@@ -1,0 +1,1006 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bay Area election contest inventory — compact schema v1.3",
+  "description": "Schema for the November 2026 California election inventory, designed to add researched counties without new county-specific columns. It validates shape, local conditional rules, code syntax, and compact omission conventions. Research uncertainty remains explicit.",
+  "$comment": "Use a Draft 2020-12 validator with format checking enabled. This schema cannot dynamically compare a source/note/party reference with keys elsewhere in the same instance, ensure ID or county-name uniqueness by one property, or reconcile coverage totals. Application validation must check these invariants and membership in election.counties_in_scope. Neither schema validation nor OCD syntax validation verifies election facts, live API recognition, geographic boundaries, or external URLs. JSON Schema defaults are annotations, not data mutation; top-level defaults describe application behavior.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "const": "elections.schema.json",
+      "description": "Relative link to the companion schema file, intended to reside beside this dataset."
+    },
+    "schema_version": {
+      "const": "1.3"
+    },
+    "election": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country": {
+          "const": "US"
+        },
+        "state": {
+          "const": "CA"
+        },
+        "research_as_of": {
+          "$ref": "#/$defs/date"
+        },
+        "counties_in_scope": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ocd_division_id": {
+                "$ref": "#/$defs/ocdDivisionId"
+              }
+            },
+            "required": [
+              "name",
+              "ocd_division_id"
+            ],
+            "description": "A researched county. County names must be unique, checked by application code; additional Bay Area counties can be appended without schema changes."
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "date",
+        "name",
+        "country",
+        "state",
+        "research_as_of",
+        "counties_in_scope"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overall research-completeness label; consult limitations and record-level verification statuses."
+        },
+        "confirmed_contests": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "confirmed_seats": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "unresolved_scheduled_contests": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "printed_candidate_entries": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "confirmed_contests_missing_candidate_rosters": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "positions_with_ocd_division_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "positions_with_ballotpedia_url": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "printed_candidates_with_ballotpedia_url": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Known research gaps and interpretation limits."
+        }
+      },
+      "required": [
+        "status",
+        "confirmed_contests",
+        "confirmed_seats",
+        "unresolved_scheduled_contests",
+        "printed_candidate_entries",
+        "confirmed_contests_missing_candidate_rosters",
+        "positions_with_ocd_division_id",
+        "positions_with_ballotpedia_url",
+        "printed_candidates_with_ballotpedia_url",
+        "limitations"
+      ]
+    },
+    "codes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "party": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[A-Z][A-Z0-9]{0,7}$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/text"
+          },
+          "minProperties": 1,
+          "description": "Official ballot party-preference code registry; includes D, R, G, and NPP (No Party Preference). NPP is an explicit ballot preference, distinct from an omitted party in a nonpartisan contest. Additional official preferences may be added without modifying the schema. Every serialized candidate party must resolve to a key here."
+        },
+        "ballot_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "confirmed": {
+              "type": "string",
+              "minLength": 1
+            },
+            "unverified": {
+              "type": "string",
+              "minLength": 1
+            },
+            "excluded": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "confirmed",
+            "unverified",
+            "excluded"
+          ],
+          "description": "Human-readable meanings of compact values used in this dataset."
+        },
+        "election_type": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "general": {
+              "type": "string",
+              "minLength": 1
+            },
+            "runoff": {
+              "type": "string",
+              "minLength": 1
+            },
+            "retention": {
+              "type": "string",
+              "minLength": 1
+            },
+            "special": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "general",
+            "runoff",
+            "retention",
+            "special"
+          ],
+          "description": "Human-readable meanings of compact values used in this dataset."
+        },
+        "candidate_list_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "complete": {
+              "type": "string",
+              "minLength": 1
+            },
+            "unverified": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "complete",
+            "unverified"
+          ],
+          "description": "Human-readable meanings of compact values used in this dataset."
+        },
+        "ocd_id_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "convention": {
+              "type": "string",
+              "minLength": 1
+            },
+            "verified": {
+              "type": "string",
+              "minLength": 1
+            },
+            "unverified": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "convention",
+            "verified",
+            "unverified"
+          ],
+          "description": "Human-readable meanings of compact values used in this dataset."
+        }
+      },
+      "required": [
+        "party",
+        "ballot_status",
+        "election_type",
+        "candidate_list_status",
+        "ocd_id_status"
+      ],
+      "description": "Reusable labels for compact values. Code maps preserve meaning while avoiding repeated long strings."
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "candidate": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "party": {
+              "const": null
+            },
+            "incumbent": {
+              "const": false
+            }
+          },
+          "required": [
+            "party",
+            "incumbent"
+          ]
+        },
+        "position": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ocd_source_ids": {
+              "$ref": "#/$defs/sourceIds"
+            }
+          },
+          "required": [
+            "ocd_source_ids"
+          ]
+        }
+      },
+      "required": [
+        "candidate",
+        "position"
+      ],
+      "description": "Application-level omission semantics. JSON Schema validation does not automatically populate these defaults. Missing candidate.party means null; missing candidate.incumbent means false. Missing position.ocd_source_ids inherits the listed default only if that position supplies ocd_division_id."
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/position"
+      },
+      "description": "Ballot-contest inventory, not one record per individual seat. Position IDs must be unique, checked outside JSON Schema."
+    },
+    "notes": {
+      "type": "object",
+      "patternProperties": {
+        "^N[0-9]{3,}$": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Shared note text registry. Position and candidate *_id / *_ids note references must resolve to these keys; application code checks reference integrity."
+    },
+    "sources": {
+      "type": "object",
+      "patternProperties": {
+        "^S[0-9]{3,}$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "url": {
+              "$ref": "#/$defs/url"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "url"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1,
+      "description": "Shared source registry, preserving URLs and titles. Source reference integrity is checked by application code."
+    },
+    "address_lookup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "division_endpoint": {
+          "$ref": "#/$defs/url"
+        },
+        "division_docs": {
+          "$ref": "#/$defs/url"
+        },
+        "voter_information_endpoint": {
+          "$ref": "#/$defs/url"
+        },
+        "voter_information_docs": {
+          "$ref": "#/$defs/url"
+        },
+        "instructions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "api_validated": {
+          "type": "boolean",
+          "description": "Whether successful live address/API validation has been completed for the supplied data; false in the current research inventory. Naming conventions alone are insufficient for reliable address eligibility matching."
+        }
+      },
+      "required": [
+        "division_endpoint",
+        "division_docs",
+        "voter_information_endpoint",
+        "voter_information_docs",
+        "instructions",
+        "api_validated"
+      ],
+      "description": "Instructions and endpoints for future address-based lookup. OCD IDs are geographic divisions, not office IDs; county or parent-jurisdiction membership alone does not establish district eligibility."
+    }
+  },
+  "required": [
+    "$schema",
+    "schema_version",
+    "election",
+    "coverage",
+    "codes",
+    "defaults",
+    "positions",
+    "notes",
+    "sources",
+    "address_lookup"
+  ],
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://[^\\s]+$"
+    },
+    "ballotpediaUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://ballotpedia\\.org/[^\\s]+$",
+      "description": "Verified corresponding Ballotpedia candidate profile, office, or election-coverage page. Omitted means no matching URL was verified, not that no page exists. The full URL is retained."
+    },
+    "ocdDivisionId": {
+      "type": "string",
+      "pattern": "^ocd-division/country:us/state:ca(?:/[^\\s/]+:[^\\s/]+)*$",
+      "description": "Open Civic Data geographic division identifier. This identifies an electorate or jurisdiction, not a unique office or candidate. A syntactically valid ID is not proof that an API recognizes it or that its boundaries match this election."
+    },
+    "sourceId": {
+      "type": "string",
+      "pattern": "^S[0-9]{3,}$"
+    },
+    "noteId": {
+      "type": "string",
+      "pattern": "^N[0-9]{3,}$"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sourceId"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "References to keys in the top-level sources registry. Resolve and validate references in application code."
+    },
+    "noteIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/noteId"
+      },
+      "uniqueItems": true,
+      "description": "References to deduplicated text in the top-level notes registry, in original note order."
+    },
+    "partyCode": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9]{0,7}$",
+      "description": "Official ballot party preference, resolved through codes.party. A value must be a key in that mapping; this cross-record constraint is checked by application code. Omitted means null/no official party affiliation for a nonpartisan contest, not an inference about personal party membership or endorsements."
+    },
+    "ballotStatus": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "unverified",
+        "excluded"
+      ],
+      "description": "Resolve labels through codes.ballot_status. Confirmed asserts final ballot appearance, independently of whether the candidate roster is verified. Unverified scheduled contests may have been canceled or filled by appointment. Excluded records are confirmed not on the ballot."
+    },
+    "candidateListStatus": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "unverified"
+      ],
+      "description": "Complete means the published printed-ballot roster was captured. Unverified means candidates is explicitly null, even when the contest's ballot appearance is confirmed. Separately recorded filed candidates are provisional and must not be displayed as confirmed ballot candidates."
+    },
+    "electionType": {
+      "type": "string",
+      "enum": [
+        "general",
+        "runoff",
+        "retention",
+        "special"
+      ],
+      "description": "Resolve full meanings through codes.election_type. Special means an election called to fill a vacancy or unexpired term when officially designated special. Judicial retention contests ask Yes/No about one justice; they are not competitive candidate-choice contests."
+    },
+    "ocdIdStatus": {
+      "type": "string",
+      "enum": [
+        "convention",
+        "verified",
+        "unverified"
+      ],
+      "description": "Convention means constructed from published OCD naming rules without successful live API validation. Verified means checked against a registry or authoritative source, with details in sources/notes; it does not by itself assert a successful live API query. Unverified means no electorate OCD ID is supplied. See address_lookup.api_validated for dataset-wide API validation status."
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Candidate name as captured from the cited ballot roster; names may preserve official ballot spelling or punctuation."
+        },
+        "party": {
+          "$ref": "#/$defs/partyCode"
+        },
+        "incumbent": {
+          "const": true,
+          "description": "Omitted means false. Only true is serialized. True denotes verified current service in the office/body sought, including appointed incumbents and current members seeking re-election after district transitions. Holding a different office does not make a candidate an incumbent for this contest."
+        },
+        "ballotpedia_url": {
+          "$ref": "#/$defs/ballotpediaUrl"
+        },
+        "incumbency_evidence_id": {
+          "$ref": "#/$defs/noteId",
+          "description": "Reference to the note supporting this candidate's incumbency."
+        },
+        "incumbency_note_id": {
+          "$ref": "#/$defs/noteId",
+          "description": "Reference to additional context about incumbency, such as a district transition."
+        },
+        "ballotpedia_note_id": {
+          "$ref": "#/$defs/noteId",
+          "description": "Reference to context or qualifications about the linked Ballotpedia page."
+        },
+        "source_ids": {
+          "$ref": "#/$defs/sourceIds",
+          "description": "Additional candidate-specific supporting sources. The contest's source_ids supply the printed roster provenance."
+        },
+        "qualified_date": {
+          "$ref": "#/$defs/date",
+          "description": "Qualification date when supplied for a write-in candidate."
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "description": "Candidate record. Missing party is null and missing incumbent is false under top-level defaults. Missing optional URL or note fields means unavailable/not supplied; this is different from an unknown candidate roster."
+    },
+    "qualifiedWriteInCandidate": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/candidate"
+        },
+        {
+          "required": [
+            "qualified_date",
+            "source_ids"
+          ]
+        }
+      ],
+      "description": "Verified write-in candidate, listed separately from names printed on the ballot."
+    },
+    "position": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}[0-9]{4}-[0-9]{3,}$",
+          "description": "Stable internal contest identifier, not an Open Civic Data identifier. Must be unique across positions; application code verifies uniqueness."
+        },
+        "counties": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Names of in-scope counties whose residents may vote in this contest. Each must match an election.counties_in_scope name. This is not necessarily every county intersected by the jurisdiction. District residency still applies."
+        },
+        "government_level": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Broad government level or type, such as Federal, State, State judiciary, City or town, Education, or Special district. Open text allows additional counties and office types."
+        },
+        "office_category": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Office category used for browsing and filtering."
+        },
+        "jurisdiction": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Full name of the governing body or jurisdiction."
+        },
+        "office": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Office or board position being filled."
+        },
+        "district_or_seat": {
+          "type": "string",
+          "minLength": 1,
+          "description": "District or seat label. Congressional districts use CD-n, California Assembly districts AD-n, and California Senate districts SD-n. Other seat labels retain their source form, including At-large, trustee areas, and judicial seats."
+        },
+        "seats": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Number of seats elected in this one ballot contest. Null means the seat count has not been confirmed. An at-large multi-seat contest has one shared candidate pool, not multiple copies of the contest."
+        },
+        "term": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "description": "Source-described term, preserving partial terms and mixed-duration multi-seat elections. Null means the term has not been verified."
+        },
+        "election_type": {
+          "$ref": "#/$defs/electionType"
+        },
+        "ballot_status": {
+          "$ref": "#/$defs/ballotStatus"
+        },
+        "partisan": {
+          "type": "boolean",
+          "description": "Whether an official candidate party preference is part of this contest. False does not describe candidates' personal political identities."
+        },
+        "ocd_division_id": {
+          "$ref": "#/$defs/ocdDivisionId",
+          "description": "Geographic identifier for the contest's electorate. Omitted means not verified/available. Do not substitute the parent jurisdiction identifier when matching an address to a district contest."
+        },
+        "ocd_id_status": {
+          "$ref": "#/$defs/ocdIdStatus"
+        },
+        "jurisdiction_ocd_division_id": {
+          "$ref": "#/$defs/ocdDivisionId",
+          "description": "Parent geographic jurisdiction where available. This may cover a larger area than the electorate. Never use it as a substitute for the contest's district when determining voter eligibility."
+        },
+        "ocd_source_ids": {
+          "$ref": "#/$defs/sourceIds",
+          "description": "Sources for the supplied electorate OCD ID. If omitted AND ocd_division_id is present, inherit defaults.position.ocd_source_ids. If no electorate OCD ID is supplied, nothing is inherited."
+        },
+        "ballotpedia_url": {
+          "$ref": "#/$defs/ballotpediaUrl"
+        },
+        "ballotpedia_page_scope": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Explains whether the linked page covers the specific office, district, city, or county."
+        },
+        "candidate_list_status": {
+          "$ref": "#/$defs/candidateListStatus"
+        },
+        "candidates": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/candidate"
+              },
+              "minItems": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Names printed on the ballot. Explicit null means the final roster is unknown; it must not be interpreted as zero candidates. For retention elections, the sole listed person is the justice subject to a Yes/No vote."
+        },
+        "candidate_list_note_id": {
+          "$ref": "#/$defs/noteId",
+          "description": "Reference to provenance or qualification text about the candidate roster."
+        },
+        "filed_candidates_not_confirmed_on_ballot": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          },
+          "minItems": 1,
+          "description": "Provisional filed names retained for unresolved contests. These are not confirmed printed-ballot candidates."
+        },
+        "qualified_write_in_candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/qualifiedWriteInCandidate"
+          },
+          "minItems": 1,
+          "description": "Known qualified write-ins, kept separate from the printed roster. Absence of this field is not proof that no write-ins exist."
+        },
+        "write_in_candidates_researched_as_of": {
+          "$ref": "#/$defs/date",
+          "description": "Date on which the separately listed write-ins were researched."
+        },
+        "write_in_candidates_source_as_of": {
+          "$ref": "#/$defs/date",
+          "description": "As-of date of the source listing qualified write-ins."
+        },
+        "write_in_candidates_status": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Research/filing status of write-ins; may remain provisional while write-in filing is open."
+        },
+        "ballot_responses": {
+          "const": [
+            "Yes",
+            "No"
+          ],
+          "description": "Response choices for a judicial retention contest."
+        },
+        "source_ids": {
+          "$ref": "#/$defs/sourceIds",
+          "description": "Sources supporting the contest's ballot status, roster, seat count, and other details; candidate-specific evidence may add candidate source_ids."
+        },
+        "primary_source_page": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Page number or page label in the primary cited document; retained as text."
+        },
+        "note_ids": {
+          "$ref": "#/$defs/noteIds"
+        }
+      },
+      "required": [
+        "id",
+        "counties",
+        "government_level",
+        "office_category",
+        "jurisdiction",
+        "office",
+        "district_or_seat",
+        "seats",
+        "term",
+        "election_type",
+        "ballot_status",
+        "partisan",
+        "ocd_id_status",
+        "candidate_list_status",
+        "candidates",
+        "source_ids"
+      ],
+      "description": "One record per ballot contest, including at-large contests electing multiple seats. This inventory contains confirmed and unresolved records; filter ballot_status explicitly when presenting a final-ballot view.",
+      "dependentRequired": {
+        "ballotpedia_page_scope": [
+          "ballotpedia_url"
+        ],
+        "qualified_write_in_candidates": [
+          "write_in_candidates_researched_as_of",
+          "write_in_candidates_source_as_of",
+          "write_in_candidates_status"
+        ],
+        "ocd_source_ids": [
+          "ocd_division_id"
+        ]
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "candidate_list_status": {
+                "const": "complete"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "candidates": {
+                "type": "array",
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "candidates": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "ballot_status": {
+                "const": "unverified"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "candidate_list_status": {
+                "const": "unverified"
+              },
+              "candidates": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "ocd_id_status": {
+                "enum": [
+                  "convention",
+                  "verified"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "ocd_division_id"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "ocd_division_id"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "election_type": {
+                "const": "retention"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "ballot_responses"
+            ],
+            "properties": {
+              "seats": {
+                "const": 1
+              },
+              "partisan": {
+                "const": false
+              },
+              "candidates": {
+                "minItems": 1,
+                "maxItems": 1
+              }
+            }
+          },
+          "else": {
+            "not": {
+              "required": [
+                "ballot_responses"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "partisan": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "candidates": {
+                "items": {
+                  "not": {
+                    "required": [
+                      "party"
+                    ]
+                  }
+                }
+              },
+              "filed_candidates_not_confirmed_on_ballot": {
+                "items": {
+                  "not": {
+                    "required": [
+                      "party"
+                    ]
+                  }
+                }
+              },
+              "qualified_write_in_candidates": {
+                "items": {
+                  "not": {
+                    "required": [
+                      "party"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "partisan": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "candidates": {
+                "items": {
+                  "required": [
+                    "party"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "jurisdiction": {
+                    "const": "United States House of Representatives"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "office": {
+                    "const": "United States Representative"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "office_category": {
+                    "const": "U.S. House"
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "district_or_seat": {
+                "pattern": "^CD-[1-9][0-9]*$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "jurisdiction": {
+                    "const": "California State Assembly"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "office": {
+                    "const": "Member of the State Assembly"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "office_category": {
+                    "const": "State Assembly"
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "district_or_seat": {
+                "pattern": "^AD-[1-9][0-9]*$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "jurisdiction": {
+                    "const": "California State Senate"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "office": {
+                    "const": "State Senator"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "office_category": {
+                    "const": "State Senate"
+                  }
+                }
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "district_or_seat": {
+                "pattern": "^SD-[1-9][0-9]*$"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
