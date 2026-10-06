@@ -183,6 +183,12 @@ negative_cases = {
     "null_url_instead_of_omission": lambda d: d["positions"][0].update(ballotpedia_url=None),
     "bad_source_reference_syntax": lambda d: d["positions"][0].update(source_ids=["123"]),
     "invalid_calendar_date": lambda d: d["election"].update(date="2026-02-30"),
+    "bad_fec_candidate_id": lambda d: d['positions'][0]['candidates'][0]['fec'].update(id='C00462697'),
+    "negative_fec_receipts": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=-1),
+    "fec_amount_as_string": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts='$100'),
+    "fec_amount_missing_cutoff": lambda d: d['positions'][0]['candidates'][0]['fec'].pop('through'),
+    "fec_unknown_with_coverage_dates": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=None),
+    "fec_unavailable_without_note": lambda d: next(c for p in d['positions'] for c in p['candidates'] or [] if c.get('fec', {}).get('receipts', 1) is None)['fec'].pop('note_id'),
 }
 outcomes = []
 for label, mutate in negative_cases.items():
@@ -200,6 +206,8 @@ confirmed_unverified_roster = mutated(lambda d: first(d, lambda p: p["ballot_sta
 assert not check(confirmed_unverified_roster, SCHEMA), "Confirmed ballot appearance must permit an explicitly unverified candidate roster"
 retention_unverified_roster = mutated(lambda d: first(d, lambda p: p["election_type"] == "retention").update(candidate_list_status="unverified", candidates=None))
 assert not check(retention_unverified_roster, SCHEMA), "A retention contest may also have an explicitly unverified roster"
+reported_zero = mutated(lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=0))
+assert not check(reported_zero, SCHEMA), 'A reported zero is valid and distinct from unavailable receipts'
 
 report = {
     "method": "Focused local checker implementing every assertion keyword used in the supplied schema, with HTTP(S) URI-subset checks. Not a standard or certified Draft 2020-12 validator.",
@@ -208,7 +216,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 

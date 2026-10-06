@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.3"
+      "const": "1.4"
     },
     "election": {
       "type": "object",
@@ -376,6 +376,76 @@
         "api_validated"
       ],
       "description": "Instructions and endpoints for future address-based lookup. OCD IDs are geographic divisions, not office IDs; county or parent-jurisdiction membership alone does not establish district eligibility."
+    },
+    "display_order": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Editorial navigation priority, not a legal hierarchy of offices. The explorer and positions array place State Senate before Assembly before other state offices.",
+      "properties": {
+        "levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "state_categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "state_offices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "levels",
+        "state_categories",
+        "state_offices"
+      ]
+    },
+    "finance": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Shared settings for every candidate.fec snapshot. Coverage from/through dates on each candidate govern the reported amount; a cycle selector is not a guarantee of identical coverage periods.",
+      "properties": {
+        "provider": {
+          "const": "FEC"
+        },
+        "cycle": {
+          "type": "integer",
+          "minimum": 2000
+        },
+        "currency": {
+          "const": "USD"
+        },
+        "metric": {
+          "const": "total_receipts"
+        },
+        "checked_on": {
+          "$ref": "#/$defs/date"
+        },
+        "method": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "required": [
+        "provider",
+        "cycle",
+        "currency",
+        "metric",
+        "checked_on",
+        "method"
+      ]
     }
   },
   "required": [
@@ -388,7 +458,9 @@
     "positions",
     "notes",
     "sources",
-    "address_lookup"
+    "address_lookup",
+    "display_order",
+    "finance"
   ],
   "$defs": {
     "text": {
@@ -520,6 +592,9 @@
         "qualified_date": {
           "$ref": "#/$defs/date",
           "description": "Qualification date when supplied for a write-in candidate."
+        },
+        "fec": {
+          "$ref": "#/$defs/fec"
         }
       },
       "required": [
@@ -1001,6 +1076,90 @@
           }
         }
       ]
+    },
+    "fec": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "FEC total receipts snapshot. Global provider, cycle, currency, metric, and retrieval date are in finance. A numeric zero is a reported zero; null means no summary total was available. Absence of fec means no federal fundraising snapshot was researched for that candidate. Source IDs resolve through sources.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[HSP][0-9][A-Z]{2}[0-9]{5}$",
+          "description": "FEC candidate ID, distinct from committee IDs and Open Civic Data geographic IDs."
+        },
+        "receipts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "Total receipts in USD to cent precision; not millions or cents. Null is unknown, not zero."
+        },
+        "from": {
+          "$ref": "#/$defs/date",
+          "description": "First day of financial coverage reported by the FEC; may precede the nominal two-year cycle."
+        },
+        "through": {
+          "$ref": "#/$defs/date",
+          "description": "Last day of financial coverage, not the retrieval date."
+        },
+        "committee_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^C[0-9]{8}$"
+          }
+        },
+        "source_id": {
+          "$ref": "#/$defs/sourceId"
+        },
+        "note_id": {
+          "$ref": "#/$defs/noteId"
+        }
+      },
+      "required": [
+        "id",
+        "receipts",
+        "source_id"
+      ],
+      "if": {
+        "properties": {
+          "receipts": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "receipts"
+        ]
+      },
+      "then": {
+        "required": [
+          "from",
+          "through",
+          "committee_ids"
+        ]
+      },
+      "else": {
+        "required": [
+          "note_id"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "from"
+              ]
+            },
+            {
+              "required": [
+                "through"
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 }

@@ -6,6 +6,24 @@ An independent research inventory and searchable, static explorer of elected off
 
 **Research snapshot: October 4, 2026.** Publication does not refresh or recertify the underlying research.
 
+**FEC fundraising snapshot: October 6, 2026.** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date.
+
+## Navigation and ordering
+
+The default **By office priority** view uses expandable sections for federal, state, judicial, county, city, education, and special-district contests. State contests appear in the requested order: **State Senate → State Assembly → other state offices**. Within the latter, Governor comes first, followed by Lieutenant Governor, Secretary of State, Controller, Treasurer, Attorney General, Insurance Commissioner, Superintendent of Public Instruction, and Board of Equalization. This is an editorial display preference, not a constitutional hierarchy.
+
+Click a section heading to expand it, or use **Expand all / Collapse all**. Counts include contests inside collapsed sections. Search results and direct contest links open the relevant sections automatically. City contests are grouped by jurisdiction. The jurisdiction and office sorts offer flat lists. Shared ordering settings live in `display_order`; the JSON positions array also follows the requested state-office priority.
+
+## Federal campaign fundraising
+
+All **22 printed federal candidates** have an FEC ID and a finance record. **20** have published total receipts; **Jeff Frese and Charles Hoelter** have `receipts: null` because their FEC candidate summaries did not publish a total. Null is not a reported zero.
+
+`candidate.fec` holds the candidate ID, `receipts`, coverage `from` and `through` dates, authorized `committee_ids` when available, a `source_id`, and an optional `note_id`. Shared `finance` settings record the provider, 2026 cycle, USD currency, total-receipts metric, October 6 retrieval date, and method once rather than repeating them for every candidate. Amounts are in dollars to cent precision.
+
+Receipts are copied from FEC candidate summaries, with Lofgren's current principal-committee summary corroborating her candidate summary. They include contributions, transfers, loans, offsets, and other receipts, so they are not net donations or cash on hand. Independent outside spending is excluded. Candidate aggregate totals are used without adding committee totals again; reported transfers are not manually removed. FEC candidate IDs are distinct from committee IDs and OCD geographic identifiers.
+
+**Compare coverage dates.** Most totals run through June 30, 2026; others run through September 7 or September 30. Scott Wiener's FEC summary reports January 1, 2023–June 30, 2026 even for the 2026 election. The dataset preserves the FEC's amount and period and explicitly flags that it is not verified as a January 2025 onward subtotal. These are dated snapshots, not a live feed. Follow each candidate's FEC source for later filings or amendments.
+
 ## Coverage and limitations
 
 The snapshot contains **416 researched contests**, including **336 confirmed contests**, **439 confirmed seats**, **869 printed candidate entries**, and **80 unresolved scheduled contests**. One confirmed contest has an unverified candidate roster.
@@ -31,7 +49,7 @@ Open Civic Data identifiers are included where available and carry an explicit v
 ## Files and data conventions
 
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.3.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.4.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintainable explorer template.
 - [`scripts/`](scripts/): dependency-free build and verification tools (Python 3 and, for the UI integration check, Node.js).
@@ -58,7 +76,7 @@ python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
 ```
 
-The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, and coverage arithmetic agrees with the records. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
+The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 
 The UI checks put temporary results in the ignored `.checks/` directory. There are no runtime package dependencies, analytics, or third-party scripts.
 

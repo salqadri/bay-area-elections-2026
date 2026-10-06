@@ -1,5 +1,7 @@
 """Check references, counts, stable IDs, and embedded downloads using Python's standard library."""
 import json
+from datetime import date
+from decimal import Decimal
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -40,6 +42,26 @@ for position in positions:
             if "party" in candidate:
                 assert candidate["party"] in data["codes"]["party"], candidate
             assert candidate.get("incumbent", True) is True, candidate
+
+federal_candidates = [c for p in positions if p['government_level'] == 'Federal' for c in p['candidates'] or []]
+fec_ids = []
+for candidate in federal_candidates:
+    f = candidate['fec']
+    fec_ids.append(f['id'])
+    assert data['sources'][f['source_id']]['url'].startswith('https://www.fec.gov/data/'), candidate['name']
+    if f['receipts'] is None:
+        assert 'from' not in f and 'through' not in f and f.get('note_id'), candidate['name']
+    else:
+        amount = Decimal(str(f['receipts']))
+        assert amount >= 0 and amount == amount.quantize(Decimal('0.01')), candidate['name']
+        assert date.fromisoformat(f['from']) <= date.fromisoformat(f['through']) <= date.fromisoformat(data['finance']['checked_on']), candidate['name']
+        if int(f['from'][:4]) < data['finance']['cycle'] - 1:
+            assert f.get('note_id'), 'Coverage outside the nominal cycle requires an explanatory note'
+assert len(fec_ids) == len(set(fec_ids)), 'Unexpected duplicate FEC candidate ID'
+state_categories = [p['office_category'] for p in positions if p['government_level'] == 'State']
+assert state_categories[0] == 'State Senate'
+assert max(i for i, c in enumerate(state_categories) if c == 'State Senate') < min(i for i, c in enumerate(state_categories) if c == 'State Assembly')
+assert max(i for i, c in enumerate(state_categories) if c == 'State Assembly') < min(i for i, c in enumerate(state_categories) if c not in {'State Senate', 'State Assembly'})
 
 confirmed = [p for p in positions if p["ballot_status"] == "confirmed"]
 printed = [candidate for p in positions for candidate in (p.get("candidates") or [])]
@@ -82,4 +104,4 @@ html = EmbeddedJSON()
 html.feed((ROOT / "index.html").read_text(encoding="utf-8"))
 assert json.loads(html.values["election-data"]) == data, "Embedded dataset differs"
 assert json.loads(html.values["election-schema"]) == schema, "Embedded schema differs"
-print(json.dumps({"passed": True, "positions": len(positions), "coverage": expected}, indent=2))
+print(json.dumps({"passed": True, "positions": len(positions), "coverage": expected, "federal_candidates_with_fec": len(federal_candidates), "reported_fec_totals": sum(c['fec']['receipts'] is not None for c in federal_candidates)}, indent=2))
