@@ -30,7 +30,8 @@ class FixtureParser(HTMLParser):
         self.stack[-1]['children'].append(text)
 
 
-parser = FixtureParser()
-parser.feed((ROOT / 'index.html').read_text())
-(GENERATED / 'explorer_dom_fixture.json').write_text(json.dumps(parser.root))
-print('Parsed standalone HTML into DOM fixture.')
+for page, name in [('index', 'explorer'), ('ballot', 'ballot')]:
+    parser = FixtureParser()
+    parser.feed((ROOT / (page + '.html')).read_text())
+    (GENERATED / (name + '_dom_fixture.json')).write_text(json.dumps(parser.root))
+    print('Parsed ' + page + '.html into DOM fixture.')

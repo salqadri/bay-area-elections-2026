@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -101,12 +101,42 @@
     "voter_information_endpoint": "https://www.googleapis.com/civicinfo/v2/voterinfo",
     "voter_information_docs": "https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery",
     "instructions": [
+      "The published ballot.html uses the public Census geocoder without an API key and keeps unresolved district alternatives visible. See lookup_limitations for confidence and coverage.",
       "Use an authorized Google Civic Information API key. divisionsByAddress accepts an address and returns division IDs and aliases.",
       "Match returned division IDs and alsoKnownAs aliases to ocd_division_id, then filter for this election and confirmed. Do not match only by county or parent jurisdiction.",
       "For supported elections, voterInfoQuery with address and the correct electionId supplies election-specific contests. Obtain the electionId from the elections endpoint; it is not supplied in this file.",
       "OCD IDs do not encode a boundary vintage or guarantee API coverage. Confirm 2026 boundaries, especially the congressional redistricting and newly created local districts. Missing or convention-only local IDs require additional registry/API/GIS verification before reliable automated address matching."
     ],
-    "api_validated": false
+    "api_validated": false,
+    "page": "ballot.html",
+    "method": "census_geographies_with_inclusive_fallback",
+    "geocoder_endpoint": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress",
+    "geocoder_docs": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+    "geography_docs": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer",
+    "congressional_session": 120,
+    "state_legislative_vintage": 2026,
+    "source_ids": [
+      "S548",
+      "S549",
+      "S550",
+      "S551"
+    ],
+    "county_election_urls": {
+      "Alameda": "https://alamedacountyca.gov/rovmvp_app/mvp.do",
+      "Contra Costa": "https://www.contracostavote.gov/elections/voter-registration/my-voting-information/",
+      "San Francisco": "https://sfelections.org/tools/portal/",
+      "San Mateo": "https://smcacre.gov/elections/my-election-info",
+      "Santa Clara": "https://rov.santaclaracounty.gov/"
+    },
+    "lookup_limitations": [
+      "The address is sent to the U.S. Census Bureau for estimated address-range geocoding; the site does not save it. Geocoding does not verify voter registration or an official ballot.",
+      "Only appropriately labeled 120th congressional and 2026 state legislative boundaries narrow those contests. Missing or stale geography retains county-relevant alternatives.",
+      "Unresolved council, supervisor and trustee districts retain every researched alternative. School, college and special-district membership that cannot be established retains broader county possibilities.",
+      "An incorporated city is determined from geographic boundaries, not a mailing city or ZIP code. Census-designated places identify unincorporated communities.",
+      "Geography confidence and confirmed November ballot appearance are distinct. Unverified scheduled races are displayed with their unresolved status.",
+      "Results cover elected offices in the five researched counties; they do not include ballot measures and are not certified exhaustive.",
+      "The integration was checked with official API documentation, current layer metadata and deterministic response fixtures. Successful live address requests have not been verified in this execution environment."
+    ]
   },
   "display_order": {
     "levels": [
@@ -2046,11 +2076,13 @@
         "S070",
         "S071",
         "S357",
-        "S356"
+        "S356",
+        "S547"
       ],
       "note_ids": [
         "N005"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-039",
@@ -2186,7 +2218,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-029",
@@ -2230,7 +2263,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-030",
@@ -2274,7 +2308,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-031",
@@ -2318,7 +2353,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-037",
@@ -2362,7 +2398,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-032",
@@ -2406,7 +2443,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-033",
@@ -2450,7 +2488,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-038",
@@ -2494,7 +2533,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-034",
@@ -2538,7 +2578,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-035",
@@ -2582,7 +2623,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-036",
@@ -2626,7 +2668,8 @@
       ],
       "note_ids": [
         "N007"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-041",
@@ -2665,7 +2708,8 @@
       ],
       "note_ids": [
         "N009"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-042",
@@ -2704,7 +2748,8 @@
       ],
       "note_ids": [
         "N009"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-043",
@@ -2745,7 +2790,8 @@
       "note_ids": [
         "N009",
         "N010"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-044",
@@ -2784,7 +2830,8 @@
       ],
       "note_ids": [
         "N009"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-045",
@@ -2824,7 +2871,8 @@
       "note_ids": [
         "N011",
         "N012"
-      ]
+      ],
+      "countywide_electorate": true
     },
     {
       "id": "CA2026-303",
@@ -20060,6 +20108,26 @@
     "S546": {
       "url": "https://www.fec.gov/data/committee/C00289603/",
       "title": "FEC — Lofgren for Congress financial summary (checked October 6, 2026)"
+    },
+    "S547": {
+      "url": "https://voterguide.sos.ca.gov/voter-info/boe-map.htm",
+      "title": "California Secretary of State — 2026 Board of Equalization district county map"
+    },
+    "S548": {
+      "url": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+      "title": "U.S. Census Bureau — Geocoding Services API, JSONP and geography layers"
+    },
+    "S549": {
+      "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer",
+      "title": "U.S. Census Bureau — current 2026 geography layers, including 120th Congress"
+    },
+    "S550": {
+      "url": "https://www.sos.ca.gov/elections/california-redistricting",
+      "title": "California Secretary of State — congressional maps for 2026 elections"
+    },
+    "S551": {
+      "url": "https://www.census.gov/programs-surveys/bas/information/cdp.html",
+      "title": "U.S. Census Bureau — incorporated places and unincorporated Census-designated places"
     }
   }
 }

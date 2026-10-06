@@ -14,6 +14,32 @@ The default **By office priority** view uses expandable sections for federal, st
 
 Click a section heading to expand it, or use **Expand all / Collapse all**. Counts include contests inside collapsed sections. Search results and direct contest links open the relevant sections automatically. City contests are grouped by jurisdiction. The jurisdiction and office sorts offer flat lists. Shared ordering settings live in `display_order`; the JSON positions array also follows the requested state-office priority.
 
+## Find my ballot by address
+
+**Address view:** https://salqadri.github.io/bay-area-elections-2026/ballot.html
+
+Enter a full US street address with city, state, and ZIP code. The public U.S. Census Geocoder supplies estimated address geography without an API key. If it returns multiple locations, the page initially shows the union of their races and lets the user choose a particular location. Unsupported counties and failed lookups receive explicit messages; neither is presented as an empty official ballot. County browsing remains available when an address cannot be resolved.
+
+The matcher keeps three geographic classifications separate from ballot appearance:
+
+| Geographic classification | Meaning |
+| --- | --- |
+| `expected` | A statewide, whole-county, current legislative, citywide, or at-large school-district geography matches. This is still an estimate. |
+| `district_uncertain` | A parent jurisdiction matches, but a council, supervisor or trustee district remains unresolved. All researched alternatives are retained. |
+| `membership_uncertain` | Membership in the local district itself has not been established. County-relevant alternatives remain visible. |
+
+The expected/possible counts include confirmed ballot contests only. Unverified scheduled contests have a separate count and a visible ballot-appearance label. A missing district response broadens the result. It never means that the voter has no contest. Schools and special districts without an established geographic match remain county-level possibilities even when another school district was located; this intentionally favors inclusion over silently omitting a race. Do not treat all the displayed alternatives as votes available to one person.
+
+The Census request uses JSONP because the [official API documentation](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html) says browser CORS requests are not supported. It requests incorporated places, unincorporated Census-designated places, school districts, counties, states, **120th Congressional Districts**, and **2026 state legislative districts** from `Public_AR_Current` / `Current_Current`. [Current TIGERweb metadata](https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer) identifies those layers; [California's 2026 congressional boundaries](https://www.sos.ca.gov/elections/california-redistricting) must not be replaced with 119th-Congress maps. The matcher refuses to narrow House races from a 119th-Congress response. Legislative responses for a different vintage stay uncertain.
+
+Mailing cities are not used as municipal boundaries. A returned incorporated place can narrow city contests; a [Census-designated place identifies an unincorporated community](https://www.census.gov/programs-surveys/bas/information/cdp.html). Census does not establish the local council, supervisor, college trustee, or special-district voting areas needed for many races. For appellate retention and BOE records that encompass entire listed counties, the dataset explicitly records `countywide_electorate: true`; this property does not extend to other county-associated districts.
+
+The address is sent to the Census service. The site does not put it into URLs, browser storage, analytics, or downloaded estimates. Requests time out and can be canceled; stale responses cannot overwrite a newer lookup. Census range-based geocoding is an estimate of a location, not proof of a registered voting residence. The new page links to official county election resources.
+
+The optional estimate download has the distinct format `bay-area-ballot-estimate/v1`, with matched geographic areas, warnings, confidence-tagged races, and the shared candidate/source/finance metadata. It excludes raw street addresses and coordinates. It is a report of a lookup, rather than the full-inventory format described by `elections.schema.json`.
+
+**Verification:** API parameters and 2026 layer metadata were checked against official documentation. The service transport, matcher and page are tested using deterministic response fixtures and a minimal DOM. Live geocoding requests could not be completed from the execution environment, so `address_lookup.api_validated` remains false. This does not turn convention-based OCD identifiers into API-validated records. The published app makes real requests when used in a browser; it has no simulated address results or embedded API credentials.
+
 ## Federal campaign fundraising
 
 All **22 printed federal candidates** have an FEC ID and a finance record. **20** have published total receipts; **Jeff Frese and Charles Hoelter** have `receipts: null` because their FEC candidate summaries did not publish a total. Null is not a reported zero.
@@ -44,12 +70,13 @@ The full Contra Costa final on-ballot proof PDF could not be retrieved during re
 
 Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases.
 
-Open Civic Data identifiers are included where available and carry an explicit verification status. They have **not been API-validated**. The explorer does not determine a voter's ballot from an address. Consult the relevant county election office for your official ballot.
+Open Civic Data identifiers are included where available and carry an explicit verification status. They have **not been API-validated**. The address view estimates races and retains unresolved alternatives; it does not determine an official ballot or voter registration. Consult the relevant county election office for your official ballot.
 
 ## Files and data conventions
 
+- [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.4.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.5.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintainable explorer template.
 - [`scripts/`](scripts/): dependency-free build and verification tools (Python 3 and, for the UI integration check, Node.js).
@@ -74,11 +101,14 @@ python3 scripts/check_data.py
 python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
+node scripts/check_address_services.cjs
+node scripts/check_address_matcher.cjs
+node scripts/check_ballot_page.cjs
 ```
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 
-The UI checks put temporary results in the ignored `.checks/` directory. There are no runtime package dependencies, analytics, or third-party scripts.
+The UI checks put temporary results in the ignored `.checks/` directory. There are no runtime package dependencies or analytics. The address page loads a Census JSONP response only when the user submits an address.
 
 ## GitHub Pages
 

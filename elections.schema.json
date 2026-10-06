@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.4"
+      "const": "1.5"
     },
     "election": {
       "type": "object",
@@ -365,6 +365,45 @@
         "api_validated": {
           "type": "boolean",
           "description": "Whether successful live address/API validation has been completed for the supplied data; false in the current research inventory. Naming conventions alone are insufficient for reliable address eligibility matching."
+        },
+        "page": {
+          "type": "string",
+          "const": "ballot.html"
+        },
+        "method": {
+          "const": "census_geographies_with_inclusive_fallback"
+        },
+        "geocoder_endpoint": {
+          "$ref": "#/$defs/url"
+        },
+        "geocoder_docs": {
+          "$ref": "#/$defs/url"
+        },
+        "geography_docs": {
+          "$ref": "#/$defs/url"
+        },
+        "congressional_session": {
+          "const": 120
+        },
+        "state_legislative_vintage": {
+          "const": 2026
+        },
+        "source_ids": {
+          "$ref": "#/$defs/sourceIds"
+        },
+        "county_election_urls": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/url"
+          },
+          "minProperties": 1
+        },
+        "lookup_limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "minItems": 1
         }
       },
       "required": [
@@ -373,9 +412,19 @@
         "voter_information_endpoint",
         "voter_information_docs",
         "instructions",
-        "api_validated"
+        "api_validated",
+        "page",
+        "method",
+        "geocoder_endpoint",
+        "geocoder_docs",
+        "geography_docs",
+        "congressional_session",
+        "state_legislative_vintage",
+        "source_ids",
+        "county_election_urls",
+        "lookup_limitations"
       ],
-      "description": "Instructions and endpoints for future address-based lookup. OCD IDs are geographic divisions, not office IDs; county or parent-jurisdiction membership alone does not establish district eligibility."
+      "description": "Published address-estimate implementation and optional Civic API integration references. County or parent membership alone does not establish a child voting district. api_validated remains false until successful live address-service verification; synthetic matching tests are a separate check."
     },
     "display_order": {
       "type": "object",
@@ -778,6 +827,10 @@
         },
         "note_ids": {
           "$ref": "#/$defs/noteIds"
+        },
+        "countywide_electorate": {
+          "const": true,
+          "description": "Only true is emitted. Every voter in each county listed in this researched record falls within this electorate. This explicit geographic rule does not establish final ballot appearance and does not apply automatically to other county-associated districts."
         }
       },
       "required": [
