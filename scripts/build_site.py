@@ -25,6 +25,8 @@ def render(page="index"):
         for placeholder, filename in {
             "__ADDRESS_SERVICE_JS__": "address-services.js",
             "__ADDRESS_MATCHER_JS__": "address-matcher.js",
+            "__ADDRESS_SUGGESTIONS_JS__": "address-suggestions.js",
+            "__ADDRESS_AUTOCOMPLETE_JS__": "address-autocomplete.js",
             "__BALLOT_PAGE_JS__": "ballot-page.js",
         }.items():
             javascript = (ROOT / "src" / filename).read_text(encoding="utf-8")

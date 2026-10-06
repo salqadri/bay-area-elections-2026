@@ -10,6 +10,7 @@
   const levelOrder = new Map(order.levels.map((level, index) => [level, index]));
   const state = { request: 0, controller: null, estimates: [], current: null, lookup: null, groups: [] };
   let toastTimer;
+  let addressAutocomplete;
 
   function node(tag, className, text) {
     const element = document.createElement(tag);
@@ -224,6 +225,7 @@
   }
   async function lookupAddress(event) {
     event.preventDefault();
+    addressAutocomplete?.close();
     const address = $('voting-address').value.trim();
     clearError();
     if (!address) { showError('Enter your voting address, including the street number and city.'); $('voting-address').focus(); return; }
@@ -278,6 +280,7 @@
     }
   }
   function browseCounty() {
+    addressAutocomplete?.close();
     clearError();
     const county = $('manual-county').value;
     if (!county) { showError('Choose a county to browse its possible races.'); $('manual-county').focus(); return; }
@@ -334,6 +337,14 @@
   }
   $('ballot-coverage').textContent = 'Coverage: ' + (DATA.election.counties_in_scope || []).map(county => county.name).join(', ') + ' counties.';
   $('ballot-footer-date').textContent = 'Election: ' + dateLabel(DATA.election.date) + ' · Election research: ' + dateLabel(DATA.election.research_as_of) + '. Estimates are not official ballots.';
+  if (globalThis.ElectionAddressAutocomplete && globalThis.ElectionAddressSuggestions) {
+    addressAutocomplete = globalThis.ElectionAddressAutocomplete.attach({
+      input: $('voting-address'),
+      listbox: $('address-suggestions'),
+      status: $('address-suggestion-status'),
+      lookup: (query, options) => globalThis.ElectionAddressSuggestions.lookup(query, options)
+    });
+  }
   $('address-form').addEventListener('submit', lookupAddress);
   $('address-match').addEventListener('change', chooseMatch);
   $('browse-county').addEventListener('click', browseCounty);

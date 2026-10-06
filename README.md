@@ -20,6 +20,10 @@ Click a section heading to expand it, or use **Expand all / Collapse all**. Coun
 
 Enter a full US street address with city, state, and ZIP code. The public U.S. Census Geocoder supplies estimated address geography without an API key. If it returns multiple locations, the page initially shows the union of their races and lets the user choose a particular location. Unsupported counties and failed lookups receive explicit messages; neither is presented as an empty official ballot. County browsing remains available when an address cannot be resolved.
 
+**Address autocomplete:** [Photon](https://github.com/komoot/photon) supplies OpenStreetMap address suggestions without an API key. After at least four characters and a 750 ms pause, the page requests US house addresses with a Bay Area location preference. It displays up to six complete returned addresses; it never invents a house number for a street-only result. Arrow keys and Enter select a suggestion, Escape dismisses the list, and ordinary Enter still submits a manually entered address. Selecting a suggestion fills the field without submitting. The Census lookup remains responsible for ballot geography.
+
+The public Photon demo permits reasonable project use and can throttle requests; it has no service availability guarantee. Requests are limited to at most one per second per page, superseded requests are canceled, failures back off, and manual entry always remains available. Suggestions require internet access and OpenStreetMap address coverage varies. Provider attribution appears beside the field. For sustained high traffic, use a hosted provider or a dedicated Photon service rather than relying on the demo. The public Nominatim endpoint is not used.
+
 The matcher keeps three geographic classifications separate from ballot appearance:
 
 | Geographic classification | Meaning |
@@ -34,11 +38,11 @@ The Census request uses JSONP because the [official API documentation](https://g
 
 Mailing cities are not used as municipal boundaries. A returned incorporated place can narrow city contests; a [Census-designated place identifies an unincorporated community](https://www.census.gov/programs-surveys/bas/information/cdp.html). Census does not establish the local council, supervisor, college trustee, or special-district voting areas needed for many races. For appellate retention and BOE records that encompass entire listed counties, the dataset explicitly records `countywide_electorate: true`; this property does not extend to other county-associated districts.
 
-The address is sent to the Census service. The site does not put it into URLs, browser storage, analytics, or downloaded estimates. Requests time out and can be canceled; stale responses cannot overwrite a newer lookup. Census range-based geocoding is an estimate of a location, not proof of a registered voting residence. The new page links to official county election resources.
+Partial address text is sent to Photon while typing; the submitted address is sent to the Census service. The site does not put addresses into page URLs, browser storage, analytics, or downloaded estimates. Requests time out and can be canceled; stale responses cannot overwrite a newer lookup. Census range-based geocoding is an estimate of a location, not proof of a registered voting residence. The new page links to official county election resources.
 
 The optional estimate download has the distinct format `bay-area-ballot-estimate/v1`, with matched geographic areas, warnings, confidence-tagged races, and the shared candidate/source/finance metadata. It excludes raw street addresses and coordinates. It is a report of a lookup, rather than the full-inventory format described by `elections.schema.json`.
 
-**Verification:** API parameters and 2026 layer metadata were checked against official documentation. The service transport, matcher and page are tested using deterministic response fixtures and a minimal DOM. Live geocoding requests could not be completed from the execution environment, so `address_lookup.api_validated` remains false. This does not turn convention-based OCD identifiers into API-validated records. The published app makes real requests when used in a browser; it has no simulated address results or embedded API credentials.
+**Verification:** API parameters and 2026 layer metadata were checked against official documentation. The service transports, autocomplete controls, matcher and page are tested using deterministic response fixtures and a minimal DOM. Live Census and Photon requests could not be completed from the execution environment, so `address_lookup.api_validated` remains false. This does not turn convention-based OCD identifiers into API-validated records. The published app makes real requests when used in a browser; it has no simulated address results or embedded API credentials.
 
 ## Federal campaign fundraising
 
@@ -87,7 +91,7 @@ Each position uses a stable ID and a `counties` array. Multi-seat elections rema
 
 ## Update and verify
 
-Edit the JSON, schema, or HTML template, then rebuild the single published HTML file:
+Edit the JSON, schema, JavaScript modules, or HTML templates, then rebuild the published HTML pages:
 
 ```sh
 python3 scripts/build_site.py
@@ -102,13 +106,15 @@ python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
+node scripts/check_address_suggestions.cjs
+node scripts/check_address_autocomplete.cjs
 node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 
-The UI checks put temporary results in the ignored `.checks/` directory. There are no runtime package dependencies or analytics. The address page loads a Census JSONP response only when the user submits an address.
+The UI checks put temporary results in the ignored `.checks/` directory. There are no runtime package dependencies or analytics. The address page requests Photon suggestions while typing and loads a Census JSONP response when the user submits an address.
 
 ## GitHub Pages
 
