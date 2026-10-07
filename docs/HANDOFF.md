@@ -12,8 +12,8 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | County scope | Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara |
 | Ballot research snapshot | October 4, 2026 |
 | FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
-| Schema | Inventory version 1.7, Draft 2020-12 (`x_url`, `campaign_url`) |
-| X accounts / sites | 135 printed entries (90 people) with verified official X URLs; 253 with verified campaign/official websites (checked October 6–7, 2026; each has its own evidence source) |
+| Schema | Inventory version 1.8, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`) |
+| X accounts / sites | 135 printed entries (90 people) with verified official X URLs; 10 federal incumbents add a second verified account in `secondary_x_url` (personal vs office handle); 388 with verified campaign/official websites (checked October 6–7, 2026; each has its own evidence source) |
 | Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
 | Confirmed seats | 439 |
 | Printed candidate entries | 869; these are entries, not necessarily unique people |
