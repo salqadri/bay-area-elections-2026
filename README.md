@@ -8,6 +8,27 @@ An independent research inventory and searchable, static explorer of elected off
 
 **FEC fundraising snapshot: October 6, 2026.** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date.
 
+## Development and agent handoff
+
+Start with [AGENTS.md](AGENTS.md), which applies to Hermes and other coding/research agents. The repository is self-contained; earlier chat history and scratch files are not needed.
+
+- [Current handoff and priorities](docs/HANDOFF.md): dated baseline, unresolved work and suggested next tasks.
+- [Election research guide](docs/RESEARCH.md): evidence standards, status decisions, source/ID conventions, FEC updates and a live unresolved-work queue command.
+- [Maintenance guide](docs/MAINTENANCE.md): architecture, local development, verification limits, county expansion and publishing.
+
+Use Git, Python 3 and Node.js. No npm/pip installation or API key is needed for the current implementation. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
+
+```sh
+git clone https://github.com/salqadri/bay-area-elections-2026.git
+cd bay-area-elections-2026
+python3 scripts/build_site.py --check
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/ballot.html`. Use `python` instead of `python3` where that is the installed executable. For an existing clone, inspect local changes and fetch the current remote state before editing.
+
+**Edit the dataset, schema, templates and JavaScript modules; rebuild both generated HTML files.** The builder does not update coverage totals or research facts. See the verification commands below and the maintenance guide before publishing.
+
 ## Navigation and ordering
 
 The default **By office priority** view uses expandable sections for federal, state, judicial, county, city, education, and special-district contests. State contests appear in the requested order: **State Senate → State Assembly → other state offices**. Within the latter, Governor comes first, followed by Lieutenant Governor, Secretary of State, Controller, Treasurer, Attorney General, Insurance Commissioner, Superintendent of Public Instruction, and Board of Equalization. This is an editorial display preference, not a constitutional hierarchy.
@@ -82,8 +103,10 @@ Open Civic Data identifiers are included where available and carry an explicit v
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
 - [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.5.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
-- [`src/index.template.html`](src/index.template.html): maintainable explorer template.
-- [`scripts/`](scripts/): dependency-free build and verification tools (Python 3 and, for the UI integration check, Node.js).
+- [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
+- [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
+- [`AGENTS.md`](AGENTS.md) and [`docs/`](docs/): agent instructions, research workflow, architecture and current handoff.
+- [`scripts/`](scripts/): dependency-free build and verification tools (Python 3 and Node.js for the JavaScript checks).
 
 Each position uses a stable ID and a `counties` array. Multi-seat elections remain one contest with a `seats` count. Legislative seats use `AD-18`, `CD-18`, or `SD-10` style labels. Party codes resolve through `codes.party`; `NPP` means the official No Party Preference label. An omitted party in a nonpartisan contest has a different meaning. `incumbent` is emitted only when verified true. Missing URLs and IDs are omitted, while an unverified candidate roster is explicitly `null`.
 
@@ -122,4 +145,4 @@ The repository is prepared for GitHub Pages publishing from **branch `main`, fol
 
 GitHub setting: **Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/ (root)` → Save**.
 
-The website URL above is the intended project-page address; a successful Pages deployment is required before it becomes available.
+The website is published at the URL above. A push or merge to `main` publishes the committed root files. Include rebuilt HTML when its sources change, and confirm the Pages deployment succeeds for the exact new commit. A successful deployment does not establish that live address providers work. See the maintenance guide for the complete release workflow.
