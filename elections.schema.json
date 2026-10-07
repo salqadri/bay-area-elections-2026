@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.7"
+      "const": "1.8"
     },
     "election": {
       "type": "object",
@@ -119,6 +119,11 @@
           "type": "integer",
           "minimum": 0,
           "description": "Printed ballot candidate entries carrying a verified official X (Twitter) account URL. Independent of Ballotpedia coverage."
+        },
+        "printed_candidates_with_secondary_x_url": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Printed ballot candidate entries carrying a verified second official X account (personal vs office) in secondary_x_url. Federal incumbents only."
         },
         "printed_candidates_with_campaign_url": {
           "type": "integer",
@@ -645,6 +650,9 @@
           "$ref": "#/$defs/ballotpediaUrl"
         },
         "x_url": {
+          "$ref": "#/$defs/xUrl"
+        },
+        "secondary_x_url": {
           "$ref": "#/$defs/xUrl"
         },
         "campaign_url": {

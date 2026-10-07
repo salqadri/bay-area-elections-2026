@@ -137,7 +137,8 @@
         if (candidate.party) row.append(node('span', 'ballot-candidate-party', partyLabel(candidate.party)));
         if (candidate.incumbent === true) row.append(node('span', 'pill incumbent', 'Incumbent'));
         if (candidate.campaign_url) { const w = node('a', 'ballot-candidate-x', 'Site ↗'); w.href = candidate.campaign_url; w.target = '_blank'; w.rel = 'noopener noreferrer'; row.append(w); }
-        if (candidate.x_url) { const x = node('a', 'ballot-candidate-x', 'X ↗'); x.href = candidate.x_url; x.target = '_blank'; x.rel = 'noopener noreferrer'; row.append(x); }
+        if (candidate.x_url) { const x = node('a', 'ballot-candidate-x', candidate.secondary_x_url ? 'X @' + candidate.x_url.split('/').pop() + ' ↗' : 'X ↗'); x.href = candidate.x_url; x.target = '_blank'; x.rel = 'noopener noreferrer'; row.append(x); }
+        if (candidate.secondary_x_url) { const x2 = node('a', 'ballot-candidate-x', 'X @' + candidate.secondary_x_url.split('/').pop() + ' ↗'); x2.href = candidate.secondary_x_url; x2.target = '_blank'; x2.rel = 'noopener noreferrer'; row.append(x2); }
         candidates.append(row);
       }
       card.append(candidates);

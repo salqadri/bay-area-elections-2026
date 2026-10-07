@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.7",
+  "schema_version": "1.8",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -81,7 +81,8 @@
     "positions_with_ballotpedia_url": 320,
     "printed_candidates_with_ballotpedia_url": 633,
     "printed_candidates_with_x_url": 135,
-    "printed_candidates_with_campaign_url": 253,
+    "printed_candidates_with_secondary_x_url": 10,
+    "printed_candidates_with_campaign_url": 388,
     "limitations": [
       "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
       "This is not yet a certified exhaustive ballot dataset: unresolved cancellation/appointment questions and unverified local OCD identifiers remain.",
@@ -210,7 +211,8 @@
             "S403",
             "S404",
             "S552",
-            "S642"
+            "S642",
+            "S941"
           ],
           "fec": {
             "id": "H0CA10149",
@@ -223,14 +225,16 @@
             "source_id": "S524"
           },
           "x_url": "https://x.com/RepGaramendi",
-          "campaign_url": "https://www.garamendi.org"
+          "campaign_url": "https://www.garamendi.org",
+          "secondary_x_url": "https://x.com/JohnGaramendi"
         },
         {
           "name": "Rudy Recile",
           "party": "R",
           "ballotpedia_url": "https://ballotpedia.org/Rudy_Recile",
           "source_ids": [
-            "S405"
+            "S405",
+            "S942"
           ],
           "fec": {
             "id": "H2CA00153",
@@ -241,7 +245,8 @@
               "C00784835"
             ],
             "source_id": "S525"
-          }
+          },
+          "campaign_url": "https://rudyforuscongress.com"
         }
       ],
       "primary_source_page": "8",
@@ -285,7 +290,8 @@
             "S407",
             "S408",
             "S553",
-            "S643"
+            "S643",
+            "S943"
           ],
           "fec": {
             "id": "H8CA10126",
@@ -298,7 +304,8 @@
             "source_id": "S526"
           },
           "x_url": "https://x.com/RepJoshHarder",
-          "campaign_url": "https://harderforcongress.com"
+          "campaign_url": "https://harderforcongress.com",
+          "secondary_x_url": "https://x.com/JoshHarder"
         },
         {
           "name": "John McBride",
@@ -375,9 +382,11 @@
           "x_url": "https://x.com/RepDeSaulnier",
           "source_ids": [
             "S555",
-            "S645"
+            "S645",
+            "S944"
           ],
-          "campaign_url": "https://desaulnierforcongress.com"
+          "campaign_url": "https://desaulnierforcongress.com",
+          "secondary_x_url": "https://x.com/MarkDeSaulnier"
         },
         {
           "name": "Jeff Frese",
@@ -546,9 +555,11 @@
           "x_url": "https://x.com/RepLSimon",
           "source_ids": [
             "S560",
-            "S650"
+            "S650",
+            "S945"
           ],
-          "campaign_url": "https://www.lateefahsimon.com"
+          "campaign_url": "https://www.lateefahsimon.com",
+          "secondary_x_url": "https://x.com/LateefahSimon"
         }
       ],
       "source_ids": [
@@ -623,11 +634,13 @@
           "source_ids": [
             "S012",
             "S562",
-            "S652"
+            "S652",
+            "S946"
           ],
           "incumbency_evidence_id": "N285",
           "x_url": "https://x.com/aishabbwahab",
-          "campaign_url": "https://www.aishawahab.com"
+          "campaign_url": "https://www.aishawahab.com",
+          "secondary_x_url": "https://x.com/SenAishaWahab"
         }
       ],
       "source_ids": [
@@ -691,7 +704,8 @@
           "source_ids": [
             "S364",
             "S563",
-            "S655"
+            "S655",
+            "S947"
           ],
           "fec": {
             "id": "H2CA14162",
@@ -704,7 +718,8 @@
             "source_id": "S537"
           },
           "x_url": "https://x.com/RepKevinMullin",
-          "campaign_url": "https://www.kevinmullinforcongress.com"
+          "campaign_url": "https://www.kevinmullinforcongress.com",
+          "secondary_x_url": "https://x.com/KevinMullin"
         }
       ],
       "source_ids": [
@@ -756,7 +771,8 @@
             "S564",
             "S656"
           ],
-          "campaign_url": "https://www.samliccardo.com"
+          "campaign_url": "https://www.samliccardo.com",
+          "secondary_x_url": "https://x.com/sliccardo"
         },
         {
           "name": "Peter Sundin Soulé",
@@ -771,7 +787,11 @@
               "C00936435"
             ],
             "source_id": "S539"
-          }
+          },
+          "campaign_url": "https://souleforcongress.com",
+          "source_ids": [
+            "S948"
+          ]
         }
       ],
       "source_ids": [
@@ -827,9 +847,11 @@
           "x_url": "https://x.com/RepRoKhanna",
           "source_ids": [
             "S565",
-            "S657"
+            "S657",
+            "S949"
           ],
-          "campaign_url": "https://www.rokhanna.com"
+          "campaign_url": "https://www.rokhanna.com",
+          "secondary_x_url": "https://x.com/RoKhanna"
         },
         {
           "name": "Ritesh Tandon",
@@ -904,9 +926,11 @@
           "x_url": "https://x.com/RepZoeLofgren",
           "source_ids": [
             "S567",
-            "S659"
+            "S659",
+            "S950"
           ],
-          "campaign_url": "https://www.zoelofgren.com"
+          "campaign_url": "https://www.zoelofgren.com",
+          "secondary_x_url": "https://x.com/ZoeLofgren"
         },
         {
           "name": "Shane Lewis",
@@ -981,9 +1005,11 @@
           "x_url": "https://x.com/RepJimmyPanetta",
           "source_ids": [
             "S569",
-            "S661"
+            "S661",
+            "S951"
           ],
-          "campaign_url": "https://www.jimmypanetta.com"
+          "campaign_url": "https://www.jimmypanetta.com",
+          "secondary_x_url": "https://x.com/JimmyPanetta"
         },
         {
           "name": "Peter Coe Verbica",
@@ -1055,7 +1081,11 @@
         {
           "name": "Linda R. Price",
           "party": "R",
-          "ballotpedia_url": "https://ballotpedia.org/Linda_Price"
+          "ballotpedia_url": "https://ballotpedia.org/Linda_Price",
+          "campaign_url": "https://www.lindapriceforsenate.com",
+          "source_ids": [
+            "S952"
+          ]
         }
       ],
       "source_ids": [
@@ -1154,7 +1184,11 @@
         {
           "name": "Mark Rendon",
           "party": "G",
-          "ballotpedia_url": "https://ballotpedia.org/Mark_Rendon"
+          "ballotpedia_url": "https://ballotpedia.org/Mark_Rendon",
+          "campaign_url": "https://www.markrendon4ad14.com",
+          "source_ids": [
+            "S953"
+          ]
         },
         {
           "name": "Buffy Wicks",
@@ -1593,7 +1627,11 @@
         {
           "name": "David G. Johnson",
           "party": "R",
-          "ballotpedia_url": "https://ballotpedia.org/David_G._Johnson_%28California_State_Assembly_candidate%29"
+          "ballotpedia_url": "https://ballotpedia.org/David_G._Johnson_%28California_State_Assembly_candidate%29",
+          "campaign_url": "https://www.davidjohnsonad23.com",
+          "source_ids": [
+            "S954"
+          ]
         }
       ],
       "source_ids": [
@@ -1862,7 +1900,11 @@
         {
           "name": "Dennis P. Sanchez",
           "party": "R",
-          "ballotpedia_url": "https://ballotpedia.org/Dennis_Sanchez_%28California%29"
+          "ballotpedia_url": "https://ballotpedia.org/Dennis_Sanchez_%28California%29",
+          "campaign_url": "https://secure.anedot.com",
+          "source_ids": [
+            "S955"
+          ]
         }
       ],
       "source_ids": [
@@ -2084,8 +2126,10 @@
           "ballotpedia_url": "https://ballotpedia.org/Malia_Cohen",
           "x_url": "https://x.com/MaliaCohen",
           "source_ids": [
-            "S591"
-          ]
+            "S591",
+            "S956"
+          ],
+          "campaign_url": "https://www.maliacohenforca.com"
         },
         {
           "name": "Herb W Morgan",
@@ -2093,8 +2137,10 @@
           "ballotpedia_url": "https://ballotpedia.org/Herb_Morgan",
           "x_url": "https://x.com/HerbWMorgan",
           "source_ids": [
-            "S592"
-          ]
+            "S592",
+            "S957"
+          ],
+          "campaign_url": "https://www.herbmorganonchain.com"
         }
       ],
       "source_ids": [
@@ -2212,8 +2258,10 @@
           "ballotpedia_url": "https://ballotpedia.org/Michael_Gates_%28California%29",
           "x_url": "https://x.com/MichaelGatesESQ",
           "source_ids": [
-            "S698"
-          ]
+            "S698",
+            "S958"
+          ],
+          "campaign_url": "https://www.gates4ag.com"
         }
       ],
       "source_ids": [
@@ -2321,7 +2369,11 @@
         },
         {
           "name": "Sonja Shaw",
-          "ballotpedia_url": "https://ballotpedia.org/Sonja_Shaw_%28California%29"
+          "ballotpedia_url": "https://ballotpedia.org/Sonja_Shaw_%28California%29",
+          "campaign_url": "https://shawforca.com",
+          "source_ids": [
+            "S959"
+          ]
         }
       ],
       "source_ids": [
@@ -2365,7 +2417,11 @@
           "name": "Sally J. Lieber",
           "party": "D",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Sally_Lieber"
+          "ballotpedia_url": "https://ballotpedia.org/Sally_Lieber",
+          "campaign_url": "https://sallylieber.org",
+          "source_ids": [
+            "S960"
+          ]
         },
         {
           "name": "John Pimentel",
@@ -3213,7 +3269,11 @@
         },
         {
           "name": "Juslyn Cabrera Manalo",
-          "ballotpedia_url": "https://ballotpedia.org/Juslyn_Cabrera_Manalo_%28San_Mateo_County_Board_of_Supervisors_District_5%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Juslyn_Cabrera_Manalo_%28San_Mateo_County_Board_of_Supervisors_District_5%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.juslynmanalo.com",
+          "source_ids": [
+            "S961"
+          ]
         }
       ],
       "ocd_id_status": "convention",
@@ -3254,9 +3314,11 @@
           "ballotpedia_url": "https://ballotpedia.org/Joaqu%C3%ADn_Torres",
           "source_ids": [
             "S368",
-            "S704"
+            "S704",
+            "S962"
           ],
-          "x_url": "https://x.com/JoaquinTorresSF"
+          "x_url": "https://x.com/JoaquinTorresSF",
+          "campaign_url": "https://www.joaquintorressf.com"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/City_elections_in_San_Francisco,_California_(2026)",
@@ -3342,7 +3404,11 @@
         },
         {
           "name": "Guy McCoy",
-          "ballotpedia_url": "https://ballotpedia.org/Guy_McCoy"
+          "ballotpedia_url": "https://ballotpedia.org/Guy_McCoy",
+          "campaign_url": "https://www.guymccoysf.com",
+          "source_ids": [
+            "S963"
+          ]
         },
         {
           "name": "Monthanus Ratanapakdee",
@@ -3401,7 +3467,11 @@
       "candidates": [
         {
           "name": "Albert Chow",
-          "ballotpedia_url": "https://ballotpedia.org/Albert_Chow"
+          "ballotpedia_url": "https://ballotpedia.org/Albert_Chow",
+          "campaign_url": "https://www.albertchowsf.com",
+          "source_ids": [
+            "S964"
+          ]
         },
         {
           "name": "Jeremy Julian Greco",
@@ -3451,7 +3521,11 @@
       "candidates": [
         {
           "name": "Alex Behrend",
-          "ballotpedia_url": "https://ballotpedia.org/Alex_Behrend"
+          "ballotpedia_url": "https://ballotpedia.org/Alex_Behrend",
+          "campaign_url": "https://alexforalld6.com",
+          "source_ids": [
+            "S965"
+          ]
         },
         {
           "name": "Matt Dorsey",
@@ -3507,7 +3581,11 @@
         },
         {
           "name": "Michael T. Nguyen",
-          "ballotpedia_url": "https://ballotpedia.org/Michael_Nguyen_(California_city_council_candidate)"
+          "ballotpedia_url": "https://ballotpedia.org/Michael_Nguyen_(California_city_council_candidate)",
+          "campaign_url": "https://www.michaelnguyen4sf.com",
+          "source_ids": [
+            "S966"
+          ]
         },
         {
           "name": "Darshini Patel",
@@ -3619,8 +3697,10 @@
           "ballotpedia_url": "https://ballotpedia.org/Shawn_M._Richard",
           "x_url": "https://x.com/bagbag123123",
           "source_ids": [
-            "S601"
-          ]
+            "S601",
+            "S967"
+          ],
+          "campaign_url": "https://www.shawnmrichard4d10.com"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/City_elections_in_San_Francisco,_California_(2026)",
@@ -3664,14 +3744,26 @@
         },
         {
           "name": "Maria L. Bondonno",
-          "ballotpedia_url": "https://ballotpedia.org/Maria_L._Bondonno_%28Alameda_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Maria_L._Bondonno_%28Alameda_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://mariabondonno4citycouncil.com",
+          "source_ids": [
+            "S968"
+          ]
         },
         {
-          "name": "Marcie Johnson"
+          "name": "Marcie Johnson",
+          "campaign_url": "https://marcie-johnson.com",
+          "source_ids": [
+            "S969"
+          ]
         },
         {
           "name": "Tyler Savage",
-          "ballotpedia_url": "https://ballotpedia.org/Tyler_Savage_%28Alameda_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Tyler_Savage_%28Alameda_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://savageforalameda.com",
+          "source_ids": [
+            "S970"
+          ]
         },
         {
           "name": "Steve Slauson",
@@ -3726,7 +3818,11 @@
         },
         {
           "name": "Tracy Jensen",
-          "ballotpedia_url": "https://ballotpedia.org/Tracy_Jensen_%28Mayor_of_Alameda%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Tracy_Jensen_%28Mayor_of_Alameda%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.tracyforalameda.com",
+          "source_ids": [
+            "S971"
+          ]
         },
         {
           "name": "Malia Vella",
@@ -3781,7 +3877,11 @@
         },
         {
           "name": "Chris McDaniels",
-          "ballotpedia_url": "https://ballotpedia.org/Chris_McDaniels_%28Albany_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Chris_McDaniels_%28Albany_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://chris4albany.com",
+          "source_ids": [
+            "S972"
+          ]
         },
         {
           "name": "Aaron Tiedemann",
@@ -3861,7 +3961,11 @@
       "candidates": [
         {
           "name": "Joy Motts",
-          "ballotpedia_url": "https://ballotpedia.org/Joy_Motts_(Antioch_City_Council_District_1,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Joy_Motts_(Antioch_City_Council_District_1,_California,_candidate_2026)",
+          "campaign_url": "https://joymotts.org",
+          "source_ids": [
+            "S973"
+          ]
         },
         {
           "name": "Tamisha Torres-Walker",
@@ -4205,7 +4309,11 @@
         },
         {
           "name": "Ross Bernet",
-          "ballotpedia_url": "https://ballotpedia.org/Ross_Bernet_%28Berkeley_City_Council%2C_District_1%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Ross_Bernet_%28Berkeley_City_Council%2C_District_1%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://secure.actblue.com",
+          "source_ids": [
+            "S974"
+          ]
         },
         {
           "name": "Moni Gangopadhyay",
@@ -4360,9 +4468,11 @@
           "ballotpedia_url": "https://ballotpedia.org/Mark_Humbert_%28Berkeley_City_Council%2C_District_8%2C_California%2C_candidate_2026%29",
           "source_ids": [
             "S131",
-            "S731"
+            "S731",
+            "S975"
           ],
-          "x_url": "https://x.com/MarkHumbert"
+          "x_url": "https://x.com/MarkHumbert",
+          "campaign_url": "https://www.humbertforcouncil.com"
         },
         {
           "name": "Mari Mendonca",
@@ -4374,7 +4484,11 @@
         },
         {
           "name": "Michael Wallman",
-          "ballotpedia_url": "https://ballotpedia.org/Michael_Wallman_%28Berkeley_City_Council%2C_District_8%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Michael_Wallman_%28Berkeley_City_Council%2C_District_8%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.wallmandistrict8.com",
+          "source_ids": [
+            "S976"
+          ]
         }
       ],
       "source_ids": [
@@ -4640,7 +4754,11 @@
         {
           "name": "Peter W. Stevenson",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Peter_W._Stevenson_(Burlingame_City_Council_District_5,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Peter_W._Stevenson_(Burlingame_City_Council_District_5,_California,_candidate_2026)",
+          "campaign_url": "https://peter4burlingame.com",
+          "source_ids": [
+            "S977"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -4691,9 +4809,11 @@
           "ballotpedia_url": "https://ballotpedia.org/Dan_Furtado_%28Campbell_City_Council_District_3%2C_California%2C_candidate_2026%29",
           "source_ids": [
             "S213",
-            "S737"
+            "S737",
+            "S978"
           ],
-          "incumbency_evidence_id": "N032"
+          "incumbency_evidence_id": "N032",
+          "campaign_url": "https://danfurtado.com"
         }
       ],
       "source_ids": [
@@ -4729,11 +4849,19 @@
       "candidate_list_status": "complete",
       "candidates": [
         {
-          "name": "Davis Stuart Fields"
+          "name": "Davis Stuart Fields",
+          "campaign_url": "https://www.davis4campbell.com",
+          "source_ids": [
+            "S979"
+          ]
         },
         {
           "name": "Joseph I. Guardado",
-          "ballotpedia_url": "https://ballotpedia.org/Joseph_I._Guardado_%28Campbell_City_Council_District_4%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Joseph_I._Guardado_%28Campbell_City_Council_District_4%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://linktr.ee",
+          "source_ids": [
+            "S980"
+          ]
         }
       ],
       "source_ids": [
@@ -4911,7 +5039,11 @@
           "name": "Maria Bagley"
         },
         {
-          "name": "Trish Brazil"
+          "name": "Trish Brazil",
+          "campaign_url": "https://trish4citycouncil.com",
+          "source_ids": [
+            "S981"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
@@ -4948,7 +5080,11 @@
           "name": "Robyn Kuslits"
         },
         {
-          "name": "Dena Acosta Beere"
+          "name": "Dena Acosta Beere",
+          "campaign_url": "https://denaacostabeere.com",
+          "source_ids": [
+            "S982"
+          ]
         },
         {
           "name": "Douglas Lezameta",
@@ -4991,7 +5127,11 @@
       "candidate_list_status": "complete",
       "candidates": [
         {
-          "name": "Aeysha Corio"
+          "name": "Aeysha Corio",
+          "campaign_url": "https://aeyshacorio.com",
+          "source_ids": [
+            "S983"
+          ]
         },
         {
           "name": "Laura Nakamura",
@@ -5040,7 +5180,11 @@
       "candidate_list_status": "complete",
       "candidates": [
         {
-          "name": "Gopal Kumarappan"
+          "name": "Gopal Kumarappan",
+          "campaign_url": "https://gopal4cupertino.org",
+          "source_ids": [
+            "S984"
+          ]
         },
         {
           "name": "Santosh Rao",
@@ -5123,7 +5267,11 @@
         {
           "name": "Teresa Proaño",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Teresa_Proano_(Daly_City_City_Council_At-large,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Teresa_Proano_(Daly_City_City_Council_At-large,_California,_candidate_2026)",
+          "campaign_url": "https://teresaproano.com",
+          "source_ids": [
+            "S985"
+          ]
         },
         {
           "name": "Tony Bayudan"
@@ -5419,14 +5567,22 @@
         },
         {
           "name": "Mary Ann \"MJ\" Jawili",
-          "ballotpedia_url": "https://ballotpedia.org/Mary_Ann_Jawili_(El_Cerrito_City_Council_At-large,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Mary_Ann_Jawili_(El_Cerrito_City_Council_At-large,_California,_candidate_2026)",
+          "campaign_url": "https://www.votemjforec.com",
+          "source_ids": [
+            "S986"
+          ]
         },
         {
           "name": "Forrest M. Lanning"
         },
         {
           "name": "Wally Nowinski",
-          "ballotpedia_url": "https://ballotpedia.org/Wally_Nowinski_(El_Cerrito_City_Council_At-large,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Wally_Nowinski_(El_Cerrito_City_Council_At-large,_California,_candidate_2026)",
+          "campaign_url": "https://secure.actblue.com",
+          "source_ids": [
+            "S974"
+          ]
         },
         {
           "name": "Gabe Quinto",
@@ -5529,9 +5685,11 @@
           "ballotpedia_url": "https://ballotpedia.org/Art_Kiesel_(Foster_City_City_Council_District_1,_California,_candidate_2026)",
           "source_ids": [
             "S379",
-            "S382"
+            "S382",
+            "S987"
           ],
-          "incumbency_note_id": "N204"
+          "incumbency_note_id": "N204",
+          "campaign_url": "https://www.art4council.com"
         },
         {
           "name": "Phoebe Shin Venkat",
@@ -5833,7 +5991,11 @@
         },
         {
           "name": "Christina Tovar",
-          "ballotpedia_url": "https://ballotpedia.org/Christina_Tovar_%28Gilroy_City_Council_District_5%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Christina_Tovar_%28Gilroy_City_Council_District_5%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.christina4council.com",
+          "source_ids": [
+            "S988"
+          ]
         },
         {
           "name": "Tom Cline",
@@ -5930,7 +6092,11 @@
         },
         {
           "name": "David Gorn",
-          "ballotpedia_url": "https://ballotpedia.org/David_Gorn_(Half_Moon_Bay_City_Council_District_1,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/David_Gorn_(Half_Moon_Bay_City_Council_District_1,_California,_candidate_2026)",
+          "campaign_url": "https://www.davidgorn4council.com",
+          "source_ids": [
+            "S989"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -6019,7 +6185,11 @@
           ]
         },
         {
-          "name": "Steven R. Booker"
+          "name": "Steven R. Booker",
+          "campaign_url": "https://www.bookerforhmb.com",
+          "source_ids": [
+            "S990"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -6147,10 +6317,12 @@
           "ballotpedia_url": "https://ballotpedia.org/Julie_Roche_%28Hayward_City_Council_District_6%2C_California%2C_candidate_2026%29",
           "source_ids": [
             "S176",
-            "S775"
+            "S775",
+            "S991"
           ],
           "incumbency_note_id": "N020",
-          "x_url": "https://x.com/julieforhayward"
+          "x_url": "https://x.com/julieforhayward",
+          "campaign_url": "https://x.com"
         }
       ],
       "source_ids": [
@@ -6191,8 +6363,10 @@
           "incumbent": true,
           "source_ids": [
             "S428",
-            "S421"
-          ]
+            "S421",
+            "S992"
+          ],
+          "campaign_url": "https://www.dion4hercules.com"
         },
         {
           "name": "Adrena Breckenridge",
@@ -6322,9 +6496,11 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Larry_Lang_%28Los_Altos_City_Council_At-large%2C_California%2C_candidate_2024%29",
           "source_ids": [
-            "S216"
+            "S216",
+            "S993"
           ],
-          "incumbency_evidence_id": "N045"
+          "incumbency_evidence_id": "N045",
+          "campaign_url": "https://www.losaltoslarry.org"
         }
       ],
       "source_ids": [
@@ -6399,7 +6575,11 @@
       "candidates": [
         {
           "name": "James Rohr",
-          "ballotpedia_url": "https://ballotpedia.org/James_Rohr_(Menlo_Park_City_Council_District_1,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/James_Rohr_(Menlo_Park_City_Council_District_1,_California,_candidate_2026)",
+          "campaign_url": "https://bellehaven.online",
+          "source_ids": [
+            "S994"
+          ]
         },
         {
           "name": "Wonman Lee",
@@ -6451,7 +6631,11 @@
           ]
         },
         {
-          "name": "Vamsi Velagapudi"
+          "name": "Vamsi Velagapudi",
+          "campaign_url": "https://www.votevamsi.com",
+          "source_ids": [
+            "S995"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -6487,7 +6671,11 @@
       "candidates": [
         {
           "name": "Charlotte Reed",
-          "ballotpedia_url": "https://ballotpedia.org/Charlotte_Reed_(Menlo_Park_City_Council_District_4,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Charlotte_Reed_(Menlo_Park_City_Council_District_4,_California,_candidate_2026)",
+          "campaign_url": "https://www.charlotteformenlopark.com",
+          "source_ids": [
+            "S996"
+          ]
         },
         {
           "name": "Laura Melahn",
@@ -6620,16 +6808,22 @@
       "candidates": [
         {
           "name": "Albert Yam",
-          "ballotpedia_url": "https://ballotpedia.org/Albert_Yam_(Millbrae_City_Council_District_4,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Albert_Yam_(Millbrae_City_Council_District_4,_California,_candidate_2026)",
+          "campaign_url": "https://www.albertyam.com",
+          "source_ids": [
+            "S997"
+          ]
         },
         {
           "name": "Bob Nguyen",
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Bob_Nguyen_(Millbrae_City_Council_District_4,_California,_candidate_2026)",
           "source_ids": [
-            "S386"
+            "S386",
+            "S998"
           ],
-          "incumbency_note_id": "N208"
+          "incumbency_note_id": "N208",
+          "campaign_url": "https://www.bob4millbrae.net"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -6679,7 +6873,11 @@
         },
         {
           "name": "Seema Kanani",
-          "ballotpedia_url": "https://ballotpedia.org/Seema_Kanani_%28Milpitas_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Seema_Kanani_%28Milpitas_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://votekanani.com",
+          "source_ids": [
+            "S999"
+          ]
         },
         {
           "name": "Garry Barbadillo",
@@ -6842,7 +7040,11 @@
       "candidate_list_status": "complete",
       "candidates": [
         {
-          "name": "Steven Hayes"
+          "name": "Steven Hayes",
+          "campaign_url": "https://electstevenhayes.com",
+          "source_ids": [
+            "S1000"
+          ]
         },
         {
           "name": "Yvonne Martinez Beltran",
@@ -6946,22 +7148,38 @@
         },
         {
           "name": "James Kuszmaul",
-          "ballotpedia_url": "https://ballotpedia.org/James_Kuszmaul_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/James_Kuszmaul_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://james4mv.com",
+          "source_ids": [
+            "S1001"
+          ]
         },
         {
           "name": "Samuel Ali"
         },
         {
           "name": "IdaRose Sylvester",
-          "ballotpedia_url": "https://ballotpedia.org/IdaRose_Sylvester_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/IdaRose_Sylvester_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.idarosesylvester.com",
+          "source_ids": [
+            "S1002"
+          ]
         },
         {
           "name": "Silja Paymer",
-          "ballotpedia_url": "https://ballotpedia.org/Silja_Paymer_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Silja_Paymer_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://siljapaymer.com",
+          "source_ids": [
+            "S1003"
+          ]
         },
         {
           "name": "Erik Poicon",
-          "ballotpedia_url": "https://ballotpedia.org/Erik_Poicon_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2024%29"
+          "ballotpedia_url": "https://ballotpedia.org/Erik_Poicon_%28Mountain_View_City_Council_At-large%2C_California%2C_candidate_2024%29",
+          "campaign_url": "https://www.erik4mv.com",
+          "source_ids": [
+            "S1004"
+          ]
         },
         {
           "name": "Alex Amoroso",
@@ -7028,8 +7246,10 @@
           "name": "Eve Marie Little",
           "incumbent": true,
           "source_ids": [
-            "S183"
-          ]
+            "S183",
+            "S1005"
+          ],
+          "campaign_url": "https://www.evemarielittle.com"
         }
       ],
       "source_ids": [
@@ -7140,7 +7360,11 @@
       "candidates": [
         {
           "name": "Brenda F. Grisham",
-          "ballotpedia_url": "https://ballotpedia.org/Brenda_Grisham"
+          "ballotpedia_url": "https://ballotpedia.org/Brenda_Grisham",
+          "campaign_url": "https://www.brendaforoakland.com",
+          "source_ids": [
+            "S1006"
+          ]
         },
         {
           "name": "Barbara Lee",
@@ -7156,7 +7380,11 @@
         },
         {
           "name": "Mindy Ruth Pechenuk",
-          "ballotpedia_url": "https://ballotpedia.org/Mindy_Pechenuk"
+          "ballotpedia_url": "https://ballotpedia.org/Mindy_Pechenuk",
+          "campaign_url": "https://electmindy.com",
+          "source_ids": [
+            "S1007"
+          ]
         },
         {
           "name": "Julius Robinson",
@@ -7295,8 +7523,10 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Kevin_Jenkins_%28California%29",
           "source_ids": [
-            "S188"
-          ]
+            "S188",
+            "S1008"
+          ],
+          "campaign_url": "https://donorbox.org"
         },
         {
           "name": "Nancy S. Sidebotham",
@@ -7335,8 +7565,10 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Brandyn_Iverson_(Orinda_City_Council_At-large,_California,_candidate_2026)",
           "source_ids": [
-            "S434"
-          ]
+            "S434",
+            "S1009"
+          ],
+          "campaign_url": "https://voteiverson.com"
         },
         {
           "name": "Janet Riley",
@@ -7523,7 +7755,11 @@
       "candidates": [
         {
           "name": "Henry Etzkowitz",
-          "ballotpedia_url": "https://ballotpedia.org/Henry_Etzkowitz_%28Palo_Alto_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Henry_Etzkowitz_%28Palo_Alto_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://henryetzkowitz4paloaltocitycouncil.com",
+          "source_ids": [
+            "S1010"
+          ]
         },
         {
           "name": "Ed Lauing",
@@ -7538,7 +7774,11 @@
         },
         {
           "name": "Bryna Chang",
-          "ballotpedia_url": "https://ballotpedia.org/Bryna_Chang_%28Palo_Alto_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Bryna_Chang_%28Palo_Alto_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.changforcitycouncil.com",
+          "source_ids": [
+            "S1011"
+          ]
         },
         {
           "name": "Vicki Veenker",
@@ -7620,7 +7860,11 @@
         },
         {
           "name": "Bill Reichle",
-          "ballotpedia_url": "https://ballotpedia.org/Bill_Reichle_%28Piedmont_City_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Bill_Reichle_%28Piedmont_City_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.reichleforpiedmont.com",
+          "source_ids": [
+            "S1012"
+          ]
         }
       ],
       "source_ids": [
@@ -7649,7 +7893,11 @@
       "candidates": [
         {
           "name": "Matthew \"Matt\" Avery",
-          "ballotpedia_url": "https://ballotpedia.org/Matthew_Avery_(Pinole_City_Council_At-large,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Matthew_Avery_(Pinole_City_Council_At-large,_California,_candidate_2026)",
+          "campaign_url": "https://matt4citycouncil.com",
+          "source_ids": [
+            "S1013"
+          ]
         },
         {
           "name": "Truc \"Christy\" Lam-Julian"
@@ -7768,14 +8016,22 @@
           "name": "Alvin Nelson"
         },
         {
-          "name": "Sonja Shephard"
+          "name": "Sonja Shephard",
+          "campaign_url": "https://nextdoor.com",
+          "source_ids": [
+            "S1014"
+          ]
         },
         {
           "name": "Carolynne Born",
           "ballotpedia_url": "https://ballotpedia.org/Carolynne_Born_(Pittsburg_City_Council_At-large,_California,_candidate_2026)"
         },
         {
-          "name": "Iztaccuauhtli Hector Gonzalez"
+          "name": "Iztaccuauhtli Hector Gonzalez",
+          "campaign_url": "https://whiteeagle.info",
+          "source_ids": [
+            "S1015"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
@@ -7902,7 +8158,11 @@
           "campaign_url": "https://www.suenoack.com"
         },
         {
-          "name": "Quy Tran"
+          "name": "Quy Tran",
+          "campaign_url": "https://www.drquytran.com",
+          "source_ids": [
+            "S1016"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
@@ -7976,10 +8236,18 @@
       "candidate_list_status": "complete",
       "candidates": [
         {
-          "name": "Vin Kruttiventi"
+          "name": "Vin Kruttiventi",
+          "campaign_url": "https://www.vote4vin.com",
+          "source_ids": [
+            "S1017"
+          ]
         },
         {
-          "name": "Kathy Narum"
+          "name": "Kathy Narum",
+          "campaign_url": "https://www.kathynarum.com",
+          "source_ids": [
+            "S1018"
+          ]
         }
       ],
       "source_ids": [
@@ -8049,8 +8317,10 @@
           "incumbent": true,
           "x_url": "https://x.com/CSturken",
           "source_ids": [
-            "S618"
-          ]
+            "S618",
+            "S1019"
+          ],
+          "campaign_url": "https://www.chrisforrwc.com"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -8612,10 +8882,12 @@
           "incumbent": true,
           "source_ids": [
             "S205",
-            "S622"
+            "S622",
+            "S1020"
           ],
           "incumbency_note_id": "N027",
-          "x_url": "https://x.com/Sbeydeh"
+          "x_url": "https://x.com/Sbeydeh",
+          "campaign_url": "https://www.sbeydehforsanleandro.com"
         }
       ],
       "source_ids": [
@@ -8652,9 +8924,11 @@
           "name": "James Aguilar",
           "incumbent": true,
           "source_ids": [
-            "S208"
+            "S208",
+            "S1021"
           ],
-          "incumbency_note_id": "N028"
+          "incumbency_note_id": "N028",
+          "campaign_url": "https://www.jamesforsanleandro.com"
         }
       ],
       "source_ids": [
@@ -8732,9 +9006,11 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Xouhoa_Bowen_%28San_Leandro_City_Council_District_5%2C_California%2C_candidate_2026%29",
           "source_ids": [
-            "S209"
+            "S209",
+            "S1022"
           ],
-          "incumbency_note_id": "N027"
+          "incumbency_note_id": "N027",
+          "campaign_url": "https://www.xouhoabowen.com"
         }
       ],
       "source_ids": [
@@ -8767,15 +9043,21 @@
       "candidates": [
         {
           "name": "Taso Zografos",
-          "ballotpedia_url": "https://ballotpedia.org/Taso_Zografos_(San_Mateo_City_Council_District_1,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Taso_Zografos_(San_Mateo_City_Council_District_1,_California,_candidate_2026)",
+          "campaign_url": "https://tasoforsanmateo.com",
+          "source_ids": [
+            "S1023"
+          ]
         },
         {
           "name": "Lisa Diaz Nash",
           "incumbent": true,
           "x_url": "https://x.com/lisadiaznash",
           "source_ids": [
-            "S623"
-          ]
+            "S623",
+            "S1024"
+          ],
+          "campaign_url": "https://www.lisaforsanmateo.com"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -8858,10 +9140,18 @@
       "candidates": [
         {
           "name": "Dave Johnson",
-          "ballotpedia_url": "https://ballotpedia.org/Dave_Johnson_(San_Mateo_City_Council_District_5,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Dave_Johnson_(San_Mateo_City_Council_District_5,_California,_candidate_2026)",
+          "campaign_url": "https://johnsonforsanmateo.com",
+          "source_ids": [
+            "S1025"
+          ]
         },
         {
-          "name": "Dana Yates Sahae"
+          "name": "Dana Yates Sahae",
+          "campaign_url": "https://www.danaforsanmateo.com",
+          "source_ids": [
+            "S1026"
+          ]
         },
         {
           "name": "Adam Loraine",
@@ -9094,7 +9384,11 @@
         },
         {
           "name": "Richard J. Adler",
-          "incumbent": true
+          "incumbent": true,
+          "campaign_url": "https://adlerforsanramon.com",
+          "source_ids": [
+            "S1027"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
@@ -9189,7 +9483,11 @@
         },
         {
           "name": "Karen Hardy",
-          "ballotpedia_url": "https://ballotpedia.org/Karen_Hardy_%28Mayor_of_Santa_Clara%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Karen_Hardy_%28Mayor_of_Santa_Clara%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.karenhardy.net",
+          "source_ids": [
+            "S1028"
+          ]
         },
         {
           "name": "David Kertes",
@@ -9211,7 +9509,11 @@
         },
         {
           "name": "Kevin Park",
-          "ballotpedia_url": "https://ballotpedia.org/Kevin_Park_%28Mayor_of_Santa_Clara%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Kevin_Park_%28Mayor_of_Santa_Clara%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://kevinpark.net",
+          "source_ids": [
+            "S1029"
+          ]
         }
       ],
       "source_ids": [
@@ -9297,7 +9599,11 @@
       "candidates": [
         {
           "name": "Kyle Madej",
-          "ballotpedia_url": "https://ballotpedia.org/Kyle_Madej_%28Santa_Clara_City_Council_District_3%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Kyle_Madej_%28Santa_Clara_City_Council_District_3%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://kyle4council.com",
+          "source_ids": [
+            "S1030"
+          ]
         },
         {
           "name": "Eric Crutchlow",
@@ -9599,9 +9905,11 @@
           "name": "Linda Sell",
           "incumbent": true,
           "source_ids": [
-            "S213"
+            "S213",
+            "S1031"
           ],
-          "incumbency_evidence_id": "N068"
+          "incumbency_evidence_id": "N068",
+          "campaign_url": "https://lindaforsunnyvale.com"
         }
       ],
       "source_ids": [
@@ -9723,9 +10031,11 @@
           "incumbent": true,
           "source_ids": [
             "S212",
-            "S846"
+            "S846",
+            "S1032"
           ],
-          "x_url": "https://x.com/Jaime_Patino"
+          "x_url": "https://x.com/Jaime_Patino",
+          "campaign_url": "https://patinoforunioncity.com"
         },
         {
           "name": "Victor Lopez Pulido",
@@ -9768,7 +10078,11 @@
           ]
         },
         {
-          "name": "Cheris Crocker-Root"
+          "name": "Cheris Crocker-Root",
+          "campaign_url": "http://root4unioncity.org",
+          "source_ids": [
+            "S1033"
+          ]
         }
       ],
       "source_ids": [
@@ -9807,10 +10121,18 @@
           ]
         },
         {
-          "name": "Vipan S. Bajwa"
+          "name": "Vipan S. Bajwa",
+          "campaign_url": "https://vipanbajwa.com",
+          "source_ids": [
+            "S1034"
+          ]
         },
         {
-          "name": "Ann Yap-Jequinto"
+          "name": "Ann Yap-Jequinto",
+          "campaign_url": "https://www.ann4unioncity.com",
+          "source_ids": [
+            "S1035"
+          ]
         }
       ],
       "source_ids": [
@@ -9975,7 +10297,11 @@
         },
         {
           "name": "Pratima Sonavne",
-          "ballotpedia_url": "https://ballotpedia.org/Pratima_Sonavne_(Danville_Town_Council_At-large,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Pratima_Sonavne_(Danville_Town_Council_At-large,_California,_candidate_2026)",
+          "campaign_url": "https://countonpratima.com",
+          "source_ids": [
+            "S1036"
+          ]
         },
         {
           "name": "Robert Storer",
@@ -10026,7 +10352,11 @@
         },
         {
           "name": "Jasmeen Pombra",
-          "ballotpedia_url": "https://ballotpedia.org/Jasmeen_Pombra_%28Los_Altos_Town_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Jasmeen_Pombra_%28Los_Altos_Town_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://jasmeenpombra.com",
+          "source_ids": [
+            "S1037"
+          ]
         },
         {
           "name": "Indu Kadambi",
@@ -10067,7 +10397,11 @@
       "candidates": [
         {
           "name": "Steve Raspe",
-          "ballotpedia_url": "https://ballotpedia.org/Steve_Raspe_%28Los_Gatos_Town_Council_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Steve_Raspe_%28Los_Gatos_Town_Council_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.steveraspe.com",
+          "source_ids": [
+            "S1038"
+          ]
         },
         {
           "name": "Rob Stump",
@@ -10092,9 +10426,11 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Rob_Moore_%28Los_Gatos_Town_Council_At-large%2C_California%2C_candidate_2026%29",
           "source_ids": [
-            "S213"
+            "S213",
+            "S1039"
           ],
-          "incumbency_evidence_id": "N075"
+          "incumbency_evidence_id": "N075",
+          "campaign_url": "https://www.robforlosgatos.com"
         },
         {
           "name": "Heidi Owens",
@@ -10155,7 +10491,11 @@
           ]
         },
         {
-          "name": "Alexis I. Mapel"
+          "name": "Alexis I. Mapel",
+          "campaign_url": "https://www.mapelformoraga.com",
+          "source_ids": [
+            "S1040"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
@@ -10192,7 +10532,11 @@
         {
           "name": "Mary Hufty",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Mary_Hufty_(Portola_Valley_Town_Council_At-large,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Mary_Hufty_(Portola_Valley_Town_Council_At-large,_California,_candidate_2026)",
+          "campaign_url": "https://maryforcouncil.org",
+          "source_ids": [
+            "S1041"
+          ]
         },
         {
           "name": "Craig S Taylor",
@@ -10688,8 +11032,10 @@
           "name": "Mary H. Rocha",
           "incumbent": true,
           "source_ids": [
-            "S467"
-          ]
+            "S467",
+            "S1042"
+          ],
+          "campaign_url": "https://maryrocha4antiochschools.com"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Antioch_Unified_School_District,_California,_elections",
@@ -11059,7 +11405,11 @@
       "candidates": [
         {
           "name": "Mary Beth Alexander",
-          "incumbent": true
+          "incumbent": true,
+          "campaign_url": "https://mb4cusd.com",
+          "source_ids": [
+            "S1043"
+          ]
         },
         {
           "name": "Andrea Rosenthal",
@@ -11206,7 +11556,11 @@
       "candidates": [
         {
           "name": "Vartika Chandra",
-          "ballotpedia_url": "https://ballotpedia.org/Vartika_Chandra"
+          "ballotpedia_url": "https://ballotpedia.org/Vartika_Chandra",
+          "campaign_url": "https://vartikachandra.org",
+          "source_ids": [
+            "S1044"
+          ]
         },
         {
           "name": "Sam Krow-Lucal",
@@ -11373,7 +11727,11 @@
         },
         {
           "name": "Brian A. Foster",
-          "ballotpedia_url": "https://ballotpedia.org/Brian_A._Foster_%28Castro_Valley_Unified_School_District_school_board_Trustee_Area_4%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Brian_A._Foster_%28Castro_Valley_Unified_School_District_school_board_Trustee_Area_4%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://foster4cvusd.com",
+          "source_ids": [
+            "S1045"
+          ]
         },
         {
           "name": "Joseph Grcar",
@@ -11870,7 +12228,11 @@
         },
         {
           "name": "Paul Pham",
-          "ballotpedia_url": "https://ballotpedia.org/Paul_Pham"
+          "ballotpedia_url": "https://ballotpedia.org/Paul_Pham",
+          "campaign_url": "https://paulpham.org",
+          "source_ids": [
+            "S1046"
+          ]
         }
       ],
       "source_ids": [
@@ -11919,7 +12281,11 @@
         },
         {
           "name": "Tony Lam",
-          "ballotpedia_url": "https://ballotpedia.org/Tony_Lam"
+          "ballotpedia_url": "https://ballotpedia.org/Tony_Lam",
+          "campaign_url": "https://www.tonylam.org",
+          "source_ids": [
+            "S1047"
+          ]
         },
         {
           "name": "Mahbub Khan",
@@ -12795,7 +13161,11 @@
         {
           "name": "Deena Kaplanis",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Deena_Kaplanis_%28Livermore_Valley_Joint_Unified_School_District_school_board_Trustee_Area_5%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Deena_Kaplanis_%28Livermore_Valley_Joint_Unified_School_District_school_board_Trustee_Area_5%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://drdeenak4lvjusd.com",
+          "source_ids": [
+            "S1048"
+          ]
         },
         {
           "name": "Sam Phelps",
@@ -13024,7 +13394,11 @@
         },
         {
           "name": "Andrew Barnes",
-          "ballotpedia_url": "https://ballotpedia.org/Andrew_Barnes_%28Menlo_Park_City_School_District%2C_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Andrew_Barnes_%28Menlo_Park_City_School_District%2C_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.barnesforboard2026.com",
+          "source_ids": [
+            "S1049"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Menlo_Park_City_Elementary_School_District%2C_California%2C_elections",
@@ -13297,7 +13671,11 @@
           "name": "Glen R. Webb"
         },
         {
-          "name": "Claudia Ortiz"
+          "name": "Claudia Ortiz",
+          "campaign_url": "https://secure.actblue.com",
+          "source_ids": [
+            "S974"
+          ]
         }
       ],
       "source_ids": [
@@ -13519,7 +13897,11 @@
       "candidates": [
         {
           "name": "Jane Baulch-Enloe",
-          "ballotpedia_url": "https://ballotpedia.org/Jane_Baulch-Enloe_(Mount_Diablo_Unified_School_District_school_board_Area_2,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Jane_Baulch-Enloe_(Mount_Diablo_Unified_School_District_school_board_Area_2,_California,_candidate_2026)",
+          "campaign_url": "https://www.jane-baulch-enloe.com",
+          "source_ids": [
+            "S1050"
+          ]
         },
         {
           "name": "Dorothy Weisenberger"
@@ -13596,7 +13978,11 @@
         {
           "name": "Shruti Kumar",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Shruti_Kumar_%28New_Haven_Unified_School_District%2C_Area_4%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Shruti_Kumar_%28New_Haven_Unified_School_District%2C_Area_4%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.electshruti.com",
+          "source_ids": [
+            "S1051"
+          ]
         },
         {
           "name": "Charandeep Singh Tatlah"
@@ -13648,7 +14034,11 @@
         },
         {
           "name": "Francis Rojas",
-          "ballotpedia_url": "https://ballotpedia.org/Francis_Rojas_%28New_Haven_Unified_School_District%2C_Area_5%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Francis_Rojas_%28New_Haven_Unified_School_District%2C_Area_5%2C_California%2C_candidate_2026%29",
+          "campaign_url": "http://francisrojas.org",
+          "source_ids": [
+            "S1052"
+          ]
         }
       ],
       "source_ids": [
@@ -13903,11 +14293,19 @@
         {
           "name": "Mike Hutchinson",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Mike_Hutchinson_%28California%29"
+          "ballotpedia_url": "https://ballotpedia.org/Mike_Hutchinson_%28California%29",
+          "campaign_url": "https://mikehutchinsonforschoolboard.wordpress.com",
+          "source_ids": [
+            "S1053"
+          ]
         },
         {
           "name": "Kathryn Camp",
-          "ballotpedia_url": "https://ballotpedia.org/Kathryn_Camp"
+          "ballotpedia_url": "https://ballotpedia.org/Kathryn_Camp",
+          "campaign_url": "https://www.kathryncamp.com",
+          "source_ids": [
+            "S1054"
+          ]
         },
         {
           "name": "Sylvia Pfeiffer Williams",
@@ -14148,7 +14546,11 @@
         },
         {
           "name": "Sonia Salwan",
-          "ballotpedia_url": "https://ballotpedia.org/Sonia_Salwan"
+          "ballotpedia_url": "https://ballotpedia.org/Sonia_Salwan",
+          "campaign_url": "https://www.soniasalwan.com",
+          "source_ids": [
+            "S1055"
+          ]
         }
       ],
       "source_ids": [
@@ -14768,7 +15170,11 @@
         },
         {
           "name": "Megha Chawla",
-          "ballotpedia_url": "https://ballotpedia.org/Megha_Chawla_%28San_Carlos_School_District%2C_At-large%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Megha_Chawla_%28San_Carlos_School_District%2C_At-large%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.meghaforschoolboard.com",
+          "source_ids": [
+            "S1056"
+          ]
         },
         {
           "name": "Shivani Tripathi",
@@ -14821,7 +15227,11 @@
         },
         {
           "name": "Monroe Lace",
-          "ballotpedia_url": "https://ballotpedia.org/Monroe_Lace"
+          "ballotpedia_url": "https://ballotpedia.org/Monroe_Lace",
+          "campaign_url": "https://www.monroelace.org",
+          "source_ids": [
+            "S1057"
+          ]
         },
         {
           "name": "Leah LaCroix",
@@ -14829,7 +15239,11 @@
         },
         {
           "name": "Jeremy Lee",
-          "ballotpedia_url": "https://ballotpedia.org/Jeremy_Lee_(California)"
+          "ballotpedia_url": "https://ballotpedia.org/Jeremy_Lee_(California)",
+          "campaign_url": "https://jeremyleesf.com",
+          "source_ids": [
+            "S1058"
+          ]
         },
         {
           "name": "Bunny McFadden",
@@ -14950,27 +15364,45 @@
           "campaign_url": "https://www.alidafisher.com"
         },
         {
-          "name": "Ryan Hazelton"
+          "name": "Ryan Hazelton",
+          "campaign_url": "https://www.ryanforsfschools.com",
+          "source_ids": [
+            "S1059"
+          ]
         },
         {
           "name": "Phil Kim",
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Phil_Kim",
           "source_ids": [
-            "S375"
-          ]
+            "S375",
+            "S1060"
+          ],
+          "campaign_url": "https://www.philkim.org"
         },
         {
           "name": "Laurance Lee",
-          "ballotpedia_url": "https://ballotpedia.org/Laurance_Lem_Lee"
+          "ballotpedia_url": "https://ballotpedia.org/Laurance_Lem_Lee",
+          "campaign_url": "https://www.lauranceleesf.com",
+          "source_ids": [
+            "S1061"
+          ]
         },
         {
           "name": "Reina Tello",
-          "ballotpedia_url": "https://ballotpedia.org/Reina_Tello"
+          "ballotpedia_url": "https://ballotpedia.org/Reina_Tello",
+          "campaign_url": "https://www.reinaforschoolboard.org",
+          "source_ids": [
+            "S1062"
+          ]
         },
         {
           "name": "Tim Tung",
-          "ballotpedia_url": "https://ballotpedia.org/Tim_Tung"
+          "ballotpedia_url": "https://ballotpedia.org/Tim_Tung",
+          "campaign_url": "https://www.timtung.com",
+          "source_ids": [
+            "S1063"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Francisco_Unified_School_District,_California,_elections_(2026)",
@@ -15069,9 +15501,11 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Jos%C3%A9_Maga%C3%B1a",
           "source_ids": [
-            "S215"
+            "S215",
+            "S1064"
           ],
-          "incumbency_evidence_id": "N088"
+          "incumbency_evidence_id": "N088",
+          "campaign_url": "https://www.votejosemagana.com"
         }
       ],
       "source_ids": [
@@ -15107,7 +15541,11 @@
       "candidates": [
         {
           "name": "Mary J. Grunthaner",
-          "ballotpedia_url": "https://ballotpedia.org/Mary_Grunthaner"
+          "ballotpedia_url": "https://ballotpedia.org/Mary_Grunthaner",
+          "campaign_url": "https://grunthaner4sanjoseschools.com",
+          "source_ids": [
+            "S1065"
+          ]
         },
         {
           "name": "Michael Melillo",
@@ -15361,7 +15799,11 @@
         {
           "name": "Beverly Gerard",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Beverly_Gerard_%28San_Mateo_County_Board_of_Education_Governing_Board_Area_2%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Beverly_Gerard_%28San_Mateo_County_Board_of_Education_Governing_Board_Area_2%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://www.reelectbeverlygerard.com",
+          "source_ids": [
+            "S1066"
+          ]
         },
         {
           "name": "Dana Johnson",
@@ -15693,7 +16135,11 @@
           "incumbency_evidence_id": "N088"
         },
         {
-          "name": "Farnoush Drexel"
+          "name": "Farnoush Drexel",
+          "campaign_url": "https://drexel4susd.com",
+          "source_ids": [
+            "S1067"
+          ]
         },
         {
           "name": "Anna Goldberg"
@@ -15729,10 +16175,18 @@
       "candidates": [
         {
           "name": "Amy Koo",
-          "incumbent": true
+          "incumbent": true,
+          "campaign_url": "https://www.amykoo.org",
+          "source_ids": [
+            "S1068"
+          ]
         },
         {
-          "name": "Alon Shiran"
+          "name": "Alon Shiran",
+          "campaign_url": "https://alonforschools.com",
+          "source_ids": [
+            "S1069"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Sequoia_Union_High_School_District%2C_California%2C_elections",
@@ -15813,7 +16267,11 @@
           "ballotpedia_url": "https://ballotpedia.org/Chialin_Hsieh_%28South_San_Francisco_Unified_School_District_school_board_Trustee_Area_A%2C_California%2C_candidate_2026%29"
         },
         {
-          "name": "Avin Sharma"
+          "name": "Avin Sharma",
+          "campaign_url": "https://www.avin4ssf.com",
+          "source_ids": [
+            "S1070"
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/South_San_Francisco_Unified_School_District%2C_California",
@@ -16058,9 +16516,11 @@
           "incumbent": true,
           "ballotpedia_url": "https://ballotpedia.org/Anne_Kepner",
           "source_ids": [
-            "S215"
+            "S215",
+            "S1071"
           ],
-          "incumbency_evidence_id": "N088"
+          "incumbency_evidence_id": "N088",
+          "campaign_url": "https://annekepner.org"
         },
         {
           "name": "Colin Lee Elliott Glaves"
@@ -16235,7 +16695,11 @@
         },
         {
           "name": "Yang Shao",
-          "ballotpedia_url": "https://ballotpedia.org/Yang_Shao"
+          "ballotpedia_url": "https://ballotpedia.org/Yang_Shao",
+          "campaign_url": "https://electyangshao.com",
+          "source_ids": [
+            "S1072"
+          ]
         }
       ],
       "source_ids": [
@@ -16317,8 +16781,10 @@
           "name": "Adriana Valencia",
           "x_url": "https://x.com/av",
           "source_ids": [
-            "S920"
-          ]
+            "S920",
+            "S1073"
+          ],
+          "campaign_url": "https://valenciaforactransit.com"
         },
         {
           "name": "Joel B. Young",
@@ -16738,7 +17204,11 @@
         {
           "name": "Kristy (Dooman) Woerz",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Kristy_Woerz_%28Castro_Valley_Sanitary_District%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Kristy_Woerz_%28Castro_Valley_Sanitary_District%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://kristy-woerz-board-2026-preview.lovely-stork-2137.chatgpt.site",
+          "source_ids": [
+            "S1074"
+          ]
         },
         {
           "name": "Joseph Grcar",
@@ -17317,7 +17787,11 @@
       "candidates": [
         {
           "name": "Kismat Kathrani",
-          "ballotpedia_url": "https://ballotpedia.org/Kismat_Kathrani_%28Dublin-San_Ramon_Community_Services_District_Board_Division_2%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Kismat_Kathrani_%28Dublin-San_Ramon_Community_Services_District_Board_Division_2%2C_California%2C_candidate_2026%29",
+          "campaign_url": "https://kismatforpeople.com",
+          "source_ids": [
+            "S1075"
+          ]
         },
         {
           "name": "Donald Downey",
@@ -17399,7 +17873,11 @@
         {
           "name": "Marguerite Young",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Marguerite_Young"
+          "ballotpedia_url": "https://ballotpedia.org/Marguerite_Young",
+          "campaign_url": "https://www.young4water.org",
+          "source_ids": [
+            "S1076"
+          ]
         }
       ],
       "source_ids": [
@@ -17463,7 +17941,11 @@
         },
         {
           "name": "Gary Wolff",
-          "ballotpedia_url": "https://ballotpedia.org/Gary_Wolff"
+          "ballotpedia_url": "https://ballotpedia.org/Gary_Wolff",
+          "campaign_url": "https://www.wolff4water.org",
+          "source_ids": [
+            "S1077"
+          ]
         }
       ],
       "source_ids": [
@@ -17511,11 +17993,19 @@
         },
         {
           "name": "Rebecca Lewington",
-          "ballotpedia_url": "https://ballotpedia.org/Rebecca_Lewington"
+          "ballotpedia_url": "https://ballotpedia.org/Rebecca_Lewington",
+          "campaign_url": "https://rebeccalewington.com",
+          "source_ids": [
+            "S1078"
+          ]
         },
         {
           "name": "William Yragui",
-          "ballotpedia_url": "https://ballotpedia.org/William_Yragui"
+          "ballotpedia_url": "https://ballotpedia.org/William_Yragui",
+          "campaign_url": "https://yragui4ebrpd.org",
+          "source_ids": [
+            "S1079"
+          ]
         }
       ],
       "source_ids": [
@@ -18453,8 +18943,10 @@
           "name": "Mike Roemer",
           "incumbent": true,
           "source_ids": [
-            "S493"
-          ]
+            "S493",
+            "S1080"
+          ],
+          "campaign_url": "https://roemerwise.wordpress.com"
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County%2C_California%2C_elections%2C_2026",
@@ -18992,7 +19484,11 @@
       "candidates": [
         {
           "name": "Jimmy Forbis",
-          "ballotpedia_url": "https://ballotpedia.org/Jimmy_Forbis"
+          "ballotpedia_url": "https://ballotpedia.org/Jimmy_Forbis",
+          "campaign_url": "https://www.jimmy4valleywater.com",
+          "source_ids": [
+            "S1081"
+          ]
         },
         {
           "name": "John L. Varela",
@@ -19035,7 +19531,11 @@
       "candidate_list_status": "complete",
       "candidates": [
         {
-          "name": "Phuong Tran Nguyen"
+          "name": "Phuong Tran Nguyen",
+          "campaign_url": "https://phuongford6.com",
+          "source_ids": [
+            "S1082"
+          ]
         },
         {
           "name": "Milan Balinton",
@@ -22911,6 +23411,574 @@
     "S940": {
       "url": "https://www.valleywater.org/director-rebecca-eisenberg-biography",
       "title": "Campaign website verification for Rebecca Eisenberg (Director, District 7): “flash-adjudicated: Official Santa Clara Valley Water District bio page for Director Rebecca Eisenberg, District 7; name and office present.” — checked 2026-10-07"
+    },
+    "S941": {
+      "url": "https://x.com/JohnGaramendi",
+      "title": "Second X account verification for John Garamendi (United States Representative, CD-8): “Name: John Garamendi | Bio: This is the official twitter account for my campaign. Representative for California’s 8th Congressional District.” — checked 2026-10-07"
+    },
+    "S942": {
+      "url": "https://rudyforuscongress.com/",
+      "title": "Campaign website verification for Rudy Recile (United States Representative, CD-8): “flash-adjudicated: Site is titled and described as Major (Ret) Rudy Recile For U.S. Congress, matching candidate and office.” — checked 2026-10-07"
+    },
+    "S943": {
+      "url": "https://x.com/JoshHarder",
+      "title": "Second X account verification for Josh Harder (United States Representative, CD-9): “Name: Josh Harder | Bio: Lillian and Karina’s dad. Businessman. Proudly representing the Central Valley in Congress. Join us: http://HarderforCon | link: Proudly representing the C” — checked 2026-10-07"
+    },
+    "S944": {
+      "url": "https://x.com/MarkDeSaulnier",
+      "title": "Second X account verification for Mark DeSaulnier (United States Representative, CD-10): “Name: Mark DeSaulnier | Bio: Father. Avid Runner. Former Small Business Owner.\nHonored to represent California's 10th Congressional District.\nCurrently a candidate for reelection” — checked 2026-10-07"
+    },
+    "S945": {
+      "url": "https://x.com/LateefahSimon",
+      "title": "Second X account verification for Lateefah Simon (United States Representative, CD-12): “Name: Lateefah Simon | Bio: Mom | Bay Native | Congresswoman CA-12 | Official tweets @RepLSimon | @macfound Fellow | @kamalaharris alum | Tweets are | link: Congresswoman CA-12 | O” — checked 2026-10-07"
+    },
+    "S946": {
+      "url": "https://x.com/SenAishaWahab",
+      "title": "Second X account verification for Aisha Wahab (United States Representative, CD-14): “Name: Senator Aisha Wahab | Bio: California State Senator, District 10” — checked 2026-10-07"
+    },
+    "S947": {
+      "url": "https://x.com/KevinMullin",
+      "title": "Second X account verification for Kevin Mullin (United States Representative, CD-15): “Name: Kevin Mullin | Bio: U.S. Rep. (D-CA15). Defending Democracy, Climate Resilience & an Economy for ALL. Dad of Twins. Hard of Hearing. Warrior | link: Kevin Mullin; U.S. Rep. (” — checked 2026-10-07"
+    },
+    "S948": {
+      "url": "https://souleforcongress.com/",
+      "title": "Campaign website verification for Peter Sundin Soulé (United States Representative, CD-16): “Peter Soule for Congress | Peter Soule for Congress · Donate. Open Menu Close Menu. Common Sense vs ... ©2026 Peter Soule for Congress. All Rights” — checked 2026-10-07"
+    },
+    "S949": {
+      "url": "https://x.com/RoKhanna",
+      "title": "Second X account verification for Ro Khanna (United States Representative, CD-17): “Name: Ro Khanna | Bio: Team America. Economic Patriotism: America's Next New Deal. Medicare for All, Good Jobs, Hometown Wealth, Tax the Billio | link: @RoKhanna; name 'Ro Khanna';” — checked 2026-10-07; probable match, indirect evidence"
+    },
+    "S950": {
+      "url": "https://x.com/ZoeLofgren",
+      "title": "Second X account verification for Zoe Lofgren (United States Representative, CD-18): “Name: Zoe Lofgren | Bio: Proud Dem Representing CA18. Teamster’s Daughter. Immigration Attorney. Farm Workers Advocate. DREAMers Defender. DigRig | link: Proud Dem Representing CA1” — checked 2026-10-07"
+    },
+    "S951": {
+      "url": "https://x.com/JimmyPanetta",
+      "title": "Second X account verification for Jimmy Panetta (United States Representative, CD-19): “Name: Jimmy Panetta | Bio: California's 19th Congressional District | link: name: 'Jimmy Panetta'; bio: \"California's 19th Congressional District\"” — checked 2026-10-07"
+    },
+    "S952": {
+      "url": "https://www.lindapriceforsenate.com/",
+      "title": "Campaign website verification for Linda R. Price (State Senator, SD-10): “Linda Price for Senate Home | Linda Price is running for the California State Senate to restore common sense, accountability, and opportunity for ever” — checked 2026-10-07"
+    },
+    "S953": {
+      "url": "https://www.markrendon4ad14.com/",
+      "title": "Campaign website verification for Mark Rendon (Member of the State Assembly, AD-14): “Mark Rendón for AD14 | ... so happy to announce that I have been endorsed. Mark Rendón for AD14. Contact us at vote@markrendon4ad14.com. Paid f” — checked 2026-10-07"
+    },
+    "S954": {
+      "url": "https://www.davidjohnsonad23.com/",
+      "title": "Campaign website verification for David G. Johnson (Member of the State Assembly, AD-23): “David Johnson for Assembly District 23 | Official campaign website for David Johnson for Assembly District 23.” — checked 2026-10-07"
+    },
+    "S955": {
+      "url": "https://secure.anedot.com/",
+      "title": "Campaign website verification for Dennis P. Sanchez (Member of the State Assembly, AD-29): “flash-adjudicated: Branded Dennis Sanchez for Assembly donation form; candidate name and Assembly office are clearly present.” — checked 2026-10-07"
+    },
+    "S956": {
+      "url": "https://www.maliacohenforca.com/",
+      "title": "Campaign website verification for Malia M. Cohen (Controller, Statewide): “flash-adjudicated: Site title and homepage identify Malia Cohen as the Democratic candidate for California State Controller 2026, with campaign navigation and paid-for-by notice.” — checked 2026-10-07"
+    },
+    "S957": {
+      "url": "https://www.herbmorganonchain.com/",
+      "title": "Campaign website verification for Herb W Morgan (Controller, Statewide): “Political Campaign Donation Tracker | Herb Morgan for California State Controller - Campaign Finance Tracker. active. Herb Morgan for Controller. Election Dat” — checked 2026-10-07"
+    },
+    "S958": {
+      "url": "https://www.gates4ag.com/",
+      "title": "Campaign website verification for Michael E. Gates (Attorney General, Statewide): “flash-adjudicated: Site is titled Michael Gates for Attorney General with campaign donate/endorse pages matching candidate and office.” — checked 2026-10-07"
+    },
+    "S959": {
+      "url": "https://shawforca.com/",
+      "title": "Campaign website verification for Sonja Shaw (Superintendent of Public Instruction, Statewide): “flash-adjudicated: Site title and homepage identify Sonja Shaw for California State Superintendent 2026 with campaign navigation and donation/join content.” — checked 2026-10-07"
+    },
+    "S960": {
+      "url": "https://sallylieber.org/",
+      "title": "Campaign website verification for Sally J. Lieber (Member, District 2): “Sally Lieber | Sally Lieber has served as a City Councilmember, Mayor, County Commissioner, State Assemblymember, Member of the Califor” — checked 2026-10-07"
+    },
+    "S961": {
+      "url": "https://www.juslynmanalo.com/",
+      "title": "Campaign website verification for Juslyn Cabrera Manalo (Supervisor, District 5): “Juslyn Manalo | ... the Storage tab. Email Address. Sign Up. Thank you! Paid for by Juslyn Manalo for Supervisor 2026. FPPC #1493016. in” — checked 2026-10-07"
+    },
+    "S962": {
+      "url": "https://www.joaquintorressf.com/",
+      "title": "Campaign website verification for Joaquín Torres (Assessor-Recorder, Citywide): “flash-adjudicated: Title, URL, homepage, and paid-for-by line identify Joaquín Torres for Assessor-Recorder 2026 campaign in San Francisco.” — checked 2026-10-07"
+    },
+    "S963": {
+      "url": "https://www.guymccoysf.com/",
+      "title": "Campaign website verification for Guy McCoy (Member, Board of Supervisors, District 2): “Guy McCoy | Candidate for San Francisco District 2 Supervisor. Why I'm Running. I'm Guy McCoy ... Website: guymccoySF.com. Get Invol” — checked 2026-10-07"
+    },
+    "S964": {
+      "url": "https://www.albertchowsf.com/",
+      "title": "Campaign website verification for Albert Chow (Member, Board of Supervisors, District 4): “Meet Albert | Albert Chow for SF Supervisor | Contact the campaign at Team@AlbertChowSF.com. Paid for by Albert Chow for Supervisor 2026, FPPC# 1485609. Financial dis” — checked 2026-10-07"
+    },
+    "S965": {
+      "url": "https://alexforalld6.com/",
+      "title": "Campaign website verification for Alex Behrend (Member, Board of Supervisors, District 6): “flash-adjudicated: Site identifies Alex Behrend as candidate for San Francisco District 6 Supervisor and includes a paid-for-by campaign disclosure.” — checked 2026-10-07"
+    },
+    "S966": {
+      "url": "https://www.michaelnguyen4sf.com/",
+      "title": "Campaign website verification for Michael T. Nguyen (Member, Board of Supervisors, District 8): “Michael Nguyen For San Francisco D8 Supervisor | Empower ... | Michael Nguyen for District 8 Supervisor ... Paid for by Michael Nguyen for Supervisor 2026, FPPC #1484606. Financial” — checked 2026-10-07"
+    },
+    "S967": {
+      "url": "https://www.shawnmrichard4d10.com/",
+      "title": "Campaign website verification for Shawn M. Richard (Member, Board of Supervisors, District 10): “Shawn Richard for District 10 Supervisor | A Proven Leader. For Our Community. For Our Future. Shawn Richard for District 10 Supervisor.” — checked 2026-10-07"
+    },
+    "S968": {
+      "url": "https://mariabondonno4citycouncil.com/",
+      "title": "Campaign website verification for Maria L. Bondonno (City Council Member, At large): “Maria Bondonno for Alameda City Council | Experienced ... | PrivacyTermsAccessibility. Paid for by Maria Bondonno for City Council 2026 FPPC ID #1495863. | Powered by Local Campaig” — checked 2026-10-07"
+    },
+    "S969": {
+      "url": "https://marcie-johnson.com/",
+      "title": "Campaign website verification for Marcie Johnson (City Council Member, At large): “YES, I SUPPORT ELECTING MARCIE JOHNSON FOR CITY ... | YES, I SUPPORT ELECTING MARCIE JOHNSON FOR CITY COUNCIL. Enclosed is my contribution payable by check, credit card, or o” — checked 2026-10-07"
+    },
+    "S970": {
+      "url": "https://savageforalameda.com/",
+      "title": "Campaign website verification for Tyler Savage (City Council Member, At large): “Tyler Savage for Alameda City Council 2026 | Our Island ... | Tyler Savage is running for Alameda City Council in 2026. A longtime Alameda resident, youth sports coach, and communi” — checked 2026-10-07"
+    },
+    "S971": {
+      "url": "https://www.tracyforalameda.com/",
+      "title": "Campaign website verification for Tracy Jensen (Mayor, At large): “flash-adjudicated: Site title and homepage identify Tracy Jensen for Alameda Mayor, matching candidate, office, and city.” — checked 2026-10-07"
+    },
+    "S972": {
+      "url": "https://chris4albany.com/",
+      "title": "Campaign website verification for Chris McDaniels (City Council Member, At large): “flash-adjudicated: Site title, URL, and disclaimer identify it as Chris McDaniels' Albany City Council campaign site.” — checked 2026-10-07"
+    },
+    "S973": {
+      "url": "https://joymotts.org/",
+      "title": "Campaign website verification for Joy Motts (City Council Member, District 1): “Privacy Policy - Antioch Council candidate Joy Motts, District 1 | Joy Motts for City Council operates the www.joymotts.org website, which provides the SERVICE. This page is used t” — checked 2026-10-07"
+    },
+    "S974": {
+      "url": "https://secure.actblue.com/",
+      "title": "Campaign website verification for Ross Bernet (City Council Member, District 1): “flash-adjudicated: ActBlue donation page explicitly for Ross Bernet for City Council in Berkeley; paid by Ross Bernet for Council 2026 with FPPC ID.” — checked 2026-10-07"
+    },
+    "S975": {
+      "url": "https://www.humbertforcouncil.com/",
+      "title": "Campaign website verification for Mark Humbert (City Council Member, District 8): “Mark Humbert for Berkeley City Council District 8 | Mark Humbert for Berkeley City Council District 8—which includes the Elmwood and Claremont neighborhoods, as well as por” — checked 2026-10-07"
+    },
+    "S976": {
+      "url": "https://www.wallmandistrict8.com/",
+      "title": "Campaign website verification for Michael Wallman (City Council Member, District 8): “Michael Wallman for Berkeley City Council, District 8 | Michael Wallman is a lifelong Berkeley resident and engineer running for Berkeley City Council, District 8, in the Novem” — checked 2026-10-07"
+    },
+    "S977": {
+      "url": "https://peter4burlingame.com/",
+      "title": "Campaign website verification for Peter W. Stevenson (City Council Member, District 5): “flash-adjudicated: Site title and homepage identify Peter Stevenson’s campaign for Burlingame City Council, with candidate-specific content and re-election messaging.” — checked 2026-10-07"
+    },
+    "S978": {
+      "url": "https://danfurtado.com/",
+      "title": "Campaign website verification for Dan Furtado (City Council Member, District 3): “Dan Furtado for Campbell City Council 2026 | Dan Furtado is a native of Campbell, former Civic Improvement Commissioner ... He is a former Board Member and President” — checked 2026-10-07"
+    },
+    "S979": {
+      "url": "https://www.davis4campbell.com/",
+      "title": "Campaign website verification for Davis Stuart Fields (City Council Member, District 4): “flash-adjudicated: Site title/URL/homepage show Davis Fields for Campbell City Council District 4 with Donate, indicating his own campaign site.” — checked 2026-10-07"
+    },
+    "S980": {
+      "url": "https://linktr.ee/",
+      "title": "Campaign website verification for Joseph I. Guardado (City Council Member, District 4): “flash-adjudicated: Linktree titled Guardado for Council 2026 Official; names Joseph Guardado and City Council District 4, indicating own campaign site.” — checked 2026-10-07"
+    },
+    "S981": {
+      "url": "https://trish4citycouncil.com/",
+      "title": "Campaign website verification for Trish Brazil (City Council Member, District 1): “flash-adjudicated: Title and homepage clearly identify Trish Brazil's own Concord City Council campaign endorsements page.” — checked 2026-10-07"
+    },
+    "S982": {
+      "url": "https://denaacostabeere.com/",
+      "title": "Campaign website verification for Dena Acosta Beere (City Council Member, District 3): “Dena Acosta Beere – For Concord City Council | Paid for by Dena Acosta Beere for City Council 2026 ID#1495129.” — checked 2026-10-07"
+    },
+    "S983": {
+      "url": "https://aeyshacorio.com/",
+      "title": "Campaign website verification for Aeysha Corio (City Council Member, District 5): “Aeysha Corio — Concord City Council District 5 | Aeysha Corio is running for Concord City Council District 5 — a Planning Commissioner, small business owner, and communi” — checked 2026-10-07"
+    },
+    "S984": {
+      "url": "https://gopal4cupertino.org/",
+      "title": "Campaign website verification for Gopal Kumarappan (City Council Member, At-large): “flash-adjudicated: Site title and content identify it as Gopal Kumarappan for Cupertino 2026, with City Council endorsements on a candidate-style domain.” — checked 2026-10-07"
+    },
+    "S985": {
+      "url": "https://teresaproano.com/",
+      "title": "Campaign website verification for Teresa Proaño (City Council Member, At-large): “Teresa Proano.com | Paid for by Teresa Proaño for City Council 2026 — FPPC ID# 1486738. Powered by. Support Teresa. Campaigns take resources” — checked 2026-10-07"
+    },
+    "S986": {
+      "url": "https://www.votemjforec.com/",
+      "title": "Campaign website verification for Mary Ann \"MJ\" Jawili (City Council Member, At large): “flash-adjudicated: Site title and homepage identify Mary Ann \"MJ\" Jawili's El Cerrito City Council campaign with candidate-specific navigation.” — checked 2026-10-07"
+    },
+    "S987": {
+      "url": "https://www.art4council.com/",
+      "title": "Campaign website verification for Art Kiesel (City Council Member, District 1): “flash-adjudicated: Site is titled and paid for by Art Kiesel for Foster City Council District 1 2026, with campaign content and donation links.” — checked 2026-10-07"
+    },
+    "S988": {
+      "url": "https://www.christina4council.com/",
+      "title": "Campaign website verification for Christina Tovar (City Council Member, District 5): “flash-adjudicated: Site is titled Christina 4 Council and explicitly promotes Christina Tovar for Gilroy City Council District 5.” — checked 2026-10-07"
+    },
+    "S989": {
+      "url": "https://www.davidgorn4council.com/",
+      "title": "Campaign website verification for David Gorn (City Council Member, District 1): “David Gorn | ... border is Mirada Road. Find Your District. Paid for by the David Gorn for City Council committee. Designed Locally b” — checked 2026-10-07"
+    },
+    "S990": {
+      "url": "https://www.bookerforhmb.com/",
+      "title": "Campaign website verification for Steven R. Booker (City Council Member, District 5): “flash-adjudicated: Site is Steven Booker HMB campaign homepage with donate/platform/endorsements and Half Moon Bay references.” — checked 2026-10-07"
+    },
+    "S991": {
+      "url": "https://x.com/",
+      "title": "Campaign website verification for Julie Roche (City Council Member, District 6): “flash-adjudicated: Own X account for Julie Roche with handle julieforhayward, bio lists Hayward City Councilmember and Hayward CA; clearly her office/campaign presence.” — checked 2026-10-07"
+    },
+    "S992": {
+      "url": "https://www.dion4hercules.com/",
+      "title": "Campaign website verification for Dion Bailey (City Council Member, At large): “flash-adjudicated: Site is clearly Dion Bailey's official Hercules City Council campaign page, showing his name, office, city, and re-election messaging.” — checked 2026-10-07"
+    },
+    "S993": {
+      "url": "https://www.losaltoslarry.org/",
+      "title": "Campaign website verification for Larry Lang (City Council Member, District 4): “flash-adjudicated: Homepage title shows 'Larry Lang for Los Altos City Council' and the site appears to be his own campaign page.” — checked 2026-10-07"
+    },
+    "S994": {
+      "url": "https://bellehaven.online/",
+      "title": "Campaign website verification for James Rohr (City Council Member, District 1): “flash-adjudicated: Homepage identifies James Rohr for City Council in Menlo Park District 1 and announces his candidacy in first person.” — checked 2026-10-07"
+    },
+    "S995": {
+      "url": "https://www.votevamsi.com/",
+      "title": "Campaign website verification for Vamsi Velagapudi (City Council Member, District 2): “flash-adjudicated: Domain/title and paid-for-by disclaimer identify Vamsi Velagapudi for City Council 2026; homepage content is his Menlo Park campaign page.” — checked 2026-10-07"
+    },
+    "S996": {
+      "url": "https://www.charlotteformenlopark.com/",
+      "title": "Campaign website verification for Charlotte Reed (City Council Member, District 4): “flash-adjudicated: Site title and paid-for notice identify Charlotte Reed for City Council 2026 in Menlo Park; homepage has campaign donate/yard sign/voter info content.” — checked 2026-10-07"
+    },
+    "S997": {
+      "url": "https://www.albertyam.com/",
+      "title": "Campaign website verification for Albert Yam (City Council Member, District 4): “Endorsements | Albert Yam For Millb | He listens to residents, understands our community, and will fight for the issues that matter most. I'm proud to support” — checked 2026-10-07"
+    },
+    "S998": {
+      "url": "https://www.bob4millbrae.net/",
+      "title": "Campaign website verification for Bob Nguyen (City Council Member, District 4): “flash-adjudicated: Site title and homepage identify Bob Nguyen for Millbrae City Council District 4 2026 with campaign content.” — checked 2026-10-07"
+    },
+    "S999": {
+      "url": "https://votekanani.com/",
+      "title": "Campaign website verification for Seema Kanani (City Council Member, At-large): “Endorsements | votekanani - Seema Kanani | Seema Kanani is running for Milpitas City Council because our community deserves safe neighborhoods, accountable leaders” — checked 2026-10-07"
+    },
+    "S1000": {
+      "url": "https://electstevenhayes.com/",
+      "title": "Campaign website verification for Steven Hayes (City Council Member, District B): “Elect Steven Hayes: Home | The maximum donation allowed under city ordinance is $5,900.00. Please make checks payable to: Elect Steven Hayes for Ci” — checked 2026-10-07"
+    },
+    "S1001": {
+      "url": "https://james4mv.com/",
+      "title": "Campaign website verification for James Kuszmaul (City Council Member, At-large): “flash-adjudicated: Site is James Kuszmaul's own campaign page for Mountain View City Council, with candidate name, office, city, and committee disclosure.” — checked 2026-10-07"
+    },
+    "S1002": {
+      "url": "https://www.idarosesylvester.com/",
+      "title": "Campaign website verification for IdaRose Sylvester (City Council Member, At-large): “IdaRose Sylvester for Mountain View City Council 2026 | IdaRose Sylvester for Mountain View City Council 2026 · Why I'm Running · Get Involved · Priorities · Endorsements · Mee” — checked 2026-10-07"
+    },
+    "S1003": {
+      "url": "https://siljapaymer.com/",
+      "title": "Campaign website verification for Silja Paymer (City Council Member, At-large): “Silja Paymer — Mountain View City Council 2026 | Silja Paymer for Mountain View City Council 2026. Bringing Safe Streets & a Greener Future — with Heart and Harmony. Joi” — checked 2026-10-07"
+    },
+    "S1004": {
+      "url": "https://www.erik4mv.com/",
+      "title": "Campaign website verification for Erik Poicon (City Council Member, At-large): “flash-adjudicated: Site is VoteErik/Erik Poicon campaign page for City Council in Mountain View, with candidate name, office, city, and donation/contact info.” — checked 2026-10-07"
+    },
+    "S1005": {
+      "url": "https://www.evemarielittle.com/",
+      "title": "Campaign website verification for Eve Marie Little (City Council Member, At large): “Eve Marie Little for City Council | Newark, California | Eve Marie Little is running for City Council in Newark, California. Learn more and join the campaign.” — checked 2026-10-07"
+    },
+    "S1006": {
+      "url": "https://www.brendaforoakland.com/",
+      "title": "Campaign website verification for Brenda F. Grisham (Mayor, At large): “flash-adjudicated: Site is Brenda Grisham's Oakland Mayor 2026 campaign page, with her name and office/city clearly present.” — checked 2026-10-07"
+    },
+    "S1007": {
+      "url": "https://electmindy.com/",
+      "title": "Campaign website verification for Mindy Ruth Pechenuk (Mayor, At large): “flash-adjudicated: Site is electmindy.com, titled Mindy's Statements, and presents Mindy Pechenuk as Oakland mayoral candidate with campaign pages.” — checked 2026-10-07"
+    },
+    "S1008": {
+      "url": "https://donorbox.org/",
+      "title": "Campaign website verification for Kevin E. Jenkins (City Council Member, District 6): “flash-adjudicated: Donorbox page names Kevin Jenkins for Oakland City Council and describes his officeholder account, matching candidate's name/office/city.” — checked 2026-10-07"
+    },
+    "S1009": {
+      "url": "https://voteiverson.com/",
+      "title": "Campaign website verification for Brandyn Iverson (City Council Member, At large): “Endorsements and Testimonials | Join the above organizations and respected leaders in supporting Brandyn Iverson for City Council by providing your endo” — checked 2026-10-07"
+    },
+    "S1010": {
+      "url": "https://henryetzkowitz4paloaltocitycouncil.com/",
+      "title": "Campaign website verification for Henry Etzkowitz (City Council Member, At-large): “flash-adjudicated: Site title, URL, and homepage clearly identify Henry Etzkowitz's 2026 Palo Alto City Council campaign.” — checked 2026-10-07"
+    },
+    "S1011": {
+      "url": "https://www.changforcitycouncil.com/",
+      "title": "Campaign website verification for Bryna Chang (City Council Member, At-large): “Bryna Chang for City Council 2026 | CLICK HERE to meet Bryna at a Neighborhood Gathering! Bryna Chang for City Council Logo. ♡ DONATE NOW · ENDORSE BRYNA →.” — checked 2026-10-07"
+    },
+    "S1012": {
+      "url": "https://www.reichleforpiedmont.com/",
+      "title": "Campaign website verification for Bill Reichle (City Council Member, At large): “Home | Bill Reichle For Piedmont | Bill Reichle (\"Rike-lee\") is running for City Council in Piedmont to bring long-term vision and management skills to sus” — checked 2026-10-07"
+    },
+    "S1013": {
+      "url": "https://matt4citycouncil.com/",
+      "title": "Campaign website verification for Matthew \"Matt\" Avery (City Council Member, At large): “flash-adjudicated: Site title and homepage clearly identify Matthew Avery’s Pinole City Council campaign with candidate name, office, city, and campaign content.” — checked 2026-10-07"
+    },
+    "S1014": {
+      "url": "https://nextdoor.com/",
+      "title": "Campaign website verification for Sonja Shephard (City Council Member, At-large): “flash-adjudicated: Homepage title shows Sonja Shephard for Pittsburg City Council 2026, matching candidate name and office/city.” — checked 2026-10-07"
+    },
+    "S1015": {
+      "url": "https://whiteeagle.info/",
+      "title": "Campaign website verification for Iztaccuauhtli Hector Gonzalez (City Council Member, At-large): “flash-adjudicated: Homepage repeatedly names Iztaccuauhtli Hector Gonzalez for Pittsburg City Council with campaign messaging, indicating own campaign site.” — checked 2026-10-07"
+    },
+    "S1016": {
+      "url": "https://www.drquytran.com/",
+      "title": "Campaign website verification for Quy Tran (City Council Member, District 4): “Contact — Dr. Quy Tran for Pleasant Hill City Council District 4 ... | Contra Costa News: Dr. Quy Tran will participate in the 2026 City Council Candidate Forum hosted by the Pleas” — checked 2026-10-07"
+    },
+    "S1017": {
+      "url": "https://www.vote4vin.com/",
+      "title": "Campaign website verification for Vin Kruttiventi (City Council Member, District 1): “flash-adjudicated: Site title and homepage identify Vin Kruttiventi For Pleasanton City Council 1, with campaign navigation and donation instructions.” — checked 2026-10-07"
+    },
+    "S1018": {
+      "url": "https://www.kathynarum.com/",
+      "title": "Campaign website verification for Kathy Narum (City Council Member, District 1): “Kathy Narum for City Council 2026 | Pleasanton | Kathy Narum for City Council District 1. Meet Kathy · Priorities · Endorsements ... Paid for by Kathy Narum for City Cou” — checked 2026-10-07"
+    },
+    "S1019": {
+      "url": "https://www.chrisforrwc.com/",
+      "title": "Campaign website verification for Chris Sturken (City Council Member, District 2): “flash-adjudicated: Site is Chris Sturken's campaign homepage for Redwood City Council District 2, with name, office, city, endorsements, and FPPC ID.” — checked 2026-10-07"
+    },
+    "S1020": {
+      "url": "https://www.sbeydehforsanleandro.com/",
+      "title": "Campaign website verification for Sbeydeh Viveros-Walton (City Council Member, District 1): “flash-adjudicated: Site title and homepage identify Sbeydeh Viveros-Walton for San Leandro City Council District 1 with campaign content and FPPC ID.” — checked 2026-10-07"
+    },
+    "S1021": {
+      "url": "https://www.jamesforsanleandro.com/",
+      "title": "Campaign website verification for James Aguilar (City Council Member, District 2): “flash-adjudicated: Site is titled 'James for San Leandro,' identifies James Aguilar, references City Council and District 2, indicating his own campaign site.” — checked 2026-10-07"
+    },
+    "S1022": {
+      "url": "https://www.xouhoabowen.com/",
+      "title": "Campaign website verification for Xouhoa Bowen (City Council Member, District 5): “Xouhoa Bowen for City Council | GET A SIGN · VOLUNTEER. XouhoaLogo.png. xouhoaforsanleandro@gmail.com. Paid for by Xouhoa Bowen for City Council 2026, F” — checked 2026-10-07"
+    },
+    "S1023": {
+      "url": "https://tasoforsanmateo.com/",
+      "title": "Campaign website verification for Taso Zografos (City Council Member, District 1): “flash-adjudicated: Site is titled and described as Taso Zografos for San Mateo City Council, District 1, with campaign content.” — checked 2026-10-07"
+    },
+    "S1024": {
+      "url": "https://www.lisaforsanmateo.com/",
+      "title": "Campaign website verification for Lisa Diaz Nash (City Council Member, District 1): “flash-adjudicated: Site title and homepage identify Lisa Diaz Nash for San Mateo City Council, with District 1 office content and paid-for-by disclosure.” — checked 2026-10-07"
+    },
+    "S1025": {
+      "url": "https://johnsonforsanmateo.com/",
+      "title": "Campaign website verification for Dave Johnson (City Council Member, District 5): “Dave Johnson for San Mateo City Council · District 5 | Dave Johnson is running for San Mateo City Council District 5 — for affordable housing, safer streets, and a thriving do” — checked 2026-10-07"
+    },
+    "S1026": {
+      "url": "https://www.danaforsanmateo.com/",
+      "title": "Campaign website verification for Dana Yates Sahae (City Council Member, District 5): “flash-adjudicated: Site title and homepage identify Dana Yates Sahae as San Mateo City Council District 5 candidate; snippet shows campaign payment disclosure.” — checked 2026-10-07"
+    },
+    "S1027": {
+      "url": "https://adlerforsanramon.com/",
+      "title": "Campaign website verification for Richard J. Adler (City Council Member, District 2): “Elect Councilmember RICHARD ADLER | Elect Councilmember RICHARD ADLER. It is an honor and a privilege to represent the San Ramon residents of District 2 as” — checked 2026-10-07"
+    },
+    "S1028": {
+      "url": "https://www.karenhardy.net/",
+      "title": "Campaign website verification for Karen Hardy (Mayor, At-large): “flash-adjudicated: Site title and homepage identify Karen Hardy as an independent candidate for Santa Clara mayor in 2026, indicating her own campaign site.” — checked 2026-10-07"
+    },
+    "S1029": {
+      "url": "https://kevinpark.net/",
+      "title": "Campaign website verification for Kevin Park (Mayor, At-large): “Kevin Park for Mayor, 2026 | Really Putting Santa Clara First | Kevin Park for Mayor, 2026 ... If you had bet me a billion dollars in 2007 that I would still be going to city counc” — checked 2026-10-07"
+    },
+    "S1030": {
+      "url": "https://kyle4council.com/",
+      "title": "Campaign website verification for Kyle Madej (City Council Member, District 3): “flash-adjudicated: Site title/snippet show Kyle Madej for City Council District 3 with volunteer/donate, indicating his own campaign site.” — checked 2026-10-07"
+    },
+    "S1031": {
+      "url": "https://lindaforsunnyvale.com/",
+      "title": "Campaign website verification for Linda Sell (City Council Member, District 1): “flash-adjudicated: Domain and page title identify Linda Sell’s campaign for Sunnyvale City Council District 1; homepage includes campaign navigation like Donate/Events.” — checked 2026-10-07"
+    },
+    "S1032": {
+      "url": "https://patinoforunioncity.com/",
+      "title": "Campaign website verification for Jaime Patino (City Council Member, District 2): “Jaime Patiño: Re-Elect for Union City City Council 2026 | Councilmember Jaime Patiño. Accomplishments: Co-authored the City's Compassionate City Resolution; Balanced the Budget f” — checked 2026-10-07"
+    },
+    "S1033": {
+      "url": "http://root4unioncity.org/",
+      "title": "Campaign website verification for Cheris Crocker-Root (City Council Member, District 3): “Cheris Crocker-Root | Union City Council District 3 | Cheris Crocker-Root is a proud Union City resident, community advocate, and mother of two young daughters attending publ” — checked 2026-10-07"
+    },
+    "S1034": {
+      "url": "https://vipanbajwa.com/",
+      "title": "Campaign website verification for Vipan S. Bajwa (City Council Member, District 4): “Vipan Bajwa for Union City Council — District 4 | Vipan Bajwa is a lifelong Union City resident who turned a career in professional finance into a commitment to public se” — checked 2026-10-07"
+    },
+    "S1035": {
+      "url": "https://www.ann4unioncity.com/",
+      "title": "Campaign website verification for Ann Yap-Jequinto (City Council Member, District 4): “flash-adjudicated: Site is titled Yap-Jequinto for Union City Council 2026 and names Ann Ruth Yap-Jequinto for District 4, with FPPC ID.” — checked 2026-10-07"
+    },
+    "S1036": {
+      "url": "https://countonpratima.com/",
+      "title": "Campaign website verification for Pratima Sonavne (Town Council Member, At-large): “flash-adjudicated: Site title and homepage identify Pratima Sonavne as Danville Town Council Candidate with campaign-style personal bio.” — checked 2026-10-07"
+    },
+    "S1037": {
+      "url": "https://jasmeenpombra.com/",
+      "title": "Campaign website verification for Jasmeen Pombra (Town Council Member, At-large): “Jasmeen Pombra for Los Altos Hills City Council | Meet Jasmeen Pombra, physician, longtime resident, and candidate for Los Altos Hills City Council in 2026.” — checked 2026-10-07"
+    },
+    "S1038": {
+      "url": "https://www.steveraspe.com/",
+      "title": "Campaign website verification for Steve Raspe (Town Council Member, At-large): “About — Steve Raspe | Steve Raspe for City Council. meet your neighbor. Steve Raspe. hero image. Twelve years ago, Steve and his wife Kristina” — checked 2026-10-07"
+    },
+    "S1039": {
+      "url": "https://www.robforlosgatos.com/",
+      "title": "Campaign website verification for Rob Moore (Town Council Member, At-large): “flash-adjudicated: Site is clearly Rob Moore's campaign page for Los Gatos Town Council, with his name, office, city, and re-election messaging.” — checked 2026-10-07"
+    },
+    "S1040": {
+      "url": "https://www.mapelformoraga.com/",
+      "title": "Campaign website verification for Alexis I. Mapel (Town Council Member, At large): “Mapel for Moraga | Moraga Town Council Campaign | Alexis Mapel is running for Moraga Town Council — a neighbor-first campaign focused on open space, responsible developme” — checked 2026-10-07"
+    },
+    "S1041": {
+      "url": "https://maryforcouncil.org/",
+      "title": "Campaign website verification for Mary Hufty (Town Council Member, At-large): “flash-adjudicated: Site title and homepage identify Mary Hufty's campaign for Portola Valley Town Council.” — checked 2026-10-07"
+    },
+    "S1042": {
+      "url": "https://maryrocha4antiochschools.com/",
+      "title": "Campaign website verification for Mary H. Rocha (Governing Board Member, Trustee Area 5): “Mary Rocha | Antioch School Board Trustee - Area 5 | Official campaign website of Mary Rocha, AUSD Board Trustee, former Mayor ... I am grateful to have been recognized as a” — checked 2026-10-07"
+    },
+    "S1043": {
+      "url": "https://mb4cusd.com/",
+      "title": "Campaign website verification for Mary Beth Alexander (Governing Board Member, Trustee Area E): “flash-adjudicated: Site title and homepage identify Mary Beth Alexander for School Board, with campaign sections and domain suggesting Cabrillo USD.” — checked 2026-10-07"
+    },
+    "S1044": {
+      "url": "https://vartikachandra.org/",
+      "title": "Campaign website verification for Vartika Chandra (Governing Board Member, Trustee Area 5): “Vartika Chandra – Campbell Union School Board | Focused on students. Vartika Chandra for Campbell Union School Board vartikaforcusd@gmail.com. Paid for by Vartika Chand” — checked 2026-10-07"
+    },
+    "S1045": {
+      "url": "https://foster4cvusd.com/",
+      "title": "Campaign website verification for Brian A. Foster (Governing Board Member / School Director, Trustee Area 4): “Endorsements – Brian A. Foster for CVUSD School Board ... | I am proud to endorse Brian Foster for Castro Valley Unified School District Board Area 4. Brian has demonstrated a stro” — checked 2026-10-07"
+    },
+    "S1046": {
+      "url": "https://paulpham.org/",
+      "title": "Campaign website verification for Paul Pham (Governing Board Member, Trustee Area 1): “Paul Pham for ESUHSD — Students & Teachers First | Refugee and foster-care survivor who knows what opportunity means. Meet Paul VolunteerDonate. Vote Paul Pham for School” — checked 2026-10-07"
+    },
+    "S1047": {
+      "url": "https://www.tonylam.org/",
+      "title": "Campaign website verification for Tony Lam (Governing Board Member, Trustee Area 4): “flash-adjudicated: Site title and homepage identify Tony Lam for ESUHSD Board of Trustees Area 4 with campaign navigation and endorsements.” — checked 2026-10-07"
+    },
+    "S1048": {
+      "url": "https://drdeenak4lvjusd.com/",
+      "title": "Campaign website verification for Deena Kaplanis (Governing Board Member / School Director, Trustee Area 5): “flash-adjudicated: Site is Dr. Deena Kaplanis’s campaign page for LVJUSD School Board Trustee, with name, office, district, and candidate bio.” — checked 2026-10-07"
+    },
+    "S1049": {
+      "url": "https://www.barnesforboard2026.com/",
+      "title": "Campaign website verification for Andrew Barnes (Governing Board Member, At large — full term): “Andrew Barnes for Menlo Park School: Home | Andrew Barnes is running for Menlo Park School Board to support strong academics, student well-being, responsible budget” — checked 2026-10-07"
+    },
+    "S1050": {
+      "url": "https://www.jane-baulch-enloe.com/",
+      "title": "Campaign website verification for Jane Baulch-Enloe (Governing Board Member, Trustee Area 2): “Jane Baulch Enloe: Home | Jane Baulch-Enloe for School Board. Seeking to be your MDUSD Trustee for Area 2. Vote November 3rd!!!” — checked 2026-10-07"
+    },
+    "S1051": {
+      "url": "https://www.electshruti.com/",
+      "title": "Campaign website verification for Shruti Kumar (Governing Board Member / School Director, Trustee Area 4): “flash-adjudicated: Title and homepage identify Shruti Kumar’s New Haven Unified School District 2026 school board re-election campaign, including candidate bio and donation links.” — checked 2026-10-07"
+    },
+    "S1052": {
+      "url": "http://francisrojas.org/",
+      "title": "Campaign website verification for Francis Rojas (Governing Board Member / School Director, Trustee Area 5): “Elect Dr. Francis Rojas to NHUSD Board - Area 5 | educators, and the community. Join our movement for stronger schools and a stronger New Haven community by voting for Dr” — checked 2026-10-07"
+    },
+    "S1053": {
+      "url": "https://mikehutchinsonforschoolboard.wordpress.com/",
+      "title": "Campaign website verification for Mike Hutchinson (Governing Board Member / School Director, District 4): “Mike Hutchinson for Oakland School Board District 5 ... | Mike Hutchinson for Oakland School Board District 5. Endorsed by the Democratic Party and Oakland's Teachers. This is an” — checked 2026-10-07"
+    },
+    "S1054": {
+      "url": "https://www.kathryncamp.com/",
+      "title": "Campaign website verification for Kathryn Camp (Governing Board Member / School Director, District 4): “Kathryn Camp for Oakland School Board 2026 | Kathryn Camp is an Oakland parent, experienced leader, and public policy professional committed to helping every student” — checked 2026-10-07"
+    },
+    "S1055": {
+      "url": "https://www.soniasalwan.com/",
+      "title": "Campaign website verification for Sonia Salwan (Governing Board Member, Trustee Area 6): “flash-adjudicated: Site title and homepage identify Sonia Salwan’s campaign for Ohlone Community College District Trustee, Area 6.” — checked 2026-10-07"
+    },
+    "S1056": {
+      "url": "https://www.meghaforschoolboard.com/",
+      "title": "Campaign website verification for Megha Chawla (Governing Board Member, At large — full term): “flash-adjudicated: Site title and homepage identify Megha Chawla as candidate for San Carlos School District Governing Board, matching the specified race.” — checked 2026-10-07"
+    },
+    "S1057": {
+      "url": "https://www.monroelace.org/",
+      "title": "Campaign website verification for Monroe Lace (Trustee, Community College Board, At large — full term): “flash-adjudicated: Domain and page identify Monroe Lace for City College Board of Trustees, with 2026 paid-for-by disclosure.” — checked 2026-10-07"
+    },
+    "S1058": {
+      "url": "https://jeremyleesf.com/",
+      "title": "Campaign website verification for Jeremy Lee (Trustee, Community College Board, At large — full term): “flash-adjudicated: Site states it is the official campaign website of Jeremy Lee for SF Community College District Board of Trustees, matching candidate and office.” — checked 2026-10-07"
+    },
+    "S1059": {
+      "url": "https://www.ryanforsfschools.com/",
+      "title": "Campaign website verification for Ryan Hazelton (Member, Board of Education, At large): “flash-adjudicated: Site title and homepage identify Ryan Hazelton for SF School Board, matching candidate and office.” — checked 2026-10-07"
+    },
+    "S1060": {
+      "url": "https://www.philkim.org/",
+      "title": "Campaign website verification for Phil Kim (Member, Board of Education, At large): “Phil Kim for School Board | Volunteer · Get Our Newsletter · Phil Kim for School Board · Donate Now. Open Menu Close Menu. Open Menu Close Menu. End” — checked 2026-10-07"
+    },
+    "S1061": {
+      "url": "https://www.lauranceleesf.com/",
+      "title": "Campaign website verification for Laurance Lee (Member, Board of Education, At large): “Laurance Lee for School Board | 加入林灼世團隊 · Laurance Lee for School Board. Open Menu Close Menu. Home · Coming Back · Experience · Endorsements · Platform” — checked 2026-10-07"
+    },
+    "S1062": {
+      "url": "https://www.reinaforschoolboard.org/",
+      "title": "Campaign website verification for Reina Tello (Member, Board of Education, At large): “flash-adjudicated: Site title and homepage identify Reina Tello for San Francisco School Board, matching the candidate and SFUSD board race.” — checked 2026-10-07"
+    },
+    "S1063": {
+      "url": "https://www.timtung.com/",
+      "title": "Campaign website verification for Tim Tung (Member, Board of Education, At large): “Tim Tung For School Board | website builder. Paid for by Tim Tung for School Board 2026. Financial disclosures are available at sfethics.org. You ne” — checked 2026-10-07"
+    },
+    "S1064": {
+      "url": "https://www.votejosemagana.com/",
+      "title": "Campaign website verification for Jose Magana (Governing Board Member, Trustee Area 2): “ENDORSEMENTS | José Magaña 4 SJUSD 2026 | ENDORSEMENTS (Titles for Identification Purposes Only) Santa Clara County Democratic Party Supervisor Susan Ellenberg Co” — checked 2026-10-07"
+    },
+    "S1065": {
+      "url": "https://grunthaner4sanjoseschools.com/",
+      "title": "Campaign website verification for Mary J. Grunthaner (Governing Board Member, Trustee Area 4): “Grunthaner4sanjoseschools | Mary J Grunthaner is running for Trustee Area 4 on the San Jose Unified School Board, advocating for quality education a” — checked 2026-10-07"
+    },
+    "S1066": {
+      "url": "https://www.reelectbeverlygerard.com/",
+      "title": "Campaign website verification for Beverly Gerard (Board of Education Member, Trustee Area 2): “View Endorsements - Beverly Gerard | Beverly Gerard for San Mateo County Board of Education 2026. Powered by CampaignPartner.com - Political Campaign Website” — checked 2026-10-07"
+    },
+    "S1067": {
+      "url": "https://drexel4susd.com/",
+      "title": "Campaign website verification for Farnoush Drexel (Governing Board Member, At-large): “Saratoga School Board Candidate - About Farnoush Drexel | Learn about Farnoush Drexel, candidate for the Saratoga Union School District Board in Saratoga, California, including h” — checked 2026-10-07"
+    },
+    "S1068": {
+      "url": "https://www.amykoo.org/",
+      "title": "Campaign website verification for Amy Koo (Governing Board Member, Trustee Area A): “Amy Koo for Sequoia Union High School District Board 2026 | ... Endorse Amy Volunteer on Team Koo. Paid for by Amy Koo for School Board 2026 - FPPC# 1446891. Email: amy@amykoo.org.” — checked 2026-10-07"
+    },
+    "S1069": {
+      "url": "https://alonforschools.com/",
+      "title": "Campaign website verification for Alon Shiran (Governing Board Member, Trustee Area A): “flash-adjudicated: Site title and homepage identify Alon Shiran’s campaign for Sequoia Union High School District Board.” — checked 2026-10-07"
+    },
+    "S1070": {
+      "url": "https://www.avin4ssf.com/",
+      "title": "Campaign website verification for Avin Sharma (Governing Board Member, Trustee Area C): “flash-adjudicated: Title and URL show Avin Sharma for School Board in SSF, matching the candidate's South San Francisco school board campaign site.” — checked 2026-10-07"
+    },
+    "S1071": {
+      "url": "https://annekepner.org/",
+      "title": "Campaign website verification for Anne J. Kepner (Governing Board Member, Trustee Area 3): “flash-adjudicated: Site is titled Anne Kepner for WVMCCD and explicitly promotes re-electing Anne Kepner for Trustee Area 3.” — checked 2026-10-07"
+    },
+    "S1072": {
+      "url": "https://electyangshao.com/",
+      "title": "Campaign website verification for Yang Shao (Director, Ward 3): “flash-adjudicated: Site is titled and branded as Yang Shao for ACWD Board Ward 3, with candidate-specific campaign content.” — checked 2026-10-07"
+    },
+    "S1073": {
+      "url": "https://valenciaforactransit.com/",
+      "title": "Campaign website verification for Adriana Valencia (Director, Ward 3): “flash-adjudicated: Site title and homepage identify Adriana Valencia for AC Transit Ward 3 with campaign navigation and donate link.” — checked 2026-10-07"
+    },
+    "S1074": {
+      "url": "https://kristy-woerz-board-2026-preview.lovely-stork-2137.chatgpt.site/",
+      "title": "Campaign website verification for Kristy (Dooman) Woerz (Director, At large): “flash-adjudicated: Page is titled and written as Kristy Woerz’s 2026 CVSan Board campaign, with candidate bio, priorities, endorsements, and contact.” — checked 2026-10-07"
+    },
+    "S1075": {
+      "url": "https://kismatforpeople.com/",
+      "title": "Campaign website verification for Kismat Kathrani (Director, Division 2): “flash-adjudicated: Homepage explicitly states Kismat Kathrani for Dublin San Ramon Services District Director Division 2, matching candidate and office.” — checked 2026-10-07"
+    },
+    "S1076": {
+      "url": "https://www.young4water.org/",
+      "title": "Campaign website verification for Marguerite Young (Director, Ward 3): “Marguerite Young for EBMUD Director, Ward 3 | East Bay Water | Re-elect Marguerite Young, EBMUD Ward 3 Director since 2014. Clean, safe, affordable water and Climate Action for Oak” — checked 2026-10-07"
+    },
+    "S1077": {
+      "url": "https://www.wolff4water.org/",
+      "title": "Campaign website verification for Gary Wolff (Director, Ward 7): “flash-adjudicated: Site is titled and written as Gary Wolff's own campaign for EBMUD Director Ward 7, with candidate name, office, and jurisdiction.” — checked 2026-10-07"
+    },
+    "S1078": {
+      "url": "https://rebeccalewington.com/",
+      "title": "Campaign website verification for Rebecca Lewington (Director, Ward 3): “flash-adjudicated: Site title and homepage identify Rebecca Lewington's campaign for East Bay Parks Director, Ward 3.” — checked 2026-10-07"
+    },
+    "S1079": {
+      "url": "https://yragui4ebrpd.org/",
+      "title": "Campaign website verification for William Yragui (Director, Ward 3): “flash-adjudicated: Site title and homepage clearly identify William Yragui's own campaign for EBRPD Board Director, Ward 3.” — checked 2026-10-07"
+    },
+    "S1080": {
+      "url": "https://roemerwise.wordpress.com/",
+      "title": "Campaign website verification for Mike Roemer (Director, Division 4): “flash-adjudicated: Title and homepage identify Mike Roemer's reelection campaign for Moraga-Orinda Fire District Board, Division 4; candidate name and office are clearly present.” — checked 2026-10-07"
+    },
+    "S1081": {
+      "url": "https://www.jimmy4valleywater.com/",
+      "title": "Campaign website verification for Jimmy Forbis (Director, District 1): “flash-adjudicated: Site is Jimmy Forbis’s campaign page for Santa Clara Valley Water District Director District 1, with candidate bio and donate links.” — checked 2026-10-07"
+    },
+    "S1082": {
+      "url": "https://phuongford6.com/",
+      "title": "Campaign website verification for Phuong Tran Nguyen (Director, District 6): “flash-adjudicated: Site is Phuong Nguyen's campaign page for Santa Clara Valley Water District 6, with candidate name, office, and campaign actions.” — checked 2026-10-07"
     }
   }
 }

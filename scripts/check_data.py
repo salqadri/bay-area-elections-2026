@@ -75,6 +75,7 @@ expected = {
     "positions_with_ballotpedia_url": sum("ballotpedia_url" in p for p in positions),
     "printed_candidates_with_ballotpedia_url": sum("ballotpedia_url" in c for c in printed),
     "printed_candidates_with_x_url": sum("x_url" in c for c in printed),
+    "printed_candidates_with_secondary_x_url": sum("secondary_x_url" in c for c in printed),
     "printed_candidates_with_campaign_url": sum("campaign_url" in c for c in printed),
 }
 for key, value in expected.items():

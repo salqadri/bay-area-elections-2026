@@ -194,6 +194,7 @@ negative_cases = {
     "x_url_invalid_characters": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/not a handle"),
     "campaign_url_no_scheme": lambda d: d["positions"][0]["candidates"][0].update(campaign_url="example-campaign.com"),
     "campaign_url_javascript": lambda d: d["positions"][0]["candidates"][0].update(campaign_url="javascript:alert(1)"),
+    "secondary_x_url_wrong_host": lambda d: d["positions"][0]["candidates"][0].update(secondary_x_url="https://twitter.com/someone"),
 }
 outcomes = []
 for label, mutate in negative_cases.items():
@@ -217,6 +218,8 @@ verified_x_url = mutated(lambda d: d["positions"][0]["candidates"][0].update(x_u
 assert not check(verified_x_url, SCHEMA), "A verified x.com profile URL must be a valid candidate field"
 verified_campaign_url = mutated(lambda d: d["positions"][0]["candidates"][0].update(campaign_url="https://example-campaign.com/2026"))
 assert not check(verified_campaign_url, SCHEMA), "A verified campaign website URL must be a valid candidate field"
+secondary_x = mutated(lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/RepExample", secondary_x_url="https://x.com/ExamplePerson"))
+assert not check(secondary_x, SCHEMA), "A verified second X account must be a valid candidate field"
 
 report = {
     "method": "Focused local checker implementing every assertion keyword used in the supplied schema, with HTTP(S) URI-subset checks. Not a standard or certified Draft 2020-12 validator.",
@@ -225,7 +228,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 
