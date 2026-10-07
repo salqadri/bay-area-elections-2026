@@ -93,7 +93,7 @@ County totals overlap: a shared district appears once in the data with multiple 
 
 The full Contra Costa final on-ballot proof PDF could not be retrieved during research. That county uses the available official material and corroborating election coverage; many unopposed contests remain unresolved. See `coverage.limitations` and each contest's notes for the specific boundaries of the research.
 
-Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases.
+Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases. **90 printed candidates** carry a separately verified official X account (`x_url`) with per-candidate evidence sources checked October 6–7, 2026; most local candidates publish no findable account, and omission never means none exists.
 
 Open Civic Data identifiers are included where available and carry an explicit verification status. They have **not been API-validated**. The address view estimates races and retains unresolved alternatives; it does not determine an official ballot or voter registration. Consult the relevant county election office for your official ballot.
 

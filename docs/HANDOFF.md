@@ -13,6 +13,7 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | Ballot research snapshot | October 4, 2026 |
 | FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
 | Schema | Inventory version 1.6, Draft 2020-12 (adds candidate `x_url`) |
+| X accounts | 90 of 869 printed candidates carry a verified official X account URL (checked October 6–7, 2026; each has its own evidence source) |
 | Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
 | Confirmed seats | 439 |
 | Printed candidate entries | 869; these are entries, not necessarily unique people |
