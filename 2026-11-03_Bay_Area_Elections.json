@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -80,6 +80,7 @@
     "positions_with_ocd_division_id": 188,
     "positions_with_ballotpedia_url": 320,
     "printed_candidates_with_ballotpedia_url": 633,
+    "printed_candidates_with_x_url": 0,
     "limitations": [
       "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
       "This is not yet a certified exhaustive ballot dataset: unresolved cancellation/appointment questions and unverified local OCD identifiers remain.",

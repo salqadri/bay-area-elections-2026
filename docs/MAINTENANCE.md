@@ -23,7 +23,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | Maintained file | Responsibility |
 | --- | --- |
 | `2026-11-03_Bay_Area_Elections.json` | Canonical researched records, code maps, source/note registries, coverage and finance metadata |
-| `elections.schema.json` | Draft 2020-12 contract for the inventory, currently version 1.5 |
+| `elections.schema.json` | Draft 2020-12 contract for the inventory, currently version 1.6 |
 | `src/index.template.html` | Explorer markup, shared CSS, inline explorer logic and download behavior |
 | `src/ballot.template.html` | Address page markup and extra CSS |
 | `src/address-services.js` | Census JSONP transport, input/result checks, timeout and cancellation |

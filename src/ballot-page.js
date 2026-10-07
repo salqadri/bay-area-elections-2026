@@ -136,6 +136,7 @@
         row.append(node('span', 'ballot-candidate-name', candidate.name));
         if (candidate.party) row.append(node('span', 'ballot-candidate-party', partyLabel(candidate.party)));
         if (candidate.incumbent === true) row.append(node('span', 'pill incumbent', 'Incumbent'));
+        if (candidate.x_url) { const x = node('a', 'ballot-candidate-x', 'X ↗'); x.href = candidate.x_url; x.target = '_blank'; x.rel = 'noopener noreferrer'; row.append(x); }
         candidates.append(row);
       }
       card.append(candidates);

@@ -74,6 +74,7 @@ expected = {
     "positions_with_ocd_division_id": sum("ocd_division_id" in p for p in positions),
     "positions_with_ballotpedia_url": sum("ballotpedia_url" in p for p in positions),
     "printed_candidates_with_ballotpedia_url": sum("ballotpedia_url" in c for c in printed),
+    "printed_candidates_with_x_url": sum("x_url" in c for c in printed),
 }
 for key, value in expected.items():
     assert data["coverage"][key] == value, (key, data["coverage"][key], value)

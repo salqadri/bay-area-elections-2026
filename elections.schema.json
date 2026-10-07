@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.5"
+      "const": "1.6"
     },
     "election": {
       "type": "object",
@@ -114,6 +114,11 @@
           "type": "integer",
           "minimum": 0,
           "description": "Summary count recomputed and checked against the position records by application code."
+        },
+        "printed_candidates_with_x_url": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Printed ballot candidate entries carrying a verified official X (Twitter) account URL. Independent of Ballotpedia coverage."
         },
         "limitations": {
           "type": "array",
@@ -532,6 +537,12 @@
       "pattern": "^https://ballotpedia\\.org/[^\\s]+$",
       "description": "Verified corresponding Ballotpedia candidate profile, office, or election-coverage page. Omitted means no matching URL was verified, not that no page exists. The full URL is retained."
     },
+    "xUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://x\\.com/[A-Za-z0-9_]{1,15}$",
+      "description": "Verified official X (Twitter) account URL for this candidate. Omitted means no matching account was verified, not that none exists."
+    },
     "ocdDivisionId": {
       "type": "string",
       "pattern": "^ocd-division/country:us/state:ca(?:/[^\\s/]+:[^\\s/]+)*$",
@@ -621,6 +632,9 @@
         },
         "ballotpedia_url": {
           "$ref": "#/$defs/ballotpediaUrl"
+        },
+        "x_url": {
+          "$ref": "#/$defs/xUrl"
         },
         "incumbency_evidence_id": {
           "$ref": "#/$defs/noteId",

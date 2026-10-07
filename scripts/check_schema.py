@@ -189,6 +189,9 @@ negative_cases = {
     "fec_amount_missing_cutoff": lambda d: d['positions'][0]['candidates'][0]['fec'].pop('through'),
     "fec_unknown_with_coverage_dates": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=None),
     "fec_unavailable_without_note": lambda d: next(c for p in d['positions'] for c in p['candidates'] or [] if c.get('fec', {}).get('receipts', 1) is None)['fec'].pop('note_id'),
+    "x_url_wrong_host": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://twitter.com/someone"),
+    "x_url_with_path_noise": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/someone/home"),
+    "x_url_invalid_characters": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/not a handle"),
 }
 outcomes = []
 for label, mutate in negative_cases.items():
@@ -208,6 +211,8 @@ retention_unverified_roster = mutated(lambda d: first(d, lambda p: p["election_t
 assert not check(retention_unverified_roster, SCHEMA), "A retention contest may also have an explicitly unverified roster"
 reported_zero = mutated(lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=0))
 assert not check(reported_zero, SCHEMA), 'A reported zero is valid and distinct from unavailable receipts'
+verified_x_url = mutated(lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/Example_Cand"))
+assert not check(verified_x_url, SCHEMA), "A verified x.com profile URL must be a valid candidate field"
 
 report = {
     "method": "Focused local checker implementing every assertion keyword used in the supplied schema, with HTTP(S) URI-subset checks. Not a standard or certified Draft 2020-12 validator.",
@@ -216,7 +221,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 

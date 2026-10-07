@@ -101,14 +101,14 @@ Open Civic Data identifiers are included where available and carry an explicit v
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.5.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.6.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
 - [`AGENTS.md`](AGENTS.md) and [`docs/`](docs/): agent instructions, research workflow, architecture and current handoff.
 - [`scripts/`](scripts/): dependency-free build and verification tools (Python 3 and Node.js for the JavaScript checks).
 
-Each position uses a stable ID and a `counties` array. Multi-seat elections remain one contest with a `seats` count. Legislative seats use `AD-18`, `CD-18`, or `SD-10` style labels. Party codes resolve through `codes.party`; `NPP` means the official No Party Preference label. An omitted party in a nonpartisan contest has a different meaning. `incumbent` is emitted only when verified true. Missing URLs and IDs are omitted, while an unverified candidate roster is explicitly `null`.
+Each position uses a stable ID and a `counties` array. Multi-seat elections remain one contest with a `seats` count. Legislative seats use `AD-18`, `CD-18`, or `SD-10` style labels. Party codes resolve through `codes.party`; `NPP` means the official No Party Preference label. An omitted party in a nonpartisan contest has a different meaning. `incumbent` is emitted only when verified true. Missing URLs and IDs are omitted, while an unverified candidate roster is explicitly `null`. A candidate's optional `x_url` records a separately verified official X (Twitter) account with its own evidence source; omission means no account was verified for that person, not that none exists.
 
 `ballot_status` and `candidate_list_status` are independent. Use `ballot_status: "confirmed"` when selecting known ballot contests, and inspect `candidate_list_status` before treating a roster as complete. Source and note IDs resolve through the top-level `sources` and `notes` registries. Ballotpedia links are included where researched; a link's scope can be broader than a particular seat and is labeled accordingly.
 

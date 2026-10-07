@@ -12,7 +12,7 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | County scope | Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara |
 | Ballot research snapshot | October 4, 2026 |
 | FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
-| Schema | Inventory version 1.5, Draft 2020-12 |
+| Schema | Inventory version 1.6, Draft 2020-12 (adds candidate `x_url`) |
 | Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
 | Confirmed seats | 439 |
 | Printed candidate entries | 869; these are entries, not necessarily unique people |
