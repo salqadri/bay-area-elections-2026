@@ -46,6 +46,15 @@ These are priorities for the next maintainer, not permission gates or claims tha
 - The inventory currently excludes ballot measures and is not a complete official sample ballot. Missing/unverified local IDs and unresolved scheduled elections are separate limitations.
 - Some prior exclusions are described in notes/limitations rather than retained as position records. When establishing exhaustive coverage, explicitly audit what is absent as well as what is present.
 
+## Session refresh — October 9, 2026
+
+Work completed after the October 6 handoff (commits `c34c94d`..HEAD; recompute counts from the JSON before treating any figure as current):
+
+- **Explorer UX fix**: candidate links (Campaign site / X / Ballotpedia) are pill chips inside the main column instead of nowrap flex siblings that squeezed names into one-letter-per-line wrapping (`src/index.template.html`, rebuilt pages).
+- **Gaza evidence dates are now mandatory** (schema 1.9 → 1.10): `date` required in `$defs.stanceEvidence`; two new schema negative cases; merge refuses dateless items; pipeline resolves dates deterministically and quarantines undated findings (`/workspace/gaza-stance-research`: `date_resolvers.py`, `backfill_dates.py`, `date_first_capture.py`, `date_content_first_seen.py`, `tests/test_date_resolvers.py`). All 22 previously undated SF items resolved or removed: ledger is **97 items / 26 people, zero undated**; removals and dating methods are recorded in `ledger/date_backfill_report.json`.
+- **LM Studio current config**: `qwen/qwen3.8-27b` at medium thinking with Parallel/Max Concurrent Predictions = **2** — run the pipeline with `--workers 2`; keep total concurrent model calls ≤ 4; prefer script passes over sub-agent fan-out against this endpoint.
+- Docs drift fixed: README/MAINTENANCE schema version claims now defer to the dataset's `schema_version` const; obsolete ChatGPT-connector references removed.
+
 ## Working agreement
 
 Read [AGENTS.md](../AGENTS.md), then maintain evidence and implementation together. Keep stable IDs, compact shared metadata, official party labels, `incumbent` only when true, and the user's Senate → Assembly → other-state-offices display preference. Both generated HTML files must reflect any data or source-code change.
