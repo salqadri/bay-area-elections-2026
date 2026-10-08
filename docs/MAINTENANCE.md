@@ -16,14 +16,14 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8000/` and `/ballot.html`. Stop the server with Ctrl+C. On systems where Python is named `python`, substitute that executable. The explorer also opens as a standalone HTML file; use HTTP for browser debugging. Address requests need internet access and remain separate from the local server.
 
-For an existing clone, inspect local changes and `git fetch origin` before rebasing or pulling. Do not overwrite local work or assume this handoff commit is still the branch head. Ordinary Git/SSH authentication on the maintainer's machine is sufficient for repository pushes when that identity has access; no ChatGPT connector is required by the project.
+For an existing clone, inspect local changes and `git fetch origin` before rebasing or pulling. Do not overwrite local work or assume this handoff commit is still the branch head. Ordinary Git/SSH authentication on the maintainer's machine is sufficient for repository pushes when that identity has access.
 
 ## File ownership and data flow
 
 | Maintained file | Responsibility |
 | --- | --- |
 | `2026-11-03_Bay_Area_Elections.json` | Canonical researched records, code maps, source/note registries, coverage and finance metadata |
-| `elections.schema.json` | Draft 2020-12 contract for the inventory, currently version 1.7 |
+| `elections.schema.json` | Draft 2020-12 contract for the inventory; the dataset's `schema_version` const is authoritative |
 | `src/index.template.html` | Explorer markup, shared CSS, inline explorer logic and download behavior |
 | `src/ballot.template.html` | Address page markup and extra CSS |
 | `src/address-services.js` | Census JSONP transport, input/result checks, timeout and cancellation |

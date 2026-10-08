@@ -103,7 +103,7 @@ Open Civic Data identifiers are included where available and carry an explicit v
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.7.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.9 (`schema_version` in the file is authoritative).
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
