@@ -198,8 +198,10 @@ negative_cases = {
     "campaign_url_javascript": lambda d: d["positions"][0]["candidates"][0].update(campaign_url="javascript:alert(1)"),
     "secondary_x_url_wrong_host": lambda d: d["positions"][0]["candidates"][0].update(secondary_x_url="https://twitter.com/someone"),
     "gaza_evidence_missing_checked_on": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9001","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes"}]),
-    "gaza_evidence_bad_dimension": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9002","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"grade_a","checked_on":"2026-10-08"}]),
-    "gaza_evidence_bad_id": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"X-1","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
+    "gaza_evidence_bad_dimension": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9002","date":"2025-06-01","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"grade_a","checked_on":"2026-10-08"}]),
+    "gaza_evidence_bad_id": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"X-1","date":"2025-06-01","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
+    "gaza_evidence_missing_date": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9003","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
+    "gaza_evidence_bad_date_format": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9004","date":"June 2025","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
 }
 outcomes = []
 for label, mutate in negative_cases.items():

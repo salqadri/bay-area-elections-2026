@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.9",
+  "schema_version": "1.10",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -465,9 +465,90 @@
           "campaign_url": "https://www.conniechansf.com",
           "gaza_evidence": [
             {
+              "id": "GE-0025",
+              "url": "https://www.araborganizing.org/sfresolution/",
+              "summary": "As a San Francisco Supervisor (District 1), Chan was part of the 8-3 supermajority vote adopting a resolution calling for an immediate and sustained ceasefire in Gaza.",
+              "date": "2023-12",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "In an 8-3 supermajority vote, the San Francisco Board of Supervisors adopted a resolution calling for an immediate and sustained ceasefire in the ongoing Israeli bombardment of Gaza.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0011",
+              "url": "https://jweekly.com/2024/01/09/s-f-supes-pass-compromise-gaza-resolution-calling-for-cease-fire-and-release-of-hostages/",
+              "summary": "As SF Supervisor, voted 8-3 for Gaza ceasefire resolution: sustained ceasefire, humanitarian aid, hostage release; condemned Oct. 7 Hamas attack and Netanyahu government's attacks on civilians.",
+              "date": "2024-01-09",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-07",
+              "quote": "Preston, Ronen and Ahsha Safaí were among the supervisors who spoke in support of the measure and voted for its passage, along with Peskin, Melgar, Connie Chan, Joel Engardio and Shamann Walton.",
+              "source_kind": "agent"
+            },
+            {
+              "id": "GE-0026",
+              "url": "https://www.latimes.com/california/story/2024-01-09/san-francisco-votes-on-gaza-resolution-calling-for-a-cease-fire",
+              "summary": "LA Times reported San Francisco supervisors voted for a Gaza cease-fire resolution; Chan, as a sitting supervisor, participated in the vote.",
+              "date": "2024-01-09",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "San Francisco supervisors vote for Gaza cease-fire resolution",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0012",
+              "url": "https://missionlocal.org/2026/01/sf-congress-foreign-policy-wiener-chakrabarti-chan-1/",
+              "summary": "In Mission Local foreign-policy interview, pledged to co-sponsor Block the Bombs Act, saying Netanyahu government has violated human rights and committed war crimes.",
+              "date": "2026-01",
+              "dimension": "war_crimes",
+              "checked_on": "2026-10-07",
+              "quote": "I would co-sponsor the Block the Bombs Act with the understanding that the [Benjamin] Netanyahu government, at this moment, has violated human rights and committed war crimes, and the United States should not be aiding that effort.",
+              "source_kind": "agent"
+            },
+            {
+              "id": "GE-0024",
+              "url": "https://missionlocal.org/2026/05/san-francisco-connie-chan-israel-aipac-congress/",
+              "summary": "Mission Local reported that big financial backers of Chan's congressional campaign were tied to pro-Israel PACs, raising questions about her anti-AIPAC stance.",
+              "date": "2026-05",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-08",
+              "quote": "Big backers of Connie Chan for Congress tied to pro-Israel PACs",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0013",
+              "url": "https://www.dropsitenews.com/p/aipac-connie-chan-san-francisco-primary",
+              "summary": "Drop Site reported AIPAC's UDP and DMFI funneled ~$500K to a super PAC network (EDW Action Fund / Pro-Choice Majority Action) that bought ads supporting Chan; her campaign denied receiving any AIPAC money.",
+              "date": "2026-05-31",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-07",
+              "quote": "Connie has also been clear from day one of this campaign that she would not accept a dime from AIPAC and she has stayed true to this throughout.",
+              "source_kind": "agent"
+            },
+            {
+              "id": "GE-0014",
+              "url": "https://jweekly.com/2026/06/01/aipac-didnt-fund-connie-chan-heres-what-actually-happened",
+              "summary": "J. found AIPAC/DMFI money went to independent PACs, not Chan's campaign; recapped her record: called for end of military aid to Israel, condemned Gaza war as genocide, supported Block the Bombs Act.",
+              "date": "2026-06-01",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-07",
+              "quote": "She has called for the end of military aid to Israel, condemned Israel's war against Hamas in Gaza as genocide against Palestinians and supported the Block the Bombs Act.",
+              "source_kind": "agent"
+            },
+            {
+              "id": "GE-0019",
+              "url": "https://www.jta.org/2026/06/30/politics/san-francisco-trans-march-downplays-participants-harassment-of-lgbtq-jewish-politician-scott-wiener",
+              "summary": "After opponent Scott Wiener was confronted by pro-Palestine activists at the Trans March, her spokesperson deferred to his experience rather than condemn protesters: solidarity 'against hate whenever someone tells us they are experiencing h",
+              "date": "2026-06-30",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-07",
+              "quote": "In this moment, what matters is how State Senator Scott Wiener felt and feels about the interactions. We must stand in solidarity against hate whenever someone tells us they are experiencing hate.",
+              "source_kind": "agent"
+            },
+            {
               "id": "GE-0017",
               "url": "https://www.conniechansf.com/foreign-policy",
               "summary": "Campaign website standing pledge (site footer, all pages): will not take money from corporate PACs, AIPAC or its lobbyists and representatives.",
+              "date": "2026-07",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
               "quote": "Connie Chan for Congress will not take money from corporate PACs, AIPAC or its lobbyists and representatives, the NRA or lobbyists and executives from pharma, PG&E, fossil fuel or tobacco companies.",
@@ -477,106 +558,19 @@
               "id": "GE-0022",
               "url": "https://www.ajcongress.org/what-we-do/jewish-voter-guide/connie-chan",
               "summary": "AJC voter guide records Chan accusing Israel of committing genocide against Palestinians and calling for an end to US military aid to Israel.",
+              "date": "2026-07",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Chan says Israel is committing genocide against the Palestinian people and calls for an end to United States military aid.",
               "source_kind": "news"
             },
             {
-              "id": "GE-0025",
-              "url": "https://www.araborganizing.org/sfresolution/",
-              "summary": "As a San Francisco Supervisor (District 1), Chan was part of the 8-3 supermajority vote adopting a resolution calling for an immediate and sustained ceasefire in Gaza.",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-08",
-              "quote": "In an 8-3 supermajority vote, the San Francisco Board of Supervisors adopted a resolution calling for an immediate and sustained ceasefire in the ongoing Israeli bombardment of Gaza.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0027",
-              "url": "https://www.threads.com/@trackaipac/post/DbDkx91HMYe/by-signing-on-to-our-platform-connie-chan-has-committed-to-rejecting-support",
-              "summary": "Connie Chan (D) committed to rejecting support from AIPAC and the Israel lobby as part of TrackAIPAC's platform.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "quote": "By signing on to our platform, Connie Chan has committed to: ✅ Rejecting support from AIPAC and the rest of the Israel lobby.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0011",
-              "url": "https://jweekly.com/2024/01/09/s-f-supes-pass-compromise-gaza-resolution-calling-for-cease-fire-and-release-of-hostages/",
-              "summary": "As SF Supervisor, voted 8-3 for Gaza ceasefire resolution: sustained ceasefire, humanitarian aid, hostage release; condemned Oct. 7 Hamas attack and Netanyahu government's attacks on civilians.",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-07",
-              "date": "2024-01-09",
-              "quote": "Preston, Ronen and Ahsha Safaí were among the supervisors who spoke in support of the measure and voted for its passage, along with Peskin, Melgar, Connie Chan, Joel Engardio and Shamann Walton.",
-              "source_kind": "agent"
-            },
-            {
-              "id": "GE-0026",
-              "url": "https://www.latimes.com/california/story/2024-01-09/san-francisco-votes-on-gaza-resolution-calling-for-a-cease-fire",
-              "summary": "LA Times reported San Francisco supervisors voted for a Gaza cease-fire resolution; Chan, as a sitting supervisor, participated in the vote.",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-08",
-              "date": "2024-01-09",
-              "quote": "San Francisco supervisors vote for Gaza cease-fire resolution",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0012",
-              "url": "https://missionlocal.org/2026/01/sf-congress-foreign-policy-wiener-chakrabarti-chan-1/",
-              "summary": "In Mission Local foreign-policy interview, pledged to co-sponsor Block the Bombs Act, saying Netanyahu government has violated human rights and committed war crimes.",
-              "dimension": "war_crimes",
-              "checked_on": "2026-10-07",
-              "date": "2026-01",
-              "quote": "I would co-sponsor the Block the Bombs Act with the understanding that the [Benjamin] Netanyahu government, at this moment, has violated human rights and committed war crimes, and the United States should not be aiding that effort.",
-              "source_kind": "agent"
-            },
-            {
-              "id": "GE-0024",
-              "url": "https://missionlocal.org/2026/05/san-francisco-connie-chan-israel-aipac-congress/",
-              "summary": "Mission Local reported that big financial backers of Chan's congressional campaign were tied to pro-Israel PACs, raising questions about her anti-AIPAC stance.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "date": "2026-05",
-              "quote": "Big backers of Connie Chan for Congress tied to pro-Israel PACs",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0013",
-              "url": "https://www.dropsitenews.com/p/aipac-connie-chan-san-francisco-primary",
-              "summary": "Drop Site reported AIPAC's UDP and DMFI funneled ~$500K to a super PAC network (EDW Action Fund / Pro-Choice Majority Action) that bought ads supporting Chan; her campaign denied receiving any AIPAC money.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-07",
-              "date": "2026-05-31",
-              "quote": "Connie has also been clear from day one of this campaign that she would not accept a dime from AIPAC and she has stayed true to this throughout.",
-              "source_kind": "agent"
-            },
-            {
-              "id": "GE-0014",
-              "url": "https://jweekly.com/2026/06/01/aipac-didnt-fund-connie-chan-heres-what-actually-happened",
-              "summary": "J. found AIPAC/DMFI money went to independent PACs, not Chan's campaign; recapped her record: called for end of military aid to Israel, condemned Gaza war as genocide, supported Block the Bombs Act.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-07",
-              "date": "2026-06-01",
-              "quote": "She has called for the end of military aid to Israel, condemned Israel's war against Hamas in Gaza as genocide against Palestinians and supported the Block the Bombs Act.",
-              "source_kind": "agent"
-            },
-            {
-              "id": "GE-0019",
-              "url": "https://www.jta.org/2026/06/30/politics/san-francisco-trans-march-downplays-participants-harassment-of-lgbtq-jewish-politician-scott-wiener",
-              "summary": "After opponent Scott Wiener was confronted by pro-Palestine activists at the Trans March, her spokesperson deferred to his experience rather than condemn protesters: solidarity 'against hate whenever someone tells us they are experiencing h",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-07",
-              "date": "2026-06-30",
-              "quote": "In this moment, what matters is how State Senator Scott Wiener felt and feels about the interactions. We must stand in solidarity against hate whenever someone tells us they are experiencing hate.",
-              "source_kind": "agent"
-            },
-            {
               "id": "GE-0015",
               "url": "https://theintercept.com/2026/07/21/connie-chan-san-francisco-aipac-pelosi",
               "summary": "Told The Intercept she will oppose all US aid to Israel and stop its 'genocidal actions'; also opposes US involvement in Israel's invasion of Lebanon and said she'd have voted for the failed House war-powers withdrawal resolution.",
+              "date": "2026-07-21",
               "dimension": "military_aid",
               "checked_on": "2026-10-07",
-              "date": "2026-07-21",
               "quote": "In Congress, we will oppose any aid to Israel and do everything in our power to stop their government's genocidal actions against the Palestinian people.",
               "source_kind": "agent"
             },
@@ -584,9 +578,9 @@
               "id": "GE-0016",
               "url": "https://missionlocal.org/2026/07/anti-aipac-group-connie-chan",
               "summary": "Signed Track AIPAC's candidate questionnaire affirming Israel is committing genocide against Palestinians, backing a total arms embargo on Israel, and requiring AIPAC to register as a foreign agent; accepted its endorsement.",
+              "date": "2026-07-21",
               "dimension": "genocide_language",
               "checked_on": "2026-10-07",
-              "date": "2026-07-21",
               "quote": "Connie has signed our candidate questionnaire, affirming that Israel is committing genocide against the Palestinian people and that Congress must end U.S. complicity in it and hold those responsible to account.",
               "source_kind": "agent"
             },
@@ -594,19 +588,29 @@
               "id": "GE-0023",
               "url": "https://missionlocal.org/2026/07/anti-aipac-group-connie-chan/",
               "summary": "Track AIPAC endorsed Chan after initially denouncing her over a $475K ad buy traced to pro-Israel PACs; she affirmed genocide language in their questionnaire.",
+              "date": "2026-07-21",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
-              "date": "2026-07-21",
               "quote": "Connie has signed our candidate questionnaire, affirming that Israel is committing genocide against the Palestinian",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0027",
+              "url": "https://www.threads.com/@trackaipac/post/DbDkx91HMYe/by-signing-on-to-our-platform-connie-chan-has-committed-to-rejecting-support",
+              "summary": "Connie Chan (D) committed to rejecting support from AIPAC and the Israel lobby as part of TrackAIPAC's platform.",
+              "date": "2026-07-21",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-08",
+              "quote": "By signing on to our platform, Connie Chan has committed to: ✅ Rejecting support from AIPAC and the rest of the Israel lobby.",
               "source_kind": "news"
             },
             {
               "id": "GE-0090",
               "url": "https://theintercept.com/2026/07/21/connie-chan-san-francisco-aipac-pelosi/",
               "summary": "Intercept headline reports Chan, Pelosi's pick for SF House seat, took an anti-AIPAC position.",
+              "date": "2026-07-21",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
-              "date": "2026-07-21",
               "quote": "Takes Anti-AIPAC",
               "source_kind": "news"
             },
@@ -614,9 +618,9 @@
               "id": "GE-0018",
               "url": "https://www.aljazeera.com/news/2026/10/3/pelosi-backed-us-candidate-calls-for-full-arms-embargo-on-israel",
               "summary": "In televised debate days before ballots mailed, called for full arms embargo on Israel, said she'd vote day one to end 'a genocide in Gaza and an apartheid state,' and would not fund Iron Dome.",
+              "date": "2026-10-03",
               "dimension": "military_aid",
               "checked_on": "2026-10-07",
-              "date": "2026-10-03",
               "quote": "Chan said that \"on day one in Congress\" she would vote to \"end a genocide in Gaza and to end an apartheid state.\"",
               "source_kind": "agent"
             }
@@ -645,27 +649,90 @@
           "campaign_url": "https://www.scottwiener.com",
           "gaza_evidence": [
             {
+              "id": "GE-0031",
+              "url": "https://sd11.senate.ca.gov/news/senator-wieners-statement-escalating-violence-israel-and-palestine",
+              "summary": "In a 2021 statement, Wiener affirmed Israel's right to exist as a Jewish state, cited his Jewish heritage, and called for a Jewish and democratic Israel living in peace with a Palestinian state.",
+              "date": "2021-05-16",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "I unequivocally believe in the importance of a Jewish state. We need a Jewish and democratic Israel living side-by-side, in peace, with a Palestinian state.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0008",
+              "url": "https://x.com/Scott_Wiener/status/1632104432128397312",
+              "summary": "X post: “Transgenderism must be eradicated from public life entirely.” These words were in a speech by a major right wing figure at a national conservative conference. It’s a straight up call for genocide. Th",
+              "date": "2023-03-04",
+              "dimension": "other",
+              "checked_on": "2026-10-07",
+              "quote": "“Transgenderism must be eradicated from public life entirely.” These words were in a speech by a major right wing figure at a national conservative conference. It’s a straight up call for genocide. That’s what this fight is about. They want us gone. https://t.co/HHFyjbCejg",
+              "source_kind": "x_post"
+            },
+            {
+              "id": "GE-0032",
+              "url": "https://x.com/Scott_Wiener/status/1729662058109534537",
+              "summary": "Wiener criticized the Oakland City Council for rejecting an amendment to condemn Hamas alongside a Gaza ceasefire resolution, calling the outcome 'Just awful.'",
+              "date": "2023-11-29",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Oakland City Council passed a reso calling for Gaza ceasefire. When a council member asked to add language condemning Hamas, a stream of public comment praising & supporting Hamas ensued. The council then rejected the request to condemn Hamas. Just awful.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0084",
+              "url": "https://www.sfchronicle.com/politics/article/wiener-ceasefire-protestors-18665308.php",
+              "summary": "Wiener was accosted by activists calling for Israel to cease bombing Gaza, showing public pressure over his conflict stance.",
+              "date": "2024-02-13",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "State Sen. Scott Wiener, D-San Francisco, has been accosted in public multiple times in recent weeks by activists calling for Israel to cease its bombing in Gaza.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0037",
+              "url": "https://sd31.senate.ca.gov/news/california-senate-condemns-gaza-violence-bipartisan-resolution",
+              "summary": "Co-authored California Senate resolution SCR 105 condemning Gaza violence, calling for end to humanitarian catastrophe and immediate release of all hostages.",
+              "date": "2025-09-15",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "Co-author Sen. Scott Wiener, D-San Francisco, said he hopes for a peace movement out of 'this catastrophe,' requiring people and governments that are committed to peace.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0028",
+              "url": "https://abc7news.com/post/state-senator-scott-wiener-changes-course-gaza-calling-israels-actions-genocide/18392065/",
+              "summary": "Wiener publicly reversed his earlier refusal, declaring in a video that Israel has committed genocide in Gaza, stating the Israeli government tried to destroy Gaza and push Palestinians out.",
+              "date": "2026-01-12",
+              "dimension": "genocide_language",
+              "checked_on": "2026-10-08",
+              "quote": "I do believe Israel has committed genocide in Gaza. To me the Israeli government has tried to destroy Gaza and to push Palestinians out. And that qualifies as genocide.",
+              "source_kind": "news"
+            },
+            {
               "id": "GE-0029",
               "url": "https://holocaustcenter.jfcs.org/joint-statement-on-senator-scott-wieners-usage-of-the-term-genocide/",
               "summary": "JFCS Holocaust Center and a statewide network of 14 California Holocaust/genocide education institutions issued a joint statement responding to Wiener's use of the term 'genocide' for Israel's actions.",
+              "date": "2026-01-12",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Joint Statement: On Senator Scott Wiener's Usage of the Term \"Genocide\"",
               "source_kind": "news"
             },
             {
-              "id": "GE-0035",
-              "url": "https://www.scottwiener.com/foreign-policy",
-              "summary": "Campaign site states Wiener declared the Netanyahu government committed genocide in Gaza, opposes offensive arms sales to Israel, supports defensive systems like Iron Dome, and calls settlement expansion a step toward ethnic cleansing.",
+              "id": "GE-0086",
+              "url": "https://www.jfeed.com/news-world/scott-wiener-israel-genocide",
+              "summary": "Wiener publicly labeled Israel's Gaza military operations genocide, saying actions to destroy Gaza and push Palestinians out meet definition.",
+              "date": "2026-01-12",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
-              "quote": "Scott is one of the very few Jewish elected leaders in the country to declare the Netanyahu government has committed genocide in Gaza.",
+              "quote": "California State Senator Scott Wiener has labeled Israel's military operations in Gaza as \"genocide,\" marking a pivotal shift after years of measured criticism.",
               "source_kind": "news"
             },
             {
               "id": "GE-0036",
               "url": "https://x.com/abc7newsbayarea/status/2010889591281025119",
               "summary": "ABC7 News posted on X linking to their report that Wiener changed course on Gaza, calling Israel's actions genocide.",
+              "date": "2026-01-13",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Sen. Scott Wiener changes course on Gaza, calling Israel's actions 'genocide'",
@@ -675,98 +742,39 @@
               "id": "GE-0085",
               "url": "https://standwithus.com/news/scott-wiener-shamefully-repeats-a-big-lie-about-israel-in-his-run-for-congress/",
               "summary": "StandWithUs accuses Wiener of repeating a false claim about Israel during his congressional campaign.",
+              "date": "2026-01-13",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Scott Wiener Shamefully Repeats a Big Lie About Israel in his Run for Congress",
               "source_kind": "news"
             },
             {
-              "id": "GE-0031",
-              "url": "https://sd11.senate.ca.gov/news/senator-wieners-statement-escalating-violence-israel-and-palestine",
-              "summary": "In a 2021 statement, Wiener affirmed Israel's right to exist as a Jewish state, cited his Jewish heritage, and called for a Jewish and democratic Israel living in peace with a Palestinian state.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "date": "2021-05-16",
-              "quote": "I unequivocally believe in the importance of a Jewish state. We need a Jewish and democratic Israel living side-by-side, in peace, with a Palestinian state.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0008",
-              "url": "https://x.com/Scott_Wiener/status/1632104432128397312",
-              "summary": "X post: “Transgenderism must be eradicated from public life entirely.” These words were in a speech by a major right wing figure at a national conservative conference. It’s a straight up call for genocide. Th",
-              "dimension": "other",
-              "checked_on": "2026-10-07",
-              "date": "2023-03-04",
-              "quote": "“Transgenderism must be eradicated from public life entirely.” These words were in a speech by a major right wing figure at a national conservative conference. It’s a straight up call for genocide. That’s what this fight is about. They want us gone. https://t.co/HHFyjbCejg",
-              "source_kind": "x_post"
-            },
-            {
-              "id": "GE-0032",
-              "url": "https://x.com/Scott_Wiener/status/1729662058109534537",
-              "summary": "Wiener criticized the Oakland City Council for rejecting an amendment to condemn Hamas alongside a Gaza ceasefire resolution, calling the outcome 'Just awful.'",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "date": "2023-11-29",
-              "quote": "Oakland City Council passed a reso calling for Gaza ceasefire. When a council member asked to add language condemning Hamas, a stream of public comment praising & supporting Hamas ensued. The council then rejected the request to condemn Hamas. Just awful.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0084",
-              "url": "https://www.sfchronicle.com/politics/article/wiener-ceasefire-protestors-18665308.php",
-              "summary": "Wiener was accosted by activists calling for Israel to cease bombing Gaza, showing public pressure over his conflict stance.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "date": "2024-02-13",
-              "quote": "State Sen. Scott Wiener, D-San Francisco, has been accosted in public multiple times in recent weeks by activists calling for Israel to cease its bombing in Gaza.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0037",
-              "url": "https://sd31.senate.ca.gov/news/california-senate-condemns-gaza-violence-bipartisan-resolution",
-              "summary": "Co-authored California Senate resolution SCR 105 condemning Gaza violence, calling for end to humanitarian catastrophe and immediate release of all hostages.",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-08",
-              "date": "2025-09-15",
-              "quote": "Co-author Sen. Scott Wiener, D-San Francisco, said he hopes for a peace movement out of 'this catastrophe,' requiring people and governments that are committed to peace.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0028",
-              "url": "https://abc7news.com/post/state-senator-scott-wiener-changes-course-gaza-calling-israels-actions-genocide/18392065/",
-              "summary": "Wiener publicly reversed his earlier refusal, declaring in a video that Israel has committed genocide in Gaza, stating the Israeli government tried to destroy Gaza and push Palestinians out.",
-              "dimension": "genocide_language",
-              "checked_on": "2026-10-08",
-              "date": "2026-01-12",
-              "quote": "I do believe Israel has committed genocide in Gaza. To me the Israeli government has tried to destroy Gaza and to push Palestinians out. And that qualifies as genocide.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0086",
-              "url": "https://www.jfeed.com/news-world/scott-wiener-israel-genocide",
-              "summary": "Wiener publicly labeled Israel's Gaza military operations genocide, saying actions to destroy Gaza and push Palestinians out meet definition.",
-              "dimension": "genocide_language",
-              "checked_on": "2026-10-08",
-              "date": "2026-01-12",
-              "quote": "California State Senator Scott Wiener has labeled Israel's military operations in Gaza as \"genocide,\" marking a pivotal shift after years of measured criticism.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0034",
               "url": "https://missionlocal.org/2026/05/san-francisco-june-election-sergey-brin/",
               "summary": "J Street Action Fund, a pro-Israel PAC supporting a two-state solution, spent $60,000 on an ad campaign boosting Wiener's congressional candidacy.",
+              "date": "2026-05-21",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
-              "date": "2026-05-21",
               "quote": "J Street Action Fund announced today that it will spend $60,000 on an ad campaign boosting congressional candidate S",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0035",
+              "url": "https://www.scottwiener.com/foreign-policy",
+              "summary": "Campaign site states Wiener declared the Netanyahu government committed genocide in Gaza, opposes offensive arms sales to Israel, supports defensive systems like Iron Dome, and calls settlement expansion a step toward ethnic cleansing.",
+              "date": "2026-06",
+              "dimension": "genocide_language",
+              "checked_on": "2026-10-08",
+              "quote": "Scott is one of the very few Jewish elected leaders in the country to declare the Netanyahu government has committed genocide in Gaza.",
               "source_kind": "news"
             },
             {
               "id": "GE-0038",
               "url": "https://forward.com/news/828866/scott-wiener-california-congress-primary/",
               "summary": "Declared that Israel perpetrates genocide in Gaza, positioning himself as a Jewish critic of Israel in the congressional primary for Pelosi's seat.",
+              "date": "2026-06",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
-              "date": "2026-06",
               "quote": "Wiener, who declared Israel perpetrates genocide, is part of a cohort of progressive Jews running for Congress and taking oppositional stands",
               "source_kind": "news"
             },
@@ -774,9 +782,9 @@
               "id": "GE-0033",
               "url": "https://www.cnn.com/2026/06/29/us/scott-wiener-gaza-israel-california",
               "summary": "CNN reported Wiener was forced to leave the San Francisco Trans March after being confronted by attendees about his position on Gaza.",
+              "date": "2026-06-29",
               "dimension": "other",
               "checked_on": "2026-10-08",
-              "date": "2026-06-29",
               "quote": "Jewish lawmaker who champions trans rights says he was forced to leave San Francisco Trans March after he was confronted about Gaza",
               "source_kind": "news"
             },
@@ -784,9 +792,9 @@
               "id": "GE-0030",
               "url": "https://jewishcurrents.org/scott-wieners-pivot-on-gaza-isnt-enough-for-the-left",
               "summary": "Jewish Currents characterized Wiener's shift to calling Gaza genocide as insufficient for the left, framing it as 'playing catch-up on Palestine' in the SF congressional race.",
+              "date": "2026-09-17",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2026-09-17",
               "quote": "Scott Wiener's Pivot on Gaza Isn't Enough for the Left. In San Francisco, a House race shows the limits of playing catch-up on Palestine.",
               "source_kind": "news"
             }
@@ -1004,22 +1012,23 @@
           "campaign_url": "https://www.hoelterforuscongress.com",
           "gaza_evidence": [
             {
-              "id": "GE-0039",
-              "url": "https://polivion.com/midterms/california/15/",
-              "summary": "Charles Hoelter (R, CA-15) shows no AIPAC-linked donations in available FEC records for the 2026 cycle.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "quote": "Charles Hoelter, a Republican, shows no AIPAC-linked donations in available records.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0009",
               "url": "https://whofundsmyrep.com/rep/kevin-mullin",
               "summary": "The tracker lists Charles Hoelter as receiving no tracked pro-Israel PAC contributions and having no independent expenditures for or against him in the 2026 CA-15 race.",
+              "date": "2026",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
-              "date": "2026",
               "quote": "Charles Hoelter (Republican)received $0 · spent for $0 · spent against $0",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0039",
+              "url": "https://polivion.com/midterms/california/15/",
+              "summary": "Charles Hoelter (R, CA-15) shows no AIPAC-linked donations in available FEC records for the 2026 cycle.",
+              "date": "2026",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-08",
+              "quote": "Charles Hoelter, a Republican, shows no AIPAC-linked donations in available records.",
               "source_kind": "news"
             }
           ]
@@ -1050,40 +1059,32 @@
           "secondary_x_url": "https://x.com/KevinMullin",
           "gaza_evidence": [
             {
-              "id": "GE-0001",
-              "url": "https://actionnetwork.org/letters/kevin-mullin-grow-a-spine-ceasefire-not-genocide",
-              "summary": "An Action Network petition urges Kevin Mullin to support an immediate arms embargo on Israel and stop U.S. funding for Israel.",
-              "dimension": "military_aid",
-              "checked_on": "2026-10-07",
-              "quote": "Tell Kevin Mullin: Arms Embargo for Israel Now! No more US Tax Money for Israel! 186,000+ People Killed on Our Dime",
+              "id": "GE-0088",
+              "url": "https://www.indybay.org/newsitems/2023/12/16/18861172.php",
+              "summary": "Protesters at Mullin's office urged him to endorse H.Res. 786 for an immediate permanent Gaza ceasefire, citing his lack of commitment to peace.",
+              "date": "2023-12-15",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "Then have been urging him to endorse House Resolution 786 that calls for an immediate and permanent ceasefire in Gaza.",
               "source_kind": "news"
             },
             {
               "id": "GE-0042",
               "url": "https://www.reversecanarymission.org/person/kevin-mullin-656bbd8770bc542ff9bde3b9",
               "summary": "Activist group Reverse Canary Mission lists Mullin under 'Complicit in Apartheid,' tracking those who support Israel's occupation of Palestine for accountability.",
+              "date": "2024-01-15",
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "Kevin Mullin - Complicit in Apartheid",
               "source_kind": "news"
             },
             {
-              "id": "GE-0088",
-              "url": "https://www.indybay.org/newsitems/2023/12/16/18861172.php",
-              "summary": "Protesters at Mullin's office urged him to endorse H.Res. 786 for an immediate permanent Gaza ceasefire, citing his lack of commitment to peace.",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-08",
-              "date": "2023-12-15",
-              "quote": "Then have been urging him to endorse House Resolution 786 that calls for an immediate and permanent ceasefire in Gaza.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0040",
               "url": "https://kevinmullin.house.gov/2024/03/06/rep-mullins-latest-statement-on-the-war-in-gaza/",
               "summary": "Mullin describes Gaza crisis as 'bordering on a famine,' supports six-week ceasefire, acknowledges Israel's right to self-defense after Oct 7, and calls for a two-state solution with Palestinian state.",
+              "date": "2024-03-06",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-03-06",
               "quote": "A humanitarian crisis bordering on a famine is unfolding in Gaza as the Israel-Hamas war enters its fifth month, and I continue to be horrified by the devastating loss of life and suffering of innocent families and children",
               "source_kind": "news"
             },
@@ -1091,9 +1092,9 @@
               "id": "GE-0041",
               "url": "https://x.com/RepKevinMullin/status/1765546434861076714",
               "summary": "Mullin posts his latest response to the war in Gaza on X, linking to his official statement calling for ceasefire, humanitarian aid, and two-state solution.",
+              "date": "2024-03-07",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-03-07",
               "quote": "My latest response to the war in Gaza",
               "source_kind": "news"
             },
@@ -1101,9 +1102,9 @@
               "id": "GE-0087",
               "url": "https://kevinmullin.house.gov/2024/04/20/rep-mullin-votes-in-favor-of-bipartisan-foreign-aid-package/",
               "summary": "Rep. Kevin Mullin voted for a foreign aid package providing Israel defensive capabilities and $9B Palestinian humanitarian aid, while supporting an immediate ceasefire.",
+              "date": "2024-04-20",
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
-              "date": "2024-04-20",
               "quote": "helping our only democratic ally in the Middle East maintain its defensive capabilities against the Iranian regime and other adversaries in the region.",
               "source_kind": "news"
             },
@@ -1111,19 +1112,29 @@
               "id": "GE-0007",
               "url": "https://x.com/RepKevinMullin/status/1796638262750052478",
               "summary": "Kevin Mullin publicly stated he strongly supports the ceasefire proposal highlighted by President Biden and called for a durable solution in Gaza.",
+              "date": "2024-05-31",
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
-              "date": "2024-05-31",
               "quote": "I strongly support the ceasefire proposal that @POTUS highlighted this morning. We need a durable solution in Gaza.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0001",
+              "url": "https://actionnetwork.org/letters/kevin-mullin-grow-a-spine-ceasefire-not-genocide",
+              "summary": "An Action Network petition urges Kevin Mullin to support an immediate arms embargo on Israel and stop U.S. funding for Israel.",
+              "date": "2024-12",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-07",
+              "quote": "Tell Kevin Mullin: Arms Embargo for Israel Now! No more US Tax Money for Israel! 186,000+ People Killed on Our Dime",
               "source_kind": "news"
             },
             {
               "id": "GE-0004",
               "url": "https://kevinmullin.house.gov/2025/01/15/rep-mullin-supports-ceasefire-agreement-between-israel-hamas/",
               "summary": "Rep. Mullin publicly supported the Israel-Hamas ceasefire deal, emphasizing hostage release and humanitarian aid to Palestinian civilians in Gaza.",
+              "date": "2025-01-15",
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
-              "date": "2025-01-15",
               "quote": "I strongly support the latest ceasefire deal reached by Israel and Hamas; we are long overdue for an end to the horrific conflict that has killed far too many innocent civilians",
               "source_kind": "news"
             },
@@ -1131,9 +1142,9 @@
               "id": "GE-0043",
               "url": "https://x.com/RepKevinMullin/status/1879678684333998393",
               "summary": "Mullin publicly endorsed the January 2025 Israel-Hamas ceasefire on X, calling the war 'long overdue' for an end.",
+              "date": "2025-01-15",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2025-01-15",
               "quote": "We are long overdue for an end to the war & I strongly support the latest ceasefire agreement between Israel & Hamas.",
               "source_kind": "news"
             },
@@ -1141,9 +1152,9 @@
               "id": "GE-0006",
               "url": "https://x.com/RepKevinMullin/status/1925610008928207050",
               "summary": "Kevin Mullin condemned the attack killing Israeli Embassy staff in Washington DC and said antisemitism, violence and hate have no place in America.",
+              "date": "2025-05-22",
               "dimension": "other",
               "checked_on": "2026-10-07",
-              "date": "2025-05-22",
               "quote": "My heart goes out to the Israeli Embassy staff who were killed in Washington DC and to all those who were affected by last night’s horrific attack. Antisemitism, violence and hate have no place in America.",
               "source_kind": "news"
             },
@@ -1151,9 +1162,9 @@
               "id": "GE-0002",
               "url": "https://x.com/RepKevinMullin/status/1949994036326256759",
               "summary": "Mullin called Gaza starvation a moral tragedy and urged the U.S. to press for a ceasefire and delivery of humanitarian aid to Palestinians.",
+              "date": "2025-07-29",
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
-              "date": "2025-07-29",
               "quote": "The U.S. must press for a ceasefire to ensure food, medical supplies and aid are delivered to Palestinians",
               "source_kind": "news"
             },
@@ -1161,9 +1172,9 @@
               "id": "GE-0003",
               "url": "https://kevinmullin.house.gov/2025/10/09/rep-mullin-supports-gaza-ceasefire-proposal/",
               "summary": "Rep. Mullin publicly supported the Gaza ceasefire deal between Israel and Hamas and urged compliance with its terms.",
+              "date": "2025-10-09",
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
-              "date": "2025-10-09",
               "quote": "“I wholeheartedly support the ceasefire deal between Israel and Hamas, and urge all parties to abide by its terms.”",
               "source_kind": "news"
             },
@@ -1171,9 +1182,9 @@
               "id": "GE-0089",
               "url": "https://www.dangforcongress.com/news/memorial-day-2026-two-versions",
               "summary": "A CA-15 opponent alleges Mullin voted to send billions in weapons to Israel, which they say fueled genocide in Gaza and the Israel-Iran war.",
+              "date": "2026-05-26",
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
-              "date": "2026-05-26",
               "quote": "This is the same Kevin Mullin who has voted to send billions of dollars in weapons to Israel, weapons that have been used to fuel a genocide in Gaza and the war between Israel and Iran.",
               "source_kind": "news"
             },
@@ -1181,9 +1192,9 @@
               "id": "GE-0005",
               "url": "https://whofundsmyrep.com/rep/kevin-mullin",
               "summary": "FEC-based tracker reports Kevin Mullin received $733,866 from pro-Israel PACs, including $698,016 from AIPAC PAC and United Democracy Project.",
+              "date": "2026-10",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
-              "date": "2026-10",
               "quote": "As of October 2026, Kevin Mullin has received $733,866 from pro-Israel PACs in FEC filings — $698,016 of it from AIPAC PAC and its super PAC, United Democracy Project",
               "source_kind": "news"
             },
@@ -1191,9 +1202,9 @@
               "id": "GE-0044",
               "url": "https://yourreprecord.org/members/mullin-kevin-ca-15/",
               "summary": "YourRep's Record lists a Palestine/Israel grade section for Mullin (D-CA-15, 2nd term) but the specific grade is not visible in extracted text.",
+              "date": "2026-10",
               "dimension": "other",
               "checked_on": "2026-10-08",
-              "date": "2026-10",
               "quote": "Kevin Mullin's Grades Across 12 Issue Areas Palestine / Israel",
               "source_kind": "news"
             }
@@ -1839,21 +1850,12 @@
           "campaign_url": "https://www.matthaney.com",
           "gaza_evidence": [
             {
-              "id": "GE-0020",
-              "url": "https://www.linkedin.com/posts/heal-palestine_special-thanks-to-california-state-assembly-activity-7431805058666770433-muZA",
-              "summary": "Haney invited HEAL Palestine's Global Healing children from Gaza to the California State Assembly floor in Sacramento to speak about their treatment.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Special Thanks to California State Assembly member Matt Haney for inviting our Global Healing children from Gaza to the floor in Sacramento to learn about their treatment during their time in California",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0091",
               "url": "https://www.antiwar.com/blog/2024/08/18/who-are-they-the-ca-legislative-jewish-caucus/",
               "summary": "Dossier lists Matt Haney as a member of the California Legislative Jewish Caucus, described as pro-Israel and refusing to support a Gaza ceasefire.",
+              "date": "2024-08-18",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-08-18",
               "quote": "the Caucus not only refuses to support a ceasefire, but centers the debate on the protesters’ lack of civility",
               "source_kind": "news"
             },
@@ -1861,10 +1863,20 @@
               "id": "GE-0021",
               "url": "https://track-jpac.org/candidates/Matt_Haney.html",
               "summary": "Haney received $47,700 in total Israel lobby contributions (2021-2025), including $25,700 from California Jewish PAC and $7,500 from Robert J. Fisher. (covers 2021–2025)",
+              "date": "2025",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
-              "date": "2025",
               "quote": "Total Israel lobby contributions: $47,700 Total Israel lobby indirect contributions: $0",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0020",
+              "url": "https://www.linkedin.com/posts/heal-palestine_special-thanks-to-california-state-assembly-activity-7431805058666770433-muZA",
+              "summary": "Haney invited HEAL Palestine's Global Healing children from Gaza to the California State Assembly floor in Sacramento to speak about their treatment.",
+              "date": "2026-02-23",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Special Thanks to California State Assembly member Matt Haney for inviting our Global Healing children from Gaza to the floor in Sacramento to learn about their treatment during their time in California",
               "source_kind": "news"
             }
           ]
@@ -1984,9 +1996,9 @@
               "id": "GE-0045",
               "url": "https://www.ktvu.com/news/some-boo-san-francisco-supervisor-who-wants-to-explicitly-condemn-hamas-attack",
               "summary": "Stefani was one of three supervisors who voted NO on the SF Board's 8-3 resolution calling for an immediate and sustained ceasefire in Gaza.",
+              "date": "2024-01-09",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2024-01-09",
               "quote": "The no votes were from Supervisors Catherine Stefani, Matt Dorsey and Rafael Mandelman.",
               "source_kind": "news"
             },
@@ -1994,9 +2006,9 @@
               "id": "GE-0046",
               "url": "https://www.nbcbayarea.com/news/local/disagreement-san-francisco-supervisors-approve-resolution-cease-fire-gaza/3418105/",
               "summary": "Stefani spoke in committee calling out the sexual violence Israeli women suffered during the Oct. 7 Hamas attack, drawing jeers from the public.",
+              "date": "2024-01-09",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-01-09",
               "quote": "Members of the public jeered at Supervisor Catherine Stefani as she called out the sexual violence Israeli women suffered during the Oct. 7 attack.",
               "source_kind": "news"
             },
@@ -2004,9 +2016,9 @@
               "id": "GE-0092",
               "url": "https://sfist.com/2024/03/12/in-wake-of-gaza-uproar-sf-supervisor-wants-board-to-stop-voting-on-non-binding-foreign-policy-resolutions/",
               "summary": "Stefani voted against the SF ceasefire resolution, arguing a ceasefire requires Hamas surrender/removal and hostage return.",
+              "date": "2024-01-09",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2024-01-09",
               "quote": "You cannot call for a ceasefire without calling for the surrender and removal of Hamas and the return of all hostages.",
               "source_kind": "news"
             },
@@ -2014,9 +2026,9 @@
               "id": "GE-0047",
               "url": "https://jcrc.org/blog/leading-jewish-organizations-call-on-mayor-breed-to-veto-sf-israel-hamas-resolution-thank-her-for-rebuking-board-of-supervisors/",
               "summary": "JCRC, ADL, and AJC named Stefani among the three supervisors who opposed the Gaza ceasefire resolution, framing their stance as protecting Jewish community safety.",
+              "date": "2024-01-16",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-01-16",
               "quote": "The three Supervisors who opposed the resolution, Matt Dorsey, Catherine Stefani, and Rafael Mandelman, understand this clearly.",
               "source_kind": "news"
             }
@@ -2504,21 +2516,12 @@
           ],
           "gaza_evidence": [
             {
-              "id": "GE-0050",
-              "url": "https://www.threads.com/@pcsentes/post/DWeEW_oFNA2/yes-xavier-becerra-has-received-funding-from-aipac-as-a-prominent-political",
-              "summary": "A Threads post claims Becerra has received funding from AIPAC-affiliated PACs, associating him with the 'Israel lobby' and pro-Israel policy alignment.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "quote": "Yes, Xavier Becerra has received funding from AIPAC. As a prominent political figure, he has been associated with contributions from the Israel lobby, particularly through political action committees (PACs) that support candidates aligned with pro-Israel policies.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0048",
               "url": "https://www.jewishexponent.com/hhs-secretary-becerra-misspoke-at-world-health-assembly-when-seeming-to-recognize-palestine/",
               "summary": "As HHS Secretary, Becerra called for a ceasefire, hostage release, humanitarian aid to Gaza, and a two-state solution at the 77th World Health Assembly, framing the conflict as a 'cycle of destruction and dislocation between Israel and Pale",
+              "date": "2024-05-28",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-05-28",
               "quote": "That is why the tragic, avoidable loss of life and cycle of destruction and dislocation between Israel and Palestine must stop immediately. We need a ceasefire agreement that leads to the release of hostages, a surge in humanitarian assistance into Gaza, and the road to a two-state solution.",
               "source_kind": "news"
             },
@@ -2526,18 +2529,18 @@
               "id": "GE-0049",
               "url": "https://www.latimes.com/politics/story/2025-05-08/california-gubernatorial-candidates-israel-palestine-villaraigosa-porter-yee-thurmond-becerra",
               "summary": "Becerra, as a California gubernatorial candidate, addressed the Israel-Palestinian conflict in a LA Times interview alongside other candidates (Villaraigosa, Porter, Yee, Thurmond).",
+              "date": "2025-05-08",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2025-05-08",
               "source_kind": "news"
             },
             {
               "id": "GE-0095",
               "url": "https://butwhatcanyoudo.org/c/ca-gov-becerra/",
               "summary": "Asked by CalMatters in May 2026 if Gaza war is genocide, Becerra said Netanyahu's conduct cannot be classified within international norms.",
+              "date": "2026-05",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
-              "date": "2026-05",
               "quote": "cannot be classified as within international norms",
               "source_kind": "news"
             },
@@ -2545,9 +2548,9 @@
               "id": "GE-0097",
               "url": "https://www.wsws.org/en/articles/2026/10/06/bfkm-o06.html",
               "summary": "WSWS reports Becerra, in a 2026 CA gubernatorial debate, referred to the US-Israeli war in Iran as illegal, though the article says it criticized form not crime.",
+              "date": "2026-10-05",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2026-10-05",
               "quote": "Becerra’s reference to the “illegal war in Iran” was only a criticism to the form, not the crime itself.",
               "source_kind": "news"
             }
@@ -2563,21 +2566,12 @@
           ],
           "gaza_evidence": [
             {
-              "id": "GE-0051",
-              "url": "https://www.jns.org/news/u-s-news/dems-running-to-be-next-california-governor-ignoring-jew-hatred-cancer-within-their-party-steve-hilton-tells-jns",
-              "summary": "Hilton tells JNS that California Democratic gubernatorial candidates are ignoring 'Jew-hatred,' which he calls a 'cancer within their party,' framing the Gaza conflict as an intra-party anti-Semitism issue.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Dems running to be next California governor ignoring Jew-hatred, 'cancer within their party,' Steve Hilton tells JNS",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0052",
               "url": "https://www.foxnews.com/video/6255413311001",
               "summary": "On Fox's 'Outnumbered,' Hilton calls the American left and media 'servants' revealing their 'true colors' in Israel-Palestine coverage, linking it to rising violence against Jews in the U.S.",
+              "date": "2021-05-21",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2021-05-21",
               "quote": "Steve Hilton: American left, media 'servants' revealing true colors with Israel-Palestine coverage",
               "source_kind": "news"
             },
@@ -2585,10 +2579,20 @@
               "id": "GE-0093",
               "url": "https://www.foxbusiness.com/video/6374241079112",
               "summary": "Hilton, a California gubernatorial candidate, said he was optimistic after Israel's strikes on Iranian nuclear sites, signaling support for Israel's military action.",
+              "date": "2025-06-13",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2025-06-13",
               "quote": "Steve Hilton says he is ‘optimistic’ after Israel’s strikes on Iran",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0051",
+              "url": "https://www.jns.org/news/u-s-news/dems-running-to-be-next-california-governor-ignoring-jew-hatred-cancer-within-their-party-steve-hilton-tells-jns",
+              "summary": "Hilton tells JNS that California Democratic gubernatorial candidates are ignoring 'Jew-hatred,' which he calls a 'cancer within their party,' framing the Gaza conflict as an intra-party anti-Semitism issue.",
+              "date": "2026-05-18",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Dems running to be next California governor ignoring Jew-hatred, 'cancer within their party,' Steve Hilton tells JNS",
               "source_kind": "news"
             }
           ]
@@ -2655,31 +2659,32 @@
           "campaign_url": "https://www.gloriaromero4ltgov.com",
           "gaza_evidence": [
             {
+              "id": "GE-0094",
+              "url": "https://abc7.com/post/pro-palestinian-demonstration-held-in-downtown-los-angeles-shuts-down-busy-intersection/14804279/",
+              "summary": "ABC7 reports former California State Senate Democratic Majority Leader Gloria Romero demanded a response to antisemitic violence on campuses, framing the issue around antisemitism.",
+              "date": "2024-05-12",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Former California State Senate Democratic Majority Leader Gloria Romero and others demanded a response to what they described as acts of antisemitic violence on campuses throughout the state",
+              "source_kind": "news"
+            },
+            {
               "id": "GE-0054",
               "url": "https://www.jns.org/news/u-s-news/if-elected-california-gop-nominee-a-former-democrat-vows-to-fight-campus-jew-hatred",
               "summary": "JNS reports Romero, as California GOP nominee and former Democrat, publicly vows to fight campus Jew-hatred, centering her campaign on antisemitism rather than Gaza policy.",
+              "date": "2026-07-22",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "If elected, California GOP nominee, a former Democrat, vows to fight campus Jew-hatred",
               "source_kind": "news"
             },
             {
-              "id": "GE-0094",
-              "url": "https://abc7.com/post/pro-palestinian-demonstration-held-in-downtown-los-angeles-shuts-down-busy-intersection/14804279/",
-              "summary": "ABC7 reports former California State Senate Democratic Majority Leader Gloria Romero demanded a response to antisemitic violence on campuses, framing the issue around antisemitism.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "date": "2024-05-12",
-              "quote": "Former California State Senate Democratic Majority Leader Gloria Romero and others demanded a response to what they described as acts of antisemitic violence on campuses throughout the state",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0053",
               "url": "https://x.com/GloriaJRomero/status/2106820540887671073",
               "summary": "Romero calls for voting to 'end antisemitism in California schools, colleges' framing Oct 7 as a rallying point, explicitly tagging @AIPAC and pro-Israel orgs.",
+              "date": "2026-10-04",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2026-10-04",
               "quote": "I call upon all to vote: mark our ballots to be the change we seek and to end antisemitism in our California schools, colleges. Together, this action will be the most powerful \" October Surprise\" we can- and must—deliver.",
               "source_kind": "news"
             }
@@ -2738,9 +2743,9 @@
               "id": "GE-0055",
               "url": "https://www.sos.ca.gov/administration/news-releases-and-advisories/2023-news-releases-and-advisories/secretary-weber-statement-israel",
               "summary": "Weber condemned the attack on Israel while expressing sympathy for both Israeli and Palestinian civilians, calling for an end to the conflict and addressing its underlying causes.",
+              "date": "2023-10-12",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2023-10-12",
               "quote": "I unequivocally condemn the attack on Israel. The brutality of targeting of civilians, including children and the elderly, will bring about no resolution for the suffering of the Palestinians.",
               "source_kind": "news"
             }
@@ -2810,9 +2815,9 @@
               "id": "GE-0056",
               "url": "https://x.com/MaliaCohen/status/1518460992266506240",
               "summary": "X post: The more we remember, the stronger we get #ArmenianGenocide https://t.co/mODzJOwZMq",
+              "date": "2022-04-25",
               "dimension": "other",
               "checked_on": "2026-10-08",
-              "date": "2022-04-25",
               "quote": "The more we remember, the stronger we get #ArmenianGenocide https://t.co/mODzJOwZMq",
               "source_kind": "x_post"
             }
@@ -2833,9 +2838,9 @@
               "id": "GE-0057",
               "url": "https://x.com/Herb4Controller/status/2049347706527838509",
               "summary": "Herb Morgan attended the Friends of the IDF Golf Tournament, framing it as standing with allies who 'defend freedom' and reinforcing 'accountability, security, and global leadership.'",
+              "date": "2026-04-29",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2026-04-29",
               "quote": "standing alongside leaders, supporters, and allies who understand that strength, partnership, and shared values matter… standing with those who defend freedom",
               "source_kind": "news"
             }
@@ -2892,22 +2897,23 @@
           "campaign_url": "https://eleniforca.com",
           "gaza_evidence": [
             {
-              "id": "GE-0059",
-              "url": "https://sjvsun.com/news/politics/kounalakis-slams-calif-universities-over-handling-of-palestinian-protests/",
-              "summary": "Kounalakis publicly criticized California universities for their handling of Palestinian student protests related to the Gaza conflict.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Kounalakis slams Calif. universities over handling of Palestinian protests",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0058",
               "url": "https://www.kcra.com/article/sacramento-man-calls-for-release-of-family-members-taken-hostage-by-hamas/45620092",
               "summary": "Kounalakis attended a California Capitol rally with Jewish and interfaith leaders calling for the release of hostages taken by Hamas on Oct 7.",
+              "date": "2023-10-23",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2023-10-23",
               "quote": "Representatives of Sacramento's Jewish and other faith communities joined Mayor Darrell Steinberg and Lt. Gov. Eleni Kounalakis at the event on Monday afternoon.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0059",
+              "url": "https://sjvsun.com/news/politics/kounalakis-slams-calif-universities-over-handling-of-palestinian-protests/",
+              "summary": "Kounalakis publicly criticized California universities for their handling of Palestinian student protests related to the Gaza conflict.",
+              "date": "2024-05-16",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Kounalakis slams Calif. universities over handling of Palestinian protests",
               "source_kind": "news"
             }
           ]
@@ -2973,30 +2979,12 @@
           "campaign_url": "https://robbonta.com",
           "gaza_evidence": [
             {
-              "id": "GE-0062",
-              "url": "https://www.isidewith.com/candidates/rob-bonta-3/policies/foreign-policy/two-state-solution-for-israel-and-palestine",
-              "summary": "IsIWith attributes 'Yes' two-state-solution support to Bonta, but the answer is explicitly derived from Democratic Party research, not his own statement.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Rob Bonta's answer is based on the following data: ChatGPT Party Research Strongly agree Yes Historically, the Democratic Party has shown support for a two-state solution as a way to resolve the Israeli-Palestinian conflict.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0098",
-              "url": "https://www.isidewith.com/candidates/rob-bonta-3/policies/foreign-policy/gaza-ceasefire",
-              "summary": "isidewith.com infers Bonta supports a government call for a permanent Gaza ceasefire based on Democratic Party research, not a direct statement.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Do you support the government calling for a permanent ceasefire in Gaza? Party’s support baseYes Rob Bonta’s answer is based on the following data",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0060",
               "url": "https://padailypost.com/2026/09/21/ag-bonta-drops-felonies-against-five-pro-palestinian-stanford-protesters/",
               "summary": "Bonta's AG office dismissed felony vandalism/conspiracy charges against 5 pro-Palestinian Stanford protesters, requiring only 100 hrs community service and ~$52K restitution.",
+              "date": "2026-09-21",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2026-09-21",
               "quote": "Felony conspiracy and vandalism charges against five pro-Palestinian Stanford University protesters will be dismissed under a pretrial diversion agreement reached Monday with the state Attorney General's Office.",
               "source_kind": "news"
             },
@@ -3004,9 +2992,9 @@
               "id": "GE-0061",
               "url": "https://www.sfchronicle.com/bayarea/article/bonta-drops-stanford-protester-felony-charges-22442425.php",
               "summary": "Bonta dropped the last felony charges against Stanford pro-Palestinian protesters; restitution set at $51,973 vs. initial $360K–$1M damage estimate, signaling leniency toward the protest.",
+              "date": "2026-09-21",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2026-09-21",
               "quote": "California Attorney General Rob Bonta dropped felony charges Monday against the last five pro-Palestinian protesters charged with felony vandalism and conspiracy following a predawn break-in at Stanford University administrative offices in June 2024.",
               "source_kind": "news"
             },
@@ -3014,9 +3002,9 @@
               "id": "GE-0096",
               "url": "https://www.nbcnews.com/news/us-news/charges-palestinian-stanford-protesters-dismissed-rcna599163",
               "summary": "Bonta's AG office agreed to dismiss felony charges against five Stanford pro-Palestinian protesters in exchange for community service and restitution.",
+              "date": "2026-09-22",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2026-09-22",
               "quote": "California Attorney General Rob Bonta’s office said Monday it would dismiss the charges if the five defendants completed 100 hours of community service each and paid about $52,000 combined in restitution to the university.",
               "source_kind": "news"
             },
@@ -3024,9 +3012,9 @@
               "id": "GE-0099",
               "url": "https://nypost.com/2026/09/22/us-news/pro-palestine-stanford-students-avoid-jail-in-diversion-deal/",
               "summary": "Bonta reached a pretrial diversion deal dropping felony charges against five pro-Palestine Stanford protesters, reducing damages and requiring community service.",
+              "date": "2026-09-22",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2026-09-22",
               "quote": "California AG Rob Bonta drops felony charges against pro-Palestinian Stanford protesters",
               "source_kind": "news"
             }
@@ -3047,9 +3035,9 @@
               "id": "GE-0100",
               "url": "https://www.thefp.com/p/exclusive-doj-opens-antisemitism",
               "summary": "Michael E. Gates, as a DOJ official, co-authored a letter opening a civil rights investigation into UC over alleged discrimination against Jewish or Israeli employees.",
+              "date": "2025-03-05",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2025-03-05",
               "quote": "discriminate against employees who are or are perceived to be Jewish or Israeli,” wrote DOJ officials Mac Warner and Michael E. Gates in the letter.",
               "source_kind": "news"
             }
@@ -3106,21 +3094,12 @@
           "campaign_url": "https://www.benallenca.com",
           "gaza_evidence": [
             {
-              "id": "GE-0068",
-              "url": "https://www.reversecanarymission.org/person/ben-allen",
-              "summary": "Reverse Canary Mission identifies Ben Allen as CA State Senator D-24 and former chair/vice-chair of the CA Legislative Jewish Caucus, accusing him of equating pro-Palestine advocacy with antisemitism and terrorism support.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Ben Allen, California State Senator (D-District 24) and long-time member/leader in the California Legislative Jewish Caucus, propagates misinformation by equating pro-Palestine advocacy with antisemitism and terrorism support, while expressing solidarity with Zionist occupation.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0063",
               "url": "https://jewishcaucus.legislature.ca.gov/news/jewish-caucus-statement-israel",
               "summary": "Ben Allen (SD24) is listed as a member of the California Legislative Jewish Caucus, which issued a joint statement condemning violence and calling for Israel-Hamas peace negotiations.",
+              "date": "2018-05-18",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2018-05-18",
               "quote": "Senators Ben Allen Senate District 24... We condemn violence and wish for Israel and Hamas to negotiate a true and lasting peace.",
               "source_kind": "news"
             },
@@ -3128,9 +3107,9 @@
               "id": "GE-0065",
               "url": "https://demmajorityforisrael.org/the-jewish-news-of-northern-california-at-state-convention-california-dems-reject-anti-israel-language-in-resolutions/",
               "summary": "Allen publicly supported the CA Democratic Party Resolutions Committee's decision to delete anti-Israel language (settler colonialism, right of return, Golan Heights) from party resolutions.",
+              "date": "2019-06-01",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2019-06-01",
               "quote": "I'm pleased that the committee decided to reject those resolutions [as originally written], said California State Senator Ben Allen",
               "source_kind": "news"
             },
@@ -3138,19 +3117,29 @@
               "id": "GE-0064",
               "url": "https://sd24.senate.ca.gov/civil-discourse-anti-bigotry-work",
               "summary": "Allen describes visiting Kibbutz K'far Aza, frames the conflict around Oct 7 and a domestic uptick in antisemitism/Islamophobia/anti-Arab hate, and notes he was Chair of the Jewish Caucus.",
+              "date": "2023-12-21",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2023-12-21",
               "quote": "I went to Kibbutz K'far Aza in southern Israel with other legislators just last year and watched with shock and horror as the streets that I had walked down and houses I had been into so recently were turned into a brutal massacre site.",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0068",
+              "url": "https://www.reversecanarymission.org/person/ben-allen",
+              "summary": "Reverse Canary Mission identifies Ben Allen as CA State Senator D-24 and former chair/vice-chair of the CA Legislative Jewish Caucus, accusing him of equating pro-Palestine advocacy with antisemitism and terrorism support.",
+              "date": "2024-01-15",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Ben Allen, California State Senator (D-District 24) and long-time member/leader in the California Legislative Jewish Caucus, propagates misinformation by equating pro-Palestine advocacy with antisemitism and terrorism support, while expressing solidarity with Zionist occupation.",
               "source_kind": "news"
             },
             {
               "id": "GE-0067",
               "url": "https://x.com/BenAllenCA/status/1748587418109055347",
               "summary": "Allen posted about meeting Palestinian-American constituents, framing the Gaza conflict alongside Islamophobia, anti-Arab hate, and antisemitism, calling for empathy.",
+              "date": "2024-01-20",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-01-20",
               "quote": "our conversation over homemade ma'amoul went from the conflict to Islamophobia & anti-Arab hate as well as antisemitism in America. Thank you for sharing with me. Empathy should help guide us forward.",
               "source_kind": "news"
             },
@@ -3158,9 +3147,9 @@
               "id": "GE-0069",
               "url": "https://jewishcaucus.legislature.ca.gov/news/state-bills-focusing-antisemitism-and-holocaust-education-training-await-newsoms-signature",
               "summary": "The CA Legislative Jewish Caucus (of which Allen was a former leader) shepherded four bills on antisemitism/Holocaust education; co-chairs Gabriel and Wiener are named, not Allen specifically.",
+              "date": "2024-09",
               "dimension": "other",
               "checked_on": "2026-10-08",
-              "date": "2024-09",
               "quote": "The California Legislative Jewish Caucus successfully shepherded four of its priority bills through the state legislature this year, and now the bills are waiting to be signed — or vetoed — by Gov. Gavin Newsom.",
               "source_kind": "news"
             },
@@ -3168,9 +3157,9 @@
               "id": "GE-0066",
               "url": "https://track-jpac.org/candidates/Ben_Allen.html",
               "summary": "Track-JPAC records $78,275 in total Israel-lobby contributions to Allen, including $24,200 from California Jewish PAC and $3,000 from former AIPAC President Michael Tuchin.",
+              "date": "2026-05-07",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
-              "date": "2026-05-07",
               "quote": "Total Israel lobby contributions: $78,275... California Jewish PAC 2021-2025 $24,200... Michael Tuchin 2013 $3,000... former President and current Board member of AIPAC",
               "source_kind": "news"
             }
@@ -3239,31 +3228,23 @@
           ],
           "gaza_evidence": [
             {
-              "id": "GE-0070",
-              "url": "https://www.linkedin.com/posts/raquellaraiz_chino-valley-unified-school-board-president-activity-7178633560755494914-jpeb",
-              "summary": "Chino Valley Unified School Board President Sonja Shaw refused to let a pro-Palestinian group (PPP) speak at a board meeting while other boards passed ceasefire resolutions.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Chino Valley Unified School Board President Sonja Shaw refuses to allow PPP to hijack a meeting. This as other school boards are passing ceasefire resolutions.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0071",
-              "url": "https://www.threads.com/@mrs.frazzled/post/DWFkquEmOad/that-does-not-say-she-took-aipac-money-she-has-not-taken-aipac-money?hl=en",
-              "summary": "A social-media post in Sonja Shaw's dossier asserts she has not taken AIPAC money, denying a claim of pro-Israel funding.",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "quote": "That does not say she took AIPAC money. She has not taken AIPAC money.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0101",
               "url": "https://www.foxnews.com/video/6343494526112",
               "summary": "Sonja Shaw appeared on Fox News @ Night (Dec 19, 2023) discussing 'the concern over the growing antisemitism in young people' in the context of the Israel-Gaza conflict.",
+              "date": "2023-12-19",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2023-12-19",
               "quote": "Julie Hamill, Sonja Shaw and Christina Pascucci, discuss the concern over the growing antisemitism in young people on 'Fox News @ Night.'",
+              "source_kind": "news"
+            },
+            {
+              "id": "GE-0070",
+              "url": "https://www.linkedin.com/posts/raquellaraiz_chino-valley-unified-school-board-president-activity-7178633560755494914-jpeb",
+              "summary": "Chino Valley Unified School Board President Sonja Shaw refused to let a pro-Palestinian group (PPP) speak at a board meeting while other boards passed ceasefire resolutions.",
+              "date": "2024-03-27",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Chino Valley Unified School Board President Sonja Shaw refuses to allow PPP to hijack a meeting. This as other school boards are passing ceasefire resolutions.",
               "source_kind": "news"
             }
           ]
@@ -3329,9 +3310,9 @@
               "id": "GE-0072",
               "url": "https://dfi-ca.org/ELECTIONS",
               "summary": "Listed as a candidate for CA Board of Equalization D1 on CJD elections page that grades candidates on Israel aid, two-state solution, and BDS positions; no specific grade or statement attributed to him in the text.",
+              "date": "2025",
               "dimension": "other",
               "checked_on": "2026-10-08",
-              "date": "2025",
               "quote": "BOARD OF EQUALIZATION D1 Sally Lieber or John Pimentel D3 Mike Gipson D3D5 IN PROCESS",
               "source_kind": "news"
             }
@@ -4436,9 +4417,9 @@
               "id": "GE-0073",
               "url": "https://x.com/alex_behrend/status/2071063769955160210",
               "summary": "Behrend publicly attacked Scott Wiener for opposing SF's 2024 ceasefire resolution, explicitly calling Israel's actions 'genocide & apartheid' and referencing ICJ war-crimes citations.",
+              "date": "2026-06-28",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
-              "date": "2026-06-28",
               "quote": "He's connected to Canary Mission and viciously got a university prez & prof fired for calling out Israel's genocide & apartheid",
               "source_kind": "news"
             }
@@ -4460,9 +4441,9 @@
               "id": "GE-0077",
               "url": "https://www.ktvu.com/news/some-boo-san-francisco-supervisor-who-wants-to-explicitly-condemn-hamas-attack",
               "summary": "Dorsey, a San Francisco supervisor, was one of three supervisors who voted no on a resolution calling for an immediate and sustained ceasefire in Gaza.",
+              "date": "2024-01-09",
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
-              "date": "2024-01-09",
               "quote": "The no votes were from Supervisors Catherine Stefani, Matt Dorsey and Rafael Mandelman.",
               "source_kind": "news"
             },
@@ -4470,9 +4451,9 @@
               "id": "GE-0078",
               "url": "https://x.com/mattdorsey/status/2096024409115099355",
               "summary": "Dorsey shared an op-ed framing Gaza's post-Hamas future as possible nation-building and coexistence with a Jewish Israel, calling 'from the river to sea' chants destructive.",
+              "date": "2026-09-04",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2026-09-04",
               "quote": "The Palestinian national project has a rare chance to evolve toward nation-building, peace and coexistence alongside a Jewish Israel that is not about to be exterminated.",
               "source_kind": "news"
             }
@@ -4522,9 +4503,9 @@
               "id": "GE-0081",
               "url": "https://cagle.com/cartoonist/mccoy/2023/10/07/278928/hamas-attacks-israel",
               "summary": "McCoy's Oct 7, 2023 cartoon depicts Israeli alarm after Hamas's surprise attack, framing the conflict's start around Hamas violence and hostage-taking.",
+              "date": "2023-10-07",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2023-10-07",
               "quote": "The cartoon depicts an Israeli official at a podium bearing the national flag reacting with alarm to a query about a one-way ticket.",
               "source_kind": "news"
             },
@@ -4532,9 +4513,9 @@
               "id": "GE-0080",
               "url": "https://cagle.com/cartoonist/gary-mccoy/2025/10/13/300846/peace-prevails-in-gaza",
               "summary": "McCoy's Oct 13, 2025 cartoon frames Gaza ceasefire diplomacy as a decisive knockout of Hamas, signaling support for a peace deal ending the war.",
+              "date": "2025-10-13",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2025-10-13",
               "quote": "The cartoon shows a Hamas fighter knocked unconscious in a boxing ring while a dove wearing boxing gloves and carrying an olive branch stands victorious nearby.",
               "source_kind": "news"
             }
@@ -4564,31 +4545,32 @@
           ],
           "gaza_evidence": [
             {
+              "id": "GE-0074",
+              "url": "https://capitalresearch.org/article/liberals-in-san-francisco-eat-their-own-over-israel/",
+              "summary": "Emanuel Yekutiel, owner of Manny's, faced weekly protests in San Francisco because of his support for Israel.",
+              "date": "2019-04-05",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Manny’s, a restaurant, café, and community space hybrid has been facing weekly protests because of the owner’s support for Israel.",
+              "source_kind": "news"
+            },
+            {
               "id": "GE-0075",
               "url": "https://www.reversecanarymission.org/person/manny-yekutiel",
               "summary": "Source says Manny Yekutiel affirms Israel's right to exist as a Jewish state.",
+              "date": "2024-01-15",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "affirms Israel’s right to exist as a Jewish state",
               "source_kind": "news"
             },
             {
-              "id": "GE-0074",
-              "url": "https://capitalresearch.org/article/liberals-in-san-francisco-eat-their-own-over-israel/",
-              "summary": "Emanuel Yekutiel, owner of Manny's, faced weekly protests in San Francisco because of his support for Israel.",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "date": "2019-04-05",
-              "quote": "Manny’s, a restaurant, café, and community space hybrid has been facing weekly protests because of the owner’s support for Israel.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0079",
               "url": "https://missionlocal.org/2025/06/mannys-cafe-protest-graffiti/",
               "summary": "Mission Local reports Manny Yekutiel's cafe was vandalized with anti-Zionist/settler graffiti targeting him, showing he is publicly framed as a Zionist.",
+              "date": "2025-06-10",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2025-06-10",
               "quote": "targeting the cafe’s owner, Manny Yekutiel, who is Jewish: “Fuck Manny,” “Zionist Fucks Gentrifyers” (sic) and “The only good settler is a dead 1”",
               "source_kind": "news"
             }
@@ -4640,9 +4622,9 @@
               "id": "GE-0076",
               "url": "https://sfgreens.org/questionnaires/2026/bastiany_d10.html",
               "summary": "Bastiany says he is a free agent seeking a tribe where he can call out the Genocide in Gaza without being gaslit.",
+              "date": "2026",
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
-              "date": "2026",
               "quote": "I'm a free agent now, looking for a tribe where I can call out the Genocide in Gaza without being gaslit.",
               "source_kind": "news"
             }
@@ -16253,9 +16235,9 @@
               "id": "GE-0010",
               "url": "https://x.com/UNFPA/status/1967698261634060509",
               "summary": "Jeremy Lee blamed Hamas for the conflict, implying Israel's actions were justified self-defense and rejecting aid or protection for Gazans.",
+              "date": "2025-09-16",
               "dimension": "framing_balance",
               "checked_on": "2026-10-07",
-              "date": "2025-09-16",
               "quote": "Then Hamas shouldn't of attacked Israel !!! F around and found out !! U break into my house kill my family and im supposed to feed you ? Protect your family ? GTFO !!!",
               "source_kind": "news"
             }
@@ -16272,9 +16254,9 @@
               "id": "GE-0082",
               "url": "https://brokeassstuart.com/p/bearing-witness-grieving-palestine-together-at-dia-de-los-muertos-exhibit",
               "summary": "Bunny McFadden authored a recommendation for a SOMArts Día de los Muertos exhibit focusing on Palestine, framing the conflict through communal grief and solidarity.",
+              "date": "2024-10-03",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2024-10-03",
               "quote": "That’s why we’re recommending the upcoming SOMArts Día De Los Muertos exhibit Bearing Witness, which focuses on Palestine this year.",
               "source_kind": "news"
             }
@@ -16336,9 +16318,9 @@
               "id": "GE-0083",
               "url": "https://www.sfchronicle.com/opinion/openforum/article/muslim-jewish-san-francisco-18436307.php",
               "summary": "Ruth Ferguson co-authored an op-ed condemning harmful rhetoric after the Israel attack and Gaza siege, framing the conflict through Jewish-Muslim safety and justice.",
+              "date": "2023-10-20",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "date": "2023-10-20",
               "quote": "we are deeply disturbed by harmful rhetoric shared by some San Franciscans in response to the terror attack in Israel and the current siege of Gaza.",
               "source_kind": "news"
             }
