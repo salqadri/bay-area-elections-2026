@@ -12,8 +12,9 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | County scope | Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara |
 | Ballot research snapshot | October 4, 2026 |
 | FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
-| Schema | Inventory version 1.8, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`) |
+| Schema | Inventory version 1.9, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`, `gaza_evidence`) |
 | X accounts / sites | 135 printed entries (90 people) with verified official X URLs; 10 federal incumbents add a second verified account in `secondary_x_url` (personal vs office handle); 388 with verified campaign/official websites (checked October 6–7, 2026; each has its own evidence source) |
+| Gaza stance research | 26 San Francisco-ballot candidates carry dated, linked, **ungraded** `gaza_evidence` items (101 total; checked October 7–8, 2026). Evidence only — no grades exist in this dataset. Other counties not yet researched |
 | Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
 | Confirmed seats | 439 |
 | Printed candidate entries | 869; these are entries, not necessarily unique people |

@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent.parent
 SCHEMA = json.loads((HERE / "elections.schema.json").read_text())
 DATA = json.loads((HERE / "2026-11-03_Bay_Area_Elections.json").read_text())
 ANNOTATIONS = {"$schema", "$comment", "title", "description", "$defs"}
-ASSERTIONS = {"$ref", "type", "additionalProperties", "properties", "required", "minLength", "minItems", "maxItems", "uniqueItems", "items", "oneOf", "anyOf", "allOf", "not", "if", "then", "else", "const", "enum", "minimum", "pattern", "patternProperties", "propertyNames", "minProperties", "dependentRequired", "format"}
+ASSERTIONS = {"$ref", "type", "additionalProperties", "properties", "required", "minLength", "maxLength", "minItems", "maxItems", "uniqueItems", "items", "oneOf", "anyOf", "allOf", "not", "if", "then", "else", "const", "enum", "minimum", "pattern", "patternProperties", "propertyNames", "minProperties", "dependentRequired", "format"}
 SEEN = set()
 
 
@@ -123,6 +123,8 @@ def check(value, schema, path="$", root=SCHEMA):
     if isinstance(value, str):
         if len(value) < schema.get("minLength", 0):
             errors.append(f"{path}: string too short")
+        if "maxLength" in schema and len(value) > schema["maxLength"]:
+            errors.append(f"{path}: string too long")
         if "pattern" in schema and not re.search(schema["pattern"], value):
             errors.append(f"{path}: pattern mismatch")
         if schema.get("format") == "date":
@@ -195,6 +197,9 @@ negative_cases = {
     "campaign_url_no_scheme": lambda d: d["positions"][0]["candidates"][0].update(campaign_url="example-campaign.com"),
     "campaign_url_javascript": lambda d: d["positions"][0]["candidates"][0].update(campaign_url="javascript:alert(1)"),
     "secondary_x_url_wrong_host": lambda d: d["positions"][0]["candidates"][0].update(secondary_x_url="https://twitter.com/someone"),
+    "gaza_evidence_missing_checked_on": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9001","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes"}]),
+    "gaza_evidence_bad_dimension": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9002","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"grade_a","checked_on":"2026-10-08"}]),
+    "gaza_evidence_bad_id": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"X-1","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
 }
 outcomes = []
 for label, mutate in negative_cases.items():
@@ -220,6 +225,8 @@ verified_campaign_url = mutated(lambda d: d["positions"][0]["candidates"][0].upd
 assert not check(verified_campaign_url, SCHEMA), "A verified campaign website URL must be a valid candidate field"
 secondary_x = mutated(lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/RepExample", secondary_x_url="https://x.com/ExamplePerson"))
 assert not check(secondary_x, SCHEMA), "A verified second X account must be a valid candidate field"
+gaza_ev = mutated(lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9100","date":"2025-06-01","url":"https://example.com/statement","summary":"Candidate called for an immediate ceasefire in a public statement.","quote":"we need a ceasefire now","dimension":"actions_votes","source_kind":"news","checked_on":"2026-10-08"}]))
+assert not check(gaza_ev, SCHEMA), "A dated Gaza evidence item must be a valid candidate field"
 
 report = {
     "method": "Focused local checker implementing every assertion keyword used in the supplied schema, with HTTP(S) URI-subset checks. Not a standard or certified Draft 2020-12 validator.",
@@ -228,7 +235,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 
