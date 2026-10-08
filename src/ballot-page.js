@@ -140,7 +140,6 @@
         if (candidate.x_url) { const x = node('a', 'ballot-candidate-x', candidate.secondary_x_url ? 'X @' + candidate.x_url.split('/').pop() + ' ↗' : 'X ↗'); x.href = candidate.x_url; x.target = '_blank'; x.rel = 'noopener noreferrer'; row.append(x); }
         if (candidate.secondary_x_url) { const x2 = node('a', 'ballot-candidate-x', 'X @' + candidate.secondary_x_url.split('/').pop() + ' ↗'); x2.href = candidate.secondary_x_url; x2.target = '_blank'; x2.rel = 'noopener noreferrer'; row.append(x2); }
         if (candidate.gaza_evidence?.length) {
-          candidates.append(row);
           const det = node('details', 'ballot-candidate-evidence');
           det.append(node('summary', null, 'Gaza stance research · ' + candidate.gaza_evidence.length + ' items (ungraded)'));
           for (const e of candidate.gaza_evidence) {
@@ -148,10 +147,9 @@
             const a = node('a', null, 'source ↗'); a.href = e.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.append(a);
             det.append(li);
           }
-          candidates.append(det);
-        } else {
-          candidates.append(row);
+          row.append(det);
         }
+        candidates.append(row);
       }
       card.append(candidates);
     } else card.append(node('p', 'ballot-roster-unverified', 'Candidate roster has not been verified.'));

@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.10",
+  "schema_version": "1.11",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -82,7 +82,7 @@
     "printed_candidates_with_ballotpedia_url": 633,
     "printed_candidates_with_x_url": 135,
     "printed_candidates_with_secondary_x_url": 10,
-    "printed_candidates_with_campaign_url": 388,
+    "printed_candidates_with_campaign_url": 386,
     "limitations": [
       "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
       "This is not yet a certified exhaustive ballot dataset: unresolved cancellation/appointment questions and unverified local OCD identifiers remain.",
@@ -97,7 +97,7 @@
       "Shared Contra Costa/Alameda contests retain their existing IDs, including CD-10, AD-14, AD-16, EBMUD Wards 3 and 7, Livermore Valley Joint Unified Trustee Area 3, and scheduled AC Transit Ward 1 and Byron-Bethany Division III. County presence does not imply countywide voter eligibility.",
       "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3."
     ],
-    "printed_candidates_with_gaza_evidence": 114
+    "printed_candidates_with_gaza_evidence": 113
   },
   "address_lookup": {
     "division_endpoint": "https://www.googleapis.com/civicinfo/v2/divisionsByAddress",
@@ -237,7 +237,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I rise today to express my support for a right all nations hold: the right to secure borders and self-defense. Our close ally, Israel, shares a border with Gaza, a region controlled by the terrorist organization Hamas.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0235",
@@ -247,7 +248,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "I am an original cosponsor of a bipartisan resolution that condemns Hamas's attack on Israel and its hostage-taking of Israeli civilians and reaffirms Congress's support for Israel's security, its right to self-defense, and US security assistance to Israel.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0240",
@@ -257,7 +259,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "calling for a ceasefire in Gaza and a new push for a durable resolution to the Israeli-Palestinian conflict",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0238",
@@ -267,7 +270,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Rep. John Garamendi D CA-08 Statement",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0384",
@@ -277,7 +281,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "It must end. My statement on the starvation crisis in Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0236",
@@ -287,7 +292,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "It's impossible to look at the starvation caused by Israel's dangerous and willful failure to enable humanitarian aid and not see a genocide being committed against the people of Palestine",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0237",
@@ -297,7 +303,8 @@
               "dimension": "war_crimes",
               "checked_on": "2026-10-08",
               "quote": "Violence by Israeli settlers against peaceful Palestinians has been all too common and we must demand accountability. Unfortunately, this administration has shown little interest in pushing for peace.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0239",
@@ -307,7 +314,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "John Garamendi has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $34,250",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -339,7 +347,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Dr. M. Anthony Harper is at the forefront of reporting on Israel-U.S. relations and the Biden Administration's anti-Israel p",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0233",
@@ -349,7 +358,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Rudy Recile Republican Nominee✓ No AIPAC-linked FEC record",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -420,17 +430,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Harder Statement on Violence in Israel",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0387",
-              "url": "https://ajpaction.org/democratic-scorecard/josh-harder/",
-              "summary": "AJP Action scores Harder 27% on pro-Palestine actions; he was non-signatory on 4 of 7 tracked letters (Oct 2023–Mar 2024) and had no opportunity on 2 committee letters.",
-              "date": "2023-10",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-08",
-              "quote": "Voting Record 12% Letters Signed 50% Cosponsorships 0% Statements 100% Total Score 27%",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0241",
@@ -440,7 +441,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "This is clearly an act of terrorism and I stand with Israel's right to defend herself and her people.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0242",
@@ -450,7 +452,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Rep. Harder Calls for Bilateral Ceasefire to Protect Innocent Lives",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0243",
@@ -460,7 +463,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Josh Harder has received $272,517 from pro-Israel PACs in FEC filings — $122,989 of it from AIPAC PAC and its super PAC, United Democracy Project",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -495,7 +499,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "John McBride, a Republican, shows a record of donations linked to AIPAC, but the exact amount is still being confirmed.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0246",
@@ -505,7 +510,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "John McBride (Republican, $52K raised) received $0 · spent for $0 · spent against $0",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -575,7 +581,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "10/13/2023 Signatory De-Escalation Letter 11/15/2023 Non-Signatory Urging Bilateral Ceasefire Letter",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0112",
@@ -585,7 +592,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "Local residents call for DeSaulnier to stop funding weapons for Gaza war",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0115",
@@ -595,7 +603,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Mark DeSaulnier - Complicit in Apartheid",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0113",
@@ -605,7 +614,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Rep. Mark DeSaulnier D CA-10 Statement",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0111",
@@ -615,7 +625,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The trickle of aid Israel has allowed into the starved region is not enough, Bay Area advocates and politicians say.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0110",
@@ -625,7 +636,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The situation in Gaza is unacceptable by any standards of humanity. I have been calling for Israel to allow for the immediate delivery and disbursement of food and humanitarian assistance to Palestinians for months.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0114",
@@ -635,7 +647,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Mark DeSaulnier has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0116",
@@ -645,7 +658,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "accepted $27K from the Israel lobby and voted with their interests 2 of 18 times",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -677,7 +691,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "Three times the majority of House Democrats stood with Israel and the Jewish community, and three times he went the other way. $26B Israel security aid, April 2024. Passed 366 to 58.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         }
@@ -737,16 +752,6 @@
           "campaign_url": "https://www.conniechansf.com",
           "gaza_evidence": [
             {
-              "id": "GE-0025",
-              "url": "https://www.araborganizing.org/sfresolution/",
-              "summary": "As a San Francisco Supervisor (District 1), Chan was part of the 8-3 supermajority vote adopting a resolution calling for an immediate and sustained ceasefire in Gaza.",
-              "date": "2023-12",
-              "dimension": "actions_votes",
-              "checked_on": "2026-10-08",
-              "quote": "In an 8-3 supermajority vote, the San Francisco Board of Supervisors adopted a resolution calling for an immediate and sustained ceasefire in the ongoing Israeli bombardment of Gaza.",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0011",
               "url": "https://jweekly.com/2024/01/09/s-f-supes-pass-compromise-gaza-resolution-calling-for-cease-fire-and-release-of-hostages/",
               "summary": "As SF Supervisor, voted 8-3 for Gaza ceasefire resolution: sustained ceasefire, humanitarian aid, hostage release; condemned Oct. 7 Hamas attack and Netanyahu government's attacks on civilians.",
@@ -754,7 +759,20 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
               "quote": "Preston, Ronen and Ahsha Safaí were among the supervisors who spoke in support of the measure and voted for its passage, along with Peskin, Melgar, Connie Chan, Joel Engardio and Shamann Walton.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0025",
+              "url": "https://www.araborganizing.org/sfresolution/",
+              "summary": "As a San Francisco Supervisor (District 1), Chan was part of the 8-3 supermajority vote adopting a resolution calling for an immediate and sustained ceasefire in Gaza.",
+              "date": "2024-01-09",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "In an 8-3 supermajority vote, the San Francisco Board of Supervisors adopted a resolution calling for an immediate and sustained ceasefire in the ongoing Israeli bombardment of Gaza.",
+              "source_kind": "news",
+              "date_method": "event_recorded",
+              "date_note": "Vote date Jan 9, 2024 corroborated by GE-0011 (J Weekly same-day) and GE-0026 (LA Times); source page undated — prior '2023-12' was an archive-capture bound for the advocacy page"
             },
             {
               "id": "GE-0026",
@@ -764,7 +782,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "San Francisco supervisors vote for Gaza cease-fire resolution",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0012",
@@ -774,7 +793,8 @@
               "dimension": "war_crimes",
               "checked_on": "2026-10-07",
               "quote": "I would co-sponsor the Block the Bombs Act with the understanding that the [Benjamin] Netanyahu government, at this moment, has violated human rights and committed war crimes, and the United States should not be aiding that effort.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0024",
@@ -784,7 +804,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Big backers of Connie Chan for Congress tied to pro-Israel PACs",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0013",
@@ -794,7 +815,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
               "quote": "Connie has also been clear from day one of this campaign that she would not accept a dime from AIPAC and she has stayed true to this throughout.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0014",
@@ -804,7 +826,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
               "quote": "She has called for the end of military aid to Israel, condemned Israel's war against Hamas in Gaza as genocide against Palestinians and supported the Block the Bombs Act.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0019",
@@ -814,7 +837,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-07",
               "quote": "In this moment, what matters is how State Senator Scott Wiener felt and feels about the interactions. We must stand in solidarity against hate whenever someone tells us they are experiencing hate.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0017",
@@ -824,7 +848,9 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
               "quote": "Connie Chan for Congress will not take money from corporate PACs, AIPAC or its lobbyists and representatives, the NRA or lobbyists and executives from pharma, PG&E, fossil fuel or tobacco companies.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "wayback_first_capture",
+              "date_note": "Earliest Wayback capture containing the claim; month is an upper bound, not a publication date (see ledger/date_backfill_report.json)."
             },
             {
               "id": "GE-0022",
@@ -834,7 +860,9 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Chan says Israel is committing genocide against the Palestinian people and calls for an end to United States military aid.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "wayback_first_capture",
+              "date_note": "Earliest Wayback capture containing the claim; month is an upper bound, not a publication date (see ledger/date_backfill_report.json)."
             },
             {
               "id": "GE-0015",
@@ -844,7 +872,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-07",
               "quote": "In Congress, we will oppose any aid to Israel and do everything in our power to stop their government's genocidal actions against the Palestinian people.",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0016",
@@ -854,17 +883,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-07",
               "quote": "Connie has signed our candidate questionnaire, affirming that Israel is committing genocide against the Palestinian people and that Congress must end U.S. complicity in it and hold those responsible to account.",
-              "source_kind": "agent"
-            },
-            {
-              "id": "GE-0023",
-              "url": "https://missionlocal.org/2026/07/anti-aipac-group-connie-chan/",
-              "summary": "Track AIPAC endorsed Chan after initially denouncing her over a $475K ad buy traced to pro-Israel PACs; she affirmed genocide language in their questionnaire.",
-              "date": "2026-07-21",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "quote": "Connie has signed our candidate questionnaire, affirming that Israel is committing genocide against the Palestinian",
-              "source_kind": "news"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0027",
@@ -874,17 +894,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "By signing on to our platform, Connie Chan has committed to: ✅ Rejecting support from AIPAC and the rest of the Israel lobby.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0090",
-              "url": "https://theintercept.com/2026/07/21/connie-chan-san-francisco-aipac-pelosi/",
-              "summary": "Intercept headline reports Chan, Pelosi's pick for SF House seat, took an anti-AIPAC position.",
-              "date": "2026-07-21",
-              "dimension": "aipac_funding",
-              "checked_on": "2026-10-08",
-              "quote": "Takes Anti-AIPAC",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0018",
@@ -894,7 +905,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-07",
               "quote": "Chan said that \"on day one in Congress\" she would vote to \"end a genocide in Gaza and to end an apartheid state.\"",
-              "source_kind": "agent"
+              "source_kind": "agent",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -928,17 +940,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I unequivocally believe in the importance of a Jewish state. We need a Jewish and democratic Israel living side-by-side, in peace, with a Palestinian state.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0008",
-              "url": "https://x.com/Scott_Wiener/status/1632104432128397312",
-              "summary": "X post: “Transgenderism must be eradicated from public life entirely.” These words were in a speech by a major right wing figure at a national conservative conference. It’s a straight up call for genocide. Th",
-              "date": "2023-03-04",
-              "dimension": "other",
-              "checked_on": "2026-10-07",
-              "quote": "“Transgenderism must be eradicated from public life entirely.” These words were in a speech by a major right wing figure at a national conservative conference. It’s a straight up call for genocide. That’s what this fight is about. They want us gone. https://t.co/HHFyjbCejg",
-              "source_kind": "x_post"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0032",
@@ -948,7 +951,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Oakland City Council passed a reso calling for Gaza ceasefire. When a council member asked to add language condemning Hamas, a stream of public comment praising & supporting Hamas ensued. The council then rejected the request to condemn Hamas. Just awful.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0084",
@@ -958,7 +962,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "State Sen. Scott Wiener, D-San Francisco, has been accosted in public multiple times in recent weeks by activists calling for Israel to cease its bombing in Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0037",
@@ -968,7 +973,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Co-author Sen. Scott Wiener, D-San Francisco, said he hopes for a peace movement out of 'this catastrophe,' requiring people and governments that are committed to peace.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0028",
@@ -978,7 +984,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "I do believe Israel has committed genocide in Gaza. To me the Israeli government has tried to destroy Gaza and to push Palestinians out. And that qualifies as genocide.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0029",
@@ -988,7 +995,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Joint Statement: On Senator Scott Wiener's Usage of the Term \"Genocide\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0086",
@@ -998,7 +1006,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "California State Senator Scott Wiener has labeled Israel's military operations in Gaza as \"genocide,\" marking a pivotal shift after years of measured criticism.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0036",
@@ -1008,7 +1017,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Sen. Scott Wiener changes course on Gaza, calling Israel's actions 'genocide'",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0085",
@@ -1018,7 +1028,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Scott Wiener Shamefully Repeats a Big Lie About Israel in his Run for Congress",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0034",
@@ -1028,7 +1039,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "J Street Action Fund announced today that it will spend $60,000 on an ad campaign boosting congressional candidate S",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0035",
@@ -1038,7 +1050,9 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Scott is one of the very few Jewish elected leaders in the country to declare the Netanyahu government has committed genocide in Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "wayback_first_capture",
+              "date_note": "Earliest Wayback capture containing the claim; month is an upper bound, not a publication date (see ledger/date_backfill_report.json)."
             },
             {
               "id": "GE-0038",
@@ -1048,7 +1062,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Wiener, who declared Israel perpetrates genocide, is part of a cohort of progressive Jews running for Congress and taking oppositional stands",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0033",
@@ -1058,7 +1073,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "Jewish lawmaker who champions trans rights says he was forced to leave San Francisco Trans March after he was confronted about Gaza",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0030",
@@ -1068,7 +1084,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Scott Wiener's Pivot on Gaza Isn't Enough for the Left. In San Francisco, a House race shows the limits of playing catch-up on Palestine.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -1132,7 +1149,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Focus: AI governance, democratic accountability, housing, sustainability, fair taxes, ending war",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -1161,16 +1179,6 @@
           "secondary_x_url": "https://x.com/LateefahSimon",
           "gaza_evidence": [
             {
-              "id": "GE-0122",
-              "url": "https://ourrevolution.com/california-gotv/",
-              "summary": "Our Revolution's endorsement of Simon describes her as 'a strong advocate for reducing military spending, putting peace first,' signaling a pro-peace foreign policy stance.",
-              "date": "2024-02-13",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "She is also a strong advocate for reducing military spending, putting peace first, and lifting up",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0120",
               "url": "https://simon.house.gov/media/press-releases/congresswoman-simons-statement-recent-developments-gaza",
               "summary": "Simon issued a formal statement on 'Recent Developments in Gaza' from her official House website, indicating ongoing public engagement with the conflict.",
@@ -1178,7 +1186,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Congresswoman Simon's Statement on Recent Developments in Gaza",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0355",
@@ -1188,7 +1197,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Congresswoman Simon Strongly Opposes President Trump's Plan for the U.S. to \"Own\" Gaza",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0121",
@@ -1198,7 +1208,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "U.S. Rep. Lateefah Simon of Oakland called for an end to U.S.-backed Israeli violence in Gaza, where dozens of Palestinians in the grip of starvation have been killed while trying to reach humanitarian aid.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0119",
@@ -1208,7 +1219,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Congresswoman Simon Calls for End of Genocide in Gaza and Passage of the Block the Bombs Act",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0123",
@@ -1218,7 +1230,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Lateefah Simon has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $10,500",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0124",
@@ -1228,7 +1241,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Lateefah Simon has received $8,850 from pro-Israel PACs in the 2026 cycle, chiefly from J Street PAC (FEC filings through 2026-10-04).",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -1295,7 +1309,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Hernández did not. Instead, she offered a nuanced response, affirming Israel's right to defend itself following the October 2023 attacks while also criticizing the scale of destruction in Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0129",
@@ -1305,7 +1320,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "More than $5m in recent weeks have been spent in ads targeting Aisha Wahab and in support of Melissa Hernandez",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0131",
@@ -1315,7 +1331,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "BART Board President Melissa Hernandez, backed by AIPAC, surged in fundraising and spending through July",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0137",
@@ -1325,7 +1342,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "BART Board President Melissa Hernandez, backed by AIPAC, surged in fundraising and spending through July",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0126",
@@ -1335,7 +1353,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "The group has spent roughly $2.5 million promoting Hernández and running ads against her main rival, Wahab... That figure is on top of about $1.8 million spent by Bold America, an independent group that has also received funding from UDP and supports Hernández.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0127",
@@ -1345,7 +1364,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "The AIPAC spending was aimed at boosting Hernandez, a moderate Democrat and president of the Bay Area Rapid Transit Board, over Wahab, a progressive state senator who supports ending U.S. military aid to Israel.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0128",
@@ -1355,7 +1375,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Since the beginning of August alone, AIPAC's super PAC, the United Democracy Project, and other affiliated groups spent more than $2.5 million on both boosting Hernandez and denigrating Wahab with negative ads and mailers, according to Federal Election Commission filings.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0130",
@@ -1365,7 +1386,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Hernandez enjoyed support of more than $2.5 million from the pro-Israel lobby AIPAC, which succeeded in significantly narrowing the gap between the two candidates but could not prevent her defeat.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0356",
@@ -1375,7 +1397,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "AIPAC gets credit for turning landslide into 'real nail-biter' in special CA election, in which anti-Israel Dem defeats candidate backed by pro-Israel group",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -1413,7 +1436,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "California Democrat who says Palestinians face 'genocide' leads race for Swalwell's House seat",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0138",
@@ -1423,7 +1447,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "California Dem who accuses Israel of genocide nearly matches rival's cash in race to replace Swalwell",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0132",
@@ -1433,7 +1458,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Last year, she introduced a resolution in the California Senate calling for an end to the war between Israel and Hamas, which she described as a \"genocide\" taking place in",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0135",
@@ -1443,7 +1469,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "She was on track for a double-digit win to serve the remainder of former Rep. Eric Swalwell's term until the American Israel Public Affairs Committee started issuing negative ads and mailers.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0134",
@@ -1453,7 +1480,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "AIPAC's super PAC, the United Democracy Project, and other affiliated groups spent more than $2.5 million on both boosting Hernandez and denigrating Wahab with negative ads and mailers",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0133",
@@ -1463,7 +1491,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "California state Senator Aisha Wahab has won a special election to fill the seat of former United States Congressman Eric Swalwell, overcoming a deluge of attack advertising funded by pro-Israel groups",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0136",
@@ -1473,7 +1502,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "As of October 2026, Aisha Wahab has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -1539,7 +1569,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
               "quote": "Charles Hoelter (Republican)received $0 · spent for $0 · spent against $0",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0039",
@@ -1549,7 +1580,9 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Charles Hoelter, a Republican, shows no AIPAC-linked donations in available records.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "wayback_first_capture",
+              "date_note": "Earliest Wayback capture containing the claim; month is an upper bound, not a publication date (see ledger/date_backfill_report.json)."
             }
           ]
         },
@@ -1586,7 +1619,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Then have been urging him to endorse House Resolution 786 that calls for an immediate and permanent ceasefire in Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0042",
@@ -1596,7 +1630,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "Kevin Mullin - Complicit in Apartheid",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0040",
@@ -1606,7 +1641,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "A humanitarian crisis bordering on a famine is unfolding in Gaza as the Israel-Hamas war enters its fifth month, and I continue to be horrified by the devastating loss of life and suffering of innocent families and children",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0041",
@@ -1616,7 +1652,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "My latest response to the war in Gaza",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0087",
@@ -1626,7 +1663,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "helping our only democratic ally in the Middle East maintain its defensive capabilities against the Iranian regime and other adversaries in the region.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0007",
@@ -1636,7 +1674,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
               "quote": "I strongly support the ceasefire proposal that @POTUS highlighted this morning. We need a durable solution in Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0001",
@@ -1646,7 +1685,9 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-07",
               "quote": "Tell Kevin Mullin: Arms Embargo for Israel Now! No more US Tax Money for Israel! 186,000+ People Killed on Our Dime",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "wayback_first_capture",
+              "date_note": "Earliest Wayback capture containing the claim; month is an upper bound, not a publication date (see ledger/date_backfill_report.json)."
             },
             {
               "id": "GE-0004",
@@ -1656,7 +1697,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
               "quote": "I strongly support the latest ceasefire deal reached by Israel and Hamas; we are long overdue for an end to the horrific conflict that has killed far too many innocent civilians",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0043",
@@ -1666,7 +1708,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "We are long overdue for an end to the war & I strongly support the latest ceasefire agreement between Israel & Hamas.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0006",
@@ -1676,7 +1719,8 @@
               "dimension": "other",
               "checked_on": "2026-10-07",
               "quote": "My heart goes out to the Israeli Embassy staff who were killed in Washington DC and to all those who were affected by last night’s horrific attack. Antisemitism, violence and hate have no place in America.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0002",
@@ -1686,7 +1730,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
               "quote": "The U.S. must press for a ceasefire to ensure food, medical supplies and aid are delivered to Palestinians",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0003",
@@ -1696,7 +1741,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-07",
               "quote": "“I wholeheartedly support the ceasefire deal between Israel and Hamas, and urge all parties to abide by its terms.”",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0005",
@@ -1706,7 +1752,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-07",
               "quote": "As of October 2026, Kevin Mullin has received $733,866 from pro-Israel PACs in FEC filings — $698,016 of it from AIPAC PAC and its super PAC, United Democracy Project",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0044",
@@ -1716,7 +1763,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "Kevin Mullin's Grades Across 12 Issue Areas Palestine / Israel",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -1781,7 +1829,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "A nuclear Iran is a nonstarter. I support Israeli efforts to dismantle Iran's nuclear capabilities before that regime can pose a much more lethal regional–and global–threat.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0105",
@@ -1791,7 +1840,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The trickle of aid Israel has allowed into the starved region is not enough, Bay Area advocates and politicians say.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0104",
@@ -1801,7 +1851,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "There's a lot of understandable fear, deep concern and some anger — and all of it's justified.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0103",
@@ -1811,7 +1862,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "We must stop having American taxpayers fund the Netanyahu government's use of U.S. weapons in a manner that routinely kills, injures, and displaces civilians in Gaza, the West Bank, and Lebanon.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0107",
@@ -1821,7 +1873,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "As of October 2026, Sam Liccardo has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0108",
@@ -1831,7 +1884,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Sam T. Liccardo's Grades Across 12 Issue Areas Palestine / Israel",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -1862,7 +1916,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Peter Sundin Soulé (Republican, $400 raised)received $0 · spent for $0 · spent against $0",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -1934,7 +1989,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "'A Matter of Conscience': Khanna Urges Biden, Congress to Back Gaza Cease-Fire",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0147",
@@ -1944,7 +2000,19 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Rep. Ro Khanna DCA-17 Statement",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0405",
+              "url": "https://www.theguardian.com/us-news/live/2026/may/21/donald-trump-ballroom-reconciliation-bill-republicans-democrats-war-powers-iran-epa-ai-latest-news-updates",
+              "summary": "Ro Khanna (with AOC) criticized the Democratic Party's 2024 election postmortem for failing to mention Israel's war in Gaza.",
+              "date": "2026-05-21",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Ro Khanna, AOC criticize Democrats' 2024 election postmortem for not mentioning Israel's war in Gaza",
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0151",
@@ -1954,7 +2022,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "An amendment to sink the pro-Israel measure, introduced by Democratic Congressman Ro Khanna, failed in a voice vote on Thursday in the House Armed Services Committee.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0148",
@@ -1964,7 +2033,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Rejecting AIPAC money isn't enough — every member of Congress must be clear on these issues.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0152",
@@ -1974,7 +2044,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "It is unconscionable to not even have a vote,\" she wrote on X/Twitter. \"We will be continuing on and will not be intimidated by the pro-Israel lobby.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0143",
@@ -1984,7 +2055,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Writing on X, Khanna said that when the Israel Defense Forces (IDF) arrived, \"they sided with the settlers and continued our detention\".",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0145",
@@ -1994,7 +2066,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I saw the arrogance in the eyes of those settlers, 21- and 22-year-olds with guns, laughing that they had detained us, the arrogance of those young IDF soldiers that my tax dollars are funding",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0150",
@@ -2004,7 +2077,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "StandWithUs Condemns Rep. Ro Khanna's Political Stunt and Escalating Anti-Israel Campaign",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0144",
@@ -2014,7 +2088,30 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "'Zero Aid to Israel,' Ro Khanna Declares at Democratic National Committee Meeting",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
+            },
+            {
+              "id": "GE-0404",
+              "url": "https://x.com/RepRoKhanna/status/2102149258254193087",
+              "summary": "X post: Our government is giving $2.8 billon in bombs to Israel. How about giving that money to the American people so they can afford food and gas? I'm tired of this Israel first policy. It's time to put Ame",
+              "date": "2026-09-21",
+              "dimension": "other",
+              "checked_on": "2026-10-08",
+              "quote": "Our government is giving $2.8 billon in bombs to Israel. How about giving that money to the American people so they can afford food and gas? I'm tired of this Israel first policy. It's time to put Americans first. https://t.co/FLySl7t0b3",
+              "source_kind": "x_post",
+              "date_method": "x_snowflake"
+            },
+            {
+              "id": "GE-0403",
+              "url": "https://x.com/RepRoKhanna/status/2104622503582904423",
+              "summary": "X post: I am opposing Section 219, that would integrate our military with Israel’s. The United States does not have this arrangement with any other country in the world. We need to stand up for American sover",
+              "date": "2026-09-28",
+              "dimension": "other",
+              "checked_on": "2026-10-08",
+              "quote": "I am opposing Section 219, that would integrate our military with Israel’s. The United States does not have this arrangement with any other country in the world. We need to stand up for American sovereignty and strip this provision from the final NDAA. https://t.co/wmVG27nT4i",
+              "source_kind": "x_post",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0149",
@@ -2024,7 +2121,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Ro Khanna has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $120,080",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -2057,7 +2155,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Ritesh Tandon Republican Nominee✓ No AIPAC-linked FEC record",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0142",
@@ -2067,7 +2166,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "He is a Democrat who will be facing Republican Ritesh Tandon in the November general election.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0141",
@@ -2077,7 +2177,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Ritesh Tandon (Republican, $38K raised)received $0 · spent for $0 · spent against $0",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -2140,6 +2241,17 @@
           "secondary_x_url": "https://x.com/ZoeLofgren",
           "gaza_evidence": [
             {
+              "id": "GE-0409",
+              "url": "https://ajpaction.org/democratic-scorecard/zoe-lofgren/",
+              "summary": "AJP Action scorecard records Lofgren (CA-18) as a signatory of the 10/13/2023 De-Escalation Letter and the 11/17/2023 Settler Violence Letter; overall score 37%.",
+              "date": "2023-10-13",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "10/13/2023 Signatory De-Escalation Letter 11/15/2023 Non-Signatory Urging Bilateral Ceasefire Letter 11/17/2023 Signatory Settler Violence Letter",
+              "source_kind": "news",
+              "date_method": "source_stated"
+            },
+            {
               "id": "GE-0290",
               "url": "https://lofgren.house.gov/media/press-releases/lofgren-statement-ongoing-conflict-gaza-and-israel",
               "summary": "Lofgren affirms Israel's right to exist and defend itself against Hamas while calling for a pause in hostilities and urging Netanyahu to recalibrate war efforts to prevent civilian casualties.",
@@ -2147,17 +2259,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I have expressed support for the victims of the attack and the right of Israel to exist and to defend itself against Hamas. I've called on President Biden to secure a pause in hostilities",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0300",
-              "url": "https://www.reversecanarymission.org/person/zoe-lofgren-656bbd8770bc542ff9bde3bc",
-              "summary": "Reverse Canary Mission labels Zoe Lofgren 'Complicit in Apartheid' on its tracking site; page text is boilerplate with no specific actions or quotes attributed to her.",
-              "date": "2024-01-15",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "Zoe Lofgren - Complicit in Apartheid",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0291",
@@ -2167,7 +2270,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "As the war in Gaza continues, with horrific loss of life, I urgently call on the parties to negotiate a ceasefire. A massive increase in humanitarian aid for Palestinian civilians in Gaza must also be accomplished",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0289",
@@ -2177,7 +2281,19 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The Netanyahu government, who controls entry into Gaza, has the responsibility to prevent famine there. The United States has a responsibility to use its influence to push for immediate action.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
+            },
+            {
+              "id": "GE-0399",
+              "url": "https://whofundsmyrep.com/rep/zoe-lofgren",
+              "summary": "whoFundsMyRep (FEC-derived) records $38,775 to Lofgren from J Street PAC across 59 transactions; ranks #337 of 439 House members for pro-Israel PAC money.",
+              "date": "2026-10",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-08",
+              "quote": "As of October 2026, Zoe Lofgren has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $38,775",
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -2268,7 +2384,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Rep. Panetta's Statement on the Ceasefire Agreement Between Israel and Hamas",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0297",
@@ -2278,7 +2395,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Democratic Rep. Jimmy Panetta received more than a quarter of a million dollars from the American Israel Public Affairs Committee (AIPAC) and its affiliated donors during the 2024 election season",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0293",
@@ -2288,7 +2406,19 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Rep. Jimmy Panetta's Statement on the Dire Humanitarian Situation in Gaza",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0412",
+              "url": "https://centralcoastadvocates.org/scorecard/",
+              "summary": "Panetta and other military-veteran members of Congress wrote to the Israeli ambassador supporting Israel 'continuing its efforts to defeat Hamas' in Gaza.",
+              "date": "2025-08-15",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "he and other military veteran members of Congress wrote to the Israeli ambassador, supporting Israel \"continuing its efforts to defeat Hamas.\"",
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0295",
@@ -2298,7 +2428,30 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Rep. Panetta Urges Against Israeli Annexation of West Bank",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0410",
+              "url": "https://panetta.house.gov/media/press-releases/rep-jimmy-panettas-statement-release-israeli-hostages",
+              "summary": "Panetta issued an official statement on the release of Israeli hostages, framing the conflict around hostage concerns.",
+              "date": "2025-10-13",
+              "dimension": "framing_balance",
+              "checked_on": "2026-10-08",
+              "quote": "Rep. Jimmy Panetta's Statement on the Release of Israeli Hostages",
+              "source_kind": "news",
+              "date_method": "page_metadata"
+            },
+            {
+              "id": "GE-0411",
+              "url": "https://panetta.house.gov/media/press-releases/rep-panetta-leads-effort-expedite-visa-services-palestinians-stuck-gaza",
+              "summary": "Panetta led a congressional effort to expedite visa services for Palestinians stranded in Gaza, showing direct action on Palestinian humanitarian needs.",
+              "date": "2025-10-20",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-08",
+              "quote": "Rep. Panetta Leads Effort to Expedite Visa Services for Palestinians Stuck in Gaza",
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0299",
@@ -2308,7 +2461,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Vote for peace: Jimmy Panetta's record supporting Israel and war is on the ballot",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0292",
@@ -2318,7 +2472,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Extremist settler violence in the West Bank is a threat and danger to Palestinian communities and undermines the safety and security of Israelis and Palestinians alike. I joined my colleagues in urging Prime Minister Netanyahu to take immediate action to restore the rule of law",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0294",
@@ -2328,7 +2483,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Rep. Panetta, Lawmakers Urge Netanyahu to Contain Settler Violence & Protect Communities in the West Bank",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0298",
@@ -2338,7 +2494,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "As of October 2026, Jimmy Panetta has received $561,053 from pro-Israel PACs in FEC filings — $559,053 of it from AIPAC PAC and its super PAC, United Democracy Project",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -2371,7 +2528,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Peter Coe Verbica, a Republican, shows no AIPAC-linked donations in available records.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -2429,7 +2587,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "District 4 Councilmember Scott Sakakihara… Students at James Logan High School want the city's leadership to take a clear stance on…",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -2495,7 +2654,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "They're carpet bombing southern Lebanon and overturned the government in Syria to give it to Al-Qaeda. Those are not rumors from Palestine, they're killing people and stealing neighboring land for the sake of \"Greater Israel\".",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -2577,17 +2737,19 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Going door-to-door, gunning down children and families, young people at a party, kidnapping innocent civilians -- this is terrorism, plain and simple. I stand with the Israeli people and pray for stability and peace.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
-              "id": "GE-0358",
+              "id": "GE-0159",
               "url": "https://track-jpac.org/candidates/Buffy_Wicks.html",
-              "summary": "Track-JPAC records $54,850 in Israel-lobby contributions to Wicks' campaign (2017-2025), including donors with documented AIPAC and pro-Israel advocacy ties.",
-              "date": "2026-05",
+              "summary": "Wicks received $54,850 in total Israel lobby contributions from donors including Fisher, Silberstein, Katzenberg, Lauder, Bloomberg, Greuel, and Farber (2017-2025).",
+              "date": "2026-05-07",
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Total Israel lobby contributions: $54,850",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -2705,7 +2867,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "They and every innocent civilian in Gaza deserves safety. And a lot more. But so do the people of Israel who live under constant attack from forces that want to see them destroyed and tried to do just that on October 7. So it is complicated.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0359",
@@ -2715,17 +2878,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I, without question, believe Israel has a right to and should continue to exist and thrive. It is my homeland... I also believe Israel has a right to defend herself. But I believe that they should do so with as little casualty to innocent lives as possible.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0157",
-              "url": "https://courthousenews.com/california-governor-signs-bill-combating-antisemitism-in-schools/",
-              "summary": "Bauer-Kahan pushed for passage of AB 715 targeting discrimination in schools; Governor Newsom signed the bill after it passed its final vote on Sept. 13 of the 2025 session.",
-              "date": "2025-10-07",
-              "dimension": "other",
-              "checked_on": "2026-10-08",
-              "quote": "It's why the Orinda Democrat pushed for passage of Assembly Bill 715 — legislation targeting discrimination in schools. And on Tuesday, Governor Gavin Newsom signed the legislation",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0156",
@@ -2735,7 +2889,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "Almost a century ago, the Nazis forced her grandmother to flee Austria, leaving behind her great-great-grandmother who died in the Holocaust, the Jewish Democrat from San Ramon told her fellow lawmakers.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0160",
@@ -2745,7 +2900,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Israel's ongoing genocide of Palestinians in Gaza, and Israel's expanding, illegal wars of aggression across West Asia",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -2809,7 +2965,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Total Israel lobby contributions: $47,700 Total Israel lobby indirect contributions: $0",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0020",
@@ -2819,7 +2976,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Special Thanks to California State Assembly member Matt Haney for inviting our Global Healing children from Gaza to the floor in Sacramento to learn about their treatment during their time in California",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -2883,7 +3041,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "promised under pressure from colleagues that they would work with skeptics, like Assemblywoman Mia Bonta, wife of Attorney General Rob Bonta, to 'clean up' the bill after passage.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0161",
@@ -2893,7 +3052,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "promised under pressure from colleagues that they would work with skeptics, like Assemblywoman Mia Bonta, wife of Attorney General Rob Bonta, to 'clean up' the bill after passage.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -2964,7 +3124,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "The no votes were from Supervisors Catherine Stefani, Matt Dorsey and Rafael Mandelman.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0046",
@@ -2974,7 +3135,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Members of the public jeered at Supervisor Catherine Stefani as she called out the sexual violence Israeli women suffered during the Oct. 7 attack.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0092",
@@ -2984,7 +3146,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "You cannot call for a ceasefire without calling for the surrender and removal of Hamas and the return of all hostages.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0047",
@@ -2994,7 +3157,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The three Supervisors who opposed the resolution, Matt Dorsey, Catherine Stefani, and Rafael Mandelman, understand this clearly.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3118,7 +3282,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Total Israel lobby contributions: $2,000",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -3171,7 +3336,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Spread misinformation, said supporters of a free Palestine are antisemitic and terrorism supporters",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0273",
@@ -3181,7 +3347,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Total Israel lobby contributions: $74,280",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3250,7 +3417,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Our country should catch up with the rest of the world and recognize Palestinian sovereignty. Shouldn't be controversial but sadly is",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0164",
@@ -3260,7 +3428,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Even prouder to endorse @TomSteyer for governor today. He is the guv who will stand agaisnt AIPAC, dark money, & corporations",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -3329,7 +3498,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Please have empathy for displaced people whether they're in the Palisades or Palestine.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0303",
@@ -3339,7 +3509,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "calls for the end to the humanitarian crisis in Gaza. It demands the immediate release of all hostages and seeks to address the ongoing humanitarian situation in the region.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3453,7 +3624,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I stand in solidarity with our nation's leaders, my colleagues in the CA Legislature, & @JPAC in support of Israel. I pray for the safe release of the hostages, & I pray for peace.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0309",
@@ -3463,7 +3635,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "It has impacted many of us on a deeply personal level, and we find ourselves asking fundamental questions — including about the security of our families and our community",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0314",
@@ -3473,7 +3646,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "This is bold leadership! Thank you @LondonBreed.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0313",
@@ -3483,7 +3657,19 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The actions of students who used their bodies to form a swastika, photographed it, and posted it online with their names and a threatening Hitler quote attached, paint a terrifying picture of the hate plaguing our communities",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0414",
+              "url": "https://track-jpac.org/candidates/Gail_Pellerin.html",
+              "summary": "Gail Pellerin (CA Assembly D-28) received $11,400 in direct contributions from California Jewish PAC (2023-2025), a pro-Israel advocacy PAC; no federal Israel-lobby contributions identified.",
+              "date": "2026-04-26",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-08",
+              "quote": "Total Israel lobby contributions: $11,400 ... California Jewish PAC 2023-2025 $11,400 This political action committee serves as a primary vehicle for pro-Israel and Zionist advocacy and political influence within California state government.",
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3552,7 +3738,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I stand with @CAJewishCaucus in condemning the brutal attack on Israel. Nothing justifies the killing of innocent civilians or the violence we see today.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0311",
@@ -3562,7 +3749,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Assembly Speaker Robert Rivas has refused to allow AB 2159, a bill which would have corrected the worst elements of last year's AB 715, to be presented to the legislature.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0312",
@@ -3572,7 +3760,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Total Israel lobby contributions: $63,577 Total Israel lobby indirect contributions: $0",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3639,7 +3828,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "That is why the tragic, avoidable loss of life and cycle of destruction and dislocation between Israel and Palestine must stop immediately. We need a ceasefire agreement that leads to the release of hostages, a surge in humanitarian assistance into Gaza, and the road to a two-state solution.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0049",
@@ -3648,7 +3838,8 @@
               "date": "2025-05-08",
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0095",
@@ -3658,7 +3849,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "cannot be classified as within international norms",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0097",
@@ -3668,7 +3860,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Becerra’s reference to the “illegal war in Iran” was only a criticism to the form, not the crime itself.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3689,7 +3882,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Steve Hilton: American left, media 'servants' revealing true colors with Israel-Palestine coverage",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0093",
@@ -3699,7 +3893,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Steve Hilton says he is ‘optimistic’ after Israel’s strikes on Iran",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0051",
@@ -3709,7 +3904,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Dems running to be next California governor ignoring Jew-hatred, 'cancer within their party,' Steve Hilton tells JNS",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         }
@@ -3782,7 +3978,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Former California State Senate Democratic Majority Leader Gloria Romero and others demanded a response to what they described as acts of antisemitic violence on campuses throughout the state",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0054",
@@ -3792,7 +3989,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "If elected, California GOP nominee, a former Democrat, vows to fight campus Jew-hatred",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0053",
@@ -3802,7 +4000,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I call upon all to vote: mark our ballots to be the change we seek and to end antisemitism in our California schools, colleges. Together, this action will be the most powerful \" October Surprise\" we can- and must—deliver.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         }
@@ -3863,7 +4062,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I unequivocally condemn the attack on Israel. The brutality of targeting of civilians, including children and the elderly, will bring about no resolution for the suffering of the Palestinians.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -3925,19 +4125,7 @@
             "S591",
             "S956"
           ],
-          "campaign_url": "https://www.maliacohenforca.com",
-          "gaza_evidence": [
-            {
-              "id": "GE-0056",
-              "url": "https://x.com/MaliaCohen/status/1518460992266506240",
-              "summary": "X post: The more we remember, the stronger we get #ArmenianGenocide https://t.co/mODzJOwZMq",
-              "date": "2022-04-25",
-              "dimension": "other",
-              "checked_on": "2026-10-08",
-              "quote": "The more we remember, the stronger we get #ArmenianGenocide https://t.co/mODzJOwZMq",
-              "source_kind": "x_post"
-            }
-          ]
+          "campaign_url": "https://www.maliacohenforca.com"
         },
         {
           "name": "Herb W Morgan",
@@ -3958,7 +4146,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "standing alongside leaders, supporters, and allies who understand that strength, partnership, and shared values matter… standing with those who defend freedom",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         }
@@ -4020,7 +4209,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Representatives of Sacramento's Jewish and other faith communities joined Mayor Darrell Steinberg and Lt. Gov. Eleni Kounalakis at the event on Monday afternoon.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0059",
@@ -4030,7 +4220,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Kounalakis slams Calif. universities over handling of Palestinian protests",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -4102,7 +4293,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Felony conspiracy and vandalism charges against five pro-Palestinian Stanford University protesters will be dismissed under a pretrial diversion agreement reached Monday with the state Attorney General's Office.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0061",
@@ -4112,7 +4304,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "California Attorney General Rob Bonta dropped felony charges Monday against the last five pro-Palestinian protesters charged with felony vandalism and conspiracy following a predawn break-in at Stanford University administrative offices in June 2024.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0096",
@@ -4122,7 +4315,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "California Attorney General Rob Bonta’s office said Monday it would dismiss the charges if the five defendants completed 100 hours of community service each and paid about $52,000 combined in restitution to the university.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0099",
@@ -4132,7 +4326,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "California AG Rob Bonta drops felony charges against pro-Palestinian Stanford protesters",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -4155,7 +4350,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "discriminate against employees who are or are perceived to be Jewish or Israeli,” wrote DOJ officials Mac Warner and Michael E. Gates in the letter.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -4217,7 +4413,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I'm pleased that the committee decided to reject those resolutions [as originally written], said California State Senator Ben Allen",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0064",
@@ -4227,7 +4424,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I went to Kibbutz K'far Aza in southern Israel with other legislators just last year and watched with shock and horror as the streets that I had walked down and houses I had been into so recently were turned into a brutal massacre site.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0068",
@@ -4237,7 +4435,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Ben Allen, California State Senator (D-District 24) and long-time member/leader in the California Legislative Jewish Caucus, propagates misinformation by equating pro-Palestine advocacy with antisemitism and terrorism support, while expressing solidarity with Zionist occupation.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0067",
@@ -4247,7 +4446,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "our conversation over homemade ma'amoul went from the conflict to Islamophobia & anti-Arab hate as well as antisemitism in America. Thank you for sharing with me. Empathy should help guide us forward.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0069",
@@ -4257,7 +4457,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "The California Legislative Jewish Caucus successfully shepherded four of its priority bills through the state legislature this year, and now the bills are waiting to be signed — or vetoed — by Gov. Gavin Newsom.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0066",
@@ -4267,7 +4468,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Total Israel lobby contributions: $78,275... California Jewish PAC 2021-2025 $24,200... Michael Tuchin 2013 $3,000... former President and current Board member of AIPAC",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -4341,7 +4543,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Julie Hamill, Sonja Shaw and Christina Pascucci, discuss the concern over the growing antisemitism in young people on 'Fox News @ Night.'",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0070",
@@ -4351,7 +4554,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Chino Valley Unified School Board President Sonja Shaw refuses to allow PPP to hijack a meeting. This as other school boards are passing ceasefire resolutions.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         }
@@ -4420,7 +4624,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "BOARD OF EQUALIZATION D1 Sally Lieber or John Pimentel D3 Mike Gipson D3D5 IN PROCESS",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -5527,7 +5732,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "He's connected to Canary Mission and viciously got a university prez & prof fired for calling out Israel's genocide & apartheid",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -5551,7 +5757,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "The no votes were from Supervisors Catherine Stefani, Matt Dorsey and Rafael Mandelman.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0078",
@@ -5561,7 +5768,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The Palestinian national project has a rare chance to evolve toward nation-building, peace and coexistence alongside a Jewish Israel that is not about to be exterminated.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         }
@@ -5636,7 +5844,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Manny’s, a restaurant, café, and community space hybrid has been facing weekly protests because of the owner’s support for Israel.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0075",
@@ -5646,7 +5855,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "affirms Israel’s right to exist as a Jewish state",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         }
@@ -5700,7 +5910,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "I'm a free agent now, looking for a tribe where I can call out the Genocide in Gaza without being gaslit.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -5742,7 +5953,7 @@
             "S600",
             "S718"
           ],
-          "campaign_url": "https://linktr.ee"
+          "campaign_url": "https://linktr.ee/votemikelin"
         },
         {
           "name": "Jamo Muhammad",
@@ -5884,7 +6095,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "I don't agree with the characterization of Israel as an apartheid state, or I don't agree with the characterization as a genocidal state.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0166",
@@ -5894,7 +6106,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Daysog, who has consistently staked out a position as 'fighting for a better, fairer more just and peaceful world,' as his website posts, found himself in two differing domains of",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -5922,7 +6135,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Divesting of support to Israel. All support #alamtg #ad18",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0167",
@@ -5932,7 +6146,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Councilmember Malia Vella left the meeting prior to the vote to care for her child.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -6084,7 +6299,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Free Palestine until its backwards, condemn terrorist actions on all sides and ceasefire.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0251",
@@ -6094,7 +6310,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Antioch council to discuss possible Israel-Hamas ceasefire resolution Tuesday",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0250",
@@ -6104,7 +6321,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "DISCUSSION AND DIRECTION ON A CEASEFIRE RESOLUTION FOR THE ISRAEL-HAMAS WAR (PROPOSED BY COUNCILMEMBER TORRES-WALKER)",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0249",
@@ -6114,7 +6332,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "I am asking again for this council to pass a resolution supporting a ceasefire… I will keep asking until it comes back.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -6221,7 +6440,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "We want the mayor to take accountability for the harm that he's done. The Jewish community in Richmond is very small. It's a very small minority, and some of the things he's posted have made them really feel vulnerable",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -6356,7 +6576,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "barely visible in the background of a group photo of the JCRC's guests at Israel's Knesset on March 22, 2023, appeared a less familiar face: that of progressive darling Jenny Wong, first elected as Berkeley City Auditor in 2018",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0362",
@@ -6366,7 +6587,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Berkeley City Auditor Jenny Wong Remain in JCRC's Pro-Genocide Group In Order To Fix It \"From The Inside\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -6490,9 +6712,9 @@
         {
           "name": "Ross Bernet",
           "ballotpedia_url": "https://ballotpedia.org/Ross_Bernet_%28Berkeley_City_Council%2C_District_1%2C_California%2C_candidate_2026%29",
-          "campaign_url": "https://secure.actblue.com",
+          "campaign_url": "https://www.rossforberkeley.com/",
           "source_ids": [
-            "S974"
+            "S1083"
           ]
         },
         {
@@ -6561,7 +6783,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "I have not taken and will not take big developer money, police union money or AIPAC-aligned money.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7050,7 +7273,7 @@
         {
           "name": "Joseph I. Guardado",
           "ballotpedia_url": "https://ballotpedia.org/Joseph_I._Guardado_%28Campbell_City_Council_District_4%2C_California%2C_candidate_2026%29",
-          "campaign_url": "https://linktr.ee",
+          "campaign_url": "https://linktr.ee/guardadoforccc",
           "source_ids": [
             "S980"
           ]
@@ -7394,7 +7617,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "A positive signal comes with the Gaza ceasefire and promising economic indicators.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7424,7 +7648,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "fifty Palestinians have died for every Israeli. And since the conflict continues, this threshold may very well change. I then wondered whether there is a calculus to wars generally: how many people need to die before one or both sides call it quits?",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7497,7 +7722,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "He headed the ad hoc committee to co-write the draft resolution with fellow Councilmember Teresa Proaño.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0276",
@@ -7507,7 +7733,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Daly City becomes latest city on Peninsula to pass Gaza resolution",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7745,7 +7972,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "some council members found the proclamation inappropriate and outside of the city's scope of issues to address",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7765,7 +7993,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "spoke about the importance of joining the movement and demanding that the United States stop financially supporting the war in Gaza",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7824,7 +8053,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "In support of the idea of an Arcata sister city in Palestine are Council Member Kimberly White, Sarah Schafer, and Council Candidates Geneveive Serna, Shea Freelove, Dana Quillman, and Ethan LaVering.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7853,9 +8083,9 @@
         {
           "name": "Wally Nowinski",
           "ballotpedia_url": "https://ballotpedia.org/Wally_Nowinski_(El_Cerrito_City_Council_At-large,_California,_candidate_2026)",
-          "campaign_url": "https://secure.actblue.com",
+          "campaign_url": "https://www.2votes4changeec.com/",
           "source_ids": [
-            "S974"
+            "S1084"
           ],
           "gaza_evidence": [
             {
@@ -7866,7 +8096,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "These produce emotionally satisfying headlines like \"most Americans support Medicare for All / a ceasefire / my favored gun control plan\" that always fall apart when you test the details and counter arguments.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -7934,7 +8165,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Mayor David Mourra said the City of Emeryville \"should not get involved in international politics, including foreign wars\" despite the fact that he himself voted for the ceasefire in Ukraine on the Council.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -8100,7 +8332,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "We urge all parties involved to engage in meaningful dialogue to halt the hostilities and address the root causes of the conflict. Only through dialogue and diplomacy can a lasting and just solution be achieved.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0176",
@@ -8110,7 +8343,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "\"It would be hypocritical for me to take sides,\" Campbell said, adding the additional language would further divide the community.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -8226,7 +8460,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "My views in an article by Anurag Mishra in Jagran English on the Israel-Palestine War. #israel #palestine",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -8346,7 +8581,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Councilmember Tom Cline didn't just vote no. He seconded a motion to reject \"any and all\" ceasefire resolutions.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0318",
@@ -8356,7 +8592,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Gilroy votes down Gaza ceasefire resolution",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -8597,7 +8834,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Hayward Mayor Mark Salinas was ready to move to the next item on the agenda, but not before Councilmember George Syrop, the council's most progressive member, attempted to make a motion calling for a ceasefire resolution.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0180",
@@ -8607,7 +8845,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Mayor Mark Salinas and councilmembers Julie Roche and Ray Bonilla were opposed, saying the decision was \"irresponsible.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -8664,7 +8903,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "All of the members of the City Council gave brief comments expressing sympathy for the suffering of people in Israel and Palestine.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0364",
@@ -8674,7 +8914,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Syrop said he supports \"protecting children over protecting precedent.\" He urged activists in the chambers to continue applying pressure on the council. Syrop's comments received a standing ovation and chants of \"Ceasefire now!\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0182",
@@ -8684,7 +8925,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Márquez, Syrop and other elected officials from across Alameda County and the U.S. condemn the targeting of civilians, both Israeli and Palestinian",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0365",
@@ -8694,7 +8936,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Hayward City Council narrowly approves divesting $1.6M",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0183",
@@ -8704,7 +8947,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "\"How can we say this has nothing to do with us when our own residents are losing family members?\" said Council Member George Syrop.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0184",
@@ -8714,7 +8958,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "On Jan. 23, the Hayward City Council voted to divest its shares of companies with ties to Israel, including Caterpillar, Chevron, Hyundai and I",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0181",
@@ -8724,7 +8969,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "\"It's about ending genocide,\" said Syrop. With the divestment strategy, \"I was looking for a material impact.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -8765,12 +9011,10 @@
           "ballotpedia_url": "https://ballotpedia.org/Julie_Roche_%28Hayward_City_Council_District_6%2C_California%2C_candidate_2026%29",
           "source_ids": [
             "S176",
-            "S775",
-            "S991"
+            "S775"
           ],
           "incumbency_note_id": "N020",
           "x_url": "https://x.com/julieforhayward",
-          "campaign_url": "https://x.com",
           "gaza_evidence": [
             {
               "id": "GE-0366",
@@ -8780,7 +9024,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Mayor Mark Salinas and councilmembers Julie Roche and Ray Bonilla were opposed, saying the decision was \"irresponsible.\" \"I think it's irresponsible policymaking to make this kind of decision on the fly,\" Roche said.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -8823,7 +9068,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Hamas was very kind to them the whole time",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -9579,7 +9825,8 @@
               "dimension": "other",
               "checked_on": "2026-10-08",
               "quote": "Please remove my name from your mailing list immediately.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -9870,7 +10117,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "Lee said she was \"proud\" of H.R.4373, which she sponsored, and noted that it included funding for our \"ally\" Israel. AIPAC thanked her for working \"to include key pro-Israel provisions in the bill.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0192",
@@ -9880,7 +10128,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "We are witnessing a humanitarian crisis in Gaza and unfolding violence in the West Bank. For Palestinian Americans, that catastrophe amounts to family members, friends, and an extended community being killed, injured, displaced",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0186",
@@ -9890,7 +10139,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "her focus is on achieving a ceasefire in Gaza — a position she says distinguishes her from the rest of the field",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0367",
@@ -9900,7 +10150,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "'Genocide Denial': Tlaib, Lee Slam Bipartisan Effort to Suppress Gaza Death Toll",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0188",
@@ -9910,7 +10161,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "that is the best path toward a permanent ceasefire in Gaza and Lebanon. The American people have made clear they do not want another war in the Middle East",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0190",
@@ -9920,7 +10172,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "DEFEATED: REP. KATIE PORTER, REP. BARBARA LEE (CA) A major contribution from UDP combined with other super PACs helped propel Rep. Adam Schiff to victory",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0189",
@@ -9930,7 +10183,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "We appreciate the efforts of many members who worked to include key pro-Israel provisions in the bill. In particular, we thank... Barbara Lee (D-CA)",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0193",
@@ -9940,7 +10194,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "Hundreds rallied at the Port Of Oakland board meeting on 12/18/25 to demand that the Port Oof Oakland commissioners who are appointed by Oakland mayor Barbara Lee vote to end the transfer of military weapon to Israel in the Port.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0187",
@@ -9950,7 +10205,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "I share your concerns about weapons and military cargo being shipped through the Oakland International Airport.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -10345,7 +10601,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Israel's Innovation System: A Triple Helix with Four Sub-helices Prof. Henry Etzkowitz It is fitting that the Triple",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -10387,7 +10644,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Palo Alto Mayor Greer Stone, left, and Council Member Vicki Veenker brought together supporters from both pro-Palestinian and pro-Israel camps and had them craft a 'unity statement.'",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -10516,7 +10774,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "A resolution from the CUNY Law School Student Government Association calling for the city's public university to sever ties with Israeli academics and institutions earned some swift rebukes",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -10532,7 +10791,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "compassionate Israeli hero Robi Damelin @PCFFIP, @YonatanZeigen whose mother was murdered by #Hamas & Palestinian @AzizAbuSarah whose brother was shot by #IDF all in 'parents circle' working for peace",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0256",
@@ -10542,7 +10802,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Why the West's self-styled peace activists can't abide the Gaza peace plan.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0257",
@@ -10552,7 +10813,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Red Cross trucks were rumbling through the Gaza hellscape to bring back 20 Israeli hostages after two years rotting in tunnels, thanks to a man whom much of the rest of the world has gotten used to hating.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -10894,7 +11156,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Israel and Hamas deal imminent: Ongoing negotiations between Hamas and Israel are focusing on the specifics of a potential deal to pause fighting in Gaza, amidst continued conflict and Trump's pressure for a peaceful resolution.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             },
             {
               "id": "GE-0195",
@@ -10904,7 +11167,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Israel and Hamas deal imminent: Ongoing negotiations between Hamas and Israel are focusing on the specifics of a potential deal to pause fighting in Gaza, amidst continued conflict and Trump's pressure for a peaceful resolution.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -10996,7 +11260,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "El concejal Chris Sturken secundó la resolución presentada por la vicealcalde Lissette Espinoza-Garnica",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -11049,7 +11314,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "los concejales Alicia C. Aguirre, Kaia Eakin, Diane Howard, Elmer Martínez Saballos y el alcalde de Redwood City Jeff Gee",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -11098,7 +11364,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "los concejales Alicia C. Aguirre, Kaia Eakin, Diane Howard, Elmer Martínez Saballos y el alcalde de Redwood City Jeff Gee",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -11148,7 +11415,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "District 6 Councilmmber Claudia Jimenez was absent.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0392",
@@ -11158,7 +11426,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "This partnership stands as a symbol of peace, unity and mutual respect,\" said council member Claudia Jimenez, who co-sponsored the proposal with Mayor Eduardo Martinez and council member Soheila Bana.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -11431,7 +11700,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "we strongly encourage the US government to implore Hamas and Israel to do all they can to work toward a cessation of hostilities, protect civilian lives, and facilitate the safe delivery of humanitarian aid to Gaza residents",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0330",
@@ -11441,7 +11711,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "San Jose City Councilmember Peter Ortiz directed Finance Director Maria Oberg to provide report to present at the PSFSS meeting",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -11507,7 +11778,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "We strongly encourage the US government to implore Hamas and Israel to do all they can to work toward a cessation of hostilities, protect civilian lives, and facilitate the safe delivery of humanitarian aid to Gaza residents.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0332",
@@ -11517,7 +11789,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "San Jose City Council to Israel and Hamas: Ceasefire, Help Gazans, Free Hostages By Matt Mahan, Rosemary Kamei, Dev Davis, Sergio Jimenez, Domingo Candelas, Omar Torres, Pam Foley, David Cohen, Arjun Batra and Peter Ortiz",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -12032,7 +12305,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Email Councilmember Elizabeth Pabon-Alvarado",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -12949,17 +13223,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I have spent the past few days with peace activist friends from Israel and Palestine, and they pointed out that the most important thing is for us to maintain our humanity through it all.",
-              "source_kind": "news"
-            },
-            {
-              "id": "GE-0262",
-              "url": "https://www.linkedin.com/posts/cherisekhaund_resources-for-educators-families-to-discuss-activity-7117897478628118528-z72S?trk=public_profile_like_view",
-              "summary": "Khaund shared Israel/Gaza educational resources for Mt. Diablo USD, cited peace activists from both sides, noted antisemitic and Islamophobic incidents, and highlighted Gaza humanitarian crisis.",
-              "date": "2023-10-11",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "I have spent the past few days with peace activist friends from Israel and Palestine, and they pointed out that the most important thing is for us to maintain our humanity through it all.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -13284,7 +13549,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Kerry Hillis, the Mayor of the very wealthy, very white Moraga, and a member of the Bay Area's 'Jewish Community Relations Council' (JCRC) had circulated a letter insisting Martinez' re-posting of allegedly 'antisemitic' social media might warrant Martinez' resignation.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -13993,7 +14259,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Palestinians send Israeli woman and child to safety.🇵🇸❤ #Palestine #طوفان_الأقصى #Israel #Hamas",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -14131,7 +14398,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "The event was addressed by Sinn Féin's Foreign Affairs spokesperson Matt Carthy TD, Palestinian medic, activist and journalist Mohammed Samaana, Councillors Aoife Finnegan and Sarah Duffy",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0282",
@@ -14141,7 +14409,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Join us on Sunday, 6th April 2025, at 11 AM for a charity walk at Navan Fort to raise funds for the children of Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -14378,7 +14647,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I visited Israel for the first time in March. I spent two weeks there and would like to share my thoughts from the experience.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         }
@@ -14876,16 +15146,6 @@
           "name": "Pamela West",
           "gaza_evidence": [
             {
-              "id": "GE-0263",
-              "url": "https://news.bbc.co.uk/2/hi/middle_east/3029328.stm",
-              "summary": "Pamela West (UK) posted a BBC 'Have Your Say' comment expressing personal hope about Middle East peace during Rice's 2003 roadmap push.",
-              "date": "2003-06-29",
-              "dimension": "framing_balance",
-              "checked_on": "2026-10-08",
-              "quote": "I feel hopeful about peace for the first time in ages Pamela West, UK",
-              "source_kind": "news"
-            },
-            {
               "id": "GE-0264",
               "url": "https://news.bbc.co.uk/2/hi/middle_east/3029726.stm",
               "summary": "Same Pamela West (UK) reader comment appears on a second BBC article the same day about Rice meeting Sharon on Gaza pullback and roadmap progress.",
@@ -14893,7 +15153,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "I feel hopeful about peace for the first time in ages Pamela West, UK",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -15077,7 +15338,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "Seema Badar [Seema Khan Badar] participated in two anti-Israel events in San Jose, California in 2023 and 2024.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -15232,7 +15494,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "Emeryville residents Sam Gould and Regina Chagolla are both part of that slate...funded by the 'Democratic Majority for Israel' a Washington based lobbying organization that is Gaza genocide denying and anti-Palestinian.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0199",
@@ -15242,7 +15505,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "The other group of candidates, called the 'Housing and Climate Progressive Democratic Slate', was backed by the pro-Israel lobby...The rest of the winners are endorsed and supported by the Israel lobby.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -15425,7 +15689,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Thousands held by Israel as hostages will remain captive",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -15954,7 +16219,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "When the hostilities in Gaza generated profound consequences throughout the Middle East, upending established views, reconfiguring the geopolitical landscape and stimulating substantial shifts in public opinion, any enduring truce is likely to have just as momentous effects.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -16122,7 +16388,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Negotiations for a ceasefire stall as Israel presses ahead with its assault on Rafah. Here's a roundup of our coverage of the conflict in Gaza from the past fortnight.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             },
             {
               "id": "GE-0201",
@@ -16132,7 +16399,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Sam Phelps, The Conversation | – Northern and central Gaza have been hit by Israeli airstrikes this week as troops return to battle Hamas fighters in areas they claimed to have cleared many months ago.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0202",
@@ -16142,7 +16410,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "A summary of our coverage on the Gaza conflict from the past fortnight. Gaza update: Israeli society at breaking point and Palestinians battle to contain polio",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -16421,7 +16690,7 @@
             "S880"
           ],
           "incumbency_evidence_id": "N088",
-          "campaign_url": "https://kellyformilpitas.wixsite.com"
+          "campaign_url": "https://kellyformilpitas.wixsite.com/my-site-1"
         },
         {
           "name": "Anuradha Sankaran",
@@ -16644,9 +16913,8 @@
         },
         {
           "name": "Claudia Ortiz",
-          "campaign_url": "https://secure.actblue.com",
           "source_ids": [
-            "S974"
+            "S1085"
           ]
         }
       ],
@@ -16917,7 +17185,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "A small but vocal faction which attacks Democrats with overly simplistic narratives over differing approaches to the Israeli-Palestinian conflict exemplifies this.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -17253,7 +17522,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Standing Up for Palestinian and Israeli Kids - Calling for a Ceasefire and Release of Hostages in Israel and Palestine - Director Valarie Bachelor and Director Jennifer Brouhard",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -17303,7 +17573,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "school board President Mike Hutchinson refused to let them speak and abruptly shut down the meeting as they demanded to be heard",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0215",
@@ -17313,7 +17584,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "school board President Mike Hutchinson refused to let them speak and abruptly shut down the meeting as they demanded to be heard",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0216",
@@ -17323,7 +17595,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "backed by former board President Mike Hutchinson and Jorge Lerma, blocked the discussion even though four of the seven members of the board have called for the Gaza resolution to be placed on a board agenda",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -17394,7 +17667,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "The board was expected to introduce a resolution this week from Director Valarie Bachelor acknowledging the Oct. 7th Hamas attack on Israel, mourning the loss of lives in Israel and Palestine, and calling for a ceasefire, the release of all hostages, and the withdrawal of Israeli troops from Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0219",
@@ -17404,7 +17678,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Valarie Bachelor, the Oakland school board member who introduced the resolution, said the board's goal is to \"guide this conflict towards peace\" as opposed to \"continued bloodshed.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0220",
@@ -17414,7 +17689,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Valarie Bachelor, the Oakland school board member who introduced the resolution, said the board's goal is to \"guide this conflict towards peace\" as opposed to \"continued bloodshed.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             },
             {
               "id": "GE-0221",
@@ -17424,7 +17700,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "Valarie Bachelor, the Oakland school board member who introduced the resolution, said the board's goal is to \"guide this conflict towards peace\" as opposed to \"continued bloodshed.\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -17510,7 +17787,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Your article is heavily one-sided, giving undue prominence to supporters of the Jewish National Fund (JNF) while characterizing the JNF Negev fundraiser dinner as merely 'a Jewish community event.'",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -18207,7 +18485,8 @@
               "dimension": "genocide_language",
               "checked_on": "2026-10-08",
               "quote": "members of the Merseyside Pension Fund are not aware that their money is invested in arms firms complicit in a genocide. And if the members of the Fund actually knew, then I'm sure the majority will want this stopped",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -18286,7 +18565,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Since 2023, Gaza City has been facing a humanitarian crisis due to the ongoing conflict with Israel, which has led to the most severe violations of children's rights documented in recent history.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -18359,7 +18639,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-07",
               "quote": "Then Hamas shouldn't of attacked Israel !!! F around and found out !! U break into my house kill my family and im supposed to feed you ? Protect your family ? GTFO !!!",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         },
@@ -18378,7 +18659,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "That’s why we’re recommending the upcoming SOMArts Día De Los Muertos exhibit Bearing Witness, which focuses on Palestine this year.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -18442,7 +18724,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "we are deeply disturbed by harmful rhetoric shared by some San Franciscans in response to the terror attack in Israel and the current siege of Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -19046,7 +19329,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Pelosi's support for Israel is heartfelt, supporters say\" By Jennifer Jacobson",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -19131,7 +19415,7 @@
         {
           "name": "Joel Woods",
           "ballotpedia_url": "https://ballotpedia.org/Joel_Woods_(California)",
-          "campaign_url": "https://campaignsunleashed.wisdocity.ai",
+          "campaign_url": "https://campaignsunleashed.wisdocity.ai/sites/joel-woods/",
           "source_ids": [
             "S910"
           ]
@@ -19187,7 +19471,8 @@
               "dimension": "actions_votes",
               "checked_on": "2026-10-08",
               "quote": "championed by Board President Maimona Afzal Berta and Trustee Raeena Lari, \"acknowledges the suffering of peoples in the Middle East, including Palestinian and Israeli children\"",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -19406,7 +19691,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Sathvik Nori Photo Credit: Ben Witeck Driving down the streets of the Gaza Strip, junior Ethan Marcus was surprised to see Palestinian children lining the sides of the narrow road",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -19497,7 +19783,8 @@
               "dimension": "aipac_funding",
               "checked_on": "2026-10-08",
               "quote": "the annual conference of American Israel Public Affairs Committee (AIPAC), the premier lobby and promoter of Israeli interests in the U.S., is a major showplace for presidential candidates",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -20027,7 +20314,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Trump has also been unable to resolve current crises between Russia and Ukraine, as well as stop Israel's ongoing attacks on Gaza.",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "page_metadata"
             }
           ]
         },
@@ -21697,7 +21985,8 @@
               "dimension": "military_aid",
               "checked_on": "2026-10-08",
               "quote": "a 102-minute followup call with JCRC BANJO member and Magal/Senstar investor Sara Lamnin raises more questions than it answers",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         }
@@ -22420,7 +22709,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "Kamran Ahmed, 28, is on day 41 of his hunger strike in Pentonville prison, London. Picture: Alamy By Alex Nichol",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "source_stated"
             }
           ]
         },
@@ -22824,7 +23114,8 @@
               "dimension": "framing_balance",
               "checked_on": "2026-10-08",
               "quote": "And to think it could all end if Hamas would just give back the hostages and surrender!!",
-              "source_kind": "news"
+              "source_kind": "news",
+              "date_method": "x_snowflake"
             }
           ]
         }
@@ -26850,10 +27141,6 @@
       "url": "https://www.bookerforhmb.com/",
       "title": "Campaign website verification for Steven R. Booker (City Council Member, District 5): “flash-adjudicated: Site is Steven Booker HMB campaign homepage with donate/platform/endorsements and Half Moon Bay references.” — checked 2026-10-07"
     },
-    "S991": {
-      "url": "https://x.com/",
-      "title": "Campaign website verification for Julie Roche (City Council Member, District 6): “flash-adjudicated: Own X account for Julie Roche with handle julieforhayward, bio lists Hayward City Councilmember and Hayward CA; clearly her office/campaign presence.” — checked 2026-10-07"
-    },
     "S992": {
       "url": "https://www.dion4hercules.com/",
       "title": "Campaign website verification for Dion Bailey (City Council Member, At large): “flash-adjudicated: Site is clearly Dion Bailey's official Hercules City Council campaign page, showing his name, office, city, and re-election messaging.” — checked 2026-10-07"
@@ -27217,6 +27504,18 @@
     "S1082": {
       "url": "https://phuongford6.com/",
       "title": "Campaign website verification for Phuong Tran Nguyen (Director, District 6): “flash-adjudicated: Site is Phuong Nguyen's campaign page for Santa Clara Valley Water District 6, with candidate name, office, and campaign actions.” — checked 2026-10-07"
+    },
+    "S1083": {
+      "url": "https://www.rossforberkeley.com/",
+      "title": "Campaign website for Ross Bernet (Berkeley City Council, District 1): dedicated candidate site; ActBlue donation page explicitly 'Ross Bernet for City Council in Berkeley', paid by Ross Bernet for Council 2026 with FPPC ID — checked 2026-10-08"
+    },
+    "S1084": {
+      "url": "https://www.2votes4changeec.com/",
+      "title": "Campaign website for Wally Nowinski (El Cerrito City Council): dedicated candidate site verified live; page names Nowinski as El Cerrito council candidate — checked 2026-10-08"
+    },
+    "S1085": {
+      "url": "https://secure.actblue.com/",
+      "title": "ActBlue donation platform (generic host): used to confirm Claudia Ortiz's ActBlue fundraising page exists; the generic homepage alone does not identify a candidate — specific page URL could not be established, so no campaign_url is claimed for her — checked 2026-10-08"
     }
   }
 }

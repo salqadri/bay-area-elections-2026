@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.10"
+      "const": "1.11"
     },
     "election": {
       "type": "object",
@@ -1282,8 +1282,20 @@
         },
         "date": {
           "type": "string",
+          "format": "iso-8601-partial",
           "pattern": "^[0-9]{4}(-[0-9]{2})?(-[0-9]{2})?$",
-          "description": "Publication/statement date as precisely as the source states it (YYYY, YYYY-MM or YYYY-MM-DD). Required: an undated item cannot establish stance evolution and must not enter the dataset."
+          "description": "Publication/statement date as precisely as the source states it (YYYY, YYYY-MM or YYYY-MM-DD), calendar-valid. Required: an undated item cannot establish stance evolution and must not enter the dataset."
+        },
+        "date_method": {
+          "type": "string",
+          "enum": ["source_stated", "page_metadata", "x_snowflake", "wayback_first_capture", "event_recorded"],
+          "description": "How this date was established. wayback_first_capture is an UPPER BOUND (content first seen by then), not a publication date; event_recorded means the date comes from the recorded event itself, corroborated elsewhere."
+        },
+        "date_note": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 240,
+          "description": "Optional provenance for the date: supporting URL or a short explanation of the dating method's basis."
         },
         "url": {
           "type": "string",
@@ -1318,6 +1330,7 @@
         },
         "checked_on": {
           "type": "string",
+          "format": "date",
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         }
       }
