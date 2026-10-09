@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.13"
+      "const": "1.14"
     },
     "election": {
       "type": "object",
@@ -133,7 +133,7 @@
         "printed_candidates_with_endorsements": {
           "type": "integer",
           "minimum": 0,
-          "description": "Printed candidate entries carrying at least one cited current-cycle endorsement, recommendation or support observation. This is a presence count, not a count of verified formal endorsements. Omission is unknown, never proof of none."
+          "description": "Printed candidate entries carrying at least one cited current-cycle endorsement or recommendation, including preferences and opposition. This is a presence count, not a count of positive endorsements. Omission is unknown, never proof of none."
         },
         "printed_candidates_with_campaign_url": {
           "type": "integer",
@@ -1286,7 +1286,7 @@
         "url",
         "checked_on"
       ],
-      "description": "A cited current-cycle endorsement, recommendation or other support observation. Support ratings belong to the named source, not this site. A primary observation is not automatically a general-election endorsement; campaign claims and secondary reports are distinguished.",
+      "description": "A cited current-cycle endorsement, preference, opposition, recommendation or other support observation. These relations are not interchangeable. Source support ratings belong to the named source, not this site. A primary observation is not automatically a general-election recommendation.",
       "properties": {
         "endorser": {
           "type": "string",
@@ -1309,7 +1309,9 @@
           "enum": [
             "endorsed",
             "recommended",
-            "supported"
+            "supported",
+            "preferred",
+            "opposed"
           ]
         },
         "phase": {
@@ -1352,6 +1354,10 @@
             "Preferred"
           ],
           "description": "Original positive support tier when published by the source; never an analyst-created candidate grade."
+        },
+        "shared": {
+          "const": true,
+          "description": "The source explicitly calls this a shared/joint endorsement; omitted otherwise."
         }
       },
       "allOf": [
@@ -1409,6 +1415,41 @@
             "required": [
               "note_id"
             ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relation": {
+                "enum": [
+                  "preferred",
+                  "opposed"
+                ]
+              }
+            },
+            "required": [
+              "relation"
+            ]
+          },
+          "then": {
+            "required": [
+              "verification",
+              "note_id"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "shared"
+            ]
+          },
+          "then": {
+            "properties": {
+              "relation": {
+                "const": "endorsed"
+              }
+            }
           }
         }
       ]

@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.13",
+  "schema_version": "1.14",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -96,10 +96,10 @@
       "Contra Costa county officers and Superior Court Position Q were resolved in June without November runoffs; no regular U.S. Senate, odd-numbered Contra Costa State Senate, or party central committee election is included for November 2026. Richmond mayor has a runoff; its June-resolved council seats are omitted.",
       "Shared Contra Costa/Alameda contests retain their existing IDs, including CD-10, AD-14, AD-16, EBMUD Wards 3 and 7, Livermore Valley Joint Unified Trustee Area 3, and scheduled AC Transit Ward 1 and Byron-Bethany Division III. County presence does not imply countywide voter eligibility.",
       "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
-      "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
+      "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
     ],
     "printed_candidates_with_gaza_evidence": 81,
-    "printed_candidates_with_endorsements": 156
+    "printed_candidates_with_endorsements": 190
   },
   "address_lookup": {
     "division_endpoint": "https://www.googleapis.com/civicinfo/v2/divisionsByAddress",
@@ -330,6 +330,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -676,16 +686,6 @@
               "quote": "10th Congressional District: Mark Desaulnier"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "JStreetPAC",
               "kind": "organization",
               "relation": "endorsed",
@@ -705,6 +705,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -952,12 +962,12 @@
             {
               "endorser": "CAIR Action",
               "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
               "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -1315,16 +1325,6 @@
               "verification": "endorser_statement"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "JStreetPAC",
               "kind": "organization",
               "relation": "endorsed",
@@ -1333,6 +1333,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N289"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -1619,16 +1629,6 @@
               "quote": "​Aisha Wahab - Congressional District 14"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "JStreetPAC",
               "kind": "organization",
               "relation": "endorsed",
@@ -1646,6 +1646,16 @@
               "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
               "checked_on": "2026-10-09",
               "verification": "endorser_statement"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -2058,6 +2068,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -2308,16 +2328,6 @@
               "verification": "endorser_statement"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "JStreetPAC",
               "kind": "organization",
               "relation": "endorsed",
@@ -2326,6 +2336,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N289"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -2499,6 +2519,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N289"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -2791,6 +2821,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Scott Sakakihara – District 10"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -2885,6 +2925,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -3277,16 +3327,6 @@
               "quote": "Matt Haney – District 17"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "California Jewish Democrats",
               "kind": "organization",
               "relation": "supported",
@@ -3296,6 +3336,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Strong Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -3392,6 +3442,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Mia Bonta – District 18"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -3593,12 +3653,12 @@
             {
               "endorser": "CAIR Action",
               "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
               "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -3861,12 +3921,12 @@
             {
               "endorser": "CAIR Action",
               "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
               "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -3961,16 +4021,6 @@
               "quote": "Ash Kalra – District 25"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "California Jewish Democrats",
               "kind": "organization",
               "relation": "supported",
@@ -3980,6 +4030,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -4053,6 +4113,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Strong Support"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -4372,6 +4442,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Governor – Xavier Becerra"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -4649,16 +4729,6 @@
           ],
           "endorsements": [
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "California Jewish Democrats",
               "kind": "organization",
               "relation": "supported",
@@ -4677,6 +4747,16 @@
               "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
               "checked_on": "2026-10-09",
               "verification": "endorser_statement"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -4741,16 +4821,6 @@
           "campaign_url": "https://www.maliacohenforca.com",
           "endorsements": [
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "California Jewish Democrats",
               "kind": "organization",
               "relation": "supported",
@@ -4769,6 +4839,16 @@
               "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
               "checked_on": "2026-10-09",
               "verification": "endorser_statement"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -5053,16 +5133,6 @@
               "quote": "Attorney General - Rob Bonta"
             },
             {
-              "endorser": "CAIR Action",
-              "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
-              "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
-            },
-            {
               "endorser": "California Jewish Democrats",
               "kind": "organization",
               "relation": "supported",
@@ -5081,6 +5151,16 @@
               "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
               "checked_on": "2026-10-09",
               "verification": "endorser_statement"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -5267,12 +5347,12 @@
             {
               "endorser": "CAIR Action",
               "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
               "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -5440,12 +5520,12 @@
             {
               "endorser": "CAIR Action",
               "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
               "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -6597,6 +6677,18 @@
               "source_kind": "news",
               "date_method": "x_snowflake"
             }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -6702,6 +6794,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "#1 Gary McCoy | #2 Michael T. Nguyen – District 8"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -6801,7 +6903,19 @@
         },
         {
           "name": "Dionjay (DJ) Brookter",
-          "ballotpedia_url": "https://ballotpedia.org/Dionjay_Brookter"
+          "ballotpedia_url": "https://ballotpedia.org/Dionjay_Brookter",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Deandra Bryant",
@@ -7262,6 +7376,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Tamisha Torres-Walker – District 1"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -7303,7 +7427,19 @@
         {
           "name": "Monica E. Wilson",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Monica_E._Wilson_(Antioch_City_Council_District_4,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Monica_E._Wilson_(Antioch_City_Council_District_4,_California,_candidate_2026)",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Matty Mathews Alappat",
@@ -7568,6 +7704,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Avery Arbaugh - At large"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -7593,6 +7739,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Ida Martinac - At large"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -7614,6 +7770,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Nathan Mizell - At large"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -7629,6 +7795,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Vylma Ortiz - At large"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -7648,6 +7824,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Derek Rodriguez - At large"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -7724,7 +7910,19 @@
         },
         {
           "name": "Moni Gangopadhyay",
-          "ballotpedia_url": "https://ballotpedia.org/Moni_Gangopadhyay_%28Berkeley_City_Council%2C_District_1%2C_California%2C_candidate_2026%29"
+          "ballotpedia_url": "https://ballotpedia.org/Moni_Gangopadhyay_%28Berkeley_City_Council%2C_District_1%2C_California%2C_candidate_2026%29",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Steve Kromer",
@@ -7802,6 +8000,18 @@
               "source_kind": "news",
               "date_method": "source_stated"
             }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -7866,6 +8076,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Syrak Micael - District 7"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -8638,6 +8858,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Laura Nakamura - District 5"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -8837,6 +9067,18 @@
           "campaign_url": "https://www.roddausmagbual.com",
           "source_ids": [
             "S747"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -8901,6 +9143,18 @@
           "campaign_url": "https://www.mike4dublin.com",
           "source_ids": [
             "S750"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -8958,7 +9212,19 @@
           ]
         },
         {
-          "name": "Richard Thornbury"
+          "name": "Richard Thornbury",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         }
       ],
       "source_ids": [
@@ -9051,6 +9317,18 @@
           "ballotpedia_url": "https://ballotpedia.org/Ruben_Abrica_(East_Palo_Alto_City_Council_At-large,_California,_candidate_2026)",
           "source_ids": [
             "S381"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -9071,6 +9349,18 @@
               "quote": "spoke about the importance of joining the movement and demanding that the United States stop financially supporting the war in Gaza",
               "source_kind": "news",
               "date_method": "source_stated"
+            }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -9329,7 +9619,19 @@
           ],
           "incumbency_note_id": "N204",
           "x_url": "https://x.com/PhoebeSVenkat",
-          "campaign_url": "https://www.phoebeshinvenkat.com"
+          "campaign_url": "https://www.phoebeshinvenkat.com",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -9556,6 +9858,18 @@
           "campaign_url": "https://www.azizakbari.com",
           "source_ids": [
             "S767"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -9654,6 +9968,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Diana Sanchez Bentz"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -9710,6 +10034,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Christina Tovar"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -9805,6 +10139,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Rebeca G Armendariz"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -10142,6 +10486,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "George Syrop - District 1"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -10794,6 +11148,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Seema Kanani - At large"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -10932,6 +11296,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Deborah M Africa"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -10992,6 +11366,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Yvonne Martinez Beltran"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -11039,6 +11423,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Dolores Alvarado"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -11124,6 +11518,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "IdaRose Sylvester"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -11242,7 +11646,19 @@
             "S183",
             "S1005"
           ],
-          "campaign_url": "https://www.evemarielittle.com"
+          "campaign_url": "https://www.evemarielittle.com",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         }
       ],
       "source_ids": [
@@ -11487,6 +11903,16 @@
               "url": "https://www.seiu1021.org/endorsements",
               "checked_on": "2026-10-09",
               "quote": "SEIU 1021 endorses Congresswoman Barbara Lee for Oakland mayor"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -11553,6 +11979,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Nate Adams – District 2"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -11765,7 +12201,19 @@
         {
           "name": "Christine Boles",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Christine_Boles_(Pacifica_City_Council_District_2,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Christine_Boles_(Pacifica_City_Council_District_2,_California,_candidate_2026)",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Dan Urban",
@@ -12456,6 +12904,18 @@
           "campaign_url": "https://www.kathynarum.com",
           "source_ids": [
             "S1018"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         }
       ],
@@ -12541,6 +13001,18 @@
               "quote": "El concejal Chris Sturken secundó la resolución presentada por la vicealcalde Lissette Espinoza-Garnica",
               "source_kind": "news",
               "date_method": "source_stated"
+            }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -12718,6 +13190,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Claudia Jiménez"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -13032,6 +13514,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Peter Ortiz – District 5"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -13186,6 +13678,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Gordon Chester - District 9"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -13843,6 +14345,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Marisol Rubio – District 4"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -14496,6 +15008,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Jaime Patiño / Victor Lopez Pulido (dual) - District 2"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -14547,6 +15069,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Cheris Crocker-Root - District 3"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -14584,6 +15116,18 @@
           "campaign_url": "https://lodhi2026.com",
           "source_ids": [
             "S848"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -15583,7 +16127,19 @@
       "candidates": [
         {
           "name": "Brandon Dawkins",
-          "ballotpedia_url": "https://ballotpedia.org/Brandon_Dawkins_(Antioch_Unified_School_District_school_board_Area_5,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Brandon_Dawkins_(Antioch_Unified_School_District_school_board_Area_5,_California,_candidate_2026)",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Mary H. Rocha",
@@ -15723,6 +16279,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Jaria Jaug"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -16454,6 +17020,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Harris Mojadedi - Area 3"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -16529,6 +17105,18 @@
           "campaign_url": "https://www.cameronsasai.com",
           "source_ids": [
             "S871"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         }
       ],
@@ -16832,6 +17420,18 @@
               "source_kind": "news",
               "date_method": "source_stated"
             }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -16897,6 +17497,16 @@
               "checked_on": "2026-10-09",
               "verification": "campaign_claim",
               "note_id": "N293"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -17076,6 +17686,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Johnny Ray Reyna"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -17195,7 +17815,19 @@
           "source_ids": [
             "S215"
           ],
-          "incumbency_evidence_id": "N088"
+          "incumbency_evidence_id": "N088",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Gilbert Borrayo",
@@ -17221,6 +17853,16 @@
               "checked_on": "2026-10-09",
               "verification": "campaign_claim",
               "note_id": "N293"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -17350,6 +17992,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Naomi Nakano-Matsumoto"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -17405,6 +18057,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Gabriel Gutierrez"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -17512,6 +18174,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Jane Stevens"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -18396,6 +19068,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Jason Amezcua"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -18438,7 +19120,19 @@
           "source_ids": [
             "S215"
           ],
-          "incumbency_evidence_id": "N088"
+          "incumbency_evidence_id": "N088",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Gabriela \"Gabby\" Winter"
@@ -18498,6 +19192,16 @@
               "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
               "checked_on": "2026-10-09",
               "quote": "Sarah Northrup Gadus"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -18540,6 +19244,18 @@
           "name": "Claudia Ortiz",
           "source_ids": [
             "S1085"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "preferred",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         }
       ],
@@ -18860,7 +19576,19 @@
             "S633",
             "S885"
           ],
-          "campaign_url": "https://kashif2026.com"
+          "campaign_url": "https://kashif2026.com",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         }
       ],
       "source_ids": [
@@ -18903,6 +19631,18 @@
           "campaign_url": "http://francisrojas.org",
           "source_ids": [
             "S1052"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         }
       ],
@@ -19169,6 +19909,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Jennifer Brouhard - District 2"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -19358,6 +20108,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Valarie Bachelor – District 6"
+            },
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         }
@@ -19545,7 +20305,19 @@
         {
           "name": "Suzanne \"Sue\" Lee Chan",
           "incumbent": true,
-          "ballotpedia_url": "https://ballotpedia.org/Suzanne_Lee_Chan"
+          "ballotpedia_url": "https://ballotpedia.org/Suzanne_Lee_Chan",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Sonia Salwan",
@@ -20326,7 +21098,19 @@
         },
         {
           "name": "Leah LaCroix",
-          "ballotpedia_url": "https://ballotpedia.org/Leah_LaCroix"
+          "ballotpedia_url": "https://ballotpedia.org/Leah_LaCroix",
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
+          ]
         },
         {
           "name": "Jeremy Lee",
@@ -20334,6 +21118,18 @@
           "campaign_url": "https://jeremyleesf.com",
           "source_ids": [
             "S1058"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -20353,6 +21149,18 @@
               "quote": "That’s why we’re recommending the upcoming SOMArts Día De Los Muertos exhibit Bearing Witness, which focuses on Palestine this year.",
               "source_kind": "news",
               "date_method": "source_stated"
+            }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -20466,6 +21274,18 @@
           "campaign_url": "https://www.virginiacheung.com",
           "source_ids": [
             "S901"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -20485,6 +21305,18 @@
           "campaign_url": "https://www.ryanforsfschools.com",
           "source_ids": [
             "S1059"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -20511,6 +21343,18 @@
           "campaign_url": "https://www.reinaforschoolboard.org",
           "source_ids": [
             "S1062"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -21175,6 +22019,18 @@
               "source_kind": "news",
               "date_method": "source_stated"
             }
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         },
         {
@@ -21233,6 +22089,18 @@
           "campaign_url": "https://vote4kamal.com",
           "source_ids": [
             "S912"
+          ],
+          "endorsements": [
+            {
+              "endorser": "CAIR Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N295"
+            }
           ]
         }
       ],
@@ -21701,12 +22569,12 @@
             {
               "endorser": "CAIR Action",
               "kind": "organization",
-              "relation": "supported",
-              "phase": "general",
-              "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://cairactionguide.org/explore",
               "checked_on": "2026-10-09",
-              "verification": "reported",
-              "note_id": "N286"
+              "verification": "endorser_statement",
+              "note_id": "N295"
             }
           ]
         },
@@ -25380,7 +26248,8 @@
     "N291": "DMFI PAC announced this endorsement on December 16, 2025 for the 2026 primary cycle. This is a historical primary endorsement, not verification of an active November endorsement. The current general-election list could not be fully retrieved.",
     "N292": "Checked October 9, 2026: California Jewish Democrats publishes support grades instead of single-candidate endorsements. The rating is the organization’s own label, not this site’s assessment. The page states the 2026 cycle but does not specify an election stage.",
     "N293": "Checked October 9, 2026: this endorsement is claimed on the candidate’s current campaign page. Independent confirmation from the named organization was not obtained; it remains a campaign claim.",
-    "N294": "Checked October 9, 2026: Kerry Hillis’s campaign names Bay Area Jewish Coalition. The exact name is preserved; this claim has not been independently confirmed or assumed to identify the separate Bay Area Jewish Action organization."
+    "N294": "Checked October 9, 2026: Kerry Hillis’s campaign names Bay Area Jewish Coalition. The exact name is preserved; this claim has not been independently confirmed or assumed to identify the separate Bay Area Jewish Action organization.",
+    "N295": "Reviewed from an October 9, 2026 supplied capture of CAIR Action’s official Explore page. The page could not be independently re-fetched. The capture omits the selected-election header, so the recommendation’s election phase is unspecified."
   },
   "sources": {
     "S001": {

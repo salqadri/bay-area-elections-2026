@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from endorsement_extract import invalid_endorser_name, norm
+from import_cair_guide import reviewed_records, REVIEW as CAIR_REVIEW
 
 ROOT = Path(__file__).resolve().parent.parent
 QUARANTINE = ROOT / 'research/endorsements/quarantine-2026-10-09.json'
@@ -27,9 +28,10 @@ def blocked_reason(record, quarantine=None):
         return 'UI text or category heading is not an identifiable endorser'
 
 
-def check_endorsements(data):
+def check_endorsements(data, review_cair=True):
     quarantine = json.loads(QUARANTINE.read_text())
     errors = []
+    expected_cair = reviewed_records(data, json.loads(CAIR_REVIEW.read_text())) if review_cair else {}
     for p in data['positions']:
         for c in p.get('candidates') or []:
             seen = set()
@@ -48,9 +50,15 @@ def check_endorsements(data):
                     errors.append(prefix + 'invalid/future check date')
                 if r.get('rating') and r['relation'] != 'supported':
                     errors.append(prefix + 'a support rating is not a formal endorsement')
-                if r['relation'] == 'supported' or r.get('verification') in {'reported', 'campaign_claim'}:
+                if r['relation'] in {'supported', 'preferred', 'opposed'} or r.get('verification') in {'reported', 'campaign_claim'}:
                     if r.get('note_id') not in data['notes']:
                         errors.append(prefix + 'support or indirect evidence needs an explanatory note')
+                if review_cair and r['endorser'] == 'CAIR Action':
+                    expected = expected_cair.get((p['id'], c['name']))
+                    if r != expected:
+                        errors.append(prefix + 'CAIR recommendation differs from reviewed official capture; update the review before publishing')
+            if (p['id'], c['name']) in expected_cair and not any(r['endorser'] == 'CAIR Action' for r in c.get('endorsements', [])):
+                errors.append(p['id'] + ' / ' + c['name'] + ': missing reviewed CAIR recommendation')
     return errors
 
 

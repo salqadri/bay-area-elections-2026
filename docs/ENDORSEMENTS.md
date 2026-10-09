@@ -18,9 +18,32 @@ On the October 9 baseline, a fresh plan contains **869 candidacies, 904 search q
 
 The initial run completed 904 searches and parsed 3,671 pages, but completion was not a factual audit. Its 741-candidacy/884-record publication claim was inflated: 723 records came from a neutral Chronicle candidate directory, and two more named a cookie notice and a section heading as endorsers. These 725 public records and their 1,167 collector observations are now quarantined with stable IDs and original snapshot hashes. The old export has been filtered; its original contents remain in Git history.
 
-The corrected publication contains **236 records under 156 candidacies**, including **77 manually reviewed additions**. Read [the review report](reviews/2026-10-09-targeted-endorsements.md), [curated findings](../research/endorsements/targeted-2026-10-09.json), and [quarantine](../research/endorsements/quarantine-2026-10-09.json). The remaining 159 older records are retained, not certified as independently audited. Missing evidence for 713 candidacies remains unknown.
+The corrected publication now contains **316 records under 190 candidacies**. The [earlier audit](reviews/2026-10-09-targeted-endorsements.md) added 77 reviewed records. The [CAIR correction](reviews/2026-10-09-cair-action-correction.md) replaces 15 of those secondary reports with 95 official-page recommendations. The remaining 159 older records are retained, not certified as independently audited. Missing evidence for 679 candidacies remains unknown.
 
-The collector export and curated layer are deliberately separate: the collector schema does not express all source ratings or other support. The canonical public dataset and both readers use schema 1.13 with `supported`, optional `rating`, `verification`, and shared `note_id` qualifications. The CAIR secondary guide is published as **reported support with unknown original tier**, not a verified CAIR formal endorsement. DMFI primary announcements remain primary. Japra's documented presentation of organizational checks is not a claim of a personal donation.
+The collector export and curated layers are deliberately separate: the collector schema does not express every public support relationship. Public schema **1.14** supports `endorsed`, `preferred`, `opposed`, `recommended` and `supported`, with source ratings, provenance and shared notes. `shared: true` applies only to a joint endorsement. Both readers display the relationship explicitly; an opposition stays in the corresponding candidate's list as **Opposed by**, never as an endorsement or as support for an opponent. The legacy `printed_candidates_with_endorsements` coverage key counts presence of any recommendation, including opposition. DMFI primary announcements remain primary. Japra's documented presentation of organizational checks is not a claim of a personal donation.
+
+### CAIR Action: preserve the official recommendation levels
+
+Use [the official Explore page](https://cairactionguide.org/explore). Its reviewed [capture manifest](../research/endorsements/cair-action-2026-10-09.json) records all 200 supplied cards, their exact level and office, cross-election annotations, source hash, retrieval limits and explicit match decisions. This produces **76 Endorsed, 18 Preferred and 1 Opposed** records. Two duplicate cards are collapsed, one district mismatch is held, and 102 cards have no match in the current printed roster. Unmatched cards are research leads, not proof that the candidate is off ballot. Do not create or alter ballot races from endorsements alone.
+
+The official page could not be independently re-fetched. The [linked PDF](https://cairaction.org/wp-content/uploads/2026/05/NorCal-Voter-Guide.pdf) could not be read and contributes no inferred labels. The supplied HTML fragment omits the selected-election header. Its “Also in Primary” annotations do not establish the selected phase, so public records say `unspecified`; the shared note explains the provenance. A retrieval date or a PDF upload path is not an endorsement announcement date.
+
+For a new complete capture, first extract its cards without model calls:
+
+```sh
+python3 scripts/import_cair_guide.py parse /path/to/capture.html --checked-on YYYY-MM-DD --output .research/cair-cards.json
+```
+
+Then review the new capture against the current roster, one source pass for all candidates. Give every card a disposition and concrete reason; explicitly record name variants, exact office/district, duplicates and holds. Update the dated manifest, provenance note and publication expectations intentionally before applying. The reviewed manifest is the reproducible evidence layer; raw HTML stays outside Git.
+
+```sh
+python3 scripts/import_cair_guide.py apply
+python3 scripts/check_cair_guide.py
+python3 scripts/check_published_endorsements.py
+python3 scripts/build_site.py
+```
+
+The apply command composes the existing publication correction with the CAIR replacement and recomputes coverage. The guard verifies all reviewed recommendations are present with the correct relationship and official URL; it rejects reverting to Blue Voter Guide or changing an opposition into an endorsement. Older CAIR secondary findings remain marked superseded in the historical manifest and cannot be reimported by the dated migration. To refresh this source later, update the manifest and its tests with the new evidence rather than disabling the guard.
 
 ### Refresh the requested publishers without per-candidate agent calls
 
@@ -45,7 +68,7 @@ python3 scripts/check_published_endorsements.py
 python3 scripts/build_site.py
 ```
 
-The apply command removes quarantined imports, applies the curated findings idempotently and updates coverage. It refuses newer conflicting review records or changed note meanings. Do not use this dated migration to override future research; update its manifest intentionally. `check_data.py` also runs the publication guard, including query/tracking variants of the rejected guide. Raw local SQLite observations are not automatically deleted: reconcile them using the quarantine IDs before exporting again. Future integrations must preserve campaign/report provenance, rank, shared endorsements and personal-capacity notices; if the public schema cannot express a qualification, hold the record until it can.
+The apply command removes quarantined imports, applies the curated findings and reviewed CAIR capture idempotently, and updates coverage. It refuses newer conflicting review records or changed note meanings. Do not use this dated migration to override future research; update its manifest intentionally. `check_data.py` also runs the publication guard, including query/tracking variants of the rejected guide. Raw local SQLite observations are not automatically deleted: reconcile them using the quarantine IDs before exporting again. Future integrations must preserve campaign/report provenance, rank, shared endorsements and personal-capacity notices; if the public schema cannot express a qualification, hold the record until it can.
 
 ## Run and resume
 
