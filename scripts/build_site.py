@@ -18,6 +18,11 @@ def render(page="index"):
         data = json.loads((ROOT / filename).read_text(encoding="utf-8"))
         embedded = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
         html = html.replace(placeholder, embedded)
+    endorsement_js = (ROOT / 'src/endorsement-display.js').read_text(encoding='utf-8')
+    assert '</script' not in endorsement_js.lower(), 'Unsafe inline endorsement script'
+    if html.count('__ENDORSEMENT_DISPLAY_JS__') != 1:
+        raise ValueError('Expected one shared endorsement display placeholder')
+    html = html.replace('__ENDORSEMENT_DISPLAY_JS__', endorsement_js)
     if page == "ballot":
         source = (ROOT / "src/index.template.html").read_text(encoding="utf-8")
         css = re.search(r"<style>(.*?)</style>", source, re.S).group(1)

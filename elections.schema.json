@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.12"
+      "const": "1.13"
     },
     "election": {
       "type": "object",
@@ -129,16 +129,12 @@
           "type": "integer",
           "minimum": 0,
           "description": "Printed ballot candidate entries carrying at least one dated Gaza-stance evidence item (research in progress; ungraded)."
-        },"printed_candidates_with_gaza_evidence": {
-          "type": "integer",
-          "minimum": 0,
-          "description": "Printed ballot candidate entries carrying at least one dated Gaza-stance evidence item (research in progress; ungraded)."
-        },        "printed_candidates_with_endorsements": {
-          "type": "integer",
-          "minimum": 0,
-          "description": "Printed candidate entries carrying at least one cited current-cycle endorsement record. Omission elsewhere means not researched or nothing attributable found."
         },
-
+        "printed_candidates_with_endorsements": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Printed candidate entries carrying at least one cited current-cycle endorsement, recommendation or support observation. This is a presence count, not a count of verified formal endorsements. Omission is unknown, never proof of none."
+        },
         "printed_candidates_with_campaign_url": {
           "type": "integer",
           "minimum": 0,
@@ -1283,17 +1279,139 @@
     "endorsementRecord": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["endorser", "relation", "phase", "url", "checked_on"],
-      "description": "One endorsement record: who endorsed (or recommended) this candidacy, in which election phase, per a cited source page. Endorsements never change the official party preference field.",
+      "required": [
+        "endorser",
+        "relation",
+        "phase",
+        "url",
+        "checked_on"
+      ],
+      "description": "A cited current-cycle endorsement, recommendation or other support observation. Support ratings belong to the named source, not this site. A primary observation is not automatically a general-election endorsement; campaign claims and secondary reports are distinguished.",
       "properties": {
-        "endorser": {"type": "string", "minLength": 2, "maxLength": 120},
-        "kind": {"enum": ["party", "union", "media", "organization", "official", "other", "unspecified"]},
-        "relation": {"enum": ["endorsed", "recommended"]},
-        "phase": {"enum": ["primary", "general", "unspecified"]},
-        "url": {"type": "string", "format": "uri", "pattern": "^https://[^ ]+$"},
-        "checked_on": {"type": "string", "format": "date"},
-        "quote": {"type": "string", "minLength": 3, "maxLength": 120}
-      }
+        "endorser": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 120
+        },
+        "kind": {
+          "enum": [
+            "party",
+            "union",
+            "media",
+            "organization",
+            "official",
+            "other",
+            "unspecified",
+            "person"
+          ]
+        },
+        "relation": {
+          "enum": [
+            "endorsed",
+            "recommended",
+            "supported"
+          ]
+        },
+        "phase": {
+          "enum": [
+            "primary",
+            "general",
+            "unspecified"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^ ]+$"
+        },
+        "checked_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 120
+        },
+        "verification": {
+          "enum": [
+            "endorser_statement",
+            "campaign_claim",
+            "reported"
+          ],
+          "description": "Omitted only for legacy records whose source classification was not retained."
+        },
+        "note_id": {
+          "type": "string",
+          "pattern": "^N[0-9]+$"
+        },
+        "rating": {
+          "enum": [
+            "Support",
+            "Strong Support",
+            "Preferred"
+          ],
+          "description": "Original positive support tier when published by the source; never an analyst-created candidate grade."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "rating"
+            ]
+          },
+          "then": {
+            "properties": {
+              "relation": {
+                "const": "supported"
+              }
+            },
+            "required": [
+              "verification",
+              "note_id"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relation": {
+                "const": "supported"
+              }
+            },
+            "required": [
+              "relation"
+            ]
+          },
+          "then": {
+            "required": [
+              "verification",
+              "note_id"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "verification": {
+                "enum": [
+                  "reported",
+                  "campaign_claim"
+                ]
+              }
+            },
+            "required": [
+              "verification"
+            ]
+          },
+          "then": {
+            "required": [
+              "note_id"
+            ]
+          }
+        }
+      ]
     },
     "stanceEvidence": {
       "type": "object",
@@ -1320,7 +1438,13 @@
         },
         "date_method": {
           "type": "string",
-          "enum": ["source_stated", "page_metadata", "x_snowflake", "wayback_first_capture", "event_recorded"],
+          "enum": [
+            "source_stated",
+            "page_metadata",
+            "x_snowflake",
+            "wayback_first_capture",
+            "event_recorded"
+          ],
           "description": "How this date was established. wayback_first_capture is an UPPER BOUND (content first seen by then), not a publication date; event_recorded means the date comes from the recorded event itself, corroborated elsewhere."
         },
         "date_note": {

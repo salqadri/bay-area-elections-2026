@@ -157,7 +157,13 @@ def plan(db, dataset, seeds, deep=False, aliases=None):
     for county in counties:
         for group in ('Democratic Party', 'Republican Party', 'labor council', 'chamber business', 'teachers educators', 'environmental organizations', 'newspaper editorial board'):
             add_query(db, f'"{county}" {election_date[:4]} November candidate endorsements {group}', [], 5)
-    for seed in json.loads(seeds.read_text(encoding='utf-8'))['sources']:
+    seed_data = json.loads(seeds.read_text(encoding='utf-8'))
+    # Shared publisher queries cost one search each, not one per candidacy.
+    for query in seed_data.get('queries', []):
+        if not isinstance(query, str) or not query.strip():
+            raise ValueError('Seed queries must be nonempty strings')
+        add_query(db, query, [], 4)
+    for seed in seed_data['sources']:
         meta = {k: v for k, v in seed.items() if k != 'url'}
         add_source(db, seed['url'], meta, 0, reviewed=True)
     db.commit()

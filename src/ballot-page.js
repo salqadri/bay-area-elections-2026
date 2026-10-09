@@ -158,10 +158,11 @@
         }
         if (candidate.endorsements?.length) {
           const en = node('details', 'ballot-candidate-endorsements');
-          en.append(node('summary', null, 'Endorsements · ' + candidate.endorsements.length + ' records (current cycle)'));
+          en.append(node('summary', null, 'Endorsements and support · ' + candidate.endorsements.length + ' records (2026 cycle)'));
           for (const r of candidate.endorsements) {
-            const li = node('p', null, (r.relation === 'recommended' ? 'Recommended by ' : 'Endorsed by ') + r.endorser + (r.kind ? ' (' + r.kind + ')' : '') + (r.phase ? ' · ' + r.phase : '') + ' — checked ' + r.checked_on);
+            const li = node('p', null, EndorsementDisplay.label(r));
             li.append(' ', safeLink(r.url, 'source ↗'));
+            if (r.note_id && DATA.notes[r.note_id]) li.append(node('span', null, ' — ' + DATA.notes[r.note_id]));
             en.append(li);
           }
           row.append(en);

@@ -10,6 +10,8 @@ from unittest.mock import patch
 
 import endorsement_extract as ex
 import research_endorsements as research
+from check_published_endorsements import blocked_reason, check_endorsements
+from apply_endorsement_review import apply_review
 
 
 META = {'publisher': 'Example County Civic Club', 'role': 'endorser', 'kind': 'organization', 'assertion': 'endorsements'}
@@ -40,6 +42,29 @@ class ExtractionChecks(unittest.TestCase):
         self.assertEqual(len(records), 2)
         self.assertFalse(issues)
         self.assertEqual({x['phase'] for x in records}, {'general'})
+
+    def test_voter_guide_and_discovery_page_do_not_endorse_every_candidate(self):
+        body = '# November 2026 Election Voter Guide\n## Governor\nMorgan Vale\nTaylor Reed'
+        records, _ = ex.extract(page(body), META, self.people, 2026)
+        self.assertFalse(records)
+        records, _ = ex.extract(page(example_body()), {**META, 'role': 'discovery'}, self.people, 2026)
+        self.assertFalse(records)
+
+    def test_endorsement_section_does_not_leak_to_sibling_candidate_directory(self):
+        body = '# November 2026 Election\n## Endorsements\nGovernor: Morgan Vale\n## Candidate directory\nGovernor: Taylor Reed'
+        records, _ = ex.extract(page(body), META, self.people, 2026)
+        self.assertEqual([r['evidence']['quote'] for r in records], ['Governor: Morgan Vale'])
+
+    def test_aggregator_never_becomes_the_endorser(self):
+        records, issues = ex.extract(page(example_body()), {**META, 'role': 'aggregator'}, self.people, 2026)
+        self.assertFalse(records)
+        self.assertIn('publisher_or_source_role_unverified', issues[0]['reasons'])
+
+    def test_cookie_notice_and_generic_heading_are_not_endorsers(self):
+        candidate = next(c for c in self.people.values() if c['name'] == 'Alex Rivera')
+        body = '# 2026 Election Endorsements\n## Alex Rivera — Exampleville City Council District 1\n### This website uses cookies.\n### 5 LEADERS OF THE COMMUNITY\n- Example Teachers Association'
+        records, _ = ex.extract(page(body), {'role': 'campaign', 'candidate_ids': [candidate['id']]}, self.people, 2026)
+        self.assertEqual([r['endorser'] for r in records], ['Example Teachers Association'])
 
     def test_primary_stays_primary_and_old_cycle_not_accepted(self):
         text = example_body().replace('November 2026 General', 'June 2026 Primary') + '\n# November 2024 General Election Endorsements\nGovernor: Morgan Vale'
@@ -125,6 +150,30 @@ class ExtractionChecks(unittest.TestCase):
         self.assertEqual(len(records), 1)
 
 
+class PublicationChecks(unittest.TestCase):
+    def test_quarantined_guide_cannot_reenter_with_tracking_url_or_new_name(self):
+        self.assertTrue(blocked_reason({'url': 'http://sfchronicle.com/projects/2026/california-sf-bay-area-voter-guide/?utm_source=x', 'endorser': 'Renamed publisher'}))
+        self.assertFalse(blocked_reason({'url': 'https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/', 'endorser': 'San Francisco Chronicle Editorial Board'}))
+
+    def test_support_rating_cannot_be_published_as_formal_endorsement(self):
+        d = dataset(); d['notes'] = {'N1': 'Source rating, not an exclusive endorsement.'}
+        d['positions'][0]['candidates'][0]['endorsements'] = [{'endorser': 'Example Group', 'relation': 'endorsed', 'rating': 'Support', 'phase': 'general', 'url': URL, 'checked_on': '2026-10-09', 'note_id': 'N1'}]
+        self.assertTrue(check_endorsements(d))
+        d['positions'][0]['candidates'][0]['endorsements'][0]['relation'] = 'supported'
+        self.assertFalse(check_endorsements(d))
+
+    def test_curated_review_is_idempotent_and_preserves_rosters(self):
+        root = Path(__file__).resolve().parent.parent
+        data = json.loads((root/'2026-11-03_Bay_Area_Elections.json').read_text())
+        review = json.loads((root/'research/endorsements/targeted-2026-10-09.json').read_text())
+        export = json.loads((root/'research/endorsements/endorsements-export-2026-10-09.json').read_text())
+        before = copy.deepcopy(data), copy.deepcopy(export)
+        first = apply_review(data, review, export)
+        self.assertEqual(first, before)
+        self.assertEqual(apply_review(first[0], review, first[1]), first)
+
+
+
 class LedgerChecks(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(); self.root = Path(self.temp.name)
@@ -145,6 +194,16 @@ class LedgerChecks(unittest.TestCase):
         self.assertEqual(first['accepted_observations'], 2)
         self.assertEqual(second['pages_processed'], 0)
         self.assertEqual(research.status(self.db)['observations'], 2)
+
+    def test_shared_publisher_queries_are_planned_once(self):
+        seeds = json.loads(self.seeds.read_text())
+        seeds['queries'] = ['Example statewide organization 2026 endorsements']
+        self.seeds.write_text(json.dumps(seeds))
+        research.plan(self.db, self.data, self.seeds)
+        research.plan(self.db, self.data, self.seeds)
+        row = self.db.execute('SELECT ids FROM queries WHERE q=?', (seeds['queries'][0],)).fetchall()
+        self.assertEqual(len(row), 1)
+        self.assertEqual(json.loads(row[0][0]), [])
 
     def test_search_snippets_never_become_endorsements(self):
         q = self.db.execute('SELECT * FROM queries LIMIT 1').fetchone()

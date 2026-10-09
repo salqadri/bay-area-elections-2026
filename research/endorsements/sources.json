@@ -1,5 +1,5 @@
 {
-  "description": "Starter sources inspected 2026-10-08. Discovery queries cover parties, labor, business, education, environmental groups and media in each county; candidate queries cover every printed candidacy regardless of party. Publisher assertions apply only to the linked publisher, never to every organization named on a page.",
+  "description": "Source registry reviewed October 9, 2026. Shared queries and lists are researched once for all printed candidacies. Discovery pages and aggregators are not endorsers; mixed tiers or cycles require source-level review.",
   "sources": [
     {
       "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
@@ -39,16 +39,18 @@
     {
       "url": "https://www.sfchronicle.com/projects/2026/california-sf-bay-area-voter-guide/",
       "publisher": "San Francisco Chronicle Editorial Board",
-      "role": "endorser",
+      "role": "discovery",
       "kind": "media",
-      "assertion": "endorsements"
+      "assertion": "mixed",
+      "review_note": "Neutral all-candidate guide; never use as editorial endorsement evidence."
     },
     {
       "url": "https://sfendorsements.com/",
       "publisher": "SFEndorsements (aggregator)",
-      "role": "endorser",
+      "role": "aggregator",
       "kind": "organization",
-      "assertion": "endorsements"
+      "assertion": "mixed",
+      "review_note": "Identify the actual endorser and preserve source tiers; this publisher is not endorsing every listed candidate."
     },
     {
       "url": "https://www.progressivevotersguide.com/california/2026/general/county/contracosta",
@@ -74,9 +76,265 @@
     {
       "url": "https://bluevoterguide.org/endorser-org/Contra_Costa_County_(CA)_Democratic_Committee/CA/2577",
       "publisher": "Blue Voter Guide (recording Contra Costa County Democratic Committee)",
+      "role": "aggregator",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Identify the actual endorser and preserve source tiers; this publisher is not endorsing every listed candidate."
+    },
+    {
+      "url": "https://www.trackaipac.com/endorsements",
+      "publisher": "Track AIPAC / Citizens Against AIPAC Corruption",
       "role": "endorser",
       "kind": "organization",
-      "assertion": "endorsements"
+      "assertion": "endorsements",
+      "review_note": "Three in-scope House candidates explicitly listed for the November 3, 2026 general election. Other states, later cycles and a separately linked local guide are excluded."
+    },
+    {
+      "url": "https://www.hinduamericanpac.com/endorsements",
+      "publisher": "Hindu American PAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Melissa Hernandez is a current CD-14 endorsement linked to her 2026 campaign. Mixed-age entries require individual review."
+    },
+    {
+      "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
+      "publisher": "CAIR Action",
+      "role": "aggregator",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Secondary November 2026 listing: 15 matches to the printed roster. Its endorsement label may flatten the official endorsed/preferred distinction; publish as reported support with original tier unresolved."
+    },
+    {
+      "url": "https://indiapost.com/americans4hindus-extends-support-to-fremont-city-council-candidates-vipin-sharma-and-manisha-pathak/",
+      "publisher": "Americans4Hindus",
+      "role": "unverified",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "September 11, 2026 report explicitly attributes organizational endorsements and certificate/check presentations by Japra for Fremont Districts 3 and 4."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/john-garamendi/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/josh-harder/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/mark-desaulnier/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/scott-wiener/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/lateefah-simon/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/aisha-wahab/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/kevin-mullin/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/sam-liccardo/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/ro-khanna/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jstreetpac.org/candidate/zoe-lofgren/",
+      "publisher": "JStreetPAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Candidate profile identifies the House district and marks Endorsed; matched against current candidate list and 2026 program."
+    },
+    {
+      "url": "https://jewishdems.org/endorsements/",
+      "publisher": "Jewish Democratic Council of America",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Two in-scope California House candidates on the full 2026 endorsements list."
+    },
+    {
+      "url": "https://dmfipac.org/news-updates/press-release/dmfi-pac-announces-major-2026-house-endorsement-slate-backing-pro-israel-democrats-in-must-win-districts-nationwide/",
+      "publisher": "DMFI PAC",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Three in-scope House candidates in the December 16, 2025 announcement for the 2026 primary cycle. General-election status remains unverified."
+    },
+    {
+      "url": "https://www.dfi-ca.org/ELECTIONS",
+      "publisher": "California Jewish Democrats",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "2026 support grades are expressly distinguished from exclusive endorsements. Neutral, No Position and In Process are not positive support records."
+    },
+    {
+      "url": "https://www.merforschoolboard.com/endorsements",
+      "publisher": "Mer Curry Nuñez campaign",
+      "role": "unverified",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Current 2026 campaign page names organizations among its endorsers; independent organizational confirmation remains outstanding."
+    },
+    {
+      "url": "https://www.kerryhillis.com/endorsements",
+      "publisher": "Kerry Hillis campaign",
+      "role": "unverified",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Current 2026 campaign page names organizations among its endorsers; independent organizational confirmation remains outstanding."
+    },
+    {
+      "url": "https://www.marccooperforschoolboard.com/endorsements",
+      "publisher": "Marc Cooper campaign",
+      "role": "unverified",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Current 2026 campaign page names organizations among its endorsers; independent organizational confirmation remains outstanding."
+    },
+    {
+      "url": "https://www.borislipkin.com/",
+      "publisher": "Boris Lipkin campaign",
+      "role": "unverified",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Current 2026 campaign page names organizations among its endorsers; independent organizational confirmation remains outstanding."
+    },
+    {
+      "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
+      "publisher": "San Francisco Chronicle Editorial Board",
+      "role": "endorser",
+      "kind": "media",
+      "assertion": "endorsements",
+      "review_note": "Actual November endorsement list, separate from the neutral candidate guide that caused the erroneous import. Ten named candidates; Coming Soon and It’s complicated entries are excluded."
+    },
+    {
+      "url": "https://cairactionguide.org/explore",
+      "publisher": "CAIR Action",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Retrieve the actual November guide once for all 15 matches; distinguish endorsed, preferred, opposed and no endorsement. The readable official California page describes the June primary, so it cannot independently confirm November tiers."
+    },
+    {
+      "url": "https://candidates.aipacpac.org/page/featured",
+      "publisher": "AIPAC PAC",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Read the candidate portal with a browser and establish current-cycle endorsements. Track AIPAC funding totals or PAC receipts do not establish AIPAC endorsements."
+    },
+    {
+      "url": "https://dmfipac.org/candidates/2026-endorsees/",
+      "publisher": "DMFI PAC",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Confirm November status, including any explicit withdrawal. Retained primary announcements are historical observations."
+    },
+    {
+      "url": "https://bajc.unitedvote.net/",
+      "publisher": "Bay Area Jewish Coalition Action",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Confirm the three campaign claims on the organization’s own November guide; resolve Hillis’s shorter organization name separately."
+    },
+    {
+      "url": "https://jdcsv.com/Endorsements",
+      "publisher": "Jewish Democratic Coalition of the Bay Area",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Find an actual November list to independently confirm the Mer Curry Nuñez and Boris Lipkin campaign claims."
+    },
+    {
+      "url": "https://www.bayareajewishaction.org/",
+      "publisher": "Bay Area Jewish Action",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Do not confuse BAJA with Bay Area Jewish Coalition Action; do not convert donations or a mission statement into endorsements."
+    },
+    {
+      "url": "https://www.newindiaabroad.com/english/indian-diaspora-community/ethan-agarwal-fundraiser-set-in-fremont-may-3",
+      "publisher": "Dr. Romesh Japra",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "2026 primary fundraising lead; do not transfer support to either CD-17 November candidate."
+    },
+    {
+      "url": "https://www.electgopal.com/endorsements/",
+      "publisher": "Dr. Romesh Japra",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "Alameda district-attorney primary lead, not Gopal Kumarappan or a current November candidacy; direct page was inaccessible."
+    },
+    {
+      "url": "https://patch.com/california/fremont/anurag-mishra-steps-aside-fremont-district-4-race-backs-manisha-pathak-call-nodx",
+      "publisher": "Dr. Romesh Japra",
+      "role": "unverified",
+      "assertion": "mixed",
+      "review_note": "The campaign post attributes endorsement to Anurag Mishra. Hosting a meeting does not establish a separate Japra endorsement."
     }
+  ],
+  "queries": [
+    "site:trackaipac.com/endorsements California 2026",
+    "site:cairactionguide.org 2026 California endorsements",
+    "site:cairaction.org 2026 Northern California voter guide",
+    "site:hinduamericanpac.com/endorsements 2026",
+    "\"Romesh Japra\" 2026 (endorsement OR endorses OR fundraiser OR support)",
+    "\"Americans4Hindus\" 2026 (endorsements OR Fremont OR California)",
+    "site:aipacpac.org 2026 California endorsements",
+    "site:jstreetpac.org 2026 California endorsements",
+    "site:dmfipac.org 2026 California endorsements",
+    "site:jewishdems.org 2026 California endorsements",
+    "\"Bay Area Jewish Coalition Action\" 2026 endorsements",
+    "\"Bay Area Jewish Action\" 2026 endorsements",
+    "\"California Jewish Democrats\" 2026 support",
+    "\"Jewish Democratic Coalition of the Bay Area\" 2026 endorsements"
   ]
 }

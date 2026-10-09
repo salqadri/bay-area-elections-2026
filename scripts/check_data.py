@@ -5,6 +5,7 @@ from decimal import Decimal
 from html.parser import HTMLParser
 from pathlib import Path
 from check_evidence import check_evidence
+from check_published_endorsements import check_endorsements
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = "2026-11-03_Bay_Area_Elections.json"
@@ -13,6 +14,8 @@ schema = json.loads((ROOT / "elections.schema.json").read_text(encoding="utf-8")
 positions = data["positions"]
 evidence_errors = check_evidence(data)
 assert not evidence_errors, '\n'.join(evidence_errors)
+endorsement_errors = check_endorsements(data)
+assert not endorsement_errors, '\n'.join(endorsement_errors)
 ids = [p["id"] for p in positions]
 assert len(ids) == len(set(ids)), "Duplicate position IDs"
 counties = [c["name"] for c in data["election"]["counties_in_scope"]]

@@ -9,7 +9,16 @@ import re
 import unicodedata
 from urllib.parse import urljoin, urlsplit, urlunsplit, parse_qsl, urlencode
 
-VERSION = 'endorsements-1'
+VERSION = 'endorsements-2'
+
+
+def invalid_endorser_name(name):
+    """Reject UI text/category labels without guessing an actual endorser."""
+    return bool(re.search(
+        r'\bcookies?\b|privacy policy|terms of (?:use|service)|all rights reserved|'
+        r'^(?:\d+\s+)?leaders of (?:the )?community$|'
+        r'^(?:our |local )?(?:elected officials|community leaders|organizations|supporters|endorsements)$',
+        name.strip(' *'), re.I))
 
 
 def norm(text):
@@ -194,6 +203,7 @@ def contexts(text):
     """Yield source lines with section/list ancestry and local election markers."""
     headings, parents = [], []
     cycle, phase, cycle_quote, endorsement_section = None, 'unspecified', '', False
+    endorsement_level = None
     paragraph_blocked = False
     lines = text.splitlines()
     for index, raw in enumerate(lines):
@@ -204,6 +214,9 @@ def contexts(text):
         h = re.match(r'^(#{1,6})\s+(.+)', item[2] if item else line)
         if h:
             level = len(h[1])
+            if endorsement_level is not None and level <= endorsement_level:
+                endorsement_section = False
+                endorsement_level = None
             headings = [(n, s) for n, s in headings if n < level]
             parents = []
             label = h[2]
@@ -222,8 +235,9 @@ def contexts(text):
         negative_section = r'questionnaire|forum|process|seeking|interview|ballot measures|resources|volunteer|donate'
         if not h and not item and len(label) < 250 and re.search(r'questionnaires|candidate forum|endorsement process', label, re.I):
             paragraph_blocked = True
-        if re.search(r'endorsements?\b|voter guide|endorsed candidates', label, re.I) and len(label) < 160 and not re.search(negative_section, label, re.I):
+        if re.search(r'endorsements?\b|endorsed candidates', label, re.I) and len(label) < 160 and not re.search(negative_section, label, re.I):
             endorsement_section = True
+            endorsement_level = len(h[1]) if h else (headings[-1][0] if headings else 0)
         if item:
             depth = len(item[1])
             parents = [(n, s) for n, s in parents if n < depth]
@@ -263,6 +277,12 @@ def qualifier(line, name):
 def extract(page, meta, candidates, year):
     records, issues = [], []
     role = meta.get('role', 'unverified')
+    # Neutral guides are discovery sources; mentioning every candidate is not
+    # an endorsement. Aggregators still create review issues, never own-publisher
+    # endorsements. A vetted voter guide with no endorsement heading requires
+    # manual review instead of trusting its title alone.
+    if role == 'discovery':
+        return [], []
     text = page['text']
     source_candidates = list(candidates.values())
     if role == 'campaign':
@@ -275,6 +295,8 @@ def extract(page, meta, candidates, year):
             if not row['endorsement_section'] or not (row['list_item'] or row['heading'] in {3, 4, 5}):
                 continue
             if len(line) > 140 or len(line.split()) < 2 or re.search(r'endorsement|\b(?:join|sign up|learn more|donate|volunteer|contact|click|thank|subscribe)\b|^elected officials|^community|^organizations|^labor$|^speaker |^former |^u\.?s\.? senator|^congress|^supervisor$|^mayor$|20\d\d.*(?:election|campaign)|(?:election|campaign).*20\d\d', line, re.I):
+                continue
+            if invalid_endorser_name(line):
                 continue
             matches = [c for c in source_candidates if not contains_name(line, c)]
             endorser_name = line.strip(' *')

@@ -1,5 +1,16 @@
 # Research and development handoff
 
+## Latest update — October 9, 2026: targeted endorsements and publication correction
+
+This update supersedes the earlier 741-candidacy/884-record endorsement counts. The current publication has **236 endorsement/support records on 156 candidacies**: 190 endorsements, 6 recommendations, 40 other support observations. It removes 725 unsupported imports (723 Chronicle directory mentions plus two non-endorser labels) and adds 77 reviewed records covering the requested publishers, Japra/Americans4Hindus and the actual Chronicle editorial list.
+
+Read [the review report](reviews/2026-10-09-targeted-endorsements.md) and the `targeted-2026-10-09.json` source/record/follow-up manifest. The old collector export is filtered, with 1,167 original observation IDs preserved in quarantine; the curated layer is separate. Schema 1.13 and both readers distinguish support ratings, primary/general stage, campaign claims and secondary reports. The collector has shared publisher queries and stricter extraction; a publication guard prevents known bad imports from returning. The apply script is idempotent and refuses conflicting newer records.
+
+CAIR's official dynamic guide and AIPAC's candidate portal remain unreadable from the research environment. CAIR secondary listings are **reported support, original tier unknown**. Hindu American PAC's Murali Srinivasan and Yang Shao entries remain held for cycle/office mismatches. Regional campaign claims still need official confirmation. The remaining older endorsement data is not comprehensively audited. Further work should resolve these source-level gaps, not rerun enrichment across every candidate. The optional Jev task was canceled by the owner.
+
+The election-wide October 4 research date, candidate rosters, party labels and FEC records were not refreshed by this targeted endorsement review. The README has current coverage; historical session entries below retain their original counts.
+
+
 **Prepared October 6, 2026 (America/Los_Angeles).** This is a handoff of existing work, not a new verification of election facts. Recheck the JSON and Git history before using these numbers as the current state.
 
 The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`, which added address autocomplete. This documentation may be followed by additional commits. The repository contains the maintained project; no prior chat conversation or scratch files are needed to work on it.

@@ -71,8 +71,17 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();$('collapse-sections').click();const city=original.positions.find(p=>p.government_level==='City or town'&&p.ballot_status==='confirmed');location.hash='#id='+city.id;window.events.hashchange();assert.equal(cards().find(c=>c.dataset.contestId===city.id).getAttribute('aria-pressed'),'true');assert(visible(cards().find(c=>c.dataset.contestId===city.id)));
   set('sort','jurisdiction');assert.equal(groups().length,0);assert($('group-controls').hidden);set('sort','level');assert(groups().length>0);
   reset();set('search','CD-8');assert(text('panel-candidates').includes('$489,134.65'));assert(text('panel-candidates').includes('$20,073.00'));assert(text('panel-candidates').includes('September 30, 2026'));assert(text('panel-candidates').includes('October 6, 2026'));
+  assert(text('panel-candidates').includes('Endorsed by JStreetPAC'));
+  assert(text('panel-candidates').includes('Supported by California Jewish Democrats · Source rating: Support'));
+  assert(!text('panel-candidates').includes('Endorsed by California Jewish Democrats'));
   tab('sources');assert(nodes($('panel-sources')).some(n=>n.tagName==='A'&&n.href==='https://www.fec.gov/data/candidate/H0CA10149/'));
   reset();set('search','CD-10');assert(text('panel-candidates').includes('No published total available'));assert(text('panel-candidates').includes('not zero'));assert(!text('panel-candidates').includes('$0.00'));
+  assert(text('panel-candidates').includes('Supported by CAIR Action'));
+  assert(text('panel-candidates').includes('original tier is unconfirmed'));
+  assert(text('panel-candidates').includes('Secondary report'));
+  reset();set('search','Manisha Pathak');assert(text('panel-candidates').includes('Supported by Dr. Romesh Japra'));
+  assert(text('panel-candidates').includes('Endorsed by Americans4Hindus'));
+  assert(!text('panel-candidates').includes('Endorsed by Dr. Romesh Japra'));
   reset();set('search','Scott Wiener');assert(text('panel-candidates').includes('January 1, 2023'));assert(text('panel-candidates').includes('not verified as a January 2025 onward subtotal'));
   reset();set('search','CD-16');assert(text('panel-candidates').includes('$400.00'));
   $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,'2026-10-06');assert.equal(fundedExport.positions[0].candidates[1].fec.receipts,400);
@@ -101,7 +110,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('search','does-not-exist-349823');assert.equal(count(),0);assert(text('result-list').includes('No contests match'));assert.equal($('download-filtered').disabled,true);
   reset();set('search','AD-18');$('download-filtered').click();const filtered=JSON.parse(await downloads.at(-1).blob.text());assert.equal(filtered.positions.length,1);assert.equal(filtered.coverage.confirmed_contests,1);assert.equal(filtered.coverage.printed_candidate_entries,2);assert.equal(filtered.coverage.status,'filtered_view_of_research_inventory');
   const subsetCandidates=filtered.positions.flatMap(p=>p.candidates||[]);
-  for(const [metric,key] of [['printed_candidates_with_x_url','x_url'],['printed_candidates_with_secondary_x_url','secondary_x_url'],['printed_candidates_with_campaign_url','campaign_url'],['printed_candidates_with_gaza_evidence','gaza_evidence']]) {
+  for(const [metric,key] of [['printed_candidates_with_x_url','x_url'],['printed_candidates_with_secondary_x_url','secondary_x_url'],['printed_candidates_with_campaign_url','campaign_url'],['printed_candidates_with_gaza_evidence','gaza_evidence'],['printed_candidates_with_endorsements','endorsements']]) {
     assert.equal(filtered.coverage[metric],subsetCandidates.filter(c=>Array.isArray(c[key])?c[key].length:!!c[key]).length,metric+' must describe the downloaded subset');
   }
   reset();set('search','CD-11');

@@ -7,18 +7,45 @@ The collector uses Python's standard library. Optional `pdftotext` supports text
 ## Minimize agent work
 
 1. Fetch shared endorser lists first. Each page is matched against the entire roster, so one union or party list can resolve many candidates.
-2. Search each candidacy once with name, office and cycle, plus county-wide discovery queries across Democratic and Republican parties, labor, business, educators, environmental groups and media. Party affiliation never limits candidate coverage. The five starter URLs are seeds, not a representative or complete inventory of endorsers.
+2. Search each candidacy once with name, office and cycle, plus county-wide discovery queries across Democratic and Republican parties, labor, business, educators, environmental groups and media. Party affiliation never limits candidate coverage. The registered URLs are seeds, not a representative or complete inventory of endorsers.
 3. Cache searches and content snapshots. Follow real endorsement links on campaign sites. Repeated URLs are fetched once per refresh and repeated extraction skips unchanged inputs.
 4. Read the grouped review packets in Hermes's main context. Register verified source publishers and reviewed name aliases, then rerun extraction to resolve whole pages at once. Handle clear rejects from the supplied excerpts without new research.
 5. Use a Research sub-agent only when a packet needs a missing page, OCR, identity verification or additional evidence. Combine issues from the same source into one lookup task, import its result, then rerun extraction. Do not dispatch one research task per candidate.
 
 On the October 9 baseline, a fresh plan contains **869 candidacies, 904 search queries and 386 initial source URLs**. `--deep` adds one targeted query per candidacy. These are request counts, not a promise of complete results, cost or duration; discovered pages add fetches. A modest first batch lets Hermes inspect coverage before committing a larger budget.
 
-## First live run status (October 9, 2026)
+## Current publication and correction — October 9, 2026
 
-Collection through this date is **complete**: 904/904 searches, 3,671 pages parsed, ~2,780 explicit fetch failures (bot-walled platforms and junk hosts; each stays checkpointed as a limitation), 1,328 accepted observations from 9 verified endorsers / 10 registered sources. Published: endorsements on **741 of 869 printed candidacies** in the election dataset (schema 1.12) plus the snapshot `research/endorsements/endorsements-export-2026-10-09.json`. A final drain pass changed nothing — re-extract/export/re-attach is byte-identical, so do not rerun collection expecting new signal from plain HTTP.
+The initial run completed 904 searches and parsed 3,671 pages, but completion was not a factual audit. Its 741-candidacy/884-record publication claim was inflated: 723 records came from a neutral Chronicle candidate directory, and two more named a cookie notice and a section heading as endorsers. These 725 public records and their 1,167 collector observations are now quarantined with stable IDs and original snapshot hashes. The old export has been filtered; its original contents remain in Git history.
 
-Next-value work: (1) browser/provider **imports** for bot-walled but credible sources (Ballotpedia candidate pages, Facebook/Instagram endorsement posts) via `import`; (2) targeted follow-up on the ~128 uncovered candidacies; (3) bulk reject-by-source for the ~27.6k pending review items from low-quality hosts after confirming they are not endorsers — record decisions with reasons, never delete packets silently.
+The corrected publication contains **236 records under 156 candidacies**, including **77 manually reviewed additions**. Read [the review report](reviews/2026-10-09-targeted-endorsements.md), [curated findings](../research/endorsements/targeted-2026-10-09.json), and [quarantine](../research/endorsements/quarantine-2026-10-09.json). The remaining 159 older records are retained, not certified as independently audited. Missing evidence for 713 candidacies remains unknown.
+
+The collector export and curated layer are deliberately separate: the collector schema does not express all source ratings or other support. The canonical public dataset and both readers use schema 1.13 with `supported`, optional `rating`, `verification`, and shared `note_id` qualifications. The CAIR secondary guide is published as **reported support with unknown original tier**, not a verified CAIR formal endorsement. DMFI primary announcements remain primary. Japra's documented presentation of organizational checks is not a claim of a personal donation.
+
+### Refresh the requested publishers without per-candidate agent calls
+
+The seed registry now includes Track AIPAC, CAIR Action, Hindu American PAC, JStreetPAC, JDCA, DMFI PAC, California Jewish Democrats, regional groups and Japra/Americans4Hindus leads. Fourteen shared publisher queries are planned once across the roster; they reuse the existing search cache. Each fetched page is matched against all candidates. Read the `followups` in the curated layer before spending requests on blocked or historically ambiguous sources.
+
+```sh
+python3 scripts/research_endorsements.py plan
+python3 scripts/research_endorsements.py run --max-queries 14 --max-pages 60 --workers 4
+python3 scripts/research_endorsements.py extract
+python3 scripts/research_endorsements.py review-packets
+```
+
+Those budgets prioritize new shared queries in an existing completed ledger; in a fresh ledger other discovery work also exists. Re-fetch a source only when its age or a concrete unresolved question justifies it. Resolve all candidates on that source in one pass. Dynamic CAIR/AIPAC pages may need one browser lookup each; Hindu American PAC's older biographies need office/cycle clarification. Do not schedule a broad enrichment run or one Research-agent invocation per candidate.
+
+Extractor version 2 invalidates the old extraction cache when `extract` runs. Neutral guides (`role: discovery`) cannot generate endorsements. Aggregators (`role: aggregator`) require review of the actual endorsing organization. Support tiers and mixed-cycle lists use `assertion: mixed`. Sibling sections no longer inherit an endorsement heading, and cookie/category labels are rejected. Registered metadata is not a substitute for reviewing accepted observations.
+
+To reproduce this dated publication layer after inspecting the current roster:
+
+```sh
+python3 scripts/apply_endorsement_review.py
+python3 scripts/check_published_endorsements.py
+python3 scripts/build_site.py
+```
+
+The apply command removes quarantined imports, applies the curated findings idempotently and updates coverage. It refuses newer conflicting review records or changed note meanings. Do not use this dated migration to override future research; update its manifest intentionally. `check_data.py` also runs the publication guard, including query/tracking variants of the rejected guide. Raw local SQLite observations are not automatically deleted: reconcile them using the quarantine IDs before exporting again. Future integrations must preserve campaign/report provenance, rank, shared endorsements and personal-capacity notices; if the public schema cannot express a qualification, hold the record until it can.
 
 ## Run and resume
 
@@ -49,7 +76,7 @@ Re-run `plan` after roster/source changes. Candidacy IDs combine contest ID and 
 {"sources":[{"url":"https://example.org/2026-endorsements","publisher":"Example Organization","role":"endorser","kind":"organization","assertion":"endorsements"}]}
 ```
 
-`assertion` can be `endorsements`, `recommendations` or `mixed`. Use `mixed` for pages combining positive endorsements, negative recommendations, or unclear categories. An endorser page asserts the publisher's position; it does not establish that every organization it mentions endorsed every candidate. Search discoveries start unverified. Do not promote a page based on its search snippet alone. Campaign URLs already in the candidate data receive `campaign` provenance; verify that they remain the candidate's site before publication.
+`role` distinguishes `endorser`, `campaign`, `aggregator`, `discovery` and `unverified`; only a verified endorser or campaign can produce automatic claims. `assertion` can be `endorsements`, `recommendations` or `mixed`. Use `mixed` for pages combining positive endorsements, negative recommendations, or unclear categories. An endorser page asserts the publisher's position; it does not establish that every organization it mentions endorsed every candidate. Search discoveries start unverified. Do not promote a page based on its search snippet alone. Campaign URLs already in the candidate data receive `campaign` provenance; verify that they remain the candidate's site before publication.
 
 For confirmed name variants, create a JSON object keyed by exported candidacy ID, with arrays of full-name aliases, then run `plan --aliases path.json` and `extract`. This explicitly replaces the alias map; ordinary replans preserve it. First/last-name approximations only create review leads. Never resolve a common-name collision without office and jurisdiction evidence.
 
