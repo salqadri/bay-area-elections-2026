@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.14",
+  "schema_version": "1.15",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -98,8 +98,8 @@
       "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
       "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
     ],
-    "printed_candidates_with_gaza_evidence": 81,
-    "printed_candidates_with_endorsements": 190
+    "printed_candidates_with_gaza_evidence": 82,
+    "printed_candidates_with_endorsements": 197
   },
   "address_lookup": {
     "division_endpoint": "https://www.googleapis.com/civicinfo/v2/divisionsByAddress",
@@ -307,6 +307,17 @@
               "quote": "John Garamendi has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $34,250",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0418",
+              "url": "https://voteforpeace.info/california/john-garamendi",
+              "summary": "Vote for Peace reports Garamendi supports an arms embargo, cites a USCPR Action score of C, and reports AIPAC/allied-lobby funding. The guide gives no funding period or underlying statement date.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -340,6 +351,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/john-garamendi",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         },
@@ -467,6 +488,17 @@
               "quote": "Josh Harder has received $272,517 from pro-Israel PACs in FEC filings — $122,989 of it from AIPAC PAC and its super PAC, United Democracy Project",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0419",
+              "url": "https://voteforpeace.info/california/josh-harder",
+              "summary": "Vote for Peace reports AIPAC/allied-lobby funding for Harder; its note provides neither an amount nor a financial period. This is a secondary funding claim, not an independent audit or a Track AIPAC opposition.",
+              "date": "2026-10-09",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -510,6 +542,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Support"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/josh-harder",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         },
@@ -673,6 +715,17 @@
               "quote": "accepted $27K from the Israel lobby and voted with their interests 2 of 18 times",
               "source_kind": "news",
               "date_method": "page_metadata"
+            },
+            {
+              "id": "GE-0420",
+              "url": "https://voteforpeace.info/california/mark-desaulnier",
+              "summary": "Vote for Peace reports DeSaulnier backs Block the Bombs and does not currently accept AIPAC/DMFI funds, while urging improvement in his record. The note supplies no cosponsorship date or funding period.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -715,6 +768,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/mark-desaulnier",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -938,6 +1002,17 @@
               "quote": "Chan said that \"on day one in Congress\" she would vote to \"end a genocide in Gaza and to end an apartheid state.\"",
               "source_kind": "agent",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0428",
+              "url": "https://arocaction.org/endorsements/",
+              "summary": "AROC Action’s endorsement rationale reports Chan supports a full arms embargo on Israel and protections for speech and protest. The publisher does not give a date for those underlying policy statements.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -968,6 +1043,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/connie-chan",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -1166,6 +1262,16 @@
               "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
               "checked_on": "2026-10-09",
               "verification": "endorser_statement"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/scott-wiener",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         }
@@ -1312,6 +1418,17 @@
               "quote": "Lateefah Simon has received $8,850 from pro-Israel PACs in the 2026 cycle, chiefly from J Street PAC (FEC filings through 2026-10-04).",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0421",
+              "url": "https://voteforpeace.info/california/lateefah-simon",
+              "summary": "Vote for Peace reports Simon backs Block the Bombs and rejects AIPAC, DMFI and Lockheed Martin funding. Its note gives no cosponsorship date or financial period.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -1343,6 +1460,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/lateefah-simon",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -1656,6 +1794,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/aisha-wahab",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -1883,6 +2042,17 @@
               "quote": "As of October 2026, Kevin Mullin has received $733,866 from pro-Israel PACs in FEC filings — $698,016 of it from AIPAC PAC and its super PAC, United Democracy Project",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0422",
+              "url": "https://voteforpeace.info/california/kevin-mullin",
+              "summary": "Vote for Peace reports AIPAC/allied-lobby funding and no Block the Bombs support for Mullin. Its undated note supplies no financial period and is not independent verification of current cosponsorship.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -1935,6 +2105,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Strong Support"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/kevin-mullin",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         }
@@ -2045,6 +2225,17 @@
               "quote": "As of October 2026, Sam Liccardo has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings.",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0423",
+              "url": "https://voteforpeace.info/california/sam-liccardo",
+              "summary": "Vote for Peace reports AIPAC/allied-lobby funding and no Block the Bombs support for Liccardo. Its undated note supplies no financial period; the guide’s Neutral label is not an endorsement or opposition.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -2315,6 +2506,17 @@
               "quote": "Ro Khanna has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $120,080",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0424",
+              "url": "https://voteforpeace.info/california/ro-khanna",
+              "summary": "Vote for Peace reports Khanna backs Block the Bombs and rejects AIPAC/DMFI funding, while urging improvement in his record. The guide supplies no cosponsorship date or financial period.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -2346,6 +2548,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/ro-khanna",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -2507,6 +2730,17 @@
               "quote": "As of October 2026, Zoe Lofgren has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings. Other pro-Israel PACs tracked here — chiefly J Street PAC — account for $38,775",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0425",
+              "url": "https://voteforpeace.info/california/zoe-lofgren",
+              "summary": "Vote for Peace reports Lofgren supports an arms embargo, cites a USCPR Action score of D, and reports past AIPAC/allied-lobby funding. The guide gives no funding period or underlying statement date.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -2529,6 +2763,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/zoe-lofgren",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -2698,6 +2943,17 @@
               "quote": "As of October 2026, Jimmy Panetta has received $561,053 from pro-Israel PACs in FEC filings — $559,053 of it from AIPAC PAC and its super PAC, United Democracy Project",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0426",
+              "url": "https://voteforpeace.info/california/jimmy-panetta",
+              "summary": "Vote for Peace’s primary-election entry reports AIPAC/allied-lobby funding and no Block the Bombs support for Panetta. The note gives no financial period and does not establish current legislative status.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -2721,6 +2977,16 @@
               "verification": "endorser_statement",
               "note_id": "N292",
               "rating": "Strong Support"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "primary",
+              "url": "https://voteforpeace.info/california/jimmy-panetta",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         },
@@ -2980,6 +3246,19 @@
           "campaign_url": "https://www.markrendon4ad14.com",
           "source_ids": [
             "S953"
+          ],
+          "endorsements": [
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/mark-rendon",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            }
           ]
         },
         {
@@ -3346,6 +3625,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/matt-haney",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -3422,6 +3722,17 @@
               "quote": "promised under pressure from colleagues that they would work with skeptics, like Assemblywoman Mia Bonta, wife of Attorney General Rob Bonta, to 'clean up' the bill after passage.",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0427",
+              "url": "https://voteforpeace.info/california/mia-bonta",
+              "summary": "Vote for Peace reports Bonta criticized AB 715’s rushed handling but ultimately voted for it. This is an undated guide account, not an independently checked roll call; the debate concerned speech about Palestine.",
+              "date": "2026-10-09",
+              "dimension": "actions_votes",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -3452,6 +3763,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/mia-bonta",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -3659,6 +3991,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/liz-ortega",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -3927,6 +4280,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/alex-lee",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -4040,6 +4414,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/ash-kalra",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -4413,6 +4808,17 @@
               "quote": "Becerra’s reference to the “illegal war in Iran” was only a criticism to the form, not the crime itself.",
               "source_kind": "news",
               "date_method": "source_stated"
+            },
+            {
+              "id": "GE-0415",
+              "url": "https://voteforpeace.info/california/xavier-becerra",
+              "summary": "Vote for Peace reports no AIPAC, DMFI or Palantir funding for Becerra; its note gives no financial period or transaction evidence. This is the guide’s claim, not an independent funding audit.",
+              "date": "2026-10-09",
+              "dimension": "aipac_funding",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -4496,6 +4902,17 @@
               "quote": "Dems running to be next California governor ignoring Jew-hatred, 'cancer within their party,' Steve Hilton tells JNS",
               "source_kind": "news",
               "date_method": "page_metadata"
+            },
+            {
+              "id": "GE-0416",
+              "url": "https://voteforpeace.info/california/steve-hilton",
+              "summary": "Vote for Peace reports Hilton supports U.S.-funded military aid to Israel and pledged legal action against California cities over BDS. The guide does not date the underlying statements.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ],
           "endorsements": [
@@ -4507,6 +4924,16 @@
               "url": "https://smgop.org/voter-guide",
               "checked_on": "2026-10-09",
               "quote": "Steve Hilton"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/steve-hilton",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         }
@@ -4767,6 +5194,18 @@
           "x_url": "https://x.com/DonWagnerCA",
           "source_ids": [
             "S590"
+          ],
+          "endorsements": [
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/donald-wagner",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
+            }
           ]
         }
       ],
@@ -4849,6 +5288,57 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/malia-cohen",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "California Building and Construction Trades Council",
+              "kind": "union",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/malia-cohen",
+              "checked_on": "2026-10-09",
+              "verification": "reported",
+              "note_id": "N298"
+            },
+            {
+              "endorser": "California Environmental Voters",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/malia-cohen",
+              "checked_on": "2026-10-09",
+              "verification": "reported",
+              "note_id": "N298"
+            },
+            {
+              "endorser": "GrowSF",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/malia-cohen",
+              "checked_on": "2026-10-09",
+              "verification": "reported",
+              "note_id": "N298"
+            },
+            {
+              "endorser": "California Council for Affordable Housing",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/malia-cohen",
+              "checked_on": "2026-10-09",
+              "verification": "reported",
+              "note_id": "N298"
             }
           ]
         },
@@ -4985,6 +5475,16 @@
               "url": "https://www.sfchronicle.com/projects/2026/california-sf-election-endorsements/",
               "checked_on": "2026-10-09",
               "verification": "endorser_statement"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "opposed",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/eleni-kounalakis",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296"
             }
           ]
         },
@@ -5161,6 +5661,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/rob-bonta",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -5353,6 +5864,60 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/jane-kim",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
+            },
+            {
+              "endorser": "Working Families Party",
+              "kind": "party",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://workingfamilies.org/2026/01/wfp-endorses-jane-kim-for-california-insurance-commissioner/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N299"
+            },
+            {
+              "endorser": "For the People Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://www.janekim.org/endorsements",
+              "checked_on": "2026-10-09",
+              "verification": "campaign_claim",
+              "note_id": "N300"
+            }
+          ],
+          "gaza_evidence": [
+            {
+              "id": "GE-0417",
+              "url": "https://voteforpeace.info/california/jane-kim",
+              "summary": "Vote for Peace reports Kim pledged to reject war-lobby support and favors divesting public funds from war crimes and genocide; the linked questionnaire response and pledge date are not supplied.",
+              "date": "2026-10-09",
+              "dimension": "military_aid",
+              "checked_on": "2026-10-09",
+              "source_kind": "voter_guide",
+              "date_method": "source_observed",
+              "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
             }
           ]
         }
@@ -5526,6 +6091,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/sally-leiber",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -6688,6 +7264,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -6775,6 +7361,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "#1 Gary McCoy | #2 Michael T. Nguyen – District 8"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -6804,6 +7400,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -6914,6 +7520,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -6937,6 +7553,18 @@
           "campaign_url": "https://www.jreppler.com",
           "source_ids": [
             "S717"
+          ],
+          "endorsements": [
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
+            }
           ]
         },
         {
@@ -8011,6 +8639,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/majdi-gaith-abuhamdieh",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -8086,6 +8735,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -9361,6 +10020,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/ofelia-bello",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -9564,7 +10234,20 @@
             "S162",
             "S761"
           ],
-          "x_url": "https://x.com/priforce"
+          "x_url": "https://x.com/priforce",
+          "endorsements": [
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/kalimah-priforce-g0if",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            }
+          ]
         },
         {
           "name": "Brandon Soublet"
@@ -9630,6 +10313,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/phoebe-shin-venkat",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         }
@@ -9869,6 +10563,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/aziz-akbari",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -10496,6 +11201,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -11913,6 +12628,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -11989,6 +12714,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -12064,6 +12799,16 @@
               "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
               "checked_on": "2026-10-09",
               "quote": "Janani Ramachandran - District 4"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -12425,7 +13170,20 @@
           "name": "Gary Gechlik"
         },
         {
-          "name": "Raymond L. Goins"
+          "name": "Raymond L. Goins",
+          "endorsements": [
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/raymond-goins",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            }
+          ]
         },
         {
           "name": "Brian Hamachek",
@@ -13013,6 +13771,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -13200,6 +13968,27 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/claudia-jimenez",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -13524,6 +14313,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/peter-ortiz",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         }
@@ -13688,6 +14488,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/gordon-chester",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         }
@@ -14763,7 +15574,20 @@
         },
         {
           "name": "Melanie Olson",
-          "ballotpedia_url": "https://ballotpedia.org/Melanie_Olson_(South_San_Francisco_City_Council_District_3,_California,_candidate_2026)"
+          "ballotpedia_url": "https://ballotpedia.org/Melanie_Olson_(South_San_Francisco_City_Council_District_3,_California,_candidate_2026)",
+          "endorsements": [
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/melanie-olson",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
+            }
+          ]
         }
       ],
       "ballotpedia_url": "https://ballotpedia.org/San_Mateo_County%2C_California%2C_elections%2C_2026",
@@ -17431,6 +18255,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -20118,6 +20952,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         }
@@ -21161,6 +22005,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -21285,6 +22139,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -21316,6 +22180,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -21354,6 +22228,16 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N295"
+            },
+            {
+              "endorser": "AROC Action",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "general",
+              "url": "https://arocaction.org/endorsements/",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N297"
             }
           ]
         },
@@ -22341,6 +23225,19 @@
               "quote": "the annual conference of American Israel Public Affairs Committee (AIPAC), the premier lobby and promoter of Israeli interests in the U.S., is a major showplace for presidential candidates",
               "source_kind": "news",
               "date_method": "source_stated"
+            }
+          ],
+          "endorsements": [
+            {
+              "endorser": "Vote for Peace",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "general",
+              "url": "https://voteforpeace.info/california/frank-lara-fadb",
+              "checked_on": "2026-10-09",
+              "verification": "endorser_statement",
+              "note_id": "N296",
+              "rating": "Ally"
             }
           ]
         },
@@ -26249,7 +27146,12 @@
     "N292": "Checked October 9, 2026: California Jewish Democrats publishes support grades instead of single-candidate endorsements. The rating is the organization’s own label, not this site’s assessment. The page states the 2026 cycle but does not specify an election stage.",
     "N293": "Checked October 9, 2026: this endorsement is claimed on the candidate’s current campaign page. Independent confirmation from the named organization was not obtained; it remains a campaign claim.",
     "N294": "Checked October 9, 2026: Kerry Hillis’s campaign names Bay Area Jewish Coalition. The exact name is preserved; this claim has not been independently confirmed or assumed to identify the separate Bay Area Jewish Action organization.",
-    "N295": "Reviewed from an October 9, 2026 supplied capture of CAIR Action’s official Explore page. The page could not be independently re-fetched. The capture omits the selected-election header, so the recommendation’s election phase is unspecified."
+    "N295": "Reviewed from an October 9, 2026 supplied capture of CAIR Action’s official Explore page. The page could not be independently re-fetched. The capture omits the selected-election header, so the recommendation’s election phase is unspecified.",
+    "N296": "Vote for Peace / Organize For Peace: source labels checked October 9, 2026. Ally is the guide’s own alignment label, not a formal endorsement; its methodology distinguishes inclusion from endorsement. Opposed is the guide’s negative recommendation. Neutral is not imported as support or opposition. Election phase follows the California list, including Jimmy Panetta’s primary entry. Other groups listed under Sources are research references, not automatically endorsers or opponents. https://voteforpeace.info/methodology",
+    "N297": "AROC Action’s official page explicitly identifies its candidate endorsements as for November 3, 2026. Names and offices were matched to the current printed roster on October 9. Multiple names in one contest are retained without inventing a rank or an explicit joint-endorsement designation. Ballot measures and candidates outside the current roster are preserved in the source review manifest.",
+    "N298": "Vote for Peace explicitly reports this organizational endorsement in Malia Cohen’s candidate notes. This is a secondary report associated with its 2026 general-election listing, not independent confirmation from the named organization. https://voteforpeace.info/california/malia-cohen",
+    "N299": "Working Families Party announced its endorsement of Jane Kim for California Insurance Commissioner on January 21, 2026. The announcement does not specify primary versus general-election scope, so phase remains unspecified. Discovered through Vote for Peace and verified on the party’s own site.",
+    "N300": "For the People Action appears in the Organizations section of Jane Kim’s current Insurance Commissioner endorsement page. This is a campaign claim, independently located through a Vote for Peace source reference; election phase is not explicitly stated on that endorsement list."
   },
   "sources": {
     "S001": {

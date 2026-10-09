@@ -62,6 +62,7 @@ python3 scripts/check_evidence.py
 python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_cair_guide.py
+python3 scripts/check_peace_guides.py
 python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
@@ -124,3 +125,10 @@ Keep credentials, private addresses and `.checks/` out of Git. `.gitignore` alre
 To restore a quarantined source, establish the missing identity/attribution/content/date, record the resolution in the review log, remove its active quarantine entry, and then add the verified evidence and rebuild. Do not simply change an evidence ID or URL spelling to evade the gate. Coordinate with the external ledger so a later merge preserves the correction.
 
 `prepare_jev_review.py --include-quarantine` writes 300 JSONL packets under `.checks/` for the current review baseline. It does not invoke an API. Optional `--source-texts` accepts an object keyed by evidence ID with `{url, text}`; the URL must equal the evidence URL. Without it, only stored excerpts are supplied, explicitly labeled as such. Jev's documented endpoint/authentication contract and outbound network access are still required. No keys belong in source, generated HTML, packets, or logs.
+
+
+## Reviewed peace guides (October 9, schema 1.15)
+
+`import_peace_guides.py` applies the source-card manifest as part of the combined endorsement migration. `check_peace_guides.py` checks completeness, polarity, election phase, preserved CAIR/Track AIPAC records, idempotence and observation dates. `check_published_endorsements.py` requires reviewed guide observations to remain present and unchanged. The CAIR importer preserves the order of already-correct records so rerunning it remains idempotent after another publisher is added.
+
+Both UI date-label functions distinguish `source_observed` from historical dates. The schema requires a complete date, voter-guide source kind and explanatory date note; the evidence guard requires observation date to equal check date. The shared endorsement renderer displays Ally explicitly without upgrading it to a formal endorsement. Rebuild both HTML files and run all README checks after changing these sources.

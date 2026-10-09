@@ -6,6 +6,7 @@ from urllib.parse import urlsplit
 
 from endorsement_extract import invalid_endorser_name, norm
 from import_cair_guide import reviewed_records, REVIEW as CAIR_REVIEW
+from import_peace_guides import check_guides
 
 ROOT = Path(__file__).resolve().parent.parent
 QUARANTINE = ROOT / 'research/endorsements/quarantine-2026-10-09.json'
@@ -59,6 +60,8 @@ def check_endorsements(data, review_cair=True):
                         errors.append(prefix + 'CAIR recommendation differs from reviewed official capture; update the review before publishing')
             if (p['id'], c['name']) in expected_cair and not any(r['endorser'] == 'CAIR Action' for r in c.get('endorsements', [])):
                 errors.append(p['id'] + ' / ' + c['name'] + ': missing reviewed CAIR recommendation')
+    if review_cair:
+        errors.extend(check_guides(data))
     return errors
 
 

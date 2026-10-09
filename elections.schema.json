@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.14"
+      "const": "1.15"
     },
     "election": {
       "type": "object",
@@ -1351,9 +1351,10 @@
           "enum": [
             "Support",
             "Strong Support",
-            "Preferred"
+            "Preferred",
+            "Ally"
           ],
-          "description": "Original positive support tier when published by the source; never an analyst-created candidate grade."
+          "description": "Original positive support tier or Ally classification published by the source; never an analyst-created grade or an assertion of a formal endorsement."
         },
         "shared": {
           "const": true,
@@ -1475,7 +1476,7 @@
           "type": "string",
           "format": "iso-8601-partial",
           "pattern": "^[0-9]{4}(-[0-9]{2})?(-[0-9]{2})?$",
-          "description": "Publication/statement date as precisely as the source states it (YYYY, YYYY-MM or YYYY-MM-DD), calendar-valid. Required: an undated item cannot establish stance evolution and must not enter the dataset."
+          "description": "Calendar-valid publication/statement date at source precision, or an explicitly labeled archive bound or guide observation date. An observed guide assessment does not date the underlying event and cannot establish stance chronology."
         },
         "date_method": {
           "type": "string",
@@ -1484,9 +1485,10 @@
             "page_metadata",
             "x_snowflake",
             "wayback_first_capture",
-            "event_recorded"
+            "event_recorded",
+            "source_observed"
           ],
-          "description": "How this date was established. wayback_first_capture is an UPPER BOUND (content first seen by then), not a publication date; event_recorded means the date comes from the recorded event itself, corroborated elsewhere."
+          "description": "How this date was established. wayback_first_capture is an UPPER BOUND (content first seen by then), not a publication date; event_recorded means the date comes from the recorded event itself, corroborated elsewhere. source_observed is the date a voter-guide assessment was inspected, not its original publication or underlying event date; requires date_note and voter_guide source kind."
         },
         "date_note": {
           "type": "string",
@@ -1530,7 +1532,36 @@
           "format": "date",
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "date_method": {
+                "const": "source_observed"
+              }
+            },
+            "required": [
+              "date_method"
+            ]
+          },
+          "then": {
+            "required": [
+              "date_note",
+              "source_kind"
+            ],
+            "properties": {
+              "date": {
+                "format": "date",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+              },
+              "source_kind": {
+                "const": "voter_guide"
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

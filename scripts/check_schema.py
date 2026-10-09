@@ -266,6 +266,21 @@ for relation in ['preferred', 'opposed']:
 gaza_ev_dated = mutated(lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9101","date":"2025-06","url":"https://example.com/statement","summary":"Candidate called for an immediate ceasefire in a public statement.","dimension":"actions_votes","checked_on":"2026-10-08","date_method":"wayback_first_capture","date_note":"Earliest Wayback capture containing the claim; month is an upper bound."}]))
 assert not check(gaza_ev_dated, SCHEMA), "Partial dates with explicit dating method and note must remain valid"
 
+
+# Guide snapshots are intentionally different from dated historical statements.
+guide = next(r for p in DATA['positions'] for c in p.get('candidates') or [] for r in c.get('gaza_evidence', []) if r.get('date_method') == 'source_observed')
+assert not check(guide, SCHEMA['$defs']['stanceEvidence'])
+for key in ['date_note', 'source_kind']:
+    bad = {k: v for k, v in guide.items() if k != key}
+    assert check(bad, SCHEMA['$defs']['stanceEvidence'])
+    outcomes.append({'case': 'guide_observation_missing_' + key, 'rejected': True})
+assert check({**guide, 'date': '2026-10'}, SCHEMA['$defs']['stanceEvidence'])
+outcomes.append({'case': 'guide_observation_partial_date', 'rejected': True})
+ally = next(r for p in DATA['positions'] for c in p.get('candidates') or [] for r in c.get('endorsements', []) if r.get('rating') == 'Ally')
+assert not check(ally, SCHEMA['$defs']['endorsementRecord'])
+assert check({**ally, 'relation': 'endorsed'}, SCHEMA['$defs']['endorsementRecord'])
+outcomes.append({'case': 'ally_promoted_to_formal_endorsement', 'rejected': True})
+
 report = {
     "method": "Focused local checker implementing every assertion keyword used in the supplied schema, with HTTP(S) URI-subset checks. Not a standard or certified Draft 2020-12 validator.",
     "standard_validator_available": False,
@@ -273,7 +288,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item", "gaza evidence partial date with dating method and note", "candidate endorsement record with source page", "source support rating with provenance and note", "source preference", "source opposition"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item", "gaza evidence partial date with dating method and note", "candidate endorsement record with source page", "source support rating with provenance and note", "source preference", "source opposition", "source Ally classification", "dated guide observation"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 

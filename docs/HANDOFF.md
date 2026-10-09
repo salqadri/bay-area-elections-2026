@@ -1,6 +1,14 @@
 # Research and development handoff
 
-## Latest update — October 9, 2026: CAIR Action source correction
+## Latest update — October 9, 2026: Vote for Peace and AROC Action
+
+Schema **1.15** publishes **386 recommendation records on 197 candidacies** and **245 Gaza evidence items under 82 candidacies**. This pass adds 27 Vote for Peace Ally classifications, 8 oppositions, 29 AROC endorsements, 6 explicit endorsements discovered through linked sources, and 14 attributed guide observations. See [the review](reviews/2026-10-09-peace-guides.md) and [complete source-card manifest](../research/endorsements/peace-guides-2026-10-09.json).
+
+All 152 Vote for Peace cards and 44 AROC cards have dispositions. Five matched Neutral entries produce no recommendation. Panetta remains primary. Five AROC candidate endorsements outside the current roster and ten measures remain in the manifest, without creating ballot contests. CAIR's official labels remain intact; Peter Ortiz is Preferred in both sources. Track AIPAC's three existing endorsements were reverified, not duplicated; a generic badge or funding claim cannot establish its opposition.
+
+Guide assessments use `date_method: source_observed`, the actual inspection date, and a required date note. Both readers label the unknown original date. They are attributed secondary claims, not independently checked funding totals, roll calls or historical statement dates. The importer and publication guard preserve reviewed records and reject unintended changes. Run `check_peace_guides.py` with the full release suite. Candidate rosters, parties, FEC, election-wide dates and prior Gaza evidence are unchanged. Historical sections below retain their original counts.
+
+## Earlier update — October 9, 2026: CAIR Action source correction
 
 The current publication is schema **1.14**, with **316 records on 190 candidacies**: 266 endorsements, 18 preferences, 6 recommendations, 25 other support observations and 1 opposition. This replaces the earlier 15 CAIR secondary reports with **95 recommendations from the supplied official Explore capture**: 76 Endorsed, 18 Preferred and 1 Opposed. Both pages explicitly label negative recommendations, including Marc Cooper's **Opposed by CAIR Action** record.
 

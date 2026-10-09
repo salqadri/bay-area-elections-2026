@@ -164,6 +164,7 @@ function fundraisingCard(f){
 function evidenceDateLabel(evidence) {
   if (!evidence.date) return 'Date unverified';
   if (evidence.date_method === 'wayback_first_capture') return 'Observed by ' + evidence.date + ' (archive bound; original date unknown)';
+  if (evidence.date_method === 'source_observed') return 'Observed on ' + evidence.date + ' (guide snapshot; original date unknown)';
   const methods = {page_metadata: 'page metadata date', x_snowflake: 'post date', event_recorded: 'event date'};
   const method = methods[evidence.date_method];
   return evidence.date + (method ? ' (' + method + ')' : '');

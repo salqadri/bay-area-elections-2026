@@ -1,0 +1,4253 @@
+{
+  "reviewed_on": "2026-10-09",
+  "base_commit": "dfb36632c4c06e5da7c7b473f157cee208cccf60",
+  "schema_version": "1.15",
+  "method": "Manual source and candidate-office review of cached rendered text. Raw captures remain outside Git. Source labels and factual match fields are retained; summaries are paraphrases. No model grading and no automatic endorsement inference from Sources badges.",
+  "sources": {
+    "vote_for_peace": {
+      "url": "https://voteforpeace.info/california",
+      "publisher": "Vote for Peace / Organize For Peace",
+      "retrieval": "rendered_text",
+      "line_count": 2176,
+      "text_sha256": "bf8b7eb14aafb76b0a5bbb5641443166cd948de07fe4aa87d9703c45efe3e557"
+    },
+    "aroc_action": {
+      "url": "https://arocaction.org/endorsements/",
+      "publisher": "AROC Action",
+      "retrieval": "rendered_text",
+      "line_count": 280,
+      "text_sha256": "ae171283a680943e2e76a721974465b557c0c997251d184d02d985d24d7f7ff8"
+    },
+    "track_aipac": {
+      "url": "https://www.trackaipac.com/endorsements",
+      "publisher": "Track AIPAC / Citizens Against AIPAC Corruption",
+      "review": "Connie Chan, Lateefah Simon and Ro Khanna independently confirmed for the general election. Their existing first-party records are preserved without duplicates. No Track AIPAC opposition is inferred from funding data or its absence from this endorsement list."
+    },
+    "wfp_jane_kim": {
+      "url": "https://workingfamilies.org/2026/01/wfp-endorses-jane-kim-for-california-insurance-commissioner/",
+      "publisher": "Working Families Party",
+      "announced_on": "2026-01-21"
+    },
+    "jane_kim_campaign": {
+      "url": "https://www.janekim.org/endorsements",
+      "publisher": "Jane Kim campaign",
+      "review": "For the People Action explicitly appears in Organizations. Broader campaign-list expansion is outside this targeted source integration."
+    }
+  },
+  "notes": {
+    "N296": "Vote for Peace / Organize For Peace: source labels checked October 9, 2026. Ally is the guide’s own alignment label, not a formal endorsement; its methodology distinguishes inclusion from endorsement. Opposed is the guide’s negative recommendation. Neutral is not imported as support or opposition. Election phase follows the California list, including Jimmy Panetta’s primary entry. Other groups listed under Sources are research references, not automatically endorsers or opponents. https://voteforpeace.info/methodology",
+    "N297": "AROC Action’s official page explicitly identifies its candidate endorsements as for November 3, 2026. Names and offices were matched to the current printed roster on October 9. Multiple names in one contest are retained without inventing a rank or an explicit joint-endorsement designation. Ballot measures and candidates outside the current roster are preserved in the source review manifest.",
+    "N298": "Vote for Peace explicitly reports this organizational endorsement in Malia Cohen’s candidate notes. This is a secondary report associated with its 2026 general-election listing, not independent confirmation from the named organization. https://voteforpeace.info/california/malia-cohen",
+    "N299": "Working Families Party announced its endorsement of Jane Kim for California Insurance Commissioner on January 21, 2026. The announcement does not specify primary versus general-election scope, so phase remains unspecified. Discovered through Vote for Peace and verified on the party’s own site.",
+    "N300": "For the People Action appears in the Organizations section of Jane Kim’s current Insurance Commissioner endorsement page. This is a campaign claim, independently located through a Vote for Peace source reference; election phase is not explicitly stated on that endorsement list."
+  },
+  "vote_for_peace_cards": [
+    {
+      "id": "VFP-001",
+      "source_name": "Xavier Becerra",
+      "office": "Governor",
+      "group": "Governor",
+      "source_label": "Neutral",
+      "phase": "general",
+      "position_id": "CA2026-014",
+      "candidate": "Xavier Becerra",
+      "url": "https://voteforpeace.info/california/xavier-becerra",
+      "source_text_sha256": "1c3c4f04e44db567ad884bce31f08a7e2dbc99f43548061b5d802347b0faf638",
+      "action": "neutral_no_recommendation",
+      "reason": "Neutral is outside the requested Ally/Opposed recommendation import; substantive issue notes are reviewed separately."
+    },
+    {
+      "id": "VFP-002",
+      "source_name": "Steve Hilton",
+      "office": "Governor",
+      "group": "Governor",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-014",
+      "candidate": "Steve Hilton",
+      "url": "https://voteforpeace.info/california/steve-hilton",
+      "source_text_sha256": "ec0f38d8ef54af85e303950e0a692e2d4c502b67ef1c4d5f74e57662780d60a4",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-003",
+      "source_name": "Shirley Weber",
+      "office": "Secretary of State",
+      "group": "Secretary of State",
+      "source_label": "Neutral",
+      "phase": "general",
+      "position_id": "CA2026-017",
+      "candidate": "Shirley N. Weber",
+      "url": "https://voteforpeace.info/california/shirley-weber",
+      "source_text_sha256": "02438b3bc8b7b33b7a75543ca20137577b3ed6c4e2de8d4d0c8952781616f85a",
+      "action": "neutral_no_recommendation",
+      "reason": "Neutral is outside the requested Ally/Opposed recommendation import; substantive issue notes are reviewed separately."
+    },
+    {
+      "id": "VFP-004",
+      "source_name": "Donald Wagner",
+      "office": "Secretary of State",
+      "group": "Secretary of State",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-017",
+      "candidate": "Donald P. (Don) Wagner",
+      "url": "https://voteforpeace.info/california/donald-wagner",
+      "source_text_sha256": "29c0e4f7282551600f32a1774cd5fa9bd9573df81b326dc596c8578be151e43b",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-005",
+      "source_name": "Malia Cohen",
+      "office": "State Controller",
+      "group": "State Controller",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "url": "https://voteforpeace.info/california/malia-cohen",
+      "source_text_sha256": "68fc0f44dd21c34d77bcee0e3d3075bf1e27f060cdbb5408720d307d6d1a93cd",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-006",
+      "source_name": "Eleni Kounalakis",
+      "office": "State Treasurer",
+      "group": "State Treasurer",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-019",
+      "candidate": "Eleni Kounalakis",
+      "url": "https://voteforpeace.info/california/eleni-kounalakis",
+      "source_text_sha256": "5727825ff464042c2141b04d24d34d66f312a08b6b5456f65ba3021c9e922006",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-007",
+      "source_name": "Rob Bonta",
+      "office": "Attorney General, District At-Large",
+      "group": "Attorney General",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-012",
+      "candidate": "Rob Bonta",
+      "url": "https://voteforpeace.info/california/rob-bonta",
+      "source_text_sha256": "49472ebbc7319db896262fb7f503206596603cee97636faf16e15e4f10f2225e",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-008",
+      "source_name": "Jane Kim",
+      "office": "Insurance Commissioner",
+      "group": "Insurance Commissioner",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "url": "https://voteforpeace.info/california/jane-kim",
+      "source_text_sha256": "d8e23f451c83d449e894dfef28f98b2bb26067c512a03028d689550d53d4a982",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-009",
+      "source_name": "Ben Allen",
+      "office": "Insurance Commissioner",
+      "group": "Insurance Commissioner",
+      "source_label": "Neutral",
+      "phase": "general",
+      "position_id": "CA2026-015",
+      "candidate": "Ben Allen",
+      "url": "https://voteforpeace.info/california/ben-allen",
+      "source_text_sha256": "030c3b3822110278b94c2b93d1e345b96cdb5126cd0b357da373ae2917ab38e8",
+      "action": "neutral_no_recommendation",
+      "reason": "Neutral is outside the requested Ally/Opposed recommendation import; substantive issue notes are reviewed separately."
+    },
+    {
+      "id": "VFP-010",
+      "source_name": "Sally Lieber",
+      "office": "State Board of Equalization, District 2",
+      "group": "State Board of Equalization, District 2",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "url": "https://voteforpeace.info/california/sally-leiber",
+      "source_text_sha256": "9f71e258b15a4f348b3eb1093309f32dc1015d1c66f0b3beec9d8f25bf740725",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-011",
+      "source_name": "Samuel Sukaton",
+      "office": "State Board of Equalization, District 3",
+      "group": "State Board of Equalization, District 3",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-012",
+      "source_name": "Tom Umberg",
+      "office": "State Board of Equalization, District 4",
+      "group": "State Board of Equalization, District 4",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-013",
+      "source_name": "Mike McGuire",
+      "office": "U.S. Representative, District 1",
+      "group": "U.S. Representative, District 1",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-014",
+      "source_name": "Jared Huffman",
+      "office": "U.S. Representative, District 2",
+      "group": "U.S. Representative, District 2",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-015",
+      "source_name": "Ami Bera",
+      "office": "U.S. Representative, District 3",
+      "group": "U.S. Representative, District 3",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-016",
+      "source_name": "Eric Jones",
+      "office": "U.S. Representative, District 4",
+      "group": "U.S. Representative, District 4",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-017",
+      "source_name": "Mike Thompson",
+      "office": "U.S. Representative, District 4",
+      "group": "U.S. Representative, District 4",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-018",
+      "source_name": "Tom McClintock",
+      "office": "U.S. Representative, District 5",
+      "group": "U.S. Representative, District 5",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-019",
+      "source_name": "Kevin Kiley",
+      "office": "U.S. Representative, District 6",
+      "group": "U.S. Representative, District 6",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-020",
+      "source_name": "Doris Matsui",
+      "office": "U.S. Representative, District 7",
+      "group": "U.S. Representative, District 7",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-021",
+      "source_name": "Mai Vang",
+      "office": "U.S. Representative, District 7",
+      "group": "U.S. Representative, District 7",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-022",
+      "source_name": "John Garamendi",
+      "office": "U.S. Representative, District 8",
+      "group": "U.S. Representative, District 8",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "url": "https://voteforpeace.info/california/john-garamendi",
+      "source_text_sha256": "05cf10fe2d5138777fbe55cefe7d1576775c71cf18b5febdf6469b6b91ac5650",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-023",
+      "source_name": "Josh Harder",
+      "office": "U.S. Representative, District 9",
+      "group": "U.S. Representative, District 9",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-310",
+      "candidate": "Josh Harder",
+      "url": "https://voteforpeace.info/california/josh-harder",
+      "source_text_sha256": "ce5573f983a4302483e523da4e33d79673b92a9ea204c402c528d96fc8b0db1a",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-024",
+      "source_name": "Mark DeSaulnier",
+      "office": "U.S. Representative, District 10",
+      "group": "U.S. Representative, District 10",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "url": "https://voteforpeace.info/california/mark-desaulnier",
+      "source_text_sha256": "9a73f33c0dcffddc9669cb25be3628fe4cdec55dd26629b31318b8b23b89bd0d",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-025",
+      "source_name": "Connie Chan",
+      "office": "U.S. Representative, District 11",
+      "group": "U.S. Representative, District 11",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "url": "https://voteforpeace.info/california/connie-chan",
+      "source_text_sha256": "bc85974653da71fbe01582091c12210fb32fc526f2a95d6bf078880cd1998779",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-026",
+      "source_name": "Scott Wiener",
+      "office": "U.S. Representative, District 11",
+      "group": "U.S. Representative, District 11",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-229",
+      "candidate": "Scott Wiener",
+      "url": "https://voteforpeace.info/california/scott-wiener",
+      "source_text_sha256": "ce188f794d454a1d417501891a0ed118b9b5cd6fe65a5eeb8091bb683f7e3eea",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-027",
+      "source_name": "Lateefah Simon",
+      "office": "U.S. Representative, District 12",
+      "group": "U.S. Representative, District 12",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "url": "https://voteforpeace.info/california/lateefah-simon",
+      "source_text_sha256": "3e1198dd07d33421648624f391150f82647978320966eca63b82cc5ad3b08aab",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-028",
+      "source_name": "Adam Gray",
+      "office": "U.S. Representative, District 13",
+      "group": "U.S. Representative, District 13",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-029",
+      "source_name": "Aisha Wahab",
+      "office": "U.S. Representative, District 14",
+      "group": "U.S. Representative, District 14",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "url": "https://voteforpeace.info/california/aisha-wahab",
+      "source_text_sha256": "669ffe273020b81d1a19635060473b66c6f9873629b8f10ac89ded30d2339c26",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-030",
+      "source_name": "Kevin Mullin",
+      "office": "U.S. Representative, District 15",
+      "group": "U.S. Representative, District 15",
+      "source_label": "Opposed",
+      "phase": "general",
+      "position_id": "CA2026-230",
+      "candidate": "Kevin Mullin",
+      "url": "https://voteforpeace.info/california/kevin-mullin",
+      "source_text_sha256": "b2fea3788ed82fd3553a8e846293ce1580e9bc2678e5eb2d9b6c8dbb3201c26c",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-031",
+      "source_name": "Sam Liccardo",
+      "office": "U.S. Representative, District 16",
+      "group": "U.S. Representative, District 16",
+      "source_label": "Neutral",
+      "phase": "general",
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "url": "https://voteforpeace.info/california/sam-liccardo",
+      "source_text_sha256": "b3a96cce83a227c4eb1e58d7cb3ce9a158682c20c940891ec1de162eef72a2e8",
+      "action": "neutral_no_recommendation",
+      "reason": "Neutral is outside the requested Ally/Opposed recommendation import; substantive issue notes are reviewed separately."
+    },
+    {
+      "id": "VFP-032",
+      "source_name": "Ro Khanna",
+      "office": "U.S. Representative, District 17",
+      "group": "U.S. Representative, District 17",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "url": "https://voteforpeace.info/california/ro-khanna",
+      "source_text_sha256": "be10e9a6fca6da6765265bf475adfed53a3101793b780469afe52d263be5f3b5",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-033",
+      "source_name": "Zoe Lofgren",
+      "office": "U.S. Representative, District 18",
+      "group": "U.S. Representative, District 18",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "url": "https://voteforpeace.info/california/zoe-lofgren",
+      "source_text_sha256": "d444b7573248f3b5746eb4864433fb5065b2f8c22ae20828685308e698a051a1",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-034",
+      "source_name": "Jimmy Panetta",
+      "office": "U.S. Representative, District 19",
+      "group": "U.S. Representative, District 19",
+      "source_label": "Opposed",
+      "phase": "primary",
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "url": "https://voteforpeace.info/california/jimmy-panetta",
+      "source_text_sha256": "b89855fce8f891ef063134a01168692c94d6dc0623cfa6adcdd447d1470af7d4",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-035",
+      "source_name": "Vince Fong",
+      "office": "U.S. Representative, District 20",
+      "group": "U.S. Representative, District 20",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-036",
+      "source_name": "Jim Costa",
+      "office": "U.S. Representative, District 21",
+      "group": "U.S. Representative, District 21",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-037",
+      "source_name": "Randy Villegas",
+      "office": "U.S. Representative, District 22",
+      "group": "U.S. Representative, District 22",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-038",
+      "source_name": "Tessa Lynn Hodge",
+      "office": "U.S. Representative, District 23",
+      "group": "U.S. Representative, District 23",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-039",
+      "source_name": "Jay Obernolte",
+      "office": "U.S. Representative, District 23",
+      "group": "U.S. Representative, District 23",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-040",
+      "source_name": "Salud Carbajal",
+      "office": "U.S. Representative, District 24",
+      "group": "U.S. Representative, District 24",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-041",
+      "source_name": "Raul Ruiz",
+      "office": "U.S. Representative, District 25",
+      "group": "U.S. Representative, District 25",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-042",
+      "source_name": "Julia Brownley",
+      "office": "U.S. Representative, District 26",
+      "group": "U.S. Representative, District 26",
+      "source_label": "Opposed",
+      "phase": "primary",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-043",
+      "source_name": "George Whitesides",
+      "office": "U.S. Representative, District 27",
+      "group": "U.S. Representative, District 27",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-044",
+      "source_name": "Judy Chu",
+      "office": "U.S. Representative, District 28",
+      "group": "U.S. Representative, District 28",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-045",
+      "source_name": "Angelica Dueñas",
+      "office": "U.S. Representative, District 29",
+      "group": "U.S. Representative, District 29",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-046",
+      "source_name": "Luz Rivas",
+      "office": "U.S. Representative, District 29",
+      "group": "U.S. Representative, District 29",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-047",
+      "source_name": "Laura Friedman",
+      "office": "U.S. Representative, District 30",
+      "group": "U.S. Representative, District 30",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-048",
+      "source_name": "Gil Cisneros",
+      "office": "U.S. Representative, District 31",
+      "group": "U.S. Representative, District 31",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-049",
+      "source_name": "Brad Sherman",
+      "office": "U.S. Representative, District 32",
+      "group": "U.S. Representative, District 32",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-050",
+      "source_name": "Pete Aguilar",
+      "office": "U.S. Representative, District 33",
+      "group": "U.S. Representative, District 33",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-051",
+      "source_name": "Jimmy Gomez",
+      "office": "U.S. Representative, District 34",
+      "group": "U.S. Representative, District 34",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-052",
+      "source_name": "Angela Gonzales-Torres",
+      "office": "U.S. Representative, District 34",
+      "group": "U.S. Representative, District 34",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-053",
+      "source_name": "Norma Torres",
+      "office": "U.S. Representative, District 35",
+      "group": "U.S. Representative, District 35",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-054",
+      "source_name": "Ted Lieu",
+      "office": "U.S. Representative, District 36",
+      "group": "U.S. Representative, District 36",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-055",
+      "source_name": "Sydney Kamlager-Dove",
+      "office": "U.S. Representative, District 37",
+      "group": "U.S. Representative, District 37",
+      "source_label": "Neutral",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-056",
+      "source_name": "Hilda Solis",
+      "office": "U.S. Representative, District 38",
+      "group": "U.S. Representative, District 38",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-057",
+      "source_name": "Mark Takano",
+      "office": "U.S. Representative, District 39",
+      "group": "U.S. Representative, District 39",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-058",
+      "source_name": "Ken Calvert",
+      "office": "U.S. Representative, District 40",
+      "group": "U.S. Representative, District 40",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-059",
+      "source_name": "Young Kim",
+      "office": "U.S. Representative, District 40",
+      "group": "U.S. Representative, District 40",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-060",
+      "source_name": "Linda Sánchez",
+      "office": "U.S. Representative, District 41",
+      "group": "U.S. Representative, District 41",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-061",
+      "source_name": "Robert Garcia",
+      "office": "U.S. Representative, District 42",
+      "group": "U.S. Representative, District 42",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-062",
+      "source_name": "Maxine Waters",
+      "office": "U.S. Representative, District 43",
+      "group": "U.S. Representative, District 43",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-063",
+      "source_name": "Nanette Barragan",
+      "office": "U.S. Representative, District 44",
+      "group": "U.S. Representative, District 44",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-064",
+      "source_name": "Derek Tran",
+      "office": "U.S. Representative, District 45",
+      "group": "U.S. Representative, District 45",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-065",
+      "source_name": "Lou Correa",
+      "office": "U.S. Representative, District 46",
+      "group": "U.S. Representative, District 46",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-066",
+      "source_name": "Dave Min",
+      "office": "U.S. Representative, District 47",
+      "group": "U.S. Representative, District 47",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-067",
+      "source_name": "Marni Von Wilpert",
+      "office": "U.S. Representative, District 48",
+      "group": "U.S. Representative, District 48",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-068",
+      "source_name": "Mike Levin",
+      "office": "U.S. Representative, District 49",
+      "group": "U.S. Representative, District 49",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-069",
+      "source_name": "Scott Peters",
+      "office": "U.S. Representative, District 50",
+      "group": "U.S. Representative, District 50",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-070",
+      "source_name": "Sara Jacobs",
+      "office": "U.S. Representative, District 51",
+      "group": "U.S. Representative, District 51",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-071",
+      "source_name": "Juan Vargas",
+      "office": "U.S. Representative, District 52",
+      "group": "U.S. Representative, District 52",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-072",
+      "source_name": "Mark Rendon",
+      "office": "State Assembly Member, District 14",
+      "group": "State Assembly Member, District 14",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-008",
+      "candidate": "Mark Rendon",
+      "url": "https://voteforpeace.info/california/mark-rendon",
+      "source_text_sha256": "20c5a52408a4755b5d223247ad85dfb3aa6e1615ae86934d5e9fa407281a9ef0",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-073",
+      "source_name": "Matt Haney",
+      "office": "State Assembly Member, District 17",
+      "group": "State Assembly Member, District 17",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "url": "https://voteforpeace.info/california/matt-haney",
+      "source_text_sha256": "0dd92900d1358af7817986f587ba4f579dfd0dd9ccee1675ee061d89e2a4d8e5",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-074",
+      "source_name": "Mia Bonta",
+      "office": "State Assembly Member, District 18",
+      "group": "State Assembly Member, District 18",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "url": "https://voteforpeace.info/california/mia-bonta",
+      "source_text_sha256": "c5e8a280db51b589a367d5e5ac0f1d2b5fa97870daebd7ab11c18967ceba4009",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-075",
+      "source_name": "Liz Ortega",
+      "office": "State Assembly Member, District 20",
+      "group": "State Assembly Member, District 20",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "url": "https://voteforpeace.info/california/liz-ortega",
+      "source_text_sha256": "bc465410c8f9836d6f3011a7735d423ac1fdf4c82e1703a4085d2edee80156cc",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-076",
+      "source_name": "Alex Lee",
+      "office": "State Assembly Member, District 24",
+      "group": "State Assembly Member, District 24",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "url": "https://voteforpeace.info/california/alex-lee",
+      "source_text_sha256": "069d96d182a0a75dabea215cd47467576716fe46c3f5cd498072cc971c662d78",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-077",
+      "source_name": "Ash Kalra",
+      "office": "State Assembly Member, District 25",
+      "group": "State Assembly Member, District 25",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "url": "https://voteforpeace.info/california/ash-kalra",
+      "source_text_sha256": "4a265933c82657e4128aafa61a7dcbdbec913890d50823a2d1186a945d1bedbc",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-078",
+      "source_name": "Patrick Ahrens",
+      "office": "State Assembly Member, District 26",
+      "group": "State Assembly Member, District 26",
+      "source_label": "Neutral",
+      "phase": "general",
+      "position_id": "CA2026-025",
+      "candidate": "Patrick Ahrens",
+      "url": "https://voteforpeace.info/california/patrick-ahrens",
+      "source_text_sha256": "cb316a492ab3700c7f7eed46cc608b87f526e942e231186f79c7cacdbbc4e25d",
+      "action": "neutral_no_recommendation",
+      "reason": "Neutral is outside the requested Ally/Opposed recommendation import; substantive issue notes are reviewed separately."
+    },
+    {
+      "id": "VFP-079",
+      "source_name": "Leila Namvar",
+      "office": "State Assembly Member, District 47",
+      "group": "State Assembly Member, District 47",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-080",
+      "source_name": "Colin Hernandez",
+      "office": "State Assembly Member, District 51",
+      "group": "State Assembly Member, District 51",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-081",
+      "source_name": "Sade Elhawary",
+      "office": "State Assembly Member, District 57",
+      "group": "State Assembly Member, District 57",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-082",
+      "source_name": "Clarissa Cervantes",
+      "office": "State Assembly Member, District 58",
+      "group": "State Assembly Member, District 58",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-083",
+      "source_name": "Victor Hernandez",
+      "office": "State Assembly Member, District 59",
+      "group": "State Assembly Member, District 59",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-084",
+      "source_name": "Sara Deen",
+      "office": "State Assembly Member, District 66",
+      "group": "State Assembly Member, District 66",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-085",
+      "source_name": "Jessie Lopez",
+      "office": "State Assembly Member, District 68",
+      "group": "State Assembly Member, District 68",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-086",
+      "source_name": "David Penaloza",
+      "office": "State Assembly Member, District 68",
+      "group": "State Assembly Member, District 68",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-087",
+      "source_name": "Chris Kluwe",
+      "office": "State Assembly Member, District 72",
+      "group": "State Assembly Member, District 72",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-088",
+      "source_name": "LaShae Sharp-Collins",
+      "office": "State Assembly Member, District 79",
+      "group": "State Assembly Member, District 79",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-089",
+      "source_name": "Sean Frame",
+      "office": "State Senator, District 6",
+      "group": "State Senator, District 6",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-090",
+      "source_name": "Sarah Rascón",
+      "office": "State Senator, District 26",
+      "group": "State Senator, District 26",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-091",
+      "source_name": "Nithya Raman",
+      "office": "Mayor",
+      "group": "Los Angeles City",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-092",
+      "source_name": "Marissa Roy",
+      "office": "City Attorney",
+      "group": "Los Angeles City",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-093",
+      "source_name": "Eunissess Hernandez",
+      "office": "City Council Member, District 1",
+      "group": "Los Angeles City",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-094",
+      "source_name": "Estuardo Mazariegos",
+      "office": "City Council Member, District 9",
+      "group": "Los Angeles City",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-095",
+      "source_name": "Estefany Castañeda",
+      "office": "Centinela Valley Union High School District, Trustee Area 5",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-096",
+      "source_name": "Anthony Bayne",
+      "office": "County Superior Court Justice, District 87",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-097",
+      "source_name": "Ben Forer",
+      "office": "County Superior Court Justice, District 66",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-098",
+      "source_name": "Rhonda Haymon",
+      "office": "County Superior Court Justice, District 64",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-099",
+      "source_name": "Tal Kahn Valbuena",
+      "office": "County Superior Court Justice, District 2",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-100",
+      "source_name": "Anna Reitano",
+      "office": "County Superior Court Justice, District 65",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-101",
+      "source_name": "David Ross",
+      "office": "County Superior Court Justice, District 131",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-102",
+      "source_name": "Rocio Rivas",
+      "office": "LA USD Board of Education, District 2",
+      "group": "Los Angeles County",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-103",
+      "source_name": "Chris Castorena",
+      "office": "City Council Member, District 5",
+      "group": "Banning",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-104",
+      "source_name": "Majdi \"Gaith\" Abuhamdieh",
+      "office": "City Council Member, District 4",
+      "group": "Berkeley",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-051",
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "url": "https://voteforpeace.info/california/majdi-gaith-abuhamdieh",
+      "source_text_sha256": "fefa65fc40eb299655585ecec093c3299e5d343a571c7f4def310dffa8a5e4a3",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-105",
+      "source_name": "Nolan Southerland",
+      "office": "City Council Member",
+      "group": "Burbank",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-106",
+      "source_name": "Mike Van Gorder",
+      "office": "City Council Member",
+      "group": "Burbank",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-107",
+      "source_name": "Bennie Tinson",
+      "office": "City Council Member, District 2",
+      "group": "Compton",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-108",
+      "source_name": "Angely Andrade Vallarta",
+      "office": "City Council Member, District 4",
+      "group": "Costa Mesa",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-109",
+      "source_name": "Ofelia Bello",
+      "office": "City Council Member",
+      "group": "East Palo Alto",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-254",
+      "candidate": "Ofelia Bello",
+      "url": "https://voteforpeace.info/california/ofelia-bello",
+      "source_text_sha256": "034a68487aa4cbbdcc12bd42fd6843505333e107bc4c136e88b99c930fcf25aa",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-110",
+      "source_name": "Alexander Kraft",
+      "office": "Mayor",
+      "group": "El Cajon",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-111",
+      "source_name": "Kalimah Priforce",
+      "office": "City Council Member",
+      "group": "Emeryville",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-058",
+      "candidate": "Kalimah Atreyu Priforce",
+      "url": "https://voteforpeace.info/california/kalimah-priforce-g0if",
+      "source_text_sha256": "acefccb11e9a576b148a259e56bec4baef769411a8527db619b87328d36881c7",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-112",
+      "source_name": "Joe Alvanez",
+      "office": "City Clerk",
+      "group": "Fontana",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-113",
+      "source_name": "Nubia Diaz",
+      "office": "City Council Member, District 1",
+      "group": "Fontana",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-114",
+      "source_name": "Ben Vasquez",
+      "office": "City Council Member, District 4",
+      "group": "Fontana",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-115",
+      "source_name": "Jocelyn Sida",
+      "office": "Mayor",
+      "group": "Fontana",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-116",
+      "source_name": "Phoebe Shin Venkat",
+      "office": "City Council Member, District 1",
+      "group": "Foster City",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-255",
+      "candidate": "Phoebe Shin Venkat",
+      "url": "https://voteforpeace.info/california/phoebe-shin-venkat",
+      "source_text_sha256": "d67f406ce67c5ce5a3be32f763baa3f55c86d7ba78b42e5c6f362db4298535c9",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-117",
+      "source_name": "Aziz Akbari",
+      "office": "City Council Member",
+      "group": "Fremont",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-061",
+      "candidate": "Aziz Akbari",
+      "url": "https://voteforpeace.info/california/aziz-akbari",
+      "source_text_sha256": "ebb14ef6574ed0658165b3bd12fc8c204be9533c84e8f208fa50848714ae4ff1",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-118",
+      "source_name": "Joaquin Arambula",
+      "office": "City Council Member, District 3",
+      "group": "Fresno",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-119",
+      "source_name": "Ariana Martinez Lott",
+      "office": "City Council Member, District 7",
+      "group": "Fresno",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-120",
+      "source_name": "Naindeep Singh",
+      "office": "City Council Member, District 1",
+      "group": "Fresno",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-121",
+      "source_name": "Maria Pacheco",
+      "office": "County Supervisor, District 1",
+      "group": "Fresno County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-122",
+      "source_name": "Scotty Hong",
+      "office": "City Council Member, District 6",
+      "group": "Irvine",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-123",
+      "source_name": "Edgar Castelan",
+      "office": "City Council Member, District 3",
+      "group": "Jurupa Valley",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-124",
+      "source_name": "Jesse Perez",
+      "office": "County Board of Education Member, District 5",
+      "group": "Merced County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-125",
+      "source_name": "Nicolo Lalama",
+      "office": "Mayor",
+      "group": "Ontario",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-126",
+      "source_name": "Claude Parrish",
+      "office": "County Assessor",
+      "group": "Orange County",
+      "source_label": "Opposed",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-127",
+      "source_name": "Robert Mestman",
+      "office": "County Superior Court Justice, Office 13",
+      "group": "Orange County",
+      "source_label": "Neutral",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-128",
+      "source_name": "Ami Sagel",
+      "office": "County Superior Court Justice, Office 41",
+      "group": "Orange County",
+      "source_label": "Neutral",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-129",
+      "source_name": "Katrina Foley",
+      "office": "County Supervisor, District 5",
+      "group": "Orange County",
+      "source_label": "Opposed",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-130",
+      "source_name": "Vicente Sarmiento",
+      "office": "County Supervisor, District 2",
+      "group": "Orange County",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-131",
+      "source_name": "Connor Traut",
+      "office": "County Supervisor, District 4",
+      "group": "Orange County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-132",
+      "source_name": "Raymond Goins",
+      "office": "City Council",
+      "group": "Palo Alto",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-100",
+      "candidate": "Raymond L. Goins",
+      "url": "https://voteforpeace.info/california/raymond-goins",
+      "source_text_sha256": "c16b971224492ef434679eac1f58af3942a683a2096bbda63d1dd0f8f5e2cbc8",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-133",
+      "source_name": "Claudia Jimenez",
+      "office": "Mayor",
+      "group": "Richmond",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-314",
+      "candidate": "Claudia Jiménez",
+      "url": "https://voteforpeace.info/california/claudia-jimenez",
+      "source_text_sha256": "d9883e57c44e761055b02e20bf0bafda45cc40c9274cd8aef0f7a8d738e09d62",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-134",
+      "source_name": "Karina Talamantes",
+      "office": "City Council Member, District 3",
+      "group": "Sacramento",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-135",
+      "source_name": "Jorge E. Mendoza Gonzalez",
+      "office": "Trustee/Member, District Robla School Distict Governing Board",
+      "group": "Sacramento",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-136",
+      "source_name": "Flojaune Cofer",
+      "office": "County Board Member, District 1",
+      "group": "Sacramento County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-137",
+      "source_name": "Eric Guerra",
+      "office": "County Board Member, District 1",
+      "group": "Sacramento County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-138",
+      "source_name": "Joe Salas",
+      "office": "City Council Member",
+      "group": "San Bernardino",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-139",
+      "source_name": "Hayden Gore",
+      "office": "Unified School District, District C",
+      "group": "San Diego",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-140",
+      "source_name": "Alicia Munoz",
+      "office": "County Board of Education, District 3",
+      "group": "San Diego County",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-141",
+      "source_name": "Rick Shea",
+      "office": "County Board of Education, District 5",
+      "group": "San Diego County",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-142",
+      "source_name": "Gordon Chester",
+      "office": "City Council Member, District 9",
+      "group": "San Jose",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-103",
+      "candidate": "Gordon Chester",
+      "url": "https://voteforpeace.info/california/gordon-chester",
+      "source_text_sha256": "0942b5e6bd24a37673ac3b81b29ffa4a8d36fd402b44c6b81a7d23d6de96ea5e",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-143",
+      "source_name": "Peter Ortiz",
+      "office": "City Council Member, District 5",
+      "group": "San Jose",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-101",
+      "candidate": "Peter Ortiz",
+      "url": "https://voteforpeace.info/california/peter-ortiz",
+      "source_text_sha256": "fac476cf2921f62d7db25cc8eeda25218c2b535d56feb2f8b6c53d6c5b15e0c1",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-144",
+      "source_name": "Isuri S. Ramos",
+      "office": "City Council Member, District 6",
+      "group": "Santa Ana",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-145",
+      "source_name": "Hector Bustos",
+      "office": "School Board Member, District 5",
+      "group": "Santa Ana",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-146",
+      "source_name": "Sylvia Argenas",
+      "office": "County Supervisor, District 1",
+      "group": "Santa Clara County",
+      "source_label": "Ally",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-147",
+      "source_name": "Jeff Rosen",
+      "office": "District Attorney",
+      "group": "Santa Clara County",
+      "source_label": "Opposed",
+      "phase": "unspecified",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-148",
+      "source_name": "Frank Lara",
+      "office": "Board of Trustees, District E",
+      "group": "South San Francisco",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-292",
+      "candidate": "Frank Lara",
+      "url": "https://voteforpeace.info/california/frank-lara-fadb",
+      "source_text_sha256": "f5a959ddb461ea2bf674fb5afb899df4fe5d45a534827f73b9661a0bb6544110",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-149",
+      "source_name": "Melanie Olson",
+      "office": "City Council Member, District 3",
+      "group": "South San Francisco",
+      "source_label": "Ally",
+      "phase": "general",
+      "position_id": "CA2026-281",
+      "candidate": "Melanie Olson",
+      "url": "https://voteforpeace.info/california/melanie-olson",
+      "source_text_sha256": "9067d95457a8ed683955d3bc8d449b90e62b303ea1d5939ce269c83a4a1be56e",
+      "action": "publish",
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "id": "VFP-150",
+      "source_name": "Derek Marshall",
+      "office": "City Council Member, District 4",
+      "group": "Victorville",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-151",
+      "source_name": "Chelsea Byers",
+      "office": "City Council Member",
+      "group": "West Hollywood",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    },
+    {
+      "id": "VFP-152",
+      "source_name": "Stephen Post",
+      "office": "City Council Member",
+      "group": "West Hollywood",
+      "source_label": "Ally",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "No reviewed candidate-and-office match in the current printed roster; source retained as a research lead, not evidence of ballot exclusion."
+    }
+  ],
+  "aroc_cards": [
+    {
+      "id": "AROC-001",
+      "source_name": "Connie Chan",
+      "office": "House of Representatives District 11",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-002",
+      "source_name": "Mai Vang",
+      "office": "House of Representatives District 7",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "Congressional/Assembly district is outside the current five-county printed roster; source endorsement retained without creating a contest."
+    },
+    {
+      "id": "AROC-003",
+      "source_name": "Lateefah Simon",
+      "office": "House of Representatives District 12",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-004",
+      "source_name": "Aisha Wahab",
+      "office": "House of Representatives District 14",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-005",
+      "source_name": "Ro Khanna",
+      "office": "House of Representatives District 17",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-006",
+      "source_name": "Randy Villegas",
+      "office": "House of Representatives District 22",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "Congressional/Assembly district is outside the current five-county printed roster; source endorsement retained without creating a contest."
+    },
+    {
+      "id": "AROC-007",
+      "source_name": "Angela Gonzales-Torres",
+      "office": "House of Representatives District 34",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "Congressional/Assembly district is outside the current five-county printed roster; source endorsement retained without creating a contest."
+    },
+    {
+      "id": "AROC-008",
+      "source_name": "Jane Kim",
+      "office": "California Insurance Commissioner",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-009",
+      "source_name": "Matt Haney",
+      "office": "California State Assembly District 17",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-010",
+      "source_name": "Mia Bonta",
+      "office": "California State Assembly District 18",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-011",
+      "source_name": "Liz Ortega",
+      "office": "California State Assembly District 20",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-012",
+      "source_name": "Alex Lee",
+      "office": "California State Assembly District 24",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-013",
+      "source_name": "Ash Kalra",
+      "office": "California State Assembly District 25",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-014",
+      "source_name": "Isaac Bryan",
+      "office": "California State Assembly District 55",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "Congressional/Assembly district is outside the current five-county printed roster; source endorsement retained without creating a contest."
+    },
+    {
+      "id": "AROC-015",
+      "source_name": "Sade Elhawary",
+      "office": "California State Assembly District 57",
+      "phase": "general",
+      "action": "not_in_current_roster",
+      "reason": "Congressional/Assembly district is outside the current five-county printed roster; source endorsement retained without creating a contest."
+    },
+    {
+      "id": "AROC-016",
+      "source_name": "Alex Behrend",
+      "office": "San Francisco Board of Supervisors District 6",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-238",
+      "candidate": "Alex Behrend",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-017",
+      "source_name": "Gary McCoy",
+      "office": "San Francisco Board of Supervisors District 8",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-239",
+      "candidate": "Gary McCoy",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-018",
+      "source_name": "Michael Nguyen",
+      "office": "San Francisco Board of Supervisors District 8",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-239",
+      "candidate": "Michael T. Nguyen",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-019",
+      "source_name": "Dion-Jay \"DJ\" Brookter",
+      "office": "San Francisco Board of Supervisors District 10",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-240",
+      "candidate": "Dionjay (DJ) Brookter",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-020",
+      "source_name": "JR Eppler",
+      "office": "San Francisco Board of Supervisors District 10",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-240",
+      "candidate": "J.R. Eppler",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-021",
+      "source_name": "Reina Tello",
+      "office": "San Francisco Board of Education",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-241",
+      "candidate": "Reina Tello",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-022",
+      "source_name": "Virginia Cheung",
+      "office": "San Francisco Board of Education",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-241",
+      "candidate": "Virginia Cheung",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-023",
+      "source_name": "Ryan Hazelton",
+      "office": "San Francisco Board of Education",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-241",
+      "candidate": "Ryan Hazelton",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-024",
+      "source_name": "Bunny McFadden",
+      "office": "San Francisco City College Board",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-242",
+      "candidate": "Bunny McFadden",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-025",
+      "source_name": "Barbara Lee",
+      "office": "Oakland Mayor",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-072",
+      "candidate": "Barbara Lee",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-026",
+      "source_name": "Nate Adams",
+      "office": "Oakland City Council District 2",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-069",
+      "candidate": "Nate Adams",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-027",
+      "source_name": "Janani Ramachandran",
+      "office": "Oakland City Council District 4",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-070",
+      "candidate": "Janani Ramachandran",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-028",
+      "source_name": "Valarie Bachelor",
+      "office": "Oakland Board of Education",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-134",
+      "candidate": "Valarie Bachelor",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-029",
+      "source_name": "Majdi Gaith",
+      "office": "Berkeley City Council",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-051",
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-030",
+      "source_name": "Syrak Micael",
+      "office": "Berkeley City Council",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-052",
+      "candidate": "Syrak Micael",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-031",
+      "source_name": "Claudia Jimenez",
+      "office": "Richmond Mayor",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-314",
+      "candidate": "Claudia Jiménez",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-032",
+      "source_name": "George Syrop",
+      "office": "Hayward City Council District 1",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-062",
+      "candidate": "George Syrop",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-033",
+      "source_name": "Seema Badar",
+      "office": "Dublin Unified School District",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-123",
+      "candidate": "Seema Badar",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-034",
+      "source_name": "Chris Sturken",
+      "office": "Redwood City City Council",
+      "phase": "general",
+      "action": "publish",
+      "position_id": "CA2026-270",
+      "candidate": "Chris Sturken",
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "id": "AROC-035",
+      "source_name": "Yes on Prop 3",
+      "office": "California Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-036",
+      "source_name": "No on Prop 39",
+      "office": "California Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-037",
+      "source_name": "Yes on Prop 40",
+      "office": "California Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-038",
+      "source_name": "No on Prop A",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-039",
+      "source_name": "Yes on Prop B",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-040",
+      "source_name": "Yes on Prop C",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-041",
+      "source_name": "No on Prop D",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-042",
+      "source_name": "No on Prop E",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-043",
+      "source_name": "No on Prop F",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    },
+    {
+      "id": "AROC-044",
+      "source_name": "Yes on Prop I",
+      "office": "San Francisco Ballot Proposition",
+      "phase": "general",
+      "action": "out_of_scope_ballot_measure",
+      "reason": "Ballot measure preserved in the source manifest; elected-office inventory excludes measures."
+    }
+  ],
+  "findings": [
+    {
+      "position_id": "CA2026-014",
+      "candidate": "Steve Hilton",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/steve-hilton",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-017",
+      "candidate": "Donald P. (Don) Wagner",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/donald-wagner",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/malia-cohen",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-019",
+      "candidate": "Eleni Kounalakis",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/eleni-kounalakis",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-012",
+      "candidate": "Rob Bonta",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/rob-bonta",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/jane-kim",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/sally-leiber",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/john-garamendi",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-310",
+      "candidate": "Josh Harder",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/josh-harder",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/mark-desaulnier",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/connie-chan",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Scott Wiener",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/scott-wiener",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/lateefah-simon",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/aisha-wahab",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-230",
+      "candidate": "Kevin Mullin",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/kevin-mullin",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/ro-khanna",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/zoe-lofgren",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "opposed",
+        "phase": "primary",
+        "url": "https://voteforpeace.info/california/jimmy-panetta",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-008",
+      "candidate": "Mark Rendon",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/mark-rendon",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/matt-haney",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/mia-bonta",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/liz-ortega",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/alex-lee",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/ash-kalra",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-051",
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/majdi-gaith-abuhamdieh",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-254",
+      "candidate": "Ofelia Bello",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/ofelia-bello",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-058",
+      "candidate": "Kalimah Atreyu Priforce",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/kalimah-priforce-g0if",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-255",
+      "candidate": "Phoebe Shin Venkat",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/phoebe-shin-venkat",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-061",
+      "candidate": "Aziz Akbari",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/aziz-akbari",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-100",
+      "candidate": "Raymond L. Goins",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/raymond-goins",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-314",
+      "candidate": "Claudia Jiménez",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/claudia-jimenez",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-103",
+      "candidate": "Gordon Chester",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/gordon-chester",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-101",
+      "candidate": "Peter Ortiz",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/peter-ortiz",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-292",
+      "candidate": "Frank Lara",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/frank-lara-fadb",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-281",
+      "candidate": "Melanie Olson",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "Vote for Peace",
+        "kind": "organization",
+        "relation": "supported",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/melanie-olson",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N296",
+        "rating": "Ally"
+      },
+      "reason": "Name or reviewed name variant matches the same office and jurisdiction in the current roster."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-238",
+      "candidate": "Alex Behrend",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-239",
+      "candidate": "Gary McCoy",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-239",
+      "candidate": "Michael T. Nguyen",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-240",
+      "candidate": "Dionjay (DJ) Brookter",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-240",
+      "candidate": "J.R. Eppler",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-241",
+      "candidate": "Reina Tello",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-241",
+      "candidate": "Virginia Cheung",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-241",
+      "candidate": "Ryan Hazelton",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-242",
+      "candidate": "Bunny McFadden",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-072",
+      "candidate": "Barbara Lee",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-069",
+      "candidate": "Nate Adams",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-070",
+      "candidate": "Janani Ramachandran",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-134",
+      "candidate": "Valarie Bachelor",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-051",
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-052",
+      "candidate": "Syrak Micael",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-314",
+      "candidate": "Claudia Jiménez",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-062",
+      "candidate": "George Syrop",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-123",
+      "candidate": "Seema Badar",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-270",
+      "candidate": "Chris Sturken",
+      "source_key": "aroc_action",
+      "record": {
+        "endorser": "AROC Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://arocaction.org/endorsements/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N297"
+      },
+      "reason": "Reviewed name variant and office/jurisdiction match; November 3 phase stated by publisher."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "California Building and Construction Trades Council",
+        "kind": "union",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/malia-cohen",
+        "checked_on": "2026-10-09",
+        "verification": "reported",
+        "note_id": "N298"
+      },
+      "reason": "Explicitly named in the candidate note’s endorsement sentence; unnamed broad union categories are not converted into organizations."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "California Environmental Voters",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/malia-cohen",
+        "checked_on": "2026-10-09",
+        "verification": "reported",
+        "note_id": "N298"
+      },
+      "reason": "Explicitly named in the candidate note’s endorsement sentence; unnamed broad union categories are not converted into organizations."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "GrowSF",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/malia-cohen",
+        "checked_on": "2026-10-09",
+        "verification": "reported",
+        "note_id": "N298"
+      },
+      "reason": "Explicitly named in the candidate note’s endorsement sentence; unnamed broad union categories are not converted into organizations."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_key": "vote_for_peace",
+      "record": {
+        "endorser": "California Council for Affordable Housing",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "general",
+        "url": "https://voteforpeace.info/california/malia-cohen",
+        "checked_on": "2026-10-09",
+        "verification": "reported",
+        "note_id": "N298"
+      },
+      "reason": "Explicitly named in the candidate note’s endorsement sentence; unnamed broad union categories are not converted into organizations."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_key": "wfp_jane_kim",
+      "record": {
+        "endorser": "Working Families Party",
+        "kind": "party",
+        "relation": "endorsed",
+        "phase": "unspecified",
+        "url": "https://workingfamilies.org/2026/01/wfp-endorses-jane-kim-for-california-insurance-commissioner/",
+        "checked_on": "2026-10-09",
+        "verification": "endorser_statement",
+        "note_id": "N299"
+      },
+      "reason": "Explicit first-party endorsement of the candidate and office; announcement phase not specified."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_key": "jane_kim_campaign",
+      "record": {
+        "endorser": "For the People Action",
+        "kind": "organization",
+        "relation": "endorsed",
+        "phase": "unspecified",
+        "url": "https://www.janekim.org/endorsements",
+        "checked_on": "2026-10-09",
+        "verification": "campaign_claim",
+        "note_id": "N300"
+      },
+      "reason": "Campaign explicitly names the organization as an endorser; source badge alone was not used."
+    }
+  ],
+  "gaza_findings": [
+    {
+      "position_id": "CA2026-014",
+      "candidate": "Xavier Becerra",
+      "record": {
+        "id": "GE-0415",
+        "url": "https://voteforpeace.info/california/xavier-becerra",
+        "summary": "Vote for Peace reports no AIPAC, DMFI or Palantir funding for Becerra; its note gives no financial period or transaction evidence. This is the guide’s claim, not an independent funding audit.",
+        "date": "2026-10-09",
+        "dimension": "aipac_funding",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-014",
+      "candidate": "Steve Hilton",
+      "record": {
+        "id": "GE-0416",
+        "url": "https://voteforpeace.info/california/steve-hilton",
+        "summary": "Vote for Peace reports Hilton supports U.S.-funded military aid to Israel and pledged legal action against California cities over BDS. The guide does not date the underlying statements.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "record": {
+        "id": "GE-0417",
+        "url": "https://voteforpeace.info/california/jane-kim",
+        "summary": "Vote for Peace reports Kim pledged to reject war-lobby support and favors divesting public funds from war crimes and genocide; the linked questionnaire response and pledge date are not supplied.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "record": {
+        "id": "GE-0418",
+        "url": "https://voteforpeace.info/california/john-garamendi",
+        "summary": "Vote for Peace reports Garamendi supports an arms embargo, cites a USCPR Action score of C, and reports AIPAC/allied-lobby funding. The guide gives no funding period or underlying statement date.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-310",
+      "candidate": "Josh Harder",
+      "record": {
+        "id": "GE-0419",
+        "url": "https://voteforpeace.info/california/josh-harder",
+        "summary": "Vote for Peace reports AIPAC/allied-lobby funding for Harder; its note provides neither an amount nor a financial period. This is a secondary funding claim, not an independent audit or a Track AIPAC opposition.",
+        "date": "2026-10-09",
+        "dimension": "aipac_funding",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "record": {
+        "id": "GE-0420",
+        "url": "https://voteforpeace.info/california/mark-desaulnier",
+        "summary": "Vote for Peace reports DeSaulnier backs Block the Bombs and does not currently accept AIPAC/DMFI funds, while urging improvement in his record. The note supplies no cosponsorship date or funding period.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "record": {
+        "id": "GE-0421",
+        "url": "https://voteforpeace.info/california/lateefah-simon",
+        "summary": "Vote for Peace reports Simon backs Block the Bombs and rejects AIPAC, DMFI and Lockheed Martin funding. Its note gives no cosponsorship date or financial period.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-230",
+      "candidate": "Kevin Mullin",
+      "record": {
+        "id": "GE-0422",
+        "url": "https://voteforpeace.info/california/kevin-mullin",
+        "summary": "Vote for Peace reports AIPAC/allied-lobby funding and no Block the Bombs support for Mullin. Its undated note supplies no financial period and is not independent verification of current cosponsorship.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "record": {
+        "id": "GE-0423",
+        "url": "https://voteforpeace.info/california/sam-liccardo",
+        "summary": "Vote for Peace reports AIPAC/allied-lobby funding and no Block the Bombs support for Liccardo. Its undated note supplies no financial period; the guide’s Neutral label is not an endorsement or opposition.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "record": {
+        "id": "GE-0424",
+        "url": "https://voteforpeace.info/california/ro-khanna",
+        "summary": "Vote for Peace reports Khanna backs Block the Bombs and rejects AIPAC/DMFI funding, while urging improvement in his record. The guide supplies no cosponsorship date or financial period.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "record": {
+        "id": "GE-0425",
+        "url": "https://voteforpeace.info/california/zoe-lofgren",
+        "summary": "Vote for Peace reports Lofgren supports an arms embargo, cites a USCPR Action score of D, and reports past AIPAC/allied-lobby funding. The guide gives no funding period or underlying statement date.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "record": {
+        "id": "GE-0426",
+        "url": "https://voteforpeace.info/california/jimmy-panetta",
+        "summary": "Vote for Peace’s primary-election entry reports AIPAC/allied-lobby funding and no Block the Bombs support for Panetta. The note gives no financial period and does not establish current legislative status.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "record": {
+        "id": "GE-0427",
+        "url": "https://voteforpeace.info/california/mia-bonta",
+        "summary": "Vote for Peace reports Bonta criticized AB 715’s rushed handling but ultimately voted for it. This is an undated guide account, not an independently checked roll call; the debate concerned speech about Palestine.",
+        "date": "2026-10-09",
+        "dimension": "actions_votes",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Substantive issue-specific source note, explicitly attributed and dated only as a guide observation."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "record": {
+        "id": "GE-0428",
+        "url": "https://arocaction.org/endorsements/",
+        "summary": "AROC Action’s endorsement rationale reports Chan supports a full arms embargo on Israel and protections for speech and protest. The publisher does not give a date for those underlying policy statements.",
+        "date": "2026-10-09",
+        "dimension": "military_aid",
+        "checked_on": "2026-10-09",
+        "source_kind": "voter_guide",
+        "date_method": "source_observed",
+        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      "reason": "Candidate-specific rationale from AROC, not an inference from the group’s general principles."
+    }
+  ],
+  "reference_review": [
+    {
+      "position_id": "CA2026-017",
+      "candidate": "Shirley N. Weber",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-017",
+      "candidate": "Shirley N. Weber",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-012",
+      "candidate": "Rob Bonta",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-012",
+      "candidate": "Rob Bonta",
+      "source_reference": "AROC Action",
+      "action": "not_confirmed_on_current_list",
+      "reason": "Rob Bonta is cited by the aggregator but does not appear in the retrieved current AROC list; no AROC endorsement added."
+    },
+    {
+      "position_id": "CA2026-012",
+      "candidate": "Rob Bonta",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_reference": "For the People Action",
+      "action": "verified_campaign_claim",
+      "reason": "Named in the campaign’s Organizations endorsement list; preserve campaign-claim provenance."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_reference": "Working Families Party",
+      "action": "verified_on_official_announcement",
+      "reason": "January 21, 2026 party announcement explicitly endorses Jane Kim; phase is unspecified."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_reference": "DSA",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "source_reference": "CAIR Action (Preferred, not Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "source_reference": "Track AIPAC",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "source_reference": "USCPR Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-310",
+      "candidate": "Josh Harder",
+      "source_reference": "Track AIPAC",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "source_reference": "Track AIPAC",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "source_reference": "CAIR Action",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "source_reference": "If Not Now",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "source_reference": "Track AIPAC",
+      "action": "existing_first_party_endorsement_confirmed",
+      "reason": "Official Track AIPAC list confirms the general-election endorsement already stored."
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-230",
+      "candidate": "Kevin Mullin",
+      "source_reference": "Track AIPAC",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "source_reference": "CAIR Action (Preferred, not Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "source_reference": "Track AIPAC",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_reference": "Track AIPAC",
+      "action": "existing_first_party_endorsement_confirmed",
+      "reason": "Official Track AIPAC list confirms the general-election endorsement already stored."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "source_reference": "CAIR Action (Preferred, not Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "source_reference": "USCPR Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "source_reference": "Track AIPAC",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "source_reference": "AROC Action",
+      "action": "verified_on_official_list",
+      "reason": "Official November 3 AROC candidate list governs this import."
+    },
+    {
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "source_reference": "For the People Action",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-025",
+      "candidate": "Patrick Ahrens",
+      "source_reference": "CAIR Action (Preferred, not Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-051",
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-254",
+      "candidate": "Ofelia Bello",
+      "source_reference": "DSA",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-254",
+      "candidate": "Ofelia Bello",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-058",
+      "candidate": "Kalimah Atreyu Priforce",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-255",
+      "candidate": "Phoebe Shin Venkat",
+      "source_reference": "DSA",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-061",
+      "candidate": "Aziz Akbari",
+      "source_reference": "Vote for Peace Questionnaire",
+      "action": "questionnaire_reference_only",
+      "reason": "Questionnaire reference is not an independent organization endorsement and supplies no accessible individual response date."
+    },
+    {
+      "position_id": "CA2026-314",
+      "candidate": "Claudia Jiménez",
+      "source_reference": "Richmond 4 Palestine",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-103",
+      "candidate": "Gordon Chester",
+      "source_reference": "CAIR Action (Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Official CAIR capture controls the exact recommendation level; aggregator does not overwrite it or establish a new phase."
+    },
+    {
+      "position_id": "CA2026-101",
+      "candidate": "Peter Ortiz",
+      "source_reference": "CAIR Action (Preferred, not Endorsed)",
+      "action": "existing_official_capture_preserved",
+      "reason": "Both Vote for Peace and the supplied official CAIR capture say Preferred; retain the existing official record without duplication or an inferred phase."
+    },
+    {
+      "position_id": "CA2026-292",
+      "candidate": "Frank Lara",
+      "source_reference": "Peace and Freedom Party",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-281",
+      "candidate": "Melanie Olson",
+      "source_reference": "Working Families Party",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    },
+    {
+      "position_id": "CA2026-281",
+      "candidate": "Melanie Olson",
+      "source_reference": "DSA",
+      "action": "source_reference_only",
+      "reason": "Listed under Sources, without an explicit individual endorsement/opposition assertion; do not infer a relationship."
+    }
+  ],
+  "note_review": [
+    {
+      "position_id": "CA2026-014",
+      "candidate": "Xavier Becerra",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-014",
+      "candidate": "Steve Hilton",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-017",
+      "candidate": "Shirley N. Weber",
+      "action": "no_substantive_gaza_evidence",
+      "reason": "Unknown views, silence or missing records do not establish an individual position."
+    },
+    {
+      "position_id": "CA2026-017",
+      "candidate": "Donald P. (Don) Wagner",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "action": "no_substantive_gaza_evidence",
+      "reason": "Unknown views, silence or missing records do not establish an individual position."
+    },
+    {
+      "position_id": "CA2026-019",
+      "candidate": "Eleni Kounalakis",
+      "action": "no_substantive_gaza_evidence",
+      "reason": "Unknown views, silence or missing records do not establish an individual position."
+    },
+    {
+      "position_id": "CA2026-012",
+      "candidate": "Rob Bonta",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Jane Kim",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Ben Allen",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-310",
+      "candidate": "Josh Harder",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Connie Chan",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-229",
+      "candidate": "Scott Wiener",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-230",
+      "candidate": "Kevin Mullin",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-008",
+      "candidate": "Mark Rendon",
+      "action": "held_not_candidate_specific",
+      "reason": "The note attributes a general Green Party platform, not a candidate-specific Gaza statement."
+    },
+    {
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "action": "publish_source_observation",
+      "reason": "Relevant substantive note retained as an attributed observation; no historical date inferred."
+    },
+    {
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-020",
+      "candidate": "Alex Lee",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-024",
+      "candidate": "Ash Kalra",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-025",
+      "candidate": "Patrick Ahrens",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-051",
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-254",
+      "candidate": "Ofelia Bello",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-058",
+      "candidate": "Kalimah Atreyu Priforce",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-255",
+      "candidate": "Phoebe Shin Venkat",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-061",
+      "candidate": "Aziz Akbari",
+      "action": "not_gaza_specific",
+      "reason": "Corporate PAC/lobbyist refusal is generic; no Israel/Gaza-specific claim appears in the note."
+    },
+    {
+      "position_id": "CA2026-100",
+      "candidate": "Raymond L. Goins",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-314",
+      "candidate": "Claudia Jiménez",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-103",
+      "candidate": "Gordon Chester",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-101",
+      "candidate": "Peter Ortiz",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-292",
+      "candidate": "Frank Lara",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    },
+    {
+      "position_id": "CA2026-281",
+      "candidate": "Melanie Olson",
+      "action": "no_substantive_gaza_note",
+      "reason": "No substantive Gaza-specific candidate note in the retrieved guide entry."
+    }
+  ],
+  "limits": [
+    "The California page mixes general-election, primary-election and already-resolved races. It is not an official ballot roster.",
+    "Vote for Peace methodology was updated April 2026; this does not date individual candidate assessments.",
+    "Guide note snapshots are observed on October 9, not dated as historical candidate statements. Funding and legislative claims remain attributed to the guide unless separately sourced.",
+    "The public inventory remains limited to elected-office contests in five researched counties. Unmatched names and measures do not create new contests.",
+    "No Track AIPAC opposition is established merely by a Vote for Peace Sources reference. The aggregator’s own Opposed label is retained separately."
+  ],
+  "counts": {
+    "vote_for_peace_cards": 152,
+    "vote_for_peace_dispositions": {
+      "neutral_no_recommendation": 5,
+      "publish": 35,
+      "not_in_current_roster": 112
+    },
+    "vote_for_peace_published_labels": {
+      "Opposed": 8,
+      "Ally": 27
+    },
+    "aroc_cards": 44,
+    "aroc_dispositions": {
+      "publish": 29,
+      "not_in_current_roster": 5,
+      "out_of_scope_ballot_measure": 10
+    },
+    "findings": 70,
+    "gaza_findings": 14
+  }
+}

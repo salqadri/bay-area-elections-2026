@@ -140,8 +140,10 @@ def apply_capture(data, review):
             current = [r for r in c.get('endorsements', []) if r['endorser'] == 'CAIR Action']
             if any(r['checked_on'] > review['reviewed_on'] for r in current):
                 raise ValueError('Refusing to replace newer CAIR research')
-            retained = [r for r in c.get('endorsements', []) if r['endorser'] != 'CAIR Action']
             record = records.get((p['id'], c['name']))
+            if current == ([record] if record else []):
+                continue
+            retained = [r for r in c.get('endorsements', []) if r['endorser'] != 'CAIR Action']
             if record:
                 retained.append(record)
             if retained:

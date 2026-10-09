@@ -15,6 +15,8 @@ const census=(county,city)=>({matchedAddress:county==='Santa Clara'?'200 E SANTA
 assert(text('ballot-results').includes('Endorsed by CAIR Action'));assert(text('ballot-results').includes('Preferred by CAIR Action'));const marcCard=cards().find(c=>c.dataset.contestId==='CA2026-150');assert(marcCard.textContent.includes('Opposed by CAIR Action'));assert(marcCard.textContent.includes('1 opposed'));assert(!marcCard.textContent.includes('Endorsed by CAIR Action'));
 assert(text('ballot-results').includes('supplied capture of CAIR Action'));
 assert(text('ballot-results').includes('Source rating: Strong Support'));
+assert(text('ballot-results').includes('Listed as Ally by Vote for Peace'));assert(text('ballot-results').includes('Opposed by Vote for Peace'));assert(!text('ballot-results').includes('Endorsed by Vote for Peace'));assert(text('ballot-results').includes('Endorsed by AROC Action'));assert(text('ballot-results').includes('Observed on 2026-10-09 (guide snapshot; original date unknown)'));
+
 assert(!text('ballot-results').includes('Endorsed by California Jewish Democrats'));
 const endorsementDetails=nodes().filter(x=>x.tagName==='DETAILS'&&x.className==='ballot-candidate-endorsements');
 assert(endorsementDetails.length>0&&endorsementDetails.every(d=>d.parent?.tagName==='LI'));

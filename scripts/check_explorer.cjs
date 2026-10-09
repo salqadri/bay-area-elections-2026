@@ -79,6 +79,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   assert(text('panel-candidates').includes('Endorsed by CAIR Action'));assert(nodes($('panel-candidates')).some(n=>n.tagName==='A'&&n.href==='https://cairactionguide.org/explore'));
   assert(text('panel-candidates').includes('supplied capture of CAIR Action'));
   reset();set('search','Marc Cooper');assert(text('panel-candidates').includes('Opposed by CAIR Action'));assert(text('panel-candidates').includes('1 opposed'));assert(!text('panel-candidates').includes('Endorsed by CAIR Action'));reset();set('search','CD-8');assert(text('panel-candidates').includes('Preferred by CAIR Action'));
+  reset();set('search','CD-11');assert(text('panel-candidates').includes('Listed as Ally by Vote for Peace'));assert(text('panel-candidates').includes('Opposed by Vote for Peace'));assert(!text('panel-candidates').includes('Endorsed by Vote for Peace'));assert(text('panel-candidates').includes('Endorsed by AROC Action'));assert(text('panel-candidates').includes('Observed on 2026-10-09 (guide snapshot; original date unknown)'));
   reset();set('search','Manisha Pathak');assert(text('panel-candidates').includes('Supported by Dr. Romesh Japra'));
   assert(text('panel-candidates').includes('Endorsed by Americans4Hindus'));
   assert(!text('panel-candidates').includes('Endorsed by Dr. Romesh Japra'));
