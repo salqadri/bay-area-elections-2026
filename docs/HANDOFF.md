@@ -13,6 +13,7 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | Ballot research snapshot | October 4, 2026 |
 | FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
 | Schema | Inventory version 1.11, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`, `gaza_evidence`; evidence `date` is required and calendar-valid, with optional `date_method`/`date_note`) |
+| Endorsements (new) | **741 of 869 printed candidacies** carry cited current-cycle `endorsements` records (884 total; schema 1.12 `$defs.endorsementRecord`) from verified endorser pages, collected October 9 via `scripts/research_endorsements.py`; snapshot at `research/endorsements/endorsements-export-2026-10-09.json`. Ongoing: bot-walled platforms and ~128 candidacies still uncovered |
 | X accounts / sites | 135 printed entries (135 distinct names) with X URLs; 27 are explicitly probable matches. 10 secondary X URLs; 383 candidate-specific campaign/official URLs retained after five generic homepage claims were removed. |
 | Gaza stance research | This review branch retains 231 items for 81 candidates after 44 manual rewrites and 69 documented quarantines (the 69th, Chan GE-0019, failed the deterministic relevance gate on post-merge reconciliation). All 300 input summaries have dispositions. Jev assessment is pending; see the post-enrichment review. |
 | Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
@@ -60,6 +61,15 @@ A second Codex review of `6ba1537` drove fixes beyond the first audit; all items
 - **Documentation honesty**: README/HANDOFF now state that 27 X-account entries are "probable match, indirect evidence" per their cited sources rather than blanket-verifying all accounts.
 
 Ledger after this pass: **300 items / 113 people**, quarantine **111**. Full suite (build --check, check_data, check_schema 37 negatives, six node harnesses) passes.
+
+## Session refresh — October 9, 2026 (endorsements published, schema 1.12)
+
+Codex PR #2 merged the endorsement collector; Hermes ran it live (Serper works here): all 904 planned searches + ~2,100 source pages fetched across passes, publisher verification registered verified endorsers/sources, and **1,328 accepted observations** exported. Integration into the public dataset:
+
+- Schema 1.11 → **1.12**: `endorsements` array on candidates (`$defs.endorsementRecord`: endorser/kind/relation/phase/url/checked_on/optional quote; `unspecified` allowed where sources don't state kind or phase). New negative cases (bad relation, missing url) and a positive case; coverage metric `printed_candidates_with_endorsements`.
+- Dataset: **741 candidacies / 884 records** attached by (position_id, name) match from the export; deduped per endorser+relation+phase. Both UIs render an "Endorsements" details block inside each candidate card/li with source links and checked dates.
+- Snapshot published at `research/endorsements/endorsements-export-2026-10-09.json` (evidence.context stripped for size; full context stays in the local SQLite ledger).
+- Known gaps: ~128 candidacies have no record yet; Facebook/Instagram/Ballotpedia pages are bot-walled to plain HTTP and need browser/provider imports (`research_endorsements.py import`); 2,300+ review items remain pending for ambiguous name matches — resolve via source packets before adding more records. Re-run `run/extract/export`, then re-attach to refresh the dataset.
 
 ## Session refresh — October 9, 2026 (enrichment resumed and completed)
 

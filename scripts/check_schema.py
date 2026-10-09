@@ -219,6 +219,8 @@ negative_cases = {
     "gaza_evidence_impossible_month": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9005","date":"2026-13","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_impossible_day": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9006","date":"2026-02-30","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_impossible_checked_on": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9007","date":"2026-02-01","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-02-30"}]),
+    "endorsement_bad_relation": lambda d: d["positions"][0]["candidates"][0].update(endorsements=[{"endorser":"Example Party","relation":"will-endorse","phase":"general","url":"https://example.com/e","checked_on":"2026-10-09"}]),
+    "endorsement_missing_url": lambda d: d["positions"][0]["candidates"][0].update(endorsements=[{"endorser":"Example Party","relation":"endorsed","phase":"general","checked_on":"2026-10-09"}]),
     "gaza_evidence_unknown_date_method": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9008","date":"2026-02-01","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08","date_method":"google_guess"}]),
 }
 outcomes = []
@@ -247,6 +249,8 @@ secondary_x = mutated(lambda d: d["positions"][0]["candidates"][0].update(x_url=
 assert not check(secondary_x, SCHEMA), "A verified second X account must be a valid candidate field"
 gaza_ev = mutated(lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9100","date":"2025-06-01","url":"https://example.com/statement","summary":"Candidate called for an immediate ceasefire in a public statement.","quote":"we need a ceasefire now","dimension":"actions_votes","source_kind":"news","checked_on":"2026-10-08"}]))
 assert not check(gaza_ev, SCHEMA), "A dated Gaza evidence item must be a valid candidate field"
+endorsement_ok = mutated(lambda d: d["positions"][0]["candidates"][0].update(endorsements=[{"endorser":"Example County Democratic Party","kind":"party","relation":"endorsed","phase":"general","url":"https://example.com/endorsements","checked_on":"2026-10-09","quote":"Jane Doe"}]))
+assert not check(endorsement_ok, SCHEMA), "A cited current-cycle endorsement record must be a valid candidate field"
 gaza_ev_dated = mutated(lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9101","date":"2025-06","url":"https://example.com/statement","summary":"Candidate called for an immediate ceasefire in a public statement.","dimension":"actions_votes","checked_on":"2026-10-08","date_method":"wayback_first_capture","date_note":"Earliest Wayback capture containing the claim; month is an upper bound."}]))
 assert not check(gaza_ev_dated, SCHEMA), "Partial dates with explicit dating method and note must remain valid"
 
@@ -257,7 +261,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item", "gaza evidence partial date with dating method and note"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item", "gaza evidence partial date with dating method and note", "candidate endorsement record with source page"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 

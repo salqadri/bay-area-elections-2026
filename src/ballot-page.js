@@ -156,6 +156,16 @@
           }
           row.append(det);
         }
+        if (candidate.endorsements?.length) {
+          const en = node('details', 'ballot-candidate-endorsements');
+          en.append(node('summary', null, 'Endorsements · ' + candidate.endorsements.length + ' records (current cycle)'));
+          for (const r of candidate.endorsements) {
+            const li = node('p', null, (r.relation === 'recommended' ? 'Recommended by ' : 'Endorsed by ') + r.endorser + (r.kind ? ' (' + r.kind + ')' : '') + (r.phase ? ' · ' + r.phase : '') + ' — checked ' + r.checked_on);
+            li.append(' ', safeLink(r.url, 'source ↗'));
+            en.append(li);
+          }
+          row.append(en);
+        }
         candidates.append(row);
       }
       card.append(candidates);

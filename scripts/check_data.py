@@ -80,6 +80,7 @@ expected = {
     "printed_candidates_with_x_url": sum("x_url" in c for c in printed),
     "printed_candidates_with_secondary_x_url": sum("secondary_x_url" in c for c in printed),
     "printed_candidates_with_gaza_evidence": sum(bool(c.get("gaza_evidence")) for c in printed),
+    "printed_candidates_with_endorsements": sum(bool(c.get("endorsements")) for c in printed),
     "printed_candidates_with_campaign_url": sum("campaign_url" in c for c in printed),
 }
 for key, value in expected.items():
