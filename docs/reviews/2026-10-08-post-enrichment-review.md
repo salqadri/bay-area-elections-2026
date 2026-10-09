@@ -2,6 +2,8 @@
 
 Reviewed upstream commit `d0ee70b718c663dfc6b0b835c0621be492f4a226`, after Hermes completed its work. This document describes corrections on the review branch, not a claim that the public site has deployed them.
 
+During delivery, upstream added documentation-only commit `39fc35e8124d9e348de95b0c834e5e1147a799cd`. Its `AGENTS.md` acceptance rules, completion status, date requirements, and external pipeline constraints were reviewed and reconciled into this branch. It changes no application code or data.
+
 ## Scope and method
 
 Compared all committed changes with the preceding reviewed snapshot `6ba1537b8106b858289f95ff4544bcf8ec4dc1e7`; inspected the application/data integration, all 300 current evidence summaries, relevant stored excerpts, and targeted original sources. The core 416-contest inventory, candidate rosters, and structured candidate FEC records are unchanged. This is not an independent recertification of all 869 printed candidate entries.
