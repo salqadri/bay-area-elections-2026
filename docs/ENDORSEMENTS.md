@@ -14,6 +14,12 @@ The collector uses Python's standard library. Optional `pdftotext` supports text
 
 On the October 9 baseline, a fresh plan contains **869 candidacies, 904 search queries and 386 initial source URLs**. `--deep` adds one targeted query per candidacy. These are request counts, not a promise of complete results, cost or duration; discovered pages add fetches. A modest first batch lets Hermes inspect coverage before committing a larger budget.
 
+## First live run status (October 9, 2026)
+
+Collection through this date is **complete**: 904/904 searches, 3,671 pages parsed, ~2,780 explicit fetch failures (bot-walled platforms and junk hosts; each stays checkpointed as a limitation), 1,328 accepted observations from 9 verified endorsers / 10 registered sources. Published: endorsements on **741 of 869 printed candidacies** in the election dataset (schema 1.12) plus the snapshot `research/endorsements/endorsements-export-2026-10-09.json`. A final drain pass changed nothing — re-extract/export/re-attach is byte-identical, so do not rerun collection expecting new signal from plain HTTP.
+
+Next-value work: (1) browser/provider **imports** for bot-walled but credible sources (Ballotpedia candidate pages, Facebook/Instagram endorsement posts) via `import`; (2) targeted follow-up on the ~128 uncovered candidacies; (3) bulk reject-by-source for the ~27.6k pending review items from low-quality hosts after confirming they are not endorsers — record decisions with reasons, never delete packets silently.
+
 ## Run and resume
 
 From the repository root:

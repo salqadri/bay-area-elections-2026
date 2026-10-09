@@ -64,12 +64,12 @@ Ledger after this pass: **300 items / 113 people**, quarantine **111**. Full sui
 
 ## Session refresh — October 9, 2026 (endorsements published, schema 1.12)
 
-Codex PR #2 merged the endorsement collector; Hermes ran it live (Serper works here): all 904 planned searches + ~2,100 source pages fetched across passes, publisher verification registered verified endorsers/sources, and **1,328 accepted observations** exported. Integration into the public dataset:
+Codex PR #2 merged the endorsement collector; Hermes ran it live (Serper works here) to completion: all 904 planned searches, **3,671 source pages parsed** (~2,780 explicit fetch failures — bot-walled Facebook/Instagram/Ballotpedia and junk hosts, checkpointed as limitations), publisher verification registered 9 verified endorsers / 10 sources, and **1,328 accepted observations** exported. A final drain pass added zero new accepted records: the re-attached export is byte-identical to what was published, so the live site is current through October 9 collection. Integration into the public dataset:
 
 - Schema 1.11 → **1.12**: `endorsements` array on candidates (`$defs.endorsementRecord`: endorser/kind/relation/phase/url/checked_on/optional quote; `unspecified` allowed where sources don't state kind or phase). New negative cases (bad relation, missing url) and a positive case; coverage metric `printed_candidates_with_endorsements`.
 - Dataset: **741 candidacies / 884 records** attached by (position_id, name) match from the export; deduped per endorser+relation+phase. Both UIs render an "Endorsements" details block inside each candidate card/li with source links and checked dates.
 - Snapshot published at `research/endorsements/endorsements-export-2026-10-09.json` (evidence.context stripped for size; full context stays in the local SQLite ledger).
-- Known gaps: ~128 candidacies have no record yet; Facebook/Instagram/Ballotpedia pages are bot-walled to plain HTTP and need browser/provider imports (`research_endorsements.py import`); 2,300+ review items remain pending for ambiguous name matches — resolve via source packets before adding more records. Re-run `run/extract/export`, then re-attach to refresh the dataset.
+- Known gaps: ~128 candidacies have no record yet; Facebook/Instagram/Ballotpedia pages are bot-walled to plain HTTP and need browser/provider imports (`research_endorsements.py import`); the review queue holds **~27.6k pending items**, overwhelmingly name-match ambiguities harvested from low-quality hosts (playpotus/civoren noise) — the right treatment is bulk reject-by-source after confirming those hosts are not credible endorsers, not per-item review.
 
 ## Session refresh — October 9, 2026 (enrichment resumed and completed)
 
