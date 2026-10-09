@@ -15,8 +15,9 @@ Start with [AGENTS.md](AGENTS.md), which applies to Hermes and other coding/rese
 - [Current handoff and priorities](docs/HANDOFF.md): dated baseline, unresolved work and suggested next tasks.
 - [Election research guide](docs/RESEARCH.md): evidence standards, status decisions, source/ID conventions, FEC updates and a live unresolved-work queue command.
 - [Maintenance guide](docs/MAINTENANCE.md): architecture, local development, verification limits, county expansion and publishing.
+- [Endorsement collector](docs/ENDORSEMENTS.md): resumable Serper/page research for every printed candidacy, cached sources, grouped review packets and a separate JSON export/schema. This research layer is not yet displayed on the website.
 
-Use Git, Python 3 and Node.js. No npm/pip installation or API key is needed for the current implementation. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
+Use Git, Python 3 and Node.js. No npm/pip installation or API key is needed to build, serve or validate the site. The optional endorsement collector uses a Serper key for search; imported page lookups need no key. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
 
 ```sh
 git clone https://github.com/salqadri/bay-area-elections-2026.git

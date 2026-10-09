@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate endorsement research ledger",
+  "description": "Research observations separate from official party affiliation. A current source version is not a certification that an endorsement remains in force. Empty records never prove no endorsements.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "election_date", "generated_at", "source_dataset_sha256", "scope", "candidates", "endorsers", "sources", "records", "conflicts"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "1.0"},
+    "election_date": {"type": "string", "format": "date"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "source_dataset_sha256": {"$ref": "#/$defs/hash"},
+    "scope": {"type": "string"},
+    "candidates": {"type": "object", "propertyNames": {"pattern": "^C-[0-9a-f]{20}$"}, "additionalProperties": {"$ref": "#/$defs/candidate"}},
+    "endorsers": {"type": "object", "propertyNames": {"pattern": "^E-[0-9a-f]{20}$"}, "additionalProperties": {"$ref": "#/$defs/endorser"}},
+    "sources": {"type": "object", "propertyNames": {"pattern": "^S-[0-9a-f]{20}$"}, "additionalProperties": {"$ref": "#/$defs/source"}},
+    "records": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "conflicts": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "endorser_id", "phase", "relations"], "properties": {"candidate_id": {"type": "string"}, "endorser_id": {"type": "string"}, "phase": {"$ref": "#/$defs/phase"}, "relations": {"type": "array", "items": {"$ref": "#/$defs/relation"}}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "phase": {"enum": ["general", "primary", "unspecified"]},
+    "relation": {"enum": ["endorsed", "withdrawn", "recommended"]},
+    "kind": {"enum": ["party", "union", "organization", "media", "person", "unspecified"]},
+    "candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "position_id", "name", "office", "jurisdiction", "seat", "term", "election_type", "counties", "campaign_url", "aliases", "record_ids", "research_status", "searches_done", "searches_pending_or_failed", "source_lookups_pending_or_failed", "exhaustive"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^C-[0-9a-f]{20}$"},
+        "position_id": {"type": "string"}, "name": {"type": "string"},
+        "office": {"type": "string"}, "jurisdiction": {"type": "string"}, "seat": {"type": "string"},
+        "term": {"type": ["string", "null"]}, "election_type": {"type": "string"},
+        "counties": {"type": "array", "items": {"type": "string"}},
+        "campaign_url": {"type": ["string", "null"]},
+        "aliases": {"type": "array", "items": {"type": "string"}},
+        "record_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "research_status": {"enum": ["incomplete", "evidence_found", "searched_no_verified_evidence"]},
+        "searches_done": {"type": "integer", "minimum": 0},
+        "searches_pending_or_failed": {"type": "integer", "minimum": 0},
+        "source_lookups_pending_or_failed": {"type": "integer", "minimum": 0},
+        "exhaustive": {"const": false}
+      }
+    },
+    "endorser": {"type": "object", "additionalProperties": false, "required": ["name", "kind"], "properties": {"name": {"type": "string", "minLength": 1}, "kind": {"$ref": "#/$defs/kind"}}},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["url", "content_sha256", "observed_at", "first_observed_at", "retrieval"],
+      "properties": {"url": {"type": "string", "format": "uri"}, "content_sha256": {"$ref": "#/$defs/hash"}, "observed_at": {"type": "string", "format": "date-time"}, "first_observed_at": {"type": "string", "format": "date-time"}, "retrieval": {"type": "string"}}
+    },
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "candidate_id", "endorser_id", "source_id", "relation", "phase", "cycle", "verification", "evidence", "method", "current_source_version", "source_refresh_failed"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R-[0-9a-f]{20}$"},
+        "candidate_id": {"type": "string", "pattern": "^C-[0-9a-f]{20}$"},
+        "endorser_id": {"type": "string", "pattern": "^E-[0-9a-f]{20}$"},
+        "source_id": {"type": "string", "pattern": "^S-[0-9a-f]{20}$"},
+        "relation": {"$ref": "#/$defs/relation"}, "phase": {"$ref": "#/$defs/phase"},
+        "cycle": {"type": "integer", "minimum": 2000},
+        "verification": {"enum": ["endorser_statement", "campaign_claim", "reported"]},
+        "rank": {"type": "integer", "minimum": 1}, "shared": {"const": true},
+        "titles_for_identification_only": {"const": true},
+        "review_id": {"type": "string"},
+        "method": {"enum": ["deterministic", "reviewed"]},
+        "current_source_version": {"type": "boolean"}, "source_refresh_failed": {"type": "boolean"},
+        "evidence": {"type": "object", "additionalProperties": false, "required": ["quote", "context", "cycle_quote"], "properties": {"quote": {"type": "string", "minLength": 1}, "context": {"type": "string", "minLength": 1}, "cycle_quote": {"type": "string", "minLength": 1}, "line": {"type": "integer", "minimum": 1}}}
+      }
+    }
+  }
+}

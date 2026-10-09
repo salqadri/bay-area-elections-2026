@@ -1,0 +1,114 @@
+{
+  "test_date": "2026-10-09",
+  "upstream_commit": "9ae65461fdb3398f9413368905e20e82119b6a89",
+  "dataset_sha256_canonical_json": "6f6c228128847c0f1e521e51a5528370b92a6f06a962797ef2c93c5d75e12a61",
+  "scope": "Extraction smoke test with five partial live page lookups; not a complete endorsement inventory or independent factual audit.",
+  "plan": {
+    "candidacies": 869,
+    "search_queries": 904,
+    "initial_source_urls": 386,
+    "campaign_urls": 381,
+    "starter_urls": 5
+  },
+  "transport": {
+    "live_lookup_provider": "Web search/browser lookup, imported through the provider-neutral JSONL adapter",
+    "live_serper_tested": false,
+    "live_direct_fetch_tested": false,
+    "serper_request_fixture_tested": true,
+    "limitation": "Direct external HTTP/Serper access was blocked in this environment. Live inputs were partial text excerpts; HTML handling was tested with synthetic fixtures."
+  },
+  "results": {
+    "accepted_observations": 129,
+    "candidates_with_evidence": 116,
+    "relations": {
+      "endorsed": 123,
+      "recommended": 6
+    },
+    "phases": {
+      "general": 119,
+      "primary": 10
+    },
+    "review_items": 58,
+    "source_groups": 5,
+    "bounded_packets": 5,
+    "research_subagent_calls": 0,
+    "all_roster_searches_run": false
+  },
+  "source_samples": [
+    {
+      "url": "https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/",
+      "observed_at": "2026-10-09T03:27:06.218447+00:00",
+      "partial": true,
+      "accepted_observations": 55,
+      "relations": {
+        "endorsed": 55
+      },
+      "phases": {
+        "general": 53,
+        "primary": 2
+      }
+    },
+    {
+      "url": "https://www.seiu1021.org/post/election-endorsements-nov-3-2026",
+      "observed_at": "2026-10-09T03:27:06.218447+00:00",
+      "partial": true,
+      "accepted_observations": 47,
+      "relations": {
+        "endorsed": 47
+      },
+      "phases": {
+        "general": 47
+      }
+    },
+    {
+      "url": "https://www.acjdc.org/endorsements",
+      "observed_at": "2026-10-09T03:27:06.218447+00:00",
+      "partial": true,
+      "accepted_observations": 21,
+      "relations": {
+        "endorsed": 21
+      },
+      "phases": {
+        "general": 13,
+        "primary": 8
+      }
+    },
+    {
+      "url": "https://www.cocorepublicans.com/endorsements",
+      "observed_at": "2026-10-09T03:27:06.218447+00:00",
+      "partial": true,
+      "accepted_observations": 0,
+      "relations": {},
+      "phases": {}
+    },
+    {
+      "url": "https://smgop.org/voter-guide",
+      "observed_at": "2026-10-09T03:27:06.218447+00:00",
+      "partial": true,
+      "accepted_observations": 6,
+      "relations": {
+        "recommended": 6
+      },
+      "phases": {
+        "general": 6
+      }
+    }
+  ],
+  "checks": {
+    "offline_regression_tests_passed": 25,
+    "json_parse_and_required_field_checks": true,
+    "record_uniqueness_and_reference_integrity": true,
+    "full_draft2020_12_schema_validation_run": false,
+    "cycle_and_phase_edge_assertions": true,
+    "mixed_negative_page_excluded": true,
+    "questionnaire_only_mentions_excluded": true,
+    "packet_budget_checks": true,
+    "replay": {
+      "pages_processed": 0,
+      "unchanged_pages_skipped": 5,
+      "new_observations": 0
+    },
+    "unchanged_generated_site_check_passed": true
+  },
+  "artifacts": "Raw source captures, SQLite ledger, review packets and sample export are local ignored test artifacts, not published endorsement data."
+}
