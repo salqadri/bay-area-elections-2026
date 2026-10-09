@@ -4,6 +4,8 @@
 
 The collector uses Python's standard library. Optional `pdftotext` supports text PDFs. It makes no LLM, Jev or Research-agent calls. Serper supplies search results; direct HTTP retrieves pages. A provider-neutral import path also accepts browser or other search-service lookups.
 
+For county selection, partial statewide planning and publisher-neutral reviewed publication, use [the repeatable workflow](REPEATABLE_RESEARCH.md). New integrations should use `reviewed_updates.py`; dated CAIR/peace importers remain historical baseline migrations.
+
 ## Minimize agent work
 
 1. Fetch shared endorser lists first. Each page is matched against the entire roster, so one union or party list can resolve many candidates.

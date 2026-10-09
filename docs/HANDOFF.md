@@ -1,6 +1,14 @@
 # Research and development handoff
 
-## Latest update — October 9, 2026: Vote for Peace and AROC Action
+## Latest update — October 9, 2026: reusable county workflow
+
+The research tooling now accepts single/multiple counties, Bay Area and California presets. A shared 58-county registry supplies names/FIPS to the planner and address decoder; actual ballot scope still comes from the dataset. `research_scope.py` reports missing inventories and unresolved rosters. County-scoped collector ledgers cache/resume without silently switching scopes; a statewide ledger can explicitly report partial coverage and grow as official rosters are added.
+
+`reviewed_updates.py` drafts held observations from any normalized publisher capture (or the existing CAIR parser), previews exact before/after changes, and registers applied reviews in an immutable ordered history. The publication guards honor explicitly reviewed supersessions while preserving the dated baseline and quarantine. `check_release.py` provides one offline release command. See [REPEATABLE_RESEARCH.md](REPEATABLE_RESEARCH.md) for the runnable workflow, source adapter contract and limits.
+
+No election facts or coverage were added in this tooling pass: the dataset remains schema 1.15 with 386 recommendation records and 245 Gaza evidence items. No statewide collection or scheduled job was launched. Roster expansion remains official-source research; source parsing and political fact review are not replaced by automatic matching.
+
+## Earlier update — October 9, 2026: Vote for Peace and AROC Action
 
 Schema **1.15** publishes **386 recommendation records on 197 candidacies** and **245 Gaza evidence items under 82 candidacies**. This pass adds 27 Vote for Peace Ally classifications, 8 oppositions, 29 AROC endorsements, 6 explicit endorsements discovered through linked sources, and 14 attributed guide observations. See [the review](reviews/2026-10-09-peace-guides.md) and [complete source-card manifest](../research/endorsements/peace-guides-2026-10-09.json).
 

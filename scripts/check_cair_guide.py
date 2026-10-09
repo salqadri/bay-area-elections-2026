@@ -6,6 +6,7 @@ import unittest
 
 from import_cair_guide import URL, DATA, REVIEW, parse_capture, recommendation, reviewed_records, apply_capture
 from check_published_endorsements import check_endorsements
+from research_test_fixtures import before_registered_updates
 
 
 def card(ident, name, level, office='Example School Board Area 2', annotation=''):
@@ -48,7 +49,8 @@ class CaptureChecks(unittest.TestCase):
 
 class PublishedChecks(unittest.TestCase):
     def setUp(self):
-        self.data = json.loads(DATA.read_text())
+        self.current = json.loads(DATA.read_text())
+        self.data = before_registered_updates(self.current)
         self.review = json.loads(REVIEW.read_text())
 
     def test_all_200_cards_accounted_for_and_95_candidacies_published(self):
@@ -56,7 +58,8 @@ class PublishedChecks(unittest.TestCase):
         self.assertEqual(len(records), 95)
         self.assertEqual(self.review['card_count'], 200)
         self.assertEqual(self.review['disposition_counts'], {'not_in_current_roster': 102, 'publish': 95, 'duplicate': 2, 'held_office_mismatch': 1})
-        self.assertFalse(check_endorsements(self.data))
+        self.assertFalse(check_endorsements(self.current))
+        self.assertFalse(check_endorsements(self.data, reviews=[]))
 
     def test_opposition_preference_and_duplicate_handling(self):
         records = reviewed_records(self.data, self.review)
@@ -81,7 +84,7 @@ class PublishedChecks(unittest.TestCase):
                 person['endorsements'].remove(record)
             else:
                 record[change] = 'endorsed' if change == 'relation' else 'https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054'
-            self.assertTrue(check_endorsements(d))
+            self.assertTrue(check_endorsements(d, reviews=[]))
 
 
 if __name__ == '__main__':

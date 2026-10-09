@@ -15,6 +15,7 @@ Start with [AGENTS.md](AGENTS.md), which applies to Hermes and other coding/rese
 - [Current handoff and priorities](docs/HANDOFF.md): dated baseline, unresolved work and suggested next tasks.
 - [Election research guide](docs/RESEARCH.md): evidence standards, status decisions, source/ID conventions, FEC updates and a live unresolved-work queue command.
 - [Maintenance guide](docs/MAINTENANCE.md): architecture, local development, verification limits, county expansion and publishing.
+- [Repeatable county workflow](docs/REPEATABLE_RESEARCH.md): county/Bay Area/California plans, cached reruns, source review drafts, exact before/after updates and an immutable publication history.
 - [Endorsement research](docs/ENDORSEMENTS.md): cached collection, shared-source review and separately labeled support evidence. The October 9 corrections publish **386 records on 197 of 869 printed candidacies**. See the [Vote for Peace / AROC review](docs/reviews/2026-10-09-peace-guides.md), [CAIR correction](docs/reviews/2026-10-09-cair-action-correction.md), [captured recommendations](research/endorsements/cair-action-2026-10-09.json), and [earlier publication audit](docs/reviews/2026-10-09-targeted-endorsements.md).
 
 Use Git, Python 3 and Node.js. No npm/pip installation or API key is needed to build, serve or validate the site. The optional endorsement collector uses a Serper key for search; imported page lookups need no key. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
@@ -141,6 +142,7 @@ python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
+python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
@@ -150,6 +152,8 @@ node scripts/check_address_autocomplete.cjs
 node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
+
+Run the full sequence above with **`python3 scripts/check_release.py`**; its report and detailed logs go to `.checks/`.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 

@@ -37,6 +37,12 @@ Photon suggestions fill the input; Census determines the geography. Keep manual 
 
 Do not persist users' entered addresses or coordinates in browser storage, analytics, page URLs, downloaded estimates, repository fixtures or logs. The page discloses partial-address requests to Photon and submitted-address requests to Census. Use public civic buildings for any live test examples. Keep credentials out of source and generated HTML; use an appropriate restricted credential or backend if a future provider requires one.
 
+## Reusable research and county reruns
+
+The owner prefers improvements to be reusable across existing county reruns, all nine Bay Area counties and California. Follow [docs/REPEATABLE_RESEARCH.md](docs/REPEATABLE_RESEARCH.md). Use `research_scope.py` to distinguish requested geography from available ballot inventories, and the collector's county/scope options with a fixed-scope ledger. Do not assume selecting a county establishes coverage. Shared contests stay singular.
+
+New source integrations should emit the common capture contract and use `reviewed_updates.py` for held drafts, exact before/after changes, provenance/date validation and registered publication history. Improve shared adapters/guards when a failure class is found; do not create another dated one-off importer by default. Registered review manifests are immutable; supersede with a new review. Historical quarantine and baseline checks remain mandatory. `check_release.py` runs the full offline gate. Official roster research and the external Gaza collector retain their separate evidence requirements.
+
 ## Editing and verification
 
 - The dataset, schema, templates and `src/*.js` are the maintained sources. `index.html` and `ballot.html` are generated deliverables: rebuild with `python3 scripts/build_site.py`, do not hand-edit them.

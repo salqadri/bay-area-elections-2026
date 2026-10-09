@@ -245,7 +245,11 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
   const CA = 'ocd-division/country:us/state:ca';
-  const COUNTY_FIPS = {'001':'Alameda','013':'Contra Costa','075':'San Francisco','081':'San Mateo','085':'Santa Clara'};
+  // One researched California registry serves the planner, Node and built page.
+  // The builder resolves the browser branch; Node loads the same source JSON.
+  const COUNTY_FIPS = typeof module === 'object' && module.exports
+    ? Object.fromEntries(require('../research/california-counties.json').counties.map(c => [c.fips, c.name]))
+    : {"001": "Alameda", "003": "Alpine", "005": "Amador", "007": "Butte", "009": "Calaveras", "011": "Colusa", "013": "Contra Costa", "015": "Del Norte", "017": "El Dorado", "019": "Fresno", "021": "Glenn", "023": "Humboldt", "025": "Imperial", "027": "Inyo", "029": "Kern", "031": "Kings", "033": "Lake", "035": "Lassen", "037": "Los Angeles", "039": "Madera", "041": "Marin", "043": "Mariposa", "045": "Mendocino", "047": "Merced", "049": "Modoc", "051": "Mono", "053": "Monterey", "055": "Napa", "057": "Nevada", "059": "Orange", "061": "Placer", "063": "Plumas", "065": "Riverside", "067": "Sacramento", "069": "San Benito", "071": "San Bernardino", "073": "San Diego", "075": "San Francisco", "077": "San Joaquin", "079": "San Luis Obispo", "081": "San Mateo", "083": "Santa Barbara", "085": "Santa Clara", "087": "Santa Cruz", "089": "Shasta", "091": "Sierra", "093": "Siskiyou", "095": "Solano", "097": "Sonoma", "099": "Stanislaus", "101": "Sutter", "103": "Tehama", "105": "Trinity", "107": "Tulare", "109": "Tuolumne", "111": "Ventura", "113": "Yolo", "115": "Yuba"};
   const COUNTY_NAMES = Object.values(COUNTY_FIPS);
   const unique = values => [...new Set(values.filter(Boolean))];
   const normalizeName = value => String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[_’']/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');

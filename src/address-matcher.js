@@ -6,7 +6,11 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
   const CA = 'ocd-division/country:us/state:ca';
-  const COUNTY_FIPS = {'001':'Alameda','013':'Contra Costa','075':'San Francisco','081':'San Mateo','085':'Santa Clara'};
+  // One researched California registry serves the planner, Node and built page.
+  // The builder resolves the browser branch; Node loads the same source JSON.
+  const COUNTY_FIPS = typeof module === 'object' && module.exports
+    ? Object.fromEntries(require('../research/california-counties.json').counties.map(c => [c.fips, c.name]))
+    : __CALIFORNIA_COUNTY_FIPS_JSON__;
   const COUNTY_NAMES = Object.values(COUNTY_FIPS);
   const unique = values => [...new Set(values.filter(Boolean))];
   const normalizeName = value => String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[_’']/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim().replace(/\s+/g, ' ');

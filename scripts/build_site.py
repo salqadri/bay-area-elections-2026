@@ -35,6 +35,9 @@ def render(page="index"):
             "__BALLOT_PAGE_JS__": "ballot-page.js",
         }.items():
             javascript = (ROOT / "src" / filename).read_text(encoding="utf-8")
+            if filename == 'address-matcher.js':
+                registry = json.loads((ROOT / 'research/california-counties.json').read_text())
+                javascript = javascript.replace('__CALIFORNIA_COUNTY_FIPS_JSON__', json.dumps({c['fips']: c['name'] for c in registry['counties']}, ensure_ascii=False))
             assert "</script" not in javascript.lower(), f"Unsafe inline script in {filename}"
             replacements[placeholder] = javascript
         for placeholder, content in replacements.items():

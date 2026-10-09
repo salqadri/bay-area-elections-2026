@@ -10,6 +10,7 @@ from pathlib import Path
 from check_published_endorsements import blocked_reason, check_endorsements, source_key
 from import_cair_guide import apply_capture, REVIEW as CAIR_REVIEW
 from import_peace_guides import apply_guides, REVIEW as PEACE_REVIEW
+from publication_reviews import load_reviews
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / '2026-11-03_Bay_Area_Elections.json'
@@ -22,6 +23,12 @@ def encode(value, indent=2):
 
 
 def apply_review(data, review, export):
+    if load_reviews():
+        # A dated baseline migration must never replay over newer source research.
+        errors = check_endorsements(data)
+        if errors:
+            raise ValueError('\n'.join(errors))
+        return data, export
     if data['schema_version'] not in {'1.12', '1.13', '1.14', '1.15'}:
         raise ValueError('Review this dated migration before applying to a different schema version')
     people = {(p['id'], c['name']): c for p in data['positions'] for c in p.get('candidates') or []}

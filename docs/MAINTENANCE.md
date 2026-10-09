@@ -63,6 +63,7 @@ python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
+python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
@@ -72,6 +73,8 @@ node scripts/check_address_autocomplete.cjs
 node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
+
+`python3 scripts/check_release.py` runs this complete offline sequence and records its results under `.checks/`.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -132,3 +135,8 @@ To restore a quarantined source, establish the missing identity/attribution/cont
 `import_peace_guides.py` applies the source-card manifest as part of the combined endorsement migration. `check_peace_guides.py` checks completeness, polarity, election phase, preserved CAIR/Track AIPAC records, idempotence and observation dates. `check_published_endorsements.py` requires reviewed guide observations to remain present and unchanged. The CAIR importer preserves the order of already-correct records so rerunning it remains idempotent after another publisher is added.
 
 Both UI date-label functions distinguish `source_observed` from historical dates. The schema requires a complete date, voter-guide source kind and explanatory date note; the evidence guard requires observation date to equal check date. The shared endorsement renderer displays Ally explicitly without upgrading it to a formal endorsement. Rebuild both HTML files and run all README checks after changing these sources.
+
+
+## Reusable scope and review pipeline
+
+Follow [REPEATABLE_RESEARCH.md](REPEATABLE_RESEARCH.md). County/FIPS data lives in `research/california-counties.json`; the build embeds the same registry that Node and Python read. Adding geography recognition never expands the election inventory. New reviewed changes use exact before/after records and source hashes, and are registered in `research/publication-reviews.json`. Keep review manifests, registry, canonical dataset, current coverage documentation and generated pages together. `schema_validation.py` holds the common focused validator; `check_schema.py` retains the regression suite.

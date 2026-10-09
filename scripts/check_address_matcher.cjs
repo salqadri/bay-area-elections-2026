@@ -277,6 +277,22 @@ test('Unsupported California counties and non-California addresses produce no mi
   assert.equal(nevada.races.length, 0);
 });
 
+test('California registry resolves every FIPS code while coverage stays dataset-driven', () => {
+  const registry = JSON.parse(fs.readFileSync(path.join(root, 'research/california-counties.json'), 'utf8'));
+  for (const county of registry.counties) {
+    const geo = geographyFromMatch({geographies:{States:[{STATE:'06'}],Counties:[{STATE:'06',COUNTY:county.fips}]}});
+    assert.deepEqual(geo.counties,[county.name]);
+    assert.deepEqual(manualCounty(county.name.toLowerCase()).counties,[county.name]);
+    const expanded = {election:{counties_in_scope:[{name:county.name}]},positions:[{id:'fixture-'+county.fips,counties:[county.name],government_level:'County',office_category:'County board',ballot_status:'confirmed'}]};
+    const estimate = estimateBallot(expanded, geo);
+    assert.equal(estimate.status,'ok');
+    assert.equal(estimate.races.length,1);
+    const unavailable = estimateBallot({election:{counties_in_scope:[]},positions:[]},geo);
+    assert.equal(unavailable.status,'outside_scope');
+    assert.equal(unavailable.races.length,0);
+  }
+});
+
 test('Missing or malformed county results request county information instead of guessing', () => {
   for (const raw of [{}, { geographies: {} }, census({ Counties: [] }), census({ Counties: [{}] })]) {
     const result = estimate(raw);

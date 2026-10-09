@@ -7,6 +7,7 @@ from collections import Counter
 from copy import deepcopy
 import json
 from pathlib import Path
+from publication_reviews import load_reviews, revised_rows
 
 ROOT = Path(__file__).resolve().parent.parent
 REVIEW = ROOT / 'research/endorsements/peace-guides-2026-10-09.json'
@@ -69,9 +70,12 @@ def apply_guides(data, review):
     return data
 
 
-def check_guides(data, review=None):
+def check_guides(data, review=None, updates=None):
     review = review or json.loads(REVIEW.read_text())
     findings, evidence = reviewed_findings(data, review)
+    updates = load_reviews() if updates is None else updates
+    findings = revised_rows(findings, 'endorsements', updates, lambda r: r['endorser'] in GUIDES)
+    evidence = revised_rows(evidence, 'gaza_evidence', updates)
     people = {(p['id'], c['name']): c for p in data['positions'] for c in p.get('candidates') or []}
     errors = []
     for field, rows in [('endorsements', findings), ('gaza_evidence', evidence)]:

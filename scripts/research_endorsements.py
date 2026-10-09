@@ -27,6 +27,7 @@ import urllib.request
 from urllib.parse import urlsplit
 
 from endorsement_extract import VERSION, candidates_from_data, clean_url, contains_name, extract, norm, office_matches, page_from_html, uid
+from research_scope import select_scope, add_scope_arguments
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DB = ROOT/'.research/endorsements/ledger.sqlite3'
@@ -121,8 +122,22 @@ def add_query(db, query, ids, priority):
         db.execute('INSERT INTO queries(q,ids,priority) VALUES (?,?,?)', (query, dump(ids), priority))
 
 
-def plan(db, dataset, seeds, deep=False, aliases=None):
+def plan(db, dataset, seeds, deep=False, aliases=None, counties=None, scope='current', allow_partial_scope=False):
     data = json.loads(dataset.read_text(encoding='utf-8'))
+    selection = select_scope(data, counties, scope)
+    requested = selection['requested_counties']
+    if selection['missing_counties'] and not allow_partial_scope:
+        raise ValueError('No inventory for: ' + ', '.join(selection['missing_counties']) +
+                         '. Research official rosters first, or explicitly use --allow-partial-scope for available counties only.')
+    if not selection['positions']:
+        raise ValueError('No researched contests in this scope; start with official roster research')
+    prior_scope = db.execute('SELECT value FROM settings WHERE key="county_scope"').fetchone()
+    if prior_scope and json.loads(prior_scope[0]) != requested:
+        raise ValueError('Use a separate ledger for a different county scope; cached work is preserved')
+    if not prior_scope and db.execute('SELECT count(*) FROM candidates').fetchone()[0]:
+        old_counties = sorted({county for c in roster(db).values() for county in c['counties']})
+        if old_counties != requested:
+            raise ValueError('Existing unscoped ledger cannot be narrowed; use a separate ledger')
     election = data['election']
     election_date = election.get('date') or election.get('election_date')
     if not election_date:
@@ -133,7 +148,9 @@ def plan(db, dataset, seeds, deep=False, aliases=None):
     setting(db, 'election_date', election_date)
     setting(db, 'dataset_sha256', digest(dump(data)))
     setting(db, 'dataset_path', str(dataset.resolve()))
-    candidates = candidates_from_data(data)
+    setting(db, 'county_scope', requested)
+    setting(db, 'missing_counties', selection['missing_counties'])
+    candidates = candidates_from_data({**data, 'positions': selection['positions']})
     alias_map = (json.loads(aliases.read_text(encoding='utf-8')) if aliases else
                  {r['id']: json.loads(r['data']).get('aliases', []) for r in db.execute('SELECT id,data FROM candidates') if r['id'] in candidates})
     for ident, names in alias_map.items():
@@ -153,7 +170,7 @@ def plan(db, dataset, seeds, deep=False, aliases=None):
         add_query(db, q, [c['id']], 20)
         if deep:
             add_query(db, f'"{c["name"]}" {race} {election_date[:4]} ("endorsed by" OR "withdraws endorsement" OR "rescinds endorsement")', [c['id']], 30)
-    counties = sorted({county for c in candidates.values() for county in c['counties']})
+    counties = selection['available_counties']
     for county in counties:
         for group in ('Democratic Party', 'Republican Party', 'labor council', 'chamber business', 'teachers educators', 'environmental organizations', 'newspaper editorial board'):
             add_query(db, f'"{county}" {election_date[:4]} November candidate endorsements {group}', [], 5)
@@ -167,7 +184,8 @@ def plan(db, dataset, seeds, deep=False, aliases=None):
         meta = {k: v for k, v in seed.items() if k != 'url'}
         add_source(db, seed['url'], meta, 0, reviewed=True)
     db.commit()
-    return {'candidacies': len(candidates), 'counties': counties,
+    return {'candidacies': len(candidates), 'counties': counties, 'requested_counties': requested,
+            'missing_counties': selection['missing_counties'],
             'queries': db.execute('SELECT count(*) FROM queries').fetchone()[0],
             'source_urls': db.execute('SELECT count(*) FROM sources').fetchone()[0]}
 
@@ -623,7 +641,9 @@ def export_ledger(db, output):
         c['exhaustive'] = False
     result = {'$schema': 'endorsements.schema.json', 'schema_version': '1.0', 'election_date': setting(db, 'election_date'),
               'generated_at': now(), 'source_dataset_sha256': setting(db, 'dataset_sha256'),
-              'scope': 'Known printed candidacies only; research observations, not a complete or official endorsement inventory.',
+              'scope': ('Known printed candidacies only for requested counties: ' + ', '.join(setting(db, 'county_scope')) +
+                        '. Counties without inventory: ' + (', '.join(setting(db, 'missing_counties')) or 'none') +
+                        '. Research observations, not a complete or official endorsement inventory.'),
               'candidates': people, 'endorsers': endorsers, 'sources': sources, 'records': records, 'conflicts': conflicts}
     atomic_json(output, result)
     schema = json.loads((ROOT/'research/endorsements/endorsements.schema.json').read_text(encoding='utf-8'))
@@ -633,7 +653,8 @@ def export_ledger(db, output):
 
 
 def status(db):
-    return {'candidacies': len(roster(db)),
+    return {'candidacies': len(roster(db)), 'requested_counties': setting(db, 'county_scope'),
+            'missing_counties': setting(db, 'missing_counties'),
             'queries': dict(db.execute('SELECT state,count(*) FROM queries GROUP BY state').fetchall()),
             'sources': dict(db.execute('SELECT state,count(*) FROM sources GROUP BY state').fetchall()),
             'observations': db.execute('SELECT count(*) FROM claims').fetchone()[0],
@@ -645,6 +666,8 @@ def main():
     parser.add_argument('--db', type=Path, default=DEFAULT_DB)
     sub = parser.add_subparsers(dest='command', required=True)
     p = sub.add_parser('plan'); p.add_argument('--dataset', type=Path, default=ROOT/'2026-11-03_Bay_Area_Elections.json'); p.add_argument('--seeds', type=Path, default=ROOT/'research/endorsements/sources.json'); p.add_argument('--deep', action='store_true'); p.add_argument('--aliases', type=Path, help='Reviewed name aliases keyed by candidacy ID')
+    add_scope_arguments(p)
+    p.add_argument('--allow-partial-scope', action='store_true', help='Plan available counties while explicitly reporting missing counties')
     p = sub.add_parser('run'); p.add_argument('--max-queries', type=int, default=100); p.add_argument('--max-pages', type=int, default=200); p.add_argument('--workers', type=int, choices=range(1, 5), default=4); p.add_argument('--no-search', action='store_true'); p.add_argument('--serper-key-file', type=Path); p.add_argument('--retry-failed', action='store_true'); p.add_argument('--refresh-days', type=float)
     p = sub.add_parser('import'); p.add_argument('file', type=Path)
     sub.add_parser('extract')
@@ -668,7 +691,7 @@ def main():
     db = None
     try:
         db = connect(args.db)
-        if args.command == 'plan': result = plan(db, args.dataset, args.seeds, args.deep, args.aliases)
+        if args.command == 'plan': result = plan(db, args.dataset, args.seeds, args.deep, args.aliases, args.county, args.scope, args.allow_partial_scope)
         elif args.command == 'run': result = run_collection(db, args)
         elif args.command == 'import': result = import_lookups(db, args.file)
         elif args.command == 'extract': result = extract_all(db)

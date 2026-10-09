@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 from endorsement_extract import invalid_endorser_name, norm
 from import_cair_guide import reviewed_records, REVIEW as CAIR_REVIEW
 from import_peace_guides import check_guides
+from publication_reviews import load_reviews, revised_rows, check_registered_reviews
 
 ROOT = Path(__file__).resolve().parent.parent
 QUARANTINE = ROOT / 'research/endorsements/quarantine-2026-10-09.json'
@@ -29,10 +30,17 @@ def blocked_reason(record, quarantine=None):
         return 'UI text or category heading is not an identifiable endorser'
 
 
-def check_endorsements(data, review_cair=True):
+def check_endorsements(data, review_cair=True, reviews=None):
     quarantine = json.loads(QUARANTINE.read_text())
     errors = []
     expected_cair = reviewed_records(data, json.loads(CAIR_REVIEW.read_text())) if review_cair else {}
+    reviews = (load_reviews() if reviews is None else reviews) if review_cair else []
+    cair_rows = revised_rows([{'position_id': k[0], 'candidate': k[1], 'record': r} for k, r in expected_cair.items()],
+                             'endorsements', reviews, lambda r: r['endorser'] == 'CAIR Action')
+    expected_cair = {}
+    for row in cair_rows:
+        if row['record']['endorser'] == 'CAIR Action':
+            expected_cair.setdefault((row['position_id'], row['candidate']), []).append(row['record'])
     for p in data['positions']:
         for c in p.get('candidates') or []:
             seen = set()
@@ -56,12 +64,13 @@ def check_endorsements(data, review_cair=True):
                         errors.append(prefix + 'support or indirect evidence needs an explanatory note')
                 if review_cair and r['endorser'] == 'CAIR Action':
                     expected = expected_cair.get((p['id'], c['name']))
-                    if r != expected:
+                    if r not in (expected or []):
                         errors.append(prefix + 'CAIR recommendation differs from reviewed official capture; update the review before publishing')
-            if (p['id'], c['name']) in expected_cair and not any(r['endorser'] == 'CAIR Action' for r in c.get('endorsements', [])):
+            if any(r not in c.get('endorsements', []) for r in expected_cair.get((p['id'], c['name']), [])):
                 errors.append(p['id'] + ' / ' + c['name'] + ': missing reviewed CAIR recommendation')
     if review_cair:
-        errors.extend(check_guides(data))
+        errors.extend(check_guides(data, updates=reviews))
+        errors.extend(check_registered_reviews(data, reviews))
     return errors
 
 

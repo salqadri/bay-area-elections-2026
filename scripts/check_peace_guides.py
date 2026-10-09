@@ -5,11 +5,13 @@ import unittest
 
 from import_peace_guides import ROOT, REVIEW, apply_guides, check_guides, reviewed_findings
 from check_evidence import check_evidence
+from research_test_fixtures import before_registered_updates
 
 
 class GuideChecks(unittest.TestCase):
     def setUp(self):
-        self.data = json.loads((ROOT / '2026-11-03_Bay_Area_Elections.json').read_text())
+        self.current = json.loads((ROOT / '2026-11-03_Bay_Area_Elections.json').read_text())
+        self.data = before_registered_updates(self.current)
         self.review = json.loads(REVIEW.read_text())
         self.people = {(p['id'], c['name']): c for p in self.data['positions'] for c in p.get('candidates') or []}
 
@@ -18,7 +20,8 @@ class GuideChecks(unittest.TestCase):
         self.assertEqual((len(findings), len(evidence)), (70, 14))
         self.assertEqual(len(self.review['vote_for_peace_cards']), 152)
         self.assertEqual(len(self.review['aroc_cards']), 44)
-        self.assertFalse(check_guides(self.data))
+        self.assertFalse(check_guides(self.current))
+        self.assertFalse(check_guides(self.data, updates=[]))
         self.review['aroc_cards'].pop()
         with self.assertRaises(ValueError):
             reviewed_findings(self.data, self.review)
@@ -47,7 +50,7 @@ class GuideChecks(unittest.TestCase):
                 person['endorsements'].remove(record)
             else:
                 person['endorsements'].append({**record, 'endorser': 'AROC Action', 'relation': 'endorsed'})
-            self.assertTrue(check_guides(data))
+            self.assertTrue(check_guides(data, updates=[]))
 
     def test_guide_dates_are_observations_not_historical_dates(self):
         self.assertFalse(check_evidence(self.data))
@@ -66,7 +69,7 @@ class GuideChecks(unittest.TestCase):
         self.assertEqual(apply_guides(self.data, self.review), before)
         from apply_endorsement_review import apply_review, REVIEW as PRIOR_REVIEW, EXPORT
         export = json.loads(EXPORT.read_text())
-        self.assertEqual(apply_review(self.data, json.loads(PRIOR_REVIEW.read_text()), export)[0], before)
+        self.assertEqual(apply_review(deepcopy(self.current), json.loads(PRIOR_REVIEW.read_text()), export)[0], self.current)
 
 
 if __name__ == '__main__':
