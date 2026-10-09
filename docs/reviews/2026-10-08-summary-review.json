@@ -1,0 +1,1875 @@
+{
+  "reviewed_on": "2026-10-08",
+  "base_commit": "d0ee70b718c663dfc6b0b835c0621be492f4a226",
+  "method": "Manual review of all 300 summaries, with targeted direct source reads. This is not a Jev assessment and does not independently verify every retained claim.",
+  "jev": {
+    "status": "blocked",
+    "reason": "No API endpoint/documentation was supplied or available; no Jev request was made."
+  },
+  "serper": {
+    "status": "blocked",
+    "reason": "Execution environment rejected https://google.serper.dev/search with HTTP 403: Calls to this URL are not allowed. No substitute web search was performed."
+  },
+  "meaning_of_unchanged": "No manual summary-quality correction was applied. This is not a certification of the source, candidate identity, date, or factual claim.",
+  "items": {
+    "GE-0234": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "quarantined",
+      "reason": "event_date_unresolved",
+      "detail": "The summary describes a 2010 flotilla speech but assigns a 2022 date from the current source URL. The original event/publication date could not be verified; a migrated URL must not create a false stance chronology."
+    },
+    "GE-0235": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "unchanged"
+    },
+    "GE-0240": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "unchanged"
+    },
+    "GE-0238": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "unchanged"
+    },
+    "GE-0384": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "rewritten",
+      "before": "Garamendi posted on X announcing his statement on the starvation crisis in Gaza, declaring 'It must end.'",
+      "after": "Garamendi called for an end to the starvation crisis in Gaza.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0236": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "unchanged"
+    },
+    "GE-0237": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "unchanged"
+    },
+    "GE-0239": {
+      "candidate": "John Garamendi",
+      "position_id": "CA2026-309",
+      "action": "rewritten",
+      "before": "Garamendi received $0 from AIPAC PAC or UDP; received $34,250 from other pro-Israel PACs (chiefly J Street PAC $33,250), ranking #350 of 439 House members.",
+      "after": "WhoFundsMyRep reports $34,250 in direct/earmarked contributions from its tracked pro-Israel PACs across election cycles, chiefly J Street PAC, and no AIPAC PAC/UDP money for Garamendi.",
+      "basis": "source_reopened"
+    },
+    "GE-0232": {
+      "candidate": "Rudy Recile",
+      "position_id": "CA2026-309",
+      "action": "quarantined",
+      "reason": "third_party_speech_only",
+      "detail": "A campaign event listing describes a guest speaker's views, without establishing Recile's own policy statement or endorsement of those specific views."
+    },
+    "GE-0233": {
+      "candidate": "Rudy Recile",
+      "position_id": "CA2026-309",
+      "action": "rewritten",
+      "before": "FEC records through Sep 30, 2026 show Rudy Recile (R, CA-08) has no AIPAC-linked donations; total 2026 fundraising is only $20,073 with $0 from PACs.",
+      "after": "PoliVion's recorded 2026 profile lists no AIPAC-linked FEC record for Recile. That limited tracker finding does not establish his position on Israel or Gaza.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0244": {
+      "candidate": "Josh Harder",
+      "position_id": "CA2026-310",
+      "action": "quarantined",
+      "reason": "source_text_unavailable",
+      "detail": "Only a statement title is stored, so its substantive position cannot be recovered from the record. Direct source retrieval failed during this review. Await the statement text; do not invent a neutral/supportive/opposed stance."
+    },
+    "GE-0241": {
+      "candidate": "Josh Harder",
+      "position_id": "CA2026-310",
+      "action": "unchanged"
+    },
+    "GE-0242": {
+      "candidate": "Josh Harder",
+      "position_id": "CA2026-310",
+      "action": "rewritten",
+      "before": "Harder's campaign site features a dedicated page titled 'Rep. Harder Calls for Bilateral Ceasefire to Protect Innocent Lives.'",
+      "after": "Harder called for a bilateral ceasefire to protect civilians.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0243": {
+      "candidate": "Josh Harder",
+      "position_id": "CA2026-310",
+      "action": "rewritten",
+      "before": "Harder received $122,989 from AIPAC PAC/UDP and $272,517 total from pro-Israel PACs; also received $143,878 from J Street PAC per FEC filings.",
+      "after": "The recorded WhoFundsMyRep snapshot reports $272,517 in tracked pro-Israel PAC funding for Harder across election cycles, including $122,989 from AIPAC PAC/UDP; this is not a 2026-only total.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0245": {
+      "candidate": "John McBride",
+      "position_id": "CA2026-310",
+      "action": "quarantined",
+      "reason": "financial_claim_unverified",
+      "detail": "PoliVion alleges an AIPAC-linked record without an amount or transaction, while the other retained tracker reports no tracked contributions. Resolve the conflicting scopes against dated FEC filings before asserting a financial link."
+    },
+    "GE-0246": {
+      "candidate": "John McBride",
+      "position_id": "CA2026-310",
+      "action": "rewritten",
+      "before": "In the 2026 CA-09 race, John McBride (R) received $0 from tracked pro-Israel PACs (AIPAC PAC, UDP, etc.) per FEC filings through Oct 2026.",
+      "after": "WhoFundsMyRep's recorded 2026 race table lists no contributions to McBride from its tracked pro-Israel PACs. This is a scoped tracker result, not proof that no other related donations exist.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0352": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "rewritten",
+      "before": "DeSaulnier signed a de-escalation letter (10/13/2023) but did NOT sign the 'Urging Bilateral Ceasefire Letter' (11/15/2023), showing partial alignment with pro-Palestine advocacy.",
+      "after": "AJP Action records DeSaulnier signing the October 13, 2023 de-escalation letter and not signing the November 15 bilateral ceasefire letter; non-signature alone does not establish opposition.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot",
+      "field_changes": {
+        "date": {
+          "before": "2023-10",
+          "after": "2023"
+        },
+        "date_method": {
+          "before": "source_stated",
+          "after": "event_recorded"
+        },
+        "date_note": {
+          "before": null,
+          "after": "Summary references actions dated October 13 and November 15, 2023 in the stored scorecard excerpt; year precision covers both. This is not a publication date."
+        }
+      }
+    },
+    "GE-0112": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "quarantined",
+      "reason": "third_party_action_only",
+      "detail": "The stored excerpt describes a petition, protest, or confrontation about the candidate, not the candidate's own position. A substantive attributable response is needed before restoration."
+    },
+    "GE-0115": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "quarantined",
+      "reason": "third_party_verdict_only",
+      "detail": "A third party's general label or criticism supplies no concrete attributed vote, policy, or statement in this record. Retain as a research lead rather than publish it as the candidate's stance."
+    },
+    "GE-0113": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "unchanged"
+    },
+    "GE-0111": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "rewritten",
+      "before": "DeSaulnier featured among Bay Area leaders and politicians saying the trickle of aid Israel allows into Gaza is not enough, calling for more humanitarian assistance.",
+      "after": "DeSaulnier urged Israel to halt military operations in Gaza, called for immediate food and humanitarian aid, and said he no longer votes for offensive military aid to Israel.",
+      "basis": "source_reopened"
+    },
+    "GE-0110": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "unchanged"
+    },
+    "GE-0114": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "rewritten",
+      "before": "DeSaulnier received $0 from AIPAC PAC or UDP; received $23,260 from J Street PAC; ranks #377 of 439 House members for pro-Israel PAC money.",
+      "after": "WhoFundsMyRep reports $23,260 in direct/earmarked contributions from its tracked pro-Israel PACs across election cycles, chiefly J Street PAC, and no AIPAC PAC/UDP money for DeSaulnier.",
+      "basis": "source_reopened"
+    },
+    "GE-0116": {
+      "candidate": "Mark DeSaulnier",
+      "position_id": "CA2026-001",
+      "action": "unchanged"
+    },
+    "GE-0109": {
+      "candidate": "Jeff Frese",
+      "position_id": "CA2026-001",
+      "action": "quarantined",
+      "reason": "reply_attribution_unverified",
+      "detail": "The URL identifies another account's parent post, not the alleged candidate reply. Its snowflake date also differs from the stored date. A direct reply URL, verified author identity, and reply date are required."
+    },
+    "GE-0011": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0025": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0026": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0012": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0024": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0013": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0014": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0019": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "rewritten",
+      "before": "After opponent Scott Wiener was confronted by pro-Palestine activists at the Trans March, her spokesperson deferred to his experience rather than condemn protesters: solidarity 'against hate whenever someone tells us they are experiencing h",
+      "after": "Chan's spokesperson urged solidarity with Wiener against hate after his confrontation with protesters at the San Francisco Trans March.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0017": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0022": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0015": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0016": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0027": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0018": {
+      "candidate": "Connie Chan",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0031": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0032": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0084": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "rewritten",
+      "before": "Wiener was accosted by activists calling for Israel to cease bombing Gaza, showing public pressure over his conflict stance.",
+      "after": "Wiener wanted the war to end and Netanyahu's government replaced, but opposed local ceasefire resolutions, saying they had fueled antisemitism; he urged more targeted Israeli operations to reduce civilian deaths.",
+      "basis": "source_reopened"
+    },
+    "GE-0037": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0028": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0029": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "rewritten",
+      "before": "JFCS Holocaust Center and a statewide network of 14 California Holocaust/genocide education institutions issued a joint statement responding to Wiener's use of the term 'genocide' for Israel's actions.",
+      "after": "Wiener accused Israel of committing genocide in a video after a congressional debate; the JFCS-led joint statement criticized that position.",
+      "basis": "source_reopened"
+    },
+    "GE-0086": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0036": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "rewritten",
+      "before": "ABC7 News posted on X linking to their report that Wiener changed course on Gaza, calling Israel's actions genocide.",
+      "after": "Wiener called Israel's actions in Gaza genocide, reversing his earlier reluctance to use the term, according to ABC7's report.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0085": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "quarantined",
+      "reason": "third_party_verdict_only",
+      "detail": "A third party's general label or criticism supplies no concrete attributed vote, policy, or statement in this record. Retain as a research lead rather than publish it as the candidate's stance."
+    },
+    "GE-0034": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0035": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0038": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "unchanged"
+    },
+    "GE-0033": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "quarantined",
+      "reason": "third_party_action_only",
+      "detail": "The stored excerpt describes a petition, protest, or confrontation about the candidate, not the candidate's own position. A substantive attributable response is needed before restoration."
+    },
+    "GE-0030": {
+      "candidate": "Scott Wiener",
+      "position_id": "CA2026-229",
+      "action": "rewritten",
+      "before": "Jewish Currents characterized Wiener's shift to calling Gaza genocide as insufficient for the left, framing it as 'playing catch-up on Palestine' in the SF congressional race.",
+      "after": "Wiener said Israel should be able to buy Iron Dome defenses from the U.S., but U.S. taxpayers should not pay for them. He also pledged to reject AIPAC money and called Israel's actions in Gaza genocide.",
+      "basis": "source_reopened"
+    },
+    "GE-0118": {
+      "candidate": "Jamie Joyce",
+      "position_id": "CA2026-002",
+      "action": "rewritten",
+      "before": "PoliVion confirms no AIPAC-linked FEC record for Joyce; her stated campaign focus includes 'ending war' alongside AI governance, housing, and sustainability.",
+      "after": "PoliVion's recorded 2026 profile lists no AIPAC-linked FEC record for Joyce. Her general campaign pledge to end war does not specify an Israel/Gaza policy.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0120": {
+      "candidate": "Lateefah Simon",
+      "position_id": "CA2026-002",
+      "action": "quarantined",
+      "reason": "source_text_unavailable",
+      "detail": "Only a statement title is stored, so its substantive position cannot be recovered from the record. Direct source retrieval failed during this review. Await the statement text; do not invent a neutral/supportive/opposed stance."
+    },
+    "GE-0355": {
+      "candidate": "Lateefah Simon",
+      "position_id": "CA2026-002",
+      "action": "unchanged"
+    },
+    "GE-0121": {
+      "candidate": "Lateefah Simon",
+      "position_id": "CA2026-002",
+      "action": "unchanged"
+    },
+    "GE-0119": {
+      "candidate": "Lateefah Simon",
+      "position_id": "CA2026-002",
+      "action": "unchanged"
+    },
+    "GE-0123": {
+      "candidate": "Lateefah Simon",
+      "position_id": "CA2026-002",
+      "action": "rewritten",
+      "before": "FEC data shows Simon received $0 from AIPAC PAC or United Democracy Project; only $10,500 from J Street PAC, ranking her #404 of 439 House members for pro-Israel PAC money.",
+      "after": "WhoFundsMyRep reports $10,500 in direct/earmarked contributions from its tracked pro-Israel PACs across election cycles, chiefly J Street PAC, and no AIPAC PAC/UDP money for Simon.",
+      "basis": "source_reopened"
+    },
+    "GE-0124": {
+      "candidate": "Lateefah Simon",
+      "position_id": "CA2026-002",
+      "action": "rewritten",
+      "before": "In the 2026 cycle, Simon received $8,850 from pro-Israel PACs, chiefly J Street PAC, per FEC filings through October 4, 2026.",
+      "after": "WhoFundsMyRep reports $8,850 in pro-Israel PAC contributions to Simon for the 2026 cycle, chiefly J Street PAC, through October 4, 2026.",
+      "basis": "source_reopened"
+    },
+    "GE-0125": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0129": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0131": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0137": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0126": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0127": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0128": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0130": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0356": {
+      "candidate": "Melissa Hernandez",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0139": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0138": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0132": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0135": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0134": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0133": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "unchanged"
+    },
+    "GE-0136": {
+      "candidate": "Aisha Wahab",
+      "position_id": "CA2026-003",
+      "action": "rewritten",
+      "before": "FEC data shows Wahab received $0 from AIPAC/UDP; $123,650 from J Street PACs; $2.25M spent against her. Ranks #170 of 439 for pro-Israel PAC money.",
+      "after": "WhoFundsMyRep's 2026 table lists $19,602 in pro-Israel PAC contributions to Wahab, $104,048 spent for her and $2,253,111 against her. Its profile reports no AIPAC PAC/UDP money received or spent for her.",
+      "basis": "source_reopened"
+    },
+    "GE-0009": {
+      "candidate": "Charles Hoelter",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0039": {
+      "candidate": "Charles Hoelter",
+      "position_id": "CA2026-230",
+      "action": "rewritten",
+      "before": "Charles Hoelter (R, CA-15) shows no AIPAC-linked donations in available FEC records for the 2026 cycle.",
+      "after": "PoliVion's recorded 2026 profile lists no AIPAC-linked donations for Hoelter; this is a limited tracker result, not a statement of his Israel/Gaza policy.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0088": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "quarantined",
+      "reason": "third_party_action_only",
+      "detail": "The stored excerpt describes a petition, protest, or confrontation about the candidate, not the candidate's own position. A substantive attributable response is needed before restoration."
+    },
+    "GE-0042": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "quarantined",
+      "reason": "third_party_verdict_only",
+      "detail": "A third party's general label or criticism supplies no concrete attributed vote, policy, or statement in this record. Retain as a research lead rather than publish it as the candidate's stance."
+    },
+    "GE-0040": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0041": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0087": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0007": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0001": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "quarantined",
+      "reason": "third_party_action_only",
+      "detail": "The stored excerpt describes a petition, protest, or confrontation about the candidate, not the candidate's own position. A substantive attributable response is needed before restoration."
+    },
+    "GE-0004": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0043": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0006": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0002": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0003": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "unchanged"
+    },
+    "GE-0005": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "rewritten",
+      "before": "FEC-based tracker reports Kevin Mullin received $733,866 from pro-Israel PACs, including $698,016 from AIPAC PAC and United Democracy Project.",
+      "after": "Across tracked election cycles, WhoFundsMyRep lists $130,185 in pro-Israel PAC contributions to Mullin and $603,681 spent independently supporting him; the latter is not money received by his campaign.",
+      "basis": "source_reopened"
+    },
+    "GE-0044": {
+      "candidate": "Kevin Mullin",
+      "position_id": "CA2026-230",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0106": {
+      "candidate": "Sam Liccardo",
+      "position_id": "CA2026-005",
+      "action": "unchanged"
+    },
+    "GE-0105": {
+      "candidate": "Sam Liccardo",
+      "position_id": "CA2026-005",
+      "action": "rewritten",
+      "before": "Bay Area leaders including politicians (Liccardo's district) called for increased humanitarian aid to Gaza, saying the trickle Israel allowed into the region was not enough.",
+      "after": "Liccardo called for immediate humanitarian aid to Gaza, criticized U.S. military support for Israel's actions, and urged Hamas to release hostages and Israel to end civilian suffering.",
+      "basis": "source_reopened"
+    },
+    "GE-0104": {
+      "candidate": "Sam Liccardo",
+      "position_id": "CA2026-005",
+      "action": "unchanged"
+    },
+    "GE-0103": {
+      "candidate": "Sam Liccardo",
+      "position_id": "CA2026-005",
+      "action": "unchanged"
+    },
+    "GE-0107": {
+      "candidate": "Sam Liccardo",
+      "position_id": "CA2026-005",
+      "action": "rewritten",
+      "before": "FEC data shows Liccardo received $0 from AIPAC PAC/UDP but $186,233 from other pro-Israel PACs (BOLD America $134,844; J Street PAC $51,389), ranking #134 of 439 House members.",
+      "after": "WhoFundsMyRep reports $51,389 in direct/earmarked contributions and $134,844 in outside spending supporting Liccardo across tracked cycles; it reports no AIPAC PAC/UDP support.",
+      "basis": "source_reopened"
+    },
+    "GE-0108": {
+      "candidate": "Sam Liccardo",
+      "position_id": "CA2026-005",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0102": {
+      "candidate": "Peter Sundin Soulé",
+      "position_id": "CA2026-005",
+      "action": "rewritten",
+      "before": "FEC filings show Peter Sundin Soulé (R, CA-16) received $0 from pro-Israel PACs in the 2026 cycle, with $0 spent for or against him.",
+      "after": "WhoFundsMyRep's recorded 2026 race table lists no tracked pro-Israel PAC contributions to Soulé and no independent spending for or against him by those groups.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0146": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0147": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0405": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0151": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0148": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0152": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "rewritten",
+      "before": "Khanna co-sponsored a bill (with Rep. Massie) to block US funding for the IDF; after the House Rules Committee canceled the vote, he posted on X: 'It is unconscionable to not even have a vote' and vowed not to be 'intimidated by the pro-Isr",
+      "after": "Khanna co-sponsored a measure with Thomas Massie to block U.S. funding for Israel's military and criticized the House Rules Committee for preventing a floor vote.",
+      "basis": "source_reopened"
+    },
+    "GE-0143": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0145": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0150": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "quarantined",
+      "reason": "third_party_verdict_only",
+      "detail": "A third party's general label or criticism supplies no concrete attributed vote, policy, or statement in this record. Retain as a research lead rather than publish it as the candidate's stance."
+    },
+    "GE-0144": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "unchanged"
+    },
+    "GE-0404": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "rewritten",
+      "before": "X post: Our government is giving $2.8 billon in bombs to Israel. How about giving that money to the American people so they can afford food and gas? I'm tired of this Israel first policy. It's time to put Ame",
+      "after": "Khanna opposed $2.8 billion in bombs for Israel and urged spending that money on Americans' food and gas costs instead.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot",
+      "field_changes": {
+        "dimension": {
+          "before": "other",
+          "after": "military_aid"
+        }
+      }
+    },
+    "GE-0403": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "rewritten",
+      "before": "X post: I am opposing Section 219, that would integrate our military with Israel’s. The United States does not have this arrangement with any other country in the world. We need to stand up for American sover",
+      "after": "Khanna opposed NDAA Section 219's proposed U.S.-Israel military integration and called for removing it to protect U.S. sovereignty.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot",
+      "field_changes": {
+        "dimension": {
+          "before": "other",
+          "after": "military_aid"
+        }
+      }
+    },
+    "GE-0149": {
+      "candidate": "Ro Khanna",
+      "position_id": "CA2026-004",
+      "action": "rewritten",
+      "before": "FEC data shows Khanna received $0 from AIPAC PAC/UDP but $120,080 from J Street PAC, ranking #173 of 439 House members for pro-Israel PAC money.",
+      "after": "WhoFundsMyRep reports $120,080 in direct/earmarked contributions across tracked election cycles, chiefly J Street PAC, and no AIPAC PAC/UDP money for Khanna; this is not a 2026-only total.",
+      "basis": "source_reopened"
+    },
+    "GE-0140": {
+      "candidate": "Ritesh Tandon",
+      "position_id": "CA2026-004",
+      "action": "rewritten",
+      "before": "PoliVion reports Tandon (R, CA-17) has no AIPAC-linked FEC record; his stated campaign focus lists affordability, housing, healthcare, jobs, innovation, fiscal discipline, border security—no Israel/Gaza issue mentioned.",
+      "after": "PoliVion's recorded 2026 profile lists no AIPAC-linked FEC record for Tandon; this does not establish his position on Israel or Gaza.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0142": {
+      "candidate": "Ritesh Tandon",
+      "position_id": "CA2026-004",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0141": {
+      "candidate": "Ritesh Tandon",
+      "position_id": "CA2026-004",
+      "action": "rewritten",
+      "before": "WhoFundsMyRep confirms Tandon received $0 from pro-Israel PACs in the 2026 CA-17 race, with no independent-expenditure spending for or against him by such groups.",
+      "after": "WhoFundsMyRep's recorded 2026 race table lists no tracked pro-Israel PAC contributions to Tandon and no independent spending for or against him by those groups.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0409": {
+      "candidate": "Zoe Lofgren",
+      "position_id": "CA2026-006",
+      "action": "rewritten",
+      "before": "AJP Action scorecard records Lofgren (CA-18) as a signatory of the 10/13/2023 De-Escalation Letter and the 11/17/2023 Settler Violence Letter; overall score 37%.",
+      "after": "AJP Action records Lofgren signing the October 13, 2023 de-escalation letter and the November 17 settler-violence letter.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot",
+      "field_changes": {
+        "date": {
+          "before": "2023-10-13",
+          "after": "2023"
+        },
+        "date_method": {
+          "before": "source_stated",
+          "after": "event_recorded"
+        },
+        "date_note": {
+          "before": null,
+          "after": "Summary references actions dated October 13 and November 17, 2023 in the stored scorecard excerpt; year precision covers both. This is not a publication date."
+        }
+      }
+    },
+    "GE-0290": {
+      "candidate": "Zoe Lofgren",
+      "position_id": "CA2026-006",
+      "action": "unchanged"
+    },
+    "GE-0291": {
+      "candidate": "Zoe Lofgren",
+      "position_id": "CA2026-006",
+      "action": "unchanged"
+    },
+    "GE-0289": {
+      "candidate": "Zoe Lofgren",
+      "position_id": "CA2026-006",
+      "action": "unchanged"
+    },
+    "GE-0399": {
+      "candidate": "Zoe Lofgren",
+      "position_id": "CA2026-006",
+      "action": "rewritten",
+      "before": "whoFundsMyRep (FEC-derived) records $38,775 to Lofgren from J Street PAC across 59 transactions; ranks #337 of 439 House members for pro-Israel PAC money.",
+      "after": "WhoFundsMyRep reports $38,775 in direct/earmarked contributions across tracked election cycles, chiefly J Street PAC, and no AIPAC PAC/UDP money for Lofgren; this is not a 2026-only total.",
+      "basis": "source_reopened"
+    },
+    "GE-0296": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "quarantined",
+      "reason": "source_text_unavailable",
+      "detail": "Only a statement title is stored, so its substantive position cannot be recovered from the record. Direct source retrieval failed during this review. Await the statement text; do not invent a neutral/supportive/opposed stance."
+    },
+    "GE-0297": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0293": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "quarantined",
+      "reason": "source_text_unavailable",
+      "detail": "Only a statement title is stored, so its substantive position cannot be recovered from the record. Direct source retrieval failed during this review. Await the statement text; do not invent a neutral/supportive/opposed stance."
+    },
+    "GE-0412": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0295": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0410": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "quarantined",
+      "reason": "source_text_unavailable",
+      "detail": "Only a statement title is stored, so its substantive position cannot be recovered from the record. Direct source retrieval failed during this review. Await the statement text; do not invent a neutral/supportive/opposed stance."
+    },
+    "GE-0411": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0299": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0292": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0294": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "unchanged"
+    },
+    "GE-0298": {
+      "candidate": "Jimmy Panetta",
+      "position_id": "CA2026-007",
+      "action": "rewritten",
+      "before": "FEC data shows Panetta received $561,053 from pro-Israel PACs ($559,053 from AIPAC PAC/United Democracy Project), ranking #58 of 439 House members.",
+      "after": "WhoFundsMyRep reports $561,053 in direct/earmarked contributions for Panetta across tracked election cycles, including $559,053 attributed to AIPAC PAC/UDP; this is not a 2026-only total.",
+      "basis": "source_reopened"
+    },
+    "GE-0301": {
+      "candidate": "Peter Coe Verbica",
+      "position_id": "CA2026-007",
+      "action": "rewritten",
+      "before": "PoliVion reports Peter Coe Verbica (R, CA-19) has no AIPAC-linked FEC donations in available records for the 2026 cycle.",
+      "after": "PoliVion's recorded 2026 profile lists no AIPAC-linked FEC donations for Verbica; this does not establish his position on Israel or Gaza.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0153": {
+      "candidate": "Scott Sakakihara",
+      "position_id": "CA2026-022",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0247": {
+      "candidate": "Jenny Leilani Callison",
+      "position_id": "CA2026-311",
+      "action": "unchanged"
+    },
+    "GE-0158": {
+      "candidate": "Buffy Wicks",
+      "position_id": "CA2026-008",
+      "action": "unchanged"
+    },
+    "GE-0159": {
+      "candidate": "Buffy Wicks",
+      "position_id": "CA2026-008",
+      "action": "unchanged"
+    },
+    "GE-0154": {
+      "candidate": "Rebecca Bauer-Kahan",
+      "position_id": "CA2026-009",
+      "action": "unchanged"
+    },
+    "GE-0359": {
+      "candidate": "Rebecca Bauer-Kahan",
+      "position_id": "CA2026-009",
+      "action": "unchanged"
+    },
+    "GE-0156": {
+      "candidate": "Rebecca Bauer-Kahan",
+      "position_id": "CA2026-009",
+      "action": "unchanged"
+    },
+    "GE-0160": {
+      "candidate": "Rebecca Bauer-Kahan",
+      "position_id": "CA2026-009",
+      "action": "unchanged"
+    },
+    "GE-0021": {
+      "candidate": "Matt Haney",
+      "position_id": "CA2026-231",
+      "action": "unchanged"
+    },
+    "GE-0020": {
+      "candidate": "Matt Haney",
+      "position_id": "CA2026-231",
+      "action": "unchanged"
+    },
+    "GE-0162": {
+      "candidate": "Mia Bonta",
+      "position_id": "CA2026-010",
+      "action": "unchanged"
+    },
+    "GE-0161": {
+      "candidate": "Mia Bonta",
+      "position_id": "CA2026-010",
+      "action": "unchanged"
+    },
+    "GE-0045": {
+      "candidate": "Catherine Stefani",
+      "position_id": "CA2026-232",
+      "action": "unchanged"
+    },
+    "GE-0046": {
+      "candidate": "Catherine Stefani",
+      "position_id": "CA2026-232",
+      "action": "unchanged"
+    },
+    "GE-0092": {
+      "candidate": "Catherine Stefani",
+      "position_id": "CA2026-232",
+      "action": "unchanged"
+    },
+    "GE-0047": {
+      "candidate": "Catherine Stefani",
+      "position_id": "CA2026-232",
+      "action": "unchanged"
+    },
+    "GE-0270": {
+      "candidate": "Diane Papan",
+      "position_id": "CA2026-233",
+      "action": "unchanged"
+    },
+    "GE-0272": {
+      "candidate": "Marc Berman",
+      "position_id": "CA2026-023",
+      "action": "quarantined",
+      "reason": "third_party_verdict_only",
+      "detail": "A third party's general label or criticism supplies no concrete attributed vote, policy, or statement in this record. Retain as a research lead rather than publish it as the candidate's stance."
+    },
+    "GE-0273": {
+      "candidate": "Marc Berman",
+      "position_id": "CA2026-023",
+      "action": "unchanged"
+    },
+    "GE-0163": {
+      "candidate": "Alex Lee",
+      "position_id": "CA2026-020",
+      "action": "unchanged"
+    },
+    "GE-0164": {
+      "candidate": "Alex Lee",
+      "position_id": "CA2026-020",
+      "action": "unchanged"
+    },
+    "GE-0304": {
+      "candidate": "Ash Kalra",
+      "position_id": "CA2026-024",
+      "action": "unchanged"
+    },
+    "GE-0303": {
+      "candidate": "Ash Kalra",
+      "position_id": "CA2026-024",
+      "action": "unchanged"
+    },
+    "GE-0306": {
+      "candidate": "Gail Pellerin",
+      "position_id": "CA2026-026",
+      "action": "unchanged"
+    },
+    "GE-0309": {
+      "candidate": "Gail Pellerin",
+      "position_id": "CA2026-026",
+      "action": "unchanged"
+    },
+    "GE-0314": {
+      "candidate": "Gail Pellerin",
+      "position_id": "CA2026-026",
+      "action": "quarantined",
+      "reason": "missing_context",
+      "detail": "The excerpt only praises London Breed's leadership; it does not identify the linked statement or establish whether it supported or opposed the ceasefire resolution. The post could not be reopened."
+    },
+    "GE-0313": {
+      "candidate": "Gail Pellerin",
+      "position_id": "CA2026-026",
+      "action": "quarantined",
+      "reason": "off_topic",
+      "detail": "The material concerns an innovation-system academic chapter or condemnation of a swastika incident, without a stated Israel/Gaza/Palestine policy position. No position may be inferred from that material alone."
+    },
+    "GE-0414": {
+      "candidate": "Gail Pellerin",
+      "position_id": "CA2026-026",
+      "action": "unchanged"
+    },
+    "GE-0310": {
+      "candidate": "Robert Rivas",
+      "position_id": "CA2026-027",
+      "action": "rewritten",
+      "before": "Rivas publicly condemned the Oct 7 attack on Israel alongside the CA Jewish Caucus, framing the conflict around Israeli victims without mentioning Gaza or Palestinian civilians.",
+      "after": "Rivas condemned the October 7 attack on Israel and said nothing justifies killing innocent civilians.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0311": {
+      "candidate": "Robert Rivas",
+      "position_id": "CA2026-027",
+      "action": "unchanged"
+    },
+    "GE-0312": {
+      "candidate": "Robert Rivas",
+      "position_id": "CA2026-027",
+      "action": "unchanged"
+    },
+    "GE-0048": {
+      "candidate": "Xavier Becerra",
+      "position_id": "CA2026-014",
+      "action": "rewritten",
+      "before": "As HHS Secretary, Becerra called for a ceasefire, hostage release, humanitarian aid to Gaza, and a two-state solution at the 77th World Health Assembly, framing the conflict as a 'cycle of destruction and dislocation between Israel and Pale",
+      "after": "Becerra called for a ceasefire agreement, hostage release, more humanitarian aid for Gaza, and a path to a two-state solution in his World Health Assembly speech.",
+      "basis": "source_reopened"
+    },
+    "GE-0049": {
+      "candidate": "Xavier Becerra",
+      "position_id": "CA2026-014",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The L.A. Times article quotes Becerra praising California's Jewish community, but provides no specific Israel/Gaza policy statement by him. Other candidates' answers cannot be attributed to Becerra. This is not evidence of neutrality."
+    },
+    "GE-0095": {
+      "candidate": "Xavier Becerra",
+      "position_id": "CA2026-014",
+      "action": "rewritten",
+      "before": "Asked by CalMatters in May 2026 if Gaza war is genocide, Becerra said Netanyahu's conduct cannot be classified within international norms.",
+      "after": "Asked whether Israel's actions in Gaza were genocide, Becerra criticized Netanyahu's conduct and called for international accountability, without answering yes or no.",
+      "basis": "source_reopened",
+      "field_changes": {
+        "url": {
+          "before": "https://butwhatcanyoudo.org/c/ca-gov-becerra/",
+          "after": "https://calmatters.org/california-voter-guide-2026/governor/videos/transcripts/"
+        },
+        "source_kind": {
+          "before": "news",
+          "after": "interview"
+        },
+        "quote": {
+          "before": "cannot be classified as within international norms",
+          "after": "I think Netanyahu should answer for all he has done before the international community."
+        }
+      }
+    },
+    "GE-0097": {
+      "candidate": "Xavier Becerra",
+      "position_id": "CA2026-014",
+      "action": "unchanged"
+    },
+    "GE-0052": {
+      "candidate": "Steve Hilton",
+      "position_id": "CA2026-014",
+      "action": "unchanged"
+    },
+    "GE-0093": {
+      "candidate": "Steve Hilton",
+      "position_id": "CA2026-014",
+      "action": "unchanged"
+    },
+    "GE-0051": {
+      "candidate": "Steve Hilton",
+      "position_id": "CA2026-014",
+      "action": "unchanged"
+    },
+    "GE-0094": {
+      "candidate": "Gloria Romero",
+      "position_id": "CA2026-016",
+      "action": "unchanged"
+    },
+    "GE-0054": {
+      "candidate": "Gloria Romero",
+      "position_id": "CA2026-016",
+      "action": "unchanged"
+    },
+    "GE-0053": {
+      "candidate": "Gloria Romero",
+      "position_id": "CA2026-016",
+      "action": "unchanged"
+    },
+    "GE-0055": {
+      "candidate": "Shirley N. Weber",
+      "position_id": "CA2026-017",
+      "action": "unchanged"
+    },
+    "GE-0057": {
+      "candidate": "Herb W Morgan",
+      "position_id": "CA2026-013",
+      "action": "unchanged"
+    },
+    "GE-0058": {
+      "candidate": "Eleni Kounalakis",
+      "position_id": "CA2026-019",
+      "action": "unchanged"
+    },
+    "GE-0059": {
+      "candidate": "Eleni Kounalakis",
+      "position_id": "CA2026-019",
+      "action": "unchanged"
+    },
+    "GE-0060": {
+      "candidate": "Rob Bonta",
+      "position_id": "CA2026-012",
+      "action": "unchanged"
+    },
+    "GE-0061": {
+      "candidate": "Rob Bonta",
+      "position_id": "CA2026-012",
+      "action": "rewritten",
+      "before": "Bonta dropped the last felony charges against Stanford pro-Palestinian protesters; restitution set at $51,973 vs. initial $360K–$1M damage estimate, signaling leniency toward the protest.",
+      "after": "Bonta's office agreed to dismiss felony charges against five Stanford pro-Palestinian protesters under a diversion agreement requiring community service and $51,973 in restitution.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0096": {
+      "candidate": "Rob Bonta",
+      "position_id": "CA2026-012",
+      "action": "unchanged"
+    },
+    "GE-0099": {
+      "candidate": "Rob Bonta",
+      "position_id": "CA2026-012",
+      "action": "unchanged"
+    },
+    "GE-0100": {
+      "candidate": "Michael E. Gates",
+      "position_id": "CA2026-012",
+      "action": "unchanged"
+    },
+    "GE-0065": {
+      "candidate": "Ben Allen",
+      "position_id": "CA2026-015",
+      "action": "unchanged"
+    },
+    "GE-0064": {
+      "candidate": "Ben Allen",
+      "position_id": "CA2026-015",
+      "action": "unchanged"
+    },
+    "GE-0068": {
+      "candidate": "Ben Allen",
+      "position_id": "CA2026-015",
+      "action": "quarantined",
+      "reason": "third_party_verdict_only",
+      "detail": "A third party's general label or criticism supplies no concrete attributed vote, policy, or statement in this record. Retain as a research lead rather than publish it as the candidate's stance."
+    },
+    "GE-0067": {
+      "candidate": "Ben Allen",
+      "position_id": "CA2026-015",
+      "action": "unchanged"
+    },
+    "GE-0069": {
+      "candidate": "Ben Allen",
+      "position_id": "CA2026-015",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0066": {
+      "candidate": "Ben Allen",
+      "position_id": "CA2026-015",
+      "action": "unchanged"
+    },
+    "GE-0101": {
+      "candidate": "Sonja Shaw",
+      "position_id": "CA2026-018",
+      "action": "unchanged"
+    },
+    "GE-0070": {
+      "candidate": "Sonja Shaw",
+      "position_id": "CA2026-018",
+      "action": "unchanged"
+    },
+    "GE-0072": {
+      "candidate": "John Pimentel",
+      "position_id": "CA2026-021",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0073": {
+      "candidate": "Alex Behrend",
+      "position_id": "CA2026-238",
+      "action": "unchanged"
+    },
+    "GE-0077": {
+      "candidate": "Matt Dorsey",
+      "position_id": "CA2026-238",
+      "action": "unchanged"
+    },
+    "GE-0078": {
+      "candidate": "Matt Dorsey",
+      "position_id": "CA2026-238",
+      "action": "unchanged"
+    },
+    "GE-0074": {
+      "candidate": "Emanuel \"Manny\" Yekutiel",
+      "position_id": "CA2026-239",
+      "action": "unchanged"
+    },
+    "GE-0075": {
+      "candidate": "Emanuel \"Manny\" Yekutiel",
+      "position_id": "CA2026-239",
+      "action": "unchanged"
+    },
+    "GE-0076": {
+      "candidate": "Pearci \"PJ\" Bastiany III",
+      "position_id": "CA2026-240",
+      "action": "unchanged"
+    },
+    "GE-0165": {
+      "candidate": "Tony Daysog",
+      "position_id": "CA2026-047",
+      "action": "unchanged"
+    },
+    "GE-0166": {
+      "candidate": "Tony Daysog",
+      "position_id": "CA2026-047",
+      "action": "unchanged"
+    },
+    "GE-0168": {
+      "candidate": "Malia Vella",
+      "position_id": "CA2026-047",
+      "action": "quarantined",
+      "reason": "unsupported_vote_claim",
+      "detail": "The excerpt says only that all support divesting support to Israel and contains an AD-18 event hashtag. It does not establish a formal Alameda council vote, roll call, or Vella's individual action."
+    },
+    "GE-0167": {
+      "candidate": "Malia Vella",
+      "position_id": "CA2026-047",
+      "action": "rewritten",
+      "before": "Vella left the Alameda City Council meeting before the vote on a Gaza ceasefire letter, abstaining from the decision.",
+      "after": "Vella left the council meeting to care for her child before the Gaza ceasefire vote; she did not cast a vote. Her absence does not establish support or opposition.",
+      "basis": "source_reopened"
+    },
+    "GE-0248": {
+      "candidate": "Tamisha Torres-Walker",
+      "position_id": "CA2026-325",
+      "action": "unchanged"
+    },
+    "GE-0251": {
+      "candidate": "Tamisha Torres-Walker",
+      "position_id": "CA2026-325",
+      "action": "rewritten",
+      "before": "Antioch Herald reported the city council would discuss a possible Israel-Hamas ceasefire resolution, the item Torres-Walker had proposed.",
+      "after": "Torres-Walker proposed that Antioch's council consider a resolution calling for a ceasefire in the Israel-Hamas war.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0250": {
+      "candidate": "Tamisha Torres-Walker",
+      "position_id": "CA2026-325",
+      "action": "rewritten",
+      "before": "A ceasefire resolution for the Israel-Hamas war was formally placed on the Antioch council agenda as proposed by Councilmember Torres-Walker for a special meeting.",
+      "after": "Torres-Walker proposed an Israel-Hamas ceasefire resolution for consideration at a special Antioch council meeting.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0249": {
+      "candidate": "Tamisha Torres-Walker",
+      "position_id": "CA2026-325",
+      "action": "unchanged"
+    },
+    "GE-0274": {
+      "candidate": "Julia Mates",
+      "position_id": "CA2026-245",
+      "action": "unchanged"
+    },
+    "GE-0169": {
+      "candidate": "Jenny Wong",
+      "position_id": "CA2026-049",
+      "action": "unchanged"
+    },
+    "GE-0362": {
+      "candidate": "Jenny Wong",
+      "position_id": "CA2026-049",
+      "action": "quarantined",
+      "reason": "unverified_third_party_allegation",
+      "detail": "The record repeats a blog headline alleging an organizational motive or financial interest without candidate-specific primary support. Do not convert an allegation into a factual stance or financial connection."
+    },
+    "GE-0174": {
+      "candidate": "Majdi \"Gaith\" Abuhamdieh",
+      "position_id": "CA2026-051",
+      "action": "unchanged"
+    },
+    "GE-0315": {
+      "candidate": "Santosh Rao",
+      "position_id": "CA2026-088",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0316": {
+      "candidate": "John Tang",
+      "position_id": "CA2026-088",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0275": {
+      "candidate": "Teresa Proaño",
+      "position_id": "CA2026-253",
+      "action": "unchanged"
+    },
+    "GE-0276": {
+      "candidate": "Teresa Proaño",
+      "position_id": "CA2026-253",
+      "action": "unchanged"
+    },
+    "GE-0277": {
+      "candidate": "Ruben Abrica",
+      "position_id": "CA2026-254",
+      "action": "quarantined",
+      "reason": "contradicted_by_source",
+      "detail": "The article body explicitly says Vice Mayor Ruben Abrica was absent. The original summary inferred attendance from a photo caption and attributed no statement or vote to him."
+    },
+    "GE-0278": {
+      "candidate": "Ofelia Bello",
+      "position_id": "CA2026-254",
+      "action": "unchanged"
+    },
+    "GE-0253": {
+      "candidate": "Kimberly White",
+      "position_id": "CA2026-313",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0390": {
+      "candidate": "Wally Nowinski",
+      "position_id": "CA2026-313",
+      "action": "unchanged"
+    },
+    "GE-0175": {
+      "candidate": "David Mourra",
+      "position_id": "CA2026-058",
+      "action": "unchanged"
+    },
+    "GE-0177": {
+      "candidate": "Desrie Campbell",
+      "position_id": "CA2026-059",
+      "action": "unchanged"
+    },
+    "GE-0176": {
+      "candidate": "Desrie Campbell",
+      "position_id": "CA2026-059",
+      "action": "unchanged"
+    },
+    "GE-0178": {
+      "candidate": "Anurag Mishra",
+      "position_id": "CA2026-061",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0317": {
+      "candidate": "Tom Cline",
+      "position_id": "CA2026-090",
+      "action": "unchanged"
+    },
+    "GE-0318": {
+      "candidate": "Tom Cline",
+      "position_id": "CA2026-090",
+      "action": "unchanged"
+    },
+    "GE-0179": {
+      "candidate": "Mark Salinas",
+      "position_id": "CA2026-064",
+      "action": "unchanged"
+    },
+    "GE-0180": {
+      "candidate": "Mark Salinas",
+      "position_id": "CA2026-064",
+      "action": "unchanged"
+    },
+    "GE-0185": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0364": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0182": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0365": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0183": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0184": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0181": {
+      "candidate": "George Syrop",
+      "position_id": "CA2026-062",
+      "action": "unchanged"
+    },
+    "GE-0366": {
+      "candidate": "Julie Roche",
+      "position_id": "CA2026-063",
+      "action": "unchanged"
+    },
+    "GE-0254": {
+      "candidate": "John Delgado",
+      "position_id": "CA2026-319",
+      "action": "quarantined",
+      "reason": "reply_attribution_unverified",
+      "detail": "The URL identifies another account's parent post, not the alleged candidate reply. Its snowflake date also differs from the stored date. A direct reply URL, verified author identity, and reply date are required."
+    },
+    "GE-0320": {
+      "candidate": "Marilyn Librers",
+      "position_id": "CA2026-097",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "An unsubscribe request is not a policy statement or evidence that the recipient rejects the subject of the mailing."
+    },
+    "GE-0191": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "rewritten",
+      "before": "As House Appropriations Chair, Lee said she was 'proud' of sponsoring H.R.4373 including $3.13B Israel aid; AIPAC, DMI, and J Street praised her pro-Israel provisions.",
+      "after": "Lee backed H.R.4373, the foreign-aid spending bill that included funding for Israel; AIPAC publicly thanked her for its pro-Israel provisions.",
+      "basis": "stored_evidence_excerpt_or_recorded_snapshot"
+    },
+    "GE-0192": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0186": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0367": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0188": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0190": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0189": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0193": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "quarantined",
+      "reason": "third_party_action_only",
+      "detail": "The stored excerpt describes a petition, protest, or confrontation about the candidate, not the candidate's own position. A substantive attributable response is needed before restoration."
+    },
+    "GE-0187": {
+      "candidate": "Barbara Lee",
+      "position_id": "CA2026-072",
+      "action": "unchanged"
+    },
+    "GE-0327": {
+      "candidate": "Henry Etzkowitz",
+      "position_id": "CA2026-100",
+      "action": "quarantined",
+      "reason": "off_topic",
+      "detail": "The material concerns an innovation-system academic chapter or condemnation of a swastika incident, without a stated Israel/Gaza/Palestine policy position. No position may be inferred from that material alone."
+    },
+    "GE-0328": {
+      "candidate": "Vicki Veenker",
+      "position_id": "CA2026-100",
+      "action": "unchanged"
+    },
+    "GE-0255": {
+      "candidate": "Gabriel Sandoval",
+      "position_id": "CA2026-318",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0258": {
+      "candidate": "Tina Brown",
+      "position_id": "CA2026-318",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0256": {
+      "candidate": "Tina Brown",
+      "position_id": "CA2026-318",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0257": {
+      "candidate": "Tina Brown",
+      "position_id": "CA2026-318",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0194": {
+      "candidate": "Vin Kruttiventi",
+      "position_id": "CA2026-074",
+      "action": "unchanged"
+    },
+    "GE-0195": {
+      "candidate": "Vin Kruttiventi",
+      "position_id": "CA2026-074",
+      "action": "quarantined",
+      "reason": "duplicate_source",
+      "detail": "The same X status ID and excerpt already appear in GE-0194. Changing the handle in a status URL does not make it a separate post."
+    },
+    "GE-0279": {
+      "candidate": "Chris Sturken",
+      "position_id": "CA2026-270",
+      "action": "rewritten",
+      "before": "Redwood City Supervisor Chris Sturken seconded and voted in favor of a resolution demanding an immediate bilateral permanent ceasefire in Gaza; the measure was vetoed 5-2.",
+      "after": "Sturken supported an immediate bilateral permanent ceasefire resolution, arguing the war affected local families. Redwood City's council rejected it 5-2.",
+      "basis": "source_reopened"
+    },
+    "GE-0280": {
+      "candidate": "Kaia Eakin",
+      "position_id": "CA2026-271",
+      "action": "rewritten",
+      "before": "Kaia Eakin, Redwood City supervisor, voted against a resolution demanding an immediate bilateral ceasefire in Gaza, joining four others in a 5-2 veto.",
+      "after": "Eakin voted against Redwood City's ceasefire resolution, saying international diplomacy was outside the city's jurisdiction and staff capacity; she urged greater diplomatic efforts.",
+      "basis": "source_reopened"
+    },
+    "GE-0281": {
+      "candidate": "Diane Howard",
+      "position_id": "CA2026-272",
+      "action": "rewritten",
+      "before": "Diane Howard voted against a Redwood City resolution demanding an immediate bilateral ceasefire in Gaza, contributing to its 5-2 rejection by the Council of Supervisors.",
+      "after": "Howard voted against Redwood City's ceasefire resolution, arguing it could deepen local divisions and that international affairs were outside the council's role.",
+      "basis": "source_reopened"
+    },
+    "GE-0259": {
+      "candidate": "Claudia Jiménez",
+      "position_id": "CA2026-314",
+      "action": "unchanged"
+    },
+    "GE-0392": {
+      "candidate": "Claudia Jiménez",
+      "position_id": "CA2026-314",
+      "action": "unchanged"
+    },
+    "GE-0329": {
+      "candidate": "Peter Ortiz",
+      "position_id": "CA2026-101",
+      "action": "unchanged"
+    },
+    "GE-0330": {
+      "candidate": "Peter Ortiz",
+      "position_id": "CA2026-101",
+      "action": "unchanged"
+    },
+    "GE-0331": {
+      "candidate": "Bien Doan",
+      "position_id": "CA2026-102",
+      "action": "unchanged"
+    },
+    "GE-0332": {
+      "candidate": "Bien Doan",
+      "position_id": "CA2026-102",
+      "action": "quarantined",
+      "reason": "archive_not_evidence",
+      "detail": "A personal tag/archive page is used to infer participation. The specific statement is already separately recorded; an archive tag is not independent evidence of a signature or position."
+    },
+    "GE-0260": {
+      "candidate": "Elizabeth Pabon-Alvarado",
+      "position_id": "CA2026-315",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0261": {
+      "candidate": "Cherise Marie Khaund",
+      "position_id": "CA2026-342",
+      "action": "unchanged"
+    },
+    "GE-0393": {
+      "candidate": "Kerry Hillis",
+      "position_id": "CA2026-324",
+      "action": "unchanged"
+    },
+    "GE-0334": {
+      "candidate": "Jamal Khan",
+      "position_id": "CA2026-142",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "A same-name social profile is not connected to the candidate by a verified campaign link or matching biography in the stored evidence."
+    },
+    "GE-0283": {
+      "candidate": "Sarah Duffy",
+      "position_id": "CA2026-297",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0282": {
+      "candidate": "Sarah Duffy",
+      "position_id": "CA2026-297",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0335": {
+      "candidate": "Chris Miller",
+      "position_id": "CA2026-144",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "A same-name social profile is not connected to the candidate by a verified campaign link or matching biography in the stored evidence."
+    },
+    "GE-0264": {
+      "candidate": "Pamela West",
+      "position_id": "CA2026-344",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0197": {
+      "candidate": "Seema Badar",
+      "position_id": "CA2026-123",
+      "action": "unchanged"
+    },
+    "GE-0198": {
+      "candidate": "Regina Chagolla",
+      "position_id": "CA2026-124",
+      "action": "quarantined",
+      "reason": "unverified_financial_attribution",
+      "detail": "The truncated summaries attribute slate-level funding allegations to Chagolla personally. Accessible source retrieval did not establish the candidate-specific connection or transaction. Preserve the lead pending verification."
+    },
+    "GE-0199": {
+      "candidate": "Regina Chagolla",
+      "position_id": "CA2026-124",
+      "action": "quarantined",
+      "reason": "unverified_financial_attribution",
+      "detail": "The truncated summaries attribute slate-level funding allegations to Chagolla personally. Accessible source retrieval did not establish the candidate-specific connection or transaction. Preserve the lead pending verification."
+    },
+    "GE-0338": {
+      "candidate": "Marc Cooper",
+      "position_id": "CA2026-150",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0265": {
+      "candidate": "Tamara Weber",
+      "position_id": "CA2026-352",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0203": {
+      "candidate": "Sam Phelps",
+      "position_id": "CA2026-129",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0201": {
+      "candidate": "Sam Phelps",
+      "position_id": "CA2026-129",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0202": {
+      "candidate": "Sam Phelps",
+      "position_id": "CA2026-129",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0266": {
+      "candidate": "Al Anderson",
+      "position_id": "CA2026-354",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0213": {
+      "candidate": "Jennifer Brouhard",
+      "position_id": "CA2026-132",
+      "action": "unchanged"
+    },
+    "GE-0212": {
+      "candidate": "Mike Hutchinson",
+      "position_id": "CA2026-133",
+      "action": "unchanged"
+    },
+    "GE-0215": {
+      "candidate": "Mike Hutchinson",
+      "position_id": "CA2026-133",
+      "action": "unchanged"
+    },
+    "GE-0216": {
+      "candidate": "Mike Hutchinson",
+      "position_id": "CA2026-133",
+      "action": "unchanged"
+    },
+    "GE-0218": {
+      "candidate": "Valarie Bachelor",
+      "position_id": "CA2026-134",
+      "action": "unchanged"
+    },
+    "GE-0219": {
+      "candidate": "Valarie Bachelor",
+      "position_id": "CA2026-134",
+      "action": "unchanged"
+    },
+    "GE-0220": {
+      "candidate": "Valarie Bachelor",
+      "position_id": "CA2026-134",
+      "action": "unchanged"
+    },
+    "GE-0221": {
+      "candidate": "Valarie Bachelor",
+      "position_id": "CA2026-134",
+      "action": "unchanged"
+    },
+    "GE-0267": {
+      "candidate": "Craig Pearson",
+      "position_id": "CA2026-355",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0223": {
+      "candidate": "Karen Fletcher",
+      "position_id": "CA2026-137",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0284": {
+      "candidate": "Shivani Tripathi",
+      "position_id": "CA2026-301",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0010": {
+      "candidate": "Jeremy Lee",
+      "position_id": "CA2026-242",
+      "action": "quarantined",
+      "reason": "reply_attribution_unverified",
+      "detail": "The URL identifies another account's parent post, not the alleged candidate reply. Its snowflake date also differs from the stored date. A direct reply URL, verified author identity, and reply date are required."
+    },
+    "GE-0082": {
+      "candidate": "Bunny McFadden",
+      "position_id": "CA2026-242",
+      "action": "unchanged"
+    },
+    "GE-0083": {
+      "candidate": "Ruth Ferguson",
+      "position_id": "CA2026-243",
+      "action": "unchanged"
+    },
+    "GE-0285": {
+      "candidate": "Jennifer Jacobson",
+      "position_id": "CA2026-293",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0343": {
+      "candidate": "Raeena S. Lari",
+      "position_id": "CA2026-173",
+      "action": "unchanged"
+    },
+    "GE-0286": {
+      "candidate": "Sathvik Nori",
+      "position_id": "CA2026-296",
+      "action": "quarantined",
+      "reason": "no_candidate_position",
+      "detail": "The stored material is a directory/grade placeholder, an appeal addressed to the candidate, a collective item without individual attribution, or reporting of others' views. It does not establish this candidate's position or action."
+    },
+    "GE-0287": {
+      "candidate": "Frank Lara",
+      "position_id": "CA2026-292",
+      "action": "unchanged"
+    },
+    "GE-0224": {
+      "candidate": "Gabriel Morales",
+      "position_id": "CA2026-183",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "A same-name social profile is not connected to the candidate by a verified campaign link or matching biography in the stored evidence."
+    },
+    "GE-0228": {
+      "candidate": "Sara Lamnin",
+      "position_id": "CA2026-192",
+      "action": "quarantined",
+      "reason": "unverified_third_party_allegation",
+      "detail": "The record repeats a blog headline alleging an organizational motive or financial interest without candidate-specific primary support. Do not convert an allegation into a factual stance or financial connection."
+    },
+    "GE-0269": {
+      "candidate": "Alex Nichol",
+      "position_id": "CA2026-382",
+      "action": "quarantined",
+      "reason": "identity_not_established",
+      "detail": "The cited speaker/author has a different or unconnected location, employer, office, or biography. The stored evidence does not establish that this is the local candidate. Restore only with candidate-specific identity evidence; this finding does not prove every pair is a different person."
+    },
+    "GE-0344": {
+      "candidate": "Rebecca Eisenberg",
+      "position_id": "CA2026-203",
+      "action": "unchanged"
+    }
+  },
+  "counts": {
+    "original_items": 300,
+    "rewritten": 44,
+    "quarantined": 68,
+    "unchanged": 188,
+    "published_items": 232,
+    "candidates_with_evidence": 81
+  },
+  "removed_campaign_links": [
+    {
+      "position_id": "CA2026-027",
+      "candidate": "Dennis P. Sanchez",
+      "url": "https://secure.anedot.com",
+      "reason": "Generic platform homepage; no candidate-specific path is retained in the verification source.",
+      "removed_verification_source_ids": [
+        "S955"
+      ]
+    },
+    {
+      "position_id": "CA2026-071",
+      "candidate": "Kevin E. Jenkins",
+      "url": "https://donorbox.org",
+      "reason": "Generic platform homepage; no candidate-specific path is retained in the verification source.",
+      "removed_verification_source_ids": [
+        "S1008"
+      ]
+    },
+    {
+      "position_id": "CA2026-336",
+      "candidate": "Sonja Shephard",
+      "url": "https://nextdoor.com",
+      "reason": "Generic platform homepage; no candidate-specific path is retained in the verification source.",
+      "removed_verification_source_ids": [
+        "S1014"
+      ]
+    }
+  ]
+}

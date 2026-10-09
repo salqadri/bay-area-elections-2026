@@ -13,8 +13,8 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | Ballot research snapshot | October 4, 2026 |
 | FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
 | Schema | Inventory version 1.11, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`, `gaza_evidence`; evidence `date` is required and calendar-valid, with optional `date_method`/`date_note`) |
-| X accounts / sites | 135 printed entries (90 people) with verified official X URLs — **27 of them explicitly "probable match" per their cited sources**; 10 federal incumbents add a second verified account in `secondary_x_url` (personal vs office handle); 386 with verified campaign/official websites (checked October 6–7, 2026; each has its own evidence source; two unverifiable generic-homepage claims removed October 8) |
-| Gaza stance research | **113 printed candidates across all five counties** (45 Alameda, 35 Contra Costa, 24 San Francisco, 30 San Mateo, 37 Santa Clara) carry dated, linked, **ungraded** `gaza_evidence` items (300 ledger items; checked October 7–9, 2026). Every item has a calendar-valid date plus `date_method`; the pipeline quarantines undated findings and audit removals with written reasons (`ledger/undated_quarantine.json`, 111 entries after two external-review audits and the completed enrichment pass — see session refreshes below). Evidence only — no grades exist in this dataset |
+| X accounts / sites | 135 printed entries (135 distinct names) with X URLs; 27 are explicitly probable matches. 10 secondary X URLs; 383 candidate-specific campaign/official URLs retained after five generic homepage claims were removed. |
+| Gaza stance research | This review branch retains 232 items for 81 candidates after 44 manual rewrites and 68 documented quarantines. All 300 input summaries have dispositions. Jev assessment is pending; see the post-enrichment review. |
 | Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
 | Confirmed seats | 439 |
 | Printed candidate entries | 869; these are entries, not necessarily unique people |
@@ -100,3 +100,10 @@ An external review (Codex) of commit `6ba1537` found systematic wrong-person att
 Read [AGENTS.md](../AGENTS.md), then maintain evidence and implementation together. Keep stable IDs, compact shared metadata, official party labels, `incumbent` only when true, and the user's Senate → Assembly → other-state-offices display preference. Both generated HTML files must reflect any data or source-code change.
 
 For each research batch, record the contest IDs checked, evidence/document dates, resulting status changes and unresolved questions. Refresh this handoff after material progress so a future agent can distinguish completed work from the original backlog. Do not merely move a date forward to make stale research appear fresh.
+
+
+## Post-enrichment manual review — October 8, 2026 (America/Los_Angeles)
+
+After upstream `d0ee70b`, all 300 evidence summaries were screened manually. This branch rewrites 44, quarantines 68 with original records/reasons, and retains 232 items under 81 candidates. It also repairs filtered-download coverage, displays archive-date bounds, closes the year-zero validator gap, and removes three remaining generic campaign homepage links. Core contests, candidates, and structured FEC records remain unchanged. See [the detailed review](reviews/2026-10-08-post-enrichment-review.md) and its per-item log for scope and unresolved issues.
+
+The requested Jev pass is not complete. Serper was blocked by the execution environment and Jev's endpoint/protocol was unavailable. The packet-preparation script does not call an API. Future work must obtain source text for held title-only entries, establish ambiguous identities, reconcile the external ledger with the repository quarantine, and complete the documented model assessment. Earlier counts and “verified” wording in historical session entries below/above are snapshots, not current certification.

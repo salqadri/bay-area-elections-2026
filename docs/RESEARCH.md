@@ -141,3 +141,12 @@ for p in data['positions']:
         print(ref, data['sources'][ref]['url'])
 PY
 ```
+
+
+## Attributable, useful evidence summaries
+
+A summary must state the candidate's concrete position, action, or accurately scoped financial fact. “Addressed the conflict,” “issued a statement,” and article titles alone are not sufficient. Name conditions and qualifications: opposing a local resolution is not automatically opposing a ceasefire; absence is not a recorded abstention; a reporter's account of someone else's opinion is not the reporter's own stance. Explicit neutrality or refusal to answer can be reported when the source establishes it. Missing text cannot be labeled neutral.
+
+Resolve identity before writing: match the local office, jurisdiction, biography, and verified campaign/account links. Obtain the direct reply URL rather than citing another account's parent post. For collective statements, establish contemporaneous membership and explicit individual attribution. Keep direct/earmarked campaign contributions separate from independent spending, and distinguish a tracker-wide history from the 2026 cycle. A tracker finding no record is a scoped absence, not proof of zero everywhere or a policy stance.
+
+Read the source around the passage, retain the citation and date basis, and write a complete sentence within 240 characters without truncation. If identity, content, or chronology cannot be established, preserve the lead with a reason in the repository quarantine. All 300 items from the post-Hermes baseline have manual dispositions in `docs/reviews/2026-10-08-summary-review.json`; Jev has not yet assessed them. See the detailed review for the service/network blockers and prepared-packet script.

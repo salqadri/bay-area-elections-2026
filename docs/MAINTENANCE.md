@@ -57,6 +57,7 @@ Run from the repository root, in this order:
 ```sh
 python3 scripts/build_site.py --check
 python3 scripts/check_data.py
+python3 scripts/check_evidence.py
 python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
@@ -110,3 +111,12 @@ Repository: `salqadri/bay-area-elections-2026`. Pages publishes **`main` / root*
 Review status/diff, commit the intended files, then push or merge under the current task's authorization. Pushing `main` changes the public site. Use normal fast-forward collaboration; do not force-push away another maintainer's work. Confirm the Pages build/deployment corresponds to the new commit and succeeds. When network access permits, open both published pages and check the modified behavior. A successful Pages build alone is not a live provider test.
 
 Keep credentials, private addresses and `.checks/` out of Git. `.gitignore` already excludes `.env` files, Python caches and `.venv`. No application secrets are required by the current build. If a secret is exposed, remove it and rotate it; deleting the current file does not remove it from Git history.
+
+
+## Evidence release guard and model-review preparation
+
+`check_data.py` imports `check_evidence.py`, which rejects unresolved candidate/source pairs from `docs/reviews/evidence-quarantine.json`, duplicate source/excerpt pairs (including renamed X handles), reused evidence IDs with different meanings, invalid/future dates relative to the check date, and obvious raw/cut-off excerpts. Run `check_evidence.py` directly for its regression checks. These checks do not certify identity or political facts.
+
+To restore a quarantined source, establish the missing identity/attribution/content/date, record the resolution in the review log, remove its active quarantine entry, and then add the verified evidence and rebuild. Do not simply change an evidence ID or URL spelling to evade the gate. Coordinate with the external ledger so a later merge preserves the correction.
+
+`prepare_jev_review.py --include-quarantine` writes 300 JSONL packets under `.checks/` for the current review baseline. It does not invoke an API. Optional `--source-texts` accepts an object keyed by evidence ID with `{url, text}`; the URL must equal the evidence URL. Without it, only stored excerpts are supplied, explicitly labeled as such. Jev's documented endpoint/authentication contract and outbound network access are still required. No keys belong in source, generated HTML, packets, or logs.

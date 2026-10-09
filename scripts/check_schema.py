@@ -141,11 +141,8 @@ def check(value, schema, path="$", root=SCHEMA):
                 day = int(parts[2]) if len(parts) > 2 else 1
                 if not (1 <= month <= 12 and 1 <= day <= 31):
                     raise ValueError
-                # month-length check only when the day component is present
-                if len(parts) > 2:
-                    datetime.date(year, month, day)
-                elif len(parts) == 2:
-                    datetime.date(year, month, 1)
+                # Also validate year-only dates; year 0000 is not a calendar year.
+                datetime.date(year, month, day)
             except (ValueError, IndexError):
                 errors.append(f"{path}: invalid calendar date")
         if schema.get("format") == "uri":
@@ -218,6 +215,7 @@ negative_cases = {
     "gaza_evidence_bad_id": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"X-1","date":"2025-06-01","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_missing_date": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9003","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_bad_date_format": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9004","date":"June 2025","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
+    "gaza_evidence_year_zero": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9009","date":"0000","url":"https://example.com/a","summary":"Candidate supported a bilateral ceasefire.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_impossible_month": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9005","date":"2026-13","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_impossible_day": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9006","date":"2026-02-30","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-10-08"}]),
     "gaza_evidence_impossible_checked_on": lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9007","date":"2026-02-01","url":"https://example.com/a","summary":"Statement about the ceasefire vote.","dimension":"actions_votes","checked_on":"2026-02-30"}]),

@@ -40,6 +40,13 @@
     if (!value) return 'date not supplied';
     return new Date(value + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   }
+  function evidenceDateLabel(evidence) {
+    if (!evidence.date) return 'Date unverified';
+    if (evidence.date_method === 'wayback_first_capture') return 'Observed by ' + evidence.date + ' (archive bound; original date unknown)';
+    const methods = {page_metadata: 'page metadata date', x_snowflake: 'post date', event_recorded: 'event date'};
+    const method = methods[evidence.date_method];
+    return evidence.date + (method ? ' (' + method + ')' : '');
+  }
   function ordinal(values, value) { const index = (values || []).indexOf(value); return index < 0 ? 999 : index; }
   function compareRaces(a, b) {
     const left = a.position, right = b.position;
@@ -143,8 +150,8 @@
           const det = node('details', 'ballot-candidate-evidence');
           det.append(node('summary', null, 'Gaza stance research · ' + candidate.gaza_evidence.length + ' items (ungraded)'));
           for (const e of candidate.gaza_evidence) {
-            const li = node('p', null, (e.date ? e.date + ' — ' : '') + e.summary);
-            const a = node('a', null, 'source ↗'); a.href = e.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.append(a);
+            const li = node('p', null, evidenceDateLabel(e) + ' — ' + e.summary);
+            li.append(' ', safeLink(e.url, 'source ↗'));
             det.append(li);
           }
           row.append(det);
