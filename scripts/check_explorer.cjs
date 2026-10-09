@@ -76,9 +76,9 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   assert(!text('panel-candidates').includes('Endorsed by California Jewish Democrats'));
   tab('sources');assert(nodes($('panel-sources')).some(n=>n.tagName==='A'&&n.href==='https://www.fec.gov/data/candidate/H0CA10149/'));
   reset();set('search','CD-10');assert(text('panel-candidates').includes('No published total available'));assert(text('panel-candidates').includes('not zero'));assert(!text('panel-candidates').includes('$0.00'));
-  assert(text('panel-candidates').includes('Supported by CAIR Action'));
-  assert(text('panel-candidates').includes('original tier is unconfirmed'));
-  assert(text('panel-candidates').includes('Secondary report'));
+  assert(text('panel-candidates').includes('Endorsed by CAIR Action'));assert(nodes($('panel-candidates')).some(n=>n.tagName==='A'&&n.href==='https://cairactionguide.org/explore'));
+  assert(text('panel-candidates').includes('supplied capture of CAIR Action'));
+  reset();set('search','Marc Cooper');assert(text('panel-candidates').includes('Opposed by CAIR Action'));assert(text('panel-candidates').includes('1 opposed'));assert(!text('panel-candidates').includes('Endorsed by CAIR Action'));reset();set('search','CD-8');assert(text('panel-candidates').includes('Preferred by CAIR Action'));
   reset();set('search','Manisha Pathak');assert(text('panel-candidates').includes('Supported by Dr. Romesh Japra'));
   assert(text('panel-candidates').includes('Endorsed by Americans4Hindus'));
   assert(!text('panel-candidates').includes('Endorsed by Dr. Romesh Japra'));

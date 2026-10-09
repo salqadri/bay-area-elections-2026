@@ -100,10 +100,10 @@
     {
       "url": "https://bluevoterguide.org/endorser-org/CAIR_Action/CA/7054",
       "publisher": "CAIR Action",
-      "role": "aggregator",
+      "role": "discovery",
       "kind": "organization",
       "assertion": "mixed",
-      "review_note": "Secondary November 2026 listing: 15 matches to the printed roster. Its endorsement label may flatten the official endorsed/preferred distinction; publish as reported support with original tier unresolved."
+      "review_note": "Superseded by official Explore capture. Do not infer CAIR support tiers from this secondary list."
     },
     {
       "url": "https://indiapost.com/americans4hindus-extends-support-to-fremont-city-council-candidates-vipin-sharma-and-manisha-pathak/",
@@ -260,9 +260,10 @@
     {
       "url": "https://cairactionguide.org/explore",
       "publisher": "CAIR Action",
-      "role": "unverified",
+      "role": "endorser",
       "assertion": "mixed",
-      "review_note": "Retrieve the actual November guide once for all 15 matches; distinguish endorsed, preferred, opposed and no endorsement. The readable official California page describes the June primary, so it cannot independently confirm November tiers."
+      "review_note": "Official Endorsed, Preferred, Oppose and Joint Endorsement cards. Use import_cair_guide.py and review all cards; do not flatten levels or infer current phase from Also in Primary. Reviewed capture: cair-action-2026-10-09.json.",
+      "kind": "organization"
     },
     {
       "url": "https://candidates.aipacpac.org/page/featured",
@@ -319,6 +320,14 @@
       "role": "unverified",
       "assertion": "mixed",
       "review_note": "The campaign post attributes endorsement to Anurag Mishra. Hosting a meeting does not establish a separate Japra endorsement."
+    },
+    {
+      "url": "https://cairaction.org/wp-content/uploads/2026/05/NorCal-Voter-Guide.pdf",
+      "publisher": "CAIR Action",
+      "role": "endorser",
+      "kind": "organization",
+      "assertion": "mixed",
+      "review_note": "Official PDF supplied by project owner. Not read: 48.9 MB exceeded browser reader limit and direct download returned 403. Verify its election header before assigning a phase; do not assume it is identical to the live guide."
     }
   ],
   "queries": [

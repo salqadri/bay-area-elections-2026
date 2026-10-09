@@ -1,6 +1,15 @@
 # Research and development handoff
 
-## Latest update — October 9, 2026: targeted endorsements and publication correction
+## Latest update — October 9, 2026: CAIR Action source correction
+
+The current publication is schema **1.14**, with **316 records on 190 candidacies**: 266 endorsements, 18 preferences, 6 recommendations, 25 other support observations and 1 opposition. This replaces the earlier 15 CAIR secondary reports with **95 recommendations from the supplied official Explore capture**: 76 Endorsed, 18 Preferred and 1 Opposed. Both pages explicitly label negative recommendations, including Marc Cooper's **Opposed by CAIR Action** record.
+
+Read [the correction report](reviews/2026-10-09-cair-action-correction.md) and `research/endorsements/cair-action-2026-10-09.json`. All 200 captured cards are accounted for: 95 published, 2 duplicates, 1 held office mismatch and 102 not matched to the current printed roster. Tomara Hall's source card says District 1; the roster and campaign say Area 2. Resolve this discrepancy before publication. Do not treat the other unmatched names as proof of absence from the ballot.
+
+The official page could not be re-fetched and the PDF was not read. Labels come from the supplied HTML capture. Its selected-election header is absent, so phase remains unspecified with a visible shared note. `import_cair_guide.py` parses captures without network/model calls and applies explicitly reviewed matches; `check_cair_guide.py` and the publication guard protect polarity, completeness, deduplication and source provenance. The former CAIR secondary layer is marked superseded. Election-wide dates, rosters, FEC records, Gaza evidence and every other publisher's records are unchanged by this correction. Historical entries below retain their original counts.
+
+
+## Earlier update — October 9, 2026: targeted endorsements and publication correction
 
 This update supersedes the earlier 741-candidacy/884-record endorsement counts. The current publication has **236 endorsement/support records on 156 candidacies**: 190 endorsements, 6 recommendations, 40 other support observations. It removes 725 unsupported imports (723 Chronicle directory mentions plus two non-endorser labels) and adds 77 reviewed records covering the requested publishers, Japra/Americans4Hindus and the actual Chronicle editorial list.
 

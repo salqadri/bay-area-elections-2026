@@ -158,7 +158,7 @@
         }
         if (candidate.endorsements?.length) {
           const en = node('details', 'ballot-candidate-endorsements');
-          en.append(node('summary', null, 'Endorsements and support · ' + candidate.endorsements.length + ' records (2026 cycle)'));
+          en.append(node('summary', null, EndorsementDisplay.summary(candidate.endorsements)));
           for (const r of candidate.endorsements) {
             const li = node('p', null, EndorsementDisplay.label(r));
             li.append(' ', safeLink(r.url, 'source ↗'));

@@ -1,5 +1,7 @@
 # Targeted endorsement review — October 9, 2026
 
+**Historical snapshot:** the CAIR source, labels and totals below are superseded by the [subsequent CAIR correction](2026-10-09-cair-action-correction.md). The quarantine decisions and other publisher findings remain in force.
+
 The public dataset now contains **236 endorsement/support observations for 156 of 869 printed candidacies**. This update adds 77 reviewed records and removes 725 unsupported prior imports. It covers the existing five-county November roster, not all US candidates or every endorsement organization. The election-wide research date, printed rosters, official party preferences and FEC receipts are unchanged.
 
 ## Findings added

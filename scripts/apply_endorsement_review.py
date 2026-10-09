@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from check_published_endorsements import blocked_reason, check_endorsements, source_key
+from import_cair_guide import apply_capture, REVIEW as CAIR_REVIEW
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / '2026-11-03_Bay_Area_Elections.json'
@@ -20,7 +21,7 @@ def encode(value, indent=2):
 
 
 def apply_review(data, review, export):
-    if data['schema_version'] not in {'1.12', '1.13'}:
+    if data['schema_version'] not in {'1.12', '1.13', '1.14'}:
         raise ValueError('Review this dated migration before applying to a different schema version')
     people = {(p['id'], c['name']): c for p in data['positions'] for c in p.get('candidates') or []}
     for ident, text in review['notes'].items():
@@ -34,6 +35,8 @@ def apply_review(data, review, export):
         else:
             c.pop('endorsements', None)
     for finding in review['findings']:
+        if review['sources'][finding['source_key']].get('superseded_by'):
+            continue
         key = (finding['position_id'], finding['candidate'])
         if key not in people:
             raise ValueError('Review candidacy no longer in the printed roster: ' + repr(key))
@@ -74,11 +77,14 @@ def apply_review(data, review, export):
                        'generated_at and source_dataset_sha256 describe the original collector run. '
                        'Separate manually reviewed findings: targeted-2026-10-09.json. '
                        'Not a complete or independently audited endorsement inventory.')
-    data['schema_version'] = '1.13'
+    apply_capture(data, json.loads(CAIR_REVIEW.read_text()))
+    data['schema_version'] = '1.14'
     data['coverage']['printed_candidates_with_endorsements'] = sum(bool(c.get('endorsements')) for c in people.values())
     limitation = ('Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, '
-                  'support ratings, campaign claims and secondary reports. Primary support is not automatically '
+                  'preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically '
                   'a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements.')
+    data['coverage']['limitations'] = [s for s in data['coverage']['limitations']
+                                        if not s.startswith('Endorsement research was partially reviewed October 9, 2026.')]
     if limitation not in data['coverage']['limitations']:
         data['coverage']['limitations'].append(limitation)
     errors = check_endorsements(data)

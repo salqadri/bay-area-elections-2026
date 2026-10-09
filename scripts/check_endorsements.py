@@ -158,9 +158,9 @@ class PublicationChecks(unittest.TestCase):
     def test_support_rating_cannot_be_published_as_formal_endorsement(self):
         d = dataset(); d['notes'] = {'N1': 'Source rating, not an exclusive endorsement.'}
         d['positions'][0]['candidates'][0]['endorsements'] = [{'endorser': 'Example Group', 'relation': 'endorsed', 'rating': 'Support', 'phase': 'general', 'url': URL, 'checked_on': '2026-10-09', 'note_id': 'N1'}]
-        self.assertTrue(check_endorsements(d))
+        self.assertTrue(check_endorsements(d, review_cair=False))
         d['positions'][0]['candidates'][0]['endorsements'][0]['relation'] = 'supported'
-        self.assertFalse(check_endorsements(d))
+        self.assertFalse(check_endorsements(d, review_cair=False))
 
     def test_curated_review_is_idempotent_and_preserves_rosters(self):
         root = Path(__file__).resolve().parent.parent

@@ -30,7 +30,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/address-suggestions.js` | Photon fetch adapter, complete-address filtering and provider backoff |
 | `src/address-autocomplete.js` | Accessible combobox interaction, debounce, cancellation and manual fallback |
 | `src/address-matcher.js` | Geography normalization, inclusive race matching, union of ambiguous matches |
-| `src/endorsement-display.js` | Shared endorsement/support wording, provenance and source-rating labels |
+| `src/endorsement-display.js` | Shared endorsement, preference, opposition and support wording, provenance and source-rating labels |
 | `src/ballot-page.js` | Form orchestration, warnings, candidate/race display and estimate export |
 | `scripts/build_site.py` | Embeds the dataset, schema where applicable, shared CSS and JavaScript into both pages |
 | `scripts/prepare_dom_fixture.py` | Parses built pages into disposable DOM fixtures for Node integration checks |
@@ -61,6 +61,7 @@ python3 scripts/check_data.py
 python3 scripts/check_evidence.py
 python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsements.py
+python3 scripts/check_cair_guide.py
 python3 scripts/check_schema.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_explorer.cjs
