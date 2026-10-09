@@ -1,4 +1,4 @@
-# Bay Area Elections · November 2026
+# Bay Area Ballot Research Assistant
 
 An independent research inventory and searchable, static explorer of elected offices for the **November 3, 2026 California general election** in **Alameda, Contra Costa, San Francisco, San Mateo, and Santa Clara counties**.
 
