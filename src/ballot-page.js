@@ -164,6 +164,7 @@
             const li = node('p', null, EndorsementDisplay.label(r));
             li.append(' ', safeLink(r.url, 'source ↗'));
             if (r.note_id && DATA.notes[r.note_id]) li.append(node('span', null, ' — ' + DATA.notes[r.note_id]));
+            if (r.logo_url) { const img = node('img', 'endorsement-logo'); try { const u = new URL(r.logo_url); if (u.protocol === 'https:') { img.src = u.href; img.alt = r.endorser + ' logo'; img.loading = 'lazy'; li.append(node('br'), img); } } catch {} }
             en.append(li);
           }
           row.append(en);
@@ -368,7 +369,7 @@
     $('manual-county').append(option);
   }
   $('ballot-coverage').textContent = 'Coverage: ' + (DATA.election.counties_in_scope || []).map(county => county.name).join(', ') + ' counties.';
-  $('ballot-footer-date').textContent = 'Election: ' + dateLabel(DATA.election.date) + ' · Election research: ' + dateLabel(DATA.election.research_as_of) + '. Estimates are not official ballots.';
+  $('ballot-footer-date').textContent = 'Election: ' + dateLabel(DATA.election.date) + ' · Election research: ' + dateLabel(DATA.election.research_as_of) + (DATA.election.publication_version ? ' · Published ' + DATA.election.publication_version : '') + '. Estimates are not official ballots.';
   if (globalThis.ElectionAddressAutocomplete && globalThis.ElectionAddressSuggestions) {
     addressAutocomplete = globalThis.ElectionAddressAutocomplete.attach({
       input: $('voting-address'),

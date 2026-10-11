@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.16"
+      "const": "1.17"
     },
     "election": {
       "type": "object",
@@ -55,6 +55,11 @@
           },
           "minItems": 1,
           "uniqueItems": true
+        },
+        "publication_version": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}\\.[0-9]+$",
+          "description": "Dated publication version of this exact dataset build (YYYY-MM-DD.N). Bump the sequence on each published change so readers can tell when content was last released; it does not replace research_as_of or finance check dates."
         }
       },
       "required": [
@@ -1363,6 +1368,12 @@
         "historical": {
           "const": true,
           "description": "Explicitly retained from a prior race or different office under the historical-endorsement policy. The required note preserves the source office/year where available; omit when no historical context is established. No renewal research is required."
+        },
+        "logo_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^ ]+$",
+          "description": "Optional URL of the endorser logo/mark as published on the cited page, for graphically displayed endorsements. Display evidence only: the endorser name must still come from readable text."
         }
       },
       "allOf": [

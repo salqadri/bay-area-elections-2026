@@ -4,7 +4,7 @@ bounded concurrency) to find its endorsement list, and export reviewable
 proposals for integration into the election dataset.
 
 Design notes / acceptance rules (see AGENTS.md "Candidate endorsements"):
-- A campaign page states the campaign's own claims. Records keep provenance
+- A campaign page states the campaign's own claims. Records keep verification
   `campaign_claim`; they never change official party preference.
 - The model may only return endorser names that appear verbatim in the fetched
   page text or image alt/nearby text. A mechanical quote gate re-checks every
@@ -378,7 +378,7 @@ def propose(db):
             gate = 'quote_verified' if fuzzy_in(quote, corpus_norm) else 'quote_not_found'
             record = {'endorser': endorser[:120], 'kind': kind, 'relation': 'endorsed', 'phase': 'unspecified',
                       'url': site_url, 'checked_on': time.strftime('%Y-%m-%d'),
-                      'quote': quote[:120], 'provenance': 'campaign_claim'}
+                      'quote': quote[:120], 'verification': 'campaign_claim'}
             # A logo URL is display-only: accept it only when it exactly matches an
             # image src from the captured inventory — either named via alt text or
             # chosen by the extractor from that same inventory (never invented URLs).
@@ -437,6 +437,21 @@ def attach(db, dataset_path, output):
     accepted = export_accepted(db)
     data = json.loads(Path(dataset_path).read_text())
     added_records, touched_candidates, skipped_dupes = 0, 0, 0
+    next_note = max(int(k[1:]) for k in data['notes']) + 1
+    site_notes = {}  # campaign url -> note id explaining the capture (upstream: every campaign_claim carries a note)
+
+    def note_for(site_url, checked_on):
+        nonlocal next_note
+        if site_url not in site_notes:
+            nid = f'N{next_note}'
+            next_note += 1
+            data['notes'][nid] = (f"Checked {checked_on}: the campaign's own website names this supporter on its "
+                                  'endorsement page. Captured by an automated scan of the campaign site and quoted '
+                                  'verbatim from that snapshot; the claim is published by the campaign itself and '
+                                  'has not been independently confirmed with the endorser.')
+            site_notes[site_url] = nid
+        return site_notes[site_url]
+
     for p in data['positions']:
         for c in p.get('candidates') or []:
             cid = uid('C-', p['id'], norm(c['name']))
@@ -452,6 +467,8 @@ def attach(db, dataset_path, output):
                 if (norm(rec['endorser']), rec['relation'], rec['phase']) in seen or norm(rec['endorser']) in names_seen:
                     skipped_dupes += 1
                     continue
+                rec = dict(rec)
+                rec.setdefault('note_id', note_for(rec['url'], rec['checked_on']))
                 current.append(rec)
                 seen.add((norm(rec['endorser']), rec['relation'], rec['phase']))
                 names_seen.add(norm(rec['endorser']))
