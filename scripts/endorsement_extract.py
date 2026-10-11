@@ -81,7 +81,8 @@ class PageParser(HTMLParser):
         if tag == 'title':
             self.in_title = True; return
         if tag == 'img':
-            alt = attrs.get('alt', '').strip()
+            # Attribute-less values (e.g. <img alt>) parse as None, not ''.
+            alt = (attrs.get('alt') or '').strip()
             if alt:
                 self.images.append(alt)
             return
