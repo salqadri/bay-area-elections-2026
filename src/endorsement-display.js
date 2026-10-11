@@ -2,8 +2,10 @@
 const EndorsementDisplay = {
   summary(records) {
     const opposed = records.filter(record => record.relation === 'opposed').length;
+    const historical = records.filter(record => record.historical === true).length;
     return 'Endorsements and recommendations · ' + records.length + ' records' +
-      (opposed ? ' · ' + opposed + ' opposed' : '') + ' (2026 cycle)';
+      (opposed ? ' · ' + opposed + ' opposed' : '') +
+      (historical ? ' · ' + historical + ' historical' : '');
   },
   label(record) {
     const relations = {endorsed: 'Endorsed by ', preferred: 'Preferred by ', opposed: 'Opposed by ', recommended: 'Recommended by ', supported: 'Supported by '};
@@ -12,6 +14,7 @@ const EndorsementDisplay = {
     const ally = record.relation === 'supported' && record.rating === 'Ally';
     return (ally ? 'Listed as Ally by ' : record.shared && record.relation === 'endorsed' ? 'Jointly endorsed by ' : relations[record.relation] || 'Record from ') + record.endorser +
       (record.rating && !ally ? ' · Source rating: ' + record.rating : '') +
+      (record.historical ? ' · Historical record (prior race)' : '') +
       ' · ' + (phase[record.phase] || 'Election phase not stated') +
       ' · ' + (provenance[record.verification] || 'Source classification not recorded') +
       ' · checked ' + record.checked_on;

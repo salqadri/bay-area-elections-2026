@@ -101,6 +101,8 @@ For each accepted decision, retain its source-card ID, source observation and co
 
 Preserve the public schema's relation, rating, phase, verification and note rules. A publisher's own statement must match the verified source publisher. A campaign claim must match its campaign. Aggregator source badges alone do not establish third-party relationships; explicit reported endorsements remain `reported`. Oppositions belong to that candidate and never imply support for another. Undated guide assessments retain `source_observed` with the actual observation date and explanatory note; they do not date historical votes, contributions or statements. Historical quarantine remains enforced.
 
+The owner's historical-endorsement policy also permits older races without renewal research. Preserve known source office/year in the card and provenance note. Set `historical: true` for a known prior race or prior office, with `verification` and `note_id`; its phase still describes the source, not the current race. Manually confirm identity when office matching supplies no suggestion (for example, an identical verified campaign URL). Do not invent a year for undated material. The shared review/duplicate keys keep historical and current records distinct if a source later explicitly publishes both. See the [priority PAC review](reviews/2026-10-10-priority-pac-review.md) for a complete applied example.
+
 ```sh
 python3 scripts/reviewed_updates.py preview research/reviews/cair-county-refresh-2026-10-09.json --output .research/proposed-elections.json
 ```

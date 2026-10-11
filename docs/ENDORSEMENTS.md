@@ -16,7 +16,13 @@ For county selection, partial statewide planning and publisher-neutral reviewed 
 
 On the October 9 baseline, a fresh plan contains **869 candidacies, 904 search queries and 386 initial source URLs**. `--deep` adds one targeted query per candidacy. These are request counts, not a promise of complete results, cost or duration; discovered pages add fetches. A modest first batch lets Hermes inspect coverage before committing a larger budget.
 
-## Current publication and correction — October 9, 2026
+## Current proposed update — October 10, 2026
+
+The [priority PAC review](reviews/2026-10-10-priority-pac-review.md) adds two Hindu American PAC historical endorsements and one reported historical United Democracy Project support record. This branch has **389 records under 199 candidacies**; 670 printed candidacies have no published recommendation. The seven inherited source pages remain unaudited. AIPAC PAC candidate endorsements remain unresolved after a bounded official-source review.
+
+Schema **1.16** adds optional `historical: true`, requiring provenance and a shared context note. Both readers visibly label prior-race records and no longer label all recommendations as the 2026 cycle. The owner accepts historical endorsements without renewal research. Preserve any year/office already stated, match the same person, and keep phase unspecified when absent. This policy does not turn donations, questionnaire scores or criticism into endorsements/opposition. The [registered review](../research/reviews/priority-pac-endorsements-2026-10-10.json) accounts for all 25 Hindu American PAC entries and the AIPAC source limits; rerunning its apply command is a no-op.
+
+## Earlier publication and correction — October 9, 2026
 
 The initial run completed 904 searches and parsed 3,671 pages, but completion was not a factual audit. Its 741-candidacy/884-record publication claim was inflated: 723 records came from a neutral Chronicle candidate directory, and two more named a cookie notice and a section heading as endorsers. These 725 public records and their 1,167 collector observations are now quarantined with stable IDs and original snapshot hashes. The old export has been filtered; its original contents remain in Git history.
 
@@ -68,7 +74,7 @@ python3 scripts/research_endorsements.py extract
 python3 scripts/research_endorsements.py review-packets
 ```
 
-Those budgets prioritize new shared queries in an existing completed ledger; in a fresh ledger other discovery work also exists. Re-fetch a source only when its age or a concrete unresolved question justifies it. Resolve all candidates on that source in one pass. Dynamic CAIR/AIPAC pages may need one browser lookup each; Hindu American PAC's older biographies need office/cycle clarification. Do not schedule a broad enrichment run or one Research-agent invocation per candidate.
+Those budgets prioritize new shared queries in an existing completed ledger; in a fresh ledger other discovery work also exists. Re-fetch a source only when its age or a concrete unresolved question justifies it. Resolve all candidates on that source in one pass. Dynamic CAIR/AIPAC pages may need one browser lookup each. Under the historical policy, retain Hindu American PAC's older biographies with explicit context instead of researching renewal. Do not schedule a broad enrichment run or one Research-agent invocation per candidate.
 
 Extractor version 2 invalidates the old extraction cache when `extract` runs. Neutral guides (`role: discovery`) cannot generate endorsements. Aggregators (`role: aggregator`) require review of the actual endorsing organization. Support tiers and mixed-cycle lists use `assertion: mixed`. Sibling sections no longer inherit an endorsement heading, and cookie/category labels are rejected. Registered metadata is not a substitute for reviewing accepted observations.
 

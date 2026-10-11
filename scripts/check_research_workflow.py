@@ -87,6 +87,22 @@ class ScopeChecks(unittest.TestCase):
 
 
 class UpdateChecks(unittest.TestCase):
+    def test_historical_and_current_records_from_same_source_remain_distinct(self):
+        review = review_for()
+        historical = deepcopy(review['decisions'][0])
+        historical['id'] = 'source-card-historical'
+        historical['after'].update(historical=True, note_id='N9900')
+        historical['evidence']['date_basis'] = 'Fixture describes an earlier race; no renewal research is required.'
+        review['notes']['N9900'] = 'Invented earlier-race endorsement context used only by this offline fixture.'
+        review['decisions'].append(historical)
+        result, report = updates.prepare(BASE, review, [])
+        self.assertEqual(report['counts'], {'added': 2})
+        self.assertNotEqual(updates.record_key('endorsements', historical['after']),
+                            updates.record_key('endorsements', review['decisions'][0]['after']))
+        again, report = updates.prepare(result, review, [])
+        self.assertEqual(again, result)
+        self.assertEqual(report['counts'], {'unchanged': 2})
+
     def test_cair_adapter_preserves_unknown_phase_and_original_capture_date(self):
         from import_cair_guide import parse_capture
         capture = parse_capture(b'<div data-testid="card-endorsement-1"><span data-testid="text-candidate-name-1">Steve Hilton</span><p>Governor of California</p><p>Also in Primary (6/2/26)</p><div data-testid="endorsement-level-preferred">Preferred</div></div>', '2026-10-08')

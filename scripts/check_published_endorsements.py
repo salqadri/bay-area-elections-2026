@@ -49,7 +49,7 @@ def check_endorsements(data, review_cair=True, reviews=None):
                 reason = blocked_reason(r, quarantine)
                 if reason:
                     errors.append(prefix + reason)
-                key = (norm(r['endorser']), r['relation'], r['phase'], source_key(r['url']))
+                key = (norm(r['endorser']), r['relation'], r['phase'], source_key(r['url']), r.get('historical', False))
                 if key in seen:
                     errors.append(prefix + 'duplicate endorsement/support source')
                 seen.add(key)
@@ -59,7 +59,7 @@ def check_endorsements(data, review_cair=True, reviews=None):
                     errors.append(prefix + 'invalid/future check date')
                 if r.get('rating') and r['relation'] != 'supported':
                     errors.append(prefix + 'a support rating is not a formal endorsement')
-                if r['relation'] in {'supported', 'preferred', 'opposed'} or r.get('verification') in {'reported', 'campaign_claim'}:
+                if r.get('historical') or r['relation'] in {'supported', 'preferred', 'opposed'} or r.get('verification') in {'reported', 'campaign_claim'}:
                     if r.get('note_id') not in data['notes']:
                         errors.append(prefix + 'support or indirect evidence needs an explanatory note')
                 if review_cair and r['endorser'] == 'CAIR Action':

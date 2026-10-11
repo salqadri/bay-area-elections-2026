@@ -1,6 +1,14 @@
 # Research and development handoff
 
-## Latest update — October 9, 2026: reusable county workflow
+## Latest proposed update — October 10, 2026: priority PAC review
+
+This review branch adds historical Hindu American PAC endorsements for Murali Srinivasan (source biography identifies 2022 Sunnyvale District 3) and Yang Shao (source office is Fremont City Council, with the same verified campaign URL). It also adds AIPAC-reported United Democracy Project support for Kevin Mullin in 2022. There are **389 recommendation records under 199 candidacies**, including three explicitly historical records. Gaza evidence remains 245 items under 82 candidacies. Ballot/finance dates and official rosters are unchanged.
+
+The owner's policy accepts older endorsements without renewal research. Schema **1.16** preserves them with `historical: true`, verification and explanatory notes; both readers display the context. The immutable [review](../research/reviews/priority-pac-endorsements-2026-10-10.json) records all 25 Hindu American PAC cards and AIPAC retrieval limits. Apply through `reviewed_updates.py`, rebuild, and run `check_release.py`. See [the review report](reviews/2026-10-10-priority-pac-review.md) for Hermes review and local preview instructions.
+
+AIPAC PAC's accessible portal text still provides no individual endorsements. Its official report's UDP assistance is explicitly classified as historical reported support, not a PAC endorsement. All 22 printed congressional candidates remain unknown for AIPAC PAC. SEIU 1021/Santa Clara Democrats and other inherited pages were outside this pass. This work is proposed in a PR; a local preview is not a GitHub Pages deployment.
+
+## Earlier update — October 9, 2026: reusable county workflow
 
 The research tooling now accepts single/multiple counties, Bay Area and California presets. A shared 58-county registry supplies names/FIPS to the planner and address decoder; actual ballot scope still comes from the dataset. `research_scope.py` reports missing inventories and unresolved rosters. County-scoped collector ledgers cache/resume without silently switching scopes; a statewide ledger can explicitly report partial coverage and grow as official rosters are added.
 

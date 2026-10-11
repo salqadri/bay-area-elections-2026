@@ -1,6 +1,6 @@
 {
   "$schema": "elections.schema.json",
-  "schema_version": "1.15",
+  "schema_version": "1.16",
   "election": {
     "date": "2026-11-03",
     "name": "California General Election",
@@ -99,7 +99,7 @@
       "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
     ],
     "printed_candidates_with_gaza_evidence": 82,
-    "printed_candidates_with_endorsements": 197
+    "printed_candidates_with_endorsements": 199
   },
   "address_lookup": {
     "division_endpoint": "https://www.googleapis.com/civicinfo/v2/divisionsByAddress",
@@ -2115,6 +2115,17 @@
               "checked_on": "2026-10-09",
               "verification": "endorser_statement",
               "note_id": "N296"
+            },
+            {
+              "endorser": "United Democracy Project",
+              "kind": "organization",
+              "relation": "supported",
+              "phase": "unspecified",
+              "url": "https://aipac.org/memos/2022-political-success",
+              "checked_on": "2026-10-10",
+              "verification": "reported",
+              "historical": true,
+              "note_id": "N303"
             }
           ]
         }
@@ -15720,7 +15731,20 @@
           "source_ids": [
             "S213"
           ],
-          "incumbency_evidence_id": "N053"
+          "incumbency_evidence_id": "N053",
+          "endorsements": [
+            {
+              "endorser": "Hindu American PAC",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://www.hinduamericanpac.com/endorsements",
+              "checked_on": "2026-10-10",
+              "verification": "endorser_statement",
+              "historical": true,
+              "note_id": "N301"
+            }
+          ]
         }
       ],
       "source_ids": [
@@ -23652,6 +23676,19 @@
           "campaign_url": "https://electyangshao.com",
           "source_ids": [
             "S1072"
+          ],
+          "endorsements": [
+            {
+              "endorser": "Hindu American PAC",
+              "kind": "organization",
+              "relation": "endorsed",
+              "phase": "unspecified",
+              "url": "https://www.hinduamericanpac.com/endorsements",
+              "checked_on": "2026-10-10",
+              "verification": "endorser_statement",
+              "historical": true,
+              "note_id": "N302"
+            }
           ]
         }
       ],
@@ -27151,7 +27188,10 @@
     "N297": "AROC Action’s official page explicitly identifies its candidate endorsements as for November 3, 2026. Names and offices were matched to the current printed roster on October 9. Multiple names in one contest are retained without inventing a rank or an explicit joint-endorsement designation. Ballot measures and candidates outside the current roster are preserved in the source review manifest.",
     "N298": "Vote for Peace explicitly reports this organizational endorsement in Malia Cohen’s candidate notes. This is a secondary report associated with its 2026 general-election listing, not independent confirmation from the named organization. https://voteforpeace.info/california/malia-cohen",
     "N299": "Working Families Party announced its endorsement of Jane Kim for California Insurance Commissioner on January 21, 2026. The announcement does not specify primary versus general-election scope, so phase remains unspecified. Discovered through Vote for Peace and verified on the party’s own site.",
-    "N300": "For the People Action appears in the Organizations section of Jane Kim’s current Insurance Commissioner endorsement page. This is a campaign claim, independently located through a Vote for Peace source reference; election phase is not explicitly stated on that endorsement list."
+    "N300": "For the People Action appears in the Organizations section of Jane Kim’s current Insurance Commissioner endorsement page. This is a campaign claim, independently located through a Vote for Peace source reference; election phase is not explicitly stated on that endorsement list.",
+    "N301": "Checked October 10, 2026: Hindu American PAC lists Murali Srinivasan under Current Endorsements, identifying Sunnyvale City Council District 3. Its biography describes his 2022 candidacy. Retained as a historical endorsement under the requested policy; renewal for 2026 was not researched. The source does not state an election phase.",
+    "N302": "Checked October 10, 2026: Hindu American PAC lists Yang Shao under Current Endorsements for Fremont City Council and links electyangshao.com, the same campaign URL recorded for this candidate. Retained as an endorsement associated with his prior office. The source does not state its election year or phase; this is not an office-specific endorsement for Alameda County Water District Ward 3.",
+    "N303": "Checked October 10, 2026: AIPAC’s report about its 2022 political activity identifies Kevin Mullin (CA-15) among candidates helped by United Democracy Project, the AIPAC-aligned super PAC. Retained as historical campaign support reported by AIPAC. This is not a stated AIPAC PAC endorsement, a 2026 recommendation or a campaign contribution total. The report does not identify an election phase for this individual support."
   },
   "sources": {
     "S001": {

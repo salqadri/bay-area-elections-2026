@@ -28,7 +28,7 @@ def record_key(field, record):
     if field == 'gaza_evidence':
         return record['id']
     from check_published_endorsements import source_key
-    return norm(record['endorser']), record['phase'], source_key(record['url'])
+    return norm(record['endorser']), record['phase'], source_key(record['url']), record.get('historical', False)
 
 
 def prepare(data, review, prior_reviews=None, validate=True):
