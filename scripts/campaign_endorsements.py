@@ -412,6 +412,113 @@ def propose(db):
             'by_gate': {x['gate']: x['c'] for x in db.execute('SELECT gate,COUNT(*) c FROM proposals GROUP BY gate')}}
 
 
+# ---------------- logo filenames (no vision model) ----------------
+# Campaigns often publish org endorsement logos with no alt/nearby text, but
+# name the image file after the endorser ("SEIU Local 87.png", "CADEMLogo").
+# A filename is readable campaign-published text: derive candidate names from
+# it mechanically, then let Jev triage each one. Never guess from pixels.
+SLUG_JUNK = re.compile(
+    r'^(icon|icons?|social|bluesky|instagram|facebook|linkedin|tik-?tok|threads|x-icon'
+    r'|headshot|portrait|photo\d*|pic|picture|img([_-]?\d+)?|images?[_-]?\d*|screenshot|unnamed'
+    r'|untitled|dsc[_-]?\d*|img|whatsapp|graphic|banner|thumb(nail)?|placeholder|close-button'
+    r'|logo|logos|seal|endorsement|endorsed|endorses|official|copy|scaled|retouched|final'
+    r'|draft|v\d+|\d+[xX]\d+|\d{4,}|colou?rs?|black|white|red|blue|green|navy|grey|gray'
+    r'|yellow|purple|orange|pink|lime|teal|round|square|circle|stacked|vertical|horizontal'
+    r'|transp|transparent|background|front|back|new|old|alt|sm|md|lg|png|jpe?g|webp|avif'
+    r'|svg|gif|bmp|tiff?|raw|high|res|hi|lo|quality|cmyk|rgb|metallic|gold|silver|full'
+    r'|version|bug|endors(?:e|es|ing|ement)?|support(s|ers)?|back(ed|ing)?|vote|with|the'
+    r'|and|am|pm|at|tik|tok|close|button)$', re.I)
+
+
+def slug_name(src):
+    """Endorser name readable in an image filename, or None when junk."""
+    from urllib.parse import unquote
+    base = unquote(urlsplit(src).path).rsplit('/', 1)[-1]
+    base = re.sub(r'(\.[A-Za-z0-9]{2,5})+$', '', base)            # chained extensions
+    base = re.sub(r'^[0-9a-f]{16,}[_-]', '', base)                # webflow hash prefix
+    base = re.sub(r'\b\d{3,4}[xX]\d{3,4}\b', ' ', base)           # resolutions
+    base = re.sub(r'[%+~]+|[_.]+', ' ', base)
+    base = re.sub(r'\(\d+\)', ' ', base)                              # (1)/(2) counters
+    base = re.sub(r'(?<=[a-z0-9])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])', ' ', base)  # camelCase
+    base = re.sub(r'\s+', ' ', base).strip(' -')
+    toks = [t for t in re.split(r'[ \-–]+', base) if t and not SLUG_JUNK.match(t)]
+    # drop pure-number tokens ("Local 87" keeps its number only when a word precedes it;
+    # standalone years/counters like 2026, 1500 are junk) — keep numbers inside words.
+    toks = [t for t in toks if not re.fullmatch(r'\d{3,}', t)]
+    # trailing single digit after words is almost always a copy counter ("Seal 1")
+    while len(toks) > 1 and re.fullmatch(r'\d', toks[-1]):
+        toks.pop()
+    # drop mid-string hex fragments (CDN leftovers the prefix rule missed); their presence
+    # means the filename is machine-generated, so distrust the whole name.
+    if any(re.fullmatch(r'[0-9a-f]{7,}', t, re.I) for t in toks):
+        return None
+    name = ' '.join(toks).strip()
+    if len(name) < 3 or len(name) > 60:
+        return None
+    if not any(c.isalpha() for c in name):
+        return None
+    if re.fullmatch(r'[0-9a-fx\s.]+', name, re.I):                # hex/numeric junk
+        return None
+    if all(len(t) <= 2 and not t.isupper() for t in toks):        # lowercase fragments
+        return None
+    return name
+
+
+def propose_logos(db):
+    """Filename-derived logo proposals; gate 'filename_gate' (mechanical, verbatim src)."""
+    existing = json.loads(DATASET.read_text())
+    rows = candidates_from_data(existing)
+    made, skipped = 0, 0
+    for r in db.execute('SELECT * FROM results'):
+        task = db.execute('SELECT * FROM tasks WHERE site_key=?', (r['site_key'],)).fetchone()
+        ids = json.loads(task['candidacy_ids'])
+        if len(ids) != 1:            # filename gives no per-candidate attribution
+            continue
+        target = ids[0]
+        site_url = clean_url(task['campaign_url'])
+        if not site_url.startswith('https://'):
+            continue
+        srcs, corpus_src = [], set()
+        for page_row in db.execute('SELECT page_json FROM pages WHERE site_key=?', (r['site_key'],)):
+            for img in json.loads(page_row['page_json']).get('images', []):
+                if img.get('src') and img['src'] not in corpus_src:
+                    corpus_src.add(img['src'])
+                    srcs.append(img['src'])
+        # names already claimed on this site (model proposals) + candidate name tokens
+        taken = [norm(json.loads(p['record_json'])['endorser']) for p in
+                 db.execute('SELECT record_json FROM proposals WHERE site_key=?', (r['site_key'],))]
+        cand_tokens = set(norm(rows[target]['name']).split())
+        seen_names = set()
+        for src in srcs:
+            name = slug_name(src)
+            if not name or norm(name) in seen_names:
+                continue
+            toks = set(norm(name).split())
+            # skip when this is (part of) an already-captured endorser or the candidate themself
+            if any(toks and toks <= set(t.split()) for t in taken):
+                skipped += 1; continue
+            if toks & cand_tokens:
+                skipped += 1; continue
+            seen_names.add(norm(name))
+            record = {'endorser': name[:120], 'kind': 'unspecified', 'relation': 'endorsed',
+                      'phase': 'unspecified', 'url': site_url, 'checked_on': time.strftime('%Y-%m-%d'),
+                      'quote': src.rsplit('/', 1)[-1][:120], 'verification': 'campaign_claim'}
+            record['logo_url'] = encode_src_global(src)[:300]
+            pid = uid('F-', target, norm(name))
+            db.execute('INSERT OR REPLACE INTO proposals(proposal_id,site_key,candidacy_id,record_json,gate,created_at) VALUES(?,?,?,?,?,?)',
+                       (pid, r['site_key'], target, dump(record), 'filename_gate', now()))
+            made += 1
+    db.commit()
+    return {'new_or_updated': made, 'skipped_overlap': skipped,
+            'by_gate': {x['gate']: x['c'] for x in db.execute('SELECT gate,COUNT(*) c FROM proposals GROUP BY gate')}}
+
+
+def encode_src_global(u):
+    parts = urlsplit(u.strip())
+    return urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%:@&=+$,-_.!~*'()"),
+                       parts.query, parts.fragment))
+
+
 # ---------------- review / apply ----------------
 def apply_review(db, path):
     decisions = json.loads(Path(path).read_text())
@@ -422,8 +529,8 @@ def apply_review(db, path):
         p = db.execute('SELECT * FROM proposals WHERE proposal_id=?', (d['proposal_id'],)).fetchone()
         if not p:
             raise ValueError('unknown proposal_id ' + str(d.get('proposal_id')))
-        if d['action'] == 'accept' and p['gate'] != 'quote_verified':
-            raise ValueError('cannot accept a quote_not_found proposal: ' + p['proposal_id'])
+        if d['action'] == 'accept' and p['gate'] not in ('quote_verified', 'filename_gate'):
+            raise ValueError('cannot accept an unverified-gate proposal: ' + p['proposal_id'])
         db.execute('INSERT OR REPLACE INTO decisions(proposal_id,action,reason,reviewed_by,decided_at) VALUES(?,?,?,?,?)',
                    (d['proposal_id'], d['action'], d['reason'], d['reviewed_by'], now()))
         applied[d['action']] += 1
@@ -433,9 +540,9 @@ def apply_review(db, path):
 
 def export_accepted(db):
     out = {}
-    for p in db.execute('''SELECT p.candidacy_id, p.record_json FROM proposals p JOIN decisions d USING(proposal_id)
-                           WHERE d.action='accept' AND p.gate='quote_verified' ORDER BY p.proposal_id'''):
-        out.setdefault(p['candidacy_id'], []).append(json.loads(p['record_json']))
+    for p in db.execute('''SELECT p.candidacy_id, p.record_json, p.gate FROM proposals p JOIN decisions d USING(proposal_id)
+                           WHERE d.action='accept' AND p.gate IN ('quote_verified','filename_gate') ORDER BY p.proposal_id'''):
+        out.setdefault(p['candidacy_id'], []).append((p['gate'], json.loads(p['record_json'])))
     return out
 
 
@@ -447,22 +554,31 @@ def attach(db, dataset_path, output):
     next_note = max(int(k[1:]) for k in data['notes']) + 1
     site_notes = {}  # campaign url -> note id explaining the capture (upstream: every campaign_claim carries a note)
 
-    def note_for(site_url, checked_on):
+    def note_for(site_url, checked_on, logo=False):
         nonlocal next_note
-        if site_url not in site_notes:
+        key = (site_url, logo)
+        if key not in site_notes:
             nid = f'N{next_note}'
             next_note += 1
-            data['notes'][nid] = (f"Checked {checked_on}: the campaign's own website names this supporter on its "
-                                  'endorsement page. Captured by an automated scan of the campaign site and quoted '
-                                  'verbatim from that snapshot; the claim is published by the campaign itself and '
-                                  'has not been independently confirmed with the endorser.')
-            site_notes[site_url] = nid
-        return site_notes[site_url]
+            if logo:
+                data['notes'][nid] = (f"Checked {checked_on}: the campaign's own endorsement page displays this "
+                                      'supporter as a logo image whose filename names them. The name comes from the '
+                                      'campaign-published image filename, not from readable page text or any image '
+                                      'analysis; the claim is published by the campaign itself and has not been '
+                                      'independently confirmed with the endorser.')
+            else:
+                data['notes'][nid] = (f"Checked {checked_on}: the campaign's own website names this supporter on its "
+                                      'endorsement page. Captured by an automated scan of the campaign site and quoted '
+                                      'verbatim from that snapshot; the claim is published by the campaign itself and '
+                                      'has not been independently confirmed with the endorser.')
+            site_notes[key] = nid
+        return site_notes[key]
 
     for p in data['positions']:
         for c in p.get('candidates') or []:
             cid = uid('C-', p['id'], norm(c['name']))
-            records = accepted.get(cid)
+            records = [rec for _gate, rec in accepted.get(cid) or []]
+            logo_records = {norm(rec['endorser']) for gate, rec in (accepted.get(cid) or []) if gate == 'filename_gate'}
             if not records:
                 continue
             current = c.setdefault('endorsements', [])
@@ -475,7 +591,8 @@ def attach(db, dataset_path, output):
                     skipped_dupes += 1
                     continue
                 rec = dict(rec)
-                rec.setdefault('note_id', note_for(rec['url'], rec['checked_on']))
+                is_logo = norm(rec['endorser']) in logo_records
+                rec.setdefault('note_id', note_for(rec['url'], rec['checked_on'], logo=is_logo))
                 current.append(rec)
                 seen.add((norm(rec['endorser']), rec['relation'], rec['phase']))
                 names_seen.add(norm(rec['endorser']))
@@ -512,6 +629,7 @@ def main():
     p = sub.add_parser('crawl'); p.add_argument('--workers', type=int, choices=range(1, 5), default=4); p.add_argument('--limit', type=int, default=10_000)
     p = sub.add_parser('extract-llm'); p.add_argument('--workers', type=int, choices=range(1, 3), default=2); p.add_argument('--limit', type=int, default=10_000); p.add_argument('--retry-errors', action='store_true', help='clear recorded llm: errors and retry those sites')
     sub.add_parser('propose')
+    sub.add_parser('propose-logos', help='derive logo-endorser names from image filenames (no vision model)')
     p = sub.add_parser('apply-review'); p.add_argument('file', type=Path)
     sub.add_parser('logo-report')
     p = sub.add_parser('attach'); p.add_argument('--dataset', type=Path, default=DATASET); p.add_argument('--output', type=Path, required=True)
@@ -532,6 +650,7 @@ def main():
         elif args.command == 'crawl': result = crawl(db, args.workers, args.limit)
         elif args.command == 'extract-llm': result = extract_llm(db, args.workers, args.limit, args.retry_errors)
         elif args.command == 'propose': result = propose(db)
+        elif args.command == 'propose-logos': result = propose_logos(db)
         elif args.command == 'apply-review': result = apply_review(db, args.file)
         elif args.command == 'logo-report': result = logo_report(db)
         elif args.command == 'attach': result = attach(db, args.dataset, args.output)

@@ -66,7 +66,12 @@ def build_state(campaign_url, candidate_lines):
                       'Each question below is about ONE entry quoted inside it; judge only that entry.'])
 
 
-def q_instructions(e):
+def q_instructions(e, gate='quote_verified'):
+    if gate == 'filename_gate':
+        return (f'The campaign site displays an endorsement logo image whose filename names '
+                f'"{e["endorser"]}". The campaign chose this filename; the logo itself is not readable here. '
+                f'Is a named organization/official with this name plausibly endorsing this candidate, '
+                f'or does the name look like page furniture (staff photo, event, generic asset)?')
     return (f'This page entry — "{e["endorser"]}" (kind {e.get("kind","unspecified")}) '
             f'quote from the page: "{e["quote"]}" — is it an endorsement of this candidate?')
 
@@ -90,7 +95,7 @@ def main():
     rows = candidates_from_data(json.loads(DATASET.read_text()))
     todo_sites = [r['site_key'] for r in db.execute(
         '''SELECT DISTINCT p.site_key FROM proposals p
-           WHERE p.gate='quote_verified' AND p.proposal_id NOT IN (SELECT proposal_id FROM jev_triage)
+           WHERE p.gate IN ('quote_verified','filename_gate') AND p.proposal_id NOT IN (SELECT proposal_id FROM jev_triage)
            ORDER BY p.site_key''')]
     if args.limit_sites:
         todo_sites = todo_sites[:args.limit_sites]
@@ -100,18 +105,18 @@ def main():
         task = db.execute('SELECT * FROM tasks WHERE site_key=?', (site_key,)).fetchone()
         cand_lines = [f"{rows[i]['name']} ({rows[i].get('office','?')})" for i in json.loads(task['candidacy_ids']) if i in rows]
         props = [dict(p) for p in db.execute(
-            "SELECT proposal_id, record_json FROM proposals WHERE site_key=? AND gate='quote_verified' "
+            "SELECT proposal_id, record_json, gate FROM proposals WHERE site_key=? AND gate IN ('quote_verified','filename_gate') "
             'AND proposal_id NOT IN (SELECT proposal_id FROM jev_triage)', (site_key,))]
         if not props:
             continue
-        entries = [(f'q{n}', p['proposal_id'], json.loads(p['record_json'])) for n, p in enumerate(props)]
+        entries = [(f'q{n}', p['proposal_id'], json.loads(p['record_json']), p['gate']) for n, p in enumerate(props)]
         for start in range(0, len(entries), CHUNK):
-            chunk = entries[start:start + CHUNK]
-            questions = {qid: {'type': 'choice', 'instructions': q_instructions(rec),
-                               'criteria': CRITERIA} for qid, _, rec in chunk}
+            chunk = entries[start:start + CHUNK]  # (qid, proposal_id, record, gate)
+            questions = {qid: {'type': 'choice', 'instructions': q_instructions(rec, gate),
+                               'criteria': CRITERIA} for qid, _, rec, gate in chunk}
             resp = post(build_state(task['campaign_url'], cand_lines), questions, key)
             calls += 1
-            for qid, pid, rec in chunk:
+            for qid, pid, rec, gate in chunk:
                 a = (resp.get('answers') or {}).get(qid) or {}
                 probs = a.get('probabilities') or {}
                 p_end = float(probs.get('endorsement', 0.0))
