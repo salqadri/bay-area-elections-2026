@@ -11,7 +11,7 @@
       "description": "Relative link to the companion schema file, intended to reside beside this dataset."
     },
     "schema_version": {
-      "const": "1.15"
+      "const": "1.16"
     },
     "election": {
       "type": "object",
@@ -1286,7 +1286,7 @@
         "url",
         "checked_on"
       ],
-      "description": "A cited current-cycle endorsement, preference, opposition, recommendation or other support observation. These relations are not interchangeable. Source support ratings belong to the named source, not this site. A primary observation is not automatically a general-election recommendation.",
+      "description": "A cited endorsement, preference, opposition, recommendation or support observation. Historical records retain prior-race context in a required note. These relations are not interchangeable; source ratings belong to the publisher. A primary observation is not automatically a general-election recommendation.",
       "properties": {
         "endorser": {
           "type": "string",
@@ -1359,6 +1359,10 @@
         "shared": {
           "const": true,
           "description": "The source explicitly calls this a shared/joint endorsement; omitted otherwise."
+        },
+        "historical": {
+          "const": true,
+          "description": "Explicitly retained from a prior race or different office under the historical-endorsement policy. The required note preserves the source office/year where available; omit when no historical context is established. No renewal research is required."
         }
       },
       "allOf": [
@@ -1451,6 +1455,19 @@
                 "const": "endorsed"
               }
             }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "historical"
+            ]
+          },
+          "then": {
+            "required": [
+              "verification",
+              "note_id"
+            ]
           }
         }
       ]

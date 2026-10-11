@@ -83,6 +83,9 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('search','Manisha Pathak');assert(text('panel-candidates').includes('Supported by Dr. Romesh Japra'));
   assert(text('panel-candidates').includes('Endorsed by Americans4Hindus'));
   assert(!text('panel-candidates').includes('Endorsed by Dr. Romesh Japra'));
+  reset();set('search','Murali Srinivasan');assert(text('panel-candidates').includes('Endorsed by Hindu American PAC'));assert(text('panel-candidates').includes('Historical record (prior race)'));assert(text('panel-candidates').includes('2022 candidacy'));assert(!text('panel-candidates').includes('(2026 cycle)'));
+  reset();set('search','Yang Shao');assert(text('panel-candidates').includes('Endorsed by Hindu American PAC'));assert(text('panel-candidates').includes('Fremont City Council'));assert(text('panel-candidates').includes('not an office-specific endorsement'));
+  reset();set('search','Kevin Mullin');assert(text('panel-candidates').includes('Supported by United Democracy Project'));assert(text('panel-candidates').includes('Historical record (prior race)'));assert(!text('panel-candidates').includes('Endorsed by AIPAC PAC'));
   reset();set('search','Scott Wiener');assert(text('panel-candidates').includes('January 1, 2023'));assert(text('panel-candidates').includes('not verified as a January 2025 onward subtotal'));
   reset();set('search','CD-16');assert(text('panel-candidates').includes('$400.00'));
   $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,'2026-10-06');assert.equal(fundedExport.positions[0].candidates[1].fec.receipts,400);
