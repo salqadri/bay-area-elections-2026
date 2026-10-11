@@ -1,6 +1,10 @@
 # Research and development handoff
 
-## Latest proposed update — October 10, 2026: priority PAC review
+## Latest published update — October 11, 2026: campaign-site endorsement scan
+
+Dataset **schema 1.17**, publication version `2026-10-11.1`. Every printed candidacy with a known campaign site was crawled (366 sites; 15 bot-walled/TLS/JS-only failures remain explicit limitations), scanned by LM Studio `qwen/qwen3.8-27b` for endorsement sections, mechanically quote-gated against cached snapshots, and triaged entry-by-entry by the TypeSafe Jev decision model. **4,452 accepted campaign claims on 250 candidacies** joined the dataset — total coverage is now **4,841 records under 371 of 869 printed candidacies**. All new records carry `verification: campaign_claim`, an explanatory per-site note and (where published as a mark) display-only `logo_url`; 7,161 lower-confidence proposals stay in the local ledger for human review. No vision model was used; logo-only endorsements without readable names became 76 review leads, never guesses. See [the scan review](reviews/2026-10-11-campaign-site-scan.md) for pipeline commands, calibration findings (Jev entries must ride in each question's instructions) and limits. Schema 1.17 also adds `election.publication_version`, shown in both page footers as the dated release marker.
+
+## Previous proposed update — October 10, 2026: priority PAC review
 
 This review branch adds historical Hindu American PAC endorsements for Murali Srinivasan (source biography identifies 2022 Sunnyvale District 3) and Yang Shao (source office is Fremont City Council, with the same verified campaign URL). It also adds AIPAC-reported United Democracy Project support for Kevin Mullin in 2022. There are **389 recommendation records under 199 candidacies**, including three explicitly historical records. Gaza evidence remains 245 items under 82 candidacies. Ballot/finance dates and official rosters are unchanged.
 

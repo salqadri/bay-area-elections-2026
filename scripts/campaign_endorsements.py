@@ -31,6 +31,7 @@ import threading
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import quote, urlsplit, urlunsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from endorsement_extract import candidates_from_data, clean_url, norm, page_from_html, uid  # noqa: E402
@@ -382,6 +383,12 @@ def propose(db):
             # A logo URL is display-only: accept it only when it exactly matches an
             # image src from the captured inventory — either named via alt text or
             # chosen by the extractor from that same inventory (never invented URLs).
+            def encode_src(u):
+                # raw HTML srcs can contain spaces; percent-encode the path so the
+                # schema's URI pattern accepts them without changing the target.
+                parts = urlsplit(u.strip())
+                return urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%:@&=+$,-_.!~*'()"),
+                                   parts.query, parts.fragment))
             known_srcs = set()
             for page_row in db.execute('SELECT page_json FROM pages WHERE site_key=?', (r['site_key'],)):
                 images = json.loads(page_row['page_json']).get('images', [])
@@ -389,12 +396,12 @@ def propose(db):
                 match = next((img for img in images
                               if norm(endorser) and norm(endorser) in norm(img.get('alt') or '')), None)
                 if match:
-                    record['logo_url'] = match['src'][:300]
+                    record['logo_url'] = encode_src(match['src'])[:300]
                     break
             else:
                 model_logo = str(item.get('logo_image_url') or '')
                 if model_logo and model_logo in known_srcs:
-                    record['logo_url'] = model_logo[:300]
+                    record['logo_url'] = encode_src(model_logo)[:300]
             pid = uid('P-', target, norm(endorser))
             cur = db.execute('INSERT OR REPLACE INTO proposals(proposal_id,site_key,candidacy_id,record_json,gate,created_at) VALUES(?,?,?,?,?,?)',
                              (pid, r['site_key'], target, dump(record), gate, now()))
