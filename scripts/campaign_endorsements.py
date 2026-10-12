@@ -324,12 +324,37 @@ def lms(prompt, timeout=1500):
     return body['choices'][0]['message'].get('content') or ''
 
 
+def _salvage_json(blob):
+    """Best-effort recovery from malformed model JSON (unescaped inner quotes in long
+    endorsement lists, mid-object truncation). Every recovered entry still passes the
+    mechanical quote gate and Jev triage, so salvage can only under-claim, not invent."""
+    endorsements = []
+    marks = list(re.finditer(r'"endorser"\s*:\s*"([^"]{2,100})"', blob))
+    for j, m in enumerate(marks):
+        chunk = blob[m.end(): marks[j + 1].start() if j + 1 < len(marks) else min(len(blob), m.end() + 500)]
+        kind_m = re.search(r'"kind"\s*:\s*"([a-z_]+)"', chunk)
+        quote_m = re.search(r'"quote"\s*:\s*"([^"]{1,240})', chunk)  # tolerate unterminated value
+        logo_m = re.search(r'"logo_image_url"\s*:\s*"([^"]+)"', chunk)
+        endorsements.append({'endorser': m.group(1), 'kind': kind_m.group(1) if kind_m else 'unspecified',
+                             'quote': (quote_m.group(1) if quote_m else '') or m.group(1),
+                             **({'logo_image_url': logo_m.group(1)} if logo_m else {})})
+    logos = [{'image_url': u} for u in re.findall(r'(?<!logo_)"image_url"\s*:\s*"([^"]+)"', blob)]
+    if not endorsements and not logos:
+        raise ValueError('no recoverable objects in malformed JSON')
+    return {'endorsements': endorsements, 'unidentified_logos': logos,
+            'has_endorsement_section': bool(endorsements), 'notes': 'salvaged from malformed model JSON'}
+
+
 def extract_json(text):
     text = re.sub(r'^```(?:json)?|```$', '', text.strip(), flags=re.M).strip()
     start, end = text.find('{'), text.rfind('}')
     if start == -1 or end <= start:
         raise ValueError('no JSON object in model output')
-    return json.loads(text[start:end + 1])
+    blob = text[start:end + 1]
+    try:
+        return json.loads(blob)
+    except json.JSONDecodeError:
+        return _salvage_json(blob)
 
 
 def site_dossier(db, key):
