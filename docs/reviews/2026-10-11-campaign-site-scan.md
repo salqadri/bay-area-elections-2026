@@ -1,6 +1,6 @@
-# Campaign-website endorsement scan — review (October 11, 2026)
+# Campaign-website endorsement scan — review (October 11, 2026; extended October 12)
 
-**Result: +4,857 campaign-claim endorsement records on ~300 candidacies across 254 campaign sites.** Dataset moves to schema **1.17** with publication version `2026-10-11.2`. Total endorsement coverage is now **374 of 869 printed candidacies carrying 5,247 records**.
+**Result: +7,058 campaign-claim endorsement records on ~310 candidacies across 381 campaign sites.** Dataset moves to schema **1.17** with publication version `2026-10-11.3`. Total endorsement coverage is now **383 of 869 printed candidacies carrying 7,448 records**.
 
 ## What ran
 
@@ -20,16 +20,19 @@
 
 ## Limits / what remains uncertain
 
-- 15 campaign sites could not be read from this environment (bot-wall/TLS/JS); their endorsement state is unknown, not empty. A real-browser pass can revisit them later.
-- The held 7,161 proposals are extraction candidates Jev did not confidently classify; they need human review before any future publication.
+- ~~15 campaign sites could not be read~~ **Recovered October 12:** browser-UA retry + Internet Archive fallbacks are built into `crawl`, and `scripts/render_failed_sites.py` renders JS-only/bot-walled sites with headless Chromium (per-site context isolation; media-blocked retry for renderer-crashing animated sites). All 381 known campaign sites are now crawled.
+- **Oversized endorsement walls silently returned nothing** from the model (prompt overflow) — fixed October 12: prompts over 45K chars split into a text pass + an image pass, doubled alt-text is deduped, and malformed JSON from long outputs is salvaged entry-by-entry. This recovered 20 sites including Connie Chan's CD-11 page (Pelosi, Schiff, Boxer, Khanna + union wall) and Ben Allen's 414-endorser page; every recovered entry still passes the quote gate and Jev triage.
+- The ~11,300 held proposals are extraction candidates Jev did not confidently classify; they need human review before any future publication.
 - Named private individuals (`kind: other`) inherit the campaign's own framing; titles shown are identification-only.
 - Logo images hot-link from campaign sites (display evidence only); if a site removes an image, the endorsement record and its text quote remain intact.
 
 ## Reproduce / extend
 
 ```sh
-sh scripts/run_campaign_scan.sh                 # resumable crawl + extract pass
+sh scripts/run_campaign_scan.sh                 # resumable crawl (+render fallback) + extract pass
+python3 scripts/render_failed_sites.py          # headless-Chromium render of JS-only sites (needs playwright)
 python3 scripts/campaign_endorsements.py propose
+python3 scripts/campaign_endorsements.py propose-logos   # logo-filename endorsements
 TYPESAFE_API_KEY=*** python3 scripts/jev_review_proposals.py   # writes decisions JSON
 python3 scripts/campaign_endorsements.py apply-review .research/endorsements/review/campaign-jev-decisions.json
 python3 scripts/campaign_endorsements.py attach --output <candidate-dataset>
