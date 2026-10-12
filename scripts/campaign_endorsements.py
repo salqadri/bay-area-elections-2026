@@ -31,7 +31,7 @@ import threading
 import time
 import urllib.error
 import urllib.request
-from urllib.parse import quote, urlsplit, urlunsplit
+from urllib.parse import quote as _uri_quote, urlsplit, urlunsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from endorsement_extract import candidates_from_data, clean_url, norm, page_from_html, uid  # noqa: E402
@@ -446,7 +446,7 @@ def extract_llm(db, workers, limit, retry_errors=False):
         image_lines = _image_lines(images) or '(none recorded)'
         combined = PROMPT.format(candidates=dump(briefs), text=text, images=image_lines)
         try:
-            if len(combined) <= 60_000:  # fits the model context in one call
+            if len(combined) <= 45_000:  # fits the model context in one call
                 result = run(combined)
             else:
                 # Oversized sites (long endorsement walls + big image inventories) overflow the
@@ -542,7 +542,7 @@ def propose(db):
                 # raw HTML srcs can contain spaces; percent-encode the path so the
                 # schema's URI pattern accepts them without changing the target.
                 parts = urlsplit(u.strip())
-                return urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%:@&=+$,-_.!~*'()"),
+                return urlunsplit((parts.scheme, parts.netloc, _uri_quote(parts.path, safe="/%:@&=+$,-_.!~*'()"),
                                    parts.query, parts.fragment))
             known_srcs = set()
             for page_row in db.execute('SELECT page_json FROM pages WHERE site_key=?', (r['site_key'],)):
@@ -670,7 +670,7 @@ def propose_logos(db):
 
 def encode_src_global(u):
     parts = urlsplit(u.strip())
-    return urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%:@&=+$,-_.!~*'()"),
+    return urlunsplit((parts.scheme, parts.netloc, _uri_quote(parts.path, safe="/%:@&=+$,-_.!~*'()"),
                        parts.query, parts.fragment))
 
 
