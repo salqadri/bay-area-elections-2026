@@ -6,7 +6,7 @@ An independent research inventory and searchable, static explorer of elected off
 
 **Research snapshot: October 4, 2026.** Publication does not refresh or recertify the underlying research.
 
-**FEC fundraising snapshot: October 6, 2026.** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date.
+**FEC fundraising snapshot: checked October 12, 2026.** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date. A scheduled weekly refresh re-checks receipts and independent expenditures through November 3.
 
 ## Development and agent handoff
 
@@ -71,7 +71,7 @@ The optional estimate download has the distinct format `bay-area-ballot-estimate
 
 All **22 printed federal candidates** have an FEC ID and a finance record. **20** have published total receipts; **Jeff Frese and Charles Hoelter** have `receipts: null` because their FEC candidate summaries did not publish a total. Null is not a reported zero.
 
-`candidate.fec` holds the candidate ID, `receipts`, coverage `from` and `through` dates, authorized `committee_ids` when available, a `source_id`, and an optional `note_id`. Shared `finance` settings record the provider, 2026 cycle, USD currency, total-receipts metric, October 6 retrieval date, and method once rather than repeating them for every candidate. Amounts are in dollars to cent precision.
+`candidate.fec` holds the candidate ID, `receipts`, coverage `from` and `through` dates, authorized `committee_ids` when available, a `source_id`, and an optional `note_id`. Shared `finance` settings record the provider, 2026 cycle, USD currency, total-receipts metric, October 12 retrieval date, and method once rather than repeating them for every candidate. Amounts are in dollars to cent precision.
 
 Receipts are copied from FEC candidate summaries, with Lofgren's current principal-committee summary corroborating her candidate summary. They include contributions, transfers, loans, offsets, and other receipts, so they are not net donations or cash on hand. Independent outside spending is excluded. Candidate aggregate totals are used without adding committee totals again; reported transfers are not manually removed. FEC candidate IDs are distinct from committee IDs and OCD geographic identifiers.
 

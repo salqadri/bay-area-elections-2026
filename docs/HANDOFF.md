@@ -65,7 +65,7 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | Election | November 3, 2026 California general election |
 | County scope | Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara |
 | Ballot research snapshot | October 4, 2026 |
-| FEC research snapshot | October 6, 2026; individual financial coverage dates differ |
+| FEC research snapshot | Checked October 12, 2026 (weekly refresh through November 3); individual financial coverage dates differ |
 | Schema | Inventory version 1.11, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`, `gaza_evidence`; evidence `date` is required and calendar-valid, with optional `date_method`/`date_note`) |
 | Endorsements (new) | **741 of 869 printed candidacies** carry cited current-cycle `endorsements` records (884 total; schema 1.12 `$defs.endorsementRecord`) from verified endorser pages, collected October 9 via `scripts/research_endorsements.py`; snapshot at `research/endorsements/endorsements-export-2026-10-09.json`. Ongoing: bot-walled platforms and ~128 candidacies still uncovered |
 | X accounts / sites | 135 printed entries (135 distinct names) with X URLs; 27 are explicitly probable matches. 10 secondary X URLs; 383 candidate-specific campaign/official URLs retained after five generic homepage claims were removed. |

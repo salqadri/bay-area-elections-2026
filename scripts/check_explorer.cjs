@@ -6,6 +6,8 @@ const root = path.resolve(__dirname, '..') + path.sep;
 const generated = path.join(root, '.checks') + path.sep;
 const fixture = JSON.parse(fs.readFileSync(generated + 'explorer_dom_fixture.json'));
 const original = JSON.parse(fs.readFileSync(root + '2026-11-03_Bay_Area_Elections.json'));
+// Mirror the page's own long-date rendering so refreshes of finance.checked_on never break this harness.
+const checkedLong = new Date(original.finance.checked_on).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
 let activeElement, downloads = [];
 class Element {
   constructor(tag, attrs = {}) { this.tagName=tag.toUpperCase(); this.attrs={...attrs}; this.children=[];this.events={};this.dataset={};this.hidden='hidden' in attrs;this.open='open' in attrs;this.checked=false;this.scrollTop=0;this._value=attrs.value;this.parent=null; for(const [k,v] of Object.entries(attrs)) if(k.startsWith('data-'))this.dataset[k.slice(5).replace(/-([a-z])/g,(_,s)=>s.toUpperCase())]=v; }
@@ -70,7 +72,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   set('search','AD-18');assert.equal(count(),1);assert(groups().every(n=>n.open));assert(visible(cards()[0]));
   reset();$('collapse-sections').click();const city=original.positions.find(p=>p.government_level==='City or town'&&p.ballot_status==='confirmed');location.hash='#id='+city.id;window.events.hashchange();assert.equal(cards().find(c=>c.dataset.contestId===city.id).getAttribute('aria-pressed'),'true');assert(visible(cards().find(c=>c.dataset.contestId===city.id)));
   set('sort','jurisdiction');assert.equal(groups().length,0);assert($('group-controls').hidden);set('sort','level');assert(groups().length>0);
-  reset();set('search','CD-8');assert(text('panel-candidates').includes('$489,134.65'));assert(text('panel-candidates').includes('$20,073.00'));assert(text('panel-candidates').includes('September 30, 2026'));assert(text('panel-candidates').includes('October 6, 2026'));
+  reset();set('search','CD-8');assert(text('panel-candidates').includes('$489,134.65'));assert(text('panel-candidates').includes('$20,073.00'));assert(text('panel-candidates').includes('September 30, 2026'));assert(text('panel-candidates').includes(checkedLong));
   assert(text('panel-candidates').includes('Endorsed by JStreetPAC'));
   assert(text('panel-candidates').includes('Supported by California Jewish Democrats · Source rating: Support'));
   assert(!text('panel-candidates').includes('Endorsed by California Jewish Democrats'));
@@ -92,7 +94,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   const moneyDetails=all().filter(n=>n.tagName==='DETAILS'&&n.children.some(c=>typeof c==='object'&&(c.className==='ie-spend'||c.className==='fundraising')));assert(moneyDetails.length>0,'Campaign money must render inside a collapsible details block');assert(moneyDetails.every(d=>!d.open),'The campaign money section must start collapsed');
   reset();set('search','Jeff Frese');assert(text('panel-candidates').includes('No itemized independent expenditures reported for or against this candidate in the current cycle.'));
   reset();set('search','CD-16');assert(text('panel-candidates').includes('$400.00'));
-  $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,'2026-10-06');assert.equal(fundedExport.positions[0].candidates[1].fec.receipts,400);
+  $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,original.finance.checked_on);assert.equal(fundedExport.positions[0].candidates[1].fec.receipts,400);
   for(const county of original.election.counties_in_scope.map(c=>c.name)){reset();set('county',county);assert.equal(count(),original.positions.filter(p=>p.ballot_status==='confirmed'&&p.counties.includes(county)).length);}
   reset();set('county','San Mateo');set('search','CD-15');assert.equal(count(),1);assert(text('panel-candidates').includes('Kevin Mullin'));assert(text('detail-meta').includes('San Francisco + San Mateo'));
   reset();set('county','San Francisco');set('search','Ruth Ferguson');assert.equal(count(),1);assert(text('detail-meta').includes('Special election'));

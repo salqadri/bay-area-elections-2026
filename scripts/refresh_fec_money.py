@@ -49,8 +49,11 @@ def sh(*cmd, check=True):
     return result
 
 
-def fec_totals(key, committee_id):
-    url = ("https://api.open.fec.gov/v1/committee/" + committee_id + "/totals/?"
+def fec_totals(key, candidate_id):
+    """Candidate-level cycle totals — aggregates across all authorized committees,
+    the same source shape as the original ingestion (committee-level totals would
+    undercount multi-committee candidates like John McBride)."""
+    url = ("https://api.open.fec.gov/v1/candidate/" + candidate_id + "/totals/?"
            + urllib.parse.urlencode({"cycle": 2026, "api_key": key}))
     with urllib.request.urlopen(url, timeout=45) as response:
         results = json.load(response).get("results") or []
@@ -94,10 +97,9 @@ def main():
             continue
         for candidate in position.get("candidates") or []:
             fec = candidate.get("fec") or {}
-            committees = fec.get("committee_ids") or []
-            if not fec.get("id"):
+            if not isinstance(fec, dict) or not fec.get("id"):
                 continue
-            totals = fec_totals(key, committees[0]) if committees else None
+            totals = fec_totals(key, fec["id"])
             receipts = (totals or {}).get("receipts")
             start = str((totals or {}).get("coverage_start_date") or "")[:10]
             end = str((totals or {}).get("coverage_end_date") or "")[:10]
