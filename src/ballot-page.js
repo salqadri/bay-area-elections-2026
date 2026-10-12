@@ -345,6 +345,8 @@
       codes: DATA.codes,
       defaults: DATA.defaults,
       finance: DATA.finance,
+      ie_finance: DATA.ie_finance,
+      ie_spenders: DATA.ie_spenders,
       notes: DATA.notes,
       sources: DATA.sources
     };

@@ -64,6 +64,37 @@ for candidate in federal_candidates:
         if int(f['from'][:4]) < data['finance']['cycle'] - 1:
             assert f.get('note_id'), 'Coverage outside the nominal cycle requires an explanatory note'
 assert len(fec_ids) == len(set(fec_ids)), 'Unexpected duplicate FEC candidate ID'
+
+# Independent expenditures: arithmetic, registry resolution and cycle conventions.
+ie_cfg = data.get('ie_finance')
+if ie_cfg is not None:
+    assert ie_cfg['provider'] == 'FEC' and ie_cfg['metric'] == 'independent_expenditures'
+    assert data['sources'][ie_cfg['source_id']]['url'].startswith('https://api.open.fec.gov/'), 'IE source must be the FEC API'
+    registered = data.get('ie_spenders', {})
+    for candidate in federal_candidates:
+        ie = candidate.get('independent_expenditures')
+        if ie is None:
+            continue
+        assert set(ie) <= {'for_total', 'against_total', 'items'}, candidate['name']
+        for direction in ('for_total', 'against_total'):
+            amount = Decimal(str(ie[direction]))
+            assert amount >= 0 and amount == amount.quantize(Decimal('0.01')), (candidate['name'], direction)
+        spenders = {}
+        for item in ie['items']:
+            assert item['amount'] > 0, candidate['name']
+            assert item['direction'] in ('for', 'against'), candidate['name']
+            assert item['spender_id'] in registered, (candidate['name'], item['spender_id'])
+            key = (item['spender_id'], item['direction'])
+            assert key not in spenders, 'Duplicate spender-direction row: ' + str(key)
+            spenders[key] = Decimal(str(item['amount']))
+        for direction, total_key in (('for', 'for_total'), ('against', 'against_total')):
+            summed = sum((a for (s, d), a in spenders.items() if d == direction), Decimal('0'))
+            assert Decimal(str(ie[total_key])) == summed.quantize(Decimal('0.01')), (candidate['name'], total_key)
+        # A candidate with no activity carries an empty itemization and zero totals.
+        if not ie['items']:
+            assert ie['for_total'] == 0 and ie['against_total'] == 0, candidate['name']
+    for spender_id, meta in registered.items():
+        assert meta.get('name'), spender_id
 state_categories = [p['office_category'] for p in positions if p['government_level'] == 'State']
 assert state_categories[0] == 'State Senate'
 assert max(i for i, c in enumerate(state_categories) if c == 'State Senate') < min(i for i, c in enumerate(state_categories) if c == 'State Assembly')
@@ -85,6 +116,9 @@ expected = {
     "printed_candidates_with_gaza_evidence": sum(bool(c.get("gaza_evidence")) for c in printed),
     "printed_candidates_with_endorsements": sum(bool(c.get("endorsements")) for c in printed),
     "printed_candidates_with_campaign_url": sum("campaign_url" in c for c in printed),
+    "printed_candidates_with_independent_expenditures": sum(
+        (c.get("independent_expenditures") or {}).get("for_total", 0)
+        + (c.get("independent_expenditures") or {}).get("against_total", 0) > 0 for c in printed),
 }
 for key, value in expected.items():
     assert data["coverage"][key] == value, (key, data["coverage"][key], value)

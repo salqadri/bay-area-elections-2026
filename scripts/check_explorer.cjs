@@ -87,6 +87,9 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('search','Yang Shao');assert(text('panel-candidates').includes('Endorsed by Hindu American PAC'));assert(text('panel-candidates').includes('Fremont City Council'));assert(text('panel-candidates').includes('not an office-specific endorsement'));
   reset();set('search','Kevin Mullin');assert(text('panel-candidates').includes('Supported by United Democracy Project'));assert(text('panel-candidates').includes('Historical record (prior race)'));assert(!text('panel-candidates').includes('Endorsed by AIPAC PAC'));
   reset();set('search','Scott Wiener');assert(text('panel-candidates').includes('January 1, 2023'));assert(text('panel-candidates').includes('not verified as a January 2025 onward subtotal'));
+  assert(text('panel-candidates').includes('Independent outside spending · FEC 2026 cycle'));assert(text('panel-candidates').includes('For: $2,423,360.28'));assert(text('panel-candidates').includes('Against: $233,400.22'));
+  assert(all().some(n=>n.className==='ie-name'&&n.textContent.includes('EQUALITY PAC')));assert(!text('panel-candidates').includes('For: $12,514,624.05'));
+  reset();set('search','Jeff Frese');assert(text('panel-candidates').includes('No itemized independent expenditures reported for or against this candidate in the current cycle.'));
   reset();set('search','CD-16');assert(text('panel-candidates').includes('$400.00'));
   $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,'2026-10-06');assert.equal(fundedExport.positions[0].candidates[1].fec.receipts,400);
   for(const county of original.election.counties_in_scope.map(c=>c.name)){reset();set('county',county);assert.equal(count(),original.positions.filter(p=>p.ballot_status==='confirmed'&&p.counties.includes(county)).length);}

@@ -49,6 +49,8 @@ negative_cases = {
     "invalid_calendar_date": lambda d: d["election"].update(date="2026-02-30"),
     "bad_fec_candidate_id": lambda d: d['positions'][0]['candidates'][0]['fec'].update(id='C00462697'),
     "negative_fec_receipts": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=-1),
+    "ie_bad_direction": lambda d: next(c for p in d['positions'] if p.get('government_level')=='Federal' for c in p['candidates'] or [] if c.get('independent_expenditures',{}).get('items'))['independent_expenditures']['items'][0].update(direction='opposed'),
+    "ie_unknown_field": lambda d: next(c for p in d['positions'] if p.get('government_level')=='Federal' for c in p['candidates'] or [] if c.get('independent_expenditures',{}).get('items'))['independent_expenditures'].update(coordinated=True),
     "fec_amount_as_string": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts='$100'),
     "fec_amount_missing_cutoff": lambda d: d['positions'][0]['candidates'][0]['fec'].pop('through'),
     "fec_unknown_with_coverage_dates": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=None),
@@ -119,6 +121,11 @@ for relation in ['preferred', 'opposed']:
 gaza_ev_dated = mutated(lambda d: d["positions"][0]["candidates"][0].update(gaza_evidence=[{"id":"GE-9101","date":"2025-06","url":"https://example.com/statement","summary":"Candidate called for an immediate ceasefire in a public statement.","dimension":"actions_votes","checked_on":"2026-10-08","date_method":"wayback_first_capture","date_note":"Earliest Wayback capture containing the claim; month is an upper bound."}]))
 assert not check(gaza_ev_dated, SCHEMA), "Partial dates with explicit dating method and note must remain valid"
 
+ie_positive = mutated(lambda d: d["positions"][0]["candidates"][0].update(independent_expenditures={"for_total":1500.0,"against_total":0.0,"items":[{"spender_id":"C00550970","direction":"for","amount":1500.0,"items":3}]}))
+assert not check(ie_positive, SCHEMA), "A candidate independent-expenditure snapshot with registered spender rows must be valid"
+ie_empty = mutated(lambda d: d["positions"][0]["candidates"][0].update(independent_expenditures={"for_total":0.0,"against_total":0.0,"items":[]}))
+assert not check(ie_empty, SCHEMA), "A zero-activity independent-expenditure snapshot must remain valid"
+
 
 # Guide snapshots are intentionally different from dated historical statements.
 guide = next(r for p in DATA['positions'] for c in p.get('candidates') or [] for r in c.get('gaza_evidence', []) if r.get('date_method') == 'source_observed')
@@ -141,7 +148,7 @@ report = {
     "positions_checked": len(DATA["positions"]),
     "schema_assertion_keywords_checked": sorted(SEEN & ASSERTIONS),
     "negative_cases": outcomes,
-    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item", "gaza evidence partial date with dating method and note", "candidate endorsement record with source page", "historical endorsement with provenance and context", "source support rating with provenance and note", "source preference", "source opposition", "source Ally classification", "dated guide observation"],
+    "positive_cases": ["current dataset", "additional registered party", "additional researched county", "empty filtered view", "confirmed ballot with unverified roster", "retention ballot with unverified roster", "reported zero FEC receipts", "candidate x_url profile link", "candidate campaign_url website link", "candidate secondary_x_url second account", "candidate gaza_evidence dated item", "gaza evidence partial date with dating method and note", "candidate endorsement record with source page", "historical endorsement with provenance and context", "source support rating with provenance and note", "source preference", "source opposition", "source Ally classification", "dated guide observation", "candidate independent-expenditure snapshot", "zero-activity independent-expenditure snapshot"],
     "additional_validation_required": ["source/note/party reference targets", "unique position IDs and county names", "county registry membership", "coverage summary arithmetic", "standard Draft 2020-12 validator verification when available"],
 }
 
