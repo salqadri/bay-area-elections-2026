@@ -43,7 +43,7 @@ DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 LMS_URL = os.environ.get('LMS_URL', 'http://192.168.0.66:11434/v1/chat/completions')
 MODEL = os.environ.get('CAMPAIGN_MODEL', 'qwen/qwen3.8-27b')
 MAX_TEXT = 18_000          # page text bound per model call
-MAX_IMAGES = 60            # image inventory entries per model call
+MAX_IMAGES = 120           # image inventory entries per model call (big endorsement pages list 100+)
 KINDS = {'party', 'union', 'media', 'organization', 'official', 'other', 'unspecified'}
 GPU_SLOTS = threading.Semaphore(2)   # LM Studio Parallel/Max Concurrent Predictions = 2
 DB_LOCK = threading.Lock()           # serialize SQLite writes from worker threads
@@ -159,11 +159,83 @@ def fetch_page_with_images(fetcher, url):
     return page
 
 
-def crawl_site(db, fetcher, task):
+BROWSER_UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+              '(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36')
+
+
+class BrowserFetcher(Fetcher):
+    """Same guards as Fetcher but presents a standard browser identity — some
+    campaign hosts serve bot UAs an empty shell or 403 while browsers get the site."""
+
+    _ua_lock = threading.Lock()
+
+    def request(self, url, payload=None, key=None):
+        import research_endorsements
+        with BrowserFetcher._ua_lock:
+            saved = research_endorsements.USER_AGENT
+            research_endorsements.USER_AGENT = BROWSER_UA
+            try:
+                return super().request(url, payload=payload, key=key)
+            finally:
+                research_endorsements.USER_AGENT = saved
+
+
+def _page_from_raw(raw, final):
+    html = raw.decode('utf-8-sig', errors='replace')
+    page = page_from_html(html, final)
+    if len(page['text'].strip()) < 40:
+        raise ValueError('Little readable text; a browser lookup may be needed')
+    page['final_url'] = final
+    page['images'] = images_from_html(html, final)[:120]
+    return page
+
+
+def wayback_page(fetcher, url):
+    """Most recent Internet Archive capture of this exact URL as a parsed page."""
+    cdx = ('http://web.archive.org/cdx/search/cdx?url=' + urllib.parse.quote(url, safe='')
+           + '&output=json&filter=statuscode:200&limit=-3')
+    try:
+        raw, _mime, _final = fetcher.request(cdx)
+        rows = json.loads(raw.decode('utf-8', 'ignore'))[1:]
+    except Exception:  # noqa: BLE001 - archive is best-effort
+        return None
+    for ts, original in sorted(((r[1], r[2]) for r in rows), reverse=True):
+        try:
+            # id_ suffix = exact archived bytes without Wayback's injected chrome
+            snap = f'https://web.archive.org/web/{ts}id_/{original}'
+            raw, _mime, _f = fetcher.request(snap)
+            page = _page_from_raw(raw, url)  # keep final_url schema-clean; capture noted separately
+            page['capture'] = f'Internet Archive {ts}'
+            return page
+        except Exception:  # noqa: BLE001 - try older captures
+            continue
+    return None
+
+
+def fetch_page_any(fetcher, browser_fetcher, url):
+    """Bot identity first; on failure retry as a standard browser, then the most
+    recent Internet Archive capture. Provenance of archive reads is kept in final_url."""
+    last: Exception | None = None
+    for f in (fetcher, browser_fetcher):
+        try:
+            return fetch_page_with_images(f, url)
+        except Exception as exc:  # noqa: BLE001 - fall through to the next identity/archive
+            last = exc
+    try:
+        page = wayback_page(fetcher, url)
+    except Exception as exc:  # noqa: BLE001
+        page, last = None, exc
+    if page is not None:
+        return page
+    raise last or ValueError('Little readable text; a browser lookup may be needed')
+
+
+def crawl_site(db, fetcher, task, browser_fetcher=None):
     key, root_url = task['site_key'], task['campaign_url']
     pages = {}
     try:
-        page = fetch_page_with_images(fetcher, root_url)
+        page = (fetch_page_any(fetcher, browser_fetcher or fetcher, root_url)
+                if browser_fetcher else fetch_page_with_images(fetcher, root_url))
     except (Blocked,) as e:
         with DB_LOCK:
             db.execute('UPDATE tasks SET state=?,error=?,observed_at=? WHERE site_key=?', ('blocked', str(e)[:300], now(), key))
@@ -189,7 +261,8 @@ def crawl_site(db, fetcher, task):
         if child_host != host or child in pages or NOISE_LINK.search(label) or not ENDORSE_LINK.search(label):
             continue
         try:
-            sub = fetch_page_with_images(fetcher, child)
+            sub = (fetch_page_any(fetcher, browser_fetcher, child)
+                   if browser_fetcher else fetch_page_with_images(fetcher, child))
         except Exception:  # noqa: BLE001
             continue
         pages[clean_url(sub.get('final_url') or child)] = sub
@@ -208,9 +281,10 @@ def crawl_site(db, fetcher, task):
 def crawl(db, workers, limit):
     tasks = [dict(r) for r in db.execute("SELECT * FROM tasks WHERE state IN ('pending','error') ORDER BY site_key LIMIT ?", (limit,))]
     fetcher = Fetcher()
+    browser_fetcher = BrowserFetcher()
     totals = {'ok': 0, 'unchanged': 0, 'error': 0, 'blocked': 0}
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        for result in pool.map(lambda t: crawl_site(db, fetcher, t), tasks):
+        for result in pool.map(lambda t: crawl_site(db, fetcher, t, browser_fetcher), tasks):
             totals[result] = totals.get(result, 0) + 1
     return {'processed': len(tasks), **totals}
 
@@ -240,7 +314,7 @@ Return ONLY a JSON object:
 {{"endorsements":[{{"endorser":"...","kind":"...","quote":"...","logo_image_url":"..."}}],"unidentified_logos":[{{"image_url":"...","note":"..."}}],"has_endorsement_section":true,"notes":""}}'''
 
 
-def lms(prompt, timeout=420):
+def lms(prompt, timeout=1500):
     payload = {'model': MODEL, 'temperature': 0, 'reasoning_effort': 'medium',
                'messages': [{'role': 'user', 'content': prompt}]}
     with GPU_SLOTS:
@@ -281,6 +355,44 @@ def candidate_brief(db, key, rows):
     return task, briefs
 
 
+def _alt_dedup(alt):
+    """Collapse exact doubled alt text ('Nancy Pelosi Nancy Pelosi' -> 'Nancy Pelosi')."""
+    words = (alt or '').split()
+    half = len(words) // 2
+    if half and words[:half] == words[half:2 * half]:
+        return ' '.join(words[:half])
+    return alt or ''
+
+
+def _image_lines(images):
+    lines = []
+    for i in images:
+        alt = _alt_dedup(i.get('alt'))
+        nearby = (i.get('nearby') or '') if not alt else ''  # alt alone is enough; saves prompt budget
+        lines.append(f"- src: {i['src']} | alt: {alt} | nearby: {nearby}")
+    return '\n'.join(lines)
+
+
+def _merge_results(a, b):
+    out = {'endorsements': [], 'unidentified_logos': [], 'has_endorsement_section': False, 'notes': ''}
+    seen = set()
+    for part in (a, b):
+        if not isinstance(part, dict):
+            continue
+        for e in part.get('endorsements') or []:
+            if not isinstance(e, dict) or not e.get('endorser'):
+                continue
+            k = norm(e['endorser'])
+            if k not in seen:
+                seen.add(k)
+                out['endorsements'].append(e)
+        for logo in part.get('unidentified_logos') or []:
+            if isinstance(logo, dict) and logo.get('image_url'):
+                out['unidentified_logos'].append(logo)
+        out['has_endorsement_section'] = out['has_endorsement_section'] or bool(part.get('has_endorsement_section'))
+    return out
+
+
 def extract_llm(db, workers, limit, retry_errors=False):
     rows = candidates_from_data(json.loads(DATASET.read_text()))
     if retry_errors:
@@ -296,11 +408,29 @@ def extract_llm(db, workers, limit, retry_errors=False):
             pages, text, images = site_dossier(db, key)
         if not text.strip():
             return key, 'empty'
-        image_lines = '\n'.join(f"- src: {i['src']} | alt: {i['alt']} | nearby: {i['nearby']}" for i in images) or '(none recorded)'
-        prompt = PROMPT.format(candidates=dump(briefs), text=text, images=image_lines)
+
+        def run(prompt):
+            last_exc: Exception | None = None
+            for _ in range(3):  # big pages sometimes yield truncated/invalid JSON; retry
+                try:
+                    return extract_json(lms(prompt))
+                except Exception as e:  # noqa: BLE001
+                    last_exc = e
+            raise last_exc  # type: ignore[misc]
+
+        image_lines = _image_lines(images) or '(none recorded)'
+        combined = PROMPT.format(candidates=dump(briefs), text=text, images=image_lines)
         try:
-            raw = lms(prompt)
-            result = extract_json(raw)
+            if len(combined) <= 60_000:  # fits the model context in one call
+                result = run(combined)
+            else:
+                # Oversized sites (long endorsement walls + big image inventories) overflow the
+                # model context and return empty; split into a text pass and an image pass.
+                text_pass = PROMPT.format(candidates=dump(briefs), text=text, images='(none recorded — handled in a second pass)')
+                img_pass = PROMPT.format(candidates=dump(briefs),
+                                         text=text[:6000] + '\n[page text trimmed here; endorsement names may appear in the IMAGE INVENTORY alt/nearby text]',
+                                         images=image_lines)
+                result = _merge_results(run(text_pass), run(img_pass))
         except Exception as e:  # noqa: BLE001 - leave the task un-extracted for resume
             with DB_LOCK:
                 db.execute('UPDATE tasks SET error=? WHERE site_key=?', (('llm:' + str(e))[:300], key))
