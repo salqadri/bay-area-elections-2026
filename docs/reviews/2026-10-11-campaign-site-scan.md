@@ -1,6 +1,6 @@
 # Campaign-website endorsement scan — review (October 11, 2026; extended October 12)
 
-**Result: +7,058 campaign-claim endorsement records on ~310 candidacies across 381 campaign sites.** Dataset moves to schema **1.17** with publication version `2026-10-11.3`. Total endorsement coverage is now **383 of 869 printed candidacies carrying 7,448 records**.
+**Result: +12,743 campaign-claim endorsement records on ~315 candidacies across 381 campaign sites.** Dataset moves to schema **1.17** with publication version `2026-10-11.4`. Total endorsement coverage is now **387 of 869 printed candidacies carrying 13,133 records**.
 
 ## What ran
 
@@ -22,7 +22,8 @@
 
 - ~~15 campaign sites could not be read~~ **Recovered October 12:** browser-UA retry + Internet Archive fallbacks are built into `crawl`, and `scripts/render_failed_sites.py` renders JS-only/bot-walled sites with headless Chromium (per-site context isolation; media-blocked retry for renderer-crashing animated sites). All 381 known campaign sites are now crawled.
 - **Oversized endorsement walls silently returned nothing** from the model (prompt overflow) — fixed October 12: prompts over 45K chars split into a text pass + an image pass, doubled alt-text is deduped, and malformed JSON from long outputs is salvaged entry-by-entry. This recovered 20 sites including Connie Chan's CD-11 page (Pelosi, Schiff, Boxer, Khanna + union wall) and Ben Allen's 414-endorser page; every recovered entry still passes the quote gate and Jev triage.
-- The ~11,300 held proposals are extraction candidates Jev did not confidently classify; they need human review before any future publication.
+- A page-context rule (October 12) recovered 5,759 entries where Jev said `endorsement` below the 0.75 bar but both the endorser name and its quote appear verbatim on the campaign's own endorsements/support page — mechanical evidence of campaign intent; each still carries its quote and per-site note.
+- The remaining ~5,500 held proposals are extraction candidates Jev did not classify as endorsements; they need human review before any future publication.
 - Named private individuals (`kind: other`) inherit the campaign's own framing; titles shown are identification-only.
 - Logo images hot-link from campaign sites (display evidence only); if a site removes an image, the endorsement record and its text quote remain intact.
 
