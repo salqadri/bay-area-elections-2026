@@ -33,6 +33,7 @@ Aggregation rules (also recorded in the published ie_finance.method):
 import argparse
 import json
 import os
+import re
 import sqlite3
 import sys
 import time
@@ -158,6 +159,22 @@ def current_cycle_types(cycle: int):
     return {f"P{cycle}", f"G{cycle}", f"R{cycle}"}
 
 
+def spender_source_url(spender_id: str, name: str) -> str:
+    """FEC committee page when a committee ID exists; FEC data search otherwise."""
+    if re.fullmatch(r"C[0-9]{8}", spender_id):
+        return f"https://www.fec.gov/data/committee/{spender_id}/"
+    return ("https://www.fec.gov/data/search/?search="
+            + urllib.parse.quote_plus((name or spender_id).strip()))
+
+
+def candidate_browse_url(candidate_id: str, cycle: int) -> str:
+    """FEC independent-expenditure browse page filtered to this candidate/cycle."""
+    return ("https://www.fec.gov/data/independent-expenditures/?"
+            + urllib.parse.urlencode({
+                "data_type": "processed", "candidate_id": candidate_id,
+                "min_date": f"{cycle - 1}-01-01", "max_date": f"{cycle}-12-31"}))
+
+
 def cmd_plan(args, db):
     data = json.loads(DATASET.read_text(encoding="utf-8"))
     entries = eligible(data, scope_counties(args))
@@ -276,7 +293,8 @@ def aggregate(db, cycle: int):
             "for_total": float(sum((Decimal(str(i["amount"])) for i in items if i["direction"] == "for"), Decimal("0"))),
             "against_total": float(sum((Decimal(str(i["amount"])) for i in items if i["direction"] == "against"), Decimal("0"))),
             "items": items, "excluded": excluded,
-            "registry": {k: {"name": v["name"], "committee_type": v["committee_type"]}
+            "registry": {k: {"name": v["name"], "committee_type": v["committee_type"],
+                             "source_url": spender_source_url(k, v["name"])}
                          for k, v in spenders.items()},
         }
     return out
@@ -313,7 +331,8 @@ def cmd_attach(args):
             existing = registry.get(key)
             if existing and existing["name"] != meta["name"]:
                 raise SystemExit(f"Spender id {key} already registered with a different name.")
-            registry[key] = {"name": meta["name"], "committee_type": meta["committee_type"]}
+            registry[key] = {"name": meta["name"], "committee_type": meta["committee_type"],
+                             "source_url": spender_source_url(key, meta["name"])}
 
     attached = 0
     federal_seen = set()
@@ -329,6 +348,7 @@ def cmd_attach(args):
             if agg is None:
                 raise SystemExit(f"No cached IE data for {candidate['name']} ({fec_id}); run first.")
             candidate["independent_expenditures"] = {
+                "browse_url": candidate_browse_url(fec_id, args.cycle),
                 "for_total": round(agg["for_total"], 2),
                 "against_total": round(agg["against_total"], 2),
                 "items": agg["items"],

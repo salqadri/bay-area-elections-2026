@@ -75,7 +75,9 @@ if ie_cfg is not None:
         ie = candidate.get('independent_expenditures')
         if ie is None:
             continue
-        assert set(ie) <= {'for_total', 'against_total', 'items'}, candidate['name']
+        assert set(ie) <= {'browse_url', 'for_total', 'against_total', 'items'}, candidate['name']
+        if ie.get('browse_url'):
+            assert ie['browse_url'].startswith('https://www.fec.gov/data/independent-expenditures/'), candidate['name']
         for direction in ('for_total', 'against_total'):
             amount = Decimal(str(ie[direction]))
             assert amount >= 0 and amount == amount.quantize(Decimal('0.01')), (candidate['name'], direction)
@@ -95,6 +97,7 @@ if ie_cfg is not None:
             assert ie['for_total'] == 0 and ie['against_total'] == 0, candidate['name']
     for spender_id, meta in registered.items():
         assert meta.get('name'), spender_id
+        assert meta['source_url'].startswith('https://www.fec.gov/data/'), (spender_id, meta.get('source_url'))
 state_categories = [p['office_category'] for p in positions if p['government_level'] == 'State']
 assert state_categories[0] == 'State Senate'
 assert max(i for i, c in enumerate(state_categories) if c == 'State Senate') < min(i for i, c in enumerate(state_categories) if c == 'State Assembly')

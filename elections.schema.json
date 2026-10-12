@@ -1709,6 +1709,10 @@
       }
      },
      "description": "One row per spender-direction combination; empty when no current-cycle expenditure is reported."
+    },
+    "browse_url": {
+     "$ref": "#/$defs/url",
+     "description": "FEC independent-expenditure browse page filtered to this candidate for the shared cycle."
     }
    }
   },
@@ -1716,7 +1720,8 @@
    "type": "object",
    "additionalProperties": false,
    "required": [
-    "name"
+    "name",
+    "source_url"
    ],
    "description": "Shared registry of independent-expenditure spenders keyed by FEC committee ID (or name fallback).",
    "properties": {
@@ -1725,6 +1730,10 @@
     },
     "committee_type": {
      "type": "string"
+    },
+    "source_url": {
+     "$ref": "#/$defs/url",
+     "description": "FEC committee page for this spender, or an FEC data search URL when no committee ID exists."
     }
    }
   }

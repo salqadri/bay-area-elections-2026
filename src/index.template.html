@@ -171,8 +171,9 @@ function ieCard(ie){
   if(ie.against_total>0)totals.append(node('span','ie-against','Against: '+fmt.format(ie.against_total)));
   box.append(totals);
   const list=node('ul','ie-list');
-  for(const item of ie.items){const li=document.createElement('li');const spender=DATA.ie_spenders[item.spender_id];const name=node('span','ie-name',spender?spender.name:item.spender_id);if(spender&&spender.committee_type)name.append(node('span',null,' · '+spender.committee_type));li.append(name,node('span','ie-amt',(item.direction==='against'?'- ':'+ ')+fmt.format(item.amount)));list.append(li);}
+  for(const item of ie.items){const li=document.createElement('li');const spender=DATA.ie_spenders[item.spender_id];let name;if(spender&&spender.source_url){name=external(spender.source_url,spender.name,'inline-source');}else{name=node('span',null,spender?spender.name:item.spender_id);}if(spender&&spender.committee_type)name.append(node('span',null,' · '+spender.committee_type));li.append(name,node('span','ie-amt',(item.direction==='against'?'- ':'+ ')+fmt.format(item.amount)));list.append(li);}
   box.append(list);
+  if(ie.browse_url)box.append(external(ie.browse_url,'All independent expenditures for this candidate on FEC.gov ↗'));
   const src=DATA.sources[cfg.source_id];if(src)box.append(external(src.url,'View FEC source ↗'));
   box.append(node('p','ie-note',cfg.method));
   return box;

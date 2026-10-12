@@ -53,7 +53,7 @@ Do not move the global `election.research_as_of` date forward in a way that impl
 - Omit `party` for nonpartisan candidates. `NPP` is an official No Party Preference label for a partisan contest, not a generic substitute for no party field.
 - Emit `incumbent: true` only when supported; omit false. Omit unavailable optional URLs/notes rather than setting them to `null`.
 - Retention/confirmation contests use `election_type: "retention"`, `seats: 1`, `partisan: false`, and `ballot_responses: ["Yes", "No"]`. A known roster contains the single justice, not opposing candidates.
-- Qualified write-ins belong in `qualified_write_in_candidates`, with `qualified_date` and `source_ids` per candidate, plus the required contest-level write-in research/source dates and status. Absence of the field does not prove no write-ins exist. Do not mix write-ins into the printed roster count.
+- Qualified write-ins belong in `qualified_write_in_candidates`, with `qualified_date` and `source_ids` per candidate, plus the required contest-level write-in research/source dates and status. Absence of the field does not prove no write-ins exist. Do not mix write-ins into the printed roster count. *(Maintenance policy, October 12, 2026: write-in sweeps are deprioritized by user decision — they rarely affect the printed ballot or reader decisions. Existing records and their evidence stay unchanged; do not schedule new write-in research.)*
 - Ballot measures are outside this elected-office inventory. Party central committees, U.S. Senate, police-related offices, odd-year district cycles, and June-resolved offices must be included only when evidence establishes a relevant November contest; a category requested by the user is not evidence of an election.
 
 ## Geography, OCD IDs, and expansion
@@ -113,7 +113,7 @@ Snapshot from the committed inventory: **416** unique positions, **336** confirm
 | 4 | Audit **CA2026-204–224**, Alameda's 21 unresolved school/special-district contests, including shared **217** AC Transit Ward 1 and **219** Byron-Bethany Division III. | `S003` county election hub; `S243` and `S345` partisan-site filing reproductions (secondary evidence); contest-specific official district sources. |
 | 5 | Resolve **CA2026-225–228**, Santa Clara scheduled offices absent from the final qualified roster: Lion's Gate full and short terms, San Martin Water, Silver Creek Valley GHAD. | `S213` September 28 qualified-candidate PDF; `S214` scheduled-office notice; `N167`. |
 | 6 | Resolve **CA2026-302** Bayshore Elementary short term and **CA2026-308** Colma Fire. Scheduled but absent from the September 3 qualified roster. | `S356`, `S388` / `S362`, `S400`; `N218`, `N222`. |
-| 7 | Validate local electorate IDs and boundaries; refresh FEC summaries and write-in research with dated evidence. Expand to Marin, Napa, Solano, and Sonoma only with a new coverage audit. | Current `ocd_id_status`, `address_lookup` docs, federal `fec.source_id`, and county election resources. |
+| 7 | Validate local electorate IDs and boundaries; refresh FEC summaries with dated evidence (write-in refresh deprioritized October 12, 2026). Expand to Marin, Napa, Solano, and Sonoma only with a new coverage audit. | Current `ocd_id_status`, `address_lookup` docs, federal `fec.source_id`, and county election resources. |
 
 Preserve distinct full/short-term records when researching **CA2026-405/406** Kensington CSD. `S510` establishes three full-term seats plus one two-year vacancy seat; a seven-member board is not seven seats on this ballot (`N271`, `N272`).
 
