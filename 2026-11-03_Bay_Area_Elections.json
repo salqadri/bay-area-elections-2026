@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-12.4"
+  "publication_version": "2026-10-12.5"
  },
  "codes": {
   "party": {
@@ -73,11 +73,11 @@
  },
  "coverage": {
   "status": "research_inventory_with_explicit_unresolved_records",
-  "confirmed_contests": 336,
-  "confirmed_seats": 439,
-  "unresolved_scheduled_contests": 80,
-  "printed_candidate_entries": 869,
-  "confirmed_contests_missing_candidate_rosters": 1,
+  "confirmed_contests": 340,
+  "confirmed_seats": 443,
+  "unresolved_scheduled_contests": 25,
+  "printed_candidate_entries": 875,
+  "confirmed_contests_missing_candidate_rosters": 0,
   "positions_with_ocd_division_id": 188,
   "positions_with_ballotpedia_url": 320,
   "printed_candidates_with_ballotpedia_url": 633,
@@ -92,8 +92,8 @@
    "San Francisco and San Mateo were added using their official November candidate materials. Shared statewide, legislative, and judicial contests retain one record with multiple county names.",
    "Names remain in the printed-candidate roster when a campaign has ended but the name remains on the ballot. Such cases are explained in contest notes.",
    "The final San Francisco voter pamphlet determines resident-ballot coverage. Geographic-only intersections listed in the statewide subdivisions table do not establish an additional contest for county residents.",
-   "Contra Costa County was added by auditing all 19 municipalities, the county’s scheduled school and special-district inventory, and the federal, state and judicial ballot lists. Unopposed scheduled contests remain unverified where final on-ballot inclusion or cancellation could not be established.",
-   "The full Contra Costa August 27 final on-ballot proof PDF could not be retrieved. Its indexed header and first contest were available; other contests use linked official city/district materials, candidate statements and corroborating election coverage. The Contra Costa inventory is therefore not certified exhaustive.",
+   "Contra Costa County was added by auditing all 19 municipalities, the county's scheduled school and special-district inventory, and the federal, state and judicial ballot lists. On October 12, 2026 every local Contra Costa record was reconciled against the county's certified August 14 candidate list and the exhaustive August 27 Contest/Candidate Proof List of contests on the ballot; unopposed filers elected at certification are recorded as excluded (confirmed not printed), with their names retained under provisional filing.",
+   "The full Contra Costa August 27 final on-ballot proof PDF was retrieved October 12, 2026 and archived in research/contra_costa/ alongside the certified August 14 candidate list; both are cited as S1087/S1088. The earlier partial-materials caveat is retired for ballot-inclusion purposes: Contra Costa local contests now rest on the county's own exhaustive proof, not corroboration. Unverified local OCD identifiers remain a separate limitation.",
    "Contra Costa county officers and Superior Court Position Q were resolved in June without November runoffs; no regular U.S. Senate, odd-numbered Contra Costa State Senate, or party central committee election is included for November 2026. Richmond mayor has a runoff; its June-resolved council seats are omitted.",
    "Shared Contra Costa/Alameda contests retain their existing IDs, including CD-10, AD-14, AD-16, EBMUD Wards 3 and 7, Livermore Valley Joint Unified Trustee Area 3, and scheduled AC Transit Ward 1 and Byron-Bethany Division III. County presence does not imply countywide voter eligibility.",
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
@@ -59935,23 +59935,29 @@
    "seats": 1,
    "term": "2 years (partial term)",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
      "name": "Michael J. Mandy",
-     "incumbent": true
+     "incumbent": true,
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S437",
     "S438",
-    "S439"
+    "S439",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N237"
+    "N237",
+    "N885"
    ],
    "ocd_division_id": "ocd-division/country:us/state:ca/place:antioch",
    "jurisdiction_ocd_division_id": "ocd-division/country:us/state:ca/place:antioch",
@@ -98725,15 +98731,17 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": false,
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Nancy Parent",
      "incumbent": true,
-     "ballotpedia_url": "https://ballotpedia.org/Nancy_Parent_(Pittsburg_City_Treasurer,_California,_candidate_2026)"
+     "source_ids": [
+      "S1087",
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
@@ -98742,7 +98750,8 @@
     "S449"
    ],
    "note_ids": [
-    "N245"
+    "N245",
+    "N886"
    ],
    "ocd_division_id": "ocd-division/country:us/state:ca/place:pittsburg",
    "jurisdiction_ocd_division_id": "ocd-division/country:us/state:ca/place:pittsburg",
@@ -116593,28 +116602,29 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": false,
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
-   "ballotpedia_page_scope": "county_election_coverage",
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Dorothy Gantt",
      "incumbent": true,
      "source_ids": [
-      "S423"
+      "S1087",
+      "S1088"
      ]
     }
    ],
+   "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
+   "ballotpedia_page_scope": "county_election_coverage",
    "source_ids": [
     "S422",
     "S423",
     "S424"
    ],
    "note_ids": [
-    "N230"
+    "N230",
+    "N886"
    ],
    "ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
    "jurisdiction_ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
@@ -116929,28 +116939,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": false,
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
-   "ballotpedia_page_scope": "county_election_coverage",
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Viviana Toledo",
-     "incumbent": true,
      "source_ids": [
-      "S423"
+      "S1087",
+      "S1088"
      ]
     }
    ],
+   "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
+   "ballotpedia_page_scope": "county_election_coverage",
    "source_ids": [
     "S422",
     "S423",
     "S424"
    ],
    "note_ids": [
-    "N230"
+    "N230",
+    "N886"
    ],
    "ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
    "jurisdiction_ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
@@ -125929,15 +125939,17 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": false,
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Ronald Cassano",
      "incumbent": true,
-     "ballotpedia_url": "https://ballotpedia.org/Ronald_Cassano_(Walnut_Creek_City_Treasurer,_California,_candidate_2026)"
+     "source_ids": [
+      "S1087",
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
@@ -125946,7 +125958,8 @@
     "S456"
    ],
    "note_ids": [
-    "N249"
+    "N249",
+    "N886"
    ],
    "ocd_division_id": "ocd-division/country:us/state:ca/place:walnut_creek",
    "jurisdiction_ocd_division_id": "ocd-division/country:us/state:ca/place:walnut_creek",
@@ -128420,24 +128433,30 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Acalanes_Union_High_School_District,_California,_elections",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Jennifer Chen"
+     "name": "Jennifer Chen",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S483",
-    "S484"
+    "S484",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -128454,24 +128473,30 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Acalanes_Union_High_School_District,_California,_elections",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Nancy Jo Kendzierski"
+     "name": "Nancy Jo Kendzierski",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S483",
-    "S484"
+    "S484",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -129053,23 +129078,29 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Antioch_Unified_School_District,_California,_elections",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Roxanne Reece"
+     "name": "Roxanne Reece",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -130308,7 +130339,7 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -130316,22 +130347,34 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Kimberly Carpenter"
+     "name": "Kimberly Carpenter",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Kari Lynn Cross"
+     "name": "Kari Lynn Cross",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Elyssa Simone Cross"
+     "name": "Elyssa Simone Cross",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -131594,18 +131637,21 @@
    "seats": 3,
    "term": null,
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County,_California,_elections,_2026",
    "ballotpedia_page_scope": "county_election_coverage",
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N258"
+    "N258",
+    "N888"
    ],
    "ocd_id_status": "unverified"
   },
@@ -134385,7 +134431,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -134393,16 +134439,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Andy Li"
+     "name": "Andy Li",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -134462,7 +134514,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -134470,16 +134522,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Mike Maxwell"
+     "name": "Mike Maxwell",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -134496,7 +134554,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -134504,16 +134562,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Clyde Henry Lewis Jr."
+     "name": "Clyde Henry Lewis Jr.",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -140590,7 +140654,7 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -140598,20 +140662,35 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Katy Foreman"
+     "name": "Katy Foreman",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Robert Sturm"
+     "name": "Robert Sturm",
+     "source_ids": [
+      "S1088"
+     ]
+    },
+    {
+     "name": "Annette Mccormick",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S483",
-    "S484"
+    "S484",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -140628,23 +140707,29 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Liberty_Union_High_School_District,_California",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Susan Wallace"
+     "name": "Susan Wallace",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -140701,18 +140786,29 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Liberty_Union_High_School_District,_California",
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N256"
+    "N256",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Joseph J Magana",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-127",
@@ -141420,7 +141516,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -141428,16 +141524,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Brenda Ann Leal"
+     "name": "Brenda Ann Leal",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -141454,7 +141556,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -141462,16 +141564,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Tania E. Brugger"
+     "name": "Tania E. Brugger",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -142064,7 +142172,7 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -142072,20 +142180,29 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Larry Paul Jacobs"
+     "name": "Larry Paul Jacobs",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Martha Amen White"
+     "name": "Martha Amen White",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S483",
-    "S484"
+    "S484",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -143963,23 +144080,29 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "ballotpedia_url": "https://ballotpedia.org/Mount_Diablo_Unified_School_District,_California",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Debra Mason"
+     "name": "Debra Mason",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -145670,7 +145793,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -145678,16 +145801,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Ann Gieseke Corridon"
+     "name": "Ann Gieseke Corridon",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -145746,7 +145875,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -145754,16 +145883,22 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Paul Domenic Didonato"
+     "name": "Paul Domenic Didonato",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -149797,7 +149932,7 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -149805,22 +149940,34 @@
    "ballotpedia_page_scope": "county_election_coverage",
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Heliodoro Moreno Jr."
+     "name": "Heliodoro Moreno Jr.",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Destiny Briscoe"
+     "name": "Destiny Briscoe",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Susan Y. Sowels"
+     "name": "Susan Y. Sowels",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N256",
-    "N257"
+    "N257",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -160538,7 +160685,7 @@
    "seats": 1,
    "term": "Short term ending December 1, 2028",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "ocd_id_status": "unverified",
    "candidate_list_status": "unverified",
@@ -160547,7 +160694,10 @@
     {
      "name": "Harpreet Sandhu",
      "incumbent": true,
-     "ballotpedia_url": "https://ballotpedia.org/Harpreet_Sandhu"
+     "ballotpedia_url": "https://ballotpedia.org/Harpreet_Sandhu",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
@@ -160558,12 +160708,15 @@
     "S282",
     "S457",
     "S517",
-    "S518"
+    "S518",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N157",
     "N260",
-    "N281"
+    "N281",
+    "N885"
    ],
    "candidate_list_note_id": "N158"
   },
@@ -161285,28 +161438,40 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Trina Hudson"
+     "name": "Trina Hudson",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Mae Torlakson"
+     "name": "Mae Torlakson",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Lupe Lopez Garcia"
+     "name": "Lupe Lopez Garcia",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -161323,22 +161488,28 @@
    "seats": 1,
    "term": "2 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "A. J. Fardella"
+     "name": "A. J. Fardella",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -161355,18 +161526,35 @@
    "seats": 2,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
     "S457",
-    "S509"
+    "S509",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Bruce Smith",
+     "source_ids": [
+      "S1088"
+     ]
+    },
+    {
+     "name": "Vignesh Rama",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-391",
@@ -161381,17 +161569,28 @@
    "seats": 2,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Danny A Hamby",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-390",
@@ -161406,22 +161605,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Pete Petrovich"
+     "name": "Pete Petrovich",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -161439,7 +161644,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "ocd_id_status": "unverified",
    "candidate_list_status": "unverified",
@@ -161447,7 +161652,10 @@
    "filed_candidates_not_confirmed_on_ballot": [
     {
      "name": "Tim Maggiore",
-     "incumbent": true
+     "incumbent": true,
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
@@ -161456,12 +161664,15 @@
     "S348",
     "S349",
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N161",
     "N261",
-    "N282"
+    "N282",
+    "N885"
    ],
    "candidate_list_note_id": "N158"
   },
@@ -161478,17 +161689,34 @@
    "seats": 2,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Joseph Atturio",
+     "source_ids": [
+      "S1088"
+     ]
+    },
+    {
+     "name": "Jonathan Schimmel",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-393",
@@ -161503,17 +161731,28 @@
    "seats": 1,
    "term": "2 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Gary Bettencourt",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-185",
@@ -161658,22 +161897,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Florence Wedington"
+     "name": "Florence Wedington",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -161853,22 +162098,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Patricia Moore Young"
+     "name": "Patricia Moore Young",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -162440,17 +162691,28 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Nick Spinner",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-199",
@@ -162575,22 +162837,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Conan Moats"
+     "name": "Conan Moats",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -162607,22 +162875,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Paul Seger"
+     "name": "Paul Seger",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -162639,22 +162913,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Jason Shaw"
+     "name": "Jason Shaw",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -166062,25 +166342,31 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "John Joseph Mercurio"
+     "name": "John Joseph Mercurio",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S495",
     "S496",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
     "N269",
-    "N270"
+    "N270",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -166099,26 +166385,32 @@
    "election_type": "general",
    "ballot_status": "confirmed",
    "partisan": false,
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County%2C_California%2C_elections%2C_2026",
-   "ballotpedia_page_scope": "county_election_coverage",
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Colin J. Coffey",
      "incumbent": true,
      "source_ids": [
-      "S498"
+      "S1087",
+      "S1088"
      ]
     },
     {
      "name": "Inderprit \"Indy Rishi Singh\" Sekhon",
-     "ballotpedia_url": "https://ballotpedia.org/Inderprit_Sekhon"
-    },
+     "source_ids": [
+      "S1087",
+      "S1088"
+     ]
+    }
+   ],
+   "ballotpedia_url": "https://ballotpedia.org/Contra_Costa_County%2C_California%2C_elections%2C_2026",
+   "ballotpedia_page_scope": "county_election_coverage",
+   "filed_candidates_not_confirmed_on_ballot": [
     {
      "name": "Mushda Faiez",
      "source_ids": [
-      "S497"
+      "S497",
+      "S1088"
      ]
     }
    ],
@@ -166128,10 +166420,13 @@
     "S494",
     "S495",
     "S496",
-    "S497"
+    "S497",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N265"
+    "N265",
+    "N887"
    ],
    "candidate_list_note_id": "N266",
    "ocd_id_status": "unverified"
@@ -166149,22 +166444,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Michael Casey"
+     "name": "Michael Casey",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -166181,22 +166482,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Kenneth Smith"
+     "name": "Kenneth Smith",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -166418,17 +166725,40 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Todd Fitzsimmons",
+     "source_ids": [
+      "S1088"
+     ]
+    },
+    {
+     "name": "Paul Burgin",
+     "source_ids": [
+      "S1088"
+     ]
+    },
+    {
+     "name": "Katy Chanana",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-192",
@@ -167544,30 +167874,42 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Rodney Kenneth Paul"
+     "name": "Rodney Kenneth Paul",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Daniel Levine"
+     "name": "Daniel Levine",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Adam Bastein"
+     "name": "Adam Bastein",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S510",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
     "N269",
-    "N271"
+    "N271",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -167584,24 +167926,30 @@
    "seats": 1,
    "term": "2 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Alexandra Aquino-Fike"
+     "name": "Alexandra Aquino-Fike",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S510",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
     "N269",
-    "N272"
+    "N272",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -167998,24 +168346,30 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Greg Hasler"
+     "name": "Greg Hasler",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S483",
-    "S491"
+    "S491",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
     "N269",
-    "N273"
+    "N273",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -168110,17 +168464,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Jared Ruddell",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-385",
@@ -168170,17 +168535,28 @@
    "seats": 1,
    "term": "2 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N885"
    ],
-   "ocd_id_status": "unverified"
+   "ocd_id_status": "unverified",
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Caitlin B. Wiley-Walker",
+     "source_ids": [
+      "S1088"
+     ]
+    }
+   ]
   },
   {
    "id": "CA2026-195",
@@ -169061,15 +169437,18 @@
    "seats": 2,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
-    "S457"
+    "S457",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
-    "N268"
+    "N268",
+    "N888"
    ],
    "ocd_id_status": "unverified"
   },
@@ -169086,22 +169465,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Mark Foley"
+     "name": "Mark Foley",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -169270,28 +169655,37 @@
    "seats": 2,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Bill Brian Clarkson"
+     "name": "Bill Brian Clarkson",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Ryan Crean"
+     "name": "Ryan Crean",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
     "S511",
     "S512",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
     "N269",
-    "N274"
+    "N274",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -170021,7 +170415,7 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -170030,18 +170424,23 @@
      "name": "Dwight Merrill",
      "incumbent": true,
      "source_ids": [
-      "S515"
+      "S515",
+      "S1088"
      ]
     },
     {
-     "name": "Ted Lam"
+     "name": "Ted Lam",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
      "name": "Alex Borys",
      "incumbent": true,
      "source_ids": [
       "S515",
-      "S516"
+      "S516",
+      "S1088"
      ],
      "incumbency_note_id": "N277"
     }
@@ -170050,12 +170449,15 @@
     "S457",
     "S513",
     "S514",
-    "S515"
+    "S515",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
     "N275",
-    "N276"
+    "N276",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -170072,28 +170474,40 @@
    "seats": 3,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Bill Mayer"
+     "name": "Bill Mayer",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Kevin Graves"
+     "name": "Kevin Graves",
+     "source_ids": [
+      "S1088"
+     ]
     },
     {
-     "name": "Ashley Porter"
+     "name": "Ashley Porter",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -170160,22 +170574,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Arto Rinteela"
+     "name": "Arto Rinteela",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -170192,22 +170612,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "David Manuel Alvarado"
+     "name": "David Manuel Alvarado",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   },
@@ -170224,22 +170650,28 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "filed_candidates_not_confirmed_on_ballot": [
     {
-     "name": "Cheryl Sudduth"
+     "name": "Cheryl Sudduth",
+     "source_ids": [
+      "S1088"
+     ]
     }
    ],
    "source_ids": [
     "S457",
-    "S483"
+    "S483",
+    "S1087",
+    "S1088"
    ],
    "note_ids": [
     "N268",
-    "N269"
+    "N269",
+    "N885"
    ],
    "ocd_id_status": "unverified"
   }
@@ -171128,7 +171560,11 @@
   "N881": "Checked 2026-10-12: the campaign's own website names this supporter on its endorsement page. Captured by an automated scan of the campaign site and quoted verbatim from that snapshot; the claim is published by the campaign itself and has not been independently confirmed with the endorser.",
   "N882": "Checked 2026-10-12: the campaign's own website names this supporter on its endorsement page. Captured by an automated scan of the campaign site and quoted verbatim from that snapshot; the claim is published by the campaign itself and has not been independently confirmed with the endorser.",
   "N883": "Checked 2026-10-12: the campaign's own website names this supporter on its endorsement page. Captured by an automated scan of the campaign site and quoted verbatim from that snapshot; the claim is published by the campaign itself and has not been independently confirmed with the endorser.",
-  "N884": "Checked 2026-10-12: the campaign's own website names this supporter on its endorsement page. Captured by an automated scan of the campaign site and quoted verbatim from that snapshot; the claim is published by the campaign itself and has not been independently confirmed with the endorser."
+  "N884": "Checked 2026-10-12: the campaign's own website names this supporter on its endorsement page. Captured by an automated scan of the campaign site and quoted verbatim from that snapshot; the claim is published by the campaign itself and has not been independently confirmed with the endorser.",
+  "N885": "The county's final Contest/Candidate Proof List (printed August 27, 2026) enumerates every contest printed on the November 3 ballot and this contest is not among them. The certified August 14 candidate list shows its qualified filers; with no opposition remaining, those candidates were elected without a November ballot contest at certification.",
+  "N886": "The county's final Contest/Candidate Proof List (printed August 27, 2026) shows this contest ON BALLOT with one qualified candidate. A single-candidate contest can remain printed; the proof is the controlling record of ballot appearance.",
+  "N887": "The final proof list confirms Ward 7 on the ballot for one seat with two qualified candidates: Colin J. Coffey (appointed in lieu, incumbent) and Inderprit \"Indy Rishi Singh\" Sekhon. Mushda Faiez appears on earlier filing reports but is not among the two qualified candidates certified by August 14.",
+  "N888": "Scheduled by the county's pre-filing positions inventory, but this contest appears in neither the certified August 14 candidate list nor the exhaustive August 27 Contest/Candidate Proof List of contests on the ballot; no qualified candidates were certified for it. Treated as confirmed not printed rather than zeroed evidence."
  },
  "sources": {
   "S001": {
@@ -174971,6 +175407,14 @@
   "S1086": {
    "url": "https://api.open.fec.gov/developers/",
    "title": "FEC Application Programming Interface — Schedule E itemized independent expenditures (candidate H…, cycle 2026)"
+  },
+  "S1087": {
+   "url": "https://www.contracostavote.gov/wp-content/uploads/8-27-26_candidatelist_detail_final.pdf",
+   "title": "Contra Costa County Contest/Candidate Proof List — November 3, 2026 General Election, Contests On Ballot (CFMR001, printed 8/27/2026; Total Contests 58, Total Candidates Filed 171)"
+  },
+  "S1088": {
+   "url": "https://www.contracostavote.gov/wp-content/uploads/8-14-26_candidatelist_summary_final.pdf",
+   "title": "Contra Costa County Candidate List — November 3, 2026 General Election (CFMR011, printed 8/14/2026; Total Number of Candidates: 253)"
   }
  },
  "ie_finance": {

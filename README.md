@@ -16,7 +16,7 @@ Start with [AGENTS.md](AGENTS.md), which applies to Hermes and other coding/rese
 - [Election research guide](docs/RESEARCH.md): evidence standards, status decisions, source/ID conventions, FEC updates and a live unresolved-work queue command.
 - [Maintenance guide](docs/MAINTENANCE.md): architecture, local development, verification limits, county expansion and publishing.
 - [Repeatable county workflow](docs/REPEATABLE_RESEARCH.md): county/Bay Area/California plans, cached reruns, source review drafts, exact before/after updates and an immutable publication history.
-- [Endorsement research](docs/ENDORSEMENTS.md): cached collection, shared-source review and separately labeled support evidence. Current coverage: **13,133 records on 387 of 869 printed candidacies**, including the October 11–12 campaign-site scan (**+12,743 campaign claims**, page-text quotes plus logo filenames readable on each campaign's own site). See the [campaign-site scan review](docs/reviews/2026-10-11-campaign-site-scan.md), the [priority PAC review](docs/reviews/2026-10-10-priority-pac-review.md), the [Vote for Peace / AROC review](docs/reviews/2026-10-09-peace-guides.md), [CAIR correction](docs/reviews/2026-10-09-cair-action-correction.md), [captured recommendations](research/endorsements/cair-action-2026-10-09.json), and [earlier publication audit](docs/reviews/2026-10-09-targeted-endorsements.md).
+- [Endorsement research](docs/ENDORSEMENTS.md): cached collection, shared-source review and separately labeled support evidence. Current coverage: **13,133 records on 387 of 875 printed candidacies**, including the October 11–12 campaign-site scan (**+12,743 campaign claims**, page-text quotes plus logo filenames readable on each campaign's own site). See the [campaign-site scan review](docs/reviews/2026-10-11-campaign-site-scan.md), the [priority PAC review](docs/reviews/2026-10-10-priority-pac-review.md), the [Vote for Peace / AROC review](docs/reviews/2026-10-09-peace-guides.md), [CAIR correction](docs/reviews/2026-10-09-cair-action-correction.md), [captured recommendations](research/endorsements/cair-action-2026-10-09.json), and [earlier publication audit](docs/reviews/2026-10-09-targeted-endorsements.md).
 
 Use Git, Python 3 and Node.js. No npm/pip installation or API key is needed to build, serve or validate the site. The optional endorsement collector uses a Serper key for search; imported page lookups need no key. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
 
@@ -81,12 +81,12 @@ Receipts are copied from FEC candidate summaries, with Lofgren's current princip
 
 ## Coverage and limitations
 
-The snapshot contains **416 researched contests**, including **336 confirmed contests**, **439 confirmed seats**, **869 printed candidate entries**, and **80 unresolved scheduled contests**. One confirmed contest has an unverified candidate roster.
+The snapshot contains **416 researched contests**, including **340 confirmed contests**, **443 confirmed seats**, **875 printed candidate entries**, and **25 unresolved scheduled contests**. Every confirmed contest now carries a complete verified roster; 51 Contra Costa contests are recorded as excluded (confirmed not on the ballot) after reconciliation against the county's final certification files.
 
 | County | Confirmed contests | Unresolved scheduled contests |
 | --- | ---: | ---: |
-| Alameda | 117 | 21 |
-| Contra Costa | 83 | 55 |
+| Alameda | 117 | 19 |
+| Contra Costa | 87 | 0 |
 | San Francisco | 37 | 0 |
 | San Mateo | 89 | 2 |
 | Santa Clara | 100 | 4 |
@@ -95,7 +95,7 @@ County totals overlap: a shared district appears once in the data with multiple 
 
 **This inventory is not yet certified exhaustive.** Unresolved records describe scheduled contests whose final ballot inclusion or cancellation has not been established. They must not be treated as confirmed ballot contests. The explorer defaults to confirmed contests, labels uncertainty, and preserves the source and research-note registries.
 
-The full Contra Costa final on-ballot proof PDF could not be retrieved during research. That county uses the available official material and corroborating election coverage; many unopposed contests remain unresolved. See `coverage.limitations` and each contest's notes for the specific boundaries of the research.
+Contra Costa's local contests were reconciled on October 12, 2026 against the county's certified August 14 candidate list and its exhaustive August 27 Contest/Candidate Proof List (both archived under `research/contra_costa/` and cited as S1087/S1088). Contests absent from that on-ballot proof — including Canyon Elementary SD and Rodeo Sanitary District, which never appear in either file — are recorded as excluded with their filers retained separately; unopposed candidates elected at certification are named in the contest notes. See `coverage.limitations` for remaining boundaries.
 
 Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases. **135 printed candidate entries (135 people)** carry a separately verified official X account (`x_url`), **10 federal incumbents add a second verified account** (`secondary_x_url`, personal vs office handle) and **383 carry a verified campaign or official website** (`campaign_url`; five unverifiable generic-platform-homepage claims removed October 8), each with its own evidence source checked October 6–7, 2026. Verification confidence is recorded per entry in the cited source: most were confirmed against live profile text; **27 entries are explicitly "probable match" (indirect biographical evidence)** and their source titles say so — treat those as probable, not certain. Organization pages, same-name professionals and city-government sites are excluded. Most local candidates publish no findable account, and omission never means none exists.
 

@@ -103,17 +103,14 @@ County counts overlap. Their sum exceeds the number of unique positions. The che
 
 ## Research queue at handoff
 
-Snapshot from the committed inventory: **416** unique positions, **336** confirmed contests, **80** unresolved scheduled contests, and **869** printed candidate entries. Ballot research is dated October 4, 2026; finance is dated October 6. Regenerate this queue after edits.
+Snapshot from the committed inventory (October 12, 2026): **416** unique positions, **340** confirmed contests, **25** unresolved scheduled contests, and **875** printed candidate entries. Ballot research is dated October 4, 2026; Contra Costa local ballot inclusion was reconciled October 12 against the county's certified August 14 list and exhaustive August 27 proof (`research/contra_costa/`, S1087/S1088); finance is checked October 12. Regenerate this queue after edits.
 
 | Priority | Work and stable records | Starting evidence already in `sources` |
 | --- | --- | --- |
-| 1 | Resolve final printed roster for **CA2026-381**, East Bay Regional Park District Ward 7. Appearance is confirmed, but two-name and three-name reports conflict (`N265`, `N266`). | `S494` county candidate statement; `S495` district notice; `S496` post-filing guide; `S497` Ballotpedia. Obtain final county ballot proof. |
-| 2 | Retrieve Contra Costa final on-ballot proof and official cancellation/appointment determinations. **55** unresolved records intersect this county; the pre-filing schedule is not a final ballot. | `S457` county positions-up-for-election PDF. `S483` is an August 7 secondary filing report, not final proof. |
-| 3 | Resolve **CA2026-327** Antioch City Clerk partial term: proposed appointment/cancellation was not verified as adopted (`N237`). | `S437` final qualification list; `S438` August 20 agenda; `S439` later agenda item. |
-| 4 | Audit **CA2026-204–224**, Alameda's 21 unresolved school/special-district contests, including shared **217** AC Transit Ward 1 and **219** Byron-Bethany Division III. | `S003` county election hub; `S243` and `S345` partisan-site filing reproductions (secondary evidence); contest-specific official district sources. |
-| 5 | Resolve **CA2026-225–228**, Santa Clara scheduled offices absent from the final qualified roster: Lion's Gate full and short terms, San Martin Water, Silver Creek Valley GHAD. | `S213` September 28 qualified-candidate PDF; `S214` scheduled-office notice; `N167`. |
-| 6 | Resolve **CA2026-302** Bayshore Elementary short term and **CA2026-308** Colma Fire. Scheduled but absent from the September 3 qualified roster. | `S356`, `S388` / `S362`, `S400`; `N218`, `N222`. |
-| 7 | Validate local electorate IDs and boundaries; refresh FEC summaries with dated evidence (write-in refresh deprioritized October 12, 2026). Expand to Marin, Napa, Solano, and Sonoma only with a new coverage audit. | Current `ocd_id_status`, `address_lookup` docs, federal `fec.source_id`, and county election resources. |
+| 1 | Audit **CA2026-204–216, 218, 220–224**, Alameda's 19 unresolved school/special-district contests. Start with the same certified-list pattern that resolved Contra Costa: Alameda Registrar's final qualified-candidate list for November 3. | `S003` county election hub; contest-specific official district sources. |
+| 2 | Resolve **CA2026-225–228**, Santa Clara scheduled offices absent from the final qualified roster: Lion's Gate full and short terms, San Martin Water, Silver Creek Valley GHAD. | `S213` September 28 qualified-candidate PDF; `S214` scheduled-office notice; `N167`. |
+| 3 | Resolve **CA2026-302** Bayshore Elementary short term and **CA2026-308** Colma Fire. Scheduled but absent from the September 3 qualified roster. | `S356`, `S388` / `S362`, `S400`; `N218`, `N222`. |
+| 4 | Validate local electorate IDs and boundaries; refresh FEC summaries with dated evidence (write-in refresh deprioritized October 12, 2026). Expand to Marin, Napa, Solano, and Sonoma only with a new coverage audit. | Current `ocd_id_status`, `address_lookup` docs, federal `fec.source_id`, and county election resources. |
 
 Preserve distinct full/short-term records when researching **CA2026-405/406** Kensington CSD. `S510` establishes three full-term seats plus one two-year vacancy seat; a seven-member board is not seven seats on this ballot (`N271`, `N272`).
 

@@ -105,7 +105,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('search','SD-10');assert.equal(count(),1);assert(text('detail-subtitle').includes('SD-10'));
   reset();set('search','San Jose');assert(count()>0,'Accent-insensitive search');
   reset();set('county','Alameda');const expectedAlameda=original.positions.filter(p=>p.ballot_status==='confirmed'&&p.counties.includes('Alameda')).length;assert.equal(count(),expectedAlameda);
-  reset();set('county','Contra Costa');set('search','East Bay Regional Park District Ward 7');assert.equal(count(),1);assert(text('detail-status').includes('Confirmed on ballot'));assert(text('panel-candidates').includes('not verified'));assert(text('panel-candidates').includes('Mushda Faiez'));assert(cards()[0].textContent.includes('Roster unverified'));
+  reset();set('county','Contra Costa');set('search','East Bay Regional Park District Ward 7');assert.equal(count(),1);assert(text('detail-status').includes('Confirmed on ballot'));assert(text('panel-candidates').includes('Colin J. Coffey'));assert(text('panel-candidates').includes('Sekhon'));assert(cards()[0].textContent.includes('2 candidates'));assert(text('panel-candidates').includes('Mushda Faiez'));assert(text('panel-candidates').includes('Provisional filing names'));
   reset();set('county','Contra Costa');set('search','AD-11');assert.equal(count(),1);assert(text('panel-candidates').includes('No Party Preference'));
   reset();set('party','NPP');assert.equal(count(),2);
   reset();set('county','Contra Costa');set('search','AD-14');assert.equal(count(),1);assert(text('detail-meta').includes('Alameda + Contra Costa'));

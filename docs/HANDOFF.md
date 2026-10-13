@@ -1,6 +1,12 @@
 # Research and development handoff
 
-## Latest published update — October 12, 2026: federal independent-expenditure layer
+## Latest published update — October 12, 2026 (afternoon): Contra Costa final-ballot reconciliation
+
+Dataset **schema 1.18**, publication version `2026-10-12.5`. The long-missing Contra Costa final on-ballot proof was located and retrieved: the county's **Contest/Candidate Proof List** (CFMR001, printed 8/27/2026, header "Contests On Ballot", exhaustive — Total Contests 58 / Candidates 171) plus the certified **Candidate List** (CFMR011, printed 8/14/2026; 253 qualified candidates). Both PDFs are archived under `research/contra_costa/` and cited as sources **S1087/S1088**; note that contracostavote.gov serves these files at bare `/wp-content/uploads/` URLs that its own pages no longer link — the Wayback CDX index was how they were found.
+
+`research/contra_costa/apply_final_proof.py` (committed, re-runnable; asserts both parses equal the PDFs' stated totals before writing) reconciled every local Contra Costa record: contests present in the proof are **confirmed** with its roster (4 solo-candidate offices stayed printed); contests absent from that exhaustive list are **excluded — confirmed not on the ballot**, their unopposed filers elected at certification, names retained under provisional filing with dated notes (51 records, including Canyon Elementary SD and Rodeo Sanitary District which appear in neither file). **CA2026-381 EBRPD Ward 7 is resolved**: complete roster Colin J. Coffey (incumbent, appointed in lieu) + Inderprit "Indy Rishi Singh" Sekhon; Mushda Faiez remains recorded as filed-but-not-certified. A reverse audit confirmed all 53 previously-confirmed Contra Costa local contests appear in the county proof — no contradictions. Coverage after: **340 confirmed / 443 seats / 25 unresolved / 875 printed entries / 0 confirmed contests missing rosters**; Contra Costa is now fully resolved (0 unresolved). The same certified-list pattern is the recommended template for Alameda's remaining queue. `check_explorer.cjs` Ward 7 assertions and `check_address_matcher.cjs`'s county-fallback expectation were updated to the new states (excluded contests are hidden from voter results by design).
+
+## Previous published update — October 12, 2026: federal independent-expenditure layer
 
 Dataset **schema 1.18**, publication version `2026-10-12.2`. Every printed federal candidate now carries `independent_expenditures`: FEC Schedule E itemized outside spending for the 2026 two-year period, with **for/against totals and one row per spender** (name + committee type resolve through the new shared `ie_spenders` registry; shared settings in `ie_finance`, source S1086). Collection is fully deterministic — `scripts/fec_independent_expenditures.py` plan/run/export/attach against the FEC API, cached in `.research/ie/fec_ie.sqlite3` (never committed), resumable via `--refresh-days`. **The scope follows the dataset**: every printed candidate entry with a `fec.id` is eligible, so county expansion automatically extends this layer once federal candidates exist there; `--county/--scope` only narrow a refresh. No LLM or Jev call is involved — primary-source API data needs no model triage.
 
@@ -70,10 +76,10 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | Endorsements (new) | **741 of 869 printed candidacies** carry cited current-cycle `endorsements` records (884 total; schema 1.12 `$defs.endorsementRecord`) from verified endorser pages, collected October 9 via `scripts/research_endorsements.py`; snapshot at `research/endorsements/endorsements-export-2026-10-09.json`. Ongoing: bot-walled platforms and ~128 candidacies still uncovered |
 | X accounts / sites | 135 printed entries (135 distinct names) with X URLs; 27 are explicitly probable matches. 10 secondary X URLs; 383 candidate-specific campaign/official URLs retained after five generic homepage claims were removed. |
 | Gaza stance research | This review branch retains 231 items for 81 candidates after 44 manual rewrites and 69 documented quarantines (the 69th, Chan GE-0019, failed the deterministic relevance gate on post-merge reconciliation). All 300 input summaries have dispositions. Jev assessment is pending; see the post-enrichment review. |
-| Inventory | 416 researched contests; 336 confirmed, 80 unresolved |
-| Confirmed seats | 439 |
-| Printed candidate entries | 869; these are entries, not necessarily unique people |
-| Confirmed races with missing roster | 1: `CA2026-381`, East Bay Regional Park District Ward 7 |
+| Inventory | 416 researched contests; 340 confirmed, 25 unresolved, 51 Contra Costa records excluded (confirmed not on ballot) |
+| Confirmed seats | 443 |
+| Printed candidate entries | 875; these are entries, not necessarily unique people |
+| Confirmed races with missing roster | 0 (Ward 7 resolved October 12 against the county proof list) |
 | OCD electorate IDs | 188, all currently convention-based; not live API validated |
 | Federal finance | 22 printed candidates with FEC IDs; 20 totals, 2 unknown amounts |
 | Live address checks | Census and Photon requests were blocked in the original execution environment; fixture checks passed |
@@ -94,8 +100,8 @@ These are priorities for the next maintainer, not permission gates or claims tha
 
 ## Known research exceptions to preserve
 
-- The full Contra Costa August 27 final on-ballot proof PDF could not be retrieved during the prior research. Some official and corroborating material was available, but the county is not certified exhaustive. Retain uncertainty until the actual final evidence is checked.
-- EBRPD Ward 7 has confirmed ballot appearance but conflicting roster evidence. Its provisional names are stored separately; do not promote them all to a final roster by copying the filed list.
+- The Contra Costa August 27 final on-ballot proof PDF was retrieved October 12, 2026 (with the certified August 14 candidate list) and archived in `research/contra_costa/`, cited as S1087/S1088. All local Contra Costa ballot-inclusion questions are closed against it; unopposed filers elected at certification sit on excluded records with their names retained under provisional filing. Do not re-open these contests without new county evidence.
+- EBRPD Ward 7 (CA2026-381) roster conflict is resolved by the same proof: two qualified candidates (Coffey incumbent, Sekhon); Mushda Faiez stays recorded as filed-but-not-certified and must not be promoted to the printed roster.
 - Jeff Frese and Charles Hoelter have `fec.receipts: null`, with explanatory notes. These are unknown totals, not zero.
 - Scott Wiener's FEC summary has a coverage period beginning in 2023. Preserve the reported period and exception note; do not relabel the same amount as a 2025–2026 subtotal.
 - The inventory currently excludes ballot measures and is not a complete official sample ballot. Missing/unverified local IDs and unresolved scheduled elections are separate limitations.

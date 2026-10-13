@@ -43,7 +43,7 @@ const rowsFor = (result, predicate) => result.races.filter(row => predicate(row.
 const race = (result, id) => result.races.find(row => row.position.id === id);
 const ids = records => records.map(record => record.id).sort();
 const resultIds = rows => ids(rows.map(row => row.position));
-const countyPositions = county => positions.filter(position => position.counties.includes(county));
+const countyPositions = county => positions.filter(position => position.counties.includes(county) && position.ballot_status !== 'excluded');
 const sf = () => census({
   'Counties': [{ STATE: '06', COUNTY: '075', NAME: 'San Francisco County' }],
   'Incorporated Places': [{ STATE: '06', BASENAME: 'San Francisco', NAME: 'San Francisco city' }],
