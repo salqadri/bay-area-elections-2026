@@ -1,6 +1,10 @@
 # Research and development handoff
 
-## Latest published update — October 12, 2026 (afternoon): Contra Costa final-ballot reconciliation
+## Latest published update — October 12, 2026 (evening): endorsement dedupe
+
+The campaign-site scan had written duplicate endorsement records: one per logo *asset* rather than per endorser. `research/clean_duplicate_endorsements.py` (committed, re-runnable) removed **180 mechanically provable duplicates** — artifacts whose quote is a bare filename sharing a logo with a named sibling (112), abbreviation aliases like HAPAC→Hindu American PAC or BPOA→BART Police Officers Association (50), and named-vs-named pairs sharing one logo asset where one name contains the other, keeping the richer record (18). Artifacts without any sibling were kept (sole evidence); judgment-required pairs (e.g. IAFF Local 1974 vs Livermore-Pleasanton Firefighters) were deliberately left alone. Coverage: **12,953 records on 387 candidacies**; logo-bearing records now 1,877.
+
+## Previous published update — October 12, 2026 (afternoon): Contra Costa final-ballot reconciliation
 
 Dataset **schema 1.18**, publication version `2026-10-12.5`. The long-missing Contra Costa final on-ballot proof was located and retrieved: the county's **Contest/Candidate Proof List** (CFMR001, printed 8/27/2026, header "Contests On Ballot", exhaustive — Total Contests 58 / Candidates 171) plus the certified **Candidate List** (CFMR011, printed 8/14/2026; 253 qualified candidates). Both PDFs are archived under `research/contra_costa/` and cited as sources **S1087/S1088**; note that contracostavote.gov serves these files at bare `/wp-content/uploads/` URLs that its own pages no longer link — the Wayback CDX index was how they were found.
 
