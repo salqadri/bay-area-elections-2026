@@ -81,11 +81,11 @@ Receipts are copied from FEC candidate summaries, with Lofgren's current princip
 
 ## Coverage and limitations
 
-The snapshot contains **416 researched contests**, including **340 confirmed contests**, **443 confirmed seats**, **875 printed candidate entries**, and **25 unresolved scheduled contests**. Every confirmed contest now carries a complete verified roster; 51 Contra Costa contests are recorded as excluded (confirmed not on the ballot) after reconciliation against the county's final certification files.
+The snapshot contains **416 researched contests**, including **340 confirmed contests**, **443 confirmed seats**, **875 printed candidate entries**, and **6 unresolved scheduled contests**. Every confirmed contest now carries a complete verified roster; 51 Contra Costa contests are recorded as excluded (confirmed not on the ballot) after reconciliation against the county's final certification files, and 21 Alameda contests (including all 19 races resolved October 13 against the Registrar's official Candidate List for the November 3 General Election) are likewise excluded.
 
 | County | Confirmed contests | Unresolved scheduled contests |
 | --- | ---: | ---: |
-| Alameda | 117 | 19 |
+| Alameda | 117 | 0 |
 | Contra Costa | 87 | 0 |
 | San Francisco | 37 | 0 |
 | San Mateo | 89 | 2 |

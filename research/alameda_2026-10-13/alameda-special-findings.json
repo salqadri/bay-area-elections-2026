@@ -1,0 +1,173 @@
+{
+  "election": "Alameda County General Election - 11/03/2026",
+  "gold_standard_source": {
+    "title": "Candidate List — Registrar of Voters, Alameda County (Election: 'General Election - 11/03/2026 (Official)')",
+    "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+    "retrieval_method": "POST to https://alamedacountyca.gov/rov_app/candidatelist/ with electionId=260, categoryId=270 (Special Districts), raceId per race; each race panel prints an explicit Race Status label ('On Ballot' or 'Not On Ballot') plus the complete filing roster and a filings count",
+    "retrieved_on": "2026-10-13"
+  },
+  "findings": [
+    {
+      "contest_id": "CA2026-218",
+      "determination": "not_on_ballot",
+      "note": "Registrar's official Candidate List for the General Election 11/03/2026 (Official) labels race 'AC Transit District Director, Ward 7' with Race Status = Not On Ballot. Sole filing: DIANE SHAW (Filing Completed, Incumbent: N, Declaration of Candidacy filed 07/27/2026; '1 Filing'). The status label is an explicit official determination printed on the certified list — not an inference from absence. Corroborated by the county Voter Information Guide for Nov 3 2026, whose candidate-statement section includes only AC Transit Ward 3, Ward 4 and Ward 5 director races (no Ward 7). Consistent with Elections Code 10515 appointment-in-lieu for a sole candidate; no separate cancellation resolution was located.",
+      "evidence": [
+        {
+          "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+          "title": "Candidate List - Registrar of Voters - Alameda County (General Election - 11/03/2026, Official; race: AC Transit District Director, Ward 7)",
+          "quote": "General Election - 11/03/2026 (Official) AC Transit District Director, Ward 7 - Not On Ballot Vote For: 1 CANDIDATE ... DIANE SHAW AC Transit Board Director ... Filing Completed Filing Agency: Alameda County Incumbent: N ... Declaration of Candidacy File Date: 07/27/2026 ... 1 Filing",
+          "page": "Registrar candidate list search result (POST electionId=260&categoryId=270&raceId=61)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+          "title": "Alameda County Voter Information Guide, General Election November 3, 2026 (sha256 5b1e32e3b8faab472f2923ea17685035b4e8595e18ddf1f37c9fcd90a88fa0e3)",
+          "quote": "Candidate statements section headings present: 'AC TRANSIT DISTRICT DIRECTOR, WARD 3', 'AC TRANSIT DISTRICT DIRECTOR, WARD 4', 'AC TRANSIT DISTRICT DIRECTOR, WARD 5' — no Ward 7 race appears anywhere in the guide.",
+          "page": "Candidate statements section (pdftotext lines ~60458-60533)",
+          "retrieved_on": "2026-10-13"
+        }
+      ],
+      "roster": [
+        { "name": "DIANE SHAW", "party_if_shown": null, "incumbent_flag": "N" }
+      ]
+    },
+    {
+      "contest_id": "CA2026-220",
+      "determination": "not_on_ballot",
+      "note": "Registrar's official Candidate List for the General Election 11/03/2026 (Official) labels race 'Member, Board Of Directors, Dublin San Ramon, Area 4' with Race Status = Not On Ballot. Sole filing: GEORGEAN VONHEEDER-LEOPOLD (Filing Completed, Incumbent: Y, Declaration of Candidacy filed 07/29/2026; '1 Filing'). Explicit official status label on the certified list. Corroborating context: DSRSD's own elections page states Division 4 is scheduled for Nov 3 2026 and that when only one candidate files, 'the supervising authority appoints any person to the office who is qualified on the date when the election would have been held, per California Elections Code Section 10515' — consistent with appointment in lieu of election.",
+      "evidence": [
+        {
+          "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+          "title": "Candidate List - Registrar of Voters - Alameda County (General Election - 11/03/2026, Official; race: Member, Board Of Directors, Dublin San Ramon, Area 4)",
+          "quote": "Member, Board Of Directors, Dublin San Ramon, Area 4 - Not On Ballot Vote For: 1 CANDIDATE ... GEORGEAN VONHEEDER-LEOPOLD Incumbent ... Filing Completed Filing Agency: Alameda County Incumbent: Y ... Declaration of Candidacy File Date: 07/29/2026 ... 1 Filing",
+          "page": "Registrar candidate list search result (POST electionId=260&categoryId=270&raceId=72)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "http://web.archive.org/web/20260518061149/https://www.dsrsd.com/About-Us/Board-of-Directors/Elections",
+          "title": "Elections | Dublin San Ramon Services District (archived 2026-05-18)",
+          "quote": "Division 2 (southwest San Ramon) and Division 4 (central Dublin) will be up for election in the general election on Tuesday, November 3, 2026. ... [if only one candidate files / no candidate run for an office], the supervising authority appoints any person to the office who is qualified on the date when the election would have been held, per California Elections Code Section 10515.",
+          "page": "District elections page (archived copy; live dsrsd.com returned 403 to curl)",
+          "retrieved_on": "2026-10-13"
+        }
+      ],
+      "roster": [
+        { "name": "GEORGEAN VONHEEDER-LEOPOLD", "party_if_shown": null, "incumbent_flag": "Y" }
+      ]
+    },
+    {
+      "contest_id": "CA2026-221",
+      "determination": "not_on_ballot",
+      "note": "Registrar's official Candidate List for the General Election 11/03/2026 (Official) labels race 'Eden Township Healthcare District Director, Area 1' with Race Status = Not On Ballot. Sole filing: MARIELLEN FARIA (Filing Completed, Incumbent: Y, Declaration of Candidacy filed 07/16/2026; '1 Filing'). Explicit official status label on the certified list. Corroborated by the county Voter Information Guide for Nov 3 2026, which carries candidate statements only for 'EDEN TOWNSHIP HEALTHCARE DISTRICT DIRECTOR, ZONE 3' (Areas 1 and 5 absent). Consistent with EC 10515 appointment-in-lieu; no separate cancellation resolution located.",
+      "evidence": [
+        {
+          "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+          "title": "Candidate List - Registrar of Voters - Alameda County (General Election - 11/03/2026, Official; race: Eden Township Healthcare District Director, Area 1)",
+          "quote": "Eden Township Healthcare District Director, Area 1 - Not On Ballot Vote For: 1 CANDIDATE ... MARIELLEN FARIA Healthcare Director/RN Filing Completed Filing Agency: Alameda County Incumbent: Y ... Declaration of Candidacy File Date: 07/16/2026 ... 1 Filing",
+          "page": "Registrar candidate list search result (POST electionId=260&categoryId=270&raceId=69)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+          "title": "Alameda County Voter Information Guide, General Election November 3, 2026",
+          "quote": "Only Eden Township heading in the guide: 'EDEN TOWNSHIP HEALTHCARE DISTRICT DIRECTOR, ZONE 3' — no Area/Zone 1 or Zone 5 race appears.",
+          "page": "Candidate statements section (pdftotext line ~60971)",
+          "retrieved_on": "2026-10-13"
+        }
+      ],
+      "roster": [
+        { "name": "MARIELLEN FARIA", "party_if_shown": null, "incumbent_flag": "Y" }
+      ]
+    },
+    {
+      "contest_id": "CA2026-222",
+      "determination": "not_on_ballot",
+      "note": "Registrar's official Candidate List for the General Election 11/03/2026 (Official) labels race 'Eden Township Healthcare District Director, Area 5' with Race Status = Not On Ballot. Sole filing: ED HERNANDEZ (Filing Completed, Incumbent: Y, Declaration of Candidacy filed 07/31/2026; '1 Filing'). Explicit official status label on the certified list. Corroborated by the county Voter Information Guide for Nov 3 2026 (only Zone 3 Eden race present). Consistent with EC 10515 appointment-in-lieu; no separate cancellation resolution located.",
+      "evidence": [
+        {
+          "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+          "title": "Candidate List - Registrar of Voters - Alameda County (General Election - 11/03/2026, Official; race: Eden Township Healthcare District Director, Area 5)",
+          "quote": "Eden Township Healthcare District Director, Area 5 - Not On Ballot Vote For: 1 CANDIDATE ... ED HERNANDEZ District Director, Eden Township Healthcare District ... Filing Completed Filing Agency: Alameda County Incumbent: Y ... Declaration of Candidacy File Date: 07/31/2026 ... 1 Filing",
+          "page": "Registrar candidate list search result (POST electionId=260&categoryId=270&raceId=71)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+          "title": "Alameda County Voter Information Guide, General Election November 3, 2026",
+          "quote": "Only Eden Township heading in the guide: 'EDEN TOWNSHIP HEALTHCARE DISTRICT DIRECTOR, ZONE 3' — no Area/Zone 1 or Zone 5 race appears.",
+          "page": "Candidate statements section (pdftotext line ~60971)",
+          "retrieved_on": "2026-10-13"
+        }
+      ],
+      "roster": [
+        { "name": "ED HERNANDEZ", "party_if_shown": null, "incumbent_flag": "Y" }
+      ]
+    },
+    {
+      "contest_id": "CA2026-223",
+      "determination": "not_on_ballot",
+      "note": "Registrar's official Candidate List for the General Election 11/03/2026 (Official) labels race 'BART Director, District 6' with Race Status = Not On Ballot. Sole filing: LIZ AMES (Filing Completed, Incumbent: Y, Declaration of Candidacy filed 08/06/2026; '1 Filing'). Explicit official status label on the certified list — the same list shows 'BART Director, District 4' as On Ballot (Robert Raburn vs Luis Reynoso), proving the Not-On-Ballot label is a discriminating determination, not a blanket category flag. Corroborated by the county Voter Information Guide for Nov 3 2026, which carries only 'BART DIRECTOR, DISTRICT 4'. bart.gov's elections page (pre-certification notice) still listed District 6 among 2026 seats; that is a scheduled-election notice and does not override the certified list. Consistent with EC 10515 appointment-in-lieu for the sole candidate.",
+      "evidence": [
+        {
+          "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+          "title": "Candidate List - Registrar of Voters - Alameda County (General Election - 11/03/2026, Official; race: BART Director, District 6)",
+          "quote": "BART Director, District 6 - Not On Ballot Vote For: 1 CANDIDATE ... LIZ AMES Engineer/BART Director ... Filing Completed Filing Agency: Alameda County Incumbent: Y ... Declaration of Candidacy File Date: 08/06/2026 ... 1 Filing",
+          "page": "Registrar candidate list search result (POST electionId=260&categoryId=270&raceId=65)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+          "title": "Alameda County Voter Information Guide, General Election November 3, 2026",
+          "quote": "Only BART heading in the guide: 'BART DIRECTOR, DISTRICT 4' — no District 6 race appears.",
+          "page": "Candidate statements section (pdftotext line ~60661)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "https://www.bart.gov/about/bod/elections",
+          "title": "Director Elections | Bay Area Rapid Transit (pre-certification notice, does NOT establish ballot placement)",
+          "quote": "The seats which are up for election include: BART District 2, BART District 4, BART District 6, and BART District 8.",
+          "page": "BART elections page",
+          "retrieved_on": "2026-10-13"
+        }
+      ],
+      "roster": [
+        { "name": "LIZ AMES", "party_if_shown": null, "incumbent_flag": "Y" }
+      ]
+    },
+    {
+      "contest_id": "CA2026-224",
+      "determination": "not_on_ballot",
+      "note": "Registrar's official Candidate List for the General Election 11/03/2026 (Official) labels race 'Washington Township Healthcare District Directors' with Race Status = Not On Ballot, Vote For: 3. Complete roster of exactly three filings — JACOB EAPEN, BERNARD L. STEWART, MICHAEL J. WALLACE (all Filing Completed, all Incumbent: Y; '3 Filings') — matching the three seats, i.e., no contest. Explicit official status label on the certified list. Corroborated by the county Voter Information Guide for Nov 3 2026, in which no Washington Township race appears anywhere (pdftotext grep zero hits). Consistent with EC 10515 appointment-in-lieu; no separate cancellation resolution located.",
+      "evidence": [
+        {
+          "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+          "title": "Candidate List - Registrar of Voters - Alameda County (General Election - 11/03/2026, Official; race: Washington Township Healthcare District Directors)",
+          "quote": "Washington Township Healthcare District Directors - Not On Ballot Vote For: 3 CANDIDATE ... JACOB EAPEN Incumbent ... BERNARD L. STEWART Director Washington Township Hospital Healthcare District ... MICHAEL J. WALLACE Director, Washington Township Healthcare District Board of Directors ... 3 Filings",
+          "page": "Registrar candidate list search result (POST electionId=260&categoryId=270&raceId=82)",
+          "retrieved_on": "2026-10-13"
+        },
+        {
+          "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+          "title": "Alameda County Voter Information Guide, General Election November 3, 2026",
+          "quote": "No 'Washington Township' contest heading appears anywhere in the guide (case-insensitive search of full pdftotext output: zero race-heading hits).",
+          "page": "Full document",
+          "retrieved_on": "2026-10-13"
+        }
+      ],
+      "roster": [
+        { "name": "JACOB EAPEN", "party_if_shown": null, "incumbent_flag": "Y" },
+        { "name": "BERNARD L. STEWART", "party_if_shown": null, "incumbent_flag": "Y" },
+        { "name": "MICHAEL J. WALLACE", "party_if_shown": null, "incumbent_flag": "Y" }
+      ]
+    }
+  ],
+  "exhaustiveness_argument": "The Registrar's Candidate List page is the county's official certified candidate list for 'General Election - 11/03/2026 (Official)' and prints an explicit per-race Race Status ('On Ballot' / 'Not On Ballot') for every contest in the Special Districts category, including both on-ballot and off-ballot races side by side (e.g., BART District 4 = On Ballot vs BART District 6 = Not On Ballot within the same list). The determination therefore rests on an affirmative official label retrieved per race, not on absence-from-list inference. The county VIG sample-ballot/candidate-statement content independently omits exactly these six races and includes the sibling contested races.",
+  "limitations": [
+    "The registrar's candidate list is a dynamic POST-driven page (alamedacountyca.gov/rov_app/candidatelist); results cannot be cited by a stable per-race deep link. Reproduction: POST electionId=260&categoryId=270&raceId=<61|65|69|71|72|82>&lastName=&raceStatus=&candidateStatus=. Raw HTML snapshots were retained at /tmp/alco/race_*.html.",
+    "No individual cancellation or appointment resolution (board minute / EC 10515 appointment order) was independently retrieved for any of the six races; determinations rest on the Registrar's certified 'Not On Ballot' status label, which is sufficient under project policy as official final-ballot material. Do not describe these as agency-confirmed cancellations.",
+    "dsrsd.com live pages returned HTTP 403 to curl; the DSRSD elections page was read from a Wayback snapshot (2026-05-18), which predates candidate filing and is used only as context for the EC 10515 appointment mechanism, not as ballot evidence.",
+    "bart.gov and actransit.org pages retrieved are pre-certification scheduled-election/candidate-info notices; they do not establish or refute November placement and were treated as non-authoritative for this determination.",
+    "The VIG PDF was fetched from acvote.alamedacountyca.gov (the same href published on the county Election Information page); the alamedacountyca.gov host returned 404 for the asset path. SHA-256 of the retrieved PDF: 5b1e32e3b8faab472f2923ea17685035b4e8595e18ddf1f37c9fcd90a88fa0e3.",
+    "Party is not shown for any of these races (all nonpartisan special-district contests); the list's BALLOT DESIGNATION column shows occupations, recorded in quotes above rather than as party."
+  ]
+}

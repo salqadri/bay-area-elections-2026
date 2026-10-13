@@ -1,0 +1,310 @@
+{
+ "generated_on": "2026-10-13",
+ "scope": "ALAMEDA-SCHOOLS CA2026-204..CA2026-216 final November 3, 2026 ballot status",
+ "primary_source": {
+  "name": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+  "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+  "how_accessed": "POST https://alamedacountyca.gov/rov_app/candidatelist/ with electionId=260&categoryId=260 (Race Status and Candidate Status filters left blank) returns the full official list for that category, each race headed e.g. \"Ohlone Community College District Trustee, Area 4 - Not On Ballot Vote For: 1\"; GET /rov_app/candidatelist/260 gives the JSON race index (134 races).",
+  "retrieved_on": "2026-10-13"
+ },
+ "corroborating_source": {
+  "name": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+  "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+  "retrieved_on": "2026-10-13"
+ },
+ "limitations": [
+  "https://acvote.alamedacountyca.gov/candidates/candidates-list rendered 'Application Temporarily Unavailable' at retrieval; the working app is https://alamedacountyca.gov/rov_app/candidatelist.",
+  "No standalone certified-candidate-list PDF was found for Alameda's November 2026 election (Wayback CDX sweeps of acgov.org/alamedacountyca.gov returned no candidate/certified PDFs); the rov_app interactive list is the registrar's live official system.",
+  "The 'What's on the Ballot?' office table on https://acvote.alamedacountyca.gov/election-information/elections?id=260 lists all scheduled offices including Not-On-Ballot races and therefore cannot by itself prove inclusion or exclusion; it was used only to confirm the race inventory.",
+  "The Registrar app does not publish the underlying cancellation/appointment resolution text for these 13 races; determinations rest on its explicit per-race 'Not On Ballot' status plus exhaustive absence from the official Voter Information Guide."
+ ],
+ "findings": [
+  {
+   "contest_id": "CA2026-204",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Dublin Unified School District, Governing Board Members, Area 2) with the explicit race status \"Not On Ballot\" and lists only these filer(s): HOLDEN LOMELI (Filing Completed, non-incumbent). Sole filer (Business Manager; Declaration of Candidacy filed 08/11/2026). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Dublin Unified School District Governing Board Members, Area 2 - Not On Ballot Vote For: 1\". HOLDEN LOMELI — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (HOLDEN LOMELI); the only Dublin Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-205",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Mountain House Elementary School District, Governing Board Member (at large, Vote For: 2)) with the explicit race status \"Not On Ballot\" and lists only these filer(s): TONYA ARLEDGE (Incomplete Filing, incumbent); BARBARA ARMSTRONG (Incomplete Filing, incumbent). Both listed filers show candidate status 'Incomplete Filing'. The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Mountain House Elementary School District Governing Board Member - Not On Ballot Vote For: 2\". TONYA ARLEDGE — candidate status as displayed: 'Incomplete Filing' ; BARBARA ARMSTRONG — candidate status as displayed: 'Incomplete Filing'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (TONYA ARLEDGE, BARBARA ARMSTRONG); the only Mountain House Elementary School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-206",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Newark Unified School District, Governing Board Members (at large, Vote For: 2)) with the explicit race status \"Not On Ballot\" and lists only these filer(s): CHRISTINE KIZER (Filing Completed, non-incumbent); JONATHAN LEDER (Incomplete Filing, non-incumbent); RENU MALHOTRA (Filing Completed, non-incumbent); JASON MATTHEW MIGUEL (Incomplete Filing, non-incumbent). Four filers; two 'Filing Completed' for 2 seats. The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Newark Unified School District Governing Board Members - Not On Ballot Vote For: 2\". CHRISTINE KIZER — candidate status as displayed: 'Filing Completed' ; JONATHAN LEDER — candidate status as displayed: 'Incomplete Filing' ; RENU MALHOTRA — candidate status as displayed: 'Filing Completed' ; JASON MATTHEW MIGUEL — candidate status as displayed: 'Incomplete Filing'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (CHRISTINE KIZER, JONATHAN LEDER, RENU MALHOTRA, JASON MATTHEW MIGUEL); the only Newark Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-207",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Ohlone Community College District, Trustee, Area 4) with the explicit race status \"Not On Ballot\" and lists only these filer(s): ELISA MARTINEZ (Filing Completed, incumbent). Sole filer (incumbent; Declaration of Candidacy filed 08/07/2026). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Ohlone Community College District Trustee, Area 4 - Not On Ballot Vote For: 1\". ELISA MARTINEZ — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (ELISA MARTINEZ); the only Ohlone Community College District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-208",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Ohlone Community College District, Trustee, Area 7) with the explicit race status \"Not On Ballot\" and lists only these filer(s): BETTY HO (Filing Completed, incumbent). Sole filer (ballot designation 'Appointed Ohlone Community College District Trustee'). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Ohlone Community College District Trustee, Area 7 - Not On Ballot Vote For: 1\". BETTY HO — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (BETTY HO); the only Ohlone Community College District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-209",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Peralta Community College District, Trustee, Area 3) with the explicit race status \"Not On Ballot\" and lists only these filer(s): LOUIS QUINDLEN (Filing Completed, incumbent). Sole filer (incumbent; Declaration of Candidacy filed 08/04/2026). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Peralta Community College District Trustee, Area 3 - Not On Ballot Vote For: 1\". LOUIS QUINDLEN — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (LOUIS QUINDLEN); the only Peralta Community College District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-210",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Peralta Community College District, Trustee, Area 7) with the explicit race status \"Not On Ballot\" and lists only these filer(s): SHEWEET YOHANNES (Filing Completed, incumbent). Sole filer (incumbent). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Peralta Community College District Trustee, Area 7 - Not On Ballot Vote For: 1\". SHEWEET YOHANNES — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (SHEWEET YOHANNES); the only Peralta Community College District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-211",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (Pleasanton Unified School District, Governing Board Member, Area 2) with the explicit race status \"Not On Ballot\" and lists only these filer(s): LAURIE WALKER (Filing Completed, incumbent). Sole filer (incumbent; Declaration of Candidacy filed 08/04/2026). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"Pleasanton Unified School District Governing Board Member, Area 2 - Not On Ballot Vote For: 1\". LAURIE WALKER — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (LAURIE WALKER); the only Pleasanton Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-212",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (San Leandro Unified School District, Governing Board Member, Area 2) with the explicit race status \"Not On Ballot\" and lists only these filer(s): JACQUELINE CALDERÓN PERL (Filing Completed, incumbent). Sole filer (incumbent). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"San Leandro Unified School District Governing Board Member,  Area 2 - Not On Ballot Vote For: 1\". JACQUELINE CALDERÓN PERL — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (JACQUELINE CALDERÓN PERL); the only San Leandro Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-213",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (San Leandro Unified School District, Governing Board Member, Area 4) with the explicit race status \"Not On Ballot\" and lists only these filer(s): LEO SHERIDAN (Filing Completed, incumbent). Sole filer (incumbent). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"San Leandro Unified School District Governing Board Member,  Area 4 - Not On Ballot Vote For: 1\". LEO SHERIDAN — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (LEO SHERIDAN); the only San Leandro Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-214",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (San Leandro Unified School District, Governing Board Member, Area 6) with the explicit race status \"Not On Ballot\" and lists only these filer(s): NATASHA MARTINEZ (Filing Completed, incumbent). Sole filer (ballot designation 'Appointed School Board Trustee'). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"San Leandro Unified School District Governing Board Member,  Area 6 - Not On Ballot Vote For: 1\". NATASHA MARTINEZ — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (NATASHA MARTINEZ); the only San Leandro Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-215",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (San Lorenzo Unified School District, Governing Board Members, Area 1) with the explicit race status \"Not On Ballot\" and lists only these filer(s): YULIANA TORRES (Filing Completed, non-incumbent). Sole filer (Declaration of Candidacy filed 08/04/2026). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"San Lorenzo Unified School District Governing Board Members, Area 1 - Not On Ballot Vote For: 1\". YULIANA TORRES — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (YULIANA TORRES); the only San Lorenzo Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  },
+  {
+   "contest_id": "CA2026-216",
+   "determination": "not_on_ballot",
+   "note": "RESOLVED — NOT ON BALLOT. The Alameda County Registrar of Voters' official Candidate List application, election 'General Election - 11/03/2026 (Official)', displays this race (San Lorenzo Unified School District, Governing Board Members, Area 4) with the explicit race status \"Not On Ballot\" and lists only these filer(s): SAMUEL MEDINA (Filing Completed, non-incumbent). Sole filer (ballot designation 'Governing Board Member, San Lorenzo Unified School District'). The Registrar's system distinguishes 'On Ballot' vs 'Not On Ballot' per race (both appear as headings across the same result set), so this is the county's official final ballot-status determination, not a filing snapshot. Corroboration: none of these candidates appears anywhere in the official November 2026 Voter Information Guide, while every contested school/college seat does. Limits: the app does not print the cancellation resolution itself; it establishes non-appearance on the printed ballot but not by its own text whether the seat was filled by election-without-opposition/appointment (Elections Code 10515/9008-type outcomes are consistent with, but not quoted by, this source).",
+   "evidence": [
+    {
+     "url": "https://alamedacountyca.gov/rov_app/candidatelist",
+     "title": "Alameda County Registrar of Voters — Candidate List (election: 'General Election - 11/03/2026 (Official)')",
+     "quote": "Election: General Election - 11/03/2026 (Official). Race heading as displayed: \"San Lorenzo Unified School District Governing Board Members, Area 4 - Not On Ballot Vote For: 1\". SAMUEL MEDINA — candidate status as displayed: 'Filing Completed'",
+     "page": "Candidate List app (electionId=260, General Election 11/03/2026 Official; race status filter left blank so all statuses returned)",
+     "retrieved_on": "2026-10-13"
+    },
+    {
+     "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
+     "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official, Registrar of Voters)",
+     "quote": "pdftotext full-text search (re-run 2026-10-13) of the official Voter Information Guide PDF: no statement or mention for any candidate in this contest (SAMUEL MEDINA); the only San Lorenzo Unified School District board/trustee statements present are for other, contested seats (e.g., Ohlone Area 6, Peralta Area 5, Dublin Areas 3 and 5, Pleasanton Area 5).",
+     "page": "Candidate statement pages (full-text search of pdftotext extraction)",
+     "retrieved_on": "2026-10-13"
+    }
+   ],
+   "roster": []
+  }
+ ],
+ "reverified_on": "2026-10-13"
+}

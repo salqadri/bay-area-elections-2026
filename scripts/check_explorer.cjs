@@ -113,7 +113,8 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('party','R');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert(p.candidates.some(c=>c.party==='R'));}
   reset();$('incumbents').checked=true;$('incumbents').fire('change');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert([...(p.candidates||[]),...(p.filed_candidates_not_confirmed_on_ballot||[])].some(c=>c.incumbent));}
   reset();clickStatus('unresolved');assert.equal(count(),original.coverage.unresolved_scheduled_contests);assert(text('panel-candidates').includes('not been confirmed'));
-  set('search','Dublin');assert(count()>0);assert(text('panel-candidates').includes('Provisional filing names'));
+  // October 13, 2026: Dublin USD Area 2 moved from unresolved to excluded (registrar Not On Ballot), so the provisional-filing render is asserted on that record via status=all + filer search.
+  reset();clickStatus('all');set('search','Holden Lomeli');assert.equal(count(),1);assert(text('detail-status').includes('Confirmed not on ballot'));assert(text('panel-candidates').includes('Provisional filing names'));
   reset();set('search','Orchard');assert.equal(count(),1);assert(text('panel-candidates').includes('Hina Patel'));assert(text('panel-candidates').includes('Qualified write-in candidates'));
   tab('sources');assert(text('panel-sources').includes('Open Civic Data'));assert(text('panel-sources').includes('Research notes'));assert(text('panel-sources').includes('Sources'));
   tab('json');assert(text('panel-json').includes('note_ids'));
