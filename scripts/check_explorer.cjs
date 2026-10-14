@@ -98,7 +98,8 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   for(const county of original.election.counties_in_scope.map(c=>c.name)){reset();set('county',county);assert.equal(count(),original.positions.filter(p=>p.ballot_status==='confirmed'&&p.counties.includes(county)).length);}
   reset();set('county','San Mateo');set('search','CD-15');assert.equal(count(),1);assert(text('panel-candidates').includes('Kevin Mullin'));assert(text('detail-meta').includes('San Francisco + San Mateo'));
   reset();set('county','San Francisco');set('search','Ruth Ferguson');assert.equal(count(),1);assert(text('detail-meta').includes('Special election'));
-  reset();set('county','San Mateo');clickStatus('unresolved');assert.equal(count(),2);
+  // October 14, 2026: the last two San Mateo unresolved contests (Bayshore ESD short term, Colma Fire PD) resolved to excluded; no county has unresolved records left.
+  reset();set('county','San Mateo');clickStatus('unresolved');assert.equal(count(),0);assert(text('result-list').includes('No contests match'));
   reset();
   set('search','AD-18');assert.equal(count(),1);assert(text('detail-subtitle').includes('AD-18'));assert(text('panel-candidates').includes('Mia Bonta'));
   reset();set('search','CD-18');assert.equal(count(),1);assert(text('panel-candidates').includes('Zoe Lofgren'));
@@ -112,7 +113,8 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('county','Contra Costa');set('search','East Bay Municipal Utility District Ward 3');assert.equal(count(),1);assert(text('detail-meta').includes('Alameda + Contra Costa'));
   reset();set('party','R');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert(p.candidates.some(c=>c.party==='R'));}
   reset();$('incumbents').checked=true;$('incumbents').fire('change');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert([...(p.candidates||[]),...(p.filed_candidates_not_confirmed_on_ballot||[])].some(c=>c.incumbent));}
-  reset();clickStatus('unresolved');assert.equal(count(),original.coverage.unresolved_scheduled_contests);assert(text('panel-candidates').includes('not been confirmed'));
+  // October 14, 2026: every scheduled contest now carries a final ballot status; the unresolved filter is asserted empty.
+  reset();clickStatus('unresolved');assert.equal(count(),original.coverage.unresolved_scheduled_contests);assert.equal(original.coverage.unresolved_scheduled_contests,0);assert(text('result-list').includes('No contests match'));
   // October 13, 2026: Dublin USD Area 2 moved from unresolved to excluded (registrar Not On Ballot), so the provisional-filing render is asserted on that record via status=all + filer search.
   reset();clickStatus('all');set('search','Holden Lomeli');assert.equal(count(),1);assert(text('detail-status').includes('Confirmed not on ballot'));assert(text('panel-candidates').includes('Provisional filing names'));
   reset();set('search','Orchard');assert.equal(count(),1);assert(text('panel-candidates').includes('Hina Patel'));assert(text('panel-candidates').includes('Qualified write-in candidates'));

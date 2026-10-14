@@ -136,7 +136,8 @@ test('An identified unincorporated Census place excludes municipalities despite 
   for (const p of countyPositions('Santa Clara').filter(p => ['Education', 'Special district'].includes(p.government_level))) {
     assert(race(result, p.id), 'Unincorporated status must not exclude school or special districts');
   }
-  assert(race(result, 'CA2026-225') && race(result, 'CA2026-226'), 'Separate full and short terms remain distinct');
+  // October 14, 2026: Lion's Gate CSD races resolved to excluded and are dropped from estimates; East Side Union HSD short/full terms carry the distinct-term assertion.
+  assert(race(result, 'CA2026-146') && race(result, 'CA2026-147'), 'Separate full and short terms remain distinct');
 });
 
 test('School parent match does not manufacture trustee-area precision', () => {
@@ -209,11 +210,13 @@ test('Manual county fallback preserves every inventory record with local uncerta
   assert.notEqual(race(sm, 'CA2026-287').confidence, 'expected', 'County education trustee area is not countywide');
 });
 
-test('Separate same-geography terms and unresolved ballot statuses survive matching', () => {
+test('Separate same-geography terms and final ballot statuses survive matching', () => {
   const santaClara = estimate(census());
-  assert.equal(race(santaClara, 'CA2026-225').position.ballot_status, 'unverified');
-  assert.equal(race(santaClara, 'CA2026-226').position.ballot_status, 'unverified');
-  assert.notEqual(race(santaClara, 'CA2026-225').position.term, race(santaClara, 'CA2026-226').position.term);
+  // October 14, 2026: Lion's Gate CSD races (CA2026-225/226) resolved to excluded — the matcher drops them from estimates; East Side Union HSD short/full terms now carry the distinct-term assertion.
+  assert(!race(santaClara, 'CA2026-225') && !race(santaClara, 'CA2026-226'), 'Excluded contests are dropped from ballot estimates');
+  assert(race(santaClara, 'CA2026-146') && race(santaClara, 'CA2026-147'));
+  assert.equal(race(santaClara, 'CA2026-146').position.ballot_status, 'confirmed');
+  assert.notEqual(race(santaClara, 'CA2026-146').position.term, race(santaClara, 'CA2026-147').position.term);
   const sanFrancisco = estimate(sf());
   assert(race(sanFrancisco, 'CA2026-242') && race(sanFrancisco, 'CA2026-243'), 'Full and partial college terms must both remain');
 });
@@ -232,8 +235,8 @@ test('Multiple address matches return the union, with expected confidence only w
   assert.equal(race(combined, 'CA2026-014').confidence, 'expected', 'Governor applies to both locations');
   assert.notEqual(race(combined, 'CA2026-004').confidence, 'expected', 'CD-17 applies only to the San José match');
   assert(race(combined, 'CA2026-242') && race(combined, 'CA2026-243'), 'Both SF college terms survive the union');
-  assert.equal(race(combined, 'CA2026-225').position.ballot_status, 'unverified');
-  assert.equal(race(combined, 'CA2026-226').position.ballot_status, 'unverified');
+  // October 14, 2026: Lion's Gate CSD races are excluded and dropped from estimates; East Side Union HSD terms carry the union assertion instead.
+  assert(race(combined, 'CA2026-146') && race(combined, 'CA2026-147'), 'Both East Side Union HSD terms survive the union');
   assert(combined.warnings.length > 0);
 });
 

@@ -25,7 +25,11 @@ def add_party_to_nonpartisan(data):
 
 
 def provisional_as_printed(data):
-    p = first(data, lambda p: p["ballot_status"] == "unverified")
+    # As of October 14, 2026 no live record is unverified; synthesize the shape from a confirmed contest so this negative case stays exercised.
+    p = first(data, lambda p: p["ballot_status"] == "confirmed")
+    p["ballot_status"] = "unverified"
+    p["candidates"] = None
+    p["candidate_list_status"] = "unverified"
     p["candidates"] = [{"name": "Example provisional filer"}]
     p["candidate_list_status"] = "complete"
 

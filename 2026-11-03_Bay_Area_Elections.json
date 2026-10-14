@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-13.1"
+  "publication_version": "2026-10-14.1"
  },
  "codes": {
   "party": {
@@ -75,7 +75,7 @@
   "status": "research_inventory_with_explicit_unresolved_records",
   "confirmed_contests": 340,
   "confirmed_seats": 443,
-  "unresolved_scheduled_contests": 6,
+  "unresolved_scheduled_contests": 0,
   "printed_candidate_entries": 875,
   "confirmed_contests_missing_candidate_rosters": 0,
   "positions_with_ocd_division_id": 188,
@@ -86,7 +86,7 @@
   "printed_candidates_with_campaign_url": 383,
   "limitations": [
    "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
-   "This is not yet a certified exhaustive ballot dataset: unresolved cancellation/appointment questions and unverified local OCD identifiers remain.",
+   "This is not yet a certified exhaustive ballot dataset: unverified local OCD identifiers remain, and excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted.",
    "Candidate rosters concern names printed on the ballot. Any verified write-ins are separate; write-in qualification may continue after the research date.",
    "County arrays contain only the counties researched so far, not necessarily every county intersected by a district.",
    "San Francisco and San Mateo were added using their official November candidate materials. Shared statewide, legislative, and judicial contests retain one record with multiple county names.",
@@ -127211,19 +127211,23 @@
    "jurisdiction": "Bayshore Elementary School District",
    "office": "Governing Board Member",
    "district_or_seat": "At large — short term",
-   "seats": 1,
+   "seats": 2,
    "term": "2 years — unexpired term",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
     "S388",
-    "S356"
+    "S356",
+    "S1093",
+    "S1094",
+    "S1095"
    ],
    "note_ids": [
-    "N218"
+    "N891",
+    "N892"
    ],
    "ocd_id_status": "unverified"
   },
@@ -160028,7 +160032,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "candidate_list_status": "unverified",
    "candidates": null,
@@ -160039,10 +160043,13 @@
    "source_ids": [
     "S362",
     "S400",
-    "S356"
+    "S356",
+    "S1093",
+    "S1094",
+    "S1095"
    ],
    "note_ids": [
-    "N222"
+    "N891"
    ]
   },
   {
@@ -165848,17 +165855,20 @@
    "seats": 1,
    "term": "Full term (4 years)",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "ocd_id_status": "unverified",
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
     "S214",
-    "S213"
+    "S213",
+    "S1091",
+    "S1092",
+    "S1096"
    ],
    "note_ids": [
-    "N167"
+    "N890"
    ]
   },
   {
@@ -165874,17 +165884,20 @@
    "seats": 2,
    "term": "Short term (2 years)",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "ocd_id_status": "unverified",
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
     "S214",
-    "S213"
+    "S213",
+    "S1091",
+    "S1092",
+    "S1096"
    ],
    "note_ids": [
-    "N167"
+    "N890"
    ]
   },
   {
@@ -167513,17 +167526,20 @@
    "seats": 2,
    "term": "Full term (4 years)",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "ocd_id_status": "unverified",
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
     "S214",
-    "S213"
+    "S213",
+    "S1091",
+    "S1092",
+    "S1097"
    ],
    "note_ids": [
-    "N167"
+    "N890"
    ]
   },
   {
@@ -168273,17 +168289,20 @@
    "seats": 3,
    "term": "Full term (4 years)",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "excluded",
    "partisan": false,
    "ocd_id_status": "unverified",
    "candidate_list_status": "unverified",
    "candidates": null,
    "source_ids": [
     "S214",
-    "S213"
+    "S213",
+    "S1091",
+    "S1092",
+    "S1098"
    ],
    "note_ids": [
-    "N167"
+    "N890"
    ]
   },
   {
@@ -168729,7 +168748,6 @@
   "N164": "Final ballot status was not confirmed. Research status: unverified_scheduled_likely_uncontested_off_ballot. Ed Hernandez only filer; omitted from current Local News Matters ballot guide. Status inference uses filings and final ballot-guide omission; do not describe as an independently retrieved official cancellation.",
   "N165": "Final ballot status was not confirmed. Research status: unverified_scheduled_likely_uncontested_off_ballot. Liz Ames only filer; omitted from current Local News Matters ballot guide. Status inference uses filings and final ballot-guide omission; do not describe as an independently retrieved official cancellation.",
   "N166": "Final ballot status was not confirmed. Research status: unverified_scheduled_likely_uncontested_off_ballot. Three candidates for three seats: Jacob Eapen, Bernard Stewart, Michael Wallace. Omitted from current Local News Matters ballot guide. Status inference uses filings and final ballot-guide omission; do not describe as an independently retrieved official cancellation.",
-  "N167": "Final ballot status was not confirmed. Research status: Unverified. Listed in the scheduled-office notice but absent from the final qualified-candidate roster. No independent cancellation or appointment record was located. This row is not a confirmed ballot contest.",
   "N168": "Midpeninsula Regional Open Space District Ward 1 is wholly in Santa Clara County; do not add San Mateo merely because the agency spans counties.",
   "N169": "BART District 6 is in Alameda County. BART stations and train service in San Mateo/Santa Clara do not make residents of those counties eligible to elect BART directors.",
   "N170": "Palo Alto Unified is marked N/A for cross-jurisdiction elections in the county election schedule. San Mateo's full school-election inventory does not list it. Interdistrict attendance and generic geospatial overlaps are insufficient to add San Mateo voters.",
@@ -168780,11 +168798,9 @@
   "N215": "Official county roster identifies Chialin Hsieh as Area C incumbent. Her Ballotpedia candidate-profile title incorrectly identifies Area A; the county roster controls this dataset.",
   "N216": "Current Area D trustee. Ceased campaigning and endorsed Michael Dekshenieks on August 28, 2026, but his name remains printed on the ballot.",
   "N217": "Current at-large board member seeking the separate short-term seat; incumbent flag denotes service on the same board.",
-  "N218": "One short-term seat was in the county scheduled-office notice but is absent from the September 3 qualified-candidate roster. Final ballot appearance or appointment/cancellation has not been independently confirmed; no printed candidate list is established.",
   "N219": "Special election for the short term in District 5. Neither candidate is the incumbent county supervisor; both hold city council offices.",
   "N220": "Neither candidate is the incumbent; the district identifies Bob Feldman as its current Zone 5 director.",
   "N221": "Appointed incumbent; the official roster labels Matt Allen Appointed Incumbent.",
-  "N222": "One seat is scheduled in the county candidate guide. The September 3 qualified-only roster contains no Colma Fire contest; no explicit cancellation or appointment determination was found. Ballot appearance and the printed candidate roster remain unverified.",
   "N223": "Congressional county coverage uses the Secretary of State’s 2026 election subdivisions, reflecting the Proposition 50 boundaries.",
   "N224": "Printed names and official party preferences follow the Secretary of State’s August 21, 2026 general-election notice to candidates.",
   "N225": "NPP denotes the official No Party Preference label in this voter-nominated contest; it is distinct from an omitted party field on a nonpartisan local contest.",
@@ -169451,7 +169467,10 @@
   "N886": "The county's final Contest/Candidate Proof List (printed August 27, 2026) shows this contest ON BALLOT with one qualified candidate. A single-candidate contest can remain printed; the proof is the controlling record of ballot appearance.",
   "N887": "The final proof list confirms Ward 7 on the ballot for one seat with two qualified candidates: Colin J. Coffey (appointed in lieu, incumbent) and Inderprit \"Indy Rishi Singh\" Sekhon. Mushda Faiez appears on earlier filing reports but is not among the two qualified candidates certified by August 14.",
   "N888": "Scheduled by the county's pre-filing positions inventory, but this contest appears in neither the certified August 14 candidate list nor the exhaustive August 27 Contest/Candidate Proof List of contests on the ballot; no qualified candidates were certified for it. Treated as confirmed not printed rather than zeroed evidence.",
-  "N889": "Resolved October 13, 2026: the Alameda County Registrar's official Candidate List for the “General Election - 11/03/2026 (Official)” displays this race with Race Status “Not On Ballot” and lists its filers beneath that heading — the county's affirmative final ballot-status determination. The official November 2026 Voter Information Guide contains no candidate statement for any filer in this race while contested sibling seats in the same district do appear (retrieved and full-text checked October 13, 2026). This establishes non-appearance on the printed ballot; the Registrar's application does not print the underlying cancellation or appointment-in-lieu resolution, so how the seat is filled (no-contest outcome or board appointment) is not asserted here."
+  "N889": "Resolved October 13, 2026: the Alameda County Registrar's official Candidate List for the “General Election - 11/03/2026 (Official)” displays this race with Race Status “Not On Ballot” and lists its filers beneath that heading — the county's affirmative final ballot-status determination. The official November 2026 Voter Information Guide contains no candidate statement for any filer in this race while contested sibling seats in the same district do appear (retrieved and full-text checked October 13, 2026). This establishes non-appearance on the printed ballot; the Registrar's application does not print the underlying cancellation or appointment-in-lieu resolution, so how the seat is filled (no-contest outcome or board appointment) is not asserted here.",
+  "N890": "Resolved October 14, 2026: the Registrar's Contest/Candidate Proof List (CFMR001, printed August 7, 2026) records zero candidates filed for this office, and the Final Qualified List of Local Eligible Candidates (posted September 28, 2026; extraction verified complete at 287 qualified candidates) contains no row for this district — not even an 'On Ballot: No' removal row — while the Unofficial Write-In Candidate List (printed September 24, 2026) shows no write-in filings. With ballot and County Voter Information Guide materials finalized August 28, 2026, this contest cannot appear on the November 3 ballot; the Registrar's own district page now lists its incumbents as holdovers or appointees with a 2026 next election. The underlying cancellation or appointment resolution is not published online, so how each seat is filled is not asserted.",
+  "N891": "Resolved October 14, 2026: this office appears in the county Candidate Guide's scheduled-offices table but in none of the three prints (July 31, August 4 and September 3, 2026) of the county's exhaustive 'All Contests / Qualified Candidates Only' Roster of Candidates — every other scheduled local office appears — and no later candidate list has been published. With Sample Ballot & Voter Information Pamphlet mailing beginning September 25, 2026, a contest with zero qualified candidates cannot appear on mailed ballots. The underlying cancellation or appointment resolution is not published online, so how the seat is filled is not asserted.",
+  "N892": "October 14, 2026: seats corrected from 1 to 2 per the county Candidate Guide's scheduled-offices table ('Bayshore Elementary School District, Governing Board (Short Term)' — Seats up: 2)."
  },
  "sources": {
   "S001": {
@@ -173310,6 +173329,38 @@
   "S1090": {
    "url": "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf",
    "title": "Alameda County Voter Information Guide, November 3, 2026 General Election (official Registrar of Voters PDF, sha256 5b1e32e3…)"
+  },
+  "S1091": {
+   "url": "https://files.santaclaracounty.gov/exjcpb1296/2026-08/unofficial-list-of-local-candidates-8.03.2026-v2.pdf?VersionId=f6GLJP4yYdQ3y8b.XBktrwmxVeOfO9og",
+   "title": "Santa Clara County ROV — Contest/Candidate Proof List (CFMR001 print date/time 8/7/2026 8:44:32PM; totals verified: Total Contests 133, Total Candidates Filed 283); contests 6042/6043/6080/6103 show Num Cands 0 / Num Qualified 0"
+  },
+  "S1092": {
+   "url": "https://files.santaclaracounty.gov/exjcpb1296/2026-09/writeincandidates_09222026.pdf?VersionId=JaOEeCylOnErqYfJrEZ7T4w1FRV30ssO",
+   "title": "Santa Clara County ROV — Unofficial List of Local Write-In Candidates (CFMR028 print date/time 9/24/2026; contests 1030-6103, Total Contests 100, Total Candidates Filed 0); no write-in filings for contests 6042/6043/6080/6103"
+  },
+  "S1093": {
+   "url": "https://smcacre.gov/system/files/2026-07/52_candidateroster_0731.pdf",
+   "title": "San Mateo County ACRE — Roster of Candidates, All Contests / Qualified Candidates Only (CFMR009 print date/time 7/31/2026); no Bayshore ESD Short Term or Colma Fire PD contest rows"
+  },
+  "S1094": {
+   "url": "https://smcacre.gov/system/files/2026-08/52_candidateroster_0804.pdf",
+   "title": "San Mateo County ACRE — Roster of Candidates, All Contests / Qualified Candidates Only (CFMR009 print date/time 8/4/2026); no Bayshore ESD Short Term or Colma Fire PD contest rows"
+  },
+  "S1095": {
+   "url": "https://smcacre.gov/system/files/2026-08/List%20of%20Offices%20with%20Extended%20Candidate%20Filing%20Periodjatas8.12.pdf",
+   "title": "San Mateo County ACRE — List of Offices with Extended Candidate Filing Period (updated 8/12/26); includes Bayshore ESD Full Term and Colma Fire PD, not Bayshore ESD Short Term"
+  },
+  "S1096": {
+   "url": "https://vote.santaclaracounty.gov/lions-gate-community-service-district",
+   "title": "Santa Clara County ROV — Lion's Gate Community Service District page (directors Sattler/Pashby/Stuart marked holdover/appointed, next election 2026)"
+  },
+  "S1097": {
+   "url": "https://vote.santaclaracounty.gov/san-martin-county-water-district",
+   "title": "Santa Clara County ROV — San Martin County Water District page (Norgard short-term + Vacant seat, next election 2026)"
+  },
+  "S1098": {
+   "url": "https://vote.santaclaracounty.gov/silver-creek-valley-country-club-geologic-hazard-abatement-district",
+   "title": "Santa Clara County ROV — Silver Creek Valley Country Club GHAD page (Katwan/Hansen/Roberts holdovers, next election 2026)"
   }
  },
  "ie_finance": {
