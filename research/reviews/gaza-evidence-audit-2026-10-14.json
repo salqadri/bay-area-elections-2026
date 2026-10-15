@@ -3,8 +3,8 @@
   "reviewed_on": "2026-10-14",
   "baseline_commit": "6fdd99e95adfd11fc5c8a7551d3055161223f476",
   "scope": "Screen all 245 existing summaries and provenance; reopen cited URLs; search every printed federal and state candidacy for Gaza/Palestine and separately for ceasefire, with targeted follow-ups. Also search the 39 existing local evidence dossiers separately for ceasefire; these include two subsequently quarantined dossiers. This is not an exhaustive search of all local candidates or an independent audit of financial trackers.",
-  "method": "Manual evidence decisions using retrieved source bodies, with normalized-quote checks as triage only. Serper discovery results and raw source captures remain ignored local research caches. No Jev or external collector call occurred.",
-  "external_ledger_status": "External collector location was requested but not available; its code, validators and ledger were not audited or changed. Reconcile the documented quarantine additions/restorations before a future external merge.",
+  "method": "Manual evidence decisions using retrieved source bodies, with normalized-quote checks as triage only. Serper discovery results and raw source captures remain ignored local research caches. No Jev or model collection call occurred. The newly versioned collector was subsequently inspected, reconciled and checked offline.",
+  "external_ledger_status": "Collector became available in upstream cc0af8c at research/gaza-stance during this review. Reconciled the ledger to all 245 published items under 82 candidacies, copied missing quarantine history and recorded three Panetta resolutions. Ran date/acceptance regressions, publication reconciliation checks and revalidate_ledger.py --dry-run: 245 retained, zero hard failures. No new model collection or GPU call occurred.",
   "query_count": 198,
   "queried_federal_and_state_candidacies": 72,
   "queries": [
@@ -4797,7 +4797,7 @@
       "candidate": "Valarie Bachelor",
       "source_key": "08cbc879736f8564",
       "excerpt_check": "normalized_quote_found",
-      "disposition": "retained_after_summary_screening",
+      "disposition": "retained_with_reviewed_gaza_context_summary",
       "limitation": "Text occurrence alone does not verify identity, context, chronology or source truth."
     },
     {
@@ -4885,5 +4885,17 @@
     "The Seema Badar first-person and letter-writing sources are held pending a retrieved identity bridge to the current Dublin USD candidacy.",
     "Earlier dated reviews remain historical snapshots; this report supersedes their current-count claims only."
   ],
-  "queried_existing_local_candidacies": 39
+  "queried_existing_local_candidacies": 39,
+  "collector_review": {
+    "upstream_commit": "cc0af8c",
+    "accepted_items": 245,
+    "accepted_people": 82,
+    "quarantine_history_items": 186,
+    "resolved_quarantine_items": 3,
+    "revalidation_hard_failures": 0,
+    "revalidation_new_soft_flags": 0,
+    "additional_registered_review": "gaza-ledger-reconciliation-2026-10-14.json",
+    "summary_context_updates": 1,
+    "scope": "Inspected collection prompts, date/acceptance rules and merger; corrected stale-ledger replacement, date/provenance loss and missing-guide regressions. This does not certify every old model extraction."
+  }
 }

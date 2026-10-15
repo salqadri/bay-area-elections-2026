@@ -67,6 +67,7 @@ python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
 python3 scripts/check_fec_money.py
+python3 scripts/check_gaza_ledger.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_finance_display.cjs
 node scripts/check_explorer.cjs
@@ -77,7 +78,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete 18-check offline sequence and records its results under `.checks/`.
+`python3 scripts/check_release.py` runs this complete 19-check offline sequence and records its results under `.checks/`.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -129,7 +130,7 @@ Keep credentials, private addresses and `.checks/` out of Git. `.gitignore` alre
 
 `check_data.py` imports `check_evidence.py`, which rejects unresolved candidate/source pairs from `docs/reviews/evidence-quarantine.json`, duplicate source/excerpt pairs (including renamed X handles), reused evidence IDs with different meanings, invalid/future dates relative to the check date, and obvious raw/cut-off excerpts. Run `check_evidence.py` directly for its regression checks. These checks do not certify identity or political facts.
 
-To restore a quarantined source, establish the missing identity/attribution/content/date, record the resolution in the review log, remove its active quarantine entry, and then add the verified evidence and rebuild. Do not simply change an evidence ID or URL spelling to evade the gate. Coordinate with the external ledger so a later merge preserves the correction.
+To restore a quarantined source, establish the missing identity/attribution/content/date, record the resolution in the review log, remove its active quarantine entry, and then add the verified evidence and rebuild. Do not simply change an evidence ID or URL spelling to evade the gate. After the reviewed publication change, reconcile the versioned collector with `python3 research/gaza-stance/merge_gaza_evidence.py --sync-published` (add `--dry-run` to preview). New unreviewed collector items stop reconciliation rather than being discarded. Run `python3 scripts/check_gaza_ledger.py`; the merger rejects missing or replaced published evidence and unresolved quarantined sources before writing.
 
 `prepare_jev_review.py --include-quarantine` writes 300 JSONL packets under `.checks/` for the current review baseline. It does not invoke an API. Optional `--source-texts` accepts an object keyed by evidence ID with `{url, text}`; the URL must equal the evidence URL. Without it, only stored excerpts are supplied, explicitly labeled as such. Jev's documented endpoint/authentication contract and outbound network access are still required. No keys belong in source, generated HTML, packets, or logs.
 
