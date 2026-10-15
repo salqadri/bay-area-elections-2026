@@ -12,12 +12,14 @@ from pathlib import Path
 import re
 
 from endorsement_extract import candidates_from_data, norm, office_matches
-from publication_reviews import ROOT, REGISTRY, file_sha, load_reviews, check_registered_reviews
+from publication_reviews import ROOT, REGISTRY, file_sha, load_reviews, check_registered_reviews, candidate_records, SINGLETON_FIELDS
 from research_scope import DATA, select_scope, add_scope_arguments
 from research_endorsements import atomic_json, digest, dump
 from schema_validation import SCHEMA, check
 
-FIELDS = {'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence'}
+FIELDS = {'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence',
+          'gaza_voting_records': 'gazaVotingRecord', 'uscpr_grade': 'uscprGrade', 'gaza_platform': 'gazaPlatform'}
+SHARED_FIELDS = {'gaza_voting': 'gazaVotingSettings', 'uscpr_scorecard': 'uscprScorecardSettings'}
 
 
 def identity(position):
@@ -27,6 +29,10 @@ def identity(position):
 def record_key(field, record):
     if field == 'gaza_evidence':
         return record['id']
+    if field == 'gaza_voting_records':
+        return record['record_id']
+    if field in SINGLETON_FIELDS:
+        return field
     from check_published_endorsements import source_key
     return norm(record['endorser']), record['phase'], source_key(record['url']), record.get('historical', False)
 
@@ -47,6 +53,37 @@ def prepare(data, review, prior_reviews=None, validate=True):
         raise ValueError('Add verified official rosters before applying research to a new county')
     selected = {p['id']: p for p in selection['positions']}
     result = deepcopy(data)
+    shared_seen = set()
+    for change in review.get('shared_changes', []):
+        field = change['field']
+        if field not in SHARED_FIELDS or field in shared_seen:
+            raise ValueError('Invalid or duplicate shared research field')
+        shared_seen.add(field)
+        before, after = change['before'], change['after']
+        if before == after:
+            raise ValueError('Shared research needs an actual before/after change')
+        if result.get(field) != after and result.get(field) != before:
+            raise ValueError('Stale shared research before value: ' + field)
+        source = review['sources'][change['source_key']]
+        if not re.fullmatch(r'[0-9a-f]{64}', source.get('content_sha256', '')):
+            raise ValueError('Shared research requires an actual source hash')
+        if not source.get('retrieval') or not source.get('publisher') or not source.get('url', '').startswith('https://'):
+            raise ValueError('Shared source needs publisher, retrieval method and HTTPS URL')
+        if date.fromisoformat(source['checked_on']) > date.fromisoformat(review['reviewed_on']):
+            raise ValueError('Shared source check date is later than review')
+        if before is not None and before['checked_on'] > source['checked_on']:
+            raise ValueError('Cannot replace shared research with an older source check')
+        if after is not None:
+            errors = check(after, SCHEMA['$defs'][SHARED_FIELDS[field]])
+            if errors:
+                raise ValueError('\n'.join(errors))
+            if after['source_url'] != source['url'] or after['checked_on'] != source['checked_on']:
+                raise ValueError('Shared research provenance must match its source capture')
+            if date.fromisoformat(after['checked_on']) > date.fromisoformat(review['reviewed_on']):
+                raise ValueError('Shared research check date is later than review')
+            result[field] = deepcopy(after)
+        else:
+            result.pop(field, None)
     people = {(p['id'], c['name']): c for p in result['positions'] for c in p.get('candidates') or []}
     for ident, note in review['notes'].items():
         if not re.fullmatch(r'N[0-9]{3,}', ident) or not isinstance(note, str) or not note.strip():
@@ -90,7 +127,10 @@ def prepare(data, review, prior_reviews=None, validate=True):
                 if errors:
                     raise ValueError('\n'.join(errors))
         if after is not None:
-            if after['url'] != source['url'] or after['checked_on'] != source['checked_on']:
+            source_url = after.get('url', after.get('source_url'))
+            if field == 'gaza_platform' and after['status'] != 'statement_found':
+                source_url = source['url'] if any(p['url'] == source['url'] for p in after['pages']) else None
+            if source_url != source['url'] or after['checked_on'] != source['checked_on']:
                 raise ValueError('Record URL/check date must match its actual source capture')
             if field == 'endorsements' and not after.get('verification'):
                 raise ValueError('New recommendations require explicit provenance')
@@ -111,7 +151,7 @@ def prepare(data, review, prior_reviews=None, validate=True):
         if collision in changed_keys:
             raise ValueError('Multiple changes to one observation in a review')
         changed_keys.add(collision)
-        records = people[key].get(field, [])
+        records = candidate_records(people[key], field)
         # Exact post-state recognition makes a rerun a no-op, including removals.
         if after is not None and records.count(after) == 1 and (before is None or before not in records):
             counts['unchanged'] += 1
@@ -131,16 +171,19 @@ def prepare(data, review, prior_reviews=None, validate=True):
             records = records[:index] + ([deepcopy(after)] if after is not None else []) + records[index + 1:]
             counts['replaced' if after is not None else 'removed'] += 1
         if records:
-            people[key][field] = records
+            people[key][field] = records[0] if field in SINGLETON_FIELDS else records
         else:
             people[key].pop(field, None)
     for field in FIELDS:
-        result['coverage']['printed_candidates_with_' + field] = sum(bool(c.get(field)) for c in people.values())
+        metric = 'printed_candidates_with_' + field
+        if metric in result['coverage'] or any(d.get('field') == field and d['action'] == 'change' for d in review['decisions']):
+            result['coverage'][metric] = sum(bool(c.get(field)) for c in people.values())
     reviews = [*prior_reviews, review]
     if validate:
         from check_evidence import check_evidence
         from check_published_endorsements import check_endorsements
-        errors = check(result, SCHEMA) + check_evidence(result) + check_endorsements(result, reviews=reviews)
+        from check_gaza_records import check_gaza_records
+        errors = check(result, SCHEMA) + check_evidence(result) + check_endorsements(result, reviews=reviews) + check_gaza_records(result)
         if errors:
             raise ValueError('\n'.join(errors[:30]))
     return result, {'review_id': review['id'], 'counts': dict(counts), 'counties': selection['requested_counties'],
@@ -193,7 +236,7 @@ def apply_file(dataset, review_path):
             raise ValueError('\n'.join(errors))
         return {'review_id': review['id'], 'already_applied': True, 'dataset_changed': False}
     result, report = prepare(data, review, reviews)
-    if not any(d['action'] == 'change' for d in review['decisions']):
+    if not review.get('shared_changes') and not any(d['action'] == 'change' for d in review['decisions']):
         raise ValueError('Nothing to apply; all observations remain held')
     registry['reviews'].append({'path': str(path.relative_to(ROOT)), 'sha256': file_sha(path)})
     old_dataset, old_registry = dataset.read_bytes(), REGISTRY.read_bytes()

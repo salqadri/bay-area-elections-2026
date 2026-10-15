@@ -6,6 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from check_evidence import check_evidence
 from check_published_endorsements import check_endorsements
+from check_gaza_records import check_gaza_records
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = "2026-11-03_Bay_Area_Elections.json"
@@ -16,6 +17,8 @@ evidence_errors = check_evidence(data)
 assert not evidence_errors, '\n'.join(evidence_errors)
 endorsement_errors = check_endorsements(data)
 assert not endorsement_errors, '\n'.join(endorsement_errors)
+gaza_record_errors = check_gaza_records(data)
+assert not gaza_record_errors, '\n'.join(gaza_record_errors)
 ids = [p["id"] for p in positions]
 assert len(ids) == len(set(ids)), "Duplicate position IDs"
 counties = [c["name"] for c in data["election"]["counties_in_scope"]]
@@ -117,6 +120,9 @@ expected = {
     "printed_candidates_with_x_url": sum("x_url" in c for c in printed),
     "printed_candidates_with_secondary_x_url": sum("secondary_x_url" in c for c in printed),
     "printed_candidates_with_gaza_evidence": sum(bool(c.get("gaza_evidence")) for c in printed),
+    "printed_candidates_with_gaza_voting_records": sum(bool(c.get("gaza_voting_records")) for c in printed),
+    "printed_candidates_with_uscpr_grade": sum(bool(c.get("uscpr_grade")) for c in printed),
+    "printed_candidates_with_gaza_platform": sum(bool(c.get("gaza_platform")) for c in printed),
     "printed_candidates_with_endorsements": sum(bool(c.get("endorsements")) for c in printed),
     "printed_candidates_with_campaign_url": sum("campaign_url" in c for c in printed),
     "printed_candidates_with_independent_expenditures": sum(

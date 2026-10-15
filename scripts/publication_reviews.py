@@ -6,6 +6,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / 'research/publication-reviews.json'
+RECORD_FIELDS = ('endorsements', 'gaza_evidence', 'gaza_voting_records', 'uscpr_grade', 'gaza_platform')
+SINGLETON_FIELDS = {'uscpr_grade', 'gaza_platform'}
+
+
+def candidate_records(candidate, field):
+    value = candidate.get(field)
+    return ([value] if value is not None else []) if field in SINGLETON_FIELDS else (value or [])
 
 
 def file_sha(path):
@@ -51,10 +58,10 @@ def revised_rows(rows, field, reviews, include_new=lambda record: False):
 def check_registered_reviews(data, reviews):
     people = {(p['id'], c['name']): c for p in data['positions'] for c in p.get('candidates') or []}
     errors = []
-    for field in ('endorsements', 'gaza_evidence'):
+    for field in RECORD_FIELDS:
         expected = revised_rows([], field, reviews, lambda r: True)
         for row in expected:
-            records = people.get((row['position_id'], row['candidate']), {}).get(field, [])
+            records = candidate_records(people.get((row['position_id'], row['candidate']), {}), field)
             if records.count(row['record']) != 1:
                 errors.append(row['candidate'] + ': missing or changed registered review record')
         for review in reviews:
@@ -64,10 +71,17 @@ def check_registered_reviews(data, reviews):
                 key = change['position_id'], change['candidate']
                 before = change['before']
                 restored = any((row['position_id'], row['candidate']) == key and row['record'] == before for row in expected)
-                if not restored and before in people.get(key, {}).get(field, []):
+                if not restored and before in candidate_records(people.get(key, {}), field):
                     errors.append(change['candidate'] + ': superseded registered record reintroduced')
     for review in reviews:
         for ident, note in review['notes'].items():
             if data['notes'].get(ident) != note:
                 errors.append('Registered review note missing or changed: ' + ident)
+    shared = {}
+    for review in reviews:
+        for change in review.get('shared_changes', []):
+            shared[change['field']] = change['after']
+    for field, expected_value in shared.items():
+        if data.get(field) != expected_value:
+            errors.append('Registered shared research missing or changed: ' + field)
     return errors

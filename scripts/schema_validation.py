@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 HERE = Path(__file__).resolve().parent.parent
 SCHEMA = json.loads((HERE / "elections.schema.json").read_text())
 ANNOTATIONS = {"$schema", "$comment", "title", "description", "$defs"}
-ASSERTIONS = {"$ref", "type", "additionalProperties", "properties", "required", "minLength", "maxLength", "minItems", "maxItems", "uniqueItems", "items", "oneOf", "anyOf", "allOf", "not", "if", "then", "else", "const", "enum", "minimum", "pattern", "patternProperties", "propertyNames", "minProperties", "dependentRequired", "format"}
+ASSERTIONS = {"$ref", "type", "additionalProperties", "properties", "required", "minLength", "maxLength", "minItems", "maxItems", "uniqueItems", "items", "oneOf", "anyOf", "allOf", "not", "if", "then", "else", "const", "enum", "minimum", "maximum", "pattern", "patternProperties", "propertyNames", "minProperties", "dependentRequired", "format"}
 SEEN = set()
 
 
@@ -151,5 +151,7 @@ def check(value, schema, path="$", root=SCHEMA):
                 errors.append(f"{path}: invalid HTTP(S) URI")
     if istype(value, "number") and "minimum" in schema and value < schema["minimum"]:
         errors.append(f"{path}: value below minimum")
+    if istype(value, "number") and "maximum" in schema and value > schema["maximum"]:
+        errors.append(f"{path}: value above maximum")
     return errors
 
