@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "id": "gaza-ledger-reconciliation-2026-10-14",
+  "election_date": "2026-11-03",
+  "reviewed_on": "2026-10-14",
+  "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+  ],
+  "sources": {
+    "bachelor-source": {
+      "url": "https://mynbc15.com/news/nation-world/california-school-board-may-call-for-ceasefire-in-gaza-strip-sparking-debate-oakland-unified-school-district-israel-palestine-hamas-middle-east-conflict-terrorism-crisis-in-the-classroom",
+      "publisher": "Crisis in the Classroom / NBC 15",
+      "role": "publisher",
+      "checked_on": "2026-10-14",
+      "retrieval": "Direct HTTP complete source body",
+      "content_sha256": "0ea2a2db536bf03e7a9e8758efe227ed026887289bef73cdd9c3b855d213d490"
+    }
+  },
+  "notes": {},
+  "decisions": [
+    {
+      "id": "context-GE-0219",
+      "action": "change",
+      "field": "gaza_evidence",
+      "position_id": "CA2026-134",
+      "candidate": "Valarie Bachelor",
+      "identity": {
+        "office": "Governing Board Member / School Director",
+        "jurisdiction": "Oakland Unified School District",
+        "district_or_seat": "District 6",
+        "term": "4 years",
+        "election_type": "general"
+      },
+      "source_key": "bachelor-source",
+      "before": {
+        "id": "GE-0219",
+        "url": "https://mynbc15.com/news/nation-world/california-school-board-may-call-for-ceasefire-in-gaza-strip-sparking-debate-oakland-unified-school-district-israel-palestine-hamas-middle-east-conflict-terrorism-crisis-in-the-classroom",
+        "summary": "Bachelor stated the board's goal is to 'guide this conflict towards peace' as opposed to 'continued bloodshed,' invoking 'an eye for an eye makes the whole world blind.'",
+        "date": "2023-11-10",
+        "dimension": "framing_balance",
+        "checked_on": "2026-10-08",
+        "quote": "Valarie Bachelor, the Oakland school board member who introduced the resolution, said the board's goal is to \"guide this conflict towards peace\" as opposed to \"continued bloodshed.\"",
+        "source_kind": "news",
+        "date_method": "source_stated"
+      },
+      "after": {
+        "id": "GE-0219",
+        "url": "https://mynbc15.com/news/nation-world/california-school-board-may-call-for-ceasefire-in-gaza-strip-sparking-debate-oakland-unified-school-district-israel-palestine-hamas-middle-east-conflict-terrorism-crisis-in-the-classroom",
+        "summary": "Discussing her Gaza ceasefire resolution, Bachelor said the board sought peace over continued bloodshed, invoking the 'eye for an eye' proverb to argue against escalation.",
+        "date": "2023-11-10",
+        "dimension": "framing_balance",
+        "checked_on": "2026-10-14",
+        "quote": "Valarie Bachelor, the Oakland school board member who introduced the resolution, said the board's goal is to \"guide this conflict towards peace\" as opposed to \"continued bloodshed.\"",
+        "source_kind": "news",
+        "date_method": "source_stated"
+      },
+      "reason": "The newly versioned collector validator cannot recognize relevance from a context-free peace quotation without its ignored raw-page cache. Reopened story explicitly identifies the Gaza ceasefire resolution; preserve that context in the summary.",
+      "evidence": {
+        "identity_basis": "The retrieved story explicitly names Oakland school board member Valarie Bachelor and the resolution she introduced.",
+        "date_basis": "Source states November 10, 2023; retained publication date. Reopened October 14, 2026.",
+        "issue_basis": "The story explicitly describes the Gaza ceasefire resolution and quotes her request for peace rather than continued bloodshed."
+      }
+    }
+  ]
+}

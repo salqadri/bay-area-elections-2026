@@ -73,8 +73,22 @@ the ledger; `merge_gaza_evidence.py` also refuses dateless items. Retrofits:
 
 ## Status
 
-- **All five counties complete** (base + `--enrich` depth passes for all 861 tracked people; enrichment finished 2026-10-09 under the post-audit acceptance rules — logs in `enrich_run.log`). After three review passes (two Hermes audits + Codex PR #1 per-item summary review) and full reconciliation: **231 dated items / 81 people** — the ledger mirrors `docs/reviews/evidence-quarantine.json` in the election repo, which is the authority for holds; quarantine file now 179 entries. Merged and published ungraded into the election dataset as `gaza_evidence` (schema 1.11: every item carries a calendar-valid date + `date_method`, optional `date_note`). Further enrichment has hit diminishing returns; remaining work is targeted follow-up on high-salience federal/statewide dossiers
+- **October 14 manual audit:** the ledger now mirrors **245 dated items / 82 candidacies**, including the 14 earlier guide observations, three restored Panetta statements and three additional ceasefire-related observations. Six syndicated/uncertain records are held or deduplicated; one retained Bachelor summary now explicitly identifies its Gaza context. The quarantine history has 186 entries, including three resolved Panetta holds whose original reasons remain preserved. See [the review](../../docs/reviews/2026-10-14-gaza-and-finance-review.md). No new model collection ran in this audit; these counts do not certify exhaustive research.
+- **Earlier collection:** all five counties had base + `--enrich` depth passes for the then-tracked 861 people; enrichment finished October 9 under the post-audit acceptance rules (logs in `enrich_run.log`). Before the guide/audit reconciliation, the corrected ledger had 231 items under 81 people. The publication uses the current schema's full calendar dates and date provenance. Further collection should target unresolved dossiers rather than repeat the broad enrichment pass.
 - **Acceptance rules** live in `validate_evidence.py` (hard quarantine + soft review flags via `ledger/review_flags.json`); apply them to existing output with `revalidate_ledger.py`, regression cases in `tests/test_validate_evidence.py`. The extraction prompt now requires an identity link between source and candidate office/jurisdiction before any item is proposed
 - Post-run review quarantines same-name misattributions and non-evidence items into `ledger/undated_quarantine.json` with a reason (**111 entries** as of 2026-10-09); the merge removes dataset evidence whose ledger entry is gone. Scan new local-candidate items for far-away place names after each county run — the LLM extractor does not check candidate identity against geography
 - Second-review rules (October 9): collective statements/current rosters never establish an individual co-signature (contemporaneous membership + explicit attribution required); a relevance regex gate with cached-page-text fallback keeps only Israel/Gaza/Palestine items; `normalize_url()` dedupes tracking params/fragments/trailing slashes; `$None`-style failed extractions rejected. Regression cases in `tests/test_validate_evidence.py`
 - Evidence from sub-agent deep dives is merged with `source_kind: "agent"`.
+
+## Manual corrections and safe merging
+
+The repository quarantine and immutable publication reviews govern published evidence. Apply new manual findings through `scripts/reviewed_updates.py` from the repository root, then copy those reviewed records and holds back into this ledger:
+
+```bash
+python3 research/gaza-stance/merge_gaza_evidence.py --sync-published --dry-run
+python3 research/gaza-stance/merge_gaza_evidence.py --sync-published
+python3 research/gaza-stance/revalidate_ledger.py --dry-run
+python3 scripts/check_gaza_ledger.py
+```
+
+Synchronization refuses to discard unknown draft items. Review those through the common capture/review workflow first. The merge rejects missing or replaced publication records, unresolved quarantined sources and invalid dates before writing. It preserves `source_observed` guide dates and full summaries; it cannot silently remove manual guide observations. A reconciled merge is a dataset-preserving round trip. Raw source caches are not required for these offline regression checks, and the deterministic rules still require human identity/context review.

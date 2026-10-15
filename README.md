@@ -111,7 +111,7 @@ The earlier October 9 audit removed **725 unsupported records**, including 723 n
 
 Read the [detailed review and limitations](docs/reviews/2026-10-08-post-enrichment-review.md), [per-item decisions](docs/reviews/2026-10-08-summary-review.json), and [quarantine](docs/reviews/evidence-quarantine.json). The optional Jev assessment was canceled by the project owner. These are manual corrections, not model-reviewed findings. Unchanged records have not all been independently fact-checked.
 
-Schema 1.17 adds display-only `logo_url` on endorsement records and `election.publication_version`, a dated release marker (`YYYY-MM-DD.N`) shown in both page footers so readers can tell when content was last published; bump the sequence with each published dataset change. Schema 1.16 preserves calendar-valid dates and date provenance and explicitly labels historical endorsements/support. Both pages label archive captures as upper bounds and `source_observed` voter-guide assessments as dated snapshots with unknown original dates. These snapshots cannot establish the chronology of underlying candidate statements, votes or contributions. The collector/ledger (versioned at `research/gaza-stance/`) must reconcile the repository quarantine before merging again; `check_data.py` now rejects unresolved quarantined sources. Omission means no retained evidence, not that a candidate has no position. The ballot and structured FEC research dates above are unchanged.
+Schema 1.17 adds display-only `logo_url` on endorsement records and `election.publication_version`, a dated release marker (`YYYY-MM-DD.N`) shown in both page footers so readers can tell when content was last published; bump the sequence with each published dataset change. Schema 1.16 preserves calendar-valid dates and date provenance and explicitly labels historical endorsements/support. Both pages label archive captures as upper bounds and `source_observed` voter-guide assessments as dated snapshots with unknown original dates. These snapshots cannot establish the chronology of underlying candidate statements, votes or contributions. The collector/ledger (versioned at `research/gaza-stance/`) is reconciled to this publication; synchronize it after future manual changes before merging again; `check_data.py` now rejects unresolved quarantined sources. Omission means no retained evidence, not that a candidate has no position. The ballot and structured FEC research dates above are unchanged.
 
 ## Files and data conventions
 
@@ -149,6 +149,7 @@ python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
 python3 scripts/check_fec_money.py
+python3 scripts/check_gaza_ledger.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_finance_display.cjs
 node scripts/check_explorer.cjs
@@ -159,7 +160,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-Run the full sequence above with **`python3 scripts/check_release.py`** (18 checks); its report and detailed logs go to `.checks/`.
+Run the full sequence above with **`python3 scripts/check_release.py`** (19 checks); its report and detailed logs go to `.checks/`.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 
