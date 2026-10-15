@@ -5,8 +5,8 @@ Deterministic maintenance pass for the two FEC-derived layers:
  1. Independent expenditures — refetch Schedule E rows for every printed federal
     candidate (``fec_independent_expenditures.py run --force``), re-aggregate and
     attach with a fresh ``checked_on`` date.
- 2. Campaign receipts — for each candidate's authorized committee, read the FEC
-    committee cycle totals. Update ``receipts``/``through`` only when the reported
+ 2. Campaign receipts — read each candidate's aggregate cycle totals.
+    Update ``receipts``/``through`` only when the reported
     coverage start still equals the stored ``from`` (so multi-cycle exceptions like
     Scott Wiener's 2023-start summary are never silently relabelled) and the new
     coverage end is later than the stored one. Missing totals stay null; a total is
@@ -18,14 +18,18 @@ was refreshed, which is exactly what those dates certify), advance
 release gate, and only on a fully green gate commit + push to main. A failing gate
 aborts with no dataset publication and exit code 1.
 
-The FEC key comes from FEC_API_KEY or /root/.cfg/fec_key; the git token from
-/root/.cfg/gh_token. Neither is ever written into the repository. Intended for a
+The FEC key comes from FEC_API_KEY or --fec-key-file. Git uses configured
+credentials, or GITHUB_TOKEN/GH_TOKEN/--github-token-file through an HTTP header
+in the child environment, never a credential-bearing URL or command argument.
+Neither credential is written into the repository or error output. Intended for a
 scheduled run through Election Day (November 3, 2026); after that it exits as a
 no-op unless --force-window is passed.
 """
 
 import argparse
+import base64
 import json
+import os
 import re
 import subprocess
 import sys
@@ -38,15 +42,53 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / "2026-11-03_Bay_Area_Elections.json"
 COLLECTOR = ROOT / "scripts/fec_independent_expenditures.py"
-REMOTE = ("https://x-access-token:{token}@"
-          "github.com/salqadri/bay-area-elections-2026.git")
+REMOTE = "https://github.com/salqadri/bay-area-elections-2026.git"
 
 
-def sh(*cmd, check=True):
-    result = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+def redact(text, secrets=()):
+    for secret in secrets:
+        if secret:
+            text = text.replace(secret, '[redacted]')
+    return re.sub(r'(https?://)[^/\s@]+@', r'\1[redacted]@', text)
+
+
+def sh(*cmd, check=True, env=None, secrets=()):
+    result = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, env=env)
     if check and result.returncode != 0:
-        raise SystemExit(f"command failed: {' '.join(map(str, cmd))}\n{result.stdout[-2000:]}\n{result.stderr[-2000:]}")
+        # Redact before truncation so a token crossing the output boundary cannot
+        # leak a suffix that no longer matches the complete secret.
+        command = redact(' '.join(map(str, cmd)), secrets)
+        stdout = redact(result.stdout, secrets)[-2000:]
+        stderr = redact(result.stderr, secrets)[-2000:]
+        raise SystemExit(f'command failed: {command}\n{stdout}\n{stderr}')
     return result
+
+
+def read_secret(names, filename, required=False):
+    for name in names:
+        if os.environ.get(name, '').strip():
+            return os.environ[name].strip()
+    try:
+        value = Path(filename).read_text(encoding='utf-8').strip() if filename else ''
+    except OSError:
+        value = ''
+    if not value and required:
+        raise SystemExit('Provide ' + names[0] + ' or a readable credential file.')
+    return value
+
+
+def push_main(token=''):
+    env = None
+    secrets = ()
+    if token:
+        encoded = base64.b64encode(('x-access-token:' + token).encode()).decode()
+        env = os.environ.copy()
+        index = int(env.get('GIT_CONFIG_COUNT', '0'))
+        env['GIT_CONFIG_COUNT'] = str(index + 1)
+        env[f'GIT_CONFIG_KEY_{index}'] = 'http.https://github.com/.extraheader'
+        env[f'GIT_CONFIG_VALUE_{index}'] = 'AUTHORIZATION: basic ' + encoded
+        secrets = (token, encoded)
+    sh('git', 'push', REMOTE, 'HEAD:main', env=env, secrets=secrets)
 
 
 def fec_totals(key, candidate_id):
@@ -58,6 +100,53 @@ def fec_totals(key, candidate_id):
     with urllib.request.urlopen(url, timeout=45) as response:
         results = json.load(response).get("results") or []
     return results[0] if results else None
+
+
+def fec_committees(key, candidate_id):
+    url = ('https://api.open.fec.gov/v1/candidate/' + candidate_id + '/committees/?'
+           + urllib.parse.urlencode({'cycle': 2026, 'api_key': key, 'per_page': 100}))
+    with urllib.request.urlopen(url, timeout=45) as response:
+        results = json.load(response).get('results') or []
+    return sorted({r['committee_id'] for r in results
+                   if r.get('designation') in {'P', 'A'} and r.get('committee_id')})
+
+
+def update_receipts(fec, totals, checked_on, committee_ids=None):
+    """Validate one full summary before mutating; unknown is distinct from zero."""
+    receipts = (totals or {}).get('receipts')
+    if receipts is None:
+        return 'skipped', 'no published total'
+    start = str(totals.get('coverage_start_date') or '')[:10]
+    end = str(totals.get('coverage_end_date') or '')[:10]
+    try:
+        valid_period = date.fromisoformat(start) <= date.fromisoformat(end) <= date.fromisoformat(checked_on)
+    except ValueError:
+        valid_period = False
+    if not valid_period:
+        return 'skipped', 'missing or invalid coverage period'
+    if fec.get('from') and start != fec['from']:
+        return 'skipped', 'coverage start differs from the stored period; exception preserved'
+    if fec.get('through') and end < fec['through']:
+        return 'skipped', 'older coverage end; existing snapshot preserved'
+    if not fec.get('from') and int(start[:4]) < 2025:
+        return 'skipped', 'new multi-cycle coverage requires a reviewed explanatory note'
+    amount = Decimal(str(receipts)).quantize(Decimal('0.01'))
+    if not amount.is_finite() or amount < 0:
+        raise ValueError('Invalid FEC receipt amount')
+    if fec.get('receipts') is not None and Decimal(str(fec['receipts'])) > amount:
+        raise ValueError('New receipts below the stored total; investigate before publishing')
+    committees = committee_ids or totals.get('committee_ids') or fec.get('committee_ids')
+    if not committees or any(not re.fullmatch(r'C[0-9]{8}', cid) for cid in committees):
+        return 'skipped', 'authorized committee IDs unavailable; existing snapshot preserved'
+    if fec.get('receipts') == float(amount) and fec.get('through') == end:
+        return 'unchanged', ''
+    was_unknown = fec.get('receipts') is None
+    fec.update(receipts=float(amount), **{'from': start, 'through': end, 'committee_ids': sorted(set(committees))})
+    if was_unknown:
+        # The old shared note says no summary total was available. Do not retain
+        # that claim after the candidate has a fully dated published summary.
+        fec.pop('note_id', None)
+    return 'updated', f'${amount:,} through {end}'
 
 
 def next_version(current):
@@ -73,6 +162,8 @@ def main():
                         help="run even after the November 4, 2026 window closes")
     parser.add_argument("--skip-push", action="store_true",
                         help="refresh and validate locally without publishing")
+    parser.add_argument('--fec-key-file', default='/root/.cfg/fec_key')
+    parser.add_argument('--github-token-file', default='/root/.cfg/gh_token')
     args = parser.parse_args()
 
     if date.today() > date(2026, 11, 4) and not args.force_window:
@@ -80,16 +171,22 @@ def main():
               "Remove or pause this scheduled job.")
         return
 
-    key = Path("/root/.cfg/fec_key").read_text(encoding="utf-8").strip()
+    if not args.skip_push:
+        if sh('git', 'branch', '--show-current').stdout.strip() != 'main':
+            raise SystemExit('Automated publication requires the main branch; use --skip-push for local review.')
+        if sh('git', 'status', '--porcelain').stdout.strip():
+            raise SystemExit('Automated publication requires a clean checkout; review existing changes first.')
+    key = read_secret(('FEC_API_KEY',), args.fec_key_file, required=True)
     today = date.today().isoformat()
     report = {"date": today}
 
     # 1) Independent expenditures: refetch everything, re-aggregate, attach.
-    sh(sys.executable, str(COLLECTOR), "run", "--force")
+    fec_env = {**os.environ, 'FEC_API_KEY': key}
+    sh(sys.executable, str(COLLECTOR), "run", "--force", env=fec_env, secrets=(key,))
     before = json.loads(DATASET.read_text(encoding="utf-8"))
     sh(sys.executable, str(COLLECTOR), "attach", "--checked-on", today)
 
-    # 2) Receipts: committee cycle totals with the coverage-start guard.
+    # 2) Candidate aggregate receipts with the coverage-start guard.
     data = json.loads(DATASET.read_text(encoding="utf-8"))
     updated, skipped = [], []
     for position in data["positions"]:
@@ -100,25 +197,15 @@ def main():
             if not isinstance(fec, dict) or not fec.get("id"):
                 continue
             totals = fec_totals(key, fec["id"])
-            receipts = (totals or {}).get("receipts")
-            start = str((totals or {}).get("coverage_start_date") or "")[:10]
-            end = str((totals or {}).get("coverage_end_date") or "")[:10]
             label = candidate["name"]
-            if receipts is None:
-                skipped.append(f"{label}: no published total (stays {fec.get('receipts')!r})")
-                continue
-            amount = Decimal(str(receipts)).quantize(Decimal("0.01"))
-            if fec.get("from") and start != fec["from"]:
-                skipped.append(f"{label}: coverage start {start} != stored {fec['from']} (exception preserved)")
-                continue
-            if fec.get("receipts") == float(amount) and fec.get("through") == end:
-                continue
-            assert not Decimal(str(fec["receipts"] or 0)) > amount, \
-                f"{label}: new total {amount} below stored {fec['receipts']} — investigate before publishing"
-            fec["receipts"] = float(amount)
-            if fec.get("from"):
-                fec["through"] = end
-            updated.append(f"{label}: ${amount:,} through {end}")
+            committees = None
+            if (totals or {}).get('receipts') is not None and not (fec.get('committee_ids') or totals.get('committee_ids')):
+                committees = fec_committees(key, fec['id'])
+            status, reason = update_receipts(fec, totals, today, committees)
+            if status == 'updated':
+                updated.append(label + ': ' + reason)
+            elif status == 'skipped':
+                skipped.append(label + ': ' + reason)
 
     data["finance"]["checked_on"] = today
     version = next_version(before["election"].get("publication_version"))
@@ -135,15 +222,15 @@ def main():
         print(json.dumps(report, indent=2))
         print(gate.stdout[-3000:])
         raise SystemExit(1)
-    report["gate"] = "16/16 PASS"
+    report["gate"] = "Complete offline release gate passed"
 
     if args.skip_push:
         report["published"] = False
         print(json.dumps(report, indent=2))
         return
 
-    token = Path("/root/.cfg/gh_token").read_text(encoding="utf-8").strip()
-    sh("git", "add", "-A")
+    token = read_secret(('GITHUB_TOKEN', 'GH_TOKEN'), args.github_token_file)
+    sh("git", "add", DATASET.name, "index.html", "ballot.html")
     message = (f"FEC money refresh {today}: receipts + independent expenditures\n\n"
                f"Receipts updated: {len(updated)}; skipped with reason: {len(skipped)}.\n"
                f"IE layer refetched for all printed federal candidates. "
@@ -154,12 +241,14 @@ def main():
         report["note"] = "no changes since last refresh"
         print(json.dumps(report, indent=2))
         return
+    if commit.returncode:
+        raise SystemExit(redact('Commit failed: ' + commit.stdout + commit.stderr, (token, key)))
     sh("git", "fetch", "origin", "--quiet")
     ahead_behind = sh("git", "rev-list", "--left-right", "--count", "HEAD...origin/main").stdout.split()
     if ahead_behind != ["1", "0"]:
         report["published"] = False
         raise SystemExit(f"unexpected divergence from origin/main ({ahead_behind}); aborting push")
-    sh("git", "push", REMOTE.format(token=token) + " HEAD:main")
+    push_main(token)
     report["published"] = True
     print(json.dumps(report, indent=2))
 

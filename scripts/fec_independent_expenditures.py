@@ -261,32 +261,30 @@ def aggregate(db, cycle: int):
                 continue
             counted.append(row)
         spenders = {}
+        directions = {}
         for row in counted:
             key = row["committee_id"] or f"name:{(row['committee_name'] or '').strip().upper()}"
-            entry = spenders.setdefault(key, {
+            spenders.setdefault(key, {
                 "spender_id": key, "name": row["committee_name"],
-                "committee_type": row["committee_type"],
-                "for_amount": Decimal("0"), "against_amount": Decimal("0"),
+                "committee_type": row["committee_type"]})
+            direction = "for" if row["support_oppose"] == "S" else "against"
+            entry = directions.setdefault((key, direction), {
+                "spender_id": key, "direction": direction, "amount": Decimal("0"),
                 "items": 0, "first_date": None, "last_date": None})
-            direction = "for_amount" if row["support_oppose"] == "S" else "against_amount"
-            entry[direction] += Decimal(str(row["amount"]))
+            entry['amount'] += Decimal(str(row['amount']))
             entry["items"] += 1
             day = row["expenditure_date"] or row["dissemination_date"]
             if day:
                 entry["first_date"] = min(entry["first_date"] or day, day)
                 entry["last_date"] = max(entry["last_date"] or day, day)
         items = []
-        for entry in spenders.values():
+        for entry in directions.values():
             item = {"spender_id": entry["spender_id"], "items": entry["items"],
                     "first_expenditure_date": entry["first_date"],
-                    "last_expenditure_date": entry["last_date"]}
-            if entry["for_amount"] > 0:
-                item["direction"] = "for"
-                item["amount"] = float(entry["for_amount"])
-            else:
-                item["direction"] = "against"
-                item["amount"] = float(entry["against_amount"])
-            items.append(item)
+                    "last_expenditure_date": entry["last_date"],
+                    "direction": entry['direction'], "amount": float(entry['amount'])}
+            if item['amount'] > 0:
+                items.append(item)
         items.sort(key=lambda i: -i["amount"])
         out[candidate_id] = {
             "name": name, "position_id": position_id,

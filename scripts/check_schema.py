@@ -58,7 +58,7 @@ negative_cases = {
     "fec_amount_as_string": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts='$100'),
     "fec_amount_missing_cutoff": lambda d: d['positions'][0]['candidates'][0]['fec'].pop('through'),
     "fec_unknown_with_coverage_dates": lambda d: d['positions'][0]['candidates'][0]['fec'].update(receipts=None),
-    "fec_unavailable_without_note": lambda d: next(c for p in d['positions'] for c in p['candidates'] or [] if c.get('fec', {}).get('receipts', 1) is None)['fec'].pop('note_id'),
+    "fec_unavailable_without_note": lambda d: d['positions'][0]['candidates'][0].update(fec={'id':'H6CA00001','receipts':None,'source_id':'S001'}),
     "x_url_wrong_host": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://twitter.com/someone"),
     "x_url_with_path_noise": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/someone/home"),
     "x_url_invalid_characters": lambda d: d["positions"][0]["candidates"][0].update(x_url="https://x.com/not a handle"),

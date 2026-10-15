@@ -147,6 +147,8 @@
         if (candidate.campaign_url) { const w = node('a', 'ballot-candidate-x', 'Site ↗'); w.href = candidate.campaign_url; w.target = '_blank'; w.rel = 'noopener noreferrer'; row.append(w); }
         if (candidate.x_url) { const x = node('a', 'ballot-candidate-x', candidate.secondary_x_url ? 'X @' + candidate.x_url.split('/').pop() + ' ↗' : 'X ↗'); x.href = candidate.x_url; x.target = '_blank'; x.rel = 'noopener noreferrer'; row.append(x); }
         if (candidate.secondary_x_url) { const x2 = node('a', 'ballot-candidate-x', 'X @' + candidate.secondary_x_url.split('/').pop() + ' ↗'); x2.href = candidate.secondary_x_url; x2.target = '_blank'; x2.rel = 'noopener noreferrer'; row.append(x2); }
+        const money = CampaignFinanceDisplay.render(candidate, DATA, {node, link: safeLink, dateLabel});
+        if (money) row.append(money);
         if (candidate.gaza_evidence?.length) {
           const det = node('details', 'ballot-candidate-evidence');
           det.append(node('summary', null, 'Gaza stance research · ' + candidate.gaza_evidence.length + ' items (ungraded)'));
