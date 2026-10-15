@@ -149,16 +149,8 @@
         if (candidate.secondary_x_url) { const x2 = node('a', 'ballot-candidate-x', 'X @' + candidate.secondary_x_url.split('/').pop() + ' ↗'); x2.href = candidate.secondary_x_url; x2.target = '_blank'; x2.rel = 'noopener noreferrer'; row.append(x2); }
         const money = CampaignFinanceDisplay.render(candidate, DATA, {node, link: safeLink, dateLabel});
         if (money) row.append(money);
-        if (candidate.gaza_evidence?.length) {
-          const det = node('details', 'ballot-candidate-evidence');
-          det.append(node('summary', null, 'Gaza stance research · ' + candidate.gaza_evidence.length + ' items (ungraded)'));
-          for (const e of candidate.gaza_evidence) {
-            const li = node('p', null, evidenceDateLabel(e) + ' — ' + e.summary);
-            li.append(' ', safeLink(e.url, 'source ↗'));
-            det.append(li);
-          }
-          row.append(det);
-        }
+        const gaza = GazaEvidenceDisplay.render(candidate, DATA, {node, link: safeLink, dateLabel, evidenceDateLabel, className: 'ballot-candidate-evidence'});
+        if (gaza) row.append(gaza);
         if (candidate.endorsements?.length) {
           const en = node('details', 'ballot-candidate-endorsements');
           en.append(node('summary', null, EndorsementDisplay.summary(candidate.endorsements)));
@@ -349,6 +341,8 @@
       finance: DATA.finance,
       ie_finance: DATA.ie_finance,
       ie_spenders: DATA.ie_spenders,
+      gaza_voting: DATA.gaza_voting,
+      uscpr_scorecard: DATA.uscpr_scorecard,
       notes: DATA.notes,
       sources: DATA.sources
     };

@@ -318,8 +318,9 @@ def cmd_attach(args):
     db = open_db(Path(args.db))
     aggregates = aggregate(db, args.cycle)
     data = json.loads(DATASET.read_text(encoding="utf-8"))
-    if data["schema_version"] != "1.18":
-        raise SystemExit("Dataset schema must be 1.18 before attach; update the schema first.")
+    expected_schema = json.loads((ROOT / "elections.schema.json").read_text())["properties"]["schema_version"]["const"]
+    if data["schema_version"] != expected_schema:
+        raise SystemExit(f"Dataset schema must be {expected_schema} before attach; update the schema first.")
     checked_on = args.checked_on or date.today().isoformat()
 
     # Shared spender registry: additive, keyed by FEC committee id (or name fallback).

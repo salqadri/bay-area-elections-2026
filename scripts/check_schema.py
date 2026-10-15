@@ -92,6 +92,16 @@ for label, mutate in negative_cases.items():
     assert result, f"Negative case was accepted: {label}"
     outcomes.append({"case": label, "rejected": True, "first_error": result[0]})
 
+
+# The publisher percentage needs an upper bound; test the new assertion directly
+# without cloning the complete election dataset for each boundary value.
+score_schema = SCHEMA['$defs']['uscprGradeValue']['properties']['score']
+for value in (101, 100.01):
+    assert check(value, score_schema), 'USCPR percentages above 100 must be rejected'
+for value in (None, 0, 100):
+    assert not check(value, score_schema), 'Unreported and boundary percentages remain valid'
+outcomes.append({'case': 'publisher_percentage_above_100', 'rejected': True})
+
 future_party = mutated(lambda d: (d["codes"]["party"].update(L="Libertarian Party"), d["positions"][0]["candidates"][0].update(party="L")))
 assert not check(future_party, SCHEMA), "Future registered party code must remain valid"
 future_county = mutated(lambda d: (d["election"]["counties_in_scope"].append({"name": "Marin", "ocd_division_id": "ocd-division/country:us/state:ca/county:marin"}), d["positions"][0]["counties"].append("Marin")))

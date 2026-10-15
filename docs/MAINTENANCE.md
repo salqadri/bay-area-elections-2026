@@ -1,6 +1,6 @@
 # Maintaining the explorer
 
-This guide describes the implementation at the October 6, 2026 handoff. Inspect current code before relying on a fixed provider layer, snapshot count or version.
+This guide includes the October 15, 2026 schema 1.19 update. Inspect current code before relying on a fixed provider layer, snapshot count or version.
 
 ## Development setup
 
@@ -32,13 +32,16 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/address-matcher.js` | Geography normalization, inclusive race matching, union of ambiguous matches |
 | `src/endorsement-display.js` | Shared endorsement, preference, opposition and support wording, provenance and source-rating labels |
 | `src/finance-display.js` | Shared dated FEC receipts and independent-spending disclosure in both readers |
+| `src/gaza-evidence-display.js` | Shared Gaza disclosure with separate publisher grades, congressional source actions, reviewed platform checks and web/social/guide evidence |
+| `scripts/sync_gaza_records.py` | Capture the tracker and official grade feed; draft or locally apply exact reviewed candidate changes |
+| `scripts/research_campaign_platforms.py` | Plan bounded website checks and produce held source packets/results for Hermes; no automatic political decision or publication |
 | `src/ballot-page.js` | Form orchestration, warnings, candidate/race display and estimate export |
 | `scripts/build_site.py` | Embeds the dataset, schema where applicable, shared CSS and JavaScript into both pages |
 | `scripts/prepare_dom_fixture.py` | Parses built pages into disposable DOM fixtures for Node integration checks |
 
 `index.html` and `ballot.html` are generated and committed. The first embeds the dataset and schema; the second embeds the dataset and address modules. Both are self-contained except for remote address services invoked by user interaction. Shared style changes in the index template also affect the ballot page. Preserve the build's `<` escaping for embedded JSON and its rejection of closing-script sequences in inline JavaScript.
 
-The downloaded address estimate uses **`bay-area-ballot-estimate/v1`**, not the inventory schema. It carries geography, confidence-tagged races and shared metadata, and deliberately omits raw addresses/coordinates. If its shape changes, treat it as a separate format contract; a dedicated schema is a possible improvement, not something already provided.
+The downloaded address estimate uses **`bay-area-ballot-estimate/v1`**, not the inventory schema. It carries geography, confidence-tagged races and shared metadata, including the Gaza action registry and USCPR provenance needed to interpret candidate records, and deliberately omits raw addresses/coordinates. If its shape changes, treat it as a separate format contract; a dedicated schema is a possible improvement, not something already provided.
 
 ## Normal change workflow
 
@@ -68,8 +71,13 @@ python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
 python3 scripts/check_fec_money.py
 python3 scripts/check_gaza_ledger.py
+python3 scripts/check_campaign_platforms.py
+python3 scripts/check_uscpr_scorecard.py
+python3 scripts/check_gaza_voting_records.py
+python3 scripts/check_gaza_records.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_finance_display.cjs
+node scripts/check_gaza_display.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -78,7 +86,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete 19-check offline sequence and records its results under `.checks/`.
+`python3 scripts/check_release.py` runs this complete 24-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -88,6 +96,8 @@ The fixture preparation must follow the build and precede the two page integrati
 | Data check | IDs/references, omission rules, global counts, FEC conventions and embedded inventory agree | Source truth, URL validity, correct geographic eligibility or exhaustive coverage |
 | Schema check | Current schema keywords and positive/negative examples pass the repository's focused validator | Full standards compliance; use a standard Draft 2020-12 validator with format checking for interoperability |
 | Finance checks | Direction-specific aggregation, safe Git push arguments and redaction, first reported receipts metadata, shared disclosure output | Live FEC totals or an actual authenticated push |
+| Gaza source and display checks | Complete reviewed sheet dimensions/values/colors, distinct official grade periods, candidate/source bindings, publication snapshots and shared UI sections | Independent verification of every legislative description/value, exhaustive career history or source-assigned political assessments |
+| Campaign platform checks | Bounded collection, exact packet/capture/identity bindings, state-specific held decisions and no silent publication | Completion of the deferred candidate-site pass, political meaning or complete-site exhaustiveness |
 | Explorer/ballot checks | Real embedded scripts work in a minimal DOM harness with fixture responses | Layout, real keyboard/browser event behavior or live geocoding |
 | Service/autocomplete/matcher checks | Parsing, timeout/abort, rate handling, uncertainty, unions and regression cases | Live provider response shapes, CORS, uptime or actual district correctness |
 
@@ -127,6 +137,22 @@ Keep credentials, private addresses and `.checks/` out of Git. `.gitignore` alre
 
 
 ## Evidence release guard and model-review preparation
+
+Schema 1.19 keeps `gaza_evidence`, `gaza_voting_records`, `uscpr_grade` and `gaza_platform` separate. The last three presence counts do not change the 245 existing prose-evidence items or imply that the platform pass has run. The shared renderer puts the layers inside one collapsed Gaza disclosure in each reader. Every tracked source action stays available in a nested Congress/member disclosure, with its actual date and source kind. Sheet colors are source assessments, accompanied by text; `Yes`, `No`, `Not voting`, `Present`, `Not elected` and missing values retain their distinct meanings. Only the official scorecard supplies USCPR grades; Column A never supplies a fallback. See [GAZA_VOTING_RECORDS.md](GAZA_VOTING_RECORDS.md) and [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md).
+
+To refresh both congressional sources, capture dated snapshots, then draft an exact local review:
+
+```sh
+python3 scripts/sync_gaza_records.py capture --checked-on YYYY-MM-DD
+python3 scripts/sync_gaza_records.py review \
+  --votes research/gaza-records/voting-records-YYYY-MM-DD.json \
+  --grades research/gaza-records/uscpr-grades-YYYY-MM-DD.json \
+  --links research/gaza-records/candidate-links.json \
+  --id gaza-records-YYYY-MM-DD \
+  --output research/reviews/gaza-records-YYYY-MM-DD.json
+```
+
+Replace the date with the actual retrieval date and choose an unused review ID/path. Read the source differences, reviewed identity links, old/new candidate fields and missing-profile dispositions before applying the draft with `python3 scripts/reviewed_updates.py apply research/reviews/gaza-records-YYYY-MM-DD.json`. The sync script also supports `review --apply` on its first invocation with a new output path after source review; it only applies locally and never commits, pushes or deploys. An existing review file is immutable and must not be overwritten. New sheet columns/header layouts stop capture until the adapter and source dispositions are reviewed. Keep the dated normalized snapshots and registered publication review together, bump `publication_version`, rebuild and run the full gate. A source refresh must not advance ballot or finance research dates.
 
 `check_data.py` imports `check_evidence.py`, which rejects unresolved candidate/source pairs from `docs/reviews/evidence-quarantine.json`, duplicate source/excerpt pairs (including renamed X handles), reused evidence IDs with different meanings, invalid/future dates relative to the check date, and obvious raw/cut-off excerpts. Run `check_evidence.py` directly for its regression checks. These checks do not certify identity or political facts.
 

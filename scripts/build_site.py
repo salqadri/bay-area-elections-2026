@@ -28,6 +28,11 @@ def render(page="index"):
     if html.count('__FINANCE_DISPLAY_JS__') != 1:
         raise ValueError('Expected one shared finance display placeholder')
     html = html.replace('__FINANCE_DISPLAY_JS__', finance_js)
+    gaza_js = (ROOT / 'src/gaza-evidence-display.js').read_text(encoding='utf-8')
+    assert '</script' not in gaza_js.lower(), 'Unsafe inline Gaza evidence script'
+    if html.count('__GAZA_EVIDENCE_DISPLAY_JS__') != 1:
+        raise ValueError('Expected one shared Gaza evidence display placeholder')
+    html = html.replace('__GAZA_EVIDENCE_DISPLAY_JS__', gaza_js)
     if page == "ballot":
         source = (ROOT / "src/index.template.html").read_text(encoding="utf-8")
         css = re.search(r"<style>(.*?)</style>", source, re.S).group(1)

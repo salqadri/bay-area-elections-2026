@@ -223,5 +223,69 @@ class UpdateChecks(unittest.TestCase):
                 self.assertEqual((dataset.read_bytes(), registry.read_bytes()), written)
 
 
+class CongressionalReviewChecks(unittest.TestCase):
+    """Use the captured source to exercise singleton/shared review history."""
+    @classmethod
+    def setUpClass(cls):
+        import sync_gaza_records as sync
+        cls.data = deepcopy(BASE)
+        for field in ('gaza_voting', 'uscpr_scorecard'):
+            cls.data.pop(field, None)
+        for p in cls.data['positions']:
+            for c in p.get('candidates') or []:
+                for field in ('gaza_voting_records', 'uscpr_grade'):
+                    c.pop(field, None)
+        for field in ('gaza_voting_records', 'uscpr_grade'):
+            cls.data['coverage']['printed_candidates_with_' + field] = 0
+        votes_path = history.ROOT / 'research/gaza-records/voting-records-2026-10-14.json'
+        grades_path = history.ROOT / 'research/gaza-records/uscpr-grades-2026-10-14.json'
+        cls.review = sync.build_review(cls.data, json.loads(votes_path.read_text()), json.loads(grades_path.read_text()),
+                                      json.loads((history.ROOT / 'research/gaza-records/candidate-links.json').read_text()),
+                                      'test-congressional-review', votes_path, grades_path)
+
+    def test_singleton_shared_history_is_exact_reversible_and_idempotent(self):
+        data, review = deepcopy(self.data), deepcopy(self.review)
+        result, report = updates.prepare(data, review, [], validate=False)
+        self.assertEqual(report['counts'], {'added': 27})
+        self.assertEqual(data, self.data)
+        self.assertFalse(history.check_registered_reviews(result, [review]))
+        again, report = updates.prepare(result, review, [], validate=False)
+        self.assertEqual(again, result)
+        self.assertEqual(report['counts'], {'unchanged': 27})
+        self.assertFalse(report['dataset_changed'])
+        tampered = deepcopy(result)
+        tampered['uscpr_scorecard']['scope_note'] += ' edited'
+        self.assertTrue(history.check_registered_reviews(tampered, [review]))
+        person = next(c for p in result['positions'] for c in p.get('candidates') or [] if c.get('uscpr_grade'))
+        self.assertIsInstance(person['uscpr_grade'], dict)
+        person['uscpr_grade']['grades'][0]['grade'] = 'A'
+        self.assertTrue(history.check_registered_reviews(result, [review]))
+
+    def test_shared_only_refresh_rejects_stale_sources_and_can_register(self):
+        result, _ = updates.prepare(self.data, self.review, [], validate=False)
+        review = deepcopy(self.review)
+        review['id'] = 'test-shared-only-refresh'
+        review['decisions'] = []
+        change = review['shared_changes'][0]
+        review['shared_changes'] = [change]
+        change['before'] = deepcopy(result[change['field']])
+        change['after']['scope_note'] += ' Additional source scope clarification.'
+        updated, report = updates.prepare(result, review, [], validate=False)
+        self.assertTrue(report['dataset_changed'])
+        self.assertFalse(history.check_registered_reviews(updated, [self.review, review]))
+        review['sources'][change['source_key']]['checked_on'] = '2026-10-13'
+        with self.assertRaisesRegex(ValueError, 'older source'):
+            updates.prepare(result, review, [], validate=False)
+
+    def test_row_provenance_and_missing_grade_do_not_transfer_by_id(self):
+        decisions = self.review['decisions']
+        self.assertEqual(sum(d['field'] == 'gaza_voting_records' for d in decisions), 18)
+        self.assertEqual(sum(d['field'] == 'uscpr_grade' for d in decisions), 9)
+        for decision in decisions:
+            self.assertEqual(decision['after']['source_url'], self.review['sources'][decision['source_key']]['url'])
+        self.assertTrue(any(d['candidate'] == 'Aisha Wahab' and d['field'] == 'gaza_voting_records' for d in decisions))
+        self.assertFalse(any(d['candidate'] == 'Aisha Wahab' and d['field'] == 'uscpr_grade' for d in decisions))
+
+
 if __name__ == '__main__':
     unittest.main()
