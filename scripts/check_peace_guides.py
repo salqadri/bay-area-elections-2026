@@ -53,15 +53,17 @@ class GuideChecks(unittest.TestCase):
             self.assertTrue(check_guides(data, updates=[]))
 
     def test_guide_dates_are_observations_not_historical_dates(self):
-        self.assertFalse(check_evidence(self.data))
+        # Importer tests use the historical baseline; evidence publication must
+        # validate the current reviewed data against the current quarantine.
+        self.assertFalse(check_evidence(self.current))
         for finding in self.review['gaza_findings']:
             record = finding['record']
             self.assertEqual(record['date_method'], 'source_observed')
             self.assertEqual(record['date'], record['checked_on'])
             self.assertTrue(record['date_note'])
-        record = next(r for c in self.people.values() for r in c.get('gaza_evidence', []) if r['date_method'] == 'source_observed')
+        record = next(r for p in self.current['positions'] for c in p.get('candidates') or [] for r in c.get('gaza_evidence', []) if r['date_method'] == 'source_observed')
         record['date'] = '2026-01-01'
-        self.assertTrue(any('guide observation' in e for e in check_evidence(self.data)))
+        self.assertTrue(any('guide observation' in e for e in check_evidence(self.current)))
 
     def test_import_preserves_existing_data_and_is_idempotent(self):
         before = deepcopy(self.data)

@@ -23,6 +23,11 @@ def render(page="index"):
     if html.count('__ENDORSEMENT_DISPLAY_JS__') != 1:
         raise ValueError('Expected one shared endorsement display placeholder')
     html = html.replace('__ENDORSEMENT_DISPLAY_JS__', endorsement_js)
+    finance_js = (ROOT / 'src/finance-display.js').read_text(encoding='utf-8')
+    assert '</script' not in finance_js.lower(), 'Unsafe inline finance script'
+    if html.count('__FINANCE_DISPLAY_JS__') != 1:
+        raise ValueError('Expected one shared finance display placeholder')
+    html = html.replace('__FINANCE_DISPLAY_JS__', finance_js)
     if page == "ballot":
         source = (ROOT / "src/index.template.html").read_text(encoding="utf-8")
         css = re.search(r"<style>(.*?)</style>", source, re.S).group(1)

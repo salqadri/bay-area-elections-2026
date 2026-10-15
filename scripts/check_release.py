@@ -10,9 +10,9 @@ PYTHON_CHECKS = [
     ('build_site.py', '--check'), ('check_data.py',), ('check_evidence.py',),
     ('check_published_endorsements.py',), ('check_endorsements.py',),
     ('check_cair_guide.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
-    ('check_schema.py',), ('prepare_dom_fixture.py',),
+    ('check_schema.py',), ('check_fec_money.py',), ('prepare_dom_fixture.py',),
 ]
-NODE_CHECKS = ['check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',
+NODE_CHECKS = ['check_finance_display.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',
                'check_address_autocomplete.cjs', 'check_address_matcher.cjs', 'check_ballot_page.cjs']
 
 

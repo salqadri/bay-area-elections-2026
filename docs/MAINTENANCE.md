@@ -31,6 +31,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/address-autocomplete.js` | Accessible combobox interaction, debounce, cancellation and manual fallback |
 | `src/address-matcher.js` | Geography normalization, inclusive race matching, union of ambiguous matches |
 | `src/endorsement-display.js` | Shared endorsement, preference, opposition and support wording, provenance and source-rating labels |
+| `src/finance-display.js` | Shared dated FEC receipts and independent-spending disclosure in both readers |
 | `src/ballot-page.js` | Form orchestration, warnings, candidate/race display and estimate export |
 | `scripts/build_site.py` | Embeds the dataset, schema where applicable, shared CSS and JavaScript into both pages |
 | `scripts/prepare_dom_fixture.py` | Parses built pages into disposable DOM fixtures for Node integration checks |
@@ -65,7 +66,9 @@ python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
+python3 scripts/check_fec_money.py
 python3 scripts/prepare_dom_fixture.py
+node scripts/check_finance_display.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -74,7 +77,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete offline sequence and records its results under `.checks/`.
+`python3 scripts/check_release.py` runs this complete 18-check offline sequence and records its results under `.checks/`.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -83,10 +86,11 @@ The fixture preparation must follow the build and precede the two page integrati
 | Build check | Generated pages equal current sources | Browser appearance or external availability |
 | Data check | IDs/references, omission rules, global counts, FEC conventions and embedded inventory agree | Source truth, URL validity, correct geographic eligibility or exhaustive coverage |
 | Schema check | Current schema keywords and positive/negative examples pass the repository's focused validator | Full standards compliance; use a standard Draft 2020-12 validator with format checking for interoperability |
+| Finance checks | Direction-specific aggregation, safe Git push arguments and redaction, first reported receipts metadata, shared disclosure output | Live FEC totals or an actual authenticated push |
 | Explorer/ballot checks | Real embedded scripts work in a minimal DOM harness with fixture responses | Layout, real keyboard/browser event behavior or live geocoding |
 | Service/autocomplete/matcher checks | Parsing, timeout/abort, rate handling, uncertainty, unions and regression cases | Live provider response shapes, CORS, uptime or actual district correctness |
 
-Existing fixtures intentionally contain some known names, FEC amounts/dates, record IDs, seat counts and a five-county selector count. Research updates can make those expectations stale. Determine whether the changed evidence or a code defect caused a failure; update the fixture with a reason, rather than replacing precise checks with unconditional success.
+Finance behavior uses fixed synthetic regression cases for unknown, zero, dated totals and mixed-direction spending. Page integration expectations derive current amounts and dates from the embedded dataset, with local-noon date formatting so the checks also work in America/Los_Angeles. Existing fixtures intentionally contain some known names, record IDs, seat counts and a five-county selector count. Research updates can make those expectations stale. Determine whether the changed evidence or a code defect caused a failure; update the fixture with a reason, rather than replacing precise checks with unconditional success.
 
 Browser review should cover desktop and narrow screens, keyboard-only autocomplete, selected and manual addresses, multiple/no matches, outside-scope addresses, API failure, county fallback, expand/collapse, direct links and both downloads. Use public civic-building addresses across the covered counties and compare returned geography with current official maps. Do not store a user's residential address in fixtures. Document the browser/date/endpoints and which scenarios were actually exercised.
 
