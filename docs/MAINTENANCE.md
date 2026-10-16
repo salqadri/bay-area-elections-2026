@@ -1,6 +1,6 @@
 # Maintaining the explorer
 
-This guide includes the October 15, 2026 schema 1.19 update. Inspect current code before relying on a fixed provider layer, snapshot count or version.
+This guide includes the October 16, 2026 schema 1.20 update (general campaign platform positions; previous layer: schema 1.19, October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
 
 ## Development setup
 
@@ -35,6 +35,8 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/gaza-evidence-display.js` | Shared Gaza disclosure with separate publisher grades, congressional source actions, reviewed platform checks and web/social/guide evidence |
 | `scripts/sync_gaza_records.py` | Capture the tracker and official grade feed; draft or locally apply exact reviewed candidate changes |
 | `scripts/research_campaign_platforms.py` | Plan bounded website checks and produce held source packets/results for Hermes; no automatic political decision or publication |
+| `scripts/research_campaign_issues.py` | Extract general campaign platform positions from the shared crawl cache via the local model under mechanical quote gates; import re-gates without a model. Publication stays with build_review + reviewed_updates |
+| `src/platform-display.js` | Shared collapsed "What they stand for · Campaign platform" disclosure (topic chips, summaries, verbatim quotes, source links, reviewed pages) in both readers |
 | `src/ballot-page.js` | Form orchestration, warnings, candidate/race display and estimate export |
 | `scripts/build_site.py` | Embeds the dataset, schema where applicable, shared CSS and JavaScript into both pages |
 | `scripts/prepare_dom_fixture.py` | Parses built pages into disposable DOM fixtures for Node integration checks |
@@ -72,12 +74,14 @@ python3 scripts/check_schema.py
 python3 scripts/check_fec_money.py
 python3 scripts/check_gaza_ledger.py
 python3 scripts/check_campaign_platforms.py
+python3 scripts/check_platform_positions.py
 python3 scripts/check_uscpr_scorecard.py
 python3 scripts/check_gaza_voting_records.py
 python3 scripts/check_gaza_records.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
+node scripts/check_platform_display.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -86,7 +90,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete 24-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 26-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -138,7 +142,7 @@ Keep credentials, private addresses and `.checks/` out of Git. `.gitignore` alre
 
 ## Evidence release guard and model-review preparation
 
-Schema 1.19 keeps `gaza_evidence`, `gaza_voting_records`, `uscpr_grade` and `gaza_platform` separate. The last three presence counts do not change the 245 existing prose-evidence items or imply that the platform pass has run. The shared renderer puts the layers inside one collapsed Gaza disclosure in each reader. Every tracked source action stays available in a nested Congress/member disclosure, with its actual date and source kind. Sheet colors are source assessments, accompanied by text; `Yes`, `No`, `Not voting`, `Present`, `Not elected` and missing values retain their distinct meanings. Only the official scorecard supplies USCPR grades; Column A never supplies a fallback. See [GAZA_VOTING_RECORDS.md](GAZA_VOTING_RECORDS.md) and [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md).
+Schema 1.20 adds the separate `platform_positions` record (general campaign-authored policy points; see [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md)) alongside schema 1.19's `gaza_evidence`, `gaza_voting_records`, `uscpr_grade` and `gaza_platform`. Presence counts for the Gaza layers do not change the 245 existing prose-evidence items or imply that a candidate holds a position on any other topic; `platform_positions` presence means only that quoted points were found on the reviewed campaign-site pages. The shared renderers put the Gaza layers inside one collapsed Gaza disclosure and platform positions in their own "What they stand for" disclosure in each reader. Every tracked source action stays available in a nested Congress/member disclosure, with its actual date and source kind. Sheet colors are source assessments, accompanied by text; `Yes`, `No`, `Not voting`, `Present`, `Not elected` and missing values retain their distinct meanings. Only the official scorecard supplies USCPR grades; Column A never supplies a fallback. See [GAZA_VOTING_RECORDS.md](GAZA_VOTING_RECORDS.md) and [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md).
 
 To refresh both congressional sources, capture dated snapshots, then draft an exact local review:
 
