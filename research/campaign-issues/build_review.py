@@ -79,6 +79,19 @@ def main():
         if not identity_ok:
             held_back.append((record['candidate'], 'name_not_on_site'))
             continue
+        if status == 'no_positions_found':
+            # JS/nav-shell guard: drop lines shared by >=80% of pages (site chrome), then
+            # require real per-page substance; silence from an unrendered shell is a finding.
+            from collections import Counter as _Counter
+            page_lines = [set(c['text'].splitlines()) for c in captures]
+            if len(page_lines) >= 3:
+                line_count = _Counter(line for lines in page_lines for line in lines)
+                threshold = max(2, (len(page_lines) * 80 + 99) // 100)
+                chrome = {line for line, n in line_count.items() if n >= threshold}
+                substance = [sum(len(line.split()) for line in lines - chrome) for lines in page_lines]
+                if all(words < 40 for words in substance):
+                    held_back.append((record['candidate'], 'nav_shell_only'))
+                    continue
         source_key = source_id + '-' + source_capture['content_sha256'][:8]
         sources[source_key] = {'url': source_capture['url'], 'publisher': record['candidate'], 'role': 'campaign',
                                'checked_on': source_capture['checked_on'], 'retrieval': 'bounded_crawler_text',
@@ -124,6 +137,8 @@ def main():
 
 
 def normalize(text):
+    # NFKD-strip combining marks so token comparisons match accented site text ('Proaño' ~ 'proano').
+    text = ''.join(c for c in unicodedata.normalize('NFKD', text) if not unicodedata.combining(c))
     return ' '.join(text.split()).lower()
 
 
