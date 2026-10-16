@@ -18,7 +18,7 @@ Start with [AGENTS.md](AGENTS.md), which applies to Hermes and other coding/rese
 - [Repeatable county workflow](docs/REPEATABLE_RESEARCH.md): county/Bay Area/California plans, cached reruns, source review drafts, exact before/after updates and an immutable publication history.
 - [Endorsement research](docs/ENDORSEMENTS.md): cached collection, shared-source review and separately labeled support evidence. Current coverage: **12,953 records on 387 of 875 printed candidacies**, including the October 11–12 campaign-site scan (**+12,743 campaign claims**, page-text quotes plus logo filenames readable on each campaign's own site). See the [campaign-site scan review](docs/reviews/2026-10-11-campaign-site-scan.md), the [priority PAC review](docs/reviews/2026-10-10-priority-pac-review.md), the [Vote for Peace / AROC review](docs/reviews/2026-10-09-peace-guides.md), [CAIR correction](docs/reviews/2026-10-09-cair-action-correction.md), [captured recommendations](research/endorsements/cair-action-2026-10-09.json), and [earlier publication audit](docs/reviews/2026-10-09-targeted-endorsements.md).
 - [Gaza legislative records and grades](docs/GAZA_VOTING_RECORDS.md): complete source-tab captures, reviewed current/prior-office identity links, sheet assessment colors and a separate official USCPR grade feed.
-- [Campaign platform workflow](docs/CAMPAIGN_PLATFORMS.md): bounded website collection, source packets and instructions for Hermes to delegate reviewed Israel/Palestine platform checks. First publication pass landed October 16, 2026 (171 candidacies); the deeper/exception follow-up rounds continue.
+- [Campaign platform workflow](docs/CAMPAIGN_PLATFORMS.md): bounded website collection, source packets and instructions for Hermes to delegate reviewed Israel/Palestine platform checks, plus the general **platform positions** layer (each candidate's own top policy points quoted verbatim from their campaign site). First publication pass landed October 16, 2026 (171 candidacies); the deeper/exception follow-up rounds continue.
 
 Use Git, Python 3 and Node.js. No npm/pip installation or API key is needed to build, serve or validate the site. The optional endorsement collector uses a Serper key for search; imported page lookups need no key. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
 
@@ -159,12 +159,14 @@ python3 scripts/check_schema.py
 python3 scripts/check_fec_money.py
 python3 scripts/check_gaza_ledger.py
 python3 scripts/check_campaign_platforms.py
+python3 scripts/check_platform_positions.py
 python3 scripts/check_uscpr_scorecard.py
 python3 scripts/check_gaza_voting_records.py
 python3 scripts/check_gaza_records.py
 python3 scripts/prepare_dom_fixture.py
 node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
+node scripts/check_platform_display.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -173,7 +175,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-Run the full sequence above with **`python3 scripts/check_release.py`** (24 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
+Run the full sequence above with **`python3 scripts/check_release.py`** (26 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 
