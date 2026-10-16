@@ -798,6 +798,9 @@
     },
     "gaza_platform": {
      "$ref": "#/$defs/gazaPlatform"
+    },
+    "platform_positions": {
+     "$ref": "#/$defs/platformPositions"
     }
    },
    "required": [
@@ -2278,6 +2281,134 @@
      },
      "then": {
       "properties": {
+       "pages": {
+        "minItems": 1
+       }
+      }
+     }
+    }
+   ]
+  },
+  "platformPositionPoint": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "topic": {
+     "enum": [
+      "Housing",
+      "Homelessness",
+      "Criminal justice & public safety",
+      "Immigration",
+      "Israel / Palestine",
+      "International affairs",
+      "Education",
+      "Parental rights in schools",
+      "Environment & climate",
+      "Healthcare",
+      "Economy & cost of living",
+      "Jobs & labor",
+      "Transportation",
+      "Civil liberties, privacy & surveillance",
+      "Government accountability & ethics",
+      "Other"
+     ]
+    },
+    "summary": {
+     "type": "string",
+     "minLength": 10,
+     "maxLength": 400
+    },
+    "quote": {
+     "type": "string",
+     "minLength": 8,
+     "maxLength": 320
+    },
+    "source_url": {
+     "$ref": "#/$defs/url"
+    }
+   },
+   "required": [
+    "topic",
+    "summary",
+    "quote",
+    "source_url"
+   ]
+  },
+  "platformPositions": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "status": {
+     "enum": [
+      "positions_found",
+      "no_positions_found",
+      "unavailable",
+      "no_website"
+     ]
+    },
+    "checked_on": {
+     "$ref": "#/$defs/date"
+    },
+    "scope_note": {
+     "type": "string",
+     "minLength": 1
+    },
+    "pages": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/gazaPlatformPage"
+     },
+     "minItems": 0
+    },
+    "points": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/platformPositionPoint"
+     },
+     "minItems": 0,
+     "maxItems": 8
+    }
+   },
+   "required": [
+    "status",
+    "checked_on",
+    "scope_note",
+    "pages",
+    "points"
+   ],
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "status": {
+        "const": "positions_found"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "points": {
+        "minItems": 1
+       },
+       "pages": {
+        "minItems": 1
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "status": {
+        "const": "no_positions_found"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "points": {
+        "maxItems": 0
+       },
        "pages": {
         "minItems": 1
        }

@@ -149,6 +149,8 @@
         if (candidate.secondary_x_url) { const x2 = node('a', 'ballot-candidate-x', 'X @' + candidate.secondary_x_url.split('/').pop() + ' ↗'); x2.href = candidate.secondary_x_url; x2.target = '_blank'; x2.rel = 'noopener noreferrer'; row.append(x2); }
         const money = CampaignFinanceDisplay.render(candidate, DATA, {node, link: safeLink, dateLabel});
         if (money) row.append(money);
+        const platform = PlatformDisplay.render(candidate, {node, link: safeLink, dateLabel, className: 'ballot-candidate-evidence'});
+        if (platform) row.append(platform);
         const gaza = GazaEvidenceDisplay.render(candidate, DATA, {node, link: safeLink, dateLabel, evidenceDateLabel, className: 'ballot-candidate-evidence'});
         if (gaza) row.append(gaza);
         if (candidate.endorsements?.length) {

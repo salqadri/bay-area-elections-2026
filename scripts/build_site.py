@@ -33,6 +33,11 @@ def render(page="index"):
     if html.count('__GAZA_EVIDENCE_DISPLAY_JS__') != 1:
         raise ValueError('Expected one shared Gaza evidence display placeholder')
     html = html.replace('__GAZA_EVIDENCE_DISPLAY_JS__', gaza_js)
+    platform_js = (ROOT / 'src/platform-display.js').read_text(encoding='utf-8')
+    assert '</script' not in platform_js.lower(), 'Unsafe inline platform display script'
+    if html.count('__PLATFORM_DISPLAY_JS__') != 1:
+        raise ValueError('Expected one shared platform display placeholder')
+    html = html.replace('__PLATFORM_DISPLAY_JS__', platform_js)
     if page == "ballot":
         source = (ROOT / "src/index.template.html").read_text(encoding="utf-8")
         css = re.search(r"<style>(.*?)</style>", source, re.S).group(1)

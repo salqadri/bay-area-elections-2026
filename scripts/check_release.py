@@ -12,9 +12,9 @@ PYTHON_CHECKS = [
     ('check_cair_guide.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
     ('check_schema.py',), ('check_fec_money.py',), ('check_gaza_ledger.py',),
     ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),
-    ('check_campaign_platforms.py',), ('prepare_dom_fixture.py',),
+    ('check_campaign_platforms.py',), ('check_platform_positions.py',), ('prepare_dom_fixture.py',),
 ]
-NODE_CHECKS = ['check_finance_display.cjs', 'check_gaza_display.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',
+NODE_CHECKS = ['check_finance_display.cjs', 'check_gaza_display.cjs', 'check_platform_display.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',
                'check_address_autocomplete.cjs', 'check_address_matcher.cjs', 'check_ballot_page.cjs']
 
 

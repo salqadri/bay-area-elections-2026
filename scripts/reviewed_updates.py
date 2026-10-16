@@ -18,7 +18,8 @@ from research_endorsements import atomic_json, digest, dump
 from schema_validation import SCHEMA, check
 
 FIELDS = {'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence',
-          'gaza_voting_records': 'gazaVotingRecord', 'uscpr_grade': 'uscprGrade', 'gaza_platform': 'gazaPlatform'}
+          'gaza_voting_records': 'gazaVotingRecord', 'uscpr_grade': 'uscprGrade', 'gaza_platform': 'gazaPlatform',
+          'platform_positions': 'platformPositions'}
 SHARED_FIELDS = {'gaza_voting': 'gazaVotingSettings', 'uscpr_scorecard': 'uscprScorecardSettings'}
 
 
@@ -129,6 +130,9 @@ def prepare(data, review, prior_reviews=None, validate=True):
         if after is not None:
             source_url = after.get('url', after.get('source_url'))
             if field == 'gaza_platform' and after['status'] != 'statement_found':
+                source_url = source['url'] if any(p['url'] == source['url'] for p in after['pages']) else None
+            if field == 'platform_positions':
+                # The record binds many captured pages; the review source is one of them.
                 source_url = source['url'] if any(p['url'] == source['url'] for p in after['pages']) else None
             if source_url != source['url'] or after['checked_on'] != source['checked_on']:
                 raise ValueError('Record URL/check date must match its actual source capture')
