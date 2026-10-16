@@ -33,6 +33,11 @@ def name_tokens(text):
     return [w for w in re.findall(r'[^\W\d_]+', text.lower()) if w not in {'dr', 'hon', 'jr', 'sr', 'ii', 'iii'}]
 
 
+def digest8(text):
+    import hashlib
+    return hashlib.sha256(text.encode()).hexdigest()[:8]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--held', type=Path, default=HELD)
@@ -85,7 +90,7 @@ def main():
             reason = ('Bounded campaign-website check found no attributable policy position within the inspected scope; '
                       'silence is scoped to these pages and capture dates, not absolute.')
         decisions.append({
-            'id': record['position_id'] + '-pp-' + source_capture['content_sha256'][:8],
+            'id': record['position_id'] + '-pp-' + digest8(record['candidate']) + '-' + source_capture['content_sha256'][:8],
             'action': 'change', 'field': 'platform_positions', 'source_key': source_key,
             'position_id': record['position_id'], 'candidate': record['candidate'], 'identity': record['identity'],
             'before': None, 'after': platform, 'reason': reason,
