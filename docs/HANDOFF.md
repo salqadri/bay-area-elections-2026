@@ -1,5 +1,15 @@
 # Research and development handoff
 
+## IN PROGRESS (October 16, 2026): general campaign platform positions extraction
+
+The new `platform_positions` feature is built, tested and pushed to `main` (schema field + renderer + guards + extractor; see [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md) "General platform positions"). The batch model pass over all 381 crawled sites runs detached in `.research/` (`run_issue_extract.sh`, resumable — completed sources are skipped on rerun). When `.research/campaign-issues/responses/` covers every crawled source (or you choose to publish a partial round), finalize:
+
+1. `python3 scripts/research_campaign_issues.py import-reviewed .research/campaign-issues/responses/*.json`
+2. Spot-audit a sample of held records against captures (`positions_found` points and one shared-site binding).
+3. `python3 research/campaign-issues/build_review.py --reviewed-on YYYY-MM-DD --output research/reviews/campaign-platform-positions-YYYY-MM-DD.json` (immutable once written; use a fresh date/file to regenerate)
+4. `python3 scripts/reviewed_updates.py preview <review>` then `apply`. Bump `election.publication_version`, set dataset+schema `schema_version` to **1.20** together with the first applied records, update README coverage claims, rebuild, run the full 26-check gate (`check_release.py`), push and verify live Pages output.
+5. Silence findings only exist where the crawl exhausted scope with zero failed captures; page-limited/robots-blocked sources stay held `unavailable` for the deeper re-crawl round shared with the Gaza platform pass.
+
 ## Latest published update — October 16, 2026: first campaign-platform publication pass
 
 Publication version **`2026-10-16.1`**, schema unchanged (1.19). The deferred bounded website pass from [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md) was executed across all 381 planned sites and published through the common review workflow as registered review `research/reviews/campaign-platforms-2026-10-16.json` (171 changes, each bound to a hash-verified capture). Coverage: **171 printed candidacies now carry `gaza_platform`** — **2 `statement_found`** (Alex Behrend, SF Supervisor D6: own policy page calling for full divestment from Israel and no city contracts with companies doing business with Israel; Connie Chan, CA-11: campaign-controlled page adopting pro-ceasefire/anti-Gaza-invasion framing plus site-wide AIPAC-money refusal pledge) and **169 scoped `no_statement_found`** silence findings. Every silence states its bounded scope (URLs, capture dates, crawl limits) and asserts nothing about statements elsewhere.
