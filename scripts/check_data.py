@@ -123,6 +123,7 @@ expected = {
     "printed_candidates_with_gaza_voting_records": sum(bool(c.get("gaza_voting_records")) for c in printed),
     "printed_candidates_with_uscpr_grade": sum(bool(c.get("uscpr_grade")) for c in printed),
     "printed_candidates_with_gaza_platform": sum(bool(c.get("gaza_platform")) for c in printed),
+    "printed_candidates_with_platform_positions": sum(bool(c.get("platform_positions")) for c in printed),
     "printed_candidates_with_endorsements": sum(bool(c.get("endorsements")) for c in printed),
     "printed_candidates_with_campaign_url": sum("campaign_url" in c for c in printed),
     "printed_candidates_with_independent_expenditures": sum(
