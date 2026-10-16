@@ -3,7 +3,7 @@ configured extraction model (LM Studio qwen/qwen3.8-27b at medium reasoning,
 bounded concurrency) to find its endorsement list, and export reviewable
 proposals for integration into the election dataset.
 
-Design notes / acceptance rules (see AGENTS.md "Candidate endorsements"):
+Design notes / acceptance rules (see docs/ENDORSEMENTS.md and the campaign-site scan review):
 - A campaign page states the campaign's own claims. Records keep verification
   `campaign_claim`; they never change official party preference.
 - The model may only return endorser names that appear verbatim in the fetched

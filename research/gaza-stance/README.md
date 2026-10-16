@@ -41,7 +41,10 @@ framing_balance | actions_votes | other`.
    `AIPAC`, `site:x.com <handle>`); jev relevance prefilter; flash-low extraction of ≤2 pages/query
 
 LLMs run on a local LM Studio server; the extractor is `qwen/qwen3.8-27b` (medium
-thinking). Configure via environment, never commit secrets:
+thinking; the flash-next GGUF ignores reasoning-effort hints). Respect the GPU
+limits: at most four concurrent LM Studio calls across everything running,
+including work launched by other agents; prefer script passes to agent fan-out.
+Configure via environment, never commit secrets:
 
 - `GAZA_LMS_URL` — OpenAI-compatible endpoint (default `http://127.0.0.1:11434/v1/chat/completions`)
 - `SERPER_KEY_FILE` / `FEC_KEY_FILE` — key-file paths (default `~/.config/gaza-research/{serper,fec}_key`)
