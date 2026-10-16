@@ -1,6 +1,14 @@
 # Research and development handoff
 
-## Latest published update — October 15, 2026: congressional records, official publisher grades and platform workflow
+## Latest published update — October 16, 2026: first campaign-platform publication pass
+
+Publication version **`2026-10-16.1`**, schema unchanged (1.19). The deferred bounded website pass from [CAMPAIGN_PLATFORMS.md](CAMPAIGN_PLATFORMS.md) was executed across all 381 planned sites and published through the common review workflow as registered review `research/reviews/campaign-platforms-2026-10-16.json` (171 changes, each bound to a hash-verified capture). Coverage: **171 printed candidacies now carry `gaza_platform`** — **2 `statement_found`** (Alex Behrend, SF Supervisor D6: own policy page calling for full divestment from Israel and no city contracts with companies doing business with Israel; Connie Chan, CA-11: campaign-controlled page adopting pro-ceasefire/anti-Gaza-invasion framing plus site-wide AIPAC-money refusal pledge) and **169 scoped `no_statement_found`** silence findings. Every silence states its bounded scope (URLs, capture dates, crawl limits) and asserts nothing about statements elsewhere.
+
+Method: plan → sequential crawl (`--max-pages 12 --max-depth 2`) → per-source packets reviewed by subagents under the guide contract → `import-reviewed` held export → deeper re-crawl (`--max-pages 24 --max-depth 3`) of the 116 sources that stopped at page limit with queued links, then packet regeneration and re-review of those sources. Silence findings were only accepted where the crawl exhausted its linked scope with zero failed captures; page-limited or partially failed sources stay `unavailable` with concrete follow-ups (382 candidacies held). 492 inventory records remain `no_website`. One subagent-fabricated identity quote (Connie Chan) was caught by the mechanical containment gate and corrected from the actual capture — a reminder that packet-hash validation catches invented citations.
+
+Still held for follow-up: ~114 sources whose deeper re-crawl review is in progress at publication time, JS-only/bot-walled sites needing browser-render or Wayback exception captures (~90), HTTP-only captures (e.g. Cheris Crocker-Root) that the HTTPS provenance guard bars from publication, and the Tom Ramsey wrong-person `campaign_url` inventory correction. The held export at `.research/campaign-platforms/held-export.json` remains the working queue for a future second platform review round.
+
+## Previous published update — October 15, 2026: congressional records, official publisher grades and platform workflow
 
 Merged as PR #6 on October 15, 2026 (merge commit `36e4305`) after the full 24-check release gate passed on the branch; Pages deployment verified live at publication version `2026-10-15.1`.
 
