@@ -64,6 +64,13 @@ The script does not call a model or spawn agents. Hermes controls concurrency. A
 
 ## Validate responses and export held records
 
+Two scripted reviewer passes proved out at round-2 scale (114 refreshed packets, October 17 publication) without changing the contract above — every response still passes the same import gates; only who reads the packet changes:
+
+1. **Direct LLM review** (`qwen/qwen3.8-27b` via LM Studio chat/completions, at most two concurrent): whole-packet prompts up to ~30K characters; larger packets use a chunked extract→decide flow (verbatim identity/issue quotes extracted per ≤38K excerpt with failed-chunk coverage accounting, then one decision prompt over the consolidated evidence). Each reply is checked against a mirror of the import gates and given one repair round fed the exact gate errors. Structural salvage (dedupe pages, drop corrupted decision blocks, rebind stale packet hashes only when every quote verifies verbatim against the current packet) may fix form but must never invent or alter semantics; anything unresolved stays `unavailable`.
+2. **Deterministic scan + Jev System One classification**: a script extracts verbatim sentence windows around Israel/Palestine/Gaza keyword hits plus identity-name sentences, then asks Jev one choice question per snippet (entries ride in each question's `instructions`; accept choice + probability ≥ 0.75). Silence findings require zero failed chunks and a crawl that permits silence; anything else holds as `unavailable`. This path handles captures far beyond any LLM context window (a 1.4 MB site resolved in seconds) and runs off the shared model server entirely.
+
+Both passes state their method honestly in each `scope_note`; reviewer identity goes in the response's `reviewer` field. Prefer scripted Jev classification wherever a deterministic pipeline needs a judgment on long text.
+
 Keep each response in `.research/campaign-platforms/responses/`. Import the files explicitly after reviewing their source and candidacy assignments:
 
 ```sh
