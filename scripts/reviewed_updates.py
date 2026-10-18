@@ -17,7 +17,7 @@ from research_scope import DATA, select_scope, add_scope_arguments
 from research_endorsements import atomic_json, digest, dump
 from schema_validation import SCHEMA, check
 
-FIELDS = {'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence',
+FIELDS = {'endorsement_images': 'endorsementImage', 'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence',
           'gaza_voting_records': 'gazaVotingRecord', 'uscpr_grade': 'uscprGrade', 'gaza_platform': 'gazaPlatform',
           'platform_positions': 'platformPositions'}
 SHARED_FIELDS = {'gaza_voting': 'gazaVotingSettings', 'uscpr_scorecard': 'uscprScorecardSettings'}
@@ -28,7 +28,7 @@ def identity(position):
 
 
 def record_key(field, record):
-    if field == 'gaza_evidence':
+    if field in {'gaza_evidence', 'endorsement_images'}:
         return record['id']
     if field == 'gaza_voting_records':
         return record['record_id']
@@ -124,7 +124,11 @@ def prepare(data, review, prior_reviews=None, validate=True):
             raise ValueError('A change needs different before/after values; use hold for unchanged findings')
         for record in [before, after]:
             if record is not None:
-                errors = check(record, SCHEMA['$defs'][FIELDS[field]])
+                # Earlier immutable reviews used copied assets. Allow their exact
+                # before-values when migrating to the current URL-only contract.
+                checked_record = ({k: v for k, v in record.items() if k not in {'asset_path', 'image_sha256'}}
+                                  if field == 'endorsement_images' and record is before else record)
+                errors = check(checked_record, SCHEMA['$defs'][FIELDS[field]])
                 if errors:
                     raise ValueError('\n'.join(errors))
         if after is not None:

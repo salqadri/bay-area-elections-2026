@@ -165,6 +165,8 @@
           }
           row.append(en);
         }
+        const imageEvidence = EndorsementDisplay.renderImages(candidate, {node, link: safeLink, className: 'ballot-candidate-evidence'});
+        if (imageEvidence) row.append(imageEvidence);
         candidates.append(row);
       }
       card.append(candidates);

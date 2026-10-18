@@ -1,5 +1,13 @@
 # Research and development handoff
 
+## Latest update — October 18, 2026: external image URLs
+
+Publication **2026-10-18.1**, schema **1.22**. Campaign-image evidence now loads original external campaign/CDN URLs directly, with an always-visible **View image** link and lazy preview. Copied image assets and the downloading/archiving option have been removed. The 463 evidence URLs, October 17 source dates and dispositions are unchanged; the 176 reviewed current-grid observations retain full page metadata and the other 287 retain explicit legacy-placement limits. The [registered correction](../research/reviews/external-endorsement-image-urls-2026-10-18.json) preserves the prior review history. See [the deterministic workflow](ENDORSEMENT_IMAGES.md) for URL-only batch updates and worker instructions.
+
+## Latest update — October 17, 2026: campaign image evidence (schema 1.22)
+
+Publication **2026-10-17.4**. See [the repeatable image workflow and worker instructions](ENDORSEMENT_IMAGES.md). All 315 explicitly filename-derived assertions were retired into neutral image observations; 14 text-based Gun Sense designations are now distinctions. Four primary pages were checked: Wiener (50 grid images, 53 named people), Panetta (23 images), Pellerin (20), Connie Chan (83). All 176 selected image URLs are preserved with source-page fingerprints, every source-image occurrence has a disposition, and exact before/after changes are registered. The dataset retains 287 older image URLs with explicit unreviewed-placement limits. Fresh broad collection can run deterministically from the campaign ledger (`export-ledger` → `build-queue`) or be split into capture-based worker tasks. Named proposals require source-local text and immutable capture bindings; old filename decisions and URL-only shortcuts cannot republish. No roster, finance or Gaza research was changed. The nationwide scaffold below is retained.
+
 ## Latest published update — October 17, 2026: nationwide Senate + governor scaffold (schema 1.21)
 
 Publication version **`2026-10-17.3`**, schema **1.21**. The dataset now carries **all 35 contested 2026 U.S. Senate races** (33 Class 2 + FL/OH specials, terms ending January 3, 2029) and **35 out-of-state governor races** as `US2026-001…070` with empty `counties` arrays: they appear only when no county filter is selected (explorer cards show the state in the district chip; the address matcher cannot match them by design — an empty-county record never intersects a voter). Schema changes: `counties.minItems 1→0`, OCD pattern widened from California-only to any US state, and the party registry extended for minor ballot parties (I/L/C/DFL/LMN/NLP/PSL/SWP/WCP/UCP/AFP/AVP/FWD/UP/AZIP/GMPJ/OPP/PGP/NWPP).

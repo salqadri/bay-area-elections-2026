@@ -6,6 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from check_evidence import check_evidence
 from check_published_endorsements import check_endorsements
+from endorsement_images import validate_published_images
 from check_gaza_records import check_gaza_records
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,7 +16,7 @@ schema = json.loads((ROOT / "elections.schema.json").read_text(encoding="utf-8")
 positions = data["positions"]
 evidence_errors = check_evidence(data)
 assert not evidence_errors, '\n'.join(evidence_errors)
-endorsement_errors = check_endorsements(data)
+endorsement_errors = check_endorsements(data) + validate_published_images(data, ROOT)
 assert not endorsement_errors, '\n'.join(endorsement_errors)
 gaza_record_errors = check_gaza_records(data)
 assert not gaza_record_errors, '\n'.join(gaza_record_errors)
@@ -133,6 +134,7 @@ expected = {
     "printed_candidates_with_uscpr_grade": sum(bool(c.get("uscpr_grade")) for c in printed),
     "printed_candidates_with_gaza_platform": sum(bool(c.get("gaza_platform")) for c in printed),
     "printed_candidates_with_platform_positions": sum(bool(c.get("platform_positions")) for c in printed),
+    "printed_candidates_with_endorsement_images": sum(bool(c.get("endorsement_images")) for c in printed),
     "printed_candidates_with_endorsements": sum(bool(c.get("endorsements")) for c in printed),
     "printed_candidates_with_campaign_url": sum("campaign_url" in c for c in printed),
     "printed_candidates_with_independent_expenditures": sum(

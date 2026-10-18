@@ -11,7 +11,7 @@
    "description": "Relative link to the companion schema file, intended to reside beside this dataset."
   },
   "schema_version": {
-   "const": "1.21"
+   "const": "1.22"
   },
   "election": {
    "type": "object",
@@ -173,6 +173,11 @@
     "printed_candidates_with_platform_positions": {
      "type": "integer",
      "minimum": 0
+    },
+    "printed_candidates_with_endorsement_images": {
+     "type": "integer",
+     "minimum": 0,
+     "description": "Printed candidacies with neutral image observations; these are not endorsement counts."
     }
    },
    "required": [
@@ -805,6 +810,14 @@
     },
     "platform_positions": {
      "$ref": "#/$defs/platformPositions"
+    },
+    "endorsement_images": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/endorsementImage"
+     },
+     "description": "Neutral campaign image observations, separate from named endorsements. Filenames and original alt text are metadata, never proof of identity or endorsement. Legacy imports retain uncertain page placement."
     }
    },
    "required": [
@@ -1410,7 +1423,8 @@
       "recommended",
       "supported",
       "preferred",
-      "opposed"
+      "opposed",
+      "distinction"
      ]
     },
     "phase": {
@@ -1566,6 +1580,24 @@
      "if": {
       "required": [
        "historical"
+      ]
+     },
+     "then": {
+      "required": [
+       "verification",
+       "note_id"
+      ]
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "relation": {
+        "const": "distinction"
+       }
+      },
+      "required": [
+       "relation"
       ]
      },
      "then": {
@@ -2420,6 +2452,84 @@
      }
     }
    ]
+  },
+  "endorsementImage": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "source_url",
+    "image_url",
+    "filename",
+    "original_alt",
+    "context",
+    "heading",
+    "checked_on",
+    "provenance"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^I-[a-f0-9]{20,64}$"
+    },
+    "source_url": {
+     "type": "string",
+     "format": "uri",
+     "pattern": "^https://[^ ]+$"
+    },
+    "image_url": {
+     "type": "string",
+     "format": "uri",
+     "pattern": "^https://[^ ]+$"
+    },
+    "filename": {
+     "type": "string",
+     "maxLength": 2000
+    },
+    "original_alt": {
+     "type": "string",
+     "maxLength": 10000
+    },
+    "context": {
+     "type": "string",
+     "maxLength": 1200
+    },
+    "heading": {
+     "type": "string",
+     "maxLength": 1000
+    },
+    "checked_on": {
+     "type": "string",
+     "format": "date"
+    },
+    "provenance": {
+     "enum": [
+      "page_capture",
+      "legacy_import"
+     ]
+    },
+    "source_sha256": {
+     "type": "string",
+     "pattern": "^[a-f0-9]{64}$"
+    }
+   },
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "provenance": {
+        "const": "page_capture"
+       }
+      }
+     },
+     "then": {
+      "required": [
+       "source_sha256"
+      ]
+     }
+    }
+   ],
+   "description": "Neutral observation of an external campaign image URL and page metadata. No image bytes are copied; remote content can change or become unavailable."
   }
  }
 }
