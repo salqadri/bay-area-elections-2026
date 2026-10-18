@@ -1,4 +1,4 @@
-"""Offline regressions for image evidence, stale review gates and published archives."""
+"""Offline regressions for image evidence, stale review gates and external image URLs."""
 from copy import deepcopy
 from datetime import date
 import hashlib
@@ -175,7 +175,7 @@ class ImageResearchChecks(unittest.TestCase):
                     jev.main();self.assertFalse(provider.called)
                 self.assertEqual(json.loads(output.read_text()),[],'Cached classifier answers cannot export against stale evidence')
 
-    def test_complete_committed_source_dispositions_and_archives(self):
+    def test_complete_committed_source_dispositions_and_external_urls(self):
         base=ROOT/'research/endorsements/image-captures-2026-10-17'
         expected={'wiener':(131,50),'panetta-endorsements':(35,23),'pellerin-endorsements':(26,20),'chan-endorsements':(129,83)}
         for name,(total,included) in expected.items():
@@ -184,6 +184,12 @@ class ImageResearchChecks(unittest.TestCase):
             self.assertEqual(len(packet['images']),total)
             self.assertEqual(len(selected_images(packet,review,file_sha(path))),included)
         self.assertFalse(validate_published_images(DATA, ROOT))
+        from schema_validation import check, SCHEMA
+        records = [r for p in DATA['positions'] for c in p.get('candidates') or [] for r in c.get('endorsement_images', [])]
+        for record in records:
+            self.assertTrue(record['image_url'].startswith('https://'))
+            self.assertFalse({'asset_path', 'image_sha256'} & record.keys())
+        self.assertTrue(check({**records[0], 'asset_path': 'assets/copied.png'}, SCHEMA['$defs']['endorsementImage']))
         wiener=next(c for p in DATA['positions'] for c in p.get('candidates') or [] if c['name']=='Scott Wiener')
         self.assertEqual(len(wiener['endorsement_images']),50)
         self.assertFalse({'ag bonta','Asm Grayson','meeno Monique Limon added'} & {r['endorser'] for r in wiener['endorsements']})

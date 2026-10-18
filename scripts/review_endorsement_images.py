@@ -12,7 +12,6 @@ import hashlib
 import json
 from pathlib import Path
 
-from capture_endorsement_images import archive_image
 from endorsement_images import image_record, VERSION
 from publication_reviews import file_sha
 from research_endorsements import atomic_json, dump, digest
@@ -50,7 +49,7 @@ def selected_images(packet, review, packet_sha):
     return [images[i['id']] for i in items if i['action'] == 'include']
 
 
-def build_review(data, packet, review, packet_sha, position_id, candidate, review_id, archive=False):
+def build_review(data, packet, review, packet_sha, position_id, candidate, review_id):
     images = selected_images(packet, review, packet_sha)
     position = next(p for p in data['positions'] if p['id'] == position_id)
     person = next(c for c in position.get('candidates') or [] if c['name'] == candidate)
@@ -64,8 +63,6 @@ def build_review(data, packet, review, packet_sha, position_id, candidate, revie
     existing = {r['id']: r for r in person.get('endorsement_images', [])}
     for image in images:
         record = image_record(image, packet['source_url'], packet['checked_on'], packet['source_sha256'])
-        if archive:
-            record = archive_image(record)
         before = existing.get(record['id']) or next((r for r in existing.values() if
             r['source_url'] == record['source_url'] and r['image_url'] == record['image_url']), None)
         if before:
@@ -138,7 +135,7 @@ def export_ledger(db_path, output_dir, data):
     return {'items': len(queue), 'ready': sum(e['status'] == 'ready' for e in queue), 'queue': str(output_dir / 'queue.json')}
 
 
-def build_queue(data, queue, review_id, reviewed_on, archive=False):
+def build_queue(data, queue, review_id, reviewed_on):
     """One deterministic, reviewable update for every ready source in a queue."""
     result = {'version': 1, 'id': review_id, 'election_date': data['election']['date'],
               'reviewed_on': reviewed_on, 'counties': [], 'base_dataset_sha256': digest(dump(data)),
@@ -154,7 +151,7 @@ def build_queue(data, queue, review_id, reviewed_on, archive=False):
         if not next(p for p in data['positions'] if p['id'] == target['position_id'])['counties']:
             result['outstanding_queue'].append({**entry, 'status': 'outside_reviewed_county_scope'})
             continue
-        part = build_review(data, packet, dispositions, file_sha(path), target['position_id'], target['candidate'], review_id, archive)
+        part = build_review(data, packet, dispositions, file_sha(path), target['position_id'], target['candidate'], review_id)
         key = hashlib.sha256((target['position_id'] + target['candidate'] + packet['source_url']).encode()).hexdigest()[:24]
         result['sources'][key] = part['sources']['page']
         result['counties'] += part['counties']
@@ -175,13 +172,13 @@ def main():
     q.add_argument('--dataset', type=Path, default=Path('2026-11-03_Bay_Area_Elections.json')); q.add_argument('--output-dir', type=Path, required=True)
     q = sub.add_parser('build-queue'); q.add_argument('--queue', type=Path, required=True)
     q.add_argument('--dataset', type=Path, default=Path('2026-11-03_Bay_Area_Elections.json')); q.add_argument('--id', required=True)
-    q.add_argument('--reviewed-on', required=True); q.add_argument('--archive', action='store_true'); q.add_argument('--output', type=Path, required=True)
+    q.add_argument('--reviewed-on', required=True); q.add_argument('--output', type=Path, required=True)
     q = sub.add_parser('decisions'); q.add_argument('--policy', choices=['hold', 'all-content'], default='hold')
     q.add_argument('--capture', type=Path, required=True); q.add_argument('--output', type=Path, required=True)
     q = sub.add_parser('build-review'); q.add_argument('--capture', type=Path, required=True)
     q.add_argument('--decisions', type=Path, required=True); q.add_argument('--dataset', type=Path, default=Path('2026-11-03_Bay_Area_Elections.json'))
     q.add_argument('--position-id', required=True); q.add_argument('--candidate', required=True)
-    q.add_argument('--id', required=True); q.add_argument('--archive', action='store_true')
+    q.add_argument('--id', required=True)
     q.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
     if args.command == 'export-ledger':
@@ -190,7 +187,7 @@ def main():
     if args.output.exists():
         p.error('Choose a new output; preserve reviewed captures and decisions')
     if args.command == 'build-queue':
-        result = build_queue(json.loads(args.dataset.read_text()), json.loads(args.queue.read_text()), args.id, args.reviewed_on, args.archive)
+        result = build_queue(json.loads(args.dataset.read_text()), json.loads(args.queue.read_text()), args.id, args.reviewed_on)
         atomic_json(args.output, result)
         print(json.dumps({'changes': len(result['decisions']), 'outstanding': len(result['outstanding_queue']), 'output': str(args.output)}))
         return
@@ -199,7 +196,7 @@ def main():
         result = decisions(packet, sha, args.policy)
     else:
         result = build_review(json.loads(args.dataset.read_text()), packet, json.loads(args.decisions.read_text()), sha,
-                              args.position_id, args.candidate, args.id, args.archive)
+                              args.position_id, args.candidate, args.id)
     args.output.parent.mkdir(parents=True, exist_ok=True); atomic_json(args.output, result)
     print(json.dumps({'output': str(args.output), 'items': len(result.get('items', result.get('decisions', [])))}))
 

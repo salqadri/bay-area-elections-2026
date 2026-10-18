@@ -29,14 +29,13 @@ EndorsementDisplay.renderImages = function(candidate, {node, link, className = '
   if (!records.length) return null;
   const details = node('details', className + ' endorsement-image-evidence');
   details.append(node('summary', null, 'Campaign image evidence · ' + records.length + ' images'));
-  details.append(node('p', null, 'Images captured from campaign sites. A logo, portrait or program badge alone does not establish an endorsement. Names are not inferred from filenames.'));
+  details.append(node('p', null, 'Images linked from campaign sites. A logo, portrait or program badge alone does not establish an endorsement. Names are not inferred from filenames.'));
   const gallery = node('div', 'endorsement-image-gallery');
   for (const record of records) {
     const figure = node('figure', 'endorsement-image-item');
     const image = node('img', 'endorsement-evidence-image');
-    const local = /^assets\/endorsement-evidence\/[a-f0-9]{64}\.(png|jpg|webp|gif|avif|svg)$/.test(record.asset_path || '');
-    let source = local ? record.asset_path : null;
-    try { if (!source && new URL(record.image_url).protocol === 'https:') source = record.image_url; } catch {}
+    let source = null;
+    try { if (new URL(record.image_url).protocol === 'https:') source = record.image_url; } catch {}
     if (source) {
       image.src = source;
       image.alt = 'Campaign image; identity and relationship not inferred';
@@ -46,7 +45,9 @@ EndorsementDisplay.renderImages = function(candidate, {node, link, className = '
       figure.append(image);
     }
     const caption = node('figcaption');
-    caption.append(link(record.source_url, 'Campaign source ↗'), node('span', null, ' · observed ' + record.checked_on));
+    caption.append(link(record.source_url, 'Campaign source ↗'));
+    if (source) caption.append(node('span', null, ' · '), link(source, 'View image ↗'));
+    caption.append(node('span', null, ' · observed ' + record.checked_on));
     if (record.provenance === 'legacy_import') {
       caption.append(node('p', null, 'Legacy capture: exact page placement and image identity have not been reviewed. The source link is the campaign root retained by the earlier scan.'));
     } else if (record.heading) {
@@ -58,7 +59,6 @@ EndorsementDisplay.renderImages = function(candidate, {node, link, className = '
     metadata.append(node('p', null, 'Filename (metadata): ' + record.filename));
     metadata.append(node('p', null, 'Original alt text: ' + (record.original_alt || '(empty)')));
     if (record.context) metadata.append(node('p', null, 'Source context: ' + record.context));
-    if (record.image_sha256) metadata.append(node('p', null, 'Archived image SHA-256: ' + record.image_sha256));
     caption.append(metadata); figure.append(caption); gallery.append(figure);
   }
   details.append(gallery);

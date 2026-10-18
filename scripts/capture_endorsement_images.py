@@ -3,24 +3,19 @@
 Examples:
   python3 scripts/capture_endorsement_images.py --url https://example.org/endorsements --checked-on 2026-10-17 --output .research/images.json
   ... --html .research/rendered.html   # actual browser HTML, never a paraphrase
-Review every inventory item (include/exclude/hold with reason). Selected images
-can be copied with archive_image(); publication uses reviewed_updates.py with
+Review every inventory item (include/exclude/hold with reason). Image bytes are never downloaded or copied; publication uses reviewed_updates.py with
 field endorsement_images and image_record(), not the old filename proposal gate.
 """
 import argparse
 from datetime import date
 import hashlib
 import json
-import re
 from pathlib import Path
 
-from endorsement_images import images_from_html, image_record, VERSION
+from endorsement_images import images_from_html, VERSION
 from endorsement_extract import page_from_html
 from research_endorsements import Fetcher, atomic_json
 
-ROOT = Path(__file__).resolve().parent.parent
-MIMES = {'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp',
-         'image/gif': 'gif', 'image/avif': 'avif', 'image/svg+xml': 'svg'}
 
 
 def capture(raw, url, checked_on):
@@ -34,23 +29,6 @@ def capture(raw, url, checked_on):
     return {'version': VERSION, 'source_url': url, 'checked_on': checked_on,
             'source_sha256': hashlib.sha256(raw).hexdigest(), 'text': page['text'],
             'images': images, 'unresolved_images': unresolved, 'limitation': 'Static HTML inventory; inspect browser output for JS/CSS-only images. No absence or endorsement inference.'}
-
-
-def archive_image(record, fetcher=None, root=ROOT):
-    """Preserve actual image bytes under a content hash; fail explicitly on errors."""
-    raw, mime, final = (fetcher or Fetcher()).request(record['image_url'])
-    if mime not in MIMES:
-        raise ValueError('Expected image response; received ' + mime)
-    if mime == 'image/svg+xml':
-        svg = raw.decode('utf-8-sig')
-        if re.search(r'<!(?:DOCTYPE|ENTITY)|<\s*(?:script|foreignObject)\b|\bon[a-z]+\s*=|(?:href|src)\s*=\s*[\"\'](?!#)|@import|url\(\s*[\"\']?(?:https?:|//|data:)', svg, re.I):
-            raise ValueError('Active or externally referenced SVG cannot be archived on the site origin')
-    sha = hashlib.sha256(raw).hexdigest()
-    path = 'assets/endorsement-evidence/' + sha + '.' + MIMES[mime]
-    target = root / path; target.parent.mkdir(parents=True, exist_ok=True)
-    if not target.exists():
-        target.write_bytes(raw)
-    return {**record, 'asset_path': path, 'image_sha256': sha}
 
 
 def main():

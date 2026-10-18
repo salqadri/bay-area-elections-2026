@@ -133,8 +133,6 @@ def validate_published_images(data, root):
                 seen.add(record['id'])
                 if date.fromisoformat(record['checked_on']) > date.today():
                     errors.append(prefix + 'future image observation')
-                if record.get('asset_path'):
-                    path = (root / record['asset_path']).resolve()
-                    if not path.is_relative_to(root / 'assets/endorsement-evidence') or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != record['image_sha256'] or path.stem != record['image_sha256']:
-                        errors.append(prefix + 'missing/changed archived image')
+                if 'asset_path' in record or 'image_sha256' in record:
+                    errors.append(prefix + 'use external image URLs without copied-asset fields')
     return errors

@@ -2511,23 +2511,7 @@
     "source_sha256": {
      "type": "string",
      "pattern": "^[a-f0-9]{64}$"
-    },
-    "asset_path": {
-     "type": "string",
-     "pattern": "^assets/endorsement-evidence/[a-f0-9]{64}\\.(png|jpg|webp|gif|avif|svg)$"
-    },
-    "image_sha256": {
-     "type": "string",
-     "pattern": "^[a-f0-9]{64}$"
     }
-   },
-   "dependentRequired": {
-    "asset_path": [
-     "image_sha256"
-    ],
-    "image_sha256": [
-     "asset_path"
-    ]
    },
    "allOf": [
     {
@@ -2544,7 +2528,8 @@
       ]
      }
     }
-   ]
+   ],
+   "description": "Neutral observation of an external campaign image URL and page metadata. No image bytes are copied; remote content can change or become unavailable."
   }
  }
 }

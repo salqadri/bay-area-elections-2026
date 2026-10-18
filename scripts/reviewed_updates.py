@@ -124,7 +124,11 @@ def prepare(data, review, prior_reviews=None, validate=True):
             raise ValueError('A change needs different before/after values; use hold for unchanged findings')
         for record in [before, after]:
             if record is not None:
-                errors = check(record, SCHEMA['$defs'][FIELDS[field]])
+                # Earlier immutable reviews used copied assets. Allow their exact
+                # before-values when migrating to the current URL-only contract.
+                checked_record = ({k: v for k, v in record.items() if k not in {'asset_path', 'image_sha256'}}
+                                  if field == 'endorsement_images' and record is before else record)
+                errors = check(checked_record, SCHEMA['$defs'][FIELDS[field]])
                 if errors:
                     raise ValueError('\n'.join(errors))
         if after is not None:
@@ -136,10 +140,6 @@ def prepare(data, review, prior_reviews=None, validate=True):
                 source_url = source['url'] if any(p['url'] == source['url'] for p in after['pages']) else None
             if source_url != source['url'] or after['checked_on'] != source['checked_on']:
                 raise ValueError('Record URL/check date must match its actual source capture')
-            if field == 'endorsement_images' and after.get('asset_path'):
-                asset = (ROOT / after['asset_path']).resolve()
-                if not asset.is_relative_to(ROOT / 'assets/endorsement-evidence') or not asset.is_file() or file_sha(asset) != after['image_sha256']:
-                    raise ValueError('Archived campaign image missing or changed')
             if field == 'endorsements' and not after.get('verification'):
                 raise ValueError('New recommendations require explicit provenance')
             if field == 'endorsements' and after.get('verification') == 'endorser_statement':
