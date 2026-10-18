@@ -192,7 +192,8 @@ def main():
     for position in data["positions"]:
         if position.get("government_level") != "Federal":
             continue
-        for candidate in position.get("candidates") or []:
+        # Provisional filings (nationwide Senate compilations) carry FEC records too.
+        for candidate in (position.get("candidates") or []) + (position.get("filed_candidates_not_confirmed_on_ballot") or []):
             fec = candidate.get("fec") or {}
             if not isinstance(fec, dict) or not fec.get("id"):
                 continue

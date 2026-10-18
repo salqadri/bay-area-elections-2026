@@ -1,6 +1,6 @@
 {
  "$schema": "elections.schema.json",
- "schema_version": "1.20",
+ "schema_version": "1.21",
  "election": {
   "date": "2026-11-03",
   "name": "California General Election",
@@ -36,7 +36,26 @@
    "D": "Democratic Party",
    "R": "Republican Party",
    "G": "Green Party",
-   "NPP": "No Party Preference"
+   "NPP": "No Party Preference",
+   "AFP": "America First Party (Nebraska)",
+   "AVP": "Approval Voting Party (Colorado)",
+   "AZIP": "Arizona's Independent Party",
+   "C": "Constitution Party",
+   "DFL": "Minnesota Democratic–Farmer–Labor Party",
+   "FWD": "Forward Party",
+   "GMPJ": "Green Mountain Peace and Justice Party",
+   "I": "Independent or unaffiliated",
+   "L": "Libertarian Party",
+   "LMN": "Legal Marijuana Now Party",
+   "NLP": "Natural Law Party",
+   "NWPP": "Nebraska Working People Party",
+   "OPP": "Oregon Progressive Party",
+   "PGP": "Pacific Green Party",
+   "PSL": "Party for Socialism and Liberation",
+   "SWP": "Socialist Workers Party",
+   "UCP": "United Citizens Party",
+   "UP": "Unity Party of America",
+   "WCP": "Working Class Party"
   },
   "ballot_status": {
    "confirmed": "Confirmed on ballot",
@@ -75,10 +94,10 @@
   "status": "research_inventory_with_explicit_unresolved_records",
   "confirmed_contests": 340,
   "confirmed_seats": 443,
-  "unresolved_scheduled_contests": 0,
+  "unresolved_scheduled_contests": 70,
   "printed_candidate_entries": 875,
   "confirmed_contests_missing_candidate_rosters": 0,
-  "positions_with_ocd_division_id": 188,
+  "positions_with_ocd_division_id": 258,
   "positions_with_ballotpedia_url": 320,
   "printed_candidates_with_ballotpedia_url": 633,
   "printed_candidates_with_x_url": 135,
@@ -24372,6 +24391,2708 @@
    ]
   },
   {
+   "id": "US2026-001",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "AL — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:al",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Barry Moore",
+     "party": "R",
+     "fec": {
+      "id": "S6AL00476",
+      "receipts": 4492066.3,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00720375",
+       "C00903518",
+       "C00954974"
+      ],
+      "source_id": "S1101"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Everett Wess",
+     "party": "D",
+     "fec": {
+      "id": "S6AL00518",
+      "receipts": 116886.85,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00935783"
+      ],
+      "source_id": "S1102"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-002",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "AK — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ak",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Gerald Heikes",
+     "party": "R",
+     "fec": {
+      "id": "S8AK00140",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1103"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Mary Peltola",
+     "party": "D",
+     "fec": {
+      "id": "S6AK00276",
+      "receipts": 32623721.76,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00933978"
+      ],
+      "source_id": "S1104"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Dan J. Sullivan",
+     "party": "R",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Dan S. Sullivan",
+     "party": "R",
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-003",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "AR — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ar",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Tom Cotton",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S4AR00103",
+      "receipts": 6989606.24,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00499988"
+      ],
+      "source_id": "S1105"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Hallie Shoffner",
+     "party": "D",
+     "fec": {
+      "id": "S6AR00199",
+      "receipts": 3682225.59,
+      "from": "2025-07-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00905471"
+      ],
+      "source_id": "S1106"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jeff Wadlin",
+     "party": "L",
+     "fec": {
+      "id": "S6AR00223",
+      "receipts": 79363.0,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00940619"
+      ],
+      "source_id": "S1107"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-004",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "CO — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:co",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Mark Baisley",
+     "party": "R",
+     "fec": {
+      "id": "S6CO00507",
+      "receipts": 138210.47,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00892034",
+       "C00932848"
+      ],
+      "source_id": "S1108"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Christopher Baum",
+     "party": "AVP",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Bob Chew",
+     "party": "FWD",
+     "fec": {
+      "id": "S6CO00556",
+      "receipts": 2852319.49,
+      "from": "2026-03-20",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00944298"
+      ],
+      "source_id": "S1109"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "John Hickenlooper",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S0CO00575",
+      "receipts": 9325922.41,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00716720"
+      ],
+      "source_id": "S1110"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Blake Huber",
+     "party": "L",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Adam Withrow",
+     "party": "UP",
+     "fec": {
+      "id": "S6CO00564",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1111"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-005",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "DE — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:de",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Chris Coons",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S0DE00092",
+      "receipts": 4837552.16,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00475392"
+      ],
+      "source_id": "S1112"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Michael Katz",
+     "party": "R",
+     "fec": {
+      "id": "S6DE00206",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1113"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-006",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "FL — Statewide",
+   "seats": 1,
+   "term": "Unexpired term ending January 3, 2027",
+   "election_type": "special",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:fl",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Neil Gillespie",
+     "party": "I",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Ashley Moody",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S6FL00640",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1114"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Angie Nixon",
+     "party": "D",
+     "fec": {
+      "id": "S6FL00830",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1115"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-007",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "GA — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ga",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Mike Collins",
+     "party": "R",
+     "fec": {
+      "id": "S6GA00390",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1116"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jon Ossoff",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S8GA00180",
+      "receipts": 110426537.75,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00718866"
+      ],
+      "source_id": "S1117"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-008",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "ID — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:id",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Todd Achilles",
+     "party": "I",
+     "fec": {
+      "id": "S6ID00146",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1118"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Natalie Fleming",
+     "party": "I",
+     "fec": {
+      "id": "S0ID00172",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1119"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Matt Loesby",
+     "party": "L",
+     "fec": {
+      "id": "S6ID00187",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1120"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jim Risch",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S8ID00092",
+      "receipts": 3823851.01,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00440362"
+      ],
+      "source_id": "S1121"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-009",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "IL — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:il",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Whitfield Harrington Jr.",
+     "party": "I",
+     "fec": {
+      "id": "S6IL00680",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1122"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Juliana Stratton",
+     "party": "D",
+     "fec": {
+      "id": "S6IL00458",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1123"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Don Tracy",
+     "party": "R",
+     "fec": {
+      "id": "S6IL00615",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1124"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-010",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "IA — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ia",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Ashley Hinson",
+     "party": "R",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Thomas Laehn",
+     "party": "L",
+     "fec": {
+      "id": "S6IA00181",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1125"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Josh Turek",
+     "party": "D",
+     "fec": {
+      "id": "S6IA00298",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1126"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-011",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "KS — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ks",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "David Graham",
+     "party": "L",
+     "fec": {
+      "id": "S2KS00154",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1127"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Adam Hamilton",
+     "party": "D",
+     "fec": {
+      "id": "S6KS00312",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1128"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Roger Marshall",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S0KS00315",
+      "receipts": 4809692.25,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00576173"
+      ],
+      "source_id": "S1129"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-012",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "KY — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ky",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Andy Barr",
+     "party": "R",
+     "fec": {
+      "id": "S6KY00286",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1130"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Charles Booker",
+     "party": "D",
+     "fec": {
+      "id": "S6KY00385",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1131"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Christopher Campbell",
+     "party": "I",
+     "fec": {
+      "id": "S6KY00377",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1132"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-013",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "LA — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:la",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Jamie Davis",
+     "party": "D",
+     "fec": {
+      "id": "S6LA00615",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1133"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Julia Letlow",
+     "party": "R",
+     "fec": {
+      "id": "S6LA00664",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1134"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-014",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "ME — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:me",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Susan Collins",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S6ME00159",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1135"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Troy Jackson",
+     "party": "D",
+     "fec": {
+      "id": "S6ME00464",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1136"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-015",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "MA — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ma",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Shiva Ayyadurai",
+     "party": "I",
+     "fec": {
+      "id": "S8MA00268",
+      "receipts": 244723.59,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00936542"
+      ],
+      "source_id": "S1137"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "John Deaton",
+     "party": "R",
+     "fec": {
+      "id": "S6MA00304",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1138"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Ed Markey",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S4MA00028",
+      "receipts": 5826326.49,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00196774"
+      ],
+      "source_id": "S1139"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Joe Tache",
+     "party": "PSL",
+     "fec": {
+      "id": "S6MA00288",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1140"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-016",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "MI — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:mi",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Lydia Christensen",
+     "party": "L",
+     "fec": {
+      "id": "S6MI00442",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1141"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Abdul El-Sayed",
+     "party": "D",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Walter P. Kristy",
+     "party": "NLP",
+     "fec": {
+      "id": "S6MI00590",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1142"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Tim Long",
+     "party": "C",
+     "fec": {
+      "id": "S6MI00566",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1143"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Douglas P. Marsh",
+     "party": "G",
+     "fec": {
+      "id": "S4MI00512",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1144"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Mike Rogers",
+     "party": "R",
+     "fec": {
+      "id": "S4MI00595",
+      "receipts": 20565706.38,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00849810",
+       "C00892026"
+      ],
+      "source_id": "S1145"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-017",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "MN — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:mn",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Peggy Flanagan",
+     "party": "DFL",
+     "fec": {
+      "id": "S6MN00440",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1146"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Marisa Simonetti",
+     "party": "I",
+     "fec": {
+      "id": "S6MN00481",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1147"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Michele Tafoya",
+     "party": "R",
+     "fec": {
+      "id": "S6MN00556",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1148"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Rebecca Whiting",
+     "party": "L",
+     "fec": {
+      "id": "S4MN00601",
+      "receipts": 3466.0,
+      "from": "2026-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00953703"
+      ],
+      "source_id": "S1149"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-018",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "MS — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ms",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Scott Colom",
+     "party": "D",
+     "fec": {
+      "id": "S6MS00133",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1150"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Cindy Hyde-Smith",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Ty Pinkins",
+     "party": "I",
+     "fec": {
+      "id": "S4MS00187",
+      "receipts": 104310.83,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00830554"
+      ],
+      "source_id": "S1151"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-019",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "MT — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:mt",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Kurt Alme",
+     "party": "R",
+     "fec": {
+      "id": "S6MT00295",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1152"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Kyle Austin",
+     "party": "L",
+     "fec": {
+      "id": "S6MT00261",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1153"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Alani Bankhead",
+     "party": "D",
+     "fec": {
+      "id": "S6MT00253",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1154"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Seth Bodnar",
+     "party": "I",
+     "fec": {
+      "id": "S6MT00287",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1155"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-020",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "NE — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ne",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Chuck Conboy",
+     "party": "AFP",
+     "fec": {
+      "id": "S6NE00202",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1156"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Mike Marvin",
+     "party": "LMN",
+     "fec": {
+      "id": "S6NE00152",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1157"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Dan Osborn",
+     "party": "I",
+     "fec": {
+      "id": "S4NE00207",
+      "receipts": 9805860.19,
+      "from": "2025-01-01",
+      "through": "2026-10-14",
+      "committee_ids": [
+       "C00850677",
+       "C00891465",
+       "C00901355"
+      ],
+      "source_id": "S1158"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Robin Richards",
+     "party": "NWPP",
+     "fec": {
+      "id": "S6NE00210",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1159"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Pete Ricketts",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S6NE00129",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1160"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-021",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "NH — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nh",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Edmond LaPlante",
+     "party": "C",
+     "fec": {
+      "id": "S2NH00223",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1161"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Chris Pappas",
+     "party": "D",
+     "fec": {
+      "id": "S6NH00141",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1162"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "John E. Sununu",
+     "party": "R",
+     "fec": {
+      "id": "S6NH00208",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1163"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-022",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "NJ — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nj",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Cory Booker",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S4NJ00185",
+      "receipts": 20663770.94,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00540500"
+      ],
+      "source_id": "S1164"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Veronica Fernandez",
+     "party": "I",
+     "fec": {
+      "id": "S0NJ00258",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1165"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Joanne Kuniansky",
+     "party": "SWP",
+     "fec": {
+      "id": "S4NJ00144",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1166"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Justin Murphy",
+     "party": "R",
+     "fec": {
+      "id": "S4NJ00532",
+      "receipts": 63175.71,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00865808"
+      ],
+      "source_id": "S1167"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-023",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "NM — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nm",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Ben Ray Luján",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S0NM00058",
+      "receipts": 6405516.36,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00443689"
+      ],
+      "source_id": "S1168"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Larry Marker",
+     "party": "R",
+     "fec": {
+      "id": "S6NM01186",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1169"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-024",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "NC — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nc",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Shannon Bray",
+     "party": "L",
+     "fec": {
+      "id": "S0NC00335",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1170"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Roy Cooper",
+     "party": "D",
+     "fec": {
+      "id": "S6NC00407",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1171"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Michael Dublin",
+     "party": "G",
+     "fec": {
+      "id": "S6NC00563",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1172"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Michael Whatley",
+     "party": "R",
+     "fec": {
+      "id": "S6NC00415",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1173"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-025",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "OH — Statewide",
+   "seats": 1,
+   "term": "Unexpired term ending January 3, 2027",
+   "election_type": "special",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:oh",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Sherrod Brown",
+     "party": "D",
+     "fec": {
+      "id": "S6OH00163",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1174"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jon Husted",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S6OH00304",
+      "receipts": 19208763.22,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00895276",
+       "C00896019"
+      ],
+      "source_id": "S1175"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Greg Levy",
+     "party": "I",
+     "fec": {
+      "id": "S6OH00395",
+      "receipts": 124609.56,
+      "from": "2025-10-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00918839"
+      ],
+      "source_id": "S1176"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "William Redpath",
+     "party": "L",
+     "fec": {
+      "id": "S6OH00429",
+      "receipts": 55255.7,
+      "from": "2025-07-03",
+      "through": "2026-10-14",
+      "committee_ids": [
+       "C00937300"
+      ],
+      "source_id": "S1177"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-026",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "OK — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ok",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Kevin Hern",
+     "party": "R",
+     "fec": {
+      "id": "S6OK04247",
+      "receipts": 10765916.36,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00943142"
+      ],
+      "source_id": "S1178"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Ron Meinhardt",
+     "party": "I",
+     "fec": {
+      "id": "S6OK04205",
+      "receipts": 15902.61,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00939058"
+      ],
+      "source_id": "S1179"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Curtis Stinnett",
+     "party": "I",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "N'Kiyla Jasmine Thomas",
+     "party": "D",
+     "fec": {
+      "id": "S6OK04163",
+      "receipts": 106994.96,
+      "from": "2025-07-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00899559"
+      ],
+      "source_id": "S1180"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Sevier White",
+     "party": "L",
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-027",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "OR — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:or",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Gary Lyndon Dye",
+     "party": "L",
+     "fec": {
+      "id": "S0OR00378",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1181"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Chris Henry",
+     "party": "OPP",
+     "fec": {
+      "id": "S2OR00234",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1182"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jeff Merkley",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S8OR00207",
+      "receipts": 5206884.43,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00437277"
+      ],
+      "source_id": "S1183"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "David Brock Smith",
+     "party": "R",
+     "fec": {
+      "id": "S6OR05218",
+      "receipts": 290737.88,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00941559"
+      ],
+      "source_id": "S1184"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-028",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "RI — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ri",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Michael Bahry",
+     "party": "I",
+     "fec": {
+      "id": "S6RI00288",
+      "receipts": 124686.15,
+      "from": "2026-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00949982"
+      ],
+      "source_id": "S1185"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Raymond McKay",
+     "party": "R",
+     "fec": {
+      "id": "S4RI00051",
+      "receipts": 196100.52,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00827964"
+      ],
+      "source_id": "S1186"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jack Reed",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S6RI00163",
+      "receipts": 3649513.55,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00238907"
+      ],
+      "source_id": "S1187"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-029",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "SC — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:sc",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Annie Andrews",
+     "party": "D",
+     "fec": {
+      "id": "S6SC04239",
+      "receipts": 20173696.89,
+      "from": "2025-05-22",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00906024"
+      ],
+      "source_id": "S1188"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Darline Graham",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S6SC04437",
+      "receipts": 1827626.21,
+      "from": "2026-07-23",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00957308"
+      ],
+      "source_id": "S1189"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Mark Hackett",
+     "party": "C",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Kasie Whitener",
+     "party": "L",
+     "fec": {
+      "id": "S6SC04247",
+      "receipts": 26184.52,
+      "from": "2025-10-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00907709"
+      ],
+      "source_id": "S1190"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-030",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "SD — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:sd",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Brian Bengs",
+     "party": "I",
+     "fec": {
+      "id": "S6SD01117",
+      "receipts": 1678331.53,
+      "from": "2025-04-28",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00903641"
+      ],
+      "source_id": "S1191"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Mike Rounds",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S4SD00049",
+      "receipts": 3652638.57,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00532465"
+      ],
+      "source_id": "S1192"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-031",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "TN — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:tn",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Marquita Bradshaw",
+     "party": "D",
+     "fec": {
+      "id": "S0TN00342",
+      "receipts": 29158.19,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00846048"
+      ],
+      "source_id": "S1193"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Tharon Chandler",
+     "party": "I",
+     "fec": {
+      "id": "S4TN00583",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1194"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Andrew Gerena",
+     "party": "I",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Bill Hagerty",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S0TN00169",
+      "receipts": 8230660.03,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00718627"
+      ],
+      "source_id": "S1195"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Jeremy Hearn",
+     "party": "I",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Robert Jones",
+     "party": "I",
+     "fec": {
+      "id": "S6TN00372",
+      "receipts": 12300.0,
+      "from": "2026-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00941971"
+      ],
+      "source_id": "S1196"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "James Macon III",
+     "party": "I",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Yoshi Matthews",
+     "party": "I",
+     "fec": {
+      "id": "S6TN00364",
+      "receipts": 47.25,
+      "from": "2026-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00936500"
+      ],
+      "source_id": "S1197"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "David Sutman Jr.",
+     "party": "I",
+     "fec": {
+      "id": "S6TN00398",
+      "receipts": 26249.47,
+      "from": "2026-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00943720"
+      ],
+      "source_id": "S1198"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Catherine Whitson",
+     "party": "I",
+     "fec": {
+      "id": "S6TN00414",
+      "receipts": null,
+      "note_id": "N905",
+      "source_id": "S1199"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-032",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "TX — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:tx",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Ted Brown",
+     "party": "L",
+     "fec": {
+      "id": "S4TX00888",
+      "receipts": 12667.28,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00857623"
+      ],
+      "source_id": "S1200"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Ken Paxton",
+     "party": "R",
+     "fec": {
+      "id": "S6TX00388",
+      "receipts": 19497809.76,
+      "from": "2025-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00901918",
+       "C00930446"
+      ],
+      "source_id": "S1201"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "James Talarico",
+     "party": "D",
+     "fec": {
+      "id": "S6TX00479",
+      "receipts": 128772835.42,
+      "from": "2025-09-08",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00919084"
+      ],
+      "source_id": "S1202"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-033",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "VA — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:va",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Bert Mizusawa",
+     "party": "R",
+     "fec": {
+      "id": "S8VA00321",
+      "receipts": 1034543.26,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00892075",
+       "C00934265"
+      ],
+      "source_id": "S1203"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Mark Warner",
+     "party": "D",
+     "incumbent": true,
+     "fec": {
+      "id": "S6VA00093",
+      "receipts": 19903654.18,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00438713"
+      ],
+      "source_id": "S1204"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
+   "id": "US2026-034",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "WV — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:wv",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Rachel Fetty Anderson",
+     "party": "D",
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Shelley Moore Capito",
+     "party": "R",
+     "incumbent": true,
+     "fec": {
+      "id": "S4WV00159",
+      "receipts": 5269965.77,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00539825"
+      ],
+      "source_id": "S1205"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "S. Marshall Wilson",
+     "party": "C",
+     "fec": {
+      "id": "S6WV00204",
+      "receipts": 58665.16,
+      "from": "2026-04-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00954263"
+      ],
+      "source_id": "S1206"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904",
+    "N907"
+   ]
+  },
+  {
+   "id": "US2026-035",
+   "counties": [],
+   "government_level": "Federal",
+   "office_category": "U.S. Senate",
+   "jurisdiction": "United States Senate",
+   "office": "United States Senator",
+   "district_or_seat": "WY — Statewide",
+   "seats": 1,
+   "term": "6 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:wy",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "James W. Byrd",
+     "party": "D",
+     "fec": {
+      "id": "S6WY00217",
+      "receipts": 41359.94,
+      "from": "2026-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00938738"
+      ],
+      "source_id": "S1207"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    },
+    {
+     "name": "Harriet Hageman",
+     "party": "R",
+     "fec": {
+      "id": "S6WY00209",
+      "receipts": 2678888.54,
+      "from": "2025-01-01",
+      "through": "2026-09-30",
+      "committee_ids": [
+       "C00788943"
+      ],
+      "source_id": "S1208"
+     },
+     "source_ids": [
+      "S1099"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1099"
+   ],
+   "note_ids": [
+    "N903",
+    "N904"
+   ]
+  },
+  {
    "id": "CA2026-022",
    "counties": [
     "Alameda",
@@ -40060,6 +42781,1857 @@
    ],
    "note_ids": [
     "N004"
+   ]
+  },
+  {
+   "id": "US2026-036",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Alabama",
+   "office": "Governor",
+   "district_or_seat": "AL — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:al",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Doug Jones",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Tommy Tuberville",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-037",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Alaska",
+   "office": "Governor",
+   "district_or_seat": "AK — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ak",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Dave Bronson",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jonathan Kreiss-Tomkins",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Treg Taylor",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Bernadette Wilson",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-038",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Arizona",
+   "office": "Governor",
+   "district_or_seat": "AZ — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:az",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Andy Biggs",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Katie Hobbs",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Teri Hourihan",
+     "party": "AZIP",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Risa Lombardo",
+     "party": "G",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-039",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Arkansas",
+   "office": "Governor",
+   "district_or_seat": "AR — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ar",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Fredrick Love",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Sarah Huckabee Sanders",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Colt Shelby",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-040",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Colorado",
+   "office": "Governor",
+   "district_or_seat": "CO — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:co",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Stephen Hamilton",
+     "party": "C",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Greg Lopez",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Victor Marx",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Eric Mulder",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jeff Peckman",
+     "party": "UP",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Erik Underwood",
+     "party": "AVP",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Phil Weiser",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-041",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Connecticut",
+   "office": "Governor",
+   "district_or_seat": "CT — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ct",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Ryan Fazio",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Ned Lamont",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-042",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Florida",
+   "office": "Governor",
+   "district_or_seat": "FL — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:fl",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Dean Abrams",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Charles Burkett",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jeffrey Datto",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Moe Dimanche",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Byron Donalds",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Scott Jewett",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "David Jolly",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Frank Russo",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-043",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Georgia",
+   "office": "Governor",
+   "district_or_seat": "GA — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ga",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Keisha Lance Bottoms",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Rick Jackson",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-044",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Hawaii",
+   "office": "Governor",
+   "district_or_seat": "HI — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:hi",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Gary Cordery",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Josh Green",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-045",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Idaho",
+   "office": "Governor",
+   "district_or_seat": "ID — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:id",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Brad Little",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Terri Pickens",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Pro-Life",
+     "party": "C",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Paul Sand",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "John Stegner",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-046",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Illinois",
+   "office": "Governor",
+   "district_or_seat": "IL — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:il",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Darren Bailey",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Collin Corbett",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "JB Pritzker",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-047",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Iowa",
+   "office": "Governor",
+   "district_or_seat": "IA — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ia",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Zach Lahn",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Rob Sand",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Sondra Wilson",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-048",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Kansas",
+   "office": "Governor",
+   "district_or_seat": "KS — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ks",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Cindy Holscher",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Ty Masterson",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-049",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Maine",
+   "office": "Governor",
+   "district_or_seat": "ME — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:me",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Rick Bennett",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Robert B. Charles",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Hannah Pingree",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-050",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Maryland",
+   "office": "Governor",
+   "district_or_seat": "MD — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:md",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Dan Cox",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Andy Ellis",
+     "party": "G",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Wes Moore",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Cathy White",
+     "party": "WCP",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-051",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Massachusetts",
+   "office": "Governor",
+   "district_or_seat": "MA — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ma",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Maura Healey",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Andrea James",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Mike Minogue",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-052",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Michigan",
+   "office": "Governor",
+   "district_or_seat": "MI — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:mi",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Jocelyn Benson",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Donna Brandenburg",
+     "party": "C",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Douglas Campbell",
+     "party": "G",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Anthony Hudson",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "John James",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-053",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Minnesota",
+   "office": "Governor",
+   "district_or_seat": "MN — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:mn",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Lisa Demuth",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Amy Klobuchar",
+     "party": "DFL",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Steven Young",
+     "party": "G",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-054",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Nebraska",
+   "office": "Governor",
+   "district_or_seat": "NE — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ne",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Rick Beard",
+     "party": "LMN",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Brett Lindstrom",
+     "party": "AFP",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jim Pillen",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Lynne Walz",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-055",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Nevada",
+   "office": "Governor",
+   "district_or_seat": "NV — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nv",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Aaron Ford",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Danielle Ford",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Joe Lombardo",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-056",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of New Hampshire",
+   "office": "Governor",
+   "district_or_seat": "NH — Statewide",
+   "seats": 1,
+   "term": "2 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nh",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Kelly Ayotte",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jon Kiper",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Cinde Warmington }}",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-057",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of New Mexico",
+   "office": "Governor",
+   "district_or_seat": "NM — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:nm",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Deb Haaland",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Gregg Hull",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-058",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of New York",
+   "office": "Governor",
+   "district_or_seat": "NY — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ny",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Bruce Blakeman",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Kathy Hochul",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-059",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Ohio",
+   "office": "Governor",
+   "district_or_seat": "OH — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:oh",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Amy Acton",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Donald Kissick",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Vivek Ramaswamy",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-060",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Oklahoma",
+   "office": "Governor",
+   "district_or_seat": "OK — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ok",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Robert Brooks Sr.",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Orlando Bush",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jerry Griffin",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Mike Mazzei",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Cyndi Munson",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-061",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Oregon",
+   "office": "Governor",
+   "district_or_seat": "OR — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:or",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Christine Drazan",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Tina Kotek",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Brett Smith",
+     "party": "PGP",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-062",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Pennsylvania",
+   "office": "Governor",
+   "district_or_seat": "PA — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:pa",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Stacy Garrity",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Ken Krawchuk",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Josh Shapiro",
+     "party": "D",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-063",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Rhode Island",
+   "office": "Governor",
+   "district_or_seat": "RI — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:ri",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Ken Block",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Helena Foulkes",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jasjit Gotra",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Aaron Guckian",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "CD Reynolds",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-064",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of South Carolina",
+   "office": "Governor",
+   "district_or_seat": "SC — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:sc",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Michael Addison",
+     "party": "UCP",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Walid Hakim",
+     "party": "G",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jermaine Johnson",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Alan Wilson",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-065",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of South Dakota",
+   "office": "Governor",
+   "district_or_seat": "SD — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:sd",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Dan Ahlers",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Larry Rhoden",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-066",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Tennessee",
+   "office": "Governor",
+   "district_or_seat": "TN — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:tn",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Misam Abidi",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Santiago Asconape",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Marsha Blackburn",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Dean Brewer",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Ray Brown",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Jerri Green",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Taylor Hafley",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "David Hatley",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Wendell Jackson",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Charles Van Morgan",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Eddie Lee Murphy",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Lauren Pinkston",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Karl Smithson",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "L. Webb Taylor",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Robert Vick",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-067",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Texas",
+   "office": "Governor",
+   "district_or_seat": "TX — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:tx",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Greg Abbott",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Pat Dixon",
+     "party": "L",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Gina Hinojosa",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-068",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Vermont",
+   "office": "Governor",
+   "district_or_seat": "VT — Statewide",
+   "seats": 1,
+   "term": "2 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:vt",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "June Goodband",
+     "party": "GMPJ",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Amanda Janoo",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Brian Judd",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Phil Scott",
+     "party": "R",
+     "incumbent": true,
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Dean Roy",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-069",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Wisconsin",
+   "office": "Governor",
+   "district_or_seat": "WI — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:wi",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "David Crowley",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Tom Tiffany",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
+   ]
+  },
+  {
+   "id": "US2026-070",
+   "counties": [],
+   "government_level": "State",
+   "office_category": "Statewide executive",
+   "jurisdiction": "State of Wyoming",
+   "office": "Governor",
+   "district_or_seat": "WY — Statewide",
+   "seats": 1,
+   "term": "4 years",
+   "election_type": "general",
+   "ballot_status": "unverified",
+   "partisan": true,
+   "ocd_division_id": "ocd-division/country:us/state:wy",
+   "ocd_id_status": "convention",
+   "candidate_list_status": "unverified",
+   "candidates": null,
+   "filed_candidates_not_confirmed_on_ballot": [
+    {
+     "name": "Eric Barlow",
+     "party": "R",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Kenneth Casner",
+     "party": "D",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Joseph Kibler",
+     "party": "C",
+     "source_ids": [
+      "S1100"
+     ]
+    }
+   ],
+   "source_ids": [
+    "S1100"
+   ],
+   "note_ids": [
+    "N903"
    ]
   },
   {
@@ -219648,7 +224220,12 @@
   "N892": "October 14, 2026: seats corrected from 1 to 2 per the county Candidate Guide's scheduled-offices table ('Bayshore Elementary School District, Governing Board (Short Term)' — Seats up: 2).",
   "N900": "Bounded campaign-website platform pass (docs/CAMPAIGN_PLATFORMS.md): every record here comes from a packet-bound, hash-verified capture reviewed against the candidate office identity; silence findings state their bounded scope and do not assert absence elsewhere.",
   "N901": "Campaign platform positions pass (docs/CAMPAIGN_PLATFORMS.md): points are quoted verbatim from hash-verified bounded website captures with mechanically gated topics and identity; silence findings state their scope and do not assert absence elsewhere. Extraction used the local qwen/qwen3.8-27b model; every published point passed deterministic quote/topic gates.",
-  "N902": "Round-2 deep re-crawl of 114 campaign sites (Oct 15 captures) reviewed against packet gates; adds statements and scoped silences resolved by the deeper crawl. Reviewer passes: LLM source review (qwen3.8-27b via LM Studio, gate-mirror validated) and deterministic keyword-scan + Jev System One classification (accept choice+probability>=0.75). Silence findings state their bounded scope and do not assert absence elsewhere."
+  "N902": "Round-2 deep re-crawl of 114 campaign sites (Oct 15 captures) reviewed against packet gates; adds statements and scoped silences resolved by the deeper crawl. Reviewer passes: LLM source review (qwen3.8-27b via LM Studio, gate-mirror validated) and deterministic keyword-scan + Jev System One classification (accept choice+probability>=0.75). Silence findings state their bounded scope and do not assert absence elsewhere.",
+  "N903": "Nationwide federal and out-of-state statewide roster compiled October 18, 2026 from the cited Wikipedia race-summary tables, which aggregate certified candidate lists published by each state's election office. Ballot status is deliberately unverified until this inventory is reconciled against those official state sources; printed names and party labels follow the compilation.",
+  "N904": "2026-cycle FEC receipts retrieved October 17, 2026 from candidate-level totals (aggregating all authorized committees), the same method as the existing federal finance layer. Coverage periods vary by filer; amounts are dated snapshots, not a live feed.",
+  "N905": "The FEC published no 2026-cycle total-receipts summary for this candidate's filings at the October 17, 2026 retrieval (no authorized committee reported receipts, or none was found). Unknown is not zero; a later filing may add a total.",
+  "N906": "The FEC totals response reported coverage beginning before the nominal 2025–2026 cycle; the source period and amount are preserved as published, not relabelled as a cycle subtotal.",
+  "N907": "No FEC candidate filing was found for this printed federal candidacy at the October 17, 2026 check (many minor-party candidates do not file). Absence of an FEC record is not absence from the ballot and does not imply zero fundraising outside the federal reporting system."
  },
  "sources": {
   "S001": {
@@ -223539,6 +228116,446 @@
   "S1098": {
    "url": "https://vote.santaclaracounty.gov/silver-creek-valley-country-club-geologic-hazard-abatement-district",
    "title": "Santa Clara County ROV — Silver Creek Valley Country Club GHAD page (Katwan/Hansen/Roberts holdovers, next election 2026)"
+  },
+  "S1099": {
+   "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_elections",
+   "title": "Wikipedia: 2026 United States Senate elections — race summary tables (retrieved October 18, 2026; each row cites state election-office sources)"
+  },
+  "S1100": {
+   "url": "https://en.wikipedia.org/wiki/2026_United_States_gubernatorial_elections",
+   "title": "Wikipedia: 2026 United States gubernatorial elections — race summary tables (retrieved October 18, 2026; each row cites state election-office sources)"
+  },
+  "S1101": {
+   "url": "https://www.fec.gov/data/candidate/S6AL00476/",
+   "title": "FEC candidate summary S6AL00476 (2026 cycle)"
+  },
+  "S1102": {
+   "url": "https://www.fec.gov/data/candidate/S6AL00518/",
+   "title": "FEC candidate summary S6AL00518 (2026 cycle)"
+  },
+  "S1103": {
+   "url": "https://www.fec.gov/data/candidate/S8AK00140/",
+   "title": "FEC candidate summary S8AK00140 (2026 cycle)"
+  },
+  "S1104": {
+   "url": "https://www.fec.gov/data/candidate/S6AK00276/",
+   "title": "FEC candidate summary S6AK00276 (2026 cycle)"
+  },
+  "S1105": {
+   "url": "https://www.fec.gov/data/candidate/S4AR00103/",
+   "title": "FEC candidate summary S4AR00103 (2026 cycle)"
+  },
+  "S1106": {
+   "url": "https://www.fec.gov/data/candidate/S6AR00199/",
+   "title": "FEC candidate summary S6AR00199 (2026 cycle)"
+  },
+  "S1107": {
+   "url": "https://www.fec.gov/data/candidate/S6AR00223/",
+   "title": "FEC candidate summary S6AR00223 (2026 cycle)"
+  },
+  "S1108": {
+   "url": "https://www.fec.gov/data/candidate/S6CO00507/",
+   "title": "FEC candidate summary S6CO00507 (2026 cycle)"
+  },
+  "S1109": {
+   "url": "https://www.fec.gov/data/candidate/S6CO00556/",
+   "title": "FEC candidate summary S6CO00556 (2026 cycle)"
+  },
+  "S1110": {
+   "url": "https://www.fec.gov/data/candidate/S0CO00575/",
+   "title": "FEC candidate summary S0CO00575 (2026 cycle)"
+  },
+  "S1111": {
+   "url": "https://www.fec.gov/data/candidate/S6CO00564/",
+   "title": "FEC candidate summary S6CO00564 (2026 cycle)"
+  },
+  "S1112": {
+   "url": "https://www.fec.gov/data/candidate/S0DE00092/",
+   "title": "FEC candidate summary S0DE00092 (2026 cycle)"
+  },
+  "S1113": {
+   "url": "https://www.fec.gov/data/candidate/S6DE00206/",
+   "title": "FEC candidate summary S6DE00206 (2026 cycle)"
+  },
+  "S1114": {
+   "url": "https://www.fec.gov/data/candidate/S6FL00640/",
+   "title": "FEC candidate summary S6FL00640 (2026 cycle)"
+  },
+  "S1115": {
+   "url": "https://www.fec.gov/data/candidate/S6FL00830/",
+   "title": "FEC candidate summary S6FL00830 (2026 cycle)"
+  },
+  "S1116": {
+   "url": "https://www.fec.gov/data/candidate/S6GA00390/",
+   "title": "FEC candidate summary S6GA00390 (2026 cycle)"
+  },
+  "S1117": {
+   "url": "https://www.fec.gov/data/candidate/S8GA00180/",
+   "title": "FEC candidate summary S8GA00180 (2026 cycle)"
+  },
+  "S1118": {
+   "url": "https://www.fec.gov/data/candidate/S6ID00146/",
+   "title": "FEC candidate summary S6ID00146 (2026 cycle)"
+  },
+  "S1119": {
+   "url": "https://www.fec.gov/data/candidate/S0ID00172/",
+   "title": "FEC candidate summary S0ID00172 (2026 cycle)"
+  },
+  "S1120": {
+   "url": "https://www.fec.gov/data/candidate/S6ID00187/",
+   "title": "FEC candidate summary S6ID00187 (2026 cycle)"
+  },
+  "S1121": {
+   "url": "https://www.fec.gov/data/candidate/S8ID00092/",
+   "title": "FEC candidate summary S8ID00092 (2026 cycle)"
+  },
+  "S1122": {
+   "url": "https://www.fec.gov/data/candidate/S6IL00680/",
+   "title": "FEC candidate summary S6IL00680 (2026 cycle)"
+  },
+  "S1123": {
+   "url": "https://www.fec.gov/data/candidate/S6IL00458/",
+   "title": "FEC candidate summary S6IL00458 (2026 cycle)"
+  },
+  "S1124": {
+   "url": "https://www.fec.gov/data/candidate/S6IL00615/",
+   "title": "FEC candidate summary S6IL00615 (2026 cycle)"
+  },
+  "S1125": {
+   "url": "https://www.fec.gov/data/candidate/S6IA00181/",
+   "title": "FEC candidate summary S6IA00181 (2026 cycle)"
+  },
+  "S1126": {
+   "url": "https://www.fec.gov/data/candidate/S6IA00298/",
+   "title": "FEC candidate summary S6IA00298 (2026 cycle)"
+  },
+  "S1127": {
+   "url": "https://www.fec.gov/data/candidate/S2KS00154/",
+   "title": "FEC candidate summary S2KS00154 (2026 cycle)"
+  },
+  "S1128": {
+   "url": "https://www.fec.gov/data/candidate/S6KS00312/",
+   "title": "FEC candidate summary S6KS00312 (2026 cycle)"
+  },
+  "S1129": {
+   "url": "https://www.fec.gov/data/candidate/S0KS00315/",
+   "title": "FEC candidate summary S0KS00315 (2026 cycle)"
+  },
+  "S1130": {
+   "url": "https://www.fec.gov/data/candidate/S6KY00286/",
+   "title": "FEC candidate summary S6KY00286 (2026 cycle)"
+  },
+  "S1131": {
+   "url": "https://www.fec.gov/data/candidate/S6KY00385/",
+   "title": "FEC candidate summary S6KY00385 (2026 cycle)"
+  },
+  "S1132": {
+   "url": "https://www.fec.gov/data/candidate/S6KY00377/",
+   "title": "FEC candidate summary S6KY00377 (2026 cycle)"
+  },
+  "S1133": {
+   "url": "https://www.fec.gov/data/candidate/S6LA00615/",
+   "title": "FEC candidate summary S6LA00615 (2026 cycle)"
+  },
+  "S1134": {
+   "url": "https://www.fec.gov/data/candidate/S6LA00664/",
+   "title": "FEC candidate summary S6LA00664 (2026 cycle)"
+  },
+  "S1135": {
+   "url": "https://www.fec.gov/data/candidate/S6ME00159/",
+   "title": "FEC candidate summary S6ME00159 (2026 cycle)"
+  },
+  "S1136": {
+   "url": "https://www.fec.gov/data/candidate/S6ME00464/",
+   "title": "FEC candidate summary S6ME00464 (2026 cycle)"
+  },
+  "S1137": {
+   "url": "https://www.fec.gov/data/candidate/S8MA00268/",
+   "title": "FEC candidate summary S8MA00268 (2026 cycle)"
+  },
+  "S1138": {
+   "url": "https://www.fec.gov/data/candidate/S6MA00304/",
+   "title": "FEC candidate summary S6MA00304 (2026 cycle)"
+  },
+  "S1139": {
+   "url": "https://www.fec.gov/data/candidate/S4MA00028/",
+   "title": "FEC candidate summary S4MA00028 (2026 cycle)"
+  },
+  "S1140": {
+   "url": "https://www.fec.gov/data/candidate/S6MA00288/",
+   "title": "FEC candidate summary S6MA00288 (2026 cycle)"
+  },
+  "S1141": {
+   "url": "https://www.fec.gov/data/candidate/S6MI00442/",
+   "title": "FEC candidate summary S6MI00442 (2026 cycle)"
+  },
+  "S1142": {
+   "url": "https://www.fec.gov/data/candidate/S6MI00590/",
+   "title": "FEC candidate summary S6MI00590 (2026 cycle)"
+  },
+  "S1143": {
+   "url": "https://www.fec.gov/data/candidate/S6MI00566/",
+   "title": "FEC candidate summary S6MI00566 (2026 cycle)"
+  },
+  "S1144": {
+   "url": "https://www.fec.gov/data/candidate/S4MI00512/",
+   "title": "FEC candidate summary S4MI00512 (2026 cycle)"
+  },
+  "S1145": {
+   "url": "https://www.fec.gov/data/candidate/S4MI00595/",
+   "title": "FEC candidate summary S4MI00595 (2026 cycle)"
+  },
+  "S1146": {
+   "url": "https://www.fec.gov/data/candidate/S6MN00440/",
+   "title": "FEC candidate summary S6MN00440 (2026 cycle)"
+  },
+  "S1147": {
+   "url": "https://www.fec.gov/data/candidate/S6MN00481/",
+   "title": "FEC candidate summary S6MN00481 (2026 cycle)"
+  },
+  "S1148": {
+   "url": "https://www.fec.gov/data/candidate/S6MN00556/",
+   "title": "FEC candidate summary S6MN00556 (2026 cycle)"
+  },
+  "S1149": {
+   "url": "https://www.fec.gov/data/candidate/S4MN00601/",
+   "title": "FEC candidate summary S4MN00601 (2026 cycle)"
+  },
+  "S1150": {
+   "url": "https://www.fec.gov/data/candidate/S6MS00133/",
+   "title": "FEC candidate summary S6MS00133 (2026 cycle)"
+  },
+  "S1151": {
+   "url": "https://www.fec.gov/data/candidate/S4MS00187/",
+   "title": "FEC candidate summary S4MS00187 (2026 cycle)"
+  },
+  "S1152": {
+   "url": "https://www.fec.gov/data/candidate/S6MT00295/",
+   "title": "FEC candidate summary S6MT00295 (2026 cycle)"
+  },
+  "S1153": {
+   "url": "https://www.fec.gov/data/candidate/S6MT00261/",
+   "title": "FEC candidate summary S6MT00261 (2026 cycle)"
+  },
+  "S1154": {
+   "url": "https://www.fec.gov/data/candidate/S6MT00253/",
+   "title": "FEC candidate summary S6MT00253 (2026 cycle)"
+  },
+  "S1155": {
+   "url": "https://www.fec.gov/data/candidate/S6MT00287/",
+   "title": "FEC candidate summary S6MT00287 (2026 cycle)"
+  },
+  "S1156": {
+   "url": "https://www.fec.gov/data/candidate/S6NE00202/",
+   "title": "FEC candidate summary S6NE00202 (2026 cycle)"
+  },
+  "S1157": {
+   "url": "https://www.fec.gov/data/candidate/S6NE00152/",
+   "title": "FEC candidate summary S6NE00152 (2026 cycle)"
+  },
+  "S1158": {
+   "url": "https://www.fec.gov/data/candidate/S4NE00207/",
+   "title": "FEC candidate summary S4NE00207 (2026 cycle)"
+  },
+  "S1159": {
+   "url": "https://www.fec.gov/data/candidate/S6NE00210/",
+   "title": "FEC candidate summary S6NE00210 (2026 cycle)"
+  },
+  "S1160": {
+   "url": "https://www.fec.gov/data/candidate/S6NE00129/",
+   "title": "FEC candidate summary S6NE00129 (2026 cycle)"
+  },
+  "S1161": {
+   "url": "https://www.fec.gov/data/candidate/S2NH00223/",
+   "title": "FEC candidate summary S2NH00223 (2026 cycle)"
+  },
+  "S1162": {
+   "url": "https://www.fec.gov/data/candidate/S6NH00141/",
+   "title": "FEC candidate summary S6NH00141 (2026 cycle)"
+  },
+  "S1163": {
+   "url": "https://www.fec.gov/data/candidate/S6NH00208/",
+   "title": "FEC candidate summary S6NH00208 (2026 cycle)"
+  },
+  "S1164": {
+   "url": "https://www.fec.gov/data/candidate/S4NJ00185/",
+   "title": "FEC candidate summary S4NJ00185 (2026 cycle)"
+  },
+  "S1165": {
+   "url": "https://www.fec.gov/data/candidate/S0NJ00258/",
+   "title": "FEC candidate summary S0NJ00258 (2026 cycle)"
+  },
+  "S1166": {
+   "url": "https://www.fec.gov/data/candidate/S4NJ00144/",
+   "title": "FEC candidate summary S4NJ00144 (2026 cycle)"
+  },
+  "S1167": {
+   "url": "https://www.fec.gov/data/candidate/S4NJ00532/",
+   "title": "FEC candidate summary S4NJ00532 (2026 cycle)"
+  },
+  "S1168": {
+   "url": "https://www.fec.gov/data/candidate/S0NM00058/",
+   "title": "FEC candidate summary S0NM00058 (2026 cycle)"
+  },
+  "S1169": {
+   "url": "https://www.fec.gov/data/candidate/S6NM01186/",
+   "title": "FEC candidate summary S6NM01186 (2026 cycle)"
+  },
+  "S1170": {
+   "url": "https://www.fec.gov/data/candidate/S0NC00335/",
+   "title": "FEC candidate summary S0NC00335 (2026 cycle)"
+  },
+  "S1171": {
+   "url": "https://www.fec.gov/data/candidate/S6NC00407/",
+   "title": "FEC candidate summary S6NC00407 (2026 cycle)"
+  },
+  "S1172": {
+   "url": "https://www.fec.gov/data/candidate/S6NC00563/",
+   "title": "FEC candidate summary S6NC00563 (2026 cycle)"
+  },
+  "S1173": {
+   "url": "https://www.fec.gov/data/candidate/S6NC00415/",
+   "title": "FEC candidate summary S6NC00415 (2026 cycle)"
+  },
+  "S1174": {
+   "url": "https://www.fec.gov/data/candidate/S6OH00163/",
+   "title": "FEC candidate summary S6OH00163 (2026 cycle)"
+  },
+  "S1175": {
+   "url": "https://www.fec.gov/data/candidate/S6OH00304/",
+   "title": "FEC candidate summary S6OH00304 (2026 cycle)"
+  },
+  "S1176": {
+   "url": "https://www.fec.gov/data/candidate/S6OH00395/",
+   "title": "FEC candidate summary S6OH00395 (2026 cycle)"
+  },
+  "S1177": {
+   "url": "https://www.fec.gov/data/candidate/S6OH00429/",
+   "title": "FEC candidate summary S6OH00429 (2026 cycle)"
+  },
+  "S1178": {
+   "url": "https://www.fec.gov/data/candidate/S6OK04247/",
+   "title": "FEC candidate summary S6OK04247 (2026 cycle)"
+  },
+  "S1179": {
+   "url": "https://www.fec.gov/data/candidate/S6OK04205/",
+   "title": "FEC candidate summary S6OK04205 (2026 cycle)"
+  },
+  "S1180": {
+   "url": "https://www.fec.gov/data/candidate/S6OK04163/",
+   "title": "FEC candidate summary S6OK04163 (2026 cycle)"
+  },
+  "S1181": {
+   "url": "https://www.fec.gov/data/candidate/S0OR00378/",
+   "title": "FEC candidate summary S0OR00378 (2026 cycle)"
+  },
+  "S1182": {
+   "url": "https://www.fec.gov/data/candidate/S2OR00234/",
+   "title": "FEC candidate summary S2OR00234 (2026 cycle)"
+  },
+  "S1183": {
+   "url": "https://www.fec.gov/data/candidate/S8OR00207/",
+   "title": "FEC candidate summary S8OR00207 (2026 cycle)"
+  },
+  "S1184": {
+   "url": "https://www.fec.gov/data/candidate/S6OR05218/",
+   "title": "FEC candidate summary S6OR05218 (2026 cycle)"
+  },
+  "S1185": {
+   "url": "https://www.fec.gov/data/candidate/S6RI00288/",
+   "title": "FEC candidate summary S6RI00288 (2026 cycle)"
+  },
+  "S1186": {
+   "url": "https://www.fec.gov/data/candidate/S4RI00051/",
+   "title": "FEC candidate summary S4RI00051 (2026 cycle)"
+  },
+  "S1187": {
+   "url": "https://www.fec.gov/data/candidate/S6RI00163/",
+   "title": "FEC candidate summary S6RI00163 (2026 cycle)"
+  },
+  "S1188": {
+   "url": "https://www.fec.gov/data/candidate/S6SC04239/",
+   "title": "FEC candidate summary S6SC04239 (2026 cycle)"
+  },
+  "S1189": {
+   "url": "https://www.fec.gov/data/candidate/S6SC04437/",
+   "title": "FEC candidate summary S6SC04437 (2026 cycle)"
+  },
+  "S1190": {
+   "url": "https://www.fec.gov/data/candidate/S6SC04247/",
+   "title": "FEC candidate summary S6SC04247 (2026 cycle)"
+  },
+  "S1191": {
+   "url": "https://www.fec.gov/data/candidate/S6SD01117/",
+   "title": "FEC candidate summary S6SD01117 (2026 cycle)"
+  },
+  "S1192": {
+   "url": "https://www.fec.gov/data/candidate/S4SD00049/",
+   "title": "FEC candidate summary S4SD00049 (2026 cycle)"
+  },
+  "S1193": {
+   "url": "https://www.fec.gov/data/candidate/S0TN00342/",
+   "title": "FEC candidate summary S0TN00342 (2026 cycle)"
+  },
+  "S1194": {
+   "url": "https://www.fec.gov/data/candidate/S4TN00583/",
+   "title": "FEC candidate summary S4TN00583 (2026 cycle)"
+  },
+  "S1195": {
+   "url": "https://www.fec.gov/data/candidate/S0TN00169/",
+   "title": "FEC candidate summary S0TN00169 (2026 cycle)"
+  },
+  "S1196": {
+   "url": "https://www.fec.gov/data/candidate/S6TN00372/",
+   "title": "FEC candidate summary S6TN00372 (2026 cycle)"
+  },
+  "S1197": {
+   "url": "https://www.fec.gov/data/candidate/S6TN00364/",
+   "title": "FEC candidate summary S6TN00364 (2026 cycle)"
+  },
+  "S1198": {
+   "url": "https://www.fec.gov/data/candidate/S6TN00398/",
+   "title": "FEC candidate summary S6TN00398 (2026 cycle)"
+  },
+  "S1199": {
+   "url": "https://www.fec.gov/data/candidate/S6TN00414/",
+   "title": "FEC candidate summary S6TN00414 (2026 cycle)"
+  },
+  "S1200": {
+   "url": "https://www.fec.gov/data/candidate/S4TX00888/",
+   "title": "FEC candidate summary S4TX00888 (2026 cycle)"
+  },
+  "S1201": {
+   "url": "https://www.fec.gov/data/candidate/S6TX00388/",
+   "title": "FEC candidate summary S6TX00388 (2026 cycle)"
+  },
+  "S1202": {
+   "url": "https://www.fec.gov/data/candidate/S6TX00479/",
+   "title": "FEC candidate summary S6TX00479 (2026 cycle)"
+  },
+  "S1203": {
+   "url": "https://www.fec.gov/data/candidate/S8VA00321/",
+   "title": "FEC candidate summary S8VA00321 (2026 cycle)"
+  },
+  "S1204": {
+   "url": "https://www.fec.gov/data/candidate/S6VA00093/",
+   "title": "FEC candidate summary S6VA00093 (2026 cycle)"
+  },
+  "S1205": {
+   "url": "https://www.fec.gov/data/candidate/S4WV00159/",
+   "title": "FEC candidate summary S4WV00159 (2026 cycle)"
+  },
+  "S1206": {
+   "url": "https://www.fec.gov/data/candidate/S6WV00204/",
+   "title": "FEC candidate summary S6WV00204 (2026 cycle)"
+  },
+  "S1207": {
+   "url": "https://www.fec.gov/data/candidate/S6WY00217/",
+   "title": "FEC candidate summary S6WY00217 (2026 cycle)"
+  },
+  "S1208": {
+   "url": "https://www.fec.gov/data/candidate/S6WY00209/",
+   "title": "FEC candidate summary S6WY00209 (2026 cycle)"
   }
  },
  "ie_finance": {

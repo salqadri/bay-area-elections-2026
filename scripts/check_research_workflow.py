@@ -50,7 +50,11 @@ class ScopeChecks(unittest.TestCase):
         registered = {c['name'] for c in BASE['election']['counties_in_scope']}
         self.assertEqual(set(bay['missing_counties']), set(REGISTRY['bay_area']) - registered)
         self.assertEqual(len(ca['requested_counties']), 58)
-        self.assertEqual(ca['unique_contests'], len(BASE['positions']))
+        # Nationwide federal/out-of-state contests (empty counties, added October 17, 2026) are
+        # deliberately outside every county-scope report; the planner counts only county-scoped records.
+        county_scoped = [p for p in BASE['positions'] if p['counties']]
+        self.assertEqual(ca['unique_contests'], len(county_scoped))
+        self.assertLess(len(county_scoped), len(BASE['positions']))
         self.assertTrue(all(not r['inventory_started'] and r['contests'] == 0 for r in ca['county_queue'] if r['county'] in ca['missing_counties']))
 
     def test_new_bay_and_non_bay_counties_need_no_county_specific_code(self):

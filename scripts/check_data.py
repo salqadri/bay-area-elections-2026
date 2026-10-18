@@ -52,9 +52,18 @@ for position in positions:
                 assert candidate["party"] in data["codes"]["party"], candidate
             assert candidate.get("incumbent", True) is True, candidate
 
-federal_candidates = [c for p in positions if p['government_level'] == 'Federal' for c in p['candidates'] or []]
+federal_candidates = [c for p in positions if p['government_level'] == 'Federal'
+                      for c in (p.get('candidates') or []) + (p.get('filed_candidates_not_confirmed_on_ballot') or [])]
+# Nationwide federal candidacies added October 17, 2026 include minor-party candidates with no FEC filing;
+# absence of an FEC record is recorded via a contest note (N907), never as zero fundraising.
+for position in positions:
+    if position['government_level'] != 'Federal':
+        continue
+    roster = (position.get('candidates') or []) + (position.get('filed_candidates_not_confirmed_on_ballot') or [])
+    if any('fec' not in c for c in roster):
+        assert 'N907' in (position.get('note_ids') or []), ('federal roster without FEC filings needs N907', position['id'])
 fec_ids = []
-for candidate in federal_candidates:
+for candidate in [c for c in federal_candidates if 'fec' in c]:
     f = candidate['fec']
     fec_ids.append(f['id'])
     assert data['sources'][f['source_id']]['url'].startswith('https://www.fec.gov/data/'), candidate['name']

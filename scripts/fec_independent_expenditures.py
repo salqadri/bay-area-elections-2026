@@ -110,7 +110,10 @@ def eligible(data, counties):
             continue
         if counties is not None and not (counties & set(position["counties"])):
             continue
-        for candidate in position.get("candidates") or []:
+        # October 17, 2026: nationwide Senate candidacies carry FEC-registered filers under the
+        # provisional roster while ballot status awaits official reconciliation; their outside
+        # spending is primary-source data regardless of that status.
+        for candidate in (position.get("candidates") or []) + (position.get("filed_candidates_not_confirmed_on_ballot") or []):
             fec = candidate.get("fec") or {}
             if fec.get("id"):
                 out.append((fec["id"], candidate["name"], position["id"]))
@@ -338,7 +341,7 @@ def cmd_attach(args):
     for position in data["positions"]:
         if position.get("government_level") != "Federal":
             continue
-        for candidate in position.get("candidates") or []:
+        for candidate in (position.get("candidates") or []) + (position.get("filed_candidates_not_confirmed_on_ballot") or []):
             fec_id = (candidate.get("fec") or {}).get("id")
             if not fec_id:
                 continue
@@ -371,6 +374,7 @@ def cmd_attach(args):
     }
 
     coverage = data["coverage"]
+    # Coverage tracks PRINTED candidacies; provisional filings are counted once their contest is confirmed.
     entries = [c for p in data["positions"] if p.get("government_level") == "Federal"
                for c in (p.get("candidates") or [])]
     coverage["printed_candidates_with_independent_expenditures"] = sum(

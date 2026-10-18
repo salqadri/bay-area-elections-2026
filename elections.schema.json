@@ -11,7 +11,7 @@
    "description": "Relative link to the companion schema file, intended to reside beside this dataset."
   },
   "schema_version": {
-   "const": "1.20"
+   "const": "1.21"
   },
   "election": {
    "type": "object",
@@ -651,8 +651,8 @@
   },
   "ocdDivisionId": {
    "type": "string",
-   "pattern": "^ocd-division/country:us/state:ca(?:/[^\\s/]+:[^\\s/]+)*$",
-   "description": "Open Civic Data geographic division identifier. This identifies an electorate or jurisdiction, not a unique office or candidate. A syntactically valid ID is not proof that an API recognizes it or that its boundaries match this election."
+   "pattern": "^ocd-division/country:us/state:[a-z]{2}(?:/[^\\s/]+:[^\\s/]+)*$",
+   "description": "Open Civic Data geographic division identifier for any US state. This identifies an electorate or jurisdiction, not a unique office or candidate. A syntactically valid ID is not proof that an API recognizes it or that its boundaries match this election."
   },
   "sourceId": {
    "type": "string",
@@ -841,9 +841,9 @@
       "type": "string",
       "minLength": 1
      },
-     "minItems": 1,
+     "minItems": 0,
      "uniqueItems": true,
-     "description": "Names of in-scope counties whose residents may vote in this contest. Each must match an election.counties_in_scope name. This is not necessarily every county intersected by the jurisdiction. District residency still applies."
+     "description": "Names of in-scope counties whose residents may vote in this contest. Each must match an election.counties_in_scope name. This is not necessarily every county intersected by the jurisdiction. District residency still applies. An empty array marks a researched contest whose electorate lies entirely outside the covered counties (nationwide federal and out-of-state statewide races); such contests appear only when no county filter is selected."
     },
     "government_level": {
      "type": "string",
