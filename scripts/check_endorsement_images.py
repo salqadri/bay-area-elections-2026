@@ -136,6 +136,28 @@ class ImageResearchChecks(unittest.TestCase):
             self.assertTrue(update['decisions'][0]['after']['image_url'].endswith('/opaque.png'))
             self.assertNotIn('endorser',update['decisions'][0]['after'])
 
+    def test_local_text_batches_are_cached_without_model_image_passes(self):
+        db = campaign.connect(':memory:')
+        row = next(c for c in candidates_from_data(DATA).values() if c.get('campaign_url'))
+        url = row['campaign_url'].rstrip('/') + '/endorsements'
+        raw = b'<h1>Endorsements</h1><p>People and organizations listed in this source are research evidence.</p>' + b'<img src="/opaque.png">' * 160
+        page = campaign._page_from_raw(raw, url)
+        db.execute('INSERT INTO tasks VALUES(?,?,?,?,?,?)', ('K-cache',row['campaign_url'],json.dumps([row['id']]),'crawled',None,'2026-10-18'))
+        db.execute('INSERT INTO pages VALUES(?,?,?,?,?)', ('K-cache',url,'source-one','2026-10-18T12:00:00Z',json.dumps(page)));db.commit()
+        response = (json.dumps({'endorsements': [], 'unidentified_logos': []}), {'prompt_tokens':100,'completion_tokens':20}, .1)
+        with patch.object(campaign,'lms',return_value=response) as provider:
+            self.assertEqual(campaign.extract_llm(db,1,1)['ok'],1)
+            self.assertEqual(provider.call_count,1,'160 unknown images must not trigger extra model calls')
+            db.execute('DELETE FROM results');db.commit()
+            self.assertEqual(campaign.extract_llm(db,1,1)['ok'],1)
+            self.assertEqual(provider.call_count,1,'Completed source batches must survive site-level retries')
+            db.execute('DELETE FROM results')
+            page['source_sha256']='changed-source'
+            db.execute('UPDATE pages SET page_json=?',(json.dumps(page),));db.commit()
+            self.assertEqual(campaign.extract_llm(db,1,1)['ok'],1)
+            self.assertEqual(provider.call_count,2,'Changed source must require a new extraction')
+        db.close()
+
     def test_jev_entry_prompt_and_legacy_cache_migration(self):
         from jev_review_proposals import q_instructions, ensure_state_table, CRITERIA
         import sqlite3

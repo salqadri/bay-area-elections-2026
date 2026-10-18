@@ -68,3 +68,27 @@ Jev is part of the ordinary per-entry loop, not an expensive escalation. The def
 ## Checks and limits
 
 Run `python3 scripts/check_release.py`. The image tests cover the raw/stripped offset bug, empty alt text, lazy sources, 160-image inventories, complete dispositions, stale snapshots, DOM reordering, logo-only pages, batch queues, filename reimport rejection, source-local name/quote gates and the URL-only schema. Shared display tests check neutral wording, metadata, external HTTPS URLs, broken-image fallback and distinction wording. Source research remains bounded; no software test certifies every political claim.
+# Running the full local batch
+
+`python3 scripts/run_campaign_endorsement_batch.py` resumes the current crawl
+ledger, exports complete image inventories, runs visible-text extraction with
+two local model requests at a time, applies mechanical quote gates, and runs
+Jev review when `TYPESAFE_API_KEY` is present in the environment. It writes
+research decisions and never modifies the published dataset. Run only one batch
+runner at a time. Keep the host and local model server awake.
+
+Progress is in `.research/endorsements/bulk-run/status.json`, with one log per
+stage. Completed text batches are cached against the exact prompt, model,
+candidate/site, page URL and source hash. Restarting reuses matching batches;
+changed sources or prompts require fresh extraction. Image inventories do not
+consume model tokens, and image filenames/alt text never establish identities.
+
+On October 18, the native crawl of 381 distinct campaign sites took about five
+minutes: 374 captured and seven fetch/readability failures. It captured 708
+pages and 9,491 image occurrences. Image export produced 707 ready page packets;
+seven failed sites and one shared-site attribution remain explicit holds. The
+903 visible-text chunks imply several hours of local extraction (provisionally
+6–12 hours, with a small and variable pilot). Local inference has no paid token
+charge; Jev usage is separate. Fetch failures and crawl limits must be followed
+up before describing research as complete. New evidence still requires the
+documented publication audit and exact before/after review.

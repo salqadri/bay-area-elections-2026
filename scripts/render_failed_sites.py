@@ -15,7 +15,7 @@ import time
 from datetime import datetime, timezone
 
 sys.path.insert(0, 'scripts')
-from campaign_endorsements import DEFAULT_DB, ENDORSE_LINK, NOISE_LINK, clean_url, images_from_html, page_from_html  # noqa: E402
+from campaign_endorsements import DEFAULT_DB, ENDORSE_LINK, NOISE_LINK, clean_url, _page_from_raw, dump  # noqa: E402
 from playwright.sync_api import sync_playwright  # noqa: E402
 
 UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -34,11 +34,8 @@ def render_page(pg, url):
         pass
     time.sleep(2.5)  # let late hydration paint
     html = pg.content()
-    page = page_from_html(html, url)
-    if len(page['text'].strip()) < 40:
-        raise ValueError('rendered shell still has little text')
-    page['final_url'] = clean_url(pg.url) or url
-    page['images'] = images_from_html(html, page['final_url'])[:120]
+    final = clean_url(pg.url) or url
+    page = _page_from_raw(html.encode('utf-8'), final)
     page['capture'] = 'headless Chromium render'
     return page
 
@@ -101,7 +98,9 @@ def main():
             key, root = t['site_key'], t['campaign_url']
             try:
                 pages = render_site(browser, root)
-                sha_all = hashlib.sha256(json.dumps({u: pp['text'] for u, pp in pages.items()}, sort_keys=True).encode()).hexdigest()[:16]
+                sha_all = hashlib.sha256(dump(pages).encode()).hexdigest()
+                db.execute('DELETE FROM pages WHERE site_key=?', (key,))
+                db.execute('DELETE FROM results WHERE site_key=?', (key,))
                 for url, pp in pages.items():
                     db.execute('INSERT OR REPLACE INTO pages(site_key,url,sha,observed_at,page_json) VALUES(?,?,?,?,?)',
                                (key, url, sha_all, now(), json.dumps(pp, sort_keys=True)))

@@ -70,6 +70,10 @@ def connect(path):
       site_key TEXT NOT NULL, url TEXT NOT NULL, sha TEXT NOT NULL,
       observed_at TEXT NOT NULL, page_json TEXT NOT NULL,
       PRIMARY KEY(site_key, url));
+    CREATE TABLE IF NOT EXISTS extraction_batches(
+      batch_id TEXT PRIMARY KEY, site_key TEXT NOT NULL, page_url TEXT NOT NULL,
+      model TEXT NOT NULL, result_json TEXT NOT NULL, usage_json TEXT NOT NULL,
+      duration_seconds REAL NOT NULL, created_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS results(
       site_key TEXT PRIMARY KEY, model TEXT NOT NULL, result_json TEXT NOT NULL,
       created_at TEXT NOT NULL);
@@ -309,14 +313,16 @@ Return ONLY a JSON object:
 {{"endorsements":[{{"endorser":"...","kind":"...","quote":"...","logo_image_url":"..."}}],"unidentified_logos":[{{"image_url":"...","note":"..."}}],"has_endorsement_section":true,"notes":""}}'''
 
 
-def lms(prompt, timeout=1500):
+def lms(prompt, timeout=1500, with_usage=False):
     payload = {'model': MODEL, 'temperature': 0, 'reasoning_effort': 'medium',
                'messages': [{'role': 'user', 'content': prompt}]}
     with GPU_SLOTS:
+        started = time.monotonic()
         req = urllib.request.Request(LMS_URL, data=dump(payload).encode(), headers={'Content-Type': 'application/json'})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             body = json.loads(resp.read())
-    return body['choices'][0]['message'].get('content') or ''
+    content = body['choices'][0]['message'].get('content') or ''
+    return (content, body.get('usage') or {}, time.monotonic() - started) if with_usage else content
 
 
 def _salvage_json(blob):
@@ -428,14 +434,25 @@ def extract_llm(db, workers, limit, retry_errors=False):
         if not text.strip():
             return key, 'empty'
 
-        def run(prompt):
-            last_exc: Exception | None = None
-            for _ in range(3):  # big pages sometimes yield truncated/invalid JSON; retry
+        def run(prompt, page_url, source_sha):
+            batch_id = uid('X-', 'visible-text-1', key, page_url, source_sha, MODEL, prompt)
+            with DB_LOCK:
+                cached = db.execute('SELECT result_json FROM extraction_batches WHERE batch_id=?', (batch_id,)).fetchone()
+            if cached:
+                return json.loads(cached['result_json'])
+            last_exc = None
+            for _ in range(3):
                 try:
-                    return extract_json(lms(prompt))
-                except Exception as e:  # noqa: BLE001
-                    last_exc = e
-            raise last_exc  # type: ignore[misc]
+                    content, usage, seconds = lms(prompt, with_usage=True)
+                    part = extract_json(content)
+                    with DB_LOCK:
+                        db.execute('INSERT OR REPLACE INTO extraction_batches VALUES(?,?,?,?,?,?,?,?)',
+                                   (batch_id, key, page_url, MODEL, dump(part), dump(usage), seconds, now()))
+                        db.commit()
+                    return part
+                except Exception as exc:  # each completed batch survives retries/resume
+                    last_exc = exc
+            raise last_exc
 
         try:
             result = {}
@@ -445,18 +462,19 @@ def extract_llm(db, workers, limit, retry_errors=False):
                     raise ValueError('Legacy image context; recrawl or reimport HTML before extraction')
                 # Complete page-local passes; no site-wide truncation or mixing of sources.
                 text_chunks = [page['text'][i:i + MAX_TEXT] for i in range(0, len(page['text']), MAX_TEXT - 1000)] or ['']
-                image_chunks = [page.get('images', [])[i:i + 25] for i in range(0, len(page.get('images', [])), 25)]
-                batches = [(chunk, []) for chunk in text_chunks] + [('', chunk) for chunk in image_chunks]
-                for chunk_text, chunk_images in batches:
+                # Images are captured completely by the deterministic inventory.
+                # They cannot supply visible-text identities, so no model image pass is needed.
+                for chunk_text in text_chunks:
                     prompt = PROMPT.format(candidates=dump(briefs), text='URL ' + page_url + '\n' + chunk_text,
-                                           images=_image_lines(chunk_images) or '(none in this batch)')
-                    part = run(prompt)
+                                           images='(handled separately by the complete deterministic image inventory)')
+                    part = run(prompt, page_url, page.get('source_sha256', ''))
                     for item in part.get('endorsements') or []:
                         item['source_url'] = page_url
                     result = _merge_results(result, part)
                     batch_count += 1
             result['_extractor_version'] = IMAGE_VERSION
             result['_batches'] = batch_count
+            result['_image_handling'] = 'deterministic inventory; no model image passes'
         except Exception as e:  # noqa: BLE001 - leave the task un-extracted for resume
             with DB_LOCK:
                 db.execute('UPDATE tasks SET error=? WHERE site_key=?', (('llm:' + str(e))[:300], key))
@@ -532,7 +550,8 @@ def propose(db):
             quote = re.sub(r'\s+', ' ', str(item.get('quote', ''))).strip()
             page_url = item.get('source_url')
             page_row = db.execute('SELECT * FROM pages WHERE site_key=? AND url=?', (r['site_key'], page_url)).fetchone()
-            target = ids[0] if len(ids) == 1 else next((i for i in ids if norm(rows[i]['name']) == norm(item.get('for', ''))), None)
+            matches = [i for i in ids if norm(rows[i]['name']) == norm(item.get('for', ''))]
+            target = ids[0] if len(ids) == 1 else matches[0] if len(matches) == 1 else None
             if not target or not page_row or not page_url.startswith('https://') or not (2 <= len(name) <= 120 and 3 <= len(quote) <= 120):
                 hold(item, 'Invalid/missing page, candidacy attribution, HTTPS URL or bounded source quote')
                 continue
