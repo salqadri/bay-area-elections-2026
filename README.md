@@ -85,7 +85,13 @@ The refresher accepts `FEC_API_KEY` or `--fec-key-file`. Publishing uses configu
 
 ## Coverage and limitations
 
-The snapshot contains **416 researched contests**, including **340 confirmed contests**, **443 confirmed seats**, **875 printed candidate entries**, and **0 unresolved scheduled contests** as of October 14, 2026. Every confirmed contest now carries a complete verified roster; 76 contests are recorded as excluded (confirmed not on the ballot): 51 Contra Costa after reconciliation against the county's final certification files, 21 Alameda (including all 19 races resolved October 13 against the Registrar's official Candidate List for the November 3 General Election), and Santa Clara's four zero-filing districts plus San Mateo's Bayshore ESD short term and Colma Fire Director on October 14.
+The snapshot contains **486 researched contests**, including **340 confirmed contests**, **443 confirmed seats**, **875 printed candidate entries**, and **70 unresolved scheduled contests** as of October 17, 2026. The 70 unresolved records are the new nationwide U.S. Senate (35 races) and out-of-state governor (35 races) compilations described below; every Bay Area contest remains finally resolved. Every confirmed contest now carries a complete verified roster; 76 contests are recorded as excluded (confirmed not on the ballot): 51 Contra Costa after reconciliation against the county's final certification files, 21 Alameda (including all 19 races resolved October 13 against the Registrar's official Candidate List for the November 3 General Election), and Santa Clara's four zero-filing districts plus San Mateo's Bayshore ESD short term and Colma Fire Director on October 14.
+
+## Nationwide Senate and governor races (added October 17, 2026)
+
+Because of high demand beyond the Bay Area, the dataset now also covers **all 35 contested 2026 U.S. Senate races** (33 Class 2 seats plus the Florida and Ohio special elections for the Rubio/Vance unexpired terms ending January 3, 2029) and **35 out-of-state governor races** (California's existing CA2026-014 record is unchanged; territories are excluded). These contests carry an empty `counties` array: they appear in the explorer only when no county filter is selected, never in a county-filtered view or an address-based ballot estimate. The five-county filter set is unchanged by design.
+
+Their rosters were compiled October 17 from each state's certified candidate lists as aggregated by the cited Wikipedia race-summary tables (S1099/S1100), and are held under `filed_candidates_not_confirmed_on_ballot` with `ballot_status: unverified` until reconciled against official state election-office sources — an explicit research queue, not a claim of incompleteness elsewhere. Senate filers carry FEC 2026-cycle receipts (108 of 123 candidacies have FEC filings; 52 published totals so far — null is unknown, never zero) and Schedule E independent-expenditure snapshots under the same dated method as the existing federal layer ($476.1M for / $981.6M against across 57 candidacies with current-cycle activity). Governor races are state elections: they have no FEC receipts or federal Schedule E data, and any future money figures will come from separately cited state sources. Minor-party candidates without FEC filings are explained by note N907; absence of a filing is not absence from the ballot.
 
 | County | Confirmed contests | Unresolved scheduled contests |
 | --- | ---: | ---: |
@@ -127,7 +133,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.20 (`schema_version` in the file is authoritative), publication `2026-10-17.1`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.21 (`schema_version` in the file is authoritative), publication `2026-10-17.3`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.

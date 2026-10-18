@@ -1,6 +1,6 @@
 # Maintaining the explorer
 
-This guide includes the October 16, 2026 schema 1.20 update (general campaign platform positions; previous layer: schema 1.19, October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
+This guide includes the October 17, 2026 schema 1.21 update (nationwide Senate/governor contests: empty-county records and any-state OCD identifiers; previous layers: 1.20 general campaign platform positions October 16, 1.19 Gaza records October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
 
 ## Development setup
 
