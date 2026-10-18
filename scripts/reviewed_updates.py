@@ -17,7 +17,7 @@ from research_scope import DATA, select_scope, add_scope_arguments
 from research_endorsements import atomic_json, digest, dump
 from schema_validation import SCHEMA, check
 
-FIELDS = {'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence',
+FIELDS = {'endorsement_images': 'endorsementImage', 'endorsements': 'endorsementRecord', 'gaza_evidence': 'stanceEvidence',
           'gaza_voting_records': 'gazaVotingRecord', 'uscpr_grade': 'uscprGrade', 'gaza_platform': 'gazaPlatform',
           'platform_positions': 'platformPositions'}
 SHARED_FIELDS = {'gaza_voting': 'gazaVotingSettings', 'uscpr_scorecard': 'uscprScorecardSettings'}
@@ -28,7 +28,7 @@ def identity(position):
 
 
 def record_key(field, record):
-    if field == 'gaza_evidence':
+    if field in {'gaza_evidence', 'endorsement_images'}:
         return record['id']
     if field == 'gaza_voting_records':
         return record['record_id']
@@ -136,6 +136,10 @@ def prepare(data, review, prior_reviews=None, validate=True):
                 source_url = source['url'] if any(p['url'] == source['url'] for p in after['pages']) else None
             if source_url != source['url'] or after['checked_on'] != source['checked_on']:
                 raise ValueError('Record URL/check date must match its actual source capture')
+            if field == 'endorsement_images' and after.get('asset_path'):
+                asset = (ROOT / after['asset_path']).resolve()
+                if not asset.is_relative_to(ROOT / 'assets/endorsement-evidence') or not asset.is_file() or file_sha(asset) != after['image_sha256']:
+                    raise ValueError('Archived campaign image missing or changed')
             if field == 'endorsements' and not after.get('verification'):
                 raise ValueError('New recommendations require explicit provenance')
             if field == 'endorsements' and after.get('verification') == 'endorser_statement':

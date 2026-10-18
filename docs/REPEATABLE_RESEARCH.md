@@ -92,11 +92,11 @@ For other publishers, pass their normalized capture to the same `draft` command.
 
 ## 4. Review exact changes and preview the delta
 
-For each accepted decision, retain its source-card ID, source observation and concrete reason. Set `action: change`, the matched `position_id`/`candidate`, and the suggested `identity` object (office, jurisdiction, district/seat, term, election type). Choose `field: endorsements` or `gaza_evidence`. Set:
+For each accepted decision, retain its source-card ID, source observation and concrete reason. Set `action: change`, the matched `position_id`/`candidate`, and the suggested `identity` object (office, jurisdiction, district/seat, term, election type). Choose the relevant reviewed field: `endorsements`, `endorsement_images`, `gaza_evidence`, `gaza_voting_records`, `uscpr_grade`, `gaza_platform` or `platform_positions`. The [image workflow](ENDORSEMENT_IMAGES.md) can draft complete neutral-image batches deterministically. Set:
 
 - `before: null` for a new observation, or the entire exact current record for a replacement/removal.
 - `after` to the complete new record, or `null` for an explicitly justified removal. Missing/inaccessible source text is not a removal reason.
-- `evidence.identity_basis`, `evidence.date_basis` and `evidence.relationship_basis` (endorsements) or `evidence.issue_basis` (Gaza) to concrete source-supported explanations.
+- `evidence.identity_basis`, `evidence.date_basis` and `evidence.relationship_basis` (endorsements) or `evidence.issue_basis` (other research fields) to concrete source-supported explanations.
 - `notes` to new shared provenance notes keyed by unused stable IDs. Existing note meanings cannot be overwritten.
 
 Preserve the public schema's relation, rating, phase, verification and note rules. A publisher's own statement must match the verified source publisher. A campaign claim must match its campaign. Aggregator source badges alone do not establish third-party relationships; explicit reported endorsements remain `reported`. Oppositions belong to that candidate and never imply support for another. Undated guide assessments retain `source_observed` with the actual observation date and explanatory note; they do not date historical votes, contributions or statements. Historical quarantine remains enforced.

@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 from endorsement_extract import invalid_endorser_name, norm
 from import_cair_guide import reviewed_records, REVIEW as CAIR_REVIEW
 from import_peace_guides import check_guides
+from campaign_endorsements import is_distinction
 from publication_reviews import load_reviews, revised_rows, check_registered_reviews
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,6 +36,7 @@ def check_endorsements(data, review_cair=True, reviews=None):
     errors = []
     expected_cair = reviewed_records(data, json.loads(CAIR_REVIEW.read_text())) if review_cair else {}
     reviews = (load_reviews() if reviews is None else reviews) if review_cair else []
+    image_policy_active = any(r['id'] == 'legacy-endorsement-images-2026-10-17' for r in reviews)
     cair_rows = revised_rows([{'position_id': k[0], 'candidate': k[1], 'record': r} for k, r in expected_cair.items()],
                              'endorsements', reviews, lambda r: r['endorser'] == 'CAIR Action')
     expected_cair = {}
@@ -46,6 +48,10 @@ def check_endorsements(data, review_cair=True, reviews=None):
             seen = set()
             for r in c.get('endorsements', []):
                 prefix = p['id'] + ' / ' + c['name'] + ': '
+                if image_policy_active and r.get('verification') == 'campaign_claim' and 'image filename' in data['notes'].get(r.get('note_id'), '').lower():
+                    errors.append(prefix + 'filename-derived identities must remain neutral image evidence')
+                if image_policy_active and r['relation'] == 'endorsed' and is_distinction(r['endorser'] + ' ' + r.get('quote', '')):
+                    errors.append(prefix + 'program distinction cannot be an endorsement')
                 reason = blocked_reason(r, quarantine)
                 if reason:
                     errors.append(prefix + reason)
@@ -59,7 +65,7 @@ def check_endorsements(data, review_cair=True, reviews=None):
                     errors.append(prefix + 'invalid/future check date')
                 if r.get('rating') and r['relation'] != 'supported':
                     errors.append(prefix + 'a support rating is not a formal endorsement')
-                if r.get('historical') or r['relation'] in {'supported', 'preferred', 'opposed'} or r.get('verification') in {'reported', 'campaign_claim'}:
+                if r.get('historical') or r['relation'] in {'supported', 'preferred', 'opposed', 'distinction'} or r.get('verification') in {'reported', 'campaign_claim'}:
                     if r.get('note_id') not in data['notes']:
                         errors.append(prefix + 'support or indirect evidence needs an explanatory note')
                 if review_cair and r['endorser'] == 'CAIR Action':

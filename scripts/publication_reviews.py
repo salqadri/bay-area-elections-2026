@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / 'research/publication-reviews.json'
-RECORD_FIELDS = ('endorsements', 'gaza_evidence', 'gaza_voting_records', 'uscpr_grade', 'gaza_platform', 'platform_positions')
+RECORD_FIELDS = ('endorsement_images', 'endorsements', 'gaza_evidence', 'gaza_voting_records', 'uscpr_grade', 'gaza_platform', 'platform_positions')
 SINGLETON_FIELDS = {'uscpr_grade', 'gaza_platform', 'platform_positions'}
 
 

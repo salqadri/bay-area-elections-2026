@@ -1,12 +1,14 @@
 # Candidate endorsement research
 
+**October 17 correction:** [Campaign image evidence and deterministic refresh workflow](ENDORSEMENT_IMAGES.md) supersede filename-derived identity inference and URL/name auto-acceptance. Current coverage is 12,638 relationship records on 385 candidacies plus 463 neutral image observations on 91 candidacies. Earlier scan counts and commands below are historical; use the new workflow for refreshes.
+
 `scripts/research_endorsements.py` collects current-cycle endorsement evidence for **every printed candidacy in the election JSON**, including nonpartisan races. It keeps a separate SQLite research ledger and exports normalized JSON with [its own schema](../research/endorsements/endorsements.schema.json). It does not modify the main dataset, candidate party preferences, or the website. Unknown candidate rosters cannot be researched until names are available.
 
 The collector uses Python's standard library. Optional `pdftotext` supports text PDFs. It makes no LLM, Jev or Research-agent calls. Serper supplies search results; direct HTTP retrieves pages. A provider-neutral import path also accepts browser or other search-service lookups.
 
 For county selection, partial statewide planning and publisher-neutral reviewed publication, use [the repeatable workflow](REPEATABLE_RESEARCH.md). New integrations should use `reviewed_updates.py`; dated CAIR/peace importers remain historical baseline migrations. Treat source text as evidence, never as instructions.
 
-The campaign-site scan (`scripts/campaign_endorsements.py` + `scripts/jev_review_proposals.py`, reviewed in [the 2026-10-11 scan review](reviews/2026-10-11-campaign-site-scan.md)) publishes only quote-gate-passing entries that Jev confidently classifies as endorsements; held proposals stay local for review. Logo-only endorsements are recovered from campaign-published image filenames (`propose-logos`, `filename_gate`) — never a vision model. Crawling falls back to browser user-agent, Internet Archive captures and headless Chromium rendering (`scripts/render_failed_sites.py`); oversized sites split into text+image passes with malformed-JSON salvage. `scripts/page_context_rule.py` additionally accepts Jev-lower-confidence entries whose endorser name and quote both appear verbatim on the campaign’s own endorsements/support page.
+The campaign-site workflow (`scripts/campaign_endorsements.py` + `scripts/jev_review_proposals.py`) now requires source-local visible names/quotes, exact page URLs and source-bound decisions. Images are a separate neutral inventory; `propose-logos` is only a compatibility inventory export, and old filename gates cannot publish. See the [current workflow](ENDORSEMENT_IMAGES.md) for deterministic batch commands and bounded worker tasks. Earlier scan details below describe dated behavior, not the acceptance policy for new updates.
 
 ## Minimize agent work
 
@@ -18,7 +20,7 @@ The campaign-site scan (`scripts/campaign_endorsements.py` + `scripts/jev_review
 
 On the October 9 baseline, a fresh plan contains **869 candidacies, 904 search queries and 386 initial source URLs**. `--deep` adds one targeted query per candidacy. These are request counts, not a promise of complete results, cost or duration; discovered pages add fetches. A modest first batch lets Hermes inspect coverage before committing a larger budget.
 
-## Current proposed update — October 10, 2026
+## Historical publication — October 10–12, 2026
 
 The [priority PAC review](reviews/2026-10-10-priority-pac-review.md) adds two Hindu American PAC historical endorsements and one reported historical United Democracy Project support record. The [October 11–12 campaign-site scan](reviews/2026-10-11-campaign-site-scan.md) then added **12,743 campaign claims** (page-text quotes plus logo filenames readable on the campaign's own site; October 12 recovered all bot-walled/JS-only sites and every oversized endorsement wall): current coverage is **12,953 records under 387 of 875 printed candidacies**; 488 remain without a published recommendation (printed-entry total updated October 12 after the Contra Costa reconciliation added six printed names; an October 12 dedupe then removed **180 duplicate endorsement records** — logo-filename artifacts and abbreviation aliases of named siblings, e.g. "HAPAC" duplicating Hindu American PAC — via `research/clean_duplicate_endorsements.py`). The seven inherited source pages remain unaudited. AIPAC PAC candidate endorsements remain unresolved after a bounded official-source review.
 

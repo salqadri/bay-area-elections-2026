@@ -1,6 +1,6 @@
 # Maintaining the explorer
 
-This guide includes the October 17, 2026 schema 1.21 update (nationwide Senate/governor contests: empty-county records and any-state OCD identifiers; previous layers: 1.20 general campaign platform positions October 16, 1.19 Gaza records October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
+The October 17, 2026 schema 1.22 update adds neutral `endorsement_images`, a separate `distinction` relationship, archived image hash checks and the [deterministic image workflow](ENDORSEMENT_IMAGES.md). The guide also includes the October 17 schema 1.21 update (nationwide Senate/governor contests: empty-county records and any-state OCD identifiers; previous layers: 1.20 general campaign platform positions October 16, 1.19 Gaza records October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
 
 ## Development setup
 
@@ -66,6 +66,7 @@ python3 scripts/build_site.py --check
 python3 scripts/check_data.py
 python3 scripts/check_evidence.py
 python3 scripts/check_published_endorsements.py
+python3 scripts/check_endorsement_images.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
@@ -79,6 +80,7 @@ python3 scripts/check_uscpr_scorecard.py
 python3 scripts/check_gaza_voting_records.py
 python3 scripts/check_gaza_records.py
 python3 scripts/prepare_dom_fixture.py
+node scripts/check_endorsement_display.cjs
 node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
 node scripts/check_platform_display.cjs
@@ -90,7 +92,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete 26-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 28-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
