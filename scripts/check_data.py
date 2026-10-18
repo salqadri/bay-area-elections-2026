@@ -168,4 +168,4 @@ html = EmbeddedJSON()
 html.feed((ROOT / "index.html").read_text(encoding="utf-8"))
 assert json.loads(html.values["election-data"]) == data, "Embedded dataset differs"
 assert json.loads(html.values["election-schema"]) == schema, "Embedded schema differs"
-print(json.dumps({"passed": True, "positions": len(positions), "coverage": expected, "federal_candidates_with_fec": len(federal_candidates), "reported_fec_totals": sum(c['fec']['receipts'] is not None for c in federal_candidates)}, indent=2))
+print(json.dumps({"passed": True, "positions": len(positions), "coverage": expected, "federal_candidates_with_fec": sum('fec' in c for c in federal_candidates), "reported_fec_totals": sum((c.get('fec') or {}).get('receipts') is not None for c in federal_candidates)}, indent=2))
