@@ -135,6 +135,8 @@ def fetch_page_with_images(fetcher, url):
     if mime == 'application/pdf' or raw.startswith(b'%PDF'):
         page = Fetcher.page(fetcher, url)  # pdftotext path; no image inventory for PDFs
         return {**page, 'images': [], 'image_parser_version': IMAGE_VERSION, 'source_sha256': hashlib.sha256(raw).hexdigest()}
+    if mime.lower().startswith(('image/', 'audio/', 'video/')):
+        raise ValueError('Media resource requires separate image/document review; not visible page text')
     return _page_from_raw(raw, final)
 
 
@@ -160,6 +162,8 @@ class BrowserFetcher(Fetcher):
 
 
 def _page_from_raw(raw, final):
+    if raw.startswith((b'\x89PNG', b'\xff\xd8\xff', b'GIF87a', b'GIF89a', b'RIFF')):
+        raise ValueError('Binary media must not be decoded as visible campaign-page text')
     html = raw.decode('utf-8-sig', errors='replace')
     page = page_from_html(html, final)
     page['final_url'] = final
@@ -546,21 +550,27 @@ def propose(db):
             continue
         task = db.execute('SELECT * FROM tasks WHERE site_key=?', (r['site_key'],)).fetchone()
         ids = json.loads(task['candidacy_ids'])
+        # A site may list thousands of supporters. Decode and normalize each
+        # captured page once, retaining exactly the same source-local gates.
+        page_cache = {}
+        for row in db.execute('SELECT * FROM pages WHERE site_key=?', (r['site_key'],)):
+            page = json.loads(row['page_json'])
+            page_cache[row['url']] = (row, page, ' ' + norm(page['text']) + ' ')
         for item in result.get('endorsements') or []:
             if not isinstance(item, dict):
                 continue
             name = re.sub(r'\s+', ' ', str(item.get('endorser', ''))).strip()
             quote = re.sub(r'\s+', ' ', str(item.get('quote', ''))).strip()
             page_url = item.get('source_url')
-            page_row = db.execute('SELECT * FROM pages WHERE site_key=? AND url=?', (r['site_key'], page_url)).fetchone()
+            page_row, page, normalized_text = page_cache.get(page_url, (None, None, ''))
             matches = [i for i in ids if norm(rows[i]['name']) == norm(item.get('for', ''))]
             target = ids[0] if len(ids) == 1 else matches[0] if len(matches) == 1 else None
             if not target or not page_row or not page_url.startswith('https://') or not (2 <= len(name) <= 120 and 3 <= len(quote) <= 120):
                 hold(item, 'Invalid/missing page, candidacy attribution, HTTPS URL or bounded source quote')
                 continue
-            page = json.loads(page_row['page_json'])
-            if (page.get('image_parser_version') != IMAGE_VERSION or not norm(name) or
-                    not contains_text(page['text'], name) or not contains_text(page['text'], quote) or is_distinction(name + ' ' + quote)):
+            if (page.get('image_parser_version') != IMAGE_VERSION or not norm(name) or not norm(quote) or
+                    ' ' + norm(name) + ' ' not in normalized_text or
+                    ' ' + norm(quote) + ' ' not in normalized_text or is_distinction(name + ' ' + quote)):
                 hold(item, 'Name/quote not found in this page visible text, obsolete parser, or explicit program distinction')
                 continue
             record = {'endorser': name, 'kind': item.get('kind') if item.get('kind') in KINDS else 'unspecified',

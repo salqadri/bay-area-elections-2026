@@ -2,7 +2,7 @@
 
 Updated October 18, 2026; schema 1.22, publication 2026-10-18.1. Source observations remain dated October 17.
 
-An image filename, original alt text, campaign-page heading or URL does not establish an endorser's identity or an endorsement. Preserve these as metadata. The readers show `endorsement_images` in a separate **Campaign image evidence** disclosure; an unknown logo remains visible without a guessed name. Program distinctions have their own `distinction` relationship and display **Distinction from**, never **Endorsed by**. The [official Gun Sense FAQ](https://gunsensevoter.org/faq/) explicitly distinguishes its designation from endorsements.
+An image filename, original alt text, campaign-page heading or URL does not establish an endorser's identity or an endorsement. Preserve these as metadata. Both readers show text records and `endorsement_images` in one **Endorsements and recommendations** list. Each entry can be text or an external image; an unknown logo remains visible without a guessed name. Source links, original filenames, alt text and context remain available on each image entry. Counts describe entries, not independently identified endorsers. Program distinctions have their own `distinction` relationship and display **Distinction from**, never **Endorsed by**. The [official Gun Sense FAQ](https://gunsensevoter.org/faq/) explicitly distinguishes its designation from endorsements.
 
 ## Correction and verification
 
@@ -64,6 +64,10 @@ Assign one **capture packet and its decisions file** per worker, with the target
 The optional named-claim pipeline remains `extract-llm → propose → jev_review_proposals.py → apply-review → attach`. Image evidence is independent of its success. Extraction now batches complete page-local text and image inventories instead of truncating the first 18,000 characters/120 images. Every candidate name and quote must occur in **visible text on the cited page**; alt text and filenames alone fail. The captured observation date and precise source page are retained. Every accepted decision is bound to the source fingerprint and exact record; changing image inventory or text invalidates old decisions. `filename_gate`, old `quote_verified` decisions and the URL/name acceptance shortcut cannot be reimported.
 
 Jev is part of the ordinary per-entry loop, not an expensive escalation. The default is pinned to the successfully checked `jev-1.13.0` (`JEV_MODEL` overrides it). Context accompanies the **specific identity and quote**, with separate choices for endorsement, distinction, other relationship, unrelated content and unclear evidence. Exact Gun Sense text fails the endorsement gate even if a classifier errs. Policy/model versions and actual responses are cached in SQLite; source changes require new proposal IDs and decisions. The [live entry checks](../research/endorsements/image-captures-2026-10-17/jev-entry-checks.json) correctly classify Panetta and Pellerin as distinctions. A preliminary broad-page prompt incorrectly classified Pellerin because it mixed her badge with the following endorsement list; the entry-specific prompt and mechanical rule prevent that acceptance. Cache/pin model and policy versions for repeatable results; a classifier is not a substitute for source evidence. API shape follows [TypeSafe's primary documentation](https://docs.typesafe.ai/introduction/quickstart#call-it-the-api). Keys come only from the runtime environment.
+
+## Unified endorsements list
+
+Text and image entries use the same shared renderer and the same list in both readers. Scott Wiener has 59 text records and 50 image entries, displayed as one list of 109 entries. Images keep original external URLs and source metadata, and a failed preview retains its source link. Program distinctions and opposition retain their explicit labels. This display change does not infer image identities, merge possible name variants, or change recorded relationships.
 
 ## Checks and limits
 

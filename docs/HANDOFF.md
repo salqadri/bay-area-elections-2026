@@ -1,5 +1,11 @@
 # Research and development handoff
 
+## Pending follow-up — October 18, 2026: unified endorsements and batch audit
+
+Both readers now render text and image entries in one **Endorsements and recommendations** list. Scott Wiener is the regression case: 59 text records plus 50 image entries, with source links and collapsible metadata. There is no separate campaign-image disclosure. This is a presentation change; source observations, political relationships and published data remain unchanged.
+
+The original 381-site local collection/extraction/Jev run is complete; see the portable batch audit and report under `research/endorsements/batch-2026-10-18/`. Machine acceptances are proposals, not new published claims: title variants, duplicate sources, office/cycle attribution and quote attribution require a publication review. Latest main added 162 additional distinct campaign sites for provisional nationwide candidates after the original scope was fixed; these are a separate outstanding collection queue. Do not merge proposals directly into published records or treat failures/holds as evidence of no endorsements.
+
 ## Latest update — October 18, 2026: external image URLs
 
 Publication **2026-10-18.1**, schema **1.22**. Campaign-image evidence now loads original external campaign/CDN URLs directly, with an always-visible **View image** link and lazy preview. Copied image assets and the downloading/archiving option have been removed. The 463 evidence URLs, October 17 source dates and dispositions are unchanged; the 176 reviewed current-grid observations retain full page metadata and the other 287 retain explicit legacy-placement limits. The [registered correction](../research/reviews/external-endorsement-image-urls-2026-10-18.json) preserves the prior review history. See [the deterministic workflow](ENDORSEMENT_IMAGES.md) for URL-only batch updates and worker instructions.
