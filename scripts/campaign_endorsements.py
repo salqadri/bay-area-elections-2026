@@ -424,8 +424,11 @@ def extract_llm(db, workers, limit, retry_errors=False):
         with DB_LOCK:
             db.execute("UPDATE tasks SET error=NULL WHERE state='crawled' AND error LIKE 'llm:%'")
             db.commit()
+    # Newest tasks first: freshly added contests (e.g. the nationwide layer) drain before a
+    # full refresh re-queues every older site; completed sites are skipped, so order only
+    # affects which results land first after an invalidating recrawl.
     todo = [r['site_key'] for r in db.execute(
-        "SELECT t.site_key FROM tasks t LEFT JOIN results r USING(site_key) WHERE t.state='crawled' AND r.site_key IS NULL AND (t.error IS NULL OR t.error NOT LIKE 'llm:%') LIMIT ?", (limit,))]
+        "SELECT t.site_key FROM tasks t LEFT JOIN results r USING(site_key) WHERE t.state='crawled' AND r.site_key IS NULL AND (t.error IS NULL OR t.error NOT LIKE 'llm:%') ORDER BY t.rowid DESC LIMIT ?", (limit,))]
 
     def work(key):
         with DB_LOCK:
