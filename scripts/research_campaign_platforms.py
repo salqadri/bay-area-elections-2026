@@ -274,7 +274,11 @@ def fetch(url, seed, request=request_once, robots=False):
 def roster(data):
     candidates = []
     for position in data['positions']:
-        for candidate in position.get('candidates') or []:
+        federal = position.get('government_level') == 'Federal' or (position.get('office') == 'Governor' and not position.get('counties'))
+        printed = position.get('candidates') or []
+        # Provisional nationwide filings carry campaign sites too; crawl them like printed entries.
+        roster_entries = list(printed) + ((position.get('filed_candidates_not_confirmed_on_ballot') or []) if federal else [])
+        for candidate in roster_entries:
             seed, problem = None, None
             if candidate.get('campaign_url'):
                 try:

@@ -145,7 +145,8 @@ def candidate_brief(candidates):
     for c in candidates:
         ident = c['identity']
         seat = ' '.join(str(x) for x in (ident.get('office'), ident.get('jurisdiction'), ident.get('district_or_seat')) if x)
-        lines.append('- ' + c['candidate'] + ' — candidate for ' + seat + ' (' + ', '.join(c['counties']) + ')')
+        where = (' (' + ', '.join(c['counties']) + ')') if c.get('counties') else ''
+        lines.append('- ' + c['candidate'] + ' — candidate for ' + seat + where)
     return '\n'.join(lines)
 
 

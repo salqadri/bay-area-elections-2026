@@ -429,13 +429,21 @@ def main():
                     help="add deep-dive query templates and re-run even if already done")
     ap.add_argument("--names", default=None,
                     help="comma-separated name substrings to restrict the pass")
+    ap.add_argument("--scope", default=None, choices=["nationwide"],
+                    help="'nationwide': out-of-county Senate/governor compilations, provisional filings included")
     ap.add_argument("--workers", type=int, default=2)
     args = ap.parse_args()
     d = json.load(open(DATA))
     people = {}
     for p in d["positions"]:
-        if args.county not in (p.get("counties") or []): continue
-        for c in (p.get("candidates") or []):
+        if args.scope == "nationwide":
+            if p.get("counties"): continue
+            if not (p.get("office_category") == "U.S. Senate" or p.get("office") == "Governor"): continue
+            roster = (p.get("candidates") or []) + (p.get("filed_candidates_not_confirmed_on_ballot") or [])
+        else:
+            if args.county not in (p.get("counties") or []): continue
+            roster = p.get("candidates") or []
+        for c in roster:
             k = norm_name(c["name"]) + "|" + str(c.get("party"))
             ent = people.setdefault(k, {"key": k, "name": c["name"], "party": c.get("party"),
                                         "level": p["government_level"], "office": p["office"],
