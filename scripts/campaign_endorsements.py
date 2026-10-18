@@ -730,7 +730,9 @@ def attach(db, dataset_path, output):
         return site_notes[key]
 
     for p in data['positions']:
-        for c in p.get('candidates') or []:
+        federal = p.get('government_level') == 'Federal' or (p.get('office') == 'Governor' and not p.get('counties'))
+        roster_entries = list(p.get('candidates') or []) + ((p.get('filed_candidates_not_confirmed_on_ballot') or []) if federal else [])
+        for c in roster_entries:
             cid = uid('C-', p['id'], norm(c['name']))
             records = [rec for _gate, rec in accepted.get(cid) or []]
             logo_records = {norm(rec['endorser']) for gate, rec in (accepted.get(cid) or []) if gate == 'filename_gate'}

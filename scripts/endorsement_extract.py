@@ -138,7 +138,10 @@ def page_from_html(html, url):
 def candidates_from_data(data):
     rows = {}
     for p in data['positions']:
-        for c in p.get('candidates') or []:
+        federal = p.get('government_level') == 'Federal' or (p.get('office') == 'Governor' and not p.get('counties'))
+        # Provisional nationwide filings carry campaign sites; scan them like printed entries.
+        roster_entries = list(p.get('candidates') or []) + ((p.get('filed_candidates_not_confirmed_on_ballot') or []) if federal else [])
+        for c in roster_entries:
             ident = uid('C-', p['id'], norm(c['name']))
             if ident in rows:
                 raise ValueError('Duplicate candidacy in dataset: ' + ident)
