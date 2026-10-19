@@ -33,11 +33,11 @@ const unified=display.render(wiener,{node,link,noteText:id=>data.notes[id]||''})
 const lists=all(unified).filter(n=>n.tagName==='UL'&&n.className==='endorsement-list');
 assert.equal(lists.length,1,'Text and image entries must share one list');
 assert.equal(lists[0].children.length,wiener.endorsements.length+wiener.endorsement_images.length);
-assert.equal(lists[0].children.filter(n=>n.className==='endorsement-text-item').length,59);
+assert.equal(lists[0].children.filter(n=>n.className==='endorsement-text-item').length,69);
 assert.equal(lists[0].children.filter(n=>n.className==='endorsement-image-entry').length,50);
 assert.equal(all(unified).filter(n=>n.tagName==='IMG').length,50);
 assert(!unified.textContent.includes('Campaign image evidence'));
-assert(unified.textContent.includes('109 entries'));
+assert(unified.textContent.includes('119 entries'));
 assert(unified.textContent.includes('Endorsed by Matt Haney'));
 assert(!unified.textContent.includes('Endorsed by ag bonta'));
 for(const name of ['Jimmy Panetta','Gail Pellerin','Connie Chan']) {
@@ -60,4 +60,4 @@ for(const endorser of ['Mabel Teng', "Sailors' Union of the Pacific"]) {
   assert(all(entry).some(n=>n.className==='endorsement-note'),'The research note belongs to the same entry');
   assert(!entry.textContent.includes(endorser==='Mabel Teng'?"Sailors' Union of the Pacific":'Mabel Teng'));
 }
-console.log(JSON.stringify({passed:true,checks:'one mixed list, Wiener 59 text + 50 images, Connie image ownership, metadata, external URLs, image fallback, distinction semantics'}));
+console.log(JSON.stringify({passed:true,checks:'one mixed list, Wiener 69 text + 50 images, Connie image ownership, metadata, external URLs, image fallback, distinction semantics'}));

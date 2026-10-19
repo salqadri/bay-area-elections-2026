@@ -224,7 +224,7 @@ class ImageResearchChecks(unittest.TestCase):
         wiener=next(c for p in DATA['positions'] for c in p.get('candidates') or [] if c['name']=='Scott Wiener')
         self.assertEqual(len(wiener['endorsement_images']),50)
         self.assertFalse({'ag bonta','Asm Grayson','meeno Monique Limon added'} & {r['endorser'] for r in wiener['endorsements']})
-        self.assertEqual(sum(r.get('verification')=='campaign_claim' and r['url']=='https://www.scottwiener.com/endorsements' for r in wiener['endorsements']),53)
+        self.assertEqual(sum(r.get('verification')=='campaign_claim' and r['url']=='https://www.scottwiener.com/endorsements' for r in wiener['endorsements']),63)
 
 
 if __name__ == '__main__':

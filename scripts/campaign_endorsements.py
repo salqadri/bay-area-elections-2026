@@ -635,6 +635,11 @@ def export_accepted(db):
 # ---------------- attach to dataset ----------------
 def attach(db, dataset_path, output):
     accepted = export_accepted(db)
+    from import_peace_guides import GUIDES  # guide endorsers publish only via their reviewed official capture
+    # California Jewish Democrats expresses relationships as support ratings in its own reviewed
+    # capture (dfi-ca.org); campaign-page claims of a formal endorsement contradict that stronger
+    # evidence and stay held for human review, mirroring the CAIR Action policy.
+    REVIEWED_RELATIONSHIP_ENDORSERS = GUIDES | {'California Jewish Democrats'}
     data = json.loads(Path(dataset_path).read_text())
     added_records, touched_candidates, skipped_dupes = 0, 0, 0
     next_note = max(int(k[1:]) for k in data['notes']) + 1
@@ -656,26 +661,28 @@ def attach(db, dataset_path, output):
         roster_entries = list(p.get('candidates') or []) + ((p.get('filed_candidates_not_confirmed_on_ballot') or []) if federal else [])
         for c in roster_entries:
             cid = uid('C-', p['id'], norm(c['name']))
-            records = [rec for _gate, rec in accepted.get(cid) or []]
+            records = [rec for _gate, rec in accepted.get(cid) or [] if rec.get('endorser') not in REVIEWED_RELATIONSHIP_ENDORSERS]
             if not records:
                 continue
-            current = c.setdefault('endorsements', [])
+            current = c.get('endorsements') or []
             before = len(current)
             from check_published_endorsements import source_key
             def observation_key(e):
                 return norm(e['endorser']), e['relation'], e['phase'], source_key(e['url']), e.get('historical', False)
             seen = {observation_key(e) for e in current}
+            additions = []
             for rec in records:
                 if observation_key(rec) in seen:
                     skipped_dupes += 1
                     continue
                 rec = dict(rec)
                 rec.setdefault('note_id', note_for(rec['url'], rec['checked_on']))
-                current.append(rec)
+                additions.append(rec)
                 seen.add(observation_key(rec))
-            if len(current) > before:
+            if additions:
+                c['endorsements'] = current + additions
                 touched_candidates += 1
-                added_records += len(current) - before
+                added_records += len(additions)
     printed = [c for p in data['positions'] for c in (p.get('candidates') or [])]
     data['coverage']['printed_candidates_with_endorsements'] = sum(bool(c.get('endorsements')) for c in printed)
     Path(output).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
