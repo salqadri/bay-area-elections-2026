@@ -34,23 +34,25 @@ EndorsementDisplay.render = function(candidate, {node, link, noteText = () => ''
   const list = node('ul', 'endorsement-list');
   for (const record of records) {
     const item = node('li', 'endorsement-text-item');
-    item.append(node('span', null, EndorsementDisplay.label(record)), ' ', link(record.url, 'source ↗'));
+    const content = node('div', 'endorsement-entry-content');
+    content.append(node('span', null, EndorsementDisplay.label(record)), ' ', link(record.url, 'source ↗'));
     const note = record.note_id ? noteText(record.note_id) : '';
     if (note) {
       const provenance = node('details', 'endorsement-note');
       provenance.append(node('summary', null, 'Research note'), node('p', null, note));
-      item.append(provenance);
+      content.append(provenance);
     }
     if (record.logo_url) {
       try {
         const url = new URL(record.logo_url);
         if (url.protocol === 'https:') {
           const image = node('img', 'endorsement-logo');
-          image.src = url.href; image.alt = record.endorser + ' logo'; image.loading = 'lazy';
-          item.append(node('br'), image);
+          image.src = url.href; image.alt = 'Image for ' + record.endorser; image.loading = 'lazy';
+          item.append(image);
         }
       } catch {}
     }
+    item.append(content);
     list.append(item);
   }
   for (const record of images) {
