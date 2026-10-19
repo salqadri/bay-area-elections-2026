@@ -48,4 +48,16 @@ for(const name of ['Jimmy Panetta','Gail Pellerin','Connie Chan']) {
   assert(!rendered.textContent.includes('Campaign image evidence'));
 }
 assert(display.render({endorsements:[{endorser:'Example',relation:'endorsed'}]},{node,link}));
-console.log(JSON.stringify({passed:true,checks:'one mixed list, Wiener 59 text + 50 images, metadata, external URLs, image fallback, distinction semantics'}));
+const connie=data.positions.flatMap(p=>p.candidates||[]).find(c=>c.name==='Connie Chan');
+const connieList=all(display.render(connie,{node,link,noteText:id=>data.notes[id]||''})).find(n=>n.className==='endorsement-list');
+for(const endorser of ['Mabel Teng', "Sailors' Union of the Pacific"]) {
+  const record=connie.endorsements.find(r=>r.endorser===endorser);
+  const entry=connieList.children.find(n=>n.textContent.startsWith('Endorsed by '+endorser+' ·'));
+  assert(entry,endorser+' must have its own endorsement entry');
+  assert.equal(all(entry).filter(n=>n.tagName==='IMG').length,1);
+  assert.equal(all(entry).find(n=>n.tagName==='IMG').src,record.logo_url,endorser+' must retain its own image');
+  assert(all(entry).some(n=>n.href===record.url));
+  assert(all(entry).some(n=>n.className==='endorsement-note'),'The research note belongs to the same entry');
+  assert(!entry.textContent.includes(endorser==='Mabel Teng'?"Sailors' Union of the Pacific":'Mabel Teng'));
+}
+console.log(JSON.stringify({passed:true,checks:'one mixed list, Wiener 59 text + 50 images, Connie image ownership, metadata, external URLs, image fallback, distinction semantics'}));
