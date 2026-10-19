@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PYTHON_CHECKS = [
     ('build_site.py', '--check'), ('check_data.py',), ('check_evidence.py',),
     ('check_published_endorsements.py',), ('check_endorsement_images.py',), ('check_endorsements.py',),
+    ('check_campaign_endorsement_batch.py', 'research/endorsements/batch-2026-10-18'),
     ('check_cair_guide.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
     ('check_schema.py',), ('check_fec_money.py',), ('check_gaza_ledger.py',),
     ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),

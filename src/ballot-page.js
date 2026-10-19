@@ -153,20 +153,8 @@
         if (platform) row.append(platform);
         const gaza = GazaEvidenceDisplay.render(candidate, DATA, {node, link: safeLink, dateLabel, evidenceDateLabel, className: 'ballot-candidate-evidence'});
         if (gaza) row.append(gaza);
-        if (candidate.endorsements?.length) {
-          const en = node('details', 'ballot-candidate-endorsements');
-          en.append(node('summary', null, EndorsementDisplay.summary(candidate.endorsements)));
-          for (const r of candidate.endorsements) {
-            const li = node('p', null, EndorsementDisplay.label(r));
-            li.append(' ', safeLink(r.url, 'source ↗'));
-            if (r.note_id && DATA.notes[r.note_id]) li.append(node('span', null, ' — ' + DATA.notes[r.note_id]));
-            if (r.logo_url) { const img = node('img', 'endorsement-logo'); try { const u = new URL(r.logo_url); if (u.protocol === 'https:') { img.src = u.href; img.alt = r.endorser + ' logo'; img.loading = 'lazy'; li.append(node('br'), img); } } catch {} }
-            en.append(li);
-          }
-          row.append(en);
-        }
-        const imageEvidence = EndorsementDisplay.renderImages(candidate, {node, link: safeLink, className: 'ballot-candidate-evidence'});
-        if (imageEvidence) row.append(imageEvidence);
+        const endorsements = EndorsementDisplay.render(candidate, {node, link: safeLink, noteText: id => DATA.notes[id] || '', className: 'ballot-candidate-endorsements'});
+        if (endorsements) row.append(endorsements);
         candidates.append(row);
       }
       card.append(candidates);

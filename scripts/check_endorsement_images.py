@@ -22,6 +22,15 @@ DATA = json.loads((ROOT / '2026-11-03_Bay_Area_Elections.json').read_text())
 
 
 class ImageResearchChecks(unittest.TestCase):
+    def test_binary_media_is_not_sent_to_text_extraction(self):
+        from unittest.mock import Mock
+        fetcher = Mock()
+        fetcher.request.return_value = (b'opaque image bytes', 'image/avif', 'https://example.org/endorsement.avif')
+        with self.assertRaisesRegex(ValueError, 'Media resource'):
+            campaign.fetch_page_with_images(fetcher, 'https://example.org/endorsement.avif')
+        with self.assertRaisesRegex(ValueError, 'Binary media'):
+            campaign._page_from_raw(b'\x89PNG\r\n\x1a\nnot visible text', 'https://example.org/endorsement.png')
+
     def test_dom_context_does_not_use_offsets_in_stripped_text(self):
         html = '<div data-layout="' + ('x' * 1000) + '"></div><section><h2>Endorsements</h2><article><img src="/ag-bonta.jpg"><p>Rob Bonta</p></article><article><img src="/unknown.png"><p>Other card</p></article></section>'
         images = images_from_html(html, 'https://example.org/endorsements')
