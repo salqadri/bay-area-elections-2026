@@ -57,6 +57,11 @@ def revised_rows(rows, field, reviews, include_new=lambda record: False):
 
 def check_registered_reviews(data, reviews):
     people = {(p['id'], c['name']): c for p in data['positions'] for c in p.get('candidates') or []}
+    # Registered reviews may also target provisional nationwide filings (empty counties, Federal/Governor).
+    for p in data['positions']:
+        if not p['counties'] and (p.get('government_level') == 'Federal' or p.get('office') == 'Governor'):
+            for c in p.get('filed_candidates_not_confirmed_on_ballot') or []:
+                people.setdefault((p['id'], c['name']), c)
     errors = []
     for field in RECORD_FIELDS:
         expected = revised_rows([], field, reviews, lambda r: True)

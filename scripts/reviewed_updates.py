@@ -53,6 +53,13 @@ def prepare(data, review, prior_reviews=None, validate=True):
     if selection['missing_counties']:
         raise ValueError('Add verified official rosters before applying research to a new county')
     selected = {p['id']: p for p in selection['positions']}
+    # A review may also target provisional nationwide contests (empty counties, Federal or
+    # Governor): they are pulled in only when one of its decisions explicitly names them.
+    referenced = {d.get('position_id') for d in review['decisions'] if d.get('action') == 'change'}
+    for p in data['positions']:
+        if (p['id'] not in selected and p['id'] in referenced and not p['counties']
+                and (p.get('government_level') == 'Federal' or p.get('office') == 'Governor')):
+            selected[p['id']] = p
     result = deepcopy(data)
     shared_seen = set()
     for change in review.get('shared_changes', []):
@@ -86,6 +93,12 @@ def prepare(data, review, prior_reviews=None, validate=True):
         else:
             result.pop(field, None)
     people = {(p['id'], c['name']): c for p in result['positions'] for c in p.get('candidates') or []}
+    # Provisional nationwide filings (empty counties, Federal/Governor) can also be review targets;
+    # they live outside the printed roster but never enter printed_* coverage metrics.
+    provisional = {(p['id'], c['name']): c for p in result['positions'] if p['id'] in referenced
+                   and not p['counties'] and (p.get('government_level') == 'Federal' or p.get('office') == 'Governor')
+                   for c in p.get('filed_candidates_not_confirmed_on_ballot') or []}
+    people.update({k: v for k, v in provisional.items() if k not in people})
     for ident, note in review['notes'].items():
         if not re.fullmatch(r'N[0-9]{3,}', ident) or not isinstance(note, str) or not note.strip():
             raise ValueError('Invalid provenance note')
@@ -185,7 +198,8 @@ def prepare(data, review, prior_reviews=None, validate=True):
     for field in FIELDS:
         metric = 'printed_candidates_with_' + field
         if metric in result['coverage'] or any(d.get('field') == field and d['action'] == 'change' for d in review['decisions']):
-            result['coverage'][metric] = sum(bool(c.get(field)) for c in people.values())
+            # Printed roster only — provisional nationwide filings never count toward printed_* metrics.
+            result['coverage'][metric] = sum(bool(c.get(field)) for p in result['positions'] for c in p.get('candidates') or [])
     reviews = [*prior_reviews, review]
     if validate:
         from check_evidence import check_evidence

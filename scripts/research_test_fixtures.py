@@ -22,6 +22,11 @@ def _endorsement_slot(record):
 def before_registered_updates(data):
     result = deepcopy(data)
     people = {(p['id'], c['name']): c for p in result['positions'] for c in p.get('candidates') or []}
+    # Reviews may also target provisional nationwide filings (empty counties, Federal/Governor).
+    for p in result['positions']:
+        if not p['counties'] and (p.get('government_level') == 'Federal' or p.get('office') == 'Governor'):
+            for c in p.get('filed_candidates_not_confirmed_on_ballot') or []:
+                people.setdefault((p['id'], c['name']), c)
     for review in reversed(load_reviews()):
         for change in reversed(review['decisions']):
             if change['action'] != 'change':
@@ -49,5 +54,6 @@ def before_registered_updates(data):
     for field in RECORD_FIELDS:
         metric = 'printed_candidates_with_' + field
         if metric in result['coverage']:
-            result['coverage'][metric] = sum(bool(c.get(field)) for c in people.values())
+            # Printed roster only, mirroring reviewed_updates and check_data.
+            result['coverage'][metric] = sum(bool(c.get(field)) for p in result['positions'] for c in p.get('candidates') or [])
     return result
