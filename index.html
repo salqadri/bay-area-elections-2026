@@ -330,7 +330,17 @@ const GazaEvidenceDisplay = {
     }
     if (evidence.length) {
       const box = section('Web, social and guide evidence · ' + evidence.length + ' items');
-      for (const item of evidence) {
+      // Newest first. ISO-style dates compare correctly across year/month/day
+      // precision; undated items keep their original relative order at the end.
+      const ordered = evidence.map((item, index) => ({ item, index })).sort((a, b) => {
+        const da = a.item.date || '';
+        const db = b.item.date || '';
+        if (da === db) return a.index - b.index;
+        if (!da) return 1;
+        if (!db) return -1;
+        return da < db ? 1 : -1;
+      });
+      for (const { item } of ordered) {
         const paragraph = node('p', 'gaza-web-item', evidenceDateLabel(item) + ' — ' + item.summary);
         paragraph.append(' ', sourceLink(item.url, 'Source ↗'));
         box.append(paragraph);

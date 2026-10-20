@@ -75,4 +75,15 @@ assert.equal(all(found).filter(n=>n.tagName==='A').length,0,'Unsafe URLs must no
 assert(found.textContent.includes('link unavailable'));
 assert.equal(display.render({},data,helpers),null);
 const ballot=display.render(candidate,data,{...helpers,className:'ballot-candidate-evidence'});assert.equal(ballot.className,'ballot-candidate-evidence');
+// Evidence renders newest-first across mixed date precisions; undated items keep input order at the end.
+const sorted=display.render({gaza_evidence:[
+  {date:'2024',summary:'Year-only oldest.',url:'https://example.org/y2024'},
+  {date:'2026-10-09',summary:'Day newest A.',url:'https://example.org/a'},
+  {date:'2025-03',summary:'Month middle.',url:'https://example.org/m'},
+  {date:'2026-10-09',summary:'Day newest B (tie keeps order).',url:'https://example.org/b'}
+]},data,helpers);
+const webItems=all(sorted).filter(n=>n.className==='gaza-web-item').map(n=>n.textContent);
+assert.equal(webItems.length,4);
+assert(webItems[0].includes('Day newest A')&&webItems[1].includes('Day newest B'),'Same-date items keep their original relative order');
+assert(webItems[2].includes('Month middle')&&webItems[3].includes('Year-only oldest'),'Descending by date across precisions');
 console.log('Shared Gaza display: attributed grade periods, every tracked action, source assessment colors and text, platform statuses, dated evidence, safe links and collapsed disclosures passed.');
