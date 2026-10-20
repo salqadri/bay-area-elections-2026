@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-20.10"
+  "publication_version": "2026-10-20.11"
  },
  "codes": {
   "party": {
@@ -92,17 +92,17 @@
  },
  "coverage": {
   "status": "research_inventory_with_explicit_unresolved_records",
-  "confirmed_contests": 372,
-  "confirmed_seats": 475,
-  "unresolved_scheduled_contests": 38,
-  "printed_candidate_entries": 966,
+  "confirmed_contests": 373,
+  "confirmed_seats": 476,
+  "unresolved_scheduled_contests": 37,
+  "printed_candidate_entries": 971,
   "confirmed_contests_missing_candidate_rosters": 11,
   "positions_with_ocd_division_id": 258,
   "positions_with_ballotpedia_url": 320,
   "printed_candidates_with_ballotpedia_url": 668,
-  "printed_candidates_with_x_url": 193,
+  "printed_candidates_with_x_url": 194,
   "printed_candidates_with_secondary_x_url": 10,
-  "printed_candidates_with_campaign_url": 434,
+  "printed_candidates_with_campaign_url": 436,
   "limitations": [
    "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
    "This is not yet a certified exhaustive ballot dataset: unverified local OCD identifiers remain, and excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted.",
@@ -118,13 +118,13 @@
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
-  "printed_candidates_with_gaza_evidence": 125,
-  "printed_candidates_with_endorsements": 410,
+  "printed_candidates_with_gaza_evidence": 127,
+  "printed_candidates_with_endorsements": 411,
   "printed_candidates_with_independent_expenditures": 28,
   "printed_candidates_with_gaza_voting_records": 11,
   "printed_candidates_with_uscpr_grade": 9,
   "printed_candidates_with_gaza_platform": 221,
-  "printed_candidates_with_platform_positions": 351,
+  "printed_candidates_with_platform_positions": 353,
   "printed_candidates_with_endorsement_images": 91
  },
  "address_lookup": {
@@ -104109,13 +104109,12 @@
    "seats": 1,
    "term": "2 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:vt",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "June Goodband",
      "party": "GMPJ",
@@ -104539,10 +104538,11 @@
     }
    ],
    "source_ids": [
-    "S1100"
+    "S1100",
+    "S1248"
    ],
    "note_ids": [
-    "N903",
+    "N1333",
     "N910"
    ]
   },
@@ -347630,7 +347630,8 @@
   "N1329": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official AL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1330": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official AL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1331": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NC source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
-  "N1332": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official WY source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
+  "N1332": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official WY source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1333": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official VT source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
  },
  "sources": {
   "S001": {
@@ -352117,6 +352118,10 @@
   "S1247": {
    "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_WY_General_Election_Candidates.pdf",
    "title": "Official WY candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1248": {
+   "url": "https://sos.vermont.gov/elections/election-info-resources/candidates",
+   "title": "Official VT candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
   }
  },
  "ie_finance": {
