@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-20.5"
+  "publication_version": "2026-10-20.6"
  },
  "codes": {
   "party": {
@@ -92,17 +92,17 @@
  },
  "coverage": {
   "status": "research_inventory_with_explicit_unresolved_records",
-  "confirmed_contests": 364,
-  "confirmed_seats": 467,
-  "unresolved_scheduled_contests": 46,
-  "printed_candidate_entries": 925,
+  "confirmed_contests": 366,
+  "confirmed_seats": 469,
+  "unresolved_scheduled_contests": 44,
+  "printed_candidate_entries": 950,
   "confirmed_contests_missing_candidate_rosters": 11,
   "positions_with_ocd_division_id": 258,
   "positions_with_ballotpedia_url": 320,
-  "printed_candidates_with_ballotpedia_url": 657,
-  "printed_candidates_with_x_url": 175,
+  "printed_candidates_with_ballotpedia_url": 660,
+  "printed_candidates_with_x_url": 179,
   "printed_candidates_with_secondary_x_url": 10,
-  "printed_candidates_with_campaign_url": 416,
+  "printed_candidates_with_campaign_url": 423,
   "limitations": [
    "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
    "This is not yet a certified exhaustive ballot dataset: unverified local OCD identifiers remain, and excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted.",
@@ -118,13 +118,13 @@
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
-  "printed_candidates_with_gaza_evidence": 111,
-  "printed_candidates_with_endorsements": 402,
-  "printed_candidates_with_independent_expenditures": 22,
+  "printed_candidates_with_gaza_evidence": 115,
+  "printed_candidates_with_endorsements": 405,
+  "printed_candidates_with_independent_expenditures": 23,
   "printed_candidates_with_gaza_voting_records": 11,
   "printed_candidates_with_uscpr_grade": 9,
   "printed_candidates_with_gaza_platform": 221,
-  "printed_candidates_with_platform_positions": 343,
+  "printed_candidates_with_platform_positions": 347,
   "printed_candidates_with_endorsement_images": 91
  },
  "address_lookup": {
@@ -59058,13 +59058,12 @@
    "seats": 1,
    "term": "6 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:tn",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Marquita Bradshaw",
      "party": "D",
@@ -59619,10 +59618,11 @@
     }
    ],
    "source_ids": [
-    "S1099"
+    "S1099",
+    "S1240"
    ],
    "note_ids": [
-    "N903",
+    "N1325",
     "N904",
     "N907",
     "N910"
@@ -102036,95 +102036,155 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:tn",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
-     "name": "Misam Abidi",
+     "name": "Charles Van Morgan",
      "party": "I",
-     "source_ids": [
-      "S1100"
-     ]
-    },
-    {
-     "name": "Santiago Asconape",
-     "party": "I",
-     "source_ids": [
-      "S1100"
-     ]
-    },
-    {
-     "name": "Marsha Blackburn",
-     "party": "R",
      "source_ids": [
       "S1100",
-      "S1101"
+      "S1102"
      ],
-     "campaign_url": "https://marshablackburn.com/",
-     "x_url": "https://x.com/VoteMarsha",
-     "gaza_evidence": [
-      {
-       "id": "GE-0892",
-       "url": "https://www.blackburn.senate.gov/2023/10/i-stand-with-israel",
-       "summary": "Senator Blackburn posted a statement titled 'I Stand With Israel' on her Senate.gov site in October 2023, affirming her support for Israel.",
-       "date": "2023-10",
-       "dimension": "framing_balance",
-       "checked_on": "2026-10-18",
-       "quote": "I Stand With Israel - U.S. Senator Marsha Blackburn of Tennessee",
-       "source_kind": "news",
-       "date_method": "source_stated"
-      }
-     ],
-     "endorsements": [
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Tim Hicks",
-       "kind": "official",
-       "phase": "unspecified",
-       "quote": "State Representative Tim Hicks (R-Gray) officially endorsed Marsha Blackburn for Governor.",
-       "relation": "endorsed",
-       "url": "https://marshablackburn.com/2026/10/12/state-representative-tim-hicks-endorses-marsha-blackburn-for-governor/",
-       "verification": "campaign_claim",
-       "note_id": "N1026"
-      },
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Tim Hicks",
-       "kind": "official",
-       "phase": "unspecified",
-       "quote": "State Representative Tim Hicks Endorses Marsha Blackburn for Governor",
-       "relation": "endorsed",
-       "url": "https://marshablackburn.com/",
-       "verification": "campaign_claim",
-       "note_id": "N1027"
-      },
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Chris Todd",
-       "kind": "official",
-       "phase": "unspecified",
-       "quote": "Representative Chris Todd: I'm Voting for Marsha Blackburn Because, Time and Again, She Has Had Tennessee's Back.",
-       "relation": "endorsed",
-       "url": "https://marshablackburn.com/",
-       "verification": "campaign_claim",
-       "note_id": "N1027"
-      },
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Donald J. Trump",
-       "kind": "official",
-       "phase": "unspecified",
-       "quote": "Marsha has been with me from the very beginning, helping advance our America First Agenda.",
-       "relation": "endorsed",
-       "url": "https://marshablackburn.com/",
-       "verification": "campaign_claim",
-       "note_id": "N1027"
-      }
+     "ballotpedia_url": "https://ballotpedia.org/Charles_Morgan_(Tennessee)"
+    },
+    {
+     "name": "Dave Seeman",
+     "party": "I",
+     "source_ids": [
+      "S1239"
      ]
+    },
+    {
+     "name": "David Hatley",
+     "party": "I",
+     "source_ids": [
+      "S1100",
+      "S1101",
+      "S1102"
+     ],
+     "campaign_url": "https://hatleyforgovernor.com/",
+     "ballotpedia_url": "https://ballotpedia.org/David_Hatley",
+     "platform_positions": {
+      "status": "positions_found",
+      "checked_on": "2026-10-18",
+      "scope_note": "Positions quoted verbatim from the campaign website pages listed here; a bounded capture, not a complete-site audit.",
+      "pages": [
+       {
+        "url": "https://hatleyforgovernor.com/",
+        "title": "David Hatley for Governor – Hatley for governor of TN",
+        "content_sha256": "4db336991abe8b6dadb19a915057dc72286706b36eab7ec8d5834accd53d5356"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/privacy-policy/",
+        "title": "Terms of Service and Privacy Policy – Hatley for Governor – David Hatley for Governor",
+        "content_sha256": "ff314fc97bcc1b7434ad6d9129006b5039751276a2d04603f2c6289f5f95b9e3"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/book/",
+        "title": "Book – David Hatley for Governor",
+        "content_sha256": "190dd356bacd9fc376b7ab145e8b1050efabbe250d1d5e246b11d66d378c8ae1"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/category/event-type/rally/",
+        "title": "Rally – David Hatley for Governor",
+        "content_sha256": "0cac17924ca0456dd955d176ab1f3751e0ade5ca5a41c9f77d39832c27778372"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/event/",
+        "title": "Event – David Hatley for Governor",
+        "content_sha256": "1666cb02f491a73a1a800f80387fa72f13204aa11cab097d17d01099a1767ad0"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/press/",
+        "title": "Press – David Hatley for Governor",
+        "content_sha256": "9621609c655231802b9ad4be5fdd5f707d9254f798ec7c9bd95c6260f95da72c"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/shop/",
+        "title": "Shop – David Hatley for Governor",
+        "content_sha256": "0d184c630348a0c7b259ec5ef57e7f50239612a0da1786ad4922be153e5e9926"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/yard-sign/",
+        "title": "Yard Sign – David Hatley for Governor",
+        "content_sha256": "c74a5cdf56974d2c55615c3d5ca44d56c97605db8a3839cdce59b80f91dd38d3"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/carthage-rally/",
+        "title": "Carthage Rally – David Hatley for Governor",
+        "content_sha256": "13a83426a4829a3fc97dd438bb29cbdced4d1766643eef517e3d74a870073c4d"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/category/event-type/rally/page/2/",
+        "title": "Rally – Page 2 – David Hatley for Governor",
+        "content_sha256": "519ab73ed872b5fdf24614343663cc40cbfe86623cff1f4089bdc10391c4ed7d"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/chattanooga-rally/",
+        "title": "Chattanooga Rally – David Hatley for Governor",
+        "content_sha256": "0af635377d5d62660c9eac921458607caf60aca20f70c881297fe42ee15d1db8"
+       },
+       {
+        "url": "https://hatleyforgovernor.com/crossville-rally/",
+        "title": "Crossville Rally – David Hatley for Governor",
+        "content_sha256": "651efde385f35e006ca143706ea179adb36fc9547f8cba66a2692724b3d92b5f"
+       }
+      ],
+      "points": [
+       {
+        "topic": "Housing",
+        "summary": "Tennessee is short roughly 120,000 starter homes. Hatley would provide conditional infrastructure grants to cities in exchange for setting aside 5–10% of new development for homes priced at $250,000 or less, and roll back international energy/electrical code adoptions that add cost without meaningful safety gains.",
+        "quote": "The state helps pay for the water, sewer, and road work a city would otherwise push onto the developer.",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Government accountability & ethics",
+        "summary": "Hatley would create an elected, nonpartisan State Auditor with CPA credentials, forensic-audit and subpoena authority, and whistleblower protections. He would also rebuild the state spending portal so every contract, grant, and payment is posted within 30 days in plain English, and ban campaign contributions from significant state contractors while they seek or perform state work.",
+        "quote": "an independent, nonpartisan State Auditor — elected statewide, just like 24 other states",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Criminal justice & public safety",
+        "summary": "Hatley pledges to be the toughest governor on crime, focusing on clearing the crime-lab backlog, hiring detectives and forensic scientists, expanding TBI's violent-crime team, and giving rural sheriffs regional investigators. He would also make life without parole mandatory for repeat child sex offenders and cut recidivism in half through pre-release reentry planning.",
+        "quote": "David Hatley will be the toughest governor this state has seen on crime",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Economy & cost of living",
+        "summary": "Hatley would impose a moratorium on new data-center approvals until Tennessee enacts real rules, ending PILOTs and tax abatements. At least half of new tax revenue from data centers would go to cutting property taxes for homeowners in the hosting county, and companies would pay for their own power and water capacity.",
+        "quote": "David Hatley would pause new approvals until Tennessee writes real rules, and ends the giveaways: no PILOTs, no abatements.",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Civil liberties, privacy & surveillance",
+        "summary": "Hatley would ban or restrict the use of Flock facial-recognition cameras, arguing the system is flawed, invasive, and leads to wrongful stops of innocent citizens. He states he will be tough on crime but believes the current surveillance system violates the privacy of average Tennesseans.",
+        "quote": "Flock cameras are getting abused far too often across our great state.",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Education",
+        "summary": "Hatley aims to move Tennessee into the top ten nationally in reading within four years (NAEP-measured). His plan includes full-time reading coaches in the 100 lowest-performing elementary schools, mandatory science-of-reading competency for teachers, daily intervention for struggling readers, and free adult literacy training paired with TCAT programs.",
+        "quote": "David Hatley’s goal is top ten in reading in the nation within four years",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Criminal justice & public safety",
+        "summary": "On drugs, Hatley would triple TBI's drug division to about 150 agents, create Florida-style SAFE grants for local task forces targeting large traffickers, add a financial-crimes unit, require medication-assisted treatment in every county jail, and publish one public accounting of opioid settlement money.",
+        "quote": "First we need to triple that division to about 150.",
+        "source_url": "https://hatleyforgovernor.com/"
+       },
+       {
+        "topic": "Economy & cost of living",
+        "summary": "Hatley would eliminate Tennessee's 4% state sales tax on groceries, returning roughly $400 per year to the average family. He would fund the approximately $800 million annual cost by cutting waste in the state's $59 billion budget. He would also pause the state gas tax while prices exceed $4 per gallon.",
+        "quote": "I will eliminate the state sales tax on groceries.",
+        "source_url": "https://hatleyforgovernor.com/"
+       }
+      ]
+     }
     },
     {
      "name": "Dean Brewer",
@@ -102134,11 +102194,13 @@
      ]
     },
     {
-     "name": "Ray Brown",
+     "name": "Eddie Lee Murphy",
      "party": "I",
      "source_ids": [
-      "S1100"
-     ]
+      "S1100",
+      "S1102"
+     ],
+     "ballotpedia_url": "https://ballotpedia.org/Eddie_Lee_Murphy"
     },
     {
      "name": "Jerri Green",
@@ -102626,139 +102688,159 @@
      ]
     },
     {
-     "name": "Taylor Hafley",
+     "name": "Karl Smithson",
      "party": "I",
      "source_ids": [
       "S1100"
      ]
     },
     {
-     "name": "David Hatley",
+     "name": "L. Webb Taylor",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Lauren Pinkston",
      "party": "I",
      "source_ids": [
       "S1100",
-      "S1101",
-      "S1102"
+      "S1101"
      ],
-     "campaign_url": "https://hatleyforgovernor.com/",
-     "ballotpedia_url": "https://ballotpedia.org/David_Hatley",
-     "platform_positions": {
-      "status": "positions_found",
-      "checked_on": "2026-10-18",
-      "scope_note": "Positions quoted verbatim from the campaign website pages listed here; a bounded capture, not a complete-site audit.",
-      "pages": [
-       {
-        "url": "https://hatleyforgovernor.com/",
-        "title": "David Hatley for Governor – Hatley for governor of TN",
-        "content_sha256": "4db336991abe8b6dadb19a915057dc72286706b36eab7ec8d5834accd53d5356"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/privacy-policy/",
-        "title": "Terms of Service and Privacy Policy – Hatley for Governor – David Hatley for Governor",
-        "content_sha256": "ff314fc97bcc1b7434ad6d9129006b5039751276a2d04603f2c6289f5f95b9e3"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/book/",
-        "title": "Book – David Hatley for Governor",
-        "content_sha256": "190dd356bacd9fc376b7ab145e8b1050efabbe250d1d5e246b11d66d378c8ae1"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/category/event-type/rally/",
-        "title": "Rally – David Hatley for Governor",
-        "content_sha256": "0cac17924ca0456dd955d176ab1f3751e0ade5ca5a41c9f77d39832c27778372"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/event/",
-        "title": "Event – David Hatley for Governor",
-        "content_sha256": "1666cb02f491a73a1a800f80387fa72f13204aa11cab097d17d01099a1767ad0"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/press/",
-        "title": "Press – David Hatley for Governor",
-        "content_sha256": "9621609c655231802b9ad4be5fdd5f707d9254f798ec7c9bd95c6260f95da72c"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/shop/",
-        "title": "Shop – David Hatley for Governor",
-        "content_sha256": "0d184c630348a0c7b259ec5ef57e7f50239612a0da1786ad4922be153e5e9926"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/yard-sign/",
-        "title": "Yard Sign – David Hatley for Governor",
-        "content_sha256": "c74a5cdf56974d2c55615c3d5ca44d56c97605db8a3839cdce59b80f91dd38d3"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/carthage-rally/",
-        "title": "Carthage Rally – David Hatley for Governor",
-        "content_sha256": "13a83426a4829a3fc97dd438bb29cbdced4d1766643eef517e3d74a870073c4d"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/category/event-type/rally/page/2/",
-        "title": "Rally – Page 2 – David Hatley for Governor",
-        "content_sha256": "519ab73ed872b5fdf24614343663cc40cbfe86623cff1f4089bdc10391c4ed7d"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/chattanooga-rally/",
-        "title": "Chattanooga Rally – David Hatley for Governor",
-        "content_sha256": "0af635377d5d62660c9eac921458607caf60aca20f70c881297fe42ee15d1db8"
-       },
-       {
-        "url": "https://hatleyforgovernor.com/crossville-rally/",
-        "title": "Crossville Rally – David Hatley for Governor",
-        "content_sha256": "651efde385f35e006ca143706ea179adb36fc9547f8cba66a2692724b3d92b5f"
-       }
-      ],
-      "points": [
-       {
-        "topic": "Housing",
-        "summary": "Tennessee is short roughly 120,000 starter homes. Hatley would provide conditional infrastructure grants to cities in exchange for setting aside 5–10% of new development for homes priced at $250,000 or less, and roll back international energy/electrical code adoptions that add cost without meaningful safety gains.",
-        "quote": "The state helps pay for the water, sewer, and road work a city would otherwise push onto the developer.",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Government accountability & ethics",
-        "summary": "Hatley would create an elected, nonpartisan State Auditor with CPA credentials, forensic-audit and subpoena authority, and whistleblower protections. He would also rebuild the state spending portal so every contract, grant, and payment is posted within 30 days in plain English, and ban campaign contributions from significant state contractors while they seek or perform state work.",
-        "quote": "an independent, nonpartisan State Auditor — elected statewide, just like 24 other states",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Criminal justice & public safety",
-        "summary": "Hatley pledges to be the toughest governor on crime, focusing on clearing the crime-lab backlog, hiring detectives and forensic scientists, expanding TBI's violent-crime team, and giving rural sheriffs regional investigators. He would also make life without parole mandatory for repeat child sex offenders and cut recidivism in half through pre-release reentry planning.",
-        "quote": "David Hatley will be the toughest governor this state has seen on crime",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Economy & cost of living",
-        "summary": "Hatley would impose a moratorium on new data-center approvals until Tennessee enacts real rules, ending PILOTs and tax abatements. At least half of new tax revenue from data centers would go to cutting property taxes for homeowners in the hosting county, and companies would pay for their own power and water capacity.",
-        "quote": "David Hatley would pause new approvals until Tennessee writes real rules, and ends the giveaways: no PILOTs, no abatements.",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Civil liberties, privacy & surveillance",
-        "summary": "Hatley would ban or restrict the use of Flock facial-recognition cameras, arguing the system is flawed, invasive, and leads to wrongful stops of innocent citizens. He states he will be tough on crime but believes the current surveillance system violates the privacy of average Tennesseans.",
-        "quote": "Flock cameras are getting abused far too often across our great state.",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Education",
-        "summary": "Hatley aims to move Tennessee into the top ten nationally in reading within four years (NAEP-measured). His plan includes full-time reading coaches in the 100 lowest-performing elementary schools, mandatory science-of-reading competency for teachers, daily intervention for struggling readers, and free adult literacy training paired with TCAT programs.",
-        "quote": "David Hatley’s goal is top ten in reading in the nation within four years",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Criminal justice & public safety",
-        "summary": "On drugs, Hatley would triple TBI's drug division to about 150 agents, create Florida-style SAFE grants for local task forces targeting large traffickers, add a financial-crimes unit, require medication-assisted treatment in every county jail, and publish one public accounting of opioid settlement money.",
-        "quote": "First we need to triple that division to about 150.",
-        "source_url": "https://hatleyforgovernor.com/"
-       },
-       {
-        "topic": "Economy & cost of living",
-        "summary": "Hatley would eliminate Tennessee's 4% state sales tax on groceries, returning roughly $400 per year to the average family. He would fund the approximately $800 million annual cost by cutting waste in the state's $59 billion budget. He would also pause the state gas tax while prices exceed $4 per gallon.",
-        "quote": "I will eliminate the state sales tax on groceries.",
-        "source_url": "https://hatleyforgovernor.com/"
-       }
-      ]
-     }
+     "campaign_url": "https://www.pinkstonfortn.com/",
+     "endorsements": [
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Danny, TN Government",
+       "kind": "other",
+       "phase": "unspecified",
+       "quote": "We have to give local officials a candidate who wants to solve problems without being a Republican or Democrat",
+       "relation": "endorsed",
+       "url": "https://www.pinkstonfortn.com/",
+       "verification": "campaign_claim",
+       "note_id": "N1029"
+      },
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Kelsey, Adoptive Mom",
+       "kind": "other",
+       "phase": "unspecified",
+       "quote": "I 1,000% believe in you.",
+       "relation": "endorsed",
+       "url": "https://www.pinkstonfortn.com/",
+       "verification": "campaign_claim",
+       "note_id": "N1029"
+      },
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Landon, Artist",
+       "kind": "other",
+       "phase": "unspecified",
+       "quote": "the only way we can bridge the gap between Democrats and Republicans is if we put democracy first",
+       "relation": "endorsed",
+       "url": "https://www.pinkstonfortn.com/",
+       "verification": "campaign_claim",
+       "note_id": "N1029"
+      }
+     ]
+    },
+    {
+     "name": "Marsha Blackburn",
+     "party": "R",
+     "source_ids": [
+      "S1100",
+      "S1101"
+     ],
+     "campaign_url": "https://marshablackburn.com/",
+     "x_url": "https://x.com/VoteMarsha",
+     "gaza_evidence": [
+      {
+       "id": "GE-0892",
+       "url": "https://www.blackburn.senate.gov/2023/10/i-stand-with-israel",
+       "summary": "Senator Blackburn posted a statement titled 'I Stand With Israel' on her Senate.gov site in October 2023, affirming her support for Israel.",
+       "date": "2023-10",
+       "dimension": "framing_balance",
+       "checked_on": "2026-10-18",
+       "quote": "I Stand With Israel - U.S. Senator Marsha Blackburn of Tennessee",
+       "source_kind": "news",
+       "date_method": "source_stated"
+      }
+     ],
+     "endorsements": [
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Tim Hicks",
+       "kind": "official",
+       "phase": "unspecified",
+       "quote": "State Representative Tim Hicks (R-Gray) officially endorsed Marsha Blackburn for Governor.",
+       "relation": "endorsed",
+       "url": "https://marshablackburn.com/2026/10/12/state-representative-tim-hicks-endorses-marsha-blackburn-for-governor/",
+       "verification": "campaign_claim",
+       "note_id": "N1026"
+      },
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Tim Hicks",
+       "kind": "official",
+       "phase": "unspecified",
+       "quote": "State Representative Tim Hicks Endorses Marsha Blackburn for Governor",
+       "relation": "endorsed",
+       "url": "https://marshablackburn.com/",
+       "verification": "campaign_claim",
+       "note_id": "N1027"
+      },
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Chris Todd",
+       "kind": "official",
+       "phase": "unspecified",
+       "quote": "Representative Chris Todd: I'm Voting for Marsha Blackburn Because, Time and Again, She Has Had Tennessee's Back.",
+       "relation": "endorsed",
+       "url": "https://marshablackburn.com/",
+       "verification": "campaign_claim",
+       "note_id": "N1027"
+      },
+      {
+       "checked_on": "2026-10-18",
+       "endorser": "Donald J. Trump",
+       "kind": "official",
+       "phase": "unspecified",
+       "quote": "Marsha has been with me from the very beginning, helping advance our America First Agenda.",
+       "relation": "endorsed",
+       "url": "https://marshablackburn.com/",
+       "verification": "campaign_claim",
+       "note_id": "N1027"
+      }
+     ]
+    },
+    {
+     "name": "Misam Abidi",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Ray Brown",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Robert Vick",
+     "party": "I",
+     "source_ids": [
+      "S1100"
+     ]
+    },
+    {
+     "name": "Victor L. Scoggin",
+     "party": "I",
+     "source_ids": [
+      "S1239"
+     ]
     },
     {
      "name": "Wendell Jackson",
@@ -102838,96 +102920,14 @@
        }
       ]
      }
-    },
-    {
-     "name": "Charles Van Morgan",
-     "party": "I",
-     "source_ids": [
-      "S1100",
-      "S1102"
-     ],
-     "ballotpedia_url": "https://ballotpedia.org/Charles_Morgan_(Tennessee)"
-    },
-    {
-     "name": "Eddie Lee Murphy",
-     "party": "I",
-     "source_ids": [
-      "S1100",
-      "S1102"
-     ],
-     "ballotpedia_url": "https://ballotpedia.org/Eddie_Lee_Murphy"
-    },
-    {
-     "name": "Lauren Pinkston",
-     "party": "I",
-     "source_ids": [
-      "S1100",
-      "S1101"
-     ],
-     "campaign_url": "https://www.pinkstonfortn.com/",
-     "endorsements": [
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Danny, TN Government",
-       "kind": "other",
-       "phase": "unspecified",
-       "quote": "We have to give local officials a candidate who wants to solve problems without being a Republican or Democrat",
-       "relation": "endorsed",
-       "url": "https://www.pinkstonfortn.com/",
-       "verification": "campaign_claim",
-       "note_id": "N1029"
-      },
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Kelsey, Adoptive Mom",
-       "kind": "other",
-       "phase": "unspecified",
-       "quote": "I 1,000% believe in you.",
-       "relation": "endorsed",
-       "url": "https://www.pinkstonfortn.com/",
-       "verification": "campaign_claim",
-       "note_id": "N1029"
-      },
-      {
-       "checked_on": "2026-10-18",
-       "endorser": "Landon, Artist",
-       "kind": "other",
-       "phase": "unspecified",
-       "quote": "the only way we can bridge the gap between Democrats and Republicans is if we put democracy first",
-       "relation": "endorsed",
-       "url": "https://www.pinkstonfortn.com/",
-       "verification": "campaign_claim",
-       "note_id": "N1029"
-      }
-     ]
-    },
-    {
-     "name": "Karl Smithson",
-     "party": "I",
-     "source_ids": [
-      "S1100"
-     ]
-    },
-    {
-     "name": "L. Webb Taylor",
-     "party": "I",
-     "source_ids": [
-      "S1100"
-     ]
-    },
-    {
-     "name": "Robert Vick",
-     "party": "I",
-     "source_ids": [
-      "S1100"
-     ]
     }
    ],
    "source_ids": [
-    "S1100"
+    "S1100",
+    "S1241"
    ],
    "note_ids": [
-    "N903",
+    "N1326",
     "N910"
    ]
   },
@@ -347623,7 +347623,9 @@
   "N1321": "Ballot appearance verified 2026-10-20 against the cited official AK source, which lists every published candidacy for this race. The official list also shows additional active candidates not in the compiled roster (12 name(s)), so the printed roster remains unverified and filings stay provisional.",
   "N1322": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official IL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1323": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official CO source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately. The official list also identifies qualified write-in candidates (Donald Willoughby (write-in), Will Powers (write-in), Ryan Apelbaum (write-in)); they are not printed ballot candidates.",
-  "N1324": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NJ source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
+  "N1324": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NJ source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1325": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official TN source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1326": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official TN source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
  },
  "sources": {
   "S001": {
@@ -352074,6 +352076,18 @@
   "S1238": {
    "url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-official-general-candidates-us-senate.pdf",
    "title": "Official NJ candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1239": {
+   "url": "https://sos.tn.gov/elections/2026-candidate-lists",
+   "title": "Tennessee Secretary of State, certified candidate lists for the November 3, 2026 General Election (retrieved 2026-10-20)"
+  },
+  "S1240": {
+   "url": "https://sos.tn.gov/elections/2026-candidate-lists",
+   "title": "Official TN candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1241": {
+   "url": "https://sos.tn.gov/elections/2026-candidate-lists",
+   "title": "Official TN candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
   }
  },
  "ie_finance": {
