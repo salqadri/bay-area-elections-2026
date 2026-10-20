@@ -66,6 +66,7 @@ REVIEWED_OVERRIDES = {
  ('MN', 'Peggy Flanagan'): 'S6MN00440',   # FEC legal name "FLANAGAN, MARGARET"; DFL nominee for US Senate MN 2026
  ('AK', 'Dan J. Sullivan'): 'S6AK00326',  # challenger "SULLIVAN, DANIEL J", F2 2026-07-14, incumbent_challenge=C
  ('AK', 'Dan S. Sullivan'): 'S4AK00214',  # incumbent senator "SULLIVAN, DAN" (incumbent_challenge=I); only consistent assignment for the two printed names
+ ('IA', 'Ashley Hinson'): 'S6IA00314',    # FEC legal name "ARENHOLZ, ASHLEY HINSON"; committee "ASHLEY FOR IOWA" P, F2 filed; US Senate IA 2026
 }
 
 def tokens(s):
@@ -73,6 +74,18 @@ def tokens(s):
     s = ''.join(ch for ch in s if not unicodedata.combining(ch))
     s = re.sub(r'[^A-Za-z ]', ' ', s).upper()
     return [t for t in s.split() if len(t) > 1 and t not in SUFFIXES]
+
+def surname_forms(wiki_tokens):
+    """Normalized joined strings of the trailing 1..3 wiki name tokens. A hyphenated
+    or compound FEC surname ('EL-SAYED', 'HYDE-SMITH', 'FETTY ANDERSON') tokenizes to
+    several tokens on both sides; comparing only single first/last tokens missed real
+    filers (El-Sayed, Hyde-Smith). Trailing sequences cover the case where a printed
+    middle name is part of the FEC compound surname."""
+    out = set()
+    for n in (1, 2, 3):
+        if len(wiki_tokens) >= n:
+            out.add(''.join(wiki_tokens[-n:]))
+    return out
 
 def norm_name(s):
     """canonical (first, last) from either 'First Last' or FEC 'Last, First M' form."""
@@ -97,6 +110,7 @@ def fec_match(cand_name, state_abbr, party, fec_rows, is_incumbent=False):
     if not wt: return None
     wlast, wfirsts = wt[-1], set(wt[:-1])
     winits = {list(f)[0] for f in wfirsts if f}
+    wsurnames = surname_forms(wt)
     best = []
     for r in fec_rows:
         if r.get('state') != state_abbr: continue
@@ -104,7 +118,9 @@ def fec_match(cand_name, state_abbr, party, fec_rows, is_incumbent=False):
         if ',' not in rn: continue
         last_part, _, first_part = rn.partition(',')
         lt = tokens(last_part); ft = set(tokens(first_part))
-        if not lt or lt[0] != wlast: continue
+        # full FEC surname (hyphens/spaces dropped) must equal one of the wiki name's
+        # trailing token sequences — single, hyphenated or compound surnames.
+        if not lt or ''.join(lt) not in wsurnames: continue
         given_ok = bool(wfirsts & ft) or bool(winits & {list(f)[0] for f in ft})
         inc_ok = (is_incumbent and r['candidate_status'] == 'C'
                   and {'DEM': 'D', 'REP': 'R'}.get(r.get('party'), '?') == party)
