@@ -59,15 +59,17 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
 
 (async()=>{
   assert.deepEqual($('county').options.map(option=>option.value).sort(),['',...original.election.counties_in_scope.map(county=>county.name)].sort(),'County selector must contain All plus exactly the registered researched counties');
-  assert.equal(count(),original.coverage.confirmed_contests);assert(text('notice-text').includes(original.coverage.unresolved_scheduled_contests+' unresolved'));assert(text('result-meta').includes(original.coverage.printed_candidate_entries+' printed'));
+  assert.equal(count(),original.positions.length,'Unfiltered default shows every researched contest, nationwide included');assert(text('notice-text').includes(original.coverage.unresolved_scheduled_contests+' unresolved'));assert(text('result-meta').includes(original.coverage.printed_candidate_entries+' printed'));
   assert(text('hero-subtitle').includes('Contra Costa'));assert(text('hero-subtitle').includes('San Francisco, San Mateo, and Santa Clara'));
   assert.deepEqual(groups().filter(n=>!n.dataset.sectionKey.includes('/')).map(n=>n.dataset.sectionKey),original.display_order.levels);
   const federalDistricts=cardPositions().filter(p=>p.government_level==='Federal').map(p=>p.district_or_seat);
-  assert.deepEqual(federalDistricts,['CD-8','CD-9','CD-10','CD-11','CD-12','CD-14','CD-15','CD-16','CD-17','CD-18','CD-19']);
+  assert.deepEqual(federalDistricts.filter(d=>d.startsWith('CD-')),['CD-8','CD-9','CD-10','CD-11','CD-12','CD-14','CD-15','CD-16','CD-17','CD-18','CD-19']);
+  assert(federalDistricts.filter(d=>d.includes('Statewide')).length>=33,'Unfiltered view must include the nationwide Senate statewide seats');
   set('level','State');const statePositions=cardPositions();assert.equal(statePositions[0].office_category,'State Senate');
   assert.equal(statePositions[1].district_or_seat,'AD-11');
   const lastAssembly=statePositions.map(p=>p.office_category).lastIndexOf('State Assembly');
-  assert.equal(statePositions[lastAssembly+1].office,'Governor');assert.equal(statePositions[lastAssembly+2].office,'Lieutenant Governor');
+  const govIdx=statePositions.findIndex((p,i)=>i>lastAssembly&&p.office==='Governor');const ltgIdx=statePositions.findIndex((p,i)=>i>lastAssembly&&p.office==='Lieutenant Governor');
+  assert(govIdx>-1&&ltgIdx>govIdx,'Statewide executives follow the assembly block in office order');
   assert.deepEqual(groups().filter(n=>n.dataset.sectionKey.startsWith('State/')).map(n=>n.dataset.sectionKey),['State/State Senate','State/State Assembly','State/Other state offices']);
   $('collapse-sections').click();assert(groups().every(n=>!n.open));assert.equal(cards().filter(visible).length,0);
   $('expand-sections').click();assert(groups().every(n=>n.open));assert.equal(cards().filter(visible).length,cards().length);
@@ -98,7 +100,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('search','Jeff Frese');if(!frese.independent_expenditures.items.length)assert(text('panel-candidates').includes('No itemized independent expenditures reported for or against this candidate in the current cycle.'));
   reset();set('search','CD-16');const soule=candidate('Peter Sundin Soulé');if(soule.fec.receipts!==null)assert(text('panel-candidates').includes(money(soule.fec.receipts)));
   $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,original.finance.checked_on);assert.equal(fundedExport.positions[0].candidates.find(c=>c.name===soule.name).fec.receipts,soule.fec.receipts);
-  for(const county of original.election.counties_in_scope.map(c=>c.name)){reset();set('county',county);assert.equal(count(),original.positions.filter(p=>p.ballot_status==='confirmed'&&p.counties.includes(county)).length);}
+  for(const county of original.election.counties_in_scope.map(c=>c.name)){reset();set('county',county);assert.equal(count(),original.positions.filter(p=>p.counties.includes(county)).length);}
   reset();set('county','San Mateo');set('search','CD-15');assert.equal(count(),1);assert(text('panel-candidates').includes('Kevin Mullin'));assert(text('detail-meta').includes('San Francisco + San Mateo'));
   reset();set('county','San Francisco');set('search','Ruth Ferguson');assert.equal(count(),1);assert(text('detail-meta').includes('Special election'));
   // October 14, 2026: the last two San Mateo unresolved contests (Bayshore ESD short term, Colma Fire PD) resolved to excluded; no county has unresolved records left.
@@ -108,13 +110,13 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('search','CD-18');assert.equal(count(),1);assert(text('panel-candidates').includes('Zoe Lofgren'));
   reset();set('search','SD-10');assert.equal(count(),1);assert(text('detail-subtitle').includes('SD-10'));
   reset();set('search','San Jose');assert(count()>0,'Accent-insensitive search');
-  reset();set('county','Alameda');const expectedAlameda=original.positions.filter(p=>p.ballot_status==='confirmed'&&p.counties.includes('Alameda')).length;assert.equal(count(),expectedAlameda);
+  reset();set('county','Alameda');const expectedAlameda=original.positions.filter(p=>p.counties.includes('Alameda')).length;assert.equal(count(),expectedAlameda);
   reset();set('county','Contra Costa');set('search','East Bay Regional Park District Ward 7');assert.equal(count(),1);assert(text('detail-status').includes('Confirmed on ballot'));assert(text('panel-candidates').includes('Colin J. Coffey'));assert(text('panel-candidates').includes('Sekhon'));assert(cards()[0].textContent.includes('2 candidates'));assert(text('panel-candidates').includes('Mushda Faiez'));assert(text('panel-candidates').includes('Provisional filing names'));
   reset();set('county','Contra Costa');set('search','AD-11');assert.equal(count(),1);assert(text('panel-candidates').includes('No Party Preference'));
   reset();set('party','NPP');assert.equal(count(),2);
   reset();set('county','Contra Costa');set('search','AD-14');assert.equal(count(),1);assert(text('detail-meta').includes('Alameda + Contra Costa'));
   reset();set('county','Contra Costa');set('search','East Bay Municipal Utility District Ward 3');assert.equal(count(),1);assert(text('detail-meta').includes('Alameda + Contra Costa'));
-  reset();set('party','R');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert(p.candidates.some(c=>c.party==='R'));}
+  reset();set('party','R');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert([...(p.candidates||[]),...(p.filed_candidates_not_confirmed_on_ballot||[])].some(c=>c.party==='R'));}
   reset();$('incumbents').checked=true;$('incumbents').fire('change');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert([...(p.candidates||[]),...(p.filed_candidates_not_confirmed_on_ballot||[])].some(c=>c.incumbent));}
   // October 17, 2026: the unresolved filter now holds exactly the nationwide Senate/governor compilations awaiting official-source reconciliation; every Bay Area contest remains finally resolved.
   reset();clickStatus('unresolved');assert.equal(count(),original.coverage.unresolved_scheduled_contests);assert.equal(original.coverage.unresolved_scheduled_contests,70);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert.deepEqual(p.counties,[]);assert(['U.S. Senate','Statewide executive'].includes(p.office_category));}

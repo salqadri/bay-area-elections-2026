@@ -103,7 +103,7 @@ Their rosters were compiled October 17 from each state's certified candidate lis
 
 County totals overlap: a shared district appears once in the data with multiple county names. A contest's inclusion for a county does **not** mean every county resident can vote in it.
 
-**This inventory is not yet certified exhaustive.** Every scheduled contest now carries a final ballot status; excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted, and unverified local OCD identifiers remain. The explorer defaults to confirmed contests, labels uncertainty, and preserves the source and research-note registries.
+**This inventory is not yet certified exhaustive.** Every scheduled contest now carries a final ballot status; excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted, and unverified local OCD identifiers remain. The explorer defaults to showing **all** researched contests — including the provisional nationwide Senate/governor races and finally-excluded contests — labels uncertainty on every card, and preserves the source and research-note registries; the Confirmed/Unresolved buttons narrow from there.
 
 Contra Costa's local contests were reconciled on October 12, 2026 against the county's certified August 14 candidate list and its exhaustive August 27 Contest/Candidate Proof List (both archived under `research/contra_costa/` and cited as S1087/S1088). Contests absent from that on-ballot proof — including Canyon Elementary SD and Rodeo Sanitary District, which never appear in either file — are recorded as excluded with their filers retained separately; unopposed candidates elected at certification are named in the contest notes. Santa Clara's Lion's Gate CSD (both terms), San Martin County Water District and Silver Creek Valley Country Club GHAD, and San Mateo's Bayshore ESD short term and Colma Fire Protection District Director were resolved October 14 as excluded on the same zero-filing pattern: each county's exhaustive final candidate documentation contains no row for these contests at all (Santa Clara additionally shows zero write-in filings in its unofficial write-in list), with ballot-material deadlines already passed; evidence and the Jev adjudication are archived under `research/unresolved_2026-10-14/`. See `coverage.limitations` for remaining boundaries.
 
@@ -133,7 +133,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.22 (`schema_version` in the file is authoritative), publication `2026-10-19.1`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.22 (`schema_version` in the file is authoritative), publication `2026-10-19.2`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
