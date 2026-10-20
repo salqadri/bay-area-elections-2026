@@ -21,7 +21,7 @@ const CampaignFinanceDisplay = {
       const ie = candidate.independent_expenditures, cfg = data.ie_finance;
       const box = node('div', 'ie-spend');
       box.append(node('p', 'ie-label', 'Independent outside spending · FEC ' + cfg.cycle + ' cycle'));
-      if (!ie.items.length) box.append(node('p', 'ie-note', 'No itemized independent expenditures reported for or against this candidate in the current cycle.'));
+      if (!ie.items.length) box.append(node('p', 'ie-note', 'No independent expenditures in the FEC regular-report totals for this two-year cycle.'));
       else {
         const totals = node('p', 'ie-totals');
         if (ie.for_total > 0) totals.append(node('span', 'ie-for', 'For: ' + format(ie.for_total)));
@@ -39,7 +39,7 @@ const CampaignFinanceDisplay = {
         box.append(list);
       }
       if (cfg.checked_on) box.append(node('p', 'ie-note', 'Checked ' + dateLabel(cfg.checked_on)));
-      if (ie.browse_url) box.append(link(ie.browse_url, 'All independent expenditures for this candidate on FEC.gov ↗'));
+      if (ie.browse_url) box.append(link(ie.browse_url, 'Browse regular-report expenditures on FEC.gov ↗'));
       const source = data.sources[cfg.source_id];
       if (source) box.append(link(source.url, 'View FEC source ↗'));
       box.append(node('p', 'ie-note', cfg.method));

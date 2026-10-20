@@ -21,6 +21,6 @@ assert(all(card).some(n=>n.href===candidate.independent_expenditures.browse_url)
 const unknown=display.render({fec:{receipts:null,source_id:'S001',note_id:'N001'}},data,helpers);
 assert(unknown.textContent.includes('No published total available'));assert(unknown.textContent.includes('unknown is not zero'));assert(!unknown.textContent.includes('$0.00'));
 const zero=display.render({fec:{receipts:0,from:'2025-01-01',through:'2026-09-30',source_id:'S001'},independent_expenditures:{for_total:0,against_total:0,items:[],browse_url:candidate.independent_expenditures.browse_url}},data,helpers);
-assert(zero.textContent.includes('$0.00'));assert(zero.textContent.includes('No itemized independent expenditures'));assert(all(zero).some(n=>n.href===candidate.independent_expenditures.browse_url));
+assert(zero.textContent.includes('$0.00'));assert(zero.textContent.includes('No independent expenditures in the FEC regular-report totals'));assert(all(zero).some(n=>n.href===candidate.independent_expenditures.browse_url));
 assert.equal(display.render({},data,helpers),null);
 console.log('Shared campaign-money display: receipts, unknown/zero, both spending directions, dates, sources and collapsed disclosure passed.');

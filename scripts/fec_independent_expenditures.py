@@ -1,33 +1,16 @@
-"""Collect FEC independent-expenditure (Schedule E) data for printed federal candidates.
+"""Collect official FEC independent-expenditure aggregates for federal candidates.
 
-Deterministic primary-source collection: no LLM, Jev or agent calls are made here.
-The scope follows the dataset itself — every printed candidate entry that carries a
-``fec.id`` is eligible, so expanding ballot coverage to new counties automatically
-expands this layer once those candidates exist in the dataset. County selection only
-narrows which eligible entries a run refreshes.
+Plan -> run -> export -> attach; includes printed and provisional FEC-linked
+candidacies, with optional county scope for collection. Uses the same endpoint as
+FEC.gov candidate pages: /schedules/schedule_e/by_candidate/, cycle explicitly
+selected with election_full=false. FEC excludes 24-/48-hour notices and memo
+entries, so overlapping reporting streams are never added together locally.
 
-Subcommands (run from anywhere; paths resolve against the repository root):
-
-  plan    [--county NAME ...|--scope bay-area|california]   report eligible entries
-  run     [same scope options] [--cycle N]                  fetch + cache Schedule E rows
-  export  --output PATH                                    normalized review export
-  attach  --publication-version V                            write the dataset layer
-
-Raw API rows are cached in a local SQLite ledger (default .research/ie/fec_ie.sqlite3,
-never committed). Re-running ``run`` only refetches candidates whose cache is older than
---refresh-days. The FEC API key comes from FEC_API_KEY or --fec-key-file; it is never
-written to the repository, logs or generated HTML.
-
-Aggregation rules (also recorded in the published ie_finance.method):
-  * keep only ``most_recent`` rows (amendment supersession handled by FEC);
-  * drop memo-child rows when the same link_id also carries a non-memo row on that
-    filing (the committee's reported subtotal already includes them); standalone
-    memo rows are kept because they are the only itemization of that expenditure;
-  * keep only current-cycle election types (P2026/G2026/R2026 for cycle 2026); other
-    election types (for example late G2024 disbursements filed in this cycle) are
-    counted as excluded and never added to a candidate total;
-  * support_oppose_indicator S -> "for", O -> "against"; rows without one are counted
-    as unspecified and excluded from totals.
+The cycle/method-version cache is separate from legacy raw Schedule E tables.
+Old caches must be recollected. A failed or incomplete response never becomes a
+zero, and attach requires current-method snapshots for the entire federal scope.
+No model is used to calculate financial amounts. Credentials come from FEC_API_KEY
+or --fec-key-file and are never stored in exports, the ledger or generated pages.
 """
 
 import argparse
@@ -35,26 +18,35 @@ import json
 import os
 import re
 import sqlite3
-import sys
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / "2026-11-03_Bay_Area_Elections.json"
 COUNTY_REGISTRY = ROOT / "research/california-counties.json"
 DEFAULT_DB = ROOT / ".research/ie/fec_ie.sqlite3"
-API = "https://api.open.fec.gov/v1/schedules/schedule_e/"
+API = "https://api.open.fec.gov/v1/schedules/schedule_e/by_candidate/"
+METHOD_VERSION = "fec-by-candidate-v2"
 BAY_AREA = ["Alameda", "Contra Costa", "Marin", "Napa", "San Francisco",
             "San Mateo", "Santa Clara", "Solano", "Sonoma"]
 
 
 def now_utc() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S+00:00")
+
+
+def checked_date(timestamp):
+    """Publication dates use the project's Pacific timezone, not the UTC day."""
+    value = datetime.fromisoformat(timestamp)
+    if value.tzinfo is None:
+        raise ValueError("FEC snapshot timestamp needs an explicit timezone")
+    return value.astimezone(ZoneInfo("America/Los_Angeles")).date().isoformat()
 
 
 def fec_key(args) -> str:
@@ -69,17 +61,12 @@ def fec_key(args) -> str:
 def open_db(path: Path) -> sqlite3.Connection:
     path.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(path)
-    db.execute("""CREATE TABLE IF NOT EXISTS candidates(
-        candidate_id TEXT PRIMARY KEY, name TEXT, position_id TEXT,
-        fetched_at TEXT, rows_total INTEGER, excluded_prior_cycle INTEGER,
-        excluded_nonrecent INTEGER, excluded_memo_child INTEGER,
-        unspecified_direction INTEGER)""")
-    db.execute("""CREATE TABLE IF NOT EXISTS rows(
-        sub_id TEXT PRIMARY KEY, candidate_id TEXT, link_id INTEGER,
-        committee_id TEXT, committee_name TEXT, committee_type TEXT,
-        support_oppose TEXT, election_type TEXT, amount REAL,
-        expenditure_date TEXT, dissemination_date TEXT, filing_date TEXT,
-        memo_code TEXT, most_recent INTEGER, purpose TEXT, pdf_url TEXT)""")
+    # Deliberately separate from the v1 raw-row cache: it discarded is_notice,
+    # so neither recent timestamps nor reaggregation can make it safe to reuse.
+    db.execute("""CREATE TABLE IF NOT EXISTS aggregate_snapshots(
+        candidate_id TEXT, cycle INTEGER, method_version TEXT,
+        fetched_at TEXT NOT NULL, payload_json TEXT NOT NULL,
+        PRIMARY KEY(candidate_id, cycle, method_version))""")
     return db
 
 
@@ -120,46 +107,92 @@ def eligible(data, counties):
     return out
 
 
-def fetch_rows(key: str, candidate_id: str, cycle: int):
-    """Keyset pagination via pagination.last_indexes.
+def fetch_page(key, params):
+    url = API + "?" + urllib.parse.urlencode({**params, "api_key": key})
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(url, timeout=60) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code in (429, 500, 502, 503, 504) and attempt < 4:
+                time.sleep(min(15 * (attempt + 1), 60))
+                continue
+            # urllib errors can include the request URL, including its key.
+            raise RuntimeError(f"FEC aggregate request failed: HTTP {error.code}") from None
+        except (urllib.error.URLError, TimeoutError):
+            if attempt < 4:
+                time.sleep(2 ** attempt)
+                continue
+            raise RuntimeError("FEC aggregate request failed: network error") from None
 
-    The Schedule E endpoint ignores ``page`` (every page returns the same first
-    window), so pages advance with the last_expenditure_date/last_index cursor
-    the API itself publishes. Rows are deduplicated by sub_id as a guard.
+
+def normalize_rows(rows, candidate_id, cycle):
+    """Validate the source contract; never turn malformed/missing data into zero."""
+    seen = set()
+    for row in rows:
+        if row.get("candidate_id") != candidate_id or row.get("cycle") != cycle:
+            raise ValueError("FEC aggregate candidate/cycle mismatch")
+        committee = row.get("committee_id")
+        if not isinstance(committee, str) or not re.fullmatch(r"C[0-9]{8}", committee):
+            raise ValueError("FEC aggregate has no valid spender ID")
+        if not isinstance(row.get("committee_name"), str) or not row["committee_name"].strip():
+            raise ValueError("FEC aggregate has no spender name")
+        direction = row.get("support_oppose_indicator")
+        if direction not in ("S", "O"):
+            raise ValueError("FEC aggregate has an unsupported spending direction")
+        identity = (committee, direction)
+        if identity in seen:
+            raise ValueError("Duplicate FEC spender/direction; pagination may have repeated")
+        seen.add(identity)
+        if type(row.get("count")) is not int or row["count"] < 1:
+            raise ValueError("FEC aggregate has an invalid item count")
+        value = row.get("total")
+        if type(value) not in (int, float):
+            raise ValueError("FEC aggregate has no numeric total")
+        amount = Decimal(str(value))
+        if not amount.is_finite() or amount < 0 or amount != amount.quantize(Decimal("0.01")):
+            raise ValueError("FEC aggregate has an invalid total; review before publishing")
+    return rows
+
+
+def fetch_aggregates(key: str, candidate_id: str, cycle: int):
+    """Use the same regular-report totals as FEC.gov, with page-number pagination.
+
+    election_full=false is essential for Senate candidates: explicitly request the
+    two-year cycle rather than rolling several cycles into a full election total.
+    The FEC owns amendment resolution, memo exclusion and election-cycle mapping.
     """
-    rows, seen, cursor = {}, set(), None
+    rows, page, expected = [], 1, None
     while True:
-        params = {"candidate_id": candidate_id, "cycle": cycle,
-                  "per_page": 100, "api_key": key}
-        if cursor:
-            params.update(cursor)
-        url = API + "?" + urllib.parse.urlencode(params)
-        for attempt in range(5):
-            try:
-                with urllib.request.urlopen(url, timeout=60) as response:
-                    payload = json.load(response)
-                break
-            except urllib.error.HTTPError as error:
-                if error.code == 429 and attempt < 4:
-                    time.sleep(15 * (attempt + 1))
-                    continue
-                raise
-        batch = payload.get("results") or []
-        fresh = [row for row in batch if row.get("sub_id") not in seen]
-        for row in fresh:
-            seen.add(row["sub_id"])
-            rows[row["sub_id"]] = row
-        total = payload.get("pagination", {}).get("count", 0)
-        indexes = (payload.get("pagination") or {}).get("last_indexes")
-        if not batch or not fresh or len(rows) >= total or not indexes:
-            return list(rows.values()), total
-        cursor = {"last_expenditure_date": indexes["last_expenditure_date"],
-                  "last_index": indexes["last_index"]}
-        time.sleep(1.5)
+        payload = fetch_page(key, {"candidate_id": candidate_id, "cycle": cycle,
+                                  "election_full": "false", "per_page": 100,
+                                  "page": page, "sort": "committee_id"})
+        batch = payload.get("results")
+        pagination = payload.get("pagination") or {}
+        count = pagination.get("count")
+        if not isinstance(batch, list) or type(count) is not int or count < 0:
+            raise ValueError("Incomplete FEC aggregate response")
+        if pagination.get("is_count_exact") is not True or pagination.get("page") != page:
+            raise ValueError("Unexpected FEC aggregate pagination")
+        if expected is None:
+            expected = count
+        if count != expected:
+            raise ValueError("FEC aggregate count changed during fetch; retry the snapshot")
+        rows.extend(batch)
+        normalize_rows(rows, candidate_id, cycle)
+        if len(rows) == count:
+            return rows
+        if len(rows) > count or not batch:
+            raise ValueError("Incomplete or repeated FEC aggregate pages")
+        page += 1
+        time.sleep(0.3)
 
 
-def current_cycle_types(cycle: int):
-    return {f"P{cycle}", f"G{cycle}", f"R{cycle}"}
+def cached_snapshots(db, cycle):
+    return {cid: {"fetched_at": fetched, "rows": json.loads(payload)}
+            for cid, fetched, payload in db.execute(
+                "SELECT candidate_id, fetched_at, payload_json FROM aggregate_snapshots "
+                "WHERE cycle=? AND method_version=?", (cycle, METHOD_VERSION))}
 
 
 def spender_source_url(spender_id: str, name: str) -> str:
@@ -175,14 +208,14 @@ def candidate_browse_url(candidate_id: str, cycle: int) -> str:
     return ("https://www.fec.gov/data/independent-expenditures/?"
             + urllib.parse.urlencode({
                 "data_type": "processed", "candidate_id": candidate_id,
+                "is_notice": "false", "most_recent": "true",
                 "min_date": f"{cycle - 1}-01-01", "max_date": f"{cycle}-12-31"}))
 
 
 def cmd_plan(args, db):
     data = json.loads(DATASET.read_text(encoding="utf-8"))
     entries = eligible(data, scope_counties(args))
-    cached = {r[0]: r[1] for r in db.execute(
-        "SELECT candidate_id, fetched_at FROM candidates")}
+    cached = cached_snapshots(db, args.cycle)
     print(json.dumps({
         "eligible_federal_entries": len(entries),
         "unique_candidate_ids": len({e[0] for e in entries}),
@@ -194,110 +227,43 @@ def cmd_plan(args, db):
 def cmd_run(args, db):
     key = fec_key(args)
     data = json.loads(DATASET.read_text(encoding="utf-8"))
-    entries = eligible(data, scope_counties(args))
-    cutoff = (datetime.now(timezone.utc) - timedelta(days=args.refresh_days)).strftime("%Y-%m-%dT%H:%M:%S+00:00")
-    cached = {r[0]: r[1] for r in db.execute("SELECT candidate_id, fetched_at FROM candidates")}
-    todo = [e for e in entries if args.force or e[0] not in cached or (cached[e[0]] or "") < cutoff]
+    entries = {cid: name for cid, name, _ in eligible(data, scope_counties(args))}
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=args.refresh_days)).isoformat()
+    cached = cached_snapshots(db, args.cycle)
+    todo = [(cid, name) for cid, name in entries.items()
+            if args.force or cid not in cached or cached[cid]["fetched_at"] < cutoff]
     print(f"{len(todo)} of {len(entries)} unique candidates to fetch "
-          f"(refresh-days={args.refresh_days}).", flush=True)
-    seen = set()
-    for candidate_id, name, position_id in todo:
-        if candidate_id in seen:
-            continue
-        seen.add(candidate_id)
-        rows, total = fetch_rows(key, candidate_id, args.cycle)
-        db.execute("BEGIN")
-        db.execute("DELETE FROM rows WHERE candidate_id=?", (candidate_id,))
-        keep_types = current_cycle_types(args.cycle)
-        excluded_prior = sum(1 for r in rows if str(r.get("election_type")) not in keep_types)
-        excluded_nonrecent = sum(1 for r in rows if not r.get("most_recent"))
-        link_codes = {}
-        for row in rows:
-            link_codes.setdefault(row.get("link_id"), set()).add(row.get("memo_code") or "")
-        memo_child = sum(1 for r in rows if (r.get("memo_code") == "X"
-                         and "" in link_codes.get(r.get("link_id"), set())))
-        unspecified = sum(1 for r in rows if not r.get("support_oppose_indicator"))
-        for row in rows:
-            committee = row.get("committee") or {}
-            db.execute("INSERT OR REPLACE INTO rows VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
-                str(row.get("sub_id")), candidate_id, row.get("link_id"),
-                committee.get("committee_id"), committee.get("name"),
-                committee.get("committee_type_full"),
-                row.get("support_oppose_indicator"), str(row.get("election_type")),
-                row.get("expenditure_amount"), row.get("expenditure_date"),
-                row.get("dissemination_date"), row.get("filing_date"),
-                row.get("memo_code"), 1 if row.get("most_recent") else 0,
-                row.get("expenditure_description"), row.get("pdf_url")))
-        db.execute("INSERT OR REPLACE INTO candidates VALUES(?,?,?,?,?,?,?,?,?)", (
-            candidate_id, name, position_id, now_utc(), total or len(rows),
-            excluded_prior, excluded_nonrecent, memo_child, unspecified))
-        db.commit()
-        print(f"  {name} ({candidate_id}): {len(rows)} rows cached", flush=True)
+          f"(method={METHOD_VERSION}, cycle={args.cycle}).", flush=True)
+    for candidate_id, name in todo:
+        rows = fetch_aggregates(key, candidate_id, args.cycle)
+        # Commit only after ALL pages and source fields have passed validation.
+        with db:
+            db.execute("INSERT OR REPLACE INTO aggregate_snapshots VALUES(?,?,?,?,?)",
+                       (candidate_id, args.cycle, METHOD_VERSION, now_utc(), json.dumps(rows)))
+        print(f"  {name} ({candidate_id}): {len(rows)} spender/direction totals cached", flush=True)
         time.sleep(0.3)
 
 
 def aggregate(db, cycle: int):
-    """Return per-candidate aggregates applying the documented rules."""
-    keep_types = current_cycle_types(cycle)
+    """Normalize official aggregates; do not sum itemized notices or guess memos."""
     out = {}
-    for candidate_id, name, position_id in db.execute(
-            "SELECT candidate_id, name, position_id FROM candidates"):
-        rows = [dict(zip([c[1] for c in db.execute("PRAGMA table_info(rows)").fetchall()], r))
-                for r in db.execute("SELECT * FROM rows WHERE candidate_id=?", (candidate_id,))]
-        link_codes = {}
+    for candidate_id, snapshot in cached_snapshots(db, cycle).items():
+        rows = normalize_rows(snapshot["rows"], candidate_id, cycle)
+        items, registry = [], {}
+        totals = {"for": Decimal(0), "against": Decimal(0)}
         for row in rows:
-            link_codes.setdefault(row["link_id"], set()).add(row["memo_code"] or "")
-        counted = []
-        excluded = {"prior_cycle": 0, "nonrecent": 0, "memo_child": 0, "unspecified": 0}
-        for row in rows:
-            if not row["most_recent"]:
-                excluded["nonrecent"] += 1
-                continue
-            if row["election_type"] not in keep_types:
-                excluded["prior_cycle"] += 1
-                continue
-            if (row["memo_code"] == "X" and "" in link_codes.get(row["link_id"], set())):
-                excluded["memo_child"] += 1
-                continue
-            if row["support_oppose"] not in ("S", "O"):
-                excluded["unspecified"] += 1
-                continue
-            counted.append(row)
-        spenders = {}
-        directions = {}
-        for row in counted:
-            key = row["committee_id"] or f"name:{(row['committee_name'] or '').strip().upper()}"
-            spenders.setdefault(key, {
-                "spender_id": key, "name": row["committee_name"],
-                "committee_type": row["committee_type"]})
-            direction = "for" if row["support_oppose"] == "S" else "against"
-            entry = directions.setdefault((key, direction), {
-                "spender_id": key, "direction": direction, "amount": Decimal("0"),
-                "items": 0, "first_date": None, "last_date": None})
-            entry['amount'] += Decimal(str(row['amount']))
-            entry["items"] += 1
-            day = row["expenditure_date"] or row["dissemination_date"]
-            if day:
-                entry["first_date"] = min(entry["first_date"] or day, day)
-                entry["last_date"] = max(entry["last_date"] or day, day)
-        items = []
-        for entry in directions.values():
-            item = {"spender_id": entry["spender_id"], "items": entry["items"],
-                    "first_expenditure_date": entry["first_date"],
-                    "last_expenditure_date": entry["last_date"],
-                    "direction": entry['direction'], "amount": float(entry['amount'])}
-            if item['amount'] > 0:
-                items.append(item)
-        items.sort(key=lambda i: -i["amount"])
-        out[candidate_id] = {
-            "name": name, "position_id": position_id,
-            "for_total": float(sum((Decimal(str(i["amount"])) for i in items if i["direction"] == "for"), Decimal("0"))),
-            "against_total": float(sum((Decimal(str(i["amount"])) for i in items if i["direction"] == "against"), Decimal("0"))),
-            "items": items, "excluded": excluded,
-            "registry": {k: {"name": v["name"], "committee_type": v["committee_type"],
-                             "source_url": spender_source_url(k, v["name"])}
-                         for k, v in spenders.items()},
-        }
+            direction = "for" if row["support_oppose_indicator"] == "S" else "against"
+            key = row["committee_id"]
+            registry[key] = {"name": row["committee_name"],
+                             "source_url": spender_source_url(key, row["committee_name"])}
+            totals[direction] += Decimal(str(row["total"]))
+            items.append({"spender_id": key, "direction": direction,
+                          "amount": row["total"], "items": row["count"]})
+        items.sort(key=lambda i: (-i["amount"], i["spender_id"], i["direction"]))
+        out[candidate_id] = {"for_total": float(totals["for"]),
+                             "against_total": float(totals["against"]),
+                             "items": items, "registry": registry,
+                             "fetched_at": snapshot["fetched_at"]}
     return out
 
 
@@ -305,7 +271,8 @@ def cmd_export(args):
     db = open_db(Path(args.db))
     aggregates = aggregate(db, args.cycle)
     export = {
-        "format": "fec-independent-expenditures/v1",
+        "format": "fec-independent-expenditures/v2",
+        "method_version": METHOD_VERSION,
         "generated_at": now_utc(),
         "cycle": args.cycle,
         "provider": "FEC",
@@ -324,7 +291,19 @@ def cmd_attach(args):
     expected_schema = json.loads((ROOT / "elections.schema.json").read_text())["properties"]["schema_version"]["const"]
     if data["schema_version"] != expected_schema:
         raise SystemExit(f"Dataset schema must be {expected_schema} before attach; update the schema first.")
-    checked_on = args.checked_on or date.today().isoformat()
+    if args.cycle != data["finance"]["cycle"]:
+        raise SystemExit("IE cycle must match the dataset finance cycle.")
+    required_ids = {cid for cid, _, _ in eligible(data, None)}
+    missing = required_ids - aggregates.keys()
+    if missing:
+        raise SystemExit("No current-method IE snapshot for: " + ", ".join(sorted(missing)) + "; run first.")
+    # A partial/failed refresh must not advertise that every candidate was checked
+    # today. Use the oldest actual retrieval date, or reject an overstated date.
+    dates = [checked_date(aggregates[cid]["fetched_at"]) for cid in required_ids]
+    checked_on = min(dates)
+    if args.checked_on and args.checked_on != checked_on:
+        raise SystemExit("--checked-on must equal the oldest candidate retrieval date: " + checked_on)
+    aggregates = {cid: aggregates[cid] for cid in sorted(required_ids)}
 
     # Shared spender registry: additive, keyed by FEC committee id (or name fallback).
     registry = data.setdefault("ie_spenders", {})
@@ -333,11 +312,12 @@ def cmd_attach(args):
             existing = registry.get(key)
             if existing and existing["name"] != meta["name"]:
                 raise SystemExit(f"Spender id {key} already registered with a different name.")
-            registry[key] = {"name": meta["name"], "committee_type": meta["committee_type"],
-                             "source_url": spender_source_url(key, meta["name"])}
+            # The aggregate endpoint supplies names, IDs and counts, not committee
+            # types or transaction dates. Preserve known registry types, omit
+            # unavailable metadata rather than fabricating it from old raw rows.
+            registry[key] = {**(existing or {}), **meta}
 
     attached = 0
-    federal_seen = set()
     for position in data["positions"]:
         if position.get("government_level") != "Federal":
             continue
@@ -345,7 +325,6 @@ def cmd_attach(args):
             fec_id = (candidate.get("fec") or {}).get("id")
             if not fec_id:
                 continue
-            federal_seen.add(fec_id)
             agg = aggregates.get(fec_id)
             if agg is None:
                 raise SystemExit(f"No cached IE data for {candidate['name']} ({fec_id}); run first.")
@@ -362,12 +341,14 @@ def cmd_attach(args):
         "provider": "FEC", "cycle": args.cycle, "currency": "USD",
         "metric": "independent_expenditures", "checked_on": checked_on,
         "source_id": args.source_id,
-        "method": ("Itemized independent expenditures (FEC Schedule E) reported for the "
-                   f"{args.cycle} two-year period and linked to each printed federal candidate. "
-                   "Only current-cycle election types are counted; late filings referencing prior "
-                   "elections are excluded from totals. Amendment supersessions use the most recent "
-                   "filing, and memo subtotals already included in a reported itemization are not "
-                   "added twice. Amounts are independent outside spending: they are not campaign "
+        "method": ("FEC official independent-expenditure aggregates by candidate for the "
+                   f"{args.cycle} two-year cycle (not the full Senate election period). "
+                   "These totals use regularly scheduled reports and exclude 24-/48-hour "
+                   "notices and memo entries to avoid double counting, matching the FEC "
+                   "candidate page for the same two-year selection. Recent notice-only spending "
+                   "is not included; newly filed summaries may take up to 48 hours to appear. "
+                   "Amendments and election-cycle attribution follow the FEC aggregate. "
+                   "Amounts are independent outside spending: they are not campaign "
                    "receipts, contributions, coordination findings or endorsements, and support of "
                    "one candidate is never treated as opposition to another. This is a dated "
                    "snapshot from the FEC API, not a live feed."),
@@ -402,7 +383,7 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("plan")
     runp = sub.add_parser("run")
-    runp.add_argument("--refresh-days", type=int, default=36500)
+    runp.add_argument("--refresh-days", type=int, default=7)
     runp.add_argument("--force", action="store_true")
     exp = sub.add_parser("export")
     exp.add_argument("--output", required=True)

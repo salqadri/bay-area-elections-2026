@@ -1,5 +1,10 @@
 """Offline finance regressions: no API credentials, network requests or Git pushes."""
 import base64
+import json
+import sqlite3
+from types import SimpleNamespace
+import urllib.error
+import urllib.parse
 from copy import deepcopy
 import os
 from pathlib import Path
@@ -14,25 +19,159 @@ from schema_validation import SCHEMA, check
 
 
 class FinanceChecks(unittest.TestCase):
-    def test_one_spender_can_support_and_oppose_with_separate_counts_and_dates(self):
+    def row(self, **changes):
+        return {"candidate_id": "H6CA00001", "cycle": 2026,
+                "committee_id": "C00000001", "committee_name": "Fixture PAC",
+                "support_oppose_indicator": "S", "total": 125.25, "count": 2, **changes}
+
+    def cache(self, db, rows, cid="H6CA00001", cycle=2026, method=ie.METHOD_VERSION,
+              fetched="2026-10-20T08:00:00+00:00"):
+        db.execute("INSERT OR REPLACE INTO aggregate_snapshots VALUES(?,?,?,?,?)",
+                   (cid, cycle, method, fetched, json.dumps(rows)))
+        db.commit()
+
+    def page(self, rows, count=None, page=1):
+        return {"results": rows, "pagination": {"count": len(rows) if count is None else count,
+                "is_count_exact": True, "page": page}}
+
+    def test_one_spender_can_support_and_oppose_with_separate_counts(self):
+        db = ie.open_db(Path(":memory:"))
+        self.cache(db, [self.row(), self.row(support_oppose_indicator="O", total=40, count=1)])
+        result = ie.aggregate(db, 2026)['H6CA00001']
+        self.assertEqual((result['for_total'], result['against_total']), (125.25, 40))
+        rows = {item['direction']: item for item in result['items']}
+        self.assertEqual(len(result['registry']), 1)
+        self.assertEqual(rows['for']['items'], 2)
+        self.assertEqual(rows['against']['items'], 1)
+        self.assertNotIn('first_expenditure_date', rows['for'])
+        self.assertNotIn('committee_type', result['registry']['C00000001'])
+        db.close()
+
+    def test_exact_udp_regression_matches_official_aggregate(self):
+        # Source-bound captured evidence, not a synthetic halving of the bad total.
+        packet = json.loads((ie.ROOT / 'research/finance/2026-10-20/udp-reconciliation.json').read_text())
+        from decimal import Decimal
+        raw = packet['rows']
+        regular = sum((Decimal(str(r['expenditure_amount'])) for r in raw if not r['is_notice']), Decimal(0))
+        notices = sum((Decimal(str(r['expenditure_amount'])) for r in raw if r['is_notice']), Decimal(0))
+        self.assertEqual(regular, Decimal('20140908.74'))
+        self.assertEqual(notices, Decimal('20423765.29'))
+        self.assertEqual(regular + notices, Decimal('40564674.03'))
+        regular_by_transaction = {r['transaction_id']: r for r in raw if not r['is_notice']}
+        primary_notices = [r for r in raw if r['is_notice'] and r['election_type'] == 'P2026']
+        self.assertEqual(len(primary_notices), 24)
+        self.assertTrue(all(r['expenditure_amount'] == regular_by_transaction[r['transaction_id']]['expenditure_amount']
+                            for r in primary_notices))
+        db = ie.open_db(Path(':memory:'))
+        self.cache(db, [packet['official_aggregate']], cid='S6MI00418')
+        result = ie.aggregate(db, 2026)['S6MI00418']
+        self.assertEqual(result['against_total'], 20140908.74)
+        self.assertEqual(result['items'][0]['items'], 25)
+        db.close()
+
+    def test_aggregate_pagination_and_explicit_two_year_scope(self):
+        rows = [self.row(committee_id=f'C{i:08d}') for i in range(101)]
+        with patch.object(ie, 'fetch_page', side_effect=[self.page(rows[:100], 101), self.page(rows[100:], 101, 2)]) as fetch, patch.object(ie.time, 'sleep'):
+            self.assertEqual(ie.fetch_aggregates('fixture', 'H6CA00001', 2026), rows)
+        calls = [call.args[1] for call in fetch.call_args_list]
+        self.assertEqual([c['page'] for c in calls], [1, 2])
+        self.assertTrue(all(c['election_full'] == 'false' and c['cycle'] == 2026 for c in calls))
+        self.assertTrue(ie.API.endswith('/schedule_e/by_candidate/'))
+
+    def test_incomplete_repeated_and_changing_pages_are_rejected(self):
+        cases = [
+            [{}, self.page([])],
+            [self.page([self.row()], 2), self.page([], 2, 2)],
+            [self.page([self.row()], 2), self.page([self.row()], 2, 2)],
+            [self.page([self.row()], 2), self.page([], 1, 2)],
+            [{'results': [], 'pagination': {'count': 0, 'page': 1}}],
+        ]
+        for pages in cases:
+            with self.subTest(pages=pages), patch.object(ie, 'fetch_page', side_effect=pages), patch.object(ie.time, 'sleep'):
+                with self.assertRaises(ValueError):
+                    ie.fetch_aggregates('fixture', 'H6CA00001', 2026)
+
+    def test_invalid_totals_identity_direction_or_counts_fail_closed(self):
+        for changes in [{'total': None}, {'total': -1}, {'total': float('nan')}, {'total': 1.234},
+                        {'count': 0}, {'count': True}, {'candidate_id': 'S6MI00418'},
+                        {'cycle': 2024}, {'committee_id': None}, {'committee_name': None},
+                        {'support_oppose_indicator': 'Other'}]:
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                ie.normalize_rows([self.row(**changes)], 'H6CA00001', 2026)
+
+    def test_genuine_empty_response_is_a_checked_zero(self):
+        with patch.object(ie, 'fetch_page', return_value=self.page([])):
+            rows = ie.fetch_aggregates('fixture', 'H6CA00001', 2026)
+        db = ie.open_db(Path(':memory:'))
+        self.cache(db, rows)
+        self.assertEqual(ie.aggregate(db, 2026)['H6CA00001']['against_total'], 0)
+        db.close()
+
+    def test_legacy_wrong_cycle_and_wrong_method_caches_never_qualify(self):
         with tempfile.TemporaryDirectory() as directory:
-            db = ie.open_db(Path(directory) / 'ie.sqlite3')
-            db.execute('INSERT INTO candidates(candidate_id,name,position_id) VALUES(?,?,?)',
-                       ('H6CA00001', 'Fixture Candidate', 'CA2026-999'))
-            for index, direction, amount, day in [(1, 'S', 100, '2026-05-01'), (2, 'O', 40, '2026-09-01'), (3, 'S', 25.25, '2026-06-01')]:
-                db.execute('''INSERT INTO rows(sub_id,candidate_id,link_id,committee_id,committee_name,
-                           support_oppose,election_type,amount,most_recent,expenditure_date)
-                           VALUES(?,?,?,?,?,?,?,?,?,?)''',
-                           (str(index), 'H6CA00001', index, 'C00000001', 'Fixture PAC', direction, 'G2026', amount, 1, day))
-            result = ie.aggregate(db, 2026)['H6CA00001']
-            self.assertEqual((result['for_total'], result['against_total']), (125.25, 40))
-            rows = {item['direction']: item for item in result['items']}
-            self.assertEqual(len(result['registry']), 1)
-            self.assertEqual(rows['for']['items'], 2)
-            self.assertEqual(rows['for']['last_expenditure_date'], '2026-06-01')
-            self.assertEqual(rows['against']['items'], 1)
-            self.assertEqual(rows['against']['first_expenditure_date'], '2026-09-01')
+            path = Path(directory) / 'ie.sqlite3'
+            db = sqlite3.connect(path)
+            db.execute('CREATE TABLE candidates(candidate_id TEXT, fetched_at TEXT)')
+            db.execute("INSERT INTO candidates VALUES('H6CA00001','2099-01-01')")
+            db.commit(); db.close()
+            db = ie.open_db(path)
+            self.cache(db, [], cycle=2024)
+            self.cache(db, [], method='legacy')
+            self.assertEqual(ie.aggregate(db, 2026), {})
+            self.assertEqual(db.execute('SELECT count(*) FROM candidates').fetchone()[0], 1)
             db.close()
+
+    def test_failure_preserves_previous_snapshot(self):
+        db = ie.open_db(Path(':memory:'))
+        self.cache(db, [self.row()])
+        args = SimpleNamespace(scope=None, county=None, cycle=2026, force=True, refresh_days=7)
+        with patch.object(ie, 'fec_key', return_value='fixture'), patch.object(ie, 'eligible', return_value=[('H6CA00001', 'Fixture', 'CA2026-999')]), patch.object(ie, 'fetch_aggregates', side_effect=ValueError('incomplete')):
+            with self.assertRaises(ValueError):
+                ie.cmd_run(args, db)
+        self.assertEqual(ie.aggregate(db, 2026)['H6CA00001']['for_total'], 125.25)
+        db.close()
+
+    def test_attach_requires_complete_scope_and_does_not_relabel_stale_dates(self):
+        with tempfile.TemporaryDirectory() as directory:
+            dataset = Path(directory) / 'data.json'
+            data = json.loads(ie.DATASET.read_text())
+            dataset.write_text(json.dumps(data))
+            before = dataset.read_bytes()
+            dbpath = Path(directory) / 'ie.sqlite3'
+            db = ie.open_db(dbpath)
+            args = SimpleNamespace(db=str(dbpath), cycle=2026, checked_on='2026-10-20', source_id='S1086', publication_version=None)
+            with patch.object(ie, 'DATASET', dataset):
+                with self.assertRaises(SystemExit):
+                    ie.cmd_attach(args)
+                self.assertEqual(dataset.read_bytes(), before)
+                for cid, _, _ in ie.eligible(data, None):
+                    self.cache(db, [], cid=cid, fetched='2026-10-19T08:00:00+00:00')
+                with self.assertRaises(SystemExit):
+                    ie.cmd_attach(args)
+                self.assertEqual(dataset.read_bytes(), before)
+            db.close()
+
+    def test_http_errors_redact_credentials(self):
+        secret = 'fixture-secret'
+        error = urllib.error.HTTPError('https://example.org/?api_key=' + secret, 403, 'Forbidden', {}, None)
+        with patch.object(ie.urllib.request, 'urlopen', side_effect=error):
+            with self.assertRaises(RuntimeError) as failure:
+                ie.fetch_page(secret, {})
+        self.assertNotIn(secret, str(failure.exception))
+        self.assertIn('403', str(failure.exception))
+
+    def test_snapshot_dates_share_the_publishers_pacific_day(self):
+        self.assertEqual(ie.checked_date('2026-10-20T06:59:00+00:00'), '2026-10-19')
+        self.assertEqual(ie.checked_date('2026-10-20T07:00:00+00:00'), '2026-10-20')
+        with patch.object(refresh, 'now_utc', return_value='2026-10-20T06:59:00+00:00'):
+            self.assertEqual(refresh.next_version('2026-10-19.3'), '2026-10-19.4')
+        with self.assertRaises(ValueError):
+            ie.checked_date('2026-10-20T07:00:00')
+
+    def test_browse_link_excludes_notices(self):
+        params = urllib.parse.parse_qs(urllib.parse.urlparse(ie.candidate_browse_url('S6MI00418', 2026)).query)
+        self.assertEqual(params['is_notice'], ['false'])
+        self.assertEqual(params['most_recent'], ['true'])
 
     def summary(self, **changes):
         return {'receipts': 50, 'coverage_start_date': '2025-01-01',

@@ -101,7 +101,7 @@ The fixture preparation must follow the build and precede the two page integrati
 | Build check | Generated pages equal current sources | Browser appearance or external availability |
 | Data check | IDs/references, omission rules, global counts, FEC conventions and embedded inventory agree | Source truth, URL validity, correct geographic eligibility or exhaustive coverage |
 | Schema check | Current schema keywords and positive/negative examples pass the repository's focused validator | Full standards compliance; use a standard Draft 2020-12 validator with format checking for interoperability |
-| Finance checks | Direction-specific aggregation, safe Git push arguments and redaction, first reported receipts metadata, shared disclosure output | Live FEC totals or an actual authenticated push |
+| Finance checks | Official aggregate pagination/scope, exact UDP reconciliation, legacy-cache rejection, failure preservation, direction separation, safe Git push arguments/redaction, receipts metadata and disclosure output | Live FEC totals or an actual authenticated push |
 | Gaza source and display checks | Complete reviewed sheet dimensions/values/colors, distinct official grade periods, candidate/source bindings, publication snapshots and shared UI sections | Independent verification of every legislative description/value, exhaustive career history or source-assigned political assessments |
 | Campaign platform checks | Bounded collection, exact packet/capture/identity bindings, state-specific held decisions and no silent publication | Completion of the deferred candidate-site pass, political meaning or complete-site exhaustiveness |
 | Explorer/ballot checks | Real embedded scripts work in a minimal DOM harness with fixture responses | Layout, real keyboard/browser event behavior or live geocoding |
@@ -177,3 +177,22 @@ Both UI date-label functions distinguish `source_observed` from historical dates
 ## Reusable scope and review pipeline
 
 Follow [REPEATABLE_RESEARCH.md](REPEATABLE_RESEARCH.md). County/FIPS data lives in `research/california-counties.json`; the build embeds the same registry that Node and Python read. Adding geography recognition never expands the election inventory. New reviewed changes use exact before/after records and source hashes, and are registered in `research/publication-reviews.json`. Keep review manifests, registry, canonical dataset, current coverage documentation and generated pages together. `schema_validation.py` holds the common focused validator; `check_schema.py` retains the regression suite. Improve shared adapters/guards when a failure class is found; do not create another dated one-off importer by default. Official roster research and the Gaza collector (`research/gaza-stance/`) retain their separate evidence requirements.
+
+
+## Independent-expenditure refresh
+
+The October 20 correction replaces custom raw Schedule E summation with the FEC candidate-page aggregate endpoint. It excludes 24-/48-hour notices and memo entries. Do not sum notice totals into regular-report totals, halve historical values, or revive the old filing-wide memo heuristic. `election_full=false` pins the two-year cycle; FEC owns cycle attribution and amendment handling. The [audit](reviews/2026-10-20-fec-ie-reconciliation.md) documents the source rules and per-candidate impact.
+
+```sh
+python3 scripts/fec_independent_expenditures.py plan
+python3 scripts/fec_independent_expenditures.py run --force
+python3 scripts/fec_independent_expenditures.py export --output .research/ie/official-aggregates.json
+python3 scripts/audit_fec_independent_expenditures.py --baseline 2026-11-03_Bay_Area_Elections.json --snapshot .research/ie/official-aggregates.json --output .research/ie/impact.json
+python3 scripts/fec_independent_expenditures.py attach --publication-version YYYY-MM-DD.N
+python3 scripts/build_site.py
+python3 scripts/check_release.py
+```
+
+Set `FEC_API_KEY` in the environment or pass global `--fec-key-file PATH` before the subcommand. Inspect the export and impact before attach. Default refresh age is seven days; `--force` refreshes every eligible candidate. A fresh clone needs no old ledger. Legacy tables remain intact but cannot satisfy the new method-version cache. Cache keys include candidate ID, cycle and method; incomplete API responses never replace a prior snapshot. Attach requires all current federal IDs and uses the oldest actual retrieval date, so partial county runs cannot label older nationwide results as freshly checked. Supplying `--checked-on` requires that exact date. Missing/unknown spenders, negative totals, unsupported directions, source renames and pagination inconsistencies stop the update for review rather than silently dropping money.
+
+Export v2 retains FEC counts but omits transaction date ranges, which the aggregate endpoint does not supply. Existing registry committee types are preserved; new spenders can lack that optional metadata. Snapshot differences can reflect intervening filings, processing or cycle attribution as well as removed double counting. Sum-across-candidate totals are not unique national spending. The full `refresh_fec_money.py` also refreshes receipts and can publish under its existing main/clean-tree gate; use the IE-only commands above when receipts are outside scope.
