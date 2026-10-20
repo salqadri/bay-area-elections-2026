@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-20.3"
+  "publication_version": "2026-10-20.4"
  },
  "codes": {
   "party": {
@@ -92,17 +92,17 @@
  },
  "coverage": {
   "status": "research_inventory_with_explicit_unresolved_records",
-  "confirmed_contests": 358,
-  "confirmed_seats": 461,
-  "unresolved_scheduled_contests": 52,
-  "printed_candidate_entries": 908,
-  "confirmed_contests_missing_candidate_rosters": 9,
+  "confirmed_contests": 362,
+  "confirmed_seats": 465,
+  "unresolved_scheduled_contests": 48,
+  "printed_candidate_entries": 915,
+  "confirmed_contests_missing_candidate_rosters": 11,
   "positions_with_ocd_division_id": 258,
   "positions_with_ballotpedia_url": 320,
-  "printed_candidates_with_ballotpedia_url": 644,
-  "printed_candidates_with_x_url": 162,
+  "printed_candidates_with_ballotpedia_url": 648,
+  "printed_candidates_with_x_url": 169,
   "printed_candidates_with_secondary_x_url": 10,
-  "printed_candidates_with_campaign_url": 406,
+  "printed_candidates_with_campaign_url": 411,
   "limitations": [
    "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
    "This is not yet a certified exhaustive ballot dataset: unverified local OCD identifiers remain, and excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted.",
@@ -118,13 +118,13 @@
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
-  "printed_candidates_with_gaza_evidence": 103,
-  "printed_candidates_with_endorsements": 398,
-  "printed_candidates_with_independent_expenditures": 17,
+  "printed_candidates_with_gaza_evidence": 107,
+  "printed_candidates_with_endorsements": 400,
+  "printed_candidates_with_independent_expenditures": 20,
   "printed_candidates_with_gaza_voting_records": 11,
   "printed_candidates_with_uscpr_grade": 9,
   "printed_candidates_with_gaza_platform": 221,
-  "printed_candidates_with_platform_positions": 337,
+  "printed_candidates_with_platform_positions": 340,
   "printed_candidates_with_endorsement_images": 91
  },
  "address_lookup": {
@@ -32021,7 +32021,7 @@
    "seats": 1,
    "term": "6 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:ak",
    "ocd_id_status": "convention",
@@ -32790,13 +32790,14 @@
     }
    ],
    "source_ids": [
-    "S1099"
+    "S1099",
+    "S1233"
    ],
    "note_ids": [
-    "N903",
+    "N1300",
+    "N1319",
     "N904",
-    "N910",
-    "N1300"
+    "N910"
    ]
   },
   {
@@ -53128,13 +53129,12 @@
    "seats": 1,
    "term": "6 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:mt",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Kurt Alme",
      "party": "R",
@@ -53841,10 +53841,11 @@
     }
    ],
    "source_ids": [
-    "S1099"
+    "S1099",
+    "S1234"
    ],
    "note_ids": [
-    "N903",
+    "N1320",
     "N904",
     "N910"
    ]
@@ -82453,7 +82454,7 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:ak",
    "ocd_id_status": "convention",
@@ -83717,10 +83718,11 @@
     }
    ],
    "source_ids": [
-    "S1100"
+    "S1100",
+    "S1235"
    ],
    "note_ids": [
-    "N903",
+    "N1321",
     "N910"
    ]
   },
@@ -87927,13 +87929,12 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:il",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Darren Bailey",
      "party": "R",
@@ -88170,10 +88171,11 @@
     }
    ],
    "source_ids": [
-    "S1100"
+    "S1100",
+    "S1236"
    ],
    "note_ids": [
-    "N903",
+    "N1322",
     "N910"
    ]
   },
@@ -347615,7 +347617,11 @@
   "N1315": "Ballot appearance verified 2026-10-20 against the cited official NY source, which lists every published candidacy for this race. The official list also shows additional active candidates not in the compiled roster (25 name(s)), so the printed roster remains unverified and filings stay provisional.",
   "N1316": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official OH source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1317": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official SD source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
-  "N1318": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NH source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
+  "N1318": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NH source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1319": "Ballot appearance verified 2026-10-20 against the cited official AK source, which lists every published candidacy for this race. The official list also shows additional active candidates not in the compiled roster (12 name(s)), so the printed roster remains unverified and filings stay provisional.",
+  "N1320": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official MT source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately. The official list also identifies qualified write-in candidates (Jami Dee Woodman (write-in)); they are not printed ballot candidates.",
+  "N1321": "Ballot appearance verified 2026-10-20 against the cited official AK source, which lists every published candidacy for this race. The official list also shows additional active candidates not in the compiled roster (12 name(s)), so the printed roster remains unverified and filings stay provisional.",
+  "N1322": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official IL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
  },
  "sources": {
   "S001": {
@@ -352042,6 +352048,22 @@
   "S1232": {
    "url": "https://mm.nh.gov/files/uploads/sos/docs/2026-ge-candidate-list.pdf",
    "title": "Official NH candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1233": {
+   "url": "https://www.elections.alaska.gov/election-candidates/",
+   "title": "Official AK candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1234": {
+   "url": "https://candidatefiling.mt.gov/candidatefiling/CandidateList.aspx?e=450002987",
+   "title": "Official MT candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1235": {
+   "url": "https://www.elections.alaska.gov/election-candidates/",
+   "title": "Official AK candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1236": {
+   "url": "https://www.elections.il.gov/ElectionOperations/EOPDFViewer.aspx?ElectionID=sejIrI%2BQmww%3D&QueryType=xF443FTCAJbIL3atac%2FUjEg7Y4yklgT1&Status=P2wRQXkiFoo%3D",
+   "title": "Official IL candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
   }
  },
  "ie_finance": {

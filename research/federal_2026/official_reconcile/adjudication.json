@@ -871,56 +871,54 @@
   ]
  },
  "US2026-046": {
-  "pid": "US2026-046",
   "state": "IL",
   "office": "Governor",
-  "source_url": "https://www.elections.il.gov/ElectionOperations/EOPDFViewer.aspx?ElectionID=sejIrI%2BQmww%3D&QueryType=xF443FTCAJbIL3atac%2FUjEg7Y4yklgT1&Status=P2wRQXkiFoo%3D",
-  "checked_on": "2026-10-20",
-  "election_marker": true,
-  "block_chars": 1081,
   "roster": [
    "Darren Bailey",
    "Collin Corbett",
    "JB Pritzker"
   ],
+  "all_accepted": true,
+  "election_marker": true,
+  "block_chars": 1049,
+  "mechanical_all_accepted": true,
+  "mechanical_extras": [],
+  "override_reviewer": "hermes-mechanical-row-extraction 2026-10-20",
+  "override_election_context": "IL State Board of Elections GENERAL ELECTION - 11/3/2026 website candidate list, all candidates as of 10/20/2026.",
+  "override_evidence": {
+   "JB Pritzker": "DEMOCRATIC JB PRITZKER (running mate CHRISTIAN MITCHELL)",
+   "Darren Bailey": "REPUBLICAN DARREN BAILEY (running mate AARON B. DEL MAR)",
+   "Collin Corbett": "INDEPENDENT COLLIN CORBETT (running mate CAROLYN SCHOFIELD)"
+  },
   "per_name": [
    {
     "name": "Darren Bailey",
-    "excerpt": "GOVERNOR AND LIEUTENANT GOVERNOR DEMOCRATIC JB PRITZKER 10/27/2025 8:00 AM REDACTION REQUESTED CHRISTIAN MITCHELL (PRITZKER) 10/27/2025 8:00 AM REPUBLICAN DARREN BAILEY 10/27/2025 8:00 AM AARON B. DEL MAR (BAILEY) 10/27/2025 8:00 AM GREEN GRISELDA ROMERO 5/26/2026 3:54 PM 5550 ABBEY DR APT 2K LISLE, IL 60532 REMOVED 7/14/2026 10:20AM EY",
     "jev": {
      "choice": "candidate_row",
-     "probability": 0.99,
-     "accepted": true
+     "probability": 1.0
     }
    },
    {
     "name": "Collin Corbett",
-    "excerpt": "E 3 GENERAL ELECTION - 11/ 3/2026 WEBSITE CANDIDATE LIST ILLINOIS STATE BOARD OF ELECTIONS 1:53AM10/20/2026 ALL CANDIDATES AS OF 10/20/2026 1:53:39 AM INDEPENDENT COLLIN CORBETT 5/26/2026 5:00 PM REDACTION REQUESTED CAROLYN SCHOFIELD (CORBETT) 5/26/2026 5:00 PM REDACTION REQUESTED",
     "jev": {
      "choice": "candidate_row",
-     "probability": 0.67,
-     "accepted": false
+     "probability": 1.0
     }
    },
    {
     "name": "JB Pritzker",
-    "excerpt": "GOVERNOR AND LIEUTENANT GOVERNOR DEMOCRATIC JB PRITZKER 10/27/2025 8:00 AM REDACTION REQUESTED CHRISTIAN MITCHELL (PRITZKER) 10/27/2025 8:00 AM REPUBLICAN DARREN BAILEY 10/27/2025 8:00 AM AARON B. DEL MAR (BAILEY) 10/27/2025",
     "jev": {
      "choice": "candidate_row",
-     "probability": 0.99,
-     "accepted": true
+     "probability": 1.0
     }
    }
   ],
-  "all_accepted": false,
   "extras_candidates": [
-   "AARON B. DEL MAR",
-   "ALL CANDIDATES AS OF",
-   "GOVERNOR AND LIEUTENANT GOVERNOR",
-   "REDACTION REQUESTED CAROLYN SCHOFIEL",
-   "REDACTION REQUESTED CHRISTIAN MITCHELL"
+   "Griselda Romero (Green) REMOVED 7/14/2026",
+   "Gary Pierce (Independence) REMOVED 6/9/2026",
+   "Richard Mayers (New) REMOVED 6/9/2026"
   ],
-  "block_text": "GOVERNOR AND LIEUTENANT GOVERNOR DEMOCRATIC JB Pritzker 10/27/2025 8:00 AM Redaction Requested Christian Mitchell (Pritzker) 10/27/2025 8:00 AM REPUBLICAN Darren Bailey 10/27/2025 8:00 AM Aaron B. Del Mar (Bailey) 10/27/2025 8:00 AM GREEN Griselda Romero 5/26/2026 3:54 PM 5550 Abbey Dr Apt 2K Lisle, IL 60532 REMOVED 7/14/2026 10:20AM Eyde Arndell (ROMERO) 5/26/2026 3:54 PM 2350 Dogwood Rd Carbondale, IL 62902 REMOVED 7/14/2026 10:20AM INDEPENDENCE PARTY Gary Pierce 5/26/2026 12:02 PM 2908 S. 14th St. Springfield, IL 62703 REMOVED 6/9/2026 10:30AM Alejandro Cabrera (PIERCE) 5/26/2026 12:02 PM 77 S. Stolp Ave. Aurora, IL 60506 REMOVED 6/9/2026 10:30AM NEW Richard Mayers 5/26/2026 3:01 PM 6159 W. 64th Place Unit 6 Chicago, IL 60638 REMOVED 6/9/2026 10:30AM Page 3 General Election - 11/ 3/2026 WEBSITE CANDIDATE LIST ILLINOIS STATE BOARD OF ELECTIONS 1:53AM10/20/2026 All Candidates as of 10/20/2026 1:53:39 AM INDEPENDENT Collin Corbett 5/26/2026 5:00 PM Redaction Requested Carolyn Schofield (CORBETT) 5/26/2026 5:00 PM Redaction Requested "
+  "source_url": "https://www.elections.il.gov/ElectionOperations/EOPDFViewer.aspx?ElectionID=sejIrI%2BQmww%3D&QueryType=xF443FTCAJbIL3atac%2FUjEg7Y4yklgT1&Status=P2wRQXkiFoo%3D"
  },
  "US2026-047": {
   "pid": "US2026-047",
@@ -1445,5 +1443,225 @@
    "Donald Kissick": "DON JAMES L. KISSICK MILLS [LIBERTARIAN]",
    "Vivek Ramaswamy": "VIVEK ROBERT A. RAMASWAMY MCCOLLEY [REPUBLICAN]"
   }
+ },
+ "US2026-019": {
+  "state": "MT",
+  "office": "U.S. Senate",
+  "roster": [
+   "Kurt Alme",
+   "Kyle Austin",
+   "Alani Bankhead",
+   "Seth Bodnar"
+  ],
+  "all_accepted": true,
+  "election_marker": true,
+  "block_chars": 2600,
+  "mechanical_all_accepted": true,
+  "mechanical_extras": [],
+  "mechanical_write_ins": [
+   "Jami Dee Woodman (write-in)"
+  ],
+  "override_reviewer": "hermes-mechanical-row-extraction 2026-10-20",
+  "override_election_context": "MT SOS candidate filing portal, FEDERAL GENERAL 2026 (11/03/2026) event list.",
+  "override_evidence": {
+   "Kurt Alme": "KURT ALME",
+   "Kyle Austin": "KYLE AUSTIN",
+   "Alani Bankhead": "ALANI BANKHEAD",
+   "Seth Bodnar": "SETH BODNAR"
+  },
+  "source_url": "https://candidatefiling.mt.gov/candidatefiling/CandidateList.aspx?e=450002987",
+  "per_name": [
+   {
+    "name": "Kurt Alme",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Kyle Austin",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Alani Bankhead",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Seth Bodnar",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   }
+  ],
+  "extras_candidates": []
+ },
+ "US2026-002": {
+  "state": "AK",
+  "office": "U.S. Senate",
+  "roster": [
+   "Gerald Heikes",
+   "Mary Peltola",
+   "Dan J. Sullivan",
+   "Dan S. Sullivan"
+  ],
+  "all_accepted": true,
+  "election_marker": true,
+  "block_chars": 71247,
+  "mechanical_all_accepted": true,
+  "mechanical_extras": [
+   "DARDEN, DUSTIN THOMAS HOUSE [REGISTERED REPUBLICAN]",
+   "GRAUBERGER, FRED C. [REGISTERED REPUBLICAN]",
+   "GRAYSON, RICHARD [REGISTERED GREEN]",
+   "HAFNER, CAROL \u201cKITTY\u201d [REGISTERED DEMOCRAT]",
+   "HILL, SIDNEY \u201cSID\u201d [UNDECLARED]",
+   "KOHLHAAS, SCOTT A. [REGISTERED LIBERTARIAN]",
+   "LESLIE, DAVID B. [REGISTERED DEMOCRAT]",
+   "MAYERS, RICHARD B. [REGISTERED REPUBLICAN]",
+   "MCELWAIN, HEATHER [REGISTERED REPUBLICAN]",
+   "ROBERTS, REECE J. [NONPARTISAN]",
+   "SAUCERMAN, SHIRLEY A. [NONPARTISAN]",
+   "SOUTHWORTH, EARL D. \u201cSKIP\u201d [REGISTERED ALASKAN PARTY]"
+  ],
+  "override_reviewer": "hermes-mechanical-row-extraction 2026-10-20",
+  "override_election_context": "AK Division of Elections certified candidate list for the November 3, 2026 general election (Wayback capture 2026-09-01; rows carry CERTIFIED status).",
+  "override_evidence": {
+   "Gerald Heikes": "HEIKES, GERALD L. [REGISTERED REPUBLICAN]",
+   "Mary Peltola": "PELTOLA, MARY [REGISTERED DEMOCRAT]",
+   "Dan J. Sullivan": "SULLIVAN, DAN S. [REGISTERED REPUBLICAN]",
+   "Dan S. Sullivan": "SULLIVAN, DAN S. [REGISTERED REPUBLICAN]"
+  },
+  "per_name": [
+   {
+    "name": "Gerald Heikes",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Mary Peltola",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Dan J. Sullivan",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Dan S. Sullivan",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   }
+  ],
+  "extras_candidates": [
+   "DARDEN, DUSTIN THOMAS HOUSE [REGISTERED REPUBLICAN]",
+   "GRAUBERGER, FRED C. [REGISTERED REPUBLICAN]",
+   "GRAYSON, RICHARD [REGISTERED GREEN]",
+   "HAFNER, CAROL \u201cKITTY\u201d [REGISTERED DEMOCRAT]",
+   "HILL, SIDNEY \u201cSID\u201d [UNDECLARED]",
+   "KOHLHAAS, SCOTT A. [REGISTERED LIBERTARIAN]",
+   "LESLIE, DAVID B. [REGISTERED DEMOCRAT]",
+   "MAYERS, RICHARD B. [REGISTERED REPUBLICAN]",
+   "MCELWAIN, HEATHER [REGISTERED REPUBLICAN]",
+   "ROBERTS, REECE J. [NONPARTISAN]",
+   "SAUCERMAN, SHIRLEY A. [NONPARTISAN]",
+   "SOUTHWORTH, EARL D. \u201cSKIP\u201d [REGISTERED ALASKAN PARTY]"
+  ],
+  "source_url": "https://www.elections.alaska.gov/election-candidates/"
+ },
+ "US2026-037": {
+  "state": "AK",
+  "office": "Governor",
+  "roster": [
+   "Dave Bronson",
+   "Jonathan Kreiss-Tomkins",
+   "Treg Taylor",
+   "Bernadette Wilson"
+  ],
+  "all_accepted": true,
+  "election_marker": true,
+  "block_chars": 71247,
+  "mechanical_all_accepted": true,
+  "mechanical_extras": [
+   "BEGICH, TOM / HNILICKA, JULIA [REGISTERED DEMOCRAT]",
+   "BISHOP, CLICK / SCHUERCH, GRETA [REGISTERED REPUBLICAN / NONPARTISAN]",
+   "CRUM, ADAM / CRAIG, BOB [REGISTERED REPUBLICAN]",
+   "DEVRIES, EDNA / HIGHTOWER, GEORGE B. [REGISTERED REPUBLICAN]",
+   "DEWITT, MEDA / STEERE, CHRISTOPHER [NONPARTISAN]",
+   "GILBERT, MICHAEL LOREN / HICKEL, TIMOTHY DEAN [REGISTERED REPUBLICAN]",
+   "HEILALA, MATT A. / SUMNER, JESSE M. [REGISTERED REPUBLICAN]",
+   "HUGHES, SHELLEY / GETTYS, BLAKE [REGISTERED REPUBLICAN]",
+   "KROLL, HENRY F. \u201cHANK\u201d / NICHOLSON, TOMMY R. III [REGISTERED REPUBLICAN / UNDECLARED]",
+   "MCGUIRE, LESIL / RASMUSSEN, SARA E. [REGISTERED REPUBLICAN]",
+   "PAYNE, DESTRY J. SR. / SILVERS, CLIFF [UNDECLARED]",
+   "WALKER, BILL / HOFFBECK, RANDY [NONPARTISAN]"
+  ],
+  "override_reviewer": "hermes-mechanical-row-extraction 2026-10-20",
+  "override_election_context": "AK Division of Elections certified candidate list for the November 3, 2026 general election (Wayback capture 2026-09-01; rows carry CERTIFIED status).",
+  "override_evidence": {
+   "Dave Bronson": "BRONSON, DAVE / CHURCH, JOSH [REGISTERED REPUBLICAN]",
+   "Jonathan Kreiss-Tomkins": "KREISS-TOMKINS, JONATHAN S. \u201cJKT\u201d / JOHNSON, ZAC [REGISTERED DEMOCRAT / NONPARTISAN]",
+   "Treg Taylor": "TAYLOR, TREG / ENGLISH, CANDI [REGISTERED REPUBLICAN]",
+   "Bernadette Wilson": "WILSON, BERNADETTE M. / SHOWER, MICHAEL K. [REGISTERED REPUBLICAN]"
+  },
+  "per_name": [
+   {
+    "name": "Dave Bronson",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Jonathan Kreiss-Tomkins",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Treg Taylor",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Bernadette Wilson",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   }
+  ],
+  "extras_candidates": [
+   "BEGICH, TOM / HNILICKA, JULIA [REGISTERED DEMOCRAT]",
+   "BISHOP, CLICK / SCHUERCH, GRETA [REGISTERED REPUBLICAN / NONPARTISAN]",
+   "CRUM, ADAM / CRAIG, BOB [REGISTERED REPUBLICAN]",
+   "DEVRIES, EDNA / HIGHTOWER, GEORGE B. [REGISTERED REPUBLICAN]",
+   "DEWITT, MEDA / STEERE, CHRISTOPHER [NONPARTISAN]",
+   "GILBERT, MICHAEL LOREN / HICKEL, TIMOTHY DEAN [REGISTERED REPUBLICAN]",
+   "HEILALA, MATT A. / SUMNER, JESSE M. [REGISTERED REPUBLICAN]",
+   "HUGHES, SHELLEY / GETTYS, BLAKE [REGISTERED REPUBLICAN]",
+   "KROLL, HENRY F. \u201cHANK\u201d / NICHOLSON, TOMMY R. III [REGISTERED REPUBLICAN / UNDECLARED]",
+   "MCGUIRE, LESIL / RASMUSSEN, SARA E. [REGISTERED REPUBLICAN]",
+   "PAYNE, DESTRY J. SR. / SILVERS, CLIFF [UNDECLARED]",
+   "WALKER, BILL / HOFFBECK, RANDY [NONPARTISAN]"
+  ],
+  "source_url": "https://www.elections.alaska.gov/election-candidates/"
  }
 }

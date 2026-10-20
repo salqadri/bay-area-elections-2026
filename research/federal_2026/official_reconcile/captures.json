@@ -46,7 +46,17 @@
     "final_url": "https://www.fec.gov/data/elections/",
     "bytes": 42603
    }
-  ]
+  ],
+  "wave2": {
+   "sha": "121a7589c799adf8",
+   "path": "121a7589c799adf8.html",
+   "source_url": "https://www.elections.alaska.gov/election-candidates/",
+   "final_url": "http://web.archive.org/web/20260901213643/https://www.elections.alaska.gov/election-candidates/",
+   "code": "200",
+   "bytes": 178082,
+   "checked_on": "2026-10-20",
+   "note": "AK Division of Elections certified candidates for Nov 3 2026 general (Wayback 2026-09-01)"
+  }
  },
  "US2026-003": {
   "state": "AR",
@@ -157,7 +167,42 @@
     "final_url": "https://sos.ga.gov/november-3-2026-general-election",
     "bytes": 5699
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://sos.ga.gov/november-3-2026-general-election",
+     "code": "403",
+     "bytes": 5699,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ga.gov/sites/default/files/forms/2026%20Certified%20Write-In%20Candidates_2.pdf",
+     "code": "403",
+     "bytes": 5862,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ga.gov/page/georgia-qualified-candidates",
+     "code": "403",
+     "bytes": 5702,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://www.fultoncountyga.gov/inside-fulton-county/fulton-county-departments/registration-and-elections/candidate-information",
+     "code": "200",
+     "bytes": 250783,
+     "ctype": "text/html; charset=utf-8"
+    }
+   ],
+   "sha": "9fd10305d1919379",
+   "path": "9fd10305d1919379.html",
+   "source_url": "https://www.fultoncountyga.gov/inside-fulton-county/fulton-county-departments/registration-and-elections/candidate-information",
+   "final_url": "https://www.fultoncountyga.gov/inside-fulton-county/fulton-county-departments/registration-and-elections/candidate-information",
+   "code": "200",
+   "bytes": 250783,
+   "checked_on": "2026-10-20"
+  }
  },
  "US2026-008": {
   "state": "ID",
@@ -248,7 +293,30 @@
     "final_url": "https://www.fec.gov/data/elections/",
     "bytes": 42603
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+     "code": "202",
+     "bytes": 0,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ks.gov/elections/candidate-information.html",
+     "code": "200",
+     "bytes": 41847,
+     "ctype": "text/html"
+    }
+   ],
+   "sha": "e35eee5899c41566",
+   "path": "e35eee5899c41566.html",
+   "source_url": "https://sos.ks.gov/elections/candidate-information.html",
+   "final_url": "https://sos.ks.gov/elections/candidate-information.html",
+   "code": "200",
+   "bytes": 41847,
+   "checked_on": "2026-10-20"
+  }
  },
  "US2026-012": {
   "state": "KY",
@@ -316,7 +384,41 @@
  "US2026-015": {
   "state": "MA",
   "office": "U.S. Senate",
-  "attempts": []
+  "attempts": [],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://www.mass.gov/doc/elections-uspspreliminary-injunction/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/2025-annual-report-3/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/committees-recommendation-letter/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/supplemental-documents-pdf-cape-cod-healthcare-inc-don-required-equipment/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/msrb-retiree-enews-bulletin-december-2025/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    }
+   ]
+  }
  },
  "US2026-016": {
   "state": "MI",
@@ -392,7 +494,17 @@
     "final_url": "https://sosmt.gov/elections/results/",
     "bytes": 5613
    }
-  ]
+  ],
+  "wave2": {
+   "sha": "e5376b34bd5a27cb",
+   "path": "e5376b34bd5a27cb.html",
+   "source_url": "https://candidatefiling.mt.gov/candidatefiling/CandidateList.aspx?e=450002987",
+   "final_url": "same",
+   "code": "200",
+   "bytes": 103868,
+   "checked_on": "2026-10-20",
+   "note": "FEDERAL GENERAL 2026 (11/03/2026) candidate list; event id 450002987"
+  }
  },
  "US2026-020": {
   "state": "NE",
@@ -587,7 +699,36 @@
     "final_url": "https://vote.sos.ri.gov/Candidates/CandidateSearchSummary?OfficeType=621&amp;Election=18239",
     "bytes": 5882
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://vote.sos.ri.gov/Candidates/CandidateSearch",
+     "code": "403",
+     "bytes": 5686,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://vote.sos.ri.gov/Candidates/CandidateSearchSummary?OfficeType=621&amp;Election=18239",
+     "code": "403",
+     "bytes": 5882,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://vote.sos.ri.gov/Forms/Elections/Guides/2026ElecCal.pdf",
+     "code": "200",
+     "bytes": 610605,
+     "ctype": "application/pdf"
+    }
+   ],
+   "sha": "84cdc77757a51d81",
+   "path": "84cdc77757a51d81.pdf",
+   "source_url": "https://vote.sos.ri.gov/Forms/Elections/Guides/2026ElecCal.pdf",
+   "final_url": "https://vote.sos.ri.gov/Forms/Elections/Guides/2026ElecCal.pdf",
+   "code": "200",
+   "bytes": 610605,
+   "checked_on": "2026-10-20"
+  }
  },
  "US2026-029": {
   "state": "SC",
@@ -775,7 +916,17 @@
     "final_url": "https://www.elections.alaska.gov/election-candidates/",
     "bytes": 0
    }
-  ]
+  ],
+  "wave2": {
+   "sha": "121a7589c799adf8",
+   "path": "121a7589c799adf8.html",
+   "source_url": "https://www.elections.alaska.gov/election-candidates/",
+   "final_url": "http://web.archive.org/web/20260901213643/https://www.elections.alaska.gov/election-candidates/",
+   "code": "200",
+   "bytes": 178082,
+   "checked_on": "2026-10-20",
+   "note": "AK Division of Elections certified candidates for Nov 3 2026 general (Wayback 2026-09-01)"
+  }
  },
  "US2026-038": {
   "state": "AZ",
@@ -802,7 +953,41 @@
     "final_url": "https://azsos.gov/media/666",
     "bytes": 5565
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://azsos.gov/elections/election-information/2026-election-info",
+     "code": "403",
+     "bytes": 5727,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://azsos.gov/elections/candidates",
+     "code": "403",
+     "bytes": 5598,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://azsos.gov/elections/candidates/candidate-filing",
+     "code": "403",
+     "bytes": 5670,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://azsos.gov/",
+     "code": "403",
+     "bytes": 5516,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://azsos.gov/elections/candidates/running-office",
+     "code": "403",
+     "bytes": 5664,
+     "ctype": "text/html; charset=UTF-8"
+    }
+   ]
+  }
  },
  "US2026-039": {
   "state": "AR",
@@ -906,7 +1091,41 @@
     "final_url": "https://sos.ga.gov/page/georgia-qualified-candidates",
     "bytes": 5680
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://sos.ga.gov/sites/default/files/forms/2026%20Certified%20Write-In%20Candidates_3.pdf",
+     "code": "403",
+     "bytes": 5840,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ga.gov/page/georgia-qualified-candidates",
+     "code": "403",
+     "bytes": 5702,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ga.gov/november-3-2026-general-election",
+     "code": "403",
+     "bytes": 5699,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ga.gov/candidate-qualifying-elected-office",
+     "code": "403",
+     "bytes": 5686,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://mvp.sos.ga.gov/s/qualifying-candidate-information",
+     "code": "403",
+     "bytes": 5816,
+     "ctype": "text/html; charset=UTF-8"
+    }
+   ]
+  }
  },
  "US2026-044": {
   "state": "HI",
@@ -1003,7 +1222,30 @@
     "final_url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
     "bytes": 0
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+     "code": "202",
+     "bytes": 0,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://sos.ks.gov/elections/candidate-information.html",
+     "code": "200",
+     "bytes": 41847,
+     "ctype": "text/html"
+    }
+   ],
+   "sha": "e35eee5899c41566",
+   "path": "e35eee5899c41566.html",
+   "source_url": "https://sos.ks.gov/elections/candidate-information.html",
+   "final_url": "https://sos.ks.gov/elections/candidate-information.html",
+   "code": "200",
+   "bytes": 41847,
+   "checked_on": "2026-10-20"
+  }
  },
  "US2026-049": {
   "state": "ME",
@@ -1050,7 +1292,41 @@
  "US2026-051": {
   "state": "MA",
   "office": "governor",
-  "attempts": []
+  "attempts": [],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://www.mass.gov/sec",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/info-details/ballot-initiatives-submitted-for-the-2026-biennial-statewide-election-proposed-laws-and-2028-biennial-statewide-election-proposed-constitutional-amendments",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/initial-brief-oakham-battery-project-moraga-storage-llc-04-13-2026/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/2025-annual-report-3/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.mass.gov/doc/2025-year-in-review/download",
+     "code": "403",
+     "bytes": 14062,
+     "ctype": "text/html"
+    }
+   ]
+  }
  },
  "US2026-052": {
   "state": "MI",
@@ -1133,7 +1409,41 @@
     "final_url": "https://www.nvsos.gov/elections/election-information/2026-election-information/2026-candidate-public-media-information",
     "bytes": 212
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://www.nvsos.gov/elections/election-information/2026-election-information",
+     "code": "200",
+     "bytes": 212,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.nvsos.gov/elections/election-information/2026-election-information/2026-candidate-public-media-information",
+     "code": "200",
+     "bytes": 212,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.nvsos.gov/SOSelectionPages/results/2026StateWidePrimary/Mineral.aspx",
+     "code": "200",
+     "bytes": 212,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.nvsos.gov/SOSCandidateServices/AnonymousAccess/CEFDSearchUU/CertCandList.aspx",
+     "code": "200",
+     "bytes": 212,
+     "ctype": "text/html"
+    },
+    {
+     "url": "https://www.nvsos.gov/SOSelectionPages/results/2026StateWidePrimary/Nye.aspx",
+     "code": "200",
+     "bytes": 212,
+     "ctype": "text/html"
+    }
+   ]
+  }
  },
  "US2026-056": {
   "state": "NH",
@@ -1314,7 +1624,36 @@
     "final_url": "https://vote.sos.ri.gov/Candidates/CandidateSearchSummary?Election=18144",
     "bytes": 5789
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://vote.sos.ri.gov/Candidates/CandidateSearchSummary?OfficeType=549&amp;Election=18239",
+     "code": "403",
+     "bytes": 5882,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://vote.sos.ri.gov/Candidates/CandidateSearch",
+     "code": "403",
+     "bytes": 5686,
+     "ctype": "text/html; charset=UTF-8"
+    },
+    {
+     "url": "https://vote.sos.ri.gov/Forms/Elections/Guides/2026ElecCal.pdf",
+     "code": "200",
+     "bytes": 610605,
+     "ctype": "application/pdf"
+    }
+   ],
+   "sha": "84cdc77757a51d81",
+   "path": "84cdc77757a51d81.pdf",
+   "source_url": "https://vote.sos.ri.gov/Forms/Elections/Guides/2026ElecCal.pdf",
+   "final_url": "https://vote.sos.ri.gov/Forms/Elections/Guides/2026ElecCal.pdf",
+   "code": "200",
+   "bytes": 610605,
+   "checked_on": "2026-10-20"
+  }
  },
  "US2026-064": {
   "state": "SC",
@@ -1432,7 +1771,24 @@
     "final_url": "https://elections.wi.gov/candidates/local-candidates",
     "bytes": 5690
    }
-  ]
+  ],
+  "wave2": {
+   "tried": [
+    {
+     "url": "https://docs.legis.wisconsin.gov/document/statutes/5.05(5s)(bm)",
+     "code": "200",
+     "bytes": 109739,
+     "ctype": "text/html; charset=utf-8"
+    }
+   ],
+   "sha": "2aafd0d05b61f3ca",
+   "path": "2aafd0d05b61f3ca.html",
+   "source_url": "https://docs.legis.wisconsin.gov/document/statutes/5.05(5s)(bm)",
+   "final_url": "https://docs.legis.wisconsin.gov/statutes/statutes/5/i/05/5s/bm",
+   "code": "200",
+   "bytes": 109739,
+   "checked_on": "2026-10-20"
+  }
  },
  "US2026-070": {
   "state": "WY",
