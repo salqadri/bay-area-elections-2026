@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-20.7"
+  "publication_version": "2026-10-20.8"
  },
  "codes": {
   "party": {
@@ -92,17 +92,17 @@
  },
  "coverage": {
   "status": "research_inventory_with_explicit_unresolved_records",
-  "confirmed_contests": 368,
-  "confirmed_seats": 471,
-  "unresolved_scheduled_contests": 42,
-  "printed_candidate_entries": 955,
+  "confirmed_contests": 370,
+  "confirmed_seats": 473,
+  "unresolved_scheduled_contests": 40,
+  "printed_candidate_entries": 959,
   "confirmed_contests_missing_candidate_rosters": 11,
   "positions_with_ocd_division_id": 258,
   "positions_with_ballotpedia_url": 320,
-  "printed_candidates_with_ballotpedia_url": 662,
-  "printed_candidates_with_x_url": 184,
+  "printed_candidates_with_ballotpedia_url": 664,
+  "printed_candidates_with_x_url": 188,
   "printed_candidates_with_secondary_x_url": 10,
-  "printed_candidates_with_campaign_url": 426,
+  "printed_candidates_with_campaign_url": 429,
   "limitations": [
    "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
    "This is not yet a certified exhaustive ballot dataset: unverified local OCD identifiers remain, and excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted.",
@@ -118,9 +118,9 @@
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
-  "printed_candidates_with_gaza_evidence": 118,
-  "printed_candidates_with_endorsements": 407,
-  "printed_candidates_with_independent_expenditures": 25,
+  "printed_candidates_with_gaza_evidence": 122,
+  "printed_candidates_with_endorsements": 409,
+  "printed_candidates_with_independent_expenditures": 26,
   "printed_candidates_with_gaza_voting_records": 11,
   "printed_candidates_with_uscpr_grade": 9,
   "printed_candidates_with_gaza_platform": 221,
@@ -31786,13 +31786,12 @@
    "seats": 1,
    "term": "6 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:al",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Barry Moore",
      "party": "R",
@@ -32002,10 +32001,11 @@
     }
    ],
    "source_ids": [
-    "S1099"
+    "S1099",
+    "S1244"
    ],
    "note_ids": [
-    "N903",
+    "N1329",
     "N904",
     "N910"
    ]
@@ -82292,13 +82292,12 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:al",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Doug Jones",
      "party": "D",
@@ -82436,10 +82435,11 @@
     }
    ],
    "source_ids": [
-    "S1100"
+    "S1100",
+    "S1245"
    ],
    "note_ids": [
-    "N903",
+    "N1330",
     "N910"
    ]
   },
@@ -347627,7 +347627,9 @@
   "N1325": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official TN source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1326": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official TN source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1327": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official ME source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
-  "N1328": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official ME source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
+  "N1328": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official ME source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1329": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official AL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1330": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official AL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
  },
  "sources": {
   "S001": {
@@ -352098,6 +352100,14 @@
   "S1243": {
    "url": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
    "title": "Official ME candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1244": {
+   "url": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+   "title": "Official AL candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1245": {
+   "url": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+   "title": "Official AL candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
   }
  },
  "ie_finance": {
