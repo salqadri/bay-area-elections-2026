@@ -2331,5 +2331,42 @@
   ],
   "extras_candidates": [],
   "source_url": "https://sos.vermont.gov/elections/election-info-resources/candidates"
+ },
+ "US2026-013": {
+  "state": "LA",
+  "office": "U.S. Senate",
+  "roster": [
+   "Jamie Davis",
+   "Julia Letlow"
+  ],
+  "all_accepted": true,
+  "election_marker": true,
+  "block_chars": 500,
+  "mechanical_all_accepted": true,
+  "mechanical_extras": [],
+  "override_reviewer": "hermes-mechanical-row-extraction 2026-10-20",
+  "override_election_context": "LA Secretary of State Voter Portal Candidate Inquiry for the November 3, 2026 general election; U.S. Senator contest lists exactly two certified candidates.",
+  "override_evidence": {
+   "Jamie Davis": "\"Jamie\" Davis \u2014 Democrat, filed 02/11/2026",
+   "Julia Letlow": "Julia Letlow \u2014 Republican, filed 02/13/2026"
+  },
+  "per_name": [
+   {
+    "name": "Jamie Davis",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   },
+   {
+    "name": "Julia Letlow",
+    "jev": {
+     "choice": "candidate_row",
+     "probability": 1.0
+    }
+   }
+  ],
+  "extras_candidates": [],
+  "source_url": "https://voterportal.sos.la.gov/CandidateInquiry/"
  }
 }
