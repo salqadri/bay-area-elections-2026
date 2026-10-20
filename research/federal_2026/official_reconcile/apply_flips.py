@@ -47,11 +47,18 @@ def main():
         p = pos[pid]
         if p['ballot_status'] == 'confirmed':
             skipped.append((pid, 'already confirmed')); continue
-        if not (r.get('all_accepted') and r.get('election_marker') and r.get('block_chars', 0) > 200):
+        mechanical = bool(r.get('mechanical_all_accepted'))
+        if not (((r.get('all_accepted') or mechanical) and r.get('election_marker')
+                 and r.get('block_chars', 0) > 200)):
             skipped.append((pid, f"not accepted (all={r.get('all_accepted')} marker={r.get('election_marker')})"))
             continue
-        # extras are only a completeness problem when they look ACTIVE
-        active_extras = [e for e in r.get('extras_candidates', []) if not WITHDRAWN.search(e)]
+        # extras are only a completeness problem when they look ACTIVE.
+        # A mechanical row-extraction override may assert verified extras=[]
+        # (exact office-row match) when the party-adjacency scan is noise-heavy.
+        if 'mechanical_extras' in r:
+            active_extras = [e for e in r['mechanical_extras'] if not WITHDRAWN.search(e)]
+        else:
+            active_extras = [e for e in r.get('extras_candidates', []) if not WITHDRAWN.search(e)]
         roster = p['filed_candidates_not_confirmed_on_ballot'] or []
         by_name = {c['name']: c for c in roster}
         ordered = [by_name[n] for n in r['roster'] if n in by_name]
@@ -62,14 +69,17 @@ def main():
         tier = 'FULL' if not active_extras else 'BALLOT'
         nkey = f'N{next_n:04d}'; next_n += 1
         if tier == 'FULL':
+            wi = r.get('mechanical_write_ins') or []
             notes[nkey] = (f"Ballot appearance and complete candidate roster verified {CHECKED_ON} against the "
                            f"cited official {r['state']} source; each published candidacy was confirmed as a "
                            f"candidate row for this race. Filed-but-not-certified names, if any, would remain "
-                           f"recorded separately.")
+                           f"recorded separately." + (f" The official list also identifies qualified write-in "
+                           f"candidates ({', '.join(wi)}); they are not printed ballot candidates." if wi else ""))
             p['ballot_status'] = 'confirmed'
             p['candidate_list_status'] = 'complete'
             p['candidates'] = ordered
-            p['filed_candidates_not_confirmed_on_ballot'] = []
+            # schema minItems=1: omit rather than store an empty array
+            p.pop('filed_candidates_not_confirmed_on_ballot', None)
         else:
             notes[nkey] = (f"Ballot appearance verified {CHECKED_ON} against the cited official {r['state']} "
                            f"source, which lists every published candidacy for this race. The official list also "

@@ -80,8 +80,13 @@ def adjudicate(pid):
     best = max(wins, key=score) if wins else ''
     election_ok = bool(re.search(r'NOVEMBER\s*3?,?\s*(?:2026)?|11/3/2026|GENERAL ELECTION', text.upper()))
     per_name = []
+    norm_page = re.sub(r'\s+', ' ', text.upper())
     for name in roster:
         ex = excerpt_for(best, name) if best else ''
+        # Office-block windows can miss rows that precede the heading occurrence
+        # (wide tables). Fall back to a page-centered window; Jev judges context.
+        if not ex:
+            ex = excerpt_for(norm_page, name)
         per_name.append({'name': name, 'excerpt': re.sub(r'\s+', ' ', ex)[:400]})
     # Jev batch: one choice question per candidate row check (calibrated shape:
     # questions dict, criteria in each question's instructions/criteria fields)
