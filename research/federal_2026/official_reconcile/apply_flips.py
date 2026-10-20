@@ -46,7 +46,10 @@ def main():
     for pid, r in sorted(adj.items()):
         p = pos[pid]
         if p['ballot_status'] == 'confirmed':
-            skipped.append((pid, 'already confirmed')); continue
+            # Upgrade path: a later FULL adjudication (e.g. Ballotpedia+Jev pass)
+            # can complete a roster that an earlier BALLOT-tier flip left provisional.
+            if p.get('candidate_list_status') == 'complete' or not r.get('mechanical_all_accepted'):
+                skipped.append((pid, 'already confirmed')); continue
         mechanical = bool(r.get('mechanical_all_accepted'))
         # A documented election-context note (e.g. certified list dated after the
         # nomination deadline) satisfies the general-election-marker requirement.
@@ -94,7 +97,8 @@ def main():
                            f"shows additional active candidates not in the compiled roster ({len(active_extras)} "
                            f"name(s)), so the printed roster remains unverified and filings stay provisional.")
             p['ballot_status'] = 'confirmed'
-        nids = [n for n in (p.get('note_ids') or []) if n != 'N903'] + [nkey]
+        nids = [n for n in (p.get('note_ids') or []) if n != 'N903'
+                and 'printed roster remains unverified' not in str(notes.get(n, ''))] + [nkey]
         p['note_ids'] = sorted(set(nids))
         if skey not in p['source_ids']:
             p['source_ids'].append(skey)

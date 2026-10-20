@@ -51,7 +51,8 @@ def textify(fn):
 ALIAS = {('tim', 'long'): ('timothy', 'long'), ('cd', 'reynolds'): ('christopher', 'reynolds'),
          ('josh', 'green'): ('joshua', 'green'), ('ed', 'markey'): ('edward', 'markey'),
          ('angie', 'nixon'): ('angela', 'nixon'), ('mike', 'minogue'): ('michael', 'minogue'),
-         ('joe', 'tache'): ('joseph', 'tache')}
+         ('joe', 'tache'): ('joseph', 'tache'), ('dave', 'bronson'): ('david', 'bronson'),
+         ('william', 'redpath'): ('bill', 'redpath'), ('greg', 'levy'): ('gregory', 'levy')}
 
 def norm(n):
     n = n.lower().replace('\u201c', '"').replace('\u201d', '"')
@@ -74,7 +75,8 @@ def general_block(t):
     return None, None
 
 def parse_entries(block):
-    """[(name, party, write_in, is_ticket_lead)] — lead = not preceded by '/ '."""
+    """[(name, party, write_in, is_ticket_lead)] — lead = not preceded by '/ '.
+    A '(Write-in)' at the END of a ticket marks the whole ticket write-in."""
     cut = re.search(r'[Ww]ithdrawn or disqualified', block)
     active = block[:cut.start()] if cut else block
     ents = []
@@ -82,7 +84,17 @@ def parse_entries(block):
         lead = not active[max(0, em.start() - 3):em.start()].endswith('/ ')
         name = re.sub(r'^submit photo\s+', '', em.group(1).strip())
         if re.search(r'defeated|won|\d{3},', name): continue
-        ents.append((name, em.group(2), bool(em.group(3)), lead))
+        # ticket-level write-in: scan forward to the next non-ticket entry for a trailing (Write-in)
+        wi = bool(em.group(3))
+        if not wi and lead:
+            nxt = active.find(' Submit photo ', em.end())
+            seg_end = len(active)
+            for m2 in re.finditer(r'[A-Z][^()/]{2,60}? \([^()]{1,45}\)( \(Write-in\))?', active[em.end():]):
+                if not active[em.end() + m2.start() - 3:em.end() + m2.start()].endswith('/ '):
+                    seg_end = em.end() + m2.start(); break
+            wi = '(Write-in)' in active[em.end():min(seg_end, nxt if nxt > 0 else seg_end) + 12] or \
+                 '(Write-in)' in active[em.end():seg_end] and '/ ' in active[em.end():seg_end]
+        ents.append((name, em.group(2), wi, lead))
     return ents
 
 def excerpt_for(block, bpname, width=420):
