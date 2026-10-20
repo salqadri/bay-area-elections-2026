@@ -48,7 +48,10 @@ def main():
         if p['ballot_status'] == 'confirmed':
             skipped.append((pid, 'already confirmed')); continue
         mechanical = bool(r.get('mechanical_all_accepted'))
-        if not (((r.get('all_accepted') or mechanical) and r.get('election_marker')
+        # A documented election-context note (e.g. certified list dated after the
+        # nomination deadline) satisfies the general-election-marker requirement.
+        marker_ok = r.get('election_marker') or (mechanical and r.get('override_election_context'))
+        if not (((r.get('all_accepted') or mechanical) and marker_ok
                  and r.get('block_chars', 0) > 200)):
             skipped.append((pid, f"not accepted (all={r.get('all_accepted')} marker={r.get('election_marker')})"))
             continue
