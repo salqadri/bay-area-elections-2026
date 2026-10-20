@@ -2,8 +2,8 @@
 
 Deterministic maintenance pass for the two FEC-derived layers:
 
- 1. Independent expenditures — refetch Schedule E rows for every printed federal
-    candidate (``fec_independent_expenditures.py run --force``), re-aggregate and
+ 1. Independent expenditures — refetch official Schedule E candidate aggregates for every FEC-linked
+    printed or provisional federal candidate (``fec_independent_expenditures.py run --force``), re-aggregate and
     attach with a fresh ``checked_on`` date.
  2. Campaign receipts — read each candidate's aggregate cycle totals.
     Update ``receipts``/``through`` only when the reported
@@ -38,6 +38,8 @@ import urllib.request
 from datetime import date, datetime, timezone
 from decimal import Decimal
 from pathlib import Path
+
+from fec_independent_expenditures import checked_date, now_utc
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / "2026-11-03_Bay_Area_Elections.json"
@@ -150,7 +152,7 @@ def update_receipts(fec, totals, checked_on, committee_ids=None):
 
 
 def next_version(current):
-    today = date.today().isoformat()
+    today = checked_date(now_utc())
     if current and current.startswith(today + "."):
         return f"{today}.{int(current.rsplit('.', 1)[1]) + 1}"
     return today + ".1"
@@ -166,7 +168,7 @@ def main():
     parser.add_argument('--github-token-file', default='/root/.cfg/gh_token')
     args = parser.parse_args()
 
-    if date.today() > date(2026, 11, 4) and not args.force_window:
+    if date.fromisoformat(checked_date(now_utc())) > date(2026, 11, 4) and not args.force_window:
         print("Refresh window closed after the November 3 election; no-op. "
               "Remove or pause this scheduled job.")
         return
@@ -177,7 +179,7 @@ def main():
         if sh('git', 'status', '--porcelain').stdout.strip():
             raise SystemExit('Automated publication requires a clean checkout; review existing changes first.')
     key = read_secret(('FEC_API_KEY',), args.fec_key_file, required=True)
-    today = date.today().isoformat()
+    today = checked_date(now_utc())
     report = {"date": today}
 
     # 1) Independent expenditures: refetch everything, re-aggregate, attach.
@@ -234,7 +236,7 @@ def main():
     sh("git", "add", DATASET.name, "index.html", "ballot.html")
     message = (f"FEC money refresh {today}: receipts + independent expenditures\n\n"
                f"Receipts updated: {len(updated)}; skipped with reason: {len(skipped)}.\n"
-               f"IE layer refetched for all printed federal candidates. "
+               f"IE layer refetched for all FEC-linked federal candidates. "
                f"Publication {version}. Full offline release gate green before push.")
     commit = sh("git", "commit", "-m", message, check=False)
     if "nothing to commit" in commit.stdout + commit.stderr:

@@ -1,0 +1,140 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": {
+   "problem": "Published UDP against Abdul El-Sayed = 40564674.03. Live unfiltered Schedule E reproduction gives regular reports 20140908.74 + notices 20423765.29 = exact published total. Official by_candidate endpoint returns 20140908.74 for UDP, count 25.",
+   "primary_evidence": {
+    "fec_api_docs": "Aggregates by candidate do not include 24 and 48 hour reports. This ensures we do not double count expenditures and totals are more accurate. Memoed items are not included.",
+    "fec_web_code": "candidate-single.js loads schedules/schedule_e/by_candidate with candidate_id, cycle, election_full. other-spending-tab says quarterly/monthly/semiannual, not 24/48-hour reports.",
+    "fec_aggregate_sql": "groups by committee, candidate, election_cycle and direction; excludes memo_cd X; includes Form 5 records.",
+    "old_collector": "Fetches all raw rows, most_recent only, P/G/R2026 only, drops memo X only if ANY nonmemo row shares link_id. Does not retain is_notice in cache."
+   },
+   "constraints": "User asks systematic fix for all candidates, efficient refresh, PR review. Amounts must be deterministic primary-source data. Existing schema supports optional count and date fields; aggregate endpoint supplies count but not expenditure dates or committee type. Preserve known committee type from registry; omit unavailable dates. Keep campaign receipts unchanged. All 136 federal IDs should be refreshed and before/after impact audited."
+  },
+  "questions": {
+   "cause": {
+    "type": "choice",
+    "instructions": "Which diagnosis is supported for the exact UDP discrepancy?",
+    "criteria": {
+     "double_count": "Our collector combines overlapping notices and regular reports; published total is invalid as unique spending",
+     "fec_wrong": "FEC candidate total is wrong",
+     "unclear": "Evidence is insufficient"
+    }
+   },
+   "method": {
+    "type": "choice",
+    "instructions": "Select the most reliable systematic source for comparable FEC candidate-page cycle totals.",
+    "criteria": {
+     "official_aggregates": "Use FEC by_candidate endpoint with explicit cycle/election_full=false; preserve support/oppose and validate pagination",
+     "manual_filter": "Keep custom raw-row aggregation and add notice/memo filters",
+     "divide_two": "Divide existing totals by two",
+     "hold": "Insufficient evidence to implement"
+    }
+   },
+   "migration": {
+    "type": "choice",
+    "instructions": "How should legacy cache be treated after changing source?",
+    "criteria": {
+     "separate_versioned": "Separate cycle/version-tagged aggregate cache; old raw cache never qualifies; require complete refreshed coverage before attach",
+     "reuse": "Reuse existing recent raw cache automatically",
+     "delete": "Delete all legacy research immediately"
+    }
+   },
+   "scope": {
+    "type": "choice",
+    "instructions": "What repair scope is warranted?",
+    "criteria": {
+     "all_federal": "Refresh and compare every FEC-linked printed/provisional federal candidate using common pipeline",
+     "el_sayed_only": "Only fix UDP/El-Sayed",
+     "all_receipts": "Also change campaign receipts without a demonstrated receipts issue"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "cause": {
+    "type": "choice",
+    "choice": "double_count",
+    "confidence": 0.11,
+    "probabilities": {
+     "double_count": 0.41,
+     "fec_wrong": 0.21,
+     "unclear": 0.38
+    }
+   },
+   "method": {
+    "type": "choice",
+    "choice": "official_aggregates",
+    "confidence": 0.71,
+    "probabilities": {
+     "official_aggregates": 0.78,
+     "manual_filter": 0.21,
+     "divide_two": 0.0,
+     "hold": 0.01
+    }
+   },
+   "migration": {
+    "type": "choice",
+    "choice": "separate_versioned",
+    "confidence": 0.98,
+    "probabilities": {
+     "separate_versioned": 0.99,
+     "reuse": 0.0,
+     "delete": 0.01
+    }
+   },
+   "scope": {
+    "type": "choice",
+    "choice": "all_federal",
+    "confidence": 1.0,
+    "probabilities": {
+     "all_federal": 1.0,
+     "el_sayed_only": 0.0,
+     "all_receipts": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1047,
+   "output_tokens": 185
+  }
+ },
+ "followup": {
+  "request": {
+   "model": "jev-1.13.0",
+   "state": "Audit of an arithmetic/data-ingestion bug, not a political assessment. Classify only the exact source facts in the question.",
+   "questions": {
+    "overlap": {
+     "type": "choice",
+     "instructions": "The published total is 40,564,674.03. FEC raw rows contain 25 regular-report UDP transactions totaling 20,140,908.74, plus 24 primary-election notice transactions totaling 20,139,904.21 and 3 general-election notices totaling 283,861.08. Every one of the 24 primary notices has the identical transaction ID AND dollar amount as a regular-report row. All 52 rows have most_recent=true. The old collector sums all 52 rows. Does the published total count the 24 matching expenditures twice?",
+     "criteria": {
+      "yes": "The collector counts all 24 matching notice/regular transactions twice",
+      "no": "There is no duplicated spending in this sum",
+      "uncertain": "These facts do not establish whether there is duplication"
+     }
+    }
+   }
+  },
+  "response": {
+   "model": "jev-1.13.0",
+   "answers": {
+    "overlap": {
+     "type": "choice",
+     "choice": "yes",
+     "confidence": 0.86,
+     "probabilities": {
+      "yes": 0.91,
+      "no": 0.04,
+      "uncertain": 0.05
+     }
+    }
+   },
+   "usage": {
+    "input_tokens": 513,
+    "output_tokens": 41
+   }
+  }
+ }
+}
