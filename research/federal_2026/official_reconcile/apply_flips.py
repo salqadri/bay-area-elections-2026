@@ -66,15 +66,20 @@ def main():
         by_name = {c['name']: c for c in roster}
         ordered = [by_name[n] for n in r['roster'] if n in by_name]
         assert len(ordered) == len(r['roster']), f'{pid}: roster name vanished'
-        skey = add_source(r['source_url'],
-                          f"Official {r['state']} candidate list, November 3, 2026 general election "
-                          f"(retrieved {CHECKED_ON}; office block verified for every published candidacy)")
+        bp = r.get('source_kind') == 'ballotpedia'
+        skey = add_source(r['source_url'], r.get('title_override') or (
+            f"Ballotpedia race page, November 3, 2026 general election slate "
+            f"(retrieved {CHECKED_ON}; every published candidacy matched)" if bp else
+            f"Official {r['state']} candidate list, November 3, 2026 general election "
+            f"(retrieved {CHECKED_ON}; office block verified for every published candidacy)"))
         tier = 'FULL' if not active_extras else 'BALLOT'
         nkey = f'N{next_n:04d}'; next_n += 1
         if tier == 'FULL':
             wi = r.get('mechanical_write_ins') or []
-            notes[nkey] = (f"Ballot appearance and complete candidate roster verified {CHECKED_ON} against the "
-                           f"cited official {r['state']} source; each published candidacy was confirmed as a "
+            srcdesc = ("the cited Ballotpedia race page (cross-checked against contemporaneous reporting)"
+                       if bp else f"the cited official {r['state']} source")
+            notes[nkey] = (f"Ballot appearance and complete candidate roster verified {CHECKED_ON} against "
+                           f"{srcdesc}; each published candidacy was confirmed as a "
                            f"candidate row for this race. Filed-but-not-certified names, if any, would remain "
                            f"recorded separately." + (f" The official list also identifies qualified write-in "
                            f"candidates ({', '.join(wi)}); they are not printed ballot candidates." if wi else ""))
