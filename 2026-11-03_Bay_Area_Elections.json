@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-20.9"
+  "publication_version": "2026-10-20.10"
  },
  "codes": {
   "party": {
@@ -92,17 +92,17 @@
  },
  "coverage": {
   "status": "research_inventory_with_explicit_unresolved_records",
-  "confirmed_contests": 371,
-  "confirmed_seats": 474,
-  "unresolved_scheduled_contests": 39,
-  "printed_candidate_entries": 963,
+  "confirmed_contests": 372,
+  "confirmed_seats": 475,
+  "unresolved_scheduled_contests": 38,
+  "printed_candidate_entries": 966,
   "confirmed_contests_missing_candidate_rosters": 11,
   "positions_with_ocd_division_id": 258,
   "positions_with_ballotpedia_url": 320,
   "printed_candidates_with_ballotpedia_url": 668,
-  "printed_candidates_with_x_url": 192,
+  "printed_candidates_with_x_url": 193,
   "printed_candidates_with_secondary_x_url": 10,
-  "printed_candidates_with_campaign_url": 433,
+  "printed_candidates_with_campaign_url": 434,
   "limitations": [
    "Unresolved scheduled contests are not assertions that those contests appear on the final ballot. Filter ballot_status to confirmed for confirmed contests.",
    "This is not yet a certified exhaustive ballot dataset: unverified local OCD identifiers remain, and excluded contests record final ballot status only — how each excluded seat was filled (holdover or appointment in lieu) is not asserted.",
@@ -124,7 +124,7 @@
   "printed_candidates_with_gaza_voting_records": 11,
   "printed_candidates_with_uscpr_grade": 9,
   "printed_candidates_with_gaza_platform": 221,
-  "printed_candidates_with_platform_positions": 350,
+  "printed_candidates_with_platform_positions": 351,
   "printed_candidates_with_endorsement_images": 91
  },
  "address_lookup": {
@@ -105379,13 +105379,12 @@
    "seats": 1,
    "term": "4 years",
    "election_type": "general",
-   "ballot_status": "unverified",
+   "ballot_status": "confirmed",
    "partisan": true,
    "ocd_division_id": "ocd-division/country:us/state:wy",
    "ocd_id_status": "convention",
-   "candidate_list_status": "unverified",
-   "candidates": null,
-   "filed_candidates_not_confirmed_on_ballot": [
+   "candidate_list_status": "complete",
+   "candidates": [
     {
      "name": "Eric Barlow",
      "party": "R",
@@ -105516,20 +105515,20 @@
      ]
     },
     {
-     "name": "Joseph Kibler",
+     "name": "Rebecca Bextel",
      "party": "C",
      "source_ids": [
-      "S1100",
-      "S1101"
-     ],
-     "x_url": "https://x.com/joseph4wy"
+      "S1223",
+      "S1247"
+     ]
     }
    ],
    "source_ids": [
-    "S1100"
+    "S1100",
+    "S1247"
    ],
    "note_ids": [
-    "N903",
+    "N1332",
     "N910"
    ]
   },
@@ -347630,7 +347629,8 @@
   "N1328": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official ME source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1329": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official AL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
   "N1330": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official AL source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
-  "N1331": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NC source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
+  "N1331": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official NC source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately.",
+  "N1332": "Ballot appearance and complete candidate roster verified 2026-10-20 against the cited official WY source; each published candidacy was confirmed as a candidate row for this race. Filed-but-not-certified names, if any, would remain recorded separately."
  },
  "sources": {
   "S001": {
@@ -352113,6 +352113,10 @@
   "S1246": {
    "url": "https://www.ncsbe.gov/results-data/candidate-lists",
    "title": "Official NC candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
+  },
+  "S1247": {
+   "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_WY_General_Election_Candidates.pdf",
+   "title": "Official WY candidate list, November 3, 2026 general election (retrieved 2026-10-20; office block verified for every published candidacy)"
   }
  },
  "ie_finance": {
