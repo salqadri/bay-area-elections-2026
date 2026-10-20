@@ -1,8 +1,8 @@
 # Research and development handoff
 
-## Proposed correction — October 20, 2026: FEC independent-expenditure totals
+## Published update — October 20, 2026: FEC independent-expenditure totals (2026-10-20.1)
 
-Publication `2026-10-20.1`, schema unchanged (1.22), prepared for PR review. The shared collector previously added overlapping 24-/48-hour notices and regularly scheduled reports; `most_recent` resolves amendments within a report, not overlap between report streams. It also used a filing-wide memo heuristic instead of FEC's memo exclusion. UDP against Abdul El-Sayed reproduces exactly: $20,140,908.74 regular + $20,423,765.29 notices = $40,564,674.03 published. Correct UDP total: $20,140,908.74.
+Merged as PR #10 (Codex). Publication `2026-10-20.1`, schema unchanged (1.22). The shared collector previously added overlapping 24-/48-hour notices and regularly scheduled reports; `most_recent` resolves amendments within a report, not overlap between report streams. It also used a filing-wide memo heuristic instead of FEC's memo exclusion. UDP against Abdul El-Sayed reproduces exactly: $20,140,908.74 regular + $20,423,765.29 notices = $40,564,674.03 published. Correct UDP total: $20,140,908.74 — independently re-verified against the live by-candidate API during Hermes review (El-Sayed card: $2,422,492.19 for / $20,829,487.24 against).
 
 The collector now uses the same official by-candidate aggregates as FEC.gov with an explicit two-year cycle. All **136** FEC-linked candidacies were refreshed October 20; **69** have changed amounts (12 printed House, 57 provisional Senate). Current totals and per-spender deltas are in the [review and reproducible audit](reviews/2026-10-20-fec-ie-reconciliation.md). These are regular-report totals: recent notice-only spending remains outside them. Do not call the full snapshot reduction duplicate dollars or unique national spending. Receipts, ballot records and political evidence are unchanged. Earlier finance methods/counts below are historical and superseded.
 
