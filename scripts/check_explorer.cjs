@@ -62,9 +62,14 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   assert.equal(count(),original.positions.length,'Unfiltered default shows every researched contest, nationwide included');assert(text('notice-text').includes(original.coverage.unresolved_scheduled_contests+' unresolved'));assert(text('result-meta').includes(original.coverage.printed_candidate_entries+' printed'));
   assert(text('hero-subtitle').includes('Contra Costa'));assert(text('hero-subtitle').includes('San Francisco, San Mateo, and Santa Clara'));
   assert.deepEqual(groups().filter(n=>!n.dataset.sectionKey.includes('/')).map(n=>n.dataset.sectionKey),original.display_order.levels);
-  const federalDistricts=cardPositions().filter(p=>p.government_level==='Federal').map(p=>p.district_or_seat);
-  assert.deepEqual(federalDistricts.filter(d=>d.startsWith('CD-')),['CD-8','CD-9','CD-10','CD-11','CD-12','CD-14','CD-15','CD-16','CD-17','CD-18','CD-19']);
-  assert(federalDistricts.filter(d=>d.includes('Statewide')).length>=33,'Unfiltered view must include the nationwide Senate statewide seats');
+  assert.deepEqual(groups().filter(n=>n.dataset.sectionKey.startsWith('Federal/')).map(n=>n.dataset.sectionKey),['Federal/U.S. Senate','Federal/U.S. House'],'The Federal section groups Senate first, then House');
+  const federalPositions=cardPositions().filter(p=>p.government_level==='Federal');
+  assert.deepEqual([...new Set(federalPositions.map(p=>p.office_category))],['U.S. Senate','U.S. House'],'Every printed federal contest follows the Senate-then-House order');
+  const caHouse=federalPositions.filter(p=>p.office_category==='U.S. House'&&(p.jurisdiction_ocd_division_id||'').includes('state:ca')).map(p=>p.district_or_seat);
+  assert.deepEqual(caHouse.filter(d=>['CD-8','CD-9','CD-10','CD-11','CD-12','CD-14','CD-15','CD-16','CD-17','CD-18','CD-19'].includes(d)),['CD-8','CD-9','CD-10','CD-11','CD-12','CD-14','CD-15','CD-16','CD-17','CD-18','CD-19'],'California districts keep numeric order inside the House block');
+  const houseDistricts=federalPositions.filter(p=>p.office_category==='U.S. House').map(p=>p.district_or_seat);
+  assert(houseDistricts.length>=60,'The nationwide in-play House races appear in the House block');
+  assert(federalPositions.filter(p=>p.office_category==='U.S. Senate'&&p.district_or_seat.includes('Statewide')).length>=35,'Unfiltered view must include the nationwide Senate statewide seats');
   set('level','State');const statePositions=cardPositions();assert.equal(statePositions[0].office_category,'State Senate');
   assert.equal(statePositions[1].district_or_seat,'AD-11');
   const lastAssembly=statePositions.map(p=>p.office_category).lastIndexOf('State Assembly');
@@ -113,7 +118,7 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   reset();set('county','Alameda');const expectedAlameda=original.positions.filter(p=>p.counties.includes('Alameda')).length;assert.equal(count(),expectedAlameda);
   reset();set('county','Contra Costa');set('search','East Bay Regional Park District Ward 7');assert.equal(count(),1);assert(text('detail-status').includes('Confirmed on ballot'));assert(text('panel-candidates').includes('Colin J. Coffey'));assert(text('panel-candidates').includes('Sekhon'));assert(cards()[0].textContent.includes('2 candidates'));assert(text('panel-candidates').includes('Mushda Faiez'));assert(text('panel-candidates').includes('Provisional filing names'));
   reset();set('county','Contra Costa');set('search','AD-11');assert.equal(count(),1);assert(text('panel-candidates').includes('No Party Preference'));
-  reset();set('party','NPP');assert.equal(count(),2);
+  reset();set('party','NPP');{const nppExpected=original.positions.filter(p=>[...(p.candidates||[]),...(p.filed_candidates_not_confirmed_on_ballot||[])].some(c=>c.party==='NPP')).length;assert.equal(count(),nppExpected,'The NPP filter matches every contest with an NPP candidacy');}
   reset();set('county','Contra Costa');set('search','AD-14');assert.equal(count(),1);assert(text('detail-meta').includes('Alameda + Contra Costa'));
   reset();set('county','Contra Costa');set('search','East Bay Municipal Utility District Ward 3');assert.equal(count(),1);assert(text('detail-meta').includes('Alameda + Contra Costa'));
   reset();set('party','R');assert(count()>0);for(const card of cards()){const p=original.positions.find(p=>p.id===card.dataset.contestId);assert([...(p.candidates||[]),...(p.filed_candidates_not_confirmed_on_ballot||[])].some(c=>c.party==='R'));}

@@ -438,7 +438,7 @@ def main():
     for p in d["positions"]:
         if args.scope == "nationwide":
             if p.get("counties"): continue
-            if not (p.get("office_category") == "U.S. Senate" or p.get("office") == "Governor"): continue
+            if not (p.get("office_category") in ("U.S. Senate", "U.S. House") or p.get("office") == "Governor"): continue
             roster = (p.get("candidates") or []) + (p.get("filed_candidates_not_confirmed_on_ballot") or [])
         else:
             if args.county not in (p.get("counties") or []): continue

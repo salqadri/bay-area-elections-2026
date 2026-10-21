@@ -54,6 +54,11 @@
     const leftLevel = label('government_level', left.government_level), rightLevel = label('government_level', right.government_level);
     let comparison = (levelOrder.get(leftLevel) ?? 99) - (levelOrder.get(rightLevel) ?? 99);
     if (comparison) return comparison;
+    if (leftLevel === 'Federal') {
+      // Senate races lead the Federal section, then House races.
+      comparison = ordinal(['U.S. Senate', 'U.S. House'], label('office_category', left.office_category)) - ordinal(['U.S. Senate', 'U.S. House'], label('office_category', right.office_category));
+      if (comparison) return comparison;
+    }
     if (leftLevel === 'State') {
       comparison = ordinal(order.state_categories, label('office_category', left.office_category)) - ordinal(order.state_categories, label('office_category', right.office_category));
       if (comparison) return comparison;
@@ -69,7 +74,7 @@
   function subgroup(position) {
     const level = label('government_level', position.government_level);
     const category = label('office_category', position.office_category);
-    if (level === 'Federal') return '';
+    if (level === 'Federal') return category;
     if (level === 'State') return ['State Senate', 'State Assembly'].includes(category) ? category : 'Other state offices';
     if (['County', 'City or town'].includes(level)) return position.jurisdiction;
     return category;

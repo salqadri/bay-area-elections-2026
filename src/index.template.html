@@ -84,6 +84,9 @@ const sectionOpen=new Map();
 let renderedGroups=[];
 function priorityCompare(a,b){
   let d=(rank[levelLabel(a)]??99)-(rank[levelLabel(b)]??99);if(d)return d;
+  if(levelLabel(a)==='Federal'){
+    d=orderIndex(['U.S. Senate','U.S. House'],categoryLabel(a))-orderIndex(['U.S. Senate','U.S. House'],categoryLabel(b));if(d)return d;
+  }
   if(levelLabel(a)==='State'){
     d=orderIndex(order.state_categories,categoryLabel(a))-orderIndex(order.state_categories,categoryLabel(b));if(d)return d;
     d=orderIndex(order.state_offices,a.office)-orderIndex(order.state_offices,b.office);if(d)return d;
@@ -91,11 +94,12 @@ function priorityCompare(a,b){
   if(levelLabel(a)==='State judiciary'){
     d=orderIndex(['Supreme Court','Court of Appeal'],categoryLabel(a))-orderIndex(['Supreme Court','Court of Appeal'],categoryLabel(b));if(d)return d;
   }
-  return collator.compare(a.jurisdiction,b.jurisdiction)||collator.compare(a.district_or_seat||'',b.district_or_seat||'')||collator.compare(a.office,b.office);
+  const stateKey=p=>levelLabel(p)==='Federal'?(p.jurisdiction_ocd_division_id||''):'';
+  return collator.compare(a.jurisdiction,b.jurisdiction)||collator.compare(stateKey(a),stateKey(b))||collator.compare(a.district_or_seat||'',b.district_or_seat||'')||collator.compare(a.office,b.office);
 }
 function sectionLabel(p){
   const level=levelLabel(p);
-  if(level==='Federal')return '';
+  if(level==='Federal')return categoryLabel(p);
   if(level==='State')return ['State Senate','State Assembly'].includes(categoryLabel(p))?categoryLabel(p):'Other state offices';
   if(['County','City or town'].includes(level))return p.jurisdiction;
   return categoryLabel(p);

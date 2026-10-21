@@ -138,7 +138,7 @@ def normalize_rows(rows, candidate_id, cycle):
         if not isinstance(row.get("committee_name"), str) or not row["committee_name"].strip():
             raise ValueError("FEC aggregate has no spender name")
         direction = row.get("support_oppose_indicator")
-        if direction not in ("S", "O"):
+        if direction not in ("S", "O", "Other"):
             raise ValueError("FEC aggregate has an unsupported spending direction")
         identity = (committee, direction)
         if identity in seen:
@@ -181,7 +181,13 @@ def fetch_aggregates(key: str, candidate_id: str, cycle: int):
         rows.extend(batch)
         normalize_rows(rows, candidate_id, cycle)
         if len(rows) == count:
-            return rows
+            # The by_candidate aggregate occasionally includes 'Other'-direction rows
+            # (e.g. individual filers with no support/oppose indicator). This dataset
+            # models only support ('for') and opposition ('against'); an Other row can
+            # be attributed to neither without inventing semantics, so it is excluded
+            # from the snapshot — never recorded as zero or folded into a direction.
+            # FEC's own candidate-page for/against totals exclude them identically.
+            return [r for r in rows if r.get("support_oppose_indicator") in ("S", "O")]
         if len(rows) > count or not batch:
             raise ValueError("Incomplete or repeated FEC aggregate pages")
         page += 1
@@ -368,7 +374,7 @@ def cmd_attach(args):
 
     DATASET.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps({"passed": True, "candidates_with_ie_activity": attached,
-                      "federal_entries_cached": len(federal_seen),
+                      "federal_entries_cached": len(aggregates),
                       "spenders_registered": len(registry),
                       "checked_on": checked_on}, indent=2))
 

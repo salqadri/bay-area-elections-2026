@@ -95,9 +95,21 @@ class FinanceChecks(unittest.TestCase):
         for changes in [{'total': None}, {'total': -1}, {'total': float('nan')}, {'total': 1.234},
                         {'count': 0}, {'count': True}, {'candidate_id': 'S6MI00418'},
                         {'cycle': 2024}, {'committee_id': None}, {'committee_name': None},
-                        {'support_oppose_indicator': 'Other'}]:
+                        {'support_oppose_indicator': 'X'}]:
             with self.subTest(changes=changes), self.assertRaises(ValueError):
                 ie.normalize_rows([self.row(**changes)], 'H6CA00001', 2026)
+
+    def test_other_direction_rows_pass_validation_but_never_reach_snapshots(self):
+        # FEC's by_candidate aggregate emits unclassifiable 'Other' rows (individual
+        # filers with no support/oppose indicator). They are valid source data — the
+        # validator must not reject them — but this dataset models only S/O, so
+        # fetch_aggregates excludes them rather than attributing them to a direction.
+        other = self.row(committee_id="C00000002", committee_name="Individual filer",
+                         support_oppose_indicator="Other")
+        rows = [self.row(), other]
+        with patch.object(ie, "fetch_page", return_value=self.page(rows)):
+            kept = ie.fetch_aggregates("fixture", "H6CA00001", 2026)
+        self.assertEqual([r["support_oppose_indicator"] for r in kept], ["S"])
 
     def test_genuine_empty_response_is_a_checked_zero(self):
         with patch.object(ie, 'fetch_page', return_value=self.page([])):
