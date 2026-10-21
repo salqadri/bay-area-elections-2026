@@ -13,9 +13,15 @@ VERSION = 'endorsements-2'
 
 
 def invalid_endorser_name(name):
-    """Reject UI text/category labels without guessing an actual endorser."""
+    """Reject UI text/category labels without guessing an actual endorser.
+
+    'Cookie(s)' is blocked only in banner phrasing (uses/accept cookies, cookie
+    notice/policy/settings/banner, or the bare plural heading) — a person named
+    Cookie Kennedy is a real endorser and must not be rejected by substring.
+    """
     return bool(re.search(
-        r'\bcookies?\b|privacy policy|terms of (?:use|service)|all rights reserved|'
+        r'\bcookies\b|(?:uses?|accept(?:ing)?|we\s+use)\s+cookies|cookie\s+(?:notice|policy|settings|banner)|'
+        r'privacy policy|terms of (?:use|service)|all rights reserved|'
         r'^(?:\d+\s+)?leaders of (?:the )?community$|'
         r'^(?:our |local )?(?:elected officials|community leaders|organizations|supporters|endorsements)$',
         name.strip(' *'), re.I))
