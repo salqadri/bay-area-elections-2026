@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Amy Klobuchar\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Dylin's Picks (Sway voting group by Dylin Helfrey)\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Dylin's Picks (Sway voting group by Dylin Helfrey)\",\"relation\":\"recommended\",\"url\":\"https://ballotpedia.org/Amy_Klobuchar#Endorsements\",\"verification\":\"reported\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Mint's Picks (Sway voting group by Mint Harvey)\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Mint's Picks (Sway voting group by Mint Harvey)\",\"relation\":\"recommended\",\"url\":\"https://ballotpedia.org/Amy_Klobuchar#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Mint's Picks (Sway voting group by Mint Harvey)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Mint's Picks (Sway voting group by Mint Harvey)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Mint's_Picks_(Sway_voting_group_by_Mint_Harvey)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/7ox9mofi\"}],\"row_html_sha256\":\"20849f2439294e4cb3c252c3a08fe2295cbd5f3db545f7ba3797d2d9a899e4b0\",\"text\":\"Mint's Picks (Sway voting group by Mint Harvey)\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.56,
+    "probabilities": {
+     "distinct": 0.71,
+     "r0": 0.24,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 823,
+   "output_tokens": 40
+  }
+ }
+}

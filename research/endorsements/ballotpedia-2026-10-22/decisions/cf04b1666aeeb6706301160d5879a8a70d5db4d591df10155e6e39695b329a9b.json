@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Gary McCoy\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Alice B. Toklas LGBTQ Democratic Club\",\"kind\":\"organization\",\"note_id\":\"N336\",\"phase\":\"unspecified\",\"quote\":\"Alice B. Toklas LGBTQ Democratic Club\",\"relation\":\"endorsed\",\"url\":\"https://www.garymccoysf.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Alice B. Toklas LGBTQ Democratic Club\",\"kind\":\"organization\",\"note_id\":\"N1056\",\"phase\":\"unspecified\",\"quote\":\"Alice B. Toklas LGBTQ Democratic Club\",\"relation\":\"endorsed\",\"url\":\"https://www.garymccoysf.com/endorsements\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Alice B. Toklas Democratic Club\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Alice B. Toklas Democratic Club\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Gary_McCoy#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Alice B. Toklas Democratic Club\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Alice B. Toklas Democratic Club\",\"url\":\"https://ballotpedia.org/Endorsements_by_Alice_B._Toklas_Democratic_Club\"},{\"text\":\"\",\"url\":\"https://www.garymccoysf.com/endorsements\"}],\"row_html_sha256\":\"a15ae9f11629b72a4fcac91e9ab3c4bb24253dfdad7c825fb1b17e8da60f1cf1\",\"text\":\"Alice B. Toklas Democratic Club\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "unclear",
+    "confidence": 0.15,
+    "probabilities": {
+     "distinct": 0.23,
+     "r0": 0.18,
+     "r1": 0.23,
+     "unclear": 0.36
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 877,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Amy Acton\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Ohio Association of Professional Fire Fighters\",\"kind\":\"union\",\"note_id\":\"N1019\",\"phase\":\"unspecified\",\"quote\":\"Ohio Association of Professional Fire Fighters\",\"relation\":\"endorsed\",\"url\":\"https://actonforgovernor.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Ohio Association of Professional Firefighters\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Ohio Association of Professional Firefighters\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Amy_Acton#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Ohio Association of Professional Firefighters\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Ohio Association of Professional Firefighters\",\"url\":\"https://ballotpedia.org/Endorsements_by_Ohio_Association_of_Professional_Firefighters\"},{\"text\":\"\",\"url\":\"https://www.wlwt.com/article/ohio-association-of-professional-firefighters-endorses-acton/73336902\"}],\"row_html_sha256\":\"1eec7a8599fa53ac604afb9be1d34f74cbe1ad35956d69e1c9b7ee240287c876\",\"text\":\"Ohio Association of Professional Firefighters\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.95,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.97,
+     "unclear": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 804,
+   "output_tokens": 41
+  }
+ }
+}

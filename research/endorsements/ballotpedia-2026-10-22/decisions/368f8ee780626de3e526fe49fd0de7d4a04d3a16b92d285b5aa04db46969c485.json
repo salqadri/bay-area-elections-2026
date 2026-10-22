@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Mary J. Grunthaner\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"South Bay Labor Council\",\"kind\":\"union\",\"note_id\":\"N1264\",\"phase\":\"unspecified\",\"quote\":\"Both candidates for Trustee have the support of South Bay Labor Council.\",\"relation\":\"endorsed\",\"url\":\"https://grunthaner4sanjoseschools.com/endorsements-%26-events\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"South Bay Labor Council (AFL-CIO)\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"South Bay Labor Council (AFL-CIO)\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Mary_Grunthaner#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"South Bay Labor Council (AFL-CIO)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"South Bay Labor Council (AFL-CIO)\",\"url\":\"https://ballotpedia.org/Endorsements_by_AFL-CIO_South_Bay_Labor_Council\"},{\"text\":\"\",\"url\":\"https://www.southbaylabor.org/2026_endorsements\"}],\"row_html_sha256\":\"9591d9261e16d0eaf7e27ae1dd6f535f3f669ecd61f22d1b0f1f39777369d951\",\"text\":\"South Bay Labor Council (AFL-CIO)\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.97,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.98,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 812,
+   "output_tokens": 41
+  }
+ }
+}

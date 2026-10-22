@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"NWA Women at the Ballot (Sway voting group by Shawndra Washington)\",\"prior_observations\":[{\"endorser\":\"National Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Beebe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Arkansas AFL-CIO\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Judge Marion A. Humphrey, Sr.\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jon Tester\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"NWA Women at the Ballot (Sway voting group by Shawndra Washington)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"NWA Women at the Ballot (Sway voting group by Shawndra Washington)\",\"url\":\"https://ballotpedia.org/Endorsements_by_NWA_Women_at_the_Ballot_(Sway_voting_group_by_Shawndra_Washington)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/bwrs4kzy\"}],\"row_html_sha256\":\"7b390be82dca0fb0290779a98907f576fe570c58993a8d71085fc2d39687d0cd\",\"text\":\"NWA Women at the Ballot (Sway voting group by Shawndra Washington)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.87,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.9,
+     "overlap": 0.02,
+     "unclear": 0.08
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 812,
+   "output_tokens": 49
+  }
+ }
+}

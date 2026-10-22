@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Mothers who vote (Sway voting group by Jennifer Rooney)\",\"prior_observations\":[{\"endorser\":\"Debra Stark\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Deborah Nardozzi\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Nancy Gutierrez\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Christine Marsh\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rusty Bowers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Andrés Cano\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Charles Lucking\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lorenzo Sierra\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Arlando Teller\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Flavio Bravo\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Consuelo Hernandez\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Andrei Cherny\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lupe Contreras\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Analise Ortiz\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Melody Hernandez\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tammy Caputi\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dr. Regina Cobb\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jennifer Pawlik\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cesar Aguilar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tim Stringham\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sean Bowie\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Aaron Lieberman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Seth Blattman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Greg Stanton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Steve Gallardo\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Joel John\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Robbie Shaw\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mae Peshlakai\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Adelita Grijalva\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Eva Burch\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Mothers who vote (Sway voting group by Jennifer Rooney)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Mothers who vote (Sway voting group by Jennifer Rooney)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Mothers_who_vote_(Sway_voting_group_by_Jennifer_Rooney)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/v3nyeig7\"}],\"row_html_sha256\":\"c2b982c3c59f156553f2a91ad51782e0dc8a96356f685868e0383d03aa478e7e\",\"text\":\"Mothers who vote (Sway voting group by Jennifer Rooney)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.79,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.84,
+     "overlap": 0.06,
+     "unclear": 0.09
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1277,
+   "output_tokens": 49
+  }
+ }
+}

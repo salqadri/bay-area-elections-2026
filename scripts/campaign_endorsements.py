@@ -639,7 +639,7 @@ def attach(db, dataset_path, output):
     # California Jewish Democrats expresses relationships as support ratings in its own reviewed
     # capture (dfi-ca.org); campaign-page claims of a formal endorsement contradict that stronger
     # evidence and stay held for human review, mirroring the CAIR Action policy.
-    REVIEWED_RELATIONSHIP_ENDORSERS = GUIDES | {'California Jewish Democrats'}
+    REVIEWED_RELATIONSHIP_ENDORSERS = GUIDES | {'CAIR Action', 'California Jewish Democrats'}
     data = json.loads(Path(dataset_path).read_text())
     added_records, touched_candidates, skipped_dupes = 0, 0, 0
     next_note = max(int(k[1:]) for k in data['notes']) + 1
@@ -669,10 +669,11 @@ def attach(db, dataset_path, output):
             from check_published_endorsements import source_key
             def observation_key(e):
                 return norm(e['endorser']), e['relation'], e['phase'], source_key(e['url']), e.get('historical', False)
+            from endorsement_identity import duplicate_record
             seen = {observation_key(e) for e in current}
             additions = []
             for rec in records:
-                if observation_key(rec) in seen:
+                if observation_key(rec) in seen or duplicate_record(rec, current + additions):
                     skipped_dupes += 1
                     continue
                 rec = dict(rec)

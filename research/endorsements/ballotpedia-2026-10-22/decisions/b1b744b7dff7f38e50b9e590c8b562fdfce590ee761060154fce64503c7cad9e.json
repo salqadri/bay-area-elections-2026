@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Vote Naomi Riess - RiessForColorado - HD59 (Sway voting group by Jeana Werts)\",\"prior_observations\":[{\"endorser\":\"Bob Beauprez\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hank Brown\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pat Grant\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Don Coram\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gale Norton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Troy Eid\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bill Owens\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark Hillman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Walker Stapleton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John Suthers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fred Yarger\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pete Coors\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael George DeSombre\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ellen Roberts\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tim Foster\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Scott Tipton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lola Spradley\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bob Schaffer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Larry Crowder\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bruce Benson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Scott Gessler\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jason Dunn\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Scott McInnis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jim Nicholson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jane Norton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Vote Naomi Riess - RiessForColorado - HD59 (Sway voting group by Jeana Werts)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Vote Naomi Riess - RiessForColorado - HD59 (Sway voting group by Jeana Werts)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Naomi_Riess_-_House_District_59,_Colorado_(Sway_voting_group_by_Jeana_Werts)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/uhwqfo8h\"}],\"row_html_sha256\":\"ff6313adccde7238e11abce7a46337e47880395415baf9f37f3d1bc9440e0e18\",\"text\":\"Vote Naomi Riess - RiessForColorado - HD59 (Sway voting group by Jeana Werts)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.79,
+    "probabilities": {
+     "curated": 0.02,
+     "distinct": 0.84,
+     "overlap": 0.05,
+     "unclear": 0.09
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1226,
+   "output_tokens": 49
+  }
+ }
+}

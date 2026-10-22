@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Vote for Progress (Sway voting group by Carolina Esparza)\",\"prior_observations\":[{\"endorser\":\"San Mateo County Republican Party\",\"phase\":\"general\",\"relation\":\"recommended\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Vote for Progress (Sway voting group by Carolina Esparza)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Vote for Progress (Sway voting group by Carolina Esparza)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Vote_for_Progress_(Sway_voting_group_by_Carolina_Esparza)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/syw6vooj\"}],\"row_html_sha256\":\"beb492af582888ed489ef6525703c535dc471157f4e3fb9ff0f2e9e1c7105bda\",\"text\":\"Vote for Progress (Sway voting group by Carolina Esparza)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.87,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.9,
+     "overlap": 0.01,
+     "unclear": 0.08
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 701,
+   "output_tokens": 49
+  }
+ }
+}

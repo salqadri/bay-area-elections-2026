@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Frmr. state Sen. Mike Morrell (R)\",\"prior_observations\":[{\"endorser\":\"Mark McCommas\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Joseph Ohls\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Mike Morrell\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sonja Shaw\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dr. Bishop Myrna Faye Fuller\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"GOP Union Caucus\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Herb Morgan\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Mike Morrell\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark McCommas\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Joseph Ohls\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"GOP Union Caucus\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sonja Shaw\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dr. Bishop Myrna Faye Fuller\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Frmr. state Sen. Mike Morrell (R)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"\",\"url\":\"https://electmindy.com/endorsments\"}],\"row_html_sha256\":\"9b3d892aa8eb748c5a7c1e88041605ba8f75e676a7dc412870f4059062af210c\",\"text\":\"Frmr. state Sen. Mike Morrell (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "overlap",
+    "confidence": 0.93,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.04,
+     "overlap": 0.95,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 897,
+   "output_tokens": 50
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Rhode Island Brotherhood of Correctional Officers\",\"prior_observations\":[{\"endorser\":\"Senator Meghan Kallman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Paula McFarland, Chair of the Cranston Tax Assessor's Appeals Board\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"East Providence City Council President Robert Rodericks\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Julie Casimiro\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Karen Alzate\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Providence City Councilman James Taylor\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pawtucket School Committee Member Juan Pablo Barrera\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Pamela Lauria\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mayor Frank Picozzi, Warwick\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Nathan Biah\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Rebecca Kislak\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Susan R. Donovan\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Ryan Pearson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Falls City Council-at-Large Laurilim Rosado Martinez\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Ana Quezada\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Lauren Carson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Providence School Board President Ty'Relle Stephens\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Portsmouth Town Councilor Juan Carlos Payero\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mayor Joseph Polisena Jr., Johnston\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Falls City Council President Pro Tempore Alberto Rivas-Lugo\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mayor Maria Rivera, Central Falls\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Providence City Councilman Pedro Espinal\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Melissa Murray\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Louis DiPalma\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Tiara Mack\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Michelle McGaw\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Robert Phillips\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mayor Jeffrey Mutter, Cumberland\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Mark McKenney\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Attorney General Peter Neronha\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Falls City Councilman Anthony Solano\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Falls City Councilman Kevin Kazarian\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Grace Diaz\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Falls City Councilman Rafael Peguero\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Former Congressman Patrick Kennedy\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"UNITE HERE Local 26\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cranston City Councilman Andy Andujar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Scott Slater\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Terri Cortvriend\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Edith Ajello\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Representative Gregory J. Costantino\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Falls City Councilman Franklin Solano\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Union of Operating Engineers Local 57\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Rhode Island Brotherhood of Correctional Officers\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Rhode Island Brotherhood of Correctional Officers\",\"url\":\"https://ballotpedia.org/Endorsements_by_Rhode_Island_Brotherhood_of_Correctional_Officers\"},{\"text\":\"\",\"url\":\"https://www.warwickonline.com/news/foulkes-gains-union-support-in-gubernatorial-campaign/article_d566a4b5-4b2e-4a79-8cea-0d9d88ac6c60.html\"}],\"row_html_sha256\":\"8337b997b096c08e9842c0e9725e52c68d1323fa972216bc8cab601e056ce136\",\"text\":\"Rhode Island Brotherhood of Correctional Officers\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.85,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.89,
+     "overlap": 0.05,
+     "unclear": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1750,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Alan Wong\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"International Alliance of Theatrical Stage Employees Local 16\",\"kind\":\"union\",\"note_id\":\"N334\",\"phase\":\"unspecified\",\"quote\":\"International Alliance of Theatrical Stage Employees Local 16\",\"relation\":\"endorsed\",\"url\":\"https://alanwong.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"International Alliance of Theatrical Stage Employees Local 16\",\"kind\":\"union\",\"note_id\":\"N1054\",\"phase\":\"unspecified\",\"quote\":\"International Alliance of Theatrical Stage Employees Local 16\",\"relation\":\"endorsed\",\"url\":\"https://alanwong.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"International Alliance of Theatrical Stage Employees (IATSE) Local 16\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"International Alliance of Theatrical Stage Employees (IATSE) Local 16\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Alan_Wong#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"International Alliance of Theatrical Stage Employees (IATSE) Local 16\",\"heading_path\":[\"Elections\",\"2026\",\"Regular election\",\"Endorsements\"],\"links\":[{\"text\":\"International Alliance of Theatrical Stage Employees (IATSE) Local 16\",\"url\":\"https://ballotpedia.org/Endorsements_by_International_Alliance_of_Theatrical_Stage_Employees_(IATSE)_Local_16\"},{\"text\":\"\",\"url\":\"https://alanwong.com/endorsements/\"}],\"row_html_sha256\":\"5409c734462ca1bda2eebc46de6c179856a4f3341f5497f0f1a72cf9359934de\",\"text\":\"International Alliance of Theatrical Stage Employees (IATSE) Local 16\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r1",
+    "confidence": 0.51,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.33,
+     "r1": 0.63,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 955,
+   "output_tokens": 49
+  }
+ }
+}

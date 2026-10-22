@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Cat Ladies for America (Sway voting group by Cat Ladies for America)\",\"prior_observations\":[{\"endorser\":\"Dave Madsen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carol Hill-Evans\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pennsylvania Professional Fire Fighters Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lisa Kennedy\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pennsylvania Laborers' District Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"NewDems Action Fund\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"WELCOME PAC\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Union of Operating Engineers Local 542\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Barbara Comstock\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Walter Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Connolly\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"UFCW Local 1776\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Chris Dietz\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Shane Steele\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pennsylvania Building & Construction Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Denver Riggleman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tim Scott\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Brotherhood of Electrical Workers - Local 229\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Austin Davis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"National Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Association of Machinists\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Josh Shapiro\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Justin Fleming\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Steelworkers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Brotherhood of Boilermakers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Mine Workers of America\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jocelyn Rawls\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fred Faylona\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Leland J. Nelson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Adam Kinzinger\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pennsylvania Conference of Teamsters\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Buck Powden\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Plumbers and Pipefitters Local 520\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pamela Thompson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jean Foschi\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"American Federation of Government Employees - Local 2004\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bob Holmes\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Patty Kim\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sean Crampsie\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lamont Jones\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sean Shultz\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Pennsylvania Trades\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Amalgamated Transit Union\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"EMILYs List\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matt Roan\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Elect Democratic Women\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"TWU Local 234\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"CWA District 2-13\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Painters and Allied Trades International Union - District Council 21\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Chad Baker\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Brotherhood of Carpenters and Joiners of America\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Nate Davidson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Cat Ladies for America (Sway voting group by Cat Ladies for America)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Cat Ladies for America (Sway voting group by Cat Ladies for America)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Cat_Ladies_for_America_(Sway_voting_group_by_Cat_Ladies_for_America)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/catladiesforamerica\"}],\"row_html_sha256\":\"b886a1451cc8c4ad1796a83a4214a91c9954a56656245943a76b3d8a325cf9fe\",\"text\":\"Cat Ladies for America (Sway voting group by Cat Ladies for America)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.81,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.86,
+     "overlap": 0.05,
+     "unclear": 0.09
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1810,
+   "output_tokens": 49
+  }
+ }
+}

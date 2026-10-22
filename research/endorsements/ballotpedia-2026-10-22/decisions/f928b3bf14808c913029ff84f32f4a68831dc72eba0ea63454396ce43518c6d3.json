@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Continuing a Legacy of Advocacy: Voting the Finer Way (Sway voting group by Laila Bromell)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Continuing a Legacy of Advocacy: Voting the Finer Way (Sway voting group by Laila Bromell)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Continuing a Legacy of Advocacy: Voting the Finer Way (Sway voting group by Laila Bromell)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Continuing_a_Legacy_of_Advocacy:_Voting_the_Finer_Way_(Sway_voting_group_by_Laila_Bromell)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/mvkvoydv\"}],\"row_html_sha256\":\"85f52aee9cc3d27061a07dc77de0b5fcd29ef4fd4edd0d69949980d9a5c67012\",\"text\":\"Continuing a Legacy of Advocacy: Voting the Finer Way (Sway voting group by Laila Bromell)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.83,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.87,
+     "overlap": 0.0,
+     "unclear": 0.13
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 745,
+   "output_tokens": 49
+  }
+ }
+}

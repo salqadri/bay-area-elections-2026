@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Citizens' Impeachment\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Citizens' Impeachment\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Citizens' Impeachment\",\"url\":\"https://ballotpedia.org/Endorsements_by_Citizens'_Impeachment\"},{\"text\":\"\",\"url\":\"https://citizensimpeachment.com/courage-candidates/#oklahoma\"}],\"row_html_sha256\":\"5a21852d584ea1998ff7aa215daae4497c974981e8b23df26dce8964c1daee99\",\"text\":\"Citizens' Impeachment\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.77,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.83,
+     "overlap": 0.0,
+     "unclear": 0.17
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 651,
+   "output_tokens": 49
+  }
+ }
+}

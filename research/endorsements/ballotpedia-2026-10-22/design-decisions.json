@@ -1,0 +1,93 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Owner asks to supplement campaign endorsements with current-cycle Ballotpedia candidate profile endorsement sections, avoid duplicates, use Jev for judgments and Serper only for searches. Mike Rogers profile has Elections > 2026 > Endorsements with 12 entries, then Elections > 2024 > Endorsements and older notable endorsements. 2026 intro says endorsements AND voter guide recommendations. Entries include elected officials and explicitly named Sway voting groups. Existing campaign record Donald Trump must remain one displayed observation. The dataset has immutable source-bound publication reviews, separate relationship labels, historical/primary/general context and curator-controlled CAIR/peace-guide source ratings. Raw source collection is deterministic.",
+  "questions": {
+   "section": {
+    "type": "choice",
+    "instructions": "Select collection scope.",
+    "criteria": {
+     "current_scoped": "Parse only explicitly current-year endorsement sections, preserving heading hierarchy and exact entries; hold absent/ambiguous year or office",
+     "all_mentions": "Import all endorsement and notable-name mentions across page history",
+     "first_section": "Always use the first Endorsements heading regardless of year"
+    }
+   },
+   "relationship": {
+    "type": "choice",
+    "instructions": "Select treatment of mixed endorsements and voter-guide recommendations.",
+    "criteria": {
+     "typed_review": "Ask Jev separately for each exact source entry, with section/candidate context; preserve recommended vs endorsed; hold insufficient evidence",
+     "all_endorsed": "Call every entry endorsed based only on the section title",
+     "drop_guides": "Drop every voter-guide entry even if the source explicitly recommends the candidate"
+    }
+   },
+   "dedupe": {
+    "type": "choice",
+    "instructions": "Select a duplicate-handling policy.",
+    "criteria": {
+     "conservative": "Skip equivalent current same-name/relationship entries across URLs; preserve explicit different phases and historical records, hold ambiguous identity/relationship conflicts; retain all source observations in audit",
+     "source_key": "Deduplicate by source URL, allowing campaign and BP duplicates for the same endorsement",
+     "fuzzy_all": "Merge similar organizations automatically including PACs and parents"
+    }
+   },
+   "publish": {
+    "type": "choice",
+    "instructions": "Select provenance and publication route.",
+    "criteria": {
+     "reviewed_reported": "Store BP as reported secondary evidence through registered reviewed_updates manifests with exact before/after, capture hashes, cycle and Jev decisions",
+     "firstparty": "Label BP list as direct endorser statements",
+     "direct_overwrite": "Replace existing endorsements with BP list"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "section": {
+    "type": "choice",
+    "choice": "current_scoped",
+    "confidence": 0.98,
+    "probabilities": {
+     "current_scoped": 0.99,
+     "all_mentions": 0.01,
+     "first_section": 0.0
+    }
+   },
+   "relationship": {
+    "type": "choice",
+    "choice": "typed_review",
+    "confidence": 1.0,
+    "probabilities": {
+     "typed_review": 1.0,
+     "all_endorsed": 0.0,
+     "drop_guides": 0.0
+    }
+   },
+   "dedupe": {
+    "type": "choice",
+    "choice": "conservative",
+    "confidence": 0.98,
+    "probabilities": {
+     "conservative": 0.99,
+     "source_key": 0.01,
+     "fuzzy_all": 0.0
+    }
+   },
+   "publish": {
+    "type": "choice",
+    "choice": "reviewed_reported",
+    "confidence": 1.0,
+    "probabilities": {
+     "reviewed_reported": 1.0,
+     "firstparty": 0.0,
+     "direct_overwrite": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 854,
+   "output_tokens": 181
+  }
+ }
+}

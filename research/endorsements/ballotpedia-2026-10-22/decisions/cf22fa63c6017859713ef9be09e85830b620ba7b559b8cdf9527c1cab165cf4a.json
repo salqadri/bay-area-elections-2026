@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Service Employees International Union (SEIU) Local 1021\",\"prior_observations\":[{\"endorser\":\"Allan on Townsend Ave.\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alameda County Democratic Party\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Torlakson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alameda County Democratic Party\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Teachers Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Oakland Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Oakland Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Torlakson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"All City Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Chris Dobbins\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"All City Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Diana Prola\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Betty Olson-Jones\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"East Bay Small Business Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alice Spearman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Service Employees International Union (SEIU) Local 1021\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Service Employees International Union (SEIU) Local 1021\",\"url\":\"https://ballotpedia.org/Endorsements_by_Service_Employees_International_Union_(SEIU)_Local_1021\"},{\"text\":\"\",\"url\":\"https://www.seiu1021.org/article/seiu-1021-congratulates-mike-hutchinson-oakland-unified-school-district-board-education\"}],\"row_html_sha256\":\"f027863333e4008b465bcc833a4b9a16207a1d071095fe05a3b9678104d88118\",\"text\":\"Service Employees International Union (SEIU) Local 1021\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.94,
+     "overlap": 0.04,
+     "unclear": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1023,
+   "output_tokens": 49
+  }
+ }
+}

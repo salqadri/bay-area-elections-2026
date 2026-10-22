@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Frmr. State Sen Gary Stanislawski (R)\",\"prior_observations\":[{\"endorser\":\"Dave Rader\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jason Carini\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Patrick Anderson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Josh Brecheen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kendal Sacchieri\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Brian Guthrie\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"James Lankford\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John M. O'Connor\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark Allen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"President Donald J. Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ross Ford\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Hern\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pam Peterson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jerry Alvord\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Steve Kunzweiler\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"George Burns\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John Ford\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark Lepak\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Randy Grellner\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Earl Sears\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Cole\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Norwood\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Eleanor Wilkerson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sarah Huckabee Sanders\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"David Bullard\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jim Shaw\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jacob McHughes\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dan Newberry\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gary Stanislawski\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cody Maynard\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark Chapman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lisa Standridge\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jim Norton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Steve Bashore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sean Kouplen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lee Denney\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rob Standridge\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jay Steagall\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Molly Jenkins\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"David Hardin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jake Baugh\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael Fisher\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Harrison\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Frmr. State Sen Gary Stanislawski (R)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"\",\"url\":\"https://www.mikeforok.com/endorsements\"}],\"row_html_sha256\":\"443ffce5b53f26d5e02d3905357a3e6b960aad6b164e644349e3771551212ea3\",\"text\":\"Frmr. State Sen Gary Stanislawski (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "overlap",
+    "confidence": 0.76,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.15,
+     "overlap": 0.8200000000000001,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1468,
+   "output_tokens": 50
+  }
+ }
+}

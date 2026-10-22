@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"North Coast States Carpenters Union\",\"prior_observations\":[{\"endorser\":\"Tom McEnery\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Biz PAC\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Johnny Khamis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carl Salas\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"George Casey\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Terry Hines\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Planned Parenthood\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"San Jose Police Officers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pam Foley\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jeff Rosen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Larry Stone\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"SCCAOR\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Margaret Abe-Koga\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The Mercury News\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael Mulcahy\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Don Rocha\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Clay Hale\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matt Mahan\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Madison Nguyen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sam Liccardo\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ron Gonzales\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"George Casey\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Johnny Khamis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Don Rocha\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Clay Hale\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Margaret Abe-Koga\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matt Mahan\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael Mulcahy\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Planned Parenthood\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom McEnery\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Larry Stone\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ron Gonzales\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Terry Hines\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Pam Foley\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Madison Nguyen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carl Salas\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jeff Rosen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"North Coast States Carpenters Union\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"North Coast States Carpenters Union\",\"url\":\"https://ballotpedia.org/Endorsements_by_North_Coast_States_Carpenters_Union\"},{\"text\":\"\",\"url\":\"https://ncscarpenters.org/images/CACandidates_Voter_Guide.pdf\"}],\"row_html_sha256\":\"f109580cb55bdf87ca8507414f1560edcb01f9b06f9a867aae83544b805732a9\",\"text\":\"North Coast States Carpenters Union\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.63,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.72,
+     "overlap": 0.11,
+     "unclear": 0.17
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1368,
+   "output_tokens": 49
+  }
+ }
+}

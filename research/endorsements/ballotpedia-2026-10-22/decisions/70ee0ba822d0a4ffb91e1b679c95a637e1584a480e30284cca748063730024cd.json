@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"San Francisco Women's Political Committee\",\"prior_observations\":[{\"endorser\":\"Myrna Melgar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Mullin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Shamann Walton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sandra Lee Fewer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gordon Mar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Emma Hare\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Mullin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Phil Kim\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hillary Ronen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Norman Yee\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lisa Weissman-Ward\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jenny Lam\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Myrna Melgar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"San Francisco Women's Political Committee\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"\",\"url\":\"https://www.instagram.com/p/DcUf596j65o/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==\"}],\"row_html_sha256\":\"ff1540c7b07c627091e08883e6dffe19328e4d37c92390ef3c13c507a2c81dda\",\"text\":\"San Francisco Women's Political Committee\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.68,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.76,
+     "overlap": 0.04,
+     "unclear": 0.2
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 932,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Abdul El-Sayed\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"College Democrats of Washtenaw Community College (WCC)\",\"kind\":\"party\",\"note_id\":\"N959\",\"phase\":\"unspecified\",\"quote\":\"College Democrats of Washtenaw Community College (WCC)\",\"relation\":\"endorsed\",\"url\":\"https://abdulforsenate.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Washtenaw Community College (WCC) College Democrats\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Washtenaw Community College (WCC) College Democrats\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Abdul_El-Sayed#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Washtenaw Community College (WCC) College Democrats\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Washtenaw Community College (WCC) College Democrats\",\"url\":\"https://ballotpedia.org/Endorsements_by_Washtenaw_Community_College_(WCC)_College_Democrats\"},{\"text\":\"\",\"url\":\"https://abdulforsenate.com/endorsements/\"}],\"row_html_sha256\":\"0625557b068f4fd079d4147c2422a33828c5f023b48736baebcdb91b9bf4379a\",\"text\":\"Washtenaw Community College (WCC) College Democrats\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 1.0,
+    "probabilities": {
+     "distinct": 0.0,
+     "r0": 1.0,
+     "unclear": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 817,
+   "output_tokens": 41
+  }
+ }
+}

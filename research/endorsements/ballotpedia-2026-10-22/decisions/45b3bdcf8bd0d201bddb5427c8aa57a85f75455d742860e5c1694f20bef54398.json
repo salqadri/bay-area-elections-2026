@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Kathryn Camp\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Iron Workers, Local 378\",\"kind\":\"union\",\"logo_url\":\"https://assets.nationbuilder.com/kathryncamp/pages/397/attachments/original/1791312224/iron_378.png?1791312224\",\"note_id\":\"N502\",\"phase\":\"unspecified\",\"quote\":\"Iron Workers, Local 378\",\"relation\":\"endorsed\",\"url\":\"https://www.kathryncamp.com/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Ironworkers Local 378\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Ironworkers Local 378\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Kathryn_Camp#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Ironworkers Local 378\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Ironworkers Local 378\",\"url\":\"https://ballotpedia.org/Endorsements_by_Ironworkers_Local_378\"},{\"text\":\"\",\"url\":\"https://www.kathryncamp.com/endorsements\"}],\"row_html_sha256\":\"13b435b5bcf9e06a0d0e932dd07ea05c3d3db3a868ac65d9421868c49d594dfb\",\"text\":\"Ironworkers Local 378\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 1.0,
+    "probabilities": {
+     "distinct": 0.0,
+     "r0": 1.0,
+     "unclear": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 837,
+   "output_tokens": 41
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Sim Kern's Texas Voter Guide (Sway voting group by Sim Kern)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Sim Kern's Texas Voter Guide (Sway voting group by Sim Kern)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Sim Kern's Texas Voter Guide (Sway voting group by Sim Kern)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Sim_Kern's_Texas_Voter_Guide_(Sway_voting_group_by_Sim_Kern)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/simkern\"}],\"row_html_sha256\":\"3e49c635d5cf65c39b9c1bd862055c58b6dc0aee5706a1f5f2ee86e9dfe349d4\",\"text\":\"Sim Kern's Texas Voter Guide (Sway voting group by Sim Kern)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.93,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.95,
+     "overlap": 0.0,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 697,
+   "output_tokens": 49
+  }
+ }
+}

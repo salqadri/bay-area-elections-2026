@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Alex Lee\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-09\",\"endorser\":\"SEIU Local 1021\",\"kind\":\"union\",\"phase\":\"general\",\"quote\":\"Alex Lee – District 24\",\"relation\":\"endorsed\",\"url\":\"https://www.seiu1021.org/post/election-endorsements-nov-3-2026\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"SEIU Local 521\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"SEIU Local 521\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Alex_Lee#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"SEIU Local 521\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"SEIU Local 521\",\"url\":\"https://ballotpedia.org/Endorsements_by_SEIU_Local_521\"},{\"text\":\"\",\"url\":\"https://www.seiu521.org/2026election\"}],\"row_html_sha256\":\"03f8bc33370a3b3e4f7638975e21013fab86555fac309b134c9f6f852e79c292\",\"text\":\"SEIU Local 521\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.34,
+    "probabilities": {
+     "distinct": 0.26,
+     "r0": 0.56,
+     "unclear": 0.18
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 769,
+   "output_tokens": 41
+  }
+ }
+}

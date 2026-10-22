@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Aisha Wahab\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"California Peace Officers Association\",\"kind\":\"organization\",\"note_id\":\"N309\",\"phase\":\"unspecified\",\"quote\":\"California Peace Officers Association\",\"relation\":\"endorsed\",\"url\":\"https://www.aishawahab.com/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"California Teachers Association\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"California Teachers Association\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Aisha_Wahab#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"California Teachers Association\",\"heading_path\":[\"Elections\",\"2026\",\"Regular election\",\"Endorsements\"],\"links\":[{\"text\":\"California Teachers Association\",\"url\":\"https://ballotpedia.org/California_Teachers_Association\"},{\"text\":\"\",\"url\":\"https://www.cta.org/document/2026-candidate-recommendations\"}],\"row_html_sha256\":\"dc15cbd6d4229a64a2e1c45784f5d6548c896b7a4d9af51077cdce7c0161edb6\",\"text\":\"California Teachers Association\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.46,
+    "probabilities": {
+     "distinct": 0.64,
+     "r0": 0.3,
+     "unclear": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 749,
+   "output_tokens": 40
+  }
+ }
+}

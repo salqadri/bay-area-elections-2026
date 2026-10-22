@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Abdul El-Sayed\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"HSDA High School Democrats of America\",\"kind\":\"party\",\"note_id\":\"N959\",\"phase\":\"unspecified\",\"quote\":\"HSDA High School Democrats of America\",\"relation\":\"endorsed\",\"url\":\"https://abdulforsenate.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"High School Democrats of America\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"High School Democrats of America\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Abdul_El-Sayed#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"High School Democrats of America\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"High School Democrats of America\",\"url\":\"https://ballotpedia.org/Endorsements_by_High_School_Democrats_of_America\"},{\"text\":\"\",\"url\":\"https://abdulforsenate.com/endorsements/\"}],\"row_html_sha256\":\"a032c95d3d6c40c865cc2f745b6934247ec7ac6eb8fcc008808cdb2e913b02b2\",\"text\":\"High School Democrats of America\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.95,
+    "probabilities": {
+     "distinct": 0.02,
+     "r0": 0.97,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 766,
+   "output_tokens": 41
+  }
+ }
+}

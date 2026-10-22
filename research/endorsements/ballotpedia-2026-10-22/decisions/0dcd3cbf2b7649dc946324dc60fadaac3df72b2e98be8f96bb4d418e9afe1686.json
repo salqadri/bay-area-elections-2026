@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Oklahoma Progressive Voting Guide (Sway voting group by Lisa Sharp)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Oklahoma Progressive Voting Guide (Sway voting group by Lisa Sharp)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Oklahoma Progressive Voting Guide (Sway voting group by Lisa Sharp)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Oklahoma_Progressive_Voting_Guide_(Sway_voting_group_by_Lisa_Sharp)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/nxn7s6q4\"}],\"row_html_sha256\":\"2938293ca69f45cb1ae70dbd7d8016c17d6f9973db27de04edd3b436c6d6e94a\",\"text\":\"Oklahoma Progressive Voting Guide (Sway voting group by Lisa Sharp)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.94,
+     "overlap": 0.0,
+     "unclear": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 700,
+   "output_tokens": 49
+  }
+ }
+}

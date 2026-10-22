@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Tyler Sirois\",\"prior_observations\":[{\"endorser\":\"Hillsborough County Firefighters\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ron DeSantis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Republican Liberty Caucus\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ron DeSantis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tampa Police Benevolent Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rick Scott\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"JD Vance\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Donald Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"JD Vance\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Johnson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gun Owners of America\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rick Scott\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Blaise Ingoglia\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Republican Liberty Caucus\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gun Owners of America\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Florida State Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Florida Police Benevolent Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Johnson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Donald Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sun Coast Police Benevolent Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"James Uthmeier\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Tyler Sirois\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Tyler Sirois\",\"url\":\"https://ballotpedia.org/Tyler_Sirois\"},{\"text\":\"\",\"url\":\"https://beltranforcongress.com/about/#endorsements\"}],\"row_html_sha256\":\"ddc67bd51a9b58aa162dc89ac23fc4c855a57ff9103ccc5a2fb8c130c6e4a234\",\"text\":\"Florida Rep. Tyler Sirois (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.8,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.85,
+     "overlap": 0.09,
+     "unclear": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1066,
+   "output_tokens": 49
+  }
+ }
+}

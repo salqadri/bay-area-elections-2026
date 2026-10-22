@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Big Tent Democrats (Sway voting group by Green Kingfisher)\",\"prior_observations\":[{\"endorser\":\"Giffords PAC\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hotel and Gaming Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hakeem Jeffries\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Actors' Equity Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dan Goldman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gregory Meeks\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Retail, Wholesale and Department Store Union\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Adriano Espaillat\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"American Federation of Musicians Local 802\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"IBEW's New York State Association of Electrical Workers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"32BJ SEIU\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Union of Operating Engineers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"EMILYs List\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Emgage Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Civil Service Employees Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Yvette Clarke\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"IATSE District 10\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jerry Nadler\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"District Council 37\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"LiUNA Eastern Region\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"LiUNA New England Region\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mason Tenders District Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"New York State AFL-CIO\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Leticia \\\"Tish\\\" James\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"New York State Alliance for Retired Americans\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tim Kennedy\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Joe Morelle\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Grace Meng\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John Mannion\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"End Citizens United\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Laura Gillen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Communications Workers of America, District 1\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Unite Here! Local 100\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Local 79\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Big Tent Democrats (Sway voting group by Green Kingfisher)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Big Tent Democrats (Sway voting group by Green Kingfisher)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Big_Tent_Democrats_(Sway_voting_group_by_Green_Kingfisher)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/83x3sjyh\"}],\"row_html_sha256\":\"970a3a48af47245274b18e4c37ce0ed26f83da87eda3fbd253d5080f6a02cc8d\",\"text\":\"Big Tent Democrats (Sway voting group by Green Kingfisher)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.94,
+     "overlap": 0.01,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1409,
+   "output_tokens": 49
+  }
+ }
+}

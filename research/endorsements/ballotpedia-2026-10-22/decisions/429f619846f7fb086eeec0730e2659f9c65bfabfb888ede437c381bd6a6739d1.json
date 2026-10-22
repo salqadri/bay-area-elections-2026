@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Jewish Democratic Coalition of the Bay Area\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Jewish Democratic Coalition of the Bay Area\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Jewish Democratic Coalition of the Bay Area\",\"url\":\"https://ballotpedia.org/Endorsements_by_Jewish_Democratic_Coalition_of_the_Bay_Area\"},{\"text\":\"\",\"url\":\"https://www.jdcsv.com/page-18068\"}],\"row_html_sha256\":\"8ef661624cf2a82a63cbd52d2299e05eabfa485d9dda6e75d10135c209e95f43\",\"text\":\"Jewish Democratic Coalition of the Bay Area\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.71,
+    "probabilities": {
+     "curated": 0.02,
+     "distinct": 0.78,
+     "overlap": 0.01,
+     "unclear": 0.19
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 660,
+   "output_tokens": 49
+  }
+ }
+}

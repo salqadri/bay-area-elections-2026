@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Anthony Constantino\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-21\",\"endorser\":\"Donald J. Trump\",\"kind\":\"official\",\"note_id\":\"N1513\",\"phase\":\"unspecified\",\"quote\":\"Donald J. Trump 45th & 47th President of the United States\",\"relation\":\"endorsed\",\"url\":\"https://www.constantino.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Donald Trump\",\"kind\":\"official\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"President Donald Trump (R)\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Anthony_Constantino#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Donald Trump\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Donald Trump\",\"url\":\"https://ballotpedia.org/Donald_Trump\"},{\"text\":\"\",\"url\":\"https://truthsocial.com/@realDonaldTrump/posts/116443819653096454\"}],\"row_html_sha256\":\"04628969f3777f0219065e3e62c2b79caea07a47dde3362b0f480896eac001f3\",\"text\":\"President Donald Trump (R)\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.97,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.98,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 774,
+   "output_tokens": 41
+  }
+ }
+}

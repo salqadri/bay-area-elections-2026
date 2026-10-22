@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Columbia County District Three (Sway voting group by Kimberly Sims)\",\"prior_observations\":[{\"endorser\":\"Dave Taylor\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Vance Smith\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Steve Scalise\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matthew Gambill\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Russell Fry\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rick Williams\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lee Anderson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Max Burns\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jason Dickerson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dale Strong\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Beth Camp\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Morgan Luttrell\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Russ Goodman\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Laken Riley's Family\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The Club for Growth\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Marty Harbin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Emmer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matt Barton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Clint Crowe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Clint Dixon\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Ezell\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"National Border Patrol Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Eli Crane\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Oil & Gas Workers Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carden Summers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Brandon Gill\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sam Watson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"James Burchett\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senate Conservatives Fund\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael Cameron\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Shawn Still\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John McGuire\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"David Shafer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Josh Bonner\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"David Clark\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Chris Erwin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Conservative Political Action Conference (CPAC)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Derrick Van Orden\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Burgess Owens\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Brian Kemp\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Turning Point Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Johnny Chastain\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Newt Gingrich\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Columbia County District Three (Sway voting group by Kimberly Sims)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Columbia County District Three (Sway voting group by Kimberly Sims)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Columbia_County_District_Three_(Sway_voting_group_by_Kimberly_Sims)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/fqffdrgv\"}],\"row_html_sha256\":\"1758fe6a27b6003f6eb70d6437ef447f200014b8bc836329c5711cbe01abcf2e\",\"text\":\"Columbia County District Three (Sway voting group by Kimberly Sims)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.88,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.91,
+     "overlap": 0.02,
+     "unclear": 0.07
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1532,
+   "output_tokens": 49
+  }
+ }
+}

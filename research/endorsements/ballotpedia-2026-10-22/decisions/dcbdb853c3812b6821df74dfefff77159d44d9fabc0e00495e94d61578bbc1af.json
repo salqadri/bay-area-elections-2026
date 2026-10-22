@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Amy Maccc's Voting Picks (Sway voting group by Amy McDonald)\",\"prior_observations\":[{\"endorser\":\"National Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Beebe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Arkansas AFL-CIO\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Judge Marion A. Humphrey, Sr.\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jon Tester\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Amy Maccc's Voting Picks (Sway voting group by Amy McDonald)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Amy Maccc's Voting Picks (Sway voting group by Amy McDonald)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Amy_Maccc's_Voting_Picks_(Sway_voting_group_by_Amy_McDonald)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/amymaccc\"}],\"row_html_sha256\":\"ab2b004f704657a343a7540bc60678b2c90055fa22d5bb0c2456e193f0034fc4\",\"text\":\"Amy Maccc's Voting Picks (Sway voting group by Amy McDonald)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.65,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.74,
+     "overlap": 0.05,
+     "unclear": 0.21
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 806,
+   "output_tokens": 49
+  }
+ }
+}

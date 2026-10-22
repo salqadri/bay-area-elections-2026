@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"United Teachers of Santa Clara\",\"prior_observations\":[{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ro Khanna\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"All seven members Santa Clara County Board of Education\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"United Teachers of Santa Clara\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"United Teachers of Santa Clara\",\"url\":\"https://ballotpedia.org/Endorsements_by_United_Teachers_of_Santa_Clara\"},{\"text\":\"\",\"url\":\"https://vote4kamal.com/\"}],\"row_html_sha256\":\"99f8041b6fcef93e1d976b167a7dc5426983421dd533346b6909fce11722e6d7\",\"text\":\"United Teachers of Santa Clara\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.91,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.93,
+     "overlap": 0.02,
+     "unclear": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 702,
+   "output_tokens": 49
+  }
+ }
+}

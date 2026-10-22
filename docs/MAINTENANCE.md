@@ -68,6 +68,7 @@ python3 scripts/check_evidence.py
 python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsement_images.py
 python3 scripts/check_endorsements.py
+python3 scripts/check_ballotpedia_endorsements.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
@@ -92,7 +93,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete 28-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 30-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -210,3 +211,8 @@ python3 scripts/check_release.py
 Set `FEC_API_KEY` in the environment or pass global `--fec-key-file PATH` before the subcommand. Inspect the export and impact before attach. Default refresh age is seven days; `--force` refreshes every eligible candidate. A fresh clone needs no old ledger. Legacy tables remain intact but cannot satisfy the new method-version cache. Cache keys include candidate ID, cycle and method; incomplete API responses never replace a prior snapshot. Attach requires all current federal IDs and uses the oldest actual retrieval date, so partial county runs cannot label older nationwide results as freshly checked. Supplying `--checked-on` requires that exact date. Missing/unknown spenders, negative totals, unsupported directions, source renames and pagination inconsistencies stop the update for review rather than silently dropping money.
 
 Export v2 retains FEC counts but omits transaction date ranges, which the aggregate endpoint does not supply. Existing registry committee types are preserved; new spenders can lack that optional metadata. Snapshot differences can reflect intervening filings, processing or cycle attribution as well as removed double counting. Sum-across-candidate totals are not unique national spending. The full `refresh_fec_money.py` also refreshes receipts and can publish under its existing main/clean-tree gate; use the IE-only commands above when receipts are outside scope.
+
+
+## Ballotpedia endorsement supplement
+
+Follow [BALLOTPEDIA_ENDORSEMENTS.md](BALLOTPEDIA_ENDORSEMENTS.md) for the recorded-profile collector, current-year source rules, saved-capture imports, Jev classifications, duplicate handling and the registered-review publication path. The campaign collector shares the same exact cross-source duplicate guard, so a later campaign refresh does not re-add a Ballotpedia observation. Source aliases and relationship conflicts remain reviewed/held; absence never deletes prior evidence. The new offline regression command is included in `check_release.py`.
