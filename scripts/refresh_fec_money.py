@@ -33,6 +33,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timezone
@@ -93,22 +94,38 @@ def push_main(token=''):
     sh('git', 'push', REMOTE, 'HEAD:main', env=env, secrets=secrets)
 
 
+def fec_get_json(url):
+    """GET with FEC rate-limit backoff; 429 and transient 5xx retry, key never surfaces."""
+    for attempt in range(6):
+        try:
+            with urllib.request.urlopen(url, timeout=45) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code in (429, 500, 502, 503, 504) and attempt < 5:
+                time.sleep(min(20 * (attempt + 1), 90))
+                continue
+            raise RuntimeError(f"FEC API request failed: HTTP {error.code}") from None
+        except (urllib.error.URLError, TimeoutError):
+            if attempt < 5:
+                time.sleep(2 ** attempt)
+                continue
+            raise RuntimeError("FEC API request failed: network error") from None
+
+
 def fec_totals(key, candidate_id):
     """Candidate-level cycle totals — aggregates across all authorized committees,
     the same source shape as the original ingestion (committee-level totals would
     undercount multi-committee candidates like John McBride)."""
     url = ("https://api.open.fec.gov/v1/candidate/" + candidate_id + "/totals/?"
            + urllib.parse.urlencode({"cycle": 2026, "api_key": key}))
-    with urllib.request.urlopen(url, timeout=45) as response:
-        results = json.load(response).get("results") or []
+    results = fec_get_json(url).get("results") or []
     return results[0] if results else None
 
 
 def fec_committees(key, candidate_id):
     url = ('https://api.open.fec.gov/v1/candidate/' + candidate_id + '/committees/?'
            + urllib.parse.urlencode({'cycle': 2026, 'api_key': key, 'per_page': 100}))
-    with urllib.request.urlopen(url, timeout=45) as response:
-        results = json.load(response).get('results') or []
+    results = fec_get_json(url).get('results') or []
     return sorted({r['committee_id'] for r in results
                    if r.get('designation') in {'P', 'A'} and r.get('committee_id')})
 
