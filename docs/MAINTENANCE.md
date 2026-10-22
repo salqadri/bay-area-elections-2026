@@ -45,6 +45,8 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 
 The downloaded address estimate uses **`bay-area-ballot-estimate/v1`**, not the inventory schema. It carries geography, confidence-tagged races and shared metadata, including the Gaza action registry and USCPR provenance needed to interpret candidate records, and deliberately omits raw addresses/coordinates. If its shape changes, treat it as a separate format contract; a dedicated schema is a possible improvement, not something already provided.
 
+Missing X profiles can be recovered from recorded campaign pages using [X_PROFILES.md](X_PROFILES.md). The source-bound additive review preserves existing accounts; no historical search ledger is treated as a permanent completion flag.
+
 ## Normal change workflow
 
 1. Inspect the current branch, source files and relevant evidence. Use a branch or isolated worktree when concurrent work warrants it.
@@ -69,6 +71,7 @@ python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsement_images.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
+python3 scripts/check_x_profiles.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
@@ -93,7 +96,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-`python3 scripts/check_release.py` runs this complete 30-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 31-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 

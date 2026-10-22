@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Discover official campaign websites and X accounts for the nationwide 2026
+"""Historical scaffold discovery runner (not the current inventory refresh).
+
+For missing X profiles across all current offices, use scripts/research_x_profiles.py;
+this old runner reads draft_positions.json and skips already-seen ledger entries.
+
+Discover official campaign websites and X accounts for the nationwide 2026
 Senate/governor candidacies via Serper, with mechanical verification gates.
 
 Gates (mirroring how the existing x_url/campaign_url layer was verified):
