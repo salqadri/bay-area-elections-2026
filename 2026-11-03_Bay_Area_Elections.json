@@ -1,6 +1,6 @@
 {
  "$schema": "elections.schema.json",
- "schema_version": "1.22",
+ "schema_version": "1.23",
  "election": {
   "date": "2026-11-03",
   "name": "California General Election",
@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-21.9"
+  "publication_version": "2026-10-22.1"
  },
  "codes": {
   "party": {
@@ -128,7 +128,9 @@
   "printed_candidates_with_uscpr_grade": 9,
   "printed_candidates_with_gaza_platform": 221,
   "printed_candidates_with_platform_positions": 578,
-  "printed_candidates_with_endorsement_images": 91
+  "printed_candidates_with_endorsement_images": 91,
+  "printed_candidates_with_ca_receipts": 41,
+  "printed_candidates_with_ca_independent_expenditures": 36
  },
  "address_lookup": {
   "division_endpoint": "https://www.googleapis.com/civicinfo/v2/divisionsByAddress",
@@ -113478,6 +113480,69 @@
         "source_url": "https://www.electscott.com/issues/fight-for-universaleverything"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1486040"
+      ],
+      "source_id": "S1493",
+      "receipts": 1701351.61,
+      "from": "2026-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 4120931.79,
+      "against_total": 88273.07,
+      "items": [
+       {
+        "spender_id": "1483390",
+        "direction": "for",
+        "amount": 1335520.32,
+        "items": 17
+       },
+       {
+        "spender_id": "1483808",
+        "direction": "for",
+        "amount": 1039940.0,
+        "items": 10
+       },
+       {
+        "spender_id": "1439102",
+        "direction": "for",
+        "amount": 1026582.5,
+        "items": 4
+       },
+       {
+        "spender_id": "1376693",
+        "direction": "for",
+        "amount": 312309.0,
+        "items": 6
+       },
+       {
+        "spender_id": "1490343",
+        "direction": "for",
+        "amount": 274389.4,
+        "items": 4
+       },
+       {
+        "spender_id": "1410185",
+        "direction": "for",
+        "amount": 130615.85,
+        "items": 8
+       },
+       {
+        "spender_id": "1491033",
+        "direction": "against",
+        "amount": 88273.07,
+        "items": 3
+       },
+       {
+        "spender_id": "1488683",
+        "direction": "for",
+        "amount": 1574.72,
+        "items": 13
+       }
+      ]
      }
     },
     {
@@ -114000,6 +114065,15 @@
         "source_url": "https://callison2026.com/issues/"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1483879"
+      ],
+      "source_id": "S1493",
+      "receipts": 7005.76,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
      }
     },
     {
@@ -114137,6 +114211,53 @@
         "summary": "Wilson states she has been committed throughout her public service career to supporting women in leadership positions, citing her role as a founding member of WIP Solano and creating the Solano Women Leaders Luncheon.",
         "quote": "Lori has been committed to supporting women in leadership positions",
         "source_url": "https://www.electloriwilson.com/about"
+       }
+      ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456721",
+       "1477199",
+       "1477317"
+      ],
+      "source_id": "S1493",
+      "receipts": 1127926.64,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 1813.48,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1048307",
+        "direction": "for",
+        "amount": 702.21,
+        "items": 3
+       },
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 548.66,
+        "items": 1
+       },
+       {
+        "spender_id": "1018635",
+        "direction": "for",
+        "amount": 220.47,
+        "items": 1
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
        }
       ]
      }
@@ -114700,7 +114821,28 @@
        "checked_on": "2026-10-11",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1488689"
+      ],
+      "source_id": "S1493",
+      "receipts": 12063.3,
+      "from": "2026-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 7000.0,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1056839",
+        "direction": "for",
+        "amount": 7000.0,
+        "items": 1
+       }
+      ]
+     }
     },
     {
      "name": "Buffy Wicks",
@@ -115045,6 +115187,35 @@
         "url": "https://www.buffywicks.com/issues/reproductive-rights",
         "title": "Women's Rights",
         "content_sha256": "b7088b369cb402a642e388844236944d307647553dc34a2cb45923414cf74b52"
+       }
+      ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1448697",
+       "1456909",
+       "1477654"
+      ],
+      "source_id": "S1493",
+      "receipts": 1514648.04,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 505.98,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 335.58,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
        }
       ]
      }
@@ -115748,7 +115919,30 @@
        "checked_on": "2026-10-11",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1463047",
+       "1478170",
+       "1480640"
+      ],
+      "source_id": "S1493",
+      "receipts": 873944.22,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 164275.5,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1439102",
+        "direction": "for",
+        "amount": 164275.5,
+        "items": 2
+       }
+      ]
+     }
     },
     {
      "name": "Arthur Webb",
@@ -116077,7 +116271,16 @@
        "checked_on": "2026-10-11",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1490039"
+      ],
+      "source_id": "S1493",
+      "receipts": 23331.0,
+      "from": "2026-01-01",
+      "through": "2026-10-17"
+     }
     }
    ],
    "primary_source_page": "15",
@@ -116434,12 +116637,44 @@
         "content_sha256": "64f5e55d94e899a97dbb7e5d83ce4517eeec1e78f64d3169bc37e9698dd26b5a"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456536",
+       "1478383"
+      ],
+      "source_id": "S1493",
+      "receipts": 422720.0,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 548.66,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 548.66,
+        "items": 1
+       }
+      ]
      }
     },
     {
      "name": "Joseph A. Rubay",
      "party": "R",
-     "ballotpedia_url": "https://ballotpedia.org/Joseph_Rubay"
+     "ballotpedia_url": "https://ballotpedia.org/Joseph_Rubay",
+     "ca_finance": {
+      "committee_ids": [
+       "1456763",
+       "1477007"
+      ],
+      "source_id": "S1493",
+      "receipts": 30840.48,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     }
     }
    ],
    "source_ids": [
@@ -116786,6 +117021,41 @@
         "content_sha256": "698b81d15eec41242eea3c8bd71e046c100a63c15ec0aa2f8f5bfc0e3bc082ab"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456530",
+       "1459009",
+       "1476944"
+      ],
+      "source_id": "S1493",
+      "receipts": 740808.37,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 3500.55,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 3158.4,
+        "items": 5
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.41,
+        "items": 1
+       }
+      ]
      }
     },
     {
@@ -117112,6 +117382,52 @@
         "content_sha256": "436e1bd132939a5f3fb6021daab86a6658066edd29156230a42a04e00638ebb7"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456426",
+       "1477774"
+      ],
+      "source_id": "S1493",
+      "receipts": 749688.0,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 21647.36,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1475739",
+        "direction": "for",
+        "amount": 21031.94,
+        "items": 2
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
+       },
+       {
+        "spender_id": "1367190",
+        "direction": "for",
+        "amount": 163.1,
+        "items": 2
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
+       }
+      ]
      }
     },
     {
@@ -117123,7 +117439,19 @@
       "S579",
       "S674"
      ],
-     "campaign_url": "https://andresandfordforassembly.com"
+     "campaign_url": "https://andresandfordforassembly.com",
+     "ca_independent_expenditures": {
+      "for_total": 0,
+      "against_total": 21031.94,
+      "items": [
+       {
+        "spender_id": "1475739",
+        "direction": "against",
+        "amount": 21031.94,
+        "items": 2
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -117354,6 +117682,40 @@
         "summary": "Catherine Stefani prioritizes improving community policing and ensuring first responders are ready to protect neighborhoods, drawing on her background as a former prosecutor and county supervisor.",
         "quote": "She’s worked tirelessly to improve community policing and the readiness of first responders.",
         "source_url": "https://www.votecatherinestefani.com/meet_catherine"
+       }
+      ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1458873",
+       "1477293"
+      ],
+      "source_id": "S1493",
+      "receipts": 1156635.17,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 3500.54,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 3158.4,
+        "items": 5
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
        }
       ]
      }
@@ -118289,6 +118651,41 @@
         "summary": "Ortega highlights that too many families are being priced out of basic necessities including housing, healthcare, and food, and pledges to fight to help every family afford these essentials.",
         "quote": "Too many families are getting priced out of the basics: housing, healthcare, and food on the table.",
         "source_url": "https://www.ortegaforassembly.com/"
+       }
+      ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456507",
+       "1471505",
+       "1476938"
+      ],
+      "source_id": "S1493",
+      "receipts": 676919.27,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 452.33,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.41,
+        "items": 1
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
        }
       ]
      }
@@ -120264,7 +120661,36 @@
        "checked_on": "2026-10-12",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1456580",
+       "1477408",
+       "1484882"
+      ],
+      "source_id": "S1493",
+      "receipts": 607591.15,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 280.59,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.41,
+        "items": 1
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -120340,7 +120766,35 @@
        "note_id": "N292",
        "rating": "Strong Support"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1456794",
+       "1477258"
+      ],
+      "source_id": "S1493",
+      "receipts": 864960.0,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 281.92,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
+       }
+      ]
+     }
     },
     {
      "name": "David G. Johnson",
@@ -120778,6 +121232,35 @@
         "summary": "Expand the CalFresh Fruit and Vegetable EBT Program to make fresh fruits and vegetables more affordable for low-income Californians facing skyrocketing costs of living.",
         "quote": "Making fresh fruits and vegetables more affordable by expanding the CalFresh Fruit and Vegetable EBT Program",
         "source_url": "https://www.votealexlee.com/issues"
+       }
+      ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456422",
+       "1476921",
+       "1490982"
+      ],
+      "source_id": "S1493",
+      "receipts": 609292.26,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 342.14,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
        }
       ]
      }
@@ -121461,6 +121944,15 @@
         "source_url": "https://www.max4california.com/about"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1485869"
+      ],
+      "source_id": "S1493",
+      "receipts": 25788.06,
+      "from": "2025-07-01",
+      "through": "2026-09-19"
      }
     }
    ],
@@ -121656,6 +122148,40 @@
         "source_url": "https://www.ashkalra.com/accomplishments"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1457313",
+       "1478352"
+      ],
+      "source_id": "S1493",
+      "receipts": 549077.0,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 452.32,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
+       }
+      ]
      }
     },
     {
@@ -121750,7 +122276,42 @@
        "verification": "campaign_claim",
        "note_id": "N322"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1464526",
+       "1476866",
+       "1482227"
+      ],
+      "source_id": "S1493",
+      "receipts": 1542816.1,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 452.32,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.4,
+        "items": 1
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
+       }
+      ]
+     }
     },
     {
      "name": "Tim Gorsulowsky",
@@ -125360,7 +125921,41 @@
        "provenance": "page_capture",
        "source_sha256": "8ea97ecef65c1d2620f2ac50ce63ad0ff12368b8e19e2385a203e8d00c53d5df"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1443589",
+       "1476812"
+      ],
+      "source_id": "S1493",
+      "receipts": 570892.0,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 452.33,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 171.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 170.41,
+        "items": 1
+       },
+       {
+        "spender_id": "1434166",
+        "direction": "for",
+        "amount": 110.18,
+        "items": 3
+       }
+      ]
+     }
     },
     {
      "name": "Carol Pefley",
@@ -126013,7 +126608,16 @@
        "checked_on": "2026-10-11",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1481290"
+      ],
+      "source_id": "S1493",
+      "receipts": 95926.48,
+      "from": "2025-01-01",
+      "through": "2026-10-17"
+     }
     }
    ],
    "source_ids": [
@@ -126229,12 +126833,44 @@
        "verification": "campaign_claim",
        "note_id": "N991"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1456511",
+       "1476818",
+       "1484749"
+      ],
+      "source_id": "S1493",
+      "receipts": 2671282.55,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 476.98,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1018622",
+        "direction": "for",
+        "amount": 476.98,
+        "items": 1
+       }
+      ]
+     }
     },
     {
      "name": "Dennis P. Sanchez",
      "party": "R",
-     "ballotpedia_url": "https://ballotpedia.org/Dennis_Sanchez_%28California%29"
+     "ballotpedia_url": "https://ballotpedia.org/Dennis_Sanchez_%28California%29",
+     "ca_finance": {
+      "committee_ids": [
+       "1487349"
+      ],
+      "source_id": "S1493",
+      "receipts": 7067.0,
+      "from": "2026-01-01",
+      "through": "2026-05-16"
+     }
     }
    ],
    "source_ids": [
@@ -131086,6 +131722,111 @@
         "source_url": "https://www.xavierbecerra2026.com/priorities/filmindustry/"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1480025"
+      ],
+      "source_id": "S1493",
+      "receipts": 34506056.04,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 20642195.75,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1490885",
+        "direction": "for",
+        "amount": 17222646.0,
+        "items": 26
+       },
+       {
+        "spender_id": "1491557",
+        "direction": "for",
+        "amount": 1798423.0,
+        "items": 8
+       },
+       {
+        "spender_id": "1490030",
+        "direction": "for",
+        "amount": 475299.49,
+        "items": 20
+       },
+       {
+        "spender_id": "1241835",
+        "direction": "for",
+        "amount": 450086.22,
+        "items": 8
+       },
+       {
+        "spender_id": "1490681",
+        "direction": "for",
+        "amount": 356000.0,
+        "items": 2
+       },
+       {
+        "spender_id": "1490752",
+        "direction": "for",
+        "amount": 168051.87,
+        "items": 7
+       },
+       {
+        "spender_id": "1299869",
+        "direction": "for",
+        "amount": 125000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1253609",
+        "direction": "for",
+        "amount": 22500.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1442900",
+        "direction": "for",
+        "amount": 15000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1488683",
+        "direction": "for",
+        "amount": 3870.95,
+        "items": 12
+       },
+       {
+        "spender_id": "1331005",
+        "direction": "for",
+        "amount": 3500.22,
+        "items": 2
+       },
+       {
+        "spender_id": "1018662",
+        "direction": "for",
+        "amount": 802.32,
+        "items": 1
+       },
+       {
+        "spender_id": "1038774",
+        "direction": "for",
+        "amount": 537.5,
+        "items": 2
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 360.53,
+        "items": 1
+       },
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 117.65,
+        "items": 1
+       }
+      ]
      }
     },
     {
@@ -131162,7 +131903,52 @@
        "verification": "endorser_statement",
        "note_id": "N296"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1480425"
+      ],
+      "source_id": "S1493",
+      "receipts": 26409583.69,
+      "from": "2025-04-15",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 43350.8,
+      "against_total": 1031858.19,
+      "items": [
+       {
+        "spender_id": "1490569",
+        "direction": "against",
+        "amount": 1031858.19,
+        "items": 3
+       },
+       {
+        "spender_id": "1077648",
+        "direction": "for",
+        "amount": 23469.21,
+        "items": 1
+       },
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 13750.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1489437",
+        "direction": "for",
+        "amount": 3090.05,
+        "items": 1
+       },
+       {
+        "spender_id": "1379388",
+        "direction": "for",
+        "amount": 3041.54,
+        "items": 5
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -168785,7 +169571,58 @@
        "checked_on": "2026-10-12",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1457360"
+      ],
+      "source_id": "S1493",
+      "receipts": 3173382.72,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 102306.7,
+      "against_total": 752818.59,
+      "items": [
+       {
+        "spender_id": "1490996",
+        "direction": "against",
+        "amount": 752818.59,
+        "items": 5
+       },
+       {
+        "spender_id": "1281772",
+        "direction": "for",
+        "amount": 58923.48,
+        "items": 3
+       },
+       {
+        "spender_id": "1469330",
+        "direction": "for",
+        "amount": 39127.68,
+        "items": 9
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 3758.66,
+        "items": 7
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 320.41,
+        "items": 1
+       },
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 176.47,
+        "items": 1
+       }
+      ]
+     }
     },
     {
      "name": "Gloria Romero",
@@ -168936,6 +169773,27 @@
         "source_url": "https://www.gloriaromero4ltgov.com/"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1486862"
+      ],
+      "source_id": "S1493",
+      "receipts": 234573.65,
+      "from": "2026-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 10000.0,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 10000.0,
+        "items": 1
+       }
+      ]
      }
     }
    ],
@@ -169030,7 +169888,76 @@
        "verification": "endorser_statement",
        "note_id": "N295"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1456658"
+      ],
+      "source_id": "S1493",
+      "receipts": 789363.75,
+      "from": "2025-01-01",
+      "through": "2026-10-17"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 18236.13,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 5757.65,
+        "items": 6
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 4667.78,
+        "items": 8
+       },
+       {
+        "spender_id": "1019126",
+        "direction": "for",
+        "amount": 3422.01,
+        "items": 2
+       },
+       {
+        "spender_id": "1237135",
+        "direction": "for",
+        "amount": 1688.8,
+        "items": 1
+       },
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 884.24,
+        "items": 2
+       },
+       {
+        "spender_id": "1048307",
+        "direction": "for",
+        "amount": 702.21,
+        "items": 3
+       },
+       {
+        "spender_id": "1257666",
+        "direction": "for",
+        "amount": 471.29,
+        "items": 1
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 320.41,
+        "items": 1
+       }
+      ]
+     }
     },
     {
      "name": "Donald P. (Don) Wagner",
@@ -169051,7 +169978,34 @@
        "verification": "endorser_statement",
        "note_id": "N296"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1482695"
+      ],
+      "source_id": "S1493",
+      "receipts": 699453.0,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 13041.54,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 10000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1379388",
+        "direction": "for",
+        "amount": 3041.54,
+        "items": 5
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -170529,6 +171483,76 @@
         "source_url": "https://www.maliacohenforca.com/issues/acting-to-protect-our-planet"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456350",
+       "1469890"
+      ],
+      "source_id": "S1493",
+      "receipts": 1770488.16,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 17995.44,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 5757.65,
+        "items": 6
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 4427.09,
+        "items": 7
+       },
+       {
+        "spender_id": "1019126",
+        "direction": "for",
+        "amount": 3422.01,
+        "items": 2
+       },
+       {
+        "spender_id": "1237135",
+        "direction": "for",
+        "amount": 1688.8,
+        "items": 1
+       },
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 884.24,
+        "items": 2
+       },
+       {
+        "spender_id": "1048307",
+        "direction": "for",
+        "amount": 702.21,
+        "items": 3
+       },
+       {
+        "spender_id": "1257666",
+        "direction": "for",
+        "amount": 471.29,
+        "items": 1
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 320.41,
+        "items": 1
+       }
+      ]
      }
     },
     {
@@ -170553,7 +171577,34 @@
        "source_kind": "news",
        "date_method": "x_snowflake"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1480103"
+      ],
+      "source_id": "S1493",
+      "receipts": 645368.63,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 13041.54,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 10000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1379388",
+        "direction": "for",
+        "amount": 3041.54,
+        "items": 5
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -172570,6 +173621,52 @@
         "source_url": "https://eleniforca.com/"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1483008",
+       "1496257"
+      ],
+      "source_id": "S1493",
+      "receipts": 9431218.36,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 81760.32,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1490343",
+        "direction": "for",
+        "amount": 75000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 5757.65,
+        "items": 6
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 360.52,
+        "items": 1
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 320.41,
+        "items": 1
+       }
+      ]
      }
     },
     {
@@ -172590,7 +173687,34 @@
        "checked_on": "2026-10-09",
        "quote": "Jennifer Hawks"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1488439"
+      ],
+      "source_id": "S1493",
+      "receipts": 101797.58,
+      "from": "2026-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 20000.0,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 10000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1440590",
+        "direction": "for",
+        "amount": 10000.0,
+        "items": 1
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -176196,6 +177320,81 @@
         "source_url": "https://robbonta.com/issues/"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1456428"
+      ],
+      "source_id": "S1493",
+      "receipts": 3151973.65,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 29552.75,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1367190",
+        "direction": "for",
+        "amount": 11248.84,
+        "items": 2
+       },
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 5757.65,
+        "items": 6
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 4735.56,
+        "items": 7
+       },
+       {
+        "spender_id": "1019126",
+        "direction": "for",
+        "amount": 3422.01,
+        "items": 2
+       },
+       {
+        "spender_id": "1237135",
+        "direction": "for",
+        "amount": 1688.8,
+        "items": 1
+       },
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 884.24,
+        "items": 2
+       },
+       {
+        "spender_id": "1048307",
+        "direction": "for",
+        "amount": 702.21,
+        "items": 3
+       },
+       {
+        "spender_id": "1257666",
+        "direction": "for",
+        "amount": 471.29,
+        "items": 1
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 320.41,
+        "items": 1
+       }
+      ]
      }
     },
     {
@@ -178999,6 +180198,33 @@
         "url": "https://www.gates4ag.com/sacramento-county-deputy-sheriffs-association-endorses-gates-for-attorney-general",
         "title": "Sacramento County Deputy Sheriffs' Association Endorses Gates for Attorney General",
         "content_sha256": "016875270a8dc2232d654558069c5daca7de607a89974effe52a156c44763312"
+       }
+      ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1486227"
+      ],
+      "source_id": "S1493",
+      "receipts": 1740331.35,
+      "from": "2026-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 13041.54,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 10000.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1379388",
+        "direction": "for",
+        "amount": 3041.54,
+        "items": 5
        }
       ]
      }
@@ -183765,6 +184991,39 @@
         "content_sha256": "0da34800b00965901b44e474bddfa12b1f4a16ddeb155f7b267ff12aaf7fa3b5"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1483889"
+      ],
+      "source_id": "S1493",
+      "receipts": 2576945.02,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 1084720.92,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1486438",
+        "direction": "for",
+        "amount": 1081280.0,
+        "items": 15
+       },
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 3276.05,
+        "items": 6
+       },
+       {
+        "spender_id": "1471051",
+        "direction": "for",
+        "amount": 164.87,
+        "items": 1
+       }
+      ]
      }
     },
     {
@@ -188296,6 +189555,69 @@
         "source_url": "https://www.janekim.org/issues/fastfairclaims"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1485530"
+      ],
+      "source_id": "S1493",
+      "receipts": 1199659.35,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 534735.42,
+      "against_total": 1511757.17,
+      "items": [
+       {
+        "spender_id": "1054833",
+        "direction": "against",
+        "amount": 1508481.12,
+        "items": 4
+       },
+       {
+        "spender_id": "1438874",
+        "direction": "for",
+        "amount": 349476.5,
+        "items": 16
+       },
+       {
+        "spender_id": "1328666",
+        "direction": "for",
+        "amount": 150195.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1469330",
+        "direction": "for",
+        "amount": 29994.67,
+        "items": 7
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 4427.1,
+        "items": 7
+       },
+       {
+        "spender_id": "1433436",
+        "direction": "against",
+        "amount": 3276.05,
+        "items": 6
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       },
+       {
+        "spender_id": "1018449",
+        "direction": "for",
+        "amount": 320.41,
+        "items": 1
+       }
+      ]
      }
     }
    ],
@@ -188377,7 +189699,52 @@
        "checked_on": "2026-10-09",
        "verification": "endorser_statement"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1478161"
+      ],
+      "source_id": "S1493",
+      "receipts": 652110.86,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 5171054.21,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1328666",
+        "direction": "for",
+        "amount": 5116149.48,
+        "items": 12
+       },
+       {
+        "spender_id": "1367043",
+        "direction": "for",
+        "amount": 39655.91,
+        "items": 1
+       },
+       {
+        "spender_id": "1482076",
+        "direction": "for",
+        "amount": 10500.0,
+        "items": 1
+       },
+       {
+        "spender_id": "1367550",
+        "direction": "for",
+        "amount": 4427.08,
+        "items": 7
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       }
+      ]
+     }
     },
     {
      "name": "Sonja Shaw",
@@ -190319,6 +191686,27 @@
         "source_url": "https://shawforca.com/index.html"
        }
       ]
+     },
+     "ca_finance": {
+      "committee_ids": [
+       "1479719"
+      ],
+      "source_id": "S1493",
+      "receipts": 548163.64,
+      "from": "2025-01-01",
+      "through": "2026-09-19"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 20000.0,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1452276",
+        "direction": "for",
+        "amount": 20000.0,
+        "items": 2
+       }
+      ]
      }
     }
    ],
@@ -192043,7 +193431,52 @@
        "checked_on": "2026-10-14",
        "date_note": "Observed October 14, 2026 in the explicitly labeled 2024 guide, page 5. This is a historical guide assessment; dates of the underlying statements are unknown."
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1444048"
+      ],
+      "source_id": "S1493",
+      "receipts": 0.0,
+      "from": "2025-01-01",
+      "through": "2025-01-27"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 6933.39,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 3158.4,
+        "items": 5
+       },
+       {
+        "spender_id": "1438874",
+        "direction": "for",
+        "amount": 2097.72,
+        "items": 6
+       },
+       {
+        "spender_id": "1076444",
+        "direction": "for",
+        "amount": 884.24,
+        "items": 2
+       },
+       {
+        "spender_id": "1257666",
+        "direction": "for",
+        "amount": 471.29,
+        "items": 1
+       },
+       {
+        "spender_id": "1018473",
+        "direction": "for",
+        "amount": 321.74,
+        "items": 1
+       }
+      ]
+     }
     },
     {
      "name": "John Pimentel",
@@ -193265,7 +194698,28 @@
        "checked_on": "2026-10-11",
        "provenance": "legacy_import"
       }
-     ]
+     ],
+     "ca_finance": {
+      "committee_ids": [
+       "1485721"
+      ],
+      "source_id": "S1493",
+      "receipts": 608495.0,
+      "from": "2026-01-01",
+      "through": "2026-10-17"
+     },
+     "ca_independent_expenditures": {
+      "for_total": 235.29,
+      "against_total": 0,
+      "items": [
+       {
+        "spender_id": "1433436",
+        "direction": "for",
+        "amount": 235.29,
+        "items": 1
+       }
+      ]
+     }
     }
    ],
    "source_ids": [
@@ -406788,6 +408242,10 @@
   "S1492": {
    "url": "https://serper.dev",
    "title": "Serper web search of official campaign sites and X accounts; pages fetched directly"
+  },
+  "S1493": {
+   "url": "https://www.sos.ca.gov/campaign-lobbying/helpful-resources/raw-data-campaign-finance-and-lobbying-activity",
+   "title": "California Secretary of State — Raw Data for Campaign Finance and Lobbying Activity (CAL-ACCESS dbwebexport.zip)"
   }
  },
  "ie_finance": {
@@ -410617,5 +412075,229 @@
   "scope_note": "Publisher grades combine votes, letters, sponsorships and other legislative actions, plus additional factors; they are not vote-only scores. Grades and percentage scores are copied without recalculation. Publisher methodology describes legislative action from 2023–2026, including the 119th Congress. Missing members remain ungraded; the feed can lag membership changes.",
   "snapshot_path": "research/gaza-records/uscpr-grades-2026-10-14.json",
   "snapshot_sha256": "fa101e040326fc580fa813d5f2c16741235c539e20f96a9628f1e1b195fe028e"
+ },
+ "ca_ie_spenders": {
+  "1483390": {
+   "name": "MOBILIZING ECONOMIC TRANSFORMATION ACROSS (META) CALIFORNIA",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1483390"
+  },
+  "1483808": {
+   "name": "GROW CALIFORNIA",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1483808"
+  },
+  "1439102": {
+   "name": "UBER INNOVATION POLITICAL ACTION COMMITTEE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1439102"
+  },
+  "1376693": {
+   "name": "KEEP CALIFORNIA GOLDEN",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1376693"
+  },
+  "1490343": {
+   "name": "ADVANCE CALIFORNIA, SPONSORED BY CALIFORNIA APARTMENT ASSOCIATION",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490343"
+  },
+  "1410185": {
+   "name": "ASIAN PACIFIC ISLANDER LEADERSHIP PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1410185"
+  },
+  "1491033": {
+   "name": "KEPNER FOR STATE SENATE 2026 SPONSORED BY LABOR ORGANIZATIONS; NURSES AND WORKING FAMILIES FOR",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1491033"
+  },
+  "1488683": {
+   "name": "ACLU CALIFORNIA ACTION VOTES",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1488683"
+  },
+  "1048307": {
+   "name": "NORTHERN SOLANO DEMOCRATIC CLUB",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1048307"
+  },
+  "1076444": {
+   "name": "DEMOCRATIC PARTY OF CONTRA COSTA COUNTY",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1076444"
+  },
+  "1018635": {
+   "name": "SOLANO COUNTY CENTRAL",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1018635"
+  },
+  "1018473": {
+   "name": "CALIFORNIA TEACHERS ASSOCIATION/ASSOCIATION FOR BETTER CITIZENSHIP",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1018473"
+  },
+  "1018449": {
+   "name": "CALIFORNIA FEDERATION OF TEACHERS, COPE - AFT, AFL-CIO",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1018449"
+  },
+  "1056839": {
+   "name": "GREEN PARTY OF CALIFORNIA",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1056839"
+  },
+  "1433436": {
+   "name": "GROWSF VOTER GUIDE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1433436"
+  },
+  "1475739": {
+   "name": "COALITION FOR PATIENT ACCESS AND INNOVATION, SPONSORED BY CALIFORNIA",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1475739"
+  },
+  "1367190": {
+   "name": "COURAGE CALIFORNIA STATE PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1367190"
+  },
+  "1434166": {
+   "name": "WE VOTE - NOSOTROS VOTAMOS - PPAMM COMMITTEE (FED PAC ID# C00527226)",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1434166"
+  },
+  "1018622": {
+   "name": "SAN BENITO COUNTY DEMOCRATIC CENTRAL COMMITTEE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1018622"
+  },
+  "1490885": {
+   "name": "BECERRA FOR GOVERNOR 2026 SPONSORED BY LABOR AND COMMUNITY HEALTH ORGANIZATIONS; WORKING FAMILIES FOR HEALTHY COMMUNITIES SUPPORTING",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490885"
+  },
+  "1491557": {
+   "name": "BECERRA FOR GOVERNOR 2026; LATINOS UNITED FOR XAVIER",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1491557"
+  },
+  "1490030": {
+   "name": "BECERRA FOR GOVERNOR 2026, SPONSORED BY LABORERS' INTERNATIONAL UNION OF NORTH AMERICA, LOCAL 300; CALIFORNIOS UNIDOS POR",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490030"
+  },
+  "1241835": {
+   "name": "CALIFORNIA PROFESSIONAL FIREFIGHTERS IE PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1241835"
+  },
+  "1490681": {
+   "name": "BECERRA FOR GOVERNOR 2026; CALIFORNIA PEOPLE SUPPORTING",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490681"
+  },
+  "1490752": {
+   "name": "WORKING FAMILIES FOR A STRONGER CALIFORNIA, SPONSORED BY LCC PAC, A BI-PARTISAN COALITION OF MUNICIPAL, COUNTY, LATINO APPOINTED AND ELECTED LEADERS PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490752"
+  },
+  "1299869": {
+   "name": "LYTTON RANCHERIA OF CALIFORNIA",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1299869"
+  },
+  "1253609": {
+   "name": "OUTFRONT MEDIA INC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1253609"
+  },
+  "1442900": {
+   "name": "CALIFORNIA'S BEST",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1442900"
+  },
+  "1331005": {
+   "name": "PLANNED PARENTHOOD AFFILIATES OF CALIFORNIA VOTES PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1331005"
+  },
+  "1018662": {
+   "name": "SLO COUNTY DEMOCRATIC PARTY",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1018662"
+  },
+  "1038774": {
+   "name": "ALICE B. TOKLAS LGBTQ DEMOCRATIC CLUB PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1038774"
+  },
+  "1367550": {
+   "name": "UNITED DOMESTIC WORKERS OF AMERICA INDEPENDENT EXPENDITURE PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1367550"
+  },
+  "1490569": {
+   "name": "HILTON FOR GOVERNOR 2026, SPONSORED BY ORGANIZATIONS OPPOSING REPUBLICAN CANDIDATES FOR GOVERNOR; GREATER GOLDEN STATE, OPPOSING",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490569"
+  },
+  "1077648": {
+   "name": "NEW MAJORITY PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1077648"
+  },
+  "1452276": {
+   "name": "REFORM LOCAL GOVERNMENT PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1452276"
+  },
+  "1489437": {
+   "name": "RESCUE CALIFORNIA COALITION",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1489437"
+  },
+  "1379388": {
+   "name": "SAN DIEGO COUNTY GUN OWNERS POLITICAL ACTION COMMITTEE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1379388"
+  },
+  "1490996": {
+   "name": "MA FOR LIEUTENANT GOVERNOR 2026; TAXPAYERS AGAINST SEXUAL HARASSMENT BY GOVERNMENT OFFICIALS - NO ON FIONA",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1490996"
+  },
+  "1281772": {
+   "name": "GOLDEN STATE LEADERSHIP FUND PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1281772"
+  },
+  "1469330": {
+   "name": "ASIAN AMERICANS FOR REPRESENTATION",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1469330"
+  },
+  "1019126": {
+   "name": "LOS ANGELES COUNTY DEMOCRATIC PARTY-ISSUES AND ADVOCACY COMMITTEE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1019126"
+  },
+  "1237135": {
+   "name": "LOS ANGELES COUNTY DEMOCRATIC PARTY - STATE CANDIDATE COMMITTEE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1237135"
+  },
+  "1257666": {
+   "name": "DEMOCRATIC CLUB OF THE CONEJO VALLEY",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1257666"
+  },
+  "1440590": {
+   "name": "HOLLANDER, YOSSIE JOSEPH",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1440590"
+  },
+  "1486438": {
+   "name": "ALLEN FOR INSURANCE COMMISSIONER 2026; CALIFORNIANS FOR AN AFFORDABLE FUTURE, SPONSORED BY CALIFORNIA ENVIRONMENTAL VOTERS, SUPPORTING BEN",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1486438"
+  },
+  "1471051": {
+   "name": "CLIMATE ACTION CALIFORNIA PAC",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1471051"
+  },
+  "1054833": {
+   "name": "JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1054833"
+  },
+  "1438874": {
+   "name": "CALIFORNIA WORKING FAMILIES PARTY",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1438874"
+  },
+  "1328666": {
+   "name": "CALIFORNIA TEACHERS ASSOCIATION INDEPENDENT EXPENDITURE COMMITTEE",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1328666"
+  },
+  "1367043": {
+   "name": "FAMILIES AND TEACHERS UNITED, SPONSORED BY CALIFORNIA CHARTER SCHOOLS ASSOCIATION ADVOCATES",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1367043"
+  },
+  "1482076": {
+   "name": "BARRERA FOR SUPERINTENDENT OF PUBLIC SCHOOLS 2026; EDUCATE THE FUTURE SUPPORTING RICHARD",
+   "source_url": "https://cal-access.sos.ca.gov/Campaign/Committee/Details.aspx?ID=1482076"
+  }
+ },
+ "ca_finance_settings": {
+  "provider": "California Secretary of State CAL-ACCESS",
+  "cycle_start": "2025-01-01",
+  "currency": "USD",
+  "metric": "total_cash_receipts",
+  "checked_on": "2026-10-22",
+  "source_id": "S1493",
+  "method": "Total cash receipts (Form 460 summary line 13) reported by each candidacy's controlled recipient committees for statements covering periods from January 1, 2025 onward, from the Secretary of State's nightly CAL-ACCESS raw-data export. Receipts include monetary contributions, loans and other cash receipts as filed; they are not net donations or cash on hand, and independent outside spending is excluded. Amendments supersede the statements they amend; statement periods opening before January 1, 2025 are excluded rather than split. Coverage dates follow each committee's latest filed statement. Amounts are as filed and not independently audited. This is a dated snapshot of the raw export, not a live feed."
+ },
+ "ca_ie_finance": {
+  "provider": "California Secretary of State CAL-ACCESS",
+  "cycle_start": "2025-01-01",
+  "currency": "USD",
+  "metric": "independent_expenditures",
+  "checked_on": "2026-10-22",
+  "source_id": "S1493",
+  "method": "Independent expenditures reported on Form 460 Schedule E with an IND expenditure code and a support/oppose code targeting this candidacy since January 1, 2025, from the Secretary of State's nightly CAL-ACCESS raw-data export. Committee contributions to candidates (Schedule D/E monetary gifts), memo subtotals and late 24-/48-hour Form 465/496 notices are excluded; amendments supersede the statements they amend, so recent notice-only spending is outside these totals. The spender is the committee that filed the statement. Amounts are independent outside spending: they are not campaign receipts, contributions, coordination findings or endorsements, and support of one candidate is never treated as opposition to another. This is a dated snapshot of the raw export, not a live feed."
  }
 }

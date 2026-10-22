@@ -1,6 +1,6 @@
 # Maintaining the explorer
 
-The October 17, 2026 schema 1.22 update adds neutral `endorsement_images`, a separate `distinction` relationship, external image URLs with no copied assets and the [deterministic image workflow](ENDORSEMENT_IMAGES.md). The guide also includes the October 17 schema 1.21 update (nationwide Senate/governor contests: empty-county records and any-state OCD identifiers; previous layers: 1.20 general campaign platform positions October 16, 1.19 Gaza records October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
+The October 22, 2026 schema 1.23 update adds the California state campaign-finance layer (CAL-ACCESS receipts and independent expenditures; see [the refresh section](#california-campaign-finance-refresh)). The guide also includes the October 17 schema 1.22 update: neutral `endorsement_images`, a separate `distinction` relationship, external image URLs with no copied assets and the [deterministic image workflow](ENDORSEMENT_IMAGES.md). The guide also includes the October 17 schema 1.21 update (nationwide Senate/governor contests: empty-county records and any-state OCD identifiers; previous layers: 1.20 general campaign platform positions October 16, 1.19 Gaza records October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
 
 ## Development setup
 
@@ -173,6 +173,20 @@ Do not claim a Jev assessment unless a documented API endpoint/authentication co
 
 Both UI date-label functions distinguish `source_observed` from historical dates. The schema requires a complete date, voter-guide source kind and explanatory date note; the evidence guard requires observation date to equal check date. The shared endorsement renderer displays Ally explicitly without upgrading it to a formal endorsement. Rebuild both HTML files and run all README checks after changing these sources.
 
+
+## California campaign finance refresh
+
+The CAL-ACCESS layer (`scripts/ca_campaign_finance.py`) reads the Secretary of State's nightly raw export. The zip (~1.6 GB), extracted TSVs and derived snapshot live under gitignored `.research/ca-finance/`; `run-state.json` records download/build/attach timestamps and the source Last-Modified/sha256.
+
+```sh
+python3 scripts/ca_campaign_finance.py download   # skips when the CDN copy is unchanged; --force overrides
+python3 scripts/ca_campaign_finance.py build      # parses TSVs -> .research/ca-finance/derived-ca-finance.json
+python3 scripts/ca_campaign_finance.py attach --publication-version YYYY-MM-DD.N
+python3 scripts/build_site.py
+python3 scripts/check_release.py
+```
+
+Receipt totals are Form 460 summary line 13 Column A summed across each controlled committee's in-window statements (highest AMEND_ID supersedes; periods opening before the cycle start are excluded, never split). IE rows require an IND expenditure code plus a support/oppose code and a parseable `EXPN_DATE` — that date requirement is what keeps coalition Schedule E memo rollups from double-counting the dated schedule-D detail rows. Do not re-add F465/F496 notice rows or undated rollup lines. Spenders resolve through `FILER_FILINGS_CD`; names through `FILERNAME_CD`. Name matching is deterministic (surname variants, nickname groups); ambiguous CAND matches drop the row rather than guess — inspect `candidacies_without_calaccess_match` after attach before assuming a miss is real absence. The SOS CDN does not answer HEAD reliably; freshness uses a 1-byte ranged GET.
 
 ## Reusable scope and review pipeline
 

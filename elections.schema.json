@@ -11,7 +11,7 @@
    "description": "Relative link to the companion schema file, intended to reside beside this dataset."
   },
   "schema_version": {
-   "const": "1.22"
+   "const": "1.23"
   },
   "election": {
    "type": "object",
@@ -178,6 +178,14 @@
      "type": "integer",
      "minimum": 0,
      "description": "Printed candidacies with neutral image observations; these are not endorsement counts."
+    },
+    "printed_candidates_with_ca_receipts": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "printed_candidates_with_ca_independent_expenditures": {
+     "type": "integer",
+     "minimum": 0
     }
    },
    "required": [
@@ -605,6 +613,91 @@
   },
   "uscpr_scorecard": {
    "$ref": "#/$defs/uscprScorecardSettings"
+  },
+  "ca_finance_settings": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "Shared settings for every candidate.ca_finance snapshot. Coverage from/through dates on each candidacy govern the reported amount; committees report on overlapping but not identical periods.",
+   "properties": {
+    "provider": {
+     "const": "California Secretary of State CAL-ACCESS"
+    },
+    "cycle_start": {
+     "$ref": "#/$defs/date",
+     "description": "First day included in receipt totals; statements opening earlier are excluded rather than split."
+    },
+    "currency": {
+     "const": "USD"
+    },
+    "metric": {
+     "const": "total_cash_receipts"
+    },
+    "checked_on": {
+     "$ref": "#/$defs/date"
+    },
+    "source_id": {
+     "$ref": "#/$defs/sourceId"
+    },
+    "method": {
+     "$ref": "#/$defs/text"
+    }
+   },
+   "required": [
+    "provider",
+    "cycle_start",
+    "currency",
+    "metric",
+    "checked_on",
+    "source_id",
+    "method"
+   ]
+  },
+  "ca_ie_finance": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "Shared settings for every candidate.ca_independent_expenditures snapshot. Coverage runs from cycle_start through the raw export's filing date; per-candidacy amounts follow filings available at checked_on.",
+   "properties": {
+    "provider": {
+     "const": "California Secretary of State CAL-ACCESS"
+    },
+    "cycle_start": {
+     "$ref": "#/$defs/date"
+    },
+    "currency": {
+     "const": "USD"
+    },
+    "metric": {
+     "const": "independent_expenditures"
+    },
+    "checked_on": {
+     "$ref": "#/$defs/date"
+    },
+    "source_id": {
+     "$ref": "#/$defs/sourceId"
+    },
+    "method": {
+     "$ref": "#/$defs/text"
+    }
+   },
+   "required": [
+    "provider",
+    "cycle_start",
+    "currency",
+    "metric",
+    "checked_on",
+    "source_id",
+    "method"
+   ]
+  },
+  "ca_ie_spenders": {
+   "type": "object",
+   "propertyNames": {
+    "pattern": "^[0-9]+$"
+   },
+   "additionalProperties": {
+    "$ref": "#/$defs/caIeSpender"
+   },
+   "description": "Shared registry of California independent-expenditure spenders keyed by CAL-ACCESS filer ID."
   }
  },
  "required": [
@@ -818,6 +911,12 @@
       "$ref": "#/$defs/endorsementImage"
      },
      "description": "Neutral campaign image observations, separate from named endorsements. Filenames and original alt text are metadata, never proof of identity or endorsement. Legacy imports retain uncertain page placement."
+    },
+    "ca_finance": {
+     "$ref": "#/$defs/caFinance"
+    },
+    "ca_independent_expenditures": {
+     "$ref": "#/$defs/caIndependentExpenditures"
     }
    },
    "required": [
@@ -2530,6 +2629,159 @@
     }
    ],
    "description": "Neutral observation of an external campaign image URL and page metadata. No image bytes are copied; remote content can change or become unavailable."
+  },
+  "caFinance": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "CAL-ACCESS total cash receipts snapshot for a California state candidacy. Global provider, cycle start, currency, metric and retrieval date are in ca_finance_settings. A numeric zero is a reported zero; null means no summary total was available. Absence of ca_finance means the candidacy had no controlled recipient committee in the CAL-ACCESS raw export. Source IDs resolve through sources.",
+   "properties": {
+    "receipts": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0,
+     "description": "Total cash receipts (Form 460 line 13 Column A) in USD to cent precision; not millions or cents. Null is unknown, not zero."
+    },
+    "from": {
+     "$ref": "#/$defs/date",
+     "description": "First day of financial coverage reported by the committee statements; never earlier than the cycle start."
+    },
+    "through": {
+     "$ref": "#/$defs/date",
+     "description": "Last day of financial coverage across the committee statements, not the retrieval date."
+    },
+    "committee_ids": {
+     "type": "array",
+     "minItems": 1,
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "pattern": "^[0-9]+$"
+     },
+     "description": "CAL-ACCESS filer IDs of committees controlled by this candidate that filed recipient-committee statements."
+    },
+    "source_id": {
+     "$ref": "#/$defs/sourceId"
+    },
+    "note_id": {
+     "$ref": "#/$defs/noteId"
+    }
+   },
+   "required": [
+    "receipts",
+    "source_id"
+   ],
+   "if": {
+    "properties": {
+     "receipts": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "receipts"
+    ]
+   },
+   "then": {
+    "required": [
+     "from",
+     "through",
+     "committee_ids"
+    ]
+   },
+   "else": {
+    "not": {
+     "anyOf": [
+      {
+       "required": [
+        "from"
+       ]
+      },
+      {
+       "required": [
+        "through"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "caIndependentExpenditures": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "for_total",
+    "against_total",
+    "items"
+   ],
+   "description": "Independent expenditures reported for this candidacy in the shared CAL-ACCESS snapshot window. Shared provider, cycle start, currency and retrieval date live in ca_ie_finance; spender names resolve through ca_ie_spenders. Absence means no state independent-expenditure snapshot was researched.",
+   "properties": {
+    "for_total": {
+     "type": "number",
+     "minimum": 0,
+     "description": "USD to cent precision; a reported zero stays zero."
+    },
+    "against_total": {
+     "type": "number",
+     "minimum": 0,
+     "description": "USD to cent precision; a reported zero stays zero."
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "spender_id",
+       "direction",
+       "amount"
+      ],
+      "description": "One spender's cycle total for or against this candidacy. Amounts are independent outside spending, not campaign receipts or endorsements.",
+      "properties": {
+       "spender_id": {
+        "type": "string",
+        "pattern": "^[0-9]+$",
+        "description": "CAL-ACCESS filer ID of the committee that filed the expenditure; registered in ca_ie_spenders."
+       },
+       "direction": {
+        "enum": [
+         "for",
+         "against"
+        ]
+       },
+       "amount": {
+        "type": "number",
+        "minimum": 0,
+        "description": "USD to cent precision; a reported zero stays zero."
+       },
+       "items": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Count of itemized Schedule E/D expenditures combined into this amount."
+       }
+      }
+     },
+     "description": "One row per spender-direction combination; empty when no expenditure is reported in the window."
+    }
+   }
+  },
+  "caIeSpender": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "name",
+    "source_url"
+   ],
+   "description": "Registry entry for a CAL-ACCESS independent-expenditure spender.",
+   "properties": {
+    "name": {
+     "$ref": "#/$defs/text"
+    },
+    "source_url": {
+     "$ref": "#/$defs/url",
+     "description": "CAL-ACCESS committee detail page for this spender."
+    }
+   }
   }
  }
 }
