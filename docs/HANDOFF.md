@@ -1,12 +1,12 @@
 # Research and development handoff
 
-## Proposed update — October 22, 2026: Ballotpedia endorsement supplement (2026-10-22.3)
+## Published update — October 22, 2026: Ballotpedia endorsement supplement (PR #11, 2026-10-22.3)
 
 New `scripts/ballotpedia_endorsements.py` supplies plan → fetch/import → extract → Jev review → draft → archive, using only recorded Ballotpedia profile URLs and explicitly current-year Endorsements sections. The parser preserves cycle/phase/category boundaries and the polling-chart heading exception. Shared `endorsement_identity.py` prevents exact cross-source duplicates in both collectors; Jev resolves name variants and screens all proposed new entities against existing names/curated publishers, including acronyms. Older/general/primary context and curated relationship controls are preserved. New rows are `reported` secondary evidence with source-section links and observation-date notes.
 
 All 934 unique recorded URLs were attempted: **236 readable / 698 empty or challenge responses**. The reviewed publication adds **200 records (103 endorsements, 97 recommendations) on 54 candidacies**, retains **167 corroborations** without adding displayed duplicates, and holds **857 parsed rows plus 47 source-layout fragments**. Unavailable URLs and unsupported layouts remain explicit queues; saved HTML imports support Hermes's existing captures. **Mike Rogers: 1 → 8**, with Donald Trump retained once, seven new endorsements, and four guide entries held for relationship/entity uncertainty. This is a scoped source supplement, not exhaustive endorsement certification.
 
-See [workflow](BALLOTPEDIA_ENDORSEMENTS.md), [audit](reviews/2026-10-22-ballotpedia-endorsements.md), registered review `research/reviews/ballotpedia-endorsements-2026-10-22.json`, and portable source/model archive `research/endorsements/ballotpedia-2026-10-22/`. Schema remains 1.23. Roster facts, finance, platforms and Gaza records are preserved. The release gate now includes the Ballotpedia regressions (30 checks total); this change is prepared in a PR for Hermes review, not deployed by the branch.
+See [workflow](BALLOTPEDIA_ENDORSEMENTS.md), [audit](reviews/2026-10-22-ballotpedia-endorsements.md), registered review `research/reviews/ballotpedia-endorsements-2026-10-22.json`, and portable source/model archive `research/endorsements/ballotpedia-2026-10-22/`. Schema remains 1.23. Roster facts, finance, platforms and Gaza records are preserved. The release gate now includes the Ballotpedia regressions (30 checks total). Hermes reviewed PR #11 independently — the full 30-check gate passed on the branch, a structural revert recovered main byte-for-byte after removing exactly the 200 additions plus version/coverage metadata, and the archive's review SHA-256 binding was verified — then merged and published it.
 
 
 ## Published update — October 22, 2026: California state campaign finance from CAL-ACCESS (schema 1.23, publication 2026-10-22.1)

@@ -4,9 +4,10 @@ Prepared against `8b484e3` (publication `2026-10-22.2`). Proposed publication
 `2026-10-22.3`; schema stays **1.23**. This branch supplements the campaign
 collector with explicitly current-cycle candidate-profile endorsement sections.
 It does not claim exhaustive coverage or infer endorsement absence from a failed
-request. The PR is for Hermes review; this branch does not deploy itself.
+request. Hermes reviewed and merged the PR; this report describes the branch's
+proposed changes as published.
 
-## Published-data changes proposed
+## Published-data changes
 
 **200 secondary-source records on 54 printed candidacies**: 103 endorsements and
 97 voter-guide recommendations. All additions retain `phase: unspecified`
