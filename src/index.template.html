@@ -88,6 +88,7 @@ function priorityCompare(a,b){
     d=orderIndex(['U.S. Senate','U.S. House'],categoryLabel(a))-orderIndex(['U.S. Senate','U.S. House'],categoryLabel(b));if(d)return d;
   }
   if(levelLabel(a)==='State'){
+    d=orderIndex(['Governor',''],a.office==='Governor'?'Governor':'')-orderIndex(['Governor',''],b.office==='Governor'?'Governor':'');if(d)return d;
     d=orderIndex(order.state_categories,categoryLabel(a))-orderIndex(order.state_categories,categoryLabel(b));if(d)return d;
     d=orderIndex(order.state_offices,a.office)-orderIndex(order.state_offices,b.office);if(d)return d;
   }
@@ -100,7 +101,7 @@ function priorityCompare(a,b){
 function sectionLabel(p){
   const level=levelLabel(p);
   if(level==='Federal')return categoryLabel(p);
-  if(level==='State')return ['State Senate','State Assembly'].includes(categoryLabel(p))?categoryLabel(p):'Other state offices';
+  if(level==='State'){if(p.office==='Governor')return 'Governor';return ['State Senate','State Assembly'].includes(categoryLabel(p))?categoryLabel(p):'Other state offices';}
   if(['County','City or town'].includes(level))return p.jurisdiction;
   return categoryLabel(p);
 }

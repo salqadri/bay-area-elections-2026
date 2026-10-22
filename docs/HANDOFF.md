@@ -1,8 +1,13 @@
 # Research and development handoff
 
+## Published update — October 21, 2026 (late): Governor split out as its own category within State (2026-10-21.9)
+
+Per owner request the State section now groups **Governor → State Senate → State Assembly → Other state offices** on both readers (`sectionLabel`/`priorityCompare` + `subgroup`/`compareRaces`; Governor leads as top-of-ticket, mirroring Senate-first in Federal). Grouping is display-only — `office_category` stays `Statewide executive` and the JSON positions array order (Senate→Assembly→statewide per check_data) is untouched; all 37 governor races (36 statewide + CA's) move into the new block. `check_explorer.cjs` State assertions rewritten for the new group keys/order — note its DOM fixture must be regenerated (`prepare_dom_fixture.py`) after any ballot.html change or it tests stale markup. README ordering paragraph updated; House platform batch published earlier as .8 (99 candidacies / 725 quoted positions via review `campaign-platform-positions-2026-10-21-house`).
+
 ## Published update — October 21, 2026 (late night): nationwide House platform positions published (2026-10-21.8)
 
 Closed the last House follow-up from the .7 batch: platform positions for the 108 new US2026 House campaign sites. Driver `.research/run_house_platform_20261021.sh` crawled + extracted all queued sources overnight (crawl 14 batches + retry sweep; extract drained to remaining=0 at 03:54Z). Imported the **108** new responses via `research_campaign_issues.py import-reviewed` and published through registered review `research/reviews/campaign-platform-positions-2026-10-21-house.json` (distinct ID from the morning Senate/governor review of the same date — IDs must be unique in `publication-reviews.json`): **99 candidacies / 725 mechanically gated, verbatim-quoted platform points** (98 `positions_found`, 1 scoped `no_positions_found`). Held back: 641 `no_website` + 554 `unavailable` inventory states (never findings of absence). Nationwide US2026 platform coverage is now **250 candidacies / 1,847 points** (House 99/725 + Senate/governor 151/1,122). Printed coverage metric `printed_candidates_with_platform_positions` = 578. Full release gate green (`passed: true`).
+
 
 ## Published update — October 21, 2026 (night): nationwide U.S. House races added (2026-10-21.7)
 

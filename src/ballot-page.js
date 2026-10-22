@@ -60,6 +60,9 @@
       if (comparison) return comparison;
     }
     if (leftLevel === 'State') {
+      // The governor's race leads the State section, mirroring Senate-first in Federal.
+      comparison = ordinal(['Governor', ''], left.office === 'Governor' ? 'Governor' : '') - ordinal(['Governor', ''], right.office === 'Governor' ? 'Governor' : '');
+      if (comparison) return comparison;
       comparison = ordinal(order.state_categories, label('office_category', left.office_category)) - ordinal(order.state_categories, label('office_category', right.office_category));
       if (comparison) return comparison;
       comparison = ordinal(order.state_offices, left.office) - ordinal(order.state_offices, right.office);
@@ -75,7 +78,10 @@
     const level = label('government_level', position.government_level);
     const category = label('office_category', position.office_category);
     if (level === 'Federal') return category;
-    if (level === 'State') return ['State Senate', 'State Assembly'].includes(category) ? category : 'Other state offices';
+    if (level === 'State') {
+      if (position.office === 'Governor') return 'Governor';
+      return ['State Senate', 'State Assembly'].includes(category) ? category : 'Other state offices';
+    }
     if (['County', 'City or town'].includes(level)) return position.jurisdiction;
     return category;
   }

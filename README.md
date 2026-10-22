@@ -35,7 +35,7 @@ Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/ballot.html`. Use `pytho
 
 ## Navigation and ordering
 
-The default **By office priority** view uses expandable sections for federal, state, judicial, county, city, education, and special-district contests. Federal contests group **U.S. Senate → U.S. House → governor**. State contests appear in the requested order: **State Senate → State Assembly → other state offices**. Within the latter, Governor comes first, followed by Lieutenant Governor, Secretary of State, Controller, Treasurer, Attorney General, Insurance Commissioner, Superintendent of Public Instruction, and Board of Equalization. This is an editorial display preference, not a constitutional hierarchy.
+The default **By office priority** view uses expandable sections for federal, state, judicial, county, city, education, and special-district contests. Federal contests group **U.S. Senate → U.S. House**. State contests group **Governor → State Senate → State Assembly → other state offices**, mirroring the top-of-ticket lead; within "other state offices" comes Lieutenant Governor, Secretary of State, Controller, Treasurer, Attorney General, Insurance Commissioner, Superintendent of Public Instruction, and Board of Equalization. This is an editorial display preference, not a constitutional hierarchy.
 
 Click a section heading to expand it, or use **Expand all / Collapse all**. Counts include contests inside collapsed sections. Search results and direct contest links open the relevant sections automatically. City contests are grouped by jurisdiction. The jurisdiction and office sorts offer flat lists. Shared ordering settings live in `display_order`; the JSON positions array also follows the requested state-office priority.
 

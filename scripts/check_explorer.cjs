@@ -70,12 +70,12 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   const houseDistricts=federalPositions.filter(p=>p.office_category==='U.S. House').map(p=>p.district_or_seat);
   assert(houseDistricts.length>=60,'The nationwide in-play House races appear in the House block');
   assert(federalPositions.filter(p=>p.office_category==='U.S. Senate'&&p.district_or_seat.includes('Statewide')).length>=35,'Unfiltered view must include the nationwide Senate statewide seats');
-  set('level','State');const statePositions=cardPositions();assert.equal(statePositions[0].office_category,'State Senate');
-  assert.equal(statePositions[1].district_or_seat,'AD-11');
-  const lastAssembly=statePositions.map(p=>p.office_category).lastIndexOf('State Assembly');
-  const govIdx=statePositions.findIndex((p,i)=>i>lastAssembly&&p.office==='Governor');const ltgIdx=statePositions.findIndex((p,i)=>i>lastAssembly&&p.office==='Lieutenant Governor');
-  assert(govIdx>-1&&ltgIdx>govIdx,'Statewide executives follow the assembly block in office order');
-  assert.deepEqual(groups().filter(n=>n.dataset.sectionKey.startsWith('State/')).map(n=>n.dataset.sectionKey),['State/State Senate','State/State Assembly','State/Other state offices']);
+  set('level','State');const statePositions=cardPositions();assert.equal(statePositions[0].office,'Governor','The governors race leads the State section');
+  assert.ok(!statePositions.some((p,i)=>i&&p.office==='Governor'&&statePositions[i-1].office!=='Governor'),'All governor races stay contiguous at the top');
+  const govEnd=statePositions.findIndex(p=>p.office!=='Governor');
+  assert.equal(statePositions[govEnd].office_category,'State Senate','State Senate follows the Governor block');
+  assert.ok(statePositions.slice(govEnd).findIndex(p=>p.office_category==='State Assembly')<statePositions.slice(govEnd).findIndex(p=>p.office==='Lieutenant Governor'),'The assembly precedes other statewide offices');
+  assert.deepEqual(groups().filter(n=>n.dataset.sectionKey.startsWith('State/')).map(n=>n.dataset.sectionKey),['State/Governor','State/State Senate','State/State Assembly','State/Other state offices']);
   $('collapse-sections').click();assert(groups().every(n=>!n.open));assert.equal(cards().filter(visible).length,0);
   $('expand-sections').click();assert(groups().every(n=>n.open));assert.equal(cards().filter(visible).length,cards().length);
   const assemblyGroup=groups().find(n=>n.dataset.sectionKey==='State/State Assembly');assemblyGroup.open=false;assemblyGroup.fire('toggle');assert(!visible(cards().find(n=>n.textContent.includes('AD-18'))));
