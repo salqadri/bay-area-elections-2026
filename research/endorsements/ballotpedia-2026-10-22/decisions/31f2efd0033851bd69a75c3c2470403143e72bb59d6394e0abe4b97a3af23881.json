@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Mamdanification (Sway voting group by Hunter Dunn and Smallplates)\",\"prior_observations\":[{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Mamdanification (Sway voting group by Hunter Dunn and Smallplates)\",\"heading_path\":[\"Elections\",\"2026\",\"California State Senate District 10\",\"Endorsements\"],\"links\":[{\"text\":\"Mamdanification (Sway voting group by Hunter Dunn and Smallplates)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Mamdanification_(Sway_voting_group_by_Hunter_Dunn_and_Smallplates)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/xqfzed6b\"}],\"row_html_sha256\":\"160073ec9cd45567931e8a95958c0ba8e349b6816b7f008c77a354a4d2166f1b\",\"text\":\"Mamdanification (Sway voting group by Hunter Dunn and Smallplates)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.85,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.89,
+     "overlap": 0.01,
+     "unclear": 0.1
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 731,
+   "output_tokens": 49
+  }
+ }
+}

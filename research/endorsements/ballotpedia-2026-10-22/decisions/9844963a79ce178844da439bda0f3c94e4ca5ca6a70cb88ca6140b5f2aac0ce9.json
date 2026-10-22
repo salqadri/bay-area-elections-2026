@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Kris and Dave (Sway voting group by Kris Cravens-Hutton and Dave Hutton)\",\"prior_observations\":[{\"endorser\":\"National Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Beebe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Arkansas AFL-CIO\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Judge Marion A. Humphrey, Sr.\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jon Tester\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Kris and Dave (Sway voting group by Kris Cravens-Hutton and Dave Hutton)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Kris and Dave (Sway voting group by Kris Cravens-Hutton and Dave Hutton)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Kris_and_Dave_(Sway_voting_group_by_Kris_Cravens-Hutton_and_Dave_Hutton)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/krisanddave\"}],\"row_html_sha256\":\"fd5b311852eb8ab35eefb620f0ce9f75517ca83e8777915219b3926f72e6cd51\",\"text\":\"Kris and Dave (Sway voting group by Kris Cravens-Hutton and Dave Hutton)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.87,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.9,
+     "overlap": 0.01,
+     "unclear": 0.09
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 818,
+   "output_tokens": 49
+  }
+ }
+}

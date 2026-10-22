@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Democratic Activists for Women Now (DAWN)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Democratic Activists for Women Now (DAWN)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Democratic Activists for Women Now (DAWN)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Democratic_Activists_for_Women_Now_(DAWN)\"},{\"text\":\"\",\"url\":\"https://www.facebook.com/permalink.php?story_fbid=pfbid0272t3v55B5VdZwcSZjnNV1wEkovAArhNThM4Zvuh72dzWjQ5rUtSDG3JNd3zAGvU9l&id=61564606648803\"}],\"row_html_sha256\":\"ab85fbcca235df0abac194f7db93221c3823c8e3e2c38a64041bb108f49dfadf\",\"text\":\"Democratic Activists for Women Now (DAWN)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.91,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.93,
+     "overlap": 0.0,
+     "unclear": 0.07
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 747,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Kathy Castor\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"League of Conservation Voters (LCV) Action Fund\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"League of Conservation Voters (LCV) Action Fund\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Kathy_Castor#Endorsements\",\"verification\":\"reported\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"League of Conservation Voters Action Fund\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"League of Conservation Voters Action Fund\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Kathy_Castor#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"League of Conservation Voters Action Fund\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"League of Conservation Voters Action Fund\",\"url\":\"https://ballotpedia.org/League_of_Conservation_Voters_Action_Fund\"},{\"text\":\"\",\"url\":\"https://www.lcv.org/endorsements/\"}],\"row_html_sha256\":\"8ace5ccac6213984d120967a5add173f46078092b5373f72782ad7aa833c9932\",\"text\":\"League of Conservation Voters Action Fund\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.94,
+    "probabilities": {
+     "distinct": 0.02,
+     "r0": 0.96,
+     "unclear": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 775,
+   "output_tokens": 41
+  }
+ }
+}

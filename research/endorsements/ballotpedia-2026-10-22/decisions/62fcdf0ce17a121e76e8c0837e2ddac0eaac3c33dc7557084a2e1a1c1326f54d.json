@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Operative Plasterers' and Cement Masons' International Association (OPCMIA) Local 300\",\"prior_observations\":[{\"endorser\":\"Ben Bartlett\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alameda County Jewish Democratic Club\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alameda County Democratic Party\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"IUPAT District Council 16\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"East Bay Young Democrats\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Iron Workers, Local 378\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Laborers, Local 304\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alameda Labor Council, AFL-CIO\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Building & Construction Trades Council of Alameda County\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matt Glaser\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Nina Senn\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Elevator Constructors, Local 8\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"North Coast States Carpenters\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jody London\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John George Democratic Club\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gary Yee\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Plumbers & Steamfitters, Local 342\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sheet Metal Workers, Local 104\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Electrical Workers, Local 595\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"BWOPA Oakland/Berkeley Chapter\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sprinkler Fitters, Local 483\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sadia Khan\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"East Bay Stonewall Democratic Club\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hon. Elihu Harris\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia M. Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bricklayers & Allied Craftworkers, Local 3\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Annie Campbell Washington\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Plasterers & Cement Masons, Local 300\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cheryl Cook-Kallio\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ryan Richardson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ron Towns\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alameda County Democratic Party\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kenneth E. Maxey II\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Annie Campbell Washington\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gary Yee\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael C. Houston\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Zac Unger\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Matt Glaser\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jody London\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hon. Elihu Harris\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cheryl Cook-Kallio\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Jenkins\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Nina Senn\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Janani Ramachandran\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia M. Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Janani Ramachandran\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ken Houston\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rowena Brown\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cathy Adams\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Operative Plasterers' and Cement Masons' International Association (OPCMIA) Local 300\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Operative Plasterers' and Cement Masons' International Association (OPCMIA) Local 300\",\"url\":\"https://ballotpedia.org/Endorsements_by_Operative_Plasterers'_and_Cement_Masons'_International_Association_(OPCMIA)_Local_300\"},{\"text\":\"\",\"url\":\"https://www.kathryncamp.com/endorsements\"}],\"row_html_sha256\":\"a3a8fab39c4f682313bab6d5f38093ce935ec9cce0d76429e1f3ae0ea044eec8\",\"text\":\"Operative Plasterers' and Cement Masons' International Association (OPCMIA) Local 300\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "overlap",
+    "confidence": 0.89,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.07,
+     "overlap": 0.92,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1810,
+   "output_tokens": 50
+  }
+ }
+}

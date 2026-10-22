@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Aisha Wahab\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"California Democratic Party\",\"kind\":\"party\",\"note_id\":\"N309\",\"phase\":\"unspecified\",\"quote\":\"California Democratic Party\",\"relation\":\"endorsed\",\"url\":\"https://www.aishawahab.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"California Democratic Party\",\"kind\":\"party\",\"note_id\":\"N921\",\"phase\":\"unspecified\",\"quote\":\"California Democratic Party\",\"relation\":\"endorsed\",\"url\":\"https://www.aishawahab.com/endorsements\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Democratic Party of California\",\"kind\":\"party\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Democratic Party of California\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Aisha_Wahab#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Democratic Party of California\",\"heading_path\":[\"Elections\",\"2026\",\"Regular election\",\"Endorsements\"],\"links\":[{\"text\":\"Democratic Party of California\",\"url\":\"https://ballotpedia.org/Democratic_Party_of_California\"},{\"text\":\"\",\"url\":\"https://cadem.org/wp-content/uploads/2026/02/Final-RATIFIED-2026-Primary-Election-Consent-Calendar.pdf\"}],\"row_html_sha256\":\"60e1c3ee86754436fc95fb36ab01f0a78d49c6dd0bbf685be22f189bb6414b0f\",\"text\":\"Democratic Party of California\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.41,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.56,
+     "r1": 0.38,
+     "unclear": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 873,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"CrowdSourceCarrie Voting Guide (Sway voting group by CrowdSourceCarrie)\",\"prior_observations\":[{\"endorser\":\"SEIU Local 1021\",\"phase\":\"general\",\"relation\":\"endorsed\"},{\"endorser\":\"California Jewish Democrats\",\"phase\":\"unspecified\",\"rating\":\"Support\",\"relation\":\"supported\"},{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Vote for Peace\",\"phase\":\"general\",\"rating\":\"Ally\",\"relation\":\"supported\"},{\"endorser\":\"AROC Action\",\"phase\":\"general\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"CrowdSourceCarrie Voting Guide (Sway voting group by CrowdSourceCarrie)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"CrowdSourceCarrie Voting Guide (Sway voting group by CrowdSourceCarrie)\",\"url\":\"https://ballotpedia.org/Endorsements_by_CrowdSourceCarrie_Voting_Group_(Sway_voting_group_by_CrowdSourceCarrie)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/crowdsourcecarrie\"}],\"row_html_sha256\":\"5a8f3ee0dfbaa5363154a12e30a3e564d083c317987aab7e64fba1080d71d1b6\",\"text\":\"CrowdSourceCarrie Voting Guide (Sway voting group by CrowdSourceCarrie)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.88,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.91,
+     "overlap": 0.04,
+     "unclear": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 827,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Gordon Chester\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-09\",\"endorser\":\"Santa Clara County Democratic Party\",\"kind\":\"party\",\"phase\":\"general\",\"quote\":\"Gordon Chester\",\"relation\":\"endorsed\",\"url\":\"https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/\"},\"r1\":{\"checked_on\":\"2026-10-09\",\"endorser\":\"Santa Clara County Democratic Party\",\"kind\":\"party\",\"phase\":\"primary\",\"quote\":\"Gordon Chester\",\"relation\":\"endorsed\",\"url\":\"https://sccdp.org/index.php/voter-resources/endorsements/2026-endorsements/\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Santa Clara County, Calif., Democratic Party\",\"kind\":\"party\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Santa Clara County, Calif., Democratic Party\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Gordon_Chester#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Santa Clara County, Calif., Democratic Party\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Santa Clara County, Calif., Democratic Party\",\"url\":\"https://ballotpedia.org/Endorsements_by_Santa_Clara_County,_Calif.,_Democratic_Party\"},{\"text\":\"\",\"url\":\"https://www.gordonford9.com/endorsements\"}],\"row_html_sha256\":\"4ec0e1353f7578a4b9929e9d8db6c050957111eb43d420c87b73425fb765ba87\",\"text\":\"Santa Clara County, Calif., Democratic Party\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.35,
+    "probabilities": {
+     "distinct": 0.03,
+     "r0": 0.51,
+     "r1": 0.07,
+     "unclear": 0.39
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 876,
+   "output_tokens": 49
+  }
+ }
+}

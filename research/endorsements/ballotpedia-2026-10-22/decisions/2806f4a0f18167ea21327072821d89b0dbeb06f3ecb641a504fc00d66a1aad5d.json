@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Oklahomans for the future of the USA (Sway voting group by Chelsea Haldane)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Oklahomans for the future of the USA (Sway voting group by Chelsea Haldane)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Oklahomans for the future of the USA (Sway voting group by Chelsea Haldane)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Oklahomans_for_the_future_of_the_USA_(Sway_voting_group_by_Chelsea_Haldane)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/sec9e8ig\"}],\"row_html_sha256\":\"6f75f1e630a625cb9c2185083c5d842e762321c68f6ca572284b5884c29efe2a\",\"text\":\"Oklahomans for the future of the USA (Sway voting group by Chelsea Haldane)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.94,
+     "overlap": 0.0,
+     "unclear": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 726,
+   "output_tokens": 49
+  }
+ }
+}

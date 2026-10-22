@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Troy Downing\",\"prior_observations\":[{\"endorser\":\"Gallatin County Sheriff Dan Springer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"President Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Congressman Ryan Zinke\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Senator Tim Sheehy\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"President Donald Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Troy Downing\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Troy Downing\",\"url\":\"https://ballotpedia.org/Troy_Downing\"},{\"text\":\"\",\"url\":\"https://dailymontanan.com/2026/03/02/montana-gop-candidates-jump-into-race-for-western-house-district/\"}],\"row_html_sha256\":\"e9ae7301b4eeeaa445cd3c5932e67c8c214236b04539790fe9d4eb3a0aba2cc1\",\"text\":\"U.S. Rep. Troy Downing (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.75,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.81,
+     "overlap": 0.1,
+     "unclear": 0.09
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 767,
+   "output_tokens": 49
+  }
+ }
+}

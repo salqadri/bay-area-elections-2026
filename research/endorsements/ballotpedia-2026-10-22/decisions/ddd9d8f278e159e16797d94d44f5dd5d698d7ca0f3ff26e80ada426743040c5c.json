@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Donald Trump\",\"prior_observations\":[{\"endorser\":\"President Donald J. Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Donald Trump\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Donald Trump\",\"url\":\"https://ballotpedia.org/Donald_Trump\"},{\"text\":\"\",\"url\":\"https://truthsocial.com/@realDonaldTrump/posts/115483612584051928\"}],\"row_html_sha256\":\"592b6f6b4beea9231fe43fe5d2a0388e4d17aa5a09b32d5db87349fa230638cd\",\"text\":\"President Donald Trump (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "overlap",
+    "confidence": 0.75,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.17,
+     "overlap": 0.81,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 662,
+   "output_tokens": 50
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Eastern Neighborhoods Democratic Club\",\"prior_observations\":[{\"endorser\":\"Myrna Melgar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Mullin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Shamann Walton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sandra Lee Fewer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Gordon Mar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Emma Hare\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kevin Mullin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Phil Kim\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hillary Ronen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Norman Yee\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lisa Weissman-Ward\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jenny Lam\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Malia Cohen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Myrna Melgar\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Eastern Neighborhoods Democratic Club\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Eastern Neighborhoods Democratic Club\",\"url\":\"https://ballotpedia.org/Endorsements_by_Eastern_Neighborhoods_Democratic_Club\"},{\"text\":\"\",\"url\":\"https://www.sfendc.com/endorsements\"}],\"row_html_sha256\":\"277adf24eb689e609922a2257fed5939a3627cd126d1e00d34f1a1d8d3873d92\",\"text\":\"Eastern Neighborhoods Democratic Club\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.76,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.8200000000000001,
+     "overlap": 0.06,
+     "unclear": 0.12
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 954,
+   "output_tokens": 49
+  }
+ }
+}

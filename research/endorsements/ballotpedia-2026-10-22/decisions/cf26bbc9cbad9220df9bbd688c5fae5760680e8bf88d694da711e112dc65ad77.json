@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Jane Kim\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"National Union of Healthcare Workers (NUHW)\",\"kind\":\"union\",\"logo_url\":\"https://run.imgix.net/86daf947-8fea-4921-83be-74f03c8a9ad0/9e2b553a-ffb1-402e-9185-e809b951b473/9e2b553a-ffb1-402e-9185-e809b951b473.png?ixlib=js-3.8.0&amp;bri=0&amp;con=0&amp;sat=0&amp;high=0&amp;shad=0&amp;usm=0&amp;rect=0%2C0%2C500%2C211&amp;auto=compress%2Cformat&amp;fit=fillmax&amp;w=2048&amp;q\",\"note_id\":\"N671\",\"phase\":\"unspecified\",\"quote\":\"National Union of Healthcare Workers (NUHW)\",\"relation\":\"endorsed\",\"url\":\"https://www.janekim.org/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"National Union of Healthcare Workers\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"National Union of Healthcare Workers\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Jane_Kim#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"National Union of Healthcare Workers\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"National Union of Healthcare Workers\",\"url\":\"https://ballotpedia.org/Endorsements_by_National_Union_of_Healthcare_Workers\"},{\"text\":\"\",\"url\":\"https://home.nuhw.org/political-action/\"}],\"row_html_sha256\":\"6c7a0de5f88f0c78bdd88ccb27a453793155e7a846887700abe701938500f7d2\",\"text\":\"National Union of Healthcare Workers\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.98,
+    "probabilities": {
+     "distinct": 0.0,
+     "r0": 0.99,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 962,
+   "output_tokens": 41
+  }
+ }
+}

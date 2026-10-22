@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Julie's Picks (Sway voting group by Julie Womack)\",\"prior_observations\":[{\"endorser\":\"North Central Ohio Building and Construction Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The International Brotherhood of Electrical Workers (IBEW)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Mine Workers of America (UMWA)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Western Reserve Building Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dayton Building and Constructions Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Greater Cincinnati Building and Construction Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Association of Professional Fire Fighters\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Environmental Council Action Fund\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Food and Commercial Workers International Union (UFCW)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio AFL-CIO\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Nurses Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Federation of Teachers (OFT)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Service Employees International Union (SEIU) Local 1\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Upper Ohio Valley Building and Construction Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Postal Workers Union (OPWU)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Columbus/Central Ohio Building and Construction Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio State Council of Machinists\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Industrial Division of the Communications Workers of America (IUE-CWA)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bricklayers and Allied Craftworkers Local 23\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"American Federation of State, County and Municipal Employees (AFSCME) Council 8\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Iron Workers Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"EMILYs List\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Auto Workers (UAW)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The Communications Workers of America District 4\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"National Security Leaders for America\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Service Employees International Union (SEIU)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Nurses for America\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Association of Public School Employees (OAPSE)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Service Employees International Union (SEIU) District 1199\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Education Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Civil Service Employees Association (OCSEA)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lima Building and Construction Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Amalgamated Transit Union\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"American Federation of State, County and Municipal Employees (AFSCME) Retirees Chapter 1184\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Planned Parenthood of Greater Ohio\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Union of Painters & Allied Trades District 6 (IUPAT)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio State Association of Letter Carriers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The American Federation of Government Employees (AFGE)\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Steelworkers District 1\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Patrolmen's Benevolent Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Julie's Picks (Sway voting group by Julie Womack)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Julie's Picks (Sway voting group by Julie Womack)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Julie's_Picks_(Sway_voting_group_by_Julie_Womack)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/dsydeuk2\"}],\"row_html_sha256\":\"bc20fcec14c3cd01d1bdcf69fbd160b43ebde66fd53be1ec7d7da82d206afdca\",\"text\":\"Julie's Picks (Sway voting group by Julie Womack)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.95,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.96,
+     "overlap": 0.01,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1671,
+   "output_tokens": 49
+  }
+ }
+}

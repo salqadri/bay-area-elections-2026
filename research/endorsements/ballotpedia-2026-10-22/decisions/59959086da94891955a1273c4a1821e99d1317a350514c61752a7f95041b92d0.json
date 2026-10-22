@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Democratic Activists for Women Now (DAWN)\",\"prior_observations\":[{\"endorser\":\"Santa Clara County Democratic Party\",\"phase\":\"general\",\"relation\":\"endorsed\"},{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Democratic Activists for Women Now (DAWN)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Democratic Activists for Women Now (DAWN)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Democratic_Activists_for_Women_Now_(DAWN)\"},{\"text\":\"\",\"url\":\"https://www.svdawn.org/endorsements\"}],\"row_html_sha256\":\"03c2cb890edb31af6b329a23eadf546cb0f77bf93255d98c3b223fda2ada2428\",\"text\":\"Democratic Activists for Women Now (DAWN)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.83,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.87,
+     "overlap": 0.05,
+     "unclear": 0.08
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 713,
+   "output_tokens": 49
+  }
+ }
+}

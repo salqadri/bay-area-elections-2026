@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Jason Lin\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Bay Area Jewish Coalition\",\"kind\":\"organization\",\"logo_url\":\"https://studentswinwithlin.com/static/images/endorsement_organization_logos/bay-area-jewish-coalition.jpeg\",\"note_id\":\"N488\",\"phase\":\"unspecified\",\"quote\":\"As an FUHSD student, I'm proud to endorse Jason Lin for the FUHSD Board.\",\"relation\":\"endorsed\",\"url\":\"https://studentswinwithlin.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Bay Area Jewish Coalition\",\"kind\":\"organization\",\"note_id\":\"N1220\",\"phase\":\"unspecified\",\"quote\":\"Community Endorsement\",\"relation\":\"endorsed\",\"url\":\"https://studentswinwithlin.com/endorsements\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Bay Area Jewish Coalition Action\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Bay Area Jewish Coalition Action\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Jason_Lin#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Bay Area Jewish Coalition Action\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Bay Area Jewish Coalition Action\",\"url\":\"https://ballotpedia.org/Endorsements_by_Bay_Area_Jewish_Coalition_Action\"},{\"text\":\"\",\"url\":\"https://studentswinwithlin.com/endorsements\"}],\"row_html_sha256\":\"fb69c9777cacc0bd195e6ae1587b8baf3f838dfc275bcfee79504fb9664d235d\",\"text\":\"Bay Area Jewish Coalition Action\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.12,
+    "probabilities": {
+     "distinct": 0.34,
+     "r0": 0.16,
+     "r1": 0.25,
+     "unclear": 0.25
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 892,
+   "output_tokens": 48
+  }
+ }
+}

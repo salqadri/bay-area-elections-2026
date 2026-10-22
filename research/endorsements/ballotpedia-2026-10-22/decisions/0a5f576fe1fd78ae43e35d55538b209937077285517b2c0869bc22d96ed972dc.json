@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Reject AIPAC from City Council to Congress (Sway voting group by Vote for Peace)\",\"prior_observations\":[{\"endorser\":\"Santa Clara County Democratic Party\",\"phase\":\"general\",\"relation\":\"endorsed\"},{\"endorser\":\"Santa Clara County Democratic Party\",\"phase\":\"primary\",\"relation\":\"endorsed\"},{\"endorser\":\"SEIU Local 1021\",\"phase\":\"general\",\"relation\":\"endorsed\"},{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"preferred\"},{\"endorser\":\"Vote for Peace\",\"phase\":\"general\",\"rating\":\"Ally\",\"relation\":\"supported\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Reject AIPAC from City Council to Congress (Sway voting group by Vote for Peace)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Reject AIPAC from City Council to Congress (Sway voting group by Vote for Peace)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Vote_for_Peace_(Sway_voting_group_by_Organize_for_Peace)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/voteforpeace\"}],\"row_html_sha256\":\"c8f341343aef5586de8e9da64811c14547f764a3a001848ea0cc8c75970c6127\",\"text\":\"Reject AIPAC from City Council to Congress (Sway voting group by Vote for Peace)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.12,
+    "probabilities": {
+     "curated": 0.32,
+     "distinct": 0.34,
+     "overlap": 0.29,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 808,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Naomi Nakano-Matsumoto\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"Silicon Valley Asian Pacific American Democratic Club, SVAPADC\",\"kind\":\"organization\",\"note_id\":\"N687\",\"phase\":\"unspecified\",\"quote\":\"Silicon Valley Asian Pacific American Democratic Club, SVAPADC\",\"relation\":\"endorsed\",\"url\":\"https://www.naomi4fuhsd.com/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Silicon Valley Asian Pacific American Democratic Club\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Silicon Valley Asian Pacific American Democratic Club\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Naomi_Nakano-Matsumoto#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Silicon Valley Asian Pacific American Democratic Club\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Silicon Valley Asian Pacific American Democratic Club\",\"url\":\"https://ballotpedia.org/Endorsements_by_Silicon_Valley_Asian_Pacific_American_Democratic_Club\"},{\"text\":\"\",\"url\":\"https://www.naomi4fuhsd.com/endorsements\"}],\"row_html_sha256\":\"1e372376f22d560093b1941698ccbe52d4f1a1825ede7b9af3629b21172514ee\",\"text\":\"Silicon Valley Asian Pacific American Democratic Club\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.97,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.98,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 805,
+   "output_tokens": 41
+  }
+ }
+}

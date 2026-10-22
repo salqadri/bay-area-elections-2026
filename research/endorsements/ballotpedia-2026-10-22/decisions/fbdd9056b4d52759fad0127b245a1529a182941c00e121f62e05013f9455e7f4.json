@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Where the Redford Grows (Sway voting group by Tiffany Redford Hall)\",\"prior_observations\":[{\"endorser\":\"Jimmy Story\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Linda Ketner\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Russell Smith\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jan Anderson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom King\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lloyd \\\"Fig\\\" Newton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John Tecklenburg\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Will Haynie\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"JA Moore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Colleen Condon\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Spencer Wetmore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kaye Koonce\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Julia Drayton-Crumblin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Waring Howe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael O. Williams\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Elizabeth Colbert-Busch\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ginny Deerin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Randy Hughes\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Leon Stavrinakis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Peter Tecklenburg\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carlos Del Toro\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tracy L. Hunt\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael B. Moore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Charles Patrick\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kathryn Whitaker\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Billy Keyserling\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Where the Redford Grows (Sway voting group by Tiffany Redford Hall)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Where the Redford Grows (Sway voting group by Tiffany Redford Hall)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Where_the_Redford_Grows_(Sway_voting_group_by_Tiffany_Redford_Hall)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/pfrc68jf\"}],\"row_html_sha256\":\"1be4687d43236ce11bf8d8e6863f158e9c6a17119bc520f7f1ffcccdbb59a8ff\",\"text\":\"Where the Redford Grows (Sway voting group by Tiffany Redford Hall)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.89,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.92,
+     "overlap": 0.01,
+     "unclear": 0.07
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1221,
+   "output_tokens": 49
+  }
+ }
+}

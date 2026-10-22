@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"The Howdy Politics Voting Guide (Sway voting group by Howdy Politics | Kat)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"The Howdy Politics Voting Guide (Sway voting group by Howdy Politics | Kat)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"\",\"url\":\"https://www.sway.co/g/howdypolitics\"}],\"row_html_sha256\":\"1bff7abf14b68b50ca205ca4ad5b3e9d6ae1656f33dbadd0fb8338afd7edd3ee\",\"text\":\"The Howdy Politics Voting Guide (Sway voting group by Howdy Politics | Kat)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.93,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.95,
+     "overlap": 0.0,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 639,
+   "output_tokens": 49
+  }
+ }
+}

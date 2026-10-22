@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"United SHE Stands (Sway voting group by Ashley Kindsvatter and Sara Petrie)\",\"prior_observations\":[{\"endorser\":\"National Association of Letter Carriers Branch 43\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Feminist Majority PAC\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"United Auto Workers\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Stop Gun Violence PAC\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Planned Parenthood Action Fund\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Alliance 4 American Leadership\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"League of Conservation Voters Action Fund\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Cincinnati Mayor Aftab Pureval\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The Ohio Nurses Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Amalgamated Transit Union\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"International Union of Painters and Allied Trades - District Council 6\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Brotherhood of Locomotive Engineers & Trainmen\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bishop Michael Dantley\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Leadership Now Project\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Corn and Wheat Growers Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Teamsters Ohio Drive\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Human Rights Campaign\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"County Commissioner Denise Driehaus\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hamilton County Auditor Jessica Miranda\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Clerk of Courts Pavan Parikh\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Reproductive Freedom for All\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"End Citizens United\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sierra Club\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ohio Legislative Black Caucus\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Hamilton County Sheriff Charmaine McGuffey\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Councilman Reggie Harris\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Greater Cincinnati UAW CAP Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"United SHE Stands (Sway voting group by Ashley Kindsvatter and Sara Petrie)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"United SHE Stands (Sway voting group by Ashley Kindsvatter and Sara Petrie)\",\"url\":\"https://ballotpedia.org/Endorsements_by_United_She_Stands_Ohio_May_2026_Democratic_Primary_(Sway_voting_group_by_Ashley_Kindsvatter)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/unitedshestands\"}],\"row_html_sha256\":\"c5a29753df50828264764099acc9738402a81f24a79ce5678310c406576b07ea\",\"text\":\"United SHE Stands (Sway voting group by Ashley Kindsvatter and Sara Petrie)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.85,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.89,
+     "overlap": 0.03,
+     "unclear": 0.08
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1337,
+   "output_tokens": 49
+  }
+ }
+}

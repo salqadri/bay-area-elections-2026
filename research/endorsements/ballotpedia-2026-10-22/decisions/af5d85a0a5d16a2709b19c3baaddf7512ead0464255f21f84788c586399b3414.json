@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Naomi Nakano-Matsumoto\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"South Bay Labor Council\",\"kind\":\"union\",\"logo_url\":\"https://images.squarespace-cdn.com/content/v1/6a4ae3d1be2470432342ed8d/6867d265-d1a8-4956-913d-e82380a513a0/sblc+endorsement.png\",\"note_id\":\"N687\",\"phase\":\"unspecified\",\"quote\":\"South Bay Labor Council\",\"relation\":\"endorsed\",\"url\":\"https://www.naomi4fuhsd.com/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"South Bay Labor Council (AFL-CIO)\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"South Bay Labor Council (AFL-CIO)\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Naomi_Nakano-Matsumoto#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"South Bay Labor Council (AFL-CIO)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"South Bay Labor Council (AFL-CIO)\",\"url\":\"https://ballotpedia.org/Endorsements_by_AFL-CIO_South_Bay_Labor_Council\"},{\"text\":\"\",\"url\":\"https://www.naomi4fuhsd.com/endorsements\"}],\"row_html_sha256\":\"9249fb972ee31289583b445d81968beee316176bd00edc58d4f015f8e4c5759b\",\"text\":\"South Bay Labor Council (AFL-CIO)\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 1.0,
+    "probabilities": {
+     "distinct": 0.0,
+     "r0": 1.0,
+     "unclear": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 873,
+   "output_tokens": 41
+  }
+ }
+}

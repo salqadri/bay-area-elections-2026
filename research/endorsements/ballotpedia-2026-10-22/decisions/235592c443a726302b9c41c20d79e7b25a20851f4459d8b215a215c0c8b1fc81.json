@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Jane Kim\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"San Francisco Young Democrats\",\"kind\":\"organization\",\"note_id\":\"N671\",\"phase\":\"unspecified\",\"quote\":\"San Francisco Young Democrats\",\"relation\":\"endorsed\",\"url\":\"https://www.janekim.org/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"San Bernardino County Young Democrats\",\"kind\":\"organization\",\"note_id\":\"N671\",\"phase\":\"unspecified\",\"quote\":\"San Bernardino County Young Democrats\",\"relation\":\"endorsed\",\"url\":\"https://www.janekim.org/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"San Bernadino Young Democrats\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"San Bernadino Young Democrats\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Jane_Kim#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"San Bernadino Young Democrats\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"San Bernadino Young Democrats\",\"url\":\"https://ballotpedia.org/Endorsements_by_San_Bernadino_Young_Democrats\"},{\"text\":\"\",\"url\":\"https://ballotpedia.org/instagram.com/p/DWIJUVWCUUw/?igsh=NTc4MTIwNjQ2YQ==\"}],\"row_html_sha256\":\"9b378eeb724b0aa3e6fa812e14865d6e0abcac9c855af3f478ae6547deade394\",\"text\":\"San Bernadino Young Democrats\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r1",
+    "confidence": 0.67,
+    "probabilities": {
+     "distinct": 0.08,
+     "r0": 0.02,
+     "r1": 0.75,
+     "unclear": 0.15
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 860,
+   "output_tokens": 49
+  }
+ }
+}

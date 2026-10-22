@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"National Education Association\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"National Education Association\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"National Education Association\",\"url\":\"https://ballotpedia.org/Endorsements_by_National_Education_Association\"},{\"text\":\"\",\"url\":\"https://educationvotes.turbovote.org/\"}],\"row_html_sha256\":\"0ae47643c23603c963f562d86b9ae2582a0fb46201c56634bd47318a0ed2243c\",\"text\":\"National Education Association\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.99,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.99,
+     "overlap": 0.0,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 632,
+   "output_tokens": 49
+  }
+ }
+}

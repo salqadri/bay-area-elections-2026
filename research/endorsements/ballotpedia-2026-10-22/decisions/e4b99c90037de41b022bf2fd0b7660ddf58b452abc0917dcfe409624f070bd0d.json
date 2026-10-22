@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Republican Party of California\",\"prior_observations\":[{\"endorser\":\"San Mateo County Republican Party\",\"phase\":\"general\",\"relation\":\"recommended\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Republican Party of California\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Republican Party of California\",\"url\":\"https://ballotpedia.org/Republican_Party_of_California\"},{\"text\":\"\",\"url\":\"https://cagop.org/endorsements/\"}],\"row_html_sha256\":\"b6d0f0e9fd84dc7139beb5d8ad19b80a61b7a7dc8b2624c23a055c0c33e40bdc\",\"text\":\"Republican Party of California\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.56,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.67,
+     "overlap": 0.3,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 656,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Gary McCoy\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"Sierra Club, San Francisco Chapter\",\"kind\":\"organization\",\"note_id\":\"N728\",\"phase\":\"unspecified\",\"quote\":\"Sierra Club, San Francisco Chapter\",\"relation\":\"endorsed\",\"url\":\"https://www.garymccoysf.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Sierra Club, San Francisco Chapter\",\"kind\":\"organization\",\"note_id\":\"N1056\",\"phase\":\"unspecified\",\"quote\":\"Sierra Club, San Francisco Chapter\",\"relation\":\"endorsed\",\"url\":\"https://www.garymccoysf.com/endorsements\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Sierra Club San Francisco Bay Chapter\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Sierra Club San Francisco Bay Chapter\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Gary_McCoy#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Sierra Club San Francisco Bay Chapter\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Sierra Club San Francisco Bay Chapter\",\"url\":\"https://ballotpedia.org/Endorsements_by_Sierra_Club_San_Francisco_Bay_Chapter\"},{\"text\":\"\",\"url\":\"https://www.garymccoysf.com/endorsements\"}],\"row_html_sha256\":\"4c67c710afdf381094f9f946ecdfc66431ab96d1ba2da00976f314babf9568a9\",\"text\":\"Sierra Club San Francisco Bay Chapter\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r1",
+    "confidence": 0.44,
+    "probabilities": {
+     "distinct": 0.05,
+     "r0": 0.18,
+     "r1": 0.58,
+     "unclear": 0.19
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 886,
+   "output_tokens": 49
+  }
+ }
+}

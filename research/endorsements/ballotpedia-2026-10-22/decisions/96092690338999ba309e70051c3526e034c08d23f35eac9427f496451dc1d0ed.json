@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Donald Trump\",\"prior_observations\":[{\"endorser\":\"AFP Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rod Pelton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Laura Garcia-Pascoe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark VanDriel\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Richard Hudson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Rocky Mountain Farmers Union Rural PAC\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"NRA Political Victory Fund\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Bill Owens\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Byron Pelton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Log Cabin Republicans\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom Emmer\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John Gates\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Denver Gazette\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mark Clark\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Republican Jewish Coalition\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"The Libre Initiative\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Citizens for Responsible Energy Solutions\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"US Chamber of Commerce\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Colorado State Shooting Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael Cowper\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jan Kulmann\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"ACC Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Colorado State Lodge Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"National Federation of Independent Business\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lisa McClain\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Mike Johnson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Dan Woog\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Steve Reams\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carlos Barron\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Colorado Young Republicans\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Scott Bright\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Adrienne Sandoval\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"America First Works\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Donald Trump\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Donald Trump\",\"url\":\"https://ballotpedia.org/Donald_Trump\"},{\"text\":\"\",\"url\":\"https://truthsocial.com/@realDonaldTrump/posts/114417102068372350\"}],\"row_html_sha256\":\"5668e1e9ea390c9815fc918e624a7888c6dcc7423b9708f2e400d0adea70ebd6\",\"text\":\"President Donald Trump (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.48,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.61,
+     "overlap": 0.36,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1289,
+   "output_tokens": 49
+  }
+ }
+}

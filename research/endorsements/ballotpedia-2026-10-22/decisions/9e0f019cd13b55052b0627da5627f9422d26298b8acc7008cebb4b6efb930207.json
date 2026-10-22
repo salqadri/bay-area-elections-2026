@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Michigan Farm Bureau AgriPAC\",\"prior_observations\":[{\"endorser\":\"Donald Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Michigan Farm Bureau AgriPAC\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Michigan Farm Bureau AgriPAC\",\"url\":\"https://ballotpedia.org/Endorsements_by_Michigan_Farm_Bureau_AgriPAC\"},{\"text\":\"\",\"url\":\"https://rogersforsenate.com/news/michigan-farm-bureau-endorses-mike-rogers-for-us-senate\"}],\"row_html_sha256\":\"37f661ff48fae6c1c572fdad698e78af153357fb9c21e7808c44f05faf7376c2\",\"text\":\"Michigan Farm Bureau AgriPAC\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.94,
+     "overlap": 0.03,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 681,
+   "output_tokens": 49
+  }
+ }
+}

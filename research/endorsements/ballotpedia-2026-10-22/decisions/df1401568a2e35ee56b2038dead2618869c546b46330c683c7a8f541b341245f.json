@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Abdul El-Sayed\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Western Michigan University College Democrats\",\"kind\":\"party\",\"note_id\":\"N959\",\"phase\":\"unspecified\",\"quote\":\"Western Michigan University College Democrats\",\"relation\":\"endorsed\",\"url\":\"https://abdulforsenate.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Eastern Michigan University (EMU) Democrats\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Eastern Michigan University (EMU) Democrats\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Abdul_El-Sayed#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Eastern Michigan University (EMU) Democrats\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Eastern Michigan University (EMU) Democrats\",\"url\":\"https://ballotpedia.org/Endorsements_by_Eastern_Michigan_University_(EMU)_Democrats\"},{\"text\":\"\",\"url\":\"https://abdulforsenate.com/endorsements/\"}],\"row_html_sha256\":\"86c512846d867eab644b38ff1e8cdf8873826e5eeef090f686061e360044c578\",\"text\":\"Eastern Michigan University (EMU) Democrats\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.31,
+    "probabilities": {
+     "distinct": 0.43,
+     "r0": 0.54,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 776,
+   "output_tokens": 41
+  }
+ }
+}

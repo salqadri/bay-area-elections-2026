@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Alan Wong\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Carpet, Linoleum, & Soft Tile Workers Union Local 12\",\"kind\":\"union\",\"note_id\":\"N334\",\"phase\":\"unspecified\",\"quote\":\"Carpet, Linoleum, & Soft Tile Workers Union Local 12\",\"relation\":\"endorsed\",\"url\":\"https://alanwong.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Carpet, Linoleum, & Soft Tile Workers Union Local 12\",\"kind\":\"union\",\"note_id\":\"N1054\",\"phase\":\"unspecified\",\"quote\":\"Carpet, Linoleum, & Soft Tile Workers Union Local 12\",\"relation\":\"endorsed\",\"url\":\"https://alanwong.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Carpet, Linoleum, & Soft Tile Workers Local 12\",\"kind\":\"union\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Carpet, Linoleum, & Soft Tile Workers Local 12\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Alan_Wong#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Carpet, Linoleum, & Soft Tile Workers Local 12\",\"heading_path\":[\"Elections\",\"2026\",\"Regular election\",\"Endorsements\"],\"links\":[{\"text\":\"Carpet, Linoleum, & Soft Tile Workers Local 12\",\"url\":\"https://ballotpedia.org/Endorsements_by_Carpet,_Linoleum,_&_Soft_Tile_Workers_Local_12\"},{\"text\":\"\",\"url\":\"https://alanwong.com/endorsements/\"}],\"row_html_sha256\":\"3ed81e6462d41df8bd6e90d677dcf2e92dc4e991d4bf3f09c5c7a903a710a82d\",\"text\":\"Carpet, Linoleum, & Soft Tile Workers Local 12\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r1",
+    "confidence": 0.65,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.18,
+     "r1": 0.74,
+     "unclear": 0.07
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 952,
+   "output_tokens": 49
+  }
+ }
+}

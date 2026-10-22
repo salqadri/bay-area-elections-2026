@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"California Federation of Labor Unions, AFL-CIO\",\"prior_observations\":[{\"endorser\":\"California Farm Bureau\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Modesto Police Officers' Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Mayors\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Farm Bureau\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Mayors\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Modesto Police Officers' Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Local Leaders\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Local Leaders\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Modesto Police Officers' Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"California Federation of Labor Unions, AFL-CIO\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"California Federation of Labor Unions, AFL-CIO\",\"url\":\"https://ballotpedia.org/Endorsements_by_California_Federation_of_Labor_Unions,_AFL-CIO\"},{\"text\":\"\",\"url\":\"https://calaborfed.org/wp-content/uploads/2026/05/260519_Labor_Endorsements_LIST_UPD.pdf\"}],\"row_html_sha256\":\"3090659e8077a9c23b9e69cead012c2c60168c139bb7b3c5d47adf91fe23c49a\",\"text\":\"California Federation of Labor Unions, AFL-CIO\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.94,
+     "overlap": 0.02,
+     "unclear": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 945,
+   "output_tokens": 49
+  }
+ }
+}

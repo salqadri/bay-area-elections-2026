@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Florida + Nationwide Voter Guide by Sara Wiles (Sway voting group by Sara Wiles)\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Florida + Nationwide Voter Guide by Sara Wiles (Sway voting group by Sara Wiles)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Florida + Nationwide Voter Guide by Sara Wiles (Sway voting group by Sara Wiles)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Florida_+_Nationwide_Voter_Guide_by_Sara_Wiles_(Sway_voting_group_by_Sara_Wiles)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/sara-wiles\"}],\"row_html_sha256\":\"7ade87bb1377ab0a3d4a4d9ed6cf630947f81a2dccb2ad60724636e7e716e413\",\"text\":\"Florida + Nationwide Voter Guide by Sara Wiles (Sway voting group by Sara Wiles)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.93,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.95,
+     "overlap": 0.0,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 717,
+   "output_tokens": 49
+  }
+ }
+}

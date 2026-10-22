@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Marc Berman\",\"prior_observations\":[{\"endorser\":\"Santa Clara County Democratic Party\",\"phase\":\"general\",\"relation\":\"endorsed\"},{\"endorser\":\"Santa Clara County Democratic Party\",\"phase\":\"primary\",\"relation\":\"endorsed\"},{\"endorser\":\"SEIU Local 1021\",\"phase\":\"general\",\"relation\":\"endorsed\"},{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"preferred\"},{\"endorser\":\"Vote for Peace\",\"phase\":\"general\",\"rating\":\"Ally\",\"relation\":\"supported\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Marc Berman\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Marc Berman\",\"url\":\"https://ballotpedia.org/Marc_Berman\"},{\"text\":\"\",\"url\":\"https://www.gordonford9.com/endorsements\"}],\"row_html_sha256\":\"928034afc98cf7b3772f4c80ce26cc42ff7df296b69e2ab1015e3c8bfe85e844\",\"text\":\"State Assm. Marc Berman (D)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.8,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.85,
+     "overlap": 0.09,
+     "unclear": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 726,
+   "output_tokens": 49
+  }
+ }
+}

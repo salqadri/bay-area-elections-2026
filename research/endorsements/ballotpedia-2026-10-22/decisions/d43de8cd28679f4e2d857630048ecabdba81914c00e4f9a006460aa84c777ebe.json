@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Naomi Nakano-Matsumoto\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"Fremont Education Association, FEA\",\"kind\":\"union\",\"logo_url\":\"https://images.squarespace-cdn.com/content/v1/6a4ae3d1be2470432342ed8d/9639b7c3-455b-41b6-8e2e-81c1bef4700c/NNM26+Endorsements+Banner+FEA.jpg\",\"note_id\":\"N837\",\"phase\":\"unspecified\",\"quote\":\"Fremont Education Association, FEA - FUHSD's Teachers, Counselors, Psychologists, SLPs\",\"relation\":\"endorsed\",\"url\":\"https://www.naomi4fuhsd.com/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Fremont Education Association\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Fremont Education Association\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Naomi_Nakano-Matsumoto#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Fremont Education Association\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Fremont Education Association\",\"url\":\"https://ballotpedia.org/Endorsements_by_Fremont_Education_Association\"},{\"text\":\"\",\"url\":\"https://www.naomi4fuhsd.com/endorsements\"}],\"row_html_sha256\":\"79b2545ead3f83ff90e2b6efc573be03d31d264b0e315187fb056080e15caa76\",\"text\":\"Fremont Education Association\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.98,
+    "probabilities": {
+     "distinct": 0.0,
+     "r0": 0.99,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 880,
+   "output_tokens": 41
+  }
+ }
+}

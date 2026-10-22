@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Tina Smith\",\"prior_observations\":[],\"source_row\":{\"category_context\":[],\"endorser\":\"Tina Smith\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Tina Smith\",\"url\":\"https://ballotpedia.org/Tina_Smith\"},{\"text\":\"\",\"url\":\"https://www.facebook.com/jakejohnsonmn/posts/pfbid0fHqok2J3QS7cm5JNzXM8LRy5jwMhHEHQQ1z4NMQCFmZrecj7ofkwyHuPVUpZxfQyl?rdid=OmpW2QwQy4xIF0PD\"}],\"row_html_sha256\":\"a76ddd06f38380cedeffde900637c17504a1a2556abbfa91a8346557da1ec5a1\",\"text\":\"U.S. Sen. Tina Smith (D)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.95,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.96,
+     "overlap": 0.01,
+     "unclear": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 687,
+   "output_tokens": 49
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Alan Wong\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Asian American for Good Governance\",\"kind\":\"organization\",\"note_id\":\"N334\",\"phase\":\"unspecified\",\"quote\":\"Asian American for Good Governance\",\"relation\":\"endorsed\",\"url\":\"https://alanwong.com/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Asian American for Good Governance\",\"kind\":\"organization\",\"note_id\":\"N1054\",\"phase\":\"unspecified\",\"quote\":\"Asian American for Good Governance\",\"relation\":\"endorsed\",\"url\":\"https://alanwong.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Asian Americans for Good Government\",\"kind\":\"organization\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Asian Americans for Good Government\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Alan_Wong#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Asian Americans for Good Government\",\"heading_path\":[\"Elections\",\"2026\",\"Regular election\",\"Endorsements\"],\"links\":[{\"text\":\"Asian Americans for Good Government\",\"url\":\"https://ballotpedia.org/Endorsements_by_Asian_Americans_for_Good_Government\"},{\"text\":\"\",\"url\":\"https://alanwong.com/endorsements/\"}],\"row_html_sha256\":\"302cc66e170f11ecdb5b72d09d39c338ede34af11f1906505f4af1466f86aaa7\",\"text\":\"Asian Americans for Good Government\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r1",
+    "confidence": 0.2,
+    "probabilities": {
+     "distinct": 0.2,
+     "r0": 0.1,
+     "r1": 0.39999999999999997,
+     "unclear": 0.3
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 847,
+   "output_tokens": 49
+  }
+ }
+}

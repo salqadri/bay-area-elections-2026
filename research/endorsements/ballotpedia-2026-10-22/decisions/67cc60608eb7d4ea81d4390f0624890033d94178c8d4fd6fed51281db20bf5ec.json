@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Gary Wolff\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Building and Construction Trades Council of Alameda County, AFL-CIO\",\"kind\":\"union\",\"logo_url\":\"https://assets.nationbuilder.com/wolff4water/pages/67/attachments/original/1790347251/alameda-building-trades.png?1790347251\",\"note_id\":\"N546\",\"phase\":\"unspecified\",\"quote\":\"Building and Construction Trades Council of Alameda County, AFL-CIO\",\"relation\":\"endorsed\",\"url\":\"https://www.wolff4water.org/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Alameda County Building Trades and Construction Council\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Alameda County Building Trades and Construction Council\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Gary_Wolff#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Alameda County Building Trades and Construction Council\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Alameda County Building Trades and Construction Council\",\"url\":\"https://ballotpedia.org/Endorsements_by_Alameda_County_Building_Trades_and_Construction_Council\"},{\"text\":\"\",\"url\":\"https://www.bac3-ca.org/alameda-btc-2026-endorsements.pdf\"}],\"row_html_sha256\":\"79837d683849f1da7b512b7626c9ffdd4c36c92f29977a8d5e06e2b79d0e962f\",\"text\":\"Alameda County Building Trades and Construction Council\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.85,
+    "probabilities": {
+     "distinct": 0.02,
+     "r0": 0.9,
+     "unclear": 0.08
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 864,
+   "output_tokens": 41
+  }
+ }
+}

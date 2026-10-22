@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Jane Kim\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-12\",\"endorser\":\"California Nurses Association (CNA)\",\"kind\":\"union\",\"logo_url\":\"https://run.imgix.net/86daf947-8fea-4921-83be-74f03c8a9ad0/be66d6c8-b0f2-44a0-94d5-696c65ab89a6/be66d6c8-b0f2-44a0-94d5-696c65ab89a6.webp?ixlib=js-3.8.0&amp;bri=0&amp;con=0&amp;sat=0&amp;high=0&amp;shad=0&amp;usm=0&amp;rect=0%2C0%2C1760%2C1760&amp;auto=compress%2Cformat&amp;fit=fillmax&amp;w=2048&am\",\"note_id\":\"N671\",\"phase\":\"unspecified\",\"quote\":\"California Nurses Association\",\"relation\":\"endorsed\",\"url\":\"https://www.janekim.org/\",\"verification\":\"campaign_claim\"},\"r1\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"California Nurses Association (CNA)\",\"kind\":\"union\",\"note_id\":\"N1044\",\"phase\":\"unspecified\",\"quote\":\"California Nurses Association (CNA)\",\"relation\":\"endorsed\",\"url\":\"https://www.janekim.org/endorsements\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"California Nurses Association\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"California Nurses Association\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Jane_Kim#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"California Nurses Association\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"California Nurses Association\",\"url\":\"https://ballotpedia.org/Endorsements_by_California_Nurses_Association\"},{\"text\":\"\",\"url\":\"https://www.nationalnursesunited.org/california-endorsements\"}],\"row_html_sha256\":\"4f31cbb9b16940d4cef11c5e98beb32695aa91f4f173c884db4451dda493730b\",\"text\":\"California Nurses Association\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "r1": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.31,
+    "probabilities": {
+     "distinct": 0.01,
+     "r0": 0.48,
+     "r1": 0.43,
+     "unclear": 0.08
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1051,
+   "output_tokens": 49
+  }
+ }
+}

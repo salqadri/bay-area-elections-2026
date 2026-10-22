@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Kathryn Camp\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-11\",\"endorser\":\"Building & Construction Trades Council of Alameda County\",\"kind\":\"union\",\"logo_url\":\"https://assets.nationbuilder.com/kathryncamp/pages/397/attachments/original/1791311772/building_trades.png?1791311772\",\"note_id\":\"N502\",\"phase\":\"unspecified\",\"quote\":\"Building & Construction Trades Council of Alameda County\",\"relation\":\"endorsed\",\"url\":\"https://www.kathryncamp.com/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Building and Construction Trades Council of Alameda County, Calif.\",\"kind\":\"unspecified\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Building and Construction Trades Council of Alameda County, Calif.\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Kathryn_Camp#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Building and Construction Trades Council of Alameda County, Calif.\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Building and Construction Trades Council of Alameda County, Calif.\",\"url\":\"https://ballotpedia.org/Endorsements_by_Building_and_Construction_Trades_Council_of_Alameda_County,_Calif.\"},{\"text\":\"\",\"url\":\"https://www.kathryncamp.com/endorsements\"}],\"row_html_sha256\":\"c1ea8da578b5f97db188400eed9306933d732cfaece772c680c5fb4773e23971\",\"text\":\"Building and Construction Trades Council of Alameda County, Calif.\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.98,
+    "probabilities": {
+     "distinct": 0.0,
+     "r0": 0.99,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 862,
+   "output_tokens": 41
+  }
+ }
+}

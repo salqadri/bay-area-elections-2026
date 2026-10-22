@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Sally Hebert HD94 (Sway voting group by Sally Hebert)\",\"prior_observations\":[{\"endorser\":\"Jimmy Story\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Linda Ketner\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Russell Smith\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Jan Anderson\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tom King\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Lloyd \\\"Fig\\\" Newton\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"John Tecklenburg\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Will Haynie\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"JA Moore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Colleen Condon\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Spencer Wetmore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kaye Koonce\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Julia Drayton-Crumblin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Waring Howe\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael O. Williams\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Elizabeth Colbert-Busch\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ginny Deerin\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Randy Hughes\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Leon Stavrinakis\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Peter Tecklenburg\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Carlos Del Toro\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Tracy L. Hunt\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Michael B. Moore\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Charles Patrick\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Kathryn Whitaker\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Billy Keyserling\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Sally Hebert HD94 (Sway voting group by Sally Hebert)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Sally Hebert HD94 (Sway voting group by Sally Hebert)\",\"url\":\"https://ballotpedia.org/Endorsements_by_Sally_Hebert_HD94_(Sway_voting_group_by_Sally_Hebert)\"},{\"text\":\"\",\"url\":\"https://www.sway.co/g/sallyhebert\"}],\"row_html_sha256\":\"095202abb44b83ce9d41ab5b05f3d4d3c47cbf8d9251cb720196a6582b0e2c81\",\"text\":\"Sally Hebert HD94 (Sway voting group by Sally Hebert)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.8,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.85,
+     "overlap": 0.05,
+     "unclear": 0.1
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1218,
+   "output_tokens": 49
+  }
+ }
+}

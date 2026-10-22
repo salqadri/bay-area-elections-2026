@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"California Young Democrats\",\"prior_observations\":[{\"endorser\":\"California Farm Bureau\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Modesto Police Officers' Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Mayors\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Farm Bureau\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Mayors\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"California Fraternal Order of Police\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Modesto Police Officers' Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Local Leaders\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Central Valley Local Leaders\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Modesto Police Officers' Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"California Young Democrats\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"California Young Democrats\",\"url\":\"https://ballotpedia.org/Endorsements_by_California_Young_Democrats\"},{\"text\":\"\",\"url\":\"https://www.cayoungdems.net/endorsements\"}],\"row_html_sha256\":\"ae29b8c2a328aa95f011c8a17b55cc87920a8f3bd1c31680bd02933b8d07369d\",\"text\":\"California Young Democrats\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.92,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.94,
+     "overlap": 0.01,
+     "unclear": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 890,
+   "output_tokens": 49
+  }
+ }
+}

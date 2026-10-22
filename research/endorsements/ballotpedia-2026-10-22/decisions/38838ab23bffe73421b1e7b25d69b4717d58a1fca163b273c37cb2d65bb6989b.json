@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"South Bay Labor Council (AFL-CIO)\",\"prior_observations\":[{\"endorser\":\"CAIR Action\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ro Khanna\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"All seven members Santa Clara County Board of Education\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"South Bay Labor Council (AFL-CIO)\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"South Bay Labor Council (AFL-CIO)\",\"url\":\"https://ballotpedia.org/Endorsements_by_AFL-CIO_South_Bay_Labor_Council\"},{\"text\":\"\",\"url\":\"https://www.southbaylabor.org/2026_endorsements\"}],\"row_html_sha256\":\"9591d9261e16d0eaf7e27ae1dd6f535f3f669ecd61f22d1b0f1f39777369d951\",\"text\":\"South Bay Labor Council (AFL-CIO)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.96,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.97,
+     "overlap": 0.01,
+     "unclear": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 733,
+   "output_tokens": 49
+  }
+ }
+}

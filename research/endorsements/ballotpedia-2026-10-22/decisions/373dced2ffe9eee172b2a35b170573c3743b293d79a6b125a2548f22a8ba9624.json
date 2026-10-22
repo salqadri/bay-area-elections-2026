@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Andy Barr\",\"existing\":{\"r0\":{\"checked_on\":\"2026-10-18\",\"endorser\":\"Mitch Whitaker\",\"kind\":\"official\",\"note_id\":\"N945\",\"phase\":\"unspecified\",\"quote\":\"State Rep Mitch Whitaker\",\"relation\":\"endorsed\",\"url\":\"https://barrforsenate.com/endorsements/\",\"verification\":\"campaign_claim\"}},\"incoming\":{\"checked_on\":\"2026-10-22\",\"endorser\":\"Mitchum Whitaker\",\"kind\":\"official\",\"note_id\":\"N1542\",\"phase\":\"unspecified\",\"quote\":\"Kentucky State Rep. Mitchum Whitaker (R)\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Andy_Barr#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Mitchum Whitaker\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Mitchum Whitaker\",\"url\":\"https://ballotpedia.org/Mitchum_Whitaker\"},{\"text\":\"\",\"url\":\"https://barrforsenate.com/endorsements/\"}],\"row_html_sha256\":\"2941093a0124adf3652cc510fe0cb12a8d15e8ee67d44b8101753723436f1cb9\",\"text\":\"Kentucky State Rep. Mitchum Whitaker (R)\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.66,
+    "probabilities": {
+     "distinct": 0.08,
+     "r0": 0.77,
+     "unclear": 0.15
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 769,
+   "output_tokens": 41
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"John Barrasso\",\"prior_observations\":[{\"endorser\":\"Donald Trump\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"John Barrasso\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"John Barrasso\",\"url\":\"https://ballotpedia.org/John_Barrasso\"},{\"text\":\"\",\"url\":\"https://rogersforsenate.com/news/state-legislators-endorse-mike-rogers-for-us-senate-3\"}],\"row_html_sha256\":\"f6db474d85e34e61853d6806fba88fab831215d6aa4845047fb7510647098cc2\",\"text\":\"U.S. Sen. John Barrasso (R)\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.96,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.97,
+     "overlap": 0.02,
+     "unclear": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 664,
+   "output_tokens": 49
+  }
+ }
+}
