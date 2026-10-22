@@ -153,7 +153,12 @@ def update_receipts(fec, totals, checked_on, committee_ids=None):
     if not amount.is_finite() or amount < 0:
         raise ValueError('Invalid FEC receipt amount')
     if fec.get('receipts') is not None and Decimal(str(fec['receipts'])) > amount:
-        raise ValueError('New receipts below the stored total; investigate before publishing')
+        # A decrease over the IDENTICAL coverage window is an FEC amendment of a
+        # previously published total (e.g. Shah H4AZ01194 -$7,000 on 2026-10-22).
+        # Any other lower reading stays blocked: it historically meant fetching
+        # committee-level instead of candidate-level totals.
+        if not (fec.get('from') == start and fec.get('through') == end):
+            raise ValueError('New receipts below the stored total; investigate before publishing')
     committees = committee_ids or totals.get('committee_ids') or fec.get('committee_ids')
     if not committees or any(not re.fullmatch(r'C[0-9]{8}', cid) for cid in committees):
         return 'skipped', 'authorized committee IDs unavailable; existing snapshot preserved'
