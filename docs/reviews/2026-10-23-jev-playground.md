@@ -61,7 +61,7 @@ stored response rows have `action_id`/`value`, while title/kind/date live in the
 shared action registry. Previously the builder read nonexistent title/date
 fields and omitted the actual response. New states resolve those IDs and include
 actual response and Congress, retaining source-selected action scope. Official
-USCPR scores remain a separate input where present.
+USCPR scorecard grades remain a separate input where present.
 
 ## Actual default run
 
