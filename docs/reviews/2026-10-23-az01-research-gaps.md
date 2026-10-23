@@ -1,6 +1,6 @@
 # Endorsement and Gaza research gaps — October 23, 2026
 
-Baseline **d6238fe**, publication `2026-10-22.5`; proposed publication
+Baseline **d6238fe**, publication `2026-10-22.5`; released publication
 **2026-10-23.1**, schema **1.23** unchanged. The [repeatable workflow](../RESEARCH_GAP_RECOVERY.md)
 addresses new-race coverage, rather than hardcoding one candidate.
 
@@ -171,3 +171,19 @@ The merge review also replayed all six Gaza claims from their original raw sourc
 bytes through the exact archived Jev requests and responses, and replayed all 17
 HAPAC card dispositions against the baseline roster. No new political findings
 or source substitutions were introduced by the review.
+
+## Publication verification
+
+[PR #13](https://github.com/salqadri/bay-area-elections-2026/pull/13) merged
+October 23 as `a9a67950faeff9f9ddbb4eb008bd1b955a70195f`, including review
+corrections at `30c393c`. All **34 release checks** passed on that final code and
+dataset, including the **23-test** gap suite. The [Pages deployment for the merge](https://github.com/salqadri/bay-area-elections-2026/actions/runs/39996870413)
+completed successfully. Live `index.html`, `ballot.html` and the canonical JSON
+were downloaded and matched the local reviewed bytes exactly.
+
+A fresh browser pass against the live site at 1440px and 390px loaded all 31 Shah
+organization logos, found his HAPAC entry exactly once, showed his three dated
+Gaza records and Feely's two dated records plus current campaign statement, and
+reported no page errors or horizontal overflow. Live screenshots were inspected.
+Three image-layout holds and the wider coverage queues remain explicit; held
+Gaza grades remain unpublished.
