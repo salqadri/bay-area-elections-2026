@@ -201,7 +201,11 @@ def capture_plan(plan, output_dir, checked_on, workers=4):
     from concurrent.futures import ThreadPoolExecutor
     from capture_endorsement_images import capture
     from research_endorsements import Fetcher, Blocked
-    output_dir.mkdir(parents=True, exist_ok=True)
+    # Refuse before fetching or writing: a repeated run must not replace its
+    # ready queue with failures caused by the existing immutable packets.
+    if output_dir.exists():
+        raise ValueError('Preserve captures and queue; choose a fresh output directory')
+    output_dir.mkdir(parents=True)
     urls = sorted({e['url'] for e in plan['items']})
     def one(url):
         try:

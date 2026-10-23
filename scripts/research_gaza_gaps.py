@@ -189,7 +189,9 @@ def build(data, claims, work, key, review_id, checked_on):
         if capture(Path(claim['raw_capture']).read_bytes(), packet['source_url'], packet['checked_on'], packet['kind']) != packet:
             raise ValueError('Packet differs from actual captured source bytes')
         p,c,record,before,ok,ref = review_claim(data, claim, packet, work, key)
-        source_key = 'source-' + digest(packet['source_url'].encode())[:20]
+        # A shared publisher page can support several candidates. Each source
+        # object includes a candidate, so its key must preserve that binding.
+        source_key = 'source-' + digest(dump([packet['source_url'], p['id'], c['name']]).encode())[:20]
         result['sources'][source_key] = {'url': packet['source_url'], 'publisher': claim['publisher'], 'role': claim['role'],
             'candidate': c['name'], 'checked_on': packet['checked_on'], 'content_sha256': packet['content_sha256'], 'retrieval': packet['retrieval']}
         decision = {'id': 'gaza-claim-' + str(i), 'action': 'hold', 'source_key': source_key, 'position_id': p['id'], 'candidate': c['name'],

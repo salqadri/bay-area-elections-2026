@@ -34,6 +34,8 @@ python3 scripts/review_endorsement_images.py capture-plan --plan .research/image
 python3 scripts/review_endorsement_images.py build-queue --queue research/endorsements/images-YYYY-MM-DD/queue.json --id campaign-images-YYYY-MM-DD --reviewed-on YYYY-MM-DD --output research/reviews/campaign-images-YYYY-MM-DD.json
 ```
 
+The capture command requires a new output directory and refuses an existing run before making requests or changing its queue.
+
 Omit `--nationwide-house` for all printed candidates. This planner follows actual
 published campaign-claim endorsement-page URLs, rather than guessing paths. It
 flags pages with no image observations or with text observed after the image
@@ -138,3 +140,5 @@ outside Git. Reapply each identical registered review to verify a no-op. These
 steps do not publish held Gaza grades or infer positions from outside spending.
 The release gate includes `check_research_gaps.py`; source truth and exhaustive
 coverage still require source review.
+
+Source entries in Gaza review drafts bind the page URL to the exact candidate and contest. Several candidates can share a publisher guide without overwriting one another's source attribution.

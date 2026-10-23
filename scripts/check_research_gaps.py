@@ -86,6 +86,14 @@ class ImageScopeChecks(unittest.TestCase):
         self.assertEqual(len(images.selected_images(p,d,'old-packet-sha')),31)
         with self.assertRaises(ValueError):images.selected_images(p,d,'different-sha')
 
+    def test_capture_rerun_preserves_existing_queue_before_network(self):
+        with tempfile.TemporaryDirectory() as temp,patch('research_endorsements.Fetcher.request') as fetch:
+            directory=Path(temp)/'run';directory.mkdir()
+            queue=directory/'queue.json';original=b'{"items": [], "previous_run": true}\n';queue.write_bytes(original)
+            with self.assertRaisesRegex(ValueError,'fresh output directory'):
+                images.capture_plan({'items':[{'url':self.url}]},directory,'2026-10-23')
+            fetch.assert_not_called();self.assertEqual(queue.read_bytes(),original)
+
 
     def test_batch_runner_makes_separate_image_publication_draft(self):
         import run_campaign_endorsement_batch as runner
@@ -198,6 +206,28 @@ class GazaGapChecks(unittest.TestCase):
         self.assertTrue(any(d['after'].get('date')=='2023-10-09' for d in changes))
         self.assertTrue(any(d['field']=='gaza_platform' and d['after']['checked_on']=='2026-10-23' for d in changes))
         observed=next(d['after'] for d in changes if d['after'].get('date_method')=='source_observed');self.assertEqual(observed['source_kind'],'voter_guide');self.assertIn('not the date',observed['date_note'])
+
+    def test_shared_guide_keeps_each_candidate_source_attribution(self):
+        self.data=deepcopy(DATA)
+        review=json.loads((ROOT/'research/reviews/az01-gaza-gap-recovery-2026-10-23.json').read_text())
+        template=next(d['after'] for d in review['decisions'] if d['after'].get('date_method')=='source_observed')
+        raw=b'<title>Fixture guide</title><p>Amish Shah supports Israel. Jay Feely supports Israel.</p>'
+        with tempfile.TemporaryDirectory() as temp,patch.object(gaza,'ask',side_effect=mocked_ask):
+            directory=Path(temp);rp=directory/'guide.raw';rp.write_bytes(raw);pp=directory/'guide.json'
+            save(pp,gaza.capture(raw,'https://guide.example/2026','2026-10-23'))
+            claims=[]
+            for i,name in enumerate(['Amish Shah','Jay Feely']):
+                p,c=target(self.data,name)
+                record={**template,'id':'GE-800'+str(i),'quote':name+' supports Israel.',
+                        'summary':'The fixture guide reports that '+name+' supports Israel.'}
+                claims.append({'position_id':p['id'],'candidate':name,'field':'gaza_evidence','record':record,
+                    'capture':str(pp),'raw_capture':str(rp),'publisher':'Fixture guide','role':'aggregator',
+                    'identity_basis':'Exact named candidate in this source fixture.',
+                    'date_basis':'Observation date of the guide, not the underlying statement date.'})
+            result,_=gaza.build(self.data,claims,directory,'fixture','fixture-shared-guide','2026-10-23')
+            self.assertEqual(len(result['decisions']),2)
+            for decision in result['decisions']:
+                self.assertEqual(result['sources'][decision['source_key']]['candidate'],decision['candidate'])
 
 
 if __name__=='__main__':unittest.main()

@@ -146,3 +146,28 @@ shared rendering is also covered by the offline integration checks. Arizona's
 nationwide records intentionally are not returned by Bay Area county address
 matching; the real-browser AZ-01 pass used the explorer. Remote images may change
 or fail later; source/image links remain available.
+
+## Merge review — October 23, 2026
+
+The owner asked Astra to review and merge PR #13 instead of Hermes. Latest main
+remained `d6238fe`, with no outstanding GitHub review comments. Review found and
+fixed two future-run defects without changing any publication records:
+
+- Reusing an image capture directory could replace its ready queue with
+  unavailable entries. The command now refuses the existing directory before
+  network requests or writes.
+- A Gaza source key used only the URL despite carrying candidate attribution.
+  Two candidates on the same publisher page could overwrite that attribution.
+  Keys now bind the URL, contest and candidate together.
+
+Both regressions reproduced the defects before the fixes; the gap suite now has
+**23 passing tests**. Jev's decisions are archived in
+`research/reviews/pr13-merge-review-2026-10-23.decisions.json`. Independent
+structural reversal again recovered the entire baseline after removing precisely
+the documented additions. README coverage counts were reconciled with the current
+dataset; dated historical counts remain explicitly historical.
+
+The merge review also replayed all six Gaza claims from their original raw source
+bytes through the exact archived Jev requests and responses, and replayed all 17
+HAPAC card dispositions against the baseline roster. No new political findings
+or source substitutions were introduced by the review.
