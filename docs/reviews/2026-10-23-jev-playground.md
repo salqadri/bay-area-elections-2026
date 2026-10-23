@@ -67,6 +67,39 @@ race browsing and no horizontal overflow/page errors. Fixture batch tests cover
 all 187 candidates, a candidate failure, cancellation, and inspecting history
 while a job is active. These UI checks make no additional real Jev calls.
 
+## Alameda / Santa Clara expansion
+
+At the owner's request, the playground now selects the union of all active
+tracked House races and every non-excluded position with Alameda or Santa Clara
+in its county coverage: **685 candidacies / 268 races**. The House subset remains
+187 / 72; 498 candidacies in 196 additional local, state and judicial contests
+are added. Shared county contests and overlapping House races appear once. The
+same person in separate races stays separate; all roster categories are retained,
+including the current local qualified write-in. No roster or research is changed.
+
+New requests/previews use `candidate-evidence-v4-local-federal` on top of the
+shared compact builder. Office category, jurisdiction, government level,
+counties/seat, election date/type, partisan status, roster and recorded incumbency
+provide context for criteria spanning local and federal offices. CAL-ACCESS
+supporting/opposing spenders use their own registry and separate input keys;
+31 candidacies have recorded California IE items. The unchanged focus registry
+selects 62 observations on 43 candidacies (max three) in the expanded scope.
+
+The 187-result House baseline and all saved requests remain immutable. Added
+candidates are immediately selectable as ungraded previews; local outputs are
+not fabricated or automatically generated. Run selected evaluates that candidate;
+Run all queues all 685 using the edited questions. County/office search and full
+local jurisdiction/office/seat labels replace ambiguous seat-only labels. House
+number ordering stays intact. The CLI scopes/builder and archive are unchanged.
+
+Offline regressions cover union inclusion/exclusion, deduplication, empty
+contests, repeated names in different races, separate rosters, California/FEC
+spender IDs, local inputs, baseline preservation and single/full custom prompts.
+Chrome desktop/mobile checks verify 685 selectable entries, 187 stored answers,
+local test runs for Raeena Lari and Avery Arbaugh using fixture transport,
+CAL-ACCESS input inspection, county/jurisdiction search and history. The actual
+local server is also checked without making new real Jev calls for this change.
+
 ## Compact, source-backed endorsement input
 
 Full House endorsement context would add **3,690 observations**. The focused
@@ -131,7 +164,7 @@ answers. Source and model text is rendered as text/JSON, not executable markup.
 
 ## Validation
 
-- **36/36 offline release checks pass**. New suites cover 19 Python regressions
+- **36/36 offline release checks pass**. New suites cover 23 Python regressions
   plus Node assertions for generic question rendering, zero/low-confidence
   retention, state/district sorting and immutable delta merges.
 - Real Chrome at **1440px and 390px** loads actual Monaco, all 187 stored answers,

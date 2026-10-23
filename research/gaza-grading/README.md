@@ -1,9 +1,14 @@
 # Jev grading and the local playground
 
 [Start and use the local playground](../../docs/JEV_PLAYGROUND.md) to edit question
-JSON, run Jev on all tracked active House candidates, and inspect exact candidate
-states, responses and confidences. Current scope is **187 candidates / 72 races**;
-the original `house-nationwide` scope omitted the existing Bay Area races.
+JSON, run Jev on tracked House candidates nationwide plus every active Alameda/
+Santa Clara county ballot contest, and inspect exact inputs and confidences.
+The playground now includes **685 candidacies / 268 races**; its immutable
+default archive remains the original **187 House candidacies / 72 races**.
+Added local/state/judicial candidates start unevaluated. The playground uses
+`candidate-evidence-v4-local-federal` with office/jurisdiction/county context and
+separate CAL-ACCESS spenders. CLI scope flags and historical request states are
+unchanged; the original `house-nationwide` scope omitted the Bay Area races.
 
 ## Confidence-only results
 

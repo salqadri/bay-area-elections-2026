@@ -37,6 +37,23 @@ def fixture():
     return {'election':{'publication_version':'2026-10-23.1'},'codes':{'party':{'D':'Democratic Party'}},'positions':ps}
 
 
+def expanded_fixture():
+    data=fixture();data['positions'][0]['counties']=['Alameda','Santa Clara']
+    for id_,county,category,status,name in [('AL-local',['Alameda'],'Mayor','confirmed','Local Alex'),
+            ('SC-local',['Santa Clara'],'School district','confirmed','Local Alex'),
+            ('shared',['Alameda','Santa Clara'],'Statewide executive','confirmed','Governor'),
+            ('outside',['San Mateo'],'Mayor','confirmed','Outside'),
+            ('excluded-local',['Santa Clara'],'Mayor','excluded','Excluded local'),
+            ('empty',['Santa Clara'],'Water district','confirmed',None)]:
+        data['positions'].append({'id':id_,'counties':county,'government_level':'City or town',
+            'office_category':category,'office':category,'jurisdiction':id_+' jurisdiction',
+            'district_or_seat':'District 3','partisan':False,'ballot_status':status,
+            'election_type':'general','candidates':[{'name':name,'incumbent':True}] if name else []})
+    data['positions'][5]['qualified_write_in_candidates']=[{'name':'Local Write In'}]
+    data['positions'][5]['filed_candidates_not_confirmed_on_ballot']=[{'name':'Local provisional'}]
+    return data
+
+
 def baseline(data):
     results=[];decisions={}
     for pos,c,roster in g.candidates(data,'house-all'):
@@ -68,6 +85,34 @@ class ValidationChecks(unittest.TestCase):
         rows=g.candidates(data,'house-all')
         self.assertEqual(len(rows),4)
         self.assertEqual(next(r for p,c,r in rows if c['name']=='Write In'),'qualified_write_in_candidates')
+
+    def test_playground_union_adds_every_county_office_and_deduplicates_shared_races(self):
+        current=p.snapshot(expanded_fixture())
+        self.assertEqual(len(current['candidates']),8);self.assertEqual(len(current['races']),7)
+        self.assertEqual(sum(c['candidate']=='Alice' for c in current['candidates']),1)
+        self.assertEqual(sum(c['candidate']=='Governor' for c in current['candidates']),1)
+        self.assertFalse({'Outside','Excluded local','Senator'} & {c['candidate'] for c in current['candidates']})
+        local=[c for c in current['candidates'] if c['candidate']=='Local Alex']
+        self.assertEqual(len({c['id'] for c in local}),2)  # distinct races never collapse by name
+        self.assertEqual({c['roster'] for c in current['candidates']},
+                         {'candidates','qualified_write_in_candidates','filed_candidates_not_confirmed_on_ballot'})
+        self.assertIn('empty',{r['id'] for r in current['races']})
+        self.assertEqual(next(c for c in current['candidates'] if c['candidate']=='Local Write In')['state']['candidate_roster'],'qualified_write_in_candidates')
+
+    def test_local_input_identifies_jurisdiction_and_keeps_cal_access_separate_from_fec(self):
+        data=expanded_fixture();pos=data['positions'][5];candidate=pos['candidates'][0]
+        candidate['ca_independent_expenditures']={'items':[{'spender_id':'1','direction':'for','amount':1234},
+            {'spender_id':'2','direction':'against','amount':4321}]}
+        candidate['independent_expenditures']={'items':[{'spender_id':'1','direction':'for','amount':500}]}
+        data['ca_ie_spenders']={'1':{'name':'California support'},'2':{'name':'California oppose'}}
+        data['ie_spenders']={'1':{'name':'Federal committee'}}
+        state=p.playground_state(pos,candidate,data)
+        self.assertEqual(state['jurisdiction'],'AL-local jurisdiction');self.assertEqual(state['office_category'],'Mayor')
+        self.assertEqual(state['state'],'CA');self.assertEqual(state['party'],'Nonpartisan');self.assertTrue(state['incumbent'])
+        self.assertEqual(state['counties'],['Alameda']);self.assertEqual(state['district_or_seat'],'District 3')
+        self.assertEqual(state['ca_spenders_supporting'],['California support $1,234'])
+        self.assertEqual(state['ca_spenders_opposing'],['California oppose $4,321'])
+        self.assertEqual(state['spenders_supporting'],['Federal committee $500'])
 
     def test_focus_includes_owner_names_and_preserves_relationship_context(self):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
@@ -109,6 +154,28 @@ class RunChecks(unittest.TestCase):
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)
         self.assertNotIn('SECRET_FIXTURE',json.dumps(b));self.assertNotIn('accepted',json.dumps(b));self.assertEqual(b['baseline']['rows'][0]['response']['answers']['verdict']['confidence'],.12)
+
+    def test_expanded_roster_keeps_original_house_baseline_and_local_inputs_are_ungraded(self):
+        g.save(self.path,expanded_fixture());bootstrap=self.manager().bootstrap()
+        self.assertEqual(len(bootstrap['snapshot']['candidates']),8)
+        self.assertEqual(len(bootstrap['baseline']['rows']),3)
+        original=json.loads(self.base.read_text())
+        for row in bootstrap['baseline']['rows']:
+            self.assertEqual(row['request'],original['decisions'][row['request_sha256']]['request'])
+            self.assertNotIn('jurisdiction',row['request']['state'])
+        self.assertNotEqual(bootstrap['baseline']['state_version'],bootstrap['snapshot']['state_version'])
+
+    def test_single_local_and_full_expanded_runs_use_the_same_edited_questions(self):
+        data=expanded_fixture();g.save(self.path,data);calls=[]
+        def call(work,req,key,force):calls.append(deepcopy(req));return response(req)
+        m=self.manager(call);local=next(c for c in m.current()['candidates'] if c['position_id']=='SC-local')
+        q={'local_or_federal':{'type':'noul','instructions':'Use the candidate office context.'}}
+        one=self.wait(m,m.start(q,local['id'])['id'])
+        self.assertEqual(len(calls),1);self.assertEqual(one['rows'][0]['request']['state']['jurisdiction'],'SC-local jurisdiction')
+        self.assertEqual(one['rows'][0]['request']['questions'],q)
+        all_done=self.wait(m,m.start(q)['id']);self.assertEqual(len(all_done['rows']),8)
+        self.assertEqual(len(calls),9);self.assertTrue(all(c['questions']==q for c in calls))
+        self.assertEqual(one['state_version'],p.STATE_VERSION)
 
     def test_fresh_run_retains_low_confidence_and_arbitrary_questions_without_cutoffs(self):
         calls=[]

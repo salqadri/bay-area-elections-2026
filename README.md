@@ -12,8 +12,9 @@ An independent research inventory and searchable, static explorer of elected off
 
 Run `python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/jev-key`
 and open **http://127.0.0.1:8787/**. Edit the owner's question JSON in Monaco,
-run Jev on the selected candidate to iterate or across all **187 candidates /
-72 active tracked House races**, and inspect answers, confidences and exact
+run Jev on the selected candidate to iterate or across all **685 candidacies /
+268 tracked races** (nationwide House plus all Alameda/Santa Clara county ballot
+races), and inspect answers, confidences and exact
 candidate inputs grouped by state/district. The editor and selected answers share
 a workspace, with generated state available on demand. Stored
 results load by default; no confidence cutoffs apply. The key stays local on the

@@ -24,3 +24,12 @@ assert.deepEqual(probabilities.map(p=>p.key),['no','yes','unknown']);assert.equa
 assert.equal(C.probabilityRows({type:'score',probabilities:{0:1,1:0},legend:{0:'Actual legend'}},{criteria:['Other text','High']})[0].label,'Actual legend');
 assert.deepEqual(C.probabilityRows({type:'noul',noul:.47},{}),[]);
 console.log('PASS Response distributions: returned probabilities and confidence remain distinct, zeroes and actual selections retained.');
+
+const localRaces=[{id:'local10',state:'CA',jurisdiction:'City of Sunnyvale',office:'Council',district_or_seat:'District 10'},
+{id:'local2',state:'CA',jurisdiction:'City of Sunnyvale',office:'Council',district_or_seat:'District 2'},
+{id:'local-school',state:'CA',jurisdiction:'School district',office:'Trustee',district_or_seat:'Area 2'},
+{...races[0],id:'house17'},{...races[1],id:'house1'}];
+assert.deepEqual(C.sortRaces(localRaces).map(r=>r.id),['house1','house17','local2','local10','local-school']);
+assert.equal(C.raceLabel(localRaces[0]),'City of Sunnyvale · Council · District 10');assert.equal(C.raceLabel(localRaces[3]),'CD-17');
+const oldRace={...localRaces[0]};delete oldRace.office_category;assert.equal(C.catalogRaces({races:[{...oldRace,office_category:'City council'}]},{races:[oldRace]})[0].office_category,'City council');
+console.log('PASS Mixed races: House numeric order, local jurisdiction/office labels and historical metadata.');

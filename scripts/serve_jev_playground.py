@@ -1,4 +1,4 @@
-"""Local House-candidate Jev playground. Serves UI + same-origin run API on loopback.
+"""Local candidate Jev playground for nationwide House and Alameda/Santa Clara races. Serves UI + same-origin run API on loopback.
 
 python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/key
 No API credential reaches the browser. Runs never change published research.
@@ -18,26 +18,64 @@ from urllib.parse import urlsplit, parse_qs
 import uuid
 
 from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, build_state,
-                        validate_questions, validate_response, jev_call, digest, dump, save, now)
+                        validate_questions, validate_response, jev_call, digest, dump, save, now, money)
 
 ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
+COUNTIES = frozenset({'Alameda', 'Santa Clara'})
+STATE_VERSION = 'candidate-evidence-v4-local-federal'
 
 
 def row_id(position_id, candidate, roster):
     return digest(dump([position_id, candidate, roster]).encode())[:24]
 
 
+def playground_positions(data):
+    """Union by contest identity: all House seats plus every active contest serving either county."""
+    return [p for p in data['positions'] if p.get('ballot_status') != 'excluded'
+            and (p.get('office_category') == 'U.S. House' or COUNTIES.intersection(p.get('counties') or []))]
+
+
+def playground_state(position, candidate, data):
+    # Preserve the compact evidence contract; enrich only new playground requests.
+    state = build_state(position, candidate, data)
+    if data.get('election', {}).get('date'):
+        state['election_date'] = data['election']['date']
+    for key in ('jurisdiction', 'office_category', 'government_level', 'district_or_seat',
+                'counties', 'election_type', 'partisan'):
+        if key in position:
+            state[key] = deepcopy(position[key])
+    if position.get('partisan') is False and not candidate.get('party'):
+        state['party'] = 'Nonpartisan'
+    if 'incumbent' in candidate:
+        state['incumbent'] = candidate['incumbent']
+    # CAL-ACCESS is a separate registry and must not resolve through FEC committee IDs.
+    ie = candidate.get('ca_independent_expenditures') or {}
+    spenders = data.get('ca_ie_spenders', {})
+    for direction, label in (('for', 'ca_spenders_supporting'), ('against', 'ca_spenders_opposing')):
+        rows = [f"{spenders.get(str(i['spender_id']), {}).get('name', i['spender_id'])} {money(i['amount'])}"
+                for i in sorted(ie.get('items', []), key=lambda x: -x['amount']) if i['direction'] == direction]
+        if rows:
+            state[label] = rows[:12]
+    return state
+
+
 def snapshot(data):
     races, rows = {}, []
-    for p, c, roster in candidates(data, 'house-all'):
-        state = build_state(p, c, data)
-        races[p['id']] = {k: p.get(k) for k in ('id', 'office', 'jurisdiction', 'district_or_seat', 'ocd_division_id', 'counties')}
-        races[p['id']]['state'] = state['state']
+    selected = playground_positions(data)
+    for p in selected:
+        races[p['id']] = {k: p.get(k) for k in ('id', 'office', 'office_category', 'government_level', 'jurisdiction',
+                                               'district_or_seat', 'ocd_division_id', 'counties', 'election_type')}
+        match = re.search(r'state:(\w\w)', p.get('ocd_division_id') or '')
+        races[p['id']]['state'] = match.group(1).upper() if match else ('CA' if p.get('counties') else '')
+    for p, c, roster in candidates({'positions': selected}, 'all'):
+        state = playground_state(p, c, data)
+        state['candidate_roster'] = roster
         rows.append({'id': row_id(p['id'], c['name'], roster), 'position_id': p['id'], 'candidate': c['name'],
-                     'party': c.get('party'), 'roster': roster, 'state': state})
-    return {'dataset_sha256': digest(dump(data).encode()), 'state_version': 'house-evidence-v3-focused',
+                     'party': c.get('party') or ('Nonpartisan' if p.get('partisan') is False else None),
+                     'roster': roster, 'state': state})
+    return {'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION,
             'publication_version': data['election']['publication_version'], 'races': list(races.values()), 'candidates': rows}
 
 
@@ -55,7 +93,7 @@ def stored_run(batch, current):
                      'party': result.get('party'), 'roster': result['roster'], 'request': request,
                      'request_sha256': result['request_sha256'], 'response': decision['response'] if decision else None,
                      'status': 'error' if result.get('error') else 'complete', 'error': result.get('error'), 'revision': 0})
-    return {'format': 'jev-playground-run/v1', 'id': 'stored-house-all-focused-2026-10-23', 'label': 'Stored results · Oct 23',
+    return {'format': 'jev-playground-run/v1', 'id': 'stored-house-all-focused-2026-10-23', 'label': 'Stored House results · Oct 23',
             'created_at': batch['run_on'], 'model': batch['model'], 'questions': batch['questions'], 'status': 'complete',
             'dataset_sha256': batch.get('dataset_sha256'), 'state_version': batch['state_version'],
             'races': current['races'], 'rows': rows, 'revision': 0, 'completed': len(rows),
@@ -107,7 +145,7 @@ class RunManager:
             if candidate_id is not None:
                 targets = [c for c in targets if c['id'] == candidate_id]
                 if not targets:
-                    raise ValueError('Selected candidate is no longer in the current active House roster. Reload the page.')
+                    raise ValueError('Selected candidate is no longer in the current active playground roster. Reload the page.')
             run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ-') + uuid.uuid4().hex[:8]
             rows = []
             for c in targets:

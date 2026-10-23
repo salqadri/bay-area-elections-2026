@@ -1,9 +1,15 @@
 # Local Jev playground
 
 The playground runs on this computer, separate from the GitHub Pages readers.
-It includes every candidate in **all active U.S. House contests tracked in this
-repository**, including the Bay Area races. Current scope: **187 candidates / 72
-races**. It does not discover additional nationwide contests or alter the roster. Separate printed, provisional and qualified-write-in rosters remain distinct.
+It includes the union of **all active U.S. House contests tracked nationwide**
+and **every active contest serving Alameda or Santa Clara County** in the
+repository's county coverage. Current scope: **685 candidacies / 268 races**,
+including 187 House candidacies / 72 races and 498 added candidacies in 196
+other races. County coverage includes local, district, state and judicial ballot
+contests. A shared county race or overlapping House race appears once; separate
+candidacies for the same person remain distinct. Excluded races stay out; printed,
+provisional and qualified-write-in rosters remain distinct (the current snapshot
+includes one local qualified write-in). No additional contests are discovered.
 
 ## Start
 
@@ -27,7 +33,9 @@ There is no new public site area or main-reader UI change in this PR.
 
 1. The page loads the stored **all-House focused run**, using the owner's exact
    October 23 question JSON (`pro-palestine-v2`). Nothing runs or incurs API calls
-   merely by opening the page.
+   merely by opening the page. The stored baseline has 187 House results; the
+   added county candidates are available immediately with **Not evaluated in this
+   run** labels until you run them. Existing saved results are never overwritten.
 2. Use the candidate picker or previous/next arrows above the workspace. On
    desktop, the Monaco question editor and selected candidate's answers sit
    side by side, with Run controls always above them. On mobile, **Questions**
@@ -36,7 +44,7 @@ There is no new public site area or main-reader UI change in this PR.
 3. Edit the questions, then press **Run selected candidate** or **Ctrl/Cmd +
    Enter** to evaluate exactly that candidate. Each iteration is saved separately.
    Select another candidate without losing the draft. When ready, **Run all
-   187 candidates** evaluates the full roster with that same question text.
+   685 candidates** evaluates the full roster with that same question text.
    Both actions take fresh snapshots of current data. Up to three Jev calls run
    concurrently; `choice`, `score` and yes/no `noul` questions can be renamed/added.
 4. The selected response shows each question key/instructions, answer, type and
@@ -51,7 +59,7 @@ There is no new public site area or main-reader UI change in this PR.
    Editing a prompt never changes the instructions or state attached to an
    existing result; a visible notice identifies answers from a saved prompt.
    Unevaluated candidates show an input preview with no inherited answers.
-6. **Browse all House races** opens the state/district groups and search/state
+6. **Browse all races** opens the state/district groups and search/state
    filters. Selecting a card brings that candidate into the workspace. Races
    remain sorted by state name and numeric district number.
 7. Run history and JSON downloads preserve exact questions, model alias and
@@ -70,10 +78,17 @@ active (in which case reload reconnects to it).
 
 ## Compact candidate input
 
-The same `grade_gaza.build_state` supplies CLI runs, local runs and previews:
+The playground wraps `grade_gaza.build_state` with versioned local/federal
+context (`candidate-evidence-v4-local-federal`) for new requests and previews.
+Historical requests and the shared CLI builder remain unchanged:
 
-- Identity/party, the top 12 supporting and opposing IE spenders (separate lists,
-  rounded dollars), recorded USCPR grades, up to eight platform summaries, a
+- Identity/party, jurisdiction, office category, government level, seat, counties,
+  election date/type, partisan status, incumbency when recorded, and exact roster
+  category. Nonpartisan status comes from the contest metadata, not a missing
+  party field. The core evidence includes the top 12 supporting and opposing IE spenders (separate lists,
+  rounded dollars), plus separate top-12 CAL-ACCESS supporting/opposing spender
+  lists when recorded (31 candidacies currently). FEC and California spender
+  registries remain separate. Recorded USCPR grades, up to eight platform summaries, a
   reviewed Gaza-platform statement when present, and up to twelve dated Gaza
   evidence summaries.
 - Focused endorsement/recommendation observations only. The versioned exact-name
@@ -84,8 +99,9 @@ The same `grade_gaza.build_state` supplies CLI runs, local runs and previews:
   Related parent/PAC names are included for context without merging entities or
   assigning them the same position. Actual source names and relation types,
   ratings, phases, verification and historical flags remain intact.
-- The focused pass includes **41 observations on 23 candidates**, at most three
-  per candidate, instead of all 3,690 House endorsement observations. Other names
+- The current expanded roster has **62 focused observations on 43 candidacies**,
+  at most three each. The original House archive had 41 on 23, instead of all
+  3,690 House endorsement observations. Other names
   are omitted for context budget, not declared unimportant or absent. No category
   is inferred from religion or ethnicity. Neutral image observations are not
   converted into named endorsements.
@@ -125,7 +141,9 @@ readers or publishes political grades.
 ## Verification
 
 `check_jev_playground.py` covers question/answer contracts, focused input context,
-congressional metadata, frozen snapshots, low-confidence retention, cancellation,
+county/House union selection, shared-race deduplication, local jurisdiction and
+CAL-ACCESS context, congressional metadata, frozen snapshots, low-confidence
+retention, cancellation,
 failure isolation, single-candidate isolation and repeated prompt iterations,
 stale-selection rejection, persisted history, same-origin/Host checks and credential
 redaction. `check_jev_playground.cjs` covers numeric ordering, custom questions,

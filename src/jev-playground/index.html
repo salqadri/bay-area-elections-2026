@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="light"><title>Jev playground · House races</title>
+<meta name="color-scheme" content="light"><title>Jev playground · Local & federal races</title>
 <link rel="stylesheet" href="/style.css">
 <script src="/contest-label.js" defer></script><script src="/core.js" defer></script><script src="/app.js" defer></script>
 </head>
@@ -10,12 +10,12 @@
 <a class="skip" href="#questions-heading">Skip to questions</a>
 <header class="masthead"><a class="brand" href="/">Jev <span>playground</span></a><span class="local-label">LOCAL RESEARCH WORKSPACE</span><a href="https://salqadri.github.io/bay-area-elections-2026/" target="_blank" rel="noopener noreferrer">Election explorer ↗</a></header>
 <main>
-<div class="hero"><div><h1>House candidate playground</h1><p id="scope">Loading current House candidates…</p></div><span id="connection" class="help">Checking local server…</span></div>
+<div class="hero"><div><h1>Candidate playground</h1><p id="scope">Loading House and county candidates…</p></div><span id="connection" class="help">Checking local server…</span></div>
 <div id="fatal" role="alert" hidden></div>
 <section class="workbench" aria-label="Prompt iteration workspace" data-mobile-view="questions">
 <div class="workbench-controls">
 <div class="candidate-control"><label for="candidate-picker">Candidate</label><div class="candidate-navigation"><button id="previous-candidate" type="button" aria-label="Previous candidate" disabled>←</button><select id="candidate-picker" aria-label="Select candidate" disabled><option>Loading…</option></select><button id="next-candidate" type="button" aria-label="Next candidate" disabled>→</button></div></div>
-<div class="run-actions"><button id="run-selected" class="primary" type="button" disabled>Run selected candidate</button><button id="stop" type="button" hidden>Stop run</button><button id="run" type="button" disabled>Run all House candidates</button></div>
+<div class="run-actions"><button id="run-selected" class="primary" type="button" disabled>Run selected candidate</button><button id="stop" type="button" hidden>Stop run</button><button id="run" type="button" disabled>Run all candidates</button></div>
 <div class="history-control"><label for="history">Results from run</label><div class="actions"><select id="history" aria-label="Select run"><option value="stored">Stored results</option></select><button id="download" type="button" disabled>Download</button></div></div>
 </div>
 <div class="workspace-status"><span id="selected-target" class="help"></span><span id="run-status" role="status" aria-live="polite">Loading stored answers…</span></div>
@@ -40,9 +40,9 @@
 </section>
 </div>
 </section>
-<details id="browse-races" class="browse-races"><summary>Browse all House races <span>By state and district</span></summary>
-<div class="filters"><label>State<select id="state"><option value="">All states</option></select></label><label>Find a candidate or district<input id="search" type="search" placeholder="Name or district…" autocomplete="off"></label><span id="visible-count" class="help"></span></div>
-<div id="races" aria-label="House races grouped by state"></div>
+<details id="browse-races" class="browse-races"><summary>Browse all races <span>By state and district</span></summary>
+<div class="filters"><label>State<select id="state"><option value="">All states</option></select></label><label>Find a candidate, office or county<input id="search" type="search" placeholder="Name, office or county…" autocomplete="off"></label><span id="visible-count" class="help"></span></div>
+<div id="races" aria-label="Candidate races grouped by state"></div>
 </details>
 </main><footer>Experimental model outputs for review. Runs stay local and never change the election dataset or published candidate records.</footer>
 </body></html>
