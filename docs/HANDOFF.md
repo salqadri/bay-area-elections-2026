@@ -1,5 +1,9 @@
 # Research and development handoff
 
+## Published update — October 22, 2026 (night): X profile re-pass over the remaining queue (2026-10-22.5)
+
+Re-ran `scripts/research_x_profiles.py` plan → collect → enrich → draft against the post-PR-#12 dataset: **290 missing-X candidacies with recorded campaign sites** (the earlier pass's cache had expired and a few candidates gained websites since). 268/288 URLs captured, 17 profile-metadata lookups via fxtwitter. Jev (`jev-1.13.0`, identity ≥0.90 / ownership ≥0.95) accepted **1 new account** — Shivraj Singh, Dublin City Council (footer social link on his own campaign site; profile name/location corroborate) — printed X coverage **446 → 447**. Holds stay explicit and unchanged in kind: 8 ownership + 7 identity holds, 20 unavailable captures, 254 captured pages with no profile link, and the same 558 missing-X candidacies without any recorded campaign site (still not searched — this remains a first-party self-link pass). Immutable review: `research/x-profiles/2026-10-22-pass2/review.json`; source S1505.
+
 ## Published update — October 22, 2026 (PR #12): missing X profile recovery (2026-10-22.4)
 
 Pulled `87bbe2c` after Hermes merged/published PR #11. Xavier Becerra's recorded campaign site directly links `https://x.com/XavierBecerra`; the old local X sweep did not use campaign self-links, while the nationwide scaffold runner excluded California's existing race and skipped cached null outcomes. Historical search logs do not establish the precise original search failure. New `scripts/research_x_profiles.py` inventories current missing fields across all offices, captures recorded campaign pages, optionally corroborates linked handles via profile metadata, and uses Jev alone for candidate/ownership judgments. No searches were called. Old script is labelled historical.
