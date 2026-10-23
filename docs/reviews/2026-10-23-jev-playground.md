@@ -164,7 +164,7 @@ answers. Source and model text is rendered as text/JSON, not executable markup.
 
 ## Validation
 
-- **36/36 offline release checks pass**. New suites cover 23 Python regressions
+- **36/36 offline release checks pass**. New suites cover 24 Python regressions
   plus Node assertions for generic question rendering, zero/low-confidence
   retention, state/district sorting and immutable delta merges.
 - Real Chrome at **1440px and 390px** loads actual Monaco, all 187 stored answers,
@@ -188,3 +188,14 @@ answers. Source and model text is rendered as text/JSON, not executable markup.
 No public deployment, political-grade publication, roster/finance/endorsement
 mutation or publication-version bump is part of this change. This is a local
 playground and reproducible experimental batch for owner/Hermes review.
+
+## CAIR Action input follow-up
+
+The owner explicitly requested current CAIR Action recommendations. Registry v3
+adds that exact publisher name to compact inputs and retains Preferred/Opposed
+relations and shared joint-endorsement flags. Registry v2 and all archived requests
+remain immutable. New core CLI states use candidate-evidence-v4-cair-focused; new
+local/federal playground inputs use candidate-evidence-v5-local-federal-cair.
+The canonical source refresh is a separate research PR from main; this UI PR
+does not duplicate its dataset changes. The actual local preview can use that
+research checkout's dataset via --dataset pending both reviews.

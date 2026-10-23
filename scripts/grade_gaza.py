@@ -30,6 +30,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v2.json'
+STATE_VERSION = 'candidate-evidence-v4-cair-focused'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -186,9 +187,9 @@ def build_state(p, c, data):
     evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])[:12]]
     if evidence:
         parts['gaza_evidence'] = evidence
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v2.json').read_text())
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v3.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
-    endorsements = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification') if k in e}
+    endorsements = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
                     for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
@@ -215,7 +216,7 @@ def plan(data, criteria, scope):
         items.append({'position_id': p['id'], 'candidate': c['name'], 'roster': roster,
                       'party': c.get('party'), 'district_or_seat': p.get('district_or_seat'),
                       'request_sha256': digest(dump(request).encode()), 'state': state})
-    return {'format': 'gaza-grading-plan/v2', 'dataset_sha256': digest(dump(data).encode()), 'state_version': 'house-evidence-v3-focused', 'scope': scope, 'criteria_id': criteria['id'],
+    return {'format': 'gaza-grading-plan/v2', 'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION, 'scope': scope, 'criteria_id': criteria['id'],
             'planned_on': now(), 'candidates': len(items), 'items': items}
 
 
@@ -251,7 +252,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False):
             results.append(result)
             if n % 20 == 0 or n == len(plan_doc['items']):
                 print(json.dumps({'graded': n, 'total': len(plan_doc['items'])}), flush=True)
-    batch = {'format': 'gaza-grading/v2', 'state_version': 'house-evidence-v3-focused', 'questions': questions, 'scope': plan_doc['scope'], 'criteria_id': plan_doc['criteria_id'],
+    batch = {'format': 'gaza-grading/v2', 'state_version': STATE_VERSION, 'questions': questions, 'scope': plan_doc['scope'], 'criteria_id': plan_doc['criteria_id'],
              'model': MODEL, 'dataset_sha256': plan_doc.get('dataset_sha256'), 'run_on': now(), 'results': results,
              'decisions': {ref: decisions[ref] for ref in {r['request_sha256'] for r in results} if ref in decisions}}
     save(work / 'results.json', batch)

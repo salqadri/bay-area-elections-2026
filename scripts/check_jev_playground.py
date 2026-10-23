@@ -125,6 +125,13 @@ class ValidationChecks(unittest.TestCase):
         state=g.build_state(pos,c,data);rows=state['focused_endorsement_observations'];self.assertEqual(len(rows),3)
         self.assertEqual(rows[0],c['endorsements'][0]);self.assertNotIn('endorsements_and_recommendations',state)
 
+    def test_cair_action_focus_preserves_preference_opposition_and_joint_flags(self):
+        data=fixture();pos=data['positions'][0];candidate=pos['candidates'][0]
+        for relation,extra in [('preferred',{}),('opposed',{}),('endorsed',{'shared':True})]:
+            candidate['endorsements']=[{'endorser':'CAIR Action','relation':relation,'phase':'general',**extra}]
+            record=g.build_state(pos,candidate,data)['focused_endorsement_observations'][0]
+            self.assertEqual(record['relation'],relation);self.assertEqual(record.get('shared'),extra.get('shared'))
+
     def test_congressional_actions_resolve_titles_and_keep_actual_response(self):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
         data['gaza_voting']={'actions':{'119-A':{'title':'Actual action','kind':'sponsorship','date_label':'2025'}}}

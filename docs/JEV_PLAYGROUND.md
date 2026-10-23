@@ -79,7 +79,7 @@ active (in which case reload reconnects to it).
 ## Compact candidate input
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v4-local-federal`) for new requests and previews.
+context (`candidate-evidence-v5-local-federal-cair`) for new requests and previews.
 Historical requests and the shared CLI builder remain unchanged:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
@@ -92,16 +92,20 @@ Historical requests and the shared CLI builder remain unchanged:
   reviewed Gaza-platform statement when present, and up to twelve dated Gaza
   evidence summaries.
 - Focused endorsement/recommendation observations only. The versioned exact-name
-  registry is `research/gaza-grading/endorsement-focus-v2.json`: owner-named
-  Track AIPAC, Vote for Peace and HAPAC, plus AIPAC, DMFI, J Street/JStreetPAC,
+  registry is `research/gaza-grading/endorsement-focus-v3.json`: owner-named
+  Track AIPAC, Vote for Peace, HAPAC and CAIR Action, plus AIPAC, DMFI, J Street/JStreetPAC,
   RJC and JDCA context selected by Jev from the organizations' own material.
   Selection evidence/actual Jev answers are in the sibling `.review.json`.
   Related parent/PAC names are included for context without merging entities or
-  assigning them the same position. Actual source names and relation types,
+  assigning them the same position. CAIR Action was explicitly added by the owner
+  in registry v3; its Preferred/Opposed relations and joint flags are retained.
+  Earlier registry v2 and stored requests remain unchanged. Actual source names and relation types,
   ratings, phases, verification and historical flags remain intact.
-- The current expanded roster has **62 focused observations on 43 candidacies**,
+- Before adding CAIR Action, the expanded roster had **62 focused observations on 43 candidacies**,
   at most three each. The original House archive had 41 on 23, instead of all
-  3,690 House endorsement observations. Other names
+  3,690 House endorsement observations. The pending CAIR source refresh plus
+  registry v3 preview has 147 focused observations on 107 of the 685 candidacies,
+  including CAIR ratings for 85 candidacies. Other names
   are omitted for context budget, not declared unimportant or absent. No category
   is inferred from religion or ethnicity. Neutral image observations are not
   converted into named endorsements.
