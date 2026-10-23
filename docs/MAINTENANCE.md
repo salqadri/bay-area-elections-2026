@@ -75,6 +75,7 @@ python3 scripts/check_research_gaps.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
 python3 scripts/check_x_profiles.py
+python3 scripts/check_jev_playground.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
@@ -102,7 +103,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs this complete 34-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 36-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -225,3 +226,5 @@ Export v2 retains FEC counts but omits transaction date ranges, which the aggreg
 ## Ballotpedia endorsement supplement
 
 Follow [BALLOTPEDIA_ENDORSEMENTS.md](BALLOTPEDIA_ENDORSEMENTS.md) for the recorded-profile collector, current-year source rules, saved-capture imports, Jev classifications, duplicate handling and the registered-review publication path. The campaign collector shares the same exact cross-source duplicate guard, so a later campaign refresh does not re-add a Ballotpedia observation. Source aliases and relationship conflicts remain reviewed/held; absence never deletes prior evidence. The new offline regression command is included in `check_release.py`.
+
+The [local Jev playground](JEV_PLAYGROUND.md) serves experiments separately from the generated readers. It has its own loopback server and ignored run history; no reader build or publication-version bump is needed for playground-only changes.

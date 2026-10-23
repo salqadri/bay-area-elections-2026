@@ -1,51 +1,58 @@
-# Jev Gaza grading batches
+# Jev grading and the local playground
 
-`scripts/grade_gaza.py` grades candidacies on the Israel/Gaza dimension with **Jev System One**
-(`jev-latest`; score questions need the current flagship). It is a research batch tool: results
-are **held pending publication review**, never written into the dataset directly.
+[Start and use the local playground](../../docs/JEV_PLAYGROUND.md) to edit question
+JSON, run Jev on all tracked active House candidates, and inspect exact candidate
+states, responses and confidences. Current scope is **187 candidates / 72 races**;
+the original `house-nationwide` scope omitted the existing Bay Area races.
 
-## Reusable shape
+## Confidence-only results
 
-- `--criteria research/gaza-grading/criteria-<id>.json` — versioned rubric file. Each run records
-  its criteria id; grading refuses a plan built against a different rubric. The owner's v1 rubric
-  (`gaza-grade-v1`, provided 2026-10-22) always yields `pro_palestine_score` (score question,
-  level 0 = shields Israel → level 5 = openly against the genocide/military assistance) and
-  `gaza_grade` (choice A–F). Future rubrics keep those two output names.
-- `--scope` — race/region selector (`house-nationwide`, `senate-nationwide`, `governor-nationwide`;
-  extend the `SCOPES` map for new offices or regions).
+The owner explicitly removed acceptance criteria on October 23. New CLI and
+playground runs retain **every valid answer and its confidence**, with no 75%
+cutoff, acceptance flag or hidden low-confidence rows. Choice probabilities and
+confidence remain separate returned values. A yes/no `noul` answer returns the
+probability of true, not a separate confidence.
 
-## Run
+The owner's exact updated questions are versioned in
+`criteria-pro-palestine-v2.json`. Both default output names are retained, but
+custom questions can be added or renamed. The score and letter are separate
+rubrics; neither is mechanically derived from the other. Decisions are made by
+Jev `jev-latest`; the current default run returned `jev-1.14.0`.
+
+## Reusable CLI
 
 ```sh
-python3 scripts/grade_gaza.py plan --scope house-nationwide --batch <name>
-python3 scripts/grade_gaza.py grade --batch <name> --jev-key-file /secure/typesafe_key --workers 4
-python3 scripts/grade_gaza.py report --batch <name>
+python3 scripts/grade_gaza.py plan --scope house-all --batch <fresh-name>
+python3 scripts/grade_gaza.py grade --scope house-all --batch <fresh-name> --jev-key-file /secure/key --workers 3 --force
+python3 scripts/grade_gaza.py report --batch <fresh-name>
 ```
 
-Working files (plan, per-request decision cache, results) live under gitignored
-`.research/gaza-grading/<batch>/`. Decisions are cached against the exact request contract — a
-rerun only pays for candidates whose evidence changed. One failed candidate is recorded as an
-`error` row and retried on rerun; it never stops the batch.
+Global `--criteria PATH` supports other question files. `house-all` selects all
+active tracked House races, including California county-scoped contests.
+`house-nationwide`, `senate-nationwide` and `governor-nationwide` retain their named
+scopes. Working plans/caches stay under ignored `.research/gaza-grading/`.
+CLI cache reuse is exact-request based; `--force` reruns every candidate. A flaky
+candidate call becomes an explicit error without discarding other answers.
 
-## What goes into the Jev `state` (kept succinct by design)
+The shared state builder includes identity, both IE directions, recorded scorecard
+and platform/Gaza evidence, focused endorsement observations, and congressional
+actions with actual response values resolved against the action registry. See the
+workflow for limits and the versioned, source-backed endorsement focus registry.
+Full endorsement lists are not passed: current focus reduces 3,690 observations
+to 41, with at most three for any candidate.
 
-Identity line (name, office+district, state code, party), then only substantive evidence:
-outside-money spenders **supporting** and **opposing** with amounts (top 12 each), official USCPR
-scorecard grades when published, up to eight campaign platform point summaries, any reviewed Gaza
-platform statement, up to twelve dated Gaza evidence items, and tracked congressional Gaza actions.
-No boilerplate scope/method notes — they burn context without informing the grade.
+## Archives
 
-## Acceptance semantics
+- **Current playground default:** `house-all-focused-2026-10-23/results.json` —
+  all 187 candidates, zero call errors, updated owner JSON, focused endorsements,
+  exact requests/responses and dataset hash. A 22 · B 4 · C 2 · D 47 · E 2 · F 110.
+  These are experimental model outputs; none is published into candidate records.
+- **Historical held batch:** `house-2026-10-22/results.json` — 165 nationwide
+  House candidates, original v1 rubric, run October 23. A 16 · B 2 · C 1 · D 48 ·
+  E 1 · F 97. Its 83 historical acceptance flags used selected-letter probability
+  ≥0.75, despite the old confidence wording. Those immutable fields are retained
+  only as history, never used to filter the new playground. Its
+  `has_gaza_evidence` flag meant a dedicated Gaza-ledger input was present; it did
+  not reliably identify all attributable topical platform evidence.
 
-`gaza_grade_accepted` marks choice confidence ≥ 0.75 (the repo-wide Jev bar). `has_gaza_evidence`
-marks whether direct attributable statements existed: rows without it are inferred only from
-outside-money and platform context and must never be presented as documented positions. Silence
-is not neutrality — an evidence-free candidate graded D/E is a weak inference, not a finding.
-
-## Batches
-
-- `house-2026-10-22` (criteria `gaza-grade-v1`, run 2026-10-23): all **165** printed nationwide
-  House candidates — A 16 · B 2 · C 1 · D 48 · E 1 · F 97; 83 grades accepted at ≥0.75; zero call
-  errors. Portable archive (answers omitted, decision cache stays local):
-  `research/gaza-grading/house-2026-10-22/results.json`. **Not published** — publication needs the
-  normal reviewed-updates workflow plus an owner decision on how grades display.
+No grader/playground command edits the election dataset or publishes grades.

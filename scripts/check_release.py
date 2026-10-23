@@ -8,14 +8,14 @@ import sys
 ROOT = Path(__file__).resolve().parent.parent
 PYTHON_CHECKS = [
     ('build_site.py', '--check'), ('check_data.py',), ('check_evidence.py',),
-    ('check_published_endorsements.py',), ('check_endorsement_images.py',), ('check_research_gaps.py',), ('check_endorsements.py',), ('check_ballotpedia_endorsements.py',), ('check_x_profiles.py',),
+    ('check_published_endorsements.py',), ('check_endorsement_images.py',), ('check_research_gaps.py',), ('check_endorsements.py',), ('check_ballotpedia_endorsements.py',), ('check_x_profiles.py',), ('check_jev_playground.py',),
     ('check_campaign_endorsement_batch.py', 'research/endorsements/batch-2026-10-18'),
     ('check_cair_guide.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
     ('check_schema.py',), ('check_fec_money.py',), ('check_gaza_ledger.py',),
     ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),
     ('check_campaign_platforms.py',), ('check_platform_positions.py',), ('prepare_dom_fixture.py',),
 ]
-NODE_CHECKS = ['check_endorsement_display.cjs', 'check_finance_display.cjs', 'check_gaza_display.cjs', 'check_platform_display.cjs', 'check_candidate_sort.cjs', 'check_contest_label.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',
+NODE_CHECKS = ['check_jev_playground.cjs', 'check_endorsement_display.cjs', 'check_finance_display.cjs', 'check_gaza_display.cjs', 'check_platform_display.cjs', 'check_candidate_sort.cjs', 'check_contest_label.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',
                'check_address_autocomplete.cjs', 'check_address_matcher.cjs', 'check_ballot_page.cjs']
 
 

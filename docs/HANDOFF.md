@@ -1,5 +1,14 @@
 # Research and development handoff
 
+## Proposed update — October 23, 2026: local Jev playground, confidence-only all-House run
+
+Owner chose a local workspace instead of a public Pages area/relay. New `scripts/serve_jev_playground.py` serves http://127.0.0.1:8787 with Monaco question editing (plain-text fallback), Run/Stop, history/downloads, state groups with numeric district sort, all answers/confidences, and exact per-candidate State/Answers/Full request JSON. Keys remain server-side; only loopback Host/same-origin JSON writes are accepted. Runs freeze questions/current dataset and persist under ignored `.research/jev-playground/`; no canonical dataset or main-reader change.
+
+Grader now supports `house-all` (187 candidates / 72 active tracked races, including Bay Area), uses the owner's exact October 23 JSON (`pro-palestine-v2`), and applies **no acceptance cutoffs or grade filtering**. Focused endorsement registry supplies only owner-named Track AIPAC/Vote for Peace/HAPAC plus five source-backed Israel-related organizations selected by Jev: **41 observations on 23 candidates, max three**, versus 3,690 full endorsement observations. Exact original relationships/phase/history stay intact; religion/ethnicity do not determine selection. Congressional states now resolve action IDs and preserve actual responses instead of blank title/date strings.
+
+New immutable default `research/gaza-grading/house-all-focused-2026-10-23/results.json`: **187/187, zero call errors** on jev-1.14.0; A 22 · B 4 · C 2 · D 47 · E 2 · F 110. All answers/confidences remain visible, including low confidence. Historical v1 archive is untouched. See [workflow](JEV_PLAYGROUND.md), [implementation review](reviews/2026-10-23-jev-playground.md) and grading README. Release gate adds Python/Node playground checks (36 total); prepared for Hermes review.
+
+
 ## Published update — October 23, 2026: endorsement image / HAPAC / AZ-01 evidence repair (2026-10-23.1)
 
 Based on latest `d6238fe`. Fixes the image builder’s obsolete empty-county exclusion, adds an explicit image-publication draft to the batch runner, and supplies current-roster missing/older-image planning. The House pass retrieves 63 known endorsement pages: 59 initially ready; a responsive lazy-image parser fix (v3) resolves Bouchard as a 60th. Publishes **1,384 neutral image observations on 43 candidacies**, including Shah’s **31 organization logos plus one introductory image**. Three source-layout holds remain explicit. Existing v2 archives still replay exactly; current exports require v3 recrawl.
