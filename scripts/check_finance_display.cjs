@@ -15,7 +15,10 @@ const candidate={fec:{receipts:1250.25,from:'2025-01-01',through:'2026-09-30',so
 const all=n=>[n,...n.children.filter(c=>typeof c==='object').flatMap(all)];
 const card=display.render(candidate,data,helpers);
 assert.equal(card.tagName,'DETAILS');assert.equal(card.open,false);
-for(const expected of ['$1,250.25','2025-01-01 – 2026-09-30','For: $100.00','Against: $40.00','+ $100.00','- $40.00','Checked 2026-10-14','Checked 2026-10-13','not campaign receipts'])assert(card.textContent.includes(expected),expected);
+for(const expected of ['$1,250.25','2025-01-01 – 2026-09-30','For: $100.00','Against: $40.00','+ $100.00','- $40.00','Checked 2026-10-14','Checked 2026-10-13','not campaign receipts','Supporting this candidate · $100.00','Opposing this candidate · $40.00'])assert(card.textContent.includes(expected),expected);
+const headings=all(card).filter(n=>n.className&&String(n.className).startsWith('ie-group-heading'));
+assert.equal(headings.length,2,'Both spending directions get their own section heading');
+assert.ok(all(card).find(n=>n.className==='ie-list'&&n.children.some(c=>typeof c==='object'&&c.textContent.includes('- $40.00'))),'Opposing spenders list under a separate list from supporters');
 assert.equal(all(card).filter(n=>n.href===data.ie_spenders.C00000001.source_url).length,2,'Both directions retain the spender link');
 assert(all(card).some(n=>n.href===candidate.independent_expenditures.browse_url));
 const unknown=display.render({fec:{receipts:null,source_id:'S001',note_id:'N001'}},data,helpers);

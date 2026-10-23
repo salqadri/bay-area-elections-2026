@@ -72,7 +72,7 @@
       comparison = ordinal(['Supreme Court', 'Court of Appeal'], label('office_category', left.office_category)) - ordinal(['Supreme Court', 'Court of Appeal'], label('office_category', right.office_category));
       if (comparison) return comparison;
     }
-    return collator.compare(left.jurisdiction, right.jurisdiction) || collator.compare(left.district_or_seat || '', right.district_or_seat || '') || collator.compare(left.office, right.office) || collator.compare(left.id, right.id);
+    return collator.compare(left.jurisdiction, right.jurisdiction) || ContestLabel.contestOrder(left, right, collator) || collator.compare(left.id, right.id);
   }
   function subgroup(position) {
     const level = label('government_level', position.government_level);
@@ -136,7 +136,7 @@
     card.dataset.confidence = race.confidence;
     card.setAttribute('data-confidence', race.confidence);
     const top = node('div', 'ballot-race-top');
-    top.append(node('span', 'ballot-race-category', label('office_category', position.office_category)), node('span', 'ballot-race-district', position.district_or_seat || ''));
+    top.append(node('span', 'ballot-race-category', label('office_category', position.office_category)), node('span', 'ballot-race-district', ContestLabel.districtLabel(position)));
     card.append(top, node('h4', null, position.office), node('p', 'ballot-race-jurisdiction', position.jurisdiction));
     const metadata = node('p', 'ballot-race-meta');
     metadata.append(node('span', null, position.election_type === 'retention' ? 'Yes / No retention vote' : Number.isInteger(position.seats) ? position.seats + (position.seats === 1 ? ' seat' : ' seats') : 'Seat count unresolved'));

@@ -45,16 +45,25 @@ const CampaignFinanceDisplay = {
         if (ie.for_total > 0) totals.append(node('span', 'ie-for', 'For: ' + format(ie.for_total)));
         if (ie.against_total > 0) totals.append(node('span', 'ie-against', 'Against: ' + format(ie.against_total)));
         box.append(totals);
-        const list = node('ul', 'ie-list');
-        for (const item of ie.items) {
-          const li = node('li');
-          const spender = spenders?.[item.spender_id];
-          const name = spender?.source_url ? link(spender.source_url, spender.name, 'inline-source ie-name') : node('span', 'ie-name', spender?.name || item.spender_id);
-          if (spender?.committee_type) name.append(node('span', null, ' · ' + spender.committee_type));
-          li.append(name, node('span', 'ie-amt', (item.direction === 'against' ? '- ' : '+ ') + format(item.amount)));
-          list.append(li);
+        // Support and opposition are listed as separate sections so opposing spenders never read as support.
+        for (const group of [
+          {direction: 'for', heading: 'Supporting this candidate', cls: 'ie-for'},
+          {direction: 'against', heading: 'Opposing this candidate', cls: 'ie-against'},
+        ]) {
+          const items = ie.items.filter(item => item.direction === group.direction);
+          if (!items.length) continue;
+          box.append(node('p', 'ie-group-heading ' + group.cls, group.heading + ' · ' + format(items.reduce((sum, item) => sum + item.amount, 0))));
+          const list = node('ul', 'ie-list');
+          for (const item of items) {
+            const li = node('li');
+            const spender = spenders?.[item.spender_id];
+            const name = spender?.source_url ? link(spender.source_url, spender.name, 'inline-source ie-name') : node('span', 'ie-name', spender?.name || item.spender_id);
+            if (spender?.committee_type) name.append(node('span', null, ' · ' + spender.committee_type));
+            li.append(name, node('span', 'ie-amt', (item.direction === 'against' ? '- ' : '+ ') + format(item.amount)));
+            list.append(li);
+          }
+          box.append(list);
         }
-        box.append(list);
       }
       if (cfg.checked_on) box.append(node('p', 'ie-note', 'Checked ' + dateLabel(cfg.checked_on)));
       if (ie.browse_url) box.append(link(ie.browse_url, 'Browse regular-report expenditures on FEC.gov ↗'));

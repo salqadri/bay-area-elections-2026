@@ -43,6 +43,11 @@ def render(page="index"):
     if html.count('__CANDIDATE_SORT_JS__') != 1:
         raise ValueError('Expected one shared candidate sort placeholder')
     html = html.replace('__CANDIDATE_SORT_JS__', sort_js)
+    label_js = (ROOT / 'src/contest-label.js').read_text(encoding='utf-8')
+    assert '</script' not in label_js.lower(), 'Unsafe inline contest label script'
+    if html.count('__CONTEST_LABEL_JS__') != 1:
+        raise ValueError('Expected one shared contest label placeholder')
+    html = html.replace('__CONTEST_LABEL_JS__', label_js)
     if page == "ballot":
         source = (ROOT / "src/index.template.html").read_text(encoding="utf-8")
         css = re.search(r"<style>(.*?)</style>", source, re.S).group(1)

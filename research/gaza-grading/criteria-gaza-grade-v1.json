@@ -1,0 +1,30 @@
+{
+  "id": "gaza-grade-v1",
+  "description": "Owner-provided grading rubric (2026-10-22). pro_palestine_score is a 0–5 score question; gaza_grade an A–F choice. Both graded by Jev System One over a succinct per-candidate state.",
+  "questions": {
+    "pro_palestine_score": {
+      "type": "score",
+      "instructions": "What grade should we give the candidate wrt the Gaza genocide?",
+      "criteria": [
+        "Shields Israel and a strong defender of Israel",
+        "Israel-centric framing with sympathy for Palestinians",
+        "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu",
+        "Condemns Israel for doing serious war crimes and condemns what's settler violence in the West Bank but refuses to say 'genocide'",
+        "Calls it a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only",
+        "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC"
+      ]
+    },
+    "gaza_grade": {
+      "type": "choice",
+      "instructions": "What grade should we give the candidate wrt the Gaza genocide, with A being the most anti-Israel to F being the most pro-Israel?",
+      "criteria": {
+        "A": "Openly against the genocide and Israeli military assistance, or called for divestment of investments from Israel",
+        "B": "Calls it a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only, or was an early proponent of a ceasefire in Gaza",
+        "C": "Condemns Israel for doing serious war crimes and condemns what's settler violence in the West Bank but refuses to say 'genocide'",
+        "D": "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu",
+        "E": "Israel-centric framing with sympathy for Palestinians",
+        "F": "Shields Israel and a strong defender of Israel"
+      }
+    }
+  }
+}
