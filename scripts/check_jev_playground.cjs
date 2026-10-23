@@ -17,3 +17,10 @@ const catalog=C.catalogRows(snapshot,single);assert.equal(catalog.length,2);asse
 assert.deepEqual(C.catalogRaces(snapshot,single),races);
 const historical={...single,rows:[{id:'removed',candidate:'Removed',status:'complete',request}]};assert.equal(C.catalogRows(snapshot,historical).at(-1).request,request);
 assert(html.includes('id="run-selected"'));console.log('PASS Single-candidate catalog: exact evaluated inputs, unrun previews, historical candidates and no inherited answers.');
+
+const distribution={type:'choice',choice:'yes',confidence:.12,probabilities:{no:.8,yes:.2,unknown:0}};
+const probabilities=C.probabilityRows(distribution,{criteria:{yes:'Submitted yes criterion',no:'Submitted no criterion',unknown:'Unknown'}});
+assert.deepEqual(probabilities.map(p=>p.key),['no','yes','unknown']);assert.equal(probabilities[1].selected,true);assert.equal(probabilities[0].selected,false);assert.equal(probabilities[1].label,'Submitted yes criterion');assert.equal(probabilities[2].probability,0);assert.equal(distribution.confidence,.12);
+assert.equal(C.probabilityRows({type:'score',probabilities:{0:1,1:0},legend:{0:'Actual legend'}},{criteria:['Other text','High']})[0].label,'Actual legend');
+assert.deepEqual(C.probabilityRows({type:'noul',noul:.47},{}),[]);
+console.log('PASS Response distributions: returned probabilities and confidence remain distinct, zeroes and actual selections retained.');

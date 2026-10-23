@@ -28,27 +28,35 @@ There is no new public site area or main-reader UI change in this PR.
 1. The page loads the stored **all-House focused run**, using the owner's exact
    October 23 question JSON (`pro-palestine-v2`). Nothing runs or incurs API calls
    merely by opening the page.
-2. Edit the questions in the Monaco JSON editor; a plain-text editor remains
-   usable if the pinned Monaco CDN is unavailable. Format/reset are optional.
-3. Select a candidate, edit the questions, and press **Run selected candidate**
-   to make exactly one fresh Jev request. The selected name appears next to the
-   controls. Try another candidate directly from the race list; unevaluated
-   candidates are labeled **Not evaluated in this run** and show a current input
-   preview, with no inherited answers. Each iteration is saved separately, with
-   its candidate name in run history. When ready, **Run all 187 candidates**
-   takes a fresh snapshot of current dataset inputs and the edited questions.
-   Up to three Jev calls run concurrently. Questions may be renamed or added; `choice`, `score` and yes/no `noul` are supported.
-4. Every answer and returned confidence is displayed. There are **no acceptance
-   cutoffs, pass/fail grade labels, confidence-based omissions or publication
-   decisions**. For `noul`, Jev returns a probability of true rather than a
-   separate confidence; the page labels that distinction.
-5. Results group by state name and sort districts numerically. Search/state
-   filters narrow presentation only. Select a candidate to inspect **State JSON**,
-   **Answers JSON** or the **Full request** and its SHA-256.
-6. Run history and JSON downloads preserve exact questions, model alias and
+2. Use the candidate picker or previous/next arrows above the workspace. On
+   desktop, the Monaco question editor and selected candidate's answers sit
+   side by side, with Run controls always above them. On mobile, **Questions**
+   and **Results** tabs share the same controls; running switches to Results.
+   The textarea fallback works when the pinned Monaco CDN is unavailable.
+3. Edit the questions, then press **Run selected candidate** or **Ctrl/Cmd +
+   Enter** to evaluate exactly that candidate. Each iteration is saved separately.
+   Select another candidate without losing the draft. When ready, **Run all
+   187 candidates** evaluates the full roster with that same question text.
+   Both actions take fresh snapshots of current data. Up to three Jev calls run
+   concurrently; `choice`, `score` and yes/no `noul` questions can be renamed/added.
+4. The selected response shows each question key/instructions, answer, type and
+   confidence. Choice rows preview the leading returned probabilities; expand
+   a row (or **Expand all**) for all options/score levels and their criteria and
+   probabilities. **Find in questions** takes you to the editable question.
+   Probabilities and confidence are separate. For `noul`, the answer is the
+   probability of true, with no invented confidence. There are **no acceptance
+   cutoffs or hidden low-confidence answers**.
+5. **Inspect generated state & raw JSON** opens the read-only State JSON,
+   Answers JSON and Full request with SHA-256. It is collapsed by default.
+   Editing a prompt never changes the instructions or state attached to an
+   existing result; a visible notice identifies answers from a saved prompt.
+   Unevaluated candidates show an input preview with no inherited answers.
+6. **Browse all House races** opens the state/district groups and search/state
+   filters. Selecting a card brings that candidate into the workspace. Races
+   remain sorted by state name and numeric district number.
+7. Run history and JSON downloads preserve exact questions, model alias and
    returned model, frozen states, request hashes, answers, confidence/probability
-   distributions, errors, cancellation status and dataset snapshot hash. Editing
-   the questions while inspecting a result cannot change that result's request.
+   distributions, errors, cancellation status and dataset snapshot hash.
 
 Runs are stored under ignored `.research/jev-playground/runs/`. Requests for each
 run are also saved in its local cache. Each Run makes fresh calls, even when the
@@ -124,5 +132,8 @@ redaction. `check_jev_playground.cjs` covers numeric ordering, custom questions,
 confidence display and immutable state during delta updates. Both are in the
 36-check offline release gate. Browser coverage includes real Monaco loading at
 desktop/mobile sizes and, using a fixture transport, full Run/Stop/history/export
-flows with custom questions, low confidence and a failed candidate. The actual
+flows with custom questions, low confidence and a failed candidate. The iteration
+workspace is checked at 1440×900, 1024×768 and 390×844 for adjacent editing/results,
+mobile tabs, selected-candidate keyboard runs, expandable distributions, input
+inspection, old-prompt labeling, history and exports. The actual
 187-candidate default batch was run against Jev, not the fixture transport.

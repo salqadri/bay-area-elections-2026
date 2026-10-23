@@ -41,6 +41,32 @@ queued calls; in-flight calls may finish. Restarts label unfinished runs interru
 A user can inspect old results while another run continues, without mixing answers
 or accidentally starting a second job.
 
+## Iteration workspace refinement
+
+The owner supplied Jev playground response markup and identified page scrolling
+between editing, Run and results as the primary UX problem. The new desktop
+workspace places the editor beside the selected response with a common candidate
+picker, previous/next controls, Run, history and download toolbar. The result
+pane scrolls independently; mobile uses Questions/Results tabs and switches to
+Results on a run. Ctrl/Cmd+Enter now runs the selected candidate, never the whole
+batch. Run all remains an explicit separate action.
+
+Each question row uses its saved instructions and shows answer/type/confidence,
+with a leading choice probability preview. Native expandable rows expose the
+full returned distribution and criterion descriptions, including zero values;
+confidence is not replaced by a choice probability. Find in questions focuses
+the draft key. Editing shows a saved-prompt notice; it cannot rewrite old result
+instructions. Generated state and raw JSON remain accessible in a collapsed
+inspector, with read-only Monaco loaded on demand. The complete state/district
+race browser is a secondary disclosure below the workspace.
+
+Chrome checks at 1440×900, 1024×768 and 390×844 cover selection, adjacent desktop
+panes, mobile edit/run/results, click and keyboard single runs, prompt isolation,
+expanded criteria, zero confidence, state/request inspection, history/export,
+race browsing and no horizontal overflow/page errors. Fixture batch tests cover
+all 187 candidates, a candidate failure, cancellation, and inspecting history
+while a job is active. These UI checks make no additional real Jev calls.
+
 ## Compact, source-backed endorsement input
 
 Full House endorsement context would add **3,690 observations**. The focused

@@ -7,28 +7,42 @@
 <script src="/contest-label.js" defer></script><script src="/core.js" defer></script><script src="/app.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#questions">Skip to questions</a>
+<a class="skip" href="#questions-heading">Skip to questions</a>
 <header class="masthead"><a class="brand" href="/">Jev <span>playground</span></a><span class="local-label">LOCAL RESEARCH WORKSPACE</span><a href="https://salqadri.github.io/bay-area-elections-2026/" target="_blank" rel="noopener noreferrer">Election explorer ↗</a></header>
 <main>
-<div class="hero"><div><p class="eyebrow">EXPERIMENT · INSPECT · ITERATE</p><h1>A prompt. Every House race.</h1><p id="scope">Loading current House candidates…</p></div><span class="model-label">jev-latest</span></div>
+<div class="hero"><div><h1>House candidate playground</h1><p id="scope">Loading current House candidates…</p></div><span id="connection" class="help">Checking local server…</span></div>
 <div id="fatal" role="alert" hidden></div>
-<section class="questions-section" aria-labelledby="questions-heading">
-<div class="section-head"><h2 id="questions-heading">Questions <span>JSON</span></h2><div class="actions"><button id="format" type="button">Format JSON</button><button id="reset" type="button">Restore defaults</button></div></div>
-<p class="help">Select a candidate below to test a prompt on one example, then run all when ready. Edit named choice, score, or yes/no (<code>noul</code>) questions. Every answer and confidence is shown; no confidence cutoffs are applied.</p>
-<div class="editor-wrap"><textarea id="questions" spellcheck="false" aria-label="Jev questions JSON" autocomplete="off"></textarea><div id="monaco-questions" aria-label="Jev questions JSON editor" hidden></div></div>
-<p id="question-error" role="alert" hidden></p>
-<div class="run-toolbar"><div><button id="run-selected" type="button" disabled>Run selected candidate</button><button id="run" class="primary" type="button" disabled>Run all House candidates</button><button id="stop" type="button" hidden>Stop run</button></div><span id="selected-target" class="help"></span><span id="connection" class="help">Checking local server…</span><span id="editor-status" class="help"></span></div>
-</section>
-<section class="results-section" aria-labelledby="results-heading">
-<div class="section-head"><h2 id="results-heading">Results</h2><div class="actions"><label for="history">Run</label><select id="history" aria-label="Select run"><option value="stored">Stored results</option></select><button id="download" type="button" disabled>Download run</button></div></div>
-<p id="run-status" role="status" aria-live="polite">Loading stored answers…</p>
+<section class="workbench" aria-label="Prompt iteration workspace" data-mobile-view="questions">
+<div class="workbench-controls">
+<div class="candidate-control"><label for="candidate-picker">Candidate</label><div class="candidate-navigation"><button id="previous-candidate" type="button" aria-label="Previous candidate" disabled>←</button><select id="candidate-picker" aria-label="Select candidate" disabled><option>Loading…</option></select><button id="next-candidate" type="button" aria-label="Next candidate" disabled>→</button></div></div>
+<div class="run-actions"><button id="run-selected" class="primary" type="button" disabled>Run selected candidate</button><button id="stop" type="button" hidden>Stop run</button><button id="run" type="button" disabled>Run all House candidates</button></div>
+<div class="history-control"><label for="history">Results from run</label><div class="actions"><select id="history" aria-label="Select run"><option value="stored">Stored results</option></select><button id="download" type="button" disabled>Download</button></div></div>
+</div>
+<div class="workspace-status"><span id="selected-target" class="help"></span><span id="run-status" role="status" aria-live="polite">Loading stored answers…</span></div>
 <p id="stale" class="notice" hidden></p>
-<div class="filters"><label>State<select id="state"><option value="">All states</option></select></label><label>Find a candidate or district<input id="search" type="search" placeholder="Name or district…" autocomplete="off"></label><span id="visible-count" class="help"></span></div>
-<div class="review-grid">
-<div id="races" aria-label="House races grouped by state"></div>
-<aside class="inspector" aria-labelledby="inspector-title"><div class="section-head"><h2 id="inspector-title">Candidate input</h2><button id="copy" type="button" disabled>Copy JSON</button></div><p id="inspector-meta" class="help">Select any candidate to inspect their exact input state.</p>
+<div class="mobile-tabs" role="tablist" aria-label="Workspace"><button id="workspace-tab-questions" type="button" role="tab" aria-controls="questions-panel" aria-selected="true" data-workspace-view="questions">Questions</button><button id="workspace-tab-results" type="button" role="tab" aria-controls="results-panel" aria-selected="false" data-workspace-view="results">Results</button></div>
+<div class="iteration-grid">
+<section id="questions-panel" class="questions-section" aria-labelledby="questions-heading">
+<div class="section-head"><h2 id="questions-heading" tabindex="-1">Questions <span>JSON</span></h2><div class="actions"><button id="format" type="button">Format</button><button id="reset" type="button">Restore defaults</button></div></div>
+<p class="help editor-help">Edit the prompt, then run this candidate. Ctrl/Cmd + Enter runs the selected candidate.</p>
+<div class="editor-wrap"><textarea id="questions" spellcheck="false" aria-label="Jev questions JSON" autocomplete="off"></textarea><div id="monaco-questions" aria-label="Jev questions JSON editor" hidden></div></div>
+<p id="question-error" role="alert" hidden></p><p id="editor-status" class="help" role="status"></p>
+</section>
+<section id="results-panel" class="candidate-results" aria-labelledby="inspector-title">
+<div class="section-head"><div><p class="eyebrow">SELECTED CANDIDATE</p><h2 id="inspector-title">Candidate results</h2></div><button id="expand-answers" type="button">Expand all</button></div>
+<p id="result-meta" class="help"></p><p id="result-notice" class="notice" hidden></p>
+<div class="answer-table-head" aria-hidden="true"><span>Key &amp; instructions</span><span id="answer-model">Answer</span><span>Type</span></div>
+<div id="selected-answers" aria-label="Selected candidate answers"></div>
+<details id="input-details" class="input-details"><summary>Inspect generated state &amp; raw JSON</summary><div class="inspector"><div class="section-head"><h3>Run input / output</h3><button id="copy" type="button" disabled>Copy JSON</button></div><p id="inspector-meta" class="help">Select any candidate to inspect their exact input state.</p>
 <div class="tabs" role="tablist" aria-label="Candidate details"><button id="tab-state" type="button" role="tab" aria-controls="inspect-panel" aria-selected="true" data-view="state">State JSON</button><button id="tab-answers" type="button" role="tab" aria-controls="inspect-panel" aria-selected="false" data-view="answers">Answers JSON</button><button id="tab-request" type="button" role="tab" aria-controls="inspect-panel" aria-selected="false" data-view="request">Full request</button></div>
-<div id="inspect-panel" role="tabpanel" aria-labelledby="tab-state"><pre id="state-json" tabindex="0">Select a candidate.</pre><div id="monaco-state" hidden></div></div><p id="request-ref" class="help mono"></p></aside>
-</div></section>
+<div id="inspect-panel" role="tabpanel" aria-labelledby="tab-state"><pre id="state-json" tabindex="0">Select a candidate.</pre><div id="monaco-state" hidden></div></div><p id="request-ref" class="help mono"></p></div></details>
+<p class="help results-footnote">Every answer is shown; no confidence cutoffs are applied. Choice probabilities and model confidence are separate values.</p>
+</section>
+</div>
+</section>
+<details id="browse-races" class="browse-races"><summary>Browse all House races <span>By state and district</span></summary>
+<div class="filters"><label>State<select id="state"><option value="">All states</option></select></label><label>Find a candidate or district<input id="search" type="search" placeholder="Name or district…" autocomplete="off"></label><span id="visible-count" class="help"></span></div>
+<div id="races" aria-label="House races grouped by state"></div>
+</details>
 </main><footer>Experimental model outputs for review. Runs stay local and never change the election dataset or published candidate records.</footer>
 </body></html>

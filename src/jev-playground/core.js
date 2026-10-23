@@ -8,6 +8,12 @@
     if(answer.type==='noul')return percent(answer.noul)+' true';
     return JSON.stringify(answer);
   }
+  function probabilityRows(answer,question){
+    return Object.entries(answer.probabilities||{}).map(([key,probability])=>({key,probability,
+      label:answer.type==='score'?(answer.legend?.[key]??question?.criteria?.[Number(key)]??key):(question?.criteria?.[key]??key),
+      selected:answer.type==='choice'&&String(answer.choice)===key
+    })).sort((a,b)=>b.probability-a.probability||a.key.localeCompare(b.key,'en-US',{numeric:true}));
+  }
   function sortRaces(races,label=code=>code){return [...races].sort((a,b)=>label(a.state).localeCompare(label(b.state),'en-US')||String(a.district_or_seat).localeCompare(String(b.district_or_seat),'en-US',{numeric:true})||a.id.localeCompare(b.id));}
   function mergeDelta(run,delta){
     if(run.id!==delta.id)throw new Error('Run identity mismatch');
@@ -21,5 +27,5 @@
   }
   function catalogRaces(snapshot,run){return [...new Map([...snapshot.races,...run.races].map(r=>[r.id,r])).values()];}
   function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {percent,answerValue,sortRaces,mergeDelta,catalogRows,catalogRaces,parseQuestions};
+  return {percent,answerValue,probabilityRows,sortRaces,mergeDelta,catalogRows,catalogRaces,parseQuestions};
 });
