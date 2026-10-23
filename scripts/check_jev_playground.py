@@ -118,6 +118,43 @@ class RunChecks(unittest.TestCase):
         self.assertTrue(all(force for _,force in calls));self.assertNotIn('accepted',json.dumps(done))
         self.assertTrue(all(row['response']['answers']['rating']['confidence']==0. for row in done['rows']))
 
+    def test_selected_run_calls_exactly_one_candidate_with_current_data_and_edited_questions(self):
+        calls=[]
+        def call(work,req,key,force):calls.append((deepcopy(req),force));return response(req)
+        m=self.manager(call);selected=m.current()['candidates'][1]
+        updated=deepcopy(self.data);updated['positions'][1]['candidates'][0]['party']='R';g.save(self.path,updated)
+        questions=deepcopy(QUESTIONS);questions['verdict']['instructions']='Edited single example'
+        done=self.wait(m,m.start(questions,selected['id'])['id'])
+        self.assertEqual(done['scope'],'candidate');self.assertEqual(len(done['rows']),1)
+        self.assertEqual(done['completed'],1);self.assertEqual(len(calls),1)
+        self.assertEqual(done['rows'][0]['id'],selected['id']);self.assertEqual(calls[0][0]['state']['candidate'],'Bob')
+        self.assertEqual(done['rows'][0]['party'],'R');self.assertEqual(calls[0][0]['questions'],questions);self.assertTrue(calls[0][1])
+        self.assertEqual(done['rows'][0]['request_sha256'],g.digest(g.dump(calls[0][0]).encode()))
+        self.assertEqual(m.history()[0]['candidate'],'Bob');self.assertEqual(m.history()[0]['total'],1)
+        single=deepcopy(done)
+        all_done=self.wait(m,m.start(QUESTIONS)['id'])
+        self.assertEqual(all_done['scope'],'all');self.assertEqual(len(all_done['rows']),3)
+        self.assertEqual(m.get(single['id']),single)
+
+    def test_selected_repeats_are_fresh_and_freeze_each_prompt(self):
+        calls=[]
+        def call(work,req,key,force):calls.append(deepcopy(req));return response(req)
+        m=self.manager(call);id_=m.current()['candidates'][0]['id'];q=deepcopy(QUESTIONS)
+        first=self.wait(m,m.start(q,id_)['id']);q['verdict']['instructions']='Iteration two'
+        second=self.wait(m,m.start(q,id_)['id']);third=self.wait(m,m.start(q,id_)['id'])
+        self.assertEqual(len(calls),3);self.assertNotEqual(first['id'],second['id']);self.assertNotEqual(second['id'],third['id'])
+        self.assertEqual(m.get(first['id'])['questions'],QUESTIONS);self.assertEqual(second['questions'],q)
+        self.assertEqual(second['rows'][0]['request_sha256'],third['rows'][0]['request_sha256'])
+
+    def test_unknown_invalid_or_removed_selection_never_calls_provider(self):
+        calls=[]
+        def call(*args,**kwargs):calls.append(True);return {}
+        m=self.manager(call);selected=m.current()['candidates'][0]['id']
+        data=deepcopy(self.data);data['positions'][0]['ballot_status']='excluded';g.save(self.path,data)
+        for id_ in ('unknown',selected,'',{},[],123):
+            with self.assertRaises(ValueError):m.start(QUESTIONS,id_)
+        self.assertFalse(calls);self.assertIsNone(m.active);self.assertEqual(m.history(),[])
+
     def test_one_failure_is_explicit_and_does_not_discard_other_answers_or_leak_secrets(self):
         def call(work,req,key,force):
             if req['state']['candidate']=='Bob':raise RuntimeError('SECRET_FIXTURE provider body')
@@ -168,6 +205,7 @@ class RunChecks(unittest.TestCase):
             c=http.client.HTTPConnection('127.0.0.1',server.server_port);c.request(method,path,body,headers or {});r=c.getresponse();status=r.status;b=r.read();c.close();return status,b
         try:
             self.assertEqual(request('GET','/api/bootstrap')[0],200)
+            self.assertEqual(request('GET','/api/snapshot')[0],200)
             self.assertEqual(request('GET','/../jev-key')[0],404)
             self.assertEqual(request('GET','/api/bootstrap',headers={'Host':'evil.test'})[0],403)
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json'})[0],403)
@@ -177,6 +215,12 @@ class RunChecks(unittest.TestCase):
             self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'key':'SECRET_FIXTURE'}),headers)[0],400)
             status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS}),headers);self.assertEqual(status,202);id_=json.loads(body)['id'];self.wait(m,id_)
             self.assertNotIn(b'SECRET_FIXTURE',request('GET','/api/runs/'+id_)[1])
+            selected=m.current()['candidates'][0]['id']
+            for candidate_id in (None,'',[],123,'stale'):
+                self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'candidate_id':candidate_id}),headers)[0],400)
+            status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'candidate_id':selected}),headers)
+            self.assertEqual(status,202);single=self.wait(m,json.loads(body)['id']);self.assertEqual(len(single['rows']),1)
+            self.assertEqual(single['rows'][0]['id'],selected)
         finally:server.shutdown();server.server_close()
 
 

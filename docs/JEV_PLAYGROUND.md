@@ -30,9 +30,14 @@ There is no new public site area or main-reader UI change in this PR.
    merely by opening the page.
 2. Edit the questions in the Monaco JSON editor; a plain-text editor remains
    usable if the pinned Monaco CDN is unavailable. Format/reset are optional.
-3. **Run all 187 candidates** takes a fresh snapshot of current dataset inputs
-   and the edited questions. Up to three Jev calls run concurrently. Questions
-   may be renamed or added; `choice`, `score` and yes/no `noul` are supported.
+3. Select a candidate, edit the questions, and press **Run selected candidate**
+   to make exactly one fresh Jev request. The selected name appears next to the
+   controls. Try another candidate directly from the race list; unevaluated
+   candidates are labeled **Not evaluated in this run** and show a current input
+   preview, with no inherited answers. Each iteration is saved separately, with
+   its candidate name in run history. When ready, **Run all 187 candidates**
+   takes a fresh snapshot of current dataset inputs and the edited questions.
+   Up to three Jev calls run concurrently. Questions may be renamed or added; `choice`, `score` and yes/no `noul` are supported.
 4. Every answer and returned confidence is displayed. There are **no acceptance
    cutoffs, pass/fail grade labels, confidence-based omissions or publication
    decisions**. For `noul`, Jev returns a probability of true rather than a
@@ -113,7 +118,8 @@ readers or publishes political grades.
 
 `check_jev_playground.py` covers question/answer contracts, focused input context,
 congressional metadata, frozen snapshots, low-confidence retention, cancellation,
-failure isolation, persisted history, same-origin/Host checks and credential
+failure isolation, single-candidate isolation and repeated prompt iterations,
+stale-selection rejection, persisted history, same-origin/Host checks and credential
 redaction. `check_jev_playground.cjs` covers numeric ordering, custom questions,
 confidence display and immutable state during delta updates. Both are in the
 36-check offline release gate. Browser coverage includes real Monaco loading at

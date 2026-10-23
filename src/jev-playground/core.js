@@ -14,6 +14,12 @@
     const changes=new Map(delta.changes.map(row=>[row.id,row]));
     return {...run,...Object.fromEntries(Object.entries(delta).filter(([key])=>key!=='changes')),rows:run.rows.map(row=>changes.has(row.id)?{...row,...changes.get(row.id),request:row.request}:row)};
   }
+  function catalogRows(snapshot,run){
+    const rows=new Map(snapshot.candidates.map(c=>[c.id,{...c,status:'preview'}]));
+    for(const row of run.rows)rows.set(row.id,row);
+    return [...rows.values()];
+  }
+  function catalogRaces(snapshot,run){return [...new Map([...snapshot.races,...run.races].map(r=>[r.id,r])).values()];}
   function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {percent,answerValue,sortRaces,mergeDelta,parseQuestions};
+  return {percent,answerValue,sortRaces,mergeDelta,catalogRows,catalogRaces,parseQuestions};
 });

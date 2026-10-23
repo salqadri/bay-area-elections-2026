@@ -86,28 +86,37 @@ class RunManager:
             if run['id'] not in self.jobs and status in {'running', 'cancelling'}:
                 status = 'interrupted'
             result.append({'id': run['id'], 'created_at': run['created_at'], 'status': status,
-                           'completed': run['completed'], 'total': len(run['rows']), 'errors': run['errors']})
+                           'completed': run['completed'], 'total': len(run['rows']), 'errors': run['errors'],
+                           'scope': run.get('scope', 'all'), 'candidate': run['rows'][0]['candidate'] if run.get('scope') == 'candidate' else None})
         return result
 
     def _persist(self, run):
         save(self.work / 'runs' / run['id'] / 'run.json', run)
 
-    def start(self, questions):
+    def start(self, questions, candidate_id=None):
         validate_questions(questions)
+        if candidate_id is not None and (not isinstance(candidate_id, str) or not candidate_id):
+            raise ValueError('candidate_id must be a nonempty candidate ID')
         with self.lock:
             if self.active:
                 raise RuntimeError('A run is already in progress; stop it or wait for completion')
             if not self.key:
                 raise PermissionError('Start the local server with --jev-key-file or TYPESAFE_API_KEY')
             current = self.current(); questions = deepcopy(questions)
+            targets = current['candidates']
+            if candidate_id is not None:
+                targets = [c for c in targets if c['id'] == candidate_id]
+                if not targets:
+                    raise ValueError('Selected candidate is no longer in the current active House roster. Reload the page.')
             run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ-') + uuid.uuid4().hex[:8]
             rows = []
-            for c in current['candidates']:
+            for c in targets:
                 request = {'model': MODEL, 'state': c['state'], 'questions': questions}
                 rows.append({k: v for k, v in c.items() if k != 'state'} | {
                     'request': request, 'request_sha256': digest(dump(request).encode()), 'status': 'queued', 'revision': 0})
             run = {'format': 'jev-playground-run/v1', 'id': run_id, 'created_at': now(), 'model': MODEL,
-                   'questions': questions, 'dataset_sha256': current['dataset_sha256'], 'state_version': current['state_version'],
+                   'questions': questions, 'scope': 'candidate' if candidate_id is not None else 'all',
+                   'dataset_sha256': current['dataset_sha256'], 'state_version': current['state_version'],
                    'races': current['races'], 'rows': rows, 'status': 'running', 'revision': 0, 'completed': 0, 'errors': 0}
             self.jobs[run_id] = run; self.active = run_id; self.stops[run_id] = threading.Event(); self._persist(run)
             initial = deepcopy(run)
@@ -208,6 +217,8 @@ def handler_for(manager):
             try:
                 if url.path == '/api/bootstrap':
                     return self.send(200, manager.bootstrap())
+                if url.path == '/api/snapshot':
+                    return self.send(200, manager.current())
                 if url.path == '/api/runs':
                     return self.send(200, manager.history())
                 if url.path.startswith('/api/runs/'):
@@ -235,9 +246,11 @@ def handler_for(manager):
                     return self.send(413, {'error': 'Request body must be 1–256000 bytes'})
                 body = json.loads(self.rfile.read(length)); path = urlsplit(self.path).path
                 if path == '/api/runs':
-                    if not isinstance(body, dict) or set(body) != {'questions'}:
-                        raise ValueError('Provide only a questions object')
-                    return self.send(202, manager.start(body['questions']))
+                    if not isinstance(body, dict) or set(body) not in ({'questions'}, {'questions', 'candidate_id'}):
+                        raise ValueError('Provide questions and optionally candidate_id only')
+                    if 'candidate_id' in body and body['candidate_id'] is None:
+                        raise ValueError('candidate_id must be a nonempty candidate ID')
+                    return self.send(202, manager.start(body['questions'], body.get('candidate_id')))
                 match = re.fullmatch(r'/api/runs/([^/]+)/cancel', path)
                 if match:
                     return self.send(200, manager.cancel(match.group(1)))

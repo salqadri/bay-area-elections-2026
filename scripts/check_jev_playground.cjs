@@ -9,3 +9,11 @@ const request={state:{candidate:'Alice'},questions:qs};const run={id:'run',rows:
 assert.equal(merged.rows[0].request,request);assert.equal(merged.rows[0].response.answers.other.confidence,0);assert.equal(run.rows[0].status,'queued');assert.throws(()=>C.mergeDelta(run,{id:'another',changes:[]}));
 const html=fs.readFileSync(path.join(__dirname,'../src/jev-playground/index.html'),'utf8');assert(html.includes('State JSON'));assert(html.includes('Full request'));assert(html.includes('role="status"'));assert(html.includes('no confidence cutoffs'));
 console.log('PASS Jev playground: custom questions, confidence without thresholds, numeric district order, immutable state and run deltas.');
+
+// A single experiment cannot inherit baseline answers for its unrun peers.
+const snapshot={races,candidates:[{id:'a',position_id:'1',candidate:'Alice',state:{candidate:'Alice'}},{id:'b',position_id:'2',candidate:'Bob',state:{candidate:'Bob'}}]};
+const single={id:'single',races,rows:[{id:'a',position_id:'1',request,status:'complete',response:{answers:{}}}]};
+const catalog=C.catalogRows(snapshot,single);assert.equal(catalog.length,2);assert.equal(catalog[0],single.rows[0]);assert.equal(catalog[1].status,'preview');assert.equal(catalog[1].response,undefined);assert.equal(catalog[1].request,undefined);assert.equal(snapshot.candidates[0].status,undefined);
+assert.deepEqual(C.catalogRaces(snapshot,single),races);
+const historical={...single,rows:[{id:'removed',candidate:'Removed',status:'complete',request}]};assert.equal(C.catalogRows(snapshot,historical).at(-1).request,request);
+assert(html.includes('id="run-selected"'));console.log('PASS Single-candidate catalog: exact evaluated inputs, unrun previews, historical candidates and no inherited answers.');

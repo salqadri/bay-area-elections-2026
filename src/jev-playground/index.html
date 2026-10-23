@@ -14,10 +14,10 @@
 <div id="fatal" role="alert" hidden></div>
 <section class="questions-section" aria-labelledby="questions-heading">
 <div class="section-head"><h2 id="questions-heading">Questions <span>JSON</span></h2><div class="actions"><button id="format" type="button">Format JSON</button><button id="reset" type="button">Restore defaults</button></div></div>
-<p class="help">Edit named choice, score, or yes/no (<code>noul</code>) questions. Every answer and confidence is shown; no confidence cutoffs are applied.</p>
+<p class="help">Select a candidate below to test a prompt on one example, then run all when ready. Edit named choice, score, or yes/no (<code>noul</code>) questions. Every answer and confidence is shown; no confidence cutoffs are applied.</p>
 <div class="editor-wrap"><textarea id="questions" spellcheck="false" aria-label="Jev questions JSON" autocomplete="off"></textarea><div id="monaco-questions" aria-label="Jev questions JSON editor" hidden></div></div>
 <p id="question-error" role="alert" hidden></p>
-<div class="run-toolbar"><div><button id="run" class="primary" type="button" disabled>Run all House candidates</button><button id="stop" type="button" hidden>Stop run</button></div><span id="connection" class="help">Checking local server…</span><span id="editor-status" class="help"></span></div>
+<div class="run-toolbar"><div><button id="run-selected" type="button" disabled>Run selected candidate</button><button id="run" class="primary" type="button" disabled>Run all House candidates</button><button id="stop" type="button" hidden>Stop run</button></div><span id="selected-target" class="help"></span><span id="connection" class="help">Checking local server…</span><span id="editor-status" class="help"></span></div>
 </section>
 <section class="results-section" aria-labelledby="results-heading">
 <div class="section-head"><h2 id="results-heading">Results</h2><div class="actions"><label for="history">Run</label><select id="history" aria-label="Select run"><option value="stored">Stored results</option></select><button id="download" type="button" disabled>Download run</button></div></div>

@@ -12,7 +12,13 @@ http://127.0.0.1:8787. Opening the page loads stored results without model calls
 Monaco 0.52.2 supplies JSON syntax highlighting/formatting; a usable textarea and
 JSON preformatted inspector remain when the pinned CDN fails.
 
-The owner-provided October 23 questions are the exact defaults. Run freezes edited
+The owner-provided October 23 questions are the exact defaults. **Run selected
+candidate** submits exactly one current candidate with the question editor text;
+**Run all** evaluates the whole roster. Single-candidate history identifies the
+candidate, and retains each iteration separately. Other candidates remain
+selectable with **Not evaluated in this run** labels and current input previews;
+answers from earlier runs never appear under the new prompt. Removed/stale
+candidate selections are rejected before provider calls. Run all freezes edited
 questions and **current** candidate states for every tracked active House race:
 **187 candidates / 72 races**, including Bay Area contests omitted from the old
 nationwide-prefix scope. Printed, provisional and qualified-write-in rosters stay
@@ -99,7 +105,7 @@ answers. Source and model text is rendered as text/JSON, not executable markup.
 
 ## Validation
 
-- **36/36 offline release checks pass**. New suites cover 16 Python regressions
+- **36/36 offline release checks pass**. New suites cover 19 Python regressions
   plus Node assertions for generic question rendering, zero/low-confidence
   retention, state/district sorting and immutable delta merges.
 - Real Chrome at **1440px and 390px** loads actual Monaco, all 187 stored answers,
@@ -110,6 +116,12 @@ answers. Source and model text is rendered as text/JSON, not executable markup.
   candidate, frozen requests, JSON download, cancellation, history/reload and
   comparing a prior run while an active job completes. The fixture never becomes
   the committed default or uses the owner's API key.
+- Single-candidate browser flows passed at 1440px (real Monaco) and 390px
+  (textarea fallback): two prompts on one candidate, another candidate, exact
+  prior requests/history/downloads, unrun previews, invalid JSON and Run all
+  after a single run. No page errors or horizontal overflow. A real localhost
+  run for Ro Khanna returned exactly one successful row on jev-1.14.0; its
+  experimental answers remain only in ignored local run history.
 - Actual default grading used Jev, not fixtures. API credentials were scanned
   against every changed/new tracked file; no matches. Existing dataset/readers
   and prior archive equal their baseline Git blobs; generated build remains exact.
