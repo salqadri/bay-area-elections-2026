@@ -1,0 +1,74 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Owner reports Amish Shah missing organization logos, Hindu American PAC endorsement, and no Gaza/Israel evidence for Shah/Jay Feely. Source page has 31 empty-alt organization images. Image builder explicitly skips empty-county nationwide races; batch runner exports inventories but only text attachments were published. HAPAC seed registry exists but dated curated import predates House addition; current publisher section lists candidates separately from previous officials not up in 2026. Both candidates have old Gaza done flags but no published evidence; Feely already has a quoted Israel point on nested /issues in general platform data.",
+  "questions": {
+   "images": {
+    "type": "choice",
+    "instructions": "Choose systematic image-publication fix.",
+    "criteria": {
+     "scope_and_draft": "Support common eligible nationwide scope; produce a separate source-bound image publication draft during the batch; re-audit known campaign endorsement pages lacking image observations; preserve unknown logos neutrally without filename identities",
+     "one_candidate": "Hardcode only Shah logos",
+     "guess": "Infer organization names from filenames"
+    }
+   },
+   "publisher": {
+    "type": "choice",
+    "instructions": "Choose HAPAC refresh method.",
+    "criteria": {
+     "current_roster": "Parse explicit current list once, match all current tracked candidacies, Jev-review office/year conflicts, preserve historical observations and corroborations, retain every card disposition",
+     "old_bios": "Import every biography as current endorsement",
+     "shah_only": "Hardcode only Shah"
+    }
+   },
+   "gaza": {
+    "type": "choice",
+    "instructions": "Choose research recovery process.",
+    "criteria": {
+     "source_bound": "Audit current missing published evidence rather than trusting done flags; include recorded nested Israel/Palestine platform URLs, Serper for leads, actual source captures, Jev review of identity/quotes/dates and faithful attribution; publish evidence without publishing held grades",
+     "done_means_absence": "Treat done plus zero records as evidence of neutrality",
+     "snippets": "Publish search snippets or financing-based inferred positions as statements"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "gaza": {
+    "type": "choice",
+    "choice": "source_bound",
+    "confidence": 1.0,
+    "probabilities": {
+     "done_means_absence": 0.0,
+     "snippets": 0.0,
+     "source_bound": 1.0
+    }
+   },
+   "images": {
+    "type": "choice",
+    "choice": "scope_and_draft",
+    "confidence": 1.0,
+    "probabilities": {
+     "guess": 0.0,
+     "one_candidate": 0.0,
+     "scope_and_draft": 1.0
+    }
+   },
+   "publisher": {
+    "type": "choice",
+    "choice": "current_roster",
+    "confidence": 1.0,
+    "probabilities": {
+     "current_roster": 1.0,
+     "old_bios": 0.0,
+     "shah_only": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 733,
+   "output_tokens": 131
+  }
+ }
+}

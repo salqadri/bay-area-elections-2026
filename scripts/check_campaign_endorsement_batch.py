@@ -7,7 +7,7 @@ from pathlib import Path
 
 from campaign_endorsements import dump, is_distinction
 from endorsement_extract import norm, uid
-from endorsement_images import VERSION
+from endorsement_images import SUPPORTED_VERSIONS
 
 
 def verify(root):
@@ -39,7 +39,7 @@ def verify(root):
                 raise ValueError('Media resource cannot support a named endorsement')
             binding = proposal['source_binding']; text = normalized_text[record['url']]
             if (binding['page_url'] != record['url'] or binding['source_sha'] != site_sha or
-                page['page'].get('image_parser_version') != VERSION or
+                page['page'].get('image_parser_version') not in SUPPORTED_VERSIONS or
                 proposal['id'] != uid('P2-', proposal['candidacy_id'], site_sha, dump(record)) or
                 not norm(record['endorser']) or not norm(record['quote']) or
                 ' ' + norm(record['endorser']) + ' ' not in text or

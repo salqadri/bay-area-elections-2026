@@ -1,5 +1,13 @@
 # Research and development handoff
 
+## Proposed update — October 23, 2026: endorsement image / HAPAC / AZ-01 evidence repair (2026-10-23.1)
+
+Based on latest `d6238fe`. Fixes the image builder’s obsolete empty-county exclusion, adds an explicit image-publication draft to the batch runner, and supplies current-roster missing/older-image planning. The House pass retrieves 63 known endorsement pages: 59 initially ready; a responsive lazy-image parser fix (v3) resolves Bouchard as a 60th. Publishes **1,384 neutral image observations on 43 candidacies**, including Shah’s **31 organization logos plus one introductory image**. Three source-layout holds remain explicit. Existing v2 archives still replay exactly; current exports require v3 recrawl.
+
+New `import_hapac.py` refreshes all 17 explicit current cards: **3 additions** (Shah, Pia Dandiya, current Murali Srinivasan), Melissa Hernandez corroborated once, Yang Shao held for office conflict, 12 outside the tracked printed roster. Old historical observations remain intact. New `research_gaza_gaps.py` audits current publication gaps rather than old done flags, includes nested topical platform URLs, uses Serper only for discovery and Jev alone for judgments. Publishes **Shah 3 dated records; Feely 2 dated records plus his current campaign statement**. Original 2023/2025 dates, article dating and guide observation limits are preserved; collector dossiers are synchronized. Held grades remain unpublished.
+
+See [workflow](RESEARCH_GAP_RECOVERY.md), [audit](reviews/2026-10-23-az01-research-gaps.md), four new registered reviews, complete source/image dispositions and actual Jev responses. Schema stays 1.23. The 34-check gate includes 21 new regressions; Chrome desktop/mobile loaded all 31 Shah organization logos and verified both Gaza disclosures. Structural comparison recovers the full baseline after removing exactly the additive research and publication metadata. Prepared for Hermes review; branch not merged.
+
 ## Published update — October 23, 2026: state-aware race labels, State filter, district-number sort, split IE for/against (display-only)
 
 Owner batch of reader fixes, all display-layer (dataset JSON untouched, no publication bump per the display-only precedent):

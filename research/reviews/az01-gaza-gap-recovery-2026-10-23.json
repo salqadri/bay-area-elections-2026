@@ -1,0 +1,286 @@
+{
+ "version": 1,
+ "id": "az01-gaza-gap-recovery-2026-10-23",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-23",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "9ffc2afecef662c383e47f214f8013d394fcc179ecbac34cf4cff4dba0892f3a",
+ "sources": {
+  "source-d25f8626e79a547ece95": {
+   "url": "https://x.com/DrAmishShah/status/1711221277787041963",
+   "publisher": "Amish Shah",
+   "role": "campaign",
+   "candidate": "Amish Shah",
+   "checked_on": "2026-10-23",
+   "content_sha256": "be4d9d76448e9991600fc1660fb3463d330ff15375e074e54ba032275cd45c0d",
+   "retrieval": "Fxtwitter API copy of exact canonical X post; id, author and timestamp checked"
+  },
+  "source-23d1e78b9fa2992de217": {
+   "url": "https://www.algemeiner.com/2026/07/24/slate-of-pro-israel-arizona-moderates-emerge-victorious/",
+   "publisher": "The Algemeiner",
+   "role": "reporter",
+   "candidate": "Amish Shah",
+   "checked_on": "2026-10-23",
+   "content_sha256": "92a27c3f728dfc76819c8fb513b01d16e3cec85c815fcc0caabc6ecc161f18c7",
+   "retrieval": "Captured source HTML"
+  },
+  "source-9dfa01fed1107bcfd767": {
+   "url": "https://jewishdems.org/endorsements/",
+   "publisher": "Jewish Democratic Council of America",
+   "role": "aggregator",
+   "candidate": "Amish Shah",
+   "checked_on": "2026-10-23",
+   "content_sha256": "0eb7522132163d1e579c818760a246df7f38ac4589ee04dee95d18851f8aed68",
+   "retrieval": "Captured source HTML"
+  },
+  "source-6e3877b01a347e1b5bda": {
+   "url": "https://x.com/jayfeely/status/1710685934377898232",
+   "publisher": "Jay Feely",
+   "role": "campaign",
+   "candidate": "Jay Feely",
+   "checked_on": "2026-10-23",
+   "content_sha256": "7b612dbe2380f4c4946fe900d9735351f857fab09317896aa553370ae269fdc5",
+   "retrieval": "Fxtwitter API copy of exact canonical X post; id, author and timestamp checked"
+  },
+  "source-bd13ab1ed278f97f5daf": {
+   "url": "https://x.com/jayfeely/status/1975691167791829139",
+   "publisher": "Jay Feely",
+   "role": "campaign",
+   "candidate": "Jay Feely",
+   "checked_on": "2026-10-23",
+   "content_sha256": "a1282f6645c2542b2c108b4c58987de020b855ef602a66127adabe0e03b724ea",
+   "retrieval": "Fxtwitter API copy of exact canonical X post; id, author and timestamp checked"
+  },
+  "source-3a63ff3fa7983e0d71b3": {
+   "url": "https://www.jayfeelyforcongress.com/issues",
+   "publisher": "Jay Feely campaign",
+   "role": "campaign",
+   "candidate": "Jay Feely",
+   "checked_on": "2026-10-23",
+   "content_sha256": "8d1729ada9bce38d294120a5e836ead940c6f0e07abddda3b3f6a52c6a0e2b41",
+   "retrieval": "Captured source HTML"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-d25f8626e79a547ece95",
+   "position_id": "US2026-072",
+   "candidate": "Amish Shah",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "48e4f22c6cd39b3fddb20327875b9218a465ed767f1fabbe7ad8372a014c00ce",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-1",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1197",
+    "date": "2023-10-09",
+    "date_method": "x_snowflake",
+    "date_note": "Original 2023 post date, verified against the canonical post ID and retrieved timestamp; this is not a new 2026 statement.",
+    "summary": "In October 2023, Shah voiced support for Israel, condemned attacks on civilians and said terrorism cannot achieve peace.",
+    "quote": "We support Israel and condemn attacks on civilians.",
+    "dimension": "framing_balance",
+    "source_kind": "x_post",
+    "url": "https://x.com/DrAmishShah/status/1711221277787041963",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Recorded campaign/verified X account identify Amish Shah, former Arizona legislator and AZ-01 congressional candidate.",
+    "date_basis": "Post author matches the recorded account; snowflake and API timestamp both establish 2023-10-09.",
+    "issue_basis": "In October 2023, Shah voiced support for Israel, condemned attacks on civilians and said terrorism cannot achieve peace. Exact source quote: We support Israel and condemn attacks on civilians."
+   }
+  },
+  {
+   "id": "gaza-claim-1",
+   "action": "change",
+   "source_key": "source-23d1e78b9fa2992de217",
+   "position_id": "US2026-072",
+   "candidate": "Amish Shah",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "627a4ac9e43e14474d482e34c69b95c8eaa830169c24695adc128dfccbce3274",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-1",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1198",
+    "date": "2026-07-24",
+    "date_method": "source_stated",
+    "date_note": "Date is the article publication date, not necessarily the policy paper date.",
+    "summary": "The Algemeiner reports that Shah supported Israel’s war to destroy Hamas while lamenting civilian casualties in Gaza and citing his Jain faith.",
+    "quote": "I support Israel in this endeavor.",
+    "dimension": "framing_balance",
+    "source_kind": "news",
+    "url": "https://www.algemeiner.com/2026/07/24/slate-of-pro-israel-arizona-moderates-emerge-victorious/",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Recorded campaign/verified X account identify Amish Shah, former Arizona legislator and AZ-01 congressional candidate. The article identifies Shah as the AZ-01 Democratic nominee.",
+    "date_basis": "Article byline visibly states July 24, 2026 1:55 pm.",
+    "issue_basis": "The Algemeiner reports that Shah supported Israel’s war to destroy Hamas while lamenting civilian casualties in Gaza and citing his Jain faith. Exact source quote: I support Israel in this endeavor."
+   }
+  },
+  {
+   "id": "gaza-claim-2",
+   "action": "change",
+   "source_key": "source-9dfa01fed1107bcfd767",
+   "position_id": "US2026-072",
+   "candidate": "Amish Shah",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "204a9976789297c26a00778426f8c18063d4908d289b25c56cb2a5fcc974aafa",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-1",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1199",
+    "date": "2026-10-23",
+    "date_method": "source_observed",
+    "date_note": "October 23 is when this JDCA guide assessment was observed, not the date Shah made the underlying statements.",
+    "summary": "JDCA reports that Shah supports U.S. Iron Dome funding and a two-state solution; this is the guide’s account of his positions.",
+    "quote": "He affirmed his \"adamant\" support of U.S. funding for the Iron Dome and “strongly supports a two-state solution.”",
+    "dimension": "military_aid",
+    "source_kind": "voter_guide",
+    "url": "https://jewishdems.org/endorsements/",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Recorded campaign/verified X account identify Amish Shah, former Arizona legislator and AZ-01 congressional candidate. The candidate-specific guide card identifies AZ-01 and opponent Jay Feely.",
+    "date_basis": "Observation date of the retrieved voter-guide assessment; source does not date the underlying statements.",
+    "issue_basis": "JDCA reports that Shah supports U.S. Iron Dome funding and a two-state solution; this is the guide’s account of his positions. Exact source quote: He affirmed his \"adamant\" support of U.S. funding for the Iron Dome and “strongly supports a two-state solution.”"
+   }
+  },
+  {
+   "id": "gaza-claim-3",
+   "action": "change",
+   "source_key": "source-6e3877b01a347e1b5bda",
+   "position_id": "US2026-072",
+   "candidate": "Jay Feely",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "06937093724278ae11cc126621b817fa35127ac542e26c398f2613e266d36231",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-1",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1200",
+    "date": "2023-10-07",
+    "date_method": "x_snowflake",
+    "date_note": "Original post date verified against the canonical post ID and retrieved timestamp; collection does not renew or redate the statement.",
+    "summary": "In October 2023, Feely said Israel had every right to defend itself after Hamas attacked Israeli civilians.",
+    "quote": "Israel has every right to defend itself!",
+    "dimension": "framing_balance",
+    "source_kind": "x_post",
+    "url": "https://x.com/jayfeely/status/1710685934377898232",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Recorded campaign and verified jayfeely X account identify Jay Feely, Arizona CD-1 congressional candidate and former NFL kicker.",
+    "date_basis": "Post ID timestamp and retrieved metadata agree on 2023-10-07.",
+    "issue_basis": "In October 2023, Feely said Israel had every right to defend itself after Hamas attacked Israeli civilians. Exact source quote: Israel has every right to defend itself!"
+   }
+  },
+  {
+   "id": "gaza-claim-4",
+   "action": "change",
+   "source_key": "source-bd13ab1ed278f97f5daf",
+   "position_id": "US2026-072",
+   "candidate": "Jay Feely",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "a90a9f581b77f39fd1fc488cc803d01702869189513bf6da0bb9ac6894366b2a",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-1",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1201",
+    "date": "2025-10-07",
+    "date_method": "x_snowflake",
+    "date_note": "Original post date verified against the canonical post ID and retrieved timestamp; collection does not renew or redate the statement.",
+    "summary": "Feely urged continued support for Israel and said Hamas must accept Trump’s peace deal or face annihilation.",
+    "quote": "Hamas must accept President Trump’s peace deal or face annihilation",
+    "dimension": "framing_balance",
+    "source_kind": "x_post",
+    "url": "https://x.com/jayfeely/status/1975691167791829139",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Recorded campaign and verified jayfeely X account identify Jay Feely, Arizona CD-1 congressional candidate and former NFL kicker.",
+    "date_basis": "Post ID timestamp and retrieved metadata agree on 2025-10-07.",
+    "issue_basis": "Feely urged continued support for Israel and said Hamas must accept Trump’s peace deal or face annihilation. Exact source quote: Hamas must accept President Trump’s peace deal or face annihilation"
+   }
+  },
+  {
+   "id": "gaza-claim-5",
+   "action": "change",
+   "source_key": "source-3a63ff3fa7983e0d71b3",
+   "position_id": "US2026-072",
+   "candidate": "Jay Feely",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "589be686f156438fdcd32cc741e644b0a66e9e470ac7e61f18c71c9f2fcb5b25",
+   "field": "gaza_platform",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-1",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "scope_note": "Only the recorded campaign issues page was reviewed for this statement; this is not an exhaustive position or an announcement date.",
+    "summary": "Feely pledges to stand with Israel, strengthen the U.S.-Israel relationship and fight antisemitism, especially on college campuses.",
+    "quote": "I will stand unapologetically with Israel and fight to strengthen the U.S.-Israel relationship.",
+    "status": "statement_found",
+    "checked_on": "2026-10-23",
+    "source_url": "https://www.jayfeelyforcongress.com/issues",
+    "pages": [
+     {
+      "url": "https://www.jayfeelyforcongress.com/issues",
+      "title": "Issues | Explore Key Priorities — Jay Feely for Congress",
+      "content_sha256": "8d1729ada9bce38d294120a5e836ead940c6f0e07abddda3b3f6a52c6a0e2b41"
+     }
+    ]
+   },
+   "evidence": {
+    "identity_basis": "Recorded campaign and verified jayfeely X account identify Jay Feely, Arizona CD-1 congressional candidate and former NFL kicker.",
+    "date_basis": "Actual current campaign-page observation on October 23, 2026; the page does not establish an announcement date.",
+    "issue_basis": "Feely pledges to stand with Israel, strengthen the U.S.-Israel relationship and fight antisemitism, especially on college campuses. Exact source quote: I will stand unapologetically with Israel and fight to strengthen the U.S.-Israel relationship."
+   }
+  }
+ ]
+}
