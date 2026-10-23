@@ -123,7 +123,7 @@ County totals overlap: a shared district appears once in the data with multiple 
 
 Contra Costa's local contests were reconciled on October 12, 2026 against the county's certified August 14 candidate list and its exhaustive August 27 Contest/Candidate Proof List (both archived under `research/contra_costa/` and cited as S1087/S1088). Contests absent from that on-ballot proof — including Canyon Elementary SD and Rodeo Sanitary District, which never appear in either file — are recorded as excluded with their filers retained separately; unopposed candidates elected at certification are named in the contest notes. Santa Clara's Lion's Gate CSD (both terms), San Martin County Water District and Silver Creek Valley Country Club GHAD, and San Mateo's Bayshore ESD short term and Colma Fire Protection District Director were resolved October 14 as excluded on the same zero-filing pattern: each county's exhaustive final candidate documentation contains no row for these contests at all (Santa Clara additionally shows zero write-in filings in its unofficial write-in list), with ballot-material deadlines already passed; evidence and the Jev adjudication are archived under `research/unresolved_2026-10-14/`. See `coverage.limitations` for remaining boundaries.
 
-Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases. **135 printed candidate entries (135 people)** carry a separately verified official X account (`x_url`), **10 federal incumbents add a second verified account** (`secondary_x_url`, personal vs office handle) and **383 carry a verified campaign or official website** (`campaign_url`; five unverifiable generic-platform-homepage claims removed October 8), each with its own evidence source checked October 6–7, 2026. Verification confidence is recorded per entry in the cited source: most were confirmed against live profile text; **27 entries are explicitly "probable match" (indirect biographical evidence)** and their source titles say so — treat those as probable, not certain. Organization pages, same-name professionals and city-government sites are excluded. Most local candidates publish no findable account, and omission never means none exists.
+Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases. **446 printed candidacies carry an X profile** (`x_url`), **10 add a second account** (`secondary_x_url`, personal vs office handle), and **653 carry a recorded campaign or official website** (`campaign_url`). Source titles retain each observation's date and verification limits, including older probable matches; this update does not re-verify existing links. The October 22 [campaign self-link recovery](docs/X_PROFILES.md) adds 11 Jev-reviewed accounts, including Xavier Becerra, from an attempted pass over all 301 missing-X candidacies with recorded websites. The [audit](docs/reviews/2026-10-22-x-profiles.md) preserves unavailable pages and identity/ownership holds. Omission never means no account exists.
 
 Open Civic Data identifiers are included where available and carry an explicit verification status. They have **not been API-validated**. The address view estimates races and retains unresolved alternatives; it does not determine an official ballot or voter registration. Consult the relevant county election office for your official ballot.
 
@@ -149,7 +149,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.23 (`schema_version` in the file is authoritative), publication `2026-10-22.3`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.23 (`schema_version` in the file is authoritative), publication `2026-10-22.4`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
@@ -178,6 +178,7 @@ python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsement_images.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
+python3 scripts/check_x_profiles.py
 python3 scripts/check_cair_guide.py
 python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
@@ -202,7 +203,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-Run the full sequence above with **`python3 scripts/check_release.py`** (30 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
+Run the full sequence above with **`python3 scripts/check_release.py`** (31 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 

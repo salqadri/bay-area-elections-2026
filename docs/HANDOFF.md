@@ -1,5 +1,14 @@
 # Research and development handoff
 
+## Proposed update — October 22, 2026: missing X profile recovery (2026-10-22.4)
+
+Pulled `87bbe2c` after Hermes merged/published PR #11. Xavier Becerra's recorded campaign site directly links `https://x.com/XavierBecerra`; the old local X sweep did not use campaign self-links, while the nationwide scaffold runner excluded California's existing race and skipped cached null outcomes. Historical search logs do not establish the precise original search failure. New `scripts/research_x_profiles.py` inventories current missing fields across all offices, captures recorded campaign pages, optionally corroborates linked handles via profile metadata, and uses Jev alone for candidate/ownership judgments. No searches were called. Old script is labelled historical.
+
+Attempted **all 299 sites for 301 missing-X candidacies with campaign URLs**: 258 readable / 41 unavailable; 25 pages have direct profile links. Source-bound additive review recovers **11 accounts**, including Becerra; 8 identity + 6 ownership holds remain explicit. Printed X coverage **435 → 446** of 1,294. **558 missing-X candidacies have no recorded campaign site** and were not searched; 235 have no profile link in the captured page. This is a first-party recovery pass, not exhaustive account discovery. Existing primary/secondary accounts and all other research remain intact.
+
+See [workflow](X_PROFILES.md), [audit](reviews/2026-10-22-x-profiles.md), and `research/x-profiles/2026-10-22/review.json` for actual source/model evidence and every disposition. Apply uses a focused exact before/after dataset-hash adapter for scalar X links; an identical rerun is a no-op. The release gate adds `check_x_profiles.py` (31 checks total, 21 new regressions). Prepared for Hermes PR review; schema remains 1.23.
+
+
 ## Published update — October 22, 2026: Ballotpedia endorsement supplement (PR #11, 2026-10-22.3)
 
 New `scripts/ballotpedia_endorsements.py` supplies plan → fetch/import → extract → Jev review → draft → archive, using only recorded Ballotpedia profile URLs and explicitly current-year Endorsements sections. The parser preserves cycle/phase/category boundaries and the polling-chart heading exception. Shared `endorsement_identity.py` prevents exact cross-source duplicates in both collectors; Jev resolves name variants and screens all proposed new entities against existing names/curated publishers, including acronyms. Older/general/primary context and curated relationship controls are preserved. New rows are `reported` secondary evidence with source-section links and observation-date notes.
