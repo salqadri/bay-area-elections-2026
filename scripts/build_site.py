@@ -38,6 +38,11 @@ def render(page="index"):
     if html.count('__PLATFORM_DISPLAY_JS__') != 1:
         raise ValueError('Expected one shared platform display placeholder')
     html = html.replace('__PLATFORM_DISPLAY_JS__', platform_js)
+    sort_js = (ROOT / 'src/candidate-sort.js').read_text(encoding='utf-8')
+    assert '</script' not in sort_js.lower(), 'Unsafe inline candidate sort script'
+    if html.count('__CANDIDATE_SORT_JS__') != 1:
+        raise ValueError('Expected one shared candidate sort placeholder')
+    html = html.replace('__CANDIDATE_SORT_JS__', sort_js)
     if page == "ballot":
         source = (ROOT / "src/index.template.html").read_text(encoding="utf-8")
         css = re.search(r"<style>(.*?)</style>", source, re.S).group(1)

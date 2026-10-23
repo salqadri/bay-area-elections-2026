@@ -1,7 +1,7 @@
 # Missing X profiles — October 22, 2026
 
 Baseline: `87bbe2c` (merged/published PR #11, publication `2026-10-22.3`).
-Proposed publication **2026-10-22.4**, schema **1.23** unchanged.
+Published as **2026-10-22.4** after Hermes review of PR #12; schema **1.23** unchanged.
 
 ## Becerra finding and cause
 

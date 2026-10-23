@@ -38,7 +38,7 @@ Open `http://127.0.0.1:8000/` or `http://127.0.0.1:8000/ballot.html`. Use `pytho
 
 The default **By office priority** view uses expandable sections for federal, state, judicial, county, city, education, and special-district contests. Federal contests group **U.S. Senate → U.S. House**. State contests group **Governor → State Senate → State Assembly → other state offices**, mirroring the top-of-ticket lead; within "other state offices" comes Lieutenant Governor, Secretary of State, Controller, Treasurer, Attorney General, Insurance Commissioner, Superintendent of Public Instruction, and Board of Equalization. This is an editorial display preference, not a constitutional hierarchy.
 
-Click a section heading to expand it, or use **Expand all / Collapse all**. Counts include contests inside collapsed sections. Search results and direct contest links open the relevant sections automatically. City contests are grouped by jurisdiction. The jurisdiction and office sorts offer flat lists. Shared ordering settings live in `display_order`; the JSON positions array also follows the requested state-office priority.
+Click a section heading to expand it, or use **Expand all / Collapse all**. Counts include contests inside collapsed sections. Search results and direct contest links open the relevant sections automatically. City contests are grouped by jurisdiction. The jurisdiction and office sorts offer flat lists. Shared ordering settings live in `display_order`; the JSON positions array also follows the requested state-office priority. Within each race both readers display candidates in a fixed research-neutral order (shared `src/candidate-sort.js`): a verified incumbent first, then higher reported total receipts (FEC or CAL-ACCESS; an unknown amount ranks below any reported figure — never treated as zero), then more endorsement records, then Democratic or Republican affiliation before other parties and nonpartisan candidates, finally the name. This is display-only: the dataset's stored roster order is unchanged.
 
 ## Find my ballot by address
 
@@ -195,6 +195,7 @@ node scripts/check_endorsement_display.cjs
 node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
 node scripts/check_platform_display.cjs
+node scripts/check_candidate_sort.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -203,7 +204,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-Run the full sequence above with **`python3 scripts/check_release.py`** (31 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
+Run the full sequence above with **`python3 scripts/check_release.py`** (32 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 

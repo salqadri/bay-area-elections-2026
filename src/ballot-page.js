@@ -150,7 +150,7 @@
     if (Array.isArray(position.candidates) && position.candidates.length) {
       const candidates = node('ul', 'ballot-candidates');
       candidates.setAttribute('aria-label', 'Candidates');
-      for (const candidate of position.candidates) {
+      for (const candidate of CandidateSort.sortRoster(position.candidates)) {
         const row = node('li');
         row.append(node('span', 'ballot-candidate-name', candidate.name));
         if (candidate.party) row.append(node('span', 'ballot-candidate-party', partyLabel(candidate.party)));
