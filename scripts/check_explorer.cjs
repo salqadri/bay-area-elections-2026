@@ -95,8 +95,9 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   assert(!text('panel-candidates').includes('Endorsed by California Jewish Democrats'));
   tab('sources');assert(nodes($('panel-sources')).some(n=>n.tagName==='A'&&n.href==='https://www.fec.gov/data/candidate/H0CA10149/'));
   reset();set('search','CD-10');const frese=candidate('Jeff Frese');if(frese.fec.receipts===null){assert(text('panel-candidates').includes('No published total available'));assert(text('panel-candidates').includes('not zero'));}else assert(text('panel-candidates').includes(money(frese.fec.receipts)));
-  assert(text('panel-candidates').includes('Endorsed by CAIR Action'));assert(nodes($('panel-candidates')).some(n=>n.tagName==='A'&&n.href==='https://cairactionguide.org/explore'));
-  assert(text('panel-candidates').includes('supplied capture of CAIR Action'));
+  assert(text('panel-candidates').includes('Endorsed by CAIR Action'));const markCair=candidate('Mark DeSaulnier').endorsements.find(r=>r.endorser==='CAIR Action');assert(nodes($('panel-candidates')).some(n=>n.tagName==='A'&&n.href===markCair.url));
+  assert(text('panel-candidates').includes(original.notes[markCair.note_id]));
+  reset();set('search','Kevin Park');assert(text('panel-candidates').includes('Preferred by CAIR Action'));assert(!text('panel-candidates').includes('Endorsed by CAIR Action'));
   reset();set('search','Marc Cooper');assert(text('panel-candidates').includes('Opposed by CAIR Action'));assert(text('panel-candidates').includes('1 opposed'));assert(!text('panel-candidates').includes('Endorsed by CAIR Action'));reset();set('search','CD-8');assert(text('panel-candidates').includes('Preferred by CAIR Action'));
   reset();set('search','CD-11');assert(text('panel-candidates').includes('Listed as Ally by Vote for Peace'));assert(text('panel-candidates').includes('Opposed by Vote for Peace'));assert(!text('panel-candidates').includes('Endorsed by Vote for Peace'));assert(text('panel-candidates').includes('Endorsed by AROC Action'));assert(text('panel-candidates').includes('Observed on 2026-10-09 (guide snapshot; original date unknown)'));
   reset();set('search','Manisha Pathak');assert(text('panel-candidates').includes('Supported by Dr. Romesh Japra'));

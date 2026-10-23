@@ -1,5 +1,7 @@
 # Candidate endorsement research
 
+**October 23 CAIR Action refresh:** the [state-guide workflow](CAIR_ACTION.md) captures the current official PDF, including Kevin Park as Preferred. [Audit](reviews/2026-10-23-cair-action-refresh.md): 242 candidate cards accounted for, 14 additions and 93 exact refreshes; final CAIR coverage is 109 records (81 Endorsed, 27 Preferred, 1 Opposed). Older records absent from the source and ambiguous identities remain intact.
+
 **October 23 new-race repair:** [Repeatable workflow](RESEARCH_GAP_RECOVERY.md) refreshes the explicit Hindu American PAC current list against the current roster via `import_hapac.py`, preserving corroborations, historical context and office-conflict holds. Image publication is a separate required review; empty-alt logos never become names from filenames. See [audit](reviews/2026-10-23-az01-research-gaps.md).
 
 **October 22 Ballotpedia supplement:** [Current-cycle profile workflow](BALLOTPEDIA_ENDORSEMENTS.md) and [publication audit](reviews/2026-10-22-ballotpedia-endorsements.md). The new recorded-profile collector adds 200 secondary reports on 54 candidacies, deduplicates 167 corroborations, and holds uncertain entity/relationship cases. Campaign and Ballotpedia collection share the exact duplicate guard; every proposed new entity is screened against existing names, including acronyms. The current README/data hold the coverage totals. Earlier source-specific counts below are dated history.

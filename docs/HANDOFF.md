@@ -225,6 +225,10 @@ All 152 Vote for Peace cards and 44 AROC cards have dispositions. Five matched N
 
 Guide assessments use `date_method: source_observed`, the actual inspection date, and a required date note. Both readers label the unknown original date. They are attributed secondary claims, not independently checked funding totals, roll calls or historical statement dates. The importer and publication guard preserve reviewed records and reject unintended changes. Run `check_peace_guides.py` with the full release suite. Candidate rosters, parties, FEC, election-wide dates and prior Gaza evidence are unchanged. Historical sections below retain their original counts.
 
+## Proposed update — October 23, 2026: current CAIR Action general-election guide
+
+The [new reusable adapter](CAIR_ACTION.md) reads the official 34-page California PDF (the landing page embeds the same source), captures all 242 candidate cards, and routes source/office matches through Jev and registered updates. Adds 14 records including Kevin Park Preferred; refreshes 93, including Endorsed → Preferred for Scott Sakakihara and Mer Curry Nuñez. CAIR now has 109 records: 81 endorsed, 27 preferred, 1 opposed. Twenty identity holds and 115 names without plausible roster leads remain explicit; no absent recommendation is deleted. Publication version 2026-10-23.2, schema unchanged; readers rebuilt. See [audit](reviews/2026-10-23-cair-action-refresh.md). Playground PR #14 separately adds CAIR to its compact input registry.
+
 ## Earlier update — October 9, 2026: CAIR Action source correction
 
 The current publication is schema **1.14**, with **316 records on 190 candidacies**: 266 endorsements, 18 preferences, 6 recommendations, 25 other support observations and 1 opposition. This replaces the earlier 15 CAIR secondary reports with **95 recommendations from the supplied official Explore capture**: 76 Endorsed, 18 Preferred and 1 Opposed. Both pages explicitly label negative recommendations, including Marc Cooper's **Opposed by CAIR Action** record.
