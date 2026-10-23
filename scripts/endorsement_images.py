@@ -9,7 +9,8 @@ from datetime import date
 import re
 from urllib.parse import urljoin, urlsplit, urlunsplit, quote, unquote
 
-VERSION = 'campaign-dom-images-2'
+VERSION = 'campaign-dom-images-3'
+SUPPORTED_VERSIONS = {'campaign-dom-images-2', VERSION}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 SKIP = {'script', 'style', 'noscript', 'svg', 'template'}
 
@@ -80,7 +81,12 @@ def images_from_html(html, base, unresolved=None):
     out = []
     for index, n in enumerate(tree.images):
         a = n.attrs
-        raw = a.get('data-src') or a.get('data-lazy-src') or a.get('src')
+        # Unbounce/responsive and common lazy loaders keep real URLs in data
+        # attributes while src is only a data-URI placeholder. Preserve an
+        # explicitly supplied URL; never derive a filename or resolution.
+        raw = next((a[k] for k in ('data-src', 'data-lazy-src', 'data-src-desktop-1x',
+                                   'data-src-mobile-1x', 'data-original', 'data-litespeed-src', 'src')
+                    if a.get(k) and not a[k].startswith('data:')), a.get('src'))
         # Some lazy loaders publish only a srcset. Keep the actual selected URL,
         # not an inferred filename or a guessed higher-resolution derivative.
         if (not raw or raw.startswith('data:')) and (a.get('data-srcset') or a.get('srcset')):

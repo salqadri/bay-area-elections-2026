@@ -1,0 +1,55 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "PR 13 review, October 23: capture_plan creates output_dir with exist_ok=True, fetches each URL, catches an existing packet as unavailable, then overwrites queue.json. A repeat command can destroy the previous ready queue. Gaza build uses SHA256(source_url) as source key but stores candidate in each source value, so claims for multiple candidates on one publisher page overwrite the earlier source candidate attribution. Existing publication has six distinct source URLs so is unaffected. Proposed fixes: refuse an existing image run directory before networking, and bind Gaza source keys to URL plus position ID and candidate, with regressions. No political evidence or dataset content changes.",
+  "questions": {
+   "capture": {
+    "type": "choice",
+    "instructions": "Choose the capture rerun behavior.",
+    "criteria": {
+     "refuse": "Fail before network or writes if the run directory exists; require a fresh run directory and preserve prior evidence",
+     "overwrite": "Keep replacing existing queues with new unavailable dispositions",
+     "resume": "Implement a larger authenticated resumable ledger in this patch"
+    }
+   },
+   "attribution": {
+    "type": "choice",
+    "instructions": "Choose source attribution behavior for multi-candidate guides.",
+    "criteria": {
+     "bind": "Include exact candidacy and URL in each source key, preserving candidate-specific attribution without changing captured page contents",
+     "shared": "Keep one URL key and let the final candidate overwrite earlier attribution",
+     "remove": "Delete candidate attribution from all source objects"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "attribution": {
+    "type": "choice",
+    "choice": "bind",
+    "confidence": 1.0,
+    "probabilities": {
+     "bind": 1.0,
+     "remove": 0.0,
+     "shared": 0.0
+    }
+   },
+   "capture": {
+    "type": "choice",
+    "choice": "refuse",
+    "confidence": 0.91,
+    "probabilities": {
+     "overwrite": 0.06,
+     "refuse": 0.94,
+     "resume": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 594,
+   "output_tokens": 77
+  }
+ }
+}

@@ -12,7 +12,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from endorsement_images import image_record, VERSION
+from endorsement_images import image_record, VERSION, SUPPORTED_VERSIONS
 from publication_reviews import file_sha
 from research_endorsements import atomic_json, dump, digest
 from reviewed_updates import identity
@@ -33,7 +33,7 @@ def decisions(packet, packet_sha, policy='hold'):
 
 
 def selected_images(packet, review, packet_sha):
-    if packet['version'] != VERSION or review['packet_sha256'] != packet_sha:
+    if packet['version'] not in SUPPORTED_VERSIONS or review['packet_sha256'] != packet_sha:
         raise ValueError('Stale packet or unsupported parser version')
     images = {i['observation_id']: i for i in packet['images']}
     items = review['items']
@@ -52,7 +52,9 @@ def selected_images(packet, review, packet_sha):
 def build_review(data, packet, review, packet_sha, position_id, candidate, review_id):
     images = selected_images(packet, review, packet_sha)
     position = next(p for p in data['positions'] if p['id'] == position_id)
-    person = next(c for c in position.get('candidates') or [] if c['name'] == candidate)
+    eligible_nationwide = not position['counties'] and (position.get('government_level') == 'Federal' or position.get('office') == 'Governor')
+    roster = list(position.get('candidates') or []) + (list(position.get('filed_candidates_not_confirmed_on_ballot') or []) if eligible_nationwide else [])
+    person = next(c for c in roster if c['name'] == candidate)
     if not person.get('campaign_url'):
         raise ValueError('A reviewed candidate campaign URL is required')
     from urllib.parse import urlsplit
@@ -77,7 +79,7 @@ def build_review(data, packet, review, packet_sha, position_id, candidate, revie
                                      'date_basis': 'Actual source packet observation date, not announcement date.',
                                      'issue_basis': 'Neutral source-image evidence; every inventory item has a disposition.'}})
     return {'version': 1, 'id': review_id, 'election_date': data['election']['date'],
-            'reviewed_on': packet['checked_on'], 'counties': position['counties'],
+            'reviewed_on': packet['checked_on'], 'counties': position['counties'] or [c['name'] for c in data['election']['counties_in_scope']],
             'base_dataset_sha256': digest(dump(data)), 'notes': {},
             'sources': {'page': {'url': packet['source_url'], 'checked_on': packet['checked_on'],
                                   'publisher': candidate + ' campaign', 'role': 'campaign', 'candidate': candidate,
@@ -148,8 +150,9 @@ def build_queue(data, queue, review_id, reviewed_on):
         path = Path(entry['capture']); packet = json.loads(path.read_text())
         dispositions = json.loads(Path(entry['decisions']).read_text())
         target = entry['candidates'][0]
-        if not next(p for p in data['positions'] if p['id'] == target['position_id'])['counties']:
-            result['outstanding_queue'].append({**entry, 'status': 'outside_reviewed_county_scope'})
+        position = next(p for p in data['positions'] if p['id'] == target['position_id'])
+        if not position['counties'] and position.get('government_level') != 'Federal' and position.get('office') != 'Governor':
+            result['outstanding_queue'].append({**entry, 'status': 'outside_publication_scope'})
             continue
         part = build_review(data, packet, dispositions, file_sha(path), target['position_id'], target['candidate'], review_id)
         key = hashlib.sha256((target['position_id'] + target['candidate'] + packet['source_url']).encode()).hexdigest()[:24]
@@ -165,9 +168,78 @@ def build_queue(data, queue, review_id, reviewed_on):
     return result
 
 
+def plan_missing(data, nationwide_house=False):
+    """Find publication gaps from actual campaign-claim source URLs, not name guesses."""
+    from urllib.parse import urlsplit, urlunsplit
+    def canonical(u):
+        p = urlsplit(u)
+        return urlunsplit((p.scheme, p.netloc.lower().removeprefix('www.'), p.path.rstrip('/'), '', ''))
+    entries = []
+    for p in data['positions']:
+        if nationwide_house and not (not p['counties'] and p.get('office_category') == 'U.S. House'):
+            continue
+        for c in p.get('candidates') or []:
+            if not c.get('campaign_url'):
+                continue
+            captures = c.get('endorsement_images', [])
+            urls = sorted({e['url'] for e in c.get('endorsements', []) if e.get('verification') == 'campaign_claim'
+                           and urlsplit(e['url']).hostname.removeprefix('www.') == urlsplit(c['campaign_url']).hostname.removeprefix('www.')
+                           and 'endorse' in urlsplit(e['url']).path.lower()})
+            for url in urls:
+                previous = [i for i in captures if canonical(i['source_url']) == canonical(url)]
+                newest_image = max((i.get('checked_on', '') for i in previous), default='')
+                newest_text = max((e.get('checked_on', '') for e in c.get('endorsements', []) if canonical(e['url']) == canonical(url)), default='')
+                if not previous or newest_image < newest_text:
+                    entries.append({'url': url, 'status': 'needs_capture',
+                                    'reason': 'No page image inventory' if not previous else 'Text source observed after image snapshot',
+                                    'candidates': [{'position_id': p['id'], 'candidate': c['name']}]})
+    return {'version': 1, 'scope': 'nationwide_house' if nationwide_house else 'all_printed', 'items': entries,
+            'limitation': 'Known published campaign endorsement pages lacking image evidence. Not a complete crawl, image identity inference or absence finding.'}
+
+
+def capture_plan(plan, output_dir, checked_on, workers=4):
+    from concurrent.futures import ThreadPoolExecutor
+    from capture_endorsement_images import capture
+    from research_endorsements import Fetcher, Blocked
+    # Refuse before fetching or writing: a repeated run must not replace its
+    # ready queue with failures caused by the existing immutable packets.
+    if output_dir.exists():
+        raise ValueError('Preserve captures and queue; choose a fresh output directory')
+    output_dir.mkdir(parents=True)
+    urls = sorted({e['url'] for e in plan['items']})
+    def one(url):
+        try:
+            raw, mime, final = Fetcher().request(url)
+            if mime not in {'text/html', 'application/xhtml+xml'}:
+                raise ValueError('HTML required; explicit browser/PDF review needed')
+            packet = capture(raw, final, checked_on)
+            name = hashlib.sha256(url.encode()).hexdigest()[:24]
+            path = output_dir / (name + '.json'); dp = output_dir / (name + '-decisions.json')
+            if path.exists() or dp.exists():
+                raise ValueError('Preserve captures; choose a fresh output directory')
+            atomic_json(path, packet)
+            disposition = decisions(packet, file_sha(path), 'all-content')
+            if packet.get('unresolved_images'):
+                return url, {'status': 'unresolved_images', 'capture': str(path), 'unresolved_images': packet['unresolved_images']}
+            atomic_json(dp, disposition)
+            return url, {'status': 'ready', 'capture': str(path), 'decisions': str(dp)}
+        except (ValueError, OSError, Blocked) as exc:
+            return url, {'status': 'unavailable', 'reason': str(exc)[:240]}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        fetched = dict(pool.map(one, urls))
+    queue = {'version': 1, 'items': [{**entry, **fetched[entry['url']]} for entry in plan['items']]}
+    atomic_json(output_dir / 'queue.json', queue)
+    return {'pages': len(urls), 'ready': sum(e['status'] == 'ready' for e in queue['items']),
+            'outstanding': sum(e['status'] != 'ready' for e in queue['items'])}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest='command', required=True)
+    q = sub.add_parser('plan-missing'); q.add_argument('--nationwide-house', action='store_true')
+    q.add_argument('--dataset', type=Path, default=Path('2026-11-03_Bay_Area_Elections.json')); q.add_argument('--output', type=Path, required=True)
+    q = sub.add_parser('capture-plan'); q.add_argument('--plan', type=Path, required=True); q.add_argument('--output-dir', type=Path, required=True)
+    q.add_argument('--checked-on', required=True); q.add_argument('--workers', type=int, choices=range(1,5), default=4)
     q = sub.add_parser('export-ledger'); q.add_argument('--db', type=Path, required=True)
     q.add_argument('--dataset', type=Path, default=Path('2026-11-03_Bay_Area_Elections.json')); q.add_argument('--output-dir', type=Path, required=True)
     q = sub.add_parser('build-queue'); q.add_argument('--queue', type=Path, required=True)
@@ -181,6 +253,12 @@ def main():
     q.add_argument('--id', required=True)
     q.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
+    if args.command == 'plan-missing':
+        if args.output.exists(): p.error('Choose a fresh plan output')
+        result = plan_missing(json.loads(args.dataset.read_text()), args.nationwide_house)
+        atomic_json(args.output, result); print(json.dumps({'missing_pages': len(result['items'])})); return
+    if args.command == 'capture-plan':
+        print(json.dumps(capture_plan(json.loads(args.plan.read_text()), args.output_dir, args.checked_on, args.workers))); return
     if args.command == 'export-ledger':
         print(json.dumps(export_ledger(args.db, args.output_dir, json.loads(args.dataset.read_text()))))
         return

@@ -9,6 +9,7 @@ from pathlib import Path
 import subprocess
 import sys
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 RUN = ROOT / '.research/endorsements/bulk-run'
@@ -17,7 +18,12 @@ RUN = ROOT / '.research/endorsements/bulk-run'
 def main():
     RUN.mkdir(parents=True, exist_ok=True)
     status = {'started_at': datetime.now(timezone.utc).isoformat(),
-              'state': 'running', 'stages': [], 'publication': 'not applied'}
+              'state': 'running', 'stages': [], 'publication': 'not applied',
+              'image_publication': 'Requires separate review/apply; text attachment does not publish image inventories'}
+
+    checked_on = datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
+    image_dir = RUN / 'images' / datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S-%f')
+    image_id = 'campaign-images-' + image_dir.name
 
     def save():
         temp = RUN / 'status.tmp'
@@ -27,7 +33,11 @@ def main():
     commands = [
         ('image-inventory', ['review_endorsement_images.py', 'export-ledger',
             '--db', '.research/endorsements/campaign.sqlite3',
-            '--output-dir', '.research/endorsements/bulk-run/images']),
+            '--output-dir', str(image_dir)]),
+        ('image-publication-draft', ['review_endorsement_images.py', 'build-queue',
+            '--queue', str(image_dir / 'queue.json'),
+            '--id', image_id, '--reviewed-on', checked_on,
+            '--output', str(image_dir / 'publication-review.json')]),
         ('local-extraction', ['campaign_endorsements.py', 'extract-llm',
             '--workers', '2', '--retry-errors']),
         ('quote-gates', ['campaign_endorsements.py', 'propose']),

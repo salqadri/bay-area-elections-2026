@@ -47,6 +47,8 @@ The downloaded address estimate uses **`bay-area-ballot-estimate/v1`**, not the 
 
 Missing X profiles can be recovered from recorded campaign pages using [X_PROFILES.md](X_PROFILES.md). The source-bound additive review preserves existing accounts; no historical search ledger is treated as a permanent completion flag.
 
+New races require separate image publication, shared-publisher refresh and topic-evidence gap review; see [RESEARCH_GAP_RECOVERY.md](RESEARCH_GAP_RECOVERY.md). A text attach or old collector done flag does not establish these layers are complete.
+
 ## Normal change workflow
 
 1. Inspect the current branch, source files and relevant evidence. Use a branch or isolated worktree when concurrent work warrants it.
@@ -69,6 +71,7 @@ python3 scripts/check_data.py
 python3 scripts/check_evidence.py
 python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsement_images.py
+python3 scripts/check_research_gaps.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
 python3 scripts/check_x_profiles.py
@@ -99,7 +102,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs this complete 32-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 34-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
