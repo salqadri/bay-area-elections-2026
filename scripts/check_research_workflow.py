@@ -12,7 +12,21 @@ import research_endorsements as collector
 from research_scope import DATA, REGISTRY, select_scope, scope_report
 import reviewed_updates as updates
 
+from research_test_fixtures import before_registered_updates
+
+# These tests intentionally pass an empty recommendation history. Restore only
+# the dated CAIR layer, keeping current Gaza quarantines and other research.
 BASE = json.loads(DATA.read_text())
+old = before_registered_updates(BASE)
+cair_before = {(p['id'],c['name']):[r for r in c.get('endorsements',[]) if r['endorser']=='CAIR Action']
+               for p in old['positions'] for c in p.get('candidates') or []}
+for position in BASE['positions']:
+    for candidate in position.get('candidates') or []:
+        records = [r for r in candidate.get('endorsements',[]) if r['endorser']!='CAIR Action']
+        records += cair_before.get((position['id'],candidate['name']),[])
+        if records: candidate['endorsements'] = records
+        else: candidate.pop('endorsements',None)
+BASE['coverage']['printed_candidates_with_endorsements'] = sum(bool(c.get('endorsements')) for p in BASE['positions'] for c in p.get('candidates') or [])
 
 
 def review_for(data=BASE, publisher='Example Civic Organization'):

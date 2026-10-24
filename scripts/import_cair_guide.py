@@ -2,6 +2,8 @@
 
 No network, model calls, fuzzy identity matching, or automatic roster additions.
 Raw HTML stays outside Git. Every captured card needs a review disposition.
+This is the dated October 9 adapter; use refresh_cair_guide.py for the current
+California state-guide source and additive registered refreshes.
 """
 import argparse
 from collections import Counter
