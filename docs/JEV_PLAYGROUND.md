@@ -27,7 +27,7 @@ the server always binds loopback, never the network interface.
 
 GitHub Pages does not serve the local API. Jev rejected a preflight from the
 Pages origin, and the owner chose a local test page instead of deploying a relay.
-There is no new public site area or main-reader UI change in this PR.
+The playground adds no public API or main-reader UI. Its implementation is merged in PR #14; the current canonical dataset includes the source refreshes in PRs #15 and #16.
 
 ## Use
 
@@ -103,8 +103,8 @@ Historical requests and the shared CLI builder remain unchanged:
   ratings, phases, verification and historical flags remain intact.
 - Before adding CAIR Action, the expanded roster had **62 focused observations on 43 candidacies**,
   at most three each. The original House archive had 41 on 23, instead of all
-  3,690 House endorsement observations. The pending CAIR source refresh plus
-  registry v3 preview has 147 focused observations on 107 of the 685 candidacies,
+  3,690 House endorsement observations. The published October 23 CAIR source refresh plus
+  registry v3 has 147 focused observations on 107 of the 685 candidacies,
   including CAIR ratings for 85 candidacies. Other names
   are omitted for context budget, not declared unimportant or absent. No category
   is inferred from religion or ethnicity. Neutral image observations are not
@@ -114,6 +114,8 @@ Historical requests and the shared CLI builder remain unchanged:
   old builder read nonexistent title/date fields from response rows, resulting
   in blank action summaries; that is corrected before grading Bay Area members.
   Source-selected actions remain distinct from a complete voting history.
+
+The October 23 local ceasefire refresh also reaches new input previews and runs, including Kevin Park’s two attributed records. The committed 187-candidate baseline and each saved local run retain their original evidence; rerun a candidate explicitly to evaluate updated facts.
 
 Inspect the JSON to see the exact available evidence. Missing fields do not
 establish a neutral position. These are experimental model answers, not verified

@@ -4,7 +4,7 @@ The October 22, 2026 schema 1.23 update adds the California state campaign-finan
 
 ## Development setup
 
-Use Git, Python 3 and Node.js. No npm packages, Python packages, framework, database, build service or API key are required for the current app. The handoff checks ran with Python **3.12.14** and Node **24.19.0**. Python 3.10+ and Node 18+ are reasonable starting environments, not a tested compatibility matrix; use the checked versions if compatibility is uncertain.
+Use Git, Python 3 and Node.js. No npm packages, Python packages, framework, database, build service or API key are required to build and serve the public readers. The full offline gate also requires `pdfplumber` for CAIR PDF parser regressions (`python3 -m pip install pdfplumber`); the local Jev server needs a server-side Jev key only when running new evaluations. The handoff checks ran with Python **3.12.14** and Node **24.19.0**. Python 3.10+ and Node 18+ are reasonable starting environments, not a tested compatibility matrix; use the checked versions if compatibility is uncertain.
 
 ```sh
 git clone https://github.com/salqadri/bay-area-elections-2026.git
@@ -49,6 +49,8 @@ Missing X profiles can be recovered from recorded campaign pages using [X_PROFIL
 
 New races require separate image publication, shared-publisher refresh and topic-evidence gap review; see [RESEARCH_GAP_RECOVERY.md](RESEARCH_GAP_RECOVERY.md). A text attach or old collector done flag does not establish these layers are complete.
 
+Current California shared-publisher refreshes have separate workflows: [CAIR Action recommendations](CAIR_ACTION.md) and [CAIR-SFBA local ceasefire actions](LOCAL_CEASEFIRE_RESEARCH.md). They do not share an endorsement classification. The action refresh ignores legacy done flags and existing-evidence presence, while the generic Gaza planner exposes `--refresh-existing --state CA`. [Local Jev evaluations](JEV_PLAYGROUND.md) remain separate from public candidate evidence and retain historical requests unchanged.
+
 ## Normal change workflow
 
 1. Inspect the current branch, source files and relevant evidence. Use a branch or isolated worktree when concurrent work warrants it.
@@ -76,7 +78,10 @@ python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
 python3 scripts/check_x_profiles.py
 python3 scripts/check_jev_playground.py
+python3 scripts/check_campaign_endorsement_batch.py research/endorsements/batch-2026-10-18
 python3 scripts/check_cair_guide.py
+python3 scripts/check_cair_refresh.py
+python3 scripts/check_local_ceasefires.py
 python3 scripts/check_peace_guides.py
 python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
@@ -93,6 +98,8 @@ node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
 node scripts/check_platform_display.cjs
 node scripts/check_candidate_sort.cjs
+node scripts/check_contest_label.cjs
+node scripts/check_jev_playground.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -103,7 +110,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs this complete 36-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 38-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 

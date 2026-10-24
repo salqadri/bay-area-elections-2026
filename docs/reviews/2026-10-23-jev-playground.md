@@ -1,5 +1,8 @@
 # Local Jev playground — implementation review, October 23, 2026
 
+Publication follow-up: merged as [PR #14](https://github.com/salqadri/bay-area-elections-2026/pull/14), together with the separate source/data updates in #15 and #16. The [combined publication record](2026-10-23-publication.md) supersedes this proposal’s merge/deployment status; its archived run and dated validation counts remain historical.
+
+
 Prepared against main `6f4db0f` (post-PR-13 research update). The owner chose a
 local test workspace instead of a public GitHub Pages area after the API rejected
 the Pages origin. The canonical election dataset, both generated readers, and

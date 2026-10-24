@@ -1,6 +1,15 @@
 # Research and development handoff
 
-## Proposed update — October 23, 2026: local Jev playground, confidence-only House and county evaluation
+## Merged release — October 23, 2026 (2026-10-23.3)
+
+At the owner's request, PRs [#14](https://github.com/salqadri/bay-area-elections-2026/pull/14), [#15](https://github.com/salqadri/bay-area-elections-2026/pull/15) and [#16](https://github.com/salqadri/bay-area-elections-2026/pull/16) are merged into main. The stacked #16 was retargeted to main after #15. Final content merge: `2a9a9be311dd468389bd479084af8c3a4fb84433`; schema remains 1.23. The combined tree passes **38/38 offline release checks**, including all playground, CAIR and local-ceasefire regressions. See the [publication record](reviews/2026-10-23-publication.md) for merge/deployment evidence and artifact hashes.
+
+The public readers include the CAIR Action refresh (109 records: 81 Endorsed, 27 Preferred, 1 Opposed) and 36 new attributed Gaza records across 35 candidacies. Printed Gaza coverage is **1,049 items / 332 candidacies**; Kevin Park has CAIR Action Preferred plus the December 19 tracker report and December 26 opinion attribution about the blocked ceasefire effort. His two Gaza records are not endorsements, and no successful ceasefire passage is claimed. Source/identity/date holds remain explicit. Follow [CAIR_ACTION.md](CAIR_ACTION.md) and [LOCAL_CEASEFIRE_RESEARCH.md](LOCAL_CEASEFIRE_RESEARCH.md) for systematic future refreshes.
+
+The Jev playground remains **local** at http://127.0.0.1:8787/, with all 685 tracked candidacies / 268 races and confidence-only display. New runs use current canonical evidence; historical results and local run history are unchanged. GitHub Pages serves the election readers and does not provide the local Jev API. No new grading batch or finance/roster refresh was run for this publication. Research and finance snapshot dates remain unchanged.
+
+
+## Merged update — October 23, 2026: local Jev playground, confidence-only House and county evaluation (#14)
 
 Owner chose a local workspace instead of a public Pages area/relay. New `scripts/serve_jev_playground.py` serves http://127.0.0.1:8787 with Monaco question editing (plain-text fallback), Run selected candidate / Run all / Stop, history/downloads, state groups with numeric district sort, all answers/confidences, and exact per-candidate State/Answers/Full request JSON. Keys remain server-side; only loopback Host/same-origin JSON writes are accepted. The iteration workspace puts the question editor next to a formatted selected-candidate response; a shared toolbar contains candidate selection, Run and history. Mobile uses Questions/Results tabs. Response rows expand for criteria/probabilities; generated State/Answers/Full request JSON is collapsed by default. Ctrl/Cmd+Enter runs the selected candidate. Single-candidate iterations make exactly one fresh call, retain the full roster for selecting another example, and label unrun candidates as input previews. Run history identifies each single-candidate target; old answers never carry into a new prompt. Runs freeze questions/current dataset and persist under ignored `.research/jev-playground/`; no canonical dataset or main-reader change.
 
@@ -8,7 +17,7 @@ Playground scope now unions all tracked nationwide House contests with every non
 
 Grader now supports `house-all` (187 candidates / 72 active tracked races, including Bay Area), uses the owner's exact October 23 JSON (`pro-palestine-v2`), and applies **no acceptance cutoffs or grade filtering**. Focused endorsement registry supplies only owner-named Track AIPAC/Vote for Peace/HAPAC plus five source-backed Israel-related organizations selected by Jev: **41 observations on 23 candidates, max three**, versus 3,690 full endorsement observations. Exact original relationships/phase/history stay intact; religion/ethnicity do not determine selection. Congressional states now resolve action IDs and preserve actual responses instead of blank title/date strings.
 
-New immutable default `research/gaza-grading/house-all-focused-2026-10-23/results.json`: **187/187, zero call errors** on jev-1.14.0; A 22 · B 4 · C 2 · D 47 · E 2 · F 110. All answers/confidences remain visible, including low confidence. Historical v1 archive is untouched. See [workflow](JEV_PLAYGROUND.md), [implementation review](reviews/2026-10-23-jev-playground.md) and grading README. Release gate adds Python/Node playground checks (36 total); prepared for Hermes review.
+New immutable default `research/gaza-grading/house-all-focused-2026-10-23/results.json`: **187/187, zero call errors** on jev-1.14.0; A 22 · B 4 · C 2 · D 47 · E 2 · F 110. All answers/confidences remain visible, including low confidence. Historical v1 archive is untouched. See [workflow](JEV_PLAYGROUND.md), [implementation review](reviews/2026-10-23-jev-playground.md) and grading README. Release gate added Python/Node playground checks (36 at that base); merged as PR #14. The combined release above has 38 checks.
 
 
 ## Published update — October 23, 2026: endorsement image / HAPAC / AZ-01 evidence repair (2026-10-23.1)
