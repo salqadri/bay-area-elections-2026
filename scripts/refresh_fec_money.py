@@ -198,6 +198,16 @@ def main():
     if not args.skip_push:
         if sh('git', 'branch', '--show-current').stdout.strip() != 'main':
             raise SystemExit('Automated publication requires the main branch; use --skip-push for local review.')
+        # Sync with origin BEFORE any work: a stale base makes the pre-push
+        # divergence guard abort after hours of fetching and strands an orphan
+        # commit on the checkout (observed 2026-10-24). Fast-forward only — a
+        # diverged local history must be reconciled by a human, never merged
+        # silently into an automated publication run.
+        sh('git', 'fetch', 'origin', '--quiet')
+        ff = sh('git', 'merge', '--ff-only', 'origin/main', check=False)
+        if ff.returncode != 0:
+            raise SystemExit('local main has diverged from origin/main; reconcile manually before the next refresh\n'
+                             + ff.stdout[-500:] + ff.stderr[-500:])
         if sh('git', 'status', '--porcelain').stdout.strip():
             raise SystemExit('Automated publication requires a clean checkout; review existing changes first.')
     key = read_secret(('FEC_API_KEY',), args.fec_key_file, required=True)
