@@ -14,6 +14,9 @@ held batch until reviewed through the normal publication workflow.
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 import json
+import math
+import re
+import unicodedata
 from pathlib import Path
 import sys
 import time
@@ -21,22 +24,81 @@ import urllib.error
 import urllib.request
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ballotpedia_endorsements import accepted, digest, dump, save, now  # noqa: E402
+from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-gaza-grade-v1.json'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v2.json'
+STATE_VERSION = 'candidate-evidence-v4-cair-focused'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
-def jev_call(work, request, key):
+def validate_questions(questions):
+    if not isinstance(questions, dict) or not questions:
+        raise ValueError('Questions must be a nonempty JSON object keyed by question name')
+    try:
+        encoded = json.dumps(questions, allow_nan=False)
+    except (ValueError, TypeError):
+        raise ValueError('Questions must contain finite JSON values') from None
+    if len(encoded.encode()) > 256000:
+        raise ValueError('Questions exceed 256 KB')
+    for name, q in questions.items():
+        if not name or not isinstance(q, dict) or q.get('type') not in {'choice', 'score', 'noul'}:
+            raise ValueError('Each named question must use choice, score, or noul')
+        if set(q) - {'type', 'instructions', 'criteria'}:
+            raise ValueError('Unknown question property in ' + name)
+        if q.get('instructions') is not None and not isinstance(q['instructions'], (str, dict, list)):
+            raise ValueError(name + ': instructions must be text, an object or an array')
+        criteria = q.get('criteria')
+        if q['type'] == 'choice' and (not isinstance(criteria, dict) or not 1 <= len(criteria) <= 255):
+            raise ValueError(name + ': choice criteria must be a nonempty object (up to 255 choices)')
+        if q['type'] == 'score' and (not isinstance(criteria, list) or not 1 <= len(criteria) <= 10):
+            raise ValueError(name + ': score criteria must contain 1–10 ordered levels')
+        if q['type'] == 'noul' and criteria is not None and (not isinstance(criteria, dict) or set(criteria) - {'true', 'false'}):
+            raise ValueError(name + ': noul criteria may define true and false')
+    return questions
+
+
+def validate_response(questions, response):
+    if not isinstance(response, dict) or not str(response.get('model', '')).startswith('jev-'):
+        raise ValueError('Unexpected Jev response/model')
+    answers = response.get('answers', {})
+    if not isinstance(answers, dict):
+        raise ValueError('Jev answers must be an object')
+    if set(answers) != set(questions):
+        raise ValueError('Jev response is missing or adds question answers')
+    def number(v, low, high):
+        return type(v) in (int, float) and math.isfinite(v) and low <= v <= high
+    for name, q in questions.items():
+        a = answers[name]
+        if not isinstance(a, dict) or a.get('type') != q['type']:
+            raise ValueError('Unexpected answer type for ' + name)
+        if q['type'] == 'noul':
+            if not number(a.get('noul'), 0, 1):
+                raise ValueError('Invalid yes/true probability for ' + name)
+            continue
+        if not number(a.get('confidence'), 0, 1):
+            raise ValueError('Invalid confidence for ' + name)
+        keys = set(q['criteria']) if q['type'] == 'choice' else {str(i) for i in range(len(q['criteria']))}
+        probs = a.get('probabilities', {})
+        if not isinstance(probs, dict) or set(probs) != keys or any(not number(v, 0, 1) for v in probs.values()):
+            raise ValueError('Invalid answer probabilities for ' + name)
+        if q['type'] == 'choice' and a.get('choice') not in keys:
+            raise ValueError('Invalid choice for ' + name)
+        if q['type'] == 'score' and not number(a.get('score'), 0, len(keys) - 1):
+            raise ValueError('Invalid score for ' + name)
+    return response
+
+
+def jev_call(work, request, key, force=False):
     """POST to System One with the exact {model,state,questions} contract; cache by request hash."""
     path = work / 'decisions' / (digest(dump(request).encode()) + '.json')
-    if path.exists():
+    if path.exists() and not force:
         saved = json.loads(path.read_text())
         if saved['request'] != request:
             raise ValueError('Changed Jev request cache')
+        validate_response(request['questions'], saved['response'])
         return saved['response']
     body = dump(request).encode()
     last_error = None
@@ -50,18 +112,20 @@ def jev_call(work, request, key):
         except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as error:
             last_error = error
             status = getattr(error, 'code', None)
-            if status not in (429, 502, 503, 529) and not isinstance(error, (urllib.error.URLError, TimeoutError)):
-                raise
+            if status in (401, 403):
+                raise PermissionError('Jev authentication failed; check the local server key') from None
+            if status is not None and status not in (429, 500, 502, 503, 504, 529):
+                raise RuntimeError(f'Jev rejected the request (HTTP {status})') from None
             time.sleep(min(60, 2 ** attempt * 2))
     else:
-        raise RuntimeError(f'Jev call kept failing: {last_error}')
-    if not str(answer.get('model', '')).startswith('jev-'):
-        raise ValueError('Unexpected judgment model ' + str(answer.get('model')))
+        raise RuntimeError('Jev request failed after retries') from None
+    validate_response(request['questions'], answer)
     save(path, {'request': request, 'response': answer})
     return answer
 
 SCOPES = {
     # name: (office_category, id prefix) — extend for new regions/offices.
+    'house-all': ('U.S. House', None),
     'house-nationwide': ('U.S. House', 'US2026-'),
     'senate-nationwide': ('U.S. Senate', 'US2026-'),
     'governor-nationwide': ('Statewide executive', 'US2026-'),
@@ -72,11 +136,13 @@ def candidates(data, scope):
     category, prefix = SCOPES[scope] if scope in SCOPES else (None, None)
     rows = []
     for p in data['positions']:
+        if p.get('ballot_status') == 'excluded':
+            continue
         if category and p.get('office_category') != category:
             continue
         if prefix and not p['id'].startswith(prefix):
             continue
-        for roster in ('candidates', 'filed_candidates_not_confirmed_on_ballot'):
+        for roster in ('candidates', 'filed_candidates_not_confirmed_on_ballot', 'qualified_write_in_candidates'):
             for c in p.get(roster) or []:
                 rows.append((p, c, roster))
     return rows
@@ -84,6 +150,10 @@ def candidates(data, scope):
 
 def money(value):
     return f'${value:,.0f}'
+
+
+def endorser_key(name):
+    return re.sub(r'[^a-z0-9]', '', unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower())
 
 
 def build_state(p, c, data):
@@ -117,12 +187,23 @@ def build_state(p, c, data):
     evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])[:12]]
     if evidence:
         parts['gaza_evidence'] = evidence
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v3.json').read_text())
+    aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
+    endorsements = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
+                    for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
+    if endorsements:
+        parts['focused_endorsement_observations'] = endorsements
     records = []
-    for record in c.get('gaza_voting_records') or []:
-        for action in record.get('actions', [])[:8]:
-            records.append(f"{action.get('date', '')} {action.get('kind', '')}: {action.get('title', '')}".strip())
+    registry = (data.get('gaza_voting') or {}).get('actions', {})
+    for record in sorted(c.get('gaza_voting_records') or [], key=lambda r: -r.get('congress', 0)):
+        for action in record.get('actions', []):
+            metadata = registry.get(action.get('action_id'), {})
+            records.append({'congress': record.get('congress'), 'title': metadata.get('title', action.get('title', '')),
+                            'kind': metadata.get('kind', action.get('kind', '')),
+                            'date': metadata.get('date', metadata.get('date_label')),
+                            'response': action.get('value')})
     if records:
-        parts['congressional_gaza_actions'] = records[:12]
+        parts['congressional_gaza_actions'] = records
     return parts
 
 
@@ -135,11 +216,12 @@ def plan(data, criteria, scope):
         items.append({'position_id': p['id'], 'candidate': c['name'], 'roster': roster,
                       'party': c.get('party'), 'district_or_seat': p.get('district_or_seat'),
                       'request_sha256': digest(dump(request).encode()), 'state': state})
-    return {'format': 'gaza-grading-plan/v1', 'scope': scope, 'criteria_id': criteria['id'],
+    return {'format': 'gaza-grading-plan/v2', 'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION, 'scope': scope, 'criteria_id': criteria['id'],
             'planned_on': now(), 'candidates': len(items), 'items': items}
 
 
-def grade(work, plan_doc, criteria, key, workers=3):
+def grade(work, plan_doc, criteria, key, workers=3, force=False):
+    validate_questions(criteria['questions'])
     decisions = {}
 
     questions = criteria['questions']
@@ -150,17 +232,16 @@ def grade(work, plan_doc, criteria, key, workers=3):
         base = {**{k: item[k] for k in ('position_id', 'candidate', 'roster', 'party', 'district_or_seat')},
                 'request_sha256': ref}
         try:
-            response = jev_call(work, request, key)
+            response = jev_call(work, request, key, force=force)
         except Exception as error:  # one failed candidate must not stop the batch; reruns retry via cache
             return {**base, 'error': type(error).__name__ + ': ' + str(error)[:200]}
         decisions[ref] = {'request': request, 'response': response}
         answers = response.get('answers', {})
-        out = {**base, 'answers': answers}
+        out = {**base, 'state': item['state'], 'answers': answers}
         g = answers.get('gaza_grade', {})
         s = answers.get('pro_palestine_score', {})
         out['gaza_grade'] = g.get('choice')
         out['gaza_grade_confidence'] = g.get('confidence')
-        out['gaza_grade_accepted'] = bool(g) and accepted(g, set(questions['gaza_grade']['criteria']), 0.75)
         out['pro_palestine_score'] = s.get('score')
         out['pro_palestine_confidence'] = s.get('confidence')
         return out
@@ -171,8 +252,8 @@ def grade(work, plan_doc, criteria, key, workers=3):
             results.append(result)
             if n % 20 == 0 or n == len(plan_doc['items']):
                 print(json.dumps({'graded': n, 'total': len(plan_doc['items'])}), flush=True)
-    batch = {'format': 'gaza-grading/v1', 'scope': plan_doc['scope'], 'criteria_id': plan_doc['criteria_id'],
-             'model': MODEL, 'run_on': now(), 'results': results,
+    batch = {'format': 'gaza-grading/v2', 'state_version': STATE_VERSION, 'questions': questions, 'scope': plan_doc['scope'], 'criteria_id': plan_doc['criteria_id'],
+             'model': MODEL, 'dataset_sha256': plan_doc.get('dataset_sha256'), 'run_on': now(), 'results': results,
              'decisions': {ref: decisions[ref] for ref in {r['request_sha256'] for r in results} if ref in decisions}}
     save(work / 'results.json', batch)
     return summary(batch)
@@ -181,10 +262,8 @@ def grade(work, plan_doc, criteria, key, workers=3):
 def summary(batch):
     from collections import Counter
     grades = Counter(r.get('gaza_grade') or 'none' for r in batch['results'])
-    accepted_grades = sum(1 for r in batch['results'] if r.get('gaza_grade_accepted'))
     return {'graded': len(batch['results']), 'errors': sum('error' in r for r in batch['results']),
             'grades': dict(sorted(grades.items())),
-            'grade_accepted_at_0.75': accepted_grades,
             'scores_recorded': sum(isinstance(r.get('pro_palestine_score'), (int, float)) for r in batch['results'])}
 
 
@@ -196,11 +275,12 @@ def main():
     sub = ap.add_subparsers(dest='command', required=True)
     for name in ('plan', 'grade', 'report'):
         s = sub.add_parser(name)
-        s.add_argument('--scope', choices=sorted(SCOPES), default='house-nationwide')
+        s.add_argument('--scope', choices=sorted(SCOPES), default='house-all')
         s.add_argument('--batch', required=True)
         if name == 'grade':
             s.add_argument('--jev-key-file', type=Path, required=True)
             s.add_argument('--workers', type=int, default=3)
+            s.add_argument('--force', action='store_true', help='Make fresh calls even for cached requests')
     args = ap.parse_args()
     criteria = json.loads(args.criteria.read_text())
     work = args.work_root / args.batch
@@ -212,7 +292,7 @@ def main():
         doc = json.loads((work / 'plan.json').read_text())
         if doc['criteria_id'] != criteria['id']:
             raise SystemExit('Batch plan was built against a different criteria file')
-        print(json.dumps(grade(work, doc, criteria, args.jev_key_file.read_text().strip(), args.workers)))
+        print(json.dumps(grade(work, doc, criteria, args.jev_key_file.read_text().strip(), args.workers, args.force)))
     else:
         batch = json.loads((work / 'results.json').read_text())
         report = {**summary(batch), 'scope': batch['scope'], 'criteria_id': batch['criteria_id'], 'run_on': batch['run_on']}
