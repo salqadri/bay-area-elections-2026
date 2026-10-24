@@ -389,9 +389,9 @@ def extract(data, work, candidate_names=None):
             'source_holds': sum(r.get('source_holds', 0) for r in rows)}
 
 
-def ask(work, state, questions, key):
+def ask(work, state, questions, key, model=MODEL):
     """Cache actual Jev decisions against the exact source/prompt/model contract."""
-    body = {'model': MODEL, 'state': state, 'questions': questions}
+    body = {'model': model, 'state': state, 'questions': questions}
     request_sha = digest(dump(body).encode())
     path = work / 'decisions' / (request_sha + '.json')
     if path.exists():
@@ -415,7 +415,7 @@ def ask(work, state, questions, key):
                 if attempt < 4:
                     time.sleep(2 ** attempt); continue
                 raise RuntimeError('Jev network failure; request not cached') from None
-    if answer.get('model') != MODEL:
+    if answer.get('model') != model:
         raise ValueError('Unexpected Jev model; decisions held')
     for qid, q in questions.items():
         a = (answer.get('answers') or {}).get(qid, {})

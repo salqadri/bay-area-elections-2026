@@ -1,0 +1,151 @@
+{
+ "version": 1,
+ "id": "cair-local-block-rows-2026-10-23",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-23",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "b75ef911c90cbf21e175bdbd984c25bae0b1dc4c56bbd28aa612cfa75b52a1f9",
+ "sources": {
+  "source-105e6223684a6bf15132": {
+   "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
+   "publisher": "CAIR-SFBA",
+   "role": "aggregator",
+   "candidate": "Tony Daysog",
+   "checked_on": "2026-10-23",
+   "content_sha256": "c88ed10c65a7dfca76f260de74e89a8dbc1ee37fcf98c844901018a4e54fef18",
+   "retrieval": "Captured source HTML"
+  },
+  "source-a61d44c8316307032e4e": {
+   "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
+   "publisher": "CAIR-SFBA",
+   "role": "aggregator",
+   "candidate": "Tracy Jensen",
+   "checked_on": "2026-10-23",
+   "content_sha256": "c88ed10c65a7dfca76f260de74e89a8dbc1ee37fcf98c844901018a4e54fef18",
+   "retrieval": "Captured source HTML"
+  },
+  "source-4c811f44efb81ac9b217": {
+   "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
+   "publisher": "CAIR-SFBA",
+   "role": "aggregator",
+   "candidate": "Malia Vella",
+   "checked_on": "2026-10-23",
+   "content_sha256": "c88ed10c65a7dfca76f260de74e89a8dbc1ee37fcf98c844901018a4e54fef18",
+   "retrieval": "Captured source HTML"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-105e6223684a6bf15132",
+   "position_id": "CA2026-047",
+   "candidate": "Tony Daysog",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "4d30743099edd29163fd204b475a69bc150386e4ee97e007a855353e90b00910",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Alameda",
+    "district_or_seat": "At large",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1285",
+    "date": "2024-01-02",
+    "date_method": "source_stated",
+    "date_note": "Tracker section dates the reported local action; not a verified roll-call transcript.",
+    "summary": "CAIR-SFBA's tracker lists Tony Daysog: Opposed ceasefire letter.",
+    "quote": "Vice Mayor Tony Daysog Opposed ceasefire letter",
+    "dimension": "actions_votes",
+    "source_kind": "advocacy_tracker",
+    "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Named historical official in the supplied California local body. Verify the person and jurisdiction against the current candidacy; office may have changed. No name-only assumption.",
+    "date_basis": "Tracker section dates the reported local action; not a verified roll-call transcript.",
+    "issue_basis": "CAIR-SFBA's tracker lists Tony Daysog: Opposed ceasefire letter. Exact source quote: Vice Mayor Tony Daysog Opposed ceasefire letter"
+   }
+  },
+  {
+   "id": "gaza-claim-1",
+   "action": "change",
+   "source_key": "source-a61d44c8316307032e4e",
+   "position_id": "CA2026-047",
+   "candidate": "Tracy Jensen",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "4b4671ebadcf46be68d01867d5c221d99ce6686a7b61807bbd5450a5df171168",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Alameda",
+    "district_or_seat": "At large",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1286",
+    "date": "2024-01-02",
+    "date_method": "source_stated",
+    "date_note": "Tracker section dates the reported local action; not a verified roll-call transcript.",
+    "summary": "CAIR-SFBA's tracker lists Tracy Jensen: Supported ceasefire letter.",
+    "quote": "Councilmember Tracy Jensen Supported ceasefire letter",
+    "dimension": "actions_votes",
+    "source_kind": "advocacy_tracker",
+    "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Named historical official in the supplied California local body. Verify the person and jurisdiction against the current candidacy; office may have changed. No name-only assumption.",
+    "date_basis": "Tracker section dates the reported local action; not a verified roll-call transcript.",
+    "issue_basis": "CAIR-SFBA's tracker lists Tracy Jensen: Supported ceasefire letter. Exact source quote: Councilmember Tracy Jensen Supported ceasefire letter"
+   }
+  },
+  {
+   "id": "gaza-claim-2",
+   "action": "change",
+   "source_key": "source-4c811f44efb81ac9b217",
+   "position_id": "CA2026-047",
+   "candidate": "Malia Vella",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "d94e2df5166485b5561efe85712aaa4e961a97b3d84fd659b4d02a506f6f59ee",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Alameda",
+    "district_or_seat": "At large",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1287",
+    "date": "2024-01-02",
+    "date_method": "source_stated",
+    "date_note": "Tracker section dates the reported local action; not a verified roll-call transcript.",
+    "summary": "CAIR-SFBA's tracker lists Malia Vella: Absent.",
+    "quote": "Councilmember Malia Vella Absent",
+    "dimension": "actions_votes",
+    "source_kind": "advocacy_tracker",
+    "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
+    "checked_on": "2026-10-23"
+   },
+   "evidence": {
+    "identity_basis": "Named historical official in the supplied California local body. Verify the person and jurisdiction against the current candidacy; office may have changed. No name-only assumption.",
+    "date_basis": "Tracker section dates the reported local action; not a verified roll-call transcript.",
+    "issue_basis": "CAIR-SFBA's tracker lists Malia Vella: Absent. Exact source quote: Councilmember Malia Vella Absent"
+   }
+  }
+ ]
+}

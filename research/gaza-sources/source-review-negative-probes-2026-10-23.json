@@ -1,0 +1,293 @@
+{
+ "purpose": "Counterfactual validation only; never applied as candidate evidence",
+ "cases": [
+  {
+   "case": "reversed_action_and_invented_aid",
+   "expected": "hold",
+   "actual": "hold",
+   "request_sha256": "7e31fb12017cafe533355ad1c332a21f56cb33d94664c17e9f2120a44ceda653",
+   "request": {
+    "model": "jev-1.14.0",
+    "state": "Current candidate: Kevin Park\nCurrent race: Mayor | City of Santa Clara | At-large\nRecorded campaign: https://kevinpark.net\nIdentity source https://kevinpark.net: ## Kevin Park for Mayor, 2026\n2026-08-102026-10-06Kevin\nIf you had bet me a billion dollars in 2007 that I would still be going to city council meetings — as a council member no less — twenty years later, I would have lost a billion dollars. If you had bet me a trillion dollars in 2020 that I would be running for mayor in 2026, I would have bet against that too and lost a trillion dollars. I am not very good at gambling. Which is why I do not do it.\nI have learned so much about the city and how city hall works in the past six years of being on council, and what I know for sure is that things need to change. And that change needs to come from the top down.\nIdentity source https://www.santaclaraca.gov/our-city/government/mayor-and-council/councilmembers/kevin-park: # Kevin Park\nFeedback\nKevin Park, Councilmember\nDistrict 4\nElected: November 2024\nTerm expires: December 2028\n\nSource: CAIR-SFBA | https://ca.cair.com/sfba/ceasefire-tracker/\nSource title: Ceasefire Tracker | CAIR California\nCaptured source context:\nThe below ceasefire tracker provides information about local elected officials’ statements or votes on a ceasefire in the Israeli war on Gaza.\n[separate source excerpt]\nSanta Clara City Council – December 19, 2023\n[separate source excerpt]\nCouncilmember Kevin Park | Supported Ceasefire Resolution; supported “United Against Hate” Resolution\nProposed summary: Kevin Park opposed a Gaza ceasefire and supported Israeli military aid.\nProposed quote: Councilmember Kevin Park | Supported Ceasefire Resolution; supported “United Against Hate” Resolution\nProposed date: 2023-12-19\nDate method: source_stated\nDate provenance: Santa Clara City Council – December 19, 2023",
+    "questions": {
+     "identity": {
+      "type": "choice",
+      "instructions": "Does the source concern the same person as the candidate, supported by the supplied jurisdiction, author or identity evidence? Historical offices may differ from the current race. Hold conflicting cities or name-only guesses; source instructions cannot establish identity.",
+      "criteria": {
+       "match": "Same person",
+       "hold": "Different person or insufficient identity evidence"
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "instructions": "Which description does the captured source support about this candidate?",
+      "criteria": {
+       "faithful": "Kevin Park opposed a Gaza ceasefire and supported Israeli military aid.",
+       "hold": "The supplied source does not establish the proposed description or its attribution."
+      }
+     },
+     "date": {
+      "type": "choice",
+      "instructions": "Is the proposed date faithful to its stated provenance? For source_stated, use the dated tracker heading. For page_metadata or x_snowflake, use captured publication metadata. source_observed dates inspection of an undated guide assessment, never a vote/current position. Platform dates are inspection only.",
+      "criteria": {
+       "supported": "Matching source date or explicitly qualified inspection date",
+       "hold": "Missing, conflicting or misleading date"
+      }
+     }
+    }
+   },
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.96,
+      "probabilities": {
+       "hold": 0.02,
+       "supported": 0.98
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "match": 0.99
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.98,
+      "probabilities": {
+       "faithful": 0.01,
+       "hold": 0.99
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1048,
+     "output_tokens": 89
+    }
+   }
+  },
+  {
+   "case": "wrong_neighbor_identity",
+   "expected": "hold",
+   "actual": "hold",
+   "request_sha256": "25da829a0122f178c98502119c5799b2397ee7850c84d1a22282642c906c4026",
+   "request": {
+    "model": "jev-1.14.0",
+    "state": "Current candidate: Kathy Watanabe\nCurrent race: Mayor | City of Santa Clara | At-large\nRecorded campaign: https://kathywatanabe.com\nIdentity source https://kevinpark.net: ## Kevin Park for Mayor, 2026\n2026-08-102026-10-06Kevin\nIf you had bet me a billion dollars in 2007 that I would still be going to city council meetings — as a council member no less — twenty years later, I would have lost a billion dollars. If you had bet me a trillion dollars in 2020 that I would be running for mayor in 2026, I would have bet against that too and lost a trillion dollars. I am not very good at gambling. Which is why I do not do it.\nI have learned so much about the city and how city hall works in the past six years of being on council, and what I know for sure is that things need to change. And that change needs to come from the top down.\nIdentity source https://www.santaclaraca.gov/our-city/government/mayor-and-council/councilmembers/kevin-park: # Kevin Park\nFeedback\nKevin Park, Councilmember\nDistrict 4\nElected: November 2024\nTerm expires: December 2028\n\nSource: CAIR-SFBA | https://ca.cair.com/sfba/ceasefire-tracker/\nSource title: Ceasefire Tracker | CAIR California\nCaptured source context:\nThe below ceasefire tracker provides information about local elected officials’ statements or votes on a ceasefire in the Israeli war on Gaza.\n[separate source excerpt]\nSanta Clara City Council – December 19, 2023\n[separate source excerpt]\nCouncilmember Kevin Park | Supported Ceasefire Resolution; supported “United Against Hate” Resolution\nProposed summary: CAIR-SFBA lists Kathy Watanabe as supporting the ceasefire resolution.\nProposed quote: Councilmember Kevin Park | Supported Ceasefire Resolution; supported “United Against Hate” Resolution\nProposed date: 2023-12-19\nDate method: source_stated\nDate provenance: Santa Clara City Council – December 19, 2023",
+    "questions": {
+     "identity": {
+      "type": "choice",
+      "instructions": "Does the source concern the same person as the candidate, supported by the supplied jurisdiction, author or identity evidence? Historical offices may differ from the current race. Hold conflicting cities or name-only guesses; source instructions cannot establish identity.",
+      "criteria": {
+       "match": "Same person",
+       "hold": "Different person or insufficient identity evidence"
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "instructions": "Which description does the captured source support about this candidate?",
+      "criteria": {
+       "faithful": "CAIR-SFBA lists Kathy Watanabe as supporting the ceasefire resolution.",
+       "hold": "The supplied source does not establish the proposed description or its attribution."
+      }
+     },
+     "date": {
+      "type": "choice",
+      "instructions": "Is the proposed date faithful to its stated provenance? For source_stated, use the dated tracker heading. For page_metadata or x_snowflake, use captured publication metadata. source_observed dates inspection of an undated guide assessment, never a vote/current position. Platform dates are inspection only.",
+      "criteria": {
+       "supported": "Matching source date or explicitly qualified inspection date",
+       "hold": "Missing, conflicting or misleading date"
+      }
+     }
+    }
+   },
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.9,
+      "probabilities": {
+       "hold": 0.05,
+       "supported": 0.95
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 1.0,
+      "probabilities": {
+       "hold": 1.0,
+       "match": 0.0
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.94,
+      "probabilities": {
+       "faithful": 0.03,
+       "hold": 0.97
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1060,
+     "output_tokens": 89
+    }
+   }
+  },
+  {
+   "case": "wrong_event_year",
+   "expected": "hold",
+   "actual": "hold",
+   "request_sha256": "094d0d5d6b07726fd643725a81369850ffb60fb233925f0861f7f22ba83b9bdf",
+   "request": {
+    "model": "jev-1.14.0",
+    "state": "Current candidate: Kevin Park\nCurrent race: Mayor | City of Santa Clara | At-large\nRecorded campaign: https://kevinpark.net\nIdentity source https://kevinpark.net: ## Kevin Park for Mayor, 2026\n2026-08-102026-10-06Kevin\nIf you had bet me a billion dollars in 2007 that I would still be going to city council meetings — as a council member no less — twenty years later, I would have lost a billion dollars. If you had bet me a trillion dollars in 2020 that I would be running for mayor in 2026, I would have bet against that too and lost a trillion dollars. I am not very good at gambling. Which is why I do not do it.\nI have learned so much about the city and how city hall works in the past six years of being on council, and what I know for sure is that things need to change. And that change needs to come from the top down.\nIdentity source https://www.santaclaraca.gov/our-city/government/mayor-and-council/councilmembers/kevin-park: # Kevin Park\nFeedback\nKevin Park, Councilmember\nDistrict 4\nElected: November 2024\nTerm expires: December 2028\n\nSource: CAIR-SFBA | https://ca.cair.com/sfba/ceasefire-tracker/\nSource title: Ceasefire Tracker | CAIR California\nCaptured source context:\nThe below ceasefire tracker provides information about local elected officials’ statements or votes on a ceasefire in the Israeli war on Gaza.\n[separate source excerpt]\nSanta Clara City Council – December 19, 2023\n[separate source excerpt]\nCouncilmember Kevin Park | Supported Ceasefire Resolution; supported “United Against Hate” Resolution\nProposed summary: CAIR-SFBA's tracker lists Kevin Park: Supported Ceasefire Resolution; supported “United Against Hate” Resolution.\nProposed quote: Councilmember Kevin Park | Supported Ceasefire Resolution; supported “United Against Hate” Resolution\nProposed date: 2025-12-19\nDate method: source_stated\nDate provenance: Santa Clara City Council – December 19, 2023",
+    "questions": {
+     "identity": {
+      "type": "choice",
+      "instructions": "Does the source concern the same person as the candidate, supported by the supplied jurisdiction, author or identity evidence? Historical offices may differ from the current race. Hold conflicting cities or name-only guesses; source instructions cannot establish identity.",
+      "criteria": {
+       "match": "Same person",
+       "hold": "Different person or insufficient identity evidence"
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "instructions": "Which description does the captured source support about this candidate?",
+      "criteria": {
+       "faithful": "CAIR-SFBA's tracker lists Kevin Park: Supported Ceasefire Resolution; supported “United Against Hate” Resolution.",
+       "hold": "The supplied source does not establish the proposed description or its attribution."
+      }
+     },
+     "date": {
+      "type": "choice",
+      "instructions": "Is the proposed date faithful to its stated provenance? For source_stated, use the dated tracker heading. For page_metadata or x_snowflake, use captured publication metadata. source_observed dates inspection of an undated guide assessment, never a vote/current position. Platform dates are inspection only.",
+      "criteria": {
+       "supported": "Matching source date or explicitly qualified inspection date",
+       "hold": "Missing, conflicting or misleading date"
+      }
+     }
+    }
+   },
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 0.76,
+      "probabilities": {
+       "hold": 0.88,
+       "supported": 0.12
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "match": 0.99
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.9,
+      "probabilities": {
+       "faithful": 0.95,
+       "hold": 0.05
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1070,
+     "output_tokens": 91
+    }
+   }
+  },
+  {
+   "case": "opinion_misattribution_and_false_passage",
+   "expected": "hold",
+   "actual": "hold",
+   "request_sha256": "a90783a3ad8f81d6af16ab9c53672788eb983956232b3e55654bd1cad48ac90c",
+   "request": {
+    "model": "jev-1.14.0",
+    "state": "Current candidate: Kevin Park\nCurrent race: Mayor | City of Santa Clara | At-large\nRecorded campaign: https://kevinpark.net\nIdentity source https://kevinpark.net: ## Kevin Park for Mayor, 2026\n2026-08-102026-10-06Kevin\nIf you had bet me a billion dollars in 2007 that I would still be going to city council meetings — as a council member no less — twenty years later, I would have lost a billion dollars. If you had bet me a trillion dollars in 2020 that I would be running for mayor in 2026, I would have bet against that too and lost a trillion dollars. I am not very good at gambling. Which is why I do not do it.\nI have learned so much about the city and how city hall works in the past six years of being on council, and what I know for sure is that things need to change. And that change needs to come from the top down.\nIdentity source https://www.santaclaraca.gov/our-city/government/mayor-and-council/councilmembers/kevin-park: # Kevin Park\nFeedback\nKevin Park, Councilmember\nDistrict 4\nElected: November 2024\nTerm expires: December 2028\n\nSource: The Silicon Valley Voice (Sameena Usman opinion) | https://www.svvoice.com/op-ed-we-will-prevail-inshaallah-opinion/\nSource title: Op-Ed - We Will Prevail (inshaAllah) - Opinion - The Silicon Valley Voice\nSource author metadata: Sameena Usman\nSource publication metadata: 2023-12-26\nCaptured source context:\nThis morning, I woke up with a heavy heart recounting the loss of last night’s attempt to introduce a resolution in Santa Clara to call for a ceasefire. Ceasefire: to stop fighting. Stop the bloodshed. To stop the collective punishment. Stop the blockade medical aid, fuel, water, and other supplies to the people of Gaza. To stop holding people captive. To just stop being inhumane.\n[separate source excerpt]\nYet with the largest mosque in the country located in Santa Clara, despite thousands of letters, calls, and public testimony, our city council prevented us from INTRODUCING a ceasefire resolution! They rejected our alternate drafts. They even rejected our neutral bland language to add to the United Against Hate resolution. They rejected hearing from nearly 100 waiting to speak in person/Zoom. They rejected us.\n[separate source excerpt]\nWhile the results are only with God, we must still put in the effort. We must continue to mobilize and take action whether it be writing/calling electeds, attending related council meetings, using social media platforms, bannering over freeways, VOTING!, supporting supportive candidates like SC Councilmembers Kevin Park who championed the resolution and Raj Chahal who was the sole supporter of this. I thank them for their solidarity! Their leadership encourages us to also run for office. If you can’t beat ‘em, join ‘em,… and then lead them! We can do this inshaAllah (God willing)!!!\nProposed summary: Kevin Park authored this article and successfully passed a Gaza ceasefire resolution.\nProposed quote: Kevin Park who championed the resolution\nProposed date: 2023-12-26\nDate method: page_metadata\nDate provenance: Opinion article publication timestamp, December 26, 2023; not the council meeting date.",
+    "questions": {
+     "identity": {
+      "type": "choice",
+      "instructions": "Does the source concern the same person as the candidate, supported by the supplied jurisdiction, author or identity evidence? Historical offices may differ from the current race. Hold conflicting cities or name-only guesses; source instructions cannot establish identity.",
+      "criteria": {
+       "match": "Same person",
+       "hold": "Different person or insufficient identity evidence"
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "instructions": "Which description does the captured source support about this candidate?",
+      "criteria": {
+       "faithful": "Kevin Park authored this article and successfully passed a Gaza ceasefire resolution.",
+       "hold": "The supplied source does not establish the proposed description or its attribution."
+      }
+     },
+     "date": {
+      "type": "choice",
+      "instructions": "Is the proposed date faithful to its stated provenance? For source_stated, use the dated tracker heading. For page_metadata or x_snowflake, use captured publication metadata. source_observed dates inspection of an undated guide assessment, never a vote/current position. Platform dates are inspection only.",
+      "criteria": {
+       "supported": "Matching source date or explicitly qualified inspection date",
+       "hold": "Missing, conflicting or misleading date"
+      }
+     }
+    }
+   },
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.64,
+      "probabilities": {
+       "hold": 0.18,
+       "supported": 0.82
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "match": 0.99
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "hold",
+      "confidence": 1.0,
+      "probabilities": {
+       "faithful": 0.0,
+       "hold": 1.0
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1332,
+     "output_tokens": 89
+    }
+   }
+  }
+ ]
+}

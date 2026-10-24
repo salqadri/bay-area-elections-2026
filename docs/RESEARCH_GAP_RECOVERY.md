@@ -83,6 +83,12 @@ not an identity inferred from the campaign's HAPAC logo filename.
 
 ## Audit evidence gaps independently of collector done flags
 
+For California local action sources, first run the
+[shared ceasefire-tracker refresh](LOCAL_CEASEFIRE_RESEARCH.md). It evaluates the
+whole current California roster even when candidates already have evidence.
+The generic planner/collector additionally accept `--refresh-existing --state CA`
+for a bounded update pass; their default remains the missing-evidence queue.
+
 ```sh
 python3 scripts/research_gaza_gaps.py plan --output .research/gaza-gaps/PLAN.json
 python3 scripts/research_gaza_gaps.py collect --candidate 'Amish Shah' --candidate 'Jay Feely' --limit 2 --output-dir .research/gaza-gaps/NEW-RUN --serper-key-file /secure/path/serper-key
