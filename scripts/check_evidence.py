@@ -45,7 +45,11 @@ def check_evidence(data, quarantine=None):
                         errors.append(context + ': evidence ID reused with a different meaning')
                     identities[eid] = identity
                     excerpt = ' '.join((evidence.get('quote') or evidence.get('summary', '')).split()).casefold()
-                    key = (url, excerpt)
+                    # Shared trackers can report the same action at distinct
+                    # dated meetings. A later vote is not a duplicate excerpt.
+                    event_date = evidence.get('date') if (evidence.get('source_kind') == 'advocacy_tracker'
+                        and evidence.get('dimension') == 'actions_votes' and evidence.get('date_method') == 'source_stated') else None
+                    key = (url, event_date, excerpt)
                     if key in sources:
                         errors.append(context + ': duplicate source and excerpt, including equivalent X status URLs')
                     sources.add(key)
