@@ -1,11 +1,16 @@
 # Research and development handoff
 
+## Firebase Analytics — October 25, 2026
+
+Both public readers now share optional production-only Firebase Analytics for `G-QKNPZZ1CDJ`; local previews and the Jev playground are excluded. Canonical analytics URLs omit query strings/fragments and referrers, address values are not passed to Firebase, and advertising personalization/Google signals are disabled. The public pages disclose analytics cookies. See [ANALYTICS.md](ANALYTICS.md) for configuration, privacy boundaries and verification. This is a runtime/documentation change; the latest October 24 finance data is retained and the dataset publication marker is unchanged.
+
+Validation: **39/39 offline release checks pass**. Chromium checks captured page views for both readers with the correct measurement ID and canonical URLs, with no test query/search/address values in analytics payloads. Local previews made no Firebase requests; blocking the SDK left both readers usable without page errors. Test collection requests were intercepted rather than sent to the production property.
+
 ## FEC money refresh — October 24, 2026 (2026-10-24.1) + cron failure root cause
 
 Full scheduled refresh of both federal money layers: the independent-expenditure layer was refetched for all **268** FEC-linked printed and provisional federal candidacies via the official by-candidate Schedule E aggregates, and candidate-level receipt totals were re-read with the coverage-start guard; `finance.checked_on`/`ie_finance.checked_on` now certify October 24. Publication **2026-10-24.1** passed the complete offline release gate (38 checks) before push and was verified live on both readers.
 
 **Why the daily cron appeared to fail:** the October 24 scheduled run executed on a checkout 16 commits behind `origin/main` (PRs #13–#16 merged after its base). It completed all FEC fetching, committed on that stale base, then its own pre-push divergence guard refused to push — leaving an orphan local commit while the cron itself reported success. No published data was affected; the run's work is fully re-derivable from live FEC APIs and today's refresh supersedes it. `scripts/refresh_fec_money.py` now fetches origin and applies a fast-forward-only merge before any API work (`f59f6f8`): a stale checkout advances automatically, and a genuinely diverged history fails in seconds for manual reconciliation instead of after an hour of fetching. The daily job continues through November 3 unchanged.
-
 
 ## Merged release — October 23, 2026 (2026-10-23.3)
 

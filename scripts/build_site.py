@@ -1,4 +1,4 @@
-"""Build the dependency-free, standalone GitHub Pages entry point."""
+"""Build the standalone GitHub Pages readers with optional remote analytics."""
 import argparse
 import json
 import re
@@ -18,6 +18,11 @@ def render(page="index"):
         data = json.loads((ROOT / filename).read_text(encoding="utf-8"))
         embedded = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
         html = html.replace(placeholder, embedded)
+    analytics_js = (ROOT / 'src/analytics.js').read_text(encoding='utf-8')
+    assert '</script' not in analytics_js.lower(), 'Unsafe inline analytics script'
+    if html.count('__ANALYTICS_JS__') != 1:
+        raise ValueError('Expected one shared analytics placeholder')
+    html = html.replace('__ANALYTICS_JS__', analytics_js)
     endorsement_js = (ROOT / 'src/endorsement-display.js').read_text(encoding='utf-8')
     assert '</script' not in endorsement_js.lower(), 'Unsafe inline endorsement script'
     if html.count('__ENDORSEMENT_DISPLAY_JS__') != 1:

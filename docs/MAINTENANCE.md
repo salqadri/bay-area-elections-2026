@@ -26,6 +26,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `elections.schema.json` | Draft 2020-12 contract for the inventory; the dataset's `schema_version` const is authoritative |
 | `src/index.template.html` | Explorer markup, shared CSS, inline explorer logic and download behavior |
 | `src/ballot.template.html` | Address page markup and extra CSS |
+| `src/analytics.js` | Optional production-only Firebase Analytics initialization shared by both public readers; see [ANALYTICS.md](ANALYTICS.md) |
 | `src/address-services.js` | Census JSONP transport, input/result checks, timeout and cancellation |
 | `src/address-suggestions.js` | Photon fetch adapter, complete-address filtering and provider backoff |
 | `src/address-autocomplete.js` | Accessible combobox interaction, debounce, cancellation and manual fallback |
@@ -41,7 +42,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `scripts/build_site.py` | Embeds the dataset, schema where applicable, shared CSS and JavaScript into both pages |
 | `scripts/prepare_dom_fixture.py` | Parses built pages into disposable DOM fixtures for Node integration checks |
 
-`index.html` and `ballot.html` are generated and committed. The first embeds the dataset and schema; the second embeds the dataset and address modules. Both are self-contained except for remote address services invoked by user interaction. Shared style changes in the index template also affect the ballot page. Preserve the build's `<` escaping for embedded JSON and its rejection of closing-script sequences in inline JavaScript.
+`index.html` and `ballot.html` are generated and committed. The first embeds the dataset and schema; the second embeds the dataset and address modules. Their election data and reader code are self-contained; the published pages optionally load Firebase Analytics from Google’s CDN, and the address page calls remote address services on interaction. Analytics failure does not prevent either reader from working. Shared style changes in the index template also affect the ballot page. Preserve the build's `<` escaping for embedded JSON and its rejection of closing-script sequences in inline JavaScript.
 
 The downloaded address estimate uses **`bay-area-ballot-estimate/v1`**, not the inventory schema. It carries geography, confidence-tagged races and shared metadata, including the Gaza action registry and USCPR provenance needed to interpret candidate records, and deliberately omits raw addresses/coordinates. If its shape changes, treat it as a separate format contract; a dedicated schema is a possible improvement, not something already provided.
 
@@ -100,6 +101,7 @@ node scripts/check_platform_display.cjs
 node scripts/check_candidate_sort.cjs
 node scripts/check_contest_label.cjs
 node scripts/check_jev_playground.cjs
+node scripts/check_analytics.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -110,7 +112,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs this complete 38-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs this complete 39-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -139,7 +141,7 @@ Browser review should cover desktop and narrow screens, keyboard-only autocomple
 - Photon autocomplete uses a US house-address filter, Bay Area preference, minimum four characters, 750 ms debounce, at least one second between request starts, cancellation and backoff. It only fills the address field; do not substitute its coordinates for verified election geography without a separately reviewed matching change.
 - The public Photon demo permits limited project use and has no availability guarantee. Keep attribution and manual fallback; assess a supported hosted service or a dedicated instance if traffic grows. Do not silently remove rate limits.
 
-Google Civic endpoints are documented in `address_lookup` for a future integration; the published site does not call them and contains no Google API key. Any integration must use current official docs, an authorized credential, the correct election ID when needed, and verified election-year boundaries. A generic division response is not automatically a certified final ballot. Preserve the current fallback and privacy behavior when changing providers.
+Google Civic endpoints are documented in `address_lookup` for a future integration; the published site does not call them and contains no Google Civic API key. The separate Firebase web configuration is public client configuration, described in [ANALYTICS.md](ANALYTICS.md). Any integration must use current official docs, an authorized credential, the correct election ID when needed, and verified election-year boundaries. A generic division response is not automatically a certified final ballot. Preserve the current fallback and privacy behavior when changing providers.
 
 ## Expanding to nine counties
 

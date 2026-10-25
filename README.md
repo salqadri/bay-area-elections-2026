@@ -222,6 +222,7 @@ node scripts/check_platform_display.cjs
 node scripts/check_candidate_sort.cjs
 node scripts/check_contest_label.cjs
 node scripts/check_jev_playground.cjs
+node scripts/check_analytics.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -230,11 +231,11 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-Run the full sequence above with **`python3 scripts/check_release.py`** (38 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
+Run the full sequence above with **`python3 scripts/check_release.py`** (39 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 
-The UI checks put temporary results in the ignored `.checks/` directory. There are no runtime package dependencies or analytics. The address page requests Photon suggestions while typing and loads a Census JSONP response when the user submits an address.
+The UI checks put temporary results in the ignored `.checks/` directory. No runtime packages need to be installed. On the published site, both readers optionally load Firebase Analytics from Google’s CDN; local development and the Jev playground do not load analytics. See [analytics setup and privacy](docs/ANALYTICS.md). The address page requests Photon suggestions while typing and loads a Census JSONP response when the user submits an address.
 
 ## GitHub Pages
 
