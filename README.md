@@ -6,7 +6,7 @@ An independent research inventory and searchable, static explorer of elected off
 
 **Research snapshot: October 4, 2026.** Publication does not refresh or recertify the underlying research.
 
-**FEC snapshots: receipts checked October 19, 2026; independent spending corrected and checked October 20, 2026.** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date. A scheduled weekly refresh re-checks receipts and independent expenditures through November 3.
+**FEC snapshots: receipts and independent spending checked October 24, 2026 (independent-spending method corrected October 20, 2026).** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date. A scheduled daily refresh re-checks receipts and independent expenditures through November 3.
 
 ## Local Jev playground
 

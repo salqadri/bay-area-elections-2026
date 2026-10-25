@@ -1,5 +1,12 @@
 # Research and development handoff
 
+## FEC money refresh — October 24, 2026 (2026-10-24.1) + cron failure root cause
+
+Full scheduled refresh of both federal money layers: the independent-expenditure layer was refetched for all **268** FEC-linked printed and provisional federal candidacies via the official by-candidate Schedule E aggregates, and candidate-level receipt totals were re-read with the coverage-start guard; `finance.checked_on`/`ie_finance.checked_on` now certify October 24. Publication **2026-10-24.1** passed the complete offline release gate (38 checks) before push and was verified live on both readers.
+
+**Why the daily cron appeared to fail:** the October 24 scheduled run executed on a checkout 16 commits behind `origin/main` (PRs #13–#16 merged after its base). It completed all FEC fetching, committed on that stale base, then its own pre-push divergence guard refused to push — leaving an orphan local commit while the cron itself reported success. No published data was affected; the run's work is fully re-derivable from live FEC APIs and today's refresh supersedes it. `scripts/refresh_fec_money.py` now fetches origin and applies a fast-forward-only merge before any API work (`f59f6f8`): a stale checkout advances automatically, and a genuinely diverged history fails in seconds for manual reconciliation instead of after an hour of fetching. The daily job continues through November 3 unchanged.
+
+
 ## Merged release — October 23, 2026 (2026-10-23.3)
 
 At the owner's request, PRs [#14](https://github.com/salqadri/bay-area-elections-2026/pull/14), [#15](https://github.com/salqadri/bay-area-elections-2026/pull/15) and [#16](https://github.com/salqadri/bay-area-elections-2026/pull/16) are merged into main. The stacked #16 was retargeted to main after #15. Final content merge: `2a9a9be311dd468389bd479084af8c3a4fb84433`; schema remains 1.23. The combined tree passes **38/38 offline release checks**, including all playground, CAIR and local-ceasefire regressions. See the [publication record](reviews/2026-10-23-publication.md) for merge/deployment evidence and artifact hashes.
@@ -280,7 +287,7 @@ The baseline implementation is commit `f2e15251ca44f2baf50e141fd14d77d09f480ed8`
 | Election | November 3, 2026 California general election |
 | County scope | Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara |
 | Ballot research snapshot | October 4, 2026 |
-| FEC research snapshot | Checked October 12, 2026 (weekly refresh through November 3); individual financial coverage dates differ |
+| FEC research snapshot | Checked October 24, 2026 (daily refresh through November 3); individual financial coverage dates differ |
 | Schema | Inventory version 1.11, Draft 2020-12 (`x_url`, `secondary_x_url`, `campaign_url`, `gaza_evidence`; evidence `date` is required and calendar-valid, with optional `date_method`/`date_note`) |
 | Endorsements (new) | **741 of 869 printed candidacies** carry cited current-cycle `endorsements` records (884 total; schema 1.12 `$defs.endorsementRecord`) from verified endorser pages, collected October 9 via `scripts/research_endorsements.py`; snapshot at `research/endorsements/endorsements-export-2026-10-09.json`. Ongoing: bot-walled platforms and ~128 candidacies still uncovered |
 | X accounts / sites | 135 printed entries (135 distinct names) with X URLs; 27 are explicitly probable matches. 10 secondary X URLs; 383 candidate-specific campaign/official URLs retained after five generic homepage claims were removed. |
