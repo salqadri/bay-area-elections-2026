@@ -1,5 +1,14 @@
 # Research and development handoff
 
+## October 26 publication
+
+The owner authorized merging and publishing PR #17 with publication version
+**2026-10-25.2**. The [release manifest](reviews/2026-10-26-publication.md) records
+the public Fiona Ma evidence addition, local playground scope and evidence
+sufficiency behavior, 40 passing release checks and exact artifact hashes.
+GitHub Pages publishes the election readers; the Jev server remains local.
+Research/finance observation dates and all saved grading inputs remain unchanged.
+
 ## Evidence sufficiency and Fiona Ma divestment — October 25, 2026
 
 The derived `pro_palestine_score_grade` now returns **Insufficient Info** for a

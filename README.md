@@ -6,7 +6,7 @@ An independent research inventory and searchable, static explorer of elected off
 
 **Research snapshot: October 4, 2026.** Publication does not refresh or recertify the underlying research.
 
-**FEC snapshots: receipts and independent spending checked October 24, 2026 (independent-spending method corrected October 20, 2026).** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date. A scheduled daily refresh re-checks receipts and independent expenditures through November 3.
+**FEC snapshots: receipts and independent spending checked October 25, 2026 (independent-spending method corrected October 20, 2026).** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date. A scheduled daily refresh re-checks receipts and independent expenditures through November 3.
 
 ## Local Jev playground
 
@@ -21,7 +21,9 @@ results load in **Latest per candidate** by default; no confidence cutoffs apply
 Filter the workspace by county and compare saved grades/scores with current CAIR
 Action recommendations in the dedicated review area. A deterministic
 `pro_palestine_score_grade` appears beside results; tune its inclusive score bands
-under **Score → grade mapping**. New input states retain Vote for Peace
+under **Score → grade mapping**. A saved 0–1 `evidence_score` below 0.10
+shows **Insufficient Info** instead of a derived letter; exactly 0.10 is still
+graded. Jev’s original answers and confidence remain visible. New input states retain Vote for Peace
 Ally/Opposed/Neutral observations, including previously held Neutral cards.
 An optional `part_of_muslim_community` boolean carries owner-confirmed
 community values into new states; unknowns remain unset. See the
@@ -42,7 +44,7 @@ These instructions apply to Hermes and other coding/research agents across the w
 - [Gaza legislative records and grades](docs/GAZA_VOTING_RECORDS.md): complete source-tab captures, reviewed current/prior-office identity links, sheet assessment colors and a separate official USCPR grade feed.
 - [Local ceasefire evidence](docs/LOCAL_CEASEFIRE_RESEARCH.md): full CAIR-SFBA tracker capture across current California candidacies, Jev identity/date review and attributed article evidence; separate from CAIR Action endorsements.
 - [Campaign platform workflow](docs/CAMPAIGN_PLATFORMS.md): bounded website collection, source packets and instructions for Hermes to delegate reviewed Israel/Palestine platform checks, plus the general **platform positions** layer (each candidate's own top policy points quoted verbatim from their campaign site). First publication pass landed October 16, 2026 (171 candidacies); the deeper/exception follow-up rounds continue.
-- [Jev grading and playground batches](research/gaza-grading/README.md): versioned question files, confidence-only outputs, compact focused inputs and exact request archives. The local playground defaults to the current all-House 187-candidate run; the earlier 165-candidate batch stays archived. Experimental outputs are separate from published candidate records.
+- [Jev grading and playground batches](research/gaza-grading/README.md): versioned question files, confidence-only outputs, compact focused inputs and exact request archives. The local playground defaults to Latest per candidate across saved local history; the 187-candidate House baseline and earlier 165-candidate batch stay archived. Experimental outputs are separate from published candidate records.
 
 Use Git, Python 3 and Node.js. Building and serving the readers needs no npm/pip installation or API key. The complete offline release gate also requires `pdfplumber` for the CAIR PDF parser regressions; see [CAIR setup](docs/CAIR_ACTION.md). The optional endorsement collector uses a Serper key for search; imported page lookups need no key. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
 
