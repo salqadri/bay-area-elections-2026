@@ -49,6 +49,11 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    side by side, with Run controls always above them. On mobile, **Questions**
    and **Results** tabs share the same controls; running switches to Results.
    The textarea fallback works when the pinned Monaco CDN is unavailable.
+   The **County** filter above the workspace applies to the candidate picker,
+   previous/next navigation, race browser and CAIR comparison. Choose one county,
+   **All 5 Bay Area counties**, or **All tracked candidates** including nationwide
+   House contests. Shared races appear once in the combined view. This is a review
+   filter; **Run Bay Area** still evaluates all five counties.
    **View candidate on election site** opens the corresponding race in the public
    explorer, filtered by the selected candidate’s name and including all roster
    statuses. The public explorer displays that candidate within the race’s roster.
@@ -108,6 +113,43 @@ Omitting `scope` keeps the existing full-roster behavior. A `candidate_id` and
 regional scope cannot be combined. The server chooses membership from current
 contest county coverage before submitting any requests; browser filters do not
 change a batch’s scope. Snapshot `scope_counts` supply both button counts.
+
+## CAIR Action comparison
+
+Every selected candidate’s results include the CAIR Action recommendations from
+that exact candidacy in the **current canonical dataset**, with the recorded tier,
+joint endorsement, election phase, source link and checked date. Historical and
+primary records remain explicitly labeled. No recorded recommendation means
+unknown, not Opposed or a publisher’s explicit No Endorsement. Compact labels
+also appear in the race browser.
+
+**Review CAIR differences** opens a dedicated comparison area. It flags current,
+nonhistorical **Preferred** or **Endorsed** records (including joint endorsements)
+when the selected saved grade is **C, D, E or F**, **or** the selected saved score
+is **≤2.5 out of 5**. General-election and phase-unspecified records qualify;
+unspecified phases remain labeled. Primary/historical records and Opposed do not
+satisfy this positive-recommendation rule. These are review flags under the
+owner’s rule, not automatic corrections to grades or recommendations.
+
+The defaults are `gaza_grade` and `pro_palestine_score`. Question selectors allow
+renamed A–F choice and 0–5 score questions, or disabling either comparison.
+Scores on other scales are not silently rescaled. The area reports how many
+Preferred/Endorsed candidates lack a compatible saved result; missing, failed
+or ungraded answers are not treated as low grades. Every qualifying answer is
+included regardless of confidence, which is displayed beside the grade/score.
+
+The comparison uses the selected history view (Latest per candidate by default)
+and the County filter. Entries remain sorted by state/race and show the saved
+model/time, exact rule trigger, current CAIR record/source and an election-site
+link. Click a candidate’s name to inspect their saved answers and exact prompt in
+the workspace. Editing the draft questions does not change saved comparisons;
+rerun explicitly to evaluate a different prompt.
+
+Current recommendation metadata is separate from the frozen Jev request.
+A recommendation added after an old evaluation appears for comparison without
+rewriting that evaluation or implying the model saw it. Historical run downloads
+remain exact; `cair_action` metadata in Latest is a current-dataset comparison
+layer, while each row’s `request` retains what was actually submitted.
 
 ## Compact candidate input
 
@@ -190,7 +232,8 @@ latest-per-candidate restoration/restarts, chronological selection, failed/stopp
 retry fallback, unevaluated/interrupted candidates and current-roster filtering,
 stale-selection rejection, persisted history, same-origin/Host checks and credential
 redaction. `check_jev_playground.cjs` covers numeric ordering, custom questions,
-confidence display and immutable state during delta updates. Both are in the
+confidence display, immutable state during delta updates, CAIR threshold boundaries,
+missing/incompatible/custom questions and county selection predicates. Both are in the
 39-check offline release gate. Browser coverage includes real Monaco loading at
 desktop/mobile sizes and, using a fixture transport, full Run/Stop/history/export
 flows with custom questions, low confidence and a failed candidate. The iteration

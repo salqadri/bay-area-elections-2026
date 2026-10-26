@@ -17,7 +17,9 @@ candidacies / 340 races** serving the five counties, or run the full **1,042
 candidacies / 401 races** including nationwide House contests. Inspect answers, confidences and exact
 candidate inputs grouped by state/district. The editor and selected answers share
 a workspace, with generated state available on demand. Stored
-results load in **Latest per candidate** by default; no confidence cutoffs apply. The key stays local on the
+results load in **Latest per candidate** by default; no confidence cutoffs apply.
+Filter the workspace by county and compare saved grades/scores with current CAIR
+Action recommendations in the dedicated review area. The key stays local on the
 server, and runs do not edit or publish candidate data. See [setup and workflow](docs/JEV_PLAYGROUND.md).
 
 ## Development and agent handoff

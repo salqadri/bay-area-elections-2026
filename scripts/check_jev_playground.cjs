@@ -13,7 +13,7 @@ console.log('PASS Jev playground: custom questions, confidence without threshold
 // A single experiment cannot inherit baseline answers for its unrun peers.
 const snapshot={races,candidates:[{id:'a',position_id:'1',candidate:'Alice',state:{candidate:'Alice'}},{id:'b',position_id:'2',candidate:'Bob',state:{candidate:'Bob'}}]};
 const single={id:'single',races,rows:[{id:'a',position_id:'1',request,status:'complete',response:{answers:{}}}]};
-const catalog=C.catalogRows(snapshot,single);assert.equal(catalog.length,2);assert.equal(catalog[0],single.rows[0]);assert.equal(catalog[1].status,'preview');assert.equal(catalog[1].response,undefined);assert.equal(catalog[1].request,undefined);assert.equal(snapshot.candidates[0].status,undefined);
+const catalog=C.catalogRows(snapshot,single);assert.equal(catalog.length,2);assert.equal(catalog[0].request,single.rows[0].request);assert.equal(catalog[0].response,single.rows[0].response);assert.equal(catalog[1].status,'preview');assert.equal(catalog[1].response,undefined);assert.equal(catalog[1].request,undefined);assert.equal(snapshot.candidates[0].status,undefined);
 assert.deepEqual(C.catalogRaces(snapshot,single),races);
 const historical={...single,rows:[{id:'removed',candidate:'Removed',status:'complete',request}]};assert.equal(C.catalogRows(snapshot,historical).at(-1).request,request);
 assert(html.includes('id="run-selected"'));console.log('PASS Single-candidate catalog: exact evaluated inputs, unrun previews, historical candidates and no inherited answers.');
@@ -43,3 +43,29 @@ assert(html.includes('id="candidate-site"'));assert(html.includes('Latest per ca
 console.log('PASS Candidate site links: exact race, encoded candidate name, all roster statuses and candidate tab.');
 
 assert(html.includes('id="run-bay-area"'));assert(html.includes('Run full roster'));
+
+const cairQuestions={gaza_grade:{type:'choice',criteria:{A:'A',B:'B',C:'C',D:'D',E:'E',F:'F'}},pro_palestine_score:{type:'score',criteria:['0','1','2','3','4','5']}};
+function reviewed(grade='B',score=4,relation='preferred',extra={}){return {status:'complete',cair_action:[{endorser:'CAIR Action',relation,phase:'general',...extra}],request:{questions:cairQuestions},response:{answers:{gaza_grade:{type:'choice',choice:grade,confidence:.01},pro_palestine_score:{type:'score',score,confidence:0}}}};}
+assert(C.cairComparison(reviewed('C',5)).flagged);assert(C.cairComparison(reviewed('F',5)).flagged);
+assert(C.cairComparison(reviewed('B',2.5,'endorsed')).flagged);
+assert(C.cairComparison(reviewed('A',0)).flagged);assert(!C.cairComparison(reviewed('A',2.500001)).flagged);
+assert(!C.cairComparison(reviewed('B',4)).flagged);assert(!C.cairComparison(reviewed('F',0,'opposed')).flagged);
+assert(!C.cairComparison(reviewed('F',0,'endorsed',{historical:true})).positive);
+assert(!C.cairComparison(reviewed('F',0,'endorsed',{phase:'primary'})).positive);
+assert(C.cairComparison(reviewed('F',0,'preferred',{phase:'unspecified'})).flagged);
+assert(C.cairComparison(reviewed('F',0,'endorsed',{shared:true})).flagged);
+assert.equal(C.cairLabel({relation:'endorsed',shared:true}),'Jointly endorsed');
+const waiting={...reviewed(),status:'preview'};assert(C.cairComparison(waiting).positive);assert(!C.cairComparison(waiting).comparable);assert(!C.cairComparison(waiting).flagged);
+const missing=reviewed();delete missing.response.answers.gaza_grade;delete missing.response.answers.pro_palestine_score;assert(!C.cairComparison(missing).comparable);
+const wrongScale=reviewed('A',0);wrongScale.request={questions:{...cairQuestions,pro_palestine_score:{type:'score',criteria:['0','1','2','3','4']}}};assert.equal(C.cairComparison(wrongScale).score,null);assert(!C.cairComparison(wrongScale).flagged);
+const custom=reviewed('C',2);custom.request={questions:{custom_grade:cairQuestions.gaza_grade,custom_score:cairQuestions.pro_palestine_score}};custom.response={answers:{custom_grade:custom.response.answers.gaza_grade,custom_score:custom.response.answers.pro_palestine_score}};
+assert(!C.cairComparison(custom).comparable);assert(C.cairComparison(custom,{gradeKey:'custom_grade',scoreKey:'custom_score'}).flagged);
+assert.deepEqual(C.comparisonQuestions([custom]),{grades:['custom_grade'],scores:['custom_score']});
+assert.equal(C.cairComparison(reviewed('F',5)).grade.confidence,.01);assert.equal(C.cairComparison(reviewed('A',0)).score.confidence,0);
+const snapshotCair={...snapshot,candidates:[{...snapshot.candidates[0],cair_action:[{relation:'preferred',phase:'general'}]},snapshot.candidates[1]]};
+const oldCair={...single,rows:[{...single.rows[0],cair_action:[{relation:'opposed',phase:'general'}]}]};
+const withCurrent=C.catalogRows(snapshotCair,oldCair)[0];assert.equal(withCurrent.cair_action[0].relation,'preferred');assert.equal(withCurrent.request,oldCair.rows[0].request);assert.equal(oldCair.rows[0].cair_action[0].relation,'opposed');
+const counties=['Alameda','Contra Costa','San Francisco','San Mateo','Santa Clara'];
+const sharedCounty={counties:['Alameda','Santa Clara']};assert(C.countyMatches(sharedCounty,'Alameda',counties));assert(C.countyMatches(sharedCounty,'Santa Clara',counties));assert(C.countyMatches(sharedCounty,'bay-area',counties));assert(!C.countyMatches(sharedCounty,'San Mateo',counties));assert(!C.countyMatches({counties:[]},'bay-area',counties));assert(C.countyMatches({counties:[]},'all',counties));
+for(const county of counties)assert(C.countyMatches({counties:[county]},'bay-area',counties));
+console.log('PASS CAIR comparisons: C/F boundaries, inclusive 2.5/5, OR logic, confidence unfiltered, joint/current/unspecified versus historical/primary/opposed, missing/renamed/incompatible answers, exact saved inputs and county predicates.');

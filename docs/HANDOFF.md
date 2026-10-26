@@ -1,5 +1,13 @@
 # Research and development handoff
 
+## CAIR comparison and county filters — October 25, 2026
+
+The playground shows each candidacy’s current CAIR Action recommendation, source, checked date and election phase beside its saved results. **Review CAIR differences** flags nonhistorical general/phase-unspecified Preferred or Endorsed records when the selected saved A–F grade is C–F **or** the selected 0–5 score is ≤2.5. Confidence remains visible without a cutoff. Question selectors support renamed questions; missing or incompatible answers are counted separately. Clicking a flagged candidate opens their saved prompt/answers; current recommendations never rewrite frozen Jev requests.
+
+A global County filter applies to candidate selection/navigation, the race browser and CAIR comparison: each of the five counties, all five combined, or the full tracked roster. Shared contests are shown once. The Bay Area batch button continues to cover all five counties. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, including 32 playground Python regressions and Node comparison-boundary tests. Browser fixtures cover CAIR/source/joint/primary/historical/unknown display, inclusive C and 2.5/5 boundaries, confidence without filtering, missing/incompatible/custom question contracts, all county modes, shared-race deduplication, empty selections, comparison navigation, live updates, exact saved inputs and desktop/mobile/Monaco behavior. Live checks find 109 candidacies with CAIR records and 3 review flags in the current saved evaluations, and preserve all 79 run files present at restart byte for byte. No live Jev calls or election-data edits were made for this display/review change.
+
 ## Five-county playground batches — October 25, 2026
 
 The playground catalog now includes all five researched Bay Area counties (Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara), plus nationwide House contests: **1,042 candidacies / 401 races**. The dedicated **Run Bay Area (877)** button submits only the 877 current candidacies in 340 regional races; **Run full roster (1042)** retains the nationwide House option. Shared county races are deduplicated by contest/candidacy identity, while provisional and qualified-write-in categories remain separate. Regional batch membership and questions freeze before calls begin, and progress/history/downloads label the scope `bay-area`. Existing evaluations remain available in Latest per candidate. No new live Jev batch or election-dataset edit is part of this capability change. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).

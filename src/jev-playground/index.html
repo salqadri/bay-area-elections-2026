@@ -11,6 +11,7 @@
 <header class="masthead"><a class="brand" href="/">Jev <span>playground</span></a><span class="local-label">LOCAL RESEARCH WORKSPACE</span><a href="https://salqadri.github.io/bay-area-elections-2026/" target="_blank" rel="noopener noreferrer">Election explorer ↗</a></header>
 <main>
 <div class="hero"><div><h1>Candidate playground</h1><p id="scope">Loading House and five-county Bay Area candidates…</p></div><span id="connection" class="help">Checking local server…</span></div>
+<div class="review-navigation"><label for="county">County<select id="county" aria-label="Filter candidates by county"><option value="all">All tracked candidates</option></select></label><span id="county-count" class="help"></span><a id="review-jump" href="#cair-review">Review CAIR differences <span id="cair-review-count"></span></a></div>
 <div id="fatal" role="alert" hidden></div>
 <section class="workbench" aria-label="Prompt iteration workspace" data-mobile-view="questions">
 <div class="workbench-controls">
@@ -31,6 +32,7 @@
 <section id="results-panel" class="candidate-results" aria-labelledby="inspector-title">
 <div class="section-head"><div><p class="eyebrow">SELECTED CANDIDATE</p><h2 id="inspector-title">Candidate results</h2></div><button id="expand-answers" type="button">Expand all</button></div>
 <p id="result-meta" class="help"></p><p class="candidate-source"><a id="candidate-site" target="_blank" rel="noopener noreferrer">View candidate on election site ↗</a><span id="evaluation-source" class="help"></span></p><p id="result-notice" class="notice" hidden></p>
+<div id="candidate-cair" class="cair-summary" aria-label="CAIR Action recommendation"></div><p id="candidate-cair-flag" class="notice" hidden></p>
 <div class="answer-table-head" aria-hidden="true"><span>Key &amp; instructions</span><span id="answer-model">Answer</span><span>Type</span></div>
 <div id="selected-answers" aria-label="Selected candidate answers"></div>
 <details id="input-details" class="input-details"><summary>Inspect generated state &amp; raw JSON</summary><div class="inspector"><div class="section-head"><h3>Run input / output</h3><button id="copy" type="button" disabled>Copy JSON</button></div><p id="inspector-meta" class="help">Select any candidate to inspect their exact input state.</p>
@@ -40,6 +42,12 @@
 </section>
 </div>
 </section>
+<details id="cair-review" class="browse-races cair-review"><summary>CAIR Action comparison <span id="cair-review-summary">Loading saved evaluations…</span></summary>
+<p class="help">Review candidates recorded as Preferred or Endorsed by CAIR Action whose selected saved grade is C–F <strong>or</strong> whose saved score is ≤2.5 / 5. Confidence is shown without a cutoff. Recommendations use the current dataset; answers keep their saved prompts and evidence.</p>
+<div class="comparison-controls"><label for="comparison-grade">Grade question<select id="comparison-grade"></select></label><label for="comparison-score">Score question (0–5)<select id="comparison-score"></select></label><span id="comparison-source" class="help"></span></div>
+<p id="comparison-coverage" class="help" role="status"></p><p class="help">The county filter applies to the candidate picker, comparison and race browser. Run Bay Area evaluates all five counties.</p>
+<div id="comparison-results" aria-label="Candidates matching the CAIR review rule"></div>
+</details>
 <details id="browse-races" class="browse-races"><summary>Browse all races <span>By state and district</span></summary>
 <div class="filters"><label>State<select id="state"><option value="">All states</option></select></label><label>Find a candidate, office or county<input id="search" type="search" placeholder="Name, office or county…" autocomplete="off"></label><span id="visible-count" class="help"></span></div>
 <div id="races" aria-label="Candidate races grouped by state"></div>

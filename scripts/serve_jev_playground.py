@@ -74,7 +74,8 @@ def snapshot(data):
         state['candidate_roster'] = roster
         rows.append({'id': row_id(p['id'], c['name'], roster), 'position_id': p['id'], 'candidate': c['name'],
                      'party': c.get('party') or ('Nonpartisan' if p.get('partisan') is False else None),
-                     'roster': roster, 'state': state})
+                     'roster': roster, 'state': state,
+                     'cair_action': deepcopy([r for r in c.get('endorsements') or [] if r.get('endorser') == 'CAIR Action'])})
     bay_races = {id_ for id_, race in races.items() if COUNTIES.intersection(race.get('counties') or [])}
     return {'scope_counts': {'all': {'candidates': len(rows), 'races': len(races)},
                              'bay-area': {'candidates': sum(c['position_id'] in bay_races for c in rows), 'races': len(bay_races)}},
@@ -171,6 +172,8 @@ class RunManager:
                     if latest_attempt[0] > successes[id_][2]:
                         row['latest_attempt'] = {**attempt['evaluation'], 'status': attempt['status'],
                                                  'error': attempt.get('error')}
+                # Current comparison metadata is separate from the frozen Jev request.
+                row['cair_action'] = deepcopy(candidate['cair_action'])
                 rows.append(row)
             active = self.jobs.get(self.active)
             return {'format': 'jev-playground-latest/v1', 'id': 'latest', 'scope': 'latest',

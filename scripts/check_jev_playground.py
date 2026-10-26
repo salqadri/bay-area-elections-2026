@@ -141,6 +141,20 @@ class ValidationChecks(unittest.TestCase):
             record=g.build_state(pos,candidate,data)['focused_endorsement_observations'][0]
             self.assertEqual(record['relation'],relation);self.assertEqual(record.get('shared'),extra.get('shared'))
 
+    def test_comparison_metadata_preserves_cair_sources_and_is_bound_to_the_candidacy(self):
+        data=expanded_fixture()
+        records=[{'endorser':'CAIR Action','relation':'preferred','phase':'general','url':'https://example.test/guide#page=2','checked_on':'2026-10-23'},
+                 {'endorser':'CAIR Action','relation':'endorsed','phase':'primary','historical':True,'shared':True},
+                 {'endorser':'CAIR SFBA','relation':'endorsed','phase':'general'}]
+        data['positions'][5]['candidates'][0]['endorsements']=deepcopy(records)
+        current=p.snapshot(data)
+        first=next(c for c in current['candidates'] if c['position_id']=='AL-local' and c['roster']=='candidates')
+        second=next(c for c in current['candidates'] if c['position_id']=='SC-local')
+        self.assertEqual(first['candidate'],second['candidate'])
+        self.assertEqual(first['cair_action'],records[:2]);self.assertEqual(second['cair_action'],[])
+        self.assertEqual(first['cair_action'][0]['url'],'https://example.test/guide#page=2')
+        self.assertEqual(data['positions'][5]['candidates'][0]['endorsements'],records)
+
     def test_congressional_actions_resolve_titles_and_keep_actual_response(self):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
         data['gaza_voting']={'actions':{'119-A':{'title':'Actual action','kind':'sponsorship','date_label':'2025'}}}
@@ -282,6 +296,21 @@ class RunChecks(unittest.TestCase):
         self.assertEqual(rows[ids[1]]['evaluation']['run_id'],second['id'])
         self.assertEqual(m.get(first['id']),first)  # projection never modifies stored requests
         self.assertNotIn('SECRET_FIXTURE',json.dumps(restarted.latest()))
+
+    def test_latest_cair_metadata_can_refresh_without_rewriting_saved_model_inputs(self):
+        old={'endorser':'CAIR Action','relation':'opposed','phase':'general','url':'https://example.test/old'}
+        self.data['positions'][0]['candidates'][0]['endorsements']=[old];g.save(self.path,self.data)
+        m=self.manager();id_=m.current()['candidates'][0]['id']
+        saved=self.wait(m,m.start(QUESTIONS,id_)['id'])
+        path=m.work/'runs'/saved['id']/'run.json';before=path.read_bytes()
+        new={**old,'relation':'preferred','url':'https://example.test/new'}
+        self.data['positions'][0]['candidates'][0]['endorsements']=[new];g.save(self.path,self.data)
+        row=next(r for r in m.latest()['rows'] if r['id']==id_)
+        self.assertEqual(row['cair_action'],[new])
+        self.assertEqual(row['request'],saved['rows'][0]['request'])
+        self.assertEqual(row['request_sha256'],saved['rows'][0]['request_sha256'])
+        self.assertEqual(row['request']['state']['focused_endorsement_observations'][0]['relation'],'opposed')
+        self.assertEqual(m.get(saved['id']),saved);self.assertEqual(path.read_bytes(),before)
 
     def test_latest_keeps_previous_answers_during_retries_and_after_failure(self):
         m=self.manager();id_=m.current()['candidates'][0]['id']
