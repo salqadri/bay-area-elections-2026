@@ -86,3 +86,9 @@ assert.equal(C.derivedGrade({...derivedRow,status:'queued'}),null);assert.equal(
 assert(C.comparisonQuestions([derivedRow]).grades.includes('pro_palestine_score_grade'));
 assert(html.includes('id="grade-mapping-form"'));assert(html.includes('id="candidate-score-grade"'));
 console.log('PASS Derived grades: exact inclusive boundaries, nonlinear bounds/validation, unsupported scores/scales, CAIR selector, confidence unchanged and reproducible exports with immutable Jev answers.');
+
+assert(C.samePrompt('{"q":{"type":"score","criteria":["low","high"]}}','{\n "q": { "type": "score", "criteria": ["low", "high"] }\n}'));
+assert(!C.samePrompt('{"q":{"type":"score","criteria":["low","high"]}}','{"q":{"type":"score","criteria":["high","low"]}}'));
+assert(!C.samePrompt('{"q":','{"q":{"type":"noul"}}'));
+assert(html.includes('id="load-saved-prompt"'));
+console.log('PASS Prompt identity: formatting-only changes remain clean, changed criteria and invalid drafts remain distinct; saved prompt control is available.');

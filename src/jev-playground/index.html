@@ -29,7 +29,7 @@
 <div class="mobile-tabs" role="tablist" aria-label="Workspace"><button id="workspace-tab-questions" type="button" role="tab" aria-controls="questions-panel" aria-selected="true" data-workspace-view="questions">Questions</button><button id="workspace-tab-results" type="button" role="tab" aria-controls="results-panel" aria-selected="false" data-workspace-view="results">Results</button></div>
 <div class="iteration-grid">
 <section id="questions-panel" class="questions-section" aria-labelledby="questions-heading">
-<div class="section-head"><h2 id="questions-heading" tabindex="-1">Questions <span>JSON</span></h2><div class="actions"><button id="format" type="button">Format</button><button id="reset" type="button">Restore defaults</button></div></div>
+<div class="section-head"><h2 id="questions-heading" tabindex="-1">Questions <span>JSON</span></h2><div class="actions"><button id="format" type="button">Format</button><button id="load-saved-prompt" type="button" title="Replace the editor with the exact questions from the selected candidate's displayed evaluation" disabled>Load saved prompt</button><button id="reset" type="button">Restore defaults</button></div></div>
 <p class="help editor-help">Edit the prompt, then run this candidate. Ctrl/Cmd + Enter runs the selected candidate.</p>
 <div class="editor-wrap"><textarea id="questions" spellcheck="false" aria-label="Jev questions JSON" autocomplete="off"></textarea><div id="monaco-questions" aria-label="Jev questions JSON editor" hidden></div></div>
 <p id="question-error" role="alert" hidden></p><p id="editor-status" class="help" role="status"></p>

@@ -42,8 +42,9 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    Evaluate A, then B, then select A again: A’s answer remains available, including
    after reloading the page or restarting the server. Candidates with no saved
    evaluation show **Not evaluated yet**. Nothing calls Jev merely by opening the
-   page; saved runs are never overwritten. The initial editor uses the owner’s
-   October 23 question JSON (`pro-palestine-v2`).
+   page; saved runs are never overwritten. The editor loads the displayed
+   evaluation’s saved questions; **Restore defaults**
+   loads the owner’s October 23 rubric (`pro-palestine-v2`).
 2. Use the candidate picker or previous/next arrows above the workspace. On
    desktop, the Monaco question editor and selected candidate's answers sit
    side by side, with Run controls always above them. On mobile, **Questions**
@@ -59,7 +60,14 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    statuses. The public explorer displays that candidate within the race’s roster.
 3. Edit the questions, then press **Run selected candidate** or **Ctrl/Cmd +
    Enter** to evaluate exactly that candidate. Each iteration is saved separately.
-   Select another candidate without losing the draft. **Run Bay Area (877)**
+   Reload restores the selected candidate and county, and loads the exact prompt
+   used for that candidate’s displayed saved evaluation. With no unsaved edits,
+   selecting another evaluated candidate loads that candidate’s saved prompt.
+   Edited questions (including invalid JSON) are preserved across candidate changes
+   and result polling, including after evaluating the edited prompt. **Load saved prompt** explicitly restores the selected
+   evaluation’s questions; **Restore defaults** loads the original rubric.
+   Drafts stay in the current page session; reloading returns to saved questions.
+   For an ungraded candidate, the current editor draft is retained. **Run Bay Area (877)**
    evaluates only the five-county group with the current question text.
    **Run full roster (1042)** also includes House candidates outside the region.
    Each action takes a fresh snapshot of current data; a regional batch is labeled
@@ -103,8 +111,9 @@ existing local history. Reload reconnects to an active evaluation. The projectio
 is served by `/api/latest`, with format `jev-playground-latest/v1`; each evaluated
 row has `evaluation` provenance (source run ID, timestamps, dataset hash, input
 version and model), plus `latest_attempt` when a newer retry did not succeed.
-Rows keep the original full request; the projection’s top-level questions are
-editor defaults, not a claim that all displayed answers used the same prompt.
+Rows keep the original full request. The editor uses the selected row’s
+`request.questions`; the projection’s top-level questions are a fallback rubric
+for candidates without a saved request, not the prompt for every displayed answer.
 Only current candidacies appear in Latest; removed/historical candidacies remain
 available in their saved runs. Preview rows contain no borrowed answers.
 

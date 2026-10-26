@@ -1,5 +1,9 @@
 # Research and development handoff
 
+## Selected evaluation prompt restoration — October 25, 2026
+
+The question editor now initializes from the selected candidate’s actual saved request, rather than the latest projection’s historical batch-default questions. Candidate/county selection persists locally across reloads. Clean navigation follows each displayed evaluation’s saved prompt; unsaved and invalid drafts survive selection changes and result polling. **Load saved prompt** restores the displayed evaluation explicitly; **Restore defaults** retains its original-rubric meaning. Reload discards the session draft and restores saved questions. No provider calls or history rewrites are required for restoration. Validation: **40/40 release checks pass**, plus Chromium regressions covering both Monaco and fallback editors, reload/selection persistence, edits during polling, prompt carry after evaluation, explicit restoration, saved-history switching, disabled storage and narrow mobile layout. All 82 existing saved run files remain unchanged.
+
 ## Derived grade in CAIR comparison cards — October 25, 2026
 
 Every CAIR comparison card now displays `pro_palestine_score_grade` alongside the selected model grade and score, with its source score confidence and current tunable mapping. Selecting the derived grade as the comparison grade displays it once. Missing/incompatible source scores stay labeled. Review selectors still control the flagging rule. Node checks and desktop/mobile Chromium checks cover the extra metric, duplicate avoidance, mapping updates and unsupported scores. This is local presentation only; no new evaluations or saved-history changes.
