@@ -41,3 +41,5 @@ assert.equal(params.get('id'),linked.position_id);assert.equal(params.get('q'),l
 assert.equal(params.get('status'),'all');assert.equal(params.get('tab'),'candidates');
 assert(html.includes('id="candidate-site"'));assert(html.includes('Latest per candidate'));
 console.log('PASS Candidate site links: exact race, encoded candidate name, all roster statuses and candidate tab.');
+
+assert(html.includes('id="run-bay-area"'));assert(html.includes('Run full roster'));

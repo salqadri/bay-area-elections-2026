@@ -1,5 +1,11 @@
 # Research and development handoff
 
+## Five-county playground batches — October 25, 2026
+
+The playground catalog now includes all five researched Bay Area counties (Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara), plus nationwide House contests: **1,042 candidacies / 401 races**. The dedicated **Run Bay Area (877)** button submits only the 877 current candidacies in 340 regional races; **Run full roster (1042)** retains the nationwide House option. Shared county races are deduplicated by contest/candidacy identity, while provisional and qualified-write-in categories remain separate. Regional batch membership and questions freeze before calls begin, and progress/history/downloads label the scope `bay-area`. Existing evaluations remain available in Latest per candidate. No new live Jev batch or election-dataset edit is part of this capability change. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, including 30 playground Python regressions. Chromium submitted a complete 877-candidate regional batch to a fixture transport and verified county-only membership, shared-race deduplication, edited questions, history labeling and desktop/mobile controls. The updated live local server exposes both counts and preserves all 79 saved run files present at restart; no live Jev batch was triggered by verification.
+
 ## Playground candidate history — October 25, 2026
 
 The local playground now defaults to **Latest per candidate** across its stored baseline and saved local history. Switching A → B → A retains A’s latest successful evaluation, including after reload/restart. Failed or stopped retries show an explicit notice alongside the prior answer; differing prompts and stale evidence remain labeled. Each displayed answer keeps its exact saved request/hash and source-run provenance, while individual history entries remain isolated immutable experiments. A new **View candidate on election site** link opens the selected race and candidate-name filter in the published explorer. No new Jev grading batch or published election-data change is part of this fix. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).

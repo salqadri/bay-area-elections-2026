@@ -1,4 +1,4 @@
-"""Local candidate Jev playground for nationwide House and Alameda/Santa Clara races. Serves UI + same-origin run API on loopback.
+"""Local candidate Jev playground for nationwide House and five-county Bay Area races. Serves UI + same-origin run API on loopback.
 
 python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/key
 No API credential reaches the browser. Runs never change published research.
@@ -23,7 +23,7 @@ from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, buil
 ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
-COUNTIES = frozenset({'Alameda', 'Santa Clara'})
+COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
 STATE_VERSION = 'candidate-evidence-v5-local-federal-cair'
 
 
@@ -32,7 +32,7 @@ def row_id(position_id, candidate, roster):
 
 
 def playground_positions(data):
-    """Union by contest identity: all House seats plus every active contest serving either county."""
+    """Union by contest identity: all House seats plus active contests serving any of the five counties."""
     return [p for p in data['positions'] if p.get('ballot_status') != 'excluded'
             and (p.get('office_category') == 'U.S. House' or COUNTIES.intersection(p.get('counties') or []))]
 
@@ -75,7 +75,11 @@ def snapshot(data):
         rows.append({'id': row_id(p['id'], c['name'], roster), 'position_id': p['id'], 'candidate': c['name'],
                      'party': c.get('party') or ('Nonpartisan' if p.get('partisan') is False else None),
                      'roster': roster, 'state': state})
-    return {'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION,
+    bay_races = {id_ for id_, race in races.items() if COUNTIES.intersection(race.get('counties') or [])}
+    return {'scope_counts': {'all': {'candidates': len(rows), 'races': len(races)},
+                             'bay-area': {'candidates': sum(c['position_id'] in bay_races for c in rows), 'races': len(bay_races)}},
+            'bay_area_counties': sorted(COUNTIES),
+            'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION,
             'publication_version': data['election']['publication_version'], 'races': list(races.values()), 'candidates': rows}
 
 
@@ -176,7 +180,7 @@ class RunManager:
                     'completed': sum(row['status'] == 'complete' for row in rows),
                     'errors': sum(row['status'] == 'error' for row in rows),
                     'status': active['status'] if active else 'complete',
-                    'active_run': {k: active[k] for k in ('id', 'status', 'completed', 'errors')} | {
+                    'active_run': {k: active[k] for k in ('id', 'status', 'scope', 'completed', 'errors')} | {
                         'total': len(active['rows'])} if active else None}
 
     def history(self):
@@ -194,8 +198,12 @@ class RunManager:
     def _persist(self, run):
         save(self.work / 'runs' / run['id'] / 'run.json', run)
 
-    def start(self, questions, candidate_id=None):
+    def start(self, questions, candidate_id=None, scope='all'):
         validate_questions(questions)
+        if not isinstance(scope, str) or scope not in {'all', 'bay-area'}:
+            raise ValueError('scope must be all or bay-area')
+        if candidate_id is not None and scope != 'all':
+            raise ValueError('Choose a candidate or a batch scope, not both')
         if candidate_id is not None and (not isinstance(candidate_id, str) or not candidate_id):
             raise ValueError('candidate_id must be a nonempty candidate ID')
         with self.lock:
@@ -205,6 +213,11 @@ class RunManager:
                 raise PermissionError('Start the local server with --jev-key-file or TYPESAFE_API_KEY')
             current = self.current(); questions = deepcopy(questions)
             targets = current['candidates']
+            if scope == 'bay-area':
+                bay_races = {r['id'] for r in current['races'] if COUNTIES.intersection(r.get('counties') or [])}
+                targets = [c for c in targets if c['position_id'] in bay_races]
+                if not targets:
+                    raise ValueError('No active Bay Area candidates are available in the current dataset')
             if candidate_id is not None:
                 targets = [c for c in targets if c['id'] == candidate_id]
                 if not targets:
@@ -216,7 +229,7 @@ class RunManager:
                 rows.append({k: v for k, v in c.items() if k != 'state'} | {
                     'request': request, 'request_sha256': digest(dump(request).encode()), 'status': 'queued', 'revision': 0})
             run = {'format': 'jev-playground-run/v1', 'id': run_id, 'created_at': now(), 'model': MODEL,
-                   'questions': questions, 'scope': 'candidate' if candidate_id is not None else 'all',
+                   'questions': questions, 'scope': 'candidate' if candidate_id is not None else scope,
                    'dataset_sha256': current['dataset_sha256'], 'state_version': current['state_version'],
                    'races': current['races'], 'rows': rows, 'status': 'running', 'revision': 0, 'completed': 0, 'errors': 0}
             self.jobs[run_id] = run; self.active = run_id; self.stops[run_id] = threading.Event(); self._persist(run)
@@ -349,11 +362,11 @@ def handler_for(manager):
                     return self.send(413, {'error': 'Request body must be 1–256000 bytes'})
                 body = json.loads(self.rfile.read(length)); path = urlsplit(self.path).path
                 if path == '/api/runs':
-                    if not isinstance(body, dict) or set(body) not in ({'questions'}, {'questions', 'candidate_id'}):
-                        raise ValueError('Provide questions and optionally candidate_id only')
+                    if not isinstance(body, dict) or set(body) not in ({'questions'}, {'questions', 'candidate_id'}, {'questions', 'scope'}):
+                        raise ValueError('Provide questions and optionally candidate_id or scope')
                     if 'candidate_id' in body and body['candidate_id'] is None:
                         raise ValueError('candidate_id must be a nonempty candidate ID')
-                    return self.send(202, manager.start(body['questions'], body.get('candidate_id')))
+                    return self.send(202, manager.start(body['questions'], body.get('candidate_id'), body.get('scope', 'all')))
                 match = re.fullmatch(r'/api/runs/([^/]+)/cancel', path)
                 if match:
                     return self.send(200, manager.cancel(match.group(1)))

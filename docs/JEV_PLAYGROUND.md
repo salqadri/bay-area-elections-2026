@@ -2,14 +2,20 @@
 
 The playground runs on this computer, separate from the GitHub Pages readers.
 It includes the union of **all active U.S. House contests tracked nationwide**
-and **every active contest serving Alameda or Santa Clara County** in the
-repository's county coverage. Current scope: **685 candidacies / 268 races**,
-including 187 House candidacies / 72 races and 498 added candidacies in 196
-other races. County coverage includes local, district, state and judicial ballot
-contests. A shared county race or overlapping House race appears once; separate
-candidacies for the same person remain distinct. Excluded races stay out; printed,
-provisional and qualified-write-in rosters remain distinct (the current snapshot
-includes one local qualified write-in). No additional contests are discovered.
+and **every active contest serving Alameda, Contra Costa, San Francisco,
+San Mateo or Santa Clara County** in the repository’s county coverage. The full
+catalog currently has **1,042 candidacies / 401 races**: 187 House candidacies /
+72 races and 855 additional candidacies / 329 races. **Run Bay Area** targets
+**877 candidacies / 340 races** serving the five counties, excluding House
+contests outside that region. **Run full roster** includes the nationwide House
+candidates as well. Counts come from each fresh dataset snapshot.
+
+County coverage includes local, district, state and judicial ballot contests,
+including statewide contests serving the counties. Shared county races and
+House/county overlaps appear once; separate candidacies for the same person
+remain distinct. Excluded races stay out; printed, provisional and
+qualified-write-in rosters remain distinct (the current snapshot includes one
+local qualified write-in). No additional contests are discovered.
 
 ## Start
 
@@ -48,9 +54,11 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    statuses. The public explorer displays that candidate within the race’s roster.
 3. Edit the questions, then press **Run selected candidate** or **Ctrl/Cmd +
    Enter** to evaluate exactly that candidate. Each iteration is saved separately.
-   Select another candidate without losing the draft. When ready, **Run all
-   685 candidates** evaluates the full roster with that same question text.
-   Both actions take fresh snapshots of current data. Up to three Jev calls run
+   Select another candidate without losing the draft. **Run Bay Area (877)**
+   evaluates only the five-county group with the current question text.
+   **Run full roster (1042)** also includes House candidates outside the region.
+   Each action takes a fresh snapshot of current data; a regional batch is labeled
+   **Bay Area** in progress/history and downloads. Up to three Jev calls run
    concurrently; `choice`, `score` and yes/no `noul` questions can be renamed/added.
 4. The selected response shows each question key/instructions, answer, type and
    confidence. Choice rows preview the leading returned probabilities; expand
@@ -95,6 +103,12 @@ editor defaults, not a claim that all displayed answers used the same prompt.
 Only current candidacies appear in Latest; removed/historical candidacies remain
 available in their saved runs. Preview rows contain no borrowed answers.
 
+Regional requests use `POST /api/runs` with `{ "questions": {…}, "scope": "bay-area" }`.
+Omitting `scope` keeps the existing full-roster behavior. A `candidate_id` and
+regional scope cannot be combined. The server chooses membership from current
+contest county coverage before submitting any requests; browser filters do not
+change a batch’s scope. Snapshot `scope_counts` supply both button counts.
+
 ## Compact candidate input
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
@@ -123,8 +137,9 @@ Historical requests and the shared CLI builder remain unchanged:
 - Before adding CAIR Action, the expanded roster had **62 focused observations on 43 candidacies**,
   at most three each. The original House archive had 41 on 23, instead of all
   3,690 House endorsement observations. The published October 23 CAIR source refresh plus
-  registry v3 has 147 focused observations on 107 of the 685 candidacies,
-  including CAIR ratings for 85 candidacies. Other names
+  registry v3 had 147 focused observations on 107 of the original 685 candidacies,
+  including CAIR ratings for 85 candidacies. The expanded five-county catalog
+  currently has 177 focused observations on 133 candidacies. Other names
   are omitted for context budget, not declared unimportant or absent. No category
   is inferred from religion or ethnicity. Neutral image observations are not
   converted into named endorsements.
@@ -166,7 +181,8 @@ readers or publishes political grades.
 ## Verification
 
 `check_jev_playground.py` covers question/answer contracts, focused input context,
-county/House union selection, shared-race deduplication, local jurisdiction and
+five-county/House union selection, regional batch isolation and API validation,
+shared-race deduplication, local jurisdiction and
 CAL-ACCESS context, congressional metadata, frozen snapshots, low-confidence
 retention, cancellation,
 failure isolation, single-candidate isolation, repeated prompt iterations,

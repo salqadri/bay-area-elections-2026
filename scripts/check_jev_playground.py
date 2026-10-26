@@ -42,7 +42,7 @@ def expanded_fixture():
     for id_,county,category,status,name in [('AL-local',['Alameda'],'Mayor','confirmed','Local Alex'),
             ('SC-local',['Santa Clara'],'School district','confirmed','Local Alex'),
             ('shared',['Alameda','Santa Clara'],'Statewide executive','confirmed','Governor'),
-            ('outside',['San Mateo'],'Mayor','confirmed','Outside'),
+            ('outside',['San Diego'],'Mayor','confirmed','Outside'),
             ('excluded-local',['Santa Clara'],'Mayor','excluded','Excluded local'),
             ('empty',['Santa Clara'],'Water district','confirmed',None)]:
         data['positions'].append({'id':id_,'counties':county,'government_level':'City or town',
@@ -51,6 +51,15 @@ def expanded_fixture():
             'election_type':'general','candidates':[{'name':name,'incumbent':True}] if name else []})
     data['positions'][5]['qualified_write_in_candidates']=[{'name':'Local Write In'}]
     data['positions'][5]['filed_candidates_not_confirmed_on_ballot']=[{'name':'Local provisional'}]
+    return data
+
+
+def five_county_fixture():
+    data=expanded_fixture()
+    for county in ('Contra Costa','San Francisco','San Mateo'):
+        data['positions'].append({'id':county,'office':'Mayor','office_category':'Mayor',
+            'jurisdiction':county+' city','partisan':False,'counties':[county],
+            'ballot_status':'confirmed','candidates':[{'name':'Shared candidate name'}]})
     return data
 
 
@@ -161,6 +170,37 @@ class RunChecks(unittest.TestCase):
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)
         self.assertNotIn('SECRET_FIXTURE',json.dumps(b));self.assertNotIn('accepted',json.dumps(b));self.assertEqual(b['baseline']['rows'][0]['response']['answers']['verdict']['confidence'],.12)
+
+    def test_five_county_catalog_counts_and_bay_batch_do_not_include_national_peers(self):
+        g.save(self.path,five_county_fixture());calls=[]
+        def call(work,req,key,force):calls.append(deepcopy(req));return response(req)
+        m=self.manager(call);current=m.current()
+        self.assertEqual(current['bay_area_counties'],['Alameda','Contra Costa','San Francisco','San Mateo','Santa Clara'])
+        self.assertEqual(current['scope_counts']['all']['candidates'],11)
+        self.assertEqual(current['scope_counts']['bay-area']['candidates'],9)
+        done=self.wait(m,m.start(QUESTIONS,scope='bay-area')['id'])
+        self.assertEqual(done['scope'],'bay-area');self.assertEqual(len(done['rows']),9)
+        self.assertEqual(len(calls),9)
+        self.assertTrue(all(p.COUNTIES.intersection(r['state']['counties']) for r in calls))
+        self.assertNotIn('Bob',{r['candidate'] for r in done['rows']})
+        self.assertNotIn('Chris',{r['candidate'] for r in done['rows']})
+        self.assertEqual(sum(r['candidate']=='Alice' for r in done['rows']),1)  # shared county race once
+        self.assertEqual(sum(r['candidate']=='Shared candidate name' for r in done['rows']),3)  # distinct candidacies
+        self.assertEqual({r['roster'] for r in done['rows']},
+                         {'candidates','qualified_write_in_candidates','filed_candidates_not_confirmed_on_ballot'})
+        self.assertEqual(m.history()[0]['scope'],'bay-area')
+        self.assertTrue(all(r['request']['questions']==QUESTIONS for r in done['rows']))
+        self.assertTrue(all(r['response']['answers']['verdict']['confidence']==.12 for r in done['rows']))
+        self.assertEqual(len(self.wait(m,m.start(QUESTIONS)['id'])['rows']),11)
+
+    def test_invalid_or_empty_batch_scope_makes_no_model_calls(self):
+        calls=[]
+        m=self.manager(lambda *args,**kwargs:calls.append(True))
+        for scope in ('unknown',None,[],{},123,'candidate'):
+            with self.assertRaises(ValueError):m.start(QUESTIONS,scope=scope)
+        with self.assertRaises(ValueError):m.start(QUESTIONS,scope='bay-area')  # fixture has no county membership
+        with self.assertRaises(ValueError):m.start(QUESTIONS,m.current()['candidates'][0]['id'],scope='bay-area')
+        self.assertFalse(calls);self.assertEqual(m.history(),[])
 
     def test_expanded_roster_keeps_original_house_baseline_and_local_inputs_are_ungraded(self):
         g.save(self.path,expanded_fixture());bootstrap=self.manager().bootstrap()
@@ -375,6 +415,13 @@ class RunChecks(unittest.TestCase):
             status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'candidate_id':selected}),headers)
             self.assertEqual(status,202);single=self.wait(m,json.loads(body)['id']);self.assertEqual(len(single['rows']),1)
             self.assertEqual(single['rows'][0]['id'],selected)
+            for scope in (None,{},[],123,'unknown'):
+                self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'scope':scope}),headers)[0],400)
+            self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'candidate_id':selected,'scope':'bay-area'}),headers)[0],400)
+            g.save(self.path,five_county_fixture())
+            status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'scope':'bay-area'}),headers)
+            self.assertEqual(status,202);bay=self.wait(m,json.loads(body)['id'])
+            self.assertEqual(bay['scope'],'bay-area');self.assertEqual(len(bay['rows']),9)
         finally:server.shutdown();server.server_close()
 
 
