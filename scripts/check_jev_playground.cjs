@@ -33,3 +33,11 @@ assert.deepEqual(C.sortRaces(localRaces).map(r=>r.id),['house1','house17','local
 assert.equal(C.raceLabel(localRaces[0]),'City of Sunnyvale · Council · District 10');assert.equal(C.raceLabel(localRaces[3]),'CD-17');
 const oldRace={...localRaces[0]};delete oldRace.office_category;assert.equal(C.catalogRaces({races:[{...oldRace,office_category:'City council'}]},{races:[oldRace]})[0].office_category,'City council');
 console.log('PASS Mixed races: House numeric order, local jurisdiction/office labels and historical metadata.');
+
+const linked={position_id:'CA2026-42',candidate:'Alex García & O’Connor'};
+const link=new URL(C.candidateSiteUrl(linked)),params=new URLSearchParams(link.hash.slice(1));
+assert.equal(link.origin,'https://salqadri.github.io');assert.equal(link.pathname,'/bay-area-elections-2026/');
+assert.equal(params.get('id'),linked.position_id);assert.equal(params.get('q'),linked.candidate);
+assert.equal(params.get('status'),'all');assert.equal(params.get('tab'),'candidates');
+assert(html.includes('id="candidate-site"'));assert(html.includes('Latest per candidate'));
+console.log('PASS Candidate site links: exact race, encoded candidate name, all roster statuses and candidate tab.');

@@ -114,7 +114,70 @@ class RunManager:
         batch = json.loads(self.baseline.read_text())
         baseline = stored_run(batch, current)
         return {'snapshot': current, 'baseline': baseline, 'questions': batch['questions'],
+                'latest': self.latest(current, baseline),
                 'key_configured': bool(self.key), 'history': self.history()}
+
+    def latest(self, current=None, baseline=None):
+        """Read-only projection of the latest successful evaluation of each candidacy.
+
+        Never mix answers into a saved run. Failed/stopped retries retain the last
+        successful answer, with a separate attempt notice and exact provenance.
+        """
+        with self.lock:
+            current = current or self.current()
+            baseline = baseline or stored_run(json.loads(self.baseline.read_text()), current)
+            sources = [(baseline, 0)]
+            for path in (self.work / 'runs').glob('*/run.json'):
+                value = json.loads(path.read_text())
+                if value['id'] not in self.jobs and value['status'] in {'running', 'cancelling'}:
+                    value['status'] = 'interrupted'
+                sources.append((value, path.stat().st_mtime_ns))
+
+            def rank(value, tie):
+                date = datetime.fromisoformat(value.replace('Z', '+00:00'))
+                if date.tzinfo is None:
+                    date = date.replace(tzinfo=timezone.utc)
+                return date.timestamp(), tie
+
+            successes, attempts = {}, {}
+            for source, tie in sources:
+                for original in source['rows']:
+                    row = deepcopy(original)
+                    if row['status'] == 'queued' and source['status'] == 'interrupted':
+                        row['status'] = 'interrupted'
+                    row['evaluation'] = {k: source.get(k) for k in
+                                         ('created_at', 'dataset_sha256', 'state_version', 'model')}
+                    row['evaluation'].update(run_id=source['id'],
+                                             finished_at=row.get('finished_at') or source.get('finished_at'))
+                    attempt_rank = rank(source['created_at'], tie)
+                    if row['id'] not in attempts or attempt_rank > attempts[row['id']][0]:
+                        attempts[row['id']] = attempt_rank, row
+                    if row['status'] == 'complete' and row.get('response'):
+                        success_rank = rank(row['evaluation']['finished_at'] or source['created_at'], tie)
+                        if row['id'] not in successes or success_rank > successes[row['id']][0]:
+                            successes[row['id']] = success_rank, row, attempt_rank
+            rows = []
+            for candidate in current['candidates']:
+                id_ = candidate['id']
+                latest_attempt = attempts.get(id_)
+                row = deepcopy(successes[id_][1] if id_ in successes else
+                               latest_attempt[1] if latest_attempt else {**candidate, 'status': 'preview'})
+                if id_ in successes and latest_attempt and latest_attempt[1]['status'] != 'complete':
+                    attempt = latest_attempt[1]
+                    if latest_attempt[0] > successes[id_][2]:
+                        row['latest_attempt'] = {**attempt['evaluation'], 'status': attempt['status'],
+                                                 'error': attempt.get('error')}
+                rows.append(row)
+            active = self.jobs.get(self.active)
+            return {'format': 'jev-playground-latest/v1', 'id': 'latest', 'scope': 'latest',
+                    'created_at': now(), 'model': MODEL, 'questions': baseline['questions'],
+                    'dataset_sha256': current['dataset_sha256'], 'state_version': current['state_version'],
+                    'races': current['races'], 'rows': rows, 'revision': 0,
+                    'completed': sum(row['status'] == 'complete' for row in rows),
+                    'errors': sum(row['status'] == 'error' for row in rows),
+                    'status': active['status'] if active else 'complete',
+                    'active_run': {k: active[k] for k in ('id', 'status', 'completed', 'errors')} | {
+                        'total': len(active['rows'])} if active else None}
 
     def history(self):
         result = []
@@ -257,6 +320,8 @@ def handler_for(manager):
                     return self.send(200, manager.bootstrap())
                 if url.path == '/api/snapshot':
                     return self.send(200, manager.current())
+                if url.path == '/api/latest':
+                    return self.send(200, manager.latest())
                 if url.path == '/api/runs':
                     return self.send(200, manager.history())
                 if url.path.startswith('/api/runs/'):

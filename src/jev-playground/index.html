@@ -16,7 +16,7 @@
 <div class="workbench-controls">
 <div class="candidate-control"><label for="candidate-picker">Candidate</label><div class="candidate-navigation"><button id="previous-candidate" type="button" aria-label="Previous candidate" disabled>←</button><select id="candidate-picker" aria-label="Select candidate" disabled><option>Loading…</option></select><button id="next-candidate" type="button" aria-label="Next candidate" disabled>→</button></div></div>
 <div class="run-actions"><button id="run-selected" class="primary" type="button" disabled>Run selected candidate</button><button id="stop" type="button" hidden>Stop run</button><button id="run" type="button" disabled>Run all candidates</button></div>
-<div class="history-control"><label for="history">Results from run</label><div class="actions"><select id="history" aria-label="Select run"><option value="stored">Stored results</option></select><button id="download" type="button" disabled>Download</button></div></div>
+<div class="history-control"><label for="history">Saved evaluations</label><div class="actions"><select id="history" aria-label="Select evaluation history"><option value="latest">Latest per candidate</option></select><button id="download" type="button" disabled>Download</button></div></div>
 </div>
 <div class="workspace-status"><span id="selected-target" class="help"></span><span id="run-status" role="status" aria-live="polite">Loading stored answers…</span></div>
 <p id="stale" class="notice" hidden></p>
@@ -30,7 +30,7 @@
 </section>
 <section id="results-panel" class="candidate-results" aria-labelledby="inspector-title">
 <div class="section-head"><div><p class="eyebrow">SELECTED CANDIDATE</p><h2 id="inspector-title">Candidate results</h2></div><button id="expand-answers" type="button">Expand all</button></div>
-<p id="result-meta" class="help"></p><p id="result-notice" class="notice" hidden></p>
+<p id="result-meta" class="help"></p><p class="candidate-source"><a id="candidate-site" target="_blank" rel="noopener noreferrer">View candidate on election site ↗</a><span id="evaluation-source" class="help"></span></p><p id="result-notice" class="notice" hidden></p>
 <div class="answer-table-head" aria-hidden="true"><span>Key &amp; instructions</span><span id="answer-model">Answer</span><span>Type</span></div>
 <div id="selected-answers" aria-label="Selected candidate answers"></div>
 <details id="input-details" class="input-details"><summary>Inspect generated state &amp; raw JSON</summary><div class="inspector"><div class="section-head"><h3>Run input / output</h3><button id="copy" type="button" disabled>Copy JSON</button></div><p id="inspector-meta" class="help">Select any candidate to inspect their exact input state.</p>

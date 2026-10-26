@@ -31,16 +31,21 @@ The playground adds no public API or main-reader UI. Its implementation is merge
 
 ## Use
 
-1. The page loads the stored **all-House focused run**, using the owner's exact
-   October 23 question JSON (`pro-palestine-v2`). Nothing runs or incurs API calls
-   merely by opening the page. The stored baseline has 187 House results; the
-   added county candidates are available immediately with **Not evaluated in this
-   run** labels until you run them. Existing saved results are never overwritten.
+1. The page opens **Latest per candidate**: the most recent successful saved
+   evaluation of each current candidacy, seeded by the stored 187-House baseline.
+   Evaluate A, then B, then select A again: A’s answer remains available, including
+   after reloading the page or restarting the server. Candidates with no saved
+   evaluation show **Not evaluated yet**. Nothing calls Jev merely by opening the
+   page; saved runs are never overwritten. The initial editor uses the owner’s
+   October 23 question JSON (`pro-palestine-v2`).
 2. Use the candidate picker or previous/next arrows above the workspace. On
    desktop, the Monaco question editor and selected candidate's answers sit
    side by side, with Run controls always above them. On mobile, **Questions**
    and **Results** tabs share the same controls; running switches to Results.
    The textarea fallback works when the pinned Monaco CDN is unavailable.
+   **View candidate on election site** opens the corresponding race in the public
+   explorer, filtered by the selected candidate’s name and including all roster
+   statuses. The public explorer displays that candidate within the race’s roster.
 3. Edit the questions, then press **Run selected candidate** or **Ctrl/Cmd +
    Enter** to evaluate exactly that candidate. Each iteration is saved separately.
    Select another candidate without losing the draft. When ready, **Run all
@@ -57,12 +62,19 @@ The playground adds no public API or main-reader UI. Its implementation is merge
 5. **Inspect generated state & raw JSON** opens the read-only State JSON,
    Answers JSON and Full request with SHA-256. It is collapsed by default.
    Editing a prompt never changes the instructions or state attached to an
-   existing result; a visible notice identifies answers from a saved prompt.
-   Unevaluated candidates show an input preview with no inherited answers.
+   existing result; a visible notice identifies answers from a different saved
+   prompt. Latest results can use different prompts: each candidate displays their
+   evaluation time, and the inspector/export retains their exact saved request,
+   answers and hash. A stale-input notice refers to that candidate’s saved evidence.
+   Failed, stopped or interrupted retries keep the previous successful answer and
+   show an attempt notice. Unevaluated candidates show only an input preview.
 6. **Browse all races** opens the state/district groups and search/state
    filters. Selecting a card brings that candidate into the workspace. Races
    remain sorted by state name and numeric district number.
-7. Run history and JSON downloads preserve exact questions, model alias and
+7. **Saved evaluations** defaults to **Latest per candidate**. Choose an individual
+   run to inspect that immutable experiment alone; candidates absent from it are
+   not silently filled with other runs’ answers. Returning to Latest preserves the
+   current editor draft. JSON downloads preserve exact questions, model alias and
    returned model, frozen states, request hashes, answers, confidence/probability
    distributions, errors, cancellation status and dataset snapshot hash.
 
@@ -73,8 +85,15 @@ Individual failures stay visible and do not remove other answers. Stop prevents
 queued calls; in-flight calls may finish, including normal provider retries.
 After a restart, an unfinished job is labelled interrupted rather than silently
 resumed. A new run can be started; existing runs remain available for review.
-The default view is the committed stored run, unless a local run is currently
-active (in which case reload reconnects to it).
+The default view is the read-only latest-per-candidate projection, including
+existing local history. Reload reconnects to an active evaluation. The projection
+is served by `/api/latest`, with format `jev-playground-latest/v1`; each evaluated
+row has `evaluation` provenance (source run ID, timestamps, dataset hash, input
+version and model), plus `latest_attempt` when a newer retry did not succeed.
+Rows keep the original full request; the projection’s top-level questions are
+editor defaults, not a claim that all displayed answers used the same prompt.
+Only current candidacies appear in Latest; removed/historical candidacies remain
+available in their saved runs. Preview rows contain no borrowed answers.
 
 ## Compact candidate input
 
@@ -150,11 +169,13 @@ readers or publishes political grades.
 county/House union selection, shared-race deduplication, local jurisdiction and
 CAL-ACCESS context, congressional metadata, frozen snapshots, low-confidence
 retention, cancellation,
-failure isolation, single-candidate isolation and repeated prompt iterations,
+failure isolation, single-candidate isolation, repeated prompt iterations,
+latest-per-candidate restoration/restarts, chronological selection, failed/stopped
+retry fallback, unevaluated/interrupted candidates and current-roster filtering,
 stale-selection rejection, persisted history, same-origin/Host checks and credential
 redaction. `check_jev_playground.cjs` covers numeric ordering, custom questions,
 confidence display and immutable state during delta updates. Both are in the
-36-check offline release gate. Browser coverage includes real Monaco loading at
+39-check offline release gate. Browser coverage includes real Monaco loading at
 desktop/mobile sizes and, using a fixture transport, full Run/Stop/history/export
 flows with custom questions, low confidence and a failed candidate. The iteration
 workspace is checked at 1440×900, 1024×768 and 390×844 for adjacent editing/results,

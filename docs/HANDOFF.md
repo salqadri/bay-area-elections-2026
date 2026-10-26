@@ -1,5 +1,11 @@
 # Research and development handoff
 
+## Playground candidate history — October 25, 2026
+
+The local playground now defaults to **Latest per candidate** across its stored baseline and saved local history. Switching A → B → A retains A’s latest successful evaluation, including after reload/restart. Failed or stopped retries show an explicit notice alongside the prior answer; differing prompts and stale evidence remain labeled. Each displayed answer keeps its exact saved request/hash and source-run provenance, while individual history entries remain isolated immutable experiments. A new **View candidate on election site** link opens the selected race and candidate-name filter in the published explorer. No new Jev grading batch or published election-data change is part of this fix. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, including 28 playground Python regressions and the Node presentation checks. Browser checks cover A → B → A, reload persistence, exact saved prompts, failure fallback, history/latest switching, desktop/mobile layout, real Monaco editing and the live Kevin Park explorer link. Reading the existing 69-run history produced the current 685-candidate view without modifying any saved run.
+
 ## Firebase Analytics — October 25, 2026
 
 Both public readers now share optional production-only Firebase Analytics for `G-QKNPZZ1CDJ`; local previews and the Jev playground are excluded. Canonical analytics URLs omit query strings/fragments and referrers, address values are not passed to Firebase, and advertising personalization/Google signals are disabled. The public pages disclose analytics cookies. See [ANALYTICS.md](ANALYTICS.md) for configuration, privacy boundaries and verification. This is a runtime/documentation change; the latest October 24 finance data is retained and the dataset publication marker is unchanged.

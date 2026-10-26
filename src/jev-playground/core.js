@@ -31,6 +31,7 @@
     return [...rows.values()];
   }
   function catalogRaces(snapshot,run){const races=new Map(snapshot.races.map(r=>[r.id,r]));for(const race of run.races)races.set(race.id,{...races.get(race.id),...race});return [...races.values()];}
+  function candidateSiteUrl(row){const params=new URLSearchParams({id:row.position_id,status:'all',q:row.candidate,tab:'candidates'});return 'https://salqadri.github.io/bay-area-elections-2026/#'+params;}
   function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {percent,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,parseQuestions};
+  return {percent,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,parseQuestions};
 });

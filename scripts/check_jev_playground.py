@@ -220,6 +220,78 @@ class RunChecks(unittest.TestCase):
         self.assertEqual(m.get(first['id'])['questions'],QUESTIONS);self.assertEqual(second['questions'],q)
         self.assertEqual(second['rows'][0]['request_sha256'],third['rows'][0]['request_sha256'])
 
+    def test_latest_retains_each_candidate_across_iterations_and_restart(self):
+        m=self.manager();ids=[c['id'] for c in m.current()['candidates']]
+        questions=deepcopy(QUESTIONS);questions['verdict']['instructions']='Alice iteration'
+        first=self.wait(m,m.start(questions,ids[0])['id'])
+        second=self.wait(m,m.start(QUESTIONS,ids[1])['id'])
+        latest=m.latest();rows={row['id']:row for row in latest['rows']}
+        for saved in (first,second):
+            original=saved['rows'][0];row=rows[original['id']]
+            self.assertEqual(row['request'],original['request'])
+            self.assertEqual(row['response'],original['response'])
+            self.assertEqual(row['request_sha256'],original['request_sha256'])
+            self.assertEqual(row['evaluation']['run_id'],saved['id'])
+        self.assertEqual(rows[ids[2]]['evaluation']['run_id'],m.bootstrap()['baseline']['id'])
+        changed=deepcopy(QUESTIONS);changed['verdict']['instructions']='Alice iteration two'
+        third=self.wait(m,m.start(changed,ids[0])['id'])
+        restarted=p.RunManager(self.path,m.work,'',self.base)
+        rows={row['id']:row for row in restarted.bootstrap()['latest']['rows']}
+        self.assertEqual(rows[ids[0]]['evaluation']['run_id'],third['id'])
+        self.assertEqual(rows[ids[0]]['request']['questions'],changed)
+        self.assertEqual(rows[ids[1]]['evaluation']['run_id'],second['id'])
+        self.assertEqual(m.get(first['id']),first)  # projection never modifies stored requests
+        self.assertNotIn('SECRET_FIXTURE',json.dumps(restarted.latest()))
+
+    def test_latest_keeps_previous_answers_during_retries_and_after_failure(self):
+        m=self.manager();id_=m.current()['candidates'][0]['id']
+        first=self.wait(m,m.start(QUESTIONS,id_)['id']);release=threading.Event()
+        def failed(*args,**kwargs):
+            release.wait(2);raise RuntimeError('SECRET_FIXTURE provider body')
+        m.transport=failed
+        pending=m.start(QUESTIONS,id_)
+        row=next(row for row in m.latest()['rows'] if row['id']==id_)
+        self.assertEqual(row['evaluation']['run_id'],first['id'])
+        self.assertEqual(row['latest_attempt']['status'],'queued')
+        self.assertEqual(m.latest()['active_run']['id'],pending['id'])
+        release.set();self.wait(m,pending['id'])
+        latest=m.latest();row=next(row for row in latest['rows'] if row['id']==id_)
+        self.assertEqual(row['evaluation']['run_id'],first['id'])
+        self.assertEqual(row['latest_attempt']['status'],'error')
+        self.assertEqual(row['latest_attempt']['run_id'],pending['id'])
+        self.assertNotIn('SECRET_FIXTURE',json.dumps(latest));self.assertIsNone(latest['active_run'])
+
+    def test_latest_orders_by_evaluation_time_not_filename_or_file_modification(self):
+        m=self.manager();id_=m.current()['candidates'][0]['id']
+        first=self.wait(m,m.start(QUESTIONS,id_)['id'])
+        second=self.wait(m,m.start(QUESTIONS,id_)['id'])
+        first['created_at']='2026-10-25T01:00:00+00:00'
+        first['rows'][0]['finished_at']='2026-10-25T06:00:00+00:00'
+        second['created_at']='2026-10-25T02:00:00+00:00'
+        second['rows'][0]['finished_at']='2026-10-25T05:00:00+00:00'
+        g.save(m.work/'runs'/first['id']/'run.json',first)
+        g.save(m.work/'runs'/second['id']/'run.json',second)
+        restarted=p.RunManager(self.path,m.work,'',self.base)
+        row=next(row for row in restarted.latest()['rows'] if row['id']==id_)
+        self.assertEqual(row['evaluation']['run_id'],first['id'])
+
+    def test_latest_ungraded_and_interrupted_candidates_are_not_fabricated_answers(self):
+        g.save(self.path,expanded_fixture());m=self.manager();current=m.current()
+        local=next(c for c in current['candidates'] if c['position_id']=='SC-local')
+        row=next(row for row in m.latest()['rows'] if row['id']==local['id'])
+        self.assertEqual(row['status'],'preview');self.assertNotIn('response',row)
+        release=threading.Event()
+        m.transport=lambda work,req,key,force:(release.wait(2),response(req))[1]
+        pending=m.start(QUESTIONS,local['id'])
+        restarted=p.RunManager(self.path,m.work,'',self.base)
+        row=next(row for row in restarted.latest()['rows'] if row['id']==local['id'])
+        self.assertEqual(row['status'],'interrupted');self.assertNotIn('response',row)
+        self.assertIsNone(restarted.latest()['active_run'])
+        release.set();self.wait(m,pending['id'])
+        data=expanded_fixture();data['positions'][6]['ballot_status']='excluded';g.save(self.path,data)
+        self.assertNotIn(local['id'],{row['id'] for row in m.latest()['rows']})
+        self.assertEqual(m.get(pending['id'])['rows'][0]['id'],local['id'])
+
     def test_unknown_invalid_or_removed_selection_never_calls_provider(self):
         calls=[]
         def call(*args,**kwargs):calls.append(True);return {}
@@ -251,6 +323,11 @@ class RunChecks(unittest.TestCase):
         m=self.manager(call,workers=1);run=m.start(QUESTIONS);started.wait(1);m.cancel(run['id']);release.set();done=self.wait(m,run['id'])
         self.assertEqual(done['status'],'cancelled');self.assertEqual(len(calls),1)
         self.assertTrue(any(row['status']=='cancelled' and 'response' not in row for row in done['rows']))
+        cancelled=next(row for row in done['rows'] if row['status']=='cancelled')
+        row=next(row for row in m.latest()['rows'] if row['id']==cancelled['id'])
+        self.assertEqual(row['status'],'complete')  # older baseline retained, not relabeled as new
+        self.assertEqual(row['latest_attempt']['status'],'cancelled')
+        self.assertNotEqual(row['evaluation']['run_id'],done['id'])
 
     def test_active_run_rejects_overlap_and_auth_failure_is_fatal(self):
         gate=threading.Event()
@@ -280,6 +357,9 @@ class RunChecks(unittest.TestCase):
         try:
             self.assertEqual(request('GET','/api/bootstrap')[0],200)
             self.assertEqual(request('GET','/api/snapshot')[0],200)
+            status,body=request('GET','/api/latest');self.assertEqual(status,200)
+            self.assertEqual(json.loads(body)['scope'],'latest')
+            self.assertNotIn(b'SECRET_FIXTURE',body)
             self.assertEqual(request('GET','/../jev-key')[0],404)
             self.assertEqual(request('GET','/api/bootstrap',headers={'Host':'evil.test'})[0],403)
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json'})[0],403)
