@@ -18,7 +18,7 @@ from score_grade import row_grade
 
 QUEUE = 'research/gaza-grading/explanation-queue-2026-10-26.json'
 EXPLANATION_FIELD = 'pro_palestine_explanation'
-SUMMARY_WORDS = (30, 95)
+SUMMARY_WORDS = (30, 110)
 
 
 def validate_summary(result, row, grade, publication_id):
