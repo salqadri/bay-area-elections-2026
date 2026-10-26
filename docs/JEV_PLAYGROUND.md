@@ -192,9 +192,16 @@ archived batches stay unchanged.
 
 ## Compact candidate input
 
+New inputs include optional boolean `part_of_muslim_community` only when explicitly
+confirmed by the owner. Public-source research can nominate questions but cannot
+overwrite an owner value. Unknowns stay absent, not
+false. This is a community observation, not a Gaza policy inference. Confirmed
+values are recorded with exact candidacy provenance and no special annotations. See
+[CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
+
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v6-local-federal-peace-labels`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v6-peace-guide-labels`:
+context (`candidate-evidence-v7-local-federal-community`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v7-community-observations`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster

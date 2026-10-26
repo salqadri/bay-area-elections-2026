@@ -1,0 +1,26 @@
+{
+  "format": "candidate-community-coverage/v1",
+  "checked_on": "2026-10-25",
+  "dataset_sha256": "6f5d7df68ca07e4ee3c256624dd397e120cb67f28c6778c2fbd2ff4af4ed3ce4",
+  "candidacies": 1296,
+  "search_coverage": {
+    "owner_confirmations_skipped": 11,
+    "initial_unknown_candidacies": 1285,
+    "distinct_candidate_queries_completed": 1277,
+    "followup_queries_completed": 15,
+    "guide_queries_completed": 6
+  },
+  "counts": {
+    "no_explicit_lead": 1250,
+    "confirmed_observation": 24,
+    "no_explicit_evidence": 22
+  },
+  "limitation": "A completed search is not proof of affiliation or non-affiliation. Unknowns are not false. Religion alone is not the owner-defined community field. Snippets nominate sources only; membership values require owner confirmation and are never overwritten by research.",
+  "confirmed_values": {
+    "true": 12,
+    "false": 12,
+    "unknown": 1272
+  },
+  "ledger": "coverage-2026-10-25.csv",
+  "source_method": "Serper-only web discovery, captured-page Jev source review, final owner confirmation of all flags."
+}

@@ -22,7 +22,10 @@ Filter the workspace by county and compare saved grades/scores with current CAIR
 Action recommendations in the dedicated review area. A deterministic
 `pro_palestine_score_grade` appears beside results; tune its inclusive score bands
 under **Score → grade mapping**. New input states retain Vote for Peace
-Ally/Opposed/Neutral observations, including previously held Neutral cards. The key stays local on the
+Ally/Opposed/Neutral observations, including previously held Neutral cards.
+An optional `part_of_muslim_community` boolean carries owner-confirmed
+community values into new states; unknowns remain unset. See the
+[community research workflow](docs/CANDIDATE_COMMUNITY.md). The key stays local on the
 server, and runs do not edit or publish candidate data. See [setup and workflow](docs/JEV_PLAYGROUND.md).
 
 ## Development and agent handoff

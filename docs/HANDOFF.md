@@ -1,5 +1,13 @@
 # Research and development handoff
 
+## Candidate community state — October 25, 2026
+
+New shared/playground requests include optional boolean `part_of_muslim_community` from an exact candidacy registry of owner-confirmed values. The final registry has 12 true and 12 false values, with no special annotations; the other 1,272 active repository candidacies remain unknown/absent. Ballot-name variants Jamal Khan and Raeena S. Lari are bound to their supplied office identities. Public religion/source research cannot set this owner-defined community field or overwrite a confirmed value. Published election JSON and both public readers are unchanged.
+
+The repeatable collector searched all 1,285 initially unconfirmed candidacies with 1,277 distinct Serper queries, plus 15 accessible-source follow-ups and six public-guide queries. Jev triages discovery and separately reviews captured source text; snippets never establish the field. Every source-review question was resolved by owner input. Full per-candidacy coverage is archived with the registry; raw captures and exact model decisions remain in the ignored research work directory. See [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md).
+
+New state versions are `candidate-evidence-v7-community-observations` and `candidate-evidence-v7-local-federal-community`. The live local server reload preserved all 82 original run files byte for byte; no grading runs were submitted. The new offline community check covers exact identity, unknown/false semantics, provider/source separation, cache invalidation and protection of owner values. The final focused suites have nine community regressions and 38 playground regressions, with live-browser verification of current input previews and exact saved requests. The complete final offline release gate passes **40/40 checks**.
+
 ## Derived score grades and Vote for Peace context — October 25, 2026
 
 The local playground adds deterministic `pro_palestine_score_grade` alongside Jev answers: six equal-width bands over 0–5, F through A, with each upper bound inclusive (0 through 5/6 is F). **Score → grade mapping** edits the five F–B bounds for nonlinear mappings; overrides persist under the server work directory. Results, race cards and optional CAIR comparisons refresh without model calls. API/download projections include the exact mapping and row field; original requests/responses, confidence, run files and archived batches remain unchanged. New CLI batches include the same field and accept `--score-grade-mapping`.
