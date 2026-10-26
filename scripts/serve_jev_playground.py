@@ -1,4 +1,4 @@
-"""Local candidate Jev playground for nationwide House and Alameda/Santa Clara races. Serves UI + same-origin run API on loopback.
+"""Local candidate Jev playground for nationwide House and five-county Bay Area races. Serves UI + same-origin run API on loopback.
 
 python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/key
 No API credential reaches the browser. Runs never change published research.
@@ -19,12 +19,13 @@ import uuid
 
 from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, build_state,
                         validate_questions, validate_response, jev_call, digest, dump, save, now, money)
+from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
 ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
-COUNTIES = frozenset({'Alameda', 'Santa Clara'})
-STATE_VERSION = 'candidate-evidence-v5-local-federal-cair'
+COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
+STATE_VERSION = 'candidate-evidence-v7-local-federal-community'
 
 
 def row_id(position_id, candidate, roster):
@@ -32,7 +33,7 @@ def row_id(position_id, candidate, roster):
 
 
 def playground_positions(data):
-    """Union by contest identity: all House seats plus every active contest serving either county."""
+    """Union by contest identity: all House seats plus active contests serving any of the five counties."""
     return [p for p in data['positions'] if p.get('ballot_status') != 'excluded'
             and (p.get('office_category') == 'U.S. House' or COUNTIES.intersection(p.get('counties') or []))]
 
@@ -74,8 +75,13 @@ def snapshot(data):
         state['candidate_roster'] = roster
         rows.append({'id': row_id(p['id'], c['name'], roster), 'position_id': p['id'], 'candidate': c['name'],
                      'party': c.get('party') or ('Nonpartisan' if p.get('partisan') is False else None),
-                     'roster': roster, 'state': state})
-    return {'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION,
+                     'roster': roster, 'state': state,
+                     'cair_action': deepcopy([r for r in c.get('endorsements') or [] if r.get('endorser') == 'CAIR Action'])})
+    bay_races = {id_ for id_, race in races.items() if COUNTIES.intersection(race.get('counties') or [])}
+    return {'scope_counts': {'all': {'candidates': len(rows), 'races': len(races)},
+                             'bay-area': {'candidates': sum(c['position_id'] in bay_races for c in rows), 'races': len(bay_races)}},
+            'bay_area_counties': sorted(COUNTIES),
+            'dataset_sha256': digest(dump(data).encode()), 'state_version': STATE_VERSION,
             'publication_version': data['election']['publication_version'], 'races': list(races.values()), 'candidates': rows}
 
 
@@ -109,12 +115,94 @@ class RunManager:
     def current(self):
         return snapshot(json.loads(self.dataset_path.read_text()))
 
+    def score_grade_mapping(self):
+        path = self.work / 'score-grade-mapping.json'
+        return validate_mapping(json.loads(path.read_text()) if path.exists() else DEFAULT_MAPPING)
+
+    def set_score_grade_mapping(self, mapping):
+        mapping = validate_mapping(mapping)
+        with self.lock:
+            save(self.work / 'score-grade-mapping.json', mapping)
+        return mapping
+
+    def present(self, run):
+        # Delta grades were computed before dropping requests; keep their exact
+        # mapping even if another tab changes the setting between reads.
+        mapping = run['score_grade_mapping'] if 'changes' in run else self.score_grade_mapping()
+        return present_run(run, mapping)
+
     def bootstrap(self):
         current = self.current()
         batch = json.loads(self.baseline.read_text())
         baseline = stored_run(batch, current)
-        return {'snapshot': current, 'baseline': baseline, 'questions': batch['questions'],
+        return {'snapshot': current, 'baseline': self.present(baseline), 'questions': batch['questions'],
+                'latest': self.present(self.latest(current, baseline)),
+                'score_grade_mapping': self.score_grade_mapping(), 'default_score_grade_mapping': DEFAULT_MAPPING,
                 'key_configured': bool(self.key), 'history': self.history()}
+
+    def latest(self, current=None, baseline=None):
+        """Read-only projection of the latest successful evaluation of each candidacy.
+
+        Never mix answers into a saved run. Failed/stopped retries retain the last
+        successful answer, with a separate attempt notice and exact provenance.
+        """
+        with self.lock:
+            current = current or self.current()
+            baseline = baseline or stored_run(json.loads(self.baseline.read_text()), current)
+            sources = [(baseline, 0)]
+            for path in (self.work / 'runs').glob('*/run.json'):
+                value = json.loads(path.read_text())
+                if value['id'] not in self.jobs and value['status'] in {'running', 'cancelling'}:
+                    value['status'] = 'interrupted'
+                sources.append((value, path.stat().st_mtime_ns))
+
+            def rank(value, tie):
+                date = datetime.fromisoformat(value.replace('Z', '+00:00'))
+                if date.tzinfo is None:
+                    date = date.replace(tzinfo=timezone.utc)
+                return date.timestamp(), tie
+
+            successes, attempts = {}, {}
+            for source, tie in sources:
+                for original in source['rows']:
+                    row = deepcopy(original)
+                    if row['status'] == 'queued' and source['status'] == 'interrupted':
+                        row['status'] = 'interrupted'
+                    row['evaluation'] = {k: source.get(k) for k in
+                                         ('created_at', 'dataset_sha256', 'state_version', 'model')}
+                    row['evaluation'].update(run_id=source['id'],
+                                             finished_at=row.get('finished_at') or source.get('finished_at'))
+                    attempt_rank = rank(source['created_at'], tie)
+                    if row['id'] not in attempts or attempt_rank > attempts[row['id']][0]:
+                        attempts[row['id']] = attempt_rank, row
+                    if row['status'] == 'complete' and row.get('response'):
+                        success_rank = rank(row['evaluation']['finished_at'] or source['created_at'], tie)
+                        if row['id'] not in successes or success_rank > successes[row['id']][0]:
+                            successes[row['id']] = success_rank, row, attempt_rank
+            rows = []
+            for candidate in current['candidates']:
+                id_ = candidate['id']
+                latest_attempt = attempts.get(id_)
+                row = deepcopy(successes[id_][1] if id_ in successes else
+                               latest_attempt[1] if latest_attempt else {**candidate, 'status': 'preview'})
+                if id_ in successes and latest_attempt and latest_attempt[1]['status'] != 'complete':
+                    attempt = latest_attempt[1]
+                    if latest_attempt[0] > successes[id_][2]:
+                        row['latest_attempt'] = {**attempt['evaluation'], 'status': attempt['status'],
+                                                 'error': attempt.get('error')}
+                # Current comparison metadata is separate from the frozen Jev request.
+                row['cair_action'] = deepcopy(candidate['cair_action'])
+                rows.append(row)
+            active = self.jobs.get(self.active)
+            return {'format': 'jev-playground-latest/v1', 'id': 'latest', 'scope': 'latest',
+                    'created_at': now(), 'model': MODEL, 'questions': baseline['questions'],
+                    'dataset_sha256': current['dataset_sha256'], 'state_version': current['state_version'],
+                    'races': current['races'], 'rows': rows, 'revision': 0,
+                    'completed': sum(row['status'] == 'complete' for row in rows),
+                    'errors': sum(row['status'] == 'error' for row in rows),
+                    'status': active['status'] if active else 'complete',
+                    'active_run': {k: active[k] for k in ('id', 'status', 'scope', 'completed', 'errors')} | {
+                        'total': len(active['rows'])} if active else None}
 
     def history(self):
         result = []
@@ -131,8 +219,12 @@ class RunManager:
     def _persist(self, run):
         save(self.work / 'runs' / run['id'] / 'run.json', run)
 
-    def start(self, questions, candidate_id=None):
+    def start(self, questions, candidate_id=None, scope='all'):
         validate_questions(questions)
+        if not isinstance(scope, str) or scope not in {'all', 'bay-area'}:
+            raise ValueError('scope must be all or bay-area')
+        if candidate_id is not None and scope != 'all':
+            raise ValueError('Choose a candidate or a batch scope, not both')
         if candidate_id is not None and (not isinstance(candidate_id, str) or not candidate_id):
             raise ValueError('candidate_id must be a nonempty candidate ID')
         with self.lock:
@@ -142,6 +234,11 @@ class RunManager:
                 raise PermissionError('Start the local server with --jev-key-file or TYPESAFE_API_KEY')
             current = self.current(); questions = deepcopy(questions)
             targets = current['candidates']
+            if scope == 'bay-area':
+                bay_races = {r['id'] for r in current['races'] if COUNTIES.intersection(r.get('counties') or [])}
+                targets = [c for c in targets if c['position_id'] in bay_races]
+                if not targets:
+                    raise ValueError('No active Bay Area candidates are available in the current dataset')
             if candidate_id is not None:
                 targets = [c for c in targets if c['id'] == candidate_id]
                 if not targets:
@@ -153,7 +250,7 @@ class RunManager:
                 rows.append({k: v for k, v in c.items() if k != 'state'} | {
                     'request': request, 'request_sha256': digest(dump(request).encode()), 'status': 'queued', 'revision': 0})
             run = {'format': 'jev-playground-run/v1', 'id': run_id, 'created_at': now(), 'model': MODEL,
-                   'questions': questions, 'scope': 'candidate' if candidate_id is not None else 'all',
+                   'questions': questions, 'scope': 'candidate' if candidate_id is not None else scope,
                    'dataset_sha256': current['dataset_sha256'], 'state_version': current['state_version'],
                    'races': current['races'], 'rows': rows, 'status': 'running', 'revision': 0, 'completed': 0, 'errors': 0}
             self.jobs[run_id] = run; self.active = run_id; self.stops[run_id] = threading.Event(); self._persist(run)
@@ -211,7 +308,10 @@ class RunManager:
                 return deepcopy(run)
             keys = ('id', 'status', 'revision', 'completed', 'errors', 'finished_at')
             result = {k: run[k] for k in keys if k in run}
+            mapping = self.score_grade_mapping()
+            result['score_grade_mapping'] = mapping
             result['changes'] = [{k: deepcopy(v) for k, v in row.items() if k != 'request'}
+                                | {'pro_palestine_score_grade': row_grade(row, mapping)}
                                  for row in run['rows'] if row['revision'] > after]
             return result
 
@@ -257,11 +357,13 @@ def handler_for(manager):
                     return self.send(200, manager.bootstrap())
                 if url.path == '/api/snapshot':
                     return self.send(200, manager.current())
+                if url.path == '/api/latest':
+                    return self.send(200, manager.present(manager.latest()))
                 if url.path == '/api/runs':
                     return self.send(200, manager.history())
                 if url.path.startswith('/api/runs/'):
                     after = parse_qs(url.query).get('after', [None])[0]
-                    return self.send(200, manager.get(url.path.removeprefix('/api/runs/'), int(after) if after is not None else None))
+                    return self.send(200, manager.present(manager.get(url.path.removeprefix('/api/runs/'), int(after) if after is not None else None)))
                 paths = {'/': ASSETS / 'index.html', '/app.js': ASSETS / 'app.js', '/core.js': ASSETS / 'core.js',
                          '/style.css': ASSETS / 'style.css', '/contest-label.js': ROOT / 'src/contest-label.js'}
                 if url.path not in paths:
@@ -283,12 +385,14 @@ def handler_for(manager):
                 if not 0 < length <= 256000:
                     return self.send(413, {'error': 'Request body must be 1–256000 bytes'})
                 body = json.loads(self.rfile.read(length)); path = urlsplit(self.path).path
+                if path == '/api/score-grade-mapping':
+                    return self.send(200, manager.set_score_grade_mapping(body))
                 if path == '/api/runs':
-                    if not isinstance(body, dict) or set(body) not in ({'questions'}, {'questions', 'candidate_id'}):
-                        raise ValueError('Provide questions and optionally candidate_id only')
+                    if not isinstance(body, dict) or set(body) not in ({'questions'}, {'questions', 'candidate_id'}, {'questions', 'scope'}):
+                        raise ValueError('Provide questions and optionally candidate_id or scope')
                     if 'candidate_id' in body and body['candidate_id'] is None:
                         raise ValueError('candidate_id must be a nonempty candidate ID')
-                    return self.send(202, manager.start(body['questions'], body.get('candidate_id')))
+                    return self.send(202, manager.present(manager.start(body['questions'], body.get('candidate_id'), body.get('scope', 'all'))))
                 match = re.fullmatch(r'/api/runs/([^/]+)/cancel', path)
                 if match:
                     return self.send(200, manager.cancel(match.group(1)))

@@ -2,14 +2,17 @@
 from copy import deepcopy
 import http.client
 import json
+import math
 from pathlib import Path
 import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 
 import grade_gaza as g
 import serve_jev_playground as p
+import score_grade as sg
 
 QUESTIONS = {'verdict': {'type': 'choice', 'instructions': 'Example', 'criteria': {'A':'One','F':'Two'}},
              'rating': {'type':'score','criteria':['Low','High']}, 'claim': {'type':'noul'}}
@@ -42,7 +45,7 @@ def expanded_fixture():
     for id_,county,category,status,name in [('AL-local',['Alameda'],'Mayor','confirmed','Local Alex'),
             ('SC-local',['Santa Clara'],'School district','confirmed','Local Alex'),
             ('shared',['Alameda','Santa Clara'],'Statewide executive','confirmed','Governor'),
-            ('outside',['San Mateo'],'Mayor','confirmed','Outside'),
+            ('outside',['San Diego'],'Mayor','confirmed','Outside'),
             ('excluded-local',['Santa Clara'],'Mayor','excluded','Excluded local'),
             ('empty',['Santa Clara'],'Water district','confirmed',None)]:
         data['positions'].append({'id':id_,'counties':county,'government_level':'City or town',
@@ -51,6 +54,15 @@ def expanded_fixture():
             'election_type':'general','candidates':[{'name':name,'incumbent':True}] if name else []})
     data['positions'][5]['qualified_write_in_candidates']=[{'name':'Local Write In'}]
     data['positions'][5]['filed_candidates_not_confirmed_on_ballot']=[{'name':'Local provisional'}]
+    return data
+
+
+def five_county_fixture():
+    data=expanded_fixture()
+    for county in ('Contra Costa','San Francisco','San Mateo'):
+        data['positions'].append({'id':county,'office':'Mayor','office_category':'Mayor',
+            'jurisdiction':county+' city','partisan':False,'counties':[county],
+            'ballot_status':'confirmed','candidates':[{'name':'Shared candidate name'}]})
     return data
 
 
@@ -64,6 +76,100 @@ def baseline(data):
 
 
 class ValidationChecks(unittest.TestCase):
+    def test_linear_grade_boundaries_are_inclusive_without_rounding(self):
+        self.assertEqual(sg.score_grade(0), 'F')
+        for i, upper in enumerate(sg.DEFAULT_MAPPING['upper_bounds']):
+            self.assertEqual(sg.score_grade(upper), 'FEDCB'[i])
+            self.assertEqual(sg.score_grade(math.nextafter(upper, math.inf)), 'EDCBA'[i])
+        self.assertEqual(sg.score_grade(5), 'A')
+        for value in (None, True, '2', -0.1, 5.1, float('nan'), float('inf')):
+            self.assertIsNone(sg.score_grade(value))
+
+    def test_reviewed_fiona_ma_divestment_evidence_reaches_generated_state(self):
+        data=json.loads((g.ROOT/'2026-11-03_Bay_Area_Elections.json').read_text())
+        p,c=next((p,c) for p in data['positions'] for c in p.get('candidates') or [] if c['name']=='Fiona Ma')
+        state=g.build_state(p,c,data)
+        self.assertTrue(any('2024-05-16' in item and 'opposed divestment from Israel' in item
+                            for item in state['gaza_evidence']))
+
+    def test_evidence_score_suppresses_only_below_ten_percent(self):
+        row={'status':'complete','request':{'questions':{
+            'pro_palestine_score':{'type':'score','criteria':list('012345')},
+            'evidence_score':{'type':'score','criteria':['none','concrete']}}},
+            'response':{'answers':{'pro_palestine_score':{'type':'score','score':1.77,'confidence':0},
+                                  'evidence_score':{'type':'score','score':0,'confidence':1}}}}
+        for value in (0, .05, .099999, .1, 1):
+            row['response']['answers']['evidence_score']['score']=value
+            original=deepcopy(row)
+            self.assertEqual(sg.row_grade(row), 'Insufficient Info' if value < .1 else 'D')
+            self.assertEqual(sg.present_run({'rows':[row]},sg.DEFAULT_MAPPING)['rows'][0]['response'], original['response'])
+            self.assertEqual(row,original)
+        for value in (None, True, '0', -.1, 1.1, float('nan')):
+            row['response']['answers']['evidence_score']['score']=value
+            self.assertEqual(sg.row_grade(row),'D')
+        row['response']['answers']['evidence_score']['score']=0
+        row['request']['questions']['evidence_score']['criteria'].append('other scale')
+        self.assertEqual(sg.row_grade(row),'D')
+        del row['request']['questions']['evidence_score']
+        self.assertEqual(sg.row_grade(row),'D')
+        row['response']['answers']['pro_palestine_score']['score']=None
+        self.assertIsNone(sg.row_grade(row))
+
+    def test_custom_grade_mapping_validation_and_input_preservation(self):
+        mapping={'upper_bounds':[.1,.5,1,2,4.9]}
+        self.assertEqual(sg.score_grade(2.5,mapping),'B')
+        for invalid in ({},[],{'upper_bounds':[1,2,3,4]}, {'upper_bounds':[0,1,2,3,4]},
+                        {'upper_bounds':[1,2,2,3,4]}, {'upper_bounds':[1,2,3,4,5]},
+                        {'upper_bounds':[False,1,2,3,4]}, {'upper_bounds':[1,2,3,4,'4.5']},
+                        {'upper_bounds':[1,2,3,4,float('nan')]}, {**mapping,'extra':1}):
+            with self.assertRaises(ValueError):sg.validate_mapping(invalid)
+        q={'pro_palestine_score':{'type':'score','criteria':list('012345')}}
+        row={'status':'complete','request':{'questions':q},'response':{'answers':{'pro_palestine_score':{'type':'score','score':2.5,'confidence':0}}}}
+        before=deepcopy(row);projected=sg.present_run({'rows':[row]},mapping)
+        self.assertEqual(projected['rows'][0]['pro_palestine_score_grade'],'B')
+        self.assertEqual(row,before);self.assertIs(projected['rows'][0]['request'],row['request'])
+        row['status']='queued';self.assertIsNone(sg.row_grade(row))
+        row['status']='complete';q['pro_palestine_score']['criteria'].pop();self.assertIsNone(sg.row_grade(row))
+
+    def test_vote_for_peace_neutral_is_context_only_exact_candidacy_and_source(self):
+        data=fixture();pos=data['positions'][0];pos['id']='CA2026-014';c=pos['candidates'][0];c['name']='Xavier Becerra'
+        before=deepcopy(c);state=g.build_state(pos,c,data);records=state['focused_endorsement_observations']
+        self.assertEqual(c,before);self.assertEqual(len(records),1)
+        self.assertEqual((records[0]['relation'],records[0]['rating'],records[0]['source_label']),('neutral','Neutral','Neutral'))
+        self.assertEqual(records[0]['url'],'https://voteforpeace.info/california/xavier-becerra')
+        pos['id']='other-race';self.assertNotIn('focused_endorsement_observations',g.build_state(pos,c,data))
+        pos['id']='CA2026-014';c['endorsements']=[{'endorser':'VoteForPeace','relation':'opposed','phase':'general','url':'https://example.test/new'}]
+        records=g.build_state(pos,c,data)['focused_endorsement_observations'];self.assertEqual(len(records),1)
+        self.assertEqual(records[0]['relation'],'opposed');self.assertNotIn('rating',records[0])
+
+    def test_vote_for_peace_exact_labels_and_primary_phase_are_retained(self):
+        review=json.loads((g.ROOT/'research/endorsements/peace-guides-2026-10-09.json').read_text())
+        for finding in review['findings']:
+            e=finding['record']
+            if e['endorser']!='Vote for Peace':continue
+            c={'name':finding['candidate'],'endorsements':[deepcopy(e)]};pos={'id':finding['position_id']}
+            records=g.focused_endorsements(pos,c);self.assertEqual(len(records),1)
+            card=next(card for card in review['vote_for_peace_cards'] if card.get('candidate')==c['name'] and card.get('position_id')==pos['id'] and card['phase']==e['phase'])
+            self.assertEqual(records[0]['source_label'],card['source_label'])
+            for key in ('relation','rating','phase','url','checked_on'):
+                if key in e:self.assertEqual(records[0][key],e[key])
+            c['endorsements'][0]['checked_on']='2026-10-25'
+            self.assertEqual(g.focused_endorsements(pos,c)[0]['checked_on'],'2026-10-25')
+
+    def test_cli_grade_adds_derived_result_without_modifying_provider_decision(self):
+        criteria={'id':'fixture','questions':{'pro_palestine_score':{'type':'score','criteria':list('012345')}}}
+        plan=g.plan(fixture(),criteria,'house-all');plan['state_version']='exact-planned-evidence-version'
+        def call(work,request,key,force=False):
+            out=response(request);out['answers']['pro_palestine_score']['score']=2.5;return out
+        with tempfile.TemporaryDirectory() as directory, patch.object(g,'jev_call',side_effect=call):
+            work=Path(directory);g.grade(work,plan,criteria,'FIXTURE',score_grade_mapping={'upper_bounds':[.1,.5,1,2,4.9]})
+            batch=json.loads((work/'results.json').read_text())
+        self.assertEqual(batch['state_version'],plan['state_version'])
+        self.assertTrue(all(r['pro_palestine_score_grade']=='B' for r in batch['results']))
+        for decision in batch['decisions'].values():
+            self.assertEqual(decision['request']['questions'],criteria['questions'])
+            self.assertNotIn('pro_palestine_score_grade',decision['response']['answers'])
+
     def test_questions_allow_renamed_added_score_choice_noul(self):
         self.assertEqual(g.validate_questions(QUESTIONS),QUESTIONS)
         self.assertEqual(g.validate_response(QUESTIONS,response({'questions':QUESTIONS}))['answers']['rating']['confidence'],0.)
@@ -132,6 +238,20 @@ class ValidationChecks(unittest.TestCase):
             record=g.build_state(pos,candidate,data)['focused_endorsement_observations'][0]
             self.assertEqual(record['relation'],relation);self.assertEqual(record.get('shared'),extra.get('shared'))
 
+    def test_comparison_metadata_preserves_cair_sources_and_is_bound_to_the_candidacy(self):
+        data=expanded_fixture()
+        records=[{'endorser':'CAIR Action','relation':'preferred','phase':'general','url':'https://example.test/guide#page=2','checked_on':'2026-10-23'},
+                 {'endorser':'CAIR Action','relation':'endorsed','phase':'primary','historical':True,'shared':True},
+                 {'endorser':'CAIR SFBA','relation':'endorsed','phase':'general'}]
+        data['positions'][5]['candidates'][0]['endorsements']=deepcopy(records)
+        current=p.snapshot(data)
+        first=next(c for c in current['candidates'] if c['position_id']=='AL-local' and c['roster']=='candidates')
+        second=next(c for c in current['candidates'] if c['position_id']=='SC-local')
+        self.assertEqual(first['candidate'],second['candidate'])
+        self.assertEqual(first['cair_action'],records[:2]);self.assertEqual(second['cair_action'],[])
+        self.assertEqual(first['cair_action'][0]['url'],'https://example.test/guide#page=2')
+        self.assertEqual(data['positions'][5]['candidates'][0]['endorsements'],records)
+
     def test_congressional_actions_resolve_titles_and_keep_actual_response(self):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
         data['gaza_voting']={'actions':{'119-A':{'title':'Actual action','kind':'sponsorship','date_label':'2025'}}}
@@ -161,6 +281,50 @@ class RunChecks(unittest.TestCase):
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)
         self.assertNotIn('SECRET_FIXTURE',json.dumps(b));self.assertNotIn('accepted',json.dumps(b));self.assertEqual(b['baseline']['rows'][0]['response']['answers']['verdict']['confidence'],.12)
+
+    def test_mapping_persists_and_projects_existing_results_without_rewriting_history(self):
+        m=self.manager();q={'pro_palestine_score':{'type':'score','criteria':list('012345')}}
+        done=self.wait(m,m.start(q)['id']);path=m.work/'runs'/done['id']/'run.json';original=path.read_bytes()
+        mapping={'upper_bounds':[.1,.2,.3,.4,.5]};m.set_score_grade_mapping(mapping)
+        restarted=p.RunManager(self.path,m.work,baseline=self.base)
+        self.assertEqual(restarted.bootstrap()['score_grade_mapping'],mapping)
+        self.assertEqual(restarted.present(done)['rows'][0]['pro_palestine_score_grade'],'F')
+        self.assertEqual(m.present(m.get(done['id'],0))['changes'][0]['pro_palestine_score_grade'],'F')
+        delta=m.get(done['id'],0);m.set_score_grade_mapping(sg.DEFAULT_MAPPING)
+        self.assertEqual(m.present(delta)['score_grade_mapping'],mapping)
+        self.assertEqual(path.read_bytes(),original)
+        self.assertNotIn('pro_palestine_score_grade',json.loads(original)['rows'][0]['response']['answers'])
+
+    def test_five_county_catalog_counts_and_bay_batch_do_not_include_national_peers(self):
+        g.save(self.path,five_county_fixture());calls=[]
+        def call(work,req,key,force):calls.append(deepcopy(req));return response(req)
+        m=self.manager(call);current=m.current()
+        self.assertEqual(current['bay_area_counties'],['Alameda','Contra Costa','San Francisco','San Mateo','Santa Clara'])
+        self.assertEqual(current['scope_counts']['all']['candidates'],11)
+        self.assertEqual(current['scope_counts']['bay-area']['candidates'],9)
+        done=self.wait(m,m.start(QUESTIONS,scope='bay-area')['id'])
+        self.assertEqual(done['scope'],'bay-area');self.assertEqual(len(done['rows']),9)
+        self.assertEqual(len(calls),9)
+        self.assertTrue(all(p.COUNTIES.intersection(r['state']['counties']) for r in calls))
+        self.assertNotIn('Bob',{r['candidate'] for r in done['rows']})
+        self.assertNotIn('Chris',{r['candidate'] for r in done['rows']})
+        self.assertEqual(sum(r['candidate']=='Alice' for r in done['rows']),1)  # shared county race once
+        self.assertEqual(sum(r['candidate']=='Shared candidate name' for r in done['rows']),3)  # distinct candidacies
+        self.assertEqual({r['roster'] for r in done['rows']},
+                         {'candidates','qualified_write_in_candidates','filed_candidates_not_confirmed_on_ballot'})
+        self.assertEqual(m.history()[0]['scope'],'bay-area')
+        self.assertTrue(all(r['request']['questions']==QUESTIONS for r in done['rows']))
+        self.assertTrue(all(r['response']['answers']['verdict']['confidence']==.12 for r in done['rows']))
+        self.assertEqual(len(self.wait(m,m.start(QUESTIONS)['id'])['rows']),11)
+
+    def test_invalid_or_empty_batch_scope_makes_no_model_calls(self):
+        calls=[]
+        m=self.manager(lambda *args,**kwargs:calls.append(True))
+        for scope in ('unknown',None,[],{},123,'candidate'):
+            with self.assertRaises(ValueError):m.start(QUESTIONS,scope=scope)
+        with self.assertRaises(ValueError):m.start(QUESTIONS,scope='bay-area')  # fixture has no county membership
+        with self.assertRaises(ValueError):m.start(QUESTIONS,m.current()['candidates'][0]['id'],scope='bay-area')
+        self.assertFalse(calls);self.assertEqual(m.history(),[])
 
     def test_expanded_roster_keeps_original_house_baseline_and_local_inputs_are_ungraded(self):
         g.save(self.path,expanded_fixture());bootstrap=self.manager().bootstrap()
@@ -220,6 +384,93 @@ class RunChecks(unittest.TestCase):
         self.assertEqual(m.get(first['id'])['questions'],QUESTIONS);self.assertEqual(second['questions'],q)
         self.assertEqual(second['rows'][0]['request_sha256'],third['rows'][0]['request_sha256'])
 
+    def test_latest_retains_each_candidate_across_iterations_and_restart(self):
+        m=self.manager();ids=[c['id'] for c in m.current()['candidates']]
+        questions=deepcopy(QUESTIONS);questions['verdict']['instructions']='Alice iteration'
+        first=self.wait(m,m.start(questions,ids[0])['id'])
+        second=self.wait(m,m.start(QUESTIONS,ids[1])['id'])
+        latest=m.latest();rows={row['id']:row for row in latest['rows']}
+        for saved in (first,second):
+            original=saved['rows'][0];row=rows[original['id']]
+            self.assertEqual(row['request'],original['request'])
+            self.assertEqual(row['response'],original['response'])
+            self.assertEqual(row['request_sha256'],original['request_sha256'])
+            self.assertEqual(row['evaluation']['run_id'],saved['id'])
+        self.assertEqual(rows[ids[2]]['evaluation']['run_id'],m.bootstrap()['baseline']['id'])
+        changed=deepcopy(QUESTIONS);changed['verdict']['instructions']='Alice iteration two'
+        third=self.wait(m,m.start(changed,ids[0])['id'])
+        restarted=p.RunManager(self.path,m.work,'',self.base)
+        rows={row['id']:row for row in restarted.bootstrap()['latest']['rows']}
+        self.assertEqual(rows[ids[0]]['evaluation']['run_id'],third['id'])
+        self.assertEqual(rows[ids[0]]['request']['questions'],changed)
+        self.assertEqual(rows[ids[1]]['evaluation']['run_id'],second['id'])
+        self.assertEqual(m.get(first['id']),first)  # projection never modifies stored requests
+        self.assertNotIn('SECRET_FIXTURE',json.dumps(restarted.latest()))
+
+    def test_latest_cair_metadata_can_refresh_without_rewriting_saved_model_inputs(self):
+        old={'endorser':'CAIR Action','relation':'opposed','phase':'general','url':'https://example.test/old'}
+        self.data['positions'][0]['candidates'][0]['endorsements']=[old];g.save(self.path,self.data)
+        m=self.manager();id_=m.current()['candidates'][0]['id']
+        saved=self.wait(m,m.start(QUESTIONS,id_)['id'])
+        path=m.work/'runs'/saved['id']/'run.json';before=path.read_bytes()
+        new={**old,'relation':'preferred','url':'https://example.test/new'}
+        self.data['positions'][0]['candidates'][0]['endorsements']=[new];g.save(self.path,self.data)
+        row=next(r for r in m.latest()['rows'] if r['id']==id_)
+        self.assertEqual(row['cair_action'],[new])
+        self.assertEqual(row['request'],saved['rows'][0]['request'])
+        self.assertEqual(row['request_sha256'],saved['rows'][0]['request_sha256'])
+        self.assertEqual(row['request']['state']['focused_endorsement_observations'][0]['relation'],'opposed')
+        self.assertEqual(m.get(saved['id']),saved);self.assertEqual(path.read_bytes(),before)
+
+    def test_latest_keeps_previous_answers_during_retries_and_after_failure(self):
+        m=self.manager();id_=m.current()['candidates'][0]['id']
+        first=self.wait(m,m.start(QUESTIONS,id_)['id']);release=threading.Event()
+        def failed(*args,**kwargs):
+            release.wait(2);raise RuntimeError('SECRET_FIXTURE provider body')
+        m.transport=failed
+        pending=m.start(QUESTIONS,id_)
+        row=next(row for row in m.latest()['rows'] if row['id']==id_)
+        self.assertEqual(row['evaluation']['run_id'],first['id'])
+        self.assertEqual(row['latest_attempt']['status'],'queued')
+        self.assertEqual(m.latest()['active_run']['id'],pending['id'])
+        release.set();self.wait(m,pending['id'])
+        latest=m.latest();row=next(row for row in latest['rows'] if row['id']==id_)
+        self.assertEqual(row['evaluation']['run_id'],first['id'])
+        self.assertEqual(row['latest_attempt']['status'],'error')
+        self.assertEqual(row['latest_attempt']['run_id'],pending['id'])
+        self.assertNotIn('SECRET_FIXTURE',json.dumps(latest));self.assertIsNone(latest['active_run'])
+
+    def test_latest_orders_by_evaluation_time_not_filename_or_file_modification(self):
+        m=self.manager();id_=m.current()['candidates'][0]['id']
+        first=self.wait(m,m.start(QUESTIONS,id_)['id'])
+        second=self.wait(m,m.start(QUESTIONS,id_)['id'])
+        first['created_at']='2026-10-25T01:00:00+00:00'
+        first['rows'][0]['finished_at']='2026-10-25T06:00:00+00:00'
+        second['created_at']='2026-10-25T02:00:00+00:00'
+        second['rows'][0]['finished_at']='2026-10-25T05:00:00+00:00'
+        g.save(m.work/'runs'/first['id']/'run.json',first)
+        g.save(m.work/'runs'/second['id']/'run.json',second)
+        restarted=p.RunManager(self.path,m.work,'',self.base)
+        row=next(row for row in restarted.latest()['rows'] if row['id']==id_)
+        self.assertEqual(row['evaluation']['run_id'],first['id'])
+
+    def test_latest_ungraded_and_interrupted_candidates_are_not_fabricated_answers(self):
+        g.save(self.path,expanded_fixture());m=self.manager();current=m.current()
+        local=next(c for c in current['candidates'] if c['position_id']=='SC-local')
+        row=next(row for row in m.latest()['rows'] if row['id']==local['id'])
+        self.assertEqual(row['status'],'preview');self.assertNotIn('response',row)
+        release=threading.Event()
+        m.transport=lambda work,req,key,force:(release.wait(2),response(req))[1]
+        pending=m.start(QUESTIONS,local['id'])
+        restarted=p.RunManager(self.path,m.work,'',self.base)
+        row=next(row for row in restarted.latest()['rows'] if row['id']==local['id'])
+        self.assertEqual(row['status'],'interrupted');self.assertNotIn('response',row)
+        self.assertIsNone(restarted.latest()['active_run'])
+        release.set();self.wait(m,pending['id'])
+        data=expanded_fixture();data['positions'][6]['ballot_status']='excluded';g.save(self.path,data)
+        self.assertNotIn(local['id'],{row['id'] for row in m.latest()['rows']})
+        self.assertEqual(m.get(pending['id'])['rows'][0]['id'],local['id'])
+
     def test_unknown_invalid_or_removed_selection_never_calls_provider(self):
         calls=[]
         def call(*args,**kwargs):calls.append(True);return {}
@@ -251,6 +502,11 @@ class RunChecks(unittest.TestCase):
         m=self.manager(call,workers=1);run=m.start(QUESTIONS);started.wait(1);m.cancel(run['id']);release.set();done=self.wait(m,run['id'])
         self.assertEqual(done['status'],'cancelled');self.assertEqual(len(calls),1)
         self.assertTrue(any(row['status']=='cancelled' and 'response' not in row for row in done['rows']))
+        cancelled=next(row for row in done['rows'] if row['status']=='cancelled')
+        row=next(row for row in m.latest()['rows'] if row['id']==cancelled['id'])
+        self.assertEqual(row['status'],'complete')  # older baseline retained, not relabeled as new
+        self.assertEqual(row['latest_attempt']['status'],'cancelled')
+        self.assertNotEqual(row['evaluation']['run_id'],done['id'])
 
     def test_active_run_rejects_overlap_and_auth_failure_is_fatal(self):
         gate=threading.Event()
@@ -280,12 +536,20 @@ class RunChecks(unittest.TestCase):
         try:
             self.assertEqual(request('GET','/api/bootstrap')[0],200)
             self.assertEqual(request('GET','/api/snapshot')[0],200)
+            status,body=request('GET','/api/latest');self.assertEqual(status,200)
+            self.assertEqual(json.loads(body)['scope'],'latest')
+            self.assertNotIn(b'SECRET_FIXTURE',body)
             self.assertEqual(request('GET','/../jev-key')[0],404)
             self.assertEqual(request('GET','/api/bootstrap',headers={'Host':'evil.test'})[0],403)
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json'})[0],403)
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json','Origin':'https://evil.test'})[0],403)
             origin='http://127.0.0.1:'+str(server.server_port)
             headers={'Content-Type':'application/json','Origin':origin}
+            mapping={'upper_bounds':[.1,.5,1,2,4.9]}
+            self.assertEqual(request('POST','/api/score-grade-mapping',json.dumps(mapping),headers)[0],200)
+            self.assertEqual(json.loads(request('GET','/api/bootstrap')[1])['score_grade_mapping'],mapping)
+            self.assertEqual(request('POST','/api/score-grade-mapping','{"upper_bounds":[1,2,2,3,4]}',headers)[0],400)
+            self.assertEqual(request('POST','/api/score-grade-mapping',json.dumps(mapping),{'Content-Type':'application/json'})[0],403)
             self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'key':'SECRET_FIXTURE'}),headers)[0],400)
             status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS}),headers);self.assertEqual(status,202);id_=json.loads(body)['id'];self.wait(m,id_)
             self.assertNotIn(b'SECRET_FIXTURE',request('GET','/api/runs/'+id_)[1])
@@ -295,6 +559,13 @@ class RunChecks(unittest.TestCase):
             status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'candidate_id':selected}),headers)
             self.assertEqual(status,202);single=self.wait(m,json.loads(body)['id']);self.assertEqual(len(single['rows']),1)
             self.assertEqual(single['rows'][0]['id'],selected)
+            for scope in (None,{},[],123,'unknown'):
+                self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'scope':scope}),headers)[0],400)
+            self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'candidate_id':selected,'scope':'bay-area'}),headers)[0],400)
+            g.save(self.path,five_county_fixture())
+            status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'scope':'bay-area'}),headers)
+            self.assertEqual(status,202);bay=self.wait(m,json.loads(body)['id'])
+            self.assertEqual(bay['scope'],'bay-area');self.assertEqual(len(bay['rows']),9)
         finally:server.shutdown();server.server_close()
 
 

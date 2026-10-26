@@ -100,6 +100,20 @@ already captured in general platform research, including nested `/issues` pages.
 Its fingerprint changes with candidate/source context. A missing record means
 source review is pending, not neutrality or absence of a position.
 
+Discovery version `gaza-discovery-v2-divestment` separates the name + Israel +
+divestment search from jurisdiction + ceasefire queries, and adds a BDS/boycott/
+bonds/investment query. Divestment/BDS-only result snippets remain discovery leads
+instead of being discarded. Existing candidate fingerprints include this search
+version. Run a fresh bounded collection for a previously incomplete candidate;
+do not treat old collector `done` flags as an empty-stance finding. Neither
+search terms nor snippets themselves create an evidence record.
+
+For news pages with an explicit `<time itemprop="datePublished" datetime="…">`,
+`capture --kind dated-html` extracts the unique calendar publication date;
+source-bound review rejects a proposed `page_metadata` date that differs. Older
+capture kinds retain their exact replay format. Use actual retrieved HTML and
+precise excerpts so navigation and unrelated stories cannot establish a claim.
+
 Collection is bounded (default ten candidates, at most twelve source attempts per
 candidate), with every deferred/unavailable source and search recorded. Omit the
 Serper key to fetch only recorded first-party leads. Searches use only Serper;

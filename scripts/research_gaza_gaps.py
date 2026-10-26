@@ -15,6 +15,9 @@ from ballotpedia_endorsements import ask, accepted, choice, digest, dump, save, 
 from endorsement_extract import page_from_html
 from reviewed_updates import identity, prepare
 
+SEARCH_VERSION = 'gaza-discovery-v2-divestment'
+ISSUE_TERMS = re.compile(r'israel|gaza|palestin|aipac|ceasefire|divest\w*|\bbds\b', re.I)
+
 
 def plan(data, names=None, refresh_existing=False, state=None):
     rows = []
@@ -40,7 +43,7 @@ def plan(data, names=None, refresh_existing=False, state=None):
                        'campaign_url': c.get('campaign_url'), 'x_url': c.get('x_url'), 'direct_source_urls': urls,
                        'topical_platform_points': topical, 'has_dated_evidence': bool(c.get('gaza_evidence')),
                        'gaza_platform_status': (c.get('gaza_platform') or {}).get('status'),
-                       'state': state_code, 'refresh_existing': refresh_existing}
+                       'state': state_code, 'refresh_existing': refresh_existing, 'search_version': SEARCH_VERSION}
             rows.append({**context, 'source_fingerprint': digest(dump(context).encode()), 'status': 'needs_source_review'})
     return {'version': 1, 'election_date': data['election']['date'], 'candidates': rows,
             'limitation': 'Missing published evidence or unreviewed topical platform leads, not evidence of neutrality. Historic done flags are not completion proofs.'}
@@ -92,6 +95,14 @@ def capture(raw, url, checked_on, kind='html'):
                        if e.attrs.get('name') == 'author']
             if len(authors) == 1:
                 packet['author'] = authors[0]
+        elif kind == 'dated-html':
+            from ballotpedia_endorsements import Document
+            doc = Document(raw.decode('utf-8', errors='replace'))
+            dates = {e.attrs['datetime'][:10] for e in doc.root.descendants({'time'})
+                     if e.attrs.get('itemprop') == 'datePublished' and e.attrs.get('datetime')}
+            if len(dates) != 1:
+                raise ValueError('Require one explicit datePublished timestamp')
+            packet['published_date'] = date.fromisoformat(dates.pop()).isoformat()
     packet['packet_sha256'] = digest(dump(packet).encode())
     return packet
 
@@ -99,7 +110,14 @@ def capture(raw, url, checked_on, kind='html'):
 def search_queries(row):
     jurisdiction = row['identity'].get('jurisdiction') or ''
     return ['"' + row['candidate'] + '" ' + suffix for suffix in
-            (jurisdiction + ' Gaza ceasefire resolution divestment', 'Israel AIPAC policy position')]
+            ('Israel divestment', 'Israel BDS boycott bonds investment',
+             jurisdiction + ' Gaza ceasefire resolution', 'Israel AIPAC policy position')]
+
+
+def relevant_lead(result):
+    """Discovery only; a relevant snippet is never publishable evidence."""
+    return bool(result.get('link', '').startswith('https://') and
+                ISSUE_TERMS.search((result.get('title') or '') + ' ' + (result.get('snippet') or '')))
 
 
 def collect(data, output_dir, names=None, limit=10, serper_key=None, refresh_existing=False, state=None):
@@ -123,8 +141,7 @@ def collect(data, output_dir, names=None, limit=10, serper_key=None, refresh_exi
                     raw, _, _ = Fetcher().request('https://google.serper.dev/search', payload={'q':query,'num':8}, key=serper_key)
                     found = json.loads(raw)
                     searches.append({'query':query,'response':found})
-                    leads += [r['link'] for r in found.get('organic',[]) if r.get('link','').startswith('https://')
-                              and re.search(r'israel|gaza|palestin|aipac|ceasefire',r.get('title','')+' '+r.get('snippet',''),re.I)]
+                    leads += [r['link'] for r in found.get('organic',[]) if relevant_lead(r)]
                 except (ValueError,OSError,Blocked) as exc:
                     searches.append({'query':query,'status':'unavailable','error':str(exc)[:180]})
         outcomes = []
@@ -190,7 +207,7 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
             raise ValueError('Post author is not the verified candidate account')
         if record.get('date') != packet['published_date']:
             raise ValueError('Post date must match verified timestamp')
-    if packet['kind'] == 'article-html' and record.get('date_method') == 'page_metadata':
+    if packet['kind'] in {'article-html', 'dated-html'} and record.get('date_method') == 'page_metadata':
         if record.get('date') != packet.get('published_date'):
             raise ValueError('Article date must match captured publication metadata')
     if field == 'gaza_platform':
@@ -296,7 +313,7 @@ def main():
     co.add_argument('--output-dir',type=Path,required=True);co.add_argument('--serper-key-file',type=Path)
     co.add_argument('--refresh-existing',action='store_true');co.add_argument('--state')
     c=sub.add_parser('capture');c.add_argument('--url',required=True);c.add_argument('--raw',type=Path,required=True)
-    c.add_argument('--kind',choices=['html','article-html','x-json'],default='html');c.add_argument('--checked-on',required=True);c.add_argument('--output',type=Path,required=True)
+    c.add_argument('--kind',choices=['html','article-html','dated-html','x-json'],default='html');c.add_argument('--checked-on',required=True);c.add_argument('--output',type=Path,required=True)
     d=sub.add_parser('draft');d.add_argument('--claims',type=Path,required=True);d.add_argument('--jev-key-file',type=Path,required=True)
     d.add_argument('--work-dir',type=Path,default=Path('.research/gaza-gap-review'));d.add_argument('--id',required=True);d.add_argument('--checked-on',required=True);d.add_argument('--output',type=Path,required=True)
     a=ap.parse_args()

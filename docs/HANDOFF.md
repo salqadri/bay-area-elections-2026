@@ -1,5 +1,83 @@
 # Research and development handoff
 
+## October 26 publication
+
+The owner authorized merging and publishing PR #17 with publication version
+**2026-10-25.2**. The [release manifest](reviews/2026-10-26-publication.md) records
+the public Fiona Ma evidence addition, local playground scope and evidence
+sufficiency behavior, 40 passing release checks and exact artifact hashes.
+GitHub Pages publishes the election readers; the Jev server remains local.
+Research/finance observation dates and all saved grading inputs remain unchanged.
+
+## Evidence sufficiency and Fiona Ma divestment — October 25, 2026
+
+The derived `pro_palestine_score_grade` now returns **Insufficient Info** for a
+saved, compatible 0–1 `evidence_score` strictly below 0.10. Exactly 0.10 is still
+graded. This applies to Python/API/CLI projections and browser race/selected/CAIR
+results and downloads. Original model grades, scores, confidence, requests and
+run files are unchanged. A suppressed label is not an A–F comparison value;
+independently selected model-grade/raw-score review rules remain intact. Legacy
+prompts without this evidence question retain their prior mapping.
+
+The missing Fiona Ma stance was a research gap, not state truncation. Historical
+logs record a timeout/empty follow-up passes despite a done/enriched flag. The
+current Serper-only discovery workflow now separately searches divestment and
+BDS and retains those leads. A May 16, 2024 POLITICO interview explicitly records
+Ma opposing divestment from Israel. Actual captured HTML, identity, meaning and
+publication date passed Jev source review. Review `fiona-divestment-2026-10-25`
+adds GE-1288; the ledger/coverage and generated readers are synchronized for
+publication version 2026-10-25.2. See the
+[full diagnosis](reviews/2026-10-25-evidence-sufficiency-and-fiona-ma.md).
+
+The local server now reads this development worktree's updated dataset and keeps
+the existing main-checkout history directory. All 102 preexisting run files were
+verified unchanged. Fiona Ma's saved evaluation retains its old input; a new run
+is needed to evaluate the new evidence. No candidate grading calls were made.
+
+## Selected evaluation prompt restoration — October 25, 2026
+
+The question editor now initializes from the selected candidate’s actual saved request, rather than the latest projection’s historical batch-default questions. Candidate/county selection persists locally across reloads. Clean navigation follows each displayed evaluation’s saved prompt; unsaved and invalid drafts survive selection changes and result polling. **Load saved prompt** restores the displayed evaluation explicitly; **Restore defaults** retains its original-rubric meaning. Reload discards the session draft and restores saved questions. No provider calls or history rewrites are required for restoration. Validation: **40/40 release checks pass**, plus Chromium regressions covering both Monaco and fallback editors, reload/selection persistence, edits during polling, prompt carry after evaluation, explicit restoration, saved-history switching, disabled storage and narrow mobile layout. All 82 existing saved run files remain unchanged.
+
+## Derived grade in CAIR comparison cards — October 25, 2026
+
+Every CAIR comparison card now displays `pro_palestine_score_grade` alongside the selected model grade and score, with its source score confidence and current tunable mapping. Selecting the derived grade as the comparison grade displays it once. Missing/incompatible source scores stay labeled. Review selectors still control the flagging rule. Node checks and desktop/mobile Chromium checks cover the extra metric, duplicate avoidance, mapping updates and unsupported scores. This is local presentation only; no new evaluations or saved-history changes.
+
+## Candidate community state — October 25, 2026
+
+New shared/playground requests include optional boolean `part_of_muslim_community` from an exact candidacy registry of owner-confirmed values. The final registry has 12 true and 12 false values, with no special annotations; the other 1,272 active repository candidacies remain unknown/absent. Ballot-name variants Jamal Khan and Raeena S. Lari are bound to their supplied office identities. Public religion/source research cannot set this owner-defined community field or overwrite a confirmed value. Published election JSON and both public readers are unchanged.
+
+The repeatable collector searched all 1,285 initially unconfirmed candidacies with 1,277 distinct Serper queries, plus 15 accessible-source follow-ups and six public-guide queries. Jev triages discovery and separately reviews captured source text; snippets never establish the field. Every source-review question was resolved by owner input. Full per-candidacy coverage is archived with the registry; raw captures and exact model decisions remain in the ignored research work directory. See [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md).
+
+New state versions are `candidate-evidence-v7-community-observations` and `candidate-evidence-v7-local-federal-community`. The live local server reload preserved all 82 original run files byte for byte; no grading runs were submitted. The new offline community check covers exact identity, unknown/false semantics, provider/source separation, cache invalidation and protection of owner values. The final focused suites have nine community regressions and 38 playground regressions, with live-browser verification of current input previews and exact saved requests. The complete final offline release gate passes **40/40 checks**.
+
+## Derived score grades and Vote for Peace context — October 25, 2026
+
+The local playground adds deterministic `pro_palestine_score_grade` alongside Jev answers: six equal-width bands over 0–5, F through A, with each upper bound inclusive (0 through 5/6 is F). **Score → grade mapping** edits the five F–B bounds for nonlinear mappings; overrides persist under the server work directory. Results, race cards and optional CAIR comparisons refresh without model calls. API/download projections include the exact mapping and row field; original requests/responses, confidence, run files and archived batches remain unchanged. New CLI batches include the same field and accept `--score-grade-mapping`.
+
+Vote for Peace was already in the focus registry, but the October 9 source import intentionally omitted Neutral cards from public endorsements. New shared/playground state versions now include the five exact reviewed Neutral candidacy mappings as observations, preserve Ally/Opposed labels and source provenance, retain primary/historical context and avoid duplicates or overriding newer canonical records. Public election data is untouched; rerun explicitly to submit the enriched state. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, plus 38 focused Python regressions and Node boundary/comparison/export tests. Chromium verified nonlinear mapping, validation, reset/reload persistence, exact raw inputs/answers, reproducible downloads, immediate CAIR updates, missing/incompatible results and desktop/mobile layout. The live roster has 40 Vote for Peace observations (27 Ally, 8 Opposed, 5 Neutral). All 82 saved run files present at restart remain byte-identical; no live Jev calls were made.
+
+## CAIR comparison and county filters — October 25, 2026
+
+The playground shows each candidacy’s current CAIR Action recommendation, source, checked date and election phase beside its saved results. **Review CAIR differences** flags nonhistorical general/phase-unspecified Preferred or Endorsed records when the selected saved A–F grade is C–F **or** the selected 0–5 score is ≤2.5. Confidence remains visible without a cutoff. Question selectors support renamed questions; missing or incompatible answers are counted separately. Clicking a flagged candidate opens their saved prompt/answers; current recommendations never rewrite frozen Jev requests.
+
+A global County filter applies to candidate selection/navigation, the race browser and CAIR comparison: each of the five counties, all five combined, or the full tracked roster. Shared contests are shown once. The Bay Area batch button continues to cover all five counties. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, including 32 playground Python regressions and Node comparison-boundary tests. Browser fixtures cover CAIR/source/joint/primary/historical/unknown display, inclusive C and 2.5/5 boundaries, confidence without filtering, missing/incompatible/custom question contracts, all county modes, shared-race deduplication, empty selections, comparison navigation, live updates, exact saved inputs and desktop/mobile/Monaco behavior. Live checks find 109 candidacies with CAIR records and 3 review flags in the current saved evaluations, and preserve all 79 run files present at restart byte for byte. No live Jev calls or election-data edits were made for this display/review change.
+
+## Five-county playground batches — October 25, 2026
+
+The playground catalog now includes all five researched Bay Area counties (Alameda, Contra Costa, San Francisco, San Mateo, Santa Clara), plus nationwide House contests: **1,042 candidacies / 401 races**. The dedicated **Run Bay Area (877)** button submits only the 877 current candidacies in 340 regional races; **Run full roster (1042)** retains the nationwide House option. Shared county races are deduplicated by contest/candidacy identity, while provisional and qualified-write-in categories remain separate. Regional batch membership and questions freeze before calls begin, and progress/history/downloads label the scope `bay-area`. Existing evaluations remain available in Latest per candidate. No new live Jev batch or election-dataset edit is part of this capability change. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, including 30 playground Python regressions. Chromium submitted a complete 877-candidate regional batch to a fixture transport and verified county-only membership, shared-race deduplication, edited questions, history labeling and desktop/mobile controls. The updated live local server exposes both counts and preserves all 79 saved run files present at restart; no live Jev batch was triggered by verification.
+
+## Playground candidate history — October 25, 2026
+
+The local playground now defaults to **Latest per candidate** across its stored baseline and saved local history. Switching A → B → A retains A’s latest successful evaluation, including after reload/restart. Failed or stopped retries show an explicit notice alongside the prior answer; differing prompts and stale evidence remain labeled. Each displayed answer keeps its exact saved request/hash and source-run provenance, while individual history entries remain isolated immutable experiments. A new **View candidate on election site** link opens the selected race and candidate-name filter in the published explorer. No new Jev grading batch or published election-data change is part of this fix. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, including 28 playground Python regressions and the Node presentation checks. Browser checks cover A → B → A, reload persistence, exact saved prompts, failure fallback, history/latest switching, desktop/mobile layout, real Monaco editing and the live Kevin Park explorer link. Reading the existing 69-run history produced the current 685-candidate view without modifying any saved run.
+
 ## Firebase Analytics — October 25, 2026
 
 Both public readers now share optional production-only Firebase Analytics for `G-QKNPZZ1CDJ`; local previews and the Jev playground are excluded. Canonical analytics URLs omit query strings/fragments and referrers, address values are not passed to Firebase, and advertising personalization/Google signals are disabled. The public pages disclose analytics cookies. See [ANALYTICS.md](ANALYTICS.md) for configuration, privacy boundaries and verification. This is a runtime/documentation change; the latest October 24 finance data is retained and the dataset publication marker is unchanged.

@@ -1,14 +1,18 @@
 # Jev grading and the local playground
 
 [Start and use the local playground](../../docs/JEV_PLAYGROUND.md) to edit question
-JSON, run Jev on tracked House candidates nationwide plus every active Alameda/
-Santa Clara county ballot contest, and inspect exact inputs and confidences.
-The playground now includes **685 candidacies / 268 races**; its immutable
-default archive remains the original **187 House candidacies / 72 races**.
-Added local/state/judicial candidates start unevaluated. The playground uses
-`candidate-evidence-v5-local-federal-cair` with office/jurisdiction/county context and
-separate CAL-ACCESS spenders. CLI scope flags and historical request states are
-unchanged; the original `house-nationwide` scope omitted the Bay Area races.
+JSON, run Jev on tracked House candidates nationwide plus every active contest
+serving Alameda, Contra Costa, San Francisco, San Mateo and Santa Clara counties,
+and inspect exact inputs and confidences. The catalog includes **1,042
+candidacies / 401 races**; **Run Bay Area** targets **877 / 340**. It opens
+**Latest per candidate** across saved local history. Its immutable baseline
+remains **187 House candidacies / 72 races**; candidates without saved evaluations
+remain input previews.
+
+The playground uses `candidate-evidence-v7-local-federal-community` with
+office/jurisdiction/county context, separate CAL-ACCESS spenders and optional
+owner-confirmed community values. CLI scope flags and historical request states
+are unchanged; the original `house-nationwide` scope omitted the Bay Area races.
 
 ## Confidence-only results
 
@@ -17,6 +21,12 @@ playground runs retain **every valid answer and its confidence**, with no 75%
 cutoff, acceptance flag or hidden low-confidence rows. Choice probabilities and
 confidence remain separate returned values. A yes/no `noul` answer returns the
 probability of true, not a separate confidence.
+
+The separate derived `pro_palestine_score_grade` uses tunable 0–5 score bands.
+When the saved two-criterion `evidence_score` is below 0.10 / 1, it shows
+**Insufficient Info** instead of a letter. This does not change Jev's original
+answers, model confidence or archived requests. See the playground workflow for
+boundary and historical-prompt behavior.
 
 The owner's exact updated questions are versioned in
 `criteria-pro-palestine-v2.json`. Both default output names are retained, but
@@ -43,12 +53,13 @@ The shared state builder includes identity, both IE directions, recorded scoreca
 and platform/Gaza evidence, focused endorsement observations, and congressional
 actions with actual response values resolved against the action registry. See the
 workflow for limits and the versioned, source-backed endorsement focus registry.
-Full endorsement lists are not passed: current focus reduces 3,690 observations
-to 41, with at most three for any candidate.
+Full endorsement lists are not passed. Focused observations preserve the exact
+reviewed recommendation levels and source provenance; the registry and current
+candidate records determine each newly generated state.
 
 ## Archives
 
-- **Current playground default:** `house-all-focused-2026-10-23/results.json` —
+- **Immutable playground baseline:** `house-all-focused-2026-10-23/results.json` —
   all 187 candidates, zero call errors, updated owner JSON, focused endorsements,
   exact requests/responses and dataset hash. A 22 · B 4 · C 2 · D 47 · E 2 · F 110.
   These are experimental model outputs; none is published into candidate records.

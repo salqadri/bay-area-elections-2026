@@ -25,12 +25,13 @@ import urllib.request
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
+from candidate_community import community_state  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v2.json'
-STATE_VERSION = 'candidate-evidence-v4-cair-focused'
+STATE_VERSION = 'candidate-evidence-v7-community-observations'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -156,6 +157,41 @@ def endorser_key(name):
     return re.sub(r'[^a-z0-9]', '', unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower())
 
 
+def focused_endorsements(p, c):
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v3.json').read_text())
+    aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
+    observations = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
+                    for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
+    original = [e for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
+    for record, source in zip(observations, original):
+        if endorser_key(record['endorser']) == 'voteforpeace':
+            record.update({k: source[k] for k in ('url', 'checked_on', 'source_label') if k in source})
+    # Exact reviewed candidacy mappings, including Neutral cards deliberately held
+    # out of the public endorsement import. Neutral is an observation, not support.
+    guide = json.loads((ROOT / 'research/endorsements/peace-guides-2026-10-09.json').read_text())
+    for card in guide['vote_for_peace_cards']:
+        if ((card.get('position_id'), card.get('candidate')) != (p['id'], c['name']) or
+                card['action'] not in {'publish', 'neutral_no_recommendation'}):
+            continue
+        matches = [e for e in observations if endorser_key(e['endorser']) == 'voteforpeace'
+                   and e.get('phase') == card['phase'] and e.get('url') == card['url'] and not e.get('historical')]
+        if matches:
+            for record in matches:
+                # Keep canonical observations authoritative if research was updated.
+                if record.get('rating', card['source_label']) == card['source_label'] and record['relation'] == {'Ally': 'supported', 'Opposed': 'opposed', 'Neutral': 'neutral'}[card['source_label']]:
+                    record['source_label'] = card['source_label']
+        elif card['action'] == 'neutral_no_recommendation':
+            # A newer canonical record, even for a different phase, supersedes
+            # this held observation rather than implicitly becoming Neutral.
+            if any(endorser_key(e['endorser']) == 'voteforpeace' for e in observations):
+                continue
+            observations.append({'endorser': 'Vote for Peace', 'relation': 'neutral', 'rating': 'Neutral',
+                                 'source_label': card['source_label'], 'phase': card['phase'],
+                                 'url': card['url'], 'checked_on': guide['reviewed_on'],
+                                 'verification': 'endorser_statement'})
+    return observations
+
+
 def build_state(p, c, data):
     """Succinct evidence state: identity + IE money both directions + platform + Gaza evidence."""
     import re
@@ -166,6 +202,7 @@ def build_state(p, c, data):
         'state': (match.group(1).upper() if match else ('CA' if p.get('counties') else '')),
         'party': data['codes']['party'].get(c.get('party'), c.get('party')),
     }
+    parts.update(community_state(p, c))
     ie = c.get('independent_expenditures') or {}
     spenders = data.get('ie_spenders', {})
     for direction, label in (('for', 'spenders_supporting'), ('against', 'spenders_opposing')):
@@ -187,10 +224,7 @@ def build_state(p, c, data):
     evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])[:12]]
     if evidence:
         parts['gaza_evidence'] = evidence
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v3.json').read_text())
-    aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
-    endorsements = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
-                    for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
+    endorsements = focused_endorsements(p, c)
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
     records = []
@@ -220,7 +254,9 @@ def plan(data, criteria, scope):
             'planned_on': now(), 'candidates': len(items), 'items': items}
 
 
-def grade(work, plan_doc, criteria, key, workers=3, force=False):
+def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_mapping=None):
+    from score_grade import DEFAULT_MAPPING, validate_mapping, row_grade
+    mapping = validate_mapping(score_grade_mapping if score_grade_mapping is not None else DEFAULT_MAPPING)
     validate_questions(criteria['questions'])
     decisions = {}
 
@@ -244,6 +280,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False):
         out['gaza_grade_confidence'] = g.get('confidence')
         out['pro_palestine_score'] = s.get('score')
         out['pro_palestine_confidence'] = s.get('confidence')
+        out['pro_palestine_score_grade'] = row_grade({'status': 'complete', 'request': request, 'response': response}, mapping)
         return out
 
     results = []
@@ -252,8 +289,9 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False):
             results.append(result)
             if n % 20 == 0 or n == len(plan_doc['items']):
                 print(json.dumps({'graded': n, 'total': len(plan_doc['items'])}), flush=True)
-    batch = {'format': 'gaza-grading/v2', 'state_version': STATE_VERSION, 'questions': questions, 'scope': plan_doc['scope'], 'criteria_id': plan_doc['criteria_id'],
+    batch = {'format': 'gaza-grading/v2', 'state_version': plan_doc['state_version'], 'questions': questions, 'scope': plan_doc['scope'], 'criteria_id': plan_doc['criteria_id'],
              'model': MODEL, 'dataset_sha256': plan_doc.get('dataset_sha256'), 'run_on': now(), 'results': results,
+             'score_grade_mapping': mapping,
              'decisions': {ref: decisions[ref] for ref in {r['request_sha256'] for r in results} if ref in decisions}}
     save(work / 'results.json', batch)
     return summary(batch)
@@ -281,6 +319,7 @@ def main():
             s.add_argument('--jev-key-file', type=Path, required=True)
             s.add_argument('--workers', type=int, default=3)
             s.add_argument('--force', action='store_true', help='Make fresh calls even for cached requests')
+            s.add_argument('--score-grade-mapping', type=Path, help='JSON with five inclusive upper_bounds for F–B; A ends at 5')
     args = ap.parse_args()
     criteria = json.loads(args.criteria.read_text())
     work = args.work_root / args.batch
@@ -292,7 +331,8 @@ def main():
         doc = json.loads((work / 'plan.json').read_text())
         if doc['criteria_id'] != criteria['id']:
             raise SystemExit('Batch plan was built against a different criteria file')
-        print(json.dumps(grade(work, doc, criteria, args.jev_key_file.read_text().strip(), args.workers, args.force)))
+        mapping = json.loads(args.score_grade_mapping.read_text()) if args.score_grade_mapping else None
+        print(json.dumps(grade(work, doc, criteria, args.jev_key_file.read_text().strip(), args.workers, args.force, mapping)))
     else:
         batch = json.loads((work / 'results.json').read_text())
         report = {**summary(batch), 'scope': batch['scope'], 'criteria_id': batch['criteria_id'], 'run_on': batch['run_on']}

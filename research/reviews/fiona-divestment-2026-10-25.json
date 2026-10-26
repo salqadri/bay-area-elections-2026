@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "id": "fiona-divestment-2026-10-25",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-25",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "6f5d7df68ca07e4ee3c256624dd397e120cb67f28c6778c2fbd2ff4af4ed3ce4",
+ "sources": {
+  "source-d866c43e90980f886a64": {
+   "url": "https://www.politico.com/newsletters/california-playbook/2024/05/16/on-the-record-with-fiona-ma-00158305",
+   "publisher": "POLITICO",
+   "role": "news",
+   "candidate": "Fiona Ma",
+   "checked_on": "2026-10-25",
+   "content_sha256": "ff9689a360e2489c1b452bd0dd810356eaa458d7e618900bcc2aedeb9d460378",
+   "retrieval": "Captured source HTML"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-d866c43e90980f886a64",
+   "position_id": "CA2026-016",
+   "candidate": "Fiona Ma",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "fc4956df1f4a50581c3909691f336b857ef67d5b166907c18546cd47464deef1",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "Lieutenant Governor",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1288",
+    "date": "2024-05-16",
+    "date_method": "page_metadata",
+    "date_note": "Historical POLITICO interview published May 16, 2024; datePublished timestamp in captured HTML. Retrieved via Serper scrape on October 25, 2026.",
+    "summary": "In a May 2024 POLITICO interview, Ma opposed divestment from Israel in response to UC student demands, describing Israel as a U.S. ally.",
+    "quote": "Israel has always been an ally of ours, so I would not support divestment from Israel.",
+    "dimension": "actions_votes",
+    "source_kind": "news",
+    "url": "https://www.politico.com/newsletters/california-playbook/2024/05/16/on-the-record-with-fiona-ma-00158305",
+    "checked_on": "2026-10-25"
+   },
+   "evidence": {
+    "identity_basis": "The interview identifies California state treasurer Fiona Ma as a 2026 lieutenant governor candidate.",
+    "date_basis": "Captured publisher HTML contains time itemprop=datePublished datetime=2024-05-16 09:01:00. Retrieved through Serper scrape after direct HTTP 403; historical interview, not a new statement.",
+    "issue_basis": "In a May 2024 POLITICO interview, Ma opposed divestment from Israel in response to UC student demands, describing Israel as a U.S. ally. Exact source quote: Israel has always been an ally of ours, so I would not support divestment from Israel."
+   }
+  }
+ ]
+}

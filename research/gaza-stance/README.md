@@ -76,6 +76,14 @@ the ledger; `merge_gaza_evidence.py` also refuses dateless items. Retrofits:
 
 ## Status
 
+- **October 25 divestment repair:** added one historical Fiona Ma interview
+  observation through source-bound Jev review: **1,050 dated items across 333
+  printed candidacies**. Legacy logs show a timeout and zero-item passes despite
+  a done/enriched flag. The current gap workflow now separates divestment/BDS
+  searches and retains those discovery leads. See the
+  [diagnosis](../../docs/reviews/2026-10-25-evidence-sufficiency-and-fiona-ma.md).
+  This targeted repair does not certify comprehensive research for other candidates.
+
 - **October 23 gap repair:** publication and this evidence ledger contain **1,013 dated items across 309 printed candidacies**. Shah gains three source-attributed items and Feely two; Feely's current campaign statement is separately stored in `gaza_platform`. The new [gap workflow](../../docs/RESEARCH_GAP_RECOVERY.md) checks current published fields and nested topical sources instead of treating old `done` flags as proof of coverage. It uses Serper for searches and Jev for judgments; no new grades are published. The counts below describe earlier snapshots.
 
 - **October 14 manual audit:** the ledger then mirrored **245 dated items / 82 candidacies**, including the 14 earlier guide observations, three restored Panetta statements and three additional ceasefire-related observations. Six syndicated/uncertain records are held or deduplicated; one retained Bachelor summary now explicitly identifies its Gaza context. The quarantine history has 186 entries, including three resolved Panetta holds whose original reasons remain preserved. See [the review](../../docs/reviews/2026-10-14-gaza-and-finance-review.md). No new model collection ran in this audit; these counts do not certify exhaustive research.
