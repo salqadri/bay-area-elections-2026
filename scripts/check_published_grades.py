@@ -75,6 +75,31 @@ class PublicationChecks(unittest.TestCase):
         for key in FIELDS:unpublished.pop(key)
         self.assertEqual(playground_state(p,c,self.data),playground_state(p,unpublished,self.data))
 
+    def test_recommendations_cannot_be_omitted_or_discounted_to_na(self):
+        from ballotpedia_endorsements import dump
+        cfg=self.data['pro_palestine_grading']
+        for mode in ('missing','insufficient'):
+            a=deepcopy(self.archive);r=next(r for r in a['rows'] if r['candidate']=='Fiona Ma')
+            if mode=='missing':
+                r['request']['state']['focused_endorsement_observations']=[]
+                r['request_sha256']=digest(dump(r['request']).encode())
+            else:
+                r['response']['answers']['evidence_score'].update(score=.05,probabilities={'0':.95,'1':.05})
+            with self.assertRaisesRegex(ValueError,'recommendation'):
+                attach(self.data,a,cfg['archive_path'],cfg['archive_sha256'])
+
+    def test_recommendation_signals_include_opposition_without_conflating_neutral(self):
+        from publish_jev_grades import recommendation_signal,validate_recommendation_evidence
+        for name in ['CAIR Action','VoteForPeace','Vote for Peace']:
+            for relation in ['endorsed','preferred','opposed','supported']:
+                obs={'endorser':name,'relation':relation,'phase':'primary'}
+                self.assertTrue(recommendation_signal(obs))
+                row={'candidate':'Fixture','request':{'state':{'focused_endorsement_observations':[obs]}}}
+                with self.assertRaisesRegex(ValueError,'N/A despite'):
+                    validate_recommendation_evidence({'endorsements':[obs]},row,'N/A')
+        self.assertFalse(recommendation_signal({'endorser':'Vote for Peace','relation':'supported','rating':'Neutral'}))
+        self.assertFalse(recommendation_signal({'endorser':'CAIR Action','relation':'endorsed','historical':True}))
+
     def test_duplicate_and_removed_scores_fail(self):
         cfg=self.data['pro_palestine_grading'];a=deepcopy(self.archive);a['rows'].append(a['rows'][0])
         with self.assertRaises(ValueError):attach(self.data,a,cfg['archive_path'],cfg['archive_sha256'])

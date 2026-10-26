@@ -80,6 +80,17 @@ Published scores are excluded from future generated input states to avoid
 feeding an earlier model result back into the next evaluation. Public input and
 model snapshot dates remain separate from ballot and finance research dates.
 
+
+The publication check also requires captured nonhistorical CAIR Action and
+Vote for Peace recommendations to appear in the exact saved input. A derived
+N/A alongside a directional endorsement, preference, support or opposition is a
+blocking evidence-review discrepancy. Primary recommendations remain explicitly
+labeled observations. Vote for Peace Neutral/no-endorsement records do not imply
+a directional stance. This guard never fabricates a score or rewrites a model
+answer; repair the input or rerun Jev with the same preferred questions. The
+fresh 1,296-candidate batch has zero CAIR Action recommendation/N/A conflicts,
+and zero N/A cases with recorded Vote for Peace observations.
+
 ## Follow-up for Hermes
 
 [The explanation task](tasks/HERMES_GRADE_EXPLANATIONS.md) and

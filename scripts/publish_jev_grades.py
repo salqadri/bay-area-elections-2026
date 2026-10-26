@@ -64,6 +64,33 @@ def freeze(latest, mapping, preferred, published_on):
             'preferred_criteria':preferred, 'rows':rows}
 
 
+
+def recommendation_signal(record):
+    name=''.join(c for c in record.get('endorser','').lower() if c.isalnum())
+    if name not in {'cairaction','voteforpeace'} or record.get('historical'):
+        return False
+    # Neutral/no-endorsement observations do not establish a directional stance.
+    rating=str(record.get('rating','')).strip().lower()
+    if name=='voteforpeace' and rating in {'neutral','no endorsement'}:
+        return False
+    return record.get('relation') in {'endorsed','preferred','supported','opposed'}
+
+
+def recommendation_key(record):
+    return (''.join(c for c in record['endorser'].lower() if c.isalnum()),
+            record.get('relation'),record.get('phase','unspecified'),record.get('rating'))
+
+
+def validate_recommendation_evidence(candidate, row, grade):
+    observed=[r for r in row['request']['state'].get('focused_endorsement_observations',[])
+              if recommendation_signal(r)]
+    expected=[r for r in candidate.get('endorsements',[]) if recommendation_signal(r)]
+    if not {recommendation_key(r) for r in expected} <= {recommendation_key(r) for r in observed}:
+        raise ValueError('CAIR Action / Vote for Peace recommendation missing from saved input: '+row['candidate'])
+    if grade=='N/A' and observed:
+        raise ValueError('N/A despite a concrete CAIR Action / Vote for Peace recommendation: '+row['candidate'])
+
+
 def attach(data, archive, archive_path, archive_sha):
     if archive.get('format') != 'published-jev-grades/v1' or archive['evidence_threshold'] != .10:
         raise ValueError('Unsupported publication format or evidence threshold')
@@ -87,7 +114,9 @@ def attach(data, archive, archive_path, archive_sha):
         state=row['request']['state']
         if not isinstance(state,dict) or state.get('candidate') != row['candidate'] or state.get('candidate_roster') != row['roster']:
             raise ValueError('Saved input belongs to a different candidate or roster')
-        c.update(projection(row, mapping, archive['id'])); seen.add(key)
+        projected=projection(row, mapping, archive['id'])
+        validate_recommendation_evidence(c,row,projected['pro_palestine_score_grade'])
+        c.update(projected); seen.add(key)
     active={key for key,(p,c) in targets.items() if p.get('ballot_status') != 'excluded'}
     if seen != active:
         raise ValueError('Publication must cover every active tracked candidacy')

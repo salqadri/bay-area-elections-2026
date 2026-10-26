@@ -28,6 +28,17 @@ Validation: **42/42 release checks pass**, plus desktop/mobile Chromium checks
 on both readers and the final preferred-default/history prompt regression. All
 104 saved runs predating the new 1,296-candidate batch remain byte-for-byte intact.
 
+
+The publication check also requires captured nonhistorical CAIR Action and
+Vote for Peace recommendations to appear in the exact saved input. A derived
+N/A alongside a directional endorsement, preference, support or opposition is a
+blocking evidence-review discrepancy. Primary recommendations remain explicitly
+labeled observations. Vote for Peace Neutral/no-endorsement records do not imply
+a directional stance. This guard never fabricates a score or rewrites a model
+answer; repair the input or rerun Jev with the same preferred questions. The
+fresh 1,296-candidate batch has zero CAIR Action recommendation/N/A conflicts,
+and zero N/A cases with recorded Vote for Peace observations.
+
 ## October 26 publication
 
 PR #17 is merged as `b472045ad6c7ac88ef2e9d037768776aa8d17719`, and its
