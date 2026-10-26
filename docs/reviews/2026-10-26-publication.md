@@ -1,6 +1,8 @@
 # October 26 publication: Jev review tools and Fiona Ma evidence
 
-The owner authorized publishing [PR #17](https://github.com/salqadri/bay-area-elections-2026/pull/17).
+The owner authorized publishing [PR #17](https://github.com/salqadri/bay-area-elections-2026/pull/17),
+merged into main as `b472045ad6c7ac88ef2e9d037768776aa8d17719` after checking
+the exact PR head.
 The release uses publication version **2026-10-25.2**, schema **1.23**. The
 version identifies the underlying October 25 content; publication does not
 advance its observation dates. Main/root is the GitHub Pages publication source.
@@ -36,6 +38,16 @@ Content manifest (documentation-only follow-ups leave these bytes unchanged):
 | `index.html` | `2e012dbe65d48cfd2bd99bc560eae5c148416f5ff9006d151b8a79111f76451b` |
 | `ballot.html` | `531417d2a06e356fe0123cd1de1d7a60605bf040093000799224d7c3a4219d98` |
 
-Publication verification must confirm a successful Pages deployment for the
-merged main commit and exact live bytes for both readers and the canonical JSON.
-Offline checks alone do not establish deployment or live provider availability.
+The [Pages deployment for the content merge](https://github.com/salqadri/bay-area-elections-2026/actions/runs/40283362389)
+completed successfully. Actual downloads of both live readers and the canonical
+JSON match every artifact hash above exactly. Chromium checked both public
+readers at widths 1440 and 390: Fiona Ma's divestment evidence and source link
+appear, with no page errors or horizontal overflow. The address reader was
+checked through county browsing; no live geocoder claim is made. Test analytics
+collection requests were blocked in the verification browser.
+
+The local Jev server now runs from the merged main checkout and uses its canonical
+dataset and existing history directory. All 104 run files present at restart were
+verified unchanged. No grading call was submitted. The documentation follow-up
+leaves the content manifest and publication version unchanged; its own Pages
+deployment is also checked before reporting publication complete.

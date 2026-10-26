@@ -2,12 +2,16 @@
 
 ## October 26 publication
 
-The owner authorized merging and publishing PR #17 with publication version
-**2026-10-25.2**. The [release manifest](reviews/2026-10-26-publication.md) records
+PR #17 is merged as `b472045ad6c7ac88ef2e9d037768776aa8d17719`, and its
+GitHub Pages deployment succeeded for publication version **2026-10-25.2**. The [release manifest](reviews/2026-10-26-publication.md) records
 the public Fiona Ma evidence addition, local playground scope and evidence
 sufficiency behavior, 40 passing release checks and exact artifact hashes.
 GitHub Pages publishes the election readers; the Jev server remains local.
 Research/finance observation dates and all saved grading inputs remain unchanged.
+Actual downloads of both public readers and the canonical JSON match the release
+manifest. Desktop/mobile Chromium verifies Fiona Ma’s evidence/source link with
+no page errors or overflow. The local playground now runs from merged main; all
+104 saved run files present at restart are unchanged.
 
 ## Evidence sufficiency and Fiona Ma divestment — October 25, 2026
 
