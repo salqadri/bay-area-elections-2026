@@ -1,4 +1,18 @@
 # Research and development handoff
+## Grade evidence explanations — in progress October 26, 2026
+
+Hermes is generating all **1,296 grade summaries** (docs/tasks/HERMES_GRADE_EXPLANATIONS.md)
+with LM Studio `qwen/qwen3.8-27b` at concurrency 2 from the exact frozen request
+states; per-request caches accumulate in the ignored `.research/grade-explanations/responses/`.
+Publication infrastructure is complete and gate-green: schema **1.25** adds candidate
+`pro_palestine_explanation` + `pro_palestine_grading.explanations`;
+`scripts/attach_grade_explanations.py` freezes the archive, validates every binding
+and bumps versions; `scripts/check_grade_explanations.py` joins the release gate
+(43 checks); both readers render a collapsed **Why this grade?** panel. When all
+responses exist: attach → build → full gate → push as publication **2026-10-26.2**
+(or the actual PT date `.N`, updating doc references) and verify live. A cron driver
+completes this autonomously overnight; after a successful publish it stands down.
+
 
 ## Public Jev scores and uniform final prompt — October 26, 2026
 

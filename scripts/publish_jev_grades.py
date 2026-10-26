@@ -126,6 +126,10 @@ def attach(data, archive, archive_path, archive_sha):
         'preferred_criteria_path':'research/gaza-grading/criteria-pro-palestine-v3.json',
         'score_grade_mapping':mapping, 'evidence_threshold':.10,
         'methodology_url':'https://github.com/salqadri/bay-area-elections-2026/blob/main/docs/PUBLISHED_GRADES.md'}
+    # Hermes evidence summaries are a separate reviewed layer; re-attaching the
+    # score archive must never silently drop them.
+    explanations = (data.get('pro_palestine_grading') or {}).get('explanations')
+    if explanations: result['pro_palestine_grading']['explanations'] = explanations
     return result
 
 

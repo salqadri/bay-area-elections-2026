@@ -154,6 +154,8 @@
         const row = node('li');
         row.append(node('span', 'ballot-candidate-name', candidate.name));
         row.append(ProPalestineGradeDisplay.render(candidate, DATA, {node}));
+        const gradeExplanation = ProPalestineGradeDisplay.renderExplanation(candidate, {node});
+        if (gradeExplanation) row.append(gradeExplanation);
         if (candidate.party) row.append(node('span', 'ballot-candidate-party', partyLabel(candidate.party)));
         if (candidate.incumbent === true) row.append(node('span', 'pill incumbent', 'Incumbent'));
         if (candidate.campaign_url) { const w = node('a', 'ballot-candidate-x', 'Site ↗'); w.href = candidate.campaign_url; w.target = '_blank'; w.rel = 'noopener noreferrer'; row.append(w); }

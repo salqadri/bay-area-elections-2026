@@ -15,7 +15,10 @@ Candidate cards in both readers now show a colored Jev score badge, for example
 Publication **2026-10-26.1** includes a fresh, uniform-prompt Jev batch for all
 **1,296 active candidacies / 471 races**: 410 letter grades and 886 N/A results.
 Scores/confidences, exact input states, the owner's question JSON and provider
-responses are archived. See [methodology and publication](docs/PUBLISHED_GRADES.md)
+responses are archived. Hermes is generating one collapsed **Why this grade?**
+evidence paragraph per candidacy from each candidate's exact saved request state,
+rubric and answers; the schema-1.25 publication path, checker and reader panels are
+ready and will publish as the next version. See [methodology and publication](docs/PUBLISHED_GRADES.md)
 and the [Hermes explanation task](docs/tasks/HERMES_GRADE_EXPLANATIONS.md).
 
 ## Local Jev playground
@@ -188,7 +191,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.23 (`schema_version` in the file is authoritative), publication `2026-10-23.3`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.24 (`schema_version` in the file is authoritative), publication `2026-10-26.1`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
@@ -220,6 +223,8 @@ python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
 python3 scripts/check_x_profiles.py
 python3 scripts/check_jev_playground.py
+python3 scripts/check_published_grades.py
+python3 scripts/check_grade_explanations.py
 python3 scripts/check_campaign_endorsement_batch.py research/endorsements/batch-2026-10-18
 python3 scripts/check_cair_guide.py
 python3 scripts/check_cair_refresh.py
@@ -235,6 +240,7 @@ python3 scripts/check_uscpr_scorecard.py
 python3 scripts/check_gaza_voting_records.py
 python3 scripts/check_gaza_records.py
 python3 scripts/prepare_dom_fixture.py
+node scripts/check_pro_palestine_grade_display.cjs
 node scripts/check_endorsement_display.cjs
 node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
@@ -251,7 +257,7 @@ node scripts/check_address_matcher.cjs
 node scripts/check_ballot_page.cjs
 ```
 
-Run the full sequence above with **`python3 scripts/check_release.py`** (39 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
+Run the full sequence above with **`python3 scripts/check_release.py`** (43 checks); its report and detailed logs go to `.checks/`. The source import, reviewed publication and platform packet checks are offline guards, not proof that every legislative fact or campaign platform has been independently researched.
 
 The checks verify that the generated HTML is current, its embedded dataset and schema match the standalone files, references resolve, IDs are unique, coverage arithmetic agrees with the records, and FEC amounts and dates obey their conventions. The focused schema checker covers the assertion keywords used here and exercises invalid and valid examples, including the difference between unknown and zero receipts; it is **not a standard general-purpose Draft 2020-12 validator**. The UI check executes the actual inline JavaScript in a minimal DOM harness to exercise priority ordering, expandable sections, direct links, fundraising displays, filters, shared districts, uncertainty labels, and downloads; it is **not a browser rendering test**. These checks validate the publication's internal consistency, not the election facts or completeness.
 

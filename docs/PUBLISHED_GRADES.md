@@ -91,10 +91,31 @@ answer; repair the input or rerun Jev with the same preferred questions. The
 fresh 1,296-candidate batch has zero CAIR Action recommendation/N/A conflicts,
 and zero N/A cases with recorded Vote for Peace observations.
 
-## Follow-up for Hermes
+## Evidence explanations
 
+The next publication (schema 1.25) shows one short evidence paragraph per
+candidate under a collapsed **Why this grade?** panel beside each badge in both
+readers. Hermes generated all 1,296 summaries with LM Studio
+`qwen/qwen3.8-27b` (temperature 0.1), giving the model exactly what Jev saw: the
+frozen input state, the exact v3 rubric and the recorded score/evidence/gaza
+answers, plus the deterministic band mapping and 0.10 threshold. Each summary is
+bound to its `candidate_id`, `request_sha256` and publication id; N/A paragraphs
+state only that evidence was insufficient (below 0.10 / 1) without assigning a
+stance. Summaries explain the saved score — they never regrade, and raw provider
+answers remain immutable.
+
+The frozen [explanations archive](../research/gaza-grading/explanations-2026-10-26.json)
+holds every entry with its grade, generating model and timestamp; the dataset's
+`pro_palestine_grading.explanations` binds its hash and the source queue.
 [The explanation task](tasks/HERMES_GRADE_EXPLANATIONS.md) and
-[1,296-item queue](../research/gaza-grading/explanation-queue-2026-10-26.json) bind
-each summary to its exact saved request. Summaries should explain the recorded
-evidence and score-to-letter mapping without changing the score or inventing an
-unrecorded candidate position. No explanation generation is part of this release.
+[queue](../research/gaza-grading/explanation-queue-2026-10-26.json) specify the
+contract; `scripts/check_grade_explanations.py` re-validates every published
+paragraph against the archive, request hashes and word/format/N/A rules.
+
+```sh
+python3 scripts/attach_grade_explanations.py --responses <dir> \
+  --output-archive research/gaza-grading/explanations-2026-10-26.json \
+  --publication-version YYYY-MM-DD.N --schema-version 1.25
+```
+
+Replaying the archive is idempotent; a changed archive must go to a new path.

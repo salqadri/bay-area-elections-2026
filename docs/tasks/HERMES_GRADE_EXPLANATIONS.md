@@ -41,5 +41,13 @@ replace the immutable raw scoring answers.
 
 Review completeness, source attribution, N/A handling and a representative sample
 before adding summaries to the readers through the normal publication workflow.
-The current release publishes scores only; this task is prepared for Hermes and
-has not been executed.
+
+## Status — generation in progress October 26, 2026
+
+Summaries are being generated for all 1,296 candidacies with LM Studio `qwen/qwen3.8-27b` (temperature
+0.1) from each candidate's exact archived state, the v3 rubric and the recorded
+answers, cached per request hash under the ignored `.research/grade-explanations/`
+work directory. The frozen archive is
+`research/gaza-grading/explanations-2026-10-26.json`; publication runs
+`scripts/attach_grade_explanations.py` into schema 1.25 as the next version, with `scripts/check_grade_explanations.py` in the release gate and a
+collapsed **Why this grade?** panel in both readers.
