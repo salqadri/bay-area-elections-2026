@@ -69,3 +69,20 @@ const counties=['Alameda','Contra Costa','San Francisco','San Mateo','Santa Clar
 const sharedCounty={counties:['Alameda','Santa Clara']};assert(C.countyMatches(sharedCounty,'Alameda',counties));assert(C.countyMatches(sharedCounty,'Santa Clara',counties));assert(C.countyMatches(sharedCounty,'bay-area',counties));assert(!C.countyMatches(sharedCounty,'San Mateo',counties));assert(!C.countyMatches({counties:[]},'bay-area',counties));assert(C.countyMatches({counties:[]},'all',counties));
 for(const county of counties)assert(C.countyMatches({counties:[county]},'bay-area',counties));
 console.log('PASS CAIR comparisons: C/F boundaries, inclusive 2.5/5, OR logic, confidence unfiltered, joint/current/unspecified versus historical/primary/opposed, missing/renamed/incompatible answers, exact saved inputs and county predicates.');
+
+const mapping=JSON.parse(fs.readFileSync(path.join(__dirname,'../research/gaza-grading/score-grade-mapping.json'),'utf8'));
+assert.deepEqual(mapping,C.defaultScoreGradeMapping);
+assert.equal(C.scoreGrade(0,mapping),'F');assert.equal(C.scoreGrade(5,mapping),'A');
+for(const [i,upper]of mapping.upper_bounds.entries()){assert.equal(C.scoreGrade(upper,mapping),'FEDCB'[i]);assert.equal(C.scoreGrade(upper+Number.EPSILON*8,mapping),'EDCBA'[i]);}
+for(const value of [null,true,'2',NaN,Infinity,-.01,5.01])assert.equal(C.scoreGrade(value,mapping),null);
+const nonlinear={upper_bounds:[.1,.5,1,2,4.9]};assert.equal(C.scoreGrade(2.5,nonlinear),'B');
+for(const invalid of [{},[],{upper_bounds:[0,1,2,3,4]},{upper_bounds:[1,2,2,3,4]},{upper_bounds:[1,2,3,4,5]},{upper_bounds:[1,2,3,4]},{upper_bounds:[false,1,2,3,4]},{upper_bounds:[1,2,3,4,NaN]},{...nonlinear,extra:1}])assert.throws(()=>C.validateMapping(invalid));
+const derivedRow=reviewed('A',2.5),before=JSON.stringify(derivedRow);
+assert.equal(C.derivedGrade(derivedRow,mapping),'D');assert.equal(C.derivedGrade(derivedRow,nonlinear),'B');
+assert(C.cairComparison(derivedRow,{gradeKey:'pro_palestine_score_grade',scoreKey:'',mapping}).flagged);
+assert(!C.cairComparison(derivedRow,{gradeKey:'pro_palestine_score_grade',scoreKey:'',mapping:nonlinear}).flagged);
+const exported=C.withScoreGrades({rows:[derivedRow]},nonlinear);assert.equal(exported.rows[0].pro_palestine_score_grade,'B');assert.deepEqual(exported.score_grade_mapping,nonlinear);assert.equal(exported.rows[0].request,derivedRow.request);assert.equal(exported.rows[0].response,derivedRow.response);assert.equal(JSON.stringify(derivedRow),before);
+assert.equal(C.derivedGrade({...derivedRow,status:'queued'}),null);assert.equal(C.derivedGrade(wrongScale),null);
+assert(C.comparisonQuestions([derivedRow]).grades.includes('pro_palestine_score_grade'));
+assert(html.includes('id="grade-mapping-form"'));assert(html.includes('id="candidate-score-grade"'));
+console.log('PASS Derived grades: exact inclusive boundaries, nonlinear bounds/validation, unsupported scores/scales, CAIR selector, confidence unchanged and reproducible exports with immutable Jev answers.');

@@ -19,12 +19,13 @@ import uuid
 
 from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, build_state,
                         validate_questions, validate_response, jev_call, digest, dump, save, now, money)
+from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
 ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
 COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
-STATE_VERSION = 'candidate-evidence-v5-local-federal-cair'
+STATE_VERSION = 'candidate-evidence-v6-local-federal-peace-labels'
 
 
 def row_id(position_id, candidate, roster):
@@ -114,12 +115,29 @@ class RunManager:
     def current(self):
         return snapshot(json.loads(self.dataset_path.read_text()))
 
+    def score_grade_mapping(self):
+        path = self.work / 'score-grade-mapping.json'
+        return validate_mapping(json.loads(path.read_text()) if path.exists() else DEFAULT_MAPPING)
+
+    def set_score_grade_mapping(self, mapping):
+        mapping = validate_mapping(mapping)
+        with self.lock:
+            save(self.work / 'score-grade-mapping.json', mapping)
+        return mapping
+
+    def present(self, run):
+        # Delta grades were computed before dropping requests; keep their exact
+        # mapping even if another tab changes the setting between reads.
+        mapping = run['score_grade_mapping'] if 'changes' in run else self.score_grade_mapping()
+        return present_run(run, mapping)
+
     def bootstrap(self):
         current = self.current()
         batch = json.loads(self.baseline.read_text())
         baseline = stored_run(batch, current)
-        return {'snapshot': current, 'baseline': baseline, 'questions': batch['questions'],
-                'latest': self.latest(current, baseline),
+        return {'snapshot': current, 'baseline': self.present(baseline), 'questions': batch['questions'],
+                'latest': self.present(self.latest(current, baseline)),
+                'score_grade_mapping': self.score_grade_mapping(), 'default_score_grade_mapping': DEFAULT_MAPPING,
                 'key_configured': bool(self.key), 'history': self.history()}
 
     def latest(self, current=None, baseline=None):
@@ -290,7 +308,10 @@ class RunManager:
                 return deepcopy(run)
             keys = ('id', 'status', 'revision', 'completed', 'errors', 'finished_at')
             result = {k: run[k] for k in keys if k in run}
+            mapping = self.score_grade_mapping()
+            result['score_grade_mapping'] = mapping
             result['changes'] = [{k: deepcopy(v) for k, v in row.items() if k != 'request'}
+                                | {'pro_palestine_score_grade': row_grade(row, mapping)}
                                  for row in run['rows'] if row['revision'] > after]
             return result
 
@@ -337,12 +358,12 @@ def handler_for(manager):
                 if url.path == '/api/snapshot':
                     return self.send(200, manager.current())
                 if url.path == '/api/latest':
-                    return self.send(200, manager.latest())
+                    return self.send(200, manager.present(manager.latest()))
                 if url.path == '/api/runs':
                     return self.send(200, manager.history())
                 if url.path.startswith('/api/runs/'):
                     after = parse_qs(url.query).get('after', [None])[0]
-                    return self.send(200, manager.get(url.path.removeprefix('/api/runs/'), int(after) if after is not None else None))
+                    return self.send(200, manager.present(manager.get(url.path.removeprefix('/api/runs/'), int(after) if after is not None else None)))
                 paths = {'/': ASSETS / 'index.html', '/app.js': ASSETS / 'app.js', '/core.js': ASSETS / 'core.js',
                          '/style.css': ASSETS / 'style.css', '/contest-label.js': ROOT / 'src/contest-label.js'}
                 if url.path not in paths:
@@ -364,12 +385,14 @@ def handler_for(manager):
                 if not 0 < length <= 256000:
                     return self.send(413, {'error': 'Request body must be 1–256000 bytes'})
                 body = json.loads(self.rfile.read(length)); path = urlsplit(self.path).path
+                if path == '/api/score-grade-mapping':
+                    return self.send(200, manager.set_score_grade_mapping(body))
                 if path == '/api/runs':
                     if not isinstance(body, dict) or set(body) not in ({'questions'}, {'questions', 'candidate_id'}, {'questions', 'scope'}):
                         raise ValueError('Provide questions and optionally candidate_id or scope')
                     if 'candidate_id' in body and body['candidate_id'] is None:
                         raise ValueError('candidate_id must be a nonempty candidate ID')
-                    return self.send(202, manager.start(body['questions'], body.get('candidate_id'), body.get('scope', 'all')))
+                    return self.send(202, manager.present(manager.start(body['questions'], body.get('candidate_id'), body.get('scope', 'all'))))
                 match = re.fullmatch(r'/api/runs/([^/]+)/cancel', path)
                 if match:
                     return self.send(200, manager.cancel(match.group(1)))

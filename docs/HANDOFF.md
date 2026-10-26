@@ -1,5 +1,13 @@
 # Research and development handoff
 
+## Derived score grades and Vote for Peace context — October 25, 2026
+
+The local playground adds deterministic `pro_palestine_score_grade` alongside Jev answers: six equal-width bands over 0–5, F through A, with each upper bound inclusive (0 through 5/6 is F). **Score → grade mapping** edits the five F–B bounds for nonlinear mappings; overrides persist under the server work directory. Results, race cards and optional CAIR comparisons refresh without model calls. API/download projections include the exact mapping and row field; original requests/responses, confidence, run files and archived batches remain unchanged. New CLI batches include the same field and accept `--score-grade-mapping`.
+
+Vote for Peace was already in the focus registry, but the October 9 source import intentionally omitted Neutral cards from public endorsements. New shared/playground state versions now include the five exact reviewed Neutral candidacy mappings as observations, preserve Ally/Opposed labels and source provenance, retain primary/historical context and avoid duplicates or overriding newer canonical records. Public election data is untouched; rerun explicitly to submit the enriched state. See [JEV_PLAYGROUND.md](JEV_PLAYGROUND.md).
+
+Validation: **39/39 release checks pass**, plus 38 focused Python regressions and Node boundary/comparison/export tests. Chromium verified nonlinear mapping, validation, reset/reload persistence, exact raw inputs/answers, reproducible downloads, immediate CAIR updates, missing/incompatible results and desktop/mobile layout. The live roster has 40 Vote for Peace observations (27 Ally, 8 Opposed, 5 Neutral). All 82 saved run files present at restart remain byte-identical; no live Jev calls were made.
+
 ## CAIR comparison and county filters — October 25, 2026
 
 The playground shows each candidacy’s current CAIR Action recommendation, source, checked date and election phase beside its saved results. **Review CAIR differences** flags nonhistorical general/phase-unspecified Preferred or Endorsed records when the selected saved A–F grade is C–F **or** the selected 0–5 score is ≤2.5. Confidence remains visible without a cutoff. Question selectors support renamed questions; missing or incompatible answers are counted separately. Clicking a flagged candidate opens their saved prompt/answers; current recommendations never rewrite frozen Jev requests.

@@ -2,14 +2,17 @@
 from copy import deepcopy
 import http.client
 import json
+import math
 from pathlib import Path
 import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 
 import grade_gaza as g
 import serve_jev_playground as p
+import score_grade as sg
 
 QUESTIONS = {'verdict': {'type': 'choice', 'instructions': 'Example', 'criteria': {'A':'One','F':'Two'}},
              'rating': {'type':'score','criteria':['Low','High']}, 'claim': {'type':'noul'}}
@@ -73,6 +76,70 @@ def baseline(data):
 
 
 class ValidationChecks(unittest.TestCase):
+    def test_linear_grade_boundaries_are_inclusive_without_rounding(self):
+        self.assertEqual(sg.score_grade(0), 'F')
+        for i, upper in enumerate(sg.DEFAULT_MAPPING['upper_bounds']):
+            self.assertEqual(sg.score_grade(upper), 'FEDCB'[i])
+            self.assertEqual(sg.score_grade(math.nextafter(upper, math.inf)), 'EDCBA'[i])
+        self.assertEqual(sg.score_grade(5), 'A')
+        for value in (None, True, '2', -0.1, 5.1, float('nan'), float('inf')):
+            self.assertIsNone(sg.score_grade(value))
+
+    def test_custom_grade_mapping_validation_and_input_preservation(self):
+        mapping={'upper_bounds':[.1,.5,1,2,4.9]}
+        self.assertEqual(sg.score_grade(2.5,mapping),'B')
+        for invalid in ({},[],{'upper_bounds':[1,2,3,4]}, {'upper_bounds':[0,1,2,3,4]},
+                        {'upper_bounds':[1,2,2,3,4]}, {'upper_bounds':[1,2,3,4,5]},
+                        {'upper_bounds':[False,1,2,3,4]}, {'upper_bounds':[1,2,3,4,'4.5']},
+                        {'upper_bounds':[1,2,3,4,float('nan')]}, {**mapping,'extra':1}):
+            with self.assertRaises(ValueError):sg.validate_mapping(invalid)
+        q={'pro_palestine_score':{'type':'score','criteria':list('012345')}}
+        row={'status':'complete','request':{'questions':q},'response':{'answers':{'pro_palestine_score':{'type':'score','score':2.5,'confidence':0}}}}
+        before=deepcopy(row);projected=sg.present_run({'rows':[row]},mapping)
+        self.assertEqual(projected['rows'][0]['pro_palestine_score_grade'],'B')
+        self.assertEqual(row,before);self.assertIs(projected['rows'][0]['request'],row['request'])
+        row['status']='queued';self.assertIsNone(sg.row_grade(row))
+        row['status']='complete';q['pro_palestine_score']['criteria'].pop();self.assertIsNone(sg.row_grade(row))
+
+    def test_vote_for_peace_neutral_is_context_only_exact_candidacy_and_source(self):
+        data=fixture();pos=data['positions'][0];pos['id']='CA2026-014';c=pos['candidates'][0];c['name']='Xavier Becerra'
+        before=deepcopy(c);state=g.build_state(pos,c,data);records=state['focused_endorsement_observations']
+        self.assertEqual(c,before);self.assertEqual(len(records),1)
+        self.assertEqual((records[0]['relation'],records[0]['rating'],records[0]['source_label']),('neutral','Neutral','Neutral'))
+        self.assertEqual(records[0]['url'],'https://voteforpeace.info/california/xavier-becerra')
+        pos['id']='other-race';self.assertNotIn('focused_endorsement_observations',g.build_state(pos,c,data))
+        pos['id']='CA2026-014';c['endorsements']=[{'endorser':'VoteForPeace','relation':'opposed','phase':'general','url':'https://example.test/new'}]
+        records=g.build_state(pos,c,data)['focused_endorsement_observations'];self.assertEqual(len(records),1)
+        self.assertEqual(records[0]['relation'],'opposed');self.assertNotIn('rating',records[0])
+
+    def test_vote_for_peace_exact_labels_and_primary_phase_are_retained(self):
+        review=json.loads((g.ROOT/'research/endorsements/peace-guides-2026-10-09.json').read_text())
+        for finding in review['findings']:
+            e=finding['record']
+            if e['endorser']!='Vote for Peace':continue
+            c={'name':finding['candidate'],'endorsements':[deepcopy(e)]};pos={'id':finding['position_id']}
+            records=g.focused_endorsements(pos,c);self.assertEqual(len(records),1)
+            card=next(card for card in review['vote_for_peace_cards'] if card.get('candidate')==c['name'] and card.get('position_id')==pos['id'] and card['phase']==e['phase'])
+            self.assertEqual(records[0]['source_label'],card['source_label'])
+            for key in ('relation','rating','phase','url','checked_on'):
+                if key in e:self.assertEqual(records[0][key],e[key])
+            c['endorsements'][0]['checked_on']='2026-10-25'
+            self.assertEqual(g.focused_endorsements(pos,c)[0]['checked_on'],'2026-10-25')
+
+    def test_cli_grade_adds_derived_result_without_modifying_provider_decision(self):
+        criteria={'id':'fixture','questions':{'pro_palestine_score':{'type':'score','criteria':list('012345')}}}
+        plan=g.plan(fixture(),criteria,'house-all');plan['state_version']='exact-planned-evidence-version'
+        def call(work,request,key,force=False):
+            out=response(request);out['answers']['pro_palestine_score']['score']=2.5;return out
+        with tempfile.TemporaryDirectory() as directory, patch.object(g,'jev_call',side_effect=call):
+            work=Path(directory);g.grade(work,plan,criteria,'FIXTURE',score_grade_mapping={'upper_bounds':[.1,.5,1,2,4.9]})
+            batch=json.loads((work/'results.json').read_text())
+        self.assertEqual(batch['state_version'],plan['state_version'])
+        self.assertTrue(all(r['pro_palestine_score_grade']=='B' for r in batch['results']))
+        for decision in batch['decisions'].values():
+            self.assertEqual(decision['request']['questions'],criteria['questions'])
+            self.assertNotIn('pro_palestine_score_grade',decision['response']['answers'])
+
     def test_questions_allow_renamed_added_score_choice_noul(self):
         self.assertEqual(g.validate_questions(QUESTIONS),QUESTIONS)
         self.assertEqual(g.validate_response(QUESTIONS,response({'questions':QUESTIONS}))['answers']['rating']['confidence'],0.)
@@ -184,6 +251,19 @@ class RunChecks(unittest.TestCase):
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)
         self.assertNotIn('SECRET_FIXTURE',json.dumps(b));self.assertNotIn('accepted',json.dumps(b));self.assertEqual(b['baseline']['rows'][0]['response']['answers']['verdict']['confidence'],.12)
+
+    def test_mapping_persists_and_projects_existing_results_without_rewriting_history(self):
+        m=self.manager();q={'pro_palestine_score':{'type':'score','criteria':list('012345')}}
+        done=self.wait(m,m.start(q)['id']);path=m.work/'runs'/done['id']/'run.json';original=path.read_bytes()
+        mapping={'upper_bounds':[.1,.2,.3,.4,.5]};m.set_score_grade_mapping(mapping)
+        restarted=p.RunManager(self.path,m.work,baseline=self.base)
+        self.assertEqual(restarted.bootstrap()['score_grade_mapping'],mapping)
+        self.assertEqual(restarted.present(done)['rows'][0]['pro_palestine_score_grade'],'F')
+        self.assertEqual(m.present(m.get(done['id'],0))['changes'][0]['pro_palestine_score_grade'],'F')
+        delta=m.get(done['id'],0);m.set_score_grade_mapping(sg.DEFAULT_MAPPING)
+        self.assertEqual(m.present(delta)['score_grade_mapping'],mapping)
+        self.assertEqual(path.read_bytes(),original)
+        self.assertNotIn('pro_palestine_score_grade',json.loads(original)['rows'][0]['response']['answers'])
 
     def test_five_county_catalog_counts_and_bay_batch_do_not_include_national_peers(self):
         g.save(self.path,five_county_fixture());calls=[]
@@ -435,6 +515,11 @@ class RunChecks(unittest.TestCase):
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json','Origin':'https://evil.test'})[0],403)
             origin='http://127.0.0.1:'+str(server.server_port)
             headers={'Content-Type':'application/json','Origin':origin}
+            mapping={'upper_bounds':[.1,.5,1,2,4.9]}
+            self.assertEqual(request('POST','/api/score-grade-mapping',json.dumps(mapping),headers)[0],200)
+            self.assertEqual(json.loads(request('GET','/api/bootstrap')[1])['score_grade_mapping'],mapping)
+            self.assertEqual(request('POST','/api/score-grade-mapping','{"upper_bounds":[1,2,2,3,4]}',headers)[0],400)
+            self.assertEqual(request('POST','/api/score-grade-mapping',json.dumps(mapping),{'Content-Type':'application/json'})[0],403)
             self.assertEqual(request('POST','/api/runs',json.dumps({'questions':QUESTIONS,'key':'SECRET_FIXTURE'}),headers)[0],400)
             status,body=request('POST','/api/runs',json.dumps({'questions':QUESTIONS}),headers);self.assertEqual(status,202);id_=json.loads(body)['id'];self.wait(m,id_)
             self.assertNotIn(b'SECRET_FIXTURE',request('GET','/api/runs/'+id_)[1])

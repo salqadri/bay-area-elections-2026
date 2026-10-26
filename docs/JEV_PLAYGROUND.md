@@ -147,15 +147,54 @@ rerun explicitly to evaluate a different prompt.
 
 Current recommendation metadata is separate from the frozen Jev request.
 A recommendation added after an old evaluation appears for comparison without
-rewriting that evaluation or implying the model saw it. Historical run downloads
-remain exact; `cair_action` metadata in Latest is a current-dataset comparison
-layer, while each row’s `request` retains what was actually submitted.
+rewriting that evaluation or implying the model saw it. Downloads keep exact
+model requests/responses and attach a separate derived grade/mapping layer;
+`cair_action` metadata in Latest is a current-dataset comparison layer, while each row’s `request` retains what was actually submitted.
+
+## Deterministic score grade
+
+`pro_palestine_score_grade` is a derived row field, separate from the model's
+`gaza_grade`. Only a completed numeric `pro_palestine_score` submitted with six
+score criteria (0–5) qualifies. Missing/invalid answers, other scales and unrun
+candidates get `null`; they are never assigned F by default. No new Jev question
+or call is required, and no separate grade confidence is invented. The UI labels
+the unchanged source score confidence explicitly.
+
+Default bands use exact stored bounds, without rounding the source score:
+
+| Grade | Score interval |
+|---|---|
+| F | 0 ≤ score ≤ 5/6 |
+| E | 5/6 < score ≤ 10/6 |
+| D | 10/6 < score ≤ 15/6 |
+| C | 15/6 < score ≤ 20/6 |
+| B | 20/6 < score ≤ 25/6 |
+| A | 25/6 < score ≤ 5 |
+
+Open **Score → grade mapping** above the workspace, or **Tune grade mapping** in
+selected results. Edit the inclusive upper bounds for F, E, D, C and B, then
+**Apply grade mapping**. Values must be strictly increasing between 0 and 5;
+A always ends at 5. **Restore linear mapping** restores the table above. Applying
+updates all derived displays and comparisons immediately without rerunning Jev.
+The CAIR grade selector also offers `pro_palestine_score_grade (derived)`;
+`gaza_grade` remains the default comparison.
+
+The tracked default is `research/gaza-grading/score-grade-mapping.json`.
+Overrides persist under the server's `--work-dir/score-grade-mapping.json`
+(default `.research/jev-playground/score-grade-mapping.json`), via the same-origin
+`POST /api/score-grade-mapping` endpoint. API views and downloads include
+`score_grade_mapping` and the derived field on each row so the grades can be
+reproduced. Saved run files and provider responses are never rewritten. The raw
+Answers/Request inspector remains the exact model response/request. A new CLI
+`grade_gaza.py grade` batch also stores the derived field and mapping; use
+`--score-grade-mapping /path/mapping.json` to override its default. Existing
+archived batches stay unchanged.
 
 ## Compact candidate input
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v5-local-federal-cair`) for new requests and previews.
-Historical requests and the shared CLI builder remain unchanged:
+context (`candidate-evidence-v6-local-federal-peace-labels`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v6-peace-guide-labels`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -176,12 +215,26 @@ Historical requests and the shared CLI builder remain unchanged:
   in registry v3; its Preferred/Opposed relations and joint flags are retained.
   Earlier registry v2 and stored requests remain unchanged. Actual source names and relation types,
   ratings, phases, verification and historical flags remain intact.
+- Vote for Peace's exact **Ally**, **Opposed** and **Neutral** source labels now
+  appear as `source_label`, with source URL/date, in new compact states. Canonical
+  Ally/Opposed observations were already included, but the October 9 import
+  deliberately held five matched Neutral cards out of public endorsements.
+  The shared builder now includes those exact reviewed candidacy mappings from
+  `research/endorsements/peace-guides-2026-10-09.json` as context-only
+  `relation: neutral`, `rating: Neutral` observations. It does not infer Neutral
+  from missing data or fuzzy-match names, change public endorsement records,
+  duplicate existing records, or override newer canonical recommendations.
+  Primary observations retain their phase (including Jimmy Panetta's).
+  Saved older states remain exact; rerun a candidate to submit this enriched
+  context. This uses the recorded October 9 evidence, not a fresh guide crawl.
 - Before adding CAIR Action, the expanded roster had **62 focused observations on 43 candidacies**,
   at most three each. The original House archive had 41 on 23, instead of all
   3,690 House endorsement observations. The published October 23 CAIR source refresh plus
   registry v3 had 147 focused observations on 107 of the original 685 candidacies,
   including CAIR ratings for 85 candidacies. The expanded five-county catalog
-  currently has 177 focused observations on 133 candidacies. Other names
+  had 177 focused observations on 133 candidacies before the v6 Vote for Peace
+  change; v6 has 182 on 134 candidacies, including 40 Vote for Peace observations
+  (27 Ally, 8 Opposed, 5 Neutral). Other names
   are omitted for context budget, not declared unimportant or absent. No category
   is inferred from religion or ethnicity. Neutral image observations are not
   converted into named endorsements.
