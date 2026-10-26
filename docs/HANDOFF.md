@@ -1,5 +1,9 @@
 # Research and development handoff
 
+## Derived grade in CAIR comparison cards — October 25, 2026
+
+Every CAIR comparison card now displays `pro_palestine_score_grade` alongside the selected model grade and score, with its source score confidence and current tunable mapping. Selecting the derived grade as the comparison grade displays it once. Missing/incompatible source scores stay labeled. Review selectors still control the flagging rule. Node checks and desktop/mobile Chromium checks cover the extra metric, duplicate avoidance, mapping updates and unsupported scores. This is local presentation only; no new evaluations or saved-history changes.
+
 ## Candidate community state — October 25, 2026
 
 New shared/playground requests include optional boolean `part_of_muslim_community` from an exact candidacy registry of owner-confirmed values. The final registry has 12 true and 12 false values, with no special annotations; the other 1,272 active repository candidacies remain unknown/absent. Ballot-name variants Jamal Khan and Raeena S. Lari are bound to their supplied office identities. Public religion/source research cannot set this owner-defined community field or overwrite a confirmed value. Published election JSON and both public readers are unchanged.

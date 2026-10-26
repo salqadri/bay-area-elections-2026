@@ -177,7 +177,11 @@ selected results. Edit the inclusive upper bounds for F, E, D, C and B, then
 A always ends at 5. **Restore linear mapping** restores the table above. Applying
 updates all derived displays and comparisons immediately without rerunning Jev.
 The CAIR grade selector also offers `pro_palestine_score_grade (derived)`;
-`gaza_grade` remains the default comparison.
+`gaza_grade` remains the default comparison. Each CAIR comparison card also
+always displays `pro_palestine_score_grade` alongside its selected grade and score,
+using the current mapping and the source score confidence. Selecting the derived
+grade for the comparison shows it once. Missing/incompatible scores are labeled
+without assigning a grade.
 
 The tracked default is `research/gaza-grading/score-grade-mapping.json`.
 Overrides persist under the server's `--work-dir/score-grade-mapping.json`
