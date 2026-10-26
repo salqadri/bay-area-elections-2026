@@ -1,5 +1,30 @@
 # Research and development handoff
 
+## Evidence sufficiency and Fiona Ma divestment — October 25, 2026
+
+The derived `pro_palestine_score_grade` now returns **Insufficient Info** for a
+saved, compatible 0–1 `evidence_score` strictly below 0.10. Exactly 0.10 is still
+graded. This applies to Python/API/CLI projections and browser race/selected/CAIR
+results and downloads. Original model grades, scores, confidence, requests and
+run files are unchanged. A suppressed label is not an A–F comparison value;
+independently selected model-grade/raw-score review rules remain intact. Legacy
+prompts without this evidence question retain their prior mapping.
+
+The missing Fiona Ma stance was a research gap, not state truncation. Historical
+logs record a timeout/empty follow-up passes despite a done/enriched flag. The
+current Serper-only discovery workflow now separately searches divestment and
+BDS and retains those leads. A May 16, 2024 POLITICO interview explicitly records
+Ma opposing divestment from Israel. Actual captured HTML, identity, meaning and
+publication date passed Jev source review. Review `fiona-divestment-2026-10-25`
+adds GE-1288; the ledger/coverage and generated readers are synchronized for
+publication version 2026-10-25.2. See the
+[full diagnosis](reviews/2026-10-25-evidence-sufficiency-and-fiona-ma.md).
+
+The local server now reads this development worktree's updated dataset and keeps
+the existing main-checkout history directory. All 102 preexisting run files were
+verified unchanged. Fiona Ma's saved evaluation retains its old input; a new run
+is needed to evaluate the new evidence. No candidate grading calls were made.
+
 ## Selected evaluation prompt restoration — October 25, 2026
 
 The question editor now initializes from the selected candidate’s actual saved request, rather than the latest projection’s historical batch-default questions. Candidate/county selection persists locally across reloads. Clean navigation follows each displayed evaluation’s saved prompt; unsaved and invalid drafts survive selection changes and result polling. **Load saved prompt** restores the displayed evaluation explicitly; **Restore defaults** retains its original-rubric meaning. Reload discards the session draft and restores saved questions. No provider calls or history rewrites are required for restoration. Validation: **40/40 release checks pass**, plus Chromium regressions covering both Monaco and fallback editors, reload/selection persistence, edits during polling, prompt carry after evaluation, explicit restoration, saved-history switching, disabled storage and narrow mobile layout. All 82 existing saved run files remain unchanged.

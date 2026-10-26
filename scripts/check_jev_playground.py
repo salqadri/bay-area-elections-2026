@@ -85,6 +85,36 @@ class ValidationChecks(unittest.TestCase):
         for value in (None, True, '2', -0.1, 5.1, float('nan'), float('inf')):
             self.assertIsNone(sg.score_grade(value))
 
+    def test_reviewed_fiona_ma_divestment_evidence_reaches_generated_state(self):
+        data=json.loads((g.ROOT/'2026-11-03_Bay_Area_Elections.json').read_text())
+        p,c=next((p,c) for p in data['positions'] for c in p.get('candidates') or [] if c['name']=='Fiona Ma')
+        state=g.build_state(p,c,data)
+        self.assertTrue(any('2024-05-16' in item and 'opposed divestment from Israel' in item
+                            for item in state['gaza_evidence']))
+
+    def test_evidence_score_suppresses_only_below_ten_percent(self):
+        row={'status':'complete','request':{'questions':{
+            'pro_palestine_score':{'type':'score','criteria':list('012345')},
+            'evidence_score':{'type':'score','criteria':['none','concrete']}}},
+            'response':{'answers':{'pro_palestine_score':{'type':'score','score':1.77,'confidence':0},
+                                  'evidence_score':{'type':'score','score':0,'confidence':1}}}}
+        for value in (0, .05, .099999, .1, 1):
+            row['response']['answers']['evidence_score']['score']=value
+            original=deepcopy(row)
+            self.assertEqual(sg.row_grade(row), 'Insufficient Info' if value < .1 else 'D')
+            self.assertEqual(sg.present_run({'rows':[row]},sg.DEFAULT_MAPPING)['rows'][0]['response'], original['response'])
+            self.assertEqual(row,original)
+        for value in (None, True, '0', -.1, 1.1, float('nan')):
+            row['response']['answers']['evidence_score']['score']=value
+            self.assertEqual(sg.row_grade(row),'D')
+        row['response']['answers']['evidence_score']['score']=0
+        row['request']['questions']['evidence_score']['criteria'].append('other scale')
+        self.assertEqual(sg.row_grade(row),'D')
+        del row['request']['questions']['evidence_score']
+        self.assertEqual(sg.row_grade(row),'D')
+        row['response']['answers']['pro_palestine_score']['score']=None
+        self.assertIsNone(sg.row_grade(row))
+
     def test_custom_grade_mapping_validation_and_input_preservation(self):
         mapping={'upper_bounds':[.1,.5,1,2,4.9]}
         self.assertEqual(sg.score_grade(2.5,mapping),'B')

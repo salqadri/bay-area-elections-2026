@@ -99,6 +99,7 @@
     const panel=$('candidate-score-grade'),grade=C.derivedGrade(row,gradeMapping);panel.replaceChildren();
     panel.append(node('strong',null,'pro_palestine_score_grade'));
     if(!grade){panel.append(node('p','help','No compatible saved 0–5 pro_palestine_score.'));return;}
+    if(grade==='Insufficient Info'){panel.append(node('span','derived-grade-value',grade),node('p','help','Saved evidence_score: '+String(C.evidenceScore(row))+' / 1, below 0.10. No derived letter grade. Original Jev answers remain below.'));return;}
     panel.append(node('span','derived-grade-value',grade));
     panel.append(node('p','help','Derived from '+String(row.response.answers.pro_palestine_score.score)+' / 5 · Source score confidence: '+C.percent(row.response.answers.pro_palestine_score.confidence)+'. No separate model confidence.'));
     const tune=node('a',null,'Tune grade mapping ↑');tune.href='#grade-mapping';tune.addEventListener('click',()=>{$('grade-mapping').open=true;});panel.append(tune);
@@ -131,8 +132,8 @@
       const recommendation=node('div','comparison-recommendation');appendCair(recommendation,row);card.append(recommendation);
       const metrics=node('div','comparison-metrics');
       const metricRows=[[comparisonGrade,comparison.grade,'grade'],[comparisonScore,comparison.score,'score']];
-      if(comparisonGrade!=='pro_palestine_score_grade'){const grade=C.derivedGrade(row,gradeMapping);metricRows.push(['pro_palestine_score_grade',grade?{value:grade,confidence:row.response.answers.pro_palestine_score.confidence,derived:true}:null,'grade']);}
-      for(const [key,metric,type]of metricRows){const cell=node('div');cell.dataset.metricKey=key;cell.append(node('strong',null,key||'Question not selected'));cell.append(node('p',null,metric?(type==='score'?String(metric.value)+' / 5':metric.value):'No compatible saved answer'));if(metric)cell.append(node('span','help',(metric.derived?'Derived · Source score confidence: ':'Confidence: ')+C.percent(metric.confidence)));metrics.append(cell);}card.append(metrics);
+      if(comparisonGrade!=='pro_palestine_score_grade'){metricRows.push(['pro_palestine_score_grade',C.gradeMetric(row,gradeMapping),'grade']);}
+      for(const [key,metric,type]of metricRows){const cell=node('div');cell.dataset.metricKey=key;cell.append(node('strong',null,key||'Question not selected'));cell.append(node('p',null,metric?(type==='score'?String(metric.value)+' / 5':metric.value):'No compatible saved answer'));if(metric)cell.append(node('span','help',metric.insufficient?'Saved evidence_score: '+String(metric.evidence)+' / 1, below 0.10':(metric.derived?'Derived · Source score confidence: ':'Confidence: ')+C.percent(metric.confidence)));metrics.append(cell);}card.append(metrics);
       card.append(node('p','help','Review reason: '+comparison.reasons.join(' or ')));
       const footer=node('div','comparison-footer'),open=sourceLink(C.candidateSiteUrl(row),'Election site ↗');footer.append(node('span','help','Saved '+formatTime(row.evaluation?.finished_at||row.evaluation?.created_at||run.created_at)+' · '+(row.response?.model||run.model)));if(open)footer.append(open);card.append(footer);results.append(card);
     }

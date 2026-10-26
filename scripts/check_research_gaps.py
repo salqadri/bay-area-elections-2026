@@ -146,6 +146,28 @@ class GazaGapChecks(unittest.TestCase):
         self.packet=gaza.capture(self.raw,self.url,'2026-10-23')
         self.claim={'position_id':p['id'],'candidate':c['name'],'field':'gaza_platform','record':{'quote':'I will stand unapologetically with Israel','summary':'Feely pledges to stand with Israel.','scope_note':'Only the recorded campaign issues page was checked.'},'date_basis':'Actual source observation on October 23, 2026, not an announcement date.'}
 
+    def test_divestment_discovery_is_independent_of_gaza_and_current_office(self):
+        row=gaza.plan(self.data,['Fiona Ma'],refresh_existing=True)['candidates'][0]
+        self.assertIn('"Fiona Ma" Israel divestment',gaza.search_queries(row))
+        self.assertIn('"Fiona Ma" Israel BDS boycott bonds investment',gaza.search_queries(row))
+        self.assertEqual(row['search_version'],gaza.SEARCH_VERSION)
+        for term in ('divestment','divesting','BDS'):
+            self.assertTrue(gaza.relevant_lead({'link':'https://example.org/article','title':'Candidate interview','snippet':'Opposes '+term}))
+        self.assertFalse(gaza.relevant_lead({'link':'https://example.org','title':'Housing only'}))
+        self.assertFalse(gaza.relevant_lead({'link':'http://example.org','title':'Israel divestment'}))
+
+    def test_dated_news_capture_checks_real_publication_metadata(self):
+        raw=b'<title>Interview</title><time itemprop="datePublished" datetime="2024-05-16 09:01:00">May 16</time><p>The candidate opposed divestment from Israel in this interview.</p>'
+        packet=gaza.capture(raw,'https://example.org/interview','2026-10-23','dated-html')
+        self.assertEqual(packet['published_date'],'2024-05-16')
+        with self.assertRaisesRegex(ValueError,'datePublished'):
+            gaza.capture(raw.replace(b'datePublished',b'dateModified'),'https://example.org/interview','2026-10-23','dated-html')
+        claim=deepcopy(self.claim);claim['field']='gaza_evidence';claim['record'].update(date='2026-10-23',date_method='page_metadata')
+        with tempfile.TemporaryDirectory() as temp,patch.object(gaza,'ask') as judge:
+            with self.assertRaisesRegex(ValueError,'date must match'):
+                gaza.review_claim(self.data,claim,{**self.packet,'kind':'dated-html','published_date':'2024-05-16'},Path(temp),'fixture')
+            judge.assert_not_called()
+
     def test_nested_verified_platform_sources_are_not_lost_to_homepage_only_crawl(self):
         rows=gaza.plan(self.data,['Jay Feely'])['candidates'];self.assertEqual(len(rows),1)
         self.assertIn(self.url,rows[0]['direct_source_urls']);self.assertEqual(rows[0]['status'],'needs_source_review')
@@ -183,7 +205,7 @@ class GazaGapChecks(unittest.TestCase):
             raw=Path(temp)/'raw.html';raw.write_bytes(self.raw);p=deepcopy(self.packet);p['text']+=' changed';p.pop('packet_sha256');p['packet_sha256']=digest(dump(p).encode());f=Path(temp)/'packet.json';save(f,p)
             claim={**self.claim,'capture':str(f),'raw_capture':str(raw)}
             with self.assertRaisesRegex(ValueError,'actual captured source'):
-                gaza.build(self.data,[claim],Path(temp),'fixture','fixture-gaza','2026-10-23')
+                gaza.build(self.data,[claim],Path(temp),'fixture','fixture-gaza',date.today().isoformat())
 
     def test_x_author_and_timestamp_binding_and_future_capture(self):
         tid='1711221277787041963';timestamp=((int(tid)>>22)+1288834974657)/1000
@@ -224,7 +246,7 @@ class GazaGapChecks(unittest.TestCase):
                     'capture':str(pp),'raw_capture':str(rp),'publisher':'Fixture guide','role':'aggregator',
                     'identity_basis':'Exact named candidate in this source fixture.',
                     'date_basis':'Observation date of the guide, not the underlying statement date.'})
-            result,_=gaza.build(self.data,claims,directory,'fixture','fixture-shared-guide','2026-10-23')
+            result,_=gaza.build(self.data,claims,directory,'fixture','fixture-shared-guide',date.today().isoformat())
             self.assertEqual(len(result['decisions']),2)
             for decision in result['decisions']:
                 self.assertEqual(result['sources'][decision['source_key']]['candidate'],decision['candidate'])

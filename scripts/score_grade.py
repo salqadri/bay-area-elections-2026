@@ -33,7 +33,18 @@ def row_grade(row, mapping=DEFAULT_MAPPING):
             not isinstance(question.get('criteria'), list) or len(question['criteria']) != 6 or
             answer.get('type') != 'score'):
         return None
-    return score_grade(answer.get('score'), mapping)
+    grade = score_grade(answer.get('score'), mapping)
+    evidence_question = (row.get('request') or {}).get('questions', {}).get('evidence_score', {})
+    evidence_answer = (row.get('response') or {}).get('answers', {}).get('evidence_score', {})
+    evidence = evidence_answer.get('score')
+    # Only the explicitly submitted 0–1 evidence question can suppress a grade.
+    # Historic prompts without that question retain their original mapping.
+    if (grade and evidence_question.get('type') == 'score' and
+            isinstance(evidence_question.get('criteria'), list) and len(evidence_question['criteria']) == 2 and
+            evidence_answer.get('type') == 'score' and type(evidence) in (int, float) and
+            math.isfinite(evidence) and 0 <= evidence < .10):
+        return 'Insufficient Info'
+    return grade
 
 
 def present_run(run, mapping):

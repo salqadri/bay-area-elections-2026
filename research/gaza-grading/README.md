@@ -18,6 +18,12 @@ cutoff, acceptance flag or hidden low-confidence rows. Choice probabilities and
 confidence remain separate returned values. A yes/no `noul` answer returns the
 probability of true, not a separate confidence.
 
+The separate derived `pro_palestine_score_grade` uses tunable 0–5 score bands.
+When the saved two-criterion `evidence_score` is below 0.10 / 1, it shows
+**Insufficient Info** instead of a letter. This does not change Jev's original
+answers, model confidence or archived requests. See the playground workflow for
+boundary and historical-prompt behavior.
+
 The owner's exact updated questions are versioned in
 `criteria-pro-palestine-v2.json`. Both default output names are retained, but
 custom questions can be added or renamed. The score and letter are separate

@@ -74,8 +74,8 @@ class LocalActionChecks(unittest.TestCase):
     def test_jurisdiction_search_and_shared_source_are_explicit_leads(self):
         row=gaps.plan(DATA,['Kevin Park'],True,'CA')['candidates'][0]
         self.assertIn(local.URL,row['direct_source_urls'])
-        query=gaps.search_queries(row)[0]
-        self.assertIn('Santa Clara',query);self.assertIn('resolution',query)
+        self.assertTrue(any('Santa Clara' in query and 'resolution' in query
+                            for query in gaps.search_queries(row)))
 
     def test_undated_congress_assessment_never_receives_a_vote_date(self):
         raw=html('Congressional Members',[('Rep. Kevin Mullin','Has failed to support ceasefire')]).encode()

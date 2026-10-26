@@ -92,3 +92,23 @@ assert(!C.samePrompt('{"q":{"type":"score","criteria":["low","high"]}}','{"q":{"
 assert(!C.samePrompt('{"q":','{"q":{"type":"noul"}}'));
 assert(html.includes('id="load-saved-prompt"'));
 console.log('PASS Prompt identity: formatting-only changes remain clean, changed criteria and invalid drafts remain distinct; saved prompt control is available.');
+
+const sparse=reviewed('D',1.77);
+sparse.request=structuredClone(sparse.request);sparse.request.questions.evidence_score={type:'score',criteria:['none','concrete']};
+sparse.response.answers.evidence_score={type:'score',score:0,confidence:1};
+for(const value of [0,.05,.099999,.1,1]){
+  sparse.response.answers.evidence_score.score=value;
+  const raw=JSON.stringify(sparse);
+  assert.equal(C.derivedGrade(sparse),value<.1?'Insufficient Info':'D');
+  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.1?'Insufficient Info':'D');
+  assert.equal(JSON.stringify(sparse),raw);
+}
+sparse.response.answers.evidence_score.score=0;
+const insufficientComparison=C.cairComparison(sparse,{gradeKey:'pro_palestine_score_grade',scoreKey:''});
+assert.equal(insufficientComparison.grade.value,'Insufficient Info');assert.equal(insufficientComparison.grade.confidence,null);
+assert(!insufficientComparison.flagged);assert(!insufficientComparison.comparable);
+assert(C.cairComparison(sparse).flagged); // Original model grade/score comparisons stay explicit.
+for(const value of [null,true,'0',NaN,-.1,1.1]){sparse.response.answers.evidence_score.score=value;assert.equal(C.derivedGrade(sparse),'D');}
+sparse.response.answers.evidence_score.score=0;sparse.request.questions.evidence_score.criteria.push('wrong scale');assert.equal(C.derivedGrade(sparse),'D');
+delete sparse.request.questions.evidence_score;assert.equal(C.derivedGrade(sparse),'D');
+console.log('PASS Evidence sufficiency: strict 0.10 boundary, validated 0–1 question, unchanged historic prompts/raw answers and nonletter CAIR handling.');

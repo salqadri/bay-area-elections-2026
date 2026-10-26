@@ -169,6 +169,17 @@ candidates get `null`; they are never assigned F by default. No new Jev question
 or call is required, and no separate grade confidence is invented. The UI labels
 the unchanged source score confidence explicitly.
 
+A compatible saved `evidence_score` (score question with two criteria, 0–1)
+strictly below **0.10** suppresses the derived letter and returns the string
+**Insufficient Info** instead. Exactly 0.10 is still graded. This applies to the
+selected result, race cards, CAIR cards, API projections, CLI output and downloads,
+without another Jev call. The UI explains the evidence threshold separately from
+model confidence. Original scores, `gaza_grade`, probabilities and confidence are
+unchanged. A historical prompt without this question (or an incompatible/invalid
+answer) does not establish low evidence and retains the existing mapping.
+An insufficient-info label is never compared as an A–F grade; independently
+selected raw score/model-grade comparisons retain their stated review rules.
+
 Default bands use exact stored bounds, without rounding the source score:
 
 | Grade | Score interval |
@@ -188,7 +199,8 @@ updates all derived displays and comparisons immediately without rerunning Jev.
 The CAIR grade selector also offers `pro_palestine_score_grade (derived)`;
 `gaza_grade` remains the default comparison. Each CAIR comparison card also
 always displays `pro_palestine_score_grade` alongside its selected grade and score,
-using the current mapping and the source score confidence. Selecting the derived
+using the current mapping and the source score confidence, or the low-evidence
+explanation when suppressed. Selecting the derived
 grade for the comparison shows it once. Missing/incompatible scores are labeled
 without assigning a grade.
 
