@@ -43,7 +43,7 @@ def row_grade(row, mapping=DEFAULT_MAPPING):
             isinstance(evidence_question.get('criteria'), list) and len(evidence_question['criteria']) == 2 and
             evidence_answer.get('type') == 'score' and type(evidence) in (int, float) and
             math.isfinite(evidence) and 0 <= evidence < .10):
-        return 'Insufficient Info'
+        return 'N/A'
     return grade
 
 

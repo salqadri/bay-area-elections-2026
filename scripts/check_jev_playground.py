@@ -101,7 +101,7 @@ class ValidationChecks(unittest.TestCase):
         for value in (0, .05, .099999, .1, 1):
             row['response']['answers']['evidence_score']['score']=value
             original=deepcopy(row)
-            self.assertEqual(sg.row_grade(row), 'Insufficient Info' if value < .1 else 'D')
+            self.assertEqual(sg.row_grade(row), 'N/A' if value < .1 else 'D')
             self.assertEqual(sg.present_run({'rows':[row]},sg.DEFAULT_MAPPING)['rows'][0]['response'], original['response'])
             self.assertEqual(row,original)
         for value in (None, True, '0', -.1, 1.1, float('nan')):
@@ -194,10 +194,11 @@ class ValidationChecks(unittest.TestCase):
 
     def test_playground_union_adds_every_county_office_and_deduplicates_shared_races(self):
         current=p.snapshot(expanded_fixture())
-        self.assertEqual(len(current['candidates']),8);self.assertEqual(len(current['races']),7)
+        self.assertEqual(len(current['candidates']),10);self.assertEqual(len(current['races']),9)
         self.assertEqual(sum(c['candidate']=='Alice' for c in current['candidates']),1)
         self.assertEqual(sum(c['candidate']=='Governor' for c in current['candidates']),1)
-        self.assertFalse({'Outside','Excluded local','Senator'} & {c['candidate'] for c in current['candidates']})
+        self.assertFalse({'Excluded','Excluded local'} & {c['candidate'] for c in current['candidates']})
+        self.assertTrue({'Outside','Senator'} <= {c['candidate'] for c in current['candidates']})
         local=[c for c in current['candidates'] if c['candidate']=='Local Alex']
         self.assertEqual(len({c['id'] for c in local}),2)  # distinct races never collapse by name
         self.assertEqual({c['roster'] for c in current['candidates']},
@@ -280,6 +281,8 @@ class RunChecks(unittest.TestCase):
 
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)
+        self.assertEqual(b['baseline']['questions'],QUESTIONS)
+        self.assertEqual(b['questions'],json.loads(p.DEFAULT_CRITERIA.read_text())['questions'])
         self.assertNotIn('SECRET_FIXTURE',json.dumps(b));self.assertNotIn('accepted',json.dumps(b));self.assertEqual(b['baseline']['rows'][0]['response']['answers']['verdict']['confidence'],.12)
 
     def test_mapping_persists_and_projects_existing_results_without_rewriting_history(self):
@@ -300,7 +303,7 @@ class RunChecks(unittest.TestCase):
         def call(work,req,key,force):calls.append(deepcopy(req));return response(req)
         m=self.manager(call);current=m.current()
         self.assertEqual(current['bay_area_counties'],['Alameda','Contra Costa','San Francisco','San Mateo','Santa Clara'])
-        self.assertEqual(current['scope_counts']['all']['candidates'],11)
+        self.assertEqual(current['scope_counts']['all']['candidates'],13)
         self.assertEqual(current['scope_counts']['bay-area']['candidates'],9)
         done=self.wait(m,m.start(QUESTIONS,scope='bay-area')['id'])
         self.assertEqual(done['scope'],'bay-area');self.assertEqual(len(done['rows']),9)
@@ -315,7 +318,7 @@ class RunChecks(unittest.TestCase):
         self.assertEqual(m.history()[0]['scope'],'bay-area')
         self.assertTrue(all(r['request']['questions']==QUESTIONS for r in done['rows']))
         self.assertTrue(all(r['response']['answers']['verdict']['confidence']==.12 for r in done['rows']))
-        self.assertEqual(len(self.wait(m,m.start(QUESTIONS)['id'])['rows']),11)
+        self.assertEqual(len(self.wait(m,m.start(QUESTIONS)['id'])['rows']),13)
 
     def test_invalid_or_empty_batch_scope_makes_no_model_calls(self):
         calls=[]
@@ -328,7 +331,7 @@ class RunChecks(unittest.TestCase):
 
     def test_expanded_roster_keeps_original_house_baseline_and_local_inputs_are_ungraded(self):
         g.save(self.path,expanded_fixture());bootstrap=self.manager().bootstrap()
-        self.assertEqual(len(bootstrap['snapshot']['candidates']),8)
+        self.assertEqual(len(bootstrap['snapshot']['candidates']),10)
         self.assertEqual(len(bootstrap['baseline']['rows']),3)
         original=json.loads(self.base.read_text())
         for row in bootstrap['baseline']['rows']:
@@ -344,15 +347,15 @@ class RunChecks(unittest.TestCase):
         one=self.wait(m,m.start(q,local['id'])['id'])
         self.assertEqual(len(calls),1);self.assertEqual(one['rows'][0]['request']['state']['jurisdiction'],'SC-local jurisdiction')
         self.assertEqual(one['rows'][0]['request']['questions'],q)
-        all_done=self.wait(m,m.start(q)['id']);self.assertEqual(len(all_done['rows']),8)
-        self.assertEqual(len(calls),9);self.assertTrue(all(c['questions']==q for c in calls))
+        all_done=self.wait(m,m.start(q)['id']);self.assertEqual(len(all_done['rows']),10)
+        self.assertEqual(len(calls),11);self.assertTrue(all(c['questions']==q for c in calls))
         self.assertEqual(one['state_version'],p.STATE_VERSION)
 
     def test_fresh_run_retains_low_confidence_and_arbitrary_questions_without_cutoffs(self):
         calls=[]
         def call(work,req,key,force):calls.append((deepcopy(req),force));return response(req)
         m=self.manager(call);r=m.start(QUESTIONS);done=self.wait(m,r['id'])
-        self.assertEqual(done['status'],'complete');self.assertEqual(done['completed'],3);self.assertEqual(len(calls),3)
+        self.assertEqual(done['status'],'complete');self.assertEqual(done['completed'],4);self.assertEqual(len(calls),4)
         self.assertTrue(all(force for _,force in calls));self.assertNotIn('accepted',json.dumps(done))
         self.assertTrue(all(row['response']['answers']['rating']['confidence']==0. for row in done['rows']))
 
@@ -371,7 +374,7 @@ class RunChecks(unittest.TestCase):
         self.assertEqual(m.history()[0]['candidate'],'Bob');self.assertEqual(m.history()[0]['total'],1)
         single=deepcopy(done)
         all_done=self.wait(m,m.start(QUESTIONS)['id'])
-        self.assertEqual(all_done['scope'],'all');self.assertEqual(len(all_done['rows']),3)
+        self.assertEqual(all_done['scope'],'all');self.assertEqual(len(all_done['rows']),4)
         self.assertEqual(m.get(single['id']),single)
 
     def test_selected_repeats_are_fresh_and_freeze_each_prompt(self):
@@ -484,8 +487,8 @@ class RunChecks(unittest.TestCase):
         def call(work,req,key,force):
             if req['state']['candidate']=='Bob':raise RuntimeError('SECRET_FIXTURE provider body')
             return response(req)
-        m=self.manager(call);r=self.wait(m,m.start(QUESTIONS)['id']);self.assertEqual(r['completed'],3);self.assertEqual(r['errors'],1)
-        self.assertNotIn('SECRET_FIXTURE',json.dumps(r));self.assertEqual(sum(row['status']=='complete' for row in r['rows']),2)
+        m=self.manager(call);r=self.wait(m,m.start(QUESTIONS)['id']);self.assertEqual(r['completed'],4);self.assertEqual(r['errors'],1)
+        self.assertNotIn('SECRET_FIXTURE',json.dumps(r));self.assertEqual(sum(row['status']=='complete' for row in r['rows']),3)
 
     def test_job_freezes_questions_and_dataset_before_network(self):
         release=threading.Event()
@@ -519,7 +522,7 @@ class RunChecks(unittest.TestCase):
 
     def test_deltas_bind_run_and_preserve_full_request_in_download(self):
         m=self.manager();done=self.wait(m,m.start(QUESTIONS)['id']);delta=m.get(done['id'],0)
-        self.assertEqual(len(delta['changes']),3);self.assertTrue(all('request' not in r for r in delta['changes']))
+        self.assertEqual(len(delta['changes']),4);self.assertTrue(all('request' not in r for r in delta['changes']))
         self.assertTrue(all('request' in r for r in done['rows']))
         self.assertEqual(m.get(done['id'],done['revision'])['changes'],[])
 

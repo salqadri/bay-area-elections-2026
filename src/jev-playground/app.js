@@ -10,7 +10,7 @@
   const raceLabel=race=>C.raceLabel(race,ContestLabel.districtLabel);
   const latestMode=()=>run?.scope==='latest';
   const scopeLabel=scope=>scope==='bay-area'?'Bay Area':scope==='candidate'?'Selected candidate':'Full roster';
-  function updateScope(){const current=boot.snapshot;$('scope').textContent=`${current.candidates.length} candidates · ${current.races.length} races · U.S. House + five Bay Area counties`;$('run').textContent='Run full roster ('+current.candidates.length+')';const bay=current.scope_counts?.['bay-area'];$('run-bay-area').textContent=bay?'Run Bay Area ('+bay.candidates+')':'Run Bay Area';$('run-bay-area').title=bay?bay.candidates+' candidates across '+bay.races+' races serving '+current.bay_area_counties.join(', '):'Restart the local server to load Bay Area batch support.';}
+  function updateScope(){const current=boot.snapshot;$('scope').textContent=`${current.candidates.length} candidates · ${current.races.length} races · All active tracked candidates`;$('run').textContent='Run full roster ('+current.candidates.length+')';const bay=current.scope_counts?.['bay-area'];$('run-bay-area').textContent=bay?'Run Bay Area ('+bay.candidates+')':'Run Bay Area';$('run-bay-area').title=bay?bay.candidates+' candidates across '+bay.races+' races serving '+current.bay_area_counties.join(', '):'Restart the local server to load Bay Area batch support.';}
   const formatTime=value=>new Date(value).toLocaleString('en-US',{timeZone:'America/Los_Angeles',dateStyle:'medium',timeStyle:'short'})+' PT';
   const text=()=>editor?editor.getValue():$('questions').value;
   function setText(value,clean=false){if(clean)promptBaseline=value;$('questions').value=value;if(editor)editor.setValue(value);validate();}
@@ -99,7 +99,7 @@
     const panel=$('candidate-score-grade'),grade=C.derivedGrade(row,gradeMapping);panel.replaceChildren();
     panel.append(node('strong',null,'pro_palestine_score_grade'));
     if(!grade){panel.append(node('p','help','No compatible saved 0–5 pro_palestine_score.'));return;}
-    if(grade==='Insufficient Info'){panel.append(node('span','derived-grade-value',grade),node('p','help','Saved evidence_score: '+String(C.evidenceScore(row))+' / 1, below 0.10. No derived letter grade. Original Jev answers remain below.'));return;}
+    if(grade==='N/A'){panel.append(node('span','derived-grade-value',grade),node('p','help','Saved evidence_score: '+String(C.evidenceScore(row))+' / 1, below 0.10. No derived letter grade. Original Jev answers remain below.'));return;}
     panel.append(node('span','derived-grade-value',grade));
     panel.append(node('p','help','Derived from '+String(row.response.answers.pro_palestine_score.score)+' / 5 · Source score confidence: '+C.percent(row.response.answers.pro_palestine_score.confidence)+'. No separate model confidence.'));
     const tune=node('a',null,'Tune grade mapping ↑');tune.href='#grade-mapping';tune.addEventListener('click',()=>{$('grade-mapping').open=true;});panel.append(tune);

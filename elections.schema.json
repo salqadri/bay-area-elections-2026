@@ -11,7 +11,7 @@
    "description": "Relative link to the companion schema file, intended to reside beside this dataset."
   },
   "schema_version": {
-   "const": "1.23"
+   "const": "1.24"
   },
   "election": {
    "type": "object",
@@ -698,6 +698,9 @@
     "$ref": "#/$defs/caIeSpender"
    },
    "description": "Shared registry of California independent-expenditure spenders keyed by CAL-ACCESS filer ID."
+  },
+  "pro_palestine_grading": {
+   "$ref": "#/$defs/proPalestineGrading"
   }
  },
  "required": [
@@ -917,12 +920,47 @@
     },
     "ca_independent_expenditures": {
      "$ref": "#/$defs/caIndependentExpenditures"
+    },
+    "pro_palestine_score": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 5,
+     "description": "Saved Jev model score under the exact archived question rubric, not a publisher scorecard."
+    },
+    "pro_palestine_score_grade": {
+     "enum": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "N/A"
+     ],
+     "description": "Derived score band; N/A means saved evidence_score below 0.10, not a neutral grade."
+    },
+    "pro_palestine_evaluation": {
+     "$ref": "#/$defs/proPalestineEvaluation"
     }
    },
    "required": [
     "name"
    ],
-   "description": "Candidate record. Missing party is null and missing incumbent is false under top-level defaults. Missing optional URL or note fields means unavailable/not supplied; this is different from an unknown candidate roster."
+   "description": "Candidate record. Missing party is null and missing incumbent is false under top-level defaults. Missing optional URL or note fields means unavailable/not supplied; this is different from an unknown candidate roster.",
+   "dependentRequired": {
+    "pro_palestine_score": [
+     "pro_palestine_score_grade",
+     "pro_palestine_evaluation"
+    ],
+    "pro_palestine_score_grade": [
+     "pro_palestine_score",
+     "pro_palestine_evaluation"
+    ],
+    "pro_palestine_evaluation": [
+     "pro_palestine_score",
+     "pro_palestine_score_grade"
+    ]
+   }
   },
   "qualifiedWriteInCandidate": {
    "allOf": [
@@ -2780,6 +2818,137 @@
     "source_url": {
      "$ref": "#/$defs/url",
      "description": "CAL-ACCESS committee detail page for this spender."
+    }
+   }
+  },
+  "proPalestineEvaluation": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "publication_id",
+    "candidate_id",
+    "model",
+    "evaluated_at",
+    "source_run_id",
+    "input_state_version",
+    "request_sha256",
+    "questions_sha256",
+    "input_dataset_sha256",
+    "confidence",
+    "evidence_score",
+    "evidence_confidence"
+   ],
+   "properties": {
+    "publication_id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "candidate_id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "model": {
+     "type": "string",
+     "minLength": 1
+    },
+    "evaluated_at": {
+     "type": "string",
+     "minLength": 1
+    },
+    "source_run_id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "input_state_version": {
+     "type": "string",
+     "minLength": 1
+    },
+    "request_sha256": {
+     "type": "string",
+     "pattern": "^[a-f0-9]{64}$"
+    },
+    "questions_sha256": {
+     "type": "string",
+     "pattern": "^[a-f0-9]{64}$"
+    },
+    "input_dataset_sha256": {
+     "type": "string",
+     "pattern": "^[a-f0-9]{64}$"
+    },
+    "confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "evidence_score": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "evidence_confidence": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   }
+  },
+  "proPalestineGrading": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "publication_id",
+    "published_on",
+    "archive_path",
+    "archive_sha256",
+    "preferred_criteria_path",
+    "score_grade_mapping",
+    "evidence_threshold",
+    "methodology_url"
+   ],
+   "properties": {
+    "publication_id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "published_on": {
+     "$ref": "#/$defs/date"
+    },
+    "archive_path": {
+     "type": "string",
+     "minLength": 1
+    },
+    "archive_sha256": {
+     "type": "string",
+     "pattern": "^[a-f0-9]{64}$"
+    },
+    "preferred_criteria_path": {
+     "type": "string",
+     "minLength": 1
+    },
+    "score_grade_mapping": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "upper_bounds"
+     ],
+     "properties": {
+      "upper_bounds": {
+       "type": "array",
+       "minItems": 5,
+       "maxItems": 5,
+       "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 5
+       }
+      }
+     }
+    },
+    "evidence_threshold": {
+     "const": 0.1
+    },
+    "methodology_url": {
+     "$ref": "#/$defs/url"
     }
    }
   }

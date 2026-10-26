@@ -1,5 +1,33 @@
 # Research and development handoff
 
+## Public Jev scores and uniform final prompt — October 26, 2026
+
+Publication **2026-10-26.1**, schema **1.24**, adds colored score badges to both
+readers: for example **E (1.36 / 5)**, or gray **N/A** for insufficient evidence.
+The owner required the exact supplied question JSON for every evaluation and
+expanded scope to **all 1,296 active tracked candidacies / 471 races**. A fresh
+Jev run `20261026T071836Z-15420e33` completed 1,296/1,296 with zero errors under
+that identical v3 JSON. **A 128 · B 21 · C 16 · D 33 · E 36 · F 176 · N/A 886**.
+The playground now includes all active tracked candidates; Bay Area remains
+877 candidacies / 340 races. Saved history and original provider responses remain
+intact. Restore defaults loads v3; saved evaluations retain their actual prompts.
+
+See [published methodology](PUBLISHED_GRADES.md), the immutable full request/response
+archive and the candidate-bound publication checker. The publisher rejects a
+mixed rubric, incomplete coverage, changed request hashes or identity mismatches.
+Published scores do not feed back into future input states. Model `gaza_grade`
+is not displayed. The public snapshot retains scores/confidences even for N/A;
+only the short badge suppresses the numeric display in that case.
+
+[Hermes's next task](tasks/HERMES_GRADE_EXPLANATIONS.md) is to summarize the evidence
+supporting each published grade. A portable 1,296-item queue supplies exact IDs
+and request hashes; all input states and the final owner JSON are committed.
+No explanation generation has run yet.
+
+Validation: **42/42 release checks pass**, plus desktop/mobile Chromium checks
+on both readers and the final preferred-default/history prompt regression. All
+104 saved runs predating the new 1,296-candidate batch remain byte-for-byte intact.
+
 ## October 26 publication
 
 PR #17 is merged as `b472045ad6c7ac88ef2e9d037768776aa8d17719`, and its

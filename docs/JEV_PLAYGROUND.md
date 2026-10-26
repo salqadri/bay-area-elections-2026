@@ -1,14 +1,12 @@
 # Local Jev playground
 
 The playground runs on this computer, separate from the GitHub Pages readers.
-It includes the union of **all active U.S. House contests tracked nationwide**
-and **every active contest serving Alameda, Contra Costa, San Francisco,
-San Mateo or Santa Clara County** in the repository’s county coverage. The full
-catalog currently has **1,042 candidacies / 401 races**: 187 House candidacies /
-72 races and 855 additional candidacies / 329 races. **Run Bay Area** targets
-**877 candidacies / 340 races** serving the five counties, excluding House
-contests outside that region. **Run full roster** includes the nationwide House
-candidates as well. Counts come from each fresh dataset snapshot.
+It includes **all active candidates tracked in this repository**, including
+nationwide House, Senate and governor races and every active contest serving
+Alameda, Contra Costa, San Francisco, San Mateo or Santa Clara County. The full
+catalog currently has **1,296 candidacies / 471 races**. **Run Bay Area** targets
+**877 candidacies / 340 races** serving the five counties. Shared races appear
+once; separate candidacies and roster types remain distinct.
 
 County coverage includes local, district, state and judicial ballot contests,
 including statewide contests serving the counties. Shared county races and
@@ -44,7 +42,7 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    evaluation show **Not evaluated yet**. Nothing calls Jev merely by opening the
    page; saved runs are never overwritten. The editor loads the displayed
    evaluation’s saved questions; **Restore defaults**
-   loads the owner’s October 23 rubric (`pro-palestine-v2`).
+   loads the owner’s October 26 rubric (`pro-palestine-v3`).
 2. Use the candidate picker or previous/next arrows above the workspace. On
    desktop, the Monaco question editor and selected candidate's answers sit
    side by side, with Run controls always above them. On mobile, **Questions**
@@ -65,11 +63,11 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    selecting another evaluated candidate loads that candidate’s saved prompt.
    Edited questions (including invalid JSON) are preserved across candidate changes
    and result polling, including after evaluating the edited prompt. **Load saved prompt** explicitly restores the selected
-   evaluation’s questions; **Restore defaults** loads the original rubric.
+   evaluation’s questions; **Restore defaults** loads the preferred owner rubric (`criteria-pro-palestine-v3.json`).
    Drafts stay in the current page session; reloading returns to saved questions.
    For an ungraded candidate, the current editor draft is retained. **Run Bay Area (877)**
    evaluates only the five-county group with the current question text.
-   **Run full roster (1042)** also includes House candidates outside the region.
+   **Run full roster (1296)** includes every active tracked candidate, including nationwide House, Senate and governor races.
    Each action takes a fresh snapshot of current data; a regional batch is labeled
    **Bay Area** in progress/history and downloads. Up to three Jev calls run
    concurrently; `choice`, `score` and yes/no `noul` questions can be renamed/added.
@@ -171,7 +169,7 @@ the unchanged source score confidence explicitly.
 
 A compatible saved `evidence_score` (score question with two criteria, 0–1)
 strictly below **0.10** suppresses the derived letter and returns the string
-**Insufficient Info** instead. Exactly 0.10 is still graded. This applies to the
+**N/A** instead. Exactly 0.10 is still graded. This applies to the
 selected result, race cards, CAIR cards, API projections, CLI output and downloads,
 without another Jev call. The UI explains the evidence threshold separately from
 model confidence. Original scores, `gaza_grade`, probabilities and confidence are
@@ -308,7 +306,7 @@ readers or publishes political grades.
 ## Verification
 
 `check_jev_playground.py` covers question/answer contracts, focused input context,
-five-county/House union selection, regional batch isolation and API validation,
+all-active selection with five-county isolation, regional batch isolation and API validation,
 shared-race deduplication, local jurisdiction and
 CAL-ACCESS context, congressional metadata, frozen snapshots, low-confidence
 retention, cancellation,
@@ -326,3 +324,14 @@ workspace is checked at 1440×900, 1024×768 and 390×844 for adjacent editing/r
 mobile tabs, selected-candidate keyboard runs, expandable distributions, input
 inspection, old-prompt labeling, history and exports. The actual
 187-candidate default batch was run against Jev, not the fixture transport.
+
+## Publishing a reviewed final batch
+
+The October 26 batch evaluates all 1,296 active candidacies using the exact
+owner-provided v3 questions; publication stores a snapshot on both public readers.
+See [published score methodology](PUBLISHED_GRADES.md). The publisher refuses a
+mixed prompt, missing active candidate, changed source hash or identity mismatch.
+Local iterations do not change the public snapshot. The public badge uses the
+derived score grade and numeric score; the model's separate `gaza_grade` is not
+shown. **Restore defaults** now loads the owner's complete v3 questions, while
+selecting a saved evaluation still restores that evaluation's actual questions.

@@ -99,13 +99,13 @@ sparse.response.answers.evidence_score={type:'score',score:0,confidence:1};
 for(const value of [0,.05,.099999,.1,1]){
   sparse.response.answers.evidence_score.score=value;
   const raw=JSON.stringify(sparse);
-  assert.equal(C.derivedGrade(sparse),value<.1?'Insufficient Info':'D');
-  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.1?'Insufficient Info':'D');
+  assert.equal(C.derivedGrade(sparse),value<.1?'N/A':'D');
+  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.1?'N/A':'D');
   assert.equal(JSON.stringify(sparse),raw);
 }
 sparse.response.answers.evidence_score.score=0;
 const insufficientComparison=C.cairComparison(sparse,{gradeKey:'pro_palestine_score_grade',scoreKey:''});
-assert.equal(insufficientComparison.grade.value,'Insufficient Info');assert.equal(insufficientComparison.grade.confidence,null);
+assert.equal(insufficientComparison.grade.value,'N/A');assert.equal(insufficientComparison.grade.confidence,null);
 assert(!insufficientComparison.flagged);assert(!insufficientComparison.comparable);
 assert(C.cairComparison(sparse).flagged); // Original model grade/score comparisons stay explicit.
 for(const value of [null,true,'0',NaN,-.1,1.1]){sparse.response.answers.evidence_score.score=value;assert.equal(C.derivedGrade(sparse),'D');}

@@ -1,0 +1,38 @@
+{
+  "id": "pro-palestine-v3",
+  "description": "Exact owner-provided preferred questions, October 26, 2026. Published saved evaluations retain their own actual question variants.",
+  "questions": {
+    "pro_palestine_score": {
+      "type": "score",
+      "instructions": "What grade should we give the candidate wrt how pro-Palestine and anti-Israel they are?",
+      "criteria": [
+        "Shields Israel and a strong defender of Israel or has endorsements from Zionist or Hindutva organizations",
+        "Israel-centric framing with sympathy for Palestinians or equates anti-zionism with anti-semitism / supports the IHRA definition of anti-semitism or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+        "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist",
+        "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreet",
+        "Calls it a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+        "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza. Or we know they are part of the Muslim community."
+      ]
+    },
+    "gaza_grade": {
+      "type": "choice",
+      "instructions": "What grade should we give the candidate wrt the Gaza genocide, with A being the most anti-Israel to F being the most pro-Israel?",
+      "criteria": {
+        "A": "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community.",
+        "B": "Calls it a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+        "C": "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreet",
+        "D": "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist",
+        "E": "Israel-centric framing with sympathy for Palestinians or equates anti-zionism with anti-semitism / supports the IHRA definition of anti-semitism or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+        "F": "Shields Israel and a strong defender of Israel or has endorsements from Zionist or Hindutva organizations"
+      }
+    },
+    "evidence_score": {
+      "type": "score",
+      "instructions": "how strong are the evidences or observations for us to evaluate the candidate's stance on being pro-Palestine or being part of the Muslim community as a measure of being pro-Justice vs being pro-Israel or benefiting zionists?",
+      "criteria": [
+        "There is zero evidence that indicates one way or another",
+        "There is concrete undeniable evidence of this candidate being one way or the other"
+      ]
+    }
+  }
+}

@@ -1,4 +1,4 @@
-"""Local candidate Jev playground for nationwide House and five-county Bay Area races. Serves UI + same-origin run API on loopback.
+"""Local Jev playground for every active tracked candidate. Serves UI + same-origin run API on loopback.
 
 python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/key
 No API credential reaches the browser. Runs never change published research.
@@ -33,9 +33,8 @@ def row_id(position_id, candidate, roster):
 
 
 def playground_positions(data):
-    """Union by contest identity: all House seats plus active contests serving any of the five counties."""
-    return [p for p in data['positions'] if p.get('ballot_status') != 'excluded'
-            and (p.get('office_category') == 'U.S. House' or COUNTIES.intersection(p.get('counties') or []))]
+    """Every active tracked contest; Bay Area remains a separate batch/filter."""
+    return [p for p in data['positions'] if p.get('ballot_status') != 'excluded']
 
 
 def playground_state(position, candidate, data):
@@ -135,7 +134,7 @@ class RunManager:
         current = self.current()
         batch = json.loads(self.baseline.read_text())
         baseline = stored_run(batch, current)
-        return {'snapshot': current, 'baseline': self.present(baseline), 'questions': batch['questions'],
+        return {'snapshot': current, 'baseline': self.present(baseline), 'questions': json.loads(DEFAULT_CRITERIA.read_text())['questions'],
                 'latest': self.present(self.latest(current, baseline)),
                 'score_grade_mapping': self.score_grade_mapping(), 'default_score_grade_mapping': DEFAULT_MAPPING,
                 'key_configured': bool(self.key), 'history': self.history()}

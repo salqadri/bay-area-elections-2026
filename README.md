@@ -8,13 +8,23 @@ An independent research inventory and searchable, static explorer of elected off
 
 **FEC snapshots: receipts and independent spending checked October 25, 2026 (independent-spending method corrected October 20, 2026).** Federal candidate finance records have their own coverage dates and do not change the ballot-research snapshot date. A scheduled daily refresh re-checks receipts and independent expenditures through November 3.
 
+## Published pro-Palestine scores
+
+Candidate cards in both readers now show a colored Jev score badge, for example
+**E (1.36 / 5)**. **N/A** means insufficient evidence or no saved evaluation.
+Publication **2026-10-26.1** includes a fresh, uniform-prompt Jev batch for all
+**1,296 active candidacies / 471 races**: 410 letter grades and 886 N/A results.
+Scores/confidences, exact input states, the owner's question JSON and provider
+responses are archived. See [methodology and publication](docs/PUBLISHED_GRADES.md)
+and the [Hermes explanation task](docs/tasks/HERMES_GRADE_EXPLANATIONS.md).
+
 ## Local Jev playground
 
 Run `python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/jev-key`
 and open **http://127.0.0.1:8787/**. Edit the owner's question JSON in Monaco,
 run Jev on the selected candidate to iterate, use **Run Bay Area** for all **877
-candidacies / 340 races** serving the five counties, or run the full **1,042
-candidacies / 401 races** including nationwide House contests. Inspect answers, confidences and exact
+candidacies / 340 races** serving the five counties, or run the full **1,296
+candidacies / 471 races** including all active tracked nationwide contests. Inspect answers, confidences and exact
 candidate inputs grouped by state/district. The editor and selected answers share
 a workspace, with generated state available on demand. Stored
 results load in **Latest per candidate** by default; no confidence cutoffs apply.
@@ -22,7 +32,7 @@ Filter the workspace by county and compare saved grades/scores with current CAIR
 Action recommendations in the dedicated review area. A deterministic
 `pro_palestine_score_grade` appears beside results; tune its inclusive score bands
 under **Score → grade mapping**. A saved 0–1 `evidence_score` below 0.10
-shows **Insufficient Info** instead of a derived letter; exactly 0.10 is still
+shows **N/A** instead of a derived letter; exactly 0.10 is still
 graded. Jev’s original answers and confidence remain visible. New input states retain Vote for Peace
 Ally/Opposed/Neutral observations, including previously held Neutral cards.
 An optional `part_of_muslim_community` boolean carries owner-confirmed
@@ -44,7 +54,7 @@ These instructions apply to Hermes and other coding/research agents across the w
 - [Gaza legislative records and grades](docs/GAZA_VOTING_RECORDS.md): complete source-tab captures, reviewed current/prior-office identity links, sheet assessment colors and a separate official USCPR grade feed.
 - [Local ceasefire evidence](docs/LOCAL_CEASEFIRE_RESEARCH.md): full CAIR-SFBA tracker capture across current California candidacies, Jev identity/date review and attributed article evidence; separate from CAIR Action endorsements.
 - [Campaign platform workflow](docs/CAMPAIGN_PLATFORMS.md): bounded website collection, source packets and instructions for Hermes to delegate reviewed Israel/Palestine platform checks, plus the general **platform positions** layer (each candidate's own top policy points quoted verbatim from their campaign site). First publication pass landed October 16, 2026 (171 candidacies); the deeper/exception follow-up rounds continue.
-- [Jev grading and playground batches](research/gaza-grading/README.md): versioned question files, confidence-only outputs, compact focused inputs and exact request archives. The local playground defaults to Latest per candidate across saved local history; the 187-candidate House baseline and earlier 165-candidate batch stay archived. Experimental outputs are separate from published candidate records.
+- [Jev grading and playground batches](research/gaza-grading/README.md): versioned question files, confidence-only outputs, compact focused inputs and exact request archives. The local playground defaults to Latest per candidate across saved local history; the 187-candidate House baseline and earlier 165-candidate batch stay archived. The October 26 publication attaches model scores and derived grades through a separate reproducible publisher; ordinary playground runs remain local.
 
 Use Git, Python 3 and Node.js. Building and serving the readers needs no npm/pip installation or API key. The complete offline release gate also requires `pdfplumber` for the CAIR PDF parser regressions; see [CAIR setup](docs/CAIR_ACTION.md). The optional endorsement collector uses a Serper key for search; imported page lookups need no key. The handoff was checked with Python 3.12.14 and Node 24.19.0; other versions are not a tested compatibility matrix.
 
@@ -158,7 +168,7 @@ The [October 23 local-action refresh](docs/reviews/2026-10-23-local-ceasefire-ev
 
 **Congressional records and USCPR Grade — checked October 14, 2026.** A separate local capture preserves the source-selected legislative history in all four 118th/119th House/Senate tracker tabs, including hidden historical tabs: **523 tab member records, 150 tracked action columns and 25,830 member/action cells**. These are source entries rather than unique people or unique votes; actions can repeat across tabs, and a tab's Congress does not replace the individual action's date. **11 printed candidates have 18 matched tab records**, including Barbara Lee's prior House service and Aisha Wahab's new House service. The UI preserves votes, committee actions, sponsorships, letters and statements as distinct actions. Pale green/red assessments and accompanying text follow the sheet's assessment of each response; a Yes is not automatically positive. This tracker does not establish a complete career history, generally cover Republican members or supply state/local voting records. See [scope, identity links and refresh instructions](docs/GAZA_VOTING_RECORDS.md). The [implementation review](docs/reviews/2026-10-15-gaza-records.md) records the preserved data and verification scope.
 
-**Nine candidates have separately attributed USCPR Action profiles**, with current 119th Congress and publisher-labeled Lifetime grades and percentage scores. Grades come exclusively from the [official USCPR Action scorecard](https://www.uscpraction.org/scorecard), never the spreadsheet's Column A. The official capture retains all 261 publisher profiles. These are the publisher's assessments combining votes and other legislative actions; this site does not calculate candidate grades. Missing profiles and `N/A` remain ungraded. In particular, the feed still names Eric Swalwell and does not supply a grade for his successor Aisha Wahab; a reused publisher identifier cannot transfer that grade. Source methodology, periods and snapshot dates remain visible.
+**Nine candidates have separately attributed USCPR Action profiles**, with current 119th Congress and publisher-labeled Lifetime grades and percentage scores. USCPR grades come exclusively from the [official USCPR Action scorecard](https://www.uscpraction.org/scorecard), never the spreadsheet's Column A. The official capture retains all 261 publisher profiles. These are the publisher's assessments combining votes and other legislative actions; this site does not recalculate USCPR grades. Project-owned Jev badges are a separate assessment described above. Missing profiles and `N/A` remain ungraded. In particular, the feed still names Eric Swalwell and does not supply a grade for his successor Aisha Wahab; a reused publisher identifier cannot transfer that grade. Source methodology, periods and snapshot dates remain visible.
 
 **Campaign platform checks — updated October 23, 2026.** The [Hermes workflow](docs/CAMPAIGN_PLATFORMS.md) plans every printed candidacy, captures a bounded set of its verified website pages, and creates source packets for review. **222 printed candidacies now carry a reviewed `gaza_platform` record**: 6 `statement_found` (Alex Behrend's own divestment policy page; Connie Chan's campaign-page Israel/Palestine framing with site-wide AIPAC-money refusal; Jamie Joyce's Gaza blog page refusing pro-Israel PAC money; Aisha Wahab's campaign attack-ads rebuttal affirming her "yes" forum answer that Israel committed genocide in Gaza; Aaron Tiedemann's positions page crediting him with creating Albany's 2024 Gaza Ceasefire Resolution; Jay Feely's campaign issues page pledging support for Israel, added October 23) and 216 scoped `no_statement_found` silences that state their inspected URLs, capture dates and crawl limits without asserting absence elsewhere. The October 17 round deep-re-crawled the 114 sites whose first-pass crawls were page-limited or partial (max_pages 24 / max_depth 3), then reviewed every refreshed packet under mechanical gates — LLM source review (`qwen/qwen3.8-27b` via LM Studio, gate-mirror validated) plus a deterministic keyword-scan + Jev System One classification pass (accept choice+probability ≥ 0.75). The October 17 pass left 162 candidacies held (161 `unavailable` — failed captures barring silence, JS-rendered shells awaiting browser exception capture — plus one scoped silence barred by the HTTPS provenance guard for an HTTP-only capture) and 492 inventory records marked `no_website`. Publication went through the common review workflow as registered reviews `research/reviews/campaign-platforms-2026-10-16.json` and `campaign-platforms-2026-10-17.json`; no platform absence is ever inferred as neutrality.
 

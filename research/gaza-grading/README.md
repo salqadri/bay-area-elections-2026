@@ -1,18 +1,15 @@
 # Jev grading and the local playground
 
 [Start and use the local playground](../../docs/JEV_PLAYGROUND.md) to edit question
-JSON, run Jev on tracked House candidates nationwide plus every active contest
-serving Alameda, Contra Costa, San Francisco, San Mateo and Santa Clara counties,
-and inspect exact inputs and confidences. The catalog includes **1,042
-candidacies / 401 races**; **Run Bay Area** targets **877 / 340**. It opens
-**Latest per candidate** across saved local history. Its immutable baseline
-remains **187 House candidacies / 72 races**; candidates without saved evaluations
-remain input previews.
+JSON, inspect exact states and evaluate every active tracked candidate. The full
+catalog has **1,296 candidacies / 471 races**; **Run Bay Area** targets **877 / 340**.
+It opens **Latest per candidate** across local history. House-only CLI scopes and
+all historical requests remain intact. New CLI/default questions are v3; old
+plans need their matching criteria file when explicitly replayed.
 
 The playground uses `candidate-evidence-v7-local-federal-community` with
-office/jurisdiction/county context, separate CAL-ACCESS spenders and optional
-owner-confirmed community values. CLI scope flags and historical request states
-are unchanged; the original `house-nationwide` scope omitted the Bay Area races.
+jurisdiction/county context, both independent-spending directions, focused
+endorsement observations and owner-confirmed community values.
 
 ## Confidence-only results
 
@@ -24,12 +21,12 @@ probability of true, not a separate confidence.
 
 The separate derived `pro_palestine_score_grade` uses tunable 0–5 score bands.
 When the saved two-criterion `evidence_score` is below 0.10 / 1, it shows
-**Insufficient Info** instead of a letter. This does not change Jev's original
+**N/A** instead of a letter. This does not change Jev's original
 answers, model confidence or archived requests. See the playground workflow for
 boundary and historical-prompt behavior.
 
 The owner's exact updated questions are versioned in
-`criteria-pro-palestine-v2.json`. Both default output names are retained, but
+`criteria-pro-palestine-v3.json`. Both default output names are retained, but
 custom questions can be added or renamed. The score and letter are separate
 rubrics; neither is mechanically derived from the other. Decisions are made by
 Jev `jev-latest`; the current default run returned `jev-1.14.0`.
@@ -71,4 +68,16 @@ candidate records determine each newly generated state.
   `has_gaza_evidence` flag meant a dedicated Gaza-ledger input was present; it did
   not reliably identify all attributable topical platform evidence.
 
-No grader/playground command edits the election dataset or publishes grades.
+Grader/playground runs do not edit the election dataset. The separate
+`publish_jev_grades.py` command attaches a frozen, complete uniform-prompt batch;
+see [publication workflow](../../docs/PUBLISHED_GRADES.md).
+
+## Current public snapshot
+
+`published-2026-10-26.json` freezes the fresh 1,296-candidate run
+`20261026T071836Z-15420e33`, zero errors, with the exact v3 prompt on every request.
+A 128 · B 21 · C 16 · D 33 · E 36 · F 176 · N/A 886. Every raw provider response,
+input state, confidence, request hash and source-run reference is preserved.
+`explanation-queue-2026-10-26.json` binds all 1,296 Hermes follow-up items to these
+exact requests. The separate model `gaza_grade` remains archived but is not a
+public score badge. Previous House batches remain immutable historical baselines.
