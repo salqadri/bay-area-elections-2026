@@ -539,7 +539,13 @@ def cmd_attach(args):
                     name = meta.get("name") or f"CAL-ACCESS filer {spender_id}"
                     existing = registry.get(spender_id)
                     if existing and existing["name"] != name:
-                        raise SystemExit(f"Spender id {spender_id} already registered with a different name.")
+                        # FILERNAME_CD keeps several historical name rows per filer and the
+                        # export row order is not stable across nightly dumps, so the build's
+                        # first-occurrence pick can flip between runs. The registry published
+                        # with this spender id stays authoritative; keep its name.
+                        print(f"note: spender {spender_id} now files as {name!r}; "
+                              f"keeping registered {existing['name']!r}")
+                        name = existing["name"]
                     registry[spender_id] = {"name": name, "source_url": COMMITTEE_URL.format(spender_id)}
                     items.append({"spender_id": spender_id, "direction": item["direction"],
                                   "amount": round(item["amount"], 2), "items": item["items"]})
