@@ -35,6 +35,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/finance-display.js` | Shared dated FEC receipts and independent-spending disclosure in both readers |
 | `src/pro-palestine-grade-display.js` | Shared colored Jev score / derived-grade badges and gray N/A on both public readers; see [PUBLISHED_GRADES.md](PUBLISHED_GRADES.md) |
 | `scripts/publish_jev_grades.py` | Freeze a complete uniform-prompt batch, attach exact source-bound scores and create the Hermes explanation queue |
+| `scripts/organization_context.py` | Add sourced organization roles/funding links to new model states; [registry and discovery workflow](ORGANIZATION_CONTEXT.md) |
 | `src/gaza-evidence-display.js` | Shared Gaza disclosure with separate publisher grades, congressional source actions, reviewed platform checks and web/social/guide evidence |
 | `scripts/sync_gaza_records.py` | Capture the tracker and official grade feed; draft or locally apply exact reviewed candidate changes |
 | `scripts/research_campaign_platforms.py` | Plan bounded website checks and produce held source packets/results for Hermes; no automatic political decision or publication |

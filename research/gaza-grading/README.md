@@ -7,9 +7,11 @@ It opens **Latest per candidate** across local history. House-only CLI scopes an
 all historical requests remain intact. New CLI/default questions are v5; old
 plans need their matching criteria file when explicitly replayed.
 
-The playground uses `candidate-evidence-v13-local-federal-vote-for-peace-refresh` with
+The playground uses `candidate-evidence-v14-local-federal-organization-context` with
 jurisdiction/county context, both independent-spending directions, focused
 endorsement observations and owner-confirmed community values.
+New states also include [sourced organization roles and funding links](../../docs/ORGANIZATION_CONTEXT.md).
+Archived evaluations retain their original states and hashes; this update makes no candidate grading calls.
 
 ## Confidence-only results
 

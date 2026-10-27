@@ -6,6 +6,12 @@ Use Jev for model judgments, as required by the owner's research policy.
 
 ## Portable inputs
 
+**October 27 context update:** new states use the source-backed v14
+[organization context](../ORGANIZATION_CONTEXT.md). No scorecards were rerun.
+Do not replace frozen inputs with these new states when explaining old grades.
+Organization funding links carry the owner's negative-signal criterion, while
+actual spender support/opposition and source qualifications remain explicit.
+
 - `research/gaza-grading/explanation-queue-2026-10-27-vfp.json`: exact candidacy IDs,
   contest/name/roster identity and request hashes for every summary.
 - `research/gaza-grading/published-2026-10-27-vfp.json`: frozen full Jev requests,

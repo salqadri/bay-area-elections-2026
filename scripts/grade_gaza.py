@@ -28,12 +28,13 @@ from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
+from organization_context import add_spending, add_observation_context, registry as organization_registry  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v5.json'
-STATE_VERSION = 'candidate-evidence-v13-vote-for-peace-refresh'
+STATE_VERSION = 'candidate-evidence-v14-organization-context'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -162,6 +163,7 @@ def endorser_key(name):
 def focused_endorsements(p, c):
     focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v3.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
+    aliases.update(organization_registry()[2]['aliases'])
     observations = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
                     for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     original = [e for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
@@ -235,13 +237,8 @@ def build_state(p, c, data):
         'party': data['codes']['party'].get(c.get('party'), c.get('party')),
     }
     parts.update(community_state(p, c))
-    ie = c.get('independent_expenditures') or {}
-    spenders = data.get('ie_spenders', {})
-    for direction, label in (('for', 'spenders_supporting'), ('against', 'spenders_opposing')):
-        rows = [f"{spenders.get(str(i['spender_id']), {}).get('name', i['spender_id'])} {money(i['amount'])}"
-                for i in sorted(ie.get('items', []), key=lambda x: -x['amount']) if i['direction'] == direction]
-        if rows:
-            parts[label] = rows[:12]
+    add_spending(parts, c, data)
+    add_spending(parts, c, data, california=True)
     grade = c.get('uscpr_grade') or {}
     official = [f"{g['period']}: {g.get('grade') or 'Not graded'}" for g in grade.get('grades', [])]
     if official:
@@ -282,6 +279,7 @@ def build_state(p, c, data):
             'Alignment follows the pro-Palestinian/anti-Zionist tracker; neutral/unknown is not opposition. '
             f'Records from {CUTOFF}; date ranges are periods, not vote dates.')
         parts['congressional_gaza_actions'] = records
+    add_observation_context(parts)
     return parts
 
 
