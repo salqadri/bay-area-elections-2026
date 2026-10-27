@@ -18,7 +18,7 @@ from urllib.parse import urlsplit, parse_qs
 import uuid
 
 from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, build_state,
-                        validate_questions, validate_response, jev_call, digest, dump, save, now, money)
+                        validate_questions, validate_response, jev_call, digest, dump, save, now)
 from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
 PLAYGROUND_DEFAULT_MAPPING = {**DEFAULT_MAPPING, 'minimum_evidence_score': .2}
@@ -27,7 +27,7 @@ ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
 COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
-STATE_VERSION = 'candidate-evidence-v13-local-federal-vote-for-peace-refresh'
+STATE_VERSION = 'candidate-evidence-v14-local-federal-organization-context'
 
 
 def row_id(position_id, candidate, roster):
@@ -52,14 +52,7 @@ def playground_state(position, candidate, data):
         state['party'] = 'Nonpartisan'
     if 'incumbent' in candidate:
         state['incumbent'] = candidate['incumbent']
-    # CAL-ACCESS is a separate registry and must not resolve through FEC committee IDs.
-    ie = candidate.get('ca_independent_expenditures') or {}
-    spenders = data.get('ca_ie_spenders', {})
-    for direction, label in (('for', 'ca_spenders_supporting'), ('against', 'ca_spenders_opposing')):
-        rows = [f"{spenders.get(str(i['spender_id']), {}).get('name', i['spender_id'])} {money(i['amount'])}"
-                for i in sorted(ie.get('items', []), key=lambda x: -x['amount']) if i['direction'] == direction]
-        if rows:
-            state[label] = rows[:12]
+    # Federal and CAL-ACCESS spending now share the source-aware core builder.
     return state
 
 

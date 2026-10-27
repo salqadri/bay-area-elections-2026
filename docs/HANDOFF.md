@@ -1,5 +1,27 @@
 # Research and development handoff
 
+## Organization context for future evaluations — October 27, 2026
+
+State v14 now supplies sourced organization roles/relevance alongside exact spending
+amounts and preserves all registered relevant spenders below the top-12 cutoff.
+FEC IDs and CAL-ACCESS IDs remain separate; unmatched spenders explicitly have
+unestablished relevance. The 15-entry Jev-reviewed registry covers the owner-named
+organizations, distinct J Street/AIPAC committees, DMFI, and UDP funding links to
+BOLD America, EDW Action Fund, 314 Action Fund (2024), and donor-reported Palmetto
+Action (2026). The owner's criterion explicitly treats a documented UDP funding
+connection as a negative organizational signal without requiring earmarking.
+
+A reusable FEC transfer discovery script captures held leads for later source/Jev
+review. [Details and maintenance](ORGANIZATION_CONTEXT.md). No candidate scorecard
+reruns, dataset/public-page edits, or changes to archived requests/explanations.
+Hermes must not present newly supplied organization context as something an old
+evaluation already considered.
+
+Validation: **46/46 offline release checks pass**, including eight organization
+regressions and 48 playground API/state checks. The restarted local server serves
+v14 for all 1,296 candidacies; 227 have organization context. All 16,724 saved local
+JSON files retained their hashes. No public page rebuild was needed.
+
 ## Voter-voice grade explanations published — October 27, 2026
 
 Publication **2026-10-27.3**, schema **1.27**, publishes grade explanations for

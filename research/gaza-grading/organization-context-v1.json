@@ -1,0 +1,429 @@
+{
+  "version": 1,
+  "id": "organization-context-v1",
+  "checked_on": "2026-10-27",
+  "scope": "Organization relevance only; no candidate grades, new candidate endorsements or financial totals. FEC identity uses exact committee IDs; CAL-ACCESS has a separate namespace. Unknown relevance is not evidence of irrelevance.",
+  "sources": {
+    "aipac-politics": {
+      "url": "https://www.aipac.org/politics",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "United Democracy Project, the AIPAC-backed super PAC",
+      "finding": "AIPAC describes advocacy for the US-Israel relationship, its PAC supporting pro-Israel congressional candidates, and UDP as an AIPAC-backed super PAC."
+    },
+    "jstreet-criteria": {
+      "url": "https://jstreetpac.org/jstreetpac-endorsement-criteria-and-process/",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "Support for a strong US-Israel relationship and for US security assistance to Israel that adheres to US law.",
+      "finding": "Criteria also include Palestinian rights, a negotiated Palestinian state, opposition to occupation/annexation, and humanitarian assistance. These differ from AIPAC’s policy criteria."
+    },
+    "jstreet-action": {
+      "url": "https://jstreet.org/issues/us-politics",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "J Street Action Fund Super PAC",
+      "finding": "The September 10, 2026 entry identifies J Street Action Fund as J Street’s super PAC; J Street describes its political work as pro-Israel, pro-peace and pro-democracy."
+    },
+    "track-aipac": {
+      "url": "https://www.trackaipac.com/contact",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "Paid for by Citizens Against AIPAC Corruption",
+      "finding": "Track AIPAC describes opposition to AIPAC/Israel-lobby influence and support for candidates refusing Israel-lobby support. The page identifies Citizens Against AIPAC Corruption as its sponsor."
+    },
+    "cair-action": {
+      "url": "https://cairaction.org/how-we-developed-our-endorsements/",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "including supporting the violence in Gaza and opposing a ceasefire",
+      "finding": "CAIR Action evaluates civil rights and foreign policy. Endorsed indicates strong alignment; Preferred can mean a better alternative without full alignment; opposition can reflect Gaza/ceasefire or Islamophobia concerns. No endorsement can reflect insufficient information."
+    },
+    "vote-for-peace": {
+      "url": "https://voteforpeace.info/methodology",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "Inclusion vs. Endorsement",
+      "finding": "Vote for Peace evaluates democracy, human rights, war-lobby/AIPAC funding and electoral viability. It aggregates aligned organizations’ recommendations and says inclusion alone is not endorsement."
+    },
+    "dmfi": {
+      "url": "https://demmajorityforisrael.org/who-we-are/",
+      "kind": "first_party",
+      "checked_on": "2026-10-27",
+      "excerpt": "DMFI is the home for pro-Israel Democrats",
+      "finding": "The joint DMFI/DMFI PAC page describes support for a pro-Israel Democratic majority and a strong US-Israel alliance, explicitly noting the two are separate organizations."
+    },
+    "bold-udp": {
+      "url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870958124",
+      "kind": "fec_filing",
+      "checked_on": "2026-10-27",
+      "finding": "Recipient Schedule A and UDP Schedule B independently record a 2026 intercommittee contribution. No candidate earmarking is established.",
+      "receipt": {
+        "committee_id": "C00854299",
+        "contributor_id": "C00799031",
+        "contributor_name": "UNITED DEMOCRACY PROJECT ('UDP')",
+        "contribution_receipt_date": "2026-05-01",
+        "contribution_receipt_amount": 400000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "10821966",
+        "sub_id": "4070820261533591254",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870958124"
+      },
+      "disbursement": {
+        "committee_id": "C00799031",
+        "recipient_committee_id": "C00854299",
+        "recipient_name": "BOLD AMERICA",
+        "disbursement_date": "2026-05-01",
+        "disbursement_amount": 400000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "B2D9735563D554AA0B69",
+        "sub_id": "4070720261525063546",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606199870826908"
+      }
+    },
+    "edw-udp": {
+      "url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870850477",
+      "kind": "fec_filing",
+      "checked_on": "2026-10-27",
+      "finding": "Recipient Schedule A and UDP Schedule B independently record a 2026 intercommittee contribution. No candidate earmarking is established.",
+      "receipt": {
+        "committee_id": "C00863472",
+        "contributor_id": "C00799031",
+        "contributor_name": "UNITED DEMOCRACY PROJECT ('UDP')",
+        "contribution_receipt_date": "2026-05-01",
+        "contribution_receipt_amount": 350000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "11242772",
+        "sub_id": "4071420261533990890",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606209870850477"
+      },
+      "disbursement": {
+        "committee_id": "C00799031",
+        "recipient_committee_id": "C00863472",
+        "recipient_name": "EDW ACTION FUND",
+        "disbursement_date": "2026-05-01",
+        "disbursement_amount": 350000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "BD6429851D1A74D0AB12",
+        "sub_id": "4070720261525063548",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202606199870826908"
+      }
+    },
+    "314-action-udp": {
+      "url": "https://docquery.fec.gov/cgi-bin/fecimg/?202406209652475366",
+      "kind": "fec_filing",
+      "checked_on": "2026-10-27",
+      "finding": "Recipient Schedule A and UDP Schedule B both report a 2024 intercommittee contribution; this is historical funding, not proof of current receipts or candidate earmarking.",
+      "disbursement": {
+        "committee_id": "C00799031",
+        "recipient_committee_id": "C00633248",
+        "recipient_name": "314 ACTION FUND",
+        "disbursement_date": "2024-05-01",
+        "disbursement_amount": 1000000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "B10BB61B8AD2D4FA5BFB",
+        "sub_id": "4062120241961914769",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202406209649378847"
+      },
+      "receipt": {
+        "committee_id": "C00633248",
+        "contributor_id": "C00799031",
+        "contributor_name": "UNITED DEMOCRACY PROJECT ('UDP')",
+        "contribution_receipt_date": "2024-05-01",
+        "contribution_receipt_amount": 1000000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "16970630",
+        "sub_id": "4062420241962048871",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202406209652475366"
+      }
+    },
+    "palmetto-action-udp": {
+      "url": "https://docquery.fec.gov/cgi-bin/fecimg/?202609199904432321",
+      "kind": "fec_donor_filing",
+      "checked_on": "2026-10-27",
+      "finding": "UDP reports a positive, non-memo intercommittee contribution to this exact FEC recipient ID. This is not a candidate earmark. Recipient-side confirmation was not returned by the Schedule A query; retain donor attribution.",
+      "disbursement": {
+        "committee_id": "C00799031",
+        "recipient_committee_id": "C00950600",
+        "recipient_name": "PALMETTO ACTION",
+        "disbursement_date": "2026-08-04",
+        "disbursement_amount": 1000000.0,
+        "memoed_subtotal": false,
+        "transaction_id": "BAD23222654C64EE698C",
+        "sub_id": "4092220261599316605",
+        "pdf_url": "https://docquery.fec.gov/cgi-bin/fecimg/?202609199904432321"
+      }
+    }
+  },
+  "entities": [
+    {
+      "id": "aipac",
+      "name": "AIPAC",
+      "aliases": [
+        "AIPAC",
+        "American Israel Public Affairs Committee",
+        "American Israel Public Affairs Committee (AIPAC)"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "advocacy organization",
+      "relevance": "Advocates a strong US-Israel relationship and electoral support for pro-Israel candidates.",
+      "source_ids": [
+        "aipac-politics"
+      ]
+    },
+    {
+      "id": "aipac-pac",
+      "name": "AIPAC PAC",
+      "aliases": [
+        "AIPAC PAC",
+        "American Israel Public Affairs Committee PAC"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "political action committee",
+      "relevance": "AIPAC’s PAC supports pro-Israel congressional candidates; it is distinct from UDP’s independent spending.",
+      "source_ids": [
+        "aipac-politics"
+      ]
+    },
+    {
+      "id": "udp",
+      "name": "United Democracy Project",
+      "aliases": [
+        "United Democracy Project",
+        "UNITED DEMOCRACY PROJECT ('UDP')",
+        "UDP"
+      ],
+      "fec_committee_ids": [
+        "C00799031"
+      ],
+      "cal_access_ids": [],
+      "role": "super PAC",
+      "relevance": "AIPAC-backed super PAC supporting the US-Israel relationship.",
+      "source_ids": [
+        "aipac-politics"
+      ]
+    },
+    {
+      "id": "jstreetpac",
+      "name": "JStreetPAC",
+      "aliases": [
+        "JStreetPAC",
+        "JStreet PAC",
+        "J Street PAC"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "political action committee",
+      "relevance": "Supports US-Israel ties and security aid compliant with US law, Palestinian rights and a negotiated Palestinian state; not equivalent to AIPAC.",
+      "source_ids": [
+        "jstreet-criteria"
+      ]
+    },
+    {
+      "id": "jstreet",
+      "name": "J Street",
+      "aliases": [
+        "JStreet",
+        "J Street"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "advocacy organization",
+      "relevance": "Describes its work as pro-Israel, pro-peace and pro-democracy; its electoral criteria include Palestinian rights and aid subject to US law.",
+      "source_ids": [
+        "jstreet-criteria"
+      ]
+    },
+    {
+      "id": "jstreet-action",
+      "name": "J Street Action Fund",
+      "aliases": [
+        "J Street Action Fund"
+      ],
+      "fec_committee_ids": [
+        "C00815753"
+      ],
+      "cal_access_ids": [],
+      "role": "super PAC",
+      "relevance": "J Street’s independent-spending committee; pro-Israel, pro-peace and pro-democracy, distinct from AIPAC/UDP.",
+      "source_ids": [
+        "jstreet-action"
+      ]
+    },
+    {
+      "id": "track-aipac",
+      "name": "Track AIPAC / Citizens Against AIPAC Corruption",
+      "aliases": [
+        "Track AIPAC",
+        "TrackAIPAC",
+        "Track AIPAC / Citizens Against AIPAC Corruption",
+        "Citizens Against AIPAC Corruption"
+      ],
+      "fec_committee_ids": [
+        "C00879080"
+      ],
+      "cal_access_ids": [],
+      "role": "advocacy project / sponsoring hybrid PAC",
+      "relevance": "Opposes AIPAC/Israel-lobby influence and supports candidates refusing Israel-lobby support.",
+      "source_ids": [
+        "track-aipac"
+      ]
+    },
+    {
+      "id": "cair-action",
+      "name": "CAIR Action",
+      "aliases": [
+        "CAIR Action"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "advocacy and recommendation organization",
+      "relevance": "Recommendations consider civil rights and foreign policy, including Gaza/ceasefire positions. Preferred is not full endorsement; preserve the recorded tier and joint status.",
+      "source_ids": [
+        "cair-action"
+      ]
+    },
+    {
+      "id": "vote-for-peace",
+      "name": "Vote for Peace",
+      "aliases": [
+        "Vote for Peace",
+        "VoteForPeace",
+        "Vote4Peace"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "candidate rating guide",
+      "relevance": "Evaluates human rights and war-lobby/AIPAC funding, also considering viability. Preserve Ally/Neutral/Opposed; inclusion alone is not endorsement or proof of a specific policy.",
+      "source_ids": [
+        "vote-for-peace"
+      ]
+    },
+    {
+      "id": "dmfi",
+      "name": "Democratic Majority for Israel",
+      "aliases": [
+        "Democratic Majority for Israel"
+      ],
+      "fec_committee_ids": [],
+      "cal_access_ids": [],
+      "role": "advocacy organization",
+      "relevance": "Advocates a pro-Israel Democratic majority and a strong US-Israel alliance.",
+      "source_ids": [
+        "dmfi"
+      ]
+    },
+    {
+      "id": "dmfi-pac",
+      "name": "DMFI PAC",
+      "aliases": [
+        "DMFI PAC",
+        "Democratic Majority for Israel PAC"
+      ],
+      "fec_committee_ids": [
+        "C00710848"
+      ],
+      "cal_access_ids": [],
+      "role": "hybrid PAC",
+      "relevance": "Electoral committee associated with Democratic Majority for Israel; supports a pro-Israel Democratic majority.",
+      "source_ids": [
+        "dmfi"
+      ]
+    },
+    {
+      "id": "bold-america",
+      "name": "BOLD America",
+      "aliases": [
+        "BOLD America"
+      ],
+      "fec_committee_ids": [
+        "C00854299"
+      ],
+      "cal_access_ids": [],
+      "role": "super PAC",
+      "relevance": "Received funding from AIPAC-backed UDP in 2026. This is a funding connection, not proof UDP funded a particular ad or directed the recipient’s spending.",
+      "source_ids": [
+        "bold-udp",
+        "aipac-politics"
+      ],
+      "relationship": {
+        "type": "received_funding_from",
+        "organization": "United Democracy Project",
+        "fec_committee_id": "C00799031",
+        "documented_date": "2026-05-01"
+      }
+    },
+    {
+      "id": "edw-action",
+      "name": "EDW Action Fund",
+      "aliases": [
+        "EDW Action Fund",
+        "EDW Action"
+      ],
+      "fec_committee_ids": [
+        "C00863472"
+      ],
+      "cal_access_ids": [],
+      "role": "hybrid PAC",
+      "relevance": "Received funding from AIPAC-backed UDP in 2026. This is a funding connection, not proof UDP funded a particular ad or directed the recipient’s spending.",
+      "source_ids": [
+        "edw-udp",
+        "aipac-politics"
+      ],
+      "relationship": {
+        "type": "received_funding_from",
+        "organization": "United Democracy Project",
+        "fec_committee_id": "C00799031",
+        "documented_date": "2026-05-01"
+      }
+    },
+    {
+      "id": "314-action",
+      "name": "314 Action Fund",
+      "aliases": [
+        "314 Action Fund"
+      ],
+      "fec_committee_ids": [
+        "C00633248"
+      ],
+      "cal_access_ids": [],
+      "role": "hybrid PAC",
+      "relevance": "Received UDP funding in 2024; this is historical, not evidence of 2026 receipts. The funding link does not establish earmarking or candidate policy.",
+      "source_ids": [
+        "314-action-udp",
+        "aipac-politics"
+      ],
+      "relationship": {
+        "type": "received_funding_from",
+        "organization": "United Democracy Project",
+        "fec_committee_id": "C00799031",
+        "documented_date": "2024-05-01"
+      }
+    },
+    {
+      "id": "palmetto-action",
+      "name": "Palmetto Action",
+      "aliases": [
+        "Palmetto Action"
+      ],
+      "fec_committee_ids": [
+        "C00950600"
+      ],
+      "cal_access_ids": [],
+      "role": "super PAC",
+      "relevance": "UDP reported a contribution to this committee in August 2026; recipient-side confirmation was not returned by the receipt query. The funding link does not establish earmarking or candidate policy.",
+      "source_ids": [
+        "palmetto-action-udp",
+        "aipac-politics"
+      ],
+      "relationship": {
+        "type": "funding_reported_by_donor",
+        "organization": "United Democracy Project",
+        "fec_committee_id": "C00799031",
+        "documented_date": "2026-08-04"
+      }
+    }
+  ]
+}

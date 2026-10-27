@@ -12,7 +12,7 @@ PYTHON_CHECKS = [
     ('check_campaign_endorsement_batch.py', 'research/endorsements/batch-2026-10-18'),
     ('check_cair_guide.py',), ('check_cair_refresh.py',), ('check_local_ceasefires.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
     ('check_schema.py',), ('check_fec_money.py',), ('check_gaza_ledger.py',), ('check_funding_evidence.py',),
-    ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),
+    ('check_organization_context.py',), ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),
     ('check_campaign_platforms.py',), ('check_platform_positions.py',), ('prepare_dom_fixture.py',),
 ]
 NODE_CHECKS = ['check_pro_palestine_grade_display.cjs', 'check_analytics.cjs', 'check_jev_playground.cjs', 'check_endorsement_display.cjs', 'check_finance_display.cjs', 'check_gaza_display.cjs', 'check_platform_display.cjs', 'check_candidate_sort.cjs', 'check_contest_label.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',

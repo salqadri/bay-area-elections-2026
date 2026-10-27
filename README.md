@@ -1,5 +1,9 @@
 # Bay Area Ballot Research Assistant
 
+New local/CLI evaluation states include [sourced organization context](docs/ORGANIZATION_CONTEXT.md),
+with explicit roles, dated UDP funding connections and the owner's funding-link criterion.
+Existing published scores and explanations are unchanged; no candidate evaluations were rerun.
+
 Publication **2026-10-27.3** (schema **1.27**) publishes the voter-voice grade
 explanations for the current **jev-2026-10-27-vfp** scores. All **405 letter
 grades** carry a short paragraph written in the project's openly pro-Palestine,

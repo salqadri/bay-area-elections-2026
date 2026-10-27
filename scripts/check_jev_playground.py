@@ -240,9 +240,9 @@ class ValidationChecks(unittest.TestCase):
         self.assertEqual(state['state'],'CA');self.assertEqual(state['party'],'Nonpartisan');self.assertTrue(state['incumbent'])
         self.assertIn('District 3',state['office']);self.assertNotIn('counties',state);self.assertNotIn('district_or_seat',state)
         self.assertEqual(next(r for r in p.snapshot(data)['races'] if r['id']==pos['id'])['counties'],['Alameda'])
-        self.assertEqual(state['ca_spenders_supporting'],['California support $1,234'])
-        self.assertEqual(state['ca_spenders_opposing'],['California oppose $4,321'])
-        self.assertEqual(state['spenders_supporting'],['Federal committee $500'])
+        self.assertEqual(state['ca_spenders_supporting'],[{'spender':'California support','amount_usd':1234,'relevance':'unestablished'}])
+        self.assertEqual(state['ca_spenders_opposing'],[{'spender':'California oppose','amount_usd':4321,'relevance':'unestablished'}])
+        self.assertEqual(state['spenders_supporting'],[{'spender':'Federal committee','amount_usd':500,'relevance':'unestablished'}])
 
     def test_focus_includes_owner_names_and_preserves_relationship_context(self):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]

@@ -250,20 +250,23 @@ values are recorded with exact candidacy provenance and no special annotations. 
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v11-local-federal-funding-periods`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v11-funding-periods`:
+context (`candidate-evidence-v14-local-federal-organization-context`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder uses `candidate-evidence-v14-organization-context`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
   category. Nonpartisan status comes from the contest metadata, not a missing
-  party field. The core evidence includes the top 12 supporting and opposing IE spenders (separate lists,
-  rounded dollars), plus separate top-12 CAL-ACCESS supporting/opposing spender
-  lists when recorded (31 candidacies currently). FEC and California spender
-  registries remain separate. Recorded USCPR grades, up to eight platform summaries, a
+  party field. The core evidence includes the top 12 supporting and opposing IE spenders
+  plus every registered relevant spender, with exact dollar amounts and explicit relevance
+  references; CAL-ACCESS lists follow the same rule. FEC and California spender
+  registries remain separate. [Organization context](ORGANIZATION_CONTEXT.md) supplies
+  sourced roles and dated funding links, including the owner's UDP funding criterion.
+  Recorded USCPR grades, up to eight platform summaries, a
   reviewed Gaza-platform statement when present, and up to twelve dated Gaza
   evidence summaries.
 - Focused endorsement/recommendation observations only. The versioned exact-name
-  registry is `research/gaza-grading/endorsement-focus-v3.json`: owner-named
+  registries are `research/gaza-grading/endorsement-focus-v3.json` and the reviewed
+  `organization-context-v1.json` aliases: owner-named
   Track AIPAC, Vote for Peace, HAPAC and CAIR Action, plus AIPAC, DMFI, J Street/JStreetPAC,
   RJC and JDCA context selected by Jev from the organizations' own material.
   Selection evidence/actual Jev answers are in the sibling `.review.json`.
