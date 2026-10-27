@@ -245,13 +245,13 @@ archived batches stay unchanged.
 New inputs include optional boolean `part_of_muslim_community` only when explicitly
 confirmed by the owner. Public-source research can nominate questions but cannot
 overwrite an owner value. Unknowns stay absent, not
-false. This is a community observation, not a Gaza policy inference. Confirmed
+false. True means confirmed membership in the pro-Palestine Muslim community and is affirmative general-alignment evidence. It does not establish every specific policy; false/unknown is not adverse. Confirmed
 values are recorded with exact candidacy provenance and no special annotations. See
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v14-local-federal-organization-context`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder uses `candidate-evidence-v14-organization-context`:
+context (`candidate-evidence-v15-local-federal-chronology-community`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder uses `candidate-evidence-v15-chronology-community`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -262,8 +262,9 @@ Historical requests remain unchanged. The shared CLI builder uses `candidate-evi
   registries remain separate. [Organization context](ORGANIZATION_CONTEXT.md) supplies
   sourced roles and dated funding links, including the owner's UDP funding criterion.
   Recorded USCPR grades, up to eight platform summaries, a
-  reviewed Gaza-platform statement when present, and up to twelve dated Gaza
-  evidence summaries.
+  reviewed Gaza-platform statement when present, and every eligible reviewed Gaza
+  evidence summary. [Reviewed context](EVIDENCE_CONTEXT.md) links debate/criticism,
+  vote explanations/follow-ups and superseded guide claims.
 - Focused endorsement/recommendation observations only. The versioned exact-name
   registries are `research/gaza-grading/endorsement-focus-v3.json` and the reviewed
   `organization-context-v1.json` aliases: owner-named

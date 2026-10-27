@@ -1,5 +1,10 @@
 # Bay Area Ballot Research Assistant
 
+Prepared publication **2026-10-27.4** adds [source-reviewed chronology and follow-ups](docs/EVIDENCE_CONTEXT.md),
+official cosponsorship dates and the clarified pro-Palestine community meaning.
+New states preserve all eligible Gaza evidence. The Sol Low narrative policy is
+versioned for Hermes; scores remain frozen.
+
 New local/CLI evaluation states include [sourced organization context](docs/ORGANIZATION_CONTEXT.md),
 with explicit roles, dated UDP funding connections and the owner's funding-link criterion.
 Existing published scores and explanations are unchanged; no candidate evaluations were rerun.

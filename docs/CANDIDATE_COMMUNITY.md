@@ -1,10 +1,12 @@
 # Candidate community field
 
 New Jev states may include the optional boolean `part_of_muslim_community`.
-It is an owner-confirmed community field, separate from religion and from any
-Gaza position or grade. A confirmed `false` is an ordinary value. There are no
-special annotations in the UI or state. Unconfirmed candidates omit the field;
-a missing value is unknown, never an inferred `false`.
+It means owner-confirmed membership in the **pro-Palestine Muslim community**.
+The owner clarified on October 27 that true is affirmative evidence of general
+alignment, beyond religious identification. New states carry the definition in
+`community_alignment_context`; it does not prove every specific policy.
+False/unknown is not an adverse stance. False values have no special
+candidate-specific annotations.
 
 `research/candidate-community/observations.json` binds each confirmed value to an
 exact contest, ballot name and office, with its confirmation date. The initial
@@ -72,8 +74,10 @@ candidacy; it never applies a proposed flag or edits the published dataset.
 
 ## Integration and verification
 
-The shared state version is `candidate-evidence-v7-community-observations`; the
-local wrapper uses `candidate-evidence-v7-local-federal-community`.
+The current shared state is `candidate-evidence-v15-chronology-community`; the
+local wrapper is `candidate-evidence-v15-local-federal-chronology-community`.
+New publications reject N/A when this explicit affirmative context was supplied.
+Historical evaluations stay exact; see [context follow-ups](EVIDENCE_CONTEXT.md).
 
 ```sh
 python3 scripts/check_candidate_community.py

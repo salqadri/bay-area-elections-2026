@@ -1,5 +1,31 @@
 # Research and development handoff
 
+## Context follow-ups and Sol handoff — October 27, 2026
+
+Prepared publication **2026-10-27.4**, schema **1.27**, adds eight Jev-reviewed
+observations and retires Liccardo's obsolete guide prose while retaining Ally.
+Wiener's debate refusal, criticism and later statement now remain linked; so do
+Khanna's initial Yes, attributed explanation, later No and separate UNRWA
+restoration cosponsorship. Official XML dates Liccardo and Wahab's Block the
+Bombs cosponsorships. [Sources, limitations and workflow](EVIDENCE_CONTEXT.md).
+
+State v15 carries the pro-Palestine community meaning as affirmative general
+alignment, retains all eligible Gaza evidence, and guards new community-positive
+N/A publications. Discovery adds context/follow-up queries and verified secondary
+X accounts, plus official bill-status parsing and an all-candidate lead audit.
+Exact registered retirements can reconcile to the collector without permitting
+unrelated deletions.
+
+**Hermes:** use **gpt-6.1-sol / low**, `summary-prompt-v2.txt` and its hashed
+`summary-model-policy-v2.json`, with full item audits. No scores or explanations
+were rerun; old inputs and responses remain exact. Jamal Khan's old N/A requires
+a new evaluation with the clarified community meaning.
+
+Validation: **47/47 offline release checks pass**, including eight new context
+regressions. The local playground serves v15 for all 1,296 candidacies; 11 have
+linked reviewed context. Frozen published scores and explanations remain
+byte-identical. Generated readers match the prepared dataset exactly.
+
 ## Organization context for future evaluations — October 27, 2026
 
 State v14 now supplies sourced organization roles/relevance alongside exact spending

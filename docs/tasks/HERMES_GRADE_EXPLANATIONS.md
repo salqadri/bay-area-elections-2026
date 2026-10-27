@@ -2,7 +2,21 @@
 
 Requested by the owner on October 26, 2026. Prepare one brief evidence summary
 for each of the **1,296 active candidacies** in the current public score snapshot.
-Use Jev for model judgments, as required by the owner's research policy.
+Use Jev for source/scoring decisions. The owner selected GPT-6.1 Sol at low
+reasoning for narrative summaries; see the v2 policy below.
+
+## October 27 follow-up policy
+
+Use `research/gaza-grading/summary-prompt-v2.txt` with the model/effort and hash
+in `summary-model-policy-v2.json`. It requires an assessment for every supplied
+evidence ID before the paragraph; no two-or-three-fact cap. Source chronology,
+corrective actions and the owner-defined pro-Palestine community meaning must be
+considered. [Evidence context](../EVIDENCE_CONTEXT.md) documents the source-reviewed
+Wiener/Khanna/Liccardo fixes. Full coverage still needs semantic review.
+
+These fixes change new v15 inputs. Do not silently replace frozen v5 request
+states or say the old score considered the new material. Candidate scores and
+existing published explanations have not been regenerated for this update.
 
 ## Portable inputs
 

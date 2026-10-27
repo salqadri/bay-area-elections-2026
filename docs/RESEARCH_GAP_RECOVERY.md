@@ -106,7 +106,9 @@ already captured in general platform research, including nested `/issues` pages.
 Its fingerprint changes with candidate/source context. A missing record means
 source review is pending, not neutrality or absence of a position.
 
-Current discovery version `gaza-discovery-v3-education-policy` adds dedicated IHRA,
+Current discovery version `gaza-discovery-v4-context-followups` adds debate/backlash,
+UNRWA explanation/follow-up and Block the Bombs cosponsorship queries, alongside
+the earlier dedicated IHRA,
 AB 715/AB 1468 and education queries and retains the earlier divestment layer.
 That layer separates the name + Israel +
 divestment search from jurisdiction + ceasefire queries, and adds a BDS/boycott/
@@ -170,3 +172,6 @@ The release gate includes `check_research_gaps.py`; source truth and exhaustive
 coverage still require source review.
 
 Source entries in Gaza review drafts bind the page URL to the exact candidate and contest. Several candidates can share a publisher guide without overwriting one another's source attribution.
+
+See [evidence context](EVIDENCE_CONTEXT.md) for verified secondary X accounts,
+official bill-status XML and the all-candidate context-lead audit.

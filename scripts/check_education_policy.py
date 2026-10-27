@@ -29,12 +29,13 @@ class EducationPolicyChecks(unittest.TestCase):
     def test_policy_channel_retains_evidence_beyond_generic_budget(self):
         p = next(p for p in DATA['positions'] if any(c['name'] == 'Scott Wiener' for c in p.get('candidates') or []))
         c = deepcopy(next(c for c in p['candidates'] if c['name'] == 'Scott Wiener'))
+        c['name'] = 'Synthetic evidence budget fixture'
         generic = {'date': '2025-01-01', 'summary': 'Generic evidence', 'dimension': 'other'}
         special = {'date': '2025-09-12', 'summary': 'Named AB 715 action', 'dimension': 'antisemitism_education',
                    'url': 'https://example.org/bill', 'date_note': 'Historical final vote', 'quote': 'Aye'}
         c['gaza_evidence'] = [dict(generic) for _ in range(20)] + [dict(special) for _ in range(15)]
         state = build_state(p, c, DATA)
-        self.assertEqual(len(state['gaza_evidence']), 12)
+        self.assertEqual(len(state['gaza_evidence']), 20)
         self.assertEqual(len(state['antisemitism_education_policy_evidence']), 15)
         self.assertEqual(state['antisemitism_education_policy_evidence'][0],{'date':special['date'],'summary':special['summary'],'context':special['date_note']})
         self.assertNotIn('pro_palestine_score', state)

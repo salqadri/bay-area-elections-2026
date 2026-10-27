@@ -7,7 +7,7 @@ It opens **Latest per candidate** across local history. House-only CLI scopes an
 all historical requests remain intact. New CLI/default questions are v5; old
 plans need their matching criteria file when explicitly replayed.
 
-The playground uses `candidate-evidence-v14-local-federal-organization-context` with
+The playground uses `candidate-evidence-v15-local-federal-chronology-community` with
 jurisdiction/county context, both independent-spending directions, focused
 endorsement observations and owner-confirmed community values.
 New states also include [sourced organization roles and funding links](../../docs/ORGANIZATION_CONTEXT.md).
@@ -136,3 +136,8 @@ evaluated with exact v5 questions, 0 errors. Garamendi and Liccardo then receive
 two same-prompt follow-ups after correcting stale guide prose. Saved mapping:
 F≤0.7, E≤1.4, D≤2.5, C≤3.2, B≤4.4, A≤5; evidence below 0.20 yields N/A.
 Counts: A 125, B 41, C 7, D 40, E 71, F 121, N/A 891. Historical artifacts remain exact.
+
+[Evidence context](../../docs/EVIDENCE_CONTEXT.md) adds complete eligible Gaza
+evidence, reviewed sequences and the owner-defined community meaning.
+`summary-model-policy-v2.json` selects GPT-6.1 Sol low reasoning and hashes
+`summary-prompt-v2.txt` for Hermes; v5 Jev scoring questions remain unchanged.

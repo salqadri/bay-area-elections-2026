@@ -3,6 +3,9 @@ import json
 from pathlib import Path
 
 REGISTRY = Path(__file__).resolve().parent.parent / 'research/candidate-community/observations.json'
+COMMUNITY_CONTEXT = ('Owner-confirmed membership in the pro-Palestine Muslim community, not religious identity alone. '
+                     'This is affirmative evidence of general pro-Palestine alignment under this guide. '
+                     'It does not establish every specific policy position; false or absent is not an adverse stance.')
 
 
 def load_observations(path=REGISTRY):
@@ -26,7 +29,10 @@ def community_state(position, candidate, observations=None):
     if observation and any(observation.get(k) != position.get(k) for k in
                            ('office', 'jurisdiction', 'district_or_seat') if k in observation):
         raise ValueError('Community observation office identity changed; review before reuse')
-    return {'part_of_muslim_community': observation['part_of_muslim_community']} if observation else {}
+    if not observation:
+        return {}
+    value = observation['part_of_muslim_community']
+    return {'part_of_muslim_community': value, **({'community_alignment_context': COMMUNITY_CONTEXT} if value else {})}
 
 
 def check_observations(data, path=REGISTRY):

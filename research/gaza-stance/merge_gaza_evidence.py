@@ -85,13 +85,23 @@ def merged_data(original, ledger):
 def sync_published(data, apply=False):
     """Mirror reviewed publication into the collector without dropping new drafts.
 
-    An extra ledger item may be removed only if the repository quarantine records
-    its candidate/source pair. Unknown extra items stop reconciliation for review.
+    An extra ledger item may be removed only if quarantine records its source or
+    a registered review retires that exact candidate/record. Unknown extras stop.
     Resolved holds retain their original text and gain resolution metadata.
     """
     validate_publication(data)
     quarantine = json.loads((ROOT / 'docs/reviews/evidence-quarantine.json').read_text())
     blocked = {(r['candidate'], canonical_url(r['evidence']['url'])) for r in quarantine['items']}
+    from publication_reviews import load_reviews
+    retired = {(d['candidate'], json.dumps(d['before'], sort_keys=True, ensure_ascii=False))
+               for review in load_reviews() for d in review['decisions']
+               if d.get('action') == 'change' and d.get('field') == 'gaza_evidence'
+               and d.get('before') is not None and d.get('after') is None}
+    def reviewed_retirement(item):
+        try:
+            return (item['person'], json.dumps(clean_item(item), sort_keys=True, ensure_ascii=False)) in retired
+        except (KeyError, ValueError):
+            return False
     people = {}
     for position in data['positions']:
         for roster in ('candidates', 'filed_candidates_not_confirmed_on_ballot', 'qualified_write_in_candidates'):
@@ -117,7 +127,8 @@ def sync_published(data, apply=False):
             paths[key] = file
             if item['id'] in accepted_ids and item['person'] != accepted_ids[item['id']]:
                 raise ValueError('Collector evidence ID belongs to a different person: ' + item['id'])
-            if item['id'] not in accepted_ids and (item['person'], canonical_url(item['url'])) not in blocked:
+            if (item['id'] not in accepted_ids and (item['person'], canonical_url(item['url'])) not in blocked
+                    and not reviewed_retirement(item)):
                 raise ValueError('Unreviewed collector item would be lost: ' + item['id'])
         if rows and norm_name(rows[0]['person']) not in people:
             writes[file] = []

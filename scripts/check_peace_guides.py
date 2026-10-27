@@ -129,8 +129,15 @@ class RefreshChecks(unittest.TestCase):
             p=next(p for p in data['positions'] if any(c['name']==name for c in p.get('candidates') or []))
             c=next(c for c in p['candidates'] if c['name']==name)
             notes=[e for e in c['gaza_evidence'] if 'voteforpeace.info' in e['url']]
-            self.assertEqual(len(notes),1);self.assertEqual(notes[0]['checked_on'],'2026-10-27')
-            self.assertEqual(notes[0]['date'],notes[0]['checked_on'])
+            if name=='Sam Liccardo':
+                self.assertEqual(notes,[])
+                primary=next(e for e in c['gaza_evidence'] if e['id']=='GE-1534')
+                self.assertEqual(primary['date'],'2026-07-14')
+                self.assertEqual(primary['source_kind'],'official_bill_status')
+                self.assertIn('cosponsor',primary['summary'])
+            else:
+                self.assertEqual(len(notes),1);self.assertEqual(notes[0]['checked_on'],'2026-10-27')
+                self.assertEqual(notes[0]['date'],notes[0]['checked_on'])
             state=playground_state(p,c,data)
             text=' '.join(state.get('gaza_evidence',[]))
             self.assertNotIn('guide’s Neutral label',text)

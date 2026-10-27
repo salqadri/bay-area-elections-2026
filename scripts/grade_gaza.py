@@ -29,12 +29,13 @@ from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
 from organization_context import add_spending, add_observation_context, registry as organization_registry  # noqa: E402
+from evidence_context import contexts as reviewed_contexts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v5.json'
-STATE_VERSION = 'candidate-evidence-v14-organization-context'
+STATE_VERSION = 'candidate-evidence-v15-chronology-community'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -259,7 +260,8 @@ def build_state(p, c, data):
     # Filter before budgeting so an omitted old/mixed total cannot displace a
     # valid current observation. New or edited funding claims require review.
     projected = [(e, funding_text(e)) for e in generic]
-    evidence = [text for _, text in projected if text][:12]
+    # All reviewed, eligible Gaza items must reach the model, including follow-ups.
+    evidence = [text for _, text in projected if text]
     if evidence:
         parts['gaza_evidence'] = evidence
     if any(funding_review(e) for e in generic):
@@ -277,9 +279,14 @@ def build_state(p, c, data):
     if records:
         parts['congressional_gaza_context'] = (
             'Alignment follows the pro-Palestinian/anti-Zionist tracker; neutral/unknown is not opposition. '
-            f'Records from {CUTOFF}; date ranges are periods, not vote dates.')
+            f'Records from {CUTOFF}; date ranges are periods, not vote dates. '
+            'Not elected is specific to the action date and can precede later votes or cosponsorships. '
+            'Read later explanations and follow-up votes with the initial action; a stated explanation is a claim, not proof of motive.')
         parts['congressional_gaza_actions'] = records
     add_observation_context(parts)
+    linked = reviewed_contexts(p, c, data=data)
+    if linked:
+        parts['reviewed_evidence_context'] = linked
     return parts
 
 

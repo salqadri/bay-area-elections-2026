@@ -15,7 +15,7 @@ from ballotpedia_endorsements import ask, accepted, choice, digest, dump, save, 
 from endorsement_extract import page_from_html
 from reviewed_updates import identity, prepare
 
-SEARCH_VERSION = 'gaza-discovery-v3-education-policy'
+SEARCH_VERSION = 'gaza-discovery-v4-context-followups'
 ISSUE_TERMS = re.compile(r'israel|gaza|palestin|aipac|ceasefire|divest\w*|\bbds\b|\bIHRA\b|anti[- ]?semit\w*|AB\s*715|ethnic studies', re.I)
 
 
@@ -40,7 +40,8 @@ def plan(data, names=None, refresh_existing=False, state=None):
             if state_code == 'ca':
                 urls.append('https://ca.cair.com/sfba/ceasefire-tracker/')
             context = {'position_id': p['id'], 'candidate': c['name'], 'identity': identity(p),
-                       'campaign_url': c.get('campaign_url'), 'x_url': c.get('x_url'), 'direct_source_urls': urls,
+                       'campaign_url': c.get('campaign_url'), 'x_url': c.get('x_url'),
+                       'secondary_x_url': c.get('secondary_x_url'), 'direct_source_urls': urls,
                        'topical_platform_points': topical, 'has_dated_evidence': bool(c.get('gaza_evidence')),
                        'gaza_platform_status': (c.get('gaza_platform') or {}).get('status'),
                        'state': state_code, 'refresh_existing': refresh_existing, 'search_version': SEARCH_VERSION}
@@ -54,7 +55,10 @@ def capture(raw, url, checked_on, kind='html'):
     if date.fromisoformat(checked_on) > date.today() or not url.startswith('https://'):
         raise ValueError('HTTPS and an actual nonfuture observation date required')
     packet = {'version': 1, 'source_url': url, 'checked_on': checked_on, 'content_sha256': digest(raw), 'kind': kind}
-    if kind in {'house-rollcall-xml', 'house-members-xml', 'california-legislation-jsonld'}:
+    if kind == 'congress-billstatus-xml':
+        from evidence_context import billstatus_capture
+        packet.update(billstatus_capture(raw, url))
+    elif kind in {'house-rollcall-xml', 'house-members-xml', 'california-legislation-jsonld'}:
         from research_education_policy import legislative_capture
         packet.update(legislative_capture(raw, url, kind))
     elif kind == 'x-json':
@@ -119,7 +123,10 @@ def search_queries(row):
             ('Israel divestment', 'Israel BDS boycott bonds investment',
              jurisdiction + ' Gaza ceasefire resolution', 'Israel AIPAC policy position',
              'IHRA antisemitism definition education', '"AB 715" OR "AB 1468"',
-             '"Antisemitism Awareness Act" curriculum ethnic studies')]
+             '"Antisemitism Awareness Act" curriculum ethnic studies',
+             'genocide debate backlash pressure reversal',
+             'UNRWA vote explanation mistake later voted against restoration',
+             '"Block the Bombs" cosponsor pledge support')]
 
 
 def relevant_lead(result):
@@ -211,7 +218,8 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
     if claim.get('date_quote') and claim['date_quote'] not in packet['text']:
         raise ValueError('Date proof absent from source')
     if packet['kind'] == 'x-json':
-        if not c.get('x_url') or c['x_url'].lower() != packet['author_url'].lower():
+        accounts = {c[k].rstrip('/').lower() for k in ('x_url','secondary_x_url') if c.get(k)}
+        if packet['author_url'].rstrip('/').lower() not in accounts:
             raise ValueError('Post author is not the verified candidate account')
         if record.get('date') != packet['published_date']:
             raise ValueError('Post date must match verified timestamp')
@@ -246,6 +254,7 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
         'Current electorate: ' + str(p.get('ocd_division_id') or p.get('counties') or 'not recorded'),
         *(['Recorded campaign: ' + c['campaign_url']] if c.get('campaign_url') else []),
         *(['Verified X profile: ' + c['x_url']] if c.get('x_url') else []),
+        *(['Verified secondary X profile: ' + c['secondary_x_url']] if c.get('secondary_x_url') else []),
         *['Supporting source ' + b['source_url'] + ': ' + b['exact_context'] for b in bridges],
         'Source: ' + claim.get('publisher', packet['title']) + ' | ' + packet['source_url'],
         'Source title: ' + packet['title'],
@@ -331,7 +340,7 @@ def main():
     co.add_argument('--output-dir',type=Path,required=True);co.add_argument('--serper-key-file',type=Path)
     co.add_argument('--refresh-existing',action='store_true');co.add_argument('--state')
     c=sub.add_parser('capture');c.add_argument('--url',required=True);c.add_argument('--raw',type=Path,required=True)
-    c.add_argument('--kind',choices=['html','article-html','dated-html','policy-html','x-json','house-rollcall-xml','house-members-xml','california-legislation-jsonld'],default='html');c.add_argument('--checked-on',required=True);c.add_argument('--output',type=Path,required=True)
+    c.add_argument('--kind',choices=['html','article-html','dated-html','policy-html','x-json','house-rollcall-xml','house-members-xml','california-legislation-jsonld','congress-billstatus-xml'],default='html');c.add_argument('--checked-on',required=True);c.add_argument('--output',type=Path,required=True)
     d=sub.add_parser('draft');d.add_argument('--claims',type=Path,required=True);d.add_argument('--jev-key-file',type=Path,required=True)
     d.add_argument('--work-dir',type=Path,default=Path('.research/gaza-gap-review'));d.add_argument('--id',required=True);d.add_argument('--checked-on',required=True);d.add_argument('--output',type=Path,required=True)
     d.add_argument('--model', default=MODEL, help='Exact Jev model identifier for source review (not scorecards)')
