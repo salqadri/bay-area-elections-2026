@@ -15,10 +15,10 @@ Candidate cards in both readers now show a colored Jev score badge, for example
 Publication **2026-10-26.1** includes a fresh, uniform-prompt Jev batch for all
 **1,296 active candidacies / 471 races**: 410 letter grades and 886 N/A results.
 Scores/confidences, exact input states, the owner's question JSON and provider
-responses are archived. Hermes is generating one collapsed **Why this grade?**
-evidence paragraph per candidacy from each candidate's exact saved request state,
-rubric and answers; the schema-1.25 publication path, checker and reader panels are
-ready and will publish as the next version. See [methodology and publication](docs/PUBLISHED_GRADES.md)
+responses are archived. Publication **2026-10-26.2** (schema 1.25) adds a collapsed
+**Why this grade?** evidence paragraph under every badge — one model-written summary
+per candidacy generated from that candidate's exact saved request state, rubric and
+answers. Summaries explain the recorded evidence; they never change a score. See [methodology and publication](docs/PUBLISHED_GRADES.md)
 and the [Hermes explanation task](docs/tasks/HERMES_GRADE_EXPLANATIONS.md).
 
 ## Local Jev playground
@@ -191,7 +191,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.24 (`schema_version` in the file is authoritative), publication `2026-10-26.1`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.25 (`schema_version` in the file is authoritative), publication `2026-10-26.2`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.

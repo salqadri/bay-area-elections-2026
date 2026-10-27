@@ -34,8 +34,9 @@ def validate_summary(result, row, grade, publication_id):
         words = len(summary.split())
         if not SUMMARY_WORDS[0] <= words <= SUMMARY_WORDS[1]:
             errors.append('summary outside %d-%d words' % SUMMARY_WORDS)
-        if '#' in summary or '**' in summary or '\n' in summary.strip():
-            errors.append('markdown or multiline text')
+        import re as _re
+        if _re.search(r'^\s*#', summary, _re.M) or '**' in summary or '\n' in summary.strip():
+            errors.append('markdown or multiline text (inline hashtags inside quotes are fine)')
         if grade == 'N/A' and not re.search(r'insufficient|below.{0,30}0\.10|not enough evidence', summary, re.I):
             errors.append('N/A summary must state insufficient evidence without assigning a stance')
     if not isinstance(result.get('model'), str) or not result['model'].strip():

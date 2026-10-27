@@ -1,18 +1,18 @@
 # Research and development handoff
-## Grade evidence explanations — in progress October 26, 2026
+## Grade evidence explanations published — October 27, 2026
 
-Hermes is generating all **1,296 grade summaries** (docs/tasks/HERMES_GRADE_EXPLANATIONS.md)
-with LM Studio `qwen/qwen3.8-27b` at concurrency 2 from the exact frozen request
-states; per-request caches accumulate in the ignored `.research/grade-explanations/responses/`.
-Publication infrastructure is complete and gate-green: schema **1.25** adds candidate
-`pro_palestine_explanation` + `pro_palestine_grading.explanations`;
-`scripts/attach_grade_explanations.py` freezes the archive, validates every binding
-and bumps versions; `scripts/check_grade_explanations.py` joins the release gate
-(43 checks); both readers render a collapsed **Why this grade?** panel. When all
-responses exist: attach → build → full gate → push as publication **2026-10-26.2**
-(or the actual PT date `.N`, updating doc references) and verify live. A cron driver
-completes this autonomously overnight; after a successful publish it stands down.
-
+Publication **2026-10-26.2**, schema **1.25**: all **1,296 grade summaries**
+(docs/tasks/HERMES_GRADE_EXPLANATIONS.md) were generated with LM Studio
+`qwen/qwen3.8-27b` (temperature 0.1, concurrency 2) from each candidate's exact
+frozen request state, v3 rubric and recorded answers; per-request caches remain in
+the ignored `.research/grade-explanations/responses/`. The frozen archive is
+`research/gaza-grading/explanations-2026-10-26.json`, attached by
+`scripts/attach_grade_explanations.py`; `scripts/check_grade_explanations.py`
+re-validates every binding in the release gate. Both readers show a collapsed
+**Why this grade?** panel; N/A paragraphs state only insufficient evidence
+(below 0.10 / 1) with no stance implied. Four initial generation failures were
+retried to completion (two truncated replies, two validator-guard refinements:
+inline `#` inside quoted hashtags is allowed; word ceiling 110).
 
 ## Public Jev scores and uniform final prompt — October 26, 2026
 

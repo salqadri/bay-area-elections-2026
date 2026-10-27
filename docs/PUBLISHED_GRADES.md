@@ -93,9 +93,9 @@ and zero N/A cases with recorded Vote for Peace observations.
 
 ## Evidence explanations
 
-The next publication (schema 1.25) shows one short evidence paragraph per
-candidate under a collapsed **Why this grade?** panel beside each badge in both
-readers. Hermes generated all 1,296 summaries with LM Studio
+Publication **2026-10-26.2** (schema 1.25) adds one short evidence paragraph per
+candidate, shown under a collapsed **Why this grade?** panel beside each badge in
+both readers. Hermes generated all 1,296 summaries with LM Studio
 `qwen/qwen3.8-27b` (temperature 0.1), giving the model exactly what Jev saw: the
 frozen input state, the exact v3 rubric and the recorded score/evidence/gaza
 answers, plus the deterministic band mapping and 0.10 threshold. Each summary is
