@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-27.3"
+  "publication_version": "2026-10-27.4"
  },
  "codes": {
   "party": {
@@ -211,7 +211,7 @@
   "cycle": 2026,
   "currency": "USD",
   "metric": "total_receipts",
-  "checked_on": "2026-10-26",
+  "checked_on": "2026-10-27",
   "method": "FEC financial summaries for the 2026 election. Receipts include contributions, transfers, loans, offsets and other receipts as reported; they are not net donations, cash on hand, or independent outside spending. Candidate-level aggregates are used without adding committee totals again. Coverage dates are preserved exactly, including any period beginning before 2025. This is a dated research snapshot, not a live feed. Missing summary totals are null, never inferred as zero."
  },
  "positions": [
@@ -46368,9 +46368,13 @@
      "party": "I",
      "fec": {
       "id": "S6KY00377",
-      "receipts": null,
-      "note_id": "N905",
-      "source_id": "S1132"
+      "receipts": 0.0,
+      "source_id": "S1132",
+      "from": "2026-09-30",
+      "through": "2026-10-14",
+      "committee_ids": [
+       "C00954131"
+      ]
      },
      "source_ids": [
       "S1099",
@@ -47027,7 +47031,7 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=S6ME00159&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 2437120.07,
-      "against_total": 1543797.69,
+      "against_total": 1549547.69,
       "items": [
        {
         "spender_id": "C00489799",
@@ -47094,6 +47098,12 @@
         "direction": "for",
         "amount": 16472.2,
         "items": 108
+       },
+       {
+        "spender_id": "C00725820",
+        "direction": "against",
+        "amount": 5750.0,
+        "items": 1
        },
        {
         "spender_id": "C00179408",
@@ -54320,7 +54330,7 @@
      },
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=S6MI00418&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
-      "for_total": 2777208.46,
+      "for_total": 2836638.58,
       "against_total": 21095658.36,
       "items": [
        {
@@ -54388,6 +54398,12 @@
         "direction": "for",
         "amount": 119706.43,
         "items": 22
+       },
+       {
+        "spender_id": "C00754069",
+        "direction": "for",
+        "amount": 59430.12,
+        "items": 2
        },
        {
         "spender_id": "C00879080",
@@ -54816,7 +54832,7 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=S4MI00595&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 13943541.47,
-      "against_total": 11285732.0,
+      "against_total": 11599252.8,
       "items": [
        {
         "spender_id": "C00687103",
@@ -54883,6 +54899,12 @@
         "direction": "for",
         "amount": 747656.06,
         "items": 7
+       },
+       {
+        "spender_id": "C00754069",
+        "direction": "against",
+        "amount": 313520.8,
+        "items": 2
        },
        {
         "spender_id": "C00875039",
@@ -67402,7 +67424,7 @@
      ],
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=S6TX00479&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
-      "for_total": 4371015.55,
+      "for_total": 4397036.35,
       "against_total": 1281079.29,
       "items": [
        {
@@ -67458,6 +67480,12 @@
         "direction": "against",
         "amount": 42986.36,
         "items": 3
+       },
+       {
+        "spender_id": "C00754069",
+        "direction": "for",
+        "amount": 26020.8,
+        "items": 2
        },
        {
         "spender_id": "C90020231",
@@ -67773,7 +67801,7 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=S6TX00388&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 1427091.9,
-      "against_total": 26905075.0,
+      "against_total": 26931095.8,
       "items": [
        {
         "spender_id": "C00542217",
@@ -67816,6 +67844,12 @@
         "direction": "for",
         "amount": 48305.9,
         "items": 6
+       },
+       {
+        "spender_id": "C00754069",
+        "direction": "against",
+        "amount": 26020.8,
+        "items": 2
        },
        {
         "spender_id": "C00432260",
@@ -70849,8 +70883,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H4AZ01194&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 284925.71,
-      "against_total": 2715303.6,
+      "against_total": 5860115.95,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 3144812.35,
+        "items": 8
+       },
        {
         "spender_id": "C00854299",
         "direction": "against",
@@ -71832,8 +71872,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6AZ05190&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 834296.88,
-      "against_total": 794162.5,
+      "against_total": 1773251.44,
       "items": [
+       {
+        "spender_id": "C00633248",
+        "direction": "against",
+        "amount": 979088.94,
+        "items": 3
+       },
        {
         "spender_id": "C00495028",
         "direction": "against",
@@ -73226,8 +73272,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6AZ06099&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 104425.8,
-      "against_total": 0.0,
+      "against_total": 2276828.24,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2276828.24,
+        "items": 13
+       },
        {
         "spender_id": "C00580068",
         "direction": "for",
@@ -74157,8 +74209,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2CA03157&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 71088.41,
-      "against_total": 41903.21,
+      "against_total": 967355.21,
       "items": [
+       {
+        "spender_id": "C00633248",
+        "direction": "against",
+        "amount": 925452.0,
+        "items": 2
+       },
        {
         "spender_id": "C00853770",
         "direction": "for",
@@ -75201,8 +75259,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2CA13115&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 4651.96,
-      "against_total": 9986.03,
+      "against_total": 2788577.12,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2778591.09,
+        "items": 7
+       },
        {
         "spender_id": "C90018904",
         "direction": "against",
@@ -76087,8 +76151,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6CA22190&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 2000971.26,
-      "against_total": 2589318.49,
+      "against_total": 6082205.09,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 3578983.45,
+        "items": 18
+       },
        {
         "spender_id": "C00859660",
         "direction": "against",
@@ -76154,12 +76224,6 @@
         "direction": "for",
         "amount": 162000.0,
         "items": 2
-       },
-       {
-        "spender_id": "C00504530",
-        "direction": "against",
-        "amount": 86096.85,
-        "items": 5
        },
        {
         "spender_id": "C00947721",
@@ -84360,7 +84424,7 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H4CO08034&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 688474.51,
-      "against_total": 2422164.15,
+      "against_total": 2476382.23,
       "items": [
        {
         "spender_id": "C00495028",
@@ -84397,6 +84461,12 @@
         "direction": "for",
         "amount": 56000.0,
         "items": 2
+       },
+       {
+        "spender_id": "C00633248",
+        "direction": "against",
+        "amount": 54218.08,
+        "items": 1
        },
        {
         "spender_id": "C00681825",
@@ -85163,9 +85233,15 @@
      "x_url": "https://x.com/MannyRutinel",
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6CO08013&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
-      "for_total": 3545176.41,
-      "against_total": 1120618.42,
+      "for_total": 3744568.78,
+      "against_total": 4840100.25,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 3719481.83,
+        "items": 14
+       },
        {
         "spender_id": "C00562777",
         "direction": "for",
@@ -85200,6 +85276,12 @@
         "spender_id": "C00716704",
         "direction": "against",
         "amount": 232500.0,
+        "items": 5
+       },
+       {
+        "spender_id": "C00633248",
+        "direction": "for",
+        "amount": 199392.37,
         "items": 5
        },
        {
@@ -89241,8 +89323,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6FL11126&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 77671.62,
-      "against_total": 91926.72,
+      "against_total": 1522270.72,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 1430344.0,
+        "items": 3
+       },
        {
         "spender_id": "C00552851",
         "direction": "against",
@@ -92746,13 +92834,19 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H8IA02043&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 420434.12,
-      "against_total": 2422244.8,
+      "against_total": 3459624.56,
       "items": [
        {
         "spender_id": "C00935015",
         "direction": "against",
         "amount": 1621515.14,
         "items": 7
+       },
+       {
+        "spender_id": "C00633248",
+        "direction": "against",
+        "amount": 1037379.76,
+        "items": 4
        },
        {
         "spender_id": "C00492140",
@@ -93051,8 +93145,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2IA02111&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 361562.15,
-      "against_total": 0.0,
+      "against_total": 4233692.65,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 4233692.65,
+        "items": 14
+       },
        {
         "spender_id": "C00173153",
         "direction": "for",
@@ -95671,8 +95771,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6IA03268&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 33738.67,
-      "against_total": 6460.83,
+      "against_total": 2258761.5,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2252300.67,
+        "items": 16
+       },
        {
         "spender_id": "C00580068",
         "direction": "for",
@@ -97896,8 +98002,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6ME02171&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 115455.75,
-      "against_total": 0.0,
+      "against_total": 2240689.46,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2240689.46,
+        "items": 7
+       },
        {
         "spender_id": "C00490375",
         "direction": "for",
@@ -99765,8 +99877,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6MI07298&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 830882.56,
-      "against_total": 957088.04,
+      "against_total": 3729947.55,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2772859.51,
+        "items": 12
+       },
        {
         "spender_id": "C00879221",
         "direction": "against",
@@ -101141,8 +101259,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6MI10276&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 893282.5,
-      "against_total": 0.0,
+      "against_total": 2659832.86,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2659832.86,
+        "items": 5
+       },
        {
         "spender_id": "C00949248",
         "direction": "for",
@@ -103470,8 +103594,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2NC02287&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 427371.77,
-      "against_total": 0.0,
+      "against_total": 3905713.82,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 3905713.82,
+        "items": 8
+       },
        {
         "spender_id": "C00844530",
         "direction": "for",
@@ -104516,8 +104646,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6NE02174&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 3119779.47,
-      "against_total": 0.0,
+      "against_total": 1418067.54,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 1418067.54,
+        "items": 9
+       },
        {
         "spender_id": "C00941690",
         "direction": "for",
@@ -108779,13 +108915,19 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H0NJ07261&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 0.0,
-      "against_total": 380943.47,
+      "against_total": 590540.25,
       "items": [
        {
         "spender_id": "C00540443",
         "direction": "against",
         "amount": 378426.0,
         "items": 2
+       },
+       {
+        "spender_id": "C00633248",
+        "direction": "against",
+        "amount": 209596.78,
+        "items": 4
        },
        {
         "spender_id": "C00640300",
@@ -111096,8 +111238,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2NM02191&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 6883.97,
-      "against_total": 0.0,
+      "against_total": 1867098.04,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 1867098.04,
+        "items": 14
+       },
        {
         "spender_id": "C00909994",
         "direction": "for",
@@ -114336,8 +114484,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6NY03247&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 1377.39,
-      "against_total": 0.0,
+      "against_total": 210035.0,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 210035.0,
+        "items": 1
+       },
        {
         "spender_id": "C00640300",
         "direction": "for",
@@ -115545,8 +115699,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6NY17171&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 1767617.31,
-      "against_total": 1532951.81,
+      "against_total": 4619185.27,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 3086233.46,
+        "items": 10
+       },
        {
         "spender_id": "C00950352",
         "direction": "against",
@@ -120662,8 +120822,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2OH01194&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 11178.83,
-      "against_total": 0.0,
+      "against_total": 1566117.12,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 1566117.12,
+        "items": 5
+       },
        {
         "spender_id": "C90021726",
         "direction": "for",
@@ -121798,13 +121964,19 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2OH16051&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 0.0,
-      "against_total": 346508.92,
+      "against_total": 366508.92,
       "items": [
        {
         "spender_id": "C00492140",
         "direction": "against",
         "amount": 345417.12,
         "items": 9
+       },
+       {
+        "spender_id": "C00725820",
+        "direction": "against",
+        "amount": 20000.0,
+        "items": 1
        },
        {
         "spender_id": "C00954040",
@@ -121981,8 +122153,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6OH07168&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 874944.5,
-      "against_total": 0.0,
+      "against_total": 1126780.54,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 1126780.54,
+        "items": 3
+       },
        {
         "spender_id": "C00928374",
         "direction": "for",
@@ -122553,8 +122731,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2OH09031&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 299799.58,
-      "against_total": 0.0,
+      "against_total": 2906424.88,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2906424.88,
+        "items": 15
+       },
        {
         "spender_id": "C00495028",
         "direction": "for",
@@ -126802,8 +126986,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6PA07188&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 2605464.8,
-      "against_total": 321234.7,
+      "against_total": 2632150.51,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2310915.81,
+        "items": 5
+       },
        {
         "spender_id": "C00936153",
         "direction": "for",
@@ -128728,8 +128918,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6PA08293&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 201988.02,
-      "against_total": 56063.19,
+      "against_total": 2420205.38,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2364142.19,
+        "items": 12
+       },
        {
         "spender_id": "C00786830",
         "direction": "for",
@@ -129481,8 +129677,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H4PA10104&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 146341.52,
-      "against_total": 131479.27,
+      "against_total": 2054491.8,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 1923012.53,
+        "items": 9
+       },
        {
         "spender_id": "C00552851",
         "direction": "against",
@@ -132187,8 +132389,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2TX23082&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 194566.59,
-      "against_total": 0.0,
+      "against_total": 2903034.25,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2903034.25,
+        "items": 16
+       },
        {
         "spender_id": "C00495028",
         "direction": "for",
@@ -132595,8 +132803,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H6TX15162&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 266984.42,
-      "against_total": 55449.63,
+      "against_total": 3197987.73,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 3142538.1,
+        "items": 13
+       },
        {
         "spender_id": "C00495028",
         "direction": "for",
@@ -134747,7 +134961,7 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2VA02064&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 371271.36,
-      "against_total": 2431578.98,
+      "against_total": 2655858.07,
       "items": [
        {
         "spender_id": "C00495028",
@@ -134766,6 +134980,12 @@
         "direction": "for",
         "amount": 260293.12,
         "items": 5
+       },
+       {
+        "spender_id": "C00633248",
+        "direction": "against",
+        "amount": 224279.09,
+        "items": 3
        },
        {
         "spender_id": "C00418897",
@@ -136060,8 +136280,14 @@
      "independent_expenditures": {
       "browse_url": "https://www.fec.gov/data/independent-expenditures/?data_type=processed&candidate_id=H2WA03217&is_notice=false&most_recent=true&min_date=2025-01-01&max_date=2026-12-31",
       "for_total": 14830.73,
-      "against_total": 0.0,
+      "against_total": 2602385.29,
       "items": [
+       {
+        "spender_id": "C00504530",
+        "direction": "against",
+        "amount": 2602385.29,
+        "items": 11
+       },
        {
         "spender_id": "C00786830",
         "direction": "for",
@@ -462520,7 +462746,7 @@
   "cycle": 2026,
   "currency": "USD",
   "metric": "independent_expenditures",
-  "checked_on": "2026-10-26",
+  "checked_on": "2026-10-27",
   "source_id": "S1086",
   "method": "FEC official independent-expenditure aggregates by candidate for the 2026 two-year cycle (not the full Senate election period). These totals use regularly scheduled reports and exclude 24-/48-hour notices and memo entries to avoid double counting, matching the FEC candidate page for the same two-year selection. Recent notice-only spending is not included; newly filed summaries may take up to 48 hours to appear. Amendments and election-cycle attribution follow the FEC aggregate. Amounts are independent outside spending: they are not campaign receipts, contributions, coordination findings or endorsements, and support of one candidate is never treated as opposition to another. This is a dated snapshot from the FEC API, not a live feed."
  },
@@ -464697,6 +464923,10 @@
   "C00746628": {
    "name": "FUTURE PROGRESS",
    "source_url": "https://www.fec.gov/data/committee/C00746628/"
+  },
+  "C00725820": {
+   "name": "THE LINCOLN PROJECT",
+   "source_url": "https://www.fec.gov/data/committee/C00725820/"
   }
  },
  "gaza_voting": {
