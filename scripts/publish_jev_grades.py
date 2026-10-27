@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 from ballotpedia_endorsements import digest, dump
-from grade_gaza import validate_questions, validate_response
+from grade_gaza import DEFAULT_CRITERIA, validate_questions, validate_response
 from score_grade import row_grade, validate_mapping
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -47,7 +47,7 @@ def projection(row, mapping, publication_id):
                 'input_state_version': row['evaluation']['state_version']}}
 
 
-def freeze(latest, mapping, preferred, published_on):
+def freeze(latest, mapping, preferred, published_on, criteria_path='research/gaza-grading/criteria-pro-palestine-v3.json'):
     validate_mapping(mapping); validate_questions(preferred['questions'])
     if date.fromisoformat(published_on) > date.today() or latest.get('scope') != 'latest':
         raise ValueError('Use the latest-per-candidate projection and an actual observation date')
@@ -61,6 +61,7 @@ def freeze(latest, mapping, preferred, published_on):
     return {'format':'published-jev-grades/v1', 'id':'jev-'+published_on,
             'published_on':published_on, 'selection':'latest successful saved evaluation per candidacy',
             'score_grade_mapping':mapping, 'evidence_threshold':.10,
+            'preferred_criteria_path':criteria_path,
             'preferred_criteria':preferred, 'rows':rows}
 
 
@@ -96,10 +97,14 @@ def attach(data, archive, archive_path, archive_sha):
         raise ValueError('Unsupported publication format or evidence threshold')
     mapping = validate_mapping(archive['score_grade_mapping'])
     result = deepcopy(data); targets = {}
+    previous = data.get('pro_palestine_grading') or {}
+    preserve_explanations = (previous.get('explanations') and previous.get('archive_sha256') == archive_sha
+                             and previous.get('archive_path') == archive_path and previous.get('publication_id') == archive['id'])
     for p in result['positions']:
         for roster in ROSTERS:
             for c in p.get(roster) or []:
                 for key in FIELDS: c.pop(key, None)
+                if not preserve_explanations: c.pop('pro_palestine_explanation', None)
                 targets[(p['id'], c['name'], roster)] = (p, c)
     seen = set()
     for row in archive['rows']:
@@ -123,13 +128,13 @@ def attach(data, archive, archive_path, archive_sha):
     result['pro_palestine_grading'] = {
         'publication_id':archive['id'], 'published_on':archive['published_on'],
         'archive_path':archive_path, 'archive_sha256':archive_sha,
-        'preferred_criteria_path':'research/gaza-grading/criteria-pro-palestine-v3.json',
+        'preferred_criteria_path':archive.get('preferred_criteria_path','research/gaza-grading/criteria-pro-palestine-v3.json'),
         'score_grade_mapping':mapping, 'evidence_threshold':.10,
         'methodology_url':'https://github.com/salqadri/bay-area-elections-2026/blob/main/docs/PUBLISHED_GRADES.md'}
-    # Hermes evidence summaries are a separate reviewed layer; re-attaching the
-    # score archive must never silently drop them.
+    # Preserve explanations only on exact archive replay. A new score batch or
+    # mapping must not display narratives bound to older answers or grade bands.
     explanations = (data.get('pro_palestine_grading') or {}).get('explanations')
-    if explanations: result['pro_palestine_grading']['explanations'] = explanations
+    if preserve_explanations: result['pro_palestine_grading']['explanations'] = explanations
     return result
 
 
@@ -138,14 +143,18 @@ def main():
     ap.add_argument('--snapshot',type=Path,help='Saved /api/bootstrap response; only used for first freeze')
     ap.add_argument('--archive',type=Path,required=True)
     ap.add_argument('--published-on',default=date.today().isoformat())
+    ap.add_argument('--criteria',type=Path,default=DEFAULT_CRITERIA,help='Versioned exact preferred questions for this publication')
     ap.add_argument('--explanation-queue',type=Path,help='Write an immutable, source-bound Hermes follow-up queue')
     args=ap.parse_args(); path=args.archive.resolve()
     if not path.is_relative_to(ROOT/'research/gaza-grading'):
         raise ValueError('Store the immutable archive under research/gaza-grading')
     if args.snapshot:
         if path.exists(): raise ValueError('Preserve the existing archive; use a new publication path')
-        boot=json.loads(args.snapshot.read_text()); preferred=json.loads((ROOT/'research/gaza-grading/criteria-pro-palestine-v3.json').read_text())
-        archive=freeze(boot['latest'],boot['score_grade_mapping'],preferred,args.published_on)
+        criteria_path=args.criteria.resolve()
+        if not criteria_path.is_relative_to(ROOT/'research/gaza-grading'):
+            raise ValueError('Store preferred criteria under research/gaza-grading')
+        boot=json.loads(args.snapshot.read_text()); preferred=json.loads(criteria_path.read_text())
+        archive=freeze(boot['latest'],boot['score_grade_mapping'],preferred,args.published_on,str(criteria_path.relative_to(ROOT)))
         # Validate every projection before writing an archive or the dataset.
         attach(json.loads(DATASET.read_text()),archive,str(path.relative_to(ROOT)),'0'*64)
         path.write_text(json.dumps(archive,ensure_ascii=False,indent=1)+'\n')

@@ -106,5 +106,17 @@ class PublicationChecks(unittest.TestCase):
         d=deepcopy(self.data);c=next(c for p in d['positions'] for c in p.get('candidates') or [] if 'pro_palestine_score' in c);c.pop('pro_palestine_score')
         with self.assertRaises(ValueError):check(d)
 
+    def test_exact_replay_preserves_explanations_and_new_archive_clears_them(self):
+        data=deepcopy(self.data);cfg=data['pro_palestine_grading']
+        cfg['explanations']={'publication_id':self.archive['id'],'archive_path':'fixture.json'}
+        candidate=next(c for p in data['positions'] for c in p.get('candidates') or [] if c.get('pro_palestine_evaluation'))
+        candidate['pro_palestine_explanation']={'summary':'A narrative bound to the existing publication.'}
+        replay=attach(data,self.archive,cfg['archive_path'],cfg['archive_sha256'])
+        self.assertEqual(replay,data)
+        newer=deepcopy(self.archive);newer['id']='jev-new-fixture'
+        refreshed=attach(data,newer,'research/gaza-grading/new-fixture.json','f'*64)
+        self.assertNotIn('explanations',refreshed['pro_palestine_grading'])
+        self.assertFalse(any(c.get('pro_palestine_explanation') for p in refreshed['positions'] for roster in ROSTERS for c in p.get(roster) or []))
+
 
 if __name__=='__main__':unittest.main()

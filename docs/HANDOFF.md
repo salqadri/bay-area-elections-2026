@@ -1,5 +1,28 @@
 # Research and development handoff
 
+## Latest Jev grades published — October 27, 2026
+
+Publication **2026-10-27.1**, schema **1.26**, freezes all 1,296 latest successful
+evaluations using the exact owner-edited v4 prompt. Archive: `published-2026-10-27.json`;
+criteria: `criteria-pro-palestine-v4.json`; C upper bound **3.2** (inclusive).
+Counts: A 126, B 24, C 13, D 37, E 64, F 140, N/A 892. No confidence gate.
+1,293 rows use the latest full run, one uses the owner’s later Haney evaluation,
+and two use narrowly repaired endorsement-evidence inputs with the same prompt.
+Wagner/Priforce had low evidence despite Vote for Peace signals; v12 now makes
+the owner’s directional-endorsement evidence rule explicit. All recommendation/N/A
+guards pass. Existing saved runs remain exact; only two repair runs were added.
+
+**Hermes next:** regenerate all grade explanations from
+`research/gaza-grading/explanation-queue-2026-10-27.json` and the new frozen archive.
+Old explanations are archived and removed from public cards; do not reuse them.
+[Task](tasks/HERMES_GRADE_EXPLANATIONS.md), [methodology](PUBLISHED_GRADES.md).
+The abandoned AB 715/2159 research was not applied; candidate evidence, finance
+and endorsements remain the previous publication’s data.
+Validation: **45/45 release checks pass**; desktop/mobile browser checks confirm
+the v4 prompt, C=3.2 boundary, new public badges and absence of stale explanations.
+All 1,296 archived requests/responses match saved run files exactly; 154 prior
+local run files retain their hashes.
+
 ## Funding periods and donor scope — October 26, 2026
 
 Publication **2026-10-26.8**, schema **1.26**, corrects seven public Track-JPAC

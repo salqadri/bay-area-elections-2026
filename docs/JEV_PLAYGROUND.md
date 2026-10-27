@@ -42,7 +42,7 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    evaluation show **Not evaluated yet**. Nothing calls Jev merely by opening the
    page; saved runs are never overwritten. The editor loads the displayed
    evaluation’s saved questions; **Restore defaults**
-   loads the owner’s October 26 rubric (`pro-palestine-v3`).
+   loads the owner’s October 27 rubric (`pro-palestine-v4`).
 2. Use the candidate picker or previous/next arrows above the workspace. On
    desktop, the Monaco question editor and selected candidate's answers sit
    side by side, with Run controls always above them. On mobile, **Questions**
@@ -63,7 +63,7 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    selecting another evaluated candidate loads that candidate’s saved prompt.
    Edited questions (including invalid JSON) are preserved across candidate changes
    and result polling, including after evaluating the edited prompt. **Load saved prompt** explicitly restores the selected
-   evaluation’s questions; **Restore defaults** loads the preferred owner rubric (`criteria-pro-palestine-v3.json`).
+   evaluation’s questions; **Restore defaults** loads the preferred owner rubric (`criteria-pro-palestine-v4.json`).
    Drafts stay in the current page session; reloading returns to saved questions.
    For an ungraded candidate, the current editor draft is retained. **Run Bay Area (877)**
    evaluates only the five-county group with the current question text.
@@ -185,14 +185,14 @@ Default bands use exact stored bounds, without rounding the source score:
 | F | 0 ≤ score ≤ 5/6 |
 | E | 5/6 < score ≤ 10/6 |
 | D | 10/6 < score ≤ 15/6 |
-| C | 15/6 < score ≤ 20/6 |
-| B | 20/6 < score ≤ 25/6 |
+| C | 15/6 < score ≤ 3.2 |
+| B | 3.2 < score ≤ 25/6 |
 | A | 25/6 < score ≤ 5 |
 
 Open **Score → grade mapping** above the workspace, or **Tune grade mapping** in
 selected results. Edit the inclusive upper bounds for F, E, D, C and B, then
 **Apply grade mapping**. Values must be strictly increasing between 0 and 5;
-A always ends at 5. **Restore linear mapping** restores the table above. Applying
+A always ends at 5. **Restore default mapping** restores the table above. Applying
 updates all derived displays and comparisons immediately without rerunning Jev.
 The CAIR grade selector also offers `pro_palestine_score_grade (derived)`;
 `gaza_grade` remains the default comparison. Each CAIR comparison card also
@@ -327,13 +327,13 @@ inspection, old-prompt labeling, history and exports. The actual
 
 ## Publishing a reviewed final batch
 
-The October 26 batch evaluates all 1,296 active candidacies using the exact
-owner-provided v3 questions; publication stores a snapshot on both public readers.
+The October 27 publication freezes the latest evaluations of all 1,296 active
+candidacies using the exact owner-edited v4 questions; both readers show that snapshot.
 See [published score methodology](PUBLISHED_GRADES.md). The publisher refuses a
 mixed prompt, missing active candidate, changed source hash or identity mismatch.
 Local iterations do not change the public snapshot. The public badge uses the
 derived score grade and numeric score; the model's separate `gaza_grade` is not
-shown. **Restore defaults** now loads the owner's complete v3 questions, while
+shown. **Restore defaults** now loads the owner's complete v4 questions, while
 selecting a saved evaluation still restores that evaluation's actual questions.
 
 ## Education-policy input refresh (October 26, 2026)
@@ -433,3 +433,17 @@ Current-cycle structured FEC/CAL-ACCESS independent spending remains available.
 This refresh does not rerun scores. Reload **Current input** to see the new
 projection; the saved **State JSON** remains the exact historical request and
 can contain the old Haney total. [Full policy and review](FUNDING_EVIDENCE.md).
+
+
+## October 27 publication defaults
+
+The preferred questions are now the owner’s exact **v4** prompt from the latest
+full-roster run. The inclusive C upper bound is **3.2**, B begins above 3.2,
+and the other bands retain their previous boundaries. These defaults are shared
+by Python, browser presentation and the local persisted mapping.
+New v12 input adds one short context note for directional CAIR Action / Vote for
+Peace observations: these are concrete stance evidence under the owner’s rubric,
+including Ally and Opposed, even without a direct quotation. Tier, phase,
+verification limits and historical/Neutral qualifiers remain intact.
+Two conflicting low-evidence results were re-evaluated with unchanged v4 questions;
+other saved provider results were not rewritten. [Current public archive](PUBLISHED_GRADES.md).

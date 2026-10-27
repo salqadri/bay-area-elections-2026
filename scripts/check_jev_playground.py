@@ -76,7 +76,10 @@ def baseline(data):
 
 
 class ValidationChecks(unittest.TestCase):
-    def test_linear_grade_boundaries_are_inclusive_without_rounding(self):
+    def test_default_grade_boundaries_are_inclusive_without_rounding(self):
+        self.assertEqual(sg.DEFAULT_MAPPING['upper_bounds'][3],3.2)
+        self.assertEqual(sg.score_grade(3.2),'C')
+        self.assertEqual(sg.score_grade(3.21),'B')
         self.assertEqual(sg.score_grade(0), 'F')
         for i, upper in enumerate(sg.DEFAULT_MAPPING['upper_bounds']):
             self.assertEqual(sg.score_grade(upper), 'FEDCB'[i])

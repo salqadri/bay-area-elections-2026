@@ -115,3 +115,13 @@ raw financial prose: calendar 2024 onward, organizations only, no mixed/unknown
 period totals or individual/conduit receipts. Historical scores remain exact.
 [Funding workflow](../../docs/FUNDING_EVIDENCE.md),
 [projection index](../funding/jev-funding-policy-v1.json).
+
+
+## Current publication: October 27, 2026
+
+`published-2026-10-27.json` freezes 1,296 latest evaluations with exact v4 questions;
+`explanation-queue-2026-10-27.json` is the current Hermes follow-up. C ends at **3.2**;
+other thresholds and the 0.10 evidence gate are unchanged. Counts: A126 / B24 /
+C13 / D37 / E64 / F140 / N/A892. Previous archives and v3 criteria remain immutable.
+Old explanations were removed from the new publication until newly bound summaries
+are generated. [Methodology](../../docs/PUBLISHED_GRADES.md).

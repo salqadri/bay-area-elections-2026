@@ -1,12 +1,42 @@
 # Published pro-Palestine model scores
 
-Publication **2026-10-26.1**, schema **1.24**, shows project-owned Jev model scores
+Publication **2026-10-27.1**, schema **1.26**, shows project-owned Jev model scores
 next to candidates on both public readers. A higher score follows the owner's
 published pro-Palestine/anti-Israel rubric. These badges are distinct from CAIR
 Action recommendations and the USCPR publisher's grades, which retain their own
 source labels.
 
-## Exact prompt and completed batch
+## Current publication — October 27, 2026
+
+Publication **2026-10-27.1**, schema **1.26**, uses the owner’s exact revised
+[criteria v4](../research/gaza-grading/criteria-pro-palestine-v4.json), including
+AB-715 in the E criteria and the JStreetPAC exception in the F criteria.
+The [current immutable archive](../research/gaza-grading/published-2026-10-27.json)
+contains **1,296 latest successful saved evaluations**, all using those exact
+questions. Source selection: 1,293 from full run `20261027T071000Z-d9860cf0`,
+the owner’s later Matt Haney run, and two recommendation-evidence repairs.
+
+Don Wagner and Kalimah Priforce initially received evidence scores below 0.10
+despite Vote for Peace Opposed/Ally observations. New input v12 explicitly
+identifies directional CAIR Action / Vote for Peace recommendations as concrete
+stance evidence under the owner’s rubric, retaining tier, phase and source
+qualifications. Only those two were re-evaluated, using the **same v4 questions**:
+Wagner **1.06, E**, evidence **0.80**; Priforce **4.86, A**, evidence **0.72**.
+Original runs/responses remain unchanged. There are no recommendation/N/A conflicts.
+
+The owner set the inclusive **C upper bound to 3.2**. B begins strictly above
+3.2 and ends at 25/6; all other bounds and the evidence threshold remain unchanged.
+This mapping changes Shirley N. Weber and Marlon Duran from C to B, without
+changing model scores. Current distribution: **A 126 · B 24 · C 13 · D 37 ·
+E 64 · F 140 · N/A 892**. No confidence acceptance cutoff is applied.
+
+Old “Why this grade?” summaries are preserved in the October 26 archive and
+removed from current cards because their prompt, request hashes and bands no
+longer match. The [new Hermes queue](../research/gaza-grading/explanation-queue-2026-10-27.json)
+binds every candidacy to this exact new archive and v4 prompt. Explanations await
+regeneration; no old narrative is presented as an explanation of a new score.
+
+## Historical October 26 prompt and completed batch
 
 The owner's exact final question JSON is stored under `questions` in
 [criteria-pro-palestine-v3.json](../research/gaza-grading/criteria-pro-palestine-v3.json).
@@ -35,8 +65,8 @@ the letter is always present. **N/A** is gray.
 | F | 0 ≤ score ≤ 5/6 |
 | E | 5/6 < score ≤ 10/6 |
 | D | 10/6 < score ≤ 2.5 |
-| C | 2.5 < score ≤ 20/6 |
-| B | 20/6 < score ≤ 25/6 |
+| C | 2.5 < score ≤ 3.2 |
+| B | 3.2 < score ≤ 25/6 |
 | A | 25/6 < score ≤ 5 |
 
 When the saved 0–1 `evidence_score` is **strictly below 0.10**, the derived grade
@@ -48,9 +78,9 @@ applied. The model's separate `gaza_grade` is archived but not displayed as a
 public badge.
 
 Hover text and the badge’s accessible label include the model score confidence,
-evidence score and Pacific evaluation time. Click it to read this methodology. All 1,296 active
-candidacies have a saved evaluation in this publication: **A 128, B 21, C 16,
-D 33, E 36, F 176, N/A 886**.
+evidence score and Pacific evaluation time. Click it to read this methodology.
+All 1,296 active candidacies have a saved evaluation in this publication:
+**A 126, B 24, C 13, D 37, E 64, F 140, N/A 892**.
 
 ## Reproducible publication
 
@@ -91,7 +121,7 @@ answer; repair the input or rerun Jev with the same preferred questions. The
 fresh 1,296-candidate batch has zero CAIR Action recommendation/N/A conflicts,
 and zero N/A cases with recorded Vote for Peace observations.
 
-## Evidence explanations
+## Historical evidence explanations (October 26 batch)
 
 Publication **2026-10-26.2** (schema 1.25) adds one short evidence paragraph per
 candidate, shown under a collapsed **Why this grade?** panel beside each badge in
@@ -140,3 +170,9 @@ totals excluded from new evaluations. In particular, Haney’s saved explanation
 still describes the old $47,700 total; his corrected public evidence instead
 identifies the PAC’s $25,700 during 2021–2023. This does **not** mean his grade
 has been recomputed. [Funding review and limits](FUNDING_EVIDENCE.md).
+
+The October 27 publication supersedes those displayed explanations; its current
+queue and archive are listed above. Exact replay preserves an explanation layer
+only for the same archive hash/path/publication. A new score or mapping archive
+clears that layer automatically, with old archives left intact. The publisher
+accepts `--criteria` to bind each new publication to its own versioned prompt.

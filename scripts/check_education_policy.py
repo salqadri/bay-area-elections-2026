@@ -119,8 +119,9 @@ class EducationPolicyChecks(unittest.TestCase):
         self.assertTrue(all(e.get('date') and e.get('summary') for e in policies))
 
     def test_existing_scores_and_preferred_prompt_keep_the_original_evaluation_binding(self):
-        archive = json.loads((ROOT / 'research/gaza-grading/published-2026-10-26.json').read_text())
-        preferred = json.loads((ROOT / 'research/gaza-grading/criteria-pro-palestine-v3.json').read_text())
+        cfg=DATA['pro_palestine_grading']
+        archive = json.loads((ROOT / cfg['archive_path']).read_text())
+        preferred = json.loads((ROOT / cfg['preferred_criteria_path']).read_text())
         self.assertEqual(preferred, archive['preferred_criteria'])
         rows = {r['id']: r for r in archive['rows']}
         for p in DATA['positions']:

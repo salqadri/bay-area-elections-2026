@@ -32,8 +32,8 @@ from funding_evidence import model_text as funding_text, needs_review as funding
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v3.json'
-STATE_VERSION = 'candidate-evidence-v11-funding-periods'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v4.json'
+STATE_VERSION = 'candidate-evidence-v12-endorsement-context'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -269,6 +269,12 @@ def build_state(p, c, data):
     endorsements = compact_endorsements(focused_endorsements(p, c))
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
+        if any(endorser_key(e['endorser']) in {'cairaction','voteforpeace'} and not e.get('historical')
+               and str(e.get('rating','')).lower() not in {'neutral','no endorsement'}
+               and e.get('relation') in {'endorsed','preferred','supported','opposed'} for e in endorsements):
+            parts['endorsement_evidence_context'] = (
+                'For this rubric, directional CAIR Action / Vote for Peace recommendations, including Ally or Opposed, '
+                'are concrete stance evidence even without a direct candidate quotation. Preserve their stated tier, phase and source qualifications.')
     records = jev_actions(c, data)
     if records:
         parts['congressional_gaza_context'] = (

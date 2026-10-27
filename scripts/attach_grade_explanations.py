@@ -16,7 +16,7 @@ from ballotpedia_endorsements import digest, dump
 from publish_jev_grades import ROOT, DATASET
 from score_grade import row_grade
 
-QUEUE = 'research/gaza-grading/explanation-queue-2026-10-26.json'
+QUEUE = 'research/gaza-grading/explanation-queue-2026-10-27.json'
 EXPLANATION_FIELD = 'pro_palestine_explanation'
 SUMMARY_WORDS = (30, 110)
 

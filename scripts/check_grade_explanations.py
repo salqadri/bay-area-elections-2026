@@ -10,6 +10,10 @@ from publish_jev_grades import ROSTERS
 
 
 def check(data):
+    if 'explanations' not in data['pro_palestine_grading']:
+        if any(c.get(EXPLANATION_FIELD) for p in data['positions'] for roster in ROSTERS for c in p.get(roster) or []):
+            raise ValueError('Orphan explanations without a current archive binding')
+        return None
     cfg = data['pro_palestine_grading']['explanations']
     path = (ROOT / cfg['archive_path']).resolve()
     if not path.is_relative_to(ROOT / 'research/gaza-grading'):
@@ -18,7 +22,7 @@ def check(data):
     if digest(dump(archive).encode()) != cfg['archive_sha256']:
         raise ValueError('Changed published explanations archive')
     queue = json.loads((ROOT / archive['source_queue_path']).read_text())
-    grades = json.loads((ROOT / 'research/gaza-grading/published-2026-10-26.json').read_text())
+    grades = json.loads((ROOT / data['pro_palestine_grading']['archive_path']).read_text())
     rows = {r['id']: r for r in grades['rows']}
     if queue['publication_id'] != cfg['publication_id'] or archive['publication_id'] != cfg['publication_id']:
         raise ValueError('Explanations publication id mismatch')
@@ -53,12 +57,12 @@ class ExplanationChecks(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data = json.loads(DATASET.read_text())
-        if 'explanations' not in cls.data['pro_palestine_grading']:
-            raise unittest.SkipTest('No explanations layer published yet')
         cls.archive = check(cls.data)
+        if cls.archive is None:
+            raise unittest.SkipTest('No explanations layer published yet')
 
     def test_scores_and_raw_evaluations_are_untouched(self):
-        grades = json.loads((ROOT / 'research/gaza-grading/published-2026-10-26.json').read_text())
+        grades = json.loads((ROOT / self.data['pro_palestine_grading']['archive_path']).read_text())
         rows = {r['id']: r for r in grades['rows']}
         entries = {e['candidate_id']: e for e in self.archive['entries']}
         for p in self.data['positions']:

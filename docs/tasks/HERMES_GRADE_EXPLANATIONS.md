@@ -6,12 +6,12 @@ Use Jev for model judgments, as required by the owner's research policy.
 
 ## Portable inputs
 
-- `research/gaza-grading/explanation-queue-2026-10-26.json`: exact candidacy IDs,
+- `research/gaza-grading/explanation-queue-2026-10-27.json`: exact candidacy IDs,
   contest/name/roster identity and request hashes for every summary.
-- `research/gaza-grading/published-2026-10-26.json`: frozen full Jev requests,
+- `research/gaza-grading/published-2026-10-27.json`: frozen full Jev requests,
   actual input states, question JSON and provider answers, including evidence
   scores and confidence. No private local run directory is needed.
-- `research/gaza-grading/criteria-pro-palestine-v3.json`: the owner's exact preferred
+- `research/gaza-grading/criteria-pro-palestine-v4.json`: the owner's exact preferred
   question JSON, used unchanged on all 1,296 evaluations.
 - `2026-11-03_Bay_Area_Elections.json`: published numeric scores, derived letters,
   provenance, mapping and archive hash. [Methodology](../PUBLISHED_GRADES.md).
@@ -42,12 +42,22 @@ replace the immutable raw scoring answers.
 Review completeness, source attribution, N/A handling and a representative sample
 before adding summaries to the readers through the normal publication workflow.
 
-## Status — completed October 27, 2026
+## Status — refresh pending after October 27 grade publication
 
-All 1,296 summaries were generated with LM Studio `qwen/qwen3.8-27b` (temperature
-0.1) from each candidate's exact archived state, the v3 rubric and the recorded
-answers, cached per request hash under the ignored `.research/grade-explanations/`
-work directory. The frozen archive is
-`research/gaza-grading/explanations-2026-10-26.json`; publication ran
-`scripts/attach_grade_explanations.py` into schema 1.25 / publication 2026-10-26.2, with `scripts/check_grade_explanations.py` in the release gate and a
-collapsed **Why this grade?** panel in both readers.
+The prior 1,296 summaries were completed for the October 26/v3 score archive.
+They are retained in `explanations-2026-10-26.json` but removed from current public
+cards because the owner reran all candidates with v4 and changed the C ceiling
+to 3.2. Generate fresh summaries for **jev-2026-10-27** from the new queue above.
+Use the archive’s own mapping, evidence threshold and exact recorded states;
+do not substitute current research or the old equal-width C/B boundary.
+
+Attach through:
+
+```sh
+python3 scripts/attach_grade_explanations.py --responses <new-responses-dir> \
+  --queue research/gaza-grading/explanation-queue-2026-10-27.json \
+  --output-archive research/gaza-grading/explanations-2026-10-27.json \
+  --publication-version 2026-10-27.2 --schema-version 1.26
+```
+
+Then update relevant docs, rebuild both readers, and run the full release gate.
