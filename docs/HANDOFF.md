@@ -22,7 +22,24 @@ regressions and 48 playground API/state checks. The restarted local server serve
 v14 for all 1,296 candidacies; 227 have organization context. All 16,724 saved local
 JSON files retained their hashes. No public page rebuild was needed.
 
-## Voter-voice grade explanations published — October 27, 2026
+## Final-prompt explanations published — October 27, 2026
+
+Publication **2026-10-27.5**, schema **1.27**, republishes all 1,296
+explanations under the owner's final summarizer prompt at temperature 1.0
+(thinking enabled) with `qwen/qwen3.8-27b`: comprehensive current-stance
+capture, candidate-specific openings with boilerplate lines banned, strict
+factual-accuracy and relevance rules, 40–100-word soft range (validator
+20–130). The 405 letter-grade paragraphs regenerate from each candidate's
+exact frozen v5 record; the 891 N/A editorial notes are unchanged in substance.
+Frozen archive `research/gaza-grading/explanations-2026-10-27-vfp-prompt3.json`
+(1,296 entries); the interim 2026-10-27.3 archive remains immutable. All 405
+generation prompts were audited to contain every prompt section; one transient
+generation error (Jimmy Panetta) was retried to completion by the driver.
+Validation: full release gate passes (46 checks, including
+`check_organization_context.py` from merged PR #18) with the dataset hash
+pinned in `.checks/release-checks.json`.
+
+## Voter-voice grade explanations published (interim batch) — October 27, 2026
 
 Publication **2026-10-27.3**, schema **1.27**, publishes grade explanations for
 the current **jev-2026-10-27-vfp** score snapshot. All **405 letter grades**
