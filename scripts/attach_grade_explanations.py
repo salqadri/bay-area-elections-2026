@@ -16,7 +16,12 @@ from ballotpedia_endorsements import digest, dump
 from publish_jev_grades import ROOT, DATASET
 from score_grade import row_grade
 
-QUEUE = 'research/gaza-grading/explanation-queue-2026-10-27.json'
+QUEUE = 'research/gaza-grading/explanation-queue-2026-10-27-vfp.json'
+NA_NOTE_MODEL = 'guide-editorial'
+NA_NOTE_TEMPLATE = ("We could not find enough in {name}'s public record — statements, votes, sponsored bills, "
+                    "endorsements or outside spending — on Palestine, Gaza or Israel to judge where {name} "
+                    "stands on Palestinian justice. This race is marked N/A; we do not infer any stance "
+                    "from silence.")
 EXPLANATION_FIELD = 'pro_palestine_explanation'
 SUMMARY_WORDS = (30, 110)
 
@@ -55,11 +60,20 @@ def build_archive(responses_dir, queue_path, publication_id):
         if item['request_sha256'] != row['request_sha256'] or digest(dump(row['request']).encode()) != row['request_sha256']:
             raise ValueError('Queue/archive request hash mismatch: ' + item['id'])
         path = responses_dir / (item['id'] + '.json')
-        if not path.exists():
-            missing.append('%s (%s)' % (item['candidate'], item['id']))
-            continue
-        result = json.loads(path.read_text())
         grade = row_grade(row, mapping) or 'N/A'
+        if not path.exists():
+            if grade == 'N/A':
+                # N/A paragraphs are hand-written editorial notes, not model output.
+                name = row['candidate']
+                result = {'candidate_id': row['id'], 'request_sha256': row['request_sha256'],
+                          'publication_id': publication_id, 'model': NA_NOTE_MODEL,
+                          'summary': NA_NOTE_TEMPLATE.format(name=name),
+                          'generated_at': None}
+            else:
+                missing.append('%s (%s)' % (item['candidate'], item['id']))
+                continue
+        else:
+            result = json.loads(path.read_text())
         errors = validate_summary(result, row, grade, publication_id)
         if errors:
             raise ValueError('%s %s: %s' % (item['id'], item['candidate'], '; '.join(errors)))
