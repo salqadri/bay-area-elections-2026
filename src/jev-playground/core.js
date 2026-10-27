@@ -14,6 +14,20 @@
   function derivedGrade(row,mapping=defaultScoreGradeMapping){const q=row.request?.questions?.pro_palestine_score,a=row.response?.answers?.pro_palestine_score;const grade=row.status==='complete'&&q?.type==='score'&&Array.isArray(q.criteria)&&q.criteria.length===6&&a?.type==='score'?scoreGrade(a.score,mapping):null;const evidence=evidenceScore(row);return grade&&evidence!==null&&evidence<.10?'N/A':grade;}
   function gradeMetric(row,mapping=defaultScoreGradeMapping){const value=derivedGrade(row,mapping);return value?{value,confidence:value==='N/A'?null:row.response.answers.pro_palestine_score.confidence,derived:true,insufficient:value==='N/A',evidence:evidenceScore(row)}:null;}
   function withScoreGrades(run,mapping){return {...run,score_grade_mapping:validateMapping(mapping),rows:run.rows.map(row=>({...row,pro_palestine_score_grade:derivedGrade(row,mapping)}))};}
+  function gradeDistribution(rows,mapping=defaultScoreGradeMapping){
+    const bounds=validateMapping(mapping).upper_bounds,buckets='ABCDEF'.split('').map(grade=>{
+      const index='FEDCBA'.indexOf(grade);return {grade,lower:index?bounds[index-1]:0,upper:index===5?5:bounds[index],rows:[]};
+    }),byGrade=new Map(buckets.map(b=>[b.grade,b])),items=[];let insufficient=0,ungraded=0;
+    for(const row of rows){const grade=derivedGrade(row,mapping);if(grade==='N/A'){insufficient++;continue;}if(!grade){ungraded++;continue;}
+      const item={row,grade,score:row.response.answers.pro_palestine_score.score};items.push(item);byGrade.get(grade).rows.push(item);
+    }
+    const compare=(a,b)=>a.score-b.score||String(a.row.candidate).localeCompare(String(b.row.candidate),'en-US')||String(a.row.id).localeCompare(String(b.row.id),'en-US');
+    items.sort(compare);for(const bucket of buckets){bucket.rows.sort(compare);bucket.count=bucket.rows.length;}
+    return {buckets,items,total:rows.length,graded:items.length,insufficient,ungraded};
+  }
+  function boundaryNeighbors(distribution,cutoff,limit=3){
+    return {below:distribution.items.filter(item=>item.score<=cutoff).slice(-limit).reverse(),above:distribution.items.filter(item=>item.score>cutoff).slice(0,limit)};
+  }
   function answerValue(answer,question){
     if(!answer)return 'Not run';
     if(answer.type==='choice')return String(answer.choice);
@@ -72,5 +86,5 @@
     return {grades:[...grades].sort(),scores:[...scores].sort()};
   }
   function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {currentInput,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
+  return {currentInput,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,gradeDistribution,boundaryNeighbors,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
 });

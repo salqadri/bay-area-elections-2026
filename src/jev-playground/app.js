@@ -5,6 +5,7 @@
   const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
   let boot,run,selectedId='',view='current-state',editor=null,stateEditor=null,lastStateText='',pollTimer=null,loading=false,activeRunId=null,historyTimer=null;
   let comparisonGrade='gaza_grade',comparisonScore='pro_palestine_score',gradeMapping=C.defaultScoreGradeMapping;
+  let savedGradeMapping=C.validateMapping(gradeMapping),mappingInvalid=false,mappingSaving=false,selectedBucket='C';
   let baselineId='',answerSignature='',monacoReady=false,promptBaseline='';const expandedAnswers=new Set();
   const rows=()=>run?.scope==='latest'?run.rows:C.catalogRows(boot.snapshot,run),races=()=>run?.scope==='latest'?run.races:C.catalogRaces(boot.snapshot,run);
   const raceLabel=race=>C.raceLabel(race,ContestLabel.districtLabel);
@@ -52,6 +53,7 @@
     if(!visible)fragment.append(node('p','help','No candidates match these filters.'));
     $('races').replaceChildren(fragment);$('visible-count').textContent=visible+' of '+orderedCandidates().length+' candidates';
     if(oldFocus)for(const el of $('races').querySelectorAll('[data-candidate-id]'))if(el.dataset.candidateId===oldFocus)el.focus({preventScroll:true});
+    renderDistribution();
   }
   function inspect(){const row=run&&rows().find(r=>r.id===selectedId);$('copy').disabled=!row;if(!row){$('inspector-title').textContent='No candidates in this county view';$('selected-answers').replaceChildren();$('candidate-cair').replaceChildren();$('candidate-score-grade').replaceChildren();$('candidate-cair-flag').hidden=true;$('candidate-site').removeAttribute('href');$('result-meta').textContent='';$('evaluation-source').textContent='';$('result-notice').hidden=true;$('stale').hidden=true;$('state-json').textContent='No candidate selected.';lastStateText='No candidate selected.';stateEditor?.setValue(lastStateText);$('inspector-meta').textContent='';$('request-ref').textContent='';return;}const race=races().find(r=>r.id===row.position_id),preview=row.status==='preview';$('candidate-site').href=C.candidateSiteUrl(row);$('evaluation-source').textContent=row.evaluation?'Saved '+formatTime(row.evaluation.finished_at||row.evaluation.created_at):'';if(latestMode()){$('stale').hidden=!row.evaluation||(row.evaluation.dataset_sha256===boot.snapshot.dataset_sha256&&row.evaluation.state_version===boot.snapshot.state_version);$('stale').textContent='This candidate’s saved evaluation uses earlier evidence or an older input format. Current input previews the next evaluation; State JSON retains the exact saved input.';}renderCandidateCair(row);renderDerivedGrade(row);renderAnswers(row,race);resultNotice();$('inspector-title').textContent=row.candidate;$('inspector-meta').textContent=`${raceLabel(race)} · ${row.party||'Nonpartisan'} · ${view==='current-state'?'Current generated input · not evaluated':preview?'Current input preview · not evaluated':'Exact '+(row.status==='queued'?'submitted':'stored')+' input'}`;
     let request=row.request;if(preview){let questions=null;try{questions=C.parseQuestions(text());}catch{}request={model:run.model,state:row.state,questions};}
@@ -102,18 +104,77 @@
     if(grade==='N/A'){panel.append(node('span','derived-grade-value',grade),node('p','help','Saved evidence_score: '+String(C.evidenceScore(row))+' / 1, below 0.10. No derived letter grade. Original Jev answers remain below.'));return;}
     panel.append(node('span','derived-grade-value',grade));
     panel.append(node('p','help','Derived from '+String(row.response.answers.pro_palestine_score.score)+' / 5 · Source score confidence: '+C.percent(row.response.answers.pro_palestine_score.confidence)+'. No separate model confidence.'));
-    const tune=node('a',null,'Tune grade mapping ↑');tune.href='#grade-mapping';tune.addEventListener('click',()=>{$('grade-mapping').open=true;});panel.append(tune);
+    const tune=node('a',null,'Back to grade distribution ↑');tune.href='#grade-distribution';tune.addEventListener('click',()=>{$('grade-mapping').open=true;});panel.append(tune);
   }
   function setupGradeMapping(){
     const controls=$('grade-bounds');controls.replaceChildren();
     for(const [i,upper]of gradeMapping.upper_bounds.entries()){const label=node('label',null,'FEDCB'[i]+' upper bound (inclusive)'),input=node('input');input.id='grade-bound-'+i;input.type='number';input.step='any';input.min='0';input.max='5';input.required=true;input.value=String(upper);label.htmlFor=input.id;label.append(input);controls.append(label);}
+    updateMappingStatus();
+  }
+  const sameMapping=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+  const readMapping=()=>({upper_bounds:Array.from({length:5},(_,i)=>$('grade-bound-'+i).value.trim()===''?null:Number($('grade-bound-'+i).value))});
+  function updateMappingStatus(){
+    const dirty=!sameMapping(gradeMapping,savedGradeMapping);
+    $('save-grade-mapping').disabled=mappingSaving||mappingInvalid||!dirty;$('revert-grade-mapping').disabled=mappingSaving||(!dirty&&!mappingInvalid);$('reset-grade-mapping').disabled=mappingSaving;
+    for(const input of $('grade-bounds').querySelectorAll('input'))input.disabled=mappingSaving;
+    $('grade-mapping-status').textContent=mappingSaving?'Saving thresholds…':mappingInvalid?'Invalid thresholds. Showing the last valid '+(dirty?'preview.':'saved mapping.'):dirty?'Live preview · not saved. Save thresholds to keep these changes.':'Saved thresholds · used across this local playground and downloads.';
+  }
+  function renderMappingViews(){renderRaces();renderCairReview();inspect();}
+  function previewGradeMapping(){
+    if(mappingSaving)return;
+    try{gradeMapping=C.validateMapping(readMapping());mappingInvalid=false;$('grade-mapping-error').hidden=true;renderMappingViews();}
+    catch(e){mappingInvalid=true;$('grade-mapping-error').textContent=e.message;$('grade-mapping-error').hidden=false;renderDistribution();}
+    updateMappingStatus();
   }
   async function applyGradeMapping(mapping){
-    try{C.validateMapping(mapping);gradeMapping=await api('/api/score-grade-mapping',{method:'POST',body:JSON.stringify(mapping)});setupGradeMapping();$('grade-mapping-error').hidden=true;$('grade-mapping-status').textContent='Mapping saved locally. All derived grades updated; Jev answers are unchanged.';renderRaces();renderCairReview();inspect();}
+    if(mappingSaving)return;
+    try{gradeMapping=C.validateMapping(mapping);mappingInvalid=false;mappingSaving=true;setupGradeMapping();renderMappingViews();savedGradeMapping=C.validateMapping(await api('/api/score-grade-mapping',{method:'POST',body:JSON.stringify(mapping)}));gradeMapping=C.validateMapping(savedGradeMapping);setupGradeMapping();$('grade-mapping-error').hidden=true;renderMappingViews();}
     catch(e){$('grade-mapping-error').textContent=e.message;$('grade-mapping-error').hidden=false;}
+    finally{mappingSaving=false;updateMappingStatus();}
   }
-  $('grade-mapping-form').addEventListener('submit',event=>{event.preventDefault();applyGradeMapping({upper_bounds:Array.from({length:5},(_,i)=>$('grade-bound-'+i).value.trim()===''?null:Number($('grade-bound-'+i).value))});});
+  $('grade-mapping-form').addEventListener('input',previewGradeMapping);
+  $('grade-mapping-form').addEventListener('submit',event=>{event.preventDefault();applyGradeMapping(readMapping());});
+  $('revert-grade-mapping').addEventListener('click',()=>{gradeMapping=C.validateMapping(savedGradeMapping);mappingInvalid=false;$('grade-mapping-error').hidden=true;setupGradeMapping();renderMappingViews();});
   $('reset-grade-mapping').addEventListener('click',()=>applyGradeMapping(boot.default_score_grade_mapping||C.defaultScoreGradeMapping));
+  $('tune-distribution').addEventListener('click',()=>{$('grade-mapping').open=!$('grade-mapping').open;});
+  $('grade-mapping').addEventListener('toggle',()=>{$('tune-distribution').setAttribute('aria-expanded',String($('grade-mapping').open));});
+  const boundaryNumber=value=>new Intl.NumberFormat('en-US',{maximumFractionDigits:6}).format(value);
+  function distributionCandidate(item,raceMap){
+    const button=node('button','distribution-candidate');button.type='button';button.dataset.candidateId=item.row.id;
+    button.setAttribute('aria-current',String(item.row.id===selectedId));
+    const identity=node('span');identity.append(node('strong',null,item.row.candidate),node('small',null,raceLabel(raceMap.get(item.row.position_id)||{})));
+    const score=node('span','edge-score',item.grade+' · '+boundaryNumber(item.score));score.title=String(item.score)+' / 5';button.append(identity,score);
+    button.addEventListener('click',()=>selectCandidate(item.row.id,true));return button;
+  }
+  function renderDistribution(){
+    if(!run)return;
+    const oldGrade=document.activeElement?.dataset?.distributionGrade,distribution=C.gradeDistribution(orderedCandidates().map(item=>item.row),gradeMapping),max=Math.max(1,...distribution.buckets.map(b=>b.count));
+    const dirty=!sameMapping(gradeMapping,savedGradeMapping),source=latestMode()?'Latest per candidate':'Selected saved history',county=$('county').selectedOptions[0]?.textContent||'All tracked candidates';
+    $('distribution-scope').textContent=source+' · '+county+' · '+distribution.graded+' letter grades / '+distribution.total+' candidacies'+(mappingInvalid?' · Last valid mapping shown':dirty?' · Unsaved preview':'');
+    const bars=document.createDocumentFragment();
+    for(const bucket of distribution.buckets){
+      const range=(bucket.grade==='F'?'0 ≤ score':boundaryNumber(bucket.lower)+' < score')+' ≤ '+boundaryNumber(bucket.upper),button=node('button','histogram-bucket bucket-'+bucket.grade.toLowerCase());
+      button.type='button';button.dataset.distributionGrade=bucket.grade;button.setAttribute('aria-pressed',String(bucket.grade===selectedBucket));button.setAttribute('aria-label',bucket.grade+': '+bucket.count+' candidates; '+range+'; inspect boundary candidates');button.title=range+' / 5';
+      const track=node('span','histogram-track'),fill=node('span','histogram-fill');fill.style.height=(bucket.count/max*100)+'%';track.append(fill);
+      button.append(node('strong','histogram-count',String(bucket.count)),track,node('strong','histogram-letter',bucket.grade),node('small','histogram-range',range));
+      button.addEventListener('click',()=>{selectedBucket=bucket.grade;$('grade-mapping').open=true;renderDistribution();});bars.append(button);
+    }
+    $('grade-histogram').replaceChildren(bars);
+    $('distribution-exclusions').textContent=distribution.insufficient+' N/A (evidence below 0.10; excluded from letter buckets) · '+distribution.ungraded+' without a compatible saved result. County and saved-history selection apply; no confidence cutoff.';
+    const bucket=distribution.buckets.find(b=>b.grade===selectedBucket),panel=$('bucket-inspection'),allOpen=panel.dataset.grade===selectedBucket&&panel.querySelector('.bucket-all')?.open,fragment=document.createDocumentFragment(),raceMap=new Map(races().map(r=>[r.id,r]));
+    fragment.append(node('h3',null,bucket.grade+' · '+bucket.count+' candidates'),node('p','help','Up to three closest scored candidates on either side of each cutoff. Click a name to inspect their saved answers.'));
+    const cards=node('div','boundary-cards'),index='FEDCBA'.indexOf(bucket.grade);
+    for(const [cutoff,label] of [...(index?[[bucket.lower,'FEDCBA'[index-1]+' → '+bucket.grade]]:[]),...(index<5?[[bucket.upper,bucket.grade+' → '+'FEDCBA'[index+1]]]:[])]){
+      const card=node('section','boundary-card');card.append(node('h4',null,label+' · cutoff '+boundaryNumber(cutoff)));
+      const neighbors=C.boundaryNeighbors(distribution,cutoff),sides=node('div','boundary-sides');
+      for(const [key,title]of [['below','At or below '+boundaryNumber(cutoff)],['above','Above '+boundaryNumber(cutoff)]]){const side=node('div');side.append(node('h5',null,title));if(!neighbors[key].length)side.append(node('p','help','No candidates on this side.'));for(const item of neighbors[key])side.append(distributionCandidate(item,raceMap));sides.append(side);}card.append(sides);cards.append(card);
+    }
+    fragment.append(cards);
+    if(bucket.count){const all=node('details','bucket-all');all.append(node('summary',null,'All '+bucket.count+' candidates in '+bucket.grade+' · lowest score first'));const populate=()=>{if(all.open&&!all.querySelector('.bucket-list')){const list=node('div','bucket-list');for(const item of bucket.rows)list.append(distributionCandidate(item,raceMap));all.append(list);}};all.addEventListener('toggle',populate);if(allOpen){all.open=true;populate();}fragment.append(all);}
+    else fragment.append(node('p','help','No candidates fall in this bucket with these thresholds.'));
+    panel.replaceChildren(fragment);panel.dataset.grade=selectedBucket;
+    if(oldGrade)$('grade-histogram').querySelector('[data-distribution-grade="'+oldGrade+'"]')?.focus({preventScroll:true});
+  }
   function renderCandidateCair(row){$('candidate-cair').replaceChildren();appendCair($('candidate-cair'),row);const comparison=C.cairComparison(row,comparisonOptions());$('candidate-cair-flag').textContent='Matches CAIR review rule: '+comparison.reasons.join(' or ');$('candidate-cair-flag').hidden=!comparison.flagged;}
   function questionPicker(id,keys,selected){const select=$(id);select.replaceChildren();const none=node('option',null,'Do not compare');none.value='';select.append(none);for(const key of keys){const option=node('option',null,key+(key==='pro_palestine_score_grade'?' (derived)':''));option.value=key;select.append(option);}if(selected&&!keys.includes(selected)){const missing=node('option',null,selected+' — not available in this view');missing.value=selected;select.append(missing);}select.value=selected;}
   function renderCairReview(){
@@ -189,5 +250,5 @@
       monacoReady=true;ensureStateEditor();
     },()=>{});};script.onerror=()=>{};document.head.append(script);
   }
-  (async()=>{try{boot=await api('/api/bootstrap');gradeMapping=C.validateMapping(boot.score_grade_mapping||C.defaultScoreGradeMapping);setupGradeMapping();baselineId=boot.baseline.id;updateScope();const remembered=rememberedSelection();if(typeof remembered.candidate_id==='string')selectedId=remembered.candidate_id;setupCountyFilter();if([...$('county').options].some(option=>option.value===remembered.county))$('county').value=remembered.county;$('connection').textContent=boot.key_configured?'Local server ready · Ctrl/Cmd + Enter runs selected':'Stored results ready · start the server with a Jev key to run';showRun(boot.latest||boot.baseline);await history();loadMonaco();}catch(e){error(e.message+' Start scripts/serve_jev_playground.py and open its local URL.');}})();
+  (async()=>{try{boot=await api('/api/bootstrap');gradeMapping=C.validateMapping(boot.score_grade_mapping||C.defaultScoreGradeMapping);savedGradeMapping=C.validateMapping(gradeMapping);setupGradeMapping();baselineId=boot.baseline.id;updateScope();const remembered=rememberedSelection();if(typeof remembered.candidate_id==='string')selectedId=remembered.candidate_id;setupCountyFilter();if([...$('county').options].some(option=>option.value===remembered.county))$('county').value=remembered.county;$('connection').textContent=boot.key_configured?'Local server ready · Ctrl/Cmd + Enter runs selected':'Stored results ready · start the server with a Jev key to run';showRun(boot.latest||boot.baseline);await history();loadMonaco();}catch(e){error(e.message+' Start scripts/serve_jev_playground.py and open its local URL.');}})();
 })();

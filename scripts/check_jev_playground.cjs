@@ -120,3 +120,15 @@ assert.equal(C.currentInput(inputSnapshot,savedInputRow).evidence,"new AB715 evi
 assert.equal(savedInputRow.request.state.evidence,"old");
 assert(C.currentInput({candidates:[]},savedInputRow).status.includes("outside"));
 assert(html.includes("tab-current-state"));
+
+// Distribution counts conserve the catalog, distinguish N/A/unrun rows, and
+// move exact-edge scores without mutating any stored provider response.
+function distributionRow(id,score,evidence=1){const row=reviewed('A',score);row.id=id;row.candidate='Candidate '+id;row.request=structuredClone(row.request);row.request.questions.evidence_score={type:'score',criteria:['none','concrete']};row.response.answers.evidence_score={type:'score',score:evidence,confidence:0};return row;}
+const distributionRows=[distributionRow('zero',0),distributionRow('edge',3.2),distributionRow('above',3.22),distributionRow('top',5),distributionRow('na',4.9,.09),{id:'waiting',status:'preview'},distributionRow('tie',3.2)];
+const distributionOriginal=JSON.stringify(distributionRows),dist=C.gradeDistribution(distributionRows,mapping);
+assert.deepEqual(Object.fromEntries(dist.buckets.map(b=>[b.grade,b.count])),{A:1,B:1,C:2,D:0,E:0,F:1});assert.equal(dist.total,7);assert.equal(dist.insufficient,1);assert.equal(dist.ungraded,1);assert.equal(dist.graded,5);assert.equal(dist.buckets.reduce((n,b)=>n+b.count,0)+dist.insufficient+dist.ungraded,dist.total);
+let neighbors=C.boundaryNeighbors(dist,3.2);assert(neighbors.below.every(x=>x.score<=3.2));assert(neighbors.above.every(x=>x.score>3.2));assert.equal(neighbors.above[0].row.id,'above');assert(![...neighbors.below,...neighbors.above].some(x=>x.row.id==='na'));assert.equal(dist.buckets.find(b=>b.grade==='C').rows[0].row.id,'edge');
+const changedDistribution=C.gradeDistribution(distributionRows,{upper_bounds:[5/6,10/6,2.5,3.3,25/6]});assert.equal(changedDistribution.buckets.find(b=>b.grade==='C').count,3);assert.equal(changedDistribution.buckets.find(b=>b.grade==='B').count,0);assert.equal(changedDistribution.insufficient,1);assert.equal(JSON.stringify(distributionRows),distributionOriginal);
+const emptyDistribution=C.gradeDistribution([],mapping);assert.equal(emptyDistribution.total,0);assert(emptyDistribution.buckets.every(b=>b.count===0));assert.deepEqual(C.boundaryNeighbors(emptyDistribution,2.5),{below:[],above:[]});assert.throws(()=>C.gradeDistribution(distributionRows,{upper_bounds:[1,2,2,3,4]}));
+assert(html.includes('id="grade-histogram"'));assert(html.includes('id="revert-grade-mapping"'));
+console.log('PASS Grade distribution: exact inclusive edges, counts conserved, N/A and missing kept separate, zero-confidence answers included, sorted boundary neighbors, empty bins and immutable source rows.');

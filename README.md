@@ -63,7 +63,9 @@ results load in **Latest per candidate** by default; no confidence cutoffs apply
 Filter the workspace by county and compare saved grades/scores with current CAIR
 Action recommendations in the dedicated review area. A deterministic
 `pro_palestine_score_grade` appears beside results; tune its inclusive score bands
-under **Score → grade mapping**. A saved 0–1 `evidence_score` below 0.10
+under **Score → grade mapping**. The A–F histogram previews threshold changes live;
+click a bar to inspect candidates nearest its cutoffs, then save or revert the
+local preview. Counts follow the county filter and saved-history selection. A saved 0–1 `evidence_score` below 0.10
 shows **N/A** instead of a derived letter; exactly 0.10 is still
 graded. Jev’s original answers and confidence remain visible. New input states retain Vote for Peace
 Ally/Opposed/Neutral observations, including previously held Neutral cards.

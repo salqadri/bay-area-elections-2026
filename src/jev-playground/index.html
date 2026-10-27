@@ -13,11 +13,18 @@
 <div class="hero"><div><h1>Candidate playground</h1><p id="scope">Loading House and five-county Bay Area candidates…</p></div><span id="connection" class="help">Checking local server…</span></div>
 <div class="review-navigation"><label for="county">County<select id="county" aria-label="Filter candidates by county"><option value="all">All tracked candidates</option></select></label><span id="county-count" class="help"></span><a id="review-jump" href="#cair-review">Review CAIR differences <span id="cair-review-count"></span></a></div>
 <div id="fatal" role="alert" hidden></div>
-<details id="grade-mapping" class="browse-races"><summary>Score → grade mapping <span>Deterministic · no Jev call</span></summary>
-<p class="help">pro_palestine_score_grade converts the saved 0–5 pro_palestine_score to A–F. Each upper bound is inclusive: by default 0 through 5/6 is F, then E, D, C, B, A. The default C upper bound is 3.2; other bounds retain their original sixths. A ends at 5. Customize the five bounds for a nonlinear mapping. This changes derived grades for all saved results, without changing Jev answers or confidence. A saved 0–1 evidence_score below 0.10 shows N/A instead of a letter; exactly 0.10 still receives a grade.</p>
-<form id="grade-mapping-form"><div id="grade-bounds" class="comparison-controls"></div><div class="actions"><button type="submit">Apply grade mapping</button><button id="reset-grade-mapping" type="button">Restore default mapping</button></div></form>
+<section id="grade-distribution" class="grade-distribution" aria-labelledby="distribution-title">
+<div class="section-head"><h2 id="distribution-title">Grade distribution</h2><button id="tune-distribution" type="button" aria-controls="grade-mapping" aria-expanded="false">Tune thresholds &amp; inspect edges</button></div>
+<p id="distribution-scope" class="help" role="status">Loading saved grades…</p>
+<div id="grade-histogram" class="grade-histogram" aria-label="Candidate counts by derived grade"></div>
+<p id="distribution-exclusions" class="help"></p>
+<details id="grade-mapping" class="mapping-tuning"><summary>Score → grade mapping <span>Live preview · no Jev call</span></summary>
+<div class="tuning-grid"><div>
+<p class="help">Edit a cutoff to preview its impact immediately. Each upper bound is inclusive; A ends at 5. Save thresholds to keep your changes. Saved Jev answers, confidence and the published site remain unchanged.</p>
+<form id="grade-mapping-form"><div id="grade-bounds" class="comparison-controls"></div><div class="actions"><button id="save-grade-mapping" type="submit">Save thresholds</button><button id="revert-grade-mapping" type="button" disabled>Revert preview</button><button id="reset-grade-mapping" type="button">Restore default mapping</button></div></form>
 <p id="grade-mapping-status" class="help" role="status">Mapping is saved locally on this server and included in downloads.</p><p id="grade-mapping-error" role="alert" hidden></p>
-</details>
+</div><section id="bucket-inspection" class="bucket-inspection" aria-label="Selected grade and boundary candidates"></section></div>
+</details></section>
 <section class="workbench" aria-label="Prompt iteration workspace" data-mobile-view="questions">
 <div class="workbench-controls">
 <div class="candidate-control"><label for="candidate-picker">Candidate</label><div class="candidate-navigation"><button id="previous-candidate" type="button" aria-label="Previous candidate" disabled>←</button><select id="candidate-picker" aria-label="Select candidate" disabled><option>Loading…</option></select><button id="next-candidate" type="button" aria-label="Next candidate" disabled>→</button></div></div>

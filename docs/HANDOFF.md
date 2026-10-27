@@ -1,5 +1,25 @@
 # Research and development handoff
 
+## Local grade distribution and threshold tuning — October 27, 2026
+
+The local playground now charts A–F counts for its county scope and selected
+saved-history view. N/A and missing/incompatible evaluations are separate counts.
+Threshold edits preview immediately, with explicit Save thresholds/Revert preview;
+no model call or published-score change occurs. Selecting a bar shows up to three
+nearest candidates on both sides of each cutoff plus an expandable full bucket
+list. Names open the existing inspector while preserving question drafts.
+The chart stays visible within the tuning area, and results link back to it.
+
+Validation covers inclusive cutoffs, count conservation, low evidence versus missing
+results, zero-confidence inclusion, empty buckets and immutable source rows.
+Desktop/mobile browser checks cover preview, invalid edits, revert, save/reload,
+boundary links, draft preservation, county/history scope and overflow, using
+intercepted APIs without Jev calls or changes to real local thresholds.
+The complete offline release gate passes **45/45 checks**. All 169 prior local
+run files retain their hashes. Canonical data, published readers, archived grades
+and prompts remain unchanged.
+See [playground workflow](JEV_PLAYGROUND.md).
+
 ## Latest Jev grades published — October 27, 2026
 
 Publication **2026-10-27.1**, schema **1.26**, freezes all 1,296 latest successful

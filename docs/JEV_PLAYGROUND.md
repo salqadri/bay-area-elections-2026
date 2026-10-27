@@ -189,11 +189,29 @@ Default bands use exact stored bounds, without rounding the source score:
 | B | 3.2 < score ≤ 25/6 |
 | A | 25/6 < score ≤ 5 |
 
-Open **Score → grade mapping** above the workspace, or **Tune grade mapping** in
-selected results. Edit the inclusive upper bounds for F, E, D, C and B, then
-**Apply grade mapping**. Values must be strictly increasing between 0 and 5;
-A always ends at 5. **Restore default mapping** restores the table above. Applying
-updates all derived displays and comparisons immediately without rerunning Jev.
+The **Grade distribution** chart above the workspace shows A–F counts for the
+selected county scope and saved-history view (Latest per candidate by default).
+Browse-race search/state filters do not change its scope. N/A and candidates
+without compatible saved results are counted separately, outside the letter bars;
+confidence never excludes a candidate.
+
+Click a grade bar or **Tune thresholds & inspect edges** to open the tuning area.
+Edit the inclusive upper bounds for F, E, D, C and B: valid changes immediately
+preview the histogram, derived result grades and CAIR comparisons without a Jev
+call. Values must be strictly increasing between 0 and 5; A always ends at 5.
+Invalid edits retain the last valid preview and disable saving. **Save thresholds**
+persists the preview locally; **Revert preview** restores the saved mapping.
+**Restore default mapping** saves the table above. The chart remains visible while
+scrolling through its tuning area.
+
+For the selected grade, the boundary panel lists up to three closest scored
+candidates on each side of each cutoff, including neighbors across empty buckets.
+Click a candidate to inspect their saved answers and inputs; question drafts are
+preserved. Expand the full bucket list to inspect other members in score order.
+**Back to grade distribution ↑** in selected results returns to the chart.
+Previewing or saving thresholds does not rewrite model answers, saved runs or
+published main-site grades. Downloads use the current preview mapping.
+
 The CAIR grade selector also offers `pro_palestine_score_grade (derived)`;
 `gaza_grade` remains the default comparison. Each CAIR comparison card also
 always displays `pro_palestine_score_grade` alongside its selected grade and score,
