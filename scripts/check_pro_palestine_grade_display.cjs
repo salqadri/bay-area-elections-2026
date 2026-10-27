@@ -29,3 +29,5 @@ const indexTemplate=fs.readFileSync(__dirname+'/../src/index.template.html','utf
 assert(indexTemplate.includes('renderExplanation(c,')&&indexTemplate.includes('.grade-explanation{'),'explorer must render and style the explanation panel');
 assert(ballotPage.includes('renderExplanation(candidate,'),'ballot reader must render the explanation panel');
 console.log('PASS public grades: compact E/score format, all color bands, accessible model provenance/confidence, gray N/A for insufficient/missing data, valid zero scores and collapsed bound evidence explanations.');
+
+const customThreshold=display.render({pro_palestine_score:3,pro_palestine_score_grade:'N/A',pro_palestine_evaluation:{...meta,evidence_score:.19}},{pro_palestine_grading:{evidence_threshold:.2}},{node});assert(customThreshold.title.includes('below 0.2 / 1'));assert(!customThreshold.title.includes('below 0.10'));

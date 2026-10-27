@@ -61,3 +61,5 @@ for(const endorser of ['Mabel Teng', "Sailors' Union of the Pacific"]) {
   assert(!entry.textContent.includes(endorser==='Mabel Teng'?"Sailors' Union of the Pacific":'Mabel Teng'));
 }
 console.log(JSON.stringify({passed:true,checks:'one mixed list, Wiener 69 text + 50 images, Connie image ownership, metadata, external URLs, image fallback, distinction semantics'}));
+
+const neutral=display.label({endorser:'Vote for Peace',relation:'neutral',phase:'general',verification:'endorser_statement',checked_on:'2026-10-27'});assert(neutral.startsWith('Listed as Neutral by Vote for Peace'));assert(!neutral.includes('Supported by'));

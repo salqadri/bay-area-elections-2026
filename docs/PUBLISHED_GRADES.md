@@ -1,17 +1,47 @@
 # Published pro-Palestine model scores
 
-Publication **2026-10-27.1**, schema **1.26**, shows project-owned Jev model scores
+Publication **2026-10-27.2**, schema **1.27**, shows project-owned Jev model scores
 next to candidates on both public readers. A higher score follows the owner's
 published pro-Palestine/anti-Israel rubric. These badges are distinct from CAIR
 Action recommendations and the USCPR publisher's grades, which retain their own
 source labels.
 
-## Current publication — October 27, 2026
+## Current publication — October 27 Vote for Peace refresh
+
+Publication **2026-10-27.2**, schema **1.27**, uses the exact latest owner-saved
+[criteria v5](../research/gaza-grading/criteria-pro-palestine-v5.json), from full
+run `20261027T084211Z-eec4530d`. The
+[current immutable archive](../research/gaza-grading/published-2026-10-27-vfp.json)
+contains **1,296 fresh successful evaluations** after refreshing Vote for Peace.
+The new full run `20261027T085927Z-01877b08` completed with zero errors. Two
+follow-up evaluations use the same v5 questions and corrected current guide
+notes for John Garamendi and Sam Liccardo. Every archived state matches its
+current generated input before publication; original local runs remain exact.
+
+132 first-party guide cards are bound to tracked candidacies: **103 additions,
+29 updates** (91 Ally, 37 Opposed, 4 Neutral). Garamendi changed Opposed → Ally.
+Source cards without a unique state/office/seat match remain held; absence never
+deletes old records, and primary observations remain primary. Aggregated badges
+for other organizations are not imported as their endorsements. See the
+[refresh workflow](MAINTENANCE.md#vote-for-peace-refresh).
+
+The publication uses the owner's saved inclusive grade bounds **0.7, 1.4, 2.5,
+3.2, 4.4** and minimum evidence **0.20 / 1**. The publisher stores and checks this
+minimum against its mapping, and public tooltips display it dynamically.
+All CAIR Action / Vote for Peace directional-recommendation evidence guards pass;
+there are no directional recommendation/N/A conflicts. Distribution:
+**A 125 · B 41 · C 7 · D 40 · E 71 · F 121 · N/A 891**. No confidence cutoff.
+
+The [new Hermes queue](../research/gaza-grading/explanation-queue-2026-10-27-vfp.json)
+binds all 1,296 summaries to this archive and v5 prompt. Older explanations remain
+archived and are not shown as explanations of these new scores.
+
+## Historical October 27 first publication
 
 Publication **2026-10-27.1**, schema **1.26**, uses the owner’s exact revised
 [criteria v4](../research/gaza-grading/criteria-pro-palestine-v4.json), including
 AB-715 in the E criteria and the JStreetPAC exception in the F criteria.
-The [current immutable archive](../research/gaza-grading/published-2026-10-27.json)
+The [historical immutable archive](../research/gaza-grading/published-2026-10-27.json)
 contains **1,296 latest successful saved evaluations**, all using those exact
 questions. Source selection: 1,293 from full run `20261027T071000Z-d9860cf0`,
 the owner’s later Matt Haney run, and two recommendation-evidence repairs.
@@ -62,15 +92,15 @@ the letter is always present. **N/A** is gray.
 
 | Grade | Unrounded score interval |
 |---|---|
-| F | 0 ≤ score ≤ 5/6 |
-| E | 5/6 < score ≤ 10/6 |
-| D | 10/6 < score ≤ 2.5 |
+| F | 0 ≤ score ≤ 0.7 |
+| E | 0.7 < score ≤ 1.4 |
+| D | 1.4 < score ≤ 2.5 |
 | C | 2.5 < score ≤ 3.2 |
-| B | 3.2 < score ≤ 25/6 |
-| A | 25/6 < score ≤ 5 |
+| B | 3.2 < score ≤ 4.4 |
+| A | 4.4 < score ≤ 5 |
 
-When the saved 0–1 `evidence_score` is **strictly below 0.10**, the derived grade
-is **N/A**. Exactly 0.10 still receives a letter. The badge shows only N/A for
+When the saved 0–1 `evidence_score` is **strictly below 0.20**, the derived grade
+is **N/A**. Exactly 0.20 still receives a letter. The badge shows only N/A for
 insufficient evidence; the raw model score and confidence remain in its tooltip,
 accessible label, canonical JSON and archive. A candidate without a saved
 evaluation also shows N/A, with a distinct explanation. No confidence cutoff is
@@ -80,7 +110,7 @@ public badge.
 Hover text and the badge’s accessible label include the model score confidence,
 evidence score and Pacific evaluation time. Click it to read this methodology.
 All 1,296 active candidacies have a saved evaluation in this publication:
-**A 126, B 24, C 13, D 37, E 64, F 140, N/A 892**.
+**A 125, B 41, C 7, D 40, E 71, F 121, N/A 891**.
 
 ## Reproducible publication
 
@@ -119,7 +149,8 @@ labeled observations. Vote for Peace Neutral/no-endorsement records do not imply
 a directional stance. This guard never fabricates a score or rewrites a model
 answer; repair the input or rerun Jev with the same preferred questions. The
 fresh 1,296-candidate batch has zero CAIR Action recommendation/N/A conflicts,
-and zero N/A cases with recorded Vote for Peace observations.
+and zero N/A cases with directional Vote for Peace observations. Neutral is not
+a directional recommendation and can still have insufficient evidence.
 
 ## Historical evidence explanations (October 26 batch)
 
@@ -128,9 +159,10 @@ candidate, shown under a collapsed **Why this grade?** panel beside each badge i
 both readers. Hermes generated all 1,296 summaries with LM Studio
 `qwen/qwen3.8-27b` (temperature 0.1), giving the model exactly what Jev saw: the
 frozen input state, the exact v3 rubric and the recorded score/evidence/gaza
-answers, plus the deterministic band mapping and 0.10 threshold. Each summary is
+answers, plus the deterministic band mapping and that historical archive’s 0.10
+evidence threshold. Each summary is
 bound to its `candidate_id`, `request_sha256` and publication id; N/A paragraphs
-state only that evidence was insufficient (below 0.10 / 1) without assigning a
+state only that evidence was insufficient (below 0.10 / 1 in that archive) without assigning a
 stance. Summaries explain the saved score — they never regrade, and raw provider
 answers remain immutable.
 

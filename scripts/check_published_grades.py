@@ -100,6 +100,13 @@ class PublicationChecks(unittest.TestCase):
         self.assertFalse(recommendation_signal({'endorser':'Vote for Peace','relation':'supported','rating':'Neutral'}))
         self.assertFalse(recommendation_signal({'endorser':'CAIR Action','relation':'endorsed','historical':True}))
 
+    def test_configurable_publication_evidence_threshold_is_exact(self):
+        cfg=self.data['pro_palestine_grading'];archive=deepcopy(self.archive)
+        archive['evidence_threshold']=.1 if archive['evidence_threshold']!=.1 else .2
+        with self.assertRaisesRegex(ValueError,'threshold differs'):
+            attach(self.data,archive,cfg['archive_path'],cfg['archive_sha256'])
+        self.assertEqual(self.archive['evidence_threshold'],self.archive['score_grade_mapping'].get('minimum_evidence_score',.1))
+
     def test_duplicate_and_removed_scores_fail(self):
         cfg=self.data['pro_palestine_grading'];a=deepcopy(self.archive);a['rows'].append(a['rows'][0])
         with self.assertRaises(ValueError):attach(self.data,a,cfg['archive_path'],cfg['archive_sha256'])

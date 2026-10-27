@@ -1,9 +1,11 @@
 # Bay Area Ballot Research Assistant
 
-Publication **2026-10-27.1** publishes the latest saved Jev evaluations for all
-**1,296 active candidates**, using the owner’s exact revised **v4** questions.
-The C upper bound is now **3.2**; B begins above 3.2. Old explanations are archived
-and removed from current cards pending regeneration against the new results.
+Publication **2026-10-27.2** (schema **1.27**) refreshes **132 Vote for Peace
+observations** and publishes fresh Jev evaluations for all **1,296 active
+candidates**, using the owner’s exact latest **v5** questions and saved grade
+bounds **0.7 / 1.4 / 2.5 / 3.2 / 4.4**, with evidence minimum **0.20 / 1**.
+John Garamendi is now listed as **Ally**, and his stale guide evidence is updated.
+Old explanations remain archived pending regeneration against the new results.
 [Current methodology](docs/PUBLISHED_GRADES.md).
 
 Publication **2026-10-26.8** corrects seven Track-JPAC funding observations,
@@ -41,13 +43,11 @@ An independent research inventory and searchable, static explorer of elected off
 
 Candidate cards in both readers now show a colored Jev score badge, for example
 **E (1.36 / 5)**. **N/A** means insufficient evidence or no saved evaluation.
-Publication **2026-10-26.1** includes a fresh, uniform-prompt Jev batch for all
-**1,296 active candidacies / 471 races**: 410 letter grades and 886 N/A results.
-Scores/confidences, exact input states, the owner's question JSON and provider
-responses are archived. Publication **2026-10-26.2** (schema 1.25) adds a collapsed
-**Why this grade?** evidence paragraph under every badge — one model-written summary
-per candidacy generated from that candidate's exact saved request state, rubric and
-answers. Summaries explain the recorded evidence; they never change a score. See [methodology and publication](docs/PUBLISHED_GRADES.md)
+The current publication covers all **1,296 active candidacies / 471 races**:
+405 letter grades and 891 N/A results. Scores/confidences, exact input states,
+owner question JSON and provider responses are archived. The prior **Why this
+grade?** summaries are retained in historical archives; a new source-bound queue
+is ready for Hermes to regenerate them. See [methodology and publication](docs/PUBLISHED_GRADES.md)
 and the [Hermes explanation task](docs/tasks/HERMES_GRADE_EXPLANATIONS.md).
 
 ## Local Jev playground
@@ -223,7 +223,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.26 (`schema_version` in the file is authoritative), publication `2026-10-27.1`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.27 (`schema_version` in the file is authoritative), publication `2026-10-27.2`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.

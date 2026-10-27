@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "Bay Area election contest inventory — compact schema v1.26",
+ "title": "Bay Area election contest inventory — compact schema v1.27",
  "description": "Schema for the November 2026 California election inventory, designed to add researched counties without new county-specific columns. It validates shape, local conditional rules, code syntax, and compact omission conventions. Research uncertainty remains explicit.",
  "$comment": "Use a Draft 2020-12 validator with format checking enabled. This schema cannot dynamically compare a source/note/party reference with keys elsewhere in the same instance, ensure ID or county-name uniqueness by one property, or reconcile coverage totals. Application validation must check these invariants and membership in election.counties_in_scope. Neither schema validation nor OCD syntax validation verifies election facts, live API recognition, geographic boundaries, or external URLs. JSON Schema defaults are annotations, not data mutation; top-level defaults describe application behavior.",
  "type": "object",
@@ -11,7 +11,7 @@
    "description": "Relative link to the companion schema file, intended to reside beside this dataset."
   },
   "schema_version": {
-   "const": "1.26"
+   "const": "1.27"
   },
   "election": {
    "type": "object",
@@ -1564,7 +1564,8 @@
       "supported",
       "preferred",
       "opposed",
-      "distinction"
+      "distinction",
+      "neutral"
      ]
     },
     "phase": {
@@ -2945,11 +2946,18 @@
         "minimum": 0,
         "maximum": 5
        }
+      },
+      "minimum_evidence_score": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
       }
      }
     },
     "evidence_threshold": {
-     "const": 0.1
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
     },
     "methodology_url": {
      "$ref": "#/$defs/url"

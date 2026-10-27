@@ -6,12 +6,12 @@ Use Jev for model judgments, as required by the owner's research policy.
 
 ## Portable inputs
 
-- `research/gaza-grading/explanation-queue-2026-10-27.json`: exact candidacy IDs,
+- `research/gaza-grading/explanation-queue-2026-10-27-vfp.json`: exact candidacy IDs,
   contest/name/roster identity and request hashes for every summary.
-- `research/gaza-grading/published-2026-10-27.json`: frozen full Jev requests,
+- `research/gaza-grading/published-2026-10-27-vfp.json`: frozen full Jev requests,
   actual input states, question JSON and provider answers, including evidence
   scores and confidence. No private local run directory is needed.
-- `research/gaza-grading/criteria-pro-palestine-v4.json`: the owner's exact preferred
+- `research/gaza-grading/criteria-pro-palestine-v5.json`: the owner's exact preferred
   question JSON, used unchanged on all 1,296 evaluations.
 - `2026-11-03_Bay_Area_Elections.json`: published numeric scores, derived letters,
   provenance, mapping and archive hash. [Methodology](../PUBLISHED_GRADES.md).
@@ -20,13 +20,13 @@ Use Jev for model judgments, as required by the owner's research policy.
 
 Resolve each queued item by candidacy ID and verify its request SHA-256 before
 calling the model. Pass the exact archived state, questions and recorded answers,
-plus the deterministic grade/mapping and 0.10 evidence threshold. Do not substitute
+plus the deterministic grade/mapping and 0.20 evidence threshold. Do not substitute
 new research or the current candidate state for what was actually evaluated.
 Generate a short, factual explanation grounded in observations present in that
 input. This is an evidence summary supporting the saved score, not a transcript
 of the scoring model's internal reasoning. Keep missing evidence explicit.
 
-For **N/A**, explain that the saved evidence score is below 0.10 / 1; do not
+For **N/A**, explain that the saved evidence score is below 0.20 / 1; do not
 assign a political stance from a lack of evidence. Distinguish direct statements,
 legislative actions, outside spending, endorsement observations and owner-confirmed
 community input when relevant. Attribute each observation accurately. Do not
@@ -46,8 +46,8 @@ before adding summaries to the readers through the normal publication workflow.
 
 The prior 1,296 summaries were completed for the October 26/v3 score archive.
 They are retained in `explanations-2026-10-26.json` but removed from current public
-cards because the owner reran all candidates with v4 and changed the C ceiling
-to 3.2. Generate fresh summaries for **jev-2026-10-27** from the new queue above.
+cards because the owner reran all candidates with v5, refreshed Vote for Peace observations and changed the score bands and
+evidence minimum. Generate fresh summaries for **jev-2026-10-27-vfp** from the new queue above.
 Use the archive’s own mapping, evidence threshold and exact recorded states;
 do not substitute current research or the old equal-width C/B boundary.
 
@@ -55,9 +55,9 @@ Attach through:
 
 ```sh
 python3 scripts/attach_grade_explanations.py --responses <new-responses-dir> \
-  --queue research/gaza-grading/explanation-queue-2026-10-27.json \
-  --output-archive research/gaza-grading/explanations-2026-10-27.json \
-  --publication-version 2026-10-27.2 --schema-version 1.26
+  --queue research/gaza-grading/explanation-queue-2026-10-27-vfp.json \
+  --output-archive research/gaza-grading/explanations-2026-10-27-vfp.json \
+  --publication-version 2026-10-27.3 --schema-version 1.27
 ```
 
 Then update relevant docs, rebuild both readers, and run the full release gate.

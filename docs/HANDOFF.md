@@ -1,5 +1,37 @@
 # Research and development handoff
 
+## Vote for Peace refresh and current scores — October 27, 2026
+
+Publication **2026-10-27.2**, schema **1.27**, supersedes the score snapshot below.
+The reusable `sync_vote_for_peace.py` captures 1,429 first-party source cards and
+accounts for every card. Exact name/prior-reviewed alias + state + office/seat
+bindings publish 132 observations: 103 new and 29 refreshed, including Garamendi
+Opposed → Ally. Four Neutral observations are explicitly neutral in both readers
+and Jev state; primary recommendations retain their phase. Other organizations'
+aggregated badges are not copied. Unclear identities/seats and out-of-scope cards
+stay held, with existing observations preserved. Two stale prose notes (Garamendi
+and Liccardo) were refreshed through separate registered before/after reviews;
+the Gaza collector ledger is reconciled.
+
+The latest owner-saved prompt is archived as **v5** from
+`20261027T084211Z-eec4530d`. Fresh full run `20261027T085927Z-01877b08` evaluated
+all **1,296** active candidacies with **zero errors**; two follow-up calls use
+corrected guide prose. Every exact saved state matches the current generated input.
+Saved bounds are **0.7, 1.4, 2.5, 3.2, 4.4**; evidence minimum **0.20**, inclusive.
+The publisher/schema/tooltips now carry that threshold rather than hardcoding 0.10.
+Archive: `published-2026-10-27-vfp.json`. Distribution:
+**A 125, B 41, C 7, D 40, E 71, F 121, N/A 891**; no confidence gate or
+directional CAIR/Vote for Peace recommendation/N/A conflicts.
+
+**Hermes next:** use `explanation-queue-2026-10-27-vfp.json` and v5 to regenerate
+all explanations. Earlier queues, requests and provider responses remain intact.
+Finance and ballot-research snapshot dates are unchanged. Validation: **45/45
+release checks pass**, plus desktop/mobile checks of both readers and the local
+playground. All 1,296 frozen requests/responses match their saved runs exactly;
+all 190 prior run files retain their hashes. Unrelated candidate/roster/finance
+data is unchanged.
+
+
 ## Editable playground evidence minimum — October 27, 2026
 
 **Minimum evidence_score** joins the grade tuning controls, defaulting to **0.20 / 1**.

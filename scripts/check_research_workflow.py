@@ -14,19 +14,28 @@ import reviewed_updates as updates
 
 from research_test_fixtures import before_registered_updates
 
-# These tests intentionally pass an empty recommendation history. Restore only
-# the dated CAIR layer, keeping current Gaza quarantines and other research.
+# These tests intentionally pass an empty publication history. Restore the dated
+# CAIR/peace-guide publisher layers only; retain current unrelated Gaza research,
+# quarantine and rosters. Current publication guards are tested independently.
 BASE = json.loads(DATA.read_text())
 old = before_registered_updates(BASE)
-cair_before = {(p['id'],c['name']):[r for r in c.get('endorsements',[]) if r['endorser']=='CAIR Action']
-               for p in old['positions'] for c in p.get('candidates') or []}
+rosters=('candidates','filed_candidates_not_confirmed_on_ballot','qualified_write_in_candidates')
+old_people={(p['id'],c['name']):c for p in old['positions'] for roster in rosters for c in p.get(roster) or []}
+publishers={'CAIR Action','Vote for Peace','AROC Action'}
 for position in BASE['positions']:
-    for candidate in position.get('candidates') or []:
-        records = [r for r in candidate.get('endorsements',[]) if r['endorser']!='CAIR Action']
-        records += cair_before.get((position['id'],candidate['name']),[])
-        if records: candidate['endorsements'] = records
-        else: candidate.pop('endorsements',None)
-BASE['coverage']['printed_candidates_with_endorsements'] = sum(bool(c.get('endorsements')) for p in BASE['positions'] for c in p.get('candidates') or [])
+    for roster in rosters:
+        for candidate in position.get(roster) or []:
+            prior=old_people.get((position['id'],candidate['name']),{})
+            records=[r for r in candidate.get('endorsements',[]) if r['endorser'] not in publishers]
+            records += [r for r in prior.get('endorsements',[]) if r['endorser'] in publishers]
+            if records: candidate['endorsements']=records
+            else: candidate.pop('endorsements',None)
+            evidence=[e for e in candidate.get('gaza_evidence',[]) if 'voteforpeace.info' not in e['url']]
+            evidence += [e for e in prior.get('gaza_evidence',[]) if 'voteforpeace.info' in e['url']]
+            if evidence: candidate['gaza_evidence']=evidence
+            else: candidate.pop('gaza_evidence',None)
+for field in ('endorsements','gaza_evidence'):
+    BASE['coverage']['printed_candidates_with_'+field]=sum(bool(c.get(field)) for p in BASE['positions'] for c in p.get('candidates') or [])
 
 
 def review_for(data=BASE, publisher='Example Civic Organization'):

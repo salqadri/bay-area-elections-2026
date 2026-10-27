@@ -60,7 +60,7 @@ def freeze(latest, mapping, preferred, published_on, criteria_path='research/gaz
                                                     'request','request_sha256','response','finished_at','evaluation')})
     return {'format':'published-jev-grades/v1', 'id':'jev-'+published_on,
             'published_on':published_on, 'selection':'latest successful saved evaluation per candidacy',
-            'score_grade_mapping':mapping, 'evidence_threshold':.10,
+            'score_grade_mapping':mapping, 'evidence_threshold':mapping.get('minimum_evidence_score', .10),
             'preferred_criteria_path':criteria_path,
             'preferred_criteria':preferred, 'rows':rows}
 
@@ -93,9 +93,11 @@ def validate_recommendation_evidence(candidate, row, grade):
 
 
 def attach(data, archive, archive_path, archive_sha):
-    if archive.get('format') != 'published-jev-grades/v1' or archive['evidence_threshold'] != .10:
+    if archive.get('format') != 'published-jev-grades/v1':
         raise ValueError('Unsupported publication format or evidence threshold')
     mapping = validate_mapping(archive['score_grade_mapping'])
+    if archive['evidence_threshold'] != mapping.get('minimum_evidence_score', .10):
+        raise ValueError('Publication evidence threshold differs from its mapping')
     result = deepcopy(data); targets = {}
     previous = data.get('pro_palestine_grading') or {}
     preserve_explanations = (previous.get('explanations') and previous.get('archive_sha256') == archive_sha
@@ -129,7 +131,7 @@ def attach(data, archive, archive_path, archive_sha):
         'publication_id':archive['id'], 'published_on':archive['published_on'],
         'archive_path':archive_path, 'archive_sha256':archive_sha,
         'preferred_criteria_path':archive.get('preferred_criteria_path','research/gaza-grading/criteria-pro-palestine-v3.json'),
-        'score_grade_mapping':mapping, 'evidence_threshold':.10,
+        'score_grade_mapping':mapping, 'evidence_threshold':mapping.get('minimum_evidence_score', .10),
         'methodology_url':'https://github.com/salqadri/bay-area-elections-2026/blob/main/docs/PUBLISHED_GRADES.md'}
     # Preserve explanations only on exact archive replay. A new score batch or
     # mapping must not display narratives bound to older answers or grade bands.
@@ -144,6 +146,7 @@ def main():
     ap.add_argument('--archive',type=Path,required=True)
     ap.add_argument('--published-on',default=date.today().isoformat())
     ap.add_argument('--criteria',type=Path,default=DEFAULT_CRITERIA,help='Versioned exact preferred questions for this publication')
+    ap.add_argument('--publication-id',help='Unique ID for a new same-day publication')
     ap.add_argument('--explanation-queue',type=Path,help='Write an immutable, source-bound Hermes follow-up queue')
     args=ap.parse_args(); path=args.archive.resolve()
     if not path.is_relative_to(ROOT/'research/gaza-grading'):
@@ -155,6 +158,7 @@ def main():
             raise ValueError('Store preferred criteria under research/gaza-grading')
         boot=json.loads(args.snapshot.read_text()); preferred=json.loads(criteria_path.read_text())
         archive=freeze(boot['latest'],boot['score_grade_mapping'],preferred,args.published_on,str(criteria_path.relative_to(ROOT)))
+        if args.publication_id: archive['id']=args.publication_id
         # Validate every projection before writing an archive or the dataset.
         attach(json.loads(DATASET.read_text()),archive,str(path.relative_to(ROOT)),'0'*64)
         path.write_text(json.dumps(archive,ensure_ascii=False,indent=1)+'\n')

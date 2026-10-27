@@ -42,7 +42,7 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    evaluation show **Not evaluated yet**. Nothing calls Jev merely by opening the
    page; saved runs are never overwritten. The editor loads the displayed
    evaluation’s saved questions; **Restore defaults**
-   loads the owner’s October 27 rubric (`pro-palestine-v4`).
+   loads the owner’s October 27 rubric (`pro-palestine-v5`).
 2. Use the candidate picker or previous/next arrows above the workspace. On
    desktop, the Monaco question editor and selected candidate's answers sit
    side by side, with Run controls always above them. On mobile, **Questions**
@@ -63,7 +63,7 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    selecting another evaluated candidate loads that candidate’s saved prompt.
    Edited questions (including invalid JSON) are preserved across candidate changes
    and result polling, including after evaluating the edited prompt. **Load saved prompt** explicitly restores the selected
-   evaluation’s questions; **Restore defaults** loads the preferred owner rubric (`criteria-pro-palestine-v4.json`).
+   evaluation’s questions; **Restore defaults** loads the preferred owner rubric (`criteria-pro-palestine-v5.json`).
    Drafts stay in the current page session; reloading returns to saved questions.
    For an ungraded candidate, the current editor draft is retained. **Run Bay Area (877)**
    evaluates only the five-county group with the current question text.
@@ -355,12 +355,12 @@ inspection, old-prompt labeling, history and exports. The actual
 ## Publishing a reviewed final batch
 
 The October 27 publication freezes the latest evaluations of all 1,296 active
-candidacies using the exact owner-edited v4 questions; both readers show that snapshot.
+candidacies using the exact owner-edited v5 questions after the Vote for Peace refresh; both readers show that snapshot.
 See [published score methodology](PUBLISHED_GRADES.md). The publisher refuses a
 mixed prompt, missing active candidate, changed source hash or identity mismatch.
 Local iterations do not change the public snapshot. The public badge uses the
 derived score grade and numeric score; the model's separate `gaza_grade` is not
-shown. **Restore defaults** now loads the owner's complete v4 questions, while
+shown. **Restore defaults** now loads the owner's complete v5 questions, while
 selecting a saved evaluation still restores that evaluation's actual questions.
 
 ## Education-policy input refresh (October 26, 2026)
@@ -474,3 +474,14 @@ including Ally and Opposed, even without a direct quotation. Tier, phase,
 verification limits and historical/Neutral qualifiers remain intact.
 Two conflicting low-evidence results were re-evaluated with unchanged v4 questions;
 other saved provider results were not rewritten. [Current public archive](PUBLISHED_GRADES.md).
+
+## Vote for Peace refresh — October 27, publication 2026-10-27.2
+
+Current inputs use v13 and canonical first-party Ally/Opposed/Neutral observations
+from the new nationwide source capture. A current Neutral record supersedes the
+held October 9 context without implying support; old states remain exact.
+All 1,296 active candidacies were rerun with the latest saved owner questions (v5)
+and updated observations, followed by two corrected-prose evaluations. Saved
+bounds 0.7 / 1.4 / 2.5 / 3.2 / 4.4 and evidence minimum 0.20 are frozen in the new
+public archive; playground edits still preview locally until explicitly published.
+[Current methodology and archive](PUBLISHED_GRADES.md).

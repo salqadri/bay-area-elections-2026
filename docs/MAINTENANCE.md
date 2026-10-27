@@ -256,3 +256,33 @@ the reader's pure date parser is in `src/gaza-evidence-display.js`. Keep both in
 agreement with `research/gaza-records/action-date-fixtures.json`. Filtering the
 Jev input must not delete historical source records or alter sheet assessments.
 The regression cases run within the existing playground/Gaza display checks.
+
+## Vote for Peace refresh
+
+Use `scripts/sync_vote_for_peace.py` for first-party nationwide guide updates:
+
+```sh
+python3 scripts/sync_vote_for_peace.py capture --checked-on YYYY-MM-DD --output research/endorsements/vote-for-peace-YYYY-MM-DD.json
+python3 scripts/sync_vote_for_peace.py review --capture research/endorsements/vote-for-peace-YYYY-MM-DD.json --id vote-for-peace-YYYY-MM-DD --output research/reviews/vote-for-peace-YYYY-MM-DD.json --dispositions research/endorsements/vote-for-peace-dispositions-YYYY-MM-DD.json
+python3 scripts/reviewed_updates.py preview research/reviews/vote-for-peace-YYYY-MM-DD.json
+python3 scripts/reviewed_updates.py apply research/reviews/vote-for-peace-YYYY-MM-DD.json
+```
+
+The capture decodes first-party Next.js cards, validates known rating codes and
+rejects conflicting source IDs. Every card gets a matched/held disposition.
+Bindings require an exact normalized name (or prior reviewed alias), state and
+compatible office/seat; a unique name alone is insufficient. Ally maps to supported,
+Opposed to opposed, Neutral to neutral. No source absence deletes a prior record;
+no new roster is inferred and other organizations' listed endorsements are not
+imported. Primary/general remains explicit. Unknown labels/layouts fail closed.
+Inspect held office/seat mismatches and old prose evidence separately: a changed
+rating can leave an old narrative stale. Use an exact registered evidence review
+for corrections, reconcile the Gaza ledger, and evaluate affected states again.
+
+October 27: 1,429 cards captured, 132 matched (103 additions / 29 replacements),
+1,297 held (outside the roster/cycle or not uniquely bound). Current canonical
+Neutral observations now display explicitly; the old October 9 held Neutral
+fallback remains available only when no newer canonical record supersedes it.
+Schema 1.27 also permits a numeric public evidence minimum consistent with the
+archived mapping. Freeze the exact saved prompt and thresholds before evaluation;
+never overwrite historical archives. Rebuild both readers and run the release gate.

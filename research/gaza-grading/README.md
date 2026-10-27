@@ -4,10 +4,10 @@
 JSON, inspect exact states and evaluate every active tracked candidate. The full
 catalog has **1,296 candidacies / 471 races**; **Run Bay Area** targets **877 / 340**.
 It opens **Latest per candidate** across local history. House-only CLI scopes and
-all historical requests remain intact. New CLI/default questions are v3; old
+all historical requests remain intact. New CLI/default questions are v5; old
 plans need their matching criteria file when explicitly replayed.
 
-The playground uses `candidate-evidence-v7-local-federal-community` with
+The playground uses `candidate-evidence-v13-local-federal-vote-for-peace-refresh` with
 jurisdiction/county context, both independent-spending directions, focused
 endorsement observations and owner-confirmed community values.
 
@@ -20,13 +20,13 @@ confidence remain separate returned values. A yes/no `noul` answer returns the
 probability of true, not a separate confidence.
 
 The separate derived `pro_palestine_score_grade` uses tunable 0–5 score bands.
-When the saved two-criterion `evidence_score` is below 0.10 / 1, it shows
+When the saved two-criterion `evidence_score` is below the saved minimum (currently 0.20 / 1), it shows
 **N/A** instead of a letter. This does not change Jev's original
 answers, model confidence or archived requests. See the playground workflow for
 boundary and historical-prompt behavior.
 
-The owner's exact updated questions are versioned in
-`criteria-pro-palestine-v3.json`. Both default output names are retained, but
+The owner's exact latest updated questions are versioned in
+`criteria-pro-palestine-v5.json`. Both default output names are retained, but
 custom questions can be added or renamed. The score and letter are separate
 rubrics; neither is mechanically derived from the other. Decisions are made by
 Jev `jev-latest`; the current default run returned `jev-1.14.0`.
@@ -120,8 +120,17 @@ period totals or individual/conduit receipts. Historical scores remain exact.
 ## Current publication: October 27, 2026
 
 `published-2026-10-27.json` freezes 1,296 latest evaluations with exact v4 questions;
-`explanation-queue-2026-10-27.json` is the current Hermes follow-up. C ends at **3.2**;
+`explanation-queue-2026-10-27.json` was that publication’s Hermes follow-up. C ends at **3.2**;
 other thresholds and the 0.10 evidence gate are unchanged. Counts: A126 / B24 /
 C13 / D37 / E64 / F140 / N/A892. Previous archives and v3 criteria remain immutable.
 Old explanations were removed from the new publication until newly bound summaries
 are generated. [Methodology](../../docs/PUBLISHED_GRADES.md).
+
+## Current Vote for Peace publication — October 27
+
+`published-2026-10-27-vfp.json` and `explanation-queue-2026-10-27-vfp.json`
+supersede the earlier October 27 snapshot/queue. All 1,296 candidacies were freshly
+evaluated with exact v5 questions, 0 errors. Garamendi and Liccardo then received
+two same-prompt follow-ups after correcting stale guide prose. Saved mapping:
+F≤0.7, E≤1.4, D≤2.5, C≤3.2, B≤4.4, A≤5; evidence below 0.20 yields N/A.
+Counts: A 125, B 41, C 7, D 40, E 71, F 121, N/A 891. Historical artifacts remain exact.

@@ -32,8 +32,8 @@ from funding_evidence import model_text as funding_text, needs_review as funding
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v4.json'
-STATE_VERSION = 'candidate-evidence-v12-endorsement-context'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v5.json'
+STATE_VERSION = 'candidate-evidence-v13-vote-for-peace-refresh'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -168,6 +168,7 @@ def focused_endorsements(p, c):
     for record, source in zip(observations, original):
         if endorser_key(record['endorser']) == 'voteforpeace':
             record.update({k: source[k] for k in ('url', 'checked_on', 'source_label') if k in source})
+            record['source_label'] = source.get('rating') or {'supported':'Ally','opposed':'Opposed','neutral':'Neutral'}.get(source['relation'], source['relation'])
     # Exact reviewed candidacy mappings, including Neutral cards deliberately held
     # out of the public endorsement import. Neutral is an observation, not support.
     guide = json.loads((ROOT / 'research/endorsements/peace-guides-2026-10-09.json').read_text())

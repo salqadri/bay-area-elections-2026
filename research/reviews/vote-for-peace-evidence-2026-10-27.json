@@ -1,0 +1,122 @@
+{
+ "version": 1,
+ "id": "vote-for-peace-evidence-2026-10-27",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-27",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "sources": {
+  "d1281f51-d5df-4a3c-9143-42d490e4e7a2": {
+   "url": "https://voteforpeace.info/candidates",
+   "publisher": "Vote for Peace",
+   "role": "reporting",
+   "checked_on": "2026-10-27",
+   "content_sha256": "38b7dd7428651f51d9d10f86075d4463076b0993b3a82e32237f149ba3c148f8",
+   "retrieval": "First-party candidates HTML card d1281f51-d5df-4a3c-9143-42d490e4e7a2; exact public_notes excerpt retained in notes capture."
+  },
+  "79f8c044-3f3b-4a84-823b-2e9b6252d1ff": {
+   "url": "https://voteforpeace.info/candidates",
+   "publisher": "Vote for Peace",
+   "role": "reporting",
+   "checked_on": "2026-10-27",
+   "content_sha256": "38b7dd7428651f51d9d10f86075d4463076b0993b3a82e32237f149ba3c148f8",
+   "retrieval": "First-party candidates HTML card 79f8c044-3f3b-4a84-823b-2e9b6252d1ff; exact public_notes excerpt retained in notes capture."
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "vfp-evidence-d1281f51-d5df-4a3c-9143-42d490e4e7a2",
+   "source_key": "d1281f51-d5df-4a3c-9143-42d490e4e7a2",
+   "action": "change",
+   "field": "gaza_evidence",
+   "position_id": "CA2026-309",
+   "candidate": "John Garamendi",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-8",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": {
+    "id": "GE-0418",
+    "url": "https://voteforpeace.info/california/john-garamendi",
+    "summary": "Vote for Peace reports Garamendi supports an arms embargo, cites a USCPR Action score of C, and reports AIPAC/allied-lobby funding. The guide gives no funding period or underlying statement date.",
+    "date": "2026-10-09",
+    "dimension": "military_aid",
+    "checked_on": "2026-10-09",
+    "source_kind": "voter_guide",
+    "date_method": "source_observed",
+    "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+   },
+   "after": {
+    "id": "GE-0418",
+    "url": "https://voteforpeace.info/candidates",
+    "summary": "Vote for Peace reports Garamendi signed Block the Bombs and does not currently take AIPAC/allied-lobby funding. The guide supplies no statement dates or funding periods.",
+    "date": "2026-10-27",
+    "dimension": "military_aid",
+    "checked_on": "2026-10-27",
+    "source_kind": "voter_guide",
+    "date_method": "source_observed",
+    "date_note": "Date is the October 27, 2026 guide observation, not the date of the underlying statements or funding. No donation amounts or periods are supplied.",
+    "quote": "This candidate has signed onto block the bombs and does not currently take funding from AIPAC and affiliated lobbies."
+   },
+   "reason": "Replace superseded October 9 guide wording with the current guide note and exact current rating, without treating its funding claim as audited financial data.",
+   "evidence": {
+    "identity_basis": "Exact source name/state/House district matches the current candidacy.",
+    "date_basis": "Guide observed October 27; underlying statement and donation dates are not given.",
+    "issue_basis": "Direct transcription of the current public note and rating; attribution and financial-period limits remain explicit."
+   }
+  },
+  {
+   "id": "vfp-evidence-79f8c044-3f3b-4a84-823b-2e9b6252d1ff",
+   "source_key": "79f8c044-3f3b-4a84-823b-2e9b6252d1ff",
+   "action": "change",
+   "field": "gaza_evidence",
+   "position_id": "CA2026-005",
+   "candidate": "Sam Liccardo",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": {
+    "id": "GE-0423",
+    "url": "https://voteforpeace.info/california/sam-liccardo",
+    "summary": "Vote for Peace reports AIPAC/allied-lobby funding and no Block the Bombs support for Liccardo. Its undated note supplies no financial period; the guide’s Neutral label is not an endorsement or opposition.",
+    "date": "2026-10-09",
+    "dimension": "military_aid",
+    "checked_on": "2026-10-09",
+    "source_kind": "voter_guide",
+    "date_method": "source_observed",
+    "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+   },
+   "after": {
+    "id": "GE-0423",
+    "url": "https://voteforpeace.info/candidates",
+    "summary": "Vote for Peace now lists Liccardo as Ally, while its note still reports AIPAC/allied-lobby funding and no Block the Bombs support. The undated note gives no funding period.",
+    "date": "2026-10-27",
+    "dimension": "military_aid",
+    "checked_on": "2026-10-27",
+    "source_kind": "voter_guide",
+    "date_method": "source_observed",
+    "date_note": "Date is the October 27, 2026 guide observation, not the date of the underlying statements or funding. No donation amounts or periods are supplied.",
+    "quote": "This candidate takes money from AIPAC and affiliated lobbies and has not signed block the bombs act."
+   },
+   "reason": "Replace superseded October 9 guide wording with the current guide note and exact current rating, without treating its funding claim as audited financial data.",
+   "evidence": {
+    "identity_basis": "Exact source name/state/House district matches the current candidacy.",
+    "date_basis": "Guide observed October 27; underlying statement and donation dates are not given.",
+    "issue_basis": "Direct transcription of the current public note and rating; attribution and financial-period limits remain explicit."
+   }
+  }
+ ]
+}

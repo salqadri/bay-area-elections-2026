@@ -11,7 +11,7 @@ const EndorsementDisplay = {
       (historical ? ' · ' + historical + ' historical' : '');
   },
   label(record) {
-    const relations = {endorsed: 'Endorsed by ', preferred: 'Preferred by ', opposed: 'Opposed by ', recommended: 'Recommended by ', supported: 'Supported by ', distinction: 'Distinction from '};
+    const relations = {endorsed: 'Endorsed by ', preferred: 'Preferred by ', opposed: 'Opposed by ', neutral: 'Listed as Neutral by ', recommended: 'Recommended by ', supported: 'Supported by ', distinction: 'Distinction from '};
     const provenance = {endorser_statement: 'Publisher statement', campaign_claim: 'Campaign claim', reported: 'Secondary report'};
     const phase = {primary: 'Primary election', general: 'General election', unspecified: 'Election phase not stated'};
     const ally = record.relation === 'supported' && record.rating === 'Ally';
