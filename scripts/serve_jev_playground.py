@@ -25,7 +25,7 @@ ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
 COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
-STATE_VERSION = 'candidate-evidence-v8-local-federal-education-policy'
+STATE_VERSION = 'candidate-evidence-v9-local-federal-legislative-assessments'
 
 
 def row_id(position_id, candidate, roster):

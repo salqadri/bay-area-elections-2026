@@ -223,8 +223,8 @@ values are recorded with exact candidacy provenance and no special annotations. 
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v8-local-federal-education-policy`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v8-education-policy`:
+context (`candidate-evidence-v9-local-federal-legislative-assessments`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v9-legislative-assessments`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -349,3 +349,17 @@ qualifications, outside the generic twelve-item budget. The source refresh added
 129 records across 104 candidacies, including Wiener; all saved scores, preferred
 v3 questions and grade explanations remain unchanged. See
 [the evidence workflow](EDUCATION_POLICY_RESEARCH.md).
+
+## Explicit legislative alignment and date scope
+
+`congressional_gaza_actions` carries each source response alongside
+`sheet_assessment`, `alignment_with_tracker` (aligned / not_aligned / neutral /
+unknown), `assessment_basis`, action ID and source tab. The state contains an
+explicit source/perspective key. Jev need not infer whether Yes or No is aligned.
+
+New legislative-tracker inputs omit actions before **2023-12-01**, unknown dates
+and periods that may start before that date. Exact dates sort newest first;
+period-only observations follow with their original labels and precision.
+[Full source/date contract](GAZA_VOTING_RECORDS.md#reader-ordering-and-jev-input-assessments-october-26-2026).
+Current input previews this change without running Jev or rewriting saved
+requests, scores or explanations.

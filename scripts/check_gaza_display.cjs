@@ -44,13 +44,14 @@ assert.equal(card.className,'candidate-evidence gaza-evidence');
 assert(card.textContent.includes('Source member: Source Member · CA-19'),'Prior/current member district stays visible');
 for(const expected of ['Gaza evidence','USCPR Grade','119th Congress: F · 7%','Lifetime: D · 25%','publisher assessment','Congressional voting / legislative record','119th House tracker tab · 3 tracked actions','118th House tracker tab · 2 tracked actions','Source Member','Snapshot checked 2026-10-14','Recorded vote','Committee vote','Sponsorship','Letter','April 15, 2026','June 24, 2011','Not on committee','Not signing','Sheet: positive','Sheet: negative','Sheet: neutral','Sheet: unclassified','Campaign platform','No Israel / Palestine platform statement found in the reviewed pages.','Web, social and guide evidence','guide snapshot; original date unknown','Historical guide assessment']) assert(card.textContent.includes(expected),expected);
 const records=all(card).filter(n=>n.className==='gaza-record');assert.equal(records.length,2);assert(records.every(n=>!n.open));
-assert.equal(records[0].children[0].textContent,'119th House tracker tab · 3 tracked actions','A tab containing a 2011 action must not label every action as a 119th-Congress action');
+assert.equal(records[0].children[0].textContent,'Dated actions · 3');assert.equal(records[1].children[0].textContent,'Period-only or undated actions · 2');
 assert(card.textContent.includes('Source member cell note.'));
 assert(all(card).some(n=>n.href==='https://example.org/member-action'));
 assert(all(card).some(n=>n.attrs.title==='Source dropdown color'));
 const actions=all(card).filter(n=>n.className==='gaza-action');assert.equal(actions.length,5,'Every tracked action must be available');
 assert(actions[0].textContent.includes('No'));assert(all(actions[0]).some(n=>n.className==='gaza-assessment positive'),'Positive color comes from the source assessment even for a No');
-assert(actions[1].textContent.includes('Yes'));assert(all(actions[1]).some(n=>n.className==='gaza-assessment negative'),'A Yes is not automatically positive');
+const aidAction=actions.find(a=>a.textContent.includes('Military aid package'));assert(aidAction.textContent.includes('Yes'));assert(all(aidAction).some(n=>n.className==='gaza-assessment negative'),'A Yes is not automatically positive');
+assert.deepEqual(actions.map(a=>a.children[0].textContent),['Block weapons transfer','Committee amendment','Military aid package','Humanitarian letter','Ceasefire resolution']);
 assert(all(actions[4]).some(n=>n.className==='gaza-assessment unclassified'),'Unknown colors stay unclassified');
 assert(all(card).some(n=>n.href===data.uscpr_scorecard.methodology_url));
 assert(all(card).some(n=>n.href===data.gaza_voting.actions.block.source_url));
@@ -87,3 +88,13 @@ assert.equal(webItems.length,4);
 assert(webItems[0].includes('Day newest A')&&webItems[1].includes('Day newest B'),'Same-date items keep their original relative order');
 assert(webItems[2].includes('Month middle')&&webItems[3].includes('Year-only oldest'),'Descending by date across precisions');
 console.log('Shared Gaza display: attributed grade periods, every tracked action, source assessment colors and text, platform statuses, dated evidence, safe links and collapsed disclosures passed.');
+
+// Calendar parsing is the same contract as the Python Jev builder; no locale parsing.
+const dateFixtures=JSON.parse(fs.readFileSync(path.join(__dirname,'../research/gaza-records/action-date-fixtures.json'),'utf8'));
+for(const fixture of dateFixtures){const parsed=JSON.parse(JSON.stringify(display.actionDate(fixture.input)));assert.deepEqual(parsed,fixture.expected);}
+const crossCandidate={gaza_voting_records:[record(119,[{action_id:'aid',value:'Yes',assessment:'negative'}]),record(118,[{action_id:'block',value:'No',assessment:'positive'}])]};
+const beforeCross=JSON.stringify(crossCandidate),cross=display.render(crossCandidate,data,helpers);
+assert.deepEqual(all(cross).filter(n=>n.className==='gaza-action').map(n=>n.children[0].textContent),['Block weapons transfer','Military aid package']);
+assert.equal(JSON.stringify(crossCandidate),beforeCross);
+assert(cross.textContent.includes('118th House')&&cross.textContent.includes('119th House'));
+console.log('PASS Legislative ordering: cross-tab newest-first, historical actions retained, periods separate, date-parser parity and immutable source records.');

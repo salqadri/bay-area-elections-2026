@@ -69,3 +69,64 @@ python3 scripts/check_gaza_voting_records.py
 ```
 
 The offline regressions cover all tabs and columns, inverted Yes/No colors, historical conditional formatting, blanks versus zero/`N/A`, stale/partial HTML, layout drift, malformed input preserving prior output, explicit identity binding and ambiguous or stale identities. They verify the adapter, not every remote political fact.
+
+## Reader ordering and Jev input assessments (October 26, 2026)
+
+Publication **2026-10-26.6** retains every source tracker record on both public
+readers. Exact dated actions are sorted newest first across tracker tabs, rather
+than grouping historical 2011 actions ahead of newer votes from another tab.
+Each action still names its tracker tab and retains its exact response,
+assessment, notes, primary link and cell-specific sheet link. Source member,
+district, snapshot date and complete tab counts remain in **Source tracker
+snapshots**. Period-only or undated entries follow the dated actions in a
+separate disclosure; a Congress-wide range is not treated as a vote timestamp.
+Equal-date entries preserve source order, including distinct tab observations of
+the same historical action.
+
+The shared Jev state builder now includes the raw `sheet_assessment`, explicit
+`alignment_with_tracker`, `assessment_basis`, `action_id`, source tab and date
+precision for each retained action. A once-per-state assessment key attributes
+this perspective to the Congressional Democrat Palestine Tracker:
+
+| Sheet assessment | Alignment supplied to Jev |
+|---|---|
+| positive | aligned |
+| negative | not_aligned |
+| neutral | neutral; no inferred opposition |
+| unclassified or absent | unknown; no inference from Yes/No |
+
+For example, Garamendi's `119-house-AK` response is **No**, with sheet assessment
+**positive** and alignment **aligned**. A Yes vote is not automatically aligned.
+Neutral, unclassified, Not voting, Not elected and blank responses stay distinct.
+This carries the existing sheet's assessment; it does not create a new political
+judgment or alter any stored source record.
+
+**Only Jev's legislative-tracker input** is restricted to **December 1, 2023 and
+later**, inclusive. Date filtering uses each action's date, never its Congress,
+snapshot/retrieval date, title, or a guessed timestamp. A range must start on or
+after the cutoff; `2023-2025` and year-only `2023` cannot establish that and are
+omitted. `2025-2027` is retained as a period-only observation, after exact dated
+actions, with its original label. Unknown or invalid dates are omitted. This
+cutoff does not remove historical prose evidence or aggregate publisher grades.
+
+The current 11 candidacies with tracker records retain **596 of 1,032 source
+entries** in generated Jev state. Garamendi retains **64 of 113**: 32 positive,
+27 negative and five neutral. The public readers retain all 1,032 source entries.
+Saved Jev inputs, scores, prompts, responses and explanations are unchanged;
+no scorecards were rerun. New input versions are
+`candidate-evidence-v9-legislative-assessments` and
+`candidate-evidence-v9-local-federal-legislative-assessments`.
+
+Python `scripts/legislative_actions.py` and the shared reader's date parser use
+[the same calendar fixtures](../research/gaza-records/action-date-fixtures.json).
+Regressions cover the cutoff boundary, range ambiguity, invalid dates, inverted
+Yes/No assessments, neutral/unknown values, cross-tab ordering and unchanged
+source data. The local playground's **Current input** tab previews these new
+inputs; **State JSON** continues to show the exact input of the saved evaluation.
+
+Validation for publication 2026-10-26.6: **44/44 release checks pass**.
+Desktop/mobile Chromium checks confirm Garamendi's 64 assessed Jev inputs and
+all 113 public tracker entries in descending date order on both readers, with no
+scoring requests or page errors. The 118 existing local run files remain
+byte-identical. The canonical source data, grades and explanations are unchanged
+apart from the publication marker.

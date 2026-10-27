@@ -90,3 +90,12 @@ Current state v8 includes every `antisemitism_education` record in a separate
 source-linked channel, outside the generic twelve-item budget. The playground
 exposes Current input separately from the exact saved State JSON. See
 [the source-review workflow](../../docs/EDUCATION_POLICY_RESEARCH.md).
+
+## Legislative tracker input v9 (October 26, 2026)
+
+The current builder includes the sheet's assessment and explicit alignment for
+each action. It keeps legislative-tracker dates from 2023-12-01 onward,
+newest first, then period-only entries whose entire range meets that cutoff.
+Ambiguous older ranges and unknown dates are omitted. This is an input change;
+no grading batch was run, and frozen requests/answers/explanations are unchanged.
+See [the source/date contract](../../docs/GAZA_VOTING_RECORDS.md).

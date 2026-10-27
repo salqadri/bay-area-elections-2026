@@ -1,4 +1,19 @@
 # Research and development handoff
+## Legislative assessment and date ordering — October 26, 2026
+
+Publication **2026-10-26.6** is a display/input-only change. Jev now receives
+exact sheet assessments plus explicit tracker-alignment labels and provenance.
+The source's positive No votes remain aligned; neutral/unknown are not converted
+to opposition. Its legislative-tracker input uses an inclusive 2023-12-01 cutoff,
+excluding unknown dates and ranges that may precede it. Garamendi retains 64 of
+113 source entries, with the original 32 positive / 27 negative / 5 neutral
+assessments. No scorecards were rerun and historical requests remain exact.
+
+Both readers retain all historical tracker entries and sort exact action dates
+newest first across tabs, followed by separately labeled period-only/undated
+entries. Per-action source tabs, notes and sheet-cell links remain intact.
+See [the source/date contract](GAZA_VOTING_RECORDS.md#reader-ordering-and-jev-input-assessments-october-26-2026).
+
 ## Education-policy evidence refresh — October 26, 2026
 
 Publication **2026-10-26.5**, schema **1.26** adds **129 reviewed evidence

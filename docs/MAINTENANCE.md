@@ -250,3 +250,9 @@ Export v2 retains FEC counts but omits transaction date ranges, which the aggreg
 Follow [BALLOTPEDIA_ENDORSEMENTS.md](BALLOTPEDIA_ENDORSEMENTS.md) for the recorded-profile collector, current-year source rules, saved-capture imports, Jev classifications, duplicate handling and the registered-review publication path. The campaign collector shares the same exact cross-source duplicate guard, so a later campaign refresh does not re-add a Ballotpedia observation. Source aliases and relationship conflicts remain reviewed/held; absence never deletes prior evidence. The new offline regression command is included in `check_release.py`.
 
 The [local Jev playground](JEV_PLAYGROUND.md) serves experiments separately from the generated readers. It has its own loopback server and ignored run history; no reader build or publication-version bump is needed for playground-only changes.
+
+Legislative chronology and Jev filtering use `scripts/legislative_actions.py`;
+the reader's pure date parser is in `src/gaza-evidence-display.js`. Keep both in
+agreement with `research/gaza-records/action-date-fixtures.json`. Filtering the
+Jev input must not delete historical source records or alter sheet assessments.
+The regression cases run within the existing playground/Gaza display checks.

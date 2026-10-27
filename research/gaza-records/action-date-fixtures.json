@@ -1,0 +1,223 @@
+[
+ {
+  "input": {
+   "date_label": "2023-12-01"
+  },
+  "expected": {
+   "start": "2023-12-01",
+   "end": "2023-12-01",
+   "precision": "day"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2023-11-30"
+  },
+  "expected": {
+   "start": "2023-11-30",
+   "end": "2023-11-30",
+   "precision": "day"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "December 5, 2023"
+  },
+  "expected": {
+   "start": "2023-12-05",
+   "end": "2023-12-05",
+   "precision": "day"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "June 24, 2011"
+  },
+  "expected": {
+   "start": "2011-06-24",
+   "end": "2011-06-24",
+   "precision": "day"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2023-2025"
+  },
+  "expected": {
+   "start": "2023-01-01",
+   "end": "2025-12-31",
+   "precision": "period"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2025\u20132027"
+  },
+  "expected": {
+   "start": "2025-01-01",
+   "end": "2027-12-31",
+   "precision": "period"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2026-2027"
+  },
+  "expected": {
+   "start": "2026-01-01",
+   "end": "2027-12-31",
+   "precision": "period"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2023"
+  },
+  "expected": {
+   "start": "2023-01-01",
+   "end": "2023-12-31",
+   "precision": "year"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2025"
+  },
+  "expected": {
+   "start": "2025-01-01",
+   "end": "2025-12-31",
+   "precision": "year"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2023-12"
+  },
+  "expected": {
+   "start": "2023-12-01",
+   "end": "2023-12-31",
+   "precision": "month"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2023-11"
+  },
+  "expected": {
+   "start": "2023-11-01",
+   "end": "2023-11-30",
+   "precision": "month"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2024-02"
+  },
+  "expected": {
+   "start": "2024-02-01",
+   "end": "2024-02-29",
+   "precision": "month"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2023-02-29"
+  },
+  "expected": {
+   "start": null,
+   "end": null,
+   "precision": "unknown"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2024-02-29"
+  },
+  "expected": {
+   "start": "2024-02-29",
+   "end": "2024-02-29",
+   "precision": "day"
+  },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2025-2023"
+  },
+  "expected": {
+   "start": null,
+   "end": null,
+   "precision": "unknown"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2025-13"
+  },
+  "expected": {
+   "start": null,
+   "end": null,
+   "precision": "unknown"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "not supplied"
+  },
+  "expected": {
+   "start": null,
+   "end": null,
+   "precision": "unknown"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": null
+  },
+  "expected": {
+   "start": null,
+   "end": null,
+   "precision": "unknown"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "0000-12-01"
+  },
+  "expected": {
+   "start": null,
+   "end": null,
+   "precision": "unknown"
+  },
+  "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2026-09-03",
+   "date": "2023-11-30"
+  },
+  "expected": {
+   "start": "2023-11-30",
+   "end": "2023-11-30",
+   "precision": "day"
+  },
+  "eligible_for_jev": false
+ }
+]

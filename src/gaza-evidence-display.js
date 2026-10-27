@@ -1,5 +1,27 @@
 /* Shared, attributed Gaza evidence layers. Text and links are created as DOM nodes. */
 const GazaEvidenceDisplay = {
+  actionDate(metadata = {}) {
+    const label = String(metadata.date || metadata.date_label || '').trim();
+    const unknown = {start:null,end:null,precision:'unknown'};
+    const iso = (year,month,day) => {
+      const value = new Date(0);value.setUTCHours(0,0,0,0);value.setUTCFullYear(year,month-1,day);
+      return year>=1&&year<=9999&&value.getUTCFullYear()===year&&value.getUTCMonth()===month-1&&value.getUTCDate()===day
+        ? `${String(year).padStart(4,'0')}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}` : null;
+    };
+    let match;
+    if((match=/^(\d{4})-(\d{2})-(\d{2})$/.exec(label))){const value=iso(...match.slice(1).map(Number));return value?{start:value,end:value,precision:'day'}:unknown;}
+    if((match=/^(\d{4})\s*[-–—]\s*(\d{4})$/.exec(label))){const first=Number(match[1]),last=Number(match[2]),start=iso(first,1,1),end=iso(last,12,31);return start&&end&&first<=last?{start,end,precision:'period'}:unknown;}
+    if((match=/^(\d{4})-(\d{2})$/.exec(label))){const year=Number(match[1]),month=Number(match[2]),start=iso(year,month,1);if(!start)return unknown;const end=new Date(0);end.setUTCHours(0,0,0,0);end.setUTCFullYear(year,month,0);return {start,end:iso(year,month,end.getUTCDate()),precision:'month'};}
+    if(/^\d{4}$/.test(label)){const start=iso(Number(label),1,1),end=iso(Number(label),12,31);return start&&end?{start,end,precision:'year'}:unknown;}
+    if((match=/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/.exec(label))){const month=['january','february','march','april','may','june','july','august','september','october','november','december'].indexOf(match[1].toLowerCase())+1;const value=month&&iso(Number(match[3]),month,Number(match[2]));return value?{start:value,end:value,precision:'day'}:unknown;}
+    return unknown;
+  },
+  orderedActions(records, registry = {}) {
+    const entries = records.flatMap(record=>(record.actions||[]).map(item=>({record,item,action:registry[item.action_id]||{}})));
+    return entries.map((entry,index)=>({...entry,index,date:this.actionDate(entry.action)})).sort((a,b)=>
+      Number(b.date.precision==='day')-Number(a.date.precision==='day')||
+      String(b.date.start||'').localeCompare(String(a.date.start||''))||a.index-b.index);
+  },
   render(candidate, data, {node, link, dateLabel, evidenceDateLabel, className = 'candidate-evidence gaza-evidence'}) {
     const profile = candidate.uscpr_grade;
     const records = candidate.gaza_voting_records || [];
@@ -56,27 +78,34 @@ const GazaEvidenceDisplay = {
       const legend = node('p', 'gaza-note');
       legend.append('Sheet assessments: ', node('span', 'gaza-assessment positive', 'positive'), ' / ', node('span', 'gaza-assessment negative', 'negative'), ' / ', node('span', 'gaza-assessment neutral', 'neutral or unclassified'), '. Colors follow the sheet’s assessment of each response.');
       box.append(legend);
+      const snapshots = node('details', 'gaza-record-sources');
+      snapshots.append(node('summary', null, 'Source tracker snapshots · ' + records.length));
       for (const record of records) {
         const actions = record.actions || [];
-        const group = node('details', 'gaza-record');
-        // A tracker tab can include actions from earlier Congresses. Its title
-        // groups the source snapshot; each action retains its own date below.
-        group.append(node('summary', null, (record.sheet_title || 'Source') + ' tracker tab · ' + actions.length + ' tracked actions'));
+        snapshots.append(node('p', 'gaza-note', (record.sheet_title || 'Source') + ' tracker tab · ' + actions.length + ' tracked actions'));
         const memberContext = [record.member_name, record.district || record.state].filter(Boolean).join(' · ');
-        group.append(node('p', 'gaza-note', 'Source member: ' + memberContext + ' · ' + record.sheet_title));
-        checked(group, record.checked_on || cfg.checked_on);
+        snapshots.append(node('p', 'gaza-note', 'Source member: ' + memberContext + ' · ' + record.sheet_title));
+        checked(snapshots, record.checked_on || cfg.checked_on);
         if (record.source_url || cfg.source_url) {
           const source = node('p', 'gaza-links');
           source.append(sourceLink(record.source_url || cfg.source_url, 'Source sheet ↗'));
-          group.append(source);
+          snapshots.append(source);
         }
+      }
+      box.append(snapshots);
+      const entries = this.orderedActions(records, cfg.actions);
+      for (const dated of [true, false]) {
+        const selected = entries.filter(entry=>(entry.date.precision==='day')===dated);
+        if (!selected.length) continue;
+        const group = node('details', 'gaza-record');
+        group.append(node('summary', null, (dated ? 'Dated actions · ' : 'Period-only or undated actions · ') + selected.length));
+        if (!dated) group.append(node('p', 'gaza-note', 'The source gives a period or incomplete date, not an exact action date. These entries follow dated actions; a Congress period is not a vote timestamp.'));
         const list = node('ul', 'gaza-action-list');
-        for (const item of actions) {
-          const action = cfg.actions?.[item.action_id];
+        for (const {record, item, action} of selected) {
           const row = node('li', 'gaza-action');
           row.append(node('p', 'gaza-action-title', action?.title || 'Tracked action ' + item.action_id));
           const kinds = {roll_call_vote: 'Recorded vote', committee_vote: 'Committee vote', sponsorship: 'Sponsorship', petition_signature: 'Petition signature', letter: 'Letter', statement: 'Statement'};
-          const context = [kinds[action?.kind] || action?.kind, action?.date_label].filter(Boolean);
+          const context = [kinds[action?.kind] || action?.kind, action?.date || action?.date_label, record.sheet_title].filter(Boolean);
           if (context.length) row.append(node('p', 'gaza-action-context', context.join(' · ')));
           const value = node('p', 'gaza-action-value');
           value.append(node('strong', null, item.value?.trim() || 'No entry recorded'));

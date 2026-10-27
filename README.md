@@ -1,5 +1,11 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-26.6** adds explicit sheet assessments and tracker alignment
+to Jev inputs, limits legislative-tracker inputs to December 2023 onward, and
+sorts the main site's full legislative history newest first across source tabs.
+[Details](docs/GAZA_VOTING_RECORDS.md#reader-ordering-and-jev-input-assessments-october-26-2026).
+Saved evaluations and grades are unchanged; no scorecards were rerun.
+
 Publication **2026-10-26.5** (schema **1.26**) adds 129 source-reviewed education-policy
 records across 104 candidates after checking all 1,296 active candidacies. It covers
 IHRA definitions, AB 715/AB 1468 and related Israel/Palestine education policy.
@@ -197,7 +203,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.26 (`schema_version` in the file is authoritative), publication `2026-10-26.5`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.26 (`schema_version` in the file is authoritative), publication `2026-10-26.6`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.

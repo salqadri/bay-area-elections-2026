@@ -256,9 +256,55 @@ class ValidationChecks(unittest.TestCase):
     def test_congressional_actions_resolve_titles_and_keep_actual_response(self):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
         data['gaza_voting']={'actions':{'119-A':{'title':'Actual action','kind':'sponsorship','date_label':'2025'}}}
-        c['gaza_voting_records']=[{'congress':119,'actions':[{'action_id':'119-A','value':'Not sponsoring'}]}]
+        c['gaza_voting_records']=[{'congress':119,'sheet_title':'119th House','actions':[{'action_id':'119-A','value':'Not sponsoring','assessment':'positive','assessment_basis':'sheet_dropdown'}]}]
         a=g.build_state(pos,c,data)['congressional_gaza_actions'][0]
-        self.assertEqual(a,{'congress':119,'title':'Actual action','kind':'sponsorship','date':'2025','response':'Not sponsoring'})
+        self.assertEqual(a,{'action_id':'119-A','congress':119,'source_tab':'119th House','title':'Actual action','kind':'sponsorship','date':'2025','date_precision':'year','response':'Not sponsoring',
+                            'sheet_assessment':'positive','alignment_with_tracker':'aligned','assessment_basis':'sheet_dropdown'})
+
+    def test_legislative_date_fixture_parity_and_cutoff(self):
+        from legislative_actions import action_date, CUTOFF
+        cases=json.loads((g.ROOT/'research/gaza-records/action-date-fixtures.json').read_text())
+        for case in cases:
+            with self.subTest(case=case['input']):
+                parsed=action_date(case['input'])
+                self.assertEqual(parsed,case['expected'])
+                self.assertEqual(bool(parsed['start'] and parsed['start']>=CUTOFF),case['eligible_for_jev'])
+
+    def test_legislative_scope_is_per_action_not_congress_and_preserves_assessments(self):
+        data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
+        data['gaza_voting']={'actions':{
+            'old':{'title':'Historical action in current tab','date_label':'2011-07-07'},
+            'before':{'date_label':'2023-11-30'},'boundary':{'date_label':'2023-12-01'},
+            'new':{'date_label':'2026-09-03'},'period':{'date_label':'2025-2027'},
+            'straddles':{'date_label':'2023-2025'},'undated':{}}}
+        c['gaza_voting_records']=[{'congress':119,'sheet_title':'119th House','actions':[
+            {'action_id':name,'value':value,'assessment':assessment,'assessment_basis':'sheet_dropdown'}
+            for name,value,assessment in [('old','Yes','negative'),('before','Yes','negative'),('boundary','No','positive'),
+                                          ('period','Not sponsoring','negative'),('straddles','Sponsor','positive'),
+                                          ('undated','Yes','positive')]]},
+            {'congress':118,'sheet_title':'118th House','actions':[{'action_id':'new','value':'Not voting','assessment':'neutral'}]}]
+        before=deepcopy(c)
+        state=g.build_state(pos,c,data);rows=state['congressional_gaza_actions']
+        self.assertEqual([r['action_id'] for r in rows],['new','boundary','period'])
+        self.assertEqual(rows[0]['alignment_with_tracker'],'neutral')
+        self.assertEqual(rows[1]['response'],'No');self.assertEqual(rows[1]['alignment_with_tracker'],'aligned')
+        self.assertEqual(rows[2]['alignment_with_tracker'],'not_aligned');self.assertEqual(rows[2]['date_precision'],'period')
+        self.assertIn('anti-Zionist',state['congressional_gaza_assessment_key']['source'])
+        self.assertEqual(c,before)
+
+    def test_garamendi_state_carries_every_retained_sheet_assessment_without_inferring_votes(self):
+        data=json.loads(g.DATASET.read_text())
+        pos,c=next((p,c) for p in data['positions'] for c in p.get('candidates') or [] if c['name']=='John Garamendi')
+        rows=g.build_state(pos,c,data)['congressional_gaza_actions']
+        original={a['action_id']:a for r in c['gaza_voting_records'] for a in r['actions']}
+        for row in rows:
+            self.assertEqual(row['sheet_assessment'],original[row['action_id']]['assessment'])
+            self.assertEqual(row['response'],original[row['action_id']]['value'])
+        ihra=next(r for r in rows if r['action_id']=='119-house-AK')
+        self.assertEqual((ihra['response'],ihra['sheet_assessment'],ihra['alignment_with_tracker']),('No','positive','aligned'))
+        dated=[r['date'] for r in rows if r['date_precision']=='day']
+        self.assertEqual(dated,sorted(dated,reverse=True));self.assertTrue(all(v>='2023-12-01' for v in dated))
+        self.assertFalse(any(r['date']=='2023-2025' for r in rows))
 
 
 class RunChecks(unittest.TestCase):

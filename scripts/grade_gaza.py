@@ -26,12 +26,13 @@ import urllib.request
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 from candidate_community import community_state  # noqa: E402
+from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v3.json'
-STATE_VERSION = 'candidate-evidence-v8-education-policy'
+STATE_VERSION = 'candidate-evidence-v9-legislative-assessments'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -235,16 +236,13 @@ def build_state(p, c, data):
     endorsements = focused_endorsements(p, c)
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
-    records = []
-    registry = (data.get('gaza_voting') or {}).get('actions', {})
-    for record in sorted(c.get('gaza_voting_records') or [], key=lambda r: -r.get('congress', 0)):
-        for action in record.get('actions', []):
-            metadata = registry.get(action.get('action_id'), {})
-            records.append({'congress': record.get('congress'), 'title': metadata.get('title', action.get('title', '')),
-                            'kind': metadata.get('kind', action.get('kind', '')),
-                            'date': metadata.get('date', metadata.get('date_label')),
-                            'response': action.get('value')})
+    records = jev_actions(c, data)
     if records:
+        parts['congressional_gaza_assessment_key'] = {
+            'source': 'Congressional Democrat Palestine Tracker (pro-Palestinian/anti-Zionist perspective)',
+            'positive': 'aligned', 'negative': 'not_aligned', 'neutral': 'neutral; do not infer opposition',
+            'unclassified': 'unknown; do not infer alignment from Yes/No',
+            'scope': f'From {CUTOFF}; exact dates newest first, then period-only entries. Unknown dates and intervals starting before cutoff omitted.'}
         parts['congressional_gaza_actions'] = records
     return parts
 
