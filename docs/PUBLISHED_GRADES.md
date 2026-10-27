@@ -166,18 +166,18 @@ state only that evidence was insufficient (below 0.10 / 1 in that archive) witho
 stance. Summaries explain the saved score — they never regrade, and raw provider
 answers remain immutable.
 
-The frozen [explanations archive](../research/gaza-grading/explanations-2026-10-26.json)
+The frozen [explanations archive](../research/gaza-grading/explanations-2026-10-27.json)
 holds every entry with its grade, generating model and timestamp; the dataset's
 `pro_palestine_grading.explanations` binds its hash and the source queue.
 [The explanation task](tasks/HERMES_GRADE_EXPLANATIONS.md) and
-[queue](../research/gaza-grading/explanation-queue-2026-10-26.json) specify the
+[queue](../research/gaza-grading/explanation-queue-2026-10-27.json) specify the
 contract; `scripts/check_grade_explanations.py` re-validates every published
 paragraph against the archive, request hashes and word/format/N/A rules.
 
 ```sh
 python3 scripts/attach_grade_explanations.py --responses <dir> \
-  --output-archive research/gaza-grading/explanations-2026-10-26.json \
-  --publication-version YYYY-MM-DD.N --schema-version 1.25
+  --output-archive research/gaza-grading/explanations-2026-10-27.json \
+  --publication-version YYYY-MM-DD.N --schema-version 1.26
 ```
 
 Replaying the archive is idempotent; a changed archive must go to a new path.
