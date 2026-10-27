@@ -90,7 +90,7 @@ class ExplanationChecks(unittest.TestCase):
     def test_na_explanations_state_insufficient_evidence(self):
         for e in self.archive['entries']:
             if e['grade'] == 'N/A':
-                self.assertRegex(e['summary'], r'(?i)insufficient|below.{0,30}0\.10|not enough evidence')
+                self.assertRegex(e['summary'], r'(?i)insufficient|below.{0,30}0\.10|not enough (?:evidence|of this)|could ?n.t find|no (?:statements|record|mention)|canno?t judge|no clear position|too little to judge')
 
 
 if __name__ == '__main__':

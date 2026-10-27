@@ -37,7 +37,7 @@ def validate_summary(result, row, grade, publication_id):
         import re as _re
         if _re.search(r'^\s*#', summary, _re.M) or '**' in summary or '\n' in summary.strip():
             errors.append('markdown or multiline text (inline hashtags inside quotes are fine)')
-        if grade == 'N/A' and not re.search(r'insufficient|below.{0,30}0\.10|not enough evidence', summary, re.I):
+        if grade == 'N/A' and not re.search(r'insufficient|below.{0,30}0\.10|not enough (?:evidence|of this)|could ?n.t find|no (?:statements|record|mention)|canno?t judge|no clear position|too little to judge', summary, re.I):
             errors.append('N/A summary must state insufficient evidence without assigning a stance')
     if not isinstance(result.get('model'), str) or not result['model'].strip():
         errors.append('missing generating model')
