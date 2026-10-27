@@ -223,8 +223,8 @@ values are recorded with exact candidacy provenance and no special annotations. 
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v10-local-federal-compact`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v10-compact`:
+context (`candidate-evidence-v11-local-federal-funding-periods`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v11-funding-periods`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -410,3 +410,26 @@ all 1,296 states shrink from 2,078,499 to 1,695,829 bytes (18.4%); Garamendi's s
 shrinks from 27,669 to 13,122 bytes (52.6%). No scoring calls were made. Reload and
 open **Current input** to inspect the compact state; **State JSON** preserves the
 exact input that produced the selected saved result.
+
+
+## Funding input scope v11 (October 26, 2026)
+
+New states use only reviewed organization contribution/spending amounts with an
+explicit period wholly from **2024-01-01** onward. A page analysis date, an
+as-of date or a 2026 candidacy does not date an underlying donation. A 2024
+cycle can include 2023; it is not automatically eligible. A range crossing the
+cutoff cannot be prorated. Individual donors, individual employer affiliations,
+earmarked individual receipts and mixed aggregates do not become organization
+donations. Outside spending stays distinct from receipts.
+
+The complete funding-observation audit is hash-bound to each exact current
+record; missing/changed observations default to held. Nonfinancial policy,
+refusal and endorsement statements retain reviewed projections, including
+narrow versions of mixed sentences. Relevant historical nonfinancial observations
+keep their dates. One short `funding_scope` line prevents omitted amounts from
+being read as zero funding. Filtering occurs before the twelve-item budget.
+Current-cycle structured FEC/CAL-ACCESS independent spending remains available.
+
+This refresh does not rerun scores. Reload **Current input** to see the new
+projection; the saved **State JSON** remains the exact historical request and
+can contain the old Haney total. [Full policy and review](FUNDING_EVIDENCE.md).

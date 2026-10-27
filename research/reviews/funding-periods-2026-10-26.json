@@ -1,0 +1,390 @@
+{
+ "version": 1,
+ "id": "funding-periods-2026-10-26",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-26",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "8f4000a32cb238c14d035bac17d93e73908c57e7d2eb13b1ec550f81f9ef1bc4",
+ "sources": {
+  "source-a9b323374777175524c7": {
+   "url": "https://track-jpac.org/candidates/Buffy_Wicks.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "a9b323374777175524c771bb3e9c364be9d7be2f540f8060ea2785e0fdaf57fb",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  },
+  "source-2fb507dc510e7818d588": {
+   "url": "https://track-jpac.org/candidates/Matt_Haney.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "2fb507dc510e7818d5883647ed11a4e6556ac9da9f971ae0935ac83471a91b22",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  },
+  "source-b11315999ef718148904": {
+   "url": "https://track-jpac.org/candidates/Diane_Papan.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "b11315999ef71814890463912587ca46549de92cdcfff4f68ae8411f473f8ebd",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  },
+  "source-258558da635678c38bbe": {
+   "url": "https://track-jpac.org/candidates/Marc_Berman.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "258558da635678c38bbee038d56e87ae8fc19cf7f4c33bad4c6ce56299959c27",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  },
+  "source-3789ef198b04166c9787": {
+   "url": "https://track-jpac.org/candidates/Gail_Pellerin.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "3789ef198b04166c9787942aa4b9b9fc898d24164e8ac1bdff76cce1b3f5e2fd",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  },
+  "source-eeb060c43869a8480075": {
+   "url": "https://track-jpac.org/candidates/Robert_Rivas.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "eeb060c43869a8480075b607cd7f364b2c4575d297196c51529de472db73a259",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  },
+  "source-89280d93b96bf5f063d9": {
+   "url": "https://track-jpac.org/candidates/Ben_Allen.html",
+   "publisher": "Track-JPAC",
+   "role": "reporting",
+   "checked_on": "2026-10-26",
+   "content_sha256": "89280d93b96bf5f063d9c432feb538fc4141d8cf8603dc7bdecffe90305300c2",
+   "retrieval": "Captured HTML; parsed individual Contributor / Years / Total Amount table cells"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "funding-GE-0159",
+   "action": "change",
+   "source_key": "source-a9b323374777175524c7",
+   "position_id": "CA2026-008",
+   "candidate": "Buffy Wicks",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-14",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0159",
+    "url": "https://track-jpac.org/candidates/Buffy_Wicks.html",
+    "summary": "Wicks received $54,850 in total Israel lobby contributions from donors including Fisher, Silberstein, Katzenberg, Lauder, Bloomberg, Greuel, and Farber (2017-2025).",
+    "date": "2026-05-07",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $54,850",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0159",
+    "url": "https://track-jpac.org/candidates/Buffy_Wicks.html",
+    "summary": "Track-JPAC lists $54,850 from individual donors across 2017–2025. This is not an organization-only total or an amount restricted to 2024 onward.",
+    "date": "2026-05-07",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$18,800",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date is the tracker’s analysis date, not a donation date. Its combined total covers individuals across multiple years."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  },
+  {
+   "id": "funding-GE-0021",
+   "action": "change",
+   "source_key": "source-2fb507dc510e7818d588",
+   "position_id": "CA2026-231",
+   "candidate": "Matt Haney",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0021",
+    "url": "https://track-jpac.org/candidates/Matt_Haney.html",
+    "summary": "Haney received $47,700 in total Israel lobby contributions (2021-2025), including $25,700 from California Jewish PAC and $7,500 from Robert J. Fisher. (covers 2021–2025)",
+    "date": "2025",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $47,700 Total Israel lobby indirect contributions: $0",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0021",
+    "url": "https://track-jpac.org/candidates/Matt_Haney.html",
+    "summary": "Track-JPAC lists $25,700 from California Jewish PAC during 2021–2023. This historical organization total does not establish any donations from that PAC in 2024 or later.",
+    "date": "2023",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$25,700",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date marks the end of the PAC row’s 2021–2023 period, not a 2025 donation. Individual donors are excluded from this summary."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  },
+  {
+   "id": "funding-GE-0270",
+   "action": "change",
+   "source_key": "source-b11315999ef718148904",
+   "position_id": "CA2026-233",
+   "candidate": "Diane Papan",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-21",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0270",
+    "url": "https://track-jpac.org/candidates/Diane_Papan.html",
+    "summary": "Diane Papan (CA Assembly D21) received $2,000 in direct Israel-lobby contributions: $1,500 from AIPAC/Birthright donor John Fisher (2023) and $500 from UC Regent Richard Leib (2021).",
+    "date": "2026-05",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $2,000",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0270",
+    "url": "https://track-jpac.org/candidates/Diane_Papan.html",
+    "summary": "Track-JPAC lists $2,000 from two individuals: $1,500 in 2023 and $500 in 2021. These are historical individual donations, not organization donations.",
+    "date": "2023",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$1,500",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date marks the latest year in the donor rows, not a 2026 receipt. This source does not establish an organization donation from 2024 onward."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  },
+  {
+   "id": "funding-GE-0273",
+   "action": "change",
+   "source_key": "source-258558da635678c38bbe",
+   "position_id": "CA2026-023",
+   "candidate": "Marc Berman",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-23",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0273",
+    "url": "https://track-jpac.org/candidates/Marc_Berman.html",
+    "summary": "Track-JPAC records $74,280 in Israel-lobby contributions to Berman's campaign, including $29,050 from California Jewish PAC (2019-2025) and $4,400 from Sheryl Sandberg (2017).",
+    "date": "2026-05-07",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $74,280",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0273",
+    "url": "https://track-jpac.org/candidates/Marc_Berman.html",
+    "summary": "Track-JPAC lists $29,050 from California Jewish PAC across 2019–2025. The table does not isolate the amount donated from 2024 onward; the full total must not be treated as recent funding.",
+    "date": "2026-05-07",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$29,050",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date is the tracker’s analysis date, not a donation date. The PAC row combines years before and after the 2024 cutoff."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  },
+  {
+   "id": "funding-GE-0414",
+   "action": "change",
+   "source_key": "source-3789ef198b04166c9787",
+   "position_id": "CA2026-026",
+   "candidate": "Gail Pellerin",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-28",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0414",
+    "url": "https://track-jpac.org/candidates/Gail_Pellerin.html",
+    "summary": "Gail Pellerin (CA Assembly D-28) received $11,400 in direct contributions from California Jewish PAC (2023-2025), a pro-Israel advocacy PAC; no federal Israel-lobby contributions identified.",
+    "date": "2026-04-26",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $11,400 ... California Jewish PAC 2023-2025 $11,400 This political action committee serves as a primary vehicle for pro-Israel and Zionist advocacy and political influence within California state government.",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0414",
+    "url": "https://track-jpac.org/candidates/Gail_Pellerin.html",
+    "summary": "Track-JPAC lists $11,400 from California Jewish PAC across 2023–2025. The table does not isolate donations from 2024 onward; the full total must not be attributed to that later period.",
+    "date": "2026-04-26",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$11,400",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date is the tracker’s analysis date, not a donation date. A 2023–2025 aggregate cannot establish a 2024-onward amount."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  },
+  {
+   "id": "funding-GE-0312",
+   "action": "change",
+   "source_key": "source-eeb060c43869a8480075",
+   "position_id": "CA2026-027",
+   "candidate": "Robert Rivas",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-29",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0312",
+    "url": "https://track-jpac.org/candidates/Robert_Rivas.html",
+    "summary": "Track-JPAC records show Rivas received $63,577 in direct Israel lobby contributions during his tenure as CA Assembly Speaker, District 29.",
+    "date": "2026-05-02",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $63,577 Total Israel lobby indirect contributions: $0",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0312",
+    "url": "https://track-jpac.org/candidates/Robert_Rivas.html",
+    "summary": "Track-JPAC lists $63,577 across 2017–2025, combining individuals and a $5,500 law-firm donation in 2023. This is not a 2024-onward organization-funding total.",
+    "date": "2026-05-02",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$5,500",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date is the tracker’s analysis date, not a donation date. Donor rows span 2017–2025 and combine individuals with a law firm."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  },
+  {
+   "id": "funding-GE-0066",
+   "action": "change",
+   "source_key": "source-89280d93b96bf5f063d9",
+   "position_id": "CA2026-015",
+   "candidate": "Ben Allen",
+   "identity": {
+    "office": "Insurance Commissioner",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0066",
+    "url": "https://track-jpac.org/candidates/Ben_Allen.html",
+    "summary": "Track-JPAC records $78,275 in total Israel-lobby contributions to Allen, including $24,200 from California Jewish PAC and $3,000 from former AIPAC President Michael Tuchin.",
+    "date": "2026-05-07",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-08",
+    "quote": "Total Israel lobby contributions: $78,275... California Jewish PAC 2021-2025 $24,200... Michael Tuchin 2013 $3,000... former President and current Board member of AIPAC",
+    "source_kind": "news",
+    "date_method": "source_stated"
+   },
+   "after": {
+    "id": "GE-0066",
+    "url": "https://track-jpac.org/candidates/Ben_Allen.html",
+    "summary": "Track-JPAC lists $24,200 from California Jewish PAC across 2021–2025. It does not isolate donations from 2024 onward; the full total must not be treated as recent funding.",
+    "date": "2026-05-07",
+    "dimension": "aipac_funding",
+    "checked_on": "2026-10-26",
+    "quote": "$24,200",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Date is the tracker’s analysis date, not a donation date. The PAC total spans years before and after the 2024 cutoff."
+   },
+   "reason": "Separate each donor’s actual contribution period from the tracker analysis date; do not treat individual or cross-cutoff totals as recent organization funding.",
+   "evidence": {
+    "identity_basis": "Source profile names the candidate and California legislative district.",
+    "date_basis": "Own donor-row Years cells, with separate page analysis date; full period limits retained in summary and date note.",
+    "issue_basis": "Correct funding chronology and donor categories without asserting ideology from religion or identity.",
+    "jev_ref": "bfce5c764fd34581557e005df541624761d1272b8b48149d1ac6e0bc2a983647"
+   }
+  }
+ ]
+}

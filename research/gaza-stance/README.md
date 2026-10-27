@@ -105,3 +105,19 @@ python3 scripts/check_gaza_ledger.py
 ```
 
 Synchronization refuses to discard unknown draft items. Review those through the common capture/review workflow first. The merge rejects missing or replaced publication records, unresolved quarantined sources and invalid dates before writing. It preserves `source_observed` guide dates and full summaries; it cannot silently remove manual guide observations. A reconciled merge is a dataset-preserving round trip. Raw source caches are not required for these offline regression checks, and the deterministic rules still require human identity/context review.
+
+
+## Funding chronology repair — October 26, 2026
+
+Seven Track-JPAC observations were replaced through an immutable source-bound
+review and synchronized back into this ledger. Haney’s PAC row covers 2021–2023;
+the old 2025 label borrowed another donor’s endpoint. All seven summaries now
+separate donor periods, individuals and analysis dates. Do not restore the old
+combined totals. [Review and systematic input policy](../../docs/FUNDING_EVIDENCE.md).
+
+The legacy FEC collector now filters known organization entities, dates from
+2024-01-01, and non-memo/non-conduit receipts before building its dossier. It no
+longer selects individuals by employer affiliation. Its extraction instructions
+forbid deriving donation dates from page dates or assigning cross-cutoff totals
+to recent years. New collector output still requires reviewed publication and a
+hash-bound funding projection; old `done` flags do not certify financial periods.

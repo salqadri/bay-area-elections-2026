@@ -27,12 +27,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
+from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v3.json'
-STATE_VERSION = 'candidate-evidence-v10-compact'
+STATE_VERSION = 'candidate-evidence-v11-funding-periods'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -256,10 +257,15 @@ def build_state(p, c, data):
     policy = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') == 'antisemitism_education']
     if policy:
         parts['antisemitism_education_policy_evidence'] = [compact_policy_evidence(e) for e in policy]
-    evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])
-                if e.get('dimension') != 'antisemitism_education'][:12]
+    generic = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') != 'antisemitism_education']
+    # Filter before budgeting so an omitted old/mixed total cannot displace a
+    # valid current observation. New or edited funding claims require review.
+    projected = [(e, funding_text(e)) for e in generic]
+    evidence = [text for _, text in projected if text][:12]
     if evidence:
         parts['gaza_evidence'] = evidence
+    if any(funding_review(e) for e in generic):
+        parts['funding_scope'] = 'Organization funding since 2024 only; unresolved or mixed totals omitted, not proof of zero funding.'
     endorsements = compact_endorsements(focused_endorsements(p, c))
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements

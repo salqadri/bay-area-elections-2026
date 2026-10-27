@@ -128,3 +128,15 @@ question JSON or frozen explanation. The local playground's **Current input** ta
 previews the next evaluation; **State JSON** retains the evaluated input. A later
 owner-authorized grade refresh must bind its explanations to the new archive.
 See [education-policy research](EDUCATION_POLICY_RESEARCH.md).
+
+
+## Funding input correction (October 26, publication 2026-10-26.8)
+
+The v11 funding projection corrects donor periods and restricts new financial
+inputs to reviewed organization amounts from calendar 2024 onward. The saved
+grade batch and explanation archive are unchanged. Older funding-based saved
+explanations display a notice that they may contain historical or mixed-donor
+totals excluded from new evaluations. In particular, Haney’s saved explanation
+still describes the old $47,700 total; his corrected public evidence instead
+identifies the PAC’s $25,700 during 2021–2023. This does **not** mean his grade
+has been recomputed. [Funding review and limits](FUNDING_EVIDENCE.md).

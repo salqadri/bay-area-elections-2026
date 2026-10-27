@@ -17,6 +17,8 @@ Usage: python3 gaza_research.py --county "San Francisco" [--limit N] [--only sub
 """
 import argparse, concurrent.futures, json, os, re, sys, threading, time, urllib.parse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'scripts'))
+from funding_evidence import organization_receipt
 from xhunt2 import serper, http, extract_json, norm_name, TextExtract
 from date_resolvers import resolve_date
 from validate_evidence import check as ev_check, person_contexts, normalize_url
@@ -280,6 +282,7 @@ TASK 1 — items: list every claim/action/statement BY or ABOUT this specific pe
 - IDENTITY FIRST: before including ANY item, confirm the source text connects the person to THIS candidate's office, jurisdiction or biography (e.g. "Oakland school board", "Berkeley", "CA-17", "candidate for"). If the source describes a different career, city, country or era than this candidate's office ({office}, {jurisdiction}), REJECT it even if the name matches exactly.
 - The evidence must convey THIS person's own position, vote, statement, or funding record. Statements by others merely criticizing/mentioning them, vandalism against them, ads about them, attendance where others spoke, or "received $0 / no record" absence claims are NOT evidence — omit them.
 - Do not infer a past co-signature from current caucus membership; include only if the cited page names this individual as a signatory at that date.
+- Funding: only organization/PAC donations dated January 2024 onward, not individuals or an individual's employer/affiliations. Never use a page analysis/publication/as-of date as a donation date. Never assign a mixed-donor or cross-cutoff total to one organization or a recent year. Copy the donor's own period; if no 2024-onward amount can be isolated, omit the funding claim and leave it for source review. An election cycle ending in 2024 includes 2023. Distinguish outside spending from contributions; keep policy/refusal statements separately from dollar claims.
 - url MUST be copied verbatim from the dossier — never invent or modify URLs.
 - date: REQUIRED whenever the dossier or source states one — check bylines, article
   timestamps, post times shown as "(YYYY-MM-DD)" in X POSTS lines (copy that exact day),
@@ -338,7 +341,7 @@ def work(person):
     fec_hits = []
     for cid in (person.get("committee_ids") or [])[:2]:
         fec_hits += [r for r in fec_receipts(cid)
-                     if PRO_ISRAEL.search((r.get("contributor_name") or "") + " " + str(r.get("contributor_employer")))]
+                     if organization_receipt(r) and PRO_ISRAEL.search(r.get("contributor_name") or "")]
     site_t = None
     if person.get("campaign_url"):
         t = page_text(person["campaign_url"])
@@ -362,9 +365,7 @@ def work(person):
         first_cid = (person.get("committee_ids") or [""])[0]
         det_items.append({"person": name, "date": (r.get("contribution_receipt_date") or "")[:10] or None,
                           "url": f"https://www.fec.gov/data/receipts/?committee_id={first_cid}",
-                          "summary": f"FEC receipt ${r.get('receipt_amount')} from {r.get('contributor_name')}"
-                                     + (f" ({r.get('contributor_employer')})" if r.get("contributor_employer") else "")
-                                     + " — pro-Israel-linked contributor",
+                          "summary": f"FEC organization receipt ${r.get('receipt_amount')} from {r.get('contributor_name')}",
                           "quote": None, "dimension": "aipac_funding", "source_kind": "fec_receipt"})
     pctx = person.get("ctx")
     added = add_evidence(key, det_items, pctx)

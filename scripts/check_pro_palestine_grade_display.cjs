@@ -20,6 +20,10 @@ assert(panel.children.some(c=>c.textContent==='Why this grade?'));assert(panel.c
 assert(panel.children.some(c=>typeof c==='object'&&c.textContent.includes(explanation.model)&&c.textContent.includes('never changes it')));
 const naPanel=display.renderExplanation({pro_palestine_score_grade:'N/A',pro_palestine_explanation:{...explanation,summary:'Rudy Recile received N/A because the saved evidence score was 0.01 out of 1, below the 0.10 threshold; the available evidence was insufficient and no letter grade was assigned.'}},{node});
 assert(naPanel.children.some(c=>typeof c==='object'&&c.textContent.includes('insufficient-evidence note')));
+const fundingCandidate={pro_palestine_score_grade:'B',pro_palestine_explanation:explanation,pro_palestine_evaluation:{input_state_version:'candidate-evidence-v7-local-federal-community'},gaza_evidence:[{dimension:'aipac_funding'}]};
+assert(display.renderExplanation(fundingCandidate,{node}).children.some(c=>c.textContent?.includes('Funding evidence rules changed')));
+fundingCandidate.pro_palestine_evaluation.input_state_version='candidate-evidence-v11-local-federal-funding-periods';
+assert(!display.renderExplanation(fundingCandidate,{node}).children.some(c=>c.textContent?.includes('Funding evidence rules changed')));
 for(const candidate of [{}, {pro_palestine_explanation:null}, {pro_palestine_explanation:{summary:'   '}}, {pro_palestine_score_grade:'B'}])assert.equal(display.renderExplanation(candidate,{node}),null,'missing or blank explanations render nothing');
 const indexTemplate=fs.readFileSync(__dirname+'/../src/index.template.html','utf8'),ballotPage=fs.readFileSync(__dirname+'/../src/ballot-page.js','utf8');
 assert(indexTemplate.includes('renderExplanation(c,')&&indexTemplate.includes('.grade-explanation{'),'explorer must render and style the explanation panel');

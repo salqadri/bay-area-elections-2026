@@ -1,4 +1,27 @@
 # Research and development handoff
+
+## Funding periods and donor scope — October 26, 2026
+
+Publication **2026-10-26.8**, schema **1.26**, corrects seven public Track-JPAC
+observations and their collector entries. Haney’s California Jewish PAC row is
+**$25,700 for 2021–2023**, not 2025; the old $47,700 mixed total no longer appears
+in current evidence or new Jev state. New v11 model inputs hold historical,
+individual/mixed, and period-unestablished funding claims. Of 221 reviewed
+observations across 151 candidacies, 185 are held; 34 nonfinancial projections
+and two dated organization-spending projections remain. These are not findings
+of zero funding. Authoritative current-cycle FEC/CAL-ACCESS independent spending
+and nonfinancial evidence remain separate. No scores or archived explanations
+were rewritten or rerun; both readers flag older funding-based saved explanations.
+
+[Workflow, audit artifacts, and limitations](FUNDING_EVIDENCE.md). Future source
+changes require renewed review; the hash-bound input gate holds unreviewed claims
+out automatically. The collector now excludes individual/employer matches,
+pre-2024 receipts, memo/earmarked receipts, and unknown donor types.
+Validation: **45/45 release checks pass**. Browser checks verify corrected Haney
+evidence and saved-grade notices on both readers at desktop/mobile sizes, exact
+saved versus current playground inputs, and county filtering. All 146 prior
+local run files retain their hashes; no scoring requests were made.
+
 ## Compact Jev state — October 26, 2026
 
 Publication **2026-10-26.7** keeps model input focused on decision-relevant

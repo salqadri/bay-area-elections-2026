@@ -170,6 +170,9 @@ const GazaEvidenceDisplay = {
     }
     if (evidence.length) {
       const box = section('Web, social and guide evidence · ' + evidence.length + ' items');
+      if (evidence.some(item => item.dimension === 'aipac_funding')) {
+        box.append(node('p', 'gaza-note', 'Funding report dates are not necessarily contribution dates. Totals may combine years or individual and organization donors; see each item’s period and source.'));
+      }
       // Newest first. ISO-style dates compare correctly across year/month/day
       // precision; undated items keep their original relative order at the end.
       const ordered = evidence.map((item, index) => ({ item, index })).sort((a, b) => {

@@ -1,5 +1,11 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-26.8** corrects seven Track-JPAC funding observations,
+including Haney’s **2021–2023** PAC period. New Jev funding inputs require
+organization-only amounts from calendar **2024 onward**; mixed/unknown-period
+totals are held, never treated as zero. Saved grades are unchanged.
+[Funding evidence policy and limits](docs/FUNDING_EVIDENCE.md).
+
 Publication **2026-10-26.7** compacts Jev inputs while preserving evidence and
 explicit alignment: 18.4% less serialized JSON overall and 52.6% less for
 Garamendi. Full provenance and source records remain available. No scorecards
@@ -208,7 +214,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.26 (`schema_version` in the file is authoritative), publication `2026-10-26.7`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.26 (`schema_version` in the file is authoritative), publication `2026-10-26.8`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.
