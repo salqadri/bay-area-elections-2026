@@ -119,3 +119,12 @@ python3 scripts/attach_grade_explanations.py --responses <dir> \
 ```
 
 Replaying the archive is idempotent; a changed archive must go to a new path.
+
+## New research after the saved evaluation
+
+The education-policy evidence refresh in publication 2026-10-26.5 (schema 1.26)
+adds current research without rerunning Jev or replacing any score, exact request,
+question JSON or frozen explanation. The local playground's **Current input** tab
+previews the next evaluation; **State JSON** retains the evaluated input. A later
+owner-authorized grade refresh must bind its explanations to the new archive.
+See [education-policy research](EDUCATION_POLICY_RESEARCH.md).

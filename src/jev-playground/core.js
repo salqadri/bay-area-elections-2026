@@ -2,6 +2,7 @@
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.JevPlaygroundCore=api;})(typeof globalThis==='object'?globalThis:this,()=>{
   const percent=n=>typeof n==='number'&&Number.isFinite(n)?new Intl.NumberFormat('en-US',{style:'percent',maximumFractionDigits:1}).format(n):'Not returned';
   function samePrompt(a,b){try{return JSON.stringify(JSON.parse(a))===JSON.stringify(JSON.parse(b));}catch{return a===b;}}
+  function currentInput(snapshot,row){return snapshot.candidates.find(candidate=>candidate.id===row.id)?.state??{status:'Candidate is outside the current input scope.'};}
   const defaultScoreGradeMapping={upper_bounds:Array.from({length:5},(_,i)=>(i+1)*5/6)};
   function validateMapping(mapping){
     const b=mapping?.upper_bounds;
@@ -71,5 +72,5 @@
     return {grades:[...grades].sort(),scores:[...scores].sort()};
   }
   function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
+  return {currentInput,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
 });

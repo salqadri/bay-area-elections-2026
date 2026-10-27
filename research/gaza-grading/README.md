@@ -81,3 +81,12 @@ input state, confidence, request hash and source-run reference is preserved.
 `explanation-queue-2026-10-26.json` binds all 1,296 Hermes follow-up items to these
 exact requests. The separate model `gaza_grade` remains archived but is not a
 public score badge. Previous House batches remain immutable historical baselines.
+
+## Education-policy evidence (October 26, 2026)
+
+No grading batch was run for this evidence update. All 1,296 published scores,
+preferred v3 questions, exact responses and frozen explanations are unchanged.
+Current state v8 includes every `antisemitism_education` record in a separate
+source-linked channel, outside the generic twelve-item budget. The playground
+exposes Current input separately from the exact saved State JSON. See
+[the source-review workflow](../../docs/EDUCATION_POLICY_RESEARCH.md).

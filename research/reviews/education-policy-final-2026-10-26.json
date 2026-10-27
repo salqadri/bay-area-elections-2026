@@ -1,0 +1,125 @@
+{
+ "version": 1,
+ "id": "education-policy-final-2026-10-26",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-26",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "0d4b2239c1c4e364834d2a6b96a7386ca954841753d52bed2745e15e1788ef26",
+ "sources": {
+  "source-6043c27ee49e4297720f": {
+   "url": "https://statenews.com/article/2025/11/tom-barrett-asking-msu-to-adopt-contested-antisemitism-definition",
+   "publisher": "The State News",
+   "role": "reporting",
+   "candidate": "Tom Barrett",
+   "checked_on": "2026-10-26",
+   "content_sha256": "1aed45eaef2f88199085759f908d9e680cfaa32e339c504a4736c027b65560aa",
+   "retrieval": "Captured source HTML"
+  },
+  "source-9a16f9fc8add51f4a21d": {
+   "url": "https://www.rickscott.senate.gov/2023/6/sen-rick-scott-leads-resolution-to-clearly-label-attacks-against-israel-as-antisemitism",
+   "publisher": "Office of Senator Rick Scott",
+   "role": "official",
+   "candidate": "Mike Rounds",
+   "checked_on": "2026-10-26",
+   "content_sha256": "48e66c7c7866333418975764ed43bc667edb18cb981e0c78ee02a14b943008c9",
+   "retrieval": "Captured source HTML"
+  },
+  "source-63043e18680168e12cac": {
+   "url": "https://moskowitz.house.gov/posts/antisemitism-awareness-act-reintroduction-and-press-conference",
+   "publisher": "Office of Representative Jared Moskowitz",
+   "role": "official",
+   "candidate": "Jared Evan Moskowitz",
+   "checked_on": "2026-10-26",
+   "content_sha256": "9bdebadb00e7c147a657ddca188fa2cce57591272e0c3256d220515308c941b1",
+   "retrieval": "Captured source HTML"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-6043c27ee49e4297720f",
+   "position_id": "US2026-094",
+   "candidate": "Tom Barrett",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "7dbbc6c4874d7c1d87664629dca43a16f0a6ef3b738444273670be5f596dd319",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-7",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1526",
+    "date": "2025-11-04",
+    "date_method": "source_stated",
+    "url": "https://statenews.com/article/2025/11/tom-barrett-asking-msu-to-adopt-contested-antisemitism-definition",
+    "summary": "In a November 4 report, The State News says Barrett urged Michigan State University in a May letter to adopt IHRA’s working definition of antisemitism. The article discusses concerns about restrictions on Israel criticism.",
+    "quote": "urged President Kevin Guskiewicz to formally incorporate the International Holocaust Remembrance Alliance’s \"working definition of antisemitism.\"",
+    "dimension": "antisemitism_education",
+    "source_kind": "news_report",
+    "checked_on": "2026-10-26",
+    "date_note": "November 4, 2025 is the article publication date. The reported letter was in May; no exact letter date is inferred."
+   },
+   "evidence": {
+    "identity_basis": "Explicit named candidate and office/state in the actual source. Historical offices can differ from the current race; hold name collisions.",
+    "date_basis": "Explicit source date or clearly labeled undated guide observation; not an inferred date for the underlying event.",
+    "issue_basis": "In a November 4 report, The State News says Barrett urged Michigan State University in a May letter to adopt IHRA’s working definition of antisemitism. The article discusses concerns about restrictions on Israel criticism. Exact source quote: urged President Kevin Guskiewicz to formally incorporate the International Holocaust Remembrance Alliance’s \"working definition of antisemitism.\""
+   }
+  },
+  {
+   "id": "gaza-claim-1",
+   "action": "change",
+   "source_key": "source-9a16f9fc8add51f4a21d",
+   "position_id": "US2026-030",
+   "candidate": "Mike Rounds",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "c2c1e882bb3c9fc3e26422c38ee380d17ed25aaf9332cc53386a072473e6bd10",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Senator",
+    "jurisdiction": "United States Senate",
+    "district_or_seat": "SD — Statewide",
+    "term": "6 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1527",
+    "date": "2023-06-15",
+    "date_method": "page_metadata",
+    "url": "https://www.rickscott.senate.gov/2023/6/sen-rick-scott-leads-resolution-to-clearly-label-attacks-against-israel-as-antisemitism",
+    "summary": "Named as a backer of Rick Scott’s June 2023 resolution embracing IHRA; the announcement calls delegitimization of Israel antisemitism. This is resolution sponsorship, not a recorded passage vote.",
+    "quote": "Mike Rounds",
+    "dimension": "antisemitism_education",
+    "source_kind": "official_statement",
+    "checked_on": "2026-10-26",
+    "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
+   },
+   "evidence": {
+    "identity_basis": "Explicit named candidate and office/state in the actual source. Historical offices can differ from the current race; hold name collisions.",
+    "date_basis": "Explicit source publication metadata; not an inferred date for the underlying event.",
+    "issue_basis": "Named as a backer of Rick Scott’s June 2023 resolution embracing IHRA; the announcement calls delegitimization of Israel antisemitism. This is resolution sponsorship, not a recorded passage vote. Exact source quote: Mike Rounds"
+   }
+  },
+  {
+   "id": "gaza-claim-2",
+   "action": "hold",
+   "source_key": "source-63043e18680168e12cac",
+   "position_id": "US2026-086",
+   "candidate": "Jared Evan Moskowitz",
+   "reason": "Source-bound Jev review did not establish all evidence requirements.",
+   "jev_ref": "c1321fa31df432b449cad03910ac1217d9b07f963627c28e700295048be5efe1"
+  }
+ ]
+}

@@ -4,6 +4,11 @@ This is an evidence-backed inventory of elected-office contests for **November 3
 
 The canonical dataset is `2026-11-03_Bay_Area_Elections.json`; the field contract is `elections.schema.json`. Read [MAINTENANCE.md](MAINTENANCE.md) for builds and checks, and [HANDOFF.md](HANDOFF.md) for the current project priorities. Do not edit embedded data in generated HTML.
 
+For Gaza/Israel-Palestine evidence about antisemitism definitions or education
+policy, use [the dedicated topic refresh](EDUCATION_POLICY_RESEARCH.md). It checks
+all active candidacies even when evidence already exists, preserves bill versions
+and source attribution, and does not automatically rerun published scorecards.
+
 ## Evidence and uncertainty
 
 Use evidence appropriate to the claim:

@@ -223,7 +223,9 @@ class UpdateChecks(unittest.TestCase):
 
     def test_apply_registers_immutable_history_and_rerun_is_noop(self):
         with tempfile.TemporaryDirectory() as temp:
-            root = Path(temp)
+            # macOS /var is a symlink to /private/var; compare canonical roots
+            # just as the publication guard canonicalizes the manifest path.
+            root = Path(temp).resolve()
             folder = root / 'research/reviews'; folder.mkdir(parents=True)
             registry = root / 'research/publication-reviews.json'; registry.write_text('{"version":1,"reviews":[]}')
             dataset = root / 'data.json'; dataset.write_text(json.dumps(BASE))

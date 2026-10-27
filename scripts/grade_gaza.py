@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v3.json'
-STATE_VERSION = 'candidate-evidence-v7-community-observations'
+STATE_VERSION = 'candidate-evidence-v8-education-policy'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -221,7 +221,15 @@ def build_state(p, c, data):
     gaza = c.get('gaza_platform') or {}
     if gaza.get('status') == 'statement_found' and gaza.get('summary'):
         parts['reviewed_gaza_platform_statement'] = gaza['summary']
-    evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])[:12]]
+    # Education-policy evidence has its own complete channel. It must not be
+    # silently lost behind the generic twelve-item budget or imply a grade.
+    policy = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') == 'antisemitism_education']
+    if policy:
+        parts['antisemitism_education_policy_evidence'] = [
+            {k: e[k] for k in ('date', 'summary', 'quote', 'url', 'source_kind', 'date_method', 'date_note') if k in e}
+            for e in policy]
+    evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])
+                if e.get('dimension') != 'antisemitism_education'][:12]
     if evidence:
         parts['gaza_evidence'] = evidence
     endorsements = focused_endorsements(p, c)

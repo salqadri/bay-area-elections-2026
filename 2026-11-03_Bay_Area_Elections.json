@@ -1,6 +1,6 @@
 {
  "$schema": "elections.schema.json",
- "schema_version": "1.25",
+ "schema_version": "1.26",
  "election": {
   "date": "2026-11-03",
   "name": "California General Election",
@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-26.2"
+  "publication_version": "2026-10-26.5"
  },
  "codes": {
   "party": {
@@ -121,7 +121,7 @@
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
-  "printed_candidates_with_gaza_evidence": 333,
+  "printed_candidates_with_gaza_evidence": 345,
   "printed_candidates_with_endorsements": 548,
   "printed_candidates_with_independent_expenditures": 181,
   "printed_candidates_with_gaza_voting_records": 11,
@@ -349,6 +349,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1364",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"G000559\",\"name\":\"Garamendi\",\"state\":\"CA\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -1634,6 +1646,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1365",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"H001090\",\"name\":\"Harder (CA)\",\"state\":\"CA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -3294,6 +3318,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1366",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"D000623\",\"name\":\"DeSaulnier\",\"state\":\"CA\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -11087,6 +11123,54 @@
        "quote": "Scott Wiener's Pivot on Gaza Isn't Enough for the Left. In San Francisco, a House race shows the limits of playing catch-up on Palestine.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1289",
+       "date": "2025-09-12",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Scott Wiener as recorded Aye on AB 715 (Senate Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Scott Wiener | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1429",
+       "date": "2025-09-16",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB715/id/3269818",
+       "summary": "AB 715’s September 16, 2025 enrolled text names Wiener a principal coauthor. It provides antisemitism education and classroom-material oversight; the text does not explicitly name IHRA.",
+       "quote": "(Principal coauthors: Senators Gonzalez, Weber Pierson, and Wiener)",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Enrolled version date, not the date Wiener became a coauthor; LegiScan reproduction."
+      },
+      {
+       "id": "GE-1430",
+       "date": "2025-06-17",
+       "date_method": "source_stated",
+       "url": "https://ca.cair.com/updates/ab-715-threatens-to-censor-palestine-in-schools/",
+       "summary": "CAIR California identified Wiener as a champion of AB 715 and argued it could censor Palestine teaching and conflate criticism of Israel with antisemitism. These are CAIR’s objections to the June bill version.",
+       "quote": "Senator Scott Wiener and Assemblymembers Jesse Gabriel and Rick Zbur",
+       "dimension": "antisemitism_education",
+       "source_kind": "advocacy_statement",
+       "checked_on": "2026-10-26",
+       "date_note": "June 17, 2025 statement about the then-current bill, before September amendments."
+      },
+      {
+       "id": "GE-1522",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Wiener",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
       }
      ],
      "endorsements": [
@@ -17021,6 +17105,18 @@
        "quote": "As of October 2026, Aisha Wahab has received no money from AIPAC PAC or its super PAC, United Democracy Project, in FEC filings.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1290",
+       "date": "2025-09-12",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Aisha Wahab as listed under Abstain (no Aye/No recorded; reason unspecified) on AB 715 (Senate Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Aisha Wahab | Abstain",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -20777,6 +20873,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1367",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"M001225\",\"name\":\"Mullin\",\"state\":\"CA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -24172,6 +24280,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1368",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"K000389\",\"name\":\"Khanna\",\"state\":\"CA\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -25333,6 +25453,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1369",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000397\",\"name\":\"Lofgren\",\"state\":\"CA\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -27021,6 +27153,18 @@
        "dimension": "framing_balance",
        "source_kind": "official_statement",
        "checked_on": "2026-10-14"
+      },
+      {
+       "id": "GE-1370",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"P000613\",\"name\":\"Panetta\",\"state\":\"CA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -32496,6 +32640,30 @@
        "quote": "Thank you President Trump. A true peacemaker! 🇺🇸 \"This week, against all odds, we have done the IMPOSSIBLE AND BROUGHT OUR HOSTAGES HOME.\" - @POTUS @realDonaldTrump #Peace #Gaza #Israel",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1371",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"M001212\",\"name\":\"Moore (AL)\",\"state\":\"AL\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1492",
+       "date": "2025-07-07",
+       "date_method": "page_metadata",
+       "url": "https://yellowhammernews.com/rep-barry-moore-pushes-define-to-defeat-act-to-cement-antisemitism-definition-into-law-strengthen-hate-crime-prosecutions/",
+       "summary": "Yellowhammer reports Moore introduced the Define to Defeat Act of 2025 to apply IHRA’s definition in federal civil-rights enforcement. This is separate from the Antisemitism Awareness Act.",
+       "quote": "The congressman’s “Define to Defeat Act of 2025”",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -34274,6 +34442,17 @@
        "quote": "As far as I'm concerned, Israel can bounce the rubble in Gaza. Anything that happens in Gaza is the responsibility of Hamas.",
        "source_kind": "news",
        "date_method": "x_snowflake"
+      },
+      {
+       "id": "GE-1431",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Tom Cotton",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -35305,6 +35484,17 @@
        "quote": "Sens. John Hickenlooper and Michael Bennet were not moved by the increasing alarm over the situation in Gaza, unlike a majority of Democrats who backed both of Sanders' measures.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1432",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "John Hickenlooper",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -36533,6 +36723,17 @@
        "quote": "Sen. Coons calls for Gaza ceasefire, TikTok sale",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1433",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Chris Coons",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -38708,6 +38909,18 @@
        "quote": "Mike Collins has received $22,746 from pro-Israel PACs in FEC filings — $19,146 of it from AIPAC PAC and its super PAC, United Democracy Project",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1372",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"C001129\",\"name\":\"Collins\",\"state\":\"GA\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -41412,6 +41625,18 @@
        "quote": "Ashley Hinson: NORPAC — $46K given; AIPAC PAC — $33K given; Republican Jewish Coalition PAC — $26K given",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1373",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"H001091\",\"name\":\"Hinson\",\"state\":\"IA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -43190,6 +43415,18 @@
        "quote": "Andy Barr — Republican, KY-06 — $309,707",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1374",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"B001282\",\"name\":\"Barr\",\"state\":\"KY\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -46473,6 +46710,18 @@
        "quote": "Julia Letlow has received $173,425 from pro-Israel PACs in the 2026 cycle, chiefly from AIPAC PAC (FEC filings through 2026-10-15)",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1375",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000595\",\"name\":\"Letlow\",\"state\":\"LA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -46832,6 +47081,17 @@
        "quote": "Susan Collins has received $4,525,846 from pro-Israel PACs in FEC filings — $3,485,087 of it from AIPAC PAC and its super PAC, United Democracy Project",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1434",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Susan Collins",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -56644,6 +56904,17 @@
        "quote": "2023 remarks on support for Israel",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1435",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Cindy Hyde-Smith",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -59181,6 +59452,29 @@
        "quote": "not only do I support the aid for Israel, but my team right now is working on a package to defund the plant Palestinian Authority. They allow this attack to happen",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1436",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Pete Ricketts",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
+      },
+      {
+       "id": "GE-1493",
+       "date": "2022-05-09",
+       "date_method": "page_metadata",
+       "url": "https://www.jns.org/antisemitism/nebraska-becomes-27th-state-to-adopt-ihra-definition-of-anti-semitism",
+       "summary": "JNS reports then-Governor Ricketts announced Nebraska’s adoption of IHRA’s working definition in May 2022. This is a historical state-policy action, distinct from his later Senate sponsorship.",
+       "quote": "He also announced that the state is officially adopting the International Holocaust Remembrance Alliance’s (IHRA) working definition of anti-Semitism.",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -59630,6 +59924,29 @@
        "quote": "when legislation denying federal funds to universities that discriminate against Israel came to the floor Thursday, Pappas voted no.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1376",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"P000614\",\"name\":\"Pappas\",\"state\":\"NH\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1445",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Pappas",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -60271,6 +60588,17 @@
        "quote": "Seven and three-quarters hours into his 25-hour speech on the Senate floor, the New Jersey Democrat Cory Booker uttered the word \"Gaza\". He was not talking about the war.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1437",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Cory Booker",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -61396,6 +61724,18 @@
        "quote": "We must continue working to release the hostages held by Hamas and end the death and destruction in Gaza. We pray for peace, for all who have suffered in Israel and in Gaza, and for an end to this war.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1469",
+       "date": "2024-07-02",
+       "date_method": "page_metadata",
+       "url": "https://ncnewsline.com/2024/07/02/cooper-signs-bill-to-establish-an-official-state-definition-of-antisemitism/",
+       "summary": "NC Newsline reports Cooper signed the SHALOM Act adopting IHRA as the state’s antisemitism definition. He defended it as combating hate while protecting free speech.",
+       "quote": "Gov. Roy Cooper signed it on Monday.",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -63153,6 +63493,18 @@
        "quote": "Kevin Hern has received $95,337 from pro-Israel PACs in the 2026 cycle, chiefly from AIPAC PAC (FEC filings through 2026-10-15).",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1378",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"H001082\",\"name\":\"Hern\",\"state\":\"OK\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -65800,6 +66152,18 @@
        "quote": "Seven Democrats joined every Republican in the Senate to vote against a resolution blocking the sale of bulldozers to Israel, given their role in razing Gaza to the ground.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1527",
+       "date": "2023-06-15",
+       "date_method": "page_metadata",
+       "url": "https://www.rickscott.senate.gov/2023/6/sen-rick-scott-leads-resolution-to-clearly-label-attacks-against-israel-as-antisemitism",
+       "summary": "Named as a backer of Rick Scott’s June 2023 resolution embracing IHRA; the announcement calls delegitimization of Israel antisemitism. This is resolution sponsorship, not a recorded passage vote.",
+       "quote": "Mike Rounds",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -66379,6 +66743,18 @@
        "quote": "Voted with us over lifetime Lifetime Issue Date Latest Action Vote Score Bill Hagerty2022-08-312022-08-31",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1441",
+       "date": "2023-06-15",
+       "date_method": "page_metadata",
+       "url": "https://www.rickscott.senate.gov/2023/6/sen-rick-scott-leads-resolution-to-clearly-label-attacks-against-israel-as-antisemitism",
+       "summary": "Named as a backer of Rick Scott’s June 2023 resolution embracing IHRA; the announcement calls delegitimization of Israel antisemitism. This is resolution sponsorship, not a recorded passage vote.",
+       "quote": "Bill Hagerty",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -66961,6 +67337,18 @@
        "quote": "he says Gaza's suffering 'makes me sick to my stomach'",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1470",
+       "date": "2026-10-26",
+       "date_method": "source_observed",
+       "url": "https://www.trackaipac.com/james-talarico",
+       "summary": "Track AIPAC’s undated guide reports Talarico voted for Texas SB 326, requiring schools to use IHRA, and SB 2972 restricting campus expressive activities; these are attributed guide claims, not checked roll calls.",
+       "quote": "Talarico voted in favor of SB 326",
+       "dimension": "antisemitism_education",
+       "source_kind": "voter_guide",
+       "checked_on": "2026-10-26",
+       "date_note": "Undated publisher guide inspected on October 26, 2026; not an independently verified roll call or original statement date."
       }
      ],
      "platform_positions": {
@@ -67265,6 +67653,17 @@
        "quote": "Three years ago today, Hamas terrorists murdered more than 1,200 innocent people in Israel and took 251 hostages. We will never forget the victims, and we will never stop standing with Israel and the Jewish people.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1471",
+       "date": "2025-08-28",
+       "date_method": "source_stated",
+       "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-announces-investigation-and-demands-documents-plano-isd-following",
+       "summary": "Paxton announced a Plano ISD investigation over pro-Palestinian materials and walkouts and called for firing educators who facilitated anti-Israel rhetoric, framing it as antisemitism enforcement.",
+       "quote": "Any teacher or administrator that has facilitated or supported radical anti-Israel rhetoric in our schools should be fired immediately.",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "pro_palestine_score": 0.11,
@@ -67511,6 +67910,17 @@
        "quote": "Mark Warner has received $885,986 from pro-Israel PACs in FEC filings — $734,232 of it from AIPAC PAC and its super PAC, United Democracy Project",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1438",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Mark Warner",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -69125,7 +69535,20 @@
       "request_sha256": "b59ac408e034250d77f4343b6c3c4f59e8d4ffe5353129e35efc01e58be19c7c",
       "summary": "Shelley Moore Capito's evaluation produced an evidence score of 0.0 out of 1, below the 0.10 threshold, so no letter grade was assigned and the displayed result is N/A. The input state contains no candidate statements, legislative actions, outside spending, endorsements, or community input referencing Gaza, Israel, or Palestine. The campaign platform points cover economy, immigration, gun rights, healthcare, environment, transportation, and education only. No relevant evidence was present to assess a stance.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1439",
+       "date": "2025-02-12",
+       "date_method": "source_stated",
+       "url": "https://www.scott.senate.gov/media-center/press-releases/sens-scott-rosen-introduce-antisemitism-awareness-act/",
+       "summary": "Named as a cosponsor of the 2025 Antisemitism Awareness Act in Senator Tim Scott’s February 12 introduction announcement; it directs the Education Department to use IHRA’s definition for campus investigations.",
+       "quote": "Shelley Moore Capito",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
+      }
+     ]
     }
    ],
    "source_ids": [
@@ -69286,6 +69709,30 @@
        "quote": "Hageman Votes NO on Ukraine, YES on Israel funding",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1379",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"H001096\",\"name\":\"Hageman\",\"state\":\"WY\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1496",
+       "date": "2024-05-01",
+       "date_method": "page_metadata",
+       "url": "https://hageman.house.gov/media/press-releases/hageman-votes-defense-first-amendment",
+       "summary": "Hageman explained her vote against the IHRA-based Antisemitism Awareness Act as a First Amendment objection, while supporting prosecution of intimidation and threats. Her objection does not establish a pro-Palestinian position.",
+       "quote": "this bill, with its unconstitutional definitions outsourced to a foreign body, is not the answer.",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "pro_palestine_score": 0.02,
@@ -72432,7 +72879,32 @@
       "request_sha256": "26280d464d6d991bbc5afad9e2c2d7c6ad04fb938080bcf36af696ee43a8ae53",
       "summary": "Juan Ciscomani's evaluation state contains no Gaza or Israel-relevant observations: no candidate statements, legislative actions, outside spending, endorsements, or community input touching on the topic. The recorded evidence score of 0.01 out of 1 falls below the 0.10 threshold required to display a letter grade, so the system assigned N/A rather than a letter. The absence of relevant evidence means no pro-Palestine or pro-Israel stance could be established from the available record.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1380",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"C001133\",\"name\":\"Ciscomani\",\"state\":\"AZ\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1447",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Ciscomani",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
+      }
+     ]
     },
     {
      "name": "JoAnna Mendoza",
@@ -73478,6 +73950,29 @@
        "quote": "This is my time – just answer yes or no Richard. He asked you a very core question, what's the answer?",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1381",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"K000401\",\"name\":\"Kiley\",\"state\":\"CA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1448",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Kiley of California",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -75087,6 +75582,29 @@
        "quote": "Republican incumbent Rep. David Valadao, who has backing from the pro-Israel lobby group AIPAC",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1382",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"V000129\",\"name\":\"Valadao\",\"state\":\"CA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1449",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Valadao",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -81554,6 +82072,17 @@
        "quote": "We congratulate Sen. John Hickenlooper and Reps. Joe Neguse, Jeff Hurd, Jeff Crank, Brittany Pettersen, and Gabe Evans on their primary victories. These results further demonstrate that support for America's alliance with Israel remains both good policy and good politics nationwide",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1450",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Crank",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -86009,6 +86538,18 @@
        "quote": "Rep. Soto's Statement on Administration Recognizing Jerusalem as Israel's Capital",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1383",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"S001200\",\"name\":\"Soto\",\"state\":\"FL\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -86728,6 +87269,18 @@
        "quote": "Luna voted in favor of major military aid packages to Israel, including the Israel Security Supplemental Appropriations Act, ensuring the Israeli Occupation Forces (IOF) receive billions in U.S. weapons and funding",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1384",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000596\",\"name\":\"Luna\",\"state\":\"FL\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -88406,6 +88959,18 @@
        "quote": "In October 2023, Castor voted in favor of H.Res. 771, which stood with Israel \"as it defends itself against the barbaric war launched by Hamas and other terrorists.\"",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1385",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"C001066\",\"name\":\"Castor (FL)\",\"state\":\"FL\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -90443,6 +91008,18 @@
        "quote": "My condolences to @hasanthehun,\" Moskowitz wrote on the social platform X after his victory.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1386",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"M001217\",\"name\":\"Moskowitz\",\"state\":\"FL\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -91163,6 +91740,18 @@
        "quote": "María Elvira Salazar has received $176,069 from pro-Israel PACs in FEC filings — $119,662 of it from AIPAC PAC and its super PAC, United Democracy Project, including $176,069 in direct and earmarked contributions.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1387",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"S000168\",\"name\":\"Salazar\",\"state\":\"FL\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -91913,6 +92502,29 @@
        "quote": "Congresswoman Mariannette Miller-Meeks, a Republican from Ottumwa, was among those who spoke on the House floor during debate.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1388",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"M001215\",\"name\":\"Miller-Meeks\",\"state\":\"IA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1452",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Miller-Meeks",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -94527,6 +95139,18 @@
        "quote": "Zach Nunn has received $193,934 from pro-Israel PACs in FEC filings — $166,281 of it from AIPAC PAC and its super PAC, United Democracy Project",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1389",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"N000193\",\"name\":\"Nunn (IA)\",\"state\":\"IA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -96565,6 +97189,18 @@
        "quote": "Ralph Alvarado, a Republican, has taken $29,169 in donations linked to AIPAC, the pro-Israel lobbying group.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1525",
+       "date": "2021-02-25",
+       "date_method": "page_metadata",
+       "url": "https://www.jns.org/antisemitism/kentucky-set-to-become-first-state-to-adopt-ihra-definition",
+       "summary": "JNS reports Alvarado introduced Kentucky’s 2021 resolution recognizing IHRA’s antisemitism definition. This is an attributed report of his legislative role, not a claim about his Gaza-war position.",
+       "quote": "The measure was introduced by State Sen. Ralph Alvarado",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -97210,6 +97846,18 @@
        "quote": "providing for consideration of the resolution (H. Res. 1117) opposing efforts to place one-sided pressure on Israel with respect to Gaza",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1390",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"H001058\",\"name\":\"Huizenga\",\"state\":\"MI\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -98613,6 +99261,18 @@
        "quote": "Tom Barrett has received $58,331 from pro-Israel PACs in the 2026 cycle, chiefly from AIPAC PAC (FEC filings through 2026-10-16).",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1526",
+       "date": "2025-11-04",
+       "date_method": "source_stated",
+       "url": "https://statenews.com/article/2025/11/tom-barrett-asking-msu-to-adopt-contested-antisemitism-definition",
+       "summary": "In a November 4 report, The State News says Barrett urged Michigan State University in a May letter to adopt IHRA’s working definition of antisemitism. The article discusses concerns about restrictions on Israel criticism.",
+       "quote": "urged President Kevin Guskiewicz to formally incorporate the International Holocaust Remembrance Alliance’s \"working definition of antisemitism.\"",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "November 4, 2025 is the article publication date. The reported letter was in May; no exact letter date is inferred."
       }
      ],
      "platform_positions": {
@@ -101500,6 +102160,18 @@
        "quote": "We again applaud Representatives Angie Craig, Tom Emmer, Brad Finstad, Michelle Fischbach, Betty McCollum, Dean Phillips, Pete Stauber, Kelly Armstrong, and Duty Johnson for their bipartisan leadership.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1391",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"F000475\",\"name\":\"Finstad\",\"state\":\"MN\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -102440,7 +103112,21 @@
       "request_sha256": "9d226e9cfc9683a37671ecac7076b149573845a23f681fcf8f97beeb76c09fde",
       "summary": "Donald Davis's evaluated input state contains no direct statements, legislative actions, outside spending, endorsements, or community input relevant to Gaza or Israel. The saved evidence score is 0.0 out of 1, below the 0.10 threshold, so no letter grade was assigned and the badge displays N/A. The low-confidence pro-Palestine score of 2.38 and D gaza-grade choice reflect a tentative model read of an otherwise empty evidence base, not a confirmed political stance.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1392",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"D000230\",\"name\":\"Davis (NC)\",\"state\":\"NC\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      }
+     ]
     },
     {
      "name": "Laurie Buckhout",
@@ -107755,6 +108441,18 @@
        "quote": "Kean Statement on Reported Israel-Hamas Ceasefire Deal",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1393",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"K000398\",\"name\":\"Kean (NJ)\",\"state\":\"NJ\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.01,
@@ -110005,6 +110703,18 @@
        "quote": "In 2024 JStreet PAC gave Gabe Vasquez a \"Priority endorsement\".",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1394",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"V000136\",\"name\":\"Vasquez\",\"state\":\"NM\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.44,
@@ -110261,6 +110971,18 @@
        "quote": "Representatives Chris Pappas (NH-01), Nicole Malliotakis (NY-11), Dina Titus (NV-01), Brad Schneider (IL-10), and Grace Meng (NY-06)",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1395",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"T000468\",\"name\":\"Titus\",\"state\":\"NV\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -112829,6 +113551,18 @@
        "quote": "Congresswoman Lee Statement on Israel Security Assistance Vote",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1396",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000590\",\"name\":\"Lee (NV)\",\"state\":\"NV\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -113039,7 +113773,32 @@
       "request_sha256": "85d6cf65dc10963f86b5a8f38d7a4349acc93c1c21341c7cc3aded7538653e9e",
       "summary": "Nicholas J. LaLota's evaluation yielded an evidence score of 0.01 out of 1, below the 0.10 threshold needed to assign a letter grade. The input state contains no recorded candidate statements, legislative actions, outside spending, endorsements, or community input relevant to Gaza or Israel. Because the available evidence was insufficient to meet the minimum evidentiary bar, no letter grade was assigned, and the displayed result is N/A.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1397",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000598\",\"name\":\"LaLota\",\"state\":\"NY\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1455",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "LaLota",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
+      }
+     ]
     },
     {
      "name": "Christopher Gallant",
@@ -113262,6 +114021,18 @@
        "quote": "Tom Suozzi has received $429,159 from pro-Israel PACs in the 2026 cycle, chiefly from AIPAC PAC (FEC filings through 2026-10-19).",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1398",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"S001201\",\"name\":\"Suozzi\",\"state\":\"NY\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.02,
@@ -113512,6 +114283,29 @@
        "quote": "has been chummy with Malik Nadeem Abid since he served on her transition team in her historic local win",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1456",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Gillen",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
+      },
+      {
+       "id": "GE-1474",
+       "date": "2025-02-06",
+       "date_method": "page_metadata",
+       "url": "https://gillen.house.gov/media/press-releases/gillen-reintroduces-antisemitism-awareness-act-alongside-lawler-gottheimer-and",
+       "summary": "Gillen’s office announced she was an original cosponsor of H.R. 1007, the Antisemitism Awareness Act, and joined its reintroduction press conference; the bill uses IHRA for education-discrimination enforcement.",
+       "quote": "Gillen is an original co-sponsor of the reintroduced bill",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -114252,6 +115046,29 @@
        "quote": "This bill is a bipartisan resolution introduced alongside Reps. Jared Moskowitz (FL-23), Mike Lawler (NY-17), and Josh Gottheimer (NJ-05).",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1399",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000599\",\"name\":\"Lawler\",\"state\":\"NY\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1457",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Lawler (for himself",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "pro_palestine_score": 0.02,
@@ -114398,6 +115215,18 @@
        "quote": "both candidates pledging continued US military support for Israel",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1475",
+       "date": "2025-04-21",
+       "date_method": "page_metadata",
+       "url": "https://jewishinsider.com/2025/04/cait-conley-mike-lawler-ny-17-primary-middle-east-counterterrorism/",
+       "summary": "Conley told Jewish Insider she would support the Antisemitism Awareness Act and funding for education civil-rights enforcement, while criticizing Trump’s targeting of student visa holders and universities.",
+       "quote": "She volunteered that she would support the Antisemitism Awareness Act",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -119523,6 +120352,29 @@
        "quote": "Greg Landsman: Israel is 'close' to ending Gaza war",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1400",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"L000601\",\"name\":\"Landsman\",\"state\":\"OH\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1458",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Landsman",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -120558,6 +121410,29 @@
        "quote": "Max Miller has received $473,207 from pro-Israel PACs in FEC filings — $319,879 of it from AIPAC PAC and its super PAC, United Democracy Project",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1401",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"M001222\",\"name\":\"Miller (OH)\",\"state\":\"OH\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1495",
+       "date": "2025-02-07",
+       "date_method": "source_stated",
+       "url": "https://maxmiller.house.gov/posts/icymi-u-s-congressman-max-miller-joins-reps-lawler-gottheimer-and-moskowitz-to-reintroduce-the-antisemitism-awareness-act",
+       "summary": "Miller’s office announced he co-led reintroduction of the Antisemitism Awareness Act, requiring the Education Department to use IHRA’s definition and contemporary examples in federal education-discrimination enforcement.",
+       "quote": "the Department of Education to use the IHRA Working Definition of Antisemitism and its contemporary examples",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -121351,6 +122226,18 @@
        "quote": "Kaptur voted in favor of H.R. 8034, the Israel Security Supplemental Appropriations Act of 2024, which provided over $17 billion in security assistance and weapons to Israel alongside limited humanitarian provisions.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1402",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"K000009\",\"name\":\"Kaptur\",\"state\":\"OH\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -121731,6 +122618,18 @@
        "quote": "The US is rightly focused on ensuring Gaza moves toward peace while addressing the security of both Israelis and Palestinians. Hamas' horrific October 7 attack ignited this conflict, and Iran-backed terror groups like Hamas and Hezbollah continue to threaten Israel's existence.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1403",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"T000463\",\"name\":\"Turner\",\"state\":\"OH\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.39,
@@ -122786,6 +123685,18 @@
        "quote": "Carey received $34,150 from the American Israel Public Affairs Committee (AI",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1404",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"C001126\",\"name\":\"Carey\",\"state\":\"OH\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -123209,6 +124120,29 @@
        "quote": "Brian Fitzpatrick, a Republican, has taken $783,168 in donations linked to AIPAC, the pro-Israel lobbying group.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1405",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"F000466\",\"name\":\"Fitzpatrick\",\"state\":\"PA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1461",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Fitzpatrick",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -127861,6 +128795,18 @@
        "quote": "Scott Perry has received $55,543 from pro-Israel PACs in the 2026 cycle, chiefly from AIPAC PAC (FEC filings through 2026-10-19).",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1406",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"P000605\",\"name\":\"Perry\",\"state\":\"PA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -130297,6 +131243,18 @@
        "quote": "I stand with Israel in their fight against the Hamas terrorists. We must condemn the violence committed against innocent women, children, and men.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1407",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Not Voting on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"D000594\",\"name\":\"De La Cruz\",\"state\":\"TX\",\"vote\":\"Not Voting\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -130800,6 +131758,18 @@
        "quote": "Henry Cuellar has received $1,039,956 from pro-Israel PACs in FEC filings — $907,182 of it from AIPAC PAC and its super PAC, United Democracy Project",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1408",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"C001063\",\"name\":\"Cuellar\",\"state\":\"TX\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -132391,6 +133361,29 @@
        "quote": "Robert Wittman (VA-1)",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1411",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"W000804\",\"name\":\"Wittman\",\"state\":\"VA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1462",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "Wittman",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "pro_palestine_score": 0.03,
@@ -133338,6 +134331,18 @@
        "quote": "Jen Kiggans has received $110,319 from pro-Israel PACs in FEC filings — $100,632 of it from AIPAC PAC and its super PAC, United Democracy Project, including $110,319 in direct and earmarked contributions.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1412",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"K000399\",\"name\":\"Kiggans (VA)\",\"state\":\"VA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.01,
@@ -134567,6 +135572,18 @@
        "quote": "Rep. Perez opens case for Palestinian immigrant detained by ICE while living in Vancouver",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1413",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"G000600\",\"name\":\"Perez\",\"state\":\"WA\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -134943,6 +135960,18 @@
        "quote": "Boo if you want, but the answer is simple. Hamas should surrender and release the hostages. CNN followed by full answer.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1414",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"S001213\",\"name\":\"Steil\",\"state\":\"WI\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.02,
@@ -135938,7 +136967,21 @@
       "request_sha256": "649fa8cb8060e5752fe14f203024a4488804ab8f10f7c7364403f29ec2d53fa8",
       "summary": "The saved evidence score for Derrick Van Orden is 0.01 out of 1, which falls below the 0.10 threshold required to display a letter grade, so the badge reads N/A. The evaluated input state contains no direct candidate statements, legislative actions, relevant endorsements, or community observations pertaining to Gaza or Israel. With no such evidence present, the scoring produced an insufficient-evidence result and no pro-Palestine or pro-Israel stance was assigned.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1415",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"V000135\",\"name\":\"Van Orden\",\"state\":\"WI\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      }
+     ]
     },
     {
      "name": "Rebecca Cooke",
@@ -140759,7 +141802,21 @@
       "request_sha256": "43013f42c0a086e3b6fa60de16578b19dedfab1adedd60a17ad7a908b1cdb63e",
       "summary": "Lori Wilson's A grade rests on CAIR Action preferring her in the general phase, verified by endorser statement, which matches the top rubric criterion for CAIR Action endorsement. No Gaza or Israel-relevant statements, legislative actions, outside spending, or other pro-Palestine endorsements appear in her campaign platform. The score of 4.27 falls in the A band (over 4.17 to 5); the evidence score of 0.15 reflects this thin base. The Gaza grade choice is B.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1291",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Lori Wilson as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Lori Wilson | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      }
+     ]
     }
    ],
    "primary_source_page": "11",
@@ -141399,6 +142456,30 @@
        "quote": "Total Israel lobby contributions: $54,850",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1292",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Buffy Wicks as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Buffy Wicks | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1501",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Wicks",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
       }
      ],
      "endorsements": [
@@ -142545,7 +143626,21 @@
       "request_sha256": "1550230f89f92e079ff4195c4962ea477598621a09478917cd04d7aa1b4195f6",
       "summary": "The evaluation of Anamarie Avila Farias produced an evidence score of 0.01 out of 1, which falls below the 0.10 threshold required to display a letter grade. The input state contained no direct candidate statements, legislative actions, endorsements, or community observations relevant to Gaza or Israel. Because the available evidence was insufficient to meet the minimum threshold, no letter grade was assigned, and the badge displays N/A.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1293",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Anamarie Farias as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Anamarie Farias | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      }
+     ]
     },
     {
      "name": "Arthur Webb",
@@ -143021,6 +144116,30 @@
        "quote": "Israel's ongoing genocide of Palestinians in Gaza, and Israel's expanding, illegal wars of aggression across West Asia",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1294",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Rebecca Bauer-Kahan as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Rebecca Bauer-Kahan | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1502",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Bauer-Kahan",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
       }
      ],
      "endorsements": [
@@ -143446,6 +144565,18 @@
        "quote": "Special Thanks to California State Assembly member Matt Haney for inviting our Global Healing children from Gaza to the floor in Sacramento to learn about their treatment during their time in California",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1295",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Matt Haney as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Matt Haney | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -143897,6 +145028,18 @@
        "source_kind": "voter_guide",
        "date_method": "source_observed",
        "date_note": "Date is the October 9, 2026 observation of this guide assessment, not the publication date or date of the underlying statement, contribution or vote."
+      },
+      {
+       "id": "GE-1296",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Mia Bonta as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Mia Bonta | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -144376,6 +145519,30 @@
        "quote": "The three Supervisors who opposed the resolution, Matt Dorsey, Catherine Stefani, and Rafael Mandelman, understand this clearly.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1297",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Catherine Stefani as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Catherine Stefani | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1503",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Stefani",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
       }
      ],
      "endorsements": [
@@ -145625,7 +146792,21 @@
       "request_sha256": "afe43a6fbe113329a6012a1790f79e2ed803f53276ca90cb52ac3ca79f3150d6",
       "summary": "Liz Ortega received an A because CAIR Action endorsed her and Vote for Peace rated her an Ally, both verified by endorser statements, satisfying the top rubric criterion. Her pro-Palestine score of 4.76 falls in the A band (over 4.17 to 5). The evidence score of 0.33 reflects that no direct candidate statements, legislative actions, or outside spending on Gaza or Israel appear in the evaluated state.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1521",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Liz Ortega as listed under Abstain (no Aye/No recorded; reason unspecified) on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Liz Ortega | Abstain",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      }
+     ]
     }
    ],
    "source_ids": [
@@ -145737,6 +146918,18 @@
        "quote": "Total Israel lobby contributions: $2,000",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1299",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Diane Papan as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Diane Papan | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -147756,6 +148949,30 @@
        "quote": "Total Israel lobby contributions: $74,280",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1300",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Marc Berman as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Marc Berman | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1504",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Berman",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
       }
      ],
      "endorsements": [
@@ -148170,6 +149387,18 @@
        "dimension": "actions_votes",
        "source_kind": "news",
        "checked_on": "2026-10-14"
+      },
+      {
+       "id": "GE-1302",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Alex Lee as listed under Abstain (no Aye/No recorded; reason unspecified) on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Alex Lee | Abstain",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -149223,6 +150452,18 @@
        "quote": "calls for the end to the humanitarian crisis in Gaza. It demands the immediate release of all hostages and seeks to address the ongoing humanitarian situation in the region.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1303",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Ash Kalra as listed under Abstain (no Aye/No recorded; reason unspecified) on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Ash Kalra | Abstain",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -149684,7 +150925,33 @@
       "request_sha256": "8a4f7897737cfa40079cade41dd34eb9d05e8856e44fbc7703f7c01db5ac5766",
       "summary": "Patrick Ahrens received a B because the recorded pro-Palestine score of 3.95 falls in the B band (over 3.33 to 4.17), anchored by CAIR Action's 'preferred' designation, which the rubric ties to the B level. Vote for Peace rated him Neutral. No direct candidate statements, legislative actions, or Gaza-specific positions appear in the input state. The evidence score of 0.35 exceeds the 0.1 threshold, so a letter displays rather than N/A.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1304",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Patrick Ahrens as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Patrick Ahrens | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1505",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Ahrens",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
+      }
+     ]
     },
     {
      "name": "Tim Gorsulowsky",
@@ -149792,6 +151059,30 @@
        "quote": "Total Israel lobby contributions: $11,400 ... California Jewish PAC 2023-2025 $11,400 This political action committee serves as a primary vehicle for pro-Israel and Zionist advocacy and political influence within California state government.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1305",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Gail Pellerin as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Gail Pellerin | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
+      },
+      {
+       "id": "GE-1506",
+       "date": "2025-02-21",
+       "date_method": "source_stated",
+       "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+       "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+       "quote": "Pellerin",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26",
+       "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
       }
      ],
      "endorsements": [
@@ -154151,6 +155442,18 @@
        "quote": "Total Israel lobby contributions: $63,577 Total Israel lobby indirect contributions: $0",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1306",
+       "date": "2025-09-13",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Robert Rivas as recorded Aye on AB 715 (Assembly Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Robert Rivas | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -159727,6 +161030,18 @@
        "quote": "Other pro-Israel PACs tracked here — chiefly Republican Jewish Coalition PAC — account for $13,000, including $13,000 in direct and earmarked contributions.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1499",
+       "date": "2025-04-29",
+       "date_method": "page_metadata",
+       "url": "https://forward.com/fast-forward/716347/antisemitism-bill-congress-jews-jesus/",
+       "summary": "The Forward reports Tuberville objected to the Antisemitism Awareness Act over religious-liberty concerns as senators considered a free-exercise amendment. This is distinct from a pro-Palestinian stance.",
+       "quote": "Tommy Tuberville of Alabama and Roger Marshall of Kansas, have expressed their objections due to concerns about religious liberty",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -161474,6 +162789,18 @@
        "quote": "The pro-Hamas, pro-genocide, anti-Israel events happening across the nation are sickening and should be condemned in the strongest fashion.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1417",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"B001302\",\"name\":\"Biggs\",\"state\":\"AZ\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "endorsements": [
@@ -162415,6 +163742,18 @@
        "quote": "Governor Sanders met with Israeli Prime Minister Benjamin Netanyahu today to discuss Arkansas' unbreakable bond with Israel and commitment to standing with the Israeli people to defeat common enemies and defend shared values.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1477",
+       "date": "2025-04-17",
+       "date_method": "page_metadata",
+       "url": "https://combatantisemitism.org/government-and-policy/arkansas-governor-signs-legislation-to-combat-antisemitism-in-states-public-universities-and-k-12-schools/",
+       "summary": "CAM reports Sanders signed Arkansas SB 352, integrating IHRA and its examples into public-school and university conduct codes and adding discrimination enforcement and optional awareness training.",
+       "quote": "SB 352 requires the integration of the IHRA definition into student and employee codes of conduct",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "pro_palestine_score": 0.02,
@@ -165969,6 +167308,18 @@
        "quote": "Two Pro-Israel Candidates Will Battle for Gov. Ron DeSantis' Seat",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1418",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Nay on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"D000032\",\"name\":\"Donalds\",\"state\":\"FL\",\"vote\":\"Nay\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "platform_positions": {
@@ -168743,6 +170094,18 @@
        "quote": "Couldn't be more grateful for President Trump and his administration for the tireless work to finally bring PEACE, stability and security.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1478",
+       "date": "2025-10-30",
+       "date_method": "page_metadata",
+       "url": "https://combatantisemitism.org/interview/its-important-to-understand-the-truth-and-spread-it-kansas-senate-president-ty-masterson-reflects-on-state-lawmakers-delegation-visit-to-israel/",
+       "summary": "CAM describes Masterson as helping spearhead Kansas’s adoption of IHRA into state law; his interview emphasizes state leaders’ role in combating antisemitism and supporting Israel.",
+       "quote": "Kansas Senate President Ty Masterson, who has helped spearhead legislative efforts in Kansas to combat antisemitism",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -169905,6 +171268,18 @@
        "quote": "Massachusetts' bond with Israel is built from family bonds — grandparents,",
        "source_kind": "news",
        "date_method": "x_snowflake"
+      },
+      {
+       "id": "GE-1479",
+       "date": "2024-07-30",
+       "date_method": "page_metadata",
+       "url": "https://www.wgbh.org/news/politics/2024-07-30/antisemitism-provisions-in-new-state-budget-spark-pushback",
+       "summary": "GBH reports Healey signed budget provisions for antisemitism curricula and a commission tied to the US National Strategy. Critics warned of indirect IHRA endorsement and speech restrictions; no explicit IHRA mandate is established.",
+       "quote": "a second outside section can be interpreted as indirectly endorsing one specific definition of the term.",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -173784,6 +175159,29 @@
        "quote": "HR 7633 (text): Introduced 3/12/24 by James (R-MI) and McCaul (R-TX), 'To provide authority to enhance security assistance with countries that are engaged in regional security cooperation efforts in the Middle East",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1420",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"J000307\",\"name\":\"James\",\"state\":\"MI\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
+      },
+      {
+       "id": "GE-1463",
+       "date": "2025-02-05",
+       "date_method": "source_stated",
+       "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1007ih/html/BILLS-119hr1007ih.htm",
+       "summary": "Listed on the introduced H.R. 1007 (February 5, 2025), the Antisemitism Awareness Act, as an original sponsor/cosponsor; the bill incorporates IHRA’s definition and examples for Title VI education enforcement.",
+       "quote": "James",
+       "dimension": "antisemitism_education",
+       "source_kind": "bill_text",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -174622,6 +176020,17 @@
        "quote": "Following Nebraska Governor Jim Pillen's announcement Thursday that he will embark on a trade mission to Israel next week, local advocates have condemned the move.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1480",
+       "date": "2026-05-29",
+       "date_method": "source_stated",
+       "url": "https://governor.nebraska.gov/gov-pillen-signs-executive-order-tackling-antisemitism-states-public-education-system",
+       "summary": "Pillen’s order requires public schools and higher education to adopt IHRA, report antisemitism incidents, and provide Holocaust, Israel and Jewish-history curriculum resources.",
+       "quote": "also adopt the IHRA definition of antisemitism",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "platform_positions": {
@@ -176030,6 +177439,18 @@
        "quote": "After war broke out between Israel and Hamas over the weekend, the Nevada delegation is standing behind Israel.",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1481",
+       "date": "2025-08-20",
+       "date_method": "page_metadata",
+       "url": "https://peoplestribune.org/2025/08/nevadas-new-legal-definition-of-antisemitism-stifles-free-speech-say-activists/",
+       "summary": "People’s Tribune reports Lombardo signed Nevada SB 179 in June 2025, adopting IHRA’s working definition into state law; the article attributes free-speech objections to Palestinian-solidarity advocates.",
+       "quote": "Senate Bill 179, which was signed into law by Governor Joe Lombardo in June",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -178848,6 +180269,18 @@
        "quote": "I am a strong supporter of Israel,\" and, in the next breath, \"I am a Zionist and a proud Zionist.",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1482",
+       "date": "2026-01-27",
+       "date_method": "page_metadata",
+       "url": "https://nypost.com/2026/01/27/us-news/gubernatorial-candidate-bruce-blakeman-blasts-hochul-mamdani-and-demands-new-york-state-adopt-ihra-antisemitism-definition-this-is-a-disgrace/",
+       "summary": "The New York Post reports Blakeman demanded New York adopt IHRA’s definition and criticized its removal by New York City’s mayor. This is his stated policy demand, not an enacted state measure.",
+       "quote": "we’re demanding our elected officials adopt that definition",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "platform_positions": {
@@ -187420,6 +188853,18 @@
        "quote": "I Stand With Israel - U.S. Senator Marsha Blackburn of Tennessee",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1442",
+       "date": "2023-06-15",
+       "date_method": "page_metadata",
+       "url": "https://www.rickscott.senate.gov/2023/6/sen-rick-scott-leads-resolution-to-clearly-label-attacks-against-israel-as-antisemitism",
+       "summary": "Named as a backer of Rick Scott’s June 2023 resolution embracing IHRA; the announcement calls delegitimization of Israel antisemitism. This is resolution sponsorship, not a recorded passage vote.",
+       "quote": "Marsha Blackburn",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -187962,6 +189407,17 @@
        "quote": "Greg Abbott threatens Texas city over resolution criticizing Israel",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1483",
+       "date": "2024-03-27",
+       "date_method": "source_stated",
+       "url": "https://gov.texas.gov/news/post/governor-abbott-fights-antisemitic-acts-at-texas-colleges-universities",
+       "summary": "Abbott directed Texas higher-education institutions to define antisemitism in free-speech policies and establish punishments for antisemitic rhetoric. The announcement also cites the state’s ban on boycotting Israel.",
+       "quote": "Governor Greg Abbott today issued an Executive Order",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_statement",
+       "checked_on": "2026-10-26"
       }
      ],
      "endorsements": [
@@ -190648,6 +192104,18 @@
        "quote": "Tiffany supportive of Israel despite calls for a ceasefire",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1422",
+       "date": "2024-05-01",
+       "date_method": "source_stated",
+       "url": "https://clerk.house.gov/evs/2024/roll172.xml",
+       "summary": "Recorded Yea on H.R. 6090, the Antisemitism Awareness Act: the bill directs use of IHRA's definition and examples in Title VI education-discrimination enforcement. A vote does not establish its rationale.",
+       "quote": "{\"bioguide_id\":\"T000165\",\"name\":\"Tiffany\",\"state\":\"WI\",\"vote\":\"Yea\"}",
+       "dimension": "antisemitism_education",
+       "source_kind": "official_roll_call",
+       "checked_on": "2026-10-26",
+       "date_note": "Official House Clerk recorded vote; quote transcribes exact XML fields, not spoken words."
       }
      ],
      "pro_palestine_score": 0.02,
@@ -211929,6 +213397,18 @@
        "quote": "Total Israel lobby contributions: $78,275... California Jewish PAC 2021-2025 $24,200... Michael Tuchin 2013 $3,000... former President and current Board member of AIPAC",
        "source_kind": "news",
        "date_method": "source_stated"
+      },
+      {
+       "id": "GE-1490",
+       "date": "2025-09-12",
+       "date_method": "source_stated",
+       "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+       "summary": "CalMatters lists Benjamin Allen as recorded Aye on AB 715 (Senate Floor). The bill creates an antisemitism coordinator and classroom-material oversight; its text does not explicitly name IHRA.",
+       "quote": "Benjamin Allen | Aye",
+       "dimension": "antisemitism_education",
+       "source_kind": "legislative_tracker",
+       "checked_on": "2026-10-26",
+       "date_note": "CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription."
       }
      ],
      "endorsements": [
@@ -221562,7 +223042,21 @@
       "request_sha256": "24986f205bbe5b5a8c7211cac57926eba50a9a3bbe32cbc52bdd0ba5950d8969",
       "summary": "Richard Barrera received an A because the pro-Palestine score of 4.31 falls in the A band (over 4.17 to 5). The sole Gaza-relevant observation is a CAIR Action preferred endorsement, verified by endorser statement, mapping to the top rubric criterion. The gaza_grade was recorded as B, consistent with that tier. No direct candidate statements, legislative actions, or other anti-Zionist endorsements appear in the state; the 0.24 evidence score reflects the limited base.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1518",
+       "date": "2026-05-19",
+       "date_method": "page_metadata",
+       "url": "https://jweekly.com/2026/05/19/candidates-for-state-superintendent-split-on-defending-k-12-antisemitism-law-in-court/",
+       "summary": "At a state-superintendent forum, Barrera expressed concerns about AB 715’s classroom effects and declined to commit to defending it against every lawsuit; he would defend it when that protects students.",
+       "quote": "declined to commit to defending AB 715 against all legal challenges.",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
+      }
+     ]
     },
     {
      "name": "Sonja Shaw",
@@ -221594,6 +223088,18 @@
        "quote": "Chino Valley Unified School Board President Sonja Shaw refuses to allow PPP to hijack a meeting. This as other school boards are passing ceasefire resolutions.",
        "source_kind": "news",
        "date_method": "page_metadata"
+      },
+      {
+       "id": "GE-1486",
+       "date": "2026-05-19",
+       "date_method": "page_metadata",
+       "url": "https://jweekly.com/2026/05/19/candidates-for-state-superintendent-split-on-defending-k-12-antisemitism-law-in-court/",
+       "summary": "At a state-superintendent forum, Shaw pressed for stronger AB 715 enforcement, criticized Muratsuchi’s abstention and accused Barrera of weakening an antisemitism resolution. This is her attributed forum stance.",
+       "quote": "Shaw called out Muratsuchi for abstaining from the final assembly vote on AB 715",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "endorsements": [
@@ -265963,7 +267469,20 @@
       "request_sha256": "28caad98ab7c4c76b907a360b2de2e1ff80836d4e1011867d059cd2c0c408e41",
       "summary": "Mark Fantozzi, a nonpartisan candidate for At-large City Council Member in Cupertino, California, received an N/A designation because the saved evidence score was 0.0 out of 1, below the 0.10 threshold for a letter grade. The input state contained no Gaza or Israel-relevant observations, including no candidate statements, legislative actions, endorsements, or community input on the pro-Palestine criteria. The available evidence was insufficient, so no grade was assigned and no political stance is implied.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1487",
+       "date": "2026-10-07",
+       "date_method": "source_stated",
+       "url": "https://icanaction.org/briefings/ican-endorses-mark-fantozzi-cupertino-city-council/",
+       "summary": "ICAN’s endorsement announcement says Fantozzi expressed interest in making municipal adoption of IHRA an early Cupertino council priority if elected. This is an attributed policy commitment, not a passed council action.",
+       "quote": "Fantozzi has expressed an interest in making adoption of the International Holocaust Remembrance Alliance’s working definition of antisemitism an early council priority",
+       "dimension": "antisemitism_education",
+       "source_kind": "advocacy_statement",
+       "checked_on": "2026-10-26"
+      }
+     ]
     },
     {
      "name": "John Tang",
@@ -271622,6 +273141,18 @@
        "source_kind": "advocacy_tracker",
        "url": "https://ca.cair.com/sfba/ceasefire-tracker/",
        "checked_on": "2026-10-23"
+      },
+      {
+       "id": "GE-1488",
+       "date": "2026-05-06",
+       "date_method": "page_metadata",
+       "url": "https://combatantisemitism.org/government-and-policy/east-palo-alto-city-council-endorses-ihra-antisemitism-definition-and-recognizes-jewish-american-heritage-month/",
+       "summary": "CAM reports Ruben Abrica voted against East Palo Alto’s resolution endorsing IHRA. This is the advocacy publisher’s account of a 3–2 council vote, not an independently checked municipal roll call.",
+       "quote": "Vice Mayor Ruben Abrica and Council Member Carlos Romero against.",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
       }
      ],
      "pro_palestine_score": 4.77,
@@ -377390,7 +378921,21 @@
       "request_sha256": "7a12277275ed27e79223f5f7e2d6ccf248a35b5b514a7ee1e30952d1d0455162",
       "summary": "Jennifer Shanoski, a nonpartisan incumbent running for At large Governing Board Member in the Berkeley Unified School District, received an N/A designation because the saved evidence score was 0.0 out of 1, falling below the 0.10 threshold required to assign a letter grade. The evaluated input state contained no direct candidate statements, legislative actions, outside spending, endorsements, or community observations relevant to Gaza or Israel, leaving insufficient evidence to place her on the pro-Palestine rubric.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1489",
+       "date": "2025-12-17",
+       "date_method": "page_metadata",
+       "url": "https://www.berkeleyside.org/2025/12/17/berkeley-unified-school-district-federal-antisemitism-inquiry-ab-715",
+       "summary": "Berkeleyside reports Shanoski criticized how Berkeley Unified was characterized in AB 715 hearings and said she looked forward to changes to the bill. This is a call for amendments, not a recorded vote against the law.",
+       "quote": "look forward to seeing changes to that bill in the year ahead.",
+       "dimension": "antisemitism_education",
+       "source_kind": "news_report",
+       "checked_on": "2026-10-26",
+       "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
+      }
+     ]
     }
    ],
    "source_ids": [

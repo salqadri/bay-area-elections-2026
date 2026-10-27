@@ -223,8 +223,8 @@ values are recorded with exact candidacy provenance and no special annotations. 
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v7-local-federal-community`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v7-community-observations`:
+context (`candidate-evidence-v8-local-federal-education-policy`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v8-education-policy`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -335,3 +335,17 @@ Local iterations do not change the public snapshot. The public badge uses the
 derived score grade and numeric score; the model's separate `gaza_grade` is not
 shown. **Restore defaults** now loads the owner's complete v3 questions, while
 selecting a saved evaluation still restores that evaluation's actual questions.
+
+## Education-policy input refresh (October 26, 2026)
+
+The default inspector tab, **Current input**, shows the state that a new evaluation
+would receive. **State JSON** still shows the exact saved input; **Full request**
+and **Answers JSON** also retain historical provenance. Inspecting new research
+never submits a request or replaces the displayed saved answers.
+
+All records tagged `antisemitism_education` now enter the separate
+`antisemitism_education_policy_evidence` channel with source URLs and date
+qualifications, outside the generic twelve-item budget. The source refresh added
+129 records across 104 candidacies, including Wiener; all saved scores, preferred
+v3 questions and grade explanations remain unchanged. See
+[the evidence workflow](EDUCATION_POLICY_RESEARCH.md).

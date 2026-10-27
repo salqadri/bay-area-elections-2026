@@ -1,0 +1,143 @@
+{
+ "version": 1,
+ "id": "education-policy-bridges-2026-10-26",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-26",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "d5cac9ba70d88152f9f9f0cd692224239fd9d00a4d7a1fcbe66a9c44d570329e",
+ "sources": {
+  "source-6737a2d57c383781e586": {
+   "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+   "publisher": "LegiScan (introduced California AB 1468)",
+   "role": "aggregator",
+   "candidate": "Scott Wiener",
+   "checked_on": "2026-10-26",
+   "content_sha256": "50ae0f93e1a09d45e40abeee8b46b8eac847a58c5833dc4cb423cc7e791c94b9",
+   "retrieval": "Captured source HTML"
+  },
+  "source-ffc137fb82fab9ecdf51": {
+   "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+   "publisher": "LegiScan (introduced California AB 1468)",
+   "role": "aggregator",
+   "candidate": "Ben Allen",
+   "checked_on": "2026-10-26",
+   "content_sha256": "50ae0f93e1a09d45e40abeee8b46b8eac847a58c5833dc4cb423cc7e791c94b9",
+   "retrieval": "Captured source HTML"
+  },
+  "source-6043c27ee49e4297720f": {
+   "url": "https://statenews.com/article/2025/11/tom-barrett-asking-msu-to-adopt-contested-antisemitism-definition",
+   "publisher": "The State News",
+   "role": "reporting",
+   "candidate": "Tom Barrett",
+   "checked_on": "2026-10-26",
+   "content_sha256": "1aed45eaef2f88199085759f908d9e680cfaa32e339c504a4736c027b65560aa",
+   "retrieval": "Captured source HTML"
+  },
+  "source-ba0c70573ef7de8de513": {
+   "url": "https://www.jns.org/antisemitism/kentucky-set-to-become-first-state-to-adopt-ihra-definition",
+   "publisher": "Jewish News Syndicate",
+   "role": "reporting",
+   "candidate": "Ralph Alvarado",
+   "checked_on": "2026-10-26",
+   "content_sha256": "d342d61ab8eb75a235a35937d4924b67d4f85c5cb83402f2d46c2bbeb9bdb665",
+   "retrieval": "Captured source HTML"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-6737a2d57c383781e586",
+   "position_id": "CA2026-229",
+   "candidate": "Scott Wiener",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "1848fb6dff495131f25ed5432484fcf2aaa570f2a1c98b90e81e3e252b28d326",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-11",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1522",
+    "date": "2025-02-21",
+    "date_method": "source_stated",
+    "url": "https://legiscan.com/CA/text/AB1468/id/3137570",
+    "summary": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715.",
+    "quote": "Wiener",
+    "dimension": "antisemitism_education",
+    "source_kind": "bill_text",
+    "checked_on": "2026-10-26",
+    "date_note": "Introduced bill version date; the proposal subsequently failed. Authorship is not an enacted-policy or final-vote claim."
+   },
+   "evidence": {
+    "identity_basis": "Explicit named candidate and office/state in the actual source. Historical offices can differ from the current race; hold name collisions.",
+    "date_basis": "Explicit source date or clearly labeled undated guide observation; not an inferred date for the underlying event.",
+    "issue_basis": "Listed among the authors/coauthors of AB 1468’s February 21, 2025 introduced version, which would focus high-school ethnic studies on domestic experiences. This proposal failed; it is distinct from enacted AB 715. Exact source quote: Wiener"
+   }
+  },
+  {
+   "id": "gaza-claim-1",
+   "action": "hold",
+   "source_key": "source-ffc137fb82fab9ecdf51",
+   "position_id": "CA2026-015",
+   "candidate": "Ben Allen",
+   "reason": "Source-bound Jev review did not establish all evidence requirements.",
+   "jev_ref": "f6dc943feaace7350f24f6f70a1cb8f5ef6ab2f7b90ba7cb20e4b1462dea2e8d"
+  },
+  {
+   "id": "gaza-claim-2",
+   "action": "hold",
+   "source_key": "source-6043c27ee49e4297720f",
+   "position_id": "US2026-094",
+   "candidate": "Tom Barrett",
+   "reason": "Source-bound Jev review did not establish all evidence requirements.",
+   "jev_ref": "6ad2058e12e98b26d24ef75f81dba4f4eb82e7c14fb79887d54cf88c53922bdf"
+  },
+  {
+   "id": "gaza-claim-3",
+   "action": "change",
+   "source_key": "source-ba0c70573ef7de8de513",
+   "position_id": "US2026-091",
+   "candidate": "Ralph Alvarado",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "52f43828584719d727a0f59c1ea240879323eddddb6a1c0a4f2bc5a901f2d4b8",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-6",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1525",
+    "date": "2021-02-25",
+    "date_method": "page_metadata",
+    "url": "https://www.jns.org/antisemitism/kentucky-set-to-become-first-state-to-adopt-ihra-definition",
+    "summary": "JNS reports Alvarado introduced Kentucky’s 2021 resolution recognizing IHRA’s antisemitism definition. This is an attributed report of his legislative role, not a claim about his Gaza-war position.",
+    "quote": "The measure was introduced by State Sen. Ralph Alvarado",
+    "dimension": "antisemitism_education",
+    "source_kind": "news_report",
+    "checked_on": "2026-10-26",
+    "date_note": "Article publication metadata date, not necessarily the date of the action described; events may precede this report."
+   },
+   "evidence": {
+    "identity_basis": "Explicit named candidate and office/state in the actual source. Historical offices can differ from the current race; hold name collisions.",
+    "date_basis": "Captured article publication metadata 2021-02-25; not the underlying event date.",
+    "issue_basis": "JNS reports Alvarado introduced Kentucky’s 2021 resolution recognizing IHRA’s antisemitism definition. This is an attributed report of his legislative role, not a claim about his Gaza-war position. Exact source quote: The measure was introduced by State Sen. Ralph Alvarado"
+   }
+  }
+ ]
+}

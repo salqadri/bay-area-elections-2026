@@ -112,3 +112,11 @@ for(const value of [null,true,'0',NaN,-.1,1.1]){sparse.response.answers.evidence
 sparse.response.answers.evidence_score.score=0;sparse.request.questions.evidence_score.criteria.push('wrong scale');assert.equal(C.derivedGrade(sparse),'D');
 delete sparse.request.questions.evidence_score;assert.equal(C.derivedGrade(sparse),'D');
 console.log('PASS Evidence sufficiency: strict 0.10 boundary, validated 0–1 question, unchanged historic prompts/raw answers and nonletter CAIR handling.');
+
+// New research is inspectable without rewriting the inputs of a saved result.
+const savedInputRow={id:"fresh-input",request:{state:{candidate:"Example",evidence:"old"}}};
+const inputSnapshot={candidates:[{id:"fresh-input",state:{candidate:"Example",evidence:"new AB715 evidence"}}]};
+assert.equal(C.currentInput(inputSnapshot,savedInputRow).evidence,"new AB715 evidence");
+assert.equal(savedInputRow.request.state.evidence,"old");
+assert(C.currentInput({candidates:[]},savedInputRow).status.includes("outside"));
+assert(html.includes("tab-current-state"));

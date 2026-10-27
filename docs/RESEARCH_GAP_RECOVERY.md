@@ -83,6 +83,12 @@ not an identity inferred from the campaign's HAPAC logo filename.
 
 ## Audit evidence gaps independently of collector done flags
 
+For IHRA definitions, AB 715/AB 1468 and Israel/Palestine education policy, use
+[the all-active-candidate topic refresh](EDUCATION_POLICY_RESEARCH.md). Its scope
+includes candidates with existing Gaza evidence and does not infer political
+positions from ordinary antisemitism condemnation or Holocaust education.
+
+
 For California local action sources, first run the
 [shared ceasefire-tracker refresh](LOCAL_CEASEFIRE_RESEARCH.md). It evaluates the
 whole current California roster even when candidates already have evidence.
@@ -100,7 +106,9 @@ already captured in general platform research, including nested `/issues` pages.
 Its fingerprint changes with candidate/source context. A missing record means
 source review is pending, not neutrality or absence of a position.
 
-Discovery version `gaza-discovery-v2-divestment` separates the name + Israel +
+Current discovery version `gaza-discovery-v3-education-policy` adds dedicated IHRA,
+AB 715/AB 1468 and education queries and retains the earlier divestment layer.
+That layer separates the name + Israel +
 divestment search from jurisdiction + ceasefire queries, and adds a BDS/boycott/
 bonds/investment query. Divestment/BDS-only result snippets remain discovery leads
 instead of being discarded. Existing candidate fingerprints include this search

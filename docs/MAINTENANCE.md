@@ -54,6 +54,12 @@ New races require separate image publication, shared-publisher refresh and topic
 
 Current California shared-publisher refreshes have separate workflows: [CAIR Action recommendations](CAIR_ACTION.md) and [CAIR-SFBA local ceasefire actions](LOCAL_CEASEFIRE_RESEARCH.md). They do not share an endorsement classification. The action refresh ignores legacy done flags and existing-evidence presence, while the generic Gaza planner exposes `--refresh-existing --state CA`. [Local Jev evaluations](JEV_PLAYGROUND.md) remain separate from public candidate evidence and retain historical requests unchanged.
 
+The [education-policy refresh](EDUCATION_POLICY_RESEARCH.md) uses
+`scripts/research_education_policy.py` for all-active-candidate Serper discovery,
+Jev triage, source captures and source-outcome audits. The shared grader gives
+`antisemitism_education` records a complete separate input channel. Capturing
+research does not run scorecards or update frozen grade explanations.
+
 ## Normal change workflow
 
 1. Inspect the current branch, source files and relevant evidence. Use a branch or isolated worktree when concurrent work warrants it.
@@ -77,10 +83,14 @@ python3 scripts/check_evidence.py
 python3 scripts/check_published_endorsements.py
 python3 scripts/check_endorsement_images.py
 python3 scripts/check_research_gaps.py
+python3 scripts/check_education_policy.py
 python3 scripts/check_endorsements.py
 python3 scripts/check_ballotpedia_endorsements.py
 python3 scripts/check_x_profiles.py
 python3 scripts/check_jev_playground.py
+python3 scripts/check_published_grades.py
+python3 scripts/check_grade_explanations.py
+python3 scripts/check_candidate_community.py
 python3 scripts/check_campaign_endorsement_batch.py research/endorsements/batch-2026-10-18
 python3 scripts/check_cair_guide.py
 python3 scripts/check_cair_refresh.py
@@ -90,20 +100,21 @@ python3 scripts/check_research_workflow.py
 python3 scripts/check_schema.py
 python3 scripts/check_fec_money.py
 python3 scripts/check_gaza_ledger.py
+python3 scripts/check_gaza_voting_records.py
+python3 scripts/check_uscpr_scorecard.py
+python3 scripts/check_gaza_records.py
 python3 scripts/check_campaign_platforms.py
 python3 scripts/check_platform_positions.py
-python3 scripts/check_uscpr_scorecard.py
-python3 scripts/check_gaza_voting_records.py
-python3 scripts/check_gaza_records.py
 python3 scripts/prepare_dom_fixture.py
+node scripts/check_pro_palestine_grade_display.cjs
+node scripts/check_analytics.cjs
+node scripts/check_jev_playground.cjs
 node scripts/check_endorsement_display.cjs
 node scripts/check_finance_display.cjs
 node scripts/check_gaza_display.cjs
 node scripts/check_platform_display.cjs
 node scripts/check_candidate_sort.cjs
 node scripts/check_contest_label.cjs
-node scripts/check_jev_playground.cjs
-node scripts/check_analytics.cjs
 node scripts/check_explorer.cjs
 node scripts/check_address_services.cjs
 node scripts/check_address_suggestions.cjs
@@ -114,7 +125,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs this complete 39-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs the complete 44-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 

@@ -8,7 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parent.parent
 PYTHON_CHECKS = [
     ('build_site.py', '--check'), ('check_data.py',), ('check_evidence.py',),
-    ('check_published_endorsements.py',), ('check_endorsement_images.py',), ('check_research_gaps.py',), ('check_endorsements.py',), ('check_ballotpedia_endorsements.py',), ('check_x_profiles.py',), ('check_jev_playground.py',), ('check_published_grades.py',), ('check_grade_explanations.py',), ('check_candidate_community.py',),
+    ('check_published_endorsements.py',), ('check_endorsement_images.py',), ('check_research_gaps.py',), ('check_education_policy.py',), ('check_endorsements.py',), ('check_ballotpedia_endorsements.py',), ('check_x_profiles.py',), ('check_jev_playground.py',), ('check_published_grades.py',), ('check_grade_explanations.py',), ('check_candidate_community.py',),
     ('check_campaign_endorsement_batch.py', 'research/endorsements/batch-2026-10-18'),
     ('check_cair_guide.py',), ('check_cair_refresh.py',), ('check_local_ceasefires.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
     ('check_schema.py',), ('check_fec_money.py',), ('check_gaza_ledger.py',),

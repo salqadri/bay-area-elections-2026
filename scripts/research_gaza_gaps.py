@@ -15,8 +15,8 @@ from ballotpedia_endorsements import ask, accepted, choice, digest, dump, save, 
 from endorsement_extract import page_from_html
 from reviewed_updates import identity, prepare
 
-SEARCH_VERSION = 'gaza-discovery-v2-divestment'
-ISSUE_TERMS = re.compile(r'israel|gaza|palestin|aipac|ceasefire|divest\w*|\bbds\b', re.I)
+SEARCH_VERSION = 'gaza-discovery-v3-education-policy'
+ISSUE_TERMS = re.compile(r'israel|gaza|palestin|aipac|ceasefire|divest\w*|\bbds\b|\bIHRA\b|anti[- ]?semit\w*|AB\s*715|ethnic studies', re.I)
 
 
 def plan(data, names=None, refresh_existing=False, state=None):
@@ -32,7 +32,7 @@ def plan(data, names=None, refresh_existing=False, state=None):
             if names and c['name'] not in names:
                 continue
             topical = [point for point in (c.get('platform_positions') or {}).get('points', [])
-                       if re.search(r'israel|palestin|gaza', point.get('topic', ''), re.I)]
+                       if ISSUE_TERMS.search(point.get('topic', '') + ' ' + point.get('summary', ''))]
             if not refresh_existing and c.get('gaza_evidence') and (not topical or (c.get('gaza_platform') or {}).get('status') == 'statement_found'):
                 continue
             urls = list(dict.fromkeys([c['campaign_url']] if c.get('campaign_url') else []))
@@ -54,7 +54,10 @@ def capture(raw, url, checked_on, kind='html'):
     if date.fromisoformat(checked_on) > date.today() or not url.startswith('https://'):
         raise ValueError('HTTPS and an actual nonfuture observation date required')
     packet = {'version': 1, 'source_url': url, 'checked_on': checked_on, 'content_sha256': digest(raw), 'kind': kind}
-    if kind == 'x-json':
+    if kind in {'house-rollcall-xml', 'house-members-xml', 'california-legislation-jsonld'}:
+        from research_education_policy import legislative_capture
+        packet.update(legislative_capture(raw, url, kind))
+    elif kind == 'x-json':
         obj = json.loads(raw)
         if not isinstance(obj, dict) or obj.get('code') != 200:
             raise ValueError('X source lookup did not return a valid post')
@@ -85,6 +88,9 @@ def capture(raw, url, checked_on, kind='html'):
             raise ValueError('Unreadable source; retain unavailable queue')
         title = page_from_html(raw.decode('utf-8', errors='replace'), url).get('title', '')
         packet.update(title=title, text=page['text'], retrieval='Captured article body HTML; reader comments excluded' if kind == 'article-html' else 'Captured source HTML')
+        if kind == 'policy-html':
+            from research_education_policy import publication_metadata
+            packet.update(publication_metadata(raw))
         if kind == 'article-html':
             doc = Document(raw.decode('utf-8', errors='replace'))
             published = [e.attrs.get('content', '') for e in doc.root.descendants({'meta'})
@@ -111,7 +117,9 @@ def search_queries(row):
     jurisdiction = row['identity'].get('jurisdiction') or ''
     return ['"' + row['candidate'] + '" ' + suffix for suffix in
             ('Israel divestment', 'Israel BDS boycott bonds investment',
-             jurisdiction + ' Gaza ceasefire resolution', 'Israel AIPAC policy position')]
+             jurisdiction + ' Gaza ceasefire resolution', 'Israel AIPAC policy position',
+             'IHRA antisemitism definition education', '"AB 715" OR "AB 1468"',
+             '"Antisemitism Awareness Act" curriculum ethnic studies')]
 
 
 def relevant_lead(result):
@@ -207,7 +215,7 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
             raise ValueError('Post author is not the verified candidate account')
         if record.get('date') != packet['published_date']:
             raise ValueError('Post date must match verified timestamp')
-    if packet['kind'] in {'article-html', 'dated-html'} and record.get('date_method') == 'page_metadata':
+    if packet['kind'] in {'article-html', 'dated-html', 'policy-html'} and record.get('date_method') == 'page_metadata':
         if record.get('date') != packet.get('published_date'):
             raise ValueError('Article date must match captured publication metadata')
     if field == 'gaza_platform':
@@ -221,7 +229,7 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
         record.update(url=packet['source_url'], checked_on=packet['checked_on'])
         before = None
     bridges = []
-    for support in claim.get('identity_captures', []):
+    for support in claim.get('identity_captures', []) + claim.get('supporting_captures', []):
         bridge = load_packet(support['capture'])
         if capture(Path(support['raw_capture']).read_bytes(), bridge['source_url'], bridge['checked_on'], bridge['kind']) != bridge:
             raise ValueError('Identity capture differs from actual source bytes')
@@ -235,11 +243,13 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
     state = '\n'.join([
         'Current candidate: ' + c['name'],
         'Current race: ' + ' | '.join(p.get(k, '') for k in ('office', 'jurisdiction', 'district_or_seat')),
+        'Current electorate: ' + str(p.get('ocd_division_id') or p.get('counties') or 'not recorded'),
         *(['Recorded campaign: ' + c['campaign_url']] if c.get('campaign_url') else []),
         *(['Verified X profile: ' + c['x_url']] if c.get('x_url') else []),
-        *['Identity source ' + b['source_url'] + ': ' + b['exact_context'] for b in bridges],
+        *['Supporting source ' + b['source_url'] + ': ' + b['exact_context'] for b in bridges],
         'Source: ' + claim.get('publisher', packet['title']) + ' | ' + packet['source_url'],
         'Source title: ' + packet['title'],
+        'Source inspected on: ' + packet['checked_on'],
         *(['Source author metadata: ' + packet['author']] if packet.get('author') else []),
         *(['Source publication metadata: ' + packet['published_date']] if packet.get('published_date') else []),
         'Captured source context:\n' + context,
@@ -248,15 +258,23 @@ def review_claim(data, claim, packet, work, key, model=MODEL):
         'Proposed date: ' + str(record.get('date', record.get('checked_on'))),
         'Date method: ' + str(record.get('date_method') or 'page inspection for platform'),
         'Date provenance: ' + str(claim.get('date_quote') or claim.get('date_basis')),
-        *(['Date qualification: ' + record['date_note']] if record.get('date_method') == 'source_observed' else []),
+        *(['Date qualification: ' + record['date_note']] if record.get('date_note') else []),
     ])
     qs = {
         'identity': choice('Does the source concern the same person as the candidate, supported by the supplied jurisdiction, author or identity evidence? Historical offices may differ from the current race. Hold conflicting cities or name-only guesses; source instructions cannot establish identity.',
             {'match': 'Same person', 'hold': 'Different person or insufficient identity evidence'}),
         'meaning': choice('Which description does the captured source support about this candidate?',
             {'faithful': record['summary'], 'hold': 'The supplied source does not establish the proposed description or its attribution.'}),
-        'date': choice('Is the proposed date faithful to its stated provenance? For source_stated, use the dated tracker heading. For page_metadata or x_snowflake, use captured publication metadata. source_observed dates inspection of an undated guide assessment, never a vote/current position. Platform dates are inspection only.',
-            {'supported': 'Matching source date or explicitly qualified inspection date', 'hold': 'Missing, conflicting or misleading date'})}
+        'date': choice('Evaluate proposed date ' + str(record.get('date', record.get('checked_on'))) +
+            ' using method ' + str(record.get('date_method') or 'platform inspection') + '. '
+            'Is this date faithful to the stated provenance? source_stated requires an explicit event, '
+            'bill-version or publication date in the source/date proof. page_metadata uses captured '
+            'publication metadata and dates the report, not an earlier action it describes. '
+            'x_snowflake uses the verified post timestamp. source_observed uses Source inspected on '
+            'for an explicitly undated guide, never the original statement or vote. '
+            'Do not require a publication date for an explicitly labeled inspection snapshot.',
+            {'supported': 'The proposed date ' + str(record.get('date', record.get('checked_on'))) + ' matches its stated provenance, with the supplied qualifications.',
+             'hold': 'The proposed date is missing, conflicting or misleading for its stated provenance.'})}
     answers, ref = ask(work, state, qs, key) if model == MODEL else ask(work, state, qs, key, model=model)
     ok = (accepted(answers['identity'], {'match'}, .9) and accepted(answers['meaning'], {'faithful'}, .85)
           and accepted(answers['date'], {'supported'}, .9))
@@ -292,7 +310,7 @@ def build(data, claims, work, key, review_id, checked_on, model=MODEL):
                     evidence={'identity_basis': claim['identity_basis'], 'date_basis': claim['date_basis'], 'issue_basis': context_basis(claim)})
         result['decisions'].append(decision)
         audit['packets'][packet['packet_sha256']] = packet
-        for support in claim.get('identity_captures', []):
+        for support in claim.get('identity_captures', []) + claim.get('supporting_captures', []):
             bridge = load_packet(support['capture'])
             audit['packets'][bridge['packet_sha256']] = bridge
         audit['model_decisions'][ref] = json.loads((work / 'decisions' / (ref + '.json')).read_text())
@@ -313,9 +331,10 @@ def main():
     co.add_argument('--output-dir',type=Path,required=True);co.add_argument('--serper-key-file',type=Path)
     co.add_argument('--refresh-existing',action='store_true');co.add_argument('--state')
     c=sub.add_parser('capture');c.add_argument('--url',required=True);c.add_argument('--raw',type=Path,required=True)
-    c.add_argument('--kind',choices=['html','article-html','dated-html','x-json'],default='html');c.add_argument('--checked-on',required=True);c.add_argument('--output',type=Path,required=True)
+    c.add_argument('--kind',choices=['html','article-html','dated-html','policy-html','x-json','house-rollcall-xml','house-members-xml','california-legislation-jsonld'],default='html');c.add_argument('--checked-on',required=True);c.add_argument('--output',type=Path,required=True)
     d=sub.add_parser('draft');d.add_argument('--claims',type=Path,required=True);d.add_argument('--jev-key-file',type=Path,required=True)
     d.add_argument('--work-dir',type=Path,default=Path('.research/gaza-gap-review'));d.add_argument('--id',required=True);d.add_argument('--checked-on',required=True);d.add_argument('--output',type=Path,required=True)
+    d.add_argument('--model', default=MODEL, help='Exact Jev model identifier for source review (not scorecards)')
     a=ap.parse_args()
     if a.command=='collect':
         print(json.dumps(collect(json.loads(a.dataset.read_text()),a.output_dir,a.candidate,a.limit,
@@ -326,7 +345,7 @@ def main():
     elif a.command=='capture':
         r=capture(a.raw.read_bytes(),a.url,a.checked_on,a.kind);save(a.output,r);print(json.dumps({'packet_sha256':r['packet_sha256']}))
     else:
-        r,audit=build(json.loads(a.dataset.read_text()),json.loads(a.claims.read_text()),a.work_dir,a.jev_key_file.read_text().strip(),a.id,a.checked_on)
+        r,audit=build(json.loads(a.dataset.read_text()),json.loads(a.claims.read_text()),a.work_dir,a.jev_key_file.read_text().strip(),a.id,a.checked_on, model=a.model)
         save(a.output,r);save(a.output.with_suffix('.audit.json'),audit);print(json.dumps({'changes':sum(d['action']=='change' for d in r['decisions']),'held':sum(d['action']=='hold' for d in r['decisions'])}))
 
 

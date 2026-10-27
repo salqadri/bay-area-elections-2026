@@ -1,5 +1,11 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-26.5** (schema **1.26**) adds 129 source-reviewed education-policy
+records across 104 candidates after checking all 1,296 active candidacies. It covers
+IHRA definitions, AB 715/AB 1468 and related Israel/Palestine education policy.
+[Research workflow and limits](docs/EDUCATION_POLICY_RESEARCH.md).
+Existing scores and explanations were retained; **no scorecards were rerun**.
+
 An independent research inventory and searchable, static explorer of elected offices for the **November 3, 2026 California general election** in **Alameda, Contra Costa, San Francisco, San Mateo, and Santa Clara counties**.
 
 **Website:** https://salqadri.github.io/bay-area-elections-2026/
@@ -191,7 +197,7 @@ Schema 1.17 adds display-only `logo_url` on endorsement records and `election.pu
 
 - [`ballot.html`](ballot.html): address-based ballot estimate with inclusive district alternatives.
 - [`index.html`](index.html): self-contained explorer, including its dataset and schema; works on GitHub Pages or when opened locally.
-- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.25 (`schema_version` in the file is authoritative), publication `2026-10-26.2`.
+- [`2026-11-03_Bay_Area_Elections.json`](2026-11-03_Bay_Area_Elections.json): source dataset, schema version 1.26 (`schema_version` in the file is authoritative), publication `2026-10-26.5`.
 - [`elections.schema.json`](elections.schema.json): JSON Schema, Draft 2020-12.
 - [`src/index.template.html`](src/index.template.html): maintained explorer markup, shared styles and explorer logic.
 - [`src/ballot.template.html`](src/ballot.template.html) and [`src/`](src/): maintained address page and its service, matching and autocomplete modules.

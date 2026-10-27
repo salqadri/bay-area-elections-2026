@@ -1,4 +1,27 @@
 # Research and development handoff
+## Education-policy evidence refresh — October 26, 2026
+
+Publication **2026-10-26.5**, schema **1.26** adds **129 reviewed evidence
+records across 104 candidacies** after a Serper-only discovery pass over all
+1,296 active candidacies. Scott Wiener now has AB 715 coauthor/vote evidence,
+CAIR's attributed June-version objections and the separate AB 1468 proposal.
+The pipeline covers IHRA/antisemitism definitions and Israel/Palestine education
+policy, preserving support, opposition, amendments, nonvotes and bill versions.
+AB 715's retrieved chaptered text does not explicitly name IHRA; do not replace
+that distinction with an assertion of literal IHRA adoption.
+
+[Workflow and limitations](EDUCATION_POLICY_RESEARCH.md),
+[sweep archive](../research/education-policy/sweep-2026-10-26.json), five
+registered reviews and source-bound Jev audits are committed. Source failures
+and ambiguous surname/date matches remain held. The new state channel retains
+all `antisemitism_education` evidence beyond the generic twelve-item budget.
+
+**No scorecards were rerun.** Numeric scores, grades, exact v3 prompts, raw
+provider responses and Hermes's frozen explanations are unchanged. Playground
+**Current input** previews regenerated state; **State JSON** retains the exact
+saved input. The owner must request a rerun before refreshing the score archive
+and its explanations. New source-review decisions use Jev only.
+
 ## Grade evidence explanations published — October 27, 2026
 
 Publication **2026-10-26.2**, schema **1.25**: all **1,296 grade summaries**
@@ -36,7 +59,7 @@ only the short badge suppresses the numeric display in that case.
 [Hermes's next task](tasks/HERMES_GRADE_EXPLANATIONS.md) is to summarize the evidence
 supporting each published grade. A portable 1,296-item queue supplies exact IDs
 and request hashes; all input states and the final owner JSON are committed.
-No explanation generation has run yet.
+That follow-up is now complete in the explanation publication recorded above.
 
 Validation: **42/42 release checks pass**, plus desktop/mobile Chromium checks
 on both readers and the final preferred-default/history prompt regression. All
