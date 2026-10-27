@@ -1,4 +1,23 @@
 # Research and development handoff
+## Compact Jev state — October 26, 2026
+
+Publication **2026-10-26.7** keeps model input focused on decision-relevant
+content. Legislative rows have five fields (date, title, kind, response,
+alignment), plus a note when needed. Identical linked observations collapse;
+conflicts and qualifications remain. County/race metadata stays in the catalog
+for filters, while URLs and capture mechanics stay in canonical/audit records.
+Endorsement levels, phase/history/joint flags, non-primary claims, date limits,
+community booleans (including false), scores and exact historical inputs remain
+intact. No scorecards were rerun.
+
+[Full v10 contract](JEV_PLAYGROUND.md#compact-model-inputs-v10-october-26-2026),
+[measured payload sizes](../research/gaza-grading/state-compaction-2026-10-26.json):
+18.4% less JSON across 1,296 inputs; Garamendi 52.6% smaller. This measures
+serialized bytes, not provider token counts. Current input previews v10.
+Validation: **44/44 release checks pass**; desktop/mobile browser checks verify
+compact current input, unchanged saved input and complete public history. All
+123 local saved run files retain their pre-change hashes.
+
 ## Legislative assessment and date ordering — October 26, 2026
 
 Publication **2026-10-26.6** is a display/input-only change. Jev now receives

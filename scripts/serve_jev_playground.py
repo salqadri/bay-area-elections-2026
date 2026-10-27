@@ -25,7 +25,7 @@ ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
 COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
-STATE_VERSION = 'candidate-evidence-v9-local-federal-legislative-assessments'
+STATE_VERSION = 'candidate-evidence-v10-local-federal-compact'
 
 
 def row_id(position_id, candidate, roster):
@@ -42,10 +42,10 @@ def playground_state(position, candidate, data):
     state = build_state(position, candidate, data)
     if data.get('election', {}).get('date'):
         state['election_date'] = data['election']['date']
-    for key in ('jurisdiction', 'office_category', 'government_level', 'district_or_seat',
-                'counties', 'election_type', 'partisan'):
-        if key in position:
-            state[key] = deepcopy(position[key])
+    if 'jurisdiction' in position:
+        state['jurisdiction'] = position['jurisdiction']
+    if position.get('election_type') and position['election_type'] != 'general':
+        state['election_type'] = position['election_type']
     if position.get('partisan') is False and not candidate.get('party'):
         state['party'] = 'Nonpartisan'
     if 'incumbent' in candidate:

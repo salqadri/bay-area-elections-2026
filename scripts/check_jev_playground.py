@@ -135,8 +135,8 @@ class ValidationChecks(unittest.TestCase):
         data=fixture();pos=data['positions'][0];pos['id']='CA2026-014';c=pos['candidates'][0];c['name']='Xavier Becerra'
         before=deepcopy(c);state=g.build_state(pos,c,data);records=state['focused_endorsement_observations']
         self.assertEqual(c,before);self.assertEqual(len(records),1)
-        self.assertEqual((records[0]['relation'],records[0]['rating'],records[0]['source_label']),('neutral','Neutral','Neutral'))
-        self.assertEqual(records[0]['url'],'https://voteforpeace.info/california/xavier-becerra')
+        self.assertEqual((records[0]['relation'],records[0]['rating']),('neutral','Neutral'))
+        self.assertNotIn('url',records[0]);self.assertNotIn('source_label',records[0])
         pos['id']='other-race';self.assertNotIn('focused_endorsement_observations',g.build_state(pos,c,data))
         pos['id']='CA2026-014';c['endorsements']=[{'endorser':'VoteForPeace','relation':'opposed','phase':'general','url':'https://example.test/new'}]
         records=g.build_state(pos,c,data)['focused_endorsement_observations'];self.assertEqual(len(records),1)
@@ -214,9 +214,10 @@ class ValidationChecks(unittest.TestCase):
         data['ca_ie_spenders']={'1':{'name':'California support'},'2':{'name':'California oppose'}}
         data['ie_spenders']={'1':{'name':'Federal committee'}}
         state=p.playground_state(pos,candidate,data)
-        self.assertEqual(state['jurisdiction'],'AL-local jurisdiction');self.assertEqual(state['office_category'],'Mayor')
+        self.assertEqual(state['jurisdiction'],'AL-local jurisdiction');self.assertIn('Mayor',state['office'])
         self.assertEqual(state['state'],'CA');self.assertEqual(state['party'],'Nonpartisan');self.assertTrue(state['incumbent'])
-        self.assertEqual(state['counties'],['Alameda']);self.assertEqual(state['district_or_seat'],'District 3')
+        self.assertIn('District 3',state['office']);self.assertNotIn('counties',state);self.assertNotIn('district_or_seat',state)
+        self.assertEqual(next(r for r in p.snapshot(data)['races'] if r['id']==pos['id'])['counties'],['Alameda'])
         self.assertEqual(state['ca_spenders_supporting'],['California support $1,234'])
         self.assertEqual(state['ca_spenders_opposing'],['California oppose $4,321'])
         self.assertEqual(state['spenders_supporting'],['Federal committee $500'])
@@ -230,7 +231,17 @@ class ValidationChecks(unittest.TestCase):
                           {'endorser':'California Jewish Democrats','relation':'supported','phase':'general'},
                           {'endorser':'Peace Officers Research Association of California','relation':'endorsed','phase':'general'}]
         state=g.build_state(pos,c,data);rows=state['focused_endorsement_observations'];self.assertEqual(len(rows),3)
-        self.assertEqual(rows[0],c['endorsements'][0]);self.assertNotIn('endorsements_and_recommendations',state)
+        self.assertEqual(rows[0],{**c['endorsements'][0],'source':'unverified'});self.assertNotIn('endorsements_and_recommendations',state)
+
+    def test_compact_identity_keeps_false_observations_and_retention_context(self):
+        data=expanded_fixture();data['election']['date']='2026-11-03'
+        pos=data['positions'][5];candidate=pos['candidates'][0];pos['election_type']='retention'
+        with patch.object(g,'community_state',return_value={'part_of_muslim_community':False}):
+            state=p.playground_state(pos,candidate,data)
+        self.assertIs(state['part_of_muslim_community'],False)
+        self.assertEqual(state['election_type'],'retention');self.assertEqual(state['election_date'],'2026-11-03')
+        self.assertEqual(state['party'],'Nonpartisan');self.assertTrue(state['incumbent'])
+        self.assertFalse(set(state)&{'counties','office_category','government_level','district_or_seat','partisan'})
 
     def test_cair_action_focus_preserves_preference_opposition_and_joint_flags(self):
         data=fixture();pos=data['positions'][0];candidate=pos['candidates'][0]
@@ -258,8 +269,7 @@ class ValidationChecks(unittest.TestCase):
         data['gaza_voting']={'actions':{'119-A':{'title':'Actual action','kind':'sponsorship','date_label':'2025'}}}
         c['gaza_voting_records']=[{'congress':119,'sheet_title':'119th House','actions':[{'action_id':'119-A','value':'Not sponsoring','assessment':'positive','assessment_basis':'sheet_dropdown'}]}]
         a=g.build_state(pos,c,data)['congressional_gaza_actions'][0]
-        self.assertEqual(a,{'action_id':'119-A','congress':119,'source_tab':'119th House','title':'Actual action','kind':'sponsorship','date':'2025','date_precision':'year','response':'Not sponsoring',
-                            'sheet_assessment':'positive','alignment_with_tracker':'aligned','assessment_basis':'sheet_dropdown'})
+        self.assertEqual(a,{'title':'Actual action','kind':'sponsorship','date':'2025','response':'Not sponsoring','alignment':'aligned'})
 
     def test_legislative_date_fixture_parity_and_cutoff(self):
         from legislative_actions import action_date, CUTOFF
@@ -277,6 +287,7 @@ class ValidationChecks(unittest.TestCase):
             'before':{'date_label':'2023-11-30'},'boundary':{'date_label':'2023-12-01'},
             'new':{'date_label':'2026-09-03'},'period':{'date_label':'2025-2027'},
             'straddles':{'date_label':'2023-2025'},'undated':{}}}
+        for name,metadata in data['gaza_voting']['actions'].items():metadata.setdefault('title',name)
         c['gaza_voting_records']=[{'congress':119,'sheet_title':'119th House','actions':[
             {'action_id':name,'value':value,'assessment':assessment,'assessment_basis':'sheet_dropdown'}
             for name,value,assessment in [('old','Yes','negative'),('before','Yes','negative'),('boundary','No','positive'),
@@ -285,26 +296,57 @@ class ValidationChecks(unittest.TestCase):
             {'congress':118,'sheet_title':'118th House','actions':[{'action_id':'new','value':'Not voting','assessment':'neutral'}]}]
         before=deepcopy(c)
         state=g.build_state(pos,c,data);rows=state['congressional_gaza_actions']
-        self.assertEqual([r['action_id'] for r in rows],['new','boundary','period'])
-        self.assertEqual(rows[0]['alignment_with_tracker'],'neutral')
-        self.assertEqual(rows[1]['response'],'No');self.assertEqual(rows[1]['alignment_with_tracker'],'aligned')
-        self.assertEqual(rows[2]['alignment_with_tracker'],'not_aligned');self.assertEqual(rows[2]['date_precision'],'period')
-        self.assertIn('anti-Zionist',state['congressional_gaza_assessment_key']['source'])
+        self.assertEqual([r['title'] for r in rows],['new','boundary','period'])
+        self.assertEqual(rows[0]['alignment'],'neutral')
+        self.assertEqual(rows[1]['response'],'No');self.assertEqual(rows[1]['alignment'],'aligned')
+        self.assertEqual(rows[2]['alignment'],'not_aligned');self.assertEqual(rows[2]['date'],'2025-2027')
+        self.assertIn('anti-Zionist',state['congressional_gaza_context'])
         self.assertEqual(c,before)
 
     def test_garamendi_state_carries_every_retained_sheet_assessment_without_inferring_votes(self):
         data=json.loads(g.DATASET.read_text())
         pos,c=next((p,c) for p in data['positions'] for c in p.get('candidates') or [] if c['name']=='John Garamendi')
         rows=g.build_state(pos,c,data)['congressional_gaza_actions']
-        original={a['action_id']:a for r in c['gaza_voting_records'] for a in r['actions']}
+        from legislative_actions import ALIGNMENT, action_date
+        registry=data['gaza_voting']['actions']
         for row in rows:
-            self.assertEqual(row['sheet_assessment'],original[row['action_id']]['assessment'])
-            self.assertEqual(row['response'],original[row['action_id']]['value'])
-        ihra=next(r for r in rows if r['action_id']=='119-house-AK')
-        self.assertEqual((ihra['response'],ihra['sheet_assessment'],ihra['alignment_with_tracker']),('No','positive','aligned'))
-        dated=[r['date'] for r in rows if r['date_precision']=='day']
+            matches=[a for record in c['gaza_voting_records'] for a in record['actions']
+                     if registry[a['action_id']]['title']==row['title'] and registry[a['action_id']].get('date_label')==row['date']
+                     and a['value']==row['response'] and ALIGNMENT[a['assessment']]==row['alignment']]
+            self.assertTrue(matches)
+            self.assertFalse(set(row)&{'action_id','congress','source_tab','date_precision','sheet_assessment','assessment_basis'})
+        ihra=next(r for r in rows if 'Codify IHRA' in r['title'])
+        self.assertEqual((ihra['response'],ihra['alignment']),('No','aligned'))
+        dated=[r['date'] for r in rows if action_date({'date_label':r['date']})['precision']=='day']
         self.assertEqual(dated,sorted(dated,reverse=True));self.assertTrue(all(v>='2023-12-01' for v in dated))
         self.assertFalse(any(r['date']=='2023-2025' for r in rows))
+
+    def test_identical_linked_actions_collapse_but_conflicts_and_notes_remain(self):
+        from legislative_actions import jev_actions
+        data={'gaza_voting':{'actions':{'a':{'title':'A bill','kind':'roll_call_vote','date_label':'2026-01-01','source_url':'https://example.org/roll1'},
+                                      'b':{'title':'A bill','kind':'roll_call_vote','date_label':'2026-01-01','source_url':'https://example.org/roll2'}}}}
+        first={'action_id':'a','value':'No','assessment':'positive'}
+        candidate={'gaza_voting_records':[{'actions':[first,dict(first),{**first,'assessment':'negative'},
+                                                 {**first,'note':'Member explanation matters.'},{**first,'action_id':'b'}]}]}
+        before=deepcopy(candidate);rows=jev_actions(candidate,data)
+        self.assertEqual(len(rows),4);self.assertEqual(rows[0]['kind'],'vote')
+        self.assertEqual([r['alignment'] for r in rows],['aligned','not_aligned','aligned','aligned'])
+        self.assertEqual(rows[2]['note'],'Member explanation matters.');self.assertEqual(candidate,before)
+
+    def test_compact_endorsements_keep_qualifiers_and_recommendation_bindings(self):
+        source=[{'endorser':'CAIR Action','relation':'preferred','phase':'primary','historical':True,'shared':True,
+                 'rating':'Preferred','source_label':'Preferred','verification':'campaign_claim','url':'https://example.org/guide','checked_on':'2026-10-26'}]
+        before=deepcopy(source);row=g.compact_endorsements(source)[0]
+        self.assertEqual(row,{'endorser':'CAIR Action','relation':'preferred','phase':'primary','historical':True,
+                              'shared':True,'rating':'Preferred','source':'campaign claim'})
+        self.assertEqual(source,before)
+        data=json.loads(g.DATASET.read_text())
+        from publish_jev_grades import validate_recommendation_evidence
+        for pos in data['positions']:
+            for candidate in pos.get('candidates') or []:
+                state=g.build_state(pos,candidate,data)
+                validate_recommendation_evidence(candidate,{'candidate':candidate['name'],'request':{'state':state}},'A')
+
 
 
 class RunChecks(unittest.TestCase):
@@ -354,7 +396,8 @@ class RunChecks(unittest.TestCase):
         done=self.wait(m,m.start(QUESTIONS,scope='bay-area')['id'])
         self.assertEqual(done['scope'],'bay-area');self.assertEqual(len(done['rows']),9)
         self.assertEqual(len(calls),9)
-        self.assertTrue(all(p.COUNTIES.intersection(r['state']['counties']) for r in calls))
+        race_lookup={r['id']:r for r in current['races']}
+        self.assertTrue(all(p.COUNTIES.intersection(race_lookup[r['position_id']]['counties']) for r in done['rows']))
         self.assertNotIn('Bob',{r['candidate'] for r in done['rows']})
         self.assertNotIn('Chris',{r['candidate'] for r in done['rows']})
         self.assertEqual(sum(r['candidate']=='Alice' for r in done['rows']),1)  # shared county race once

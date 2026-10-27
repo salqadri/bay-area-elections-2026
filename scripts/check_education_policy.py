@@ -36,8 +36,19 @@ class EducationPolicyChecks(unittest.TestCase):
         state = build_state(p, c, DATA)
         self.assertEqual(len(state['gaza_evidence']), 12)
         self.assertEqual(len(state['antisemitism_education_policy_evidence']), 15)
-        self.assertEqual(state['antisemitism_education_policy_evidence'][0]['url'], special['url'])
+        self.assertEqual(state['antisemitism_education_policy_evidence'][0],{'date':special['date'],'summary':special['summary'],'context':special['date_note']})
         self.assertNotIn('pro_palestine_score', state)
+
+    def test_compact_policy_context_keeps_date_uncertainty_without_capture_mechanics(self):
+        from grade_gaza import compact_policy_evidence
+        base={'date':'2025-06-01','summary':'Source reports a policy action.','url':'https://example.org',
+              'quote':'Repeated quote','source_kind':'news_report','date_method':'page_metadata'}
+        original={**base,'date_note':'Article publication metadata date, not necessarily the date of the action described; events may precede this report.'}
+        self.assertEqual(compact_policy_evidence(original),{'date':base['date'],'summary':base['summary'],'context':'Report date; action may be earlier.'})
+        original['date_note']='June statement about an earlier bill version, before September amendments.'
+        self.assertEqual(compact_policy_evidence(original)['context'],original['date_note'])
+        original['date_note']='CalMatters structured VoteAction date/labels, not an independently verified official roll call; quote is field transcription.'
+        self.assertEqual(compact_policy_evidence(original)['context'],'Tracker date, not an independently verified official roll call.')
 
     def test_roll_call_capture_preserves_nay_and_nonvotes_without_inventing_support(self):
         raw = b'''<rollcall-vote><vote-metadata><congress>118</congress><legis-num>H R 6090</legis-num>
@@ -104,7 +115,8 @@ class EducationPolicyChecks(unittest.TestCase):
         self.assertTrue(any('principal coauthor' in e['summary'] for e in policies))
         self.assertTrue(any('CAIR' in e['summary'] and 'June' in e['summary'] for e in policies))
         self.assertTrue(any('AB 1468' in e['summary'] and 'failed' in e['summary'] for e in policies))
-        self.assertTrue(all(e.get('url') and e.get('date_method') for e in policies))
+        self.assertTrue(all(set(e)<= {'date','summary','context'} for e in policies))
+        self.assertTrue(all(e.get('date') and e.get('summary') for e in policies))
 
     def test_existing_scores_and_preferred_prompt_keep_the_original_evaluation_binding(self):
         archive = json.loads((ROOT / 'research/gaza-grading/published-2026-10-26.json').read_text())

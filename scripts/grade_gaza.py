@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v3.json'
-STATE_VERSION = 'candidate-evidence-v9-legislative-assessments'
+STATE_VERSION = 'candidate-evidence-v10-compact'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -193,6 +193,35 @@ def focused_endorsements(p, c):
     return observations
 
 
+def compact_endorsements(observations):
+    """Retain recommendation meaning; provenance stays in the canonical record."""
+    rows = []
+    for observation in observations:
+        row = {k: observation[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'shared') if k in observation}
+        if observation.get('source_label') and observation.get('source_label') != observation.get('rating'):
+            row['source_label'] = observation['source_label']
+        verification = observation.get('verification')
+        if verification != 'endorser_statement':
+            row['source'] = {'campaign_claim': 'campaign claim', 'reported': 'report'}.get(verification, 'unverified')
+        if row not in rows:
+            rows.append(row)
+    return rows
+
+
+def compact_policy_evidence(evidence):
+    row = {k: evidence[k] for k in ('date', 'summary')}
+    note = evidence.get('date_note', '')
+    # Remove capture mechanics, while retaining chronology and source limits.
+    note = note.replace('; quote transcribes exact XML fields, not spoken words.', '.')
+    note = note.replace('; quote is field transcription.', '.')
+    note = note.replace('CalMatters structured VoteAction date/labels', 'Tracker date')
+    if note == 'Article publication metadata date, not necessarily the date of the action described; events may precede this report.':
+        note = 'Report date; action may be earlier.'
+    if note:
+        row['context'] = note
+    return row
+
+
 def build_state(p, c, data):
     """Succinct evidence state: identity + IE money both directions + platform + Gaza evidence."""
     import re
@@ -226,23 +255,19 @@ def build_state(p, c, data):
     # silently lost behind the generic twelve-item budget or imply a grade.
     policy = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') == 'antisemitism_education']
     if policy:
-        parts['antisemitism_education_policy_evidence'] = [
-            {k: e[k] for k in ('date', 'summary', 'quote', 'url', 'source_kind', 'date_method', 'date_note') if k in e}
-            for e in policy]
+        parts['antisemitism_education_policy_evidence'] = [compact_policy_evidence(e) for e in policy]
     evidence = [f"{e['date']}: {e['summary']}" for e in (c.get('gaza_evidence') or [])
                 if e.get('dimension') != 'antisemitism_education'][:12]
     if evidence:
         parts['gaza_evidence'] = evidence
-    endorsements = focused_endorsements(p, c)
+    endorsements = compact_endorsements(focused_endorsements(p, c))
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
     records = jev_actions(c, data)
     if records:
-        parts['congressional_gaza_assessment_key'] = {
-            'source': 'Congressional Democrat Palestine Tracker (pro-Palestinian/anti-Zionist perspective)',
-            'positive': 'aligned', 'negative': 'not_aligned', 'neutral': 'neutral; do not infer opposition',
-            'unclassified': 'unknown; do not infer alignment from Yes/No',
-            'scope': f'From {CUTOFF}; exact dates newest first, then period-only entries. Unknown dates and intervals starting before cutoff omitted.'}
+        parts['congressional_gaza_context'] = (
+            'Alignment follows the pro-Palestinian/anti-Zionist tracker; neutral/unknown is not opposition. '
+            f'Records from {CUTOFF}; date ranges are periods, not vote dates.')
         parts['congressional_gaza_actions'] = records
     return parts
 

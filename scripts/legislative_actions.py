@@ -1,6 +1,7 @@
 """Source-date ordering and explicit tracker alignment; no political inference."""
 import calendar
 from datetime import date
+import json
 import re
 
 CUTOFF = '2023-12-01'
@@ -59,14 +60,21 @@ def jev_actions(candidate, data):
                 continue
             assessment = item.get('assessment')
             assessment = assessment if assessment in ALIGNMENT else 'unclassified'
-            row = {'action_id': item.get('action_id'), 'congress': record.get('congress'), 'source_tab': record.get('sheet_title'),
-                   'title': metadata.get('title', item.get('title', '')),
-                   'kind': metadata.get('kind', item.get('kind', '')),
+            kind = metadata.get('kind', item.get('kind', ''))
+            row = {'title': metadata.get('title', item.get('title', '')),
+                   'kind': 'vote' if kind == 'roll_call_vote' else kind,
                    'date': metadata.get('date') or metadata.get('date_label'),
-                   'date_precision': parsed['precision'], 'response': item.get('value'),
-                   'sheet_assessment': assessment, 'alignment_with_tracker': ALIGNMENT[assessment],
-                   'assessment_basis': item.get('assessment_basis', 'none')}
+                   'response': item.get('value'), 'alignment': ALIGNMENT[assessment]}
             if item.get('note'):
-                row['source_note'] = item['note']
-            rows.append((order_key(metadata), row))
-    return [row for _, row in sorted(rows, key=lambda pair: pair[0], reverse=True)]
+                row['note'] = item['note']
+            rows.append((order_key(metadata), row, metadata.get('source_url')))
+    seen, result = set(), []
+    for _, row, url in sorted(rows, key=lambda pair: pair[0], reverse=True):
+        # Collapse only identical statements about the same linked action.
+        # Different titles, responses, alignment or qualifications stay distinct.
+        key = (url, json.dumps(row, sort_keys=True, ensure_ascii=False))
+        if url and key in seen:
+            continue
+        seen.add(key)
+        result.append(row)
+    return result

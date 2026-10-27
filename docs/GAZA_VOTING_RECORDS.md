@@ -130,3 +130,17 @@ all 113 public tracker entries in descending date order on both readers, with no
 scoring requests or page errors. The 118 existing local run files remain
 byte-identical. The canonical source data, grades and explanations are unchanged
 apart from the publication marker.
+
+### Compact Jev projection (publication 2026-10-26.7)
+
+Input v10 supersedes the expanded per-action v9 format above. Each model entry
+now carries only date, title, kind, actual response and explicit `alignment`,
+plus a source note when material. The full sheet assessment, color, basis,
+action ID and source-tab provenance remain in the canonical dataset and audit
+records; the site’s full history and source links are unchanged.
+No model is asked to infer alignment from Yes/No or dropdown mechanics.
+Identical observations of the same linked action collapse only when all projected
+facts and qualifications match. The cutoff/order and source assessments are
+unchanged; Garamendi's 64 retained observations become 51 model entries, while
+the site retains his complete 113 source entries. Historical inputs and scores
+are unchanged. See [v10 input details](JEV_PLAYGROUND.md#compact-model-inputs-v10-october-26-2026).

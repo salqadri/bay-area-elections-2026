@@ -99,3 +99,12 @@ newest first, then period-only entries whose entire range meets that cutoff.
 Ambiguous older ranges and unknown dates are omitted. This is an input change;
 no grading batch was run, and frozen requests/answers/explanations are unchanged.
 See [the source/date contract](../../docs/GAZA_VOTING_RECORDS.md).
+
+## Compact input v10 (October 26, 2026)
+
+The shared/local input builders now omit capture mechanics and duplicate metadata,
+retain explicit alignment and substantive qualifiers, and collapse identical
+linked legislative observations. No scoring requests or archived evaluation edits
+occurred. The canonical dataset and provenance are unchanged. See
+[the v10 input contract](../../docs/JEV_PLAYGROUND.md#compact-model-inputs-v10-october-26-2026)
+and [the measured state sizes](state-compaction-2026-10-26.json).

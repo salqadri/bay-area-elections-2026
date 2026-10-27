@@ -223,8 +223,8 @@ values are recorded with exact candidacy provenance and no special annotations. 
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v9-local-federal-legislative-assessments`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v9-legislative-assessments`:
+context (`candidate-evidence-v10-local-federal-compact`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder now uses `candidate-evidence-v10-compact`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -350,16 +350,63 @@ qualifications, outside the generic twelve-item budget. The source refresh added
 v3 questions and grade explanations remain unchanged. See
 [the evidence workflow](EDUCATION_POLICY_RESEARCH.md).
 
-## Explicit legislative alignment and date scope
+## Legislative alignment and date scope (v9 history)
 
-`congressional_gaza_actions` carries each source response alongside
+The v9 format (superseded by v10 below) carried each source response alongside
 `sheet_assessment`, `alignment_with_tracker` (aligned / not_aligned / neutral /
-unknown), `assessment_basis`, action ID and source tab. The state contains an
-explicit source/perspective key. Jev need not infer whether Yes or No is aligned.
+unknown), `assessment_basis`, action ID and source tab. An explicit source/perspective
+key let Jev use the assessment without interpreting Yes or No itself.
 
 New legislative-tracker inputs omit actions before **2023-12-01**, unknown dates
 and periods that may start before that date. Exact dates sort newest first;
-period-only observations follow with their original labels and precision.
+period-only observations follow with their original labels.
 [Full source/date contract](GAZA_VOTING_RECORDS.md#reader-ordering-and-jev-input-assessments-october-26-2026).
-Current input previews this change without running Jev or rewriting saved
-requests, scores or explanations.
+The v10 projection preserves this alignment and date scope without rewriting
+saved requests, scores or explanations.
+
+## Compact model inputs v10 (October 26, 2026)
+
+New requests use compact projections; the canonical dataset, main-site evidence,
+audit records and historical saved requests retain their original detail.
+Legislative entries contain only `date`, `title`, `kind`, `response` and
+`alignment`, plus `note` when the source supplies an additional qualification.
+`vote` identifies a roll-call vote; sponsorships, committee votes, letters and
+statements retain distinct kinds. Alignment is mapped from the sheet assessment
+by code: positive → aligned, negative → not_aligned, neutral → neutral,
+unclassified → unknown. One short context string supplies the tracker perspective
+and date-range caveat. Worksheet mechanics, IDs, Congress/tab identifiers,
+precision tags and duplicate assessment labels are excluded from model input.
+
+The December 1, 2023 cutoff and newest-first order are unchanged. An identical
+entry is collapsed only when its primary action URL and all projected meaning
+(including response, alignment and any note) match. Different URLs, titles,
+responses, alignments or notes remain separate. The canonical record keeps all
+source entries. The current projection has 505 legislative entries, versus 596
+before this exact-duplicate reduction; Garamendi has 51 versus 64.
+
+Focused endorsements retain endorser, relation, phase, rating and historical/joint
+qualifiers. Duplicate publisher labels, URLs and check-date/verification mechanics
+are omitted. Campaign claims and reported/unverified claims remain explicitly
+marked, rather than being presented as direct endorser statements. CAIR Action
+and Vote for Peace recommendation publication checks still pass for every current
+candidate. The underlying full `focused_endorsements()` observations are unchanged.
+
+Education-policy observations retain the full date and summary, with meaningful
+chronology/source qualifications under `context`. Repeated quotes, URLs and
+capture-method fields are excluded. XML/transcription mechanics are removed;
+report dates, earlier bill versions and independent-verification limits remain.
+Other factual evidence summaries and funding amounts are unchanged.
+
+The model keeps candidate, office/seat, state, party, jurisdiction, election date,
+incumbency, owner-confirmed community values and non-general election type where
+recorded. County filters, grouping and race categories use catalog metadata outside
+the model input. Duplicate seat/category/government-level/partisan/general-election
+metadata is omitted from the model state. Exact roster identity remains for
+publication binding. Explicit false community observations remain false.
+
+[Measured payload sizes](../research/gaza-grading/state-compaction-2026-10-26.json)
+use UTF-8 bytes of compact serialized state JSON, not a claim about Jev's tokenizer:
+all 1,296 states shrink from 2,078,499 to 1,695,829 bytes (18.4%); Garamendi's state
+shrinks from 27,669 to 13,122 bytes (52.6%). No scoring calls were made. Reload and
+open **Current input** to inspect the compact state; **State JSON** preserves the
+exact input that produced the selected saved result.
