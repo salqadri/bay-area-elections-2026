@@ -1,5 +1,37 @@
 # Published pro-Palestine model scores
 
+## Current publication — owner full-roster v6 refresh
+
+Prepared publication **2026-10-27.7**, schema **1.27**, freezes all **1,296**
+successful evaluations from `20261027T224704Z-cc6d4be3`, using the exact owner
+questions in [criteria v6](../research/gaza-grading/criteria-pro-palestine-v6.json).
+Compared with v5, the top criterion adds opposition to US actions on behalf of
+Israel. All saved states match the current v15 state builder, including reviewed
+chronology, current organization context, spending and community meaning.
+No older evaluation is silently substituted into this full-roster run.
+
+[Immutable scoring archive](../research/gaza-grading/published-2026-10-27-v6.json),
+publication ID **jev-2026-10-27-v6**. The provider was **jev-1.14.0**. Saved
+inclusive upper bounds: **F 0.7, E 1.4, D 2.3, C 3.3, B 4.4, A 5**;
+minimum evidence remains **0.20 / 1**, with no confidence cutoff. Distribution:
+**A 121 · B 44 · C 13 · D 38 · E 67 · F 125 · N/A 888**.
+
+Scott Wiener is **D (2.08/5)**, Sam Liccardo **C (2.67/5)**, Ro Khanna
+**A (4.71/5)**, Kiran Mohammad **A (4.86/5)** and Jamal Khan **A (4.88/5)**.
+The latter two now have evidence **0.88** and **0.91**, respectively; their earlier
+N/A results are historical. All current directional CAIR Action / Vote for Peace
+and confirmed-community evidence publication guards pass.
+
+The earlier targeted-rerun recommendation is completed by this full-roster run.
+Fresh prompts/results invalidate the bindings of the prior Qwen summaries;
+those immutable archives remain available but are not displayed as explanations
+of these new scores. [Hermes's new queue](../research/gaza-grading/explanation-queue-2026-10-27-v6.json)
+contains all 1,296 current request hashes for regeneration with the latest
+owner-approved Qwen summarizer prompt. No replacement summaries were generated
+by this publication step.
+
+## Historical publication — final Qwen summaries
+
 Publication **2026-10-27.5**, schema **1.27**, shows project-owned Jev model scores
 next to candidates on both public readers, each with a voter-voice explanation
 paragraph (or an editorial N/A note). A higher score follows the owner's

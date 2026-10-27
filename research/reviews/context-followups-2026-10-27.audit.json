@@ -1,0 +1,407 @@
+{
+ "format": "context-followup-source-audit/v1",
+ "sources": [
+  {
+   "source_url": "https://www.jta.org/2026/01/12/united-states/after-facing-backlash-california-congressional-hopeful-scott-wiener-says-israel-is-committing-genocide",
+   "content_sha256": "79b2c379c5761bf707fe39576bfd3ebb8f8a9d41d0a37c3e0959479b689871e5",
+   "packet_sha256": "c296dacf2bdee0357bd4f9d006849f3b27aef83eff0f0f933850d28208734647",
+   "checked_on": "2026-10-27",
+   "kind": "policy-html",
+   "retrieval": "Captured source HTML"
+  },
+  {
+   "source_url": "https://x.com/RoKhanna/status/2012298777286115736",
+   "content_sha256": "daf1e830b10f8e2c9ea20d28ce09a09084bc428c98c3abe109780dd98a2a8866",
+   "packet_sha256": "70ed502000c60fa7147c79b0b9209b06f969409db6ae7ca696b00cac8b520086",
+   "checked_on": "2026-10-27",
+   "kind": "x-json",
+   "retrieval": "Fxtwitter API copy of exact canonical X post; id, author and timestamp checked"
+  },
+  {
+   "source_url": "https://clerk.house.gov/evs/2026/roll028.xml",
+   "content_sha256": "7b5d7aae15fa2f41ab447180190931c754fba70248462805ca07e6db78b683a8",
+   "packet_sha256": "4ffc66f5d333548f278a282f88556d3db5dbfead8f8c42fc31f76e63f356c456",
+   "checked_on": "2026-10-27",
+   "kind": "house-rollcall-xml",
+   "retrieval": "Official House Clerk XML; exact structured fields transcribed as JSON lines"
+  },
+  {
+   "source_url": "https://clerk.house.gov/evs/2026/roll053.xml",
+   "content_sha256": "4b12e201d51a44dcd865637153e0e61c6ba568d332e8df7337120fc040673259",
+   "packet_sha256": "1ae86df7e557f549f7eabd28e79aefcef85c50431835259550aa6638a0eadbdf",
+   "checked_on": "2026-10-27",
+   "kind": "house-rollcall-xml",
+   "retrieval": "Official House Clerk XML; exact structured fields transcribed as JSON lines"
+  },
+  {
+   "source_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2411.xml",
+   "content_sha256": "ea77d1efde70e23c04b13b14361a71bd39fbc15553221eb05b1a5e9f35a8e13e",
+   "packet_sha256": "bab3e2587d62cee985b61de17324b5bd15d4a0c899fc6455dae3e1438e9206ed",
+   "checked_on": "2026-10-27",
+   "kind": "congress-billstatus-xml",
+   "retrieval": "Official GovInfo BILLSTATUS XML; bill identity and cosponsor fields parsed; withdrawal dates preserved"
+  },
+  {
+   "source_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr3565.xml",
+   "content_sha256": "499e5f2dd7daad754ecb8a33987a13049dd289e14bcbfab03e96002508f18584",
+   "packet_sha256": "35068c2b748b56079f953e3c5b9cdd580c12ccc282e60c67b479553d1307b331",
+   "checked_on": "2026-10-27",
+   "kind": "congress-billstatus-xml",
+   "retrieval": "Official GovInfo BILLSTATUS XML; bill identity and cosponsor fields parsed; withdrawal dates preserved"
+  }
+ ],
+ "decisions": {
+  "9b78bf89d69f1c803840dfbda9c96568836f81895d9f61d6e1f97e12c725107d": {
+   "request_sha256": "9b78bf89d69f1c803840dfbda9c96568836f81895d9f61d6e1f97e12c725107d",
+   "request_state_sha256": "6240ce7aff6f96b4c0600995706da8c8eabd3c430692b48e7b39122794a54907",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "supported": 0.99
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.88,
+      "probabilities": {
+       "hold": 0.06,
+       "match": 0.94
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.98,
+      "probabilities": {
+       "faithful": 0.99,
+       "hold": 0.01
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1160,
+     "output_tokens": 91
+    }
+   }
+  },
+  "d655358766383d919c940159a8453fdcaef38be2c4c2f525ff3b445571d2866a": {
+   "request_sha256": "d655358766383d919c940159a8453fdcaef38be2c4c2f525ff3b445571d2866a",
+   "request_state_sha256": "ff3a028174dbe8010a1e7bd3f716c0f851dcb2452cd1a17f5a898dd1b5eeccd5",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "supported": 0.99
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.8,
+      "probabilities": {
+       "hold": 0.1,
+       "match": 0.9
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.98,
+      "probabilities": {
+       "faithful": 0.99,
+       "hold": 0.01
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1139,
+     "output_tokens": 91
+    }
+   }
+  },
+  "c6bc6cca52b4155ad38d8efdee598c35b72f8788bca8e63656c14fc8ba9941a0": {
+   "request_sha256": "c6bc6cca52b4155ad38d8efdee598c35b72f8788bca8e63656c14fc8ba9941a0",
+   "request_state_sha256": "ae2384fe85e1d1c5acbbc630190c7e798da496b3856f0270fdbf5d34ff2e2f92",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "supported": 0.99
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 1.0,
+      "probabilities": {
+       "hold": 0.0,
+       "match": 1.0
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.98,
+      "probabilities": {
+       "faithful": 0.99,
+       "hold": 0.01
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1105,
+     "output_tokens": 91
+    }
+   }
+  },
+  "3909c34c5768dd5ca604f6745fd2159b39f0953ab1e9f0a47c404633512a049b": {
+   "request_sha256": "3909c34c5768dd5ca604f6745fd2159b39f0953ab1e9f0a47c404633512a049b",
+   "request_state_sha256": "9e64d3e7ffadfe4572637094e2dbe71bc612ad84efb1a9a9008ac37c2b1fe787",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.96,
+      "probabilities": {
+       "hold": 0.02,
+       "supported": 0.98
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.96,
+      "probabilities": {
+       "hold": 0.02,
+       "match": 0.98
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.98,
+      "probabilities": {
+       "faithful": 0.99,
+       "hold": 0.01
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1094,
+     "output_tokens": 91
+    }
+   }
+  },
+  "6ffc619c554f26ba7c111acf10302660708d4e8f835723c240f23655b80596ab": {
+   "request_sha256": "6ffc619c554f26ba7c111acf10302660708d4e8f835723c240f23655b80596ab",
+   "request_state_sha256": "bdd7c73b51fe0574c460e39a5eea10c797eebd588b02cbddd02788bded0d1d02",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.94,
+      "probabilities": {
+       "hold": 0.03,
+       "supported": 0.97
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.96,
+      "probabilities": {
+       "hold": 0.02,
+       "match": 0.98
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.98,
+      "probabilities": {
+       "faithful": 0.99,
+       "hold": 0.01
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1120,
+     "output_tokens": 91
+    }
+   }
+  },
+  "20ee1cb2940bb06a02d2eeaab561bc0dd160b8c893a815cef7714ac0f9822558": {
+   "request_sha256": "20ee1cb2940bb06a02d2eeaab561bc0dd160b8c893a815cef7714ac0f9822558",
+   "request_state_sha256": "107c6900b9941b497b841693b1c08142f5d7a2e1dd0c559fea3d0d3931af50d3",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.94,
+      "probabilities": {
+       "hold": 0.03,
+       "supported": 0.97
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.98,
+      "probabilities": {
+       "hold": 0.01,
+       "match": 0.99
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.96,
+      "probabilities": {
+       "faithful": 0.98,
+       "hold": 0.02
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1103,
+     "output_tokens": 91
+    }
+   }
+  },
+  "6d8db78e80281e32ad4f356150c3aa6b6cccd8b3a98c8cab1c27062755aae157": {
+   "request_sha256": "6d8db78e80281e32ad4f356150c3aa6b6cccd8b3a98c8cab1c27062755aae157",
+   "request_state_sha256": "7dadcadb4e980036e23ebfb75f448567cf2db902be407f53bb67256598d9c84c",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.94,
+      "probabilities": {
+       "hold": 0.03,
+       "supported": 0.97
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.96,
+      "probabilities": {
+       "hold": 0.02,
+       "match": 0.98
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.92,
+      "probabilities": {
+       "faithful": 0.96,
+       "hold": 0.04
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1084,
+     "output_tokens": 91
+    }
+   }
+  },
+  "c331128e1daa94585a1708ac118c36ebd8a1843ca67afcec5dae111e504afbf4": {
+   "request_sha256": "c331128e1daa94585a1708ac118c36ebd8a1843ca67afcec5dae111e504afbf4",
+   "request_state_sha256": "3e8c0711eb560d80794618cbd06c6e505fd34df6e0b0dd903ef4b6bc1b721859",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "date": {
+      "type": "choice",
+      "choice": "supported",
+      "confidence": 0.94,
+      "probabilities": {
+       "hold": 0.03,
+       "supported": 0.97
+      }
+     },
+     "identity": {
+      "type": "choice",
+      "choice": "match",
+      "confidence": 0.96,
+      "probabilities": {
+       "hold": 0.02,
+       "match": 0.98
+      }
+     },
+     "meaning": {
+      "type": "choice",
+      "choice": "faithful",
+      "confidence": 0.92,
+      "probabilities": {
+       "faithful": 0.96,
+       "hold": 0.04
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 1081,
+     "output_tokens": 91
+    }
+   }
+  },
+  "47d42aeb0890cfee4f93d9644014f98f5a37f50eb6d8559868a67817f599dad8": {
+   "request_sha256": "47d42aeb0890cfee4f93d9644014f98f5a37f50eb6d8559868a67817f599dad8",
+   "request_state_sha256": "0421786c5c3f292cf303dd1d5e8c5fd4ac203247bbafec3c973c4d6e783e4842",
+   "model": "jev-1.14.0",
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "reconcile": {
+      "type": "choice",
+      "choice": "superseded",
+      "confidence": 0.86,
+      "probabilities": {
+       "hold": 0.07,
+       "superseded": 0.93
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 718,
+     "output_tokens": 37
+    }
+   }
+  }
+ },
+ "note": "Full raw source captures, exact model requests and retry history are preserved under the ignored .research/context-followups-2026-10-27 directory; portable records preserve hashes, source URLs, literal short quotes in the review and actual Jev responses."
+}

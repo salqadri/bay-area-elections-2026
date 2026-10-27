@@ -1,0 +1,396 @@
+{
+ "version": 1,
+ "id": "context-followups-2026-10-27",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-27",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "0c6ebb98097b79f2cef18ae352131f8037070cfc8853c165edf9ace014f2fbf6",
+ "sources": {
+  "source-776c813324ce6cf8ebcd": {
+   "url": "https://www.jta.org/2026/01/12/united-states/after-facing-backlash-california-congressional-hopeful-scott-wiener-says-israel-is-committing-genocide",
+   "publisher": "JTA",
+   "role": "reporting",
+   "candidate": "Scott Wiener",
+   "checked_on": "2026-10-27",
+   "content_sha256": "79b2c379c5761bf707fe39576bfd3ebb8f8a9d41d0a37c3e0959479b689871e5",
+   "retrieval": "Captured source HTML"
+  },
+  "source-825bc64b389e5f8f6b75": {
+   "url": "https://x.com/RoKhanna/status/2012298777286115736",
+   "publisher": "Ro Khanna verified personal X account",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "daf1e830b10f8e2c9ea20d28ce09a09084bc428c98c3abe109780dd98a2a8866",
+   "retrieval": "Fxtwitter API copy of exact canonical X post; id, author and timestamp checked"
+  },
+  "source-cbf8fbc9ecd8bf90d054": {
+   "url": "https://clerk.house.gov/evs/2026/roll028.xml",
+   "publisher": "House Clerk",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "7b5d7aae15fa2f41ab447180190931c754fba70248462805ca07e6db78b683a8",
+   "retrieval": "Official House Clerk XML; exact structured fields transcribed as JSON lines"
+  },
+  "source-5e2280bc28bf90d7c955": {
+   "url": "https://clerk.house.gov/evs/2026/roll053.xml",
+   "publisher": "House Clerk",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "4b12e201d51a44dcd865637153e0e61c6ba568d332e8df7337120fc040673259",
+   "retrieval": "Official House Clerk XML; exact structured fields transcribed as JSON lines"
+  },
+  "source-9b9c74a23e66b9f45ab6": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2411.xml",
+   "publisher": "GovInfo / Congress.gov",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "ea77d1efde70e23c04b13b14361a71bd39fbc15553221eb05b1a5e9f35a8e13e",
+   "retrieval": "Official GovInfo BILLSTATUS XML; bill identity and cosponsor fields parsed; withdrawal dates preserved"
+  },
+  "source-cc032abbb654bcdbee48": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr3565.xml",
+   "publisher": "GovInfo / Congress.gov",
+   "role": "reporting",
+   "candidate": "Sam Liccardo",
+   "checked_on": "2026-10-27",
+   "content_sha256": "499e5f2dd7daad754ecb8a33987a13049dd289e14bcbfab03e96002508f18584",
+   "retrieval": "Official GovInfo BILLSTATUS XML; bill identity and cosponsor fields parsed; withdrawal dates preserved"
+  },
+  "source-45db74f14cec477b6a62": {
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr3565.xml",
+   "publisher": "GovInfo / Congress.gov",
+   "role": "reporting",
+   "candidate": "Aisha Wahab",
+   "checked_on": "2026-10-27",
+   "content_sha256": "499e5f2dd7daad754ecb8a33987a13049dd289e14bcbfab03e96002508f18584",
+   "retrieval": "Official GovInfo BILLSTATUS XML; bill identity and cosponsor fields parsed; withdrawal dates preserved"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-776c813324ce6cf8ebcd",
+   "position_id": "CA2026-229",
+   "candidate": "Scott Wiener",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "9b78bf89d69f1c803840dfbda9c96568836f81895d9f61d6e1f97e12c725107d",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-11",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1528",
+    "date": "2026-01-12",
+    "date_method": "page_metadata",
+    "summary": "JTA reports Wiener declined the debate genocide question while both Democratic opponents answered yes; the refusal drew audience jeers.",
+    "quote": "his two Democratic opponents endorsed the genocide charge without hesitation",
+    "dimension": "genocide_language",
+    "source_kind": "news",
+    "date_note": "January 12 report about the preceding Wednesday debate; report date is not the debate date.",
+    "url": "https://www.jta.org/2026/01/12/united-states/after-facing-backlash-california-congressional-hopeful-scott-wiener-says-israel-is-committing-genocide",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Captured article publication metadata explicitly gives January 12, 2026; this dates the report, not the earlier debate/video.",
+    "issue_basis": "JTA reports Wiener declined the debate genocide question while both Democratic opponents answered yes; the refusal drew audience jeers. Exact source quote: his two Democratic opponents endorsed the genocide charge without hesitation"
+   }
+  },
+  {
+   "id": "gaza-claim-1",
+   "action": "change",
+   "source_key": "source-776c813324ce6cf8ebcd",
+   "position_id": "CA2026-229",
+   "candidate": "Scott Wiener",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "d655358766383d919c940159a8453fdcaef38be2c4c2f525ff3b445571d2866a",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-11",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1529",
+    "date": "2026-01-12",
+    "date_method": "page_metadata",
+    "summary": "After ongoing criticism over his debate refusal, Wiener issued a Sunday video saying Israel committed genocide in Gaza, JTA reports.",
+    "quote": "Facing ongoing criticism over his stance",
+    "dimension": "genocide_language",
+    "source_kind": "news",
+    "date_note": "January 12 report describes the Sunday January 11 video, following the preceding debate and criticism.",
+    "url": "https://www.jta.org/2026/01/12/united-states/after-facing-backlash-california-congressional-hopeful-scott-wiener-says-israel-is-committing-genocide",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Captured article publication metadata explicitly gives January 12, 2026; this dates the report, not the earlier debate/video.",
+    "issue_basis": "After ongoing criticism over his debate refusal, Wiener issued a Sunday video saying Israel committed genocide in Gaza, JTA reports. Exact source quote: Facing ongoing criticism over his stance"
+   }
+  },
+  {
+   "id": "gaza-claim-2",
+   "action": "change",
+   "source_key": "source-825bc64b389e5f8f6b75",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "c6bc6cca52b4155ad38d8efdee598c35b72f8788bca8e63656c14fc8ba9941a0",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1530",
+    "date": "2026-01-16",
+    "date_method": "x_snowflake",
+    "summary": "Khanna said Republicans \"snuck\" provisions into the UN/State/foreign-aid bill and said he had voted to fund UNRWA; this is his explanation, not proof he was unaware.",
+    "quote": "The Republicans snuck these into a bill about our funding for the UN, State Department, and foreign aid.",
+    "dimension": "actions_votes",
+    "source_kind": "x_post",
+    "url": "https://x.com/RoKhanna/status/2012298777286115736",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Exact X post ID 2012298777286115736: author RoKhanna verified as candidate secondary account; API timestamp and snowflake agree on January 16, 2026 UTC. This dates his explanation, not the earlier votes he describes.",
+    "issue_basis": "Khanna said Republicans \"snuck\" provisions into the UN/State/foreign-aid bill and said he had voted to fund UNRWA; this is his explanation, not proof he was unaware. Exact source quote: The Republicans snuck these into a bill about our funding for the UN, State Department, and foreign aid."
+   }
+  },
+  {
+   "id": "gaza-claim-3",
+   "action": "change",
+   "source_key": "source-cbf8fbc9ecd8bf90d054",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "3909c34c5768dd5ca604f6745fd2159b39f0953ab1e9f0a47c404633512a049b",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1531",
+    "date": "2026-01-14",
+    "date_method": "source_stated",
+    "summary": "The House Clerk records Khanna voting Yea on H.R. 7006: passage of the State/foreign-aid appropriations package.",
+    "quote": "{\"bioguide_id\":\"K000389\",\"name\":\"Khanna\",\"state\":\"CA\",\"vote\":\"Yea\"}",
+    "dimension": "actions_votes",
+    "source_kind": "official_roll_call",
+    "date_note": "Official recorded vote; quote transcribes XML fields, not spoken words.",
+    "url": "https://clerk.house.gov/evs/2026/roll028.xml",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Official recorded vote; quote transcribes XML fields, not spoken words.",
+    "issue_basis": "The House Clerk records Khanna voting Yea on H.R. 7006: passage of the State/foreign-aid appropriations package. Exact source quote: {\"bioguide_id\":\"K000389\",\"name\":\"Khanna\",\"state\":\"CA\",\"vote\":\"Yea\"}"
+   }
+  },
+  {
+   "id": "gaza-claim-4",
+   "action": "change",
+   "source_key": "source-5e2280bc28bf90d7c955",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "6ffc619c554f26ba7c111acf10302660708d4e8f835723c240f23655b80596ab",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1532",
+    "date": "2026-02-03",
+    "date_method": "source_stated",
+    "summary": "The House Clerk records Khanna voting Nay on H.R. 7148: concurrence in the later consolidated appropriations package.",
+    "quote": "{\"bioguide_id\":\"K000389\",\"name\":\"Khanna\",\"state\":\"CA\",\"vote\":\"Nay\"}",
+    "dimension": "actions_votes",
+    "source_kind": "official_roll_call",
+    "date_note": "Official House Clerk vote 53, action-date 3-Feb-2026 (February 3, 2026). This dates the roll call, not a report.",
+    "url": "https://clerk.house.gov/evs/2026/roll053.xml",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Official House vote 53 XML metadata action-date is 3-Feb-2026, meaning February 3, 2026; Khanna K000389 has Nay. This is the recorded action date.",
+    "issue_basis": "The House Clerk records Khanna voting Nay on H.R. 7148: concurrence in the later consolidated appropriations package. Exact source quote: {\"bioguide_id\":\"K000389\",\"name\":\"Khanna\",\"state\":\"CA\",\"vote\":\"Nay\"}"
+   }
+  },
+  {
+   "id": "gaza-claim-5",
+   "action": "change",
+   "source_key": "source-9b9c74a23e66b9f45ab6",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "20ee1cb2940bb06a02d2eeaab561bc0dd160b8c893a815cef7714ac0f9822558",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1533",
+    "date": "2025-03-27",
+    "date_method": "source_stated",
+    "summary": "Official bill-status data lists Khanna as a cosponsor of H.R. 2411, the UNRWA Funding Emergency Restoration Act, added 2025-03-27.",
+    "quote": "{\"bill\":\"H.R.2411\",\"bioguide_id\":\"K000389\",\"name\":\"Rep. Khanna, Ro [D-CA-17]\",\"cosponsorship_date\":\"2025-03-27\"}",
+    "dimension": "actions_votes",
+    "source_kind": "official_bill_status",
+    "date_note": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
+    "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2411.xml",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
+    "issue_basis": "Official bill-status data lists Khanna as a cosponsor of H.R. 2411, the UNRWA Funding Emergency Restoration Act, added 2025-03-27. Exact source quote: {\"bill\":\"H.R.2411\",\"bioguide_id\":\"K000389\",\"name\":\"Rep. Khanna, Ro [D-CA-17]\",\"cosponsorship_date\":\"2025-03-27\"}"
+   }
+  },
+  {
+   "id": "gaza-claim-6",
+   "action": "change",
+   "source_key": "source-cc032abbb654bcdbee48",
+   "position_id": "CA2026-005",
+   "candidate": "Sam Liccardo",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "6d8db78e80281e32ad4f356150c3aa6b6cccd8b3a98c8cab1c27062755aae157",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1534",
+    "date": "2026-07-14",
+    "date_method": "source_stated",
+    "summary": "Official bill-status data lists Liccardo as a cosponsor of H.R. 3565 (Block the Bombs Act), added 2026-07-14.",
+    "quote": "{\"bill\":\"H.R.3565\",\"bioguide_id\":\"L000607\",\"name\":\"Rep. Liccardo, Sam T. [D-CA-16]\",\"cosponsorship_date\":\"2026-07-14\"}",
+    "dimension": "actions_votes",
+    "source_kind": "official_bill_status",
+    "date_note": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
+    "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr3565.xml",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
+    "issue_basis": "Official bill-status data lists Liccardo as a cosponsor of H.R. 3565 (Block the Bombs Act), added 2026-07-14. Exact source quote: {\"bill\":\"H.R.3565\",\"bioguide_id\":\"L000607\",\"name\":\"Rep. Liccardo, Sam T. [D-CA-16]\",\"cosponsorship_date\":\"2026-07-14\"}"
+   }
+  },
+  {
+   "id": "gaza-claim-7",
+   "action": "change",
+   "source_key": "source-45db74f14cec477b6a62",
+   "position_id": "CA2026-003",
+   "candidate": "Aisha Wahab",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "c331128e1daa94585a1708ac118c36ebd8a1843ca67afcec5dae111e504afbf4",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-14",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1535",
+    "date": "2026-10-05",
+    "date_method": "source_stated",
+    "summary": "Official bill-status data lists Wahab as a cosponsor of H.R. 3565 (Block the Bombs Act), added 2026-10-05.",
+    "quote": "{\"bill\":\"H.R.3565\",\"bioguide_id\":\"W000832\",\"name\":\"Rep. Wahab, Aisha [D-CA-14]\",\"cosponsorship_date\":\"2026-10-05\"}",
+    "dimension": "actions_votes",
+    "source_kind": "official_bill_status",
+    "date_note": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
+    "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr3565.xml",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Exact named candidate or official bioguide record matches the current candidacy.",
+    "date_basis": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
+    "issue_basis": "Official bill-status data lists Wahab as a cosponsor of H.R. 3565 (Block the Bombs Act), added 2026-10-05. Exact source quote: {\"bill\":\"H.R.3565\",\"bioguide_id\":\"W000832\",\"name\":\"Rep. Wahab, Aisha [D-CA-14]\",\"cosponsorship_date\":\"2026-10-05\"}"
+   }
+  },
+  {
+   "source_key": "source-cc032abbb654bcdbee48",
+   "position_id": "CA2026-005",
+   "candidate": "Sam Liccardo",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "id": "retire-vfp-stale-liccardo-note",
+   "action": "change",
+   "field": "gaza_evidence",
+   "before": {
+    "id": "GE-0423",
+    "url": "https://voteforpeace.info/candidates",
+    "summary": "Vote for Peace now lists Liccardo as Ally, while its note still reports AIPAC/allied-lobby funding and no Block the Bombs support. The undated note gives no funding period.",
+    "date": "2026-10-27",
+    "dimension": "military_aid",
+    "checked_on": "2026-10-27",
+    "source_kind": "voter_guide",
+    "date_method": "source_observed",
+    "date_note": "Date is the October 27, 2026 guide observation, not the date of the underlying statements or funding. No donation amounts or periods are supplied.",
+    "quote": "This candidate takes money from AIPAC and affiliated lobbies and has not signed block the bombs act."
+   },
+   "after": null,
+   "reason": "Official July 14, 2026 cosponsorship supersedes the undated no-support claim. The undated funding allegation does not establish current organization funding; Ally endorsement is retained.",
+   "evidence": {
+    "identity_basis": "Official L000607 is Sam T. Liccardo, CA-16.",
+    "date_basis": "Official cosponsorship date is July 14, 2026; guide note has no underlying date.",
+    "issue_basis": "Block the Bombs cosponsorship is directly relevant; stale no-support prose is retired, not silently carried forward."
+   },
+   "jev_ref": "47d42aeb0890cfee4f93d9644014f98f5a37f50eb6d8559868a67817f599dad8"
+  }
+ ]
+}

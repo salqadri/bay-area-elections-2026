@@ -1,5 +1,14 @@
 # Local Jev playground
 
+Current prepared publication **2026-10-27.7** uses the owner's exact v6 questions
+from full-roster run `20261027T224704Z-cc6d4be3`. All 1,296 saved inputs match
+current v15 states. Tracked Python/browser defaults and the persisted owner
+mapping agree: **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.20**.
+The publisher freezes saved answers without calling Jev. Historical scores and
+summary archives remain immutable; a new source-bound Hermes queue accompanies
+this publication. [Methodology](PUBLISHED_GRADES.md).
+
+
 The playground runs on this computer, separate from the GitHub Pages readers.
 It includes **all active candidates tracked in this repository**, including
 nationwide House, Senate and governor races and every active contest serving
@@ -184,12 +193,12 @@ Default bands use exact stored bounds, without rounding the source score:
 
 | Grade | Score interval |
 |---|---|
-| F | 0 ≤ score ≤ 5/6 |
-| E | 5/6 < score ≤ 10/6 |
-| D | 10/6 < score ≤ 15/6 |
-| C | 15/6 < score ≤ 3.2 |
-| B | 3.2 < score ≤ 25/6 |
-| A | 25/6 < score ≤ 5 |
+| F | 0 ≤ score ≤ 0.7 |
+| E | 0.7 < score ≤ 1.4 |
+| D | 1.4 < score ≤ 2.3 |
+| C | 2.3 < score ≤ 3.3 |
+| B | 3.3 < score ≤ 4.4 |
+| A | 4.4 < score ≤ 5 |
 
 The **Grade distribution** chart above the workspace shows A–F counts for the
 selected county scope and saved-history view (Latest per candidate by default).
@@ -245,13 +254,13 @@ archived batches stay unchanged.
 New inputs include optional boolean `part_of_muslim_community` only when explicitly
 confirmed by the owner. Public-source research can nominate questions but cannot
 overwrite an owner value. Unknowns stay absent, not
-false. This is a community observation, not a Gaza policy inference. Confirmed
+false. True means confirmed membership in the pro-Palestine Muslim community and is affirmative general-alignment evidence. It does not establish every specific policy; false/unknown is not adverse. Confirmed
 values are recorded with exact candidacy provenance and no special annotations. See
 [CANDIDATE_COMMUNITY.md](CANDIDATE_COMMUNITY.md) for coverage and source review.
 
 The playground wraps `grade_gaza.build_state` with versioned local/federal
-context (`candidate-evidence-v14-local-federal-organization-context`) for new requests and previews.
-Historical requests remain unchanged. The shared CLI builder uses `candidate-evidence-v14-organization-context`:
+context (`candidate-evidence-v15-local-federal-chronology-community`) for new requests and previews.
+Historical requests remain unchanged. The shared CLI builder uses `candidate-evidence-v15-chronology-community`:
 
 - Identity/party, jurisdiction, office category, government level, seat, counties,
   election date/type, partisan status, incumbency when recorded, and exact roster
@@ -262,8 +271,9 @@ Historical requests remain unchanged. The shared CLI builder uses `candidate-evi
   registries remain separate. [Organization context](ORGANIZATION_CONTEXT.md) supplies
   sourced roles and dated funding links, including the owner's UDP funding criterion.
   Recorded USCPR grades, up to eight platform summaries, a
-  reviewed Gaza-platform statement when present, and up to twelve dated Gaza
-  evidence summaries.
+  reviewed Gaza-platform statement when present, and every eligible reviewed Gaza
+  evidence summary. [Reviewed context](EVIDENCE_CONTEXT.md) links debate/criticism,
+  vote explanations/follow-ups and superseded guide claims.
 - Focused endorsement/recommendation observations only. The versioned exact-name
   registries are `research/gaza-grading/endorsement-focus-v3.json` and the reviewed
   `organization-context-v1.json` aliases: owner-named

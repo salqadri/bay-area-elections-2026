@@ -1,0 +1,875 @@
+{
+  "format": "jev-rerun-impact/v1",
+  "status": "review only; no candidate score or explanation calls performed",
+  "scope": "PR #19 compared with latest main; not a comprehensive regrade recommendation for older PRs",
+  "baseline_commit": "5d35c5c85e5a3ad54b0e092b0502419579c80e2d",
+  "baseline_publication": "2026-10-27.5",
+  "prepared_publication": "2026-10-27.6",
+  "state_version": "candidate-evidence-v15-local-federal-chronology-community",
+  "score_archive_path": "research/gaza-grading/published-2026-10-27-vfp.json",
+  "score_archive_sha256": "e5c8bbddb8d56c6c3f9aec663773dd0619f298fe52edc0eb8db4828eb34ecbbf",
+  "criteria_path": "research/gaza-grading/criteria-pro-palestine-v5.json",
+  "score_grade_mapping": {
+    "upper_bounds": [
+      0.7,
+      1.4,
+      2.5,
+      3.2,
+      4.4
+    ],
+    "minimum_evidence_score": 0.2
+  },
+  "counts": {
+    "all_candidates": 1296,
+    "all_races": 471,
+    "input_changed_by_pr": 22,
+    "substantive_input_changed_by_pr": 21,
+    "priority": 4,
+    "recommended_small_batch": 5,
+    "optional": 11,
+    "summary_only": 7
+  },
+  "preexisting_archive_drift": {
+    "main_inputs_different_from_published": 336,
+    "current_inputs_different_from_published": 339,
+    "field_counts_on_main": {
+      "organization_context": 227,
+      "spenders_supporting": 166,
+      "spending_context": 217,
+      "focused_endorsement_observations": 9,
+      "spenders_opposing": 127,
+      "ca_spenders_supporting": 35,
+      "ca_spenders_opposing": 6
+    },
+    "note": "These are exact input differences, not findings that scores are wrong. Most predate PR #19 (including organization context and spending projection changes). Do not present the small batch as eliminating all historical input drift."
+  },
+  "jev_triage": {
+    "model": "jev-1.14.0",
+    "request_sha256": "5822941245cc64a43c3954d7aa2618a26537ea6238bc6a02e8c9113eec23004c",
+    "purpose": "Rerun prioritization only; does not evaluate or change candidate scores. Ro Khanna is included in the recommended small batch to address the owner-identified omission, though triage marks an already-A numerical refresh optional."
+  },
+  "rows": [
+    {
+      "candidate_id": "6af9da3c9c6c2b2c7dd4d0df",
+      "position_id": "CA2026-309",
+      "candidate": "John Garamendi",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-8",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Contra Costa"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:8"
+      },
+      "saved_grade": "B",
+      "saved_score": 4.26,
+      "saved_evidence_score": 0.97,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "018e08b2d38888eeba2ba66e9d7278e0b8265d5efa5a14644f604f145fec1643",
+      "current_state_sha256": "bdbdea200421a3dbdfb93b38ec7be7df0d9191da2aed7f15354dbc73311f9c97",
+      "published_request_sha256": "1480b1734b869a7a64c4623d07940c39762a1070cb13851f0f7827baa974a297",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "summary_only",
+        "confidence": 0.46,
+        "probabilities": {
+          "optional": 0.32,
+          "priority": 0.04,
+          "summary_only": 0.64
+        }
+      },
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "6a2c45170b4eb2bc90176030",
+      "position_id": "CA2026-310",
+      "candidate": "Josh Harder",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-9",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Contra Costa"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:9"
+      },
+      "saved_grade": "E",
+      "saved_score": 0.89,
+      "saved_evidence_score": 0.94,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "b2d0405caf9a87523bf36b96d2a0be04a2484527175f4da6dda495af62d142ff",
+      "current_state_sha256": "48edad3090169835807d995d63a38c9b36c8798aa6ce081686d2ceec94a5b0c0",
+      "published_request_sha256": "57b2d2900d7eefe2d95717660328a2e1ca2e5e2ac98108097d6c969f2af279c3",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "summary_only",
+        "confidence": 0.41,
+        "probabilities": {
+          "optional": 0.35,
+          "priority": 0.04,
+          "summary_only": 0.61
+        }
+      },
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "4c848318ace49e244a9a3135",
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-10",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Alameda",
+          "Contra Costa"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:10"
+      },
+      "saved_grade": "B",
+      "saved_score": 4.11,
+      "saved_evidence_score": 0.96,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "5f7f7fefe3d170806ed7b28f10eb306cdd5bf7ecee9a603b0b1711fb1add9037",
+      "current_state_sha256": "24c308bafc90b4b07ff049712cff70c42e072c206d8b8c057e40b7b3f41cfda1",
+      "published_request_sha256": "913a034d25845e74fe5c93d39a66c821ace8e97b01083a543010dcbdddb45cb5",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "summary_only",
+        "confidence": 0.51,
+        "probabilities": {
+          "optional": 0.31,
+          "priority": 0.02,
+          "summary_only": 0.67
+        }
+      },
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "6e5cfe7a7f104c5ff0327fd4",
+      "position_id": "CA2026-229",
+      "candidate": "Scott Wiener",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-11",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "San Francisco"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:11"
+      },
+      "saved_grade": "C",
+      "saved_score": 2.7,
+      "saved_evidence_score": 0.97,
+      "changed_fields": [
+        "gaza_evidence",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "de3f732c45721b061788fd5da3f284d7e21c5b2eea859ad1782c9d001bfc2519",
+      "current_state_sha256": "71b1b647110fdc557b43ec4b1ff2378f62637562d2668f6b977cd502262a28a8",
+      "published_request_sha256": "dc58973d5b9a55559c43332d238330d93ba0c877d823d58ece3ec55d7ec8004b",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "priority",
+        "confidence": 0.06,
+        "probabilities": {
+          "optional": 0.31,
+          "priority": 0.37,
+          "summary_only": 0.32
+        }
+      },
+      "triage": "priority",
+      "recommended_small_batch": true,
+      "reason": "New debate refusal, opponent responses, backlash and subsequent statement materially qualify the apparent shift; evaluate the entire sequence."
+    },
+    {
+      "candidate_id": "160cf859c00717d5c90559bb",
+      "position_id": "CA2026-002",
+      "candidate": "Lateefah Simon",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-12",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:12"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.82,
+      "saved_evidence_score": 0.99,
+      "changed_fields": [
+        "community_alignment_context",
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "f07476a14036d19e99d5d3dd78df9167366ee8d90a49896f1b2cdc99558ca352",
+      "current_state_sha256": "aedccddeeb90ed669427bb330d5bf91244497b92c1874c7521182cb48f138c90",
+      "published_request_sha256": "d066c1039ba621367d993236713f065cd7a2a5754864cee820aaa10b44c17556",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.31,
+        "probabilities": {
+          "optional": 0.54,
+          "priority": 0.09,
+          "summary_only": 0.37
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "45d66bb6837c85f34ca6736c",
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-14",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:14"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.85,
+      "saved_evidence_score": 0.99,
+      "changed_fields": [
+        "community_alignment_context",
+        "congressional_gaza_context",
+        "gaza_evidence",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "922925adcc883a26048c6e45e4ca70cf6d58ee493964e047814589a40e54f660",
+      "current_state_sha256": "e51c92e306fd87fa64632f92735d252d187eaae009d1235ad2b64e563c51c619",
+      "published_request_sha256": "2f02f99f18b64bca15df3e8f8c682e390991d011480b4bc032d7605f87fa95c6",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.3,
+        "probabilities": {
+          "optional": 0.53,
+          "priority": 0.35,
+          "summary_only": 0.12
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "New official dated cosponsorship verifies Sponsor already present in the evaluated legislative record; current A and 0.99 evidence are already supported. Optional numerical refresh; use the primary source in future summaries."
+    },
+    {
+      "candidate_id": "aea03a0e6c28239122d063de",
+      "position_id": "CA2026-230",
+      "candidate": "Kevin Mullin",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-15",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "San Francisco",
+          "San Mateo"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:15"
+      },
+      "saved_grade": "E",
+      "saved_score": 1.07,
+      "saved_evidence_score": 0.95,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "90731554f1b0fc64941efd119c64d6dacc2daf1d257544a60d64426ecea6ba46",
+      "current_state_sha256": "6320329477f82394ef424e9c5b57dbf1dc2ed7533e66d9e1b45133626dbce8f5",
+      "published_request_sha256": "1215520606df1e4869e86331b806944e2681bb840e7e28c309e100b40cc4a7f6",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "summary_only",
+        "confidence": 0.61,
+        "probabilities": {
+          "optional": 0.25,
+          "priority": 0.01,
+          "summary_only": 0.74
+        }
+      },
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "26dccad6f07aee09aa2a8b1e",
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-16",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "San Mateo",
+          "Santa Clara"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:16"
+      },
+      "saved_grade": "D",
+      "saved_score": 2.44,
+      "saved_evidence_score": 0.95,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "gaza_evidence",
+        "organization_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "c2995bbe4de2d11a66dbbb0eed488b1763ed938565f0292738ac000bf61424d3",
+      "current_state_sha256": "c25c30bcb32cbeba4224f3f2de598cc6e19252909f3c72929cce27b21ebad319",
+      "published_request_sha256": "bc5309797a8e04cf6a49892037190c206a42a889cb9212c9437784ab539d2eb2",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "priority",
+        "confidence": 0.51,
+        "probabilities": {
+          "optional": 0.25,
+          "priority": 0.67,
+          "summary_only": 0.08
+        }
+      },
+      "triage": "priority",
+      "recommended_small_batch": true,
+      "reason": "Remove obsolete no-Block-the-Bombs guide prose and replace it with dated official cosponsorship; saved input contained conflicting evidence."
+    },
+    {
+      "candidate_id": "2936483efec2278cf6b5f118",
+      "position_id": "CA2026-004",
+      "candidate": "Ro Khanna",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-17",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Alameda",
+          "Santa Clara"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:17"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.74,
+      "saved_evidence_score": 0.98,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "gaza_evidence",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "3c217066a45972f52e948d23eee1cc5a01b298cd5c21eaffc9397a7714e89bf4",
+      "current_state_sha256": "cfa9b9a2e257defcd1fd9a3b9c509c538e094a85e350411991b67f3003c53ff6",
+      "published_request_sha256": "de11d209ef736d70ccbf22895b86253243df231239fad86049fbdaf4118f9c94",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.3,
+        "probabilities": {
+          "optional": 0.53,
+          "priority": 0.17,
+          "summary_only": 0.3
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": true,
+      "reason": "New attributed explanation and separate dated UNRWA-restoration cosponsorship add important context to the initial Yes and later No. Already A, so numerical change is not assured, but include in the small batch because the owner specifically flagged this omission."
+    },
+    {
+      "candidate_id": "e2a9219c734e77a24c011d4c",
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-18",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Santa Clara"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:18"
+      },
+      "saved_grade": "D",
+      "saved_score": 2.35,
+      "saved_evidence_score": 0.96,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "81e8f15e8683e6cdae6a84f1f869fd1f07ef5f59ca8889272cb9bdb756c93134",
+      "current_state_sha256": "6200199b8b96d68949169f067379cf5337c90e62dde3a42eb49947a8e95010f1",
+      "published_request_sha256": "9a53c205de0c2cceec3f26683db8c8f9bb5e81933ce5592baf088b53c3ee042d",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "summary_only",
+        "confidence": 0.61,
+        "probabilities": {
+          "optional": 0.24,
+          "priority": 0.02,
+          "summary_only": 0.74
+        }
+      },
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "ded732b12f987385684e5a27",
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-19",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [
+          "Santa Clara"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/cd:19"
+      },
+      "saved_grade": "E",
+      "saved_score": 0.88,
+      "saved_evidence_score": 0.94,
+      "changed_fields": [
+        "congressional_gaza_context",
+        "reviewed_evidence_context"
+      ],
+      "base_state_sha256": "ecb41ba8888b80b3fecff5c47fe1ac4fb1f2c27d01b3a22f7b74a71e01509c5e",
+      "current_state_sha256": "8a6aa451bd5ea8a2fa0050705d34ab96f6e43bbd12e543170d0bc9f1eeaf5df2",
+      "published_request_sha256": "471e2d90548e6c607c38f4936aa10aa66f36cae7d29e3340e663e853b4526323",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "summary_only",
+        "confidence": 0.58,
+        "probabilities": {
+          "optional": 0.26,
+          "priority": 0.02,
+          "summary_only": 0.72
+        }
+      },
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "8adeb81b78e8cf937d7978a8",
+      "position_id": "US2026-016",
+      "candidate": "Abdul El-Sayed",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Senator",
+        "district_or_seat": "MI — Statewide",
+        "jurisdiction": "United States Senate",
+        "counties": [],
+        "ocd_division_id": "ocd-division/country:us/state:mi"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.93,
+      "saved_evidence_score": 0.99,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "0b3a8e6cd2c087b8aa17b2d8f79efef5327de407e33ded98c24cd2811ffb5b19",
+      "current_state_sha256": "5bb03f305370acb254033fe4636e5846edd64da850b0891cbe2edd8e1fa57d7b",
+      "published_request_sha256": "74ec58397e6327e9c3be39df8a3fb0715f562f9c647568f337828c85ea148681",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.48,
+        "probabilities": {
+          "optional": 0.65,
+          "priority": 0.02,
+          "summary_only": 0.33
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "dc49c19eb45954d46e77b3a4",
+      "position_id": "US2026-093",
+      "candidate": "Shafina Barnett",
+      "roster": "candidates",
+      "contest": {
+        "office": "United States Representative",
+        "district_or_seat": "CD-4",
+        "jurisdiction": "United States House of Representatives",
+        "counties": [],
+        "ocd_division_id": "ocd-division/country:us/state:mi/cd:4"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.91,
+      "saved_evidence_score": 0.25,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "aed48e413db06438d343ed0b3165e86b463e0fe0bb61c82aa6f3758fbe9eaa93",
+      "current_state_sha256": "fdcecf9708a38993f8fcd607d454822d6f5450a0bc8213dba609f143d4a385d5",
+      "published_request_sha256": "1042309d2f2629696e83fec90fd0aa6c70f508f3f68abdef1cf898b4ef6e37fe",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.2,
+        "probabilities": {
+          "optional": 0.47,
+          "priority": 0.27,
+          "summary_only": 0.26
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "ce5cf968d11cfe26d986d4b6",
+      "position_id": "CA2026-057",
+      "candidate": "Kiran Mohammad",
+      "roster": "candidates",
+      "contest": {
+        "office": "Mayor",
+        "district_or_seat": "At large",
+        "jurisdiction": "City of Dublin",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/place:dublin"
+      },
+      "saved_grade": "N/A",
+      "saved_score": 4.86,
+      "saved_evidence_score": 0.17,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "0e6e92e59430f0f7199cab0d897834243bc4068a0d4dd7d04ab64d68983173a6",
+      "current_state_sha256": "d090dc692aa6ade0676d870908970ea43ceb295d229d4bd36419aec333068186",
+      "published_request_sha256": "579997103bbd1508880031ca8cdd234c78571cf00d05241867c59859b0dbfb58",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "priority",
+        "confidence": 0.37,
+        "probabilities": {
+          "optional": 0.28,
+          "priority": 0.58,
+          "summary_only": 0.14
+        }
+      },
+      "triage": "priority",
+      "recommended_small_batch": true,
+      "reason": "Confirmed pro-Palestine community alignment conflicts with the saved low-evidence N/A; rerun instead of manually replacing the grade."
+    },
+    {
+      "candidate_id": "da5294be566d8feef0fd4818",
+      "position_id": "CA2026-056",
+      "candidate": "Kashef Qaadri",
+      "roster": "candidates",
+      "contest": {
+        "office": "City Council Member",
+        "district_or_seat": "District 4",
+        "jurisdiction": "City of Dublin",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/place:dublin/council_district:4"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.96,
+      "saved_evidence_score": 0.94,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "da85afde42b14137b4c6e4612160b7e74f14ff811f2ba48af6ce2950f87d98fe",
+      "current_state_sha256": "d05cc5b82b1a8d09470ebd50f3b1239c863b34bb8a03eaa8494fdb668c4cfa00",
+      "published_request_sha256": "42026dda229a9b7fc498ad3a03f733feca29c319b912b9aef19a2ef59337fa62",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.36,
+        "probabilities": {
+          "optional": 0.5700000000000001,
+          "priority": 0.02,
+          "summary_only": 0.41
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "9598de26683e23305913da00",
+      "position_id": "CA2026-061",
+      "candidate": "Aziz Akbari",
+      "roster": "candidates",
+      "contest": {
+        "office": "City Council Member",
+        "district_or_seat": "District 4",
+        "jurisdiction": "City of Fremont",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/place:fremont/council_district:4"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.88,
+      "saved_evidence_score": 0.8,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "bc1de1357c3df27e5bd681169fe686a0af8348fa4c8f4a0359bbbdd077cac010",
+      "current_state_sha256": "ada6f1b30beffd738e267ef6b91cff357a791aade5f8dccd82713718e0a51622",
+      "published_request_sha256": "3156780728519115ff9427aba77b7758fa74b971fd3110fd2ee8231e895ad694",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.45,
+        "probabilities": {
+          "optional": 0.63,
+          "priority": 0.04,
+          "summary_only": 0.33
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "e916e36ec32c1ee0fdf4bad3",
+      "position_id": "CA2026-072",
+      "candidate": "Barbara Lee",
+      "roster": "candidates",
+      "contest": {
+        "office": "Mayor",
+        "district_or_seat": "At large",
+        "jurisdiction": "City of Oakland",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/place:oakland"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.62,
+      "saved_evidence_score": 0.96,
+      "changed_fields": [
+        "congressional_gaza_context"
+      ],
+      "base_state_sha256": "37bd7360e8cadb13f06f18087b3ee599b280e170c10b402ba6aaf0dcb9495000",
+      "current_state_sha256": "2f3c578fc6449ba4f7543329977bc9c29c609325c8d6591a51f95f1cf1d38b82",
+      "published_request_sha256": "08839b7ca10a2fb8de4405e9ffc571d947548ae2c6f75d1e855201aedd5dd6b1",
+      "jev_triage": null,
+      "triage": "summary_only",
+      "recommended_small_batch": false,
+      "reason": "Only explanatory grouping/context changes. The underlying legislative actions and responses were already in the scoring request; no new contrary or favorable action is added by this PR."
+    },
+    {
+      "candidate_id": "7a31059f45e9b092226c49b1",
+      "position_id": "CA2026-084",
+      "candidate": "Qasim Lodhi",
+      "roster": "candidates",
+      "contest": {
+        "office": "City Council Member",
+        "district_or_seat": "District 4",
+        "jurisdiction": "City of Union City",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": "ocd-division/country:us/state:ca/place:union_city/council_district:4"
+      },
+      "saved_grade": "A",
+      "saved_score": 4.9,
+      "saved_evidence_score": 0.76,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "3939b275eb87a0e2094de2d4f37579f4a00b59480f875549b14ff57383c578c9",
+      "current_state_sha256": "75417833feb4bae64f9d3e204760824093dcc80c8c4f721372fa783417ed020f",
+      "published_request_sha256": "332f229b0233b3ba3e73ce93547d3a297080a7cb08184483a526d062a0921abb",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.43,
+        "probabilities": {
+          "optional": 0.62,
+          "priority": 0.04,
+          "summary_only": 0.34
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "709ab0f7fe52cd7c59492956",
+      "position_id": "CA2026-142",
+      "candidate": "Jamal Khan",
+      "roster": "candidates",
+      "contest": {
+        "office": "Governing Board Member",
+        "district_or_seat": "At-large",
+        "jurisdiction": "Berryessa Union School District",
+        "counties": [
+          "Santa Clara"
+        ],
+        "ocd_division_id": null
+      },
+      "saved_grade": "N/A",
+      "saved_score": 4.85,
+      "saved_evidence_score": 0.16,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "d0947613eb6f37fbbefa63febf5ee1994a64ee0133b44f75dae941c83817f80b",
+      "current_state_sha256": "1a12a6ad18dfd47564d864b525e28d9dc53538b502759a34567362de7245a1e3",
+      "published_request_sha256": "fa721d936fd3414f4b52ab2e4cad61e1d8f4158680d9d21e7d5505eda02ca9a6",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "priority",
+        "confidence": 0.33,
+        "probabilities": {
+          "optional": 0.31,
+          "priority": 0.55,
+          "summary_only": 0.14
+        }
+      },
+      "triage": "priority",
+      "recommended_small_batch": true,
+      "reason": "Confirmed pro-Palestine community alignment conflicts with the saved low-evidence N/A; rerun instead of manually replacing the grade."
+    },
+    {
+      "candidate_id": "67c8682407d7eab71964ff7b",
+      "position_id": "CA2026-123",
+      "candidate": "Seema Badar",
+      "roster": "candidates",
+      "contest": {
+        "office": "Governing Board Member / School Director",
+        "district_or_seat": "Trustee Area 5",
+        "jurisdiction": "Dublin Unified School District",
+        "counties": [
+          "Alameda"
+        ],
+        "ocd_division_id": null
+      },
+      "saved_grade": "A",
+      "saved_score": 4.92,
+      "saved_evidence_score": 0.89,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "c8890ed4ad621740decb8c19263b255be863c59205d95f37612913fb261b8321",
+      "current_state_sha256": "784046a6145d3ea094626eec5ab2f2787324b4fddcfa12929ff66f5395f86f00",
+      "published_request_sha256": "0529babdd29b9c19ac4eb2036ca01f5d7024c552a339459e3bd9426bc76d1e95",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.48,
+        "probabilities": {
+          "optional": 0.65,
+          "priority": 0.02,
+          "summary_only": 0.33
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "fdf386148462248413e42abd",
+      "position_id": "CA2026-173",
+      "candidate": "Raeena S. Lari",
+      "roster": "candidates",
+      "contest": {
+        "office": "Member, Board of Education",
+        "district_or_seat": "Trustee Area 7",
+        "jurisdiction": "Santa Clara County Board of Education",
+        "counties": [
+          "Santa Clara"
+        ],
+        "ocd_division_id": null
+      },
+      "saved_grade": "A",
+      "saved_score": 4.87,
+      "saved_evidence_score": 0.99,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "57b4b38d1d62e34e9316e5992a29ee5d24d4cccfafb9badfdd30535df79a492c",
+      "current_state_sha256": "4c9799ba45fd7a6e8d6ad6573a8886a0d85bbf98f338eae094abb1f483cdbe8e",
+      "published_request_sha256": "83ebf264471a1c3e65480226c42db520e10a3a6c96f5a232d7333226d907eab8",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.37,
+        "probabilities": {
+          "optional": 0.58,
+          "priority": 0.02,
+          "summary_only": 0.4
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    },
+    {
+      "candidate_id": "f4796394291f22763edba491",
+      "position_id": "CA2026-174",
+      "candidate": "Kamal Yassin",
+      "roster": "candidates",
+      "contest": {
+        "office": "Governing Board Member",
+        "district_or_seat": "Trustee Area 1",
+        "jurisdiction": "Santa Clara Unified School District",
+        "counties": [
+          "Santa Clara"
+        ],
+        "ocd_division_id": null
+      },
+      "saved_grade": "A",
+      "saved_score": 4.91,
+      "saved_evidence_score": 0.79,
+      "changed_fields": [
+        "community_alignment_context"
+      ],
+      "base_state_sha256": "4ea1a2a056fefeec6e34989850dd2fa3a5a9a9b51c22493f08e74aa8a5453bb5",
+      "current_state_sha256": "d9e17dae92bcb0031f4a322049d5424ac7eec903257be0cda86ffc587bc5ac88",
+      "published_request_sha256": "e44ff41fe44cdeb2e32b1a712681874484f2bb7c0469870c45c3792d2c6f2be6",
+      "jev_triage": {
+        "type": "choice",
+        "choice": "optional",
+        "confidence": 0.4,
+        "probabilities": {
+          "optional": 0.6,
+          "priority": 0.03,
+          "summary_only": 0.37
+        }
+      },
+      "triage": "optional",
+      "recommended_small_batch": false,
+      "reason": "The true boolean was already evaluated and the result is A; new text clarifies its owner-defined meaning. Optional refresh, without an urgent known grade error."
+    }
+  ]
+}

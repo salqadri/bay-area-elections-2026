@@ -61,6 +61,22 @@ class LedgerChecks(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'Unreviewed collector item would be lost'):
                     merge.sync_published(self.data)
 
+    def test_exact_registered_retirement_can_sync_but_an_edited_copy_cannot(self):
+        from publication_reviews import load_reviews
+        retired=next(d for r in load_reviews() for d in r['decisions'] if d.get('id')=='retire-vfp-stale-liccardo-note')
+        with tempfile.TemporaryDirectory() as directory:
+            evidence=Path(directory,'evidence');evidence.mkdir()
+            history=Path(directory,'ledger');history.mkdir()
+            (history/'undated_quarantine.json').write_text('[]')
+            path=evidence/'retired.json'
+            path.write_text(json.dumps([{**retired['before'],'person':retired['candidate']}]))
+            with patch.object(merge,'LEDGER',str(evidence)):
+                self.assertGreater(merge.sync_published(self.data)['changed_files'],0)
+                row={**retired['before'],'person':retired['candidate'],'summary':'Unreviewed different claim'}
+                path.write_text(json.dumps([row]))
+                with self.assertRaisesRegex(ValueError,'Unreviewed collector item'):
+                    merge.sync_published(self.data)
+
 
 if __name__ == '__main__':
     for filename in ('test_date_resolvers.py', 'test_validate_evidence.py'):

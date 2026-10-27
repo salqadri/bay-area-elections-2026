@@ -40,7 +40,7 @@ class CommunityChecks(unittest.TestCase):
         p={'id':'race','office':'Council','jurisdiction':'Example City','district_or_seat':'District 1'};candidate={'name':'Known Candidate'}
         record={**p,'position_id':'race','candidate':candidate['name'],'part_of_muslim_community':True}
         records={('race',candidate['name']):record};before=deepcopy(candidate)
-        self.assertEqual(c.community_state(p,candidate,records),{'part_of_muslim_community':True});self.assertEqual(candidate,before)
+        self.assertEqual(c.community_state(p,candidate,records),{'part_of_muslim_community':True,'community_alignment_context':c.COMMUNITY_CONTEXT});self.assertEqual(candidate,before)
         self.assertEqual(c.community_state(p,{'name':'Other Candidate','endorsements':[{'endorser':'CAIR Action','relation':'endorsed'}]},records),{})
         self.assertEqual(c.community_state({**p,'id':'different'},candidate,records),{})
         record['part_of_muslim_community']=False;self.assertEqual(c.community_state(p,candidate,records),{'part_of_muslim_community':False})

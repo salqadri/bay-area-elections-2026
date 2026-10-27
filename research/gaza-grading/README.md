@@ -1,13 +1,22 @@
 # Jev grading and the local playground
 
+Current prepared publication **2026-10-27.7**: `published-2026-10-27-v6.json`,
+`criteria-pro-palestine-v6.json`, and `explanation-queue-2026-10-27-v6.json` freeze
+all 1,296 owner evaluations from `20261027T224704Z-cc6d4be3`. All inputs match v15.
+Mapping: **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, evidence **0.20**. Counts:
+**A 121, B 44, C 13, D 38, E 67, F 125, N/A 888**. Grade changes relative to
+the prior publication are recorded in `publication-2026-10-27-v6-changes.json`.
+Existing Qwen summaries remain historical; fresh summaries must bind v6 requests.
+
+
 [Start and use the local playground](../../docs/JEV_PLAYGROUND.md) to edit question
 JSON, inspect exact states and evaluate every active tracked candidate. The full
 catalog has **1,296 candidacies / 471 races**; **Run Bay Area** targets **877 / 340**.
 It opens **Latest per candidate** across local history. House-only CLI scopes and
-all historical requests remain intact. New CLI/default questions are v5; old
+all historical requests remain intact. New CLI/default questions are v6; old
 plans need their matching criteria file when explicitly replayed.
 
-The playground uses `candidate-evidence-v14-local-federal-organization-context` with
+The playground uses `candidate-evidence-v15-local-federal-chronology-community` with
 jurisdiction/county context, both independent-spending directions, focused
 endorsement observations and owner-confirmed community values.
 New states also include [sourced organization roles and funding links](../../docs/ORGANIZATION_CONTEXT.md).
@@ -136,3 +145,9 @@ evaluated with exact v5 questions, 0 errors. Garamendi and Liccardo then receive
 two same-prompt follow-ups after correcting stale guide prose. Saved mapping:
 F≤0.7, E≤1.4, D≤2.5, C≤3.2, B≤4.4, A≤5; evidence below 0.20 yields N/A.
 Counts: A 125, B 41, C 7, D 40, E 71, F 121, N/A 891. Historical artifacts remain exact.
+
+[Evidence context](../../docs/EVIDENCE_CONTEXT.md) adds complete eligible Gaza
+evidence, reviewed sequences and the owner-defined community meaning.
+`summary-policy-v2.json` hashes the model-independent `summary-prompt-v2.txt`
+and records evidence-coverage requirements for Hermes. Hermes continues using
+`qwen/qwen3.8-27b` with existing runtime settings; v5 Jev scoring questions remain unchanged.

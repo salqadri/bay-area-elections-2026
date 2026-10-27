@@ -83,6 +83,9 @@ def recommendation_key(record):
 
 
 def validate_recommendation_evidence(candidate, row, grade):
+    state=row['request']['state']
+    if grade=='N/A' and state.get('part_of_muslim_community') is True and state.get('community_alignment_context'):
+        raise ValueError('N/A despite confirmed pro-Palestine community alignment: '+row['candidate'])
     observed=[r for r in row['request']['state'].get('focused_endorsement_observations',[])
               if recommendation_signal(r)]
     expected=[r for r in candidate.get('endorsements',[]) if recommendation_signal(r)]
