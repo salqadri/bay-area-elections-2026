@@ -139,5 +139,6 @@ Counts: A 125, B 41, C 7, D 40, E 71, F 121, N/A 891. Historical artifacts remai
 
 [Evidence context](../../docs/EVIDENCE_CONTEXT.md) adds complete eligible Gaza
 evidence, reviewed sequences and the owner-defined community meaning.
-`summary-model-policy-v2.json` selects GPT-6.1 Sol low reasoning and hashes
-`summary-prompt-v2.txt` for Hermes; v5 Jev scoring questions remain unchanged.
+`summary-policy-v2.json` hashes the model-independent `summary-prompt-v2.txt`
+and records evidence-coverage requirements for Hermes. Hermes continues using
+`qwen/qwen3.8-27b` with existing runtime settings; v5 Jev scoring questions remain unchanged.

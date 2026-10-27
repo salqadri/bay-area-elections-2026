@@ -2,13 +2,13 @@
 
 Requested by the owner on October 26, 2026. Prepare one brief evidence summary
 for each of the **1,296 active candidacies** in the current public score snapshot.
-Use Jev for source/scoring decisions. The owner selected GPT-6.1 Sol at low
-reasoning for narrative summaries; see the v2 policy below.
+Use Jev for source/scoring decisions. Hermes uses `qwen/qwen3.8-27b` for
+narrative summaries; retain the existing runtime settings.
 
 ## October 27 follow-up policy
 
-Use `research/gaza-grading/summary-prompt-v2.txt` with the model/effort and hash
-in `summary-model-policy-v2.json`. It requires an assessment for every supplied
+Use `research/gaza-grading/summary-prompt-v2.txt` with the hash and coverage
+requirements in `summary-policy-v2.json`. It requires an assessment for every supplied
 evidence ID before the paragraph; no two-or-three-fact cap. Source chronology,
 corrective actions and the owner-defined pro-Palestine community meaning must be
 considered. [Evidence context](../EVIDENCE_CONTEXT.md) documents the source-reviewed

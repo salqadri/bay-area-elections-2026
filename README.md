@@ -2,7 +2,7 @@
 
 Prepared publication **2026-10-27.4** adds [source-reviewed chronology and follow-ups](docs/EVIDENCE_CONTEXT.md),
 official cosponsorship dates and the clarified pro-Palestine community meaning.
-New states preserve all eligible Gaza evidence. The Sol Low narrative policy is
+New states preserve all eligible Gaza evidence. The full-evidence summary prompt is
 versioned for Hermes; scores remain frozen.
 
 New local/CLI evaluation states include [sourced organization context](docs/ORGANIZATION_CONTEXT.md),

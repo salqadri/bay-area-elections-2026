@@ -79,9 +79,9 @@ publisher URL does not authorize deleting other observations.
 
 ## Hermes handoff
 
-The owner selected **GPT-6.1 Sol / low reasoning** for narrative work.
-`summary-model-policy-v2.json` pins the model and the hash of
-`summary-prompt-v2.txt`. The prompt requires an assessment for every supplied item,
+Hermes continues using `qwen/qwen3.8-27b` for narrative work, with its existing
+runtime settings. The model-independent `summary-policy-v2.json` pins the hash of
+`summary-prompt-v2.txt` and the evidence-coverage requirements. The prompt requires an assessment for every supplied item,
 chronology/reconciliation and the defined community meaning, with no fixed
 two-or-three-fact cap. Validate every ID once; coverage does not prove correct
 polarity or interpretation, so keep review flags.

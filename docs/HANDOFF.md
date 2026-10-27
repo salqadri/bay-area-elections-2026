@@ -1,6 +1,6 @@
 # Research and development handoff
 
-## Context follow-ups and Sol handoff — October 27, 2026
+## Context follow-ups and Hermes handoff — October 27, 2026
 
 Prepared publication **2026-10-27.4**, schema **1.27**, adds eight Jev-reviewed
 observations and retires Liccardo's obsolete guide prose while retaining Ally.
@@ -16,8 +16,9 @@ X accounts, plus official bill-status parsing and an all-candidate lead audit.
 Exact registered retirements can reconcile to the collector without permitting
 unrelated deletions.
 
-**Hermes:** use **gpt-6.1-sol / low**, `summary-prompt-v2.txt` and its hashed
-`summary-model-policy-v2.json`, with full item audits. No scores or explanations
+**Hermes:** keep using `qwen/qwen3.8-27b` with the improved
+`summary-prompt-v2.txt` and its hashed `summary-policy-v2.json`, with full item
+audits. This policy does not change model runtime settings. No scores or explanations
 were rerun; old inputs and responses remain exact. Jamal Khan's old N/A requires
 a new evaluation with the clarified community meaning.
 
