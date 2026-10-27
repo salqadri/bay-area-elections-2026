@@ -1,6 +1,6 @@
 # Evidence chronology and source reconciliation
 
-Prepared publication **2026-10-27.4** (schema 1.27) adds eight Jev-reviewed
+Prepared publication **2026-10-27.6** (schema 1.27) adds eight Jev-reviewed
 observations and retires one obsolete guide observation. New grader/playground
 inputs are **v15**. Candidate scores and explanations were not rerun.
 
@@ -78,6 +78,11 @@ registered review. An edited claim or unreviewed draft still fails; a shared
 publisher URL does not authorize deleting other observations.
 
 ## Hermes handoff
+
+Latest-main reconciliation preserves Hermes's final-prompt summaries from
+publication 2026-10-27.5. Keep that newer owner-approved prompt and Qwen runtime.
+The audit-oriented prompt below is supplementary. See the
+[targeted rerun review](JEV_RERUN_REVIEW.md) before regenerating scores or prose.
 
 Hermes continues using `qwen/qwen3.8-27b` for narrative work, with its existing
 runtime settings. The model-independent `summary-policy-v2.json` pins the hash of

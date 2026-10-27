@@ -1,8 +1,29 @@
 # Research and development handoff
 
+## Latest-main reconciliation and targeted reruns — October 27, 2026
+
+Merged main `5d35c5c` into PR #19, preserving the final-prompt Qwen explanations
+from publication 2026-10-27.5. Rebuilt both generated readers to resolve their
+merge conflicts; prepared evidence publication is now **2026-10-27.6**.
+Neither published numerical scores nor Hermes's latest explanations changed.
+
+[Targeted rerun review](JEV_RERUN_REVIEW.md) recommends just **Scott Wiener,
+Sam Liccardo, Ro Khanna, Kiran Mohammad and Jamal Khan** as the small batch.
+Kiran and Jamal are currently N/A despite confirmed alignment. Ro is already A,
+so his numerical refresh is less urgent but addresses the owner's explicit concern.
+Aisha Wahab's new primary source reinforces existing sponsorship and an A.
+Other PR changes do not require a full-roster rerun. The linked machine-readable
+manifest includes every changed candidacy and exact input hashes.
+
+The shared builder updates **Current input** for all 1,296 candidacies; saved
+scoring requests and results stay immutable until explicitly rerun. Retain the
+latest owner-approved summarizer prompt and Qwen runtime from main; the v2
+full-evidence audit material below is supplementary guidance, not a replacement
+for the newer final-prompt summary batch.
+
 ## Context follow-ups and Hermes handoff — October 27, 2026
 
-Prepared publication **2026-10-27.4**, schema **1.27**, adds eight Jev-reviewed
+Prepared publication **2026-10-27.6**, schema **1.27**, adds eight Jev-reviewed
 observations and retires Liccardo's obsolete guide prose while retaining Ally.
 Wiener's debate refusal, criticism and later statement now remain linked; so do
 Khanna's initial Yes, attributed explanation, later No and separate UNRWA
@@ -49,7 +70,24 @@ regressions and 48 playground API/state checks. The restarted local server serve
 v14 for all 1,296 candidacies; 227 have organization context. All 16,724 saved local
 JSON files retained their hashes. No public page rebuild was needed.
 
-## Voter-voice grade explanations published — October 27, 2026
+## Final-prompt explanations published — October 27, 2026
+
+Publication **2026-10-27.5**, schema **1.27**, republishes all 1,296
+explanations under the owner's final summarizer prompt at temperature 1.0
+(thinking enabled) with `qwen/qwen3.8-27b`: comprehensive current-stance
+capture, candidate-specific openings with boilerplate lines banned, strict
+factual-accuracy and relevance rules, 40–100-word soft range (validator
+20–130). The 405 letter-grade paragraphs regenerate from each candidate's
+exact frozen v5 record; the 891 N/A editorial notes are unchanged in substance.
+Frozen archive `research/gaza-grading/explanations-2026-10-27-vfp-prompt3.json`
+(1,296 entries); the interim 2026-10-27.3 archive remains immutable. All 405
+generation prompts were audited to contain every prompt section; one transient
+generation error (Jimmy Panetta) was retried to completion by the driver.
+Validation: full release gate passes (46 checks, including
+`check_organization_context.py` from merged PR #18) with the dataset hash
+pinned in `.checks/release-checks.json`.
+
+## Voter-voice grade explanations published (interim batch) — October 27, 2026
 
 Publication **2026-10-27.3**, schema **1.27**, publishes grade explanations for
 the current **jev-2026-10-27-vfp** score snapshot. All **405 letter grades**

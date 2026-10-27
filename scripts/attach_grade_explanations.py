@@ -23,7 +23,7 @@ NA_NOTE_TEMPLATE = ("We could not find enough in {name}'s public record — stat
                     "stands on Palestinian justice. This race is marked N/A; we do not infer any stance "
                     "from silence.")
 EXPLANATION_FIELD = 'pro_palestine_explanation'
-SUMMARY_WORDS = (30, 110)
+SUMMARY_WORDS = (20, 130)
 
 
 def validate_summary(result, row, grade, publication_id):
