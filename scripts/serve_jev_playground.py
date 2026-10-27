@@ -21,6 +21,8 @@ from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, buil
                         validate_questions, validate_response, jev_call, digest, dump, save, now, money)
 from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
+PLAYGROUND_DEFAULT_MAPPING = {**DEFAULT_MAPPING, 'minimum_evidence_score': .2}
+
 ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
@@ -116,10 +118,12 @@ class RunManager:
 
     def score_grade_mapping(self):
         path = self.work / 'score-grade-mapping.json'
-        return validate_mapping(json.loads(path.read_text()) if path.exists() else DEFAULT_MAPPING)
+        mapping = validate_mapping(json.loads(path.read_text()) if path.exists() else PLAYGROUND_DEFAULT_MAPPING)
+        return {**mapping, 'minimum_evidence_score': mapping.get('minimum_evidence_score', .2)}
 
     def set_score_grade_mapping(self, mapping):
         mapping = validate_mapping(mapping)
+        mapping.setdefault('minimum_evidence_score', .2)
         with self.lock:
             save(self.work / 'score-grade-mapping.json', mapping)
         return mapping
@@ -136,7 +140,7 @@ class RunManager:
         baseline = stored_run(batch, current)
         return {'snapshot': current, 'baseline': self.present(baseline), 'questions': json.loads(DEFAULT_CRITERIA.read_text())['questions'],
                 'latest': self.present(self.latest(current, baseline)),
-                'score_grade_mapping': self.score_grade_mapping(), 'default_score_grade_mapping': DEFAULT_MAPPING,
+                'score_grade_mapping': self.score_grade_mapping(), 'default_score_grade_mapping': PLAYGROUND_DEFAULT_MAPPING,
                 'key_configured': bool(self.key), 'history': self.history()}
 
     def latest(self, current=None, baseline=None):

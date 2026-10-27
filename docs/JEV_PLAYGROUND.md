@@ -168,9 +168,11 @@ or call is required, and no separate grade confidence is invented. The UI labels
 the unchanged source score confidence explicitly.
 
 A compatible saved `evidence_score` (score question with two criteria, 0–1)
-strictly below **0.10** suppresses the derived letter and returns the string
-**N/A** instead. Exactly 0.10 is still graded. This applies to the
-selected result, race cards, CAIR cards, API projections, CLI output and downloads,
+strictly below the editable **Minimum evidence_score** suppresses the derived letter
+and returns **N/A** instead. The playground default is **0.20 / 1**; evidence
+exactly at the minimum qualifies. The minimum accepts values from 0 to 1 and
+previews live alongside grade bounds. This applies to the
+selected result, race cards, histogram, CAIR cards, API projections and downloads,
 without another Jev call. The UI explains the evidence threshold separately from
 model confidence. Original scores, `gaza_grade`, probabilities and confidence are
 unchanged. A historical prompt without this question (or an incompatible/invalid
@@ -200,7 +202,8 @@ Edit the inclusive upper bounds for F, E, D, C and B: valid changes immediately
 preview the histogram, derived result grades and CAIR comparisons without a Jev
 call. Values must be strictly increasing between 0 and 5; A always ends at 5.
 Invalid edits retain the last valid preview and disable saving. **Save thresholds**
-persists the preview locally; **Revert preview** restores the saved mapping.
+persists the grade bounds and evidence minimum locally; **Revert preview** restores
+both saved settings.
 **Restore default mapping** saves the table above. The chart remains visible while
 scrolling through its tuning area.
 
@@ -221,6 +224,12 @@ grade for the comparison shows it once. Missing/incompatible scores are labeled
 without assigning a grade.
 
 The tracked default is `research/gaza-grading/score-grade-mapping.json`.
+The optional `minimum_evidence_score` property travels with the mapping in local
+API responses and downloads. Existing playground settings without it use 0.20
+while retaining their custom grade bounds. Archived publication/CLI mappings
+without that property retain their historical 0.10 rule, so opening the playground
+does not change published grades or archived results.
+
 Overrides persist under the server's `--work-dir/score-grade-mapping.json`
 (default `.research/jev-playground/score-grade-mapping.json`), via the same-origin
 `POST /api/score-grade-mapping` endpoint. API views and downloads include

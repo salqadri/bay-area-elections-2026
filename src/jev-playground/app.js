@@ -101,7 +101,7 @@
     const panel=$('candidate-score-grade'),grade=C.derivedGrade(row,gradeMapping);panel.replaceChildren();
     panel.append(node('strong',null,'pro_palestine_score_grade'));
     if(!grade){panel.append(node('p','help','No compatible saved 0–5 pro_palestine_score.'));return;}
-    if(grade==='N/A'){panel.append(node('span','derived-grade-value',grade),node('p','help','Saved evidence_score: '+String(C.evidenceScore(row))+' / 1, below 0.10. No derived letter grade. Original Jev answers remain below.'));return;}
+    if(grade==='N/A'){panel.append(node('span','derived-grade-value',grade),node('p','help','Saved evidence_score: '+String(C.evidenceScore(row))+' / 1, below '+String(gradeMapping.minimum_evidence_score??.10)+'. No derived letter grade. Original Jev answers remain below.'));return;}
     panel.append(node('span','derived-grade-value',grade));
     panel.append(node('p','help','Derived from '+String(row.response.answers.pro_palestine_score.score)+' / 5 · Source score confidence: '+C.percent(row.response.answers.pro_palestine_score.confidence)+'. No separate model confidence.'));
     const tune=node('a',null,'Back to grade distribution ↑');tune.href='#grade-distribution';tune.addEventListener('click',()=>{$('grade-mapping').open=true;});panel.append(tune);
@@ -109,10 +109,11 @@
   function setupGradeMapping(){
     const controls=$('grade-bounds');controls.replaceChildren();
     for(const [i,upper]of gradeMapping.upper_bounds.entries()){const label=node('label',null,'FEDCB'[i]+' upper bound (inclusive)'),input=node('input');input.id='grade-bound-'+i;input.type='number';input.step='any';input.min='0';input.max='5';input.required=true;input.value=String(upper);label.htmlFor=input.id;label.append(input);controls.append(label);}
+    const label=node('label',null,'Minimum evidence_score (0–1)'),input=node('input');input.id='minimum-evidence-score';input.type='number';input.step='any';input.min='0';input.max='1';input.required=true;input.value=String(gradeMapping.minimum_evidence_score??.10);label.htmlFor=input.id;label.append(input);controls.append(label);
     updateMappingStatus();
   }
   const sameMapping=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-  const readMapping=()=>({upper_bounds:Array.from({length:5},(_,i)=>$('grade-bound-'+i).value.trim()===''?null:Number($('grade-bound-'+i).value))});
+  const readMapping=()=>({minimum_evidence_score:$('minimum-evidence-score').value.trim()===''?null:Number($('minimum-evidence-score').value),upper_bounds:Array.from({length:5},(_,i)=>$('grade-bound-'+i).value.trim()===''?null:Number($('grade-bound-'+i).value))});
   function updateMappingStatus(){
     const dirty=!sameMapping(gradeMapping,savedGradeMapping);
     $('save-grade-mapping').disabled=mappingSaving||mappingInvalid||!dirty;$('revert-grade-mapping').disabled=mappingSaving||(!dirty&&!mappingInvalid);$('reset-grade-mapping').disabled=mappingSaving;
@@ -160,7 +161,7 @@
       button.addEventListener('click',()=>{selectedBucket=bucket.grade;$('grade-mapping').open=true;renderDistribution();});bars.append(button);
     }
     $('grade-histogram').replaceChildren(bars);
-    $('distribution-exclusions').textContent=distribution.insufficient+' N/A (evidence below 0.10; excluded from letter buckets) · '+distribution.ungraded+' without a compatible saved result. County and saved-history selection apply; no confidence cutoff.';
+    $('distribution-exclusions').textContent=distribution.insufficient+' N/A (evidence below '+String(gradeMapping.minimum_evidence_score??.10)+'; excluded from letter buckets) · '+distribution.ungraded+' without a compatible saved result. County and saved-history selection apply; no confidence cutoff.';
     const bucket=distribution.buckets.find(b=>b.grade===selectedBucket),panel=$('bucket-inspection'),allOpen=panel.dataset.grade===selectedBucket&&panel.querySelector('.bucket-all')?.open,fragment=document.createDocumentFragment(),raceMap=new Map(races().map(r=>[r.id,r]));
     fragment.append(node('h3',null,bucket.grade+' · '+bucket.count+' candidates'),node('p','help','Up to three closest scored candidates on either side of each cutoff. Click a name to inspect their saved answers.'));
     const cards=node('div','boundary-cards'),index='FEDCBA'.indexOf(bucket.grade);
@@ -194,7 +195,7 @@
       const metrics=node('div','comparison-metrics');
       const metricRows=[[comparisonGrade,comparison.grade,'grade'],[comparisonScore,comparison.score,'score']];
       if(comparisonGrade!=='pro_palestine_score_grade'){metricRows.push(['pro_palestine_score_grade',C.gradeMetric(row,gradeMapping),'grade']);}
-      for(const [key,metric,type]of metricRows){const cell=node('div');cell.dataset.metricKey=key;cell.append(node('strong',null,key||'Question not selected'));cell.append(node('p',null,metric?(type==='score'?String(metric.value)+' / 5':metric.value):'No compatible saved answer'));if(metric)cell.append(node('span','help',metric.insufficient?'Saved evidence_score: '+String(metric.evidence)+' / 1, below 0.10':(metric.derived?'Derived · Source score confidence: ':'Confidence: ')+C.percent(metric.confidence)));metrics.append(cell);}card.append(metrics);
+      for(const [key,metric,type]of metricRows){const cell=node('div');cell.dataset.metricKey=key;cell.append(node('strong',null,key||'Question not selected'));cell.append(node('p',null,metric?(type==='score'?String(metric.value)+' / 5':metric.value):'No compatible saved answer'));if(metric)cell.append(node('span','help',metric.insufficient?'Saved evidence_score: '+String(metric.evidence)+' / 1, below '+String(gradeMapping.minimum_evidence_score??.10):(metric.derived?'Derived · Source score confidence: ':'Confidence: ')+C.percent(metric.confidence)));metrics.append(cell);}card.append(metrics);
       card.append(node('p','help','Review reason: '+comparison.reasons.join(' or ')));
       const footer=node('div','comparison-footer'),open=sourceLink(C.candidateSiteUrl(row),'Election site ↗');footer.append(node('span','help','Saved '+formatTime(row.evaluation?.finished_at||row.evaluation?.created_at||run.created_at)+' · '+(row.response?.model||run.model)));if(open)footer.append(open);card.append(footer);results.append(card);
     }

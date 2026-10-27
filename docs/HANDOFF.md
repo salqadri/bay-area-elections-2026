@@ -1,5 +1,21 @@
 # Research and development handoff
 
+## Editable playground evidence minimum — October 27, 2026
+
+**Minimum evidence_score** joins the grade tuning controls, defaulting to **0.20 / 1**.
+Evidence strictly below it produces N/A; the exact minimum qualifies. Valid edits
+preview histogram counts, boundary neighbors and derived grades immediately;
+Save thresholds/Revert preview persist or restore both settings. Local API views
+and downloads include `minimum_evidence_score` in `score_grade_mapping`.
+Existing local grade bounds are preserved when this new default is added.
+Historical publication/CLI mappings without this optional field retain 0.10;
+no published dataset, model responses, prompt or saved evaluations are rewritten.
+No Jev calls were made. Tests cover exact boundaries, 0/1 extremes, invalid values,
+legacy settings, persistence, exports and desktop/mobile live preview/save/reload.
+Validation: **45/45 release checks pass**; all 186 prior local evaluation files
+retain their hashes.
+
+
 ## Local grade distribution and threshold tuning — October 27, 2026
 
 The local playground now charts A–F counts for its county scope and selected

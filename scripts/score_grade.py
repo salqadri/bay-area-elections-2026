@@ -9,13 +9,17 @@ DEFAULT_MAPPING = json.loads((Path(__file__).resolve().parent.parent /
 
 
 def validate_mapping(mapping):
-    if not isinstance(mapping, dict) or set(mapping) != {'upper_bounds'}:
+    if not isinstance(mapping, dict) or 'upper_bounds' not in mapping or set(mapping) - {'upper_bounds', 'minimum_evidence_score'}:
         raise ValueError('Provide upper_bounds: five increasing numbers for F, E, D, C, B. A ends at 5.')
     bounds = mapping['upper_bounds']
     if (not isinstance(bounds, list) or len(bounds) != 5 or
             any(type(n) not in (int, float) or not math.isfinite(n) for n in bounds) or
             not all(a < b for a, b in zip([0] + bounds, bounds + [5]))):
         raise ValueError('Grade bounds must be five finite, strictly increasing numbers between 0 and 5.')
+    if 'minimum_evidence_score' in mapping:
+        minimum = mapping['minimum_evidence_score']
+        if type(minimum) not in (int, float) or not math.isfinite(minimum) or not 0 <= minimum <= 1:
+            raise ValueError('Minimum evidence score must be a finite number from 0 to 1.')
     return deepcopy(mapping)
 
 
@@ -42,7 +46,7 @@ def row_grade(row, mapping=DEFAULT_MAPPING):
     if (grade and evidence_question.get('type') == 'score' and
             isinstance(evidence_question.get('criteria'), list) and len(evidence_question['criteria']) == 2 and
             evidence_answer.get('type') == 'score' and type(evidence) in (int, float) and
-            math.isfinite(evidence) and 0 <= evidence < .10):
+            math.isfinite(evidence) and 0 <= evidence < mapping.get('minimum_evidence_score', .10)):
         return 'N/A'
     return grade
 

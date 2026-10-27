@@ -118,6 +118,25 @@ class ValidationChecks(unittest.TestCase):
         row['response']['answers']['pro_palestine_score']['score']=None
         self.assertIsNone(sg.row_grade(row))
 
+    def test_configurable_evidence_minimum_and_legacy_mapping(self):
+        row={'status':'complete','request':{'questions':{
+            'pro_palestine_score':{'type':'score','criteria':list('012345')},
+            'evidence_score':{'type':'score','criteria':['none','concrete']}}},
+            'response':{'answers':{'pro_palestine_score':{'type':'score','score':3,'confidence':0},
+                                  'evidence_score':{'type':'score','score':.199999,'confidence':0}}}}
+        mapping={**sg.DEFAULT_MAPPING,'minimum_evidence_score':.2}
+        self.assertEqual(sg.row_grade(row,mapping),'N/A')
+        self.assertEqual(sg.row_grade(row,sg.DEFAULT_MAPPING),'C')
+        row['response']['answers']['evidence_score']['score']=.2
+        original=deepcopy(row)
+        self.assertEqual(sg.row_grade(row,mapping),'C')
+        self.assertEqual(sg.row_grade(row,{**mapping,'minimum_evidence_score':1}),'N/A')
+        self.assertEqual(sg.row_grade(row,{**mapping,'minimum_evidence_score':0}),'C')
+        self.assertEqual(sg.present_run({'rows':[row]},mapping)['score_grade_mapping'],mapping)
+        self.assertEqual(row,original)
+        for value in (None,True,'0.2',-.1,1.1,float('nan')):
+            with self.assertRaises(ValueError):sg.validate_mapping({**mapping,'minimum_evidence_score':value})
+
     def test_custom_grade_mapping_validation_and_input_preservation(self):
         mapping={'upper_bounds':[.1,.5,1,2,4.9]}
         self.assertEqual(sg.score_grade(2.5,mapping),'B')
@@ -370,6 +389,16 @@ class RunChecks(unittest.TestCase):
         while m.get(id_)['status'] in {'running','cancelling'} and time.monotonic()<end:time.sleep(.01)
         return m.get(id_)
 
+    def test_playground_default_and_persisted_evidence_minimum(self):
+        m=self.manager()
+        self.assertEqual(m.bootstrap()['score_grade_mapping']['minimum_evidence_score'],.2)
+        legacy={**sg.DEFAULT_MAPPING,'upper_bounds':[.1,.5,1,2,4.9]}
+        (m.work/'score-grade-mapping.json').write_text(json.dumps(legacy))
+        self.assertEqual(m.score_grade_mapping(),{**legacy,'minimum_evidence_score':.2})
+        m.set_score_grade_mapping({**legacy,'minimum_evidence_score':.4})
+        restarted=p.RunManager(self.path,m.work,baseline=self.base)
+        self.assertEqual(restarted.score_grade_mapping()['minimum_evidence_score'],.4)
+
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)
         self.assertEqual(b['baseline']['questions'],QUESTIONS)
@@ -379,7 +408,7 @@ class RunChecks(unittest.TestCase):
     def test_mapping_persists_and_projects_existing_results_without_rewriting_history(self):
         m=self.manager();q={'pro_palestine_score':{'type':'score','criteria':list('012345')}}
         done=self.wait(m,m.start(q)['id']);path=m.work/'runs'/done['id']/'run.json';original=path.read_bytes()
-        mapping={'upper_bounds':[.1,.2,.3,.4,.5]};m.set_score_grade_mapping(mapping)
+        mapping={'upper_bounds':[.1,.2,.3,.4,.5],'minimum_evidence_score':.2};m.set_score_grade_mapping(mapping)
         restarted=p.RunManager(self.path,m.work,baseline=self.base)
         self.assertEqual(restarted.bootstrap()['score_grade_mapping'],mapping)
         self.assertEqual(restarted.present(done)['rows'][0]['pro_palestine_score_grade'],'F')
@@ -640,7 +669,7 @@ class RunChecks(unittest.TestCase):
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json','Origin':'https://evil.test'})[0],403)
             origin='http://127.0.0.1:'+str(server.server_port)
             headers={'Content-Type':'application/json','Origin':origin}
-            mapping={'upper_bounds':[.1,.5,1,2,4.9]}
+            mapping={'upper_bounds':[.1,.5,1,2,4.9],'minimum_evidence_score':.2}
             self.assertEqual(request('POST','/api/score-grade-mapping',json.dumps(mapping),headers)[0],200)
             self.assertEqual(json.loads(request('GET','/api/bootstrap')[1])['score_grade_mapping'],mapping)
             self.assertEqual(request('POST','/api/score-grade-mapping','{"upper_bounds":[1,2,2,3,4]}',headers)[0],400)

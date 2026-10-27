@@ -71,7 +71,7 @@ for(const county of counties)assert(C.countyMatches({counties:[county]},'bay-are
 console.log('PASS CAIR comparisons: C/F boundaries, inclusive 2.5/5, OR logic, confidence unfiltered, joint/current/unspecified versus historical/primary/opposed, missing/renamed/incompatible answers, exact saved inputs and county predicates.');
 
 const mapping=JSON.parse(fs.readFileSync(path.join(__dirname,'../research/gaza-grading/score-grade-mapping.json'),'utf8'));
-assert.deepEqual(mapping,C.defaultScoreGradeMapping);
+assert.deepEqual(mapping.upper_bounds,C.defaultScoreGradeMapping.upper_bounds);
 assert.equal(C.scoreGrade(0,mapping),'F');assert.equal(C.scoreGrade(5,mapping),'A');
 for(const [i,upper]of mapping.upper_bounds.entries()){assert.equal(C.scoreGrade(upper,mapping),'FEDCB'[i]);assert.equal(C.scoreGrade(upper+Number.EPSILON*8,mapping),'EDCBA'[i]);}
 for(const value of [null,true,'2',NaN,Infinity,-.01,5.01])assert.equal(C.scoreGrade(value,mapping),null);
@@ -99,7 +99,7 @@ sparse.response.answers.evidence_score={type:'score',score:0,confidence:1};
 for(const value of [0,.05,.099999,.1,1]){
   sparse.response.answers.evidence_score.score=value;
   const raw=JSON.stringify(sparse);
-  assert.equal(C.derivedGrade(sparse),value<.1?'N/A':'D');
+  assert.equal(C.derivedGrade(sparse),value<.2?'N/A':'D');
   assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.1?'N/A':'D');
   assert.equal(JSON.stringify(sparse),raw);
 }
@@ -132,3 +132,17 @@ const changedDistribution=C.gradeDistribution(distributionRows,{upper_bounds:[5/
 const emptyDistribution=C.gradeDistribution([],mapping);assert.equal(emptyDistribution.total,0);assert(emptyDistribution.buckets.every(b=>b.count===0));assert.deepEqual(C.boundaryNeighbors(emptyDistribution,2.5),{below:[],above:[]});assert.throws(()=>C.gradeDistribution(distributionRows,{upper_bounds:[1,2,2,3,4]}));
 assert(html.includes('id="grade-histogram"'));assert(html.includes('id="revert-grade-mapping"'));
 console.log('PASS Grade distribution: exact inclusive edges, counts conserved, N/A and missing kept separate, zero-confidence answers included, sorted boundary neighbors, empty bins and immutable source rows.');
+
+// Explicit evidence cutoffs are inclusive and persist in export mappings.
+const evidenceRows=[distributionRow('low',3,.199999),distributionRow('exact',3,.2),distributionRow('high',3,.8)];
+const evidenceMapping={...mapping,minimum_evidence_score:.2},evidenceOriginal=JSON.stringify(evidenceRows);
+assert.equal(C.defaultScoreGradeMapping.minimum_evidence_score,.2);
+assert.deepEqual(evidenceRows.map(row=>C.derivedGrade(row,evidenceMapping)),['N/A','C','C']);
+assert.equal(C.gradeDistribution(evidenceRows,evidenceMapping).insufficient,1);
+assert.equal(C.gradeDistribution(evidenceRows,{...mapping,minimum_evidence_score:.9}).insufficient,3);
+assert.equal(C.gradeDistribution(evidenceRows,{...mapping,minimum_evidence_score:0}).insufficient,0);
+assert.equal(C.withScoreGrades({rows:evidenceRows},evidenceMapping).score_grade_mapping.minimum_evidence_score,.2);
+for(const minimum of [null,true,'0.2',NaN,-.1,1.1])assert.throws(()=>C.validateMapping({...mapping,minimum_evidence_score:minimum}));
+assert.equal(JSON.stringify(evidenceRows),evidenceOriginal);
+assert(html.includes('default 0.20 / 1'));
+console.log('PASS Configurable evidence minimum: 0.20 default, exact inclusive edge, validation, live distribution, export and immutable answers.');
