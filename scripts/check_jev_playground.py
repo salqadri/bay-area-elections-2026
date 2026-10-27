@@ -77,9 +77,9 @@ def baseline(data):
 
 class ValidationChecks(unittest.TestCase):
     def test_default_grade_boundaries_are_inclusive_without_rounding(self):
-        self.assertEqual(sg.DEFAULT_MAPPING['upper_bounds'][3],3.2)
-        self.assertEqual(sg.score_grade(3.2),'C')
-        self.assertEqual(sg.score_grade(3.21),'B')
+        self.assertEqual(sg.DEFAULT_MAPPING['upper_bounds'][3],3.3)
+        self.assertEqual(sg.score_grade(3.3),'C')
+        self.assertEqual(sg.score_grade(3.31),'B')
         self.assertEqual(sg.score_grade(0), 'F')
         for i, upper in enumerate(sg.DEFAULT_MAPPING['upper_bounds']):
             self.assertEqual(sg.score_grade(upper), 'FEDCB'[i])
@@ -95,16 +95,16 @@ class ValidationChecks(unittest.TestCase):
         self.assertTrue(any('2024-05-16' in item and 'opposed divestment from Israel' in item
                             for item in state['gaza_evidence']))
 
-    def test_evidence_score_suppresses_only_below_ten_percent(self):
+    def test_evidence_score_suppresses_only_below_twenty_percent(self):
         row={'status':'complete','request':{'questions':{
             'pro_palestine_score':{'type':'score','criteria':list('012345')},
             'evidence_score':{'type':'score','criteria':['none','concrete']}}},
             'response':{'answers':{'pro_palestine_score':{'type':'score','score':1.77,'confidence':0},
                                   'evidence_score':{'type':'score','score':0,'confidence':1}}}}
-        for value in (0, .05, .099999, .1, 1):
+        for value in (0, .05, .1, .199999, .2, 1):
             row['response']['answers']['evidence_score']['score']=value
             original=deepcopy(row)
-            self.assertEqual(sg.row_grade(row), 'N/A' if value < .1 else 'D')
+            self.assertEqual(sg.row_grade(row), 'N/A' if value < .2 else 'D')
             self.assertEqual(sg.present_run({'rows':[row]},sg.DEFAULT_MAPPING)['rows'][0]['response'], original['response'])
             self.assertEqual(row,original)
         for value in (None, True, '0', -.1, 1.1, float('nan')):
@@ -126,7 +126,7 @@ class ValidationChecks(unittest.TestCase):
                                   'evidence_score':{'type':'score','score':.199999,'confidence':0}}}}
         mapping={**sg.DEFAULT_MAPPING,'minimum_evidence_score':.2}
         self.assertEqual(sg.row_grade(row,mapping),'N/A')
-        self.assertEqual(sg.row_grade(row,sg.DEFAULT_MAPPING),'C')
+        self.assertEqual(sg.row_grade(row,{'upper_bounds':sg.DEFAULT_MAPPING['upper_bounds']}),'C')
         row['response']['answers']['evidence_score']['score']=.2
         original=deepcopy(row)
         self.assertEqual(sg.row_grade(row,mapping),'C')

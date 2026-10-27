@@ -1,5 +1,11 @@
 # Evidence chronology and source reconciliation
 
+The owner subsequently reran the full roster with revised v6 questions. Prepared
+publication **2026-10-27.7** freezes those results, with all 1,296 saved inputs
+matching current v15 states. The no-rerun statements below describe preparation
+of the earlier evidence update. See [current methodology](PUBLISHED_GRADES.md)
+and [Hermes's new summary task](tasks/HERMES_GRADE_EXPLANATIONS.md).
+
 Prepared publication **2026-10-27.6** (schema 1.27) adds eight Jev-reviewed
 observations and retires one obsolete guide observation. New grader/playground
 inputs are **v15**. Candidate scores and explanations were not rerun.

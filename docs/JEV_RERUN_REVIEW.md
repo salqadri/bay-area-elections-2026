@@ -1,5 +1,14 @@
 # Targeted Jev rerun review — October 27, 2026
 
+**Completed:** the owner subsequently reran all 1,296 candidates in
+`20261027T224704Z-cc6d4be3`, using revised v6 questions and updated thresholds.
+Prepared publication **2026-10-27.7** freezes that full run. Every saved state now
+matches the current builder, so the input drift discussed below is historical.
+The five candidates do not need another rerun for these same fixes. See
+[current methodology](PUBLISHED_GRADES.md). This document and its manifest retain
+the earlier audit for provenance.
+
+
 Compared PR #19 with main `5d35c5c` (publication 2026-10-27.5). Prepared evidence publication is 2026-10-27.6. Hermes’s latest `qwen/qwen3.8-27b` summaries and the current numerical evaluations are preserved.
 
 ## What is updated

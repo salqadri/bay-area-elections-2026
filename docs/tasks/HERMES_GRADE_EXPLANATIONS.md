@@ -1,5 +1,34 @@
 # Hermes follow-up: concise explanations of all published grades
 
+## Current task — summaries for v6 evaluations
+
+Prepared publication **2026-10-27.7** replaces the scoring snapshot with the
+owner's full-roster run `20261027T224704Z-cc6d4be3`: exact **v6** questions,
+all 1,296 current v15 states, grade bounds **0.7 / 1.4 / 2.3 / 3.3 / 4.4**,
+minimum evidence **0.20**, no confidence filter. Use:
+
+- `research/gaza-grading/explanation-queue-2026-10-27-v6.json`
+- `research/gaza-grading/published-2026-10-27-v6.json`
+- `research/gaza-grading/criteria-pro-palestine-v6.json`
+
+Keep the owner's latest Qwen summarizer prompt and runtime. Each replacement
+summary must bind the new `candidate_id`, `request_sha256` and publication ID
+**jev-2026-10-27-v6**. Do not attach prior paragraphs by name or replace their
+request hashes: the scoring questions and results changed. The previous prompt3
+summary archive remains immutable. Its paragraphs are no longer shown beside
+the new scores. New N/A notes can use the existing editorial template; no
+political stance should be inferred from insufficient evidence.
+
+The batch contains **408 letter-grade paragraphs** for Qwen and **888 N/A
+editorial notes**. The existing attachment tool creates the latter without model
+calls when response files are absent. Keep final paragraphs/source audits bound
+to the new queue, and publish to a new immutable explanations archive.
+
+The earlier five-candidate rerun recommendation is complete because the owner
+ran the full roster. The sections below describe historical v5 work and useful
+full-evidence/source-binding requirements; use the v6 queue above for new work.
+
+
 Requested by the owner on October 26, 2026. Prepare one brief evidence summary
 for each of the **1,296 active candidacies** in the current public score snapshot.
 Use Jev for source/scoring decisions. Hermes uses `qwen/qwen3.8-27b` for

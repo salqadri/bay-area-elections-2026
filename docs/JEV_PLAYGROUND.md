@@ -1,5 +1,14 @@
 # Local Jev playground
 
+Current prepared publication **2026-10-27.7** uses the owner's exact v6 questions
+from full-roster run `20261027T224704Z-cc6d4be3`. All 1,296 saved inputs match
+current v15 states. Tracked Python/browser defaults and the persisted owner
+mapping agree: **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.20**.
+The publisher freezes saved answers without calling Jev. Historical scores and
+summary archives remain immutable; a new source-bound Hermes queue accompanies
+this publication. [Methodology](PUBLISHED_GRADES.md).
+
+
 The playground runs on this computer, separate from the GitHub Pages readers.
 It includes **all active candidates tracked in this repository**, including
 nationwide House, Senate and governor races and every active contest serving
@@ -184,12 +193,12 @@ Default bands use exact stored bounds, without rounding the source score:
 
 | Grade | Score interval |
 |---|---|
-| F | 0 ≤ score ≤ 5/6 |
-| E | 5/6 < score ≤ 10/6 |
-| D | 10/6 < score ≤ 15/6 |
-| C | 15/6 < score ≤ 3.2 |
-| B | 3.2 < score ≤ 25/6 |
-| A | 25/6 < score ≤ 5 |
+| F | 0 ≤ score ≤ 0.7 |
+| E | 0.7 < score ≤ 1.4 |
+| D | 1.4 < score ≤ 2.3 |
+| C | 2.3 < score ≤ 3.3 |
+| B | 3.3 < score ≤ 4.4 |
+| A | 4.4 < score ≤ 5 |
 
 The **Grade distribution** chart above the workspace shows A–F counts for the
 selected county scope and saved-history view (Latest per candidate by default).

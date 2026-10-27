@@ -34,7 +34,7 @@ from evidence_context import contexts as reviewed_contexts  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v5.json'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v6.json'
 STATE_VERSION = 'candidate-evidence-v15-chronology-community'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 

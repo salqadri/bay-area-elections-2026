@@ -1,5 +1,33 @@
 # Research and development handoff
 
+## Owner full-roster v6 scoring publication — October 27, 2026
+
+Prepared publication **2026-10-27.7**, schema **1.27**, freezes all **1,296**
+successful owner evaluations from `20261027T224704Z-cc6d4be3`. Exact revised
+questions are saved as `criteria-pro-palestine-v6.json`; the archive and new
+Hermes queue use the `2026-10-27-v6` suffix. Every frozen input matches current
+v15. Saved inclusive bounds: **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence
+**0.20**, no confidence gate. Counts: **A 121 · B 44 · C 13 · D 38 · E 67 ·
+F 125 · N/A 888**.
+
+The previous five-candidate rerun task is complete. Wiener is D (2.08), Liccardo
+C (2.67), Khanna A (4.71), Kiran Mohammad A (4.86), Jamal Khan A (4.88).
+No new Jev calls were made during freezing. Tracked browser/CLI defaults now
+match the owner's saved bounds. Both readers are rebuilt with the new projection.
+
+**Hermes next:** regenerate explanations against the new queue with the owner's
+latest Qwen summarizer prompt. Previous summaries are preserved in immutable
+archives, but their old request bindings are not displayed as explanations of
+new v6 results. [Current task and inputs](tasks/HERMES_GRADE_EXPLANATIONS.md).
+
+Validation: **47/47 release checks pass**. Every frozen request, provider response
+and evaluation provenance matches the owner's saved full run; all 1,296 state
+objects match current generated input. Browser/Python grade defaults and live
+playground defaults match the saved thresholds and v6 questions. Historical
+score and prompt3 summary archives remain byte-identical. No new model calls
+were made to freeze or publish this snapshot.
+
+
 ## Latest-main reconciliation and targeted reruns — October 27, 2026
 
 Merged main `5d35c5c` into PR #19, preserving the final-prompt Qwen explanations

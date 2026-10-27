@@ -78,7 +78,7 @@ for(const value of [null,true,'2',NaN,Infinity,-.01,5.01])assert.equal(C.scoreGr
 const nonlinear={upper_bounds:[.1,.5,1,2,4.9]};assert.equal(C.scoreGrade(2.5,nonlinear),'B');
 for(const invalid of [{},[],{upper_bounds:[0,1,2,3,4]},{upper_bounds:[1,2,2,3,4]},{upper_bounds:[1,2,3,4,5]},{upper_bounds:[1,2,3,4]},{upper_bounds:[false,1,2,3,4]},{upper_bounds:[1,2,3,4,NaN]},{...nonlinear,extra:1}])assert.throws(()=>C.validateMapping(invalid));
 const derivedRow=reviewed('A',2.5),before=JSON.stringify(derivedRow);
-assert.equal(C.derivedGrade(derivedRow,mapping),'D');assert.equal(C.derivedGrade(derivedRow,nonlinear),'B');
+assert.equal(C.derivedGrade(derivedRow,mapping),'C');assert.equal(C.derivedGrade(derivedRow,nonlinear),'B');
 assert(C.cairComparison(derivedRow,{gradeKey:'pro_palestine_score_grade',scoreKey:'',mapping}).flagged);
 assert(!C.cairComparison(derivedRow,{gradeKey:'pro_palestine_score_grade',scoreKey:'',mapping:nonlinear}).flagged);
 const exported=C.withScoreGrades({rows:[derivedRow]},nonlinear);assert.equal(exported.rows[0].pro_palestine_score_grade,'B');assert.deepEqual(exported.score_grade_mapping,nonlinear);assert.equal(exported.rows[0].request,derivedRow.request);assert.equal(exported.rows[0].response,derivedRow.response);assert.equal(JSON.stringify(derivedRow),before);
@@ -100,7 +100,7 @@ for(const value of [0,.05,.099999,.1,1]){
   sparse.response.answers.evidence_score.score=value;
   const raw=JSON.stringify(sparse);
   assert.equal(C.derivedGrade(sparse),value<.2?'N/A':'D');
-  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.1?'N/A':'D');
+  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.2?'N/A':'D');
   assert.equal(JSON.stringify(sparse),raw);
 }
 sparse.response.answers.evidence_score.score=0;
@@ -111,7 +111,7 @@ assert(C.cairComparison(sparse).flagged); // Original model grade/score comparis
 for(const value of [null,true,'0',NaN,-.1,1.1]){sparse.response.answers.evidence_score.score=value;assert.equal(C.derivedGrade(sparse),'D');}
 sparse.response.answers.evidence_score.score=0;sparse.request.questions.evidence_score.criteria.push('wrong scale');assert.equal(C.derivedGrade(sparse),'D');
 delete sparse.request.questions.evidence_score;assert.equal(C.derivedGrade(sparse),'D');
-console.log('PASS Evidence sufficiency: strict 0.10 boundary, validated 0–1 question, unchanged historic prompts/raw answers and nonletter CAIR handling.');
+console.log('PASS Evidence sufficiency: strict 0.20 boundary, validated 0–1 question, unchanged historic prompts/raw answers and nonletter CAIR handling.');
 
 // New research is inspectable without rewriting the inputs of a saved result.
 const savedInputRow={id:"fresh-input",request:{state:{candidate:"Example",evidence:"old"}}};
@@ -124,11 +124,11 @@ assert(html.includes("tab-current-state"));
 // Distribution counts conserve the catalog, distinguish N/A/unrun rows, and
 // move exact-edge scores without mutating any stored provider response.
 function distributionRow(id,score,evidence=1){const row=reviewed('A',score);row.id=id;row.candidate='Candidate '+id;row.request=structuredClone(row.request);row.request.questions.evidence_score={type:'score',criteria:['none','concrete']};row.response.answers.evidence_score={type:'score',score:evidence,confidence:0};return row;}
-const distributionRows=[distributionRow('zero',0),distributionRow('edge',3.2),distributionRow('above',3.22),distributionRow('top',5),distributionRow('na',4.9,.09),{id:'waiting',status:'preview'},distributionRow('tie',3.2)];
+const distributionRows=[distributionRow('zero',0),distributionRow('edge',3.3),distributionRow('above',3.32),distributionRow('top',5),distributionRow('na',4.9,.09),{id:'waiting',status:'preview'},distributionRow('tie',3.3)];
 const distributionOriginal=JSON.stringify(distributionRows),dist=C.gradeDistribution(distributionRows,mapping);
 assert.deepEqual(Object.fromEntries(dist.buckets.map(b=>[b.grade,b.count])),{A:1,B:1,C:2,D:0,E:0,F:1});assert.equal(dist.total,7);assert.equal(dist.insufficient,1);assert.equal(dist.ungraded,1);assert.equal(dist.graded,5);assert.equal(dist.buckets.reduce((n,b)=>n+b.count,0)+dist.insufficient+dist.ungraded,dist.total);
-let neighbors=C.boundaryNeighbors(dist,3.2);assert(neighbors.below.every(x=>x.score<=3.2));assert(neighbors.above.every(x=>x.score>3.2));assert.equal(neighbors.above[0].row.id,'above');assert(![...neighbors.below,...neighbors.above].some(x=>x.row.id==='na'));assert.equal(dist.buckets.find(b=>b.grade==='C').rows[0].row.id,'edge');
-const changedDistribution=C.gradeDistribution(distributionRows,{upper_bounds:[5/6,10/6,2.5,3.3,25/6]});assert.equal(changedDistribution.buckets.find(b=>b.grade==='C').count,3);assert.equal(changedDistribution.buckets.find(b=>b.grade==='B').count,0);assert.equal(changedDistribution.insufficient,1);assert.equal(JSON.stringify(distributionRows),distributionOriginal);
+let neighbors=C.boundaryNeighbors(dist,3.3);assert(neighbors.below.every(x=>x.score<=3.3));assert(neighbors.above.every(x=>x.score>3.3));assert.equal(neighbors.above[0].row.id,'above');assert(![...neighbors.below,...neighbors.above].some(x=>x.row.id==='na'));assert.equal(dist.buckets.find(b=>b.grade==='C').rows[0].row.id,'edge');
+const changedDistribution=C.gradeDistribution(distributionRows,{upper_bounds:[.7,1.4,2.3,3.4,4.4]});assert.equal(changedDistribution.buckets.find(b=>b.grade==='C').count,3);assert.equal(changedDistribution.buckets.find(b=>b.grade==='B').count,0);assert.equal(changedDistribution.insufficient,1);assert.equal(JSON.stringify(distributionRows),distributionOriginal);
 const emptyDistribution=C.gradeDistribution([],mapping);assert.equal(emptyDistribution.total,0);assert(emptyDistribution.buckets.every(b=>b.count===0));assert.deepEqual(C.boundaryNeighbors(emptyDistribution,2.5),{below:[],above:[]});assert.throws(()=>C.gradeDistribution(distributionRows,{upper_bounds:[1,2,2,3,4]}));
 assert(html.includes('id="grade-histogram"'));assert(html.includes('id="revert-grade-mapping"'));
 console.log('PASS Grade distribution: exact inclusive edges, counts conserved, N/A and missing kept separate, zero-confidence answers included, sorted boundary neighbors, empty bins and immutable source rows.');
