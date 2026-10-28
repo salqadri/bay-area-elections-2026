@@ -1,5 +1,7 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-28.1** adds [candidate recommendations for every confirmed race](recommendations.html): one recommended candidate per race — 12 via the Muslim-community rule, 141 via the Jev decision model over published grades — or an explicit "no recommendation" where the evidence doesn't support one (102 races with only sub-C grades, 284 with no grades at all). Each pick carries a Qwen-generated "why" paragraph. [Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).
+
 Publication **2026-10-27.13** adds BAMC Action recommendations and complete candidate comments, plus separately attributed Samir Laymoun opinions. **96 source entries**, including official supports/oppositions and two comment-only observations, reach the endorsement lists and new Jev inputs. Propositions are excluded; scores are not rerun. [Sources, differences and repeatable import](docs/BAMC_ACTION.md).
 
 Publication **2026-10-27.12** manually cleans **336 visible explanations**, removing

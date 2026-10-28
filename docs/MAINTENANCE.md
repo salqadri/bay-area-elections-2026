@@ -43,6 +43,7 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/platform-display.js` | Shared collapsed "What they stand for · Campaign platform" disclosure (topic chips, summaries, verbatim quotes, source links, reviewed pages) in both readers |
 | `src/ballot-page.js` | Form orchestration, warnings, candidate/race display and estimate export |
 | `scripts/build_site.py` | Embeds the dataset, schema where applicable, shared CSS and JavaScript into both pages |
+| `scripts/build_recommendations.py` | Per-race recommendation pipeline: Muslim-community rule, Jev best-of-graded picks, Qwen "why" summaries, and the recommendations page builder; see [CANDIDATE_RECOMMENDATIONS.md](CANDIDATE_RECOMMENDATIONS.md) |
 | `scripts/prepare_dom_fixture.py` | Parses built pages into disposable DOM fixtures for Node integration checks |
 
 `index.html` and `ballot.html` are generated and committed. The first embeds the dataset and schema; the second embeds the dataset and address modules. Their election data and reader code are self-contained; the published pages optionally load Firebase Analytics from Google’s CDN, and the address page calls remote address services on interaction. Analytics failure does not prevent either reader from working. Shared style changes in the index template also affect the ballot page. Preserve the build's `<` escaping for embedded JSON and its rejection of closing-script sequences in inline JavaScript.
