@@ -23,7 +23,7 @@ NA_NOTE_TEMPLATE = ("We could not find enough in {name}'s public record — stat
                     "stands on Palestinian justice. This race is marked N/A; we do not infer any stance "
                     "from silence.")
 EXPLANATION_FIELD = 'pro_palestine_explanation'
-SUMMARY_WORDS = (20, 130)
+SUMMARY_WORDS = (5, 130)
 
 
 def validate_summary_refreshes(archive, rows):
@@ -48,6 +48,36 @@ def validate_summary_refreshes(archive, rows):
             raise ValueError('Summary refresh differs from its recorded input/output')
 
 
+def validate_editorial_review(archive):
+    review = archive.get('editorial_review')
+    if not review:
+        return
+    path = (ROOT / review['path']).resolve()
+    if not path.is_relative_to(ROOT / 'research/gaza-grading') or digest(path.read_bytes()) != review['sha256']:
+        raise ValueError('Changed editorial review manifest')
+    manifest = json.loads(path.read_text())
+    previous_path = (ROOT / manifest['source_archive_path']).resolve()
+    if not previous_path.is_relative_to(ROOT / 'research/gaza-grading'):
+        raise ValueError('Editorial source outside grading registry')
+    previous = json.loads(previous_path.read_text())
+    if digest(dump(previous).encode()) != manifest['source_archive_sha256']:
+        raise ValueError('Changed editorial source archive')
+    before = {e['candidate_id']: e for e in previous['entries']}
+    after = {e['candidate_id']: e for e in archive['entries']}
+    edits = {e['candidate_id']: e for e in manifest['entries']}
+    changed = {key for key in after if after[key]['summary'] != before[key]['summary']}
+    if set(before) != set(after) or set(edits) != changed or len(edits) != len(manifest['entries']):
+        raise ValueError('Editorial review coverage differs from actual edits')
+    for key, edit in edits.items():
+        old, new = before[key], after[key]
+        if (edit['before'] != old['summary'] or edit['after'] != new['summary'] or
+                edit['candidate'] != new['candidate'] or
+                edit['request_sha256'] != old['request_sha256'] or
+                edit['request_sha256'] != new['request_sha256'] or
+                edit['previous_grade'] != old['grade'] or edit['grade'] != new['grade']):
+            raise ValueError('Editorial edit does not bind source and final prose')
+
+
 def validate_summary(result, row, grade, publication_id):
     errors = []
     if result.get('candidate_id') != row['id'] or result.get('request_sha256') != row['request_sha256']:
@@ -64,6 +94,11 @@ def validate_summary(result, row, grade, publication_id):
         import re as _re
         if _re.search(r'^\s*#', summary, _re.M) or '**' in summary or '\n' in summary.strip():
             errors.append('markdown or multiline text (inline hashtags inside quotes are fine)')
+        if grade != 'N/A' and re.search(
+                r'supplied record|provided record|available record|single data point|too thin|'
+                r'record is (?:limited|sparse|thin)|assessment rests|full stance|'
+                r'no other (?:statements|votes|endorsements|actions)', summary, re.I):
+            errors.append('missing-record disclaimer padding in a political explanation')
         if grade == 'N/A' and not re.search(r'insufficient|below.{0,30}0\.10|not enough (?:evidence|of this)|could ?n.t find|no (?:statements|record|mention)|canno?t judge|no clear position|too little to judge', summary, re.I):
             errors.append('N/A summary must state insufficient evidence without assigning a stance')
     if not isinstance(result.get('model'), str) or not result['model'].strip():
@@ -120,6 +155,7 @@ def attach(data, archive, archive_path):
     if archive.get('summary_refreshes'):
         grades = json.loads((ROOT / data['pro_palestine_grading']['archive_path']).read_text())
         validate_summary_refreshes(archive, {r['id']: r for r in grades['rows']})
+    validate_editorial_review(archive)
     result = deepcopy(data)
     targets = {}
     for p in result['positions']:

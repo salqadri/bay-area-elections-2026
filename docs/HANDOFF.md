@@ -1,5 +1,22 @@
 # Research and development handoff
 
+## Current editorial publication
+
+Publication **2026-10-27.12**, schema **1.28**, manually cleans **336 visible
+explanations** and makes four unrelated-platform-only candidates N/A. All raw
+numerical model evaluations and the owner-approved Khanna paragraph are unchanged.
+Current counts: **A 121 · B 44 · C 13 · D 30 · E 67 · F 125 · N/A 896**.
+Use the `published-2026-10-27-editorial.json` score snapshot and matching
+`explanations-2026-10-27-editorial.json` / `explanation-queue-2026-10-27-editorial.json`.
+The versioned issue-observation gate supplements the unchanged **0.22** evidence
+minimum; historical mapping snapshots remain reproducible. Future paragraphs must
+omit missing-record disclaimer padding and give JStreetPAC little weight.
+Use the hash-bound **summary-prompt-v3.txt / summary-policy-v3.json** while retaining
+Hermes's Qwen defaults. The Liccardo Sol Low comparison remains held for review.
+[Full policy, audit and exact changes](SUMMARY_EDITORIAL_REVIEW.md).
+
+Older sections below describe earlier publications.
+
 ## Evidence minimum and unknown-candidate display — October 27, 2026
 
 Publication **2026-10-27.11** applies the owner's saved minimum evidence **0.22**

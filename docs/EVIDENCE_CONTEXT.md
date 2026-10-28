@@ -91,11 +91,11 @@ The audit-oriented prompt below is supplementary. See the
 [targeted rerun review](JEV_RERUN_REVIEW.md) before regenerating scores or prose.
 
 Hermes continues using `qwen/qwen3.8-27b` for narrative work, with its existing
-runtime settings. The model-independent `summary-policy-v2.json` pins the hash of
-`summary-prompt-v2.txt` and the evidence-coverage requirements. The prompt requires an assessment for every supplied item,
+runtime settings. The current model-independent `summary-policy-v3.json` pins the hash of
+`summary-prompt-v3.txt` and the evidence-coverage requirements. The prompt requires an assessment for every supplied item,
 chronology/reconciliation and the defined community meaning, with no fixed
 two-or-three-fact cap. Validate every ID once; coverage does not prove correct
-polarity or interpretation, so keep review flags.
+polarity or interpretation, so keep review flags. V3 also removes missing-record padding, permits shorter factual summaries, and gives JStreetPAC little weight. See [the manual editorial publication](SUMMARY_EDITORIAL_REVIEW.md).
 
 Frozen requests, questions, provider responses, scores and prior explanations
 are untouched. Do not substitute v15 and claim new context computed an old grade.

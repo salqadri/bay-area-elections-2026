@@ -112,11 +112,12 @@ class RunManager:
     def score_grade_mapping(self):
         path = self.work / 'score-grade-mapping.json'
         mapping = validate_mapping(json.loads(path.read_text()) if path.exists() else PLAYGROUND_DEFAULT_MAPPING)
-        return {**mapping, 'minimum_evidence_score': mapping.get('minimum_evidence_score', PLAYGROUND_DEFAULT_MAPPING['minimum_evidence_score'])}
+        return {**mapping, 'require_issue_observation': True, 'minimum_evidence_score': mapping.get('minimum_evidence_score', PLAYGROUND_DEFAULT_MAPPING['minimum_evidence_score'])}
 
     def set_score_grade_mapping(self, mapping):
         mapping = validate_mapping(mapping)
         mapping.setdefault('minimum_evidence_score', PLAYGROUND_DEFAULT_MAPPING['minimum_evidence_score'])
+        mapping['require_issue_observation'] = True
         with self.lock:
             save(self.work / 'score-grade-mapping.json', mapping)
         return mapping

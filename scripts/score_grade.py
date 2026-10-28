@@ -2,6 +2,7 @@
 from copy import deepcopy
 import json
 import math
+import re
 from pathlib import Path
 
 DEFAULT_MAPPING = json.loads((Path(__file__).resolve().parent.parent /
@@ -9,7 +10,7 @@ DEFAULT_MAPPING = json.loads((Path(__file__).resolve().parent.parent /
 
 
 def validate_mapping(mapping):
-    if not isinstance(mapping, dict) or 'upper_bounds' not in mapping or set(mapping) - {'upper_bounds', 'minimum_evidence_score'}:
+    if not isinstance(mapping, dict) or 'upper_bounds' not in mapping or set(mapping) - {'upper_bounds', 'minimum_evidence_score', 'require_issue_observation'}:
         raise ValueError('Provide upper_bounds: five increasing numbers for F, E, D, C, B. A ends at 5.')
     bounds = mapping['upper_bounds']
     if (not isinstance(bounds, list) or len(bounds) != 5 or
@@ -20,6 +21,8 @@ def validate_mapping(mapping):
         minimum = mapping['minimum_evidence_score']
         if type(minimum) not in (int, float) or not math.isfinite(minimum) or not 0 <= minimum <= 1:
             raise ValueError('Minimum evidence score must be a finite number from 0 to 1.')
+    if 'require_issue_observation' in mapping and type(mapping['require_issue_observation']) is not bool:
+        raise ValueError('require_issue_observation must be boolean.')
     return deepcopy(mapping)
 
 
@@ -28,6 +31,25 @@ def score_grade(score, mapping=DEFAULT_MAPPING):
     if type(score) not in (int, float) or not math.isfinite(score) or not 0 <= score <= 5:
         return None
     return next(grade for grade, upper in zip('FEDCBA', bounds + [5]) if score <= upper)
+
+
+# Identity and unrelated local platforms are not observations about this issue.
+# Unknown nonempty fields are preserved conservatively; this is not a stance classifier.
+IDENTITY_FIELDS = {'candidate', 'office', 'state', 'party', 'election_date', 'jurisdiction',
+                   'office_category', 'government_level', 'district_or_seat', 'counties',
+                   'election_type', 'partisan', 'incumbent', 'candidate_roster',
+                   'part_of_muslim_community', 'community_alignment_context', 'campaign_platform_points'}
+ISSUE_TERMS = r'gaza|palestin|israel|zionis|aipac|cease.?fire|genocide|divest|\bbds\b|ihra|antisemit|anti.semit|arms|foreign policy|middle east|military aid|unrwa|netanyahu'
+
+
+def has_issue_observation(state):
+    if not isinstance(state, dict):
+        return True  # Missing historic inputs are not a new finding of silence.
+    if state.get('part_of_muslim_community') is True:
+        return True
+    if any(value for key, value in state.items() if key not in IDENTITY_FIELDS):
+        return True
+    return bool(re.search(ISSUE_TERMS, json.dumps(state.get('campaign_platform_points', [])), re.I))
 
 
 def row_grade(row, mapping=DEFAULT_MAPPING):
@@ -47,6 +69,8 @@ def row_grade(row, mapping=DEFAULT_MAPPING):
             isinstance(evidence_question.get('criteria'), list) and len(evidence_question['criteria']) == 2 and
             evidence_answer.get('type') == 'score' and type(evidence) in (int, float) and
             math.isfinite(evidence) and 0 <= evidence < mapping.get('minimum_evidence_score', .10)):
+        return 'N/A'
+    if grade and mapping.get('require_issue_observation') and not has_issue_observation((row.get('request') or {}).get('state')):
         return 'N/A'
     return grade
 

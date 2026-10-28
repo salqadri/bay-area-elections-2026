@@ -44,6 +44,22 @@ class PublicationChecks(unittest.TestCase):
             with self.subTest(candidate=row['candidate']):
                 self.assertEqual(projection(row,self.archive['score_grade_mapping'],self.archive['id'])['pro_palestine_score_grade'],'N/A')
 
+    def test_unrelated_local_platform_is_not_issue_evidence(self):
+        from score_grade import has_issue_observation, row_grade
+        names = {'Shruti Kumar', 'Arielle Fleisher', 'Boris Lipkin', 'Rebecca Lewington'}
+        for row in self.archive['rows']:
+            if row['candidate'] in names:
+                self.assertFalse(has_issue_observation(row['request']['state']))
+                self.assertEqual(row_grade(row, self.archive['score_grade_mapping']), 'N/A')
+                historical = {k: v for k, v in self.archive['score_grade_mapping'].items() if k != 'require_issue_observation'}
+                self.assertEqual(row_grade(row, historical), 'D')
+        for key, value in [('focused_endorsement_observations', [{'endorser':'CAIR Action','relation':'preferred'}]),
+                           ('gaza_evidence', ['Supported a ceasefire.']),
+                           ('campaign_platform_points', ['Oppose arms transfers to Israel.']),
+                           ('part_of_muslim_community', True)]:
+            self.assertTrue(has_issue_observation({'candidate':'Fixture', key:value}))
+        self.assertFalse(has_issue_observation({'candidate':'Fixture','part_of_muslim_community':False,'campaign_platform_points':['Fund schools and parks.']}))
+
     def test_latest_fiona_and_smiley_scores_remain_exact(self):
         people={c['name']:c for p in self.data['positions'] for c in p.get('candidates') or []}
         for name in ['Fiona Ma','Charles A. Smiley']:

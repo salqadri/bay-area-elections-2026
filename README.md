@@ -1,5 +1,17 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-27.12** manually cleans **336 visible explanations**, removing
+missing-record disclaimers and methodological padding. Known recommendation tiers,
+source attribution, concrete actions and meaningful contrary evidence remain.
+JStreetPAC backing is not used as an automatic positive or negative signal.
+The approved Khanna paragraph is unchanged. [Editorial review](docs/SUMMARY_EDITORIAL_REVIEW.md).
+
+Four unrelated-platform-only records become **N/A**: Shruti Kumar, Arielle Fleisher,
+Boris Lipkin and Rebecca Lewington. The new versioned issue-observation gate does
+not change any raw model request, answer, score, confidence or evaluation timestamp.
+Minimum evidence remains **0.22**, with the existing grade bounds. Current counts:
+**A 121 · B 44 · C 13 · D 30 · E 67 · F 125 · N/A 896**.
+
 Publication **2026-10-27.11** applies the owner's minimum evidence **0.22 / 1**.
 Rommy Kushner, Angel Rodriguez, Dean Abrams and Thomas McMasters now show **N/A**.
 All N/A candidates have no “Why this grade?” panel or directional score/confidence

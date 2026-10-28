@@ -394,7 +394,7 @@ class RunChecks(unittest.TestCase):
         self.assertEqual(m.bootstrap()['score_grade_mapping']['minimum_evidence_score'],.22)
         legacy={'upper_bounds':[.1,.5,1,2,4.9]}
         (m.work/'score-grade-mapping.json').write_text(json.dumps(legacy))
-        self.assertEqual(m.score_grade_mapping(),{**legacy,'minimum_evidence_score':.22})
+        self.assertEqual(m.score_grade_mapping(),{**legacy,'minimum_evidence_score':.22,'require_issue_observation':True})
         m.set_score_grade_mapping({**legacy,'minimum_evidence_score':.4})
         restarted=p.RunManager(self.path,m.work,baseline=self.base)
         self.assertEqual(restarted.score_grade_mapping()['minimum_evidence_score'],.4)
@@ -408,11 +408,11 @@ class RunChecks(unittest.TestCase):
     def test_mapping_persists_and_projects_existing_results_without_rewriting_history(self):
         m=self.manager();q={'pro_palestine_score':{'type':'score','criteria':list('012345')}}
         done=self.wait(m,m.start(q)['id']);path=m.work/'runs'/done['id']/'run.json';original=path.read_bytes()
-        mapping={'upper_bounds':[.1,.2,.3,.4,.5],'minimum_evidence_score':.2};m.set_score_grade_mapping(mapping)
+        mapping={'upper_bounds':[.1,.2,.3,.4,.5],'minimum_evidence_score':.2,'require_issue_observation':True};m.set_score_grade_mapping(mapping)
         restarted=p.RunManager(self.path,m.work,baseline=self.base)
         self.assertEqual(restarted.bootstrap()['score_grade_mapping'],mapping)
-        self.assertEqual(restarted.present(done)['rows'][0]['pro_palestine_score_grade'],'F')
-        self.assertEqual(m.present(m.get(done['id'],0))['changes'][0]['pro_palestine_score_grade'],'F')
+        self.assertEqual(restarted.present(done)['rows'][0]['pro_palestine_score_grade'],'N/A')
+        self.assertEqual(m.present(m.get(done['id'],0))['changes'][0]['pro_palestine_score_grade'],'N/A')
         delta=m.get(done['id'],0);m.set_score_grade_mapping(sg.DEFAULT_MAPPING)
         self.assertEqual(m.present(delta)['score_grade_mapping'],mapping)
         self.assertEqual(path.read_bytes(),original)
@@ -669,7 +669,7 @@ class RunChecks(unittest.TestCase):
             self.assertEqual(request('POST','/api/runs','{}',{'Content-Type':'application/json','Origin':'https://evil.test'})[0],403)
             origin='http://127.0.0.1:'+str(server.server_port)
             headers={'Content-Type':'application/json','Origin':origin}
-            mapping={'upper_bounds':[.1,.5,1,2,4.9],'minimum_evidence_score':.2}
+            mapping={'upper_bounds':[.1,.5,1,2,4.9],'minimum_evidence_score':.2,'require_issue_observation':True}
             self.assertEqual(request('POST','/api/score-grade-mapping',json.dumps(mapping),headers)[0],200)
             self.assertEqual(json.loads(request('GET','/api/bootstrap')[1])['score_grade_mapping'],mapping)
             self.assertEqual(request('POST','/api/score-grade-mapping','{"upper_bounds":[1,2,2,3,4]}',headers)[0],400)

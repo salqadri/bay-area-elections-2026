@@ -5,7 +5,7 @@ from pathlib import Path
 import unittest
 
 from ballotpedia_endorsements import digest, dump
-from attach_grade_explanations import EXPLANATION_FIELD, ROOT, DATASET, validate_summary, validate_summary_refreshes
+from attach_grade_explanations import EXPLANATION_FIELD, ROOT, DATASET, validate_summary, validate_summary_refreshes, validate_editorial_review
 from publish_jev_grades import ROSTERS
 
 
@@ -25,6 +25,7 @@ def check(data):
     grades = json.loads((ROOT / data['pro_palestine_grading']['archive_path']).read_text())
     rows = {r['id']: r for r in grades['rows']}
     validate_summary_refreshes(archive, rows)
+    validate_editorial_review(archive)
     if queue['publication_id'] != cfg['publication_id'] or archive['publication_id'] != cfg['publication_id']:
         raise ValueError('Explanations publication id mismatch')
     if len(archive['entries']) != len(queue['candidates']):
@@ -75,6 +76,22 @@ class ExplanationChecks(unittest.TestCase):
                     row = rows[meta['candidate_id']]
                     self.assertEqual(c['pro_palestine_score'], row['response']['answers']['pro_palestine_score']['score'])
                     self.assertIn(entries[meta['candidate_id']]['summary'], c[EXPLANATION_FIELD]['summary'])
+
+    def test_manual_edit_manifest_and_padding_guard(self):
+        validate_editorial_review(self.archive)
+        e = next(e for e in self.archive['entries'] if e['grade'] != 'N/A')
+        fixture = {'candidate_id': e['candidate_id'], 'request_sha256': e['request_sha256'],
+                   'publication_id': self.archive['publication_id'], 'model': e['model'],
+                   'summary': 'The supplied record is too thin to characterize the full stance of this candidate.'}
+        row = {'id': e['candidate_id'], 'request_sha256': e['request_sha256']}
+        self.assertTrue(any('disclaimer padding' in error for error in validate_summary(fixture, row, e['grade'], self.archive['publication_id'])))
+        fixture['summary'] = 'CAIR Action endorses this candidate.'
+        self.assertEqual(validate_summary(fixture, row, e['grade'], self.archive['publication_id']), [])
+        bad = deepcopy(self.archive)
+        entry = next(e for e in bad['entries'] if e['grade'] != 'N/A')
+        entry['summary'] += ' Unreviewed change.'
+        with self.assertRaises(ValueError):
+            validate_editorial_review(bad)
 
     def test_changed_or_missing_explanation_fails(self):
         for change in ('edit', 'drop'):

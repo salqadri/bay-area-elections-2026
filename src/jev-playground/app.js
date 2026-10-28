@@ -113,7 +113,7 @@
     updateMappingStatus();
   }
   const sameMapping=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-  const readMapping=()=>({minimum_evidence_score:$('minimum-evidence-score').value.trim()===''?null:Number($('minimum-evidence-score').value),upper_bounds:Array.from({length:5},(_,i)=>$('grade-bound-'+i).value.trim()===''?null:Number($('grade-bound-'+i).value))});
+  const readMapping=()=>({require_issue_observation:true,minimum_evidence_score:$('minimum-evidence-score').value.trim()===''?null:Number($('minimum-evidence-score').value),upper_bounds:Array.from({length:5},(_,i)=>$('grade-bound-'+i).value.trim()===''?null:Number($('grade-bound-'+i).value))});
   function updateMappingStatus(){
     const dirty=!sameMapping(gradeMapping,savedGradeMapping);
     $('save-grade-mapping').disabled=mappingSaving||mappingInvalid||!dirty;$('revert-grade-mapping').disabled=mappingSaving||(!dirty&&!mappingInvalid);$('reset-grade-mapping').disabled=mappingSaving;

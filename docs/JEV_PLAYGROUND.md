@@ -1,5 +1,9 @@
 # Local Jev playground
 
+Publication **2026-10-27.12** adds a versioned issue-observation gate: identity and unrelated local-platform text cannot qualify a candidate for a political grade. Current browser/server mappings retain this alongside the saved **0.22** minimum. Four more candidates are N/A; raw answers remain intact. [Editorial review](SUMMARY_EDITORIAL_REVIEW.md).
+
+Earlier publication notes:
+
 The current persisted/default minimum evidence is **0.22 / 1**. Publication
 **2026-10-27.11** applies that owner-saved setting to the existing complete v6
 results, without another model call. Rommy Kushner and three other previously

@@ -3,16 +3,25 @@
   const percent=n=>typeof n==='number'&&Number.isFinite(n)?new Intl.NumberFormat('en-US',{style:'percent',maximumFractionDigits:1}).format(n):'Not returned';
   function samePrompt(a,b){try{return JSON.stringify(JSON.parse(a))===JSON.stringify(JSON.parse(b));}catch{return a===b;}}
   function currentInput(snapshot,row){return snapshot.candidates.find(candidate=>candidate.id===row.id)?.state??{status:'Candidate is outside the current input scope.'};}
-  const defaultScoreGradeMapping={upper_bounds:[.7,1.4,2.3,3.3,4.4],minimum_evidence_score:.22};
+  const defaultScoreGradeMapping={upper_bounds:[.7,1.4,2.3,3.3,4.4],minimum_evidence_score:.22,require_issue_observation:true};
   function validateMapping(mapping){
     const b=mapping?.upper_bounds;
-    if(!mapping||Object.keys(mapping).some(key=>!['upper_bounds','minimum_evidence_score'].includes(key))||!Array.isArray(b)||b.length!==5||b.some((n,i)=>typeof n!=='number'||!Number.isFinite(n)||n<=(i?b[i-1]:0)||n>=5))throw new Error('Grade bounds must be five finite, strictly increasing numbers between 0 and 5.');
+    if(!mapping||Object.keys(mapping).some(key=>!['upper_bounds','minimum_evidence_score','require_issue_observation'].includes(key))||!Array.isArray(b)||b.length!==5||b.some((n,i)=>typeof n!=='number'||!Number.isFinite(n)||n<=(i?b[i-1]:0)||n>=5))throw new Error('Grade bounds must be five finite, strictly increasing numbers between 0 and 5.');
     if('minimum_evidence_score' in mapping&&(typeof mapping.minimum_evidence_score!=='number'||!Number.isFinite(mapping.minimum_evidence_score)||mapping.minimum_evidence_score<0||mapping.minimum_evidence_score>1))throw new Error('Minimum evidence score must be a finite number from 0 to 1.');
-    return {upper_bounds:[...b],...('minimum_evidence_score' in mapping?{minimum_evidence_score:mapping.minimum_evidence_score}:{})};
+    if('require_issue_observation' in mapping&&typeof mapping.require_issue_observation!=='boolean')throw new Error('require_issue_observation must be boolean.');
+    return {...('require_issue_observation' in mapping?{require_issue_observation:mapping.require_issue_observation}:{}),upper_bounds:[...b],...('minimum_evidence_score' in mapping?{minimum_evidence_score:mapping.minimum_evidence_score}:{})};
   }
   function scoreGrade(score,mapping=defaultScoreGradeMapping){const b=validateMapping(mapping).upper_bounds;if(typeof score!=='number'||!Number.isFinite(score)||score<0||score>5)return null;return 'FEDCBA'[[...b,5].findIndex(upper=>score<=upper)];}
   function evidenceScore(row){const q=row.request?.questions?.evidence_score,a=row.response?.answers?.evidence_score;return row.status==='complete'&&q?.type==='score'&&Array.isArray(q.criteria)&&q.criteria.length===2&&a?.type==='score'&&typeof a.score==='number'&&Number.isFinite(a.score)&&a.score>=0&&a.score<=1?a.score:null;}
-  function derivedGrade(row,mapping=defaultScoreGradeMapping){const q=row.request?.questions?.pro_palestine_score,a=row.response?.answers?.pro_palestine_score;const grade=row.status==='complete'&&q?.type==='score'&&Array.isArray(q.criteria)&&q.criteria.length===6&&a?.type==='score'?scoreGrade(a.score,mapping):null;const evidence=evidenceScore(row);return grade&&evidence!==null&&evidence<(mapping.minimum_evidence_score??.10)?'N/A':grade;}
+  function hasIssueObservation(state){
+    if(!state||typeof state!=='object')return true;
+    if(state.part_of_muslim_community===true)return true;
+    const identity=new Set(['candidate','office','state','party','election_date','jurisdiction','office_category','government_level','district_or_seat','counties','election_type','partisan','incumbent','candidate_roster','part_of_muslim_community','community_alignment_context','campaign_platform_points']);
+    const nonempty=value=>Array.isArray(value)?value.length>0:value&&typeof value==='object'?Object.keys(value).length>0:!!value;
+    if(Object.entries(state).some(([key,value])=>!identity.has(key)&&nonempty(value)))return true;
+    return /gaza|palestin|israel|zionis|aipac|cease.?fire|genocide|divest|\bbds\b|ihra|antisemit|anti.semit|arms|foreign policy|middle east|military aid|unrwa|netanyahu/i.test(JSON.stringify(state.campaign_platform_points||[]));
+  }
+  function derivedGrade(row,mapping=defaultScoreGradeMapping){const q=row.request?.questions?.pro_palestine_score,a=row.response?.answers?.pro_palestine_score;const grade=row.status==='complete'&&q?.type==='score'&&Array.isArray(q.criteria)&&q.criteria.length===6&&a?.type==='score'?scoreGrade(a.score,mapping):null;const evidence=evidenceScore(row);return grade&&((evidence!==null&&evidence<(mapping.minimum_evidence_score??.10))||(mapping.require_issue_observation&&!hasIssueObservation(row.request?.state)))?'N/A':grade;}
   function gradeMetric(row,mapping=defaultScoreGradeMapping){const value=derivedGrade(row,mapping);return value?{value,confidence:value==='N/A'?null:row.response.answers.pro_palestine_score.confidence,derived:true,insufficient:value==='N/A',evidence:evidenceScore(row)}:null;}
   function withScoreGrades(run,mapping){return {...run,score_grade_mapping:validateMapping(mapping),rows:run.rows.map(row=>({...row,pro_palestine_score_grade:derivedGrade(row,mapping)}))};}
   function gradeDistribution(rows,mapping=defaultScoreGradeMapping){
@@ -87,5 +96,5 @@
     return {grades:[...grades].sort(),scores:[...scores].sort()};
   }
   function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {currentInput,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,gradeDistribution,boundaryNeighbors,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
+  return {currentInput,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,hasIssueObservation,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,gradeDistribution,boundaryNeighbors,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
 });

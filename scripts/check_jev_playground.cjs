@@ -146,3 +146,19 @@ for(const minimum of [null,true,'0.2',NaN,-.1,1.1])assert.throws(()=>C.validateM
 assert.equal(JSON.stringify(evidenceRows),evidenceOriginal);
 assert(html.includes('default 0.22 / 1'));
 console.log('PASS Configurable evidence minimum: 0.22 default, exact inclusive edge, validation, live distribution, export and immutable answers.');
+
+// Real published inputs: generic school/parks platforms cannot establish a stance.
+const published=JSON.parse(fs.readFileSync(path.join(__dirname,'../research/gaza-grading/published-2026-10-27-editorial.json'),'utf8'));
+const noIssue=new Set(['Shruti Kumar','Arielle Fleisher','Boris Lipkin','Rebecca Lewington']);
+for(const row of published.rows){
+ const grade=C.derivedGrade(row,published.score_grade_mapping);
+ if(noIssue.has(row.candidate)){
+  assert.equal(grade,'N/A');assert.equal(C.hasIssueObservation(row.request.state),false);
+  const historical={...published.score_grade_mapping};delete historical.require_issue_observation;assert.equal(C.derivedGrade(row,historical),'D');
+ }
+ if(row.request.state.focused_endorsement_observations?.length)assert(C.hasIssueObservation(row.request.state));
+}
+assert.equal(C.hasIssueObservation({candidate:'Fixture',part_of_muslim_community:true}),true);
+assert.equal(C.hasIssueObservation({candidate:'Fixture',campaign_platform_points:['Stop arms transfers to Israel.']}),true);
+assert.throws(()=>C.validateMapping({...published.score_grade_mapping,require_issue_observation:'true'}));
+console.log('PASS issue observation gate: real local-platform-only candidates become N/A; recommendation/community evidence and historical mappings retained.');
