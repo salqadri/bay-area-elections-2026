@@ -51,6 +51,24 @@ class ContextChecks(unittest.TestCase):
         self.assertTrue(any('backlash' in q and 'debate' in q for q in queries))
         self.assertTrue(any('UNRWA' in q and 'explanation' in q for q in queries))
         self.assertTrue(any('Block the Bombs' in q and 'cosponsor' in q for q in queries))
+        self.assertTrue(any('after:2023-10-06' in q and 'before:2023-12-01' in q for q in queries))
+
+    def test_model_date_cutoff_never_deletes_public_history_or_date_qualifications(self):
+        from grade_gaza import build_state
+        from legislative_actions import CUTOFF
+        self.assertEqual(CUTOFF, '2023-11-01')
+        candidate={'name':'Historical fixture','gaza_evidence':[
+            {'id':'GE-9001','date':'2023-10-10','summary':'A dated public statement.',
+             'date_note':'Publication date; not the first statement.'}],
+            'gaza_voting_records':[{'actions':[
+                {'action_id':'old','value':'Yes'}, {'action_id':'new','value':'No'}]}]}
+        data={'codes':{'party':{}},'gaza_voting':{'actions':{
+            'old':{'title':'October action','date_label':'2023-10-31'},
+            'new':{'title':'November action','date_label':'2023-11-01'}}}}
+        before=deepcopy(candidate);state=build_state({'id':'fixture'},candidate,data)
+        self.assertEqual([a['title'] for a in state['congressional_gaza_actions']],['November action'])
+        self.assertIn('not the first statement',state['gaza_evidence'][0])
+        self.assertEqual(candidate,before)
 
     def test_verified_secondary_x_account_passes_without_allowing_lookalikes(self):
         c={'name':'Person','x_url':'https://x.com/Official','secondary_x_url':'https://x.com/Personal'}

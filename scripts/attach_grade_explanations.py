@@ -26,6 +26,28 @@ EXPLANATION_FIELD = 'pro_palestine_explanation'
 SUMMARY_WORDS = (20, 130)
 
 
+def validate_summary_refreshes(archive, rows):
+    """Bind explicitly refreshed prose to both its new input and unchanged score."""
+    entries = {e['candidate_id']: e for e in archive['entries']}
+    for candidate_id, refresh in archive.get('summary_refreshes', {}).items():
+        row = rows[candidate_id]; entry = entries[candidate_id]; documents = {}
+        for kind in ('input', 'output'):
+            path = (ROOT / refresh[kind + '_path']).resolve()
+            if not path.is_relative_to(ROOT / 'research/gaza-grading'):
+                raise ValueError('Summary refresh source outside grading registry')
+            if digest(path.read_bytes()) != refresh[kind + '_sha256']:
+                raise ValueError('Changed summary refresh ' + kind)
+            documents[kind] = json.loads(path.read_text())
+            if (documents[kind]['candidate_id'] != candidate_id or
+                    documents[kind]['associated_score_request_sha256'] != row['request_sha256']):
+                raise ValueError('Summary refresh score identity mismatch')
+        source, output = documents['input'], documents['output']
+        if (source['recorded_response'] != row['response'] or source['questions'] != row['request']['questions'] or
+                source['state']['candidate'] != row['candidate'] or source['displayed_grade'] != entry['grade'] or
+                source['requested_model'] != entry['model'] or output['summary'] != entry['summary']):
+            raise ValueError('Summary refresh differs from its recorded input/output')
+
+
 def validate_summary(result, row, grade, publication_id):
     errors = []
     if result.get('candidate_id') != row['id'] or result.get('request_sha256') != row['request_sha256']:
@@ -95,6 +117,9 @@ def build_archive(responses_dir, queue_path, publication_id):
 def attach(data, archive, archive_path):
     if archive.get('format') != 'published-jev-grade-explanations/v1':
         raise ValueError('Unsupported explanations format')
+    if archive.get('summary_refreshes'):
+        grades = json.loads((ROOT / data['pro_palestine_grading']['archive_path']).read_text())
+        validate_summary_refreshes(archive, {r['id']: r for r in grades['rows']})
     result = deepcopy(data)
     targets = {}
     for p in result['positions']:

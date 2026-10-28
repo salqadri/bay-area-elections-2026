@@ -1,5 +1,13 @@
 # Jev grading and the local playground
 
+Prepared publication **2026-10-27.9** adds the source-reviewed November Khanna
+timeline and one owner-requested summary refresh. New inputs are v16, legislative
+cutoff **2023-11-01**; no numerical reruns. The new explanation archive's
+`summary_refreshes` binds `ro-khanna-summary-input-2026-10-27.json` and the matching
+output/audit. Every other paragraph and all old scoring archives remain exact.
+[Source and history audit](../../docs/HISTORICAL_GAZA_EVIDENCE.md).
+
+
 Current prepared publication **2026-10-27.7**: `published-2026-10-27-v6.json`,
 `criteria-pro-palestine-v6.json`, and `explanation-queue-2026-10-27-v6.json` freeze
 all 1,296 owner evaluations from `20261027T224704Z-cc6d4be3`. All inputs match v15.

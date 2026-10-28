@@ -106,7 +106,7 @@ already captured in general platform research, including nested `/issues` pages.
 Its fingerprint changes with candidate/source context. A missing record means
 source review is pending, not neutrality or absence of a position.
 
-Current discovery version `gaza-discovery-v4-context-followups` adds debate/backlash,
+Current discovery version `gaza-discovery-v5-early-chronology` adds debate/backlash,
 UNRWA explanation/follow-up and Block the Bombs cosponsorship queries, alongside
 the earlier dedicated IHRA,
 AB 715/AB 1468 and education queries and retains the earlier divestment layer.
@@ -175,3 +175,7 @@ Source entries in Gaza review drafts bind the page URL to the exact candidate an
 
 See [evidence context](EVIDENCE_CONTEXT.md) for verified secondary X accounts,
 official bill-status XML and the all-candidate context-lead audit.
+
+Discovery v5 explicitly searches October–November 2023 ceasefire statements and
+retrospective first-call coverage. A later article or repost never establishes
+first support by itself. [Historical evidence audit](HISTORICAL_GAZA_EVIDENCE.md).

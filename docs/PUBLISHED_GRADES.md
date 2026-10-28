@@ -1,5 +1,16 @@
 # Published pro-Palestine model scores
 
+## Current evidence and narrative correction
+
+Prepared publication **2026-10-27.9** preserves every v6 numerical score and
+refreshes only Ro Khanna's explanation using the owner-requested Sol Low model.
+The paragraph uses separately archived current research, including November 2023
+sources; the numeric scoring request was not rewritten or rerun. The new
+`explanations-2026-10-27-v6-chronology.json` archive records explicit input/output
+hashes under `summary_refreshes`. All other summaries remain identical.
+[Chronology, cutoff policy and source audit](HISTORICAL_GAZA_EVIDENCE.md).
+
+
 ## Current publication — owner full-roster v6 refresh
 
 Prepared publication **2026-10-27.7**, schema **1.27**, freezes all **1,296**

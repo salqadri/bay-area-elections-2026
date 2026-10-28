@@ -1,5 +1,31 @@
 # Research and development handoff
 
+## Historical evidence and Khanna narrative — October 27, 2026
+
+Prepared publication **2026-10-27.9** adds source-reviewed November 21 and 26,
+2023 Khanna evidence and qualifies the February 2024 repost. Initial research
+missed November; it was not deleted by a date cutoff. The public-history audit
+found no date-cutoff deletions among 14 missing Q4 records; legitimate source
+holds/dedupes remain intact. [Full findings](HISTORICAL_GAZA_EVIDENCE.md).
+
+New v16 legislative inputs start **2023-11-01** (95 more actions across the changed
+state set); date qualifications reach the compact model input. Public histories
+are never filtered by this projection. No numerical scores were rerun.
+
+The owner's requested single **GPT-6.1 Sol / low** narrative refresh applies only
+to Ro Khanna. It is bound to separately archived current input/output and the
+unchanged saved score; 1,295 other paragraphs match main exactly. Hermes's Qwen
+defaults remain unchanged. Discovery and summarizer guidance now guard against
+mistaking the earliest collected report for the candidate's first position.
+
+Validation: **47/47 release checks pass**, including expanded November boundaries,
+public-history preservation, date qualifications and refresh-input/output tamper
+guards. The live local playground serves v16 with the new scope. Every numerical
+projection and 1,295 other summaries match main; original scoring/Qwen archives
+are byte-identical. The Sol output has one audit row for every supplied evidence
+item/action (100 rows, no duplicate IDs).
+
+
 ## v6 voter explanations published — October 28, 2026
 
 Publication **2026-10-27.8**, schema **1.27**, reattached explanations to the v6

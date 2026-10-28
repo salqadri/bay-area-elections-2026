@@ -1,5 +1,17 @@
 # Hermes follow-up: concise explanations of all published grades
 
+## Historical-timeline correction
+
+Only Khanna's paragraph was refreshed using the owner's explicit Sol Low request.
+Hermes's Qwen defaults are unchanged. Its new archive contains separate generation
+input/output hashes rather than pretending November evidence was in the old scoring
+request. Preserve the other 1,295 summaries. Apply this additional rule to future
+Qwen summaries: an earliest collected report does not establish first/earliest
+support; distinguish statement, broadcast, report and repost dates. Use “by [date]”
+when the source establishes support by then, without proving the onset.
+[Current correction and exact inputs](../HISTORICAL_GAZA_EVIDENCE.md).
+
+
 ## Current task — summaries for v6 evaluations
 
 Prepared publication **2026-10-27.7** replaces the scoring snapshot with the

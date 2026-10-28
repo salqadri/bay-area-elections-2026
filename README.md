@@ -1,5 +1,13 @@
 # Bay Area Ballot Research Assistant
 
+Prepared publication **2026-10-27.9** corrects [historical Gaza chronology](docs/HISTORICAL_GAZA_EVIDENCE.md):
+Khanna's ceasefire support is documented by **November 21, 2023**; February 2024
+was a later repost. New Jev legislative inputs include **November 1, 2023** onward;
+public older evidence remains available. Only Khanna's summary was regenerated,
+using the corrected record. All numerical scores and 1,295 other summaries remain
+unchanged.
+
+
 Prepared publication **2026-10-27.7** freezes the owner's full-roster v6 Jev run:
 **1,296 evaluations**, exact revised questions, saved grade bounds
 **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, and minimum evidence **0.20**.

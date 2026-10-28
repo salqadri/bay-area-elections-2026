@@ -4,7 +4,7 @@ from datetime import date
 import json
 import re
 
-CUTOFF = '2023-12-01'
+CUTOFF = '2023-11-01'
 ALIGNMENT = {'positive': 'aligned', 'negative': 'not_aligned', 'neutral': 'neutral', 'unclassified': 'unknown'}
 MONTHS = {name.lower(): i for i, name in enumerate(
     ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), 1)}
