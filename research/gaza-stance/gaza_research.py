@@ -244,6 +244,7 @@ FIXED_QUERY_TEMPLATES = [
     '"{name}" AIPAC pro-israel funding',
 ]
 ENRICH_QUERY_TEMPLATES = [
+    '"{name}" ceasefire after:2023-10-06 before:2023-12-01',
     '"{name}" "genocide" palestine gaza',
     '"{name}" arms sales Israel vote congress',
     '"{name}" JLM endorsement OR "Jewish Democratic Council" OR AIPAC endorsement 2026',
@@ -279,6 +280,7 @@ Below is a dossier assembled deterministically from fixed searches (news snippet
 
 TASK 1 — items: list every claim/action/statement BY or ABOUT this specific person regarding Israel, Gaza, Palestine, arms sales/military aid to Israel, AIPAC or pro-Israel funding/endorsements, ceasefire votes or actions, genocide recognition, or how they frame the conflict. Rules:
 - ONLY this exact person (reject same-name different people; reject generic party-platform statements unless attributed to them).
+- Preserve source-verified historical statements, including October-November 2023. Model-input cutoffs do not authorize deleting dated public research. A later article/repost date is not the date a stance began; never infer first/earliest support from the earliest item in this dossier. Distinguish original action dates from report/republication dates.
 - IDENTITY FIRST: before including ANY item, confirm the source text connects the person to THIS candidate's office, jurisdiction or biography (e.g. "Oakland school board", "Berkeley", "CA-17", "candidate for"). If the source describes a different career, city, country or era than this candidate's office ({office}, {jurisdiction}), REJECT it even if the name matches exactly.
 - The evidence must convey THIS person's own position, vote, statement, or funding record. Statements by others merely criticizing/mentioning them, vandalism against them, ads about them, attendance where others spoke, or "received $0 / no record" absence claims are NOT evidence — omit them.
 - Do not infer a past co-signature from current caucus membership; include only if the cited page names this individual as a signatory at that date.

@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-27.8"
+  "publication_version": "2026-10-27.9"
  },
  "codes": {
   "party": {
@@ -24200,13 +24200,14 @@
       {
        "id": "GE-0146",
        "url": "https://khanna.house.gov/media/in-the-news/matter-conscience-khanna-urges-biden-congress-back-gaza-cease-fire",
-       "summary": "Khanna's official site carries a piece titled 'A Matter of Conscience' in which he urges Biden and Congress to back a Gaza ceasefire.",
+       "summary": "Khanna's official February 9, 2024 article repost reports continuing advocacy for a lasting Gaza ceasefire; it does not establish when he first supported one.",
        "date": "2024-02-09",
        "dimension": "actions_votes",
-       "checked_on": "2026-10-08",
+       "checked_on": "2026-10-27",
        "quote": "'A Matter of Conscience': Khanna Urges Biden, Congress to Back Gaza Cease-Fire",
        "source_kind": "news",
-       "date_method": "page_metadata"
+       "date_method": "page_metadata",
+       "date_note": "February 9 is the official page's publication date, not the start of his ceasefire advocacy. Separately captured November 2023 sources predate this article."
       },
       {
        "id": "GE-0147",
@@ -24397,6 +24398,30 @@
        "source_kind": "official_bill_status",
        "date_note": "Official cosponsorship date, not a roll-call vote. Quote transcribes bill-status XML fields.",
        "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2411.xml",
+       "checked_on": "2026-10-27"
+      },
+      {
+       "id": "GE-1536",
+       "date": "2023-11-21",
+       "summary": "By November 21, 2023, Khanna publicly backed making the negotiated multi-day ceasefire permanent, linking it to hostage releases, humanitarian aid and ending the violence.",
+       "quote": "Once deal, the ceasefire should be permanent",
+       "dimension": "actions_votes",
+       "source_kind": "x_post",
+       "date_method": "x_snowflake",
+       "date_note": "Date of this verified post; earlier statements may exist. This establishes support by November 21, not the first-ever call.",
+       "url": "https://x.com/RoKhanna/status/1726990658861511135",
+       "checked_on": "2026-10-27"
+      },
+      {
+       "id": "GE-1537",
+       "date": "2023-11-26",
+       "summary": "On ABC on November 26, 2023, Khanna called for a ceasefire now, said he had come out for it days earlier, and clarified that he wanted a lasting ceasefire. He linked the call to hostage releases and a diplomatic two-state solution.",
+       "quote": "Well, I think we need a ceasefire now.",
+       "dimension": "actions_votes",
+       "source_kind": "news",
+       "date_method": "source_stated",
+       "date_note": "Interview airdate, not the first date he supported a ceasefire. He says his call began days before this interview.",
+       "url": "https://abcnews.com/Politics/week-transcript-11-26-23-white-house-national/story?id=105156072",
        "checked_on": "2026-10-27"
       }
      ],
@@ -25358,8 +25383,8 @@
       "publication_id": "jev-2026-10-27-v6",
       "candidate_id": "2936483efec2278cf6b5f118",
       "request_sha256": "fde785de0871728031a167b428ef05db07f8ee352d9dfc77deeccfeb5465a3f6",
-      "summary": "Khanna's August 2026 'Zero Aid to Israel' declaration, co-sponsorship of a Gaza genocide resolution, and amendment striking U.S.-Israel military integration from the NDAA, reinforced by Track AIPAC and CAIR Action endorsements, place him firmly against U.S. enablement of Israel. He called for a ceasefire as early as February 2024. Tension remains: he voted Yea in January 2026 on H.R. 7006, which carried $3.3 billion in Israeli military aid, and in 2024 supported resolutions condemning 'from the river to the sea' and banning PLO members. His later Nay on the consolidated package and UNRWA-restoration cosponsorship partially offset but do not erase those alignments.",
-      "model": "qwen/qwen3.8-27b"
+      "summary": "Ro Khanna backed a permanent ceasefire by November 21, 2023, and now calls for ending U.S. military aid to Israel. He sponsors genocide recognition and UNRWA restoration. His record remains mixed: he backed aid-promising resolutions, Palestinian-targeted sanctions and measures restricting Palestinian advocacy, while USCPR rates his current Congress C and lifetime D. In January 2026, he voted for an aid package funding Israel and defunding UNRWA; he said Republicans had “snuck” provisions into it. His February No on a later package and separate restoration cosponsorship do not erase that Yes.",
+      "model": "gpt-6.1-sol"
      }
     },
     {
@@ -466956,10 +466981,11 @@
   "methodology_url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/docs/PUBLISHED_GRADES.md",
   "explanations": {
    "publication_id": "jev-2026-10-27-v6",
-   "archive_path": "research/gaza-grading/explanations-2026-10-27-v6-prompt3.json",
-   "archive_sha256": "a61acef5275a7d076a66dea26e0d2f2b0bb558e97f7f496fc9785607f4b11e83",
+   "archive_path": "research/gaza-grading/explanations-2026-10-27-v6-chronology.json",
+   "archive_sha256": "67505f622550ae63d37c04ce2920bf6ca08d93cdce0bf90f5852ba66f0e452e2",
    "source_queue_path": "research/gaza-grading/explanation-queue-2026-10-27-v6.json",
    "generator": [
+    "gpt-6.1-sol",
     "guide-editorial",
     "qwen/qwen3.8-27b"
    ]

@@ -1,0 +1,161 @@
+{
+ "version": 1,
+ "id": "early-gaza-chronology-2026-10-27",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-27",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "54a73e2f2460c11d555d98faaf5c00c81d4c5beb08e4e7ee6c09b024f19fd13e",
+ "sources": {
+  "source-6a88bae0729e512dceaf": {
+   "url": "https://x.com/RoKhanna/status/1726990658861511135",
+   "publisher": "Ro Khanna verified X account",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "608e620325eaf683f0f0affe499538309413c4a5ff21df98567e49f33ec10292",
+   "retrieval": "Fxtwitter API copy of exact canonical X post; id, author and timestamp checked"
+  },
+  "source-14d9809bfbdb749e862c": {
+   "url": "https://abcnews.com/Politics/week-transcript-11-26-23-white-house-national/story?id=105156072",
+   "publisher": "ABC News — This Week interview transcript",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "3eacc305480c39ee7f609f5ef8ba45356ee0c7decbe7d7198b0e7eee263570ff",
+   "retrieval": "Captured source HTML"
+  },
+  "source-358186298dd2d0a59742": {
+   "url": "https://khanna.house.gov/media/in-the-news/matter-conscience-khanna-urges-biden-congress-back-gaza-cease-fire",
+   "publisher": "Congressman Ro Khanna official office — article repost",
+   "role": "reporting",
+   "candidate": "Ro Khanna",
+   "checked_on": "2026-10-27",
+   "content_sha256": "7cb0e2e20d963a49264c00dd9a159d8c4a5752e6f05c2a0d9082ed22fb87fd64",
+   "retrieval": "Captured source HTML"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "november-post",
+   "action": "change",
+   "source_key": "source-6a88bae0729e512dceaf",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Exact source quote, verified candidate identity and event/publication date passed Jev source review.",
+   "jev_ref": "f186db9a9540809067ac7030368e522c25af51ce0e05cf9569f0c55977b6cb42",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1536",
+    "date": "2023-11-21",
+    "summary": "By November 21, 2023, Khanna publicly backed making the negotiated multi-day ceasefire permanent, linking it to hostage releases, humanitarian aid and ending the violence.",
+    "quote": "Once deal, the ceasefire should be permanent",
+    "dimension": "actions_votes",
+    "source_kind": "x_post",
+    "date_method": "x_snowflake",
+    "date_note": "Date of this verified post; earlier statements may exist. This establishes support by November 21, not the first-ever call.",
+    "url": "https://x.com/RoKhanna/status/1726990658861511135",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Recorded verified X account RoKhanna; source interview/repost names US Representative Ro Khanna of California.",
+    "date_basis": "The exact original post ID 1726990658861511135 decodes via the X snowflake epoch to 2023-11-21T15:47:13 UTC. API created_timestamp=1700581633 and created_at=Tue Nov 21 15:47:13 +0000 2023 independently agree within two seconds; the capture parser checked both id/author and timestamp. The record date is the post date, not a claim that this was his first ceasefire call.",
+    "issue_basis": "By November 21, 2023, Khanna publicly backed making the negotiated multi-day ceasefire permanent, linking it to hostage releases, humanitarian aid and ending the violence."
+   }
+  },
+  {
+   "id": "abc-transcript",
+   "action": "change",
+   "source_key": "source-14d9809bfbdb749e862c",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Exact source quote, verified candidate identity and event/publication date passed Jev source review.",
+   "jev_ref": "b5c74972e674b2bf77eba902f690498cb5b1f9be6d14c26b3978199ee1bf11d2",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1537",
+    "date": "2023-11-26",
+    "summary": "On ABC on November 26, 2023, Khanna called for a ceasefire now, said he had come out for it days earlier, and clarified that he wanted a lasting ceasefire. He linked the call to hostage releases and a diplomatic two-state solution.",
+    "quote": "Well, I think we need a ceasefire now.",
+    "dimension": "actions_votes",
+    "source_kind": "news",
+    "date_method": "source_stated",
+    "date_note": "Interview airdate, not the first date he supported a ceasefire. He says his call began days before this interview.",
+    "url": "https://abcnews.com/Politics/week-transcript-11-26-23-white-house-national/story?id=105156072",
+    "checked_on": "2026-10-27"
+   },
+   "evidence": {
+    "identity_basis": "Recorded verified X account RoKhanna; source interview/repost names US Representative Ro Khanna of California.",
+    "date_basis": "ABC publication line explicitly states November 26, 2023, 9:02 AM. The transcript introduction explicitly says this episode aired Sunday, November 26, matching the publication date and dated title 11-26-23. This record dates the on-air interview, not the earlier statement he references as days ago.",
+    "issue_basis": "On ABC on November 26, 2023, Khanna called for a ceasefire now, said he had come out for it days earlier, and clarified that he wanted a lasting ceasefire. He linked the call to hostage releases and a diplomatic two-state solution."
+   }
+  },
+  {
+   "id": "february-official",
+   "action": "change",
+   "source_key": "source-358186298dd2d0a59742",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "reason": "Exact source quote, verified candidate identity and event/publication date passed Jev source review.",
+   "jev_ref": "a5b7aefabb8dd23ce5be2b425e8012e3e3d58380e089f4249bd91f827838d167",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "before": {
+    "id": "GE-0146",
+    "url": "https://khanna.house.gov/media/in-the-news/matter-conscience-khanna-urges-biden-congress-back-gaza-cease-fire",
+    "summary": "Khanna's official site carries a piece titled 'A Matter of Conscience' in which he urges Biden and Congress to back a Gaza ceasefire.",
+    "date": "2024-02-09",
+    "dimension": "actions_votes",
+    "checked_on": "2026-10-08",
+    "quote": "'A Matter of Conscience': Khanna Urges Biden, Congress to Back Gaza Cease-Fire",
+    "source_kind": "news",
+    "date_method": "page_metadata"
+   },
+   "after": {
+    "id": "GE-0146",
+    "url": "https://khanna.house.gov/media/in-the-news/matter-conscience-khanna-urges-biden-congress-back-gaza-cease-fire",
+    "summary": "Khanna's official February 9, 2024 article repost reports continuing advocacy for a lasting Gaza ceasefire; it does not establish when he first supported one.",
+    "date": "2024-02-09",
+    "dimension": "actions_votes",
+    "checked_on": "2026-10-27",
+    "quote": "'A Matter of Conscience': Khanna Urges Biden, Congress to Back Gaza Cease-Fire",
+    "source_kind": "news",
+    "date_method": "page_metadata",
+    "date_note": "February 9 is the official page's publication date, not the start of his ceasefire advocacy. Separately captured November 2023 sources predate this article."
+   },
+   "evidence": {
+    "identity_basis": "Recorded verified X account RoKhanna; source interview/repost names US Representative Ro Khanna of California.",
+    "date_basis": "Visible source publication date and full transcript title; report date is not assumed to be the first occurrence.",
+    "issue_basis": "Khanna's official February 9, 2024 article repost reports continuing advocacy for a lasting Gaza ceasefire; it does not establish when he first supported one."
+   }
+  }
+ ]
+}

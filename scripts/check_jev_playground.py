@@ -306,7 +306,7 @@ class ValidationChecks(unittest.TestCase):
         data=fixture();pos=data['positions'][0];c=pos['candidates'][0]
         data['gaza_voting']={'actions':{
             'old':{'title':'Historical action in current tab','date_label':'2011-07-07'},
-            'before':{'date_label':'2023-11-30'},'boundary':{'date_label':'2023-12-01'},
+            'before':{'date_label':'2023-10-31'},'boundary':{'date_label':'2023-11-01'},
             'new':{'date_label':'2026-09-03'},'period':{'date_label':'2025-2027'},
             'straddles':{'date_label':'2023-2025'},'undated':{}}}
         for name,metadata in data['gaza_voting']['actions'].items():metadata.setdefault('title',name)
@@ -340,7 +340,7 @@ class ValidationChecks(unittest.TestCase):
         ihra=next(r for r in rows if 'Codify IHRA' in r['title'])
         self.assertEqual((ihra['response'],ihra['alignment']),('No','aligned'))
         dated=[r['date'] for r in rows if action_date({'date_label':r['date']})['precision']=='day']
-        self.assertEqual(dated,sorted(dated,reverse=True));self.assertTrue(all(v>='2023-12-01' for v in dated))
+        self.assertEqual(dated,sorted(dated,reverse=True));self.assertTrue(all(v>='2023-11-01' for v in dated))
         self.assertFalse(any(r['date']=='2023-2025' for r in rows))
 
     def test_identical_linked_actions_collapse_but_conflicts_and_notes_remain(self):

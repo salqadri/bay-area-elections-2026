@@ -15,7 +15,7 @@ from ballotpedia_endorsements import ask, accepted, choice, digest, dump, save, 
 from endorsement_extract import page_from_html
 from reviewed_updates import identity, prepare
 
-SEARCH_VERSION = 'gaza-discovery-v4-context-followups'
+SEARCH_VERSION = 'gaza-discovery-v5-early-chronology'
 ISSUE_TERMS = re.compile(r'israel|gaza|palestin|aipac|ceasefire|divest\w*|\bbds\b|\bIHRA\b|anti[- ]?semit\w*|AB\s*715|ethnic studies', re.I)
 
 
@@ -126,7 +126,9 @@ def search_queries(row):
              '"Antisemitism Awareness Act" curriculum ethnic studies',
              'genocide debate backlash pressure reversal',
              'UNRWA vote explanation mistake later voted against restoration',
-             '"Block the Bombs" cosponsor pledge support')]
+             '"Block the Bombs" cosponsor pledge support',
+             'ceasefire after:2023-10-06 before:2023-12-01',
+             'ceasefire first called October November 2023')]
 
 
 def relevant_lead(result):

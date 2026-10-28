@@ -1,5 +1,11 @@
 # Local Jev playground
 
+Current v16 inputs include legislative actions from **2023-11-01**, retain
+meaningful date qualifications and preserve the full public history separately.
+The stored v6 scores remain exact; only Khanna's public narrative was refreshed.
+See [the historical evidence correction](HISTORICAL_GAZA_EVIDENCE.md).
+
+
 Current prepared publication **2026-10-27.7** uses the owner's exact v6 questions
 from full-roster run `20261027T224704Z-cc6d4be3`. All 1,296 saved inputs match
 current v15 states. Tracked Python/browser defaults and the persisted owner
@@ -397,7 +403,7 @@ The v9 format (superseded by v10 below) carried each source response alongside
 unknown), `assessment_basis`, action ID and source tab. An explicit source/perspective
 key let Jev use the assessment without interpreting Yes or No itself.
 
-New legislative-tracker inputs omit actions before **2023-12-01**, unknown dates
+New legislative-tracker inputs omit actions before **2023-11-01**, unknown dates
 and periods that may start before that date. Exact dates sort newest first;
 period-only observations follow with their original labels.
 [Full source/date contract](GAZA_VOTING_RECORDS.md#reader-ordering-and-jev-input-assessments-october-26-2026).
@@ -417,7 +423,7 @@ unclassified → unknown. One short context string supplies the tracker perspect
 and date-range caveat. Worksheet mechanics, IDs, Congress/tab identifiers,
 precision tags and duplicate assessment labels are excluded from model input.
 
-The December 1, 2023 cutoff and newest-first order are unchanged. An identical
+The cutoff is now November 1, 2023; newest-first ordering is unchanged. An identical
 entry is collapsed only when its primary action URL and all projected meaning
 (including response, alignment and any note) match. Different URLs, titles,
 responses, alignments or notes remain separate. The canonical record keeps all

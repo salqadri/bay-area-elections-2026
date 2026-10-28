@@ -47,7 +47,8 @@ def policy():
 
 def model_text(evidence, observations=None):
     if not needs_review(evidence):
-        return f"{evidence['date']}: {evidence['summary']}"
+        note = (' Date context: ' + evidence['date_note']) if evidence.get('date_note') else ''
+        return f"{evidence['date']}: {evidence['summary']}" + note
     record = (policy() if observations is None else observations).get(evidence['id'], {})
     if record.get('evidence_sha256') != signature(evidence):
         return None

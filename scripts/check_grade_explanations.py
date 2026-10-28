@@ -5,7 +5,7 @@ from pathlib import Path
 import unittest
 
 from ballotpedia_endorsements import digest, dump
-from attach_grade_explanations import EXPLANATION_FIELD, ROOT, DATASET, validate_summary
+from attach_grade_explanations import EXPLANATION_FIELD, ROOT, DATASET, validate_summary, validate_summary_refreshes
 from publish_jev_grades import ROSTERS
 
 
@@ -24,6 +24,7 @@ def check(data):
     queue = json.loads((ROOT / archive['source_queue_path']).read_text())
     grades = json.loads((ROOT / data['pro_palestine_grading']['archive_path']).read_text())
     rows = {r['id']: r for r in grades['rows']}
+    validate_summary_refreshes(archive, rows)
     if queue['publication_id'] != cfg['publication_id'] or archive['publication_id'] != cfg['publication_id']:
         raise ValueError('Explanations publication id mismatch')
     if len(archive['entries']) != len(queue['candidates']):
@@ -86,6 +87,19 @@ class ExplanationChecks(unittest.TestCase):
                 c.pop(EXPLANATION_FIELD)
             with self.assertRaises(ValueError):
                 check(d)
+
+    def test_refreshed_summary_cannot_change_input_output_or_score_binding(self):
+        grades = json.loads((ROOT / self.data['pro_palestine_grading']['archive_path']).read_text())
+        rows = {r['id']: r for r in grades['rows']}
+        for candidate_id, refresh in self.archive.get('summary_refreshes', {}).items():
+            for key in ('input_sha256', 'output_sha256'):
+                bad = deepcopy(self.archive); bad['summary_refreshes'][candidate_id][key] = '0' * 64
+                with self.assertRaisesRegex(ValueError, 'Changed summary refresh'):
+                    validate_summary_refreshes(bad, rows)
+            bad = deepcopy(self.archive)
+            next(e for e in bad['entries'] if e['candidate_id'] == candidate_id)['summary'] = 'An unrecorded replacement.'
+            with self.assertRaisesRegex(ValueError, 'recorded input/output'):
+                validate_summary_refreshes(bad, rows)
 
     def test_na_explanations_state_insufficient_evidence(self):
         for e in self.archive['entries']:

@@ -19,7 +19,7 @@
    "end": "2023-11-30",
    "precision": "day"
   },
-  "eligible_for_jev": false
+  "eligible_for_jev": true
  },
  {
   "input": {
@@ -118,7 +118,7 @@
    "end": "2023-11-30",
    "precision": "month"
   },
-  "eligible_for_jev": false
+  "eligible_for_jev": true
  },
  {
   "input": {
@@ -218,6 +218,28 @@
    "end": "2023-11-30",
    "precision": "day"
   },
+  "eligible_for_jev": true
+ },
+ {
+  "input": {
+   "date_label": "2023-10-31"
+  },
+  "expected": {
+   "start": "2023-10-31",
+   "end": "2023-10-31",
+   "precision": "day"
+  },
   "eligible_for_jev": false
+ },
+ {
+  "input": {
+   "date_label": "2023-11-01"
+  },
+  "expected": {
+   "start": "2023-11-01",
+   "end": "2023-11-01",
+   "precision": "day"
+  },
+  "eligible_for_jev": true
  }
 ]
