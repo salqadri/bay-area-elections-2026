@@ -1,5 +1,14 @@
 # Jev grading and the local playground
 
+Current publication **2026-10-27.11** applies minimum evidence **0.22** with no
+model calls. `published-2026-10-27-evidence022.json` copies the existing v6 raw
+results and changes only their public mapping metadata. Matching explanation
+archive/queue use the same `evidence022` suffix. Four D labels become N/A; the
+changes are recorded in `evidence-threshold-2026-10-27-changes.json`. Political
+paragraphs for those four become archival insufficiency notes, and public readers
+hide all N/A explanation panels. Khanna and other surviving paragraphs remain exact.
+
+
 Publication **2026-10-27.10** selects the concise Ro Khanna draft (78 words).
 See `explanations-2026-10-27-v6-concise-khanna.json` and the matching
 `ro-khanna-summary-{input,output}-2026-10-27-concise.json` files. Raw model text

@@ -19,7 +19,7 @@ assert.equal(panel.tagName,'details');assert.equal(panel.className,'grade-explan
 assert(panel.children.some(c=>c.textContent==='Why this grade?'));assert(panel.children.some(c=>c.textContent===explanation.summary));
 assert(panel.children.some(c=>typeof c==='object'&&c.textContent.includes(explanation.model)&&c.textContent.includes('never changes it')));
 const naPanel=display.renderExplanation({pro_palestine_score_grade:'N/A',pro_palestine_explanation:{...explanation,summary:'Rudy Recile received N/A because the saved evidence score was 0.01 out of 1, below the 0.10 threshold; the available evidence was insufficient and no letter grade was assigned.'}},{node});
-assert(naPanel.children.some(c=>typeof c==='object'&&c.textContent.includes('Editorial note: we mark N/A')&&c.textContent.includes('never infer a stance from silence')&&!c.textContent.includes('qwen')),'N/A panel shows the hand-written editorial note with no model attribution');
+assert.equal(naPanel,null,'N/A candidates have no political or editorial explanation panel');
 const fundingCandidate={pro_palestine_score_grade:'B',pro_palestine_explanation:explanation,pro_palestine_evaluation:{input_state_version:'candidate-evidence-v7-local-federal-community'},gaza_evidence:[{dimension:'aipac_funding'}]};
 assert(display.renderExplanation(fundingCandidate,{node}).children.some(c=>c.textContent?.includes('Funding evidence rules changed')));
 fundingCandidate.pro_palestine_evaluation.input_state_version='candidate-evidence-v11-local-federal-funding-periods';
@@ -31,3 +31,7 @@ assert(ballotPage.includes('renderExplanation(candidate,'),'ballot reader must r
 console.log('PASS public grades: compact E/score format, all color bands, accessible model provenance/confidence, gray N/A for insufficient/missing data, valid zero scores and collapsed bound evidence explanations.');
 
 const customThreshold=display.render({pro_palestine_score:3,pro_palestine_score_grade:'N/A',pro_palestine_evaluation:{...meta,evidence_score:.19}},{pro_palestine_grading:{evidence_threshold:.2}},{node});assert(customThreshold.title.includes('below 0.2 / 1'));assert(!customThreshold.title.includes('below 0.10'));
+
+const unknownBadge=display.render({pro_palestine_score:1.69,pro_palestine_score_grade:'N/A',pro_palestine_evaluation:{...meta,evidence_score:.21}},{pro_palestine_grading:{evidence_threshold:.22}},{node});assert.equal(unknownBadge.textContent,'N/A');assert(!unknownBadge.title.includes('1.69')&&!unknownBadge.title.includes('Model score confidence'));assert(unknownBadge.title.includes('below 0.22 / 1'));
+
+assert.equal(display.renderExplanation({pro_palestine_score_grade:'N/A',pro_palestine_explanation:explanation},{node}),null,'N/A hides even a stale political interpretation');

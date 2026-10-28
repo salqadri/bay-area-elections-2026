@@ -3,7 +3,7 @@
   const percent=n=>typeof n==='number'&&Number.isFinite(n)?new Intl.NumberFormat('en-US',{style:'percent',maximumFractionDigits:1}).format(n):'Not returned';
   function samePrompt(a,b){try{return JSON.stringify(JSON.parse(a))===JSON.stringify(JSON.parse(b));}catch{return a===b;}}
   function currentInput(snapshot,row){return snapshot.candidates.find(candidate=>candidate.id===row.id)?.state??{status:'Candidate is outside the current input scope.'};}
-  const defaultScoreGradeMapping={upper_bounds:[.7,1.4,2.3,3.3,4.4],minimum_evidence_score:.2};
+  const defaultScoreGradeMapping={upper_bounds:[.7,1.4,2.3,3.3,4.4],minimum_evidence_score:.22};
   function validateMapping(mapping){
     const b=mapping?.upper_bounds;
     if(!mapping||Object.keys(mapping).some(key=>!['upper_bounds','minimum_evidence_score'].includes(key))||!Array.isArray(b)||b.length!==5||b.some((n,i)=>typeof n!=='number'||!Number.isFinite(n)||n<=(i?b[i-1]:0)||n>=5))throw new Error('Grade bounds must be five finite, strictly increasing numbers between 0 and 5.');

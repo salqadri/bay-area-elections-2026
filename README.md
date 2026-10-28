@@ -1,5 +1,11 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-27.11** applies the owner's minimum evidence **0.22 / 1**.
+Rommy Kushner, Angel Rodriguez, Dean Abrams and Thomas McMasters now show **N/A**.
+All N/A candidates have no “Why this grade?” panel or directional score/confidence
+in the badge tooltip. Raw evaluations remain archived; no model calls were made.
+
+
 Publication **2026-10-27.10** replaces only Ro Khanna's explanation with the
 owner-approved **78-word** GPT-6.1 Sol Low draft under the 45–80-word rule.
 A recorded copy edit clarifies “U.S. military aid to Israel.” All numerical

@@ -95,16 +95,16 @@ class ValidationChecks(unittest.TestCase):
         self.assertTrue(any('2024-05-16' in item and 'opposed divestment from Israel' in item
                             for item in state['gaza_evidence']))
 
-    def test_evidence_score_suppresses_only_below_twenty_percent(self):
+    def test_evidence_score_suppresses_only_below_default_minimum(self):
         row={'status':'complete','request':{'questions':{
             'pro_palestine_score':{'type':'score','criteria':list('012345')},
             'evidence_score':{'type':'score','criteria':['none','concrete']}}},
             'response':{'answers':{'pro_palestine_score':{'type':'score','score':1.77,'confidence':0},
                                   'evidence_score':{'type':'score','score':0,'confidence':1}}}}
-        for value in (0, .05, .1, .199999, .2, 1):
+        for value in (0, .05, .1, .199999, .2, .219999, .22, 1):
             row['response']['answers']['evidence_score']['score']=value
             original=deepcopy(row)
-            self.assertEqual(sg.row_grade(row), 'N/A' if value < .2 else 'D')
+            self.assertEqual(sg.row_grade(row), 'N/A' if value < sg.DEFAULT_MAPPING['minimum_evidence_score'] else 'D')
             self.assertEqual(sg.present_run({'rows':[row]},sg.DEFAULT_MAPPING)['rows'][0]['response'], original['response'])
             self.assertEqual(row,original)
         for value in (None, True, '0', -.1, 1.1, float('nan')):
@@ -391,10 +391,10 @@ class RunChecks(unittest.TestCase):
 
     def test_playground_default_and_persisted_evidence_minimum(self):
         m=self.manager()
-        self.assertEqual(m.bootstrap()['score_grade_mapping']['minimum_evidence_score'],.2)
-        legacy={**sg.DEFAULT_MAPPING,'upper_bounds':[.1,.5,1,2,4.9]}
+        self.assertEqual(m.bootstrap()['score_grade_mapping']['minimum_evidence_score'],.22)
+        legacy={'upper_bounds':[.1,.5,1,2,4.9]}
         (m.work/'score-grade-mapping.json').write_text(json.dumps(legacy))
-        self.assertEqual(m.score_grade_mapping(),{**legacy,'minimum_evidence_score':.2})
+        self.assertEqual(m.score_grade_mapping(),{**legacy,'minimum_evidence_score':.22})
         m.set_score_grade_mapping({**legacy,'minimum_evidence_score':.4})
         restarted=p.RunManager(self.path,m.work,baseline=self.base)
         self.assertEqual(restarted.score_grade_mapping()['minimum_evidence_score'],.4)

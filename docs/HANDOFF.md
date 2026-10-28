@@ -1,5 +1,35 @@
 # Research and development handoff
 
+## Evidence minimum and unknown-candidate display — October 27, 2026
+
+Publication **2026-10-27.11** applies the owner's saved minimum evidence **0.22**
+without re-running models. Grade bounds remain **0.7 / 1.4 / 2.3 / 3.3 / 4.4**.
+Rommy Kushner (0.21), Angel Rodriguez (0.20), Dean Abrams (0.20) and Thomas
+McMasters (0.21) change from D to N/A. All **556 identity-only inputs** now have
+N/A; a regression prevents publishing a political grade for this input class.
+False community membership and party/office identity are not stance evidence.
+
+Both readers hide the explanation panel for every N/A candidate and omit the
+meaningless saved directional score/confidence from N/A tooltips. The four prior
+political paragraphs are replaced with archival editorial insufficiency notes;
+these notes are not rendered as public explanation panels. Other paragraphs,
+including Khanna's approved 78-word text, remain exact.
+
+The mapping-only publication is `published-2026-10-27-evidence022.json`, with
+matching explanation archive and queue. Its derivation identifies the untouched
+v6 source archive; raw requests, answers and evaluation metadata are identical.
+Counts: **A 121 · B 44 · C 13 · D 34 · E 67 · F 125 · N/A 892**. Browser, CLI
+and local server defaults inherit the saved 0.22 minimum. Historical mappings
+remain reproducible. No source research or model calls were performed.
+
+Validation: **47/47 release checks pass**, including all 556 identity-only
+cases, inclusive 0.22 boundaries, historical custom mappings, and N/A panels
+that hide even a stale political paragraph. Every raw request/answer/evaluation
+row matches the prior scoring archive. Only the four newly insufficient
+paragraphs changed; the approved Khanna text is exact. The restarted local
+playground uses 0.22 for both saved and default mappings.
+
+
 ## Approved concise Khanna summary — October 27, 2026
 
 Publication **2026-10-27.10** uses the owner-selected Sol Low comparison draft,

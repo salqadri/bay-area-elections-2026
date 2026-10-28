@@ -1,5 +1,12 @@
 # Local Jev playground
 
+The current persisted/default minimum evidence is **0.22 / 1**. Publication
+**2026-10-27.11** applies that owner-saved setting to the existing complete v6
+results, without another model call. Rommy Kushner and three other previously
+unsupported D labels are now N/A on the main site. Public N/A candidates have
+no explanation panel or directional score in their tooltip. [Current policy](PUBLISHED_GRADES.md).
+
+
 Current v16 inputs include legislative actions from **2023-11-01**, retain
 meaningful date qualifications and preserve the full public history separately.
 The stored v6 scores remain exact; only Khanna's public narrative was refreshed.
@@ -184,7 +191,7 @@ the unchanged source score confidence explicitly.
 
 A compatible saved `evidence_score` (score question with two criteria, 0–1)
 strictly below the editable **Minimum evidence_score** suppresses the derived letter
-and returns **N/A** instead. The playground default is **0.20 / 1**; evidence
+and returns **N/A** instead. The playground default is **0.22 / 1**; evidence
 exactly at the minimum qualifies. The minimum accepts values from 0 to 1 and
 previews live alongside grade bounds. This applies to the
 selected result, race cards, histogram, CAIR cards, API projections and downloads,

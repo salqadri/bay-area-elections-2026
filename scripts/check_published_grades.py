@@ -34,6 +34,16 @@ class PublicationChecks(unittest.TestCase):
         self.assertEqual(attach(self.data,self.archive,cfg['archive_path'],cfg['archive_sha256']),self.data)
         self.assertEqual(len(self.archive['rows']),1296)
 
+    def test_identity_only_candidates_never_receive_a_political_grade(self):
+        identity={'candidate','office','state','party','election_date','jurisdiction',
+                  'candidate_roster','incumbent','part_of_muslim_community','election_type'}
+        rows=[r for r in self.archive['rows'] if set(r['request']['state'])<=identity
+              and r['request']['state'].get('part_of_muslim_community') is not True]
+        self.assertTrue(any(r['candidate']=='Rommy Kushner' for r in rows))
+        for row in rows:
+            with self.subTest(candidate=row['candidate']):
+                self.assertEqual(projection(row,self.archive['score_grade_mapping'],self.archive['id'])['pro_palestine_score_grade'],'N/A')
+
     def test_latest_fiona_and_smiley_scores_remain_exact(self):
         people={c['name']:c for p in self.data['positions'] for c in p.get('candidates') or []}
         for name in ['Fiona Ma','Charles A. Smiley']:

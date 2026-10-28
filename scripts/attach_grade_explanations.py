@@ -16,7 +16,7 @@ from ballotpedia_endorsements import digest, dump
 from publish_jev_grades import ROOT, DATASET
 from score_grade import row_grade
 
-QUEUE = 'research/gaza-grading/explanation-queue-2026-10-27-v6.json'
+QUEUE = 'research/gaza-grading/explanation-queue-2026-10-27-evidence022.json'
 NA_NOTE_MODEL = 'guide-editorial'
 NA_NOTE_TEMPLATE = ("We could not find enough in {name}'s public record — statements, votes, sponsored bills, "
                     "endorsements or outside spending — on Palestine, Gaza or Israel to judge where {name} "

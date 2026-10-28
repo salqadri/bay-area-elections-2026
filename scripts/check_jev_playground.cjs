@@ -96,11 +96,11 @@ console.log('PASS Prompt identity: formatting-only changes remain clean, changed
 const sparse=reviewed('D',1.77);
 sparse.request=structuredClone(sparse.request);sparse.request.questions.evidence_score={type:'score',criteria:['none','concrete']};
 sparse.response.answers.evidence_score={type:'score',score:0,confidence:1};
-for(const value of [0,.05,.099999,.1,1]){
+for(const value of [0,.05,.099999,.1,.2,.219999,.22,1]){
   sparse.response.answers.evidence_score.score=value;
   const raw=JSON.stringify(sparse);
-  assert.equal(C.derivedGrade(sparse),value<.2?'N/A':'D');
-  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.2?'N/A':'D');
+  assert.equal(C.derivedGrade(sparse),value<.22?'N/A':'D');
+  assert.equal(C.withScoreGrades({rows:[sparse]},mapping).rows[0].pro_palestine_score_grade,value<.22?'N/A':'D');
   assert.equal(JSON.stringify(sparse),raw);
 }
 sparse.response.answers.evidence_score.score=0;
@@ -111,7 +111,7 @@ assert(C.cairComparison(sparse).flagged); // Original model grade/score comparis
 for(const value of [null,true,'0',NaN,-.1,1.1]){sparse.response.answers.evidence_score.score=value;assert.equal(C.derivedGrade(sparse),'D');}
 sparse.response.answers.evidence_score.score=0;sparse.request.questions.evidence_score.criteria.push('wrong scale');assert.equal(C.derivedGrade(sparse),'D');
 delete sparse.request.questions.evidence_score;assert.equal(C.derivedGrade(sparse),'D');
-console.log('PASS Evidence sufficiency: strict 0.20 boundary, validated 0–1 question, unchanged historic prompts/raw answers and nonletter CAIR handling.');
+console.log('PASS Evidence sufficiency: strict 0.22 boundary, validated 0–1 question, unchanged historic prompts/raw answers and nonletter CAIR handling.');
 
 // New research is inspectable without rewriting the inputs of a saved result.
 const savedInputRow={id:"fresh-input",request:{state:{candidate:"Example",evidence:"old"}}};
@@ -134,15 +134,15 @@ assert(html.includes('id="grade-histogram"'));assert(html.includes('id="revert-g
 console.log('PASS Grade distribution: exact inclusive edges, counts conserved, N/A and missing kept separate, zero-confidence answers included, sorted boundary neighbors, empty bins and immutable source rows.');
 
 // Explicit evidence cutoffs are inclusive and persist in export mappings.
-const evidenceRows=[distributionRow('low',3,.199999),distributionRow('exact',3,.2),distributionRow('high',3,.8)];
-const evidenceMapping={...mapping,minimum_evidence_score:.2},evidenceOriginal=JSON.stringify(evidenceRows);
-assert.equal(C.defaultScoreGradeMapping.minimum_evidence_score,.2);
+const evidenceRows=[distributionRow('low',3,.219999),distributionRow('exact',3,.22),distributionRow('high',3,.8)];
+const evidenceMapping={...mapping,minimum_evidence_score:.22},evidenceOriginal=JSON.stringify(evidenceRows);
+assert.equal(C.defaultScoreGradeMapping.minimum_evidence_score,.22);
 assert.deepEqual(evidenceRows.map(row=>C.derivedGrade(row,evidenceMapping)),['N/A','C','C']);
 assert.equal(C.gradeDistribution(evidenceRows,evidenceMapping).insufficient,1);
 assert.equal(C.gradeDistribution(evidenceRows,{...mapping,minimum_evidence_score:.9}).insufficient,3);
 assert.equal(C.gradeDistribution(evidenceRows,{...mapping,minimum_evidence_score:0}).insufficient,0);
-assert.equal(C.withScoreGrades({rows:evidenceRows},evidenceMapping).score_grade_mapping.minimum_evidence_score,.2);
+assert.equal(C.withScoreGrades({rows:evidenceRows},evidenceMapping).score_grade_mapping.minimum_evidence_score,.22);
 for(const minimum of [null,true,'0.2',NaN,-.1,1.1])assert.throws(()=>C.validateMapping({...mapping,minimum_evidence_score:minimum}));
 assert.equal(JSON.stringify(evidenceRows),evidenceOriginal);
-assert(html.includes('default 0.20 / 1'));
-console.log('PASS Configurable evidence minimum: 0.20 default, exact inclusive edge, validation, live distribution, export and immutable answers.');
+assert(html.includes('default 0.22 / 1'));
+console.log('PASS Configurable evidence minimum: 0.22 default, exact inclusive edge, validation, live distribution, export and immutable answers.');

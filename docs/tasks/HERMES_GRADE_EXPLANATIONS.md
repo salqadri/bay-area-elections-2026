@@ -1,5 +1,16 @@
 # Hermes follow-up: concise explanations of all published grades
 
+## Current evidence minimum
+
+Publication **2026-10-27.11** remaps existing raw evaluations at minimum evidence
+**0.22**; there were no model calls. Use the matching `evidence022` score archive,
+explanation archive and queue for future publication work. The four newly N/A
+candidates (Rommy Kushner, Angel Rodriguez, Dean Abrams, Thomas McMasters) must
+not have political interpretations. Their editorial archive notes are hidden
+in both readers along with all other N/A explanation panels. Other summaries,
+including the approved concise Khanna text, are unchanged.
+
+
 ## Current Khanna paragraph
 
 The owner approved the strict 45–80-word Sol Low comparison draft for Khanna.

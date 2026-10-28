@@ -21,7 +21,7 @@ from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, buil
                         validate_questions, validate_response, jev_call, digest, dump, save, now)
 from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
-PLAYGROUND_DEFAULT_MAPPING = {**DEFAULT_MAPPING, 'minimum_evidence_score': .2}
+PLAYGROUND_DEFAULT_MAPPING = {**DEFAULT_MAPPING, 'minimum_evidence_score': DEFAULT_MAPPING.get('minimum_evidence_score', .22)}
 
 ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
@@ -112,11 +112,11 @@ class RunManager:
     def score_grade_mapping(self):
         path = self.work / 'score-grade-mapping.json'
         mapping = validate_mapping(json.loads(path.read_text()) if path.exists() else PLAYGROUND_DEFAULT_MAPPING)
-        return {**mapping, 'minimum_evidence_score': mapping.get('minimum_evidence_score', .2)}
+        return {**mapping, 'minimum_evidence_score': mapping.get('minimum_evidence_score', PLAYGROUND_DEFAULT_MAPPING['minimum_evidence_score'])}
 
     def set_score_grade_mapping(self, mapping):
         mapping = validate_mapping(mapping)
-        mapping.setdefault('minimum_evidence_score', .2)
+        mapping.setdefault('minimum_evidence_score', PLAYGROUND_DEFAULT_MAPPING['minimum_evidence_score'])
         with self.lock:
             save(self.work / 'score-grade-mapping.json', mapping)
         return mapping

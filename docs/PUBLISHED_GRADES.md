@@ -1,6 +1,31 @@
 # Published pro-Palestine model scores
 
-## Current narrative publication
+## Current minimum-evidence publication
+
+Publication **2026-10-27.11** applies the owner-saved minimum evidence **0.22 / 1**,
+inclusive: evidence strictly below 0.22 produces N/A; exactly 0.22 qualifies.
+This is an evidence-sufficiency rule, not a confidence cutoff. Grade bounds
+remain **0.7 / 1.4 / 2.3 / 3.3 / 4.4**. The mapping-only snapshot is
+`published-2026-10-27-evidence022.json`, ID **jev-2026-10-27-evidence022**. It copies
+all 1,296 v6 requests, raw answers and original evaluation metadata unchanged.
+No evaluations were rerun and no candidate-specific blacklist was introduced.
+
+Four D labels become N/A: **Rommy Kushner (0.21), Angel Rodriguez (0.20),
+Dean Abrams (0.20), Thomas McMasters (0.21)**. Counts are **A 121 · B 44 · C 13 ·
+D 34 · E 67 · F 125 · N/A 892**. Every identity-only input with no affirmative
+community observation is N/A (556 cases); this is covered by a publication regression.
+
+Public readers show the gray N/A badge and sufficiency tooltip, without a
+political explanation panel or directional model score/confidence. The four old
+political summaries are replaced by editorial insufficiency notes in the new
+archive. Archival notes remain for reproducibility but are not displayed as
+explanations. Other letter-grade summaries and the approved Khanna paragraph
+are copied exactly. The matching `explanations-2026-10-27-evidence022.json` and
+`explanation-queue-2026-10-27-evidence022.json` bind the updated publication.
+All previous archives remain immutable.
+
+
+## Previous narrative-only publication
 
 Publication **2026-10-27.10** publishes only the owner-approved concise Khanna
 paragraph: **78 words**, GPT-6.1 Sol Low, strict 45–80-word instruction, complete
@@ -12,7 +37,7 @@ chronology archive remains immutable. This is a narrative refresh, not a
 numerical scoring run or a change to Hermes's default model.
 
 
-## Current evidence and narrative correction
+## Historical evidence and narrative correction
 
 Prepared publication **2026-10-27.9** preserves every v6 numerical score and
 refreshes only Ro Khanna's explanation using the owner-requested Sol Low model.
@@ -23,7 +48,7 @@ hashes under `summary_refreshes`. All other summaries remain identical.
 [Chronology, cutoff policy and source audit](HISTORICAL_GAZA_EVIDENCE.md).
 
 
-## Current publication — owner full-roster v6 refresh
+## Original v6 scoring run
 
 Prepared publication **2026-10-27.7**, schema **1.27**, freezes all **1,296**
 successful evaluations from `20261027T224704Z-cc6d4be3`, using the exact owner
