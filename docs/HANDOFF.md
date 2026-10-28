@@ -1,5 +1,26 @@
 # Research and development handoff
 
+## Approved concise Khanna summary — October 27, 2026
+
+Publication **2026-10-27.10** uses the owner-selected Sol Low comparison draft,
+**78 words** after the recorded clarification “U.S. military aid to Israel.”
+The model received the same complete current record, rubric and recorded result
+as the Qwen comparison, with a strict **45–80-word** paragraph rule. One-off
+comparison models are not changes to Hermes's Qwen defaults.
+
+Archive: `research/gaza-grading/explanations-2026-10-27-v6-concise-khanna.json`.
+Its refresh metadata binds the separately archived concise generation input and
+matching output, which preserves both raw model text and the explicit editorial
+replacement. All numerical evaluations, source data,
+thresholds, historical archives and **1,295 other summaries** remain exact.
+Both readers are rebuilt. No new model calls were made for this publication.
+
+Validation: **47/47 release checks pass** against this dataset. The recorded
+editorial replacement reproduces the 78-word final text exactly. Only Khanna's
+paragraph and publication/archive metadata differ from the previous release;
+all evidence, numerical evaluations and other summaries remain exact.
+
+
 ## Historical evidence and Khanna narrative — October 27, 2026
 
 Prepared publication **2026-10-27.9** adds source-reviewed November 21 and 26,

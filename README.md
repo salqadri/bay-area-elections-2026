@@ -1,5 +1,11 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-27.10** replaces only Ro Khanna's explanation with the
+owner-approved **78-word** GPT-6.1 Sol Low draft under the 45–80-word rule.
+A recorded copy edit clarifies “U.S. military aid to Israel.” All numerical
+scores, evidence and 1,295 other summaries are unchanged.
+
+
 Prepared publication **2026-10-27.9** corrects [historical Gaza chronology](docs/HISTORICAL_GAZA_EVIDENCE.md):
 Khanna's ceasefire support is documented by **November 21, 2023**; February 2024
 was a later repost. New Jev legislative inputs include **November 1, 2023** onward;

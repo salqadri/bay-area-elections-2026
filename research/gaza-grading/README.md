@@ -1,5 +1,12 @@
 # Jev grading and the local playground
 
+Publication **2026-10-27.10** selects the concise Ro Khanna draft (78 words).
+See `explanations-2026-10-27-v6-concise-khanna.json` and the matching
+`ro-khanna-summary-{input,output}-2026-10-27-concise.json` files. Raw model text
+and the one editorial clarification are retained. Numeric scores and all other
+paragraphs remain exact; Hermes's Qwen defaults are unchanged.
+
+
 Prepared publication **2026-10-27.9** adds the source-reviewed November Khanna
 timeline and one owner-requested summary refresh. New inputs are v16, legislative
 cutoff **2023-11-01**; no numerical reruns. The new explanation archive's

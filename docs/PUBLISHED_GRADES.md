@@ -1,5 +1,17 @@
 # Published pro-Palestine model scores
 
+## Current narrative publication
+
+Publication **2026-10-27.10** publishes only the owner-approved concise Khanna
+paragraph: **78 words**, GPT-6.1 Sol Low, strict 45–80-word instruction, complete
+current research context. One recorded wording clarification specifies U.S.
+military aid to Israel. His numeric grade remains **A (4.71/5)**. Every other
+score and summary is unchanged. `explanations-2026-10-27-v6-concise-khanna.json`
+binds the generation input and raw/final output by SHA-256; the previous
+chronology archive remains immutable. This is a narrative refresh, not a
+numerical scoring run or a change to Hermes's default model.
+
+
 ## Current evidence and narrative correction
 
 Prepared publication **2026-10-27.9** preserves every v6 numerical score and

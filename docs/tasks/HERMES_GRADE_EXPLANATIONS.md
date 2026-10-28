@@ -1,5 +1,17 @@
 # Hermes follow-up: concise explanations of all published grades
 
+## Current Khanna paragraph
+
+The owner approved the strict 45–80-word Sol Low comparison draft for Khanna.
+Publication **2026-10-27.10** publishes its 78-word final paragraph, with one
+recorded clarification of U.S. aid to Israel. The shared current context and
+summary rules are saved in `ro-khanna-summary-input-2026-10-27-concise.json`;
+raw output, final text and the edit are saved in the matching output file.
+The current explanation archive is `explanations-2026-10-27-v6-concise-khanna.json`.
+Other summaries and all scores are unchanged. Continue using the existing Qwen
+runtime for Hermes; this one-off Sol draft does not change model defaults.
+
+
 ## Historical-timeline correction
 
 Only Khanna's paragraph was refreshed using the owner's explicit Sol Low request.
