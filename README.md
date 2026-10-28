@@ -1,5 +1,7 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-27.13** adds BAMC Action recommendations and complete candidate comments, plus separately attributed Samir Laymoun opinions. **96 source entries**, including official supports/oppositions and two comment-only observations, reach the endorsement lists and new Jev inputs. Propositions are excluded; scores are not rerun. [Sources, differences and repeatable import](docs/BAMC_ACTION.md).
+
 Publication **2026-10-27.12** manually cleans **336 visible explanations**, removing
 missing-record disclaimers and methodological padding. Known recommendation tiers,
 source attribution, concrete actions and meaningful contrary evidence remain.

@@ -1,0 +1,1765 @@
+{
+ "version": 2,
+ "policy": "bamc-action-candidates-v2",
+ "election_date": "2026-11-03",
+ "checked_on": "2026-10-27",
+ "official_updated_at": "2026-10-27 03:32:39",
+ "comment_updated_at": "2026-10-26 21:10:25",
+ "sources": {
+  "official": {
+   "url": "https://bamcaction.org/myvote/bamc-action",
+   "api_url": "https://bamcaction.org/api/myvote/organization/bamc-action",
+   "publisher": "BAMC Action",
+   "role": "endorser",
+   "checked_on": "2026-10-27",
+   "content_sha256": "4059afd7767af8665ea74a24fe835b712ccefde9f8476c367b2c0c4981e16f85",
+   "retrieval": "Public organization API backing the linked official guide; explicit picks/avoids only."
+  },
+  "board-comments": {
+   "url": "https://bamcaction.org/myvote/razim",
+   "api_url": "https://bamcaction.org/api/myvote/shared/razim",
+   "publisher": "BAMC Action",
+   "role": "endorser",
+   "checked_on": "2026-10-27",
+   "content_sha256": "306ff90af995a625cbf4d422f3a437d06fe0e3c61f97749226ba75736e1061d4",
+   "retrieval": "Public shared-guide API; candidate comments accepted as organization commentary at explicit owner direction. Its personal picks/avoids are not organization positions."
+  },
+  "catalog": {
+   "url": "https://bamcaction.org/api/myvote/catalog",
+   "publisher": "BAMC Action",
+   "role": "aggregator",
+   "checked_on": "2026-10-27",
+   "content_sha256": "0a0403d835185829d63afe1564a418d731ce26dea65d65dfd278ebcffa3a305c",
+   "retrieval": "Public candidate/contest catalog used for exact labels, offices, seats and election date."
+  },
+  "activist": {
+   "url": "https://bamcaction.org/myvote/samir",
+   "api_url": "https://bamcaction.org/api/myvote/shared/samir",
+   "publisher": "Samir Laymoun",
+   "role": "endorser",
+   "checked_on": "2026-10-27",
+   "content_sha256": "8a4081395fbad876d130e56de33a3a05dec1c36c38eeb816a1db90d8a07afa99",
+   "retrieval": "Public activist shared-guide API; full author name supplied by owner. Personal picks/avoids and comments are distinct from BAMC Action positions."
+  }
+ },
+ "source_counties": {
+  "alameda": "Alameda",
+  "contra-costa": "Contra Costa",
+  "marin": "Marin",
+  "napa": "Napa",
+  "sacramento": "Sacramento",
+  "san-francisco": "San Francisco",
+  "san-joaquin": "San Joaquin",
+  "san-mateo": "San Mateo",
+  "santa-clara": "Santa Clara",
+  "solano": "Solano",
+  "sonoma": "Sonoma",
+  "stanislaus": "Stanislaus"
+ },
+ "ignored_non_candidate_contests": [
+  "ca-proposition-1",
+  "ca-proposition-2",
+  "ca-proposition-3",
+  "ca-proposition-37",
+  "ca-proposition-38",
+  "ca-proposition-39",
+  "ca-proposition-4",
+  "ca-proposition-40",
+  "ca-proposition-41",
+  "ca-proposition-42",
+  "ca-proposition-43",
+  "ca-proposition-44",
+  "ca-proposition-45",
+  "ca-proposition-5",
+  "santa-clara-measure-c",
+  "santa-clara-measure-g",
+  "santa-clara-measure-h",
+  "santa-clara-measure-i",
+  "santa-clara-measure-s"
+ ],
+ "cards": [
+  {
+   "id": "bamc/alameda-dublin-unified-school-district-governing-board-members-area-5/seema-badar",
+   "endorser": "BAMC Action",
+   "contest_id": "alameda-dublin-unified-school-district-governing-board-members-area-5",
+   "option_id": "seema-badar",
+   "name": "SEEMA BADAR",
+   "title": "Dublin Unified School District Governing Board Members, Area 5",
+   "jurisdiction": "Dublin Unified School District Governing Board Members, Area 5",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Seema will bring the much needed balance in the curriculum for the school district.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/alameda-for-mayor-dublin/kiran-mohammad",
+   "endorser": "BAMC Action",
+   "contest_id": "alameda-for-mayor-dublin",
+   "option_id": "kiran-mohammad",
+   "name": "KIRAN MOHAMMAD",
+   "title": "For Mayor, Dublin",
+   "jurisdiction": "For Mayor, Dublin",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "bamc/alameda-for-member-of-city-council-4-fremont/aziz-akbari",
+   "endorser": "BAMC Action",
+   "contest_id": "alameda-for-member-of-city-council-4-fremont",
+   "option_id": "aziz-akbari",
+   "name": "AZIZ AKBARI",
+   "title": "For Member Of City Council #4, Fremont",
+   "jurisdiction": "For Member Of City Council #4, Fremont",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Aziz as the Alameda Water District Chair has risen from serving the community and has the right experience to be a city council member",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/alameda-for-member-of-city-council-4-union-city/qasim-lodhi",
+   "endorser": "BAMC Action",
+   "contest_id": "alameda-for-member-of-city-council-4-union-city",
+   "option_id": "qasim-lodhi",
+   "name": "QASIM LODHI",
+   "title": "For Member Of City Council #4, Union City",
+   "jurisdiction": "For Member Of City Council #4, Union City",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "bamc/alameda-for-member-of-city-council-district-4-berkeley/majdi-gaith-abuhamdieh",
+   "endorser": "BAMC Action",
+   "contest_id": "alameda-for-member-of-city-council-district-4-berkeley",
+   "option_id": "majdi-gaith-abuhamdieh",
+   "name": "MAJDI \"GAITH\" ABUHAMDIEH",
+   "title": "For Member Of City Council District #4, Berkeley",
+   "jurisdiction": "For Member Of City Council District #4, Berkeley",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "ranked",
+   "relation": "supported",
+   "rank": 1,
+   "comments": [
+    {
+     "text": "Majdi is the only business friendly candidate that can turn around Berkeley",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/alameda-for-members-of-city-council-4-dublin/kashef-qaadri",
+   "endorser": "BAMC Action",
+   "contest_id": "alameda-for-members-of-city-council-4-dublin",
+   "option_id": "kashef-qaadri",
+   "name": "KASHEF QAADRI",
+   "title": "For Members Of City Council #4, Dublin",
+   "jurisdiction": "For Members Of City Council #4, Dublin",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Kashef is an incumbent and a great candidate for Dublin",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/ca-congress-11/connie-chan",
+   "endorser": "BAMC Action",
+   "contest_id": "ca-congress-11",
+   "option_id": "connie-chan",
+   "name": "Connie Chan",
+   "title": "United States Representative District 11",
+   "jurisdiction": "United States Representative District 11",
+   "county_ids": [
+    "san-francisco"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Connie is one of the those rare candidates that has taken a strong position against the genocide, and she has the support of labor.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/ca-congress-12/lateefah-simon",
+   "endorser": "BAMC Action",
+   "contest_id": "ca-congress-12",
+   "option_id": "lateefah-simon",
+   "name": "Lateefah Simon",
+   "title": "United States Representative District 12",
+   "jurisdiction": "United States Representative District 12",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Lateefah has been a long time organizer and now a great candidate representing her district.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/ca-congress-14/aisha-wahab",
+   "endorser": "BAMC Action",
+   "contest_id": "ca-congress-14",
+   "option_id": "aisha-wahab",
+   "name": "Aisha Wahab",
+   "title": "United States Representative District 14",
+   "jurisdiction": "United States Representative District 14",
+   "county_ids": [
+    "alameda"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "She has the potential of becoming a great congressional candidate",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/ca-congress-16/sam-liccardo",
+   "endorser": "BAMC Action",
+   "contest_id": "ca-congress-16",
+   "option_id": "sam-liccardo",
+   "name": "Sam Liccardo",
+   "title": "United States Representative District 16",
+   "jurisdiction": "United States Representative District 16",
+   "county_ids": [
+    "san-mateo",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Sam has been a good supporter. We still need to push Sam for calling it a genocide.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/ca-congress-17/ro-khanna",
+   "endorser": "BAMC Action",
+   "contest_id": "ca-congress-17",
+   "option_id": "ro-khanna",
+   "name": "Ro Khanna",
+   "title": "United States Representative District 17",
+   "jurisdiction": "United States Representative District 17",
+   "county_ids": [
+    "alameda",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "His recent visit to Palestine and calling it a genocide has been a game changer.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-3170/raeena-s-lari",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-3170",
+   "option_id": "raeena-s-lari",
+   "name": "Raeena S. Lari",
+   "title": "Santa Clara County Board of Education, Trustee Area 7",
+   "jurisdiction": "Santa Clara County Board of Education, Trustee Area 7",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Raeena has been a long serving trustee for the board of education.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-3371/kamal-yassin",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-3371",
+   "option_id": "kamal-yassin",
+   "name": "Kamal Yassin",
+   "title": "Santa Clara Unified School District, Trustee Area 1",
+   "jurisdiction": "Santa Clara Unified School District, Trustee Area 1",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Kamal will bring the much needed balance to the school board with his no-nonsense approach to solving the challenges with the school district and its curriculum",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5071/heidi-owens",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5071",
+   "option_id": "heidi-owens",
+   "name": "Heidi Owens",
+   "title": "Town of Los Gatos Council",
+   "jurisdiction": "Town of Los Gatos Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "comment",
+   "comments": [
+    {
+     "text": "Because it is the highest votes winners, I suggest you vote only for two - Rob and Jeff.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5071/jeff-suzuki",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5071",
+   "option_id": "jeff-suzuki",
+   "name": "Jeff Suzuki",
+   "title": "Town of Los Gatos Council",
+   "jurisdiction": "Town of Los Gatos Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Jeff is one of the biggest supporter of diversity in one of the least diverse communities in the Bay Area.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5071/mary-badame",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5071",
+   "option_id": "mary-badame",
+   "name": "Mary Badame",
+   "title": "Town of Los Gatos Council",
+   "jurisdiction": "Town of Los Gatos Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": [
+    {
+     "text": "Do not vote for Mary",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5071/rob-moore",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5071",
+   "option_id": "rob-moore",
+   "name": "Rob Moore",
+   "title": "Town of Los Gatos Council",
+   "jurisdiction": "Town of Los Gatos Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Rob is the youngest Mayor and a great supporter of diverse communities.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5071/rob-stump",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5071",
+   "option_id": "rob-stump",
+   "name": "Rob Stump",
+   "title": "Town of Los Gatos Council",
+   "jurisdiction": "Town of Los Gatos Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": [
+    {
+     "text": "Do not vote for Rob Stump. He has been the worst planning commissioner in our experience",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5071/steve-raspe",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5071",
+   "option_id": "steve-raspe",
+   "name": "Steve Raspe",
+   "title": "Town of Los Gatos Council",
+   "jurisdiction": "Town of Los Gatos Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "comment",
+   "comments": [
+    {
+     "text": "Because it is the highest votes winners, I suggest you vote only for two.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "bamc/santa-clara-5230/kevin-park",
+   "endorser": "BAMC Action",
+   "contest_id": "santa-clara-5230",
+   "option_id": "kevin-park",
+   "name": "Kevin Park",
+   "title": "Mayor, City of Santa Clara",
+   "jurisdiction": "Mayor, City of Santa Clara",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Kevin is a breadth of fresh air in a crowded field. He has been consistent in support of Muslims.",
+     "url": "https://bamcaction.org/myvote/razim"
+    }
+   ]
+  },
+  {
+   "id": "samir/ca-assembly-23/david-g-johnson",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-23",
+   "option_id": "david-g-johnson",
+   "name": "David G. Johnson",
+   "title": "State Assembly Member District 23",
+   "jurisdiction": "State Assembly Member District 23",
+   "county_ids": [
+    "san-mateo",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-23/marc-berman",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-23",
+   "option_id": "marc-berman",
+   "name": "Marc Berman",
+   "title": "State Assembly Member District 23",
+   "jurisdiction": "State Assembly Member District 23",
+   "county_ids": [
+    "san-mateo",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-24/alex-lee",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-24",
+   "option_id": "alex-lee",
+   "name": "Alex Lee",
+   "title": "State Assembly Member District 24",
+   "jurisdiction": "State Assembly Member District 24",
+   "county_ids": [
+    "alameda",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-25/ash-kalra",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-25",
+   "option_id": "ash-kalra",
+   "name": "Ash Kalra",
+   "title": "State Assembly Member District 25",
+   "jurisdiction": "State Assembly Member District 25",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-26/patrick-ahrens",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-26",
+   "option_id": "patrick-ahrens",
+   "name": "Patrick Ahrens",
+   "title": "State Assembly Member District 26",
+   "jurisdiction": "State Assembly Member District 26",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-26/tim-gorsulowsky",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-26",
+   "option_id": "tim-gorsulowsky",
+   "name": "Tim Gorsulowsky",
+   "title": "State Assembly Member District 26",
+   "jurisdiction": "State Assembly Member District 26",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-28/carol-pefley",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-28",
+   "option_id": "carol-pefley",
+   "name": "Carol Pefley",
+   "title": "State Assembly Member District 28",
+   "jurisdiction": "State Assembly Member District 28",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-28/gail-pellerin",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-28",
+   "option_id": "gail-pellerin",
+   "name": "Gail Pellerin",
+   "title": "State Assembly Member District 28",
+   "jurisdiction": "State Assembly Member District 28",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-29/dennis-p-sanchez",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-29",
+   "option_id": "dennis-p-sanchez",
+   "name": "Dennis P. Sanchez",
+   "title": "State Assembly Member District 29",
+   "jurisdiction": "State Assembly Member District 29",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-assembly-29/robert-rivas",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-assembly-29",
+   "option_id": "robert-rivas",
+   "name": "Robert Rivas",
+   "title": "State Assembly Member District 29",
+   "jurisdiction": "State Assembly Member District 29",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-attorney-general/rob-bonta",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-attorney-general",
+   "option_id": "rob-bonta",
+   "name": "Rob Bonta",
+   "title": "Attorney General",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-boe-2/sally-j-lieber",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-boe-2",
+   "option_id": "sally-j-lieber",
+   "name": "Sally J. Lieber",
+   "title": "Board of Equalization Member District 2",
+   "jurisdiction": "Board of Equalization Member District 2",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "san-francisco",
+    "san-mateo",
+    "santa-clara",
+    "sonoma"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-congress-16/peter-sundin-soule",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-16",
+   "option_id": "peter-sundin-soule",
+   "name": "Peter Sundin Soulé",
+   "title": "United States Representative District 16",
+   "jurisdiction": "United States Representative District 16",
+   "county_ids": [
+    "san-mateo",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": [
+    {
+     "text": "Reduce his winning margin to show he’s vulnerable thus encouraging challengers which will give us an opportunity to exact more from him. He failed to call Israeli genocide in Gaza or apartheid.",
+     "url": "https://bamcaction.org/myvote/samir"
+    }
+   ]
+  },
+  {
+   "id": "samir/ca-congress-17/ritesh-tandon",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-17",
+   "option_id": "ritesh-tandon",
+   "name": "Ritesh Tandon",
+   "title": "United States Representative District 17",
+   "jurisdiction": "United States Representative District 17",
+   "county_ids": [
+    "alameda",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-congress-17/ro-khanna",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-17",
+   "option_id": "ro-khanna",
+   "name": "Ro Khanna",
+   "title": "United States Representative District 17",
+   "jurisdiction": "United States Representative District 17",
+   "county_ids": [
+    "alameda",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-congress-18/shane-lewis",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-18",
+   "option_id": "shane-lewis",
+   "name": "Shane Lewis",
+   "title": "United States Representative District 18",
+   "jurisdiction": "United States Representative District 18",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-congress-18/zoe-lofgren",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-18",
+   "option_id": "zoe-lofgren",
+   "name": "Zoe Lofgren",
+   "title": "United States Representative District 18",
+   "jurisdiction": "United States Representative District 18",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": [
+    {
+     "text": "To reduce her winning margin to show she’s vulnerable thus encouraging challengers and giving us an opportunity to exact more fm her. She has not called Israeli genocide in Gaza or apartheid or sanction on Israel",
+     "url": "https://bamcaction.org/myvote/samir"
+    }
+   ]
+  },
+  {
+   "id": "samir/ca-congress-19/jimmy-panetta",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-19",
+   "option_id": "jimmy-panetta",
+   "name": "Jimmy Panetta",
+   "title": "United States Representative District 19",
+   "jurisdiction": "United States Representative District 19",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": [
+    {
+     "text": "Same reasons mentioned previously\nLeveraging our votes",
+     "url": "https://bamcaction.org/myvote/samir"
+    }
+   ]
+  },
+  {
+   "id": "samir/ca-congress-19/peter-coe-verbica",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-congress-19",
+   "option_id": "peter-coe-verbica",
+   "name": "Peter Coe Verbica",
+   "title": "United States Representative District 19",
+   "jurisdiction": "United States Representative District 19",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-controller/malia-m-cohen",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-controller",
+   "option_id": "malia-m-cohen",
+   "name": "Malia M. Cohen",
+   "title": "Controller",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-governor/steve-hilton",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-governor",
+   "option_id": "steve-hilton",
+   "name": "Steve Hilton",
+   "title": "Governor",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-governor/xavier-becerra",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-governor",
+   "option_id": "xavier-becerra",
+   "name": "Xavier Becerra",
+   "title": "Governor",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-insurance-commissioner/ben-allen",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-insurance-commissioner",
+   "option_id": "ben-allen",
+   "name": "Ben Allen",
+   "title": "Insurance Commissioner",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-insurance-commissioner/jane-kim",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-insurance-commissioner",
+   "option_id": "jane-kim",
+   "name": "Jane Kim",
+   "title": "Insurance Commissioner",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-lieutenant-governor/fiona-ma",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-lieutenant-governor",
+   "option_id": "fiona-ma",
+   "name": "Fiona Ma",
+   "title": "Lieutenant Governor",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-secretary-of-state/shirley-n-weber",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-secretary-of-state",
+   "option_id": "shirley-n-weber",
+   "name": "Shirley N. Weber",
+   "title": "Secretary of State",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-senate-10/scott-sakakihara",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-senate-10",
+   "option_id": "scott-sakakihara",
+   "name": "Scott Sakakihara",
+   "title": "State Senate District 10",
+   "jurisdiction": "State Senate District 10",
+   "county_ids": [
+    "alameda",
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-superintendent-of-public-instruction/richard-barrera",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-superintendent-of-public-instruction",
+   "option_id": "richard-barrera",
+   "name": "Richard Barrera",
+   "title": "Superintendent of Public Instruction",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-superintendent-of-public-instruction/sonja-shaw",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-superintendent-of-public-instruction",
+   "option_id": "sonja-shaw",
+   "name": "Sonja Shaw",
+   "title": "Superintendent of Public Instruction",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/ca-treasurer/eleni-kounalakis",
+   "endorser": "Samir Laymoun",
+   "contest_id": "ca-treasurer",
+   "option_id": "eleni-kounalakis",
+   "name": "Eleni Kounalakis",
+   "title": "Treasurer",
+   "jurisdiction": "California",
+   "county_ids": [
+    "alameda",
+    "contra-costa",
+    "marin",
+    "napa",
+    "sacramento",
+    "san-francisco",
+    "san-joaquin",
+    "san-mateo",
+    "santa-clara",
+    "solano",
+    "sonoma",
+    "stanislaus"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3170/karla-dominguez-vega",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3170",
+   "option_id": "karla-dominguez-vega",
+   "name": "Karla Dominguez Vega",
+   "title": "Santa Clara County Board of Education, Trustee Area 7",
+   "jurisdiction": "Santa Clara County Board of Education, Trustee Area 7",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3170/raeena-s-lari",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3170",
+   "option_id": "raeena-s-lari",
+   "name": "Raeena S. Lari",
+   "title": "Santa Clara County Board of Education, Trustee Area 7",
+   "jurisdiction": "Santa Clara County Board of Education, Trustee Area 7",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3216/liangfang-liang-chao",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3216",
+   "option_id": "liangfang-liang-chao",
+   "name": "Liangfang \"Liang\" Chao",
+   "title": "Foothill-De Anza Community College District, Trustee Area 4",
+   "jurisdiction": "Foothill-De Anza Community College District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3253/anne-j-kepner",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3253",
+   "option_id": "anne-j-kepner",
+   "name": "Anne J. Kepner",
+   "title": "West Valley-Mission Community College District, Trustee Area 3",
+   "jurisdiction": "West Valley-Mission Community College District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3257/susan-oster-fish",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3257",
+   "option_id": "susan-oster-fish",
+   "name": "Susan Oster Fish",
+   "title": "West Valley-Mission Community College District, Trustee Area 7",
+   "jurisdiction": "West Valley-Mission Community College District, Trustee Area 7",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3335/art-cohen",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3335",
+   "option_id": "art-cohen",
+   "name": "Art Cohen",
+   "title": "Morgan Hill Unified School District, Trustee Area 3",
+   "jurisdiction": "Morgan Hill Unified School District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3335/sarah-northrup-gadus",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3335",
+   "option_id": "sarah-northrup-gadus",
+   "name": "Sarah Northrup Gadus",
+   "title": "Morgan Hill Unified School District, Trustee Area 3",
+   "jurisdiction": "Morgan Hill Unified School District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3336/claudia-ortiz",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3336",
+   "option_id": "claudia-ortiz",
+   "name": "Claudia Ortiz",
+   "title": "Morgan Hill Unified School District, Trustee Area 4",
+   "jurisdiction": "Morgan Hill Unified School District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3336/glen-r-webb",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3336",
+   "option_id": "glen-r-webb",
+   "name": "Glen R. Webb",
+   "title": "Morgan Hill Unified School District, Trustee Area 4",
+   "jurisdiction": "Morgan Hill Unified School District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3340/avery-wang",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3340",
+   "option_id": "avery-wang",
+   "name": "Avery Wang",
+   "title": "Palo Alto Unified School District",
+   "jurisdiction": "Palo Alto Unified School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3340/john-craig",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3340",
+   "option_id": "john-craig",
+   "name": "John Craig",
+   "title": "Palo Alto Unified School District",
+   "jurisdiction": "Palo Alto Unified School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3340/linda-henigin",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3340",
+   "option_id": "linda-henigin",
+   "name": "Linda Henigin",
+   "title": "Palo Alto Unified School District",
+   "jurisdiction": "Palo Alto Unified School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3352/tomara-hall",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3352",
+   "option_id": "tomara-hall",
+   "name": "Tomara Hall",
+   "title": "San José Unified School District, Trustee Area 2",
+   "jurisdiction": "San José Unified School District, Trustee Area 2",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3354/michael-melillo",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3354",
+   "option_id": "michael-melillo",
+   "name": "Michael Melillo",
+   "title": "San José Unified School District, Trustee Area 4",
+   "jurisdiction": "San José Unified School District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3371/kamal-yassin",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3371",
+   "option_id": "kamal-yassin",
+   "name": "Kamal Yassin",
+   "title": "Santa Clara Unified School District, Trustee Area 1",
+   "jurisdiction": "Santa Clara Unified School District, Trustee Area 1",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3422/mer-curry-nunez",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3422",
+   "option_id": "mer-curry-nunez",
+   "name": "Mer Curry Nuñez",
+   "title": "East Side Union High School District, Trustee Area 1, Short Term",
+   "jurisdiction": "East Side Union High School District, Trustee Area 1, Short Term",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3425/mahbub-khan",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3425",
+   "option_id": "mahbub-khan",
+   "name": "Mahbub Khan",
+   "title": "East Side Union High School District, Trustee Area 4",
+   "jurisdiction": "East Side Union High School District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3435/jason-lin",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3435",
+   "option_id": "jason-lin",
+   "name": "Jason Lin",
+   "title": "Fremont Union High School District, Trustee Area 3",
+   "jurisdiction": "Fremont Union High School District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3435/rosa-kim",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3435",
+   "option_id": "rosa-kim",
+   "name": "Rosa Kim",
+   "title": "Fremont Union High School District, Trustee Area 3",
+   "jurisdiction": "Fremont Union High School District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3436/ilanit-eliaz",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3436",
+   "option_id": "ilanit-eliaz",
+   "name": "Ilanit Eliaz",
+   "title": "Fremont Union High School District, Trustee Area 4",
+   "jurisdiction": "Fremont Union High School District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3436/naomi-nakano-matsumoto",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3436",
+   "option_id": "naomi-nakano-matsumoto",
+   "name": "Naomi Nakano-Matsumoto",
+   "title": "Fremont Union High School District, Trustee Area 4",
+   "jurisdiction": "Fremont Union High School District, Trustee Area 4",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3444/ishaan-prasad",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3444",
+   "option_id": "ishaan-prasad",
+   "name": "Ishaan Prasad",
+   "title": "Los Gatos-Saratoga Union High School District, Trustee Area 2",
+   "jurisdiction": "Los Gatos-Saratoga Union High School District, Trustee Area 2",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3444/sangeeta-balachandran-mallik",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3444",
+   "option_id": "sangeeta-balachandran-mallik",
+   "name": "Sangeeta Balachandran Mallik",
+   "title": "Los Gatos-Saratoga Union High School District, Trustee Area 2",
+   "jurisdiction": "Los Gatos-Saratoga Union High School District, Trustee Area 2",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3505/linda-lo-chavez",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3505",
+   "option_id": "linda-lo-chavez",
+   "name": "Línda Lo Chávez",
+   "title": "Alum Rock Union School District, Trustee Area 5",
+   "jurisdiction": "Alum Rock Union School District, Trustee Area 5",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3511/jamal-khan",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3511",
+   "option_id": "jamal-khan",
+   "name": "Jamal Khan",
+   "title": "Berryessa Union School District",
+   "jurisdiction": "Berryessa Union School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3534/sam-krow-lucal",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3534",
+   "option_id": "sam-krow-lucal",
+   "name": "Sam Krow-Lucal",
+   "title": "Campbell Union School District, Trustee Area 5",
+   "jurisdiction": "Campbell Union School District, Trustee Area 5",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3534/vartika-chandra",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3534",
+   "option_id": "vartika-chandra",
+   "name": "Vartika Chandra",
+   "title": "Campbell Union School District, Trustee Area 5",
+   "jurisdiction": "Campbell Union School District, Trustee Area 5",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3551/mary-hien-pollett",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3551",
+   "option_id": "mary-hien-pollett",
+   "name": "Mary Hien Pollett",
+   "title": "Evergreen School District",
+   "jurisdiction": "Evergreen School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3561/marc-cooper",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3561",
+   "option_id": "marc-cooper",
+   "name": "Marc Cooper",
+   "title": "Franklin-McKinley School District",
+   "jurisdiction": "Franklin-McKinley School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3591/david-poll",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3591",
+   "option_id": "david-poll",
+   "name": "David Poll",
+   "title": "Los Altos School District",
+   "jurisdiction": "Los Altos School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3641/sundar-subbarayan",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3641",
+   "option_id": "sundar-subbarayan",
+   "name": "Sundar Subbarayan",
+   "title": "Mountain View Whisman School District",
+   "jurisdiction": "Mountain View Whisman School District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3675/casino-fajardo",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3675",
+   "option_id": "casino-fajardo",
+   "name": "Casino Fajardo",
+   "title": "Oak Grove School District, Trustee Area 5",
+   "jurisdiction": "Oak Grove School District, Trustee Area 5",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3705/michelle-maginot",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3705",
+   "option_id": "michelle-maginot",
+   "name": "Michelle Maginot",
+   "title": "Sunnyvale School District, Trustee Area 3",
+   "jurisdiction": "Sunnyvale School District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-3705/rommy-kushner",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-3705",
+   "option_id": "rommy-kushner",
+   "name": "Rommy Kushner",
+   "title": "Sunnyvale School District, Trustee Area 3",
+   "jurisdiction": "Sunnyvale School District, Trustee Area 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5080/carmen-montano",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5080",
+   "option_id": "carmen-montano",
+   "name": "Carmen Montano",
+   "title": "Mayor, City of Milpitas",
+   "jurisdiction": "Mayor, City of Milpitas",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5081/jennie-ha-phan",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5081",
+   "option_id": "jennie-ha-phan",
+   "name": "Jennie Ha Phan",
+   "title": "City of Milpitas Council",
+   "jurisdiction": "City of Milpitas Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5081/seema-kanani",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5081",
+   "option_id": "seema-kanani",
+   "name": "Seema Kanani",
+   "title": "City of Milpitas Council",
+   "jurisdiction": "City of Milpitas Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5121/vicki-veenker",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5121",
+   "option_id": "vicki-veenker",
+   "name": "Vicki Veenker",
+   "title": "City of Palo Alto Council",
+   "jurisdiction": "City of Palo Alto Council",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5205/peter-ortiz",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5205",
+   "option_id": "peter-ortiz",
+   "name": "Peter Ortiz",
+   "title": "City of San José Council, District 5",
+   "jurisdiction": "City of San José Council, District 5",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5230/karen-hardy",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5230",
+   "option_id": "karen-hardy",
+   "name": "Karen Hardy",
+   "title": "Mayor, City of Santa Clara",
+   "jurisdiction": "Mayor, City of Santa Clara",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5230/kathy-watanabe",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5230",
+   "option_id": "kathy-watanabe",
+   "name": "Kathy Watanabe",
+   "title": "Mayor, City of Santa Clara",
+   "jurisdiction": "Mayor, City of Santa Clara",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5230/kevin-park",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5230",
+   "option_id": "kevin-park",
+   "name": "Kevin Park",
+   "title": "Mayor, City of Santa Clara",
+   "jurisdiction": "Mayor, City of Santa Clara",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "supported",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5253/murali-srinivasan",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5253",
+   "option_id": "murali-srinivasan",
+   "name": "Murali Srinivasan",
+   "title": "City of Sunnyvale Council, District 3",
+   "jurisdiction": "City of Sunnyvale Council, District 3",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-5255/richard-mehlinger",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-5255",
+   "option_id": "richard-mehlinger",
+   "name": "Richard Mehlinger",
+   "title": "City of Sunnyvale Council, District 5",
+   "jurisdiction": "City of Sunnyvale Council, District 5",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-6007/pete-dailey",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-6007",
+   "option_id": "pete-dailey",
+   "name": "Pete Dailey",
+   "title": "Santa Clara Valley Water, District 7",
+   "jurisdiction": "Santa Clara Valley Water, District 7",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "single",
+   "relation": "opposed",
+   "comments": []
+  },
+  {
+   "id": "samir/santa-clara-6020/gilbert-wong",
+   "endorser": "Samir Laymoun",
+   "contest_id": "santa-clara-6020",
+   "option_id": "gilbert-wong",
+   "name": "Gilbert Wong",
+   "title": "Cupertino Sanitary District",
+   "jurisdiction": "Cupertino Sanitary District",
+   "county_ids": [
+    "santa-clara"
+   ],
+   "kind": "multiple",
+   "relation": "supported",
+   "comments": []
+  }
+ ]
+}

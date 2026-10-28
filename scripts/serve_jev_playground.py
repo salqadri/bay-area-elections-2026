@@ -18,7 +18,7 @@ from urllib.parse import urlsplit, parse_qs
 import uuid
 
 from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, build_state,
-                        validate_questions, validate_response, jev_call, digest, dump, save, now)
+                        validate_questions, validate_response, jev_call, digest, dump, save, now, STATE_VERSION as CORE_STATE_VERSION)
 from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
 PLAYGROUND_DEFAULT_MAPPING = {**DEFAULT_MAPPING, 'minimum_evidence_score': DEFAULT_MAPPING.get('minimum_evidence_score', .22)}
@@ -27,7 +27,7 @@ ASSETS = ROOT / 'src/jev-playground'
 BASELINE = ROOT / 'research/gaza-grading/house-all-focused-2026-10-23/results.json'
 WORK = ROOT / '.research/jev-playground'
 COUNTIES = frozenset({'Alameda', 'Contra Costa', 'San Francisco', 'San Mateo', 'Santa Clara'})
-STATE_VERSION = 'candidate-evidence-v16-local-federal-historical-date-context'
+STATE_VERSION = CORE_STATE_VERSION + '-local-federal'
 
 
 def row_id(position_id, candidate, roster):

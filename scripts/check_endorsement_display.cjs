@@ -63,3 +63,9 @@ for(const endorser of ['Mabel Teng', "Sailors' Union of the Pacific"]) {
 console.log(JSON.stringify({passed:true,checks:'one mixed list, Wiener 69 text + 50 images, Connie image ownership, metadata, external URLs, image fallback, distinction semantics'}));
 
 const neutral=display.label({endorser:'Vote for Peace',relation:'neutral',phase:'general',verification:'endorser_statement',checked_on:'2026-10-27'});assert(neutral.startsWith('Listed as Neutral by Vote for Peace'));assert(!neutral.includes('Supported by'));
+
+// Full comments are text, source-bound, and never converted into support/opposition.
+const bamcComment={endorser:'BAMC Action',relation:'comment',phase:'general',verification:'endorser_statement',checked_on:'2026-10-27',url:'https://example.org/official',comments:[{text:'Vote for two. <script>unsafe()</script>',url:'https://example.org/comment'}]};
+const commentary=display.render({endorsements:[bamcComment]},{node,link});assert(commentary.textContent.includes('Comment from BAMC Action'));assert(!commentary.textContent.includes('Supported by')&&!commentary.textContent.includes('Opposed by'));assert(commentary.textContent.includes(bamcComment.comments[0].text));assert(all(commentary).some(n=>n.href==='https://example.org/comment'));assert.equal(all(commentary).filter(n=>n.tagName==='Q').length,1);
+const liccardo=data.positions.flatMap(p=>p.candidates||[]).find(c=>c.name==='Sam Liccardo');const liccardoGuide=display.render(liccardo,{node,link});assert(liccardoGuide.textContent.includes('Supported by BAMC Action'));assert(liccardoGuide.textContent.includes('We still need to push Sam for calling it a genocide.'));
+const zoe=data.positions.flatMap(p=>p.candidates||[]).find(c=>c.name==='Zoe Lofgren');assert(display.render(zoe,{node,link}).textContent.includes('Opposed by Samir Laymoun'));

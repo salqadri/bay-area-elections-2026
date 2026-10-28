@@ -287,3 +287,14 @@ fallback remains available only when no newer canonical record supersedes it.
 Schema 1.27 also permits a numeric public evidence minimum consistent with the
 archived mapping. Freeze the exact saved prompt and thresholds before evaluation;
 never overwrite historical archives. Rebuild both readers and run the release gate.
+
+
+## BAMC Action and activist guide refreshes
+
+Use `scripts/sync_bamc_action.py capture` and `review`, followed by the existing
+registered `reviewed_updates` preview/apply process. See [BAMC_ACTION.md](BAMC_ACTION.md)
+for exact commands and source distinctions. Official organization selections and
+activist choices must remain separate. Preserve every comment verbatim and its
+source; comment-only or tactical advice cannot create opposition. Measures are
+excluded. Rebuild both readers and the current Jev inputs after a reviewed import;
+never rewrite frozen evaluation requests or automatically rerun scores.

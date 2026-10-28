@@ -1,0 +1,3257 @@
+{
+ "version": 1,
+ "id": "bamc-action-candidates-2026-10-27",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-27",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "c08062a3b2820187734722e20fc05e4d6d40c5029eabe3c620f4338d944cf944",
+ "sources": {
+  "official": {
+   "url": "https://bamcaction.org/myvote/bamc-action",
+   "api_url": "https://bamcaction.org/api/myvote/organization/bamc-action",
+   "publisher": "BAMC Action",
+   "role": "endorser",
+   "checked_on": "2026-10-27",
+   "content_sha256": "4059afd7767af8665ea74a24fe835b712ccefde9f8476c367b2c0c4981e16f85",
+   "retrieval": "Public organization API backing the linked official guide; explicit picks/avoids only."
+  },
+  "board-comments": {
+   "url": "https://bamcaction.org/myvote/razim",
+   "api_url": "https://bamcaction.org/api/myvote/shared/razim",
+   "publisher": "BAMC Action",
+   "role": "endorser",
+   "checked_on": "2026-10-27",
+   "content_sha256": "306ff90af995a625cbf4d422f3a437d06fe0e3c61f97749226ba75736e1061d4",
+   "retrieval": "Public shared-guide API; candidate comments accepted as organization commentary at explicit owner direction. Its personal picks/avoids are not organization positions."
+  },
+  "catalog": {
+   "url": "https://bamcaction.org/api/myvote/catalog",
+   "publisher": "BAMC Action",
+   "role": "aggregator",
+   "checked_on": "2026-10-27",
+   "content_sha256": "0a0403d835185829d63afe1564a418d731ce26dea65d65dfd278ebcffa3a305c",
+   "retrieval": "Public candidate/contest catalog used for exact labels, offices, seats and election date."
+  },
+  "activist": {
+   "url": "https://bamcaction.org/myvote/samir",
+   "api_url": "https://bamcaction.org/api/myvote/shared/samir",
+   "publisher": "Samir Laymoun",
+   "role": "endorser",
+   "checked_on": "2026-10-27",
+   "content_sha256": "8a4081395fbad876d130e56de33a3a05dec1c36c38eeb816a1db90d8a07afa99",
+   "retrieval": "Public activist shared-guide API; full author name supplied by owner. Personal picks/avoids and comments are distinct from BAMC Action positions."
+  }
+ },
+ "notes": {
+  "N1546": "BAMC Action is the owner-designated trusted Bay Area Muslim Council recommendation source. Support/opposition is copied only from its official organization guide. Supplementary board-guide candidate comments are included at owner direction; they may concern local suitability or tactical voting and do not independently establish a Palestine position. Comment-only entries are not endorsements, neutrality ratings or opposition. Samir Laymoun is a separately attributed activist opinion source, not an official BAMC Action position. Comments may refer to an opponent or provide tactical rationale; preserve attachment without resolving ambiguous pronouns. Propositions and ballot measures are excluded."
+ },
+ "decisions": [
+  {
+   "id": "bamc/alameda-dublin-unified-school-district-governing-board-members-area-5/seema-badar",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-123",
+   "candidate": "Seema Badar",
+   "identity": {
+    "office": "Governing Board Member / School Director",
+    "jurisdiction": "Dublin Unified School District",
+    "district_or_seat": "Trustee Area 5",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Seema will bring the much needed balance in the curriculum for the school district.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/alameda-for-mayor-dublin/kiran-mohammad",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-057",
+   "candidate": "Kiran Mohammad",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Dublin",
+    "district_or_seat": "At large",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/alameda-for-member-of-city-council-4-fremont/aziz-akbari",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-061",
+   "candidate": "Aziz Akbari",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Fremont",
+    "district_or_seat": "District 4",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Aziz as the Alameda Water District Chair has risen from serving the community and has the right experience to be a city council member",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/alameda-for-member-of-city-council-4-union-city/qasim-lodhi",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-084",
+   "candidate": "Qasim Lodhi",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Union City",
+    "district_or_seat": "District 4",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/alameda-for-member-of-city-council-district-4-berkeley/majdi-gaith-abuhamdieh",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-051",
+   "candidate": "Majdi \"Gaith\" Abuhamdieh",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Berkeley",
+    "district_or_seat": "District 4",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Majdi is the only business friendly candidate that can turn around Berkeley",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ],
+    "recommendation_rank": 1
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/alameda-for-members-of-city-council-4-dublin/kashef-qaadri",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-056",
+   "candidate": "Kashef Qaadri",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Dublin",
+    "district_or_seat": "District 4",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Kashef is an incumbent and a great candidate for Dublin",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/ca-congress-11/connie-chan",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-229",
+   "candidate": "Connie Chan",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-11",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Connie is one of the those rare candidates that has taken a strong position against the genocide, and she has the support of labor.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/ca-congress-12/lateefah-simon",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-002",
+   "candidate": "Lateefah Simon",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-12",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Lateefah has been a long time organizer and now a great candidate representing her district.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/ca-congress-14/aisha-wahab",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-003",
+   "candidate": "Aisha Wahab",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-14",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "She has the potential of becoming a great congressional candidate",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/ca-congress-16/sam-liccardo",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-005",
+   "candidate": "Sam Liccardo",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Sam has been a good supporter. We still need to push Sam for calling it a genocide.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/ca-congress-17/ro-khanna",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "His recent visit to Palestine and calling it a genocide has been a game changer.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-3170/raeena-s-lari",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-173",
+   "candidate": "Raeena S. Lari",
+   "identity": {
+    "office": "Member, Board of Education",
+    "jurisdiction": "Santa Clara County Board of Education",
+    "district_or_seat": "Trustee Area 7",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Raeena has been a long serving trustee for the board of education.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-3371/kamal-yassin",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-174",
+   "candidate": "Kamal Yassin",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Santa Clara Unified School District",
+    "district_or_seat": "Trustee Area 1",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Kamal will bring the much needed balance to the school board with his no-nonsense approach to solving the challenges with the school district and its curriculum",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/heidi-owens",
+   "action": "change",
+   "source_key": "board-comments",
+   "position_id": "CA2026-112",
+   "candidate": "Heidi Owens",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "comment",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/razim",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Because it is the highest votes winners, I suggest you vote only for two - Rob and Jeff.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/jeff-suzuki",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-112",
+   "candidate": "Jeff Suzuki",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Jeff is one of the biggest supporter of diversity in one of the least diverse communities in the Bay Area.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/mary-badame",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-112",
+   "candidate": "Mary Badame",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Do not vote for Mary",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/rob-moore",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-112",
+   "candidate": "Rob Moore",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Rob is the youngest Mayor and a great supporter of diverse communities.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/rob-stump",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-112",
+   "candidate": "Rob Stump",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Do not vote for Rob Stump. He has been the worst planning commissioner in our experience",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/steve-raspe",
+   "action": "change",
+   "source_key": "board-comments",
+   "position_id": "CA2026-112",
+   "candidate": "Steve Raspe",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "comment",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/razim",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Because it is the highest votes winners, I suggest you vote only for two.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5230/kevin-park",
+   "action": "change",
+   "source_key": "official",
+   "position_id": "CA2026-106",
+   "candidate": "Kevin Park",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Santa Clara",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/bamc-action",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Kevin is a breadth of fresh air in a crowded field. He has been consistent in support of Muslims.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-23/david-g-johnson",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-023",
+   "candidate": "David G. Johnson",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-23",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-23/marc-berman",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-023",
+   "candidate": "Marc Berman",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-23",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-24/alex-lee",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-020",
+   "candidate": "Alex Lee",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-24",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-25/ash-kalra",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-024",
+   "candidate": "Ash Kalra",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-25",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-26/patrick-ahrens",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-025",
+   "candidate": "Patrick Ahrens",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-26",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-26/tim-gorsulowsky",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-025",
+   "candidate": "Tim Gorsulowsky",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-26",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-28/carol-pefley",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-026",
+   "candidate": "Carol Pefley",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-28",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-28/gail-pellerin",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-026",
+   "candidate": "Gail Pellerin",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-28",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-29/dennis-p-sanchez",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-027",
+   "candidate": "Dennis P. Sanchez",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-29",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-assembly-29/robert-rivas",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-027",
+   "candidate": "Robert Rivas",
+   "identity": {
+    "office": "Member of the State Assembly",
+    "jurisdiction": "California State Assembly",
+    "district_or_seat": "AD-29",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-attorney-general/rob-bonta",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-012",
+   "candidate": "Rob Bonta",
+   "identity": {
+    "office": "Attorney General",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-boe-2/sally-j-lieber",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-021",
+   "candidate": "Sally J. Lieber",
+   "identity": {
+    "office": "Member",
+    "jurisdiction": "California State Board of Equalization",
+    "district_or_seat": "District 2",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-16/peter-sundin-soule",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-005",
+   "candidate": "Peter Sundin Soulé",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Reduce his winning margin to show he’s vulnerable thus encouraging challengers which will give us an opportunity to exact more from him. He failed to call Israeli genocide in Gaza or apartheid.",
+      "url": "https://bamcaction.org/myvote/samir"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-17/ritesh-tandon",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-004",
+   "candidate": "Ritesh Tandon",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-17/ro-khanna",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-004",
+   "candidate": "Ro Khanna",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-17",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-18/shane-lewis",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-006",
+   "candidate": "Shane Lewis",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-18",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-18/zoe-lofgren",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-006",
+   "candidate": "Zoe Lofgren",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-18",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "To reduce her winning margin to show she’s vulnerable thus encouraging challengers and giving us an opportunity to exact more fm her. She has not called Israeli genocide in Gaza or apartheid or sanction on Israel",
+      "url": "https://bamcaction.org/myvote/samir"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-19/jimmy-panetta",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-007",
+   "candidate": "Jimmy Panetta",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-19",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Same reasons mentioned previously\nLeveraging our votes",
+      "url": "https://bamcaction.org/myvote/samir"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-19/peter-coe-verbica",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-007",
+   "candidate": "Peter Coe Verbica",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-19",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-controller/malia-m-cohen",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-013",
+   "candidate": "Malia M. Cohen",
+   "identity": {
+    "office": "Controller",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-governor/steve-hilton",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-014",
+   "candidate": "Steve Hilton",
+   "identity": {
+    "office": "Governor",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-governor/xavier-becerra",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-014",
+   "candidate": "Xavier Becerra",
+   "identity": {
+    "office": "Governor",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-insurance-commissioner/ben-allen",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-015",
+   "candidate": "Ben Allen",
+   "identity": {
+    "office": "Insurance Commissioner",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-insurance-commissioner/jane-kim",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-015",
+   "candidate": "Jane Kim",
+   "identity": {
+    "office": "Insurance Commissioner",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-lieutenant-governor/fiona-ma",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-016",
+   "candidate": "Fiona Ma",
+   "identity": {
+    "office": "Lieutenant Governor",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-secretary-of-state/shirley-n-weber",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-017",
+   "candidate": "Shirley N. Weber",
+   "identity": {
+    "office": "Secretary of State",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-senate-10/scott-sakakihara",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-022",
+   "candidate": "Scott Sakakihara",
+   "identity": {
+    "office": "State Senator",
+    "jurisdiction": "California State Senate",
+    "district_or_seat": "SD-10",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-superintendent-of-public-instruction/richard-barrera",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-018",
+   "candidate": "Richard Barrera",
+   "identity": {
+    "office": "Superintendent of Public Instruction",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-superintendent-of-public-instruction/sonja-shaw",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-018",
+   "candidate": "Sonja Shaw",
+   "identity": {
+    "office": "Superintendent of Public Instruction",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-treasurer/eleni-kounalakis",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-019",
+   "candidate": "Eleni Kounalakis",
+   "identity": {
+    "office": "Treasurer",
+    "jurisdiction": "California",
+    "district_or_seat": "Statewide",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3170/karla-dominguez-vega",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-173",
+   "candidate": "Karla Dominguez Vega",
+   "identity": {
+    "office": "Member, Board of Education",
+    "jurisdiction": "Santa Clara County Board of Education",
+    "district_or_seat": "Trustee Area 7",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3170/raeena-s-lari",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-173",
+   "candidate": "Raeena S. Lari",
+   "identity": {
+    "office": "Member, Board of Education",
+    "jurisdiction": "Santa Clara County Board of Education",
+    "district_or_seat": "Trustee Area 7",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3216/liangfang-liang-chao",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-149",
+   "candidate": "Liangfang \"Liang\" Chao",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Foothill-De Anza Community College District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3253/anne-j-kepner",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-177",
+   "candidate": "Anne J. Kepner",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "West Valley-Mission Community College District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3257/susan-oster-fish",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-178",
+   "candidate": "Susan Oster Fish",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "West Valley-Mission Community College District",
+    "district_or_seat": "Trustee Area 7",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3335/art-cohen",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-161",
+   "candidate": "Art Cohen",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Morgan Hill Unified School District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3335/sarah-northrup-gadus",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-161",
+   "candidate": "Sarah Northrup Gadus",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Morgan Hill Unified School District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3336/claudia-ortiz",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-162",
+   "candidate": "Claudia Ortiz",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Morgan Hill Unified School District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3336/glen-r-webb",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-162",
+   "candidate": "Glen R. Webb",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Morgan Hill Unified School District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3340/avery-wang",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-169",
+   "candidate": "Avery Wang",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Palo Alto Unified School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3340/john-craig",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-169",
+   "candidate": "John Craig",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Palo Alto Unified School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3340/linda-henigin",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-169",
+   "candidate": "Linda Henigin",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Palo Alto Unified School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3352/tomara-hall",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-170",
+   "candidate": "Tomara Hall",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "San José Unified School District",
+    "district_or_seat": "Trustee Area 2",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3354/michael-melillo",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-171",
+   "candidate": "Michael Melillo",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "San José Unified School District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3371/kamal-yassin",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-174",
+   "candidate": "Kamal Yassin",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Santa Clara Unified School District",
+    "district_or_seat": "Trustee Area 1",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3422/mer-curry-nunez",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-146",
+   "candidate": "Mer Curry Nuñez",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "East Side Union High School District",
+    "district_or_seat": "Trustee Area 1",
+    "term": "Short term (2 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3425/mahbub-khan",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-147",
+   "candidate": "Mahbub Khan",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "East Side Union High School District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3435/jason-lin",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-151",
+   "candidate": "Jason Lin",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Fremont Union High School District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3435/rosa-kim",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-151",
+   "candidate": "Rosa Kim",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Fremont Union High School District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3436/ilanit-eliaz",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-152",
+   "candidate": "Ilanit Eliaz",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Fremont Union High School District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3436/naomi-nakano-matsumoto",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-152",
+   "candidate": "Naomi Nakano-Matsumoto",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Fremont Union High School District",
+    "district_or_seat": "Trustee Area 4",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3444/ishaan-prasad",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-157",
+   "candidate": "Ishaan Prasad",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Los Gatos-Saratoga Union High School District",
+    "district_or_seat": "Trustee Area 2",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3444/sangeeta-balachandran-mallik",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-157",
+   "candidate": "Sangeeta Balachandran Mallik",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Los Gatos-Saratoga Union High School District",
+    "district_or_seat": "Trustee Area 2",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3505/linda-lo-chavez",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-141",
+   "candidate": "Línda Lo Chávez",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Alum Rock Union School District",
+    "district_or_seat": "Trustee Area 5",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3511/jamal-khan",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-142",
+   "candidate": "Jamal Khan",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Berryessa Union School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3534/sam-krow-lucal",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-145",
+   "candidate": "Sam Krow-Lucal",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Campbell Union School District",
+    "district_or_seat": "Trustee Area 5",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3534/vartika-chandra",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-145",
+   "candidate": "Vartika Chandra",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Campbell Union School District",
+    "district_or_seat": "Trustee Area 5",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3551/mary-hien-pollett",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-148",
+   "candidate": "Mary Hien Pollett",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Evergreen School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3561/marc-cooper",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-150",
+   "candidate": "Marc Cooper",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Franklin-McKinley School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3591/david-poll",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-156",
+   "candidate": "David Poll",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Los Altos School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3641/sundar-subbarayan",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-163",
+   "candidate": "Sundar Subbarayan",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Mountain View Whisman School District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3675/casino-fajardo",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-167",
+   "candidate": "Casino Fajardo",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Oak Grove School District",
+    "district_or_seat": "Trustee Area 5",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3705/michelle-maginot",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-176",
+   "candidate": "Michelle Maginot",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Sunnyvale School District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-3705/rommy-kushner",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-176",
+   "candidate": "Rommy Kushner",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Sunnyvale School District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5080/carmen-montano",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-095",
+   "candidate": "Carmen Montano",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Milpitas",
+    "district_or_seat": "At-large",
+    "term": "Full term (2 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5081/jennie-ha-phan",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-094",
+   "candidate": "Jennie Ha Phan",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Milpitas",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5081/seema-kanani",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-094",
+   "candidate": "Seema Kanani",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Milpitas",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5121/vicki-veenker",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-100",
+   "candidate": "Vicki Veenker",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Palo Alto",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5205/peter-ortiz",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-101",
+   "candidate": "Peter Ortiz",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of San José",
+    "district_or_seat": "District 5",
+    "term": "Full term (4 years)",
+    "election_type": "runoff"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5230/karen-hardy",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-106",
+   "candidate": "Karen Hardy",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Santa Clara",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5230/kathy-watanabe",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-106",
+   "candidate": "Kathy Watanabe",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Santa Clara",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5230/kevin-park",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-106",
+   "candidate": "Kevin Park",
+   "identity": {
+    "office": "Mayor",
+    "jurisdiction": "City of Santa Clara",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5253/murali-srinivasan",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-109",
+   "candidate": "Murali Srinivasan",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Sunnyvale",
+    "district_or_seat": "District 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-5255/richard-mehlinger",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-110",
+   "candidate": "Richard Mehlinger",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Sunnyvale",
+    "district_or_seat": "District 5",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-6007/pete-dailey",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-203",
+   "candidate": "Pete Dailey",
+   "identity": {
+    "office": "Director",
+    "jurisdiction": "Santa Clara Valley Water District",
+    "district_or_seat": "District 7",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/santa-clara-6020/gilbert-wong",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-199",
+   "candidate": "Gilbert Wong",
+   "identity": {
+    "office": "Director",
+    "jurisdiction": "Cupertino Sanitary District",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546"
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide selections are ignored for BAMC Action. Activist records copy only the activist selections and comments."
+   }
+  }
+ ],
+ "audit_path": "research/reviews/bamc-action-candidates-2026-10-27.audit.json",
+ "audit_sha256": "23f87abdf2b47ccf8f6c81b40934a9e46a4b4339ba8124aa681db8e34c3d289e"
+}

@@ -1,5 +1,15 @@
 # Local Jev playground
 
+## Community-guide source update
+
+Publication **2026-10-27.13**, schema **1.29**, adds BAMC Action's **16 supports /
+2 oppositions**, two comment-only entries, and Samir Laymoun's **38 supports /
+38 oppositions**. All **21 candidate comments** are preserved. New v17 Jev inputs
+include these alongside CAIR Action and Vote for Peace, retaining differing race
+selections and tactical comment context. Existing saved scores and explanations
+are unchanged; no candidate evaluations were rerun. [Import and source policy](BAMC_ACTION.md).
+
+
 Publication **2026-10-27.12** adds a versioned issue-observation gate: identity and unrelated local-platform text cannot qualify a candidate for a political grade. Current browser/server mappings retain this alongside the saved **0.22** minimum. Four more candidates are N/A; raw answers remain intact. [Editorial review](SUMMARY_EDITORIAL_REVIEW.md).
 
 Earlier publication notes:

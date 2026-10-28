@@ -11,12 +11,13 @@ const EndorsementDisplay = {
       (historical ? ' · ' + historical + ' historical' : '');
   },
   label(record) {
-    const relations = {endorsed: 'Endorsed by ', preferred: 'Preferred by ', opposed: 'Opposed by ', neutral: 'Listed as Neutral by ', recommended: 'Recommended by ', supported: 'Supported by ', distinction: 'Distinction from '};
+    const relations = {endorsed: 'Endorsed by ', preferred: 'Preferred by ', opposed: 'Opposed by ', neutral: 'Listed as Neutral by ', recommended: 'Recommended by ', supported: 'Supported by ', distinction: 'Distinction from ', comment: 'Comment from '};
     const provenance = {endorser_statement: 'Publisher statement', campaign_claim: 'Campaign claim', reported: 'Secondary report'};
     const phase = {primary: 'Primary election', general: 'General election', unspecified: 'Election phase not stated'};
     const ally = record.relation === 'supported' && record.rating === 'Ally';
     return (ally ? 'Listed as Ally by ' : record.shared && record.relation === 'endorsed' ? 'Jointly endorsed by ' : relations[record.relation] || 'Record from ') + record.endorser +
       (record.rating && !ally ? ' · Source rating: ' + record.rating : '') +
+      (record.recommendation_rank ? ' · Preference rank: ' + record.recommendation_rank : '') +
       (record.historical ? ' · Historical record (prior race)' : '') +
       ' · ' + (phase[record.phase] || 'Election phase not stated') +
       ' · ' + (provenance[record.verification] || 'Source classification not recorded') +
@@ -36,6 +37,11 @@ EndorsementDisplay.render = function(candidate, {node, link, noteText = () => ''
     const item = node('li', 'endorsement-text-item');
     const content = node('div', 'endorsement-entry-content');
     content.append(node('span', null, EndorsementDisplay.label(record)), ' ', link(record.url, 'source ↗'));
+    for (const comment of record.comments || []) {
+      const paragraph = node('p', 'endorsement-comment');
+      paragraph.append(node('q', null, comment.text), ' ', link(comment.url, 'comment source ↗'));
+      content.append(paragraph);
+    }
     const note = record.note_id ? noteText(record.note_id) : '';
     if (note) {
       const provenance = node('details', 'endorsement-note');
