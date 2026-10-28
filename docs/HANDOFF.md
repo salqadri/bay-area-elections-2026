@@ -1,5 +1,17 @@
 # Research and development handoff
 
+## v6 voter explanations published — October 28, 2026
+
+Publication **2026-10-27.8**, schema **1.27**, reattached explanations to the v6
+scores. The 408 letter grades carry fresh voter-voice paragraphs generated
+under the owner's final summarizer prompt (temperature 1.0, thinking enabled,
+grade-letter leak guard) from each candidate's exact frozen v6 record; the 888
+N/A candidacies keep the hand-written editorial note. Frozen archive
+`research/gaza-grading/explanations-2026-10-27-v6-prompt3.json` (1,296 entries,
+each bound to candidate_id + v6 request_sha256). The v5 explanation archives
+are superseded but immutable. Full release gate passes (47 checks) with the
+dataset hash pinned in `.checks/release-checks.json`.
+
 ## Owner full-roster v6 scoring publication — October 27, 2026
 
 Prepared publication **2026-10-27.7**, schema **1.27**, freezes all **1,296**

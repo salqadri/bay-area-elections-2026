@@ -97,6 +97,23 @@ replace the immutable raw scoring answers.
 Review completeness, source attribution, N/A handling and a representative sample
 before adding summaries to the readers through the normal publication workflow.
 
+## Status — completed October 28, 2026 (publication 2026-10-27.8)
+
+All summaries for **jev-2026-10-27-v6** are generated, validated and published
+as publication **2026-10-27.8** in
+`research/gaza-grading/explanations-2026-10-27-v6-prompt3.json` (1,296
+entries). The **408 letter grades** carry voter-voice paragraphs regenerated
+under the owner's final prompt — openly pro-Palestine, pro-justice,
+anti-genocide standpoint, comprehensive current-stance capture,
+candidate-specific openings, strict factual-accuracy and relevance rules —
+from each candidate's exact frozen v6 input state, rubric and recorded result
+(LM Studio `qwen/qwen3.8-27b`, temperature 1.0, thinking enabled, with a new
+grade-letter leak guard in the harness; 0 generation errors). The **888 N/A
+candidacies** get a uniform hand-written editorial note (no LLM): the record is
+too thin to judge and no stance is inferred from silence. The 2026-10-27.5 v5
+batch is superseded (its 405 paragraphs no longer bind to the v6 request
+hashes) and remains archived immutable.
+
 ## Status — completed October 27, 2026 (publication 2026-10-27.5)
 
 All summaries for **jev-2026-10-27-vfp** are generated, validated and published

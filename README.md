@@ -4,9 +4,10 @@ Prepared publication **2026-10-27.7** freezes the owner's full-roster v6 Jev run
 **1,296 evaluations**, exact revised questions, saved grade bounds
 **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, and minimum evidence **0.20**.
 Distribution: **A 121 · B 44 · C 13 · D 38 · E 67 · F 125 · N/A 888**.
-Every saved input matches the current v15 builder. Previous Qwen summaries remain
-archived; [Hermes's fresh explanation queue](docs/tasks/HERMES_GRADE_EXPLANATIONS.md)
-is bound to these new results. [Current methodology](docs/PUBLISHED_GRADES.md).
+Every saved input matches the current v15 builder. Every candidacy again carries
+a voter-voice explanation (publication **2026-10-27.8**: fresh Qwen paragraphs
+for the 408 letter grades, editorial notes for the 888 N/A entries).
+[Current methodology](docs/PUBLISHED_GRADES.md).
 
 Evidence preparation **2026-10-27.6** added [source-reviewed chronology and follow-ups](docs/EVIDENCE_CONTEXT.md),
 official cosponsorship dates and the clarified pro-Palestine community meaning.

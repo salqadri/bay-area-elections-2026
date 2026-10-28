@@ -24,11 +24,17 @@ and confirmed-community evidence publication guards pass.
 
 The earlier targeted-rerun recommendation is completed by this full-roster run.
 Fresh prompts/results invalidate the bindings of the prior Qwen summaries;
-those immutable archives remain available but are not displayed as explanations
-of these new scores. [Hermes's new queue](../research/gaza-grading/explanation-queue-2026-10-27-v6.json)
-contains all 1,296 current request hashes for regeneration with the latest
-owner-approved Qwen summarizer prompt. No replacement summaries were generated
-by this publication step.
+Publication **2026-10-27.8**, schema **1.27**, reattached the explanations for
+the v6 scores: the **408 letter grades** carry fresh voter-voice paragraphs
+generated with the owner's final summarizer prompt (LM Studio
+`qwen/qwen3.8-27b`, temperature 1.0, thinking enabled, grade-letter leak guard)
+from each candidate's exact frozen v6 record, and the **888 N/A candidacies**
+get a hand-written editorial note (no LLM) saying the record is too thin to
+judge and inferring nothing from silence. The
+[explanations archive](../research/gaza-grading/explanations-2026-10-27-v6-prompt3.json)
+holds one entry per candidacy, each bound to its `candidate_id`,
+`request_sha256` and publication ID **jev-2026-10-27-v6**; the v5-era
+explanation archives remain immutable but are no longer displayed.
 
 ## Historical publication — final Qwen summaries
 
