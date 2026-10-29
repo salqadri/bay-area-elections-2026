@@ -83,7 +83,7 @@ are keyed by exact request, so rule or roster changes trigger only the affected 
 | `research/candidate-recommendations/jev-answers-2026-10-28-latest.jsonl` | Archived Jev decisions with confidence and request hashes |
 | `research/candidate-recommendations/race-reasons-2026-10-28-latest.jsonl` | Archived Qwen why-paragraphs with prompt hashes and model provenance |
 | `scripts/build_recommendations.py` | The four-stage pipeline (classify → jev → reasons → build) |
-| `src/recommendation-display.js` | Shared race-recommendation box for both readers (display only) |
+| `src/recommendation-display.js` | Shared race-recommendation box for both readers (display only): the why-paragraph auto-expands and remembers an explicit collapse/expand via localStorage across races; the note carries only the recommendation-set date — no model attribution |
 | `index.html` / `ballot.html` | Generated, committed readers carrying the embedded recommendation map |
 
 ## Limits

@@ -2,6 +2,13 @@
    by scripts/build_recommendations.py against the published grades and archived
    with the recommendation plan; the page never derives or reranks anything. */
 const RecommendationDisplay = {
+  whyKey: 'recommendation-why',
+  whyCollapsed() {
+    try { return localStorage.getItem(this.whyKey) === 'collapsed'; } catch { return false; }
+  },
+  rememberWhy(open) {
+    try { open ? localStorage.removeItem(this.whyKey) : localStorage.setItem(this.whyKey, 'collapsed'); } catch {}
+  },
   render(positionId, { node, recs, confirmed }) {
     const r = recs && recs.byPosition && recs.byPosition[positionId];
     if (!r || !confirmed) return null;
@@ -19,9 +26,12 @@ const RecommendationDisplay = {
     const why = r.why && r.why.text;
     if (why) {
       const details = node('details', 'race-recommendation-why');
+      // Expanded by default; one explicit collapse is remembered across races.
+      if (!this.whyCollapsed()) details.open = true;
+      details.addEventListener('toggle', () => this.rememberWhy(!!details.open));
       details.append(node('summary', null, 'Why this pick?'));
       details.append(node('p', 'race-recommendation-text', why));
-      details.append(node('p', 'race-recommendation-note', 'Written by ' + r.why.model + ' from the recorded evidence and published grades for the candidates in this race. Picks follow our published rules: a confirmed Muslim-community candidate first, otherwise the strongest published pro-Palestine record. Recommendation set dated ' + (recs.generated_on || '') + '.'));
+      if (recs.generated_on) details.append(node('p', 'race-recommendation-note', 'Recommendation set dated ' + recs.generated_on + '.'));
       box.append(details);
     }
     return box;

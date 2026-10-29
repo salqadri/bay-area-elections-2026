@@ -9,6 +9,11 @@ and ballot result shows the pick with a Qwen why-paragraph written under the own
 framework, or the explicit no-recommendation line; the standalone recommendations page
 is retired. [Rules, pipeline and provenance](CANDIDATE_RECOMMENDATIONS.md).
 
+Display follow-up (owner request): the why-paragraph now auto-expands with a remembered
+collapse preference across races, its note shows only the recommendation-set date (model
+attribution removed), and the federal-race "Campaign money" explainer panel was removed as
+redundant real-estate. Display-only changes; the dataset and plan bytes are unchanged.
+
 Publication **2026-10-28.4** publishes the owner's completed full-roster
 run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,

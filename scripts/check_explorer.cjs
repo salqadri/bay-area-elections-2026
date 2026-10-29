@@ -42,7 +42,8 @@ const blobs=new Map();let blobId=0;
 const RealURL=URL;RealURL.createObjectURL=blob=>{const id='blob:test-'+ ++blobId;blobs.set(id,blob);return id;};RealURL.revokeObjectURL=()=>{};
 const location={hash:''};
 const window={matchMedia:()=>({matches:false,addEventListener(){}}),events:{},addEventListener(k,f){this.events[k]=f;}};
-const context={document,window,location,history:{replaceState(_a,_b,hash){location.hash=hash;}},URL:RealURL,URLSearchParams,Blob,Intl,console,setTimeout:()=>1,clearTimeout(){}};
+const localStorage={_d:{},getItem(k){return k in this._d?this._d[k]:null;},setItem(k,v){this._d[k]=String(v);},removeItem(k){delete this._d[k];}};
+const context={document,window,location,localStorage,history:{replaceState(_a,_b,hash){location.hash=hash;}},URL:RealURL,URLSearchParams,Blob,Intl,console,setTimeout:()=>1,clearTimeout(){}};
 vm.createContext(context);
 const script=all().find(n=>n.tagName==='SCRIPT'&&!n.attrs.type).textContent;
 vm.runInContext(script,context,{filename:'explorer-inline.js'});
@@ -106,6 +107,18 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
    assert(text('panel-candidates').includes('Our pick:'), 'confirmed race detail shows the pick');
    assert(text('panel-candidates').includes(pick.recommended), 'detail names the recommended candidate');
    assert(text('panel-candidates').includes(pick.why.text), 'detail shows the archived why-paragraph');
+   assert(!text('panel-candidates').includes('Written by'),'note carries no model attribution');
+   assert(text('panel-candidates').includes('Recommendation set dated '+recs.generated_on),'note shows only the set date');
+   assert(nodes($('panel-candidates')).some(n=>String(n.className).includes('race-recommendation-why')&&n.open),'why-paragraph auto-expands by default');
+   {const otherPick=Object.entries(recs.byPosition).find(([id,v])=>v.recommended&&v.why&&id!==pickId);
+    const why=all().find(n=>String(n.className).includes('race-recommendation-why'));why.open=false;why.fire('toggle');
+    location.hash='#id='+otherPick[0];window.events.hashchange();
+    const reopened=all().find(n=>String(n.className).includes('race-recommendation-why'));
+    assert(reopened&&!reopened.open,'a collapse preference persists across races');
+    reopened.open=true;reopened.fire('toggle');
+    location.hash='#id='+pickId;window.events.hashchange();
+    const reexpanded=all().find(n=>String(n.className).includes('race-recommendation-why'));
+    assert(reexpanded&&reexpanded.open,'an expand preference persists across races');reset();}
    const [noneId,none]=Object.entries(recs.byPosition).find(([id,v])=>!v.recommended&&v.category==='no_information'&&confirmed(id));
    location.hash='#id='+noneId;window.events.hashchange();
    assert(text('panel-candidates').includes('No recommendation'), 'no-information race shows the no-recommendation line');
@@ -135,6 +148,18 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
    assert(text('panel-candidates').includes('Our pick:'), 'confirmed race detail shows the pick');
    assert(text('panel-candidates').includes(pick.recommended), 'detail names the recommended candidate');
    assert(text('panel-candidates').includes(pick.why.text), 'detail shows the archived why-paragraph');
+   assert(!text('panel-candidates').includes('Written by'),'note carries no model attribution');
+   assert(text('panel-candidates').includes('Recommendation set dated '+recs.generated_on),'note shows only the set date');
+   assert(nodes($('panel-candidates')).some(n=>String(n.className).includes('race-recommendation-why')&&n.open),'why-paragraph auto-expands by default');
+   {const otherPick=Object.entries(recs.byPosition).find(([id,v])=>v.recommended&&v.why&&id!==pickId);
+    const why=all().find(n=>String(n.className).includes('race-recommendation-why'));why.open=false;why.fire('toggle');
+    location.hash='#id='+otherPick[0];window.events.hashchange();
+    const reopened=all().find(n=>String(n.className).includes('race-recommendation-why'));
+    assert(reopened&&!reopened.open,'a collapse preference persists across races');
+    reopened.open=true;reopened.fire('toggle');
+    location.hash='#id='+pickId;window.events.hashchange();
+    const reexpanded=all().find(n=>String(n.className).includes('race-recommendation-why'));
+    assert(reexpanded&&reexpanded.open,'an expand preference persists across races');reset();}
    const [noneId,none]=Object.entries(recs.byPosition).find(([id,v])=>!v.recommended&&v.category==='no_information'&&confirmed(id));
    location.hash='#id='+noneId;window.events.hashchange();
    assert(text('panel-candidates').includes('No recommendation'), 'no-information race shows the no-recommendation line');

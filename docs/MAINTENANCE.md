@@ -43,7 +43,8 @@ For an existing clone, inspect local changes and `git fetch origin` before rebas
 | `src/address-autocomplete.js` | Accessible combobox interaction, debounce, cancellation and manual fallback |
 | `src/address-matcher.js` | Geography normalization, inclusive race matching, union of ambiguous matches |
 | `src/endorsement-display.js` | Shared endorsement, preference, opposition and support wording, provenance and source-rating labels |
-| `src/finance-display.js` | Shared dated FEC receipts and independent-spending disclosure in both readers |
+| `src/finance-display.js` | Shared dated FEC receipts and independent-spending disclosure in both readers (the race-level money explainer panel was removed October 29 at owner request) |
+| `src/recommendation-display.js` | Shared race-recommendation box in both readers: why-paragraph auto-expanded with a remembered collapse preference across races; date-only provenance note |
 | `src/pro-palestine-grade-display.js` | Shared colored Jev score / derived-grade badges and gray N/A on both public readers; see [PUBLISHED_GRADES.md](PUBLISHED_GRADES.md) |
 | `scripts/publish_jev_grades.py` | Freeze a complete uniform-prompt batch, attach exact source-bound scores and create the Hermes explanation queue |
 | `scripts/organization_context.py` | Add sourced organization roles/funding links to new model states; [registry and discovery workflow](ORGANIZATION_CONTEXT.md) |
