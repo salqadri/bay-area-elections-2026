@@ -8,6 +8,8 @@
   'use strict';
 
   const ENDPOINT = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress';
+  const LOCATIONS_ENDPOINT = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress';
+  const TIGER_ENDPOINT = 'https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/identify';
   const BENCHMARK = 'Public_AR_Current';
   const VINTAGE = 'Current_Current';
   const LAYERS = Object.freeze([14, 16, 18, 28, 30, 54, 56, 58, 80, 82]);
@@ -61,8 +63,25 @@
     };
   }
 
-  // Environment injection keeps the real browser transport covered by isolated tests.
-  // Each client has its own callback namespace; each lookup owns all its resources.
+  // Census's combined geography endpoint can fail while its address geocoder
+  // and direct TIGERweb service remain available. Both paths use Census matches.
+  function geographyResponse(payload) {
+    if (record(payload) && payload.error) throw failure('SERVICE_ERROR', 'The Census geography service could not process this lookup.');
+    if (!record(payload) || !Array.isArray(payload.results)) throw failure('INVALID_RESPONSE', 'The Census geography service returned an incomplete response.');
+    const geographies = {};
+    const names = /^(States|Counties|Incorporated Places|Census Designated Places|Unified School Districts|Secondary School Districts|Elementary School Districts|\d+(?:st|nd|rd|th) Congressional Districts|\d{4} State Legislative Districts\s*-\s*(?:Upper|Lower))$/i;
+    for (const item of payload.results) {
+      if (!record(item) || !LAYERS.includes(item.layerId) || typeof item.layerName !== 'string' || !names.test(item.layerName)) continue;
+      if (!record(item.attributes)) throw failure('INVALID_RESPONSE', 'The Census geography service returned an incomplete response.');
+      (geographies[item.layerName] ||= []).push(item.attributes);
+    }
+    // No mailing-city or coordinate guess substitutes for an actual county polygon.
+    if (!(geographies.Counties || []).some(row => /^\d{2}$/.test(row.STATE) && /^\d{3}$/.test(row.COUNTY))) {
+      throw failure('INVALID_RESPONSE', 'The Census geography service did not identify a county. Please try again or browse counties.');
+    }
+    return geographies;
+  }
+
   function createClient(environment) {
     environment = environment || {};
     const host = environment.globalObject || root;
@@ -70,100 +89,86 @@
     const schedule = environment.setTimeout || host.setTimeout.bind(host);
     const cancel = environment.clearTimeout || host.clearTimeout.bind(host);
     const now = environment.now || function () { return new Date(); };
+    const clock = environment.clock || Date.now;
+    const fallbackEnabled = environment.fallbackEnabled !== false;
     const namespace = '__electionCensus_' + Date.now().toString(36) + '_' + (++clientSequence) + '_';
     let requestSequence = 0;
 
-    function lookup(address, options) {
-      options = options || {};
-      const signal = options.signal;
-      const timeoutMs = options.timeoutMs === undefined ? 20000 : options.timeoutMs;
+    function jsonp(endpoint, parameters, timeoutMs, signal) {
       return new Promise(function (resolve, reject) {
-        if (typeof address !== 'string' || !address.trim()) {
-          reject(failure('INVALID_ADDRESS', 'Enter a street address, city, and state or ZIP code.'));
-          return;
-        }
-        if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) {
-          reject(failure('INVALID_OPTIONS', 'The address lookup timeout must be a positive number.'));
-          return;
-        }
-        if (signal && signal.aborted) {
-          reject(failure('ABORTED', 'Address lookup canceled.'));
-          return;
-        }
+        if (signal && signal.aborted) { reject(failure('ABORTED', 'Address lookup canceled.')); return; }
         if (!doc || typeof doc.createElement !== 'function' || !(doc.head || doc.body || doc.documentElement)) {
-          reject(failure('UNSUPPORTED_ENVIRONMENT', 'Address lookup is available in a web browser.'));
-          return;
+          reject(failure('UNSUPPORTED_ENVIRONMENT', 'Address lookup is available in a web browser.')); return;
         }
         let callbackName;
         do { callbackName = namespace + (++requestSequence); }
         while (Object.prototype.hasOwnProperty.call(host, callbackName));
-        let script;
-        let timer;
-        let settled = false;
-        let listeningForAbort = false;
-
+        let script, timer, settled = false, listeningForAbort = false;
         function cleanup() {
           if (timer !== undefined) cancel(timer);
           if (listeningForAbort) signal.removeEventListener('abort', onAbort);
           delete host[callbackName];
-          if (script) {
-            script.onerror = null;
-            if (script.parentNode) script.parentNode.removeChild(script);
-          }
+          if (script) { script.onerror = null; if (script.parentNode) script.parentNode.removeChild(script); }
         }
-
         function finish(error, result) {
-          // A queued response may arrive after an abort, timeout, or another callback.
           if (settled) return;
-          settled = true;
-          cleanup();
-          if (error) reject(error);
-          else resolve(result);
+          settled = true; cleanup();
+          if (error) reject(error); else resolve(result);
         }
-
-        function onAbort() {
-          finish(failure('ABORTED', 'Address lookup canceled.'));
-        }
-
-        host[callbackName] = function (payload) {
-          if (settled) return;
-          try { finish(null, normalizeResponse(payload, now)); }
-          catch (error) { finish(error); }
-        };
-
+        function onAbort() { finish(failure('ABORTED', 'Address lookup canceled.')); }
+        host[callbackName] = function (payload) { finish(null, payload); };
         try {
-          const url = new URL(ENDPOINT);
-          url.search = new URLSearchParams({
-            address: address.trim(),
-            benchmark: BENCHMARK,
-            vintage: VINTAGE,
-            layers: LAYERS.join(','),
-            format: 'jsonp',
-            callback: callbackName
-          }).toString();
-          script = doc.createElement('script');
-          script.async = true;
-          script.referrerPolicy = 'no-referrer';
-          script.src = url.toString();
-          script.onerror = function () {
-            finish(failure('NETWORK', 'Could not reach the Census address service. Check your connection and try again.'));
-          };
-          if (signal) {
-            signal.addEventListener('abort', onAbort, {once: true});
-            listeningForAbort = true;
-          }
-          // Recheck after registering the listener for custom or already-changing signals.
+          const url = new URL(endpoint);
+          url.search = new URLSearchParams({...parameters, callback: callbackName}).toString();
+          script = doc.createElement('script'); script.async = true; script.referrerPolicy = 'no-referrer'; script.src = url.toString();
+          script.onerror = function () { finish(failure('NETWORK', 'Could not reach the Census address service. Check your connection and try again.')); };
+          if (signal) { signal.addEventListener('abort', onAbort, {once: true}); listeningForAbort = true; }
           if (signal && signal.aborted) { onAbort(); return; }
-          timer = schedule(function () {
-            finish(failure('TIMEOUT', 'The Census address service took too long to respond. Please try again.'));
-          }, timeoutMs);
+          timer = schedule(function () { finish(failure('TIMEOUT', 'The Census address lookup took too long to respond. Please try again.')); }, timeoutMs);
           (doc.head || doc.body || doc.documentElement).appendChild(script);
-        } catch (_) {
-          finish(failure('NETWORK', 'Could not start the Census address lookup. Please try again.'));
-        }
+        } catch (_) { finish(failure('NETWORK', 'Could not start the Census address lookup. Please try again.')); }
       });
     }
 
+    async function lookup(address, options) {
+      options = options || {};
+      const signal = options.signal, timeoutMs = options.timeoutMs === undefined ? 20000 : options.timeoutMs;
+      if (typeof address !== 'string' || !address.trim()) throw failure('INVALID_ADDRESS', 'Enter a street address, city, and state or ZIP code.');
+      if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw failure('INVALID_OPTIONS', 'The address lookup timeout must be a positive number.');
+      if (signal && signal.aborted) throw failure('ABORTED', 'Address lookup canceled.');
+      const deadline = clock() + timeoutMs;
+      function remaining() {
+        if (signal && signal.aborted) throw failure('ABORTED', 'Address lookup canceled.');
+        const value = deadline - clock();
+        if (value <= 0) throw failure('TIMEOUT', 'The Census address lookup took too long to respond. Please try again.');
+        return value;
+      }
+      try {
+        const payload = await jsonp(ENDPOINT, {address: address.trim(), benchmark: BENCHMARK, vintage: VINTAGE,
+          layers: LAYERS.join(','), format: 'jsonp'}, fallbackEnabled ? Math.min(8000, timeoutMs * .4) : timeoutMs, signal);
+        return normalizeResponse(payload, now);
+      } catch (error) {
+        if (!fallbackEnabled || !['NETWORK','TIMEOUT'].includes(error.code)) throw error;
+      }
+      const located = await jsonp(LOCATIONS_ENDPOINT, {address: address.trim(), benchmark: BENCHMARK, format: 'jsonp'}, remaining(), signal);
+      // Reuse strict address/coordinate validation before sending a point to TIGERweb.
+      if (record(located) && (located.error || located.errors)) return normalizeResponse(located, now);
+      const addressMatches = located && located.result && located.result.addressMatches;
+      if (!Array.isArray(addressMatches)) throw failure('INVALID_RESPONSE', 'The Census address service returned an incomplete response.');
+      const result = normalizeResponse({result: {addressMatches: addressMatches.map(match => ({...match, geographies: {}}))}}, now);
+      for (const match of result.matches) {
+        const x = match.coordinates.x, y = match.coordinates.y;
+        const payload = await jsonp(TIGER_ENDPOINT, {geometry: x + ',' + y, geometryType: 'esriGeometryPoint', sr: '4326',
+          layers: 'all:' + LAYERS.join(','), tolerance: '0', mapExtent: [x-.01,y-.01,x+.01,y+.01].join(','),
+          imageDisplay: '100,100,96', returnGeometry: 'false', f: 'json'}, remaining(), signal);
+        // Keep the returned layer's actual name/year. The matcher rejects old maps.
+        match.geographies = geographyResponse(payload);
+      }
+      result.provider = 'U.S. Census Bureau · TIGERweb backup';
+      result.vintage = 'TIGERweb_Current';
+      result.queriedAt = now().toISOString();
+      return result;
+    }
     return {lookup: lookup};
   }
 
@@ -172,6 +177,8 @@
     lookup: defaultClient.lookup,
     createClient: createClient,
     ENDPOINT: ENDPOINT,
+    LOCATIONS_ENDPOINT: LOCATIONS_ENDPOINT,
+    TIGER_ENDPOINT: TIGER_ENDPOINT,
     BENCHMARK: BENCHMARK,
     VINTAGE: VINTAGE,
     LAYERS: LAYERS

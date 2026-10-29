@@ -298,6 +298,9 @@
     } catch (error) {
       if (request !== state.request) return;
       if (error?.name === 'AbortError') showError('The lookup was interrupted. Please try again, or browse county possibilities below.');
+      else if (error?.code === 'TIMEOUT') showError('The Census address lookup timed out. Please try again, or browse county possibilities below.');
+      else if (error?.code === 'INVALID_ADDRESS' || error?.code === 'SERVICE_ERROR') showError('Census could not process that address. Check the street number, city, state and ZIP code, then try again. County browsing is available below.');
+      else if (error?.code === 'INVALID_RESPONSE') showError('Census returned incomplete address geography. Please try again, or browse county possibilities below.');
       else showError('Address lookup is temporarily unavailable. Please try again, or browse county possibilities below. Your official ballot is available from your county elections office.');
     } finally {
       if (request === state.request) { setLoading(false); state.controller = null; }

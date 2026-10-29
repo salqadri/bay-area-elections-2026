@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-28.2"
+  "publication_version": "2026-10-28.3"
  },
  "codes": {
   "party": {
@@ -138,7 +138,7 @@
   "voter_information_endpoint": "https://www.googleapis.com/civicinfo/v2/voterinfo",
   "voter_information_docs": "https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery",
   "instructions": [
-   "The published ballot.html uses the public Census geocoder without an API key and keeps unresolved district alternatives visible. See lookup_limitations for confidence and coverage.",
+   "The published ballot.html uses public Census address/geography services without an API key, with a direct TIGERweb backup when the combined endpoint is unavailable. Unresolved district alternatives remain visible.",
    "Use an authorized Google Civic Information API key. divisionsByAddress accepts an address and returns division IDs and aliases.",
    "Match returned division IDs and alsoKnownAs aliases to ocd_division_id, then filter for this election and confirmed. Do not match only by county or parent jurisdiction.",
    "For supported elections, voterInfoQuery with address and the correct electionId supplies election-specific contests. Obtain the electionId from the elections endpoint; it is not supplied in this file.",
@@ -172,7 +172,7 @@
    "An incorporated city is determined from geographic boundaries, not a mailing city or ZIP code. Census-designated places identify unincorporated communities.",
    "Geography confidence and confirmed November ballot appearance are distinct. Unverified scheduled races are displayed with their unresolved status.",
    "Results cover elected offices in the five researched counties; they do not include ballot measures and are not certified exhaustive.",
-   "The integration was checked with official API documentation, current layer metadata and deterministic response fixtures. Successful live address requests have not been verified in this execution environment."
+   "Live Chrome tests on public San Jose and San Francisco addresses verified Census/TIGERweb recovery on 2026-10-28; a Census no-match response was also checked. This does not validate every supplied electorate/OCD identifier or certify an official ballot."
   ]
  },
  "display_order": {

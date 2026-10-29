@@ -1,5 +1,7 @@
 # Bay Area Ballot Research Assistant
 
+Publication **2026-10-28.3** adds Census/TIGERweb failover for the address-estimate page after reproducing HTTP 502 failures in the combined Census endpoint. Live Chrome checks resolve public San Jose and San Francisco addresses; no-match and uncertain geographies remain explicit. [Diagnosis, recovery and validation](docs/ADDRESS_LOOKUP_RECOVERY.md).
+
 Publication **2026-10-28.2** corrects BAMC opposition to **Steve Raspe and Heidi Owens**,
 removes race-wide guide context from every candidate input, and assigns the Samir
 comment about Sam Liccardo to Sam. Peter Sundin Soulé retains only his own
@@ -211,7 +213,7 @@ Partial address text is sent to Photon while typing; the submitted address is se
 
 The optional estimate download has the distinct format `bay-area-ballot-estimate/v1`, with matched geographic areas, warnings, confidence-tagged races, and the shared candidate/source/finance metadata. It excludes raw street addresses and coordinates. It is a report of a lookup, rather than the full-inventory format described by `elections.schema.json`.
 
-**Verification:** API parameters and 2026 layer metadata were checked against official documentation. The service transports, autocomplete controls, matcher and page are tested using deterministic response fixtures and a minimal DOM. Live Census and Photon requests could not be completed from the execution environment, so `address_lookup.api_validated` remains false. This does not turn convention-based OCD identifiers into API-validated records. The published app makes real requests when used in a browser; it has no simulated address results or embedded API credentials.
+**Verification:** API parameters and 2026 layer metadata were checked against official documentation. The service transports, autocomplete controls, matcher and page are tested using deterministic response fixtures and a minimal DOM. The original integration used offline fixtures. Census/TIGERweb address recovery was subsequently verified in live Chrome tests on October 28; `address_lookup.api_validated` remains false for dataset-wide electorate/identifier validation. This does not turn convention-based OCD identifiers into API-validated records. The published app makes real requests when used in a browser; it has no simulated address results or embedded API credentials.
 
 ## Federal campaign fundraising
 

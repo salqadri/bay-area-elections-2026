@@ -6,7 +6,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const service = require('../src/address-services.js');
 
-function fixture() {
+function fixture(fallbackEnabled = false, clock) {
   const host = {};
   const scripts = [];
   const timers = new Map();
@@ -17,7 +17,7 @@ function fixture() {
   };
   const document = {head, createElement(tag) { assert.equal(tag, 'script'); return {}; }};
   const client = service.createClient({
-    globalObject: host, document,
+    globalObject: host, document, fallbackEnabled, ...(clock ? {clock} : {}),
     setTimeout(fn, ms) { const id = ++timerSequence; timers.set(id, {fn, ms}); return id; },
     clearTimeout(id) { timers.delete(id); },
     now() { return new Date('2026-10-06T22:00:00.000Z'); }
@@ -201,6 +201,70 @@ async function test(label, run) {
     assert.equal(typeof service.lookup, 'function');
     assert.equal(context.ElectionAddressService.ENDPOINT, service.ENDPOINT);
     await assert.rejects(service.lookup('Example address'), {code: 'UNSUPPORTED_ENVIRONMENT'});
+  });
+
+  const tick = async () => { await Promise.resolve(); await Promise.resolve(); await Promise.resolve(); };
+  const located = (matches = [match()]) => ({result: {addressMatches: matches.map(({geographies, ...m}) => m)}});
+  const identified = (county = 'Santa Clara', congressionalName = '120th Congressional Districts') => ({results: [
+    {layerId:82,layerName:'Counties',attributes:{STATE:'06',COUNTY:county==='Santa Clara'?'085':'075',NAME:county+' County'}},
+    {layerId:28,layerName:'Incorporated Places',attributes:{STATE:'06',BASENAME:county==='Santa Clara'?'San Jose':'San Francisco'}},
+    {layerId:54,layerName:congressionalName,attributes:{STATE:'06',CD120:'18',CD119:'18'}},
+    {layerId:14,layerName:'Unified School Districts',attributes:{STATE:'06',NAME:'San Jose Unified School District'}}
+  ]});
+
+  await test('provider outage recovers through Census coordinates and actual TIGERweb polygons', async () => {
+    const f=fixture(true);const pending=f.client.lookup('Public City Hall, CA');
+    assert.equal([...f.timers.values()][0].ms,8000);
+    f.pending().script.onerror();await tick();
+    assert.equal(f.pending().url.origin+f.pending().url.pathname,service.LOCATIONS_ENDPOINT);
+    f.pending().callback(located());await tick();
+    const point=f.pending();assert.equal(point.url.origin+point.url.pathname,service.TIGER_ENDPOINT);
+    assert.equal(point.url.searchParams.get('geometry'),'-121.885,37.338');assert.equal(point.url.searchParams.get('tolerance'),'0');
+    point.callback(identified());const result=await pending;
+    assert.equal(result.matches[0].geographies.Counties[0].NAME,'Santa Clara County');
+    assert.equal(result.matches[0].geographies['120th Congressional Districts'][0].CD120,'18');
+    assert(result.provider.includes('TIGERweb'));assert.equal(result.vintage,'TIGERweb_Current');f.clean();
+  });
+
+  await test('backup keeps every ambiguous address bound to its own geography', async () => {
+    const f=fixture(true);const pending=f.client.lookup('Ambiguous address');f.pending().script.onerror();await tick();
+    const second=match('SAN FRANCISCO MATCH');second.coordinates={x:-122.42,y:37.78};
+    f.pending().callback(located([match(),second]));await tick();f.pending().callback(identified());await tick();
+    assert.equal(f.pending().url.searchParams.get('geometry'),'-122.42,37.78');f.pending().callback(identified('San Francisco'));
+    const result=await pending;assert.equal(result.matches.length,2);assert.equal(result.matches[1].matchedAddress,'SAN FRANCISCO MATCH');assert.equal(result.matches[1].geographies.Counties[0].COUNTY,'075');f.clean();
+  });
+
+  await test('backup never relabels historic congressional maps as current boundaries', async () => {
+    const f=fixture(true);const pending=f.client.lookup('Example');f.pending().script.onerror();await tick();f.pending().callback(located());await tick();f.pending().callback(identified('Santa Clara','119th Congressional Districts'));
+    const result=await pending;assert.equal(result.matches[0].geographies['120th Congressional Districts'],undefined);assert(result.matches[0].geographies['119th Congressional Districts']);f.clean();
+  });
+
+  await test('incomplete backup geography fails instead of inventing a county or city', async () => {
+    for(const response of [{results:[]},{error:{message:'private raw service error'}},{results:[{layerId:82,layerName:'Counties',attributes:{NAME:'Unverified'}}]}]){
+      const f=fixture(true);const pending=f.client.lookup('Example');f.pending().script.onerror();await tick();f.pending().callback(located());await tick();f.pending().callback(response);await assert.rejects(pending,e=>['SERVICE_ERROR','INVALID_RESPONSE'].includes(e.code)&&!e.message.includes('private raw'));f.clean();
+    }
+  });
+
+  await test('invalid backup coordinates never reach the polygon service', async () => {
+    const f=fixture(true);const pending=f.client.lookup('Example');f.pending().script.onerror();await tick();const invalid=match();invalid.coordinates.x=181;f.pending().callback(located([invalid]));await assert.rejects(pending,{code:'INVALID_RESPONSE'});f.clean();
+  });
+
+  await test('empty backup matches stay empty rather than falling back to a place centroid', async () => {
+    const f=fixture(true);const pending=f.client.lookup('No address');f.pending().script.onerror();await tick();f.pending().callback(located([]));assert.deepEqual((await pending).matches,[]);f.clean();
+  });
+
+  await test('one total deadline bounds primary and backup, including hung requests', async () => {
+    let clock=0;const f=fixture(true,()=>clock);const pending=f.client.lookup('Example',{timeoutMs:20000});
+    const primary=[...f.timers.values()][0];assert.equal(primary.ms,8000);clock=8000;primary.fn();await tick();
+    const backup=[...f.timers.values()][0];assert.equal(backup.ms,12000);clock=20000;backup.fn();await assert.rejects(pending,{code:'TIMEOUT'});f.clean();
+  });
+
+  await test('canceling during backup removes resources and cannot start later stages', async () => {
+    const f=fixture(true);const controller=new AbortController();const pending=f.client.lookup('Example',{signal:controller.signal});f.pending().script.onerror();await tick();const callback=f.pending().callback;controller.abort();await assert.rejects(pending,{code:'ABORTED'});callback(located());await tick();f.clean();
+  });
+
+  await test('a service-rejected address is not retried as a different location', async () => {
+    const f=fixture(true);const pending=f.client.lookup('Bad address');f.pending().callback({errors:['Invalid input']});await assert.rejects(pending,{code:'SERVICE_ERROR'});await tick();f.clean();
   });
 
   process.stdout.write(`${passed} address-service checks passed (mock transport; no live-network claim).\n`);

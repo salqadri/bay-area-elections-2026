@@ -1,5 +1,7 @@
 # Research and development handoff
 
+Publication **2026-10-28.3** fixes Census geography-service failures with a bounded fallback to Census address coordinates and direct TIGERweb polygons. Both paths retain real district labels, cancellation and privacy behavior. Candidate data and scores are unchanged. [Address recovery policy and live checks](ADDRESS_LOOKUP_RECOVERY.md).
+
 Publication **2026-10-28.2** corrects BAMC opposition to **Steve Raspe and Heidi Owens**,
 removes race-wide guide context from every candidate input, and assigns the Samir
 comment about Sam Liccardo to Sam. Peter Sundin Soulé retains only his own

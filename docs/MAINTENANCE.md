@@ -1,5 +1,7 @@
 # Maintaining the explorer
 
+Publication **2026-10-28.3** fixes Census geography-service failures with a bounded fallback to Census address coordinates and direct TIGERweb polygons. Both paths retain real district labels, cancellation and privacy behavior. Candidate data and scores are unchanged. [Address recovery policy and live checks](ADDRESS_LOOKUP_RECOVERY.md).
+
 The October 22, 2026 schema 1.23 update adds the California state campaign-finance layer (CAL-ACCESS receipts and independent expenditures; see [the refresh section](#california-campaign-finance-refresh)). The guide also includes the October 17 schema 1.22 update: neutral `endorsement_images`, a separate `distinction` relationship, external image URLs with no copied assets and the [deterministic image workflow](ENDORSEMENT_IMAGES.md). The guide also includes the October 17 schema 1.21 update (nationwide Senate/governor contests: empty-county records and any-state OCD identifiers; previous layers: 1.20 general campaign platform positions October 16, 1.19 Gaza records October 15). Inspect current code before relying on a fixed provider layer, snapshot count or version.
 
 ## Development setup
