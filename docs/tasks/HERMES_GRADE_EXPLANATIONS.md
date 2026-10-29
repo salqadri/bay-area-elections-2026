@@ -1,5 +1,13 @@
 # Hermes follow-up: concise explanations of all published grades
 
+Publication **2026-10-28.2** corrects BAMC opposition to **Steve Raspe and Heidi Owens**,
+removes race-wide guide context from every candidate input, and assigns the Samir
+comment about Sam Liccardo to Sam. Peter Sundin Soulé retains only his own
+protest-vote recommendation. New/edited comments require an exact subject review.
+Published scores and explanations remain unchanged; current inputs use v18.
+[Correction and current-input policy](../COMMUNITY_GUIDE_CLEANUP.md).
+
+
 ## Community-guide source update
 
 Publication **2026-10-27.13**, schema **1.29**, adds BAMC Action's **16 supports /

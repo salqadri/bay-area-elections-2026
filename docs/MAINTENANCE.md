@@ -294,8 +294,9 @@ never overwrite historical archives. Rebuild both readers and run the release ga
 
 Use `scripts/sync_bamc_action.py capture` and `review`, followed by the existing
 registered `reviewed_updates` preview/apply process. See [BAMC_ACTION.md](BAMC_ACTION.md)
-for exact commands and source distinctions. Official organization selections and
-activist choices must remain separate. Preserve every comment verbatim and its
+for exact commands and source distinctions. Official/owner-authorized board positions and activist choices must remain separate.
+Every new/edited comment needs an exact source-text subject review before draft/apply.
+See [the candidate-only correction](COMMUNITY_GUIDE_CLEANUP.md). Preserve every comment verbatim and its
 source; comment-only or tactical advice cannot create opposition. Measures are
 excluded. Rebuild both readers and the current Jev inputs after a reviewed import;
 never rewrite frozen evaluation requests or automatically rerun scores.

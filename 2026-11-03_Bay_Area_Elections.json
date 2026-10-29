@@ -1,6 +1,6 @@
 {
  "$schema": "elections.schema.json",
- "schema_version": "1.29",
+ "schema_version": "1.30",
  "election": {
   "date": "2026-11-03",
   "name": "California General Election",
@@ -29,7 +29,7 @@
     "ocd_division_id": "ocd-division/country:us/state:ca/county:santa_clara"
    }
   ],
-  "publication_version": "2026-10-28.1"
+  "publication_version": "2026-10-28.2"
  },
  "codes": {
   "party": {
@@ -23066,6 +23066,22 @@
          "url": "https://bamcaction.org/myvote/razim"
         }
        ]
+      },
+      {
+       "endorser": "Samir Laymoun",
+       "kind": "person",
+       "relation": "comment",
+       "phase": "general",
+       "url": "https://bamcaction.org/myvote/samir",
+       "checked_on": "2026-10-28",
+       "verification": "endorser_statement",
+       "note_id": "N1547",
+       "comments": [
+        {
+         "text": "Reduce his winning margin to show he’s vulnerable thus encouraging challengers which will give us an opportunity to exact more from him. He failed to call Israeli genocide in Gaza or apartheid.",
+         "url": "https://bamcaction.org/myvote/samir"
+        }
+       ]
       }
      ],
      "independent_expenditures": {
@@ -24054,15 +24070,10 @@
        "relation": "supported",
        "phase": "general",
        "url": "https://bamcaction.org/myvote/samir",
-       "checked_on": "2026-10-27",
+       "checked_on": "2026-10-28",
        "verification": "endorser_statement",
-       "note_id": "N1546",
-       "comments": [
-        {
-         "text": "Reduce his winning margin to show he’s vulnerable thus encouraging challengers which will give us an opportunity to exact more from him. He failed to call Israeli genocide in Gaza or apartheid.",
-         "url": "https://bamcaction.org/myvote/samir"
-        }
-       ]
+       "note_id": "N1547",
+       "recommendation_context": "Protest-vote recommendation."
       }
      ],
      "independent_expenditures": {
@@ -373482,12 +373493,12 @@
       {
        "endorser": "BAMC Action",
        "kind": "organization",
-       "relation": "comment",
+       "relation": "opposed",
        "phase": "general",
        "url": "https://bamcaction.org/myvote/razim",
-       "checked_on": "2026-10-27",
+       "checked_on": "2026-10-28",
        "verification": "endorser_statement",
-       "note_id": "N1546",
+       "note_id": "N1547",
        "comments": [
         {
          "text": "Because it is the highest votes winners, I suggest you vote only for two.",
@@ -374397,12 +374408,12 @@
       {
        "endorser": "BAMC Action",
        "kind": "organization",
-       "relation": "comment",
+       "relation": "opposed",
        "phase": "general",
        "url": "https://bamcaction.org/myvote/razim",
-       "checked_on": "2026-10-27",
+       "checked_on": "2026-10-28",
        "verification": "endorser_statement",
-       "note_id": "N1546",
+       "note_id": "N1547",
        "comments": [
         {
          "text": "Because it is the highest votes winners, I suggest you vote only for two - Rob and Jeff.",
@@ -458462,7 +458473,8 @@
   "N1543": "Hindu American PAC explicitly lists this candidate under Current Endorsements. The observation date is not an announcement date. Phase is not specified; old profile biographies and the separately listed prior officials are not automatically renewed.",
   "N1544": "CAIR Action 2026 California General Election guide, explicitly dated November 3, 2026. Exact candidate card and source page were captured on 2026-10-23. Endorsed and Joint Endorsement are endorsements (joint remains shared); Preferred and Opposed retain their distinct polarity. The observation date is not an announcement date. Ballot measures and absent names do not add or remove candidate recommendations.",
   "N1545": "Vote for Peace first-party guide observed 2026-10-27. Ally is a support classification, not a formal endorsement; Neutral is not support. Election phase is retained. Organizations listed by this aggregator are not imported as their own endorsements.",
-  "N1546": "BAMC Action is the owner-designated trusted Bay Area Muslim Council recommendation source. Support/opposition is copied only from its official organization guide. Supplementary board-guide candidate comments are included at owner direction; they may concern local suitability or tactical voting and do not independently establish a Palestine position. Comment-only entries are not endorsements, neutrality ratings or opposition. Samir Laymoun is a separately attributed activist opinion source, not an official BAMC Action position. Comments may refer to an opponent or provide tactical rationale; preserve attachment without resolving ambiguous pronouns. Propositions and ballot measures are excluded."
+  "N1546": "BAMC Action is the owner-designated trusted Bay Area Muslim Council recommendation source. Support/opposition is copied only from its official organization guide. Supplementary board-guide candidate comments are included at owner direction; they may concern local suitability or tactical voting and do not independently establish a Palestine position. Comment-only entries are not endorsements, neutrality ratings or opposition. Samir Laymoun is a separately attributed activist opinion source, not an official BAMC Action position. Comments may refer to an opponent or provide tactical rationale; preserve attachment without resolving ambiguous pronouns. Propositions and ballot measures are excluded.",
+  "N1547": "BAMC Action is the owner-designated trusted Bay Area Muslim Council recommendation source. Support/opposition is copied from its official organization guide and owner-authorized board guide. Supplementary board-guide candidate comments are included at owner direction; they may concern local suitability or tactical voting and do not independently establish a Palestine position. Comment-only entries are not endorsements, neutrality ratings or opposition. Samir Laymoun is a separately attributed activist opinion source, not an official BAMC Action position. Comments are assigned to their reviewed candidate subjects, not automatically to the candidate under whose ballot option they were posted. Protest-vote support is marked as tactical. Propositions and ballot measures are excluded."
  },
  "sources": {
   "S001": {

@@ -1,44 +1,26 @@
 # BAMC Action and activist recommendations
 
-Publication **2026-10-27.13**, schema **1.29**, adds **96 source-specific candidate
-entries across 92 candidacies / 63 races**. BAMC Action is the owner-designated
-trusted Bay Area Muslim Council source. Its organization guide determines its
-positions; a separately identified activist retains his own opinions. No
-propositions or ballot-measure entries are imported.
+Publication **2026-10-28.2**, schema **1.30**, corrects guide polarity and comment
+subjects. Current data has **97 source observations across 92 candidates / 63 races**.
+See [the correction and exact attribution rules](COMMUNITY_GUIDE_CLEANUP.md).
 
 | Source | Support | Oppose | Comments only | Candidate comments |
 |---|---:|---:|---:|---:|
-| BAMC Action | 16 | 2 | 2 | 18 |
-| Samir Laymoun | 38 | 38 | 0 | 3 |
+| BAMC Action | 16 | 4 | 0 | 18 |
+| Samir Laymoun | 38 | 38 | 1 | 3 |
 
-The [official organization guide](https://bamcaction.org/myvote/bamc-action)
-provides BAMC Action's support/opposition. Candidate comments from the
-[board-member guide](https://bamcaction.org/myvote/razim) are included as BAMC
-commentary at the owner's explicit direction. Its personal selections do not
-create organization positions. In particular, tactical comments concerning
-Heidi Owens and Steve Raspe are **comments only**, not official opposition.
+BAMC Action positions come from its official guide and the owner-authorized
+board guide. Its explicit opposition to Steve Raspe and Heidi Owens is included.
+Contradictory explicit positions require review. Samir Laymoun's activist views
+remain a separately attributed source. Nonselections alone never imply opposition.
+Propositions and ballot measures are excluded.
 
-[Samir Laymoun's guide](https://bamcaction.org/myvote/samir) is a separately
-attributed personal opinion source. The owner supplied his full author identity.
-His selections and all three candidate comments are retained, including opinions
-that differ from BAMC Action. Opponents not explicitly listed as avoided are not
-automatically assigned opposition.
-
-## Candidate comments and differences
-
-`endorsements[].comments` stores each complete, verbatim comment with its source
-URL. Both readers render comments as text beneath the matching recommendation;
-HTML in comments is never executed. The new `comment` relationship asserts no
-support, opposition or neutrality rating. Explicit ranked choices preserve their
-preference rank. Other publishers' records remain unchanged.
-
-BAMC Action supports **Sam Liccardo**; Samir supports **Peter Sundin Soulé**.
-Samir's tactical comment about reducing an incumbent's winning margin is kept
-under the source candidate where it was posted. The current Jev state includes
-both sources' differing race selections and their comments, with an explicit
-warning against treating ambiguous pronouns as a candidate policy fact. No
-explicit Samir opposition rating for Liccardo is invented. Samir's opposition to
-Zoe Lofgren and Jimmy Panetta is separately recorded with its comments.
+Comments are verbatim and source-linked. Every comment has a hash-bound reviewed
+candidate subject. Samir supports Peter Sundin Soulé as a protest vote; his
+criticism of Sam Liccardo is assigned to Sam's input, rather than Peter's. A
+recommendation qualifier is not a candidate policy statement. Race-wide guide
+context is not included in candidate inputs. The original October 27 snapshots
+remain immutable history.
 
 ## Repeatable import and review
 
@@ -74,33 +56,15 @@ candidate scoring calls.
 
 ## Jev inputs
 
-`endorsement-focus-v4.json` explicitly includes BAMC Action and Samir Laymoun
-alongside CAIR Action and Vote for Peace. New state version is
-**candidate-evidence-v17-bamc-action-comments**; playground metadata derives from
-that shared version with a `-local-federal` suffix to prevent version drift.
-Compact observations preserve
-source names, support/opposition/comment-only relations, phase, complete comments
-and explicit preference ranks. Short context identifies source trust and separates
-organization recommendations, personal activist opinions and tactical voting
-advice from specific Palestine policy claims.
+`endorsement-focus-v5.json` includes BAMC Action and Samir Laymoun alongside CAIR
+Action and Vote for Peace. New core state version is
+**candidate-evidence-v18-candidate-only-guide-comments**. The playground derives
+its version from that core with a `-local-federal` suffix. Observations retain
+polarity, phase, reviewed comment subjects, complete comments and recommendation
+qualifiers. `community_guide_race_context` is no longer generated.
 
-`community_guide_race_context` exposes different selections only when both sources
-have nonempty, different support lists in that race. A rival's selection is not
-an invented opposition rating. Current affected states are archived in
-`research/gaza-grading/community-guide-states-2026-10-27.json` for review.
-
-Existing saved scoring requests, numerical responses, grade bands, evidence
-minimum, explanations and historical score archives are unchanged. They do not
-pretend the new source material was present in the old scoring run. New runs use
-the updated generated inputs; no candidate scores were rerun for this import.
-
-## Verification
-
-All **48 release checks pass**. Seven source-specific regressions cover official
-versus personal polarity, comment-only handling, excluded measures, source changes,
-exact office/seat identity, repeated-import deduplication, complete comment delivery
-to new states, differing race choices and the bound Jev identity audit. Both reader
-integration checks verify independent CAIR Action/Samir opposition records and the
-new comments. The synchronized core/playground version is separately checked.
-All prior published score/evaluation/explanation fields remain identical. The local
-playground exposes all 96 new source observations across its 1,296-candidate catalog.
+The latest current states are archived in
+`research/gaza-grading/community-guide-states-2026-10-28.json`. Previous scoring
+requests, answers and explanations are retained unchanged; the **Current input**
+tab previews new inputs, while **State JSON** shows a saved evaluation's original
+request. No scoring rerun is performed for the correction.

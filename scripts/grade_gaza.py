@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v6.json'
-STATE_VERSION = 'candidate-evidence-v17-bamc-action-comments'
+STATE_VERSION = 'candidate-evidence-v18-candidate-only-guide-comments'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -162,7 +162,7 @@ def endorser_key(name):
 
 
 def focused_endorsements(p, c):
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v4.json').read_text())
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v5.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
     aliases.update(organization_registry()[2]['aliases'])
     observations = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
@@ -172,6 +172,8 @@ def focused_endorsements(p, c):
         if endorser_key(record['endorser']) in {'bamcaction','samirlaymoun'}:
             if source.get('comments'):
                 record['comments'] = [comment['text'] for comment in source['comments']]
+            if source.get('recommendation_context'):
+                record['recommendation_context'] = source['recommendation_context']
             if source.get('recommendation_rank'):
                 record['recommendation_rank'] = source['recommendation_rank']
         if endorser_key(record['endorser']) == 'voteforpeace':
@@ -203,26 +205,6 @@ def focused_endorsements(p, c):
     return observations
 
 
-def community_guide_race_context(position):
-    """Expose differing guide selections without inventing opposition to rivals."""
-    names = ('BAMC Action', 'Samir Laymoun')
-    support = {name:[] for name in names}; comments = []
-    for candidate in position.get('candidates') or []:
-        for observation in candidate.get('endorsements') or []:
-            name = observation['endorser']
-            if name not in names or observation.get('historical') or observation.get('phase') != 'general':
-                continue
-            if observation['relation'] == 'supported':
-                support[name].append(candidate['name'])
-            for comment in observation.get('comments',[]):
-                comments.append({'source':name,'listed_under':candidate['name'],'text':comment['text']})
-    if not all(support.values()) or set(support[names[0]]) == set(support[names[1]]):
-        return None
-    return {'selections':[{'source':name,'supports':sorted(support[name])} for name in names],
-            'comments':comments,
-            'context':'These sources choose different candidates in the same race. Selecting a rival is not an explicit opposition rating. Comments retain their source candidate attachment and may discuss the opponent; do not infer the referent of ambiguous pronouns.'}
-
-
 def compact_endorsements(observations):
     """Retain recommendation meaning; provenance stays in the canonical record."""
     rows = []
@@ -230,7 +212,7 @@ def compact_endorsements(observations):
         row = {k: observation[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'shared') if k in observation}
         if observation.get('source_label') and observation.get('source_label') != observation.get('rating'):
             row['source_label'] = observation['source_label']
-        for field in ('comments', 'recommendation_rank'):
+        for field in ('comments', 'recommendation_rank', 'recommendation_context'):
             if field in observation:
                 row[field] = observation[field]
         verification = observation.get('verification')
@@ -300,23 +282,20 @@ def build_state(p, c, data):
         if any(endorser_key(e['endorser']) == 'bamcaction' for e in endorsements):
             parts['bamc_action_context'] = (
                 'BAMC Action (Bay Area Muslim Council) is an owner-designated trusted Muslim community recommendation source. '
-                'Support/opposition comes only from its official guide. Candidate comments include owner-authorized board-guide commentary. '
+                'Explicit official and owner-authorized board-guide positions are included. Comments concern this candidate only. '
                 'Comment-only entries are not support, opposition or neutrality ratings; tactical voting advice does not establish a Palestine stance. '
                 'Preserve comments and do not infer specific policy from an organizational recommendation alone.')
         if any(endorser_key(e['endorser']) == 'samirlaymoun' for e in endorsements):
             parts['activist_opinion_context'] = (
                 'Samir Laymoun is an activist opinion source requested by the owner, separate from official BAMC Action positions. '
                 'Preserve his support/opposition and comments. A tactical vote may aim to pressure an incumbent; '
-                'comments attached to a challenger may discuss the opponent. Do not turn ambiguous pronouns or strategic selections into candidate policy facts.')
+                'comments are assigned to their reviewed candidate subject. A protest-vote recommendation does not establish shared policy views.')
         if any(endorser_key(e['endorser']) in {'cairaction','voteforpeace'} and not e.get('historical')
                and str(e.get('rating','')).lower() not in {'neutral','no endorsement'}
                and e.get('relation') in {'endorsed','preferred','supported','opposed'} for e in endorsements):
             parts['endorsement_evidence_context'] = (
                 'For this rubric, directional CAIR Action / Vote for Peace recommendations, including Ally or Opposed, '
                 'are concrete stance evidence even without a direct candidate quotation. Preserve their stated tier, phase and source qualifications.')
-    guide_race = community_guide_race_context(p)
-    if guide_race:
-        parts['community_guide_race_context'] = guide_race
     records = jev_actions(c, data)
     if records:
         parts['congressional_gaza_context'] = (

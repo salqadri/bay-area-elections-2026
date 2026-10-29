@@ -17,6 +17,7 @@ const EndorsementDisplay = {
     const ally = record.relation === 'supported' && record.rating === 'Ally';
     return (ally ? 'Listed as Ally by ' : record.shared && record.relation === 'endorsed' ? 'Jointly endorsed by ' : relations[record.relation] || 'Record from ') + record.endorser +
       (record.rating && !ally ? ' · Source rating: ' + record.rating : '') +
+      (record.recommendation_context ? ' · ' + record.recommendation_context : '') +
       (record.recommendation_rank ? ' · Preference rank: ' + record.recommendation_rank : '') +
       (record.historical ? ' · Historical record (prior race)' : '') +
       ' · ' + (phase[record.phase] || 'Election phase not stated') +

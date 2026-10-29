@@ -1,0 +1,252 @@
+{
+ "version": 1,
+ "id": "community-guide-cleanup-2026-10-28",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-10-28",
+ "counties": [
+  "Alameda",
+  "Contra Costa",
+  "San Francisco",
+  "San Mateo",
+  "Santa Clara"
+ ],
+ "base_dataset_sha256": "de1510ecfb4140e9200706c378c138c01a6ae752e79bd064ab8f420ff4dec2b6",
+ "sources": {
+  "official": {
+   "url": "https://bamcaction.org/myvote/bamc-action",
+   "api_url": "https://bamcaction.org/api/myvote/organization/bamc-action",
+   "publisher": "BAMC Action",
+   "role": "endorser",
+   "checked_on": "2026-10-28",
+   "content_sha256": "4059afd7767af8665ea74a24fe835b712ccefde9f8476c367b2c0c4981e16f85",
+   "retrieval": "Public organization API backing the linked official guide; explicit picks/avoids only."
+  },
+  "board-comments": {
+   "url": "https://bamcaction.org/myvote/razim",
+   "api_url": "https://bamcaction.org/api/myvote/shared/razim",
+   "publisher": "BAMC Action",
+   "role": "endorser",
+   "checked_on": "2026-10-28",
+   "content_sha256": "306ff90af995a625cbf4d422f3a437d06fe0e3c61f97749226ba75736e1061d4",
+   "retrieval": "Public shared-guide API; candidate comments accepted as organization commentary at explicit owner direction. Explicit board-guide picks/avoids are accepted as BAMC positions at owner direction; conflicting guides are held."
+  },
+  "catalog": {
+   "url": "https://bamcaction.org/api/myvote/catalog",
+   "publisher": "BAMC Action",
+   "role": "aggregator",
+   "checked_on": "2026-10-28",
+   "content_sha256": "0a0403d835185829d63afe1564a418d731ce26dea65d65dfd278ebcffa3a305c",
+   "retrieval": "Public candidate/contest catalog used for exact labels, offices, seats and election date."
+  },
+  "activist": {
+   "url": "https://bamcaction.org/myvote/samir",
+   "api_url": "https://bamcaction.org/api/myvote/shared/samir",
+   "publisher": "Samir Laymoun",
+   "role": "endorser",
+   "checked_on": "2026-10-28",
+   "content_sha256": "8a4081395fbad876d130e56de33a3a05dec1c36c38eeb816a1db90d8a07afa99",
+   "retrieval": "Public activist shared-guide API; full author name supplied by owner. Personal picks/avoids and comments are distinct from BAMC Action positions."
+  }
+ },
+ "notes": {
+  "N1547": "BAMC Action is the owner-designated trusted Bay Area Muslim Council recommendation source. Support/opposition is copied from its official organization guide and owner-authorized board guide. Supplementary board-guide candidate comments are included at owner direction; they may concern local suitability or tactical voting and do not independently establish a Palestine position. Comment-only entries are not endorsements, neutrality ratings or opposition. Samir Laymoun is a separately attributed activist opinion source, not an official BAMC Action position. Comments are assigned to their reviewed candidate subjects, not automatically to the candidate under whose ballot option they were posted. Protest-vote support is marked as tactical. Propositions and ballot measures are excluded."
+ },
+ "decisions": [
+  {
+   "id": "bamc/santa-clara-5071/heidi-owens",
+   "action": "change",
+   "source_key": "board-comments",
+   "position_id": "CA2026-112",
+   "candidate": "Heidi Owens",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "comment",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/razim",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Because it is the highest votes winners, I suggest you vote only for two - Rob and Jeff.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/razim",
+    "checked_on": "2026-10-28",
+    "verification": "endorser_statement",
+    "note_id": "N1547",
+    "comments": [
+     {
+      "text": "Because it is the highest votes winners, I suggest you vote only for two - Rob and Jeff.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide explicit picks/avoids are owner-authorized as BAMC Action positions; a conflicting official guide requires review. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "bamc/santa-clara-5071/steve-raspe",
+   "action": "change",
+   "source_key": "board-comments",
+   "position_id": "CA2026-112",
+   "candidate": "Steve Raspe",
+   "identity": {
+    "office": "Town Council Member",
+    "jurisdiction": "Town of Los Gatos",
+    "district_or_seat": "At-large",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "comment",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/razim",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Because it is the highest votes winners, I suggest you vote only for two.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "after": {
+    "endorser": "BAMC Action",
+    "kind": "organization",
+    "relation": "opposed",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/razim",
+    "checked_on": "2026-10-28",
+    "verification": "endorser_statement",
+    "note_id": "N1547",
+    "comments": [
+     {
+      "text": "Because it is the highest votes winners, I suggest you vote only for two.",
+      "url": "https://bamcaction.org/myvote/razim"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide explicit picks/avoids are owner-authorized as BAMC Action positions; a conflicting official guide requires review. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-16/peter-sundin-soule",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-005",
+   "candidate": "Peter Sundin Soulé",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-27",
+    "verification": "endorser_statement",
+    "note_id": "N1546",
+    "comments": [
+     {
+      "text": "Reduce his winning margin to show he’s vulnerable thus encouraging challengers which will give us an opportunity to exact more from him. He failed to call Israeli genocide in Gaza or apartheid.",
+      "url": "https://bamcaction.org/myvote/samir"
+     }
+    ]
+   },
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "supported",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-28",
+    "verification": "endorser_statement",
+    "note_id": "N1547",
+    "recommendation_context": "Protest-vote recommendation."
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide explicit picks/avoids are owner-authorized as BAMC Action positions; a conflicting official guide requires review. Activist records copy only the activist selections and comments."
+   }
+  },
+  {
+   "id": "samir/ca-congress-16/sam-liccardo",
+   "action": "change",
+   "source_key": "activist",
+   "position_id": "CA2026-005",
+   "candidate": "Sam Liccardo",
+   "identity": {
+    "office": "United States Representative",
+    "jurisdiction": "United States House of Representatives",
+    "district_or_seat": "CD-16",
+    "term": "2 years",
+    "election_type": "general"
+   },
+   "field": "endorsements",
+   "before": null,
+   "after": {
+    "endorser": "Samir Laymoun",
+    "kind": "person",
+    "relation": "comment",
+    "phase": "general",
+    "url": "https://bamcaction.org/myvote/samir",
+    "checked_on": "2026-10-28",
+    "verification": "endorser_statement",
+    "note_id": "N1547",
+    "comments": [
+     {
+      "text": "Reduce his winning margin to show he’s vulnerable thus encouraging challengers which will give us an opportunity to exact more from him. He failed to call Israeli genocide in Gaza or apartheid.",
+      "url": "https://bamcaction.org/myvote/samir"
+     }
+    ]
+   },
+   "reason": "Copy the identified source explicit support/opposition, or preserve commentary without inferring a recommendation. Retain complete candidate comments.",
+   "evidence": {
+    "identity_basis": "Exact normalized name, county, office/jurisdiction and district/seat from publisher catalog.",
+    "date_basis": "Publisher catalog explicitly identifies the November 3, 2026 election; check date is retrieval, not endorsement date.",
+    "relationship_basis": "Official picks mean support; official avoids mean opposition. Comment-only records assert neither support nor opposition. Board-guide explicit picks/avoids are owner-authorized as BAMC Action positions; a conflicting official guide requires review. Activist records copy only the activist selections and comments."
+   }
+  }
+ ],
+ "audit_path": "research/reviews/community-guide-cleanup-2026-10-28.audit.json",
+ "audit_sha256": "727b1fbaef9a94a5837df52927aed10f4f4fdc2ebcc4c9bbbd9bd33d34d7efdd",
+ "comment_subject_review_path": "research/endorsements/comment-subjects-2026-10-28.json",
+ "comment_subject_review_sha256": "cb2e379905214503a9016bc262ee17a8d864ec6e0257f58e571eced4a8553c46"
+}
