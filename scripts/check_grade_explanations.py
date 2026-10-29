@@ -90,8 +90,19 @@ class ExplanationChecks(unittest.TestCase):
         bad = deepcopy(self.archive)
         entry = next(e for e in bad['entries'] if e['grade'] != 'N/A')
         entry['summary'] += ' Unreviewed change.'
-        with self.assertRaises(ValueError):
-            validate_editorial_review(bad)
+        if self.archive.get('editorial_review'):
+            with self.assertRaises(ValueError):
+                validate_editorial_review(bad)
+        else:
+            # No editorial manifest in this publication: unreviewed prose is caught
+            # by the archive SHA + dataset binding inside check(), not by a manifest.
+            self.assertIsNone(validate_editorial_review(bad))
+            d = deepcopy(self.data)
+            target = next(c for p in d['positions'] for roster in ROSTERS for c in (p.get(roster) or [])
+                          if c.get(EXPLANATION_FIELD, {}).get('candidate_id') == entry['candidate_id'])
+            target[EXPLANATION_FIELD]['summary'] += ' Unreviewed change.'
+            with self.assertRaises(ValueError):
+                check(d)
 
     def test_changed_or_missing_explanation_fails(self):
         for change in ('edit', 'drop'):

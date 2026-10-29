@@ -1,0 +1,70 @@
+{
+ "candidate_id": "079dd1f271994315b4628672",
+ "request_sha256": "6374100ceda5e7f147ee0d7092ec7c0c98f2c029ea0e0c71ec9d32e34fcb557a",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Marques's campaign platform states he is \"called to strongly support Israel as a Christian and American\" and pledges to back Trump's efforts to bring sustainable peace to the Middle East and end endless wars. He frames this as a religious and patriotic duty, and the rest of his platform addresses economy, immigration, and domestic issues without reference to Palestinian rights.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context (CD-2, US House); no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier (AL); no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All four spenders carry 'relevance: unestablished'; spending_context explicitly bars using them to explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining that unmapped spenders do not bear on the Palestine assessment; no candidate action described."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "The Israel/Palestine platform point states he is 'called to strongly support Israel as a Christian and American' and pledges to back Trump's Middle East efforts; remaining points (economy, immigration, pro-life, etc.) are unrelated to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date of the 2026 election; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "US House of Representatives; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative tag ('candidates'); no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T08:00:55Z"
+}

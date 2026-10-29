@@ -1,0 +1,76 @@
+{
+ "candidate_id": "0235d00fba949b42ea1f8007",
+ "request_sha256": "a4154c1a09b603954e03a8189a18bd164277d369e203a99c10ef29c611cd33ce",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker records Watanabe opposing a ceasefire resolution and supporting a 'United Against Hate' Resolution in December 2023, noting the entry is not a verified roll-call transcript. Her campaign platform addresses only local Santa Clara matters—housing, public safety, neighborhood services. Activist Samir Laymoun opposed her in the general phase as an individual opinion source rather than through an organizational body.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local municipal office; no Palestine/Israel policy dimension."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State identifier; no bearing on Palestine assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "grouped",
+   "reason": "All points address local Santa Clara issues (housing, public safety, services); no foreign-policy or Palestine content. Referenced briefly to note the local scope of the campaign."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records opposition to a ceasefire resolution and support for a 'United Against Hate' Resolution (Dec 2023), with caveat that it is not a verified roll-call transcript."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Samir Laymoun opposed Watanabe in the general phase, indicating disapproval from a pro-Palestine-aligned activist."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Interpretive context clarifying Laymoun is an individual opinion source, not an organizational endorsement; incorporated as a qualification in the summary."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Future election date (2026-11-03); no Palestine policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "City of Santa Clara; no independent Palestine relevance beyond confirming local scope."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Dataset categorization label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:35:16Z"
+}

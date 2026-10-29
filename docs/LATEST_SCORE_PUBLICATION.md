@@ -1,5 +1,14 @@
 # Latest score publication — October 28, 2026
 
+Publication **2026-10-28.5** (current) completes the Hermes follow-up below: all **398**
+letter-grade candidacies now carry fresh Qwen explanations generated from their exact
+frozen v7 requests under summary-prompt-v3 (`research/gaza-grading/explanations-2026-10-28-latest.json`,
+responses in `research/gaza-grading/responses-2026-10-28-latest/`), and the **898** N/A
+entries use the editorial insufficiency note. The race-recommendation layer moved into
+both readers with fresh Qwen why-paragraphs for all 151 picks; the standalone page and the
+old race-only-ID summary cache are retired. See [CANDIDATE_RECOMMENDATIONS.md](CANDIDATE_RECOMMENDATIONS.md).
+Sections below describe publication 2026-10-28.4.
+
 Publication **2026-10-28.4**, schema **1.30**, publishes the owner's saved complete
 run `20261029T043045Z-42f63b2f` (UTC), without rerunning candidate scorecards.
 All **1,296 active candidacies / 471 races** have successful evaluations, zero

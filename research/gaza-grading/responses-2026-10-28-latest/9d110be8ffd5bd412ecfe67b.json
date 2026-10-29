@@ -1,0 +1,82 @@
+{
+ "candidate_id": "9d110be8ffd5bd412ecfe67b",
+ "request_sha256": "19b5dc16b08e1b5b09fe0d67d082dbf804b572a3cd97bce71dab292be6489f10",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "McCorriston, a nonpartisan mayoral candidate in Dublin, CA, is listed in CAIR-SFBA's tracker as supporting a ceasefire resolution (2023-12-19; tracker date, not a verified roll-call transcript). In the 2026 general election, CAIR Action endorsed him and Vote for Peace rated him an Ally, both organizations that assess candidates on Gaza and civil-rights positions. His campaign platform addresses only local issues.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Subject name used in the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies local mayoral context"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Geographic context for jurisdiction"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is brief context"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "included",
+   "reason": "All points address local issues (safety, housing, economy); no foreign-policy content; noted briefly to frame the record"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records support for ceasefire resolution, dated 2023-12-19, with caveat that it is a tracker date not a verified roll-call transcript"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating (general) are concrete pro-Palestine stance evidence per the rubric context"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR/VfP directional recommendations count as concrete stance evidence; folded into endorsement description"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace roles; used to characterize the endorsing bodies in the summary"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "2026-11-03 dates the general election context"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Dublin specifies the local race"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label adds no information about the candidate's position"
+  }
+ ],
+ "generated_at": "2026-10-29T09:19:58Z"
+}

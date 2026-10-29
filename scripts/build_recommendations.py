@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build candidate recommendations: Jev picks the best candidate per race; a Qwen
-sub-agent writes a short voter summary; a standalone recommendations.html is
-published. Deterministic precedence (owner rules):
+sub-agent writes the race-level recommendation reason; both readers (explore +
+find-my-ballot) render the recommendation inside each race. Deterministic precedence (owner rules):
   1. A confirmed Muslim-community candidate wins that race outright.
   2. Otherwise Jev chooses the best graded candidate.
   3. No candidate with a political grade -> no information.
@@ -25,9 +25,7 @@ OUTDIR = ROOT / "research" / "candidate-recommendations"
 PLAN = OUTDIR / "recommendations-2026-10-28-latest.json"
 JEV_CACHE = OUTDIR / "jev-answers-2026-10-28-latest.jsonl"
 SUM_CACHE = OUTDIR / "summaries-2026-10-28-latest.jsonl"
-OUT_HTML = ROOT / "recommendations.html"
-TEMPLATE = ROOT / "src" / "recommendations.template.html"
-DISPLAY_JS = ROOT / "src" / "recommendations-display.js"
+REASON_CACHE = OUTDIR / "race-reasons-2026-10-28-latest.jsonl"
 
 JEV_URL = "https://api.typesafe.ai/v1/systemone"
 JEV_KEY = None  # Loaded only for an uncached provider call; offline builds need no key.
@@ -275,97 +273,8 @@ def cached_pick_matches(cached, request):
     return choice in grades and GRADE_ORDER[grades[choice]] == min(map(GRADE_ORDER.get, grades.values()))
 
 
-def summary_prompt(race, evmap):
-    rec = race["recommended"]
-    winner = next((c for c in evmap if c["name"] == rec), None)
-    others = [c for c in evmap if c["name"] != rec and c.get("grade") and c["grade"] != "N/A"]
-    others.sort(key=lambda c: GRADE_ORDER.get(c["grade"], 9))
-    others = others[:2]
-    lines = [f"Race: {race['office']}{' - ' + race['district_or_seat'] if race.get('district_or_seat') else ''} (2026 general election)."]
-    if race["category"] == CAT_MUSLIM:
-        lines.append(f"We support {rec} because they are a confirmed member of the Muslim community and the strongest candidate in this race.")
-    else:
-        lines.append(f"We support {rec} because Jev selected them as the strongest candidate in this race on the pro-Palestine evidence.")
-    lines.append("")
-    lines.append(f"RECOMMENDED CANDIDATE: {rec}")
-    lines.append(_fmt_evid(winner))
-    if others:
-        lines.append("")
-        lines.append("OTHER GRADGED CANDIDATES (for contrast only):")
-        for c in others:
-            lines.append(f"- {c['name']}: " + _fmt_evid(c, compact=True))
-    lines.append("")
-    lines.append("Write a single 45-80 word voter paragraph explaining why a voter should support "
-                 f"{rec} in this race and why {rec} is the stronger choice over the other candidate(s). "
-                 "Use ONLY the facts above. Plain prose, no lists, no bullet points, no quotation marks, "
-                 "no headings, no disclaimer about being an AI, no invented facts. Name the race office once. "
-                 "Output ONLY the paragraph.")
-    return "\n".join(lines)
-
-
-def _fmt_evid(c, compact=False):
-    if not c:
-        return ""
-    n = 3 if compact else 5
-    bits = [f"Grade {c['grade']} ({c['score']})"]
-    if c.get("platform"):
-        bits.append("Platform: " + c["platform"])
-    if c.get("positions"):
-        bits.append("Positions: " + " | ".join(c["positions"][:n]))
-    if c.get("endorsed_by"):
-        bits.append("Endorsed by: " + ", ".join(c["endorsed_by"][:6]))
-    if c.get("gaza_actions"):
-        bits.append("Gaza record: " + " | ".join(c["gaza_actions"][:n]))
-    if c.get("explanation"):
-        bits.append("Assessment: " + c["explanation"])
-    return " | ".join(bits)
-
-
-def summarize(races):
-    data = json.loads(DATA.read_text())
-    by_pos = {p["id"]: p for p in data["positions"]}
-    cache = _load_jsonl(SUM_CACHE)
-    prompts = {r["position_id"]: summary_prompt(r, [cand_brief(c) for c in all_candidates(by_pos[r["position_id"]])])
-               for r in races if r["needs_summary"] and r["recommended"]}
-    todo = [r for r in races if r["position_id"] in prompts and
-            cache.get(r["position_id"], {}).get("prompt_sha256") != request_hash(prompts[r["position_id"]])]
-    print(f"Summaries: {sum(1 for r in races if r['needs_summary'])} needed, {len(cache)} cached, {len(todo)} to run")
-    def work(r):
-        evmap = [cand_brief(c) for c in all_candidates(by_pos[r["position_id"]])]
-        prompt = summary_prompt(r, evmap)
-        text = _lmstudio(prompt)
-        rec = {"position_id": r["position_id"], "text": text, "words": len(text.split()), "model": LMSTUDIO_MODEL,
-               "prompt_sha256": request_hash(prompt)}
-        return r["position_id"], rec
-    def _run(batch):
-        with ThreadPoolExecutor(max_workers=2) as ex:  # LM Studio concurrency = 2
-            futs = {ex.submit(work, r): r for r in batch}
-            for fut in as_completed(futs):
-                r = futs[fut]
-                try:
-                    pid, rec = fut.result()
-                except Exception as e:  # noqa: BLE001 - one flaky item must not kill the batch
-                    print(f"  [FAILED] {r['position_id']} {r['recommended']}: {e}", flush=True)
-                    continue
-                with SUM_CACHE.open("a") as f:
-                    f.write(json.dumps(rec) + "\n")
-                cache[pid] = rec
-                r["summary"] = rec
-                print(f"  [{len(cache)}] {pid} {r['recommended']} -> {rec['words']} words", flush=True)
-    for i in range(0, len(todo), 10):
-        _run(todo[i:i + 10])
-    for r in races:
-        if r["position_id"] in prompts and cache.get(r["position_id"], {}).get("prompt_sha256") == request_hash(prompts[r["position_id"]]):
-            r["summary"] = cache[r["position_id"]]
-    missing = [r["position_id"] for r in races if r["needs_summary"] and r["recommended"] and "summary" not in r]
-    if missing:
-        print(f"Summaries incomplete: {len(missing)} missing (re-run 'summarize' to retry): {missing[:8]}", flush=True)
-        raise SystemExit(1)
-    return races
-
-
-def _lmstudio(prompt):
-    body = json.dumps({"model": LMSTUDIO_MODEL, "reasoning_effort": LMSTUDIO_REASONING, "max_tokens": 4000,
+def _lmstudio(prompt, max_tokens=4000):
+    body = json.dumps({"model": LMSTUDIO_MODEL, "reasoning_effort": LMSTUDIO_REASONING, "max_tokens": max_tokens,
                        "messages": [{"role": "user", "content": prompt}]}).encode()
     last = None
     for attempt in range(4):
@@ -395,49 +304,266 @@ def _load_jsonl(path):
     return out
 
 
-def build_page(races):
-    order = {CAT_MUSLIM: 0, CAT_JEV: 1, CAT_NO_GOOD: 2, CAT_NO_INFO: 3}
+# ---- race-level recommendation reasons (owner framework, 2026-10-28) ----
+# Litmus test first; silence is a ding, not neutrality; no numeric scores;
+# endorsement policy: Muslim-community-aligned vs AIPAC/Zionist/Hindutva only.
+COMMUNITY_ENDORSERS = ["bamc", "cair", "aroc", "arab resource", "vote for peace",
+                       "khanna", "muslim", "jewish voice for peace", "jvp",
+                       "peace action", "organize for peace", "track aipac"]
+ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",
+                            "democratic majority for israel", "cufo", "cufi",
+                            "christians united", "israeli-american civic", "ican",
+                            "bajc", "jstreet", "j street", "hindu", "americans4hindus",
+                            "jewish democratic council"]
+REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "opposed", "recommended")
+
+
+def relevant_endorsements(c):
+    community, contrast = [], []
+    for e in c.get("endorsements") or []:
+        if not isinstance(e, dict):
+            continue
+        nm, rel = e.get("endorser"), e.get("relation")
+        if not nm or rel not in REASON_ENDORSER_RELATIONS:
+            continue
+        low = nm.lower()
+        if any(p in low for p in COMMUNITY_ENDORSERS):
+            community.append((nm, rel or "endorsed"))
+        elif any(p in low for p in ISRAEL_ALIGNED_ENDORSERS):
+            contrast.append((nm, rel or "endorsed"))
+    return community, contrast
+
+
+def reason_evidence(c):
+    """Textual evidence for the reason prompt. Numeric scores deliberately excluded."""
+    lines = []
+    expl = c.get("pro_palestine_explanation") or {}
+    if isinstance(expl, dict) and expl.get("summary"):
+        lines.append("Our assessment: " + digest(expl["summary"], 460))
+    pp = c.get("platform_positions")
+    if isinstance(pp, dict) and pp.get("positions"):
+        for pos in pp["positions"][:4]:
+            t, s = pos.get("topic"), pos.get("summary") or pos.get("position")
+            if t and s:
+                lines.append(f"Platform — {t}: " + digest(s, 220))
+    for g in (c.get("gaza_evidence") or [])[:8]:
+        if isinstance(g, dict):
+            t = g.get("action") or g.get("title") or g.get("summary")
+            d = g.get("date") or g.get("as_of")
+            if t:
+                lines.append("Record" + (f" ({d})" if d else "") + ": " + digest(t, 220))
+    community, contrast = relevant_endorsements(c)
+    if community:
+        lines.append("Muslim-community / pro-Palestine-aligned records: "
+                     + "; ".join(f"{n} ({r})" for n, r in community[:6]))
+    if contrast:
+        lines.append("Israel-aligned / AIPAC / Hindu-nationalist-aligned records: "
+                     + "; ".join(f"{n} ({r})" for n, r in contrast[:6]))
+    return lines
+
+
+def reason_prompt(race, pos_by_id):
+    cands = all_candidates(pos_by_id[race["position_id"]])
+    rec = next(c for c in cands if c.get("name") == race["recommended"])
+    graded = [c for c in cands if grade_of(c) and c.get("name") != race["recommended"]]
+    graded.sort(key=lambda c: GRADE_ORDER[grade_of(c)])
+    graded = graded[:3]
+    federal = race.get("office_category") in ("U.S. House", "U.S. Senate")
+    lines = [f"Race: {race['office']}"
+             + (f" — {race['district_or_seat']}" if race.get("district_or_seat") else "")
+             + f" ({race['jurisdiction'] or ' '.join(race.get('counties') or [])}), November 3, 2026 general election."]
+    if race["category"] == CAT_MUSLIM:
+        lines.append(f"We support {race['recommended']}, a confirmed member of the Muslim community,"
+                     " our community's candidate in this race.")
+    else:
+        lines.append(f"Our research selects {race['recommended']} as the strongest candidate in this race.")
+    lines += ["", f"RECOMMENDED CANDIDATE: {rec.get('name')}"
+              + (f" ({rec.get('party')})" if rec.get("party") else ""),
+              "- " + "\n- ".join(reason_evidence(rec))]
+    if graded:
+        lines += ["", "OTHER CANDIDATES IN THIS RACE WE HAVE INFORMATION ABOUT:"]
+        for c in graded:
+            lines.append(f"{c.get('name')}" + (f" ({c.get('party')})" if c.get("party") else ""))
+            lines += ["- " + l for l in reason_evidence(c)[:6]]
+    else:
+        lines += ["", "No other candidate in this race has a researched record."]
+    framing = ("" if not federal else
+               "This is a FEDERAL race: for a federal office-seeker, taking no recorded position on these "
+               "questions effectively supports the status quo, and the paragraph should say that plainly "
+               "when the recommended candidate's shown record lacks litmus-test action.")
+    lines += ["",
+              "Write ONE voter-facing paragraph of up to 200 words explaining why a voter should support "
+              f"{race['recommended']} in this race and why {race['recommended']} is stronger than the other "
+              "candidates above, grounded in the textual records shown. "
+              "OUR FRAMEWORK: voters judge candidates first on two litmus tests — opposing the genocide in "
+              "Gaza and ending U.S. military/economic aid to Israel. When the recommended candidate's shown "
+              "record contains concrete acts on these tests (cosponsoring the Block the Bombs Act, voting "
+              "against arms funding, calling it a genocide, divestment action), name the specific acts with "
+              "their dates or bill names as shown. When the shown record does NOT contain them, be "
+              "transparent: one plain sentence stating what the candidate has not done on the record (for "
+              "example: has not called it a genocide; has not backed blocking weapons transfers; voted for "
+              "aid bills), then explain why the candidate is still the best option listed. Never hide a "
+              "shortfall and never invent one. Do not write meta-language like 'the record does not show' or "
+              "'has not published a stated position' — write about what the candidate has or has not done. "
+              "A candidate who refused to properly support Palestinians when put in the position (a contrary "
+              "vote, an opposed resolution, rejecting community asks) gets that held against them; an "
+              "abstention under heavy pressure can read as qualified support if the shown assessment says so — "
+              "follow the shown assessments. " + framing + " "
+              "Rules: never mention any numeric score or rating; a letter grade may appear at most in "
+              "passing — prefer explaining actual acts, votes, statements and positions. Use ONLY the facts "
+              "shown; never add outside knowledge or invent events, dates, quotes or endorsements; if a "
+              "competitor has no shown record, say nothing about them. Endorsements: mention only the "
+              "'Muslim-community / pro-Palestine-aligned records' and 'Israel-aligned / AIPAC / "
+              "Hindu-nationalist-aligned records' lines (Muslim-aligned backing supports a candidate; "
+              "AIPAC/UDP/DMFI/ICAN or Hindu-nationalist-aligned backing or opposition is a relevant "
+              "contrast); never name any other endorser. Plain prose, no lists, no quotation marks, no "
+              f"headings, no AI disclaimer. Name the office once. Output ONLY the paragraph."]
+    return "\n".join(lines)
+
+
+def _policy_match(low, tokens):
+    """Word-boundary token match so short tokens like 'ican' cannot hide inside
+    'american' (plain substring matching caused a real policy miss)."""
+    return any(re.search(r"(?<![a-z0-9])" + re.escape(a) + r"(?![a-z0-9])", low) for a in tokens)
+
+
+def _close_to(a, b):
+    """True when a equals b or differs by at most two single-character edits."""
+    if a == b:
+        return True
+    if abs(len(a) - len(b)) > 2:
+        return False
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+            if cur[-1] > 2:  # prune hopeless rows
+                cur[-1] = 3
+        prev = cur
+    return prev[-1] <= 2
+
+
+def out_of_policy_endorsers(race, pos_by_id, text):
+    """Endorser names present in this race's records but outside the two policy
+    buckets; a paragraph that NAMES one violates the endorsement policy.
+    Multi-word names are matched exactly (case-sensitive full name) so city or
+    county prefixes inside org names cannot false-positive on ordinary prose;
+    single distinctive names match on word boundaries. Candidate names in this
+    race are never endorsements-of-record for policy purposes."""
+    allowed = set(COMMUNITY_ENDORSERS) | set(ISRAEL_ALIGNED_ENDORSERS)
+    cand_names = {norm(c.get("name")) for c in all_candidates(pos_by_id[race["position_id"]])}
+    cores = set()
+    for c in all_candidates(pos_by_id[race["position_id"]]):
+        for e in c.get("endorsements") or []:
+            if not isinstance(e, dict):
+                continue
+            nm = e.get("endorser") or ""
+            low = nm.lower()
+            if not nm or _policy_match(low, allowed):
+                continue
+            head = re.split(r"[,(]", nm)[0].strip()
+            head = re.sub(r"^(hon|dr|mr|mrs|ms|sen|rep|fmr|former|supervisor|assemblymember|mayor|president)\.?\s+", "", head, flags=re.I)
+            people = [head] + [m.strip() for m in re.findall(r"\bby\s+([A-Z][\w'\u00c0-\u024f.-]+(?:\s+[A-Z][\w'\u00c0-\u024f.-]+){1,3})", nm)]
+            for person in people:
+                if not person:
+                    continue
+                nperson = norm(person)
+                if any(nperson == cn or _close_to(nperson, cn) for cn in cand_names):
+                    continue
+                if len(person.split()) >= 2:
+                    cores.add(("phrase", re.sub(r"\s+", " ", person)))
+                else:
+                    cores.add(("word", norm(person)))
+    hits = []
+    flat = re.sub(r"\s+", " ", text)
+    lower = text.lower()
+    for kind, value in sorted(cores, key=lambda x: -len(x[1])):
+        if kind == "phrase":
+            if value in flat:
+                hits.append(value)
+        elif len(value) >= 4 and re.search(r"(?<![a-z0-9])" + re.escape(value) + r"(?![a-z0-9])", lower):
+            hits.append(value)
+    # collapse hits that are substrings of other hits
+    hits = [h for h in hits if not any(h != o and h.lower() in o.lower() for o in hits)]
+    return hits
+
+
+def reasons_phase(races, only=None):
     data = json.loads(DATA.read_text())
-    validate_plan(races, data)
     by_pos = {p["id"]: p for p in data["positions"]}
+    cache = _load_jsonl(REASON_CACHE)
+    prompts = {r["position_id"]: reason_prompt(r, by_pos)
+               for r in races if r.get("recommended")}
+    cached_ok = {}
+    for pid, rec in cache.items():
+        if rec.get("prompt_sha256") == request_hash(prompts.get(pid, "")) if prompts.get(pid) else False:
+            if rec.get("text") and not out_of_policy_endorsers(next((r for r in races if r["position_id"] == pid), {"position_id": pid}), by_pos, rec["text"]):
+                cached_ok[pid] = rec
+    todo = [r for r in races if r["position_id"] in prompts and r["position_id"] not in cached_ok
+            and (not only or r["position_id"] in only)]
+    print(f"Reasons: {len(prompts)} picks, {len(cached_ok)} cached, {len(todo)} to run")
+    def work(r):
+        prompt = prompts[r["position_id"]]
+        text = _lmstudio(prompt, max_tokens=8000)
+        for _ in range(2):  # endorsement-policy retry: never name out-of-policy backers
+            bad = out_of_policy_endorsers(r, by_pos, text)
+            if not bad:
+                break
+            print(f"  [endorser-retry] {r['position_id']}: naming {bad}", flush=True)
+            text = _lmstudio(prompt + "\nIMPORTANT: do not name, allude to, or characterize the following people or organizations in this race: "
+                             + "; ".join(bad) + ". Output ONLY the paragraph.", max_tokens=8000)
+        bad = out_of_policy_endorsers(r, by_pos, text)
+        if bad:  # last resort: explicit ban list, describe such backers generically
+            text = _lmstudio(prompt + "\nHARD CONSTRAINT: you may name ONLY organizations from the two lines "
+                             "'Muslim-community / pro-Palestine-aligned records' and 'Israel-aligned / AIPAC / "
+                             "Hindu-nationalist-aligned records'. Do NOT name or describe: "
+                             + "; ".join(bad) + ". If an opponent's strength comes from such groups, say "
+                             '"labor and civic endorsements" without naming them. Output ONLY the paragraph.',
+                             max_tokens=8000)
+            bad = out_of_policy_endorsers(r, by_pos, text)
+        if bad:
+            raise ValueError("out-of-policy endorsers after retries: " + "; ".join(bad))
+        rec = {"position_id": r["position_id"], "text": text, "words": len(text.split()),
+               "model": LMSTUDIO_MODEL, "prompt_sha256": request_hash(prompt)}
+        return r["position_id"], rec
+    def _run(batch):
+        with ThreadPoolExecutor(max_workers=2) as ex:  # LM Studio concurrency = 2
+            futs = {ex.submit(work, r): r for r in batch}
+            for fut in as_completed(futs):
+                r = futs[fut]
+                try:
+                    pid, rec = fut.result()
+                except Exception as e:  # noqa: BLE001
+                    print(f"  [FAILED] {r['position_id']} {r['recommended']}: {e}", flush=True)
+                    continue
+                if not 30 <= rec["words"] <= 215:
+                    print(f"  [FAILED] {r['position_id']} {r['recommended']}: {rec['words']} words outside 30-215", flush=True)
+                    continue
+                with REASON_CACHE.open("a") as f:
+                    f.write(json.dumps(rec) + "\n")
+                cache[pid] = rec
+                print(f"  [{len(cache)}] {pid} {r['recommended']} -> {rec['words']} words", flush=True)
+    for i in range(0, len(todo), 4):
+        _run(todo[i:i + 4])
     for r in races:
-        r["order"] = order[r["category"]]
-        pos = by_pos.get(r["position_id"], {})
-        m = re.search(r"state:([a-z]{2})", pos.get("ocd_division_id") or "")
-        r["_state"] = m.group(1).upper() if m else ("CA" if pos.get("counties") else "")
-        r["_jur"] = pos.get("jurisdiction") or ""
-    def natural_key(s):
-        return [(0, int(t)) if t.isdigit() else (1, t) for t in re.split(r"(\d+)", s)]
-    races.sort(key=lambda r: (r["order"], r["_jur"], r["_state"], natural_key(r["district_or_seat"] or ""),
-                              r["office"] or "", r["position_id"]))
-    for r in races:
-        r.pop("_state", None); r.pop("_jur", None)
-    payload = {
-        "generated_on": time.strftime("%Y-%m-%d"),
-        "source_dataset": DATA.name,
-        "source_dataset_sha256": hashlib.sha256(DATA.read_bytes()).hexdigest(),
-        "plan_sha256": hashlib.sha256(PLAN.read_bytes()).hexdigest(),
-        "counts": {
-            CAT_MUSLIM: sum(1 for r in races if r["category"] == CAT_MUSLIM),
-            CAT_JEV: sum(1 for r in races if r["category"] == CAT_JEV),
-            CAT_NO_GOOD: sum(1 for r in races if r["category"] == CAT_NO_GOOD),
-            CAT_NO_INFO: sum(1 for r in races if r["category"] == CAT_NO_INFO),
-        },
-        "races": races,
-    }
-    html = TEMPLATE.read_text()
-    for ph, content in {
-        "__RECOMMENDATIONS_DATA_JSON__": json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c"),
-        "__RECOMMENDATIONS_DISPLAY_JS__": DISPLAY_JS.read_text(),
-        "__CONTEST_LABEL_JS__": (ROOT / "src" / "contest-label.js").read_text(),
-    }.items():
-        if html.count(ph) != 1:
-            raise ValueError(f"Expected one {ph}")
-        html = html.replace(ph, content)
-    if re.search(r"__[A-Z_]+__", html):
-        raise ValueError("Unresolved placeholder")
-    OUT_HTML.write_text(html)
-    print(f"Built {OUT_HTML.name} ({OUT_HTML.stat().st_size:,} bytes)")
+        if r["position_id"] in cached_ok:
+            r["summary"] = cached_ok[r["position_id"]]
+    missing = [r["position_id"] for r in races if r["position_id"] in prompts and "summary" not in r]
+    if missing:
+        print(f"Reasons incomplete: {len(missing)} missing (re-run 'reasons'): {missing[:8]}", flush=True)
+        if not only:
+            raise SystemExit(1)
+    return races
+
+
+def build_pages():
+    """Rebuild index.html and ballot.html (both carry the embedded recommendation map)."""
+    import build_site
+    for page in ("index", "ballot"):
+        result = build_site.render(page)
+        (ROOT / f"{page}.html").write_text(result, encoding="utf-8")
+        print(f"Built {page}.html ({(ROOT / f'{page}.html').stat().st_size:,} bytes)")
 
 
 def validate_plan(races, data):
@@ -479,15 +605,17 @@ def save_plan(races):
 
 
 def main():
-    global PLAN, JEV_CACHE, SUM_CACHE, JEV_KEY
+    global PLAN, JEV_CACHE, SUM_CACHE, REASON_CACHE, JEV_KEY
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("command", choices=["classify", "jev", "summarize", "build", "all", "refresh"])
+    ap.add_argument("command", choices=["classify", "jev", "reasons", "build", "all", "refresh"])
     ap.add_argument("--plan", type=Path, default=PLAN)
     ap.add_argument("--jev-cache", type=Path, default=JEV_CACHE)
     ap.add_argument("--summary-cache", type=Path, default=SUM_CACHE)
+    ap.add_argument("--reason-cache", type=Path, default=REASON_CACHE)
+    ap.add_argument("--only", default=None, help="reasons: comma-separated position ids")
     ap.add_argument("--jev-key-file", type=Path)
     args = ap.parse_args()
-    PLAN, JEV_CACHE, SUM_CACHE = args.plan.resolve(), args.jev_cache.resolve(), args.summary_cache.resolve()
+    PLAN, JEV_CACHE, SUM_CACHE, REASON_CACHE = args.plan.resolve(), args.jev_cache.resolve(), args.summary_cache.resolve(), args.reason_cache.resolve()
     if args.jev_key_file: JEV_KEY = args.jev_key_file.read_text().strip()
     data = json.loads(DATA.read_text())
     obs = json.loads(OBS.read_text())
@@ -498,25 +626,27 @@ def main():
         # Publish the current choices/grades without narratives from an older run.
         races = jev_phase(races)
         save_plan(races)
-        build_page(races)
+        build_pages()
     elif args.command == "all":
         races = json.loads(PLAN.read_text())["races"]
         races = jev_phase(races)
         save_plan(races)
-        races = summarize(races)
+        races = reasons_phase(races)
         save_plan(races)
-        build_page(races)
+        build_pages()
     elif args.command == "jev":
         races = json.loads(PLAN.read_text())["races"]
         races = jev_phase(races)
         save_plan(races)
-    elif args.command == "summarize":
+    elif args.command == "reasons":
         races = json.loads(PLAN.read_text())["races"]
-        races = summarize(races)
+        only = set(args.only.split(",")) if args.only else None
+        races = reasons_phase(races, only=only)
         save_plan(races)
     elif args.command == "build":
         races = json.loads(PLAN.read_text())["races"]
-        build_page(races)
+        validate_plan(races, data)
+        build_pages()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,64 @@
+{
+ "candidate_id": "c47b4fe126da3da4af482e5e",
+ "request_sha256": "aedf57bbe10e186a26f238f93061096e925c7b83eaefdbc4ff701040f3a9a49e",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As Surfside Mayor in April 2024, Burkett acknowledged \"people on both sides\" of the Israel-Palestine conflict but centered his statement on condemning physical attacks on Jewish people and protecting the local Jewish community. His 2026 Florida gubernatorial platform addresses economy, healthcare, housing, and immigration but does not engage with Gaza, Israeli military policy, or Palestinian rights. The documented framing is Israel-centric, foregrounding Jewish safety rather than Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation; no policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Independent/unaffiliated; no policy signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Eight platform points cover economy, healthcare, housing, government, transportation, immigration; none address Israel, Palestine, or Gaza, providing context for the limited record"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "April 2024 statement as Surfside Mayor uses 'both sides' framing and centers on protecting local Jewish community; Israel-centric framing without addressing Palestinian suffering or Israeli military conduct"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal"
+  }
+ ],
+ "generated_at": "2026-10-29T08:47:29Z"
+}

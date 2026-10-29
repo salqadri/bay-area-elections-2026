@@ -1,0 +1,64 @@
+{
+ "candidate_id": "4e96bc55de540ebee37a1d93",
+ "request_sha256": "16448f263e48fbe61355ee62c0c54a52f8a96d991709f5b01af3fe9ab86507ee",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "In 2014, then in the Alaska House, Kreiss-Tomkins voted for a resolution commending the State of Israel, which passed with no votes against. His 2026 Alaska gubernatorial campaign platform addresses education, housing, energy, healthcare, data-center regulation, and government ethics without referencing Israel, Palestine, Gaza, or Middle East policy. That single recorded pro-Israel legislative vote is the only documented action bearing on his position toward Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used as identifier throughout; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Statewide Governor seat provides context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Alaska jurisdiction; no direct bearing on the assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Democratic affiliation does not itself indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Platform covers only domestic Alaska issues (education, housing, energy, healthcare, data centers, ethics, Permanent Fund); no mention of Israel, Palestine, Gaza, or Middle East policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2014 Alaska House vote for a resolution commending the State of Israel; passed unanimously. Only documented action on the issue."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 election date is scheduling context, not a policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State of Alaska; no Palestine-related policy dimension."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T08:43:34Z"
+}

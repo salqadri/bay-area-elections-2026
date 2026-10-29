@@ -1,0 +1,100 @@
+{
+ "candidate_id": "2836c9a6bc79c696f3747693",
+ "request_sha256": "3e7c9bad93e4f413bbfbcb173ea654b56e14506959d82696b9a3313310ab3fba",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kounalakis attended a California Capitol hostage rally in October 2023 and in May 2024 criticized universities for their handling of Palestinian student protests on Gaza. Vote for Peace, which rates candidates on human rights and war-lobby funding, marked her Opposed in the general. CAIR Action listed her as Preferred, a tier below endorsement, and independent activist Samir Laymoun also opposed her. Her documented record reflects Israel-centric framing rather than advocacy for Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Statewide Treasurer role provides context but no Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California jurisdiction; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Democratic Party affiliation; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All listed spenders have unestablished relevance to Palestine; no explicit Israel/Palestine connection documented."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies spending is independent expenditure, not campaign money; no Palestine-specific relevance established."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Platform covers economy, education, climate, and equity with no Palestine- or Israel-specific content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Hostage rally (Oct 2023) shows Israel-centric framing; criticizing Palestinian student protests (May 2024) is adverse to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace Opposed is concrete anti-Zionist-org opposition; CAIR Preferred is a complicating positive signal below endorsement tier; Laymoun opposed is an independent activist opinion."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Explains Laymoun is an independent opinion source separate from official BAMC positions; a protest-vote recommendation does not establish shared policy."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies that directional CAIR/VfP recommendations count as concrete stance evidence; methodological context only."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes VfP and CAIR roles for attribution accuracy; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 general election date; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:09:28Z"
+}

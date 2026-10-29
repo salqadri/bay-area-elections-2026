@@ -1,0 +1,160 @@
+{
+ "candidate_id": "45d66bb6837c85f34ca6736c",
+ "request_sha256": "f064023af6d0612e1f0433c9ca1855197d9187ed4b98029ab22dc8bc8057c9c4",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Wahab answered 'Yes' when directly asked about Gaza genocide at an April 2026 forum, introduced a California Senate resolution calling the conflict a genocide and demanding its end, and cosponsored the Block the Bombs Act. She voted against a bill to defund universities boycotting Israel, is owner-confirmed in the pro-Palestine Muslim community, and holds a CAIR Action endorsement and Vote for Peace Ally rating while UDP spent $1.6 million against her. She has not separately sponsored genocide-recognition or UNRWA-restoration bills.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation provides context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label has no independent Palestine signal here."
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in pro-Palestine Muslim community; affirmative alignment evidence per community_alignment_context."
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Explains that the true value is affirmative pro-Palestine alignment, not mere religious identity."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Reference material defining UDP, BOLD America, J Street, CAIR, Vote for Peace, AIPAC, JStreetPAC; no candidate-specific signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "J Street Action Fund $104K is a pro-Israel/pro-peace PAC with little weight per guide; remaining spenders have unestablished relevance."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodology note clarifying independent spending is not campaign contribution; no candidate-specific signal."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "UDP ($1.64M) and BOLD America ($610K, UDP-funded) ran negative ads against Wahab; AIPAC-aligned opposition confirms her pro-Palestine positioning."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "omitted",
+   "reason": "International affairs point (ending open-ended deployments, Congress authorizes war, diplomacy over force) is broadly relevant but general; concrete actions in other fields are stronger evidence."
+  },
+  {
+   "id": "candidate_record.reviewed_gaza_platform_statement",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "At April 2026 candidate forum she answered 'Yes' to direct genocide question, affirming it as her position."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CalMatters tracker lists abstention on AB 715 (antisemitism coordinator, classroom oversight); not an Aye vote, no explicit IHRA in text; limited signal."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Multiple 2026 reports of genocide language; CA Senate resolution calling war a genocide and demanding its end (Aug 2026); cosponsorship of H.R. 3565 Block the Bombs Act (Oct 2026); UDP $2.5M+ spending against her."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding tracked since 2024 only; contextual limitation, not a policy signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating (general) are concrete pro-Palestine stance evidence; BAMC Action support is community-aligned; JStreetPAC endorsement gets little weight."
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Explains BAMC Action as owner-designated trusted source; comment-only entries are not ratings; contextual note."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Confirms CAIR/Vote for Peace directional recommendations count as concrete stance evidence; methodological clarification."
+  },
+  {
+   "id": "candidate_record.congressional_gaza_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note: alignment follows pro-Palestinian tracker; 'Not elected' is specific to action date; records from 2023-11-01."
+  },
+  {
+   "id": "candidate_record.congressional_gaza_actions",
+   "assessment": "uncertain",
+   "treatment": "grouped",
+   "reason": "Concrete in-office actions are aligned (voted No on defund-boycott bill Sept 2026; sponsors Block the Bombs Act; correctly not sponsoring US-Israel Defense Partnership Act), but she also does not sponsor genocide-recognition, UNRWA-restoration, or Nakba-recognition bills during 2025-2027 source period. Most entries are 'Not elected' (neutral, pre-service). Non-sponsorship significance limited by short service (sworn in between Feb and Sept 2026)."
+  },
+  {
+   "id": "candidate_record.reviewed_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes UNRWA legislative sequence (H.R.7006, H.R.7148 not elected; restoration not sponsoring) are different packages; cautions against inferring motive from sequence alone."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "US House jurisdiction; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Confirms she is a sitting member; explains why some 2026 votes are recorded while earlier ones are 'Not elected.'"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorical label only; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T07:28:33Z"
+}

@@ -1,0 +1,64 @@
+{
+ "candidate_id": "20ef189aefff652477263785",
+ "request_sha256": "a0bac83f963367aef78cdae217a979ee6b05a584b317a2be0b73587177ce168b",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Mazzei praised Trump in June 2025 for “protecting our ally Israel and securing peace in the Mid East,” framing US–Israel relations positively with no mention of Gaza or Palestinian casualties. A 2016 advocacy-site claim that he co-sponsored an Oklahoma Senate resolution commending Israel is unverified; the recorded Senate log does not name him.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context; no bearing on Palestinian-justice position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All eight platform points address economy, education, jobs, criminal justice, and immigration; none concern Israel, Palestine, or related speech rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "June 2025 statement praises Israel as an ally with no mention of Gaza or Palestinian casualties; 2016 resolution co-sponsorship claim is explicitly unverified (Senate record does not name him)."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling information; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorization label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:01:04Z"
+}

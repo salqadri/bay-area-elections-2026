@@ -1,0 +1,70 @@
+{
+ "candidate_id": "998c6090931fec884bf1617b",
+ "request_sha256": "c788e6154125e4b5cee3eb1beaec49f26e412b8ac2fbc948f2b90089767e538d",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, which weighs civil rights and foreign policy including Gaza and ceasefire positions in its recommendations, issued a full general-election endorsement of LaCroix for San Francisco Community College District trustee. The record's endorsement framework treats such directional CAIR Action recommendations as concrete stance evidence even without a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no positional content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Identifies the local trustee race; provides context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic label; no bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action issued a full general-election endorsement; the record's framework treats this as concrete stance evidence on civil rights and Gaza/ceasefire positions."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Supplies the interpretive rule that directional CAIR Action recommendations count as concrete stance evidence even without a candidate quotation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's role and that its recommendations weigh Gaza/ceasefire positions; contextual for the endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal context; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies San Francisco Community College District as the race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Data-structure label ('candidates'); no positional content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:45:45Z"
+}

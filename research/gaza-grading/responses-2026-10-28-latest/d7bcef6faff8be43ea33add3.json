@@ -1,0 +1,100 @@
+{
+ "candidate_id": "d7bcef6faff8be43ea33add3",
+ "request_sha256": "9a640aa80a94ec6dc8582e5a7a21b5634bfc13b45391e4c975dd22944ac207f1",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Track AIPAC reported in September 2026 that Villegas recognizes the genocide in Gaza and pledged to oppose military aid to Israel. CAIR Action endorsed him for the general election, and Vote for Peace rated him an Ally. As a school board member, he signed a ceasefire letter to the White House in January 2024. Pro-Israel spenders DMFI PAC and UDP-funded 314 Action Fund ran ads against him, and the Stop arming Israel group listed him as endorsed in October 2026.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State context only; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All twelve spenders marked unestablished relevance; no Palestine connection documented."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note clarifying spending is independent; no candidate-specific Palestine signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Provides definitions for DMFI PAC, 314 Action Fund, CAIR, Vote for Peace, Track AIPAC used to interpret spending and endorsements."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "DMFI PAC ($500K) and UDP-funded 314 Action Fund ($36.7K) spent against him, indicating pro-Israel opposition to his candidacy."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Domestic policy points (gas tax, healthcare, immigration); Iran war opposition is tangential and not specifically about Palestine/Israel."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Ceasefire letter (Jan 2024), Track AIPAC genocide/aid statement (Sep 2026), Stop arming Israel listing (Oct 2026), Jewish Insider label (Jun 2026)."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-election endorsement and Vote for Peace Ally rating are concrete pro-Palestine stance evidence per context note."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Confirms directional recommendations count as concrete evidence; methodological clarification, not a standalone fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing context; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office level context; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Categorical label; no Palestine-relevant signal."
+  }
+ ],
+ "generated_at": "2026-10-29T08:04:31Z"
+}

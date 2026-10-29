@@ -1,0 +1,106 @@
+{
+ "candidate_id": "c3fddae0867c71b55f6e1957",
+ "request_sha256": "b974750aab4e06840a0be870854b5bacb686a4914c75dc7fae63689498ec0c6b",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace rates Poindexter an Ally in the general election, providing concrete alignment evidence. His platform identifies ending the war in Iran as a step toward lower energy prices, reflecting a broader anti-war stance in the Middle East. His only documented Gaza statement, from August 2026, frames the conflict through a military-benefits lens, equating Israeli soldiers' benefits with American service members'.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (CD-7 House); no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All spenders marked unestablished relevance; spending_context directs these not to explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains why unmapped spenders are excluded from the Palestine assessment; contextual rule only."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CLF spending marked unestablished relevance; no documented Palestine connection."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "uncertain",
+   "treatment": "included",
+   "reason": "International-affairs point on ending the Iran war as a step to lower energy prices is tangentially relevant to Middle East anti-war stance; other points (economy, healthcare, labor, data centers) are unrelated."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "uncertain",
+   "treatment": "included",
+   "reason": "The 2026-08-15 military-benefits framing equates Israeli soldiers with U.S. service members; the only direct Israel/Palestine statement in the record."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Data-scope limitation note; no candidate-specific signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace Ally rating in the general phase is concrete pro-Palestine stance evidence per the endorsement context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Establishes that Vote for Peace Ally is treated as concrete stance evidence; methodological context."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace methodology; clarifies the endorsement but adds no independent candidate signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no Palestine-specific signal."
+  }
+ ],
+ "generated_at": "2026-10-29T08:23:50Z"
+}

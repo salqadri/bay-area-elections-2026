@@ -1,0 +1,70 @@
+{
+ "candidate_id": "a20a19ec7c49e4eb143b8beb",
+ "request_sha256": "c52c7ccee45afbce525a1d402b75dedbd2c39c627d91bfde87443c47a8ca2097",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Richard Thornbury for the Dublin City Council general, and Vote for Peace rated him an Ally. Both organizations evaluate candidates on Gaza ceasefire positions, human rights records, and war-lobby funding.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Local city council seat; contextual detail for the jurisdiction."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; no independent policy relevance beyond jurisdiction context."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no bearing on Palestinian-justice positioning."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed (general) and Vote for Peace rated him Ally (general); both are directional pro-Palestine stance signals per the rubric context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains that CAIR/VfP directional recommendations count as concrete stance evidence; interpretive framing for the endorsements already noted."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes what CAIR Action and Vote for Peace evaluate (Gaza ceasefire, human rights, war-lobby funding); clarifies the endorsements' relevance without adding new candidate facts."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; scheduling detail with no bearing on policy assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Dublin; identifies the local race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative tag (\"candidates\"); no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:20:23Z"
+}

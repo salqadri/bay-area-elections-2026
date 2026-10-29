@@ -1,11 +1,20 @@
 # Research and development handoff
 
-Current publication **2026-10-28.4** publishes the owner's completed full-roster
+Current publication **2026-10-28.5** completes the Hermes follow-up from publication
+2026-10-28.4: all **398 letter-grade candidates** carry fresh source-bound evidence
+explanations (generated from each exact frozen v7 scoring request under
+summary-prompt-v3; `qwen/qwen3.8-27b`), and **898** N/A candidacies carry the editorial
+insufficiency note. Recommendations now render **inside both readers** — every race card
+and ballot result shows the pick with a Qwen why-paragraph written under the owner
+framework, or the explicit no-recommendation line; the standalone recommendations page
+is retired. [Rules, pipeline and provenance](CANDIDATE_RECOMMENDATIONS.md).
+
+Publication **2026-10-28.4** publishes the owner's completed full-roster
 run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
 with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·
 F 123 · N/A 898**. Candidate and race explanations from the previous run are
-held, per the owner's choice; fresh source-bound queues are ready for Hermes.
+held, per the owner's choice; fresh source-bound queues were ready for Hermes.
 The recommendations page also uses the new grades. [Current archives, validation
 and Hermes follow-up](LATEST_SCORE_PUBLICATION.md). Older publication notes below are historical.
 

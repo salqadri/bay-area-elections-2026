@@ -1,6 +1,7 @@
 'use strict';
 (() => {
   const DATA = JSON.parse(document.getElementById('election-data').textContent);
+  const RECS = (() => { try { return JSON.parse(document.getElementById('recommendations-data').textContent); } catch { return { byPosition: {} }; } })();
   const $ = id => document.getElementById(id);
   const service = globalThis.ElectionAddressService;
   const matcher = globalThis.ElectionAddressMatcher;
@@ -147,6 +148,7 @@
     card.append(node('span', 'ballot-confidence' + (race.confidence === 'expected' ? '' : ' possible'), confidence));
     if (race.reason) card.append(node('p', 'ballot-reason', race.reason));
     if (!knownConfirmed(position)) card.append(node('p', 'ballot-unverified', 'Ballot appearance unresolved: this scheduled contest is not confirmed on the November ballot.'));
+    if (typeof RecommendationDisplay !== 'undefined') { const recBox = RecommendationDisplay.render(position.id, { node, recs: RECS, confirmed: knownConfirmed(position) }); if (recBox) card.append(recBox); }
     if (Array.isArray(position.candidates) && position.candidates.length) {
       const candidates = node('ul', 'ballot-candidates');
       candidates.setAttribute('aria-label', 'Candidates');

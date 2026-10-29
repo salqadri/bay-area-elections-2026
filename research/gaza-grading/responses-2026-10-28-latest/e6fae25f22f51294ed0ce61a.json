@@ -1,0 +1,70 @@
+{
+ "candidate_id": "e6fae25f22f51294ed0ce61a",
+ "request_sha256": "32a20bcf53bfbfc25d073bd1dbc265cca179b58fbb9e61f30e1e7f0ecf33f7a6",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Tandon, a Republican candidate for California's 17th congressional district, faces recorded opposition from activist Samir Laymoun in the general-election phase. The record identifies Laymoun as an individual opinion source separate from organizational positions, noting that a protest-vote recommendation does not establish shared policy views.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the explanation."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides the office sought (CD-17 Representative) for identification."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the state (CA) for the candidate."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Basic identifying context; does not by itself establish a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "A scope note stating funding period and omission rules; no specific funding figure or organization relevant to Palestinian justice is supplied."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Samir Laymoun's recorded opposition in the general phase is the only substantive observation in the record."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Contextualizes Laymoun as an individual opinion source separate from organizational positions and notes protest-vote recommendations do not establish shared policy views; grouped with the opposition observation."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "The 2026 election date does not bear on the candidate's position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Redundant with the office field; does not add policy information."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification tag; no bearing on the assessment."
+  }
+ ],
+ "generated_at": "2026-10-29T07:30:27Z"
+}

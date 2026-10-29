@@ -1,0 +1,70 @@
+{
+ "candidate_id": "e4f72baa72e8e25d18e0adc3",
+ "request_sha256": "ff660632e4a4ad9fe050141757d47897cafaa6b49f21ac4e5bb315731b8c6b6e",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "McKay defended his listing on the RJC website in July 2026, pushing back against criticism of the association while denying AIPAC contributed to his campaign; funding records remain unresolved. His choice to stand behind a pro-Israel organizational listing rather than distance himself from it, absent any documented support for Palestinian justice, grounds the pro-Israel assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identifier only; no policy content"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context; no policy signal on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation without specific policy content on this topic"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Defends RJC website listing and denies AIPAC contribution; core evidence for pro-Israel assessment"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Clarifies AIPAC funding is unresolved, qualifying the candidate's denial"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "AIPAC role description; grouped with gaza_evidence for context on the AIPAC denial"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date; no policy content"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy content"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label; no policy content"
+  }
+ ],
+ "generated_at": "2026-10-29T07:55:09Z"
+}

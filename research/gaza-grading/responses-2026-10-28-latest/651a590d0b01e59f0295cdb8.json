@@ -1,0 +1,70 @@
+{
+ "candidate_id": "651a590d0b01e59f0295cdb8",
+ "request_sha256": "8bce21d1b2fde34f8eb5b08be5f69f861747d1c26330c5dd04850eb9e5fd7a7c",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Dawkins for Antioch Unified School District Area 5 trustee in the general phase, and Vote for Peace rated him an Ally. Both organizations evaluate candidates on Gaza and ceasefire positions and war-lobby funding, and their directional recommendations are the recorded stance evidence for this nonpartisan local candidate.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; not a stance indicator."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local school-board race the endorsements refer to."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State designation; no bearing on stance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a position on Palestine."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general, endorsement level) and Vote for Peace Ally rating are the core recorded stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Framework note confirming CAIR/VFP directional recommendations count as concrete stance evidence; supports reading of item 5."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR and VFP evaluate Gaza, ceasefire, and war-lobby funding, establishing relevance of the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal detail only; no stance signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Antioch Unified School District identifies the specific local race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Category label (candidates); no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:39:41Z"
+}

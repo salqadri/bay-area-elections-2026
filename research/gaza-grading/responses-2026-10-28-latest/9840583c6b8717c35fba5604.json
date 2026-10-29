@@ -1,0 +1,70 @@
+{
+ "candidate_id": "9840583c6b8717c35fba5604",
+ "request_sha256": "9523822f5197f0ff0c06e3af12321ad82a841416c68541782149b5f7d7129a9c",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As incumbent Hayward mayor, Salinas opposed Palestinian justice measures on both recorded occasions: he blocked Councilmember Syrop's Gaza ceasefire motion in December 2023 by invoking procedural rules, and in January 2024 he voted against divesting $1.6M from Caterpillar, Intel, Chevron, and Hyundai for their ties to Israel, calling the move 'irresponsible.' CAIR-SFBA's tracker lists the same divestment opposition, with a noted caveat that its date reflects the tracker's reporting period rather than a verified roll-call transcript.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office title provides context for recorded actions but no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no information about Palestine position"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All eight platform points address local crime, jobs, education, economy, housing, transportation, homelessness, and ethics; none reference Israel, Palestine, Gaza, or foreign policy"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Records Salinas blocking a Gaza ceasefire motion via procedural rules (Dec 2023) and voting against $1.6M divestment from companies with Israel ties, calling it irresponsible (Jan 2024); CAIR-SFBA tracker corroborates the divestment opposition with a date-qualification caveat"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 election date provides timing context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Hayward identifies the local body where actions occurred"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status is context for the recorded mayoral actions"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label; no policy content"
+  }
+ ],
+ "generated_at": "2026-10-29T09:25:26Z"
+}

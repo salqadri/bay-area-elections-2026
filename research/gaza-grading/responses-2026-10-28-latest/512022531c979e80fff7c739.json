@@ -1,0 +1,64 @@
+{
+ "candidate_id": "512022531c979e80fff7c739",
+ "request_sha256": "bfab01e032a9ff4d888e3ff43070caeee71eb712b328a8103e9ff62d167a52d6",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker records incumbent Foster City Council Member Stacy Jimenez as opposing a local ceasefire resolution in December 2023. The tracker qualifies this as a reported local action rather than a verified roll-call transcript. That documented opposition to a ceasefire is the specific conduct underlying the assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local city council office; no Palestine-related policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-related policy signal"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker lists her as opposing a local ceasefire resolution (Dec 2023); the sole substantive Palestine-related entry, and it is adverse to pro-Palestine standing"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date context; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Foster City; contextual only"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal"
+  }
+ ],
+ "generated_at": "2026-10-29T09:22:32Z"
+}

@@ -1,0 +1,58 @@
+{
+ "candidate_id": "93941f4444aee79c78e4e195",
+ "request_sha256": "47bf3d6d2b4b47978583ce0bef80c540fb01ba3a06b466728b8f4202f74c4af9",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "O'Toole campaigns for NJ-07 under the 'Stop Israel's Genocide Party' banner, using explicit genocide language to frame the Israel-Gaza conflict. Described as an 'anti-genocide independent' by October 2026, his campaign consistently frames the war as genocide and opposes Israel's conduct.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (CD-7 US Representative); no policy content"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "State abbreviation included within 'NJ-07' reference in summary"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Party name 'Stop Israel's Genocide Party' is explicit anti-genocide framing"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Three items consistently document explicit genocide language and opposition to Israel's conduct in 2026 campaign"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03) provides temporal context only; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal House jurisdiction; no additional policy content beyond office field"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata tag ('candidates'); no policy or evidence content"
+  }
+ ],
+ "generated_at": "2026-10-29T08:17:53Z"
+}

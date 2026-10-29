@@ -1,0 +1,76 @@
+{
+ "candidate_id": "52fd46942da5af73dcd830ac",
+ "request_sha256": "b6105305601cd19e022902e82520e168291ab18c80ffc8be6eebec2421239da5",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Virginia Cheung in the general election for San Francisco Board of Education, a recommendation the organization develops by considering civil rights and foreign policy, including Gaza and ceasefire positions. Her campaign platform addresses San Francisco education priorities—absenteeism, educator recruitment, equity, and budget transparency.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides race context (Board of Education) for the endorsement"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Confirms California jurisdiction for CAIR Action relevance"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestine assessment"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "All six points address San Francisco education policy; no foreign-policy or Israel/Palestine content present"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed Cheung in the general election; per endorsement_evidence_context this is concrete stance evidence for the rubric"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR directional recommendations count as stance evidence; supports interpretation of the endorsement row"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action as considering civil rights and foreign policy including Gaza/ceasefire; contextualizes the endorsement"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date does not materially clarify the candidate's position"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "San Francisco USD specifies the local race context"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label; no bearing on Palestine assessment"
+  }
+ ],
+ "generated_at": "2026-10-29T09:46:47Z"
+}

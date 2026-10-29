@@ -1,0 +1,76 @@
+{
+ "candidate_id": "e8f06fa55040f113eb48c0be",
+ "request_sha256": "c141306efc35a4dbd12598050846daeb07409f791b52730a33d6d15d655706ca",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Sarah Syed in the 2026 general election for Ward 4 Director. CAIR Action's recommendations weigh civil rights and foreign policy, including Gaza and ceasefire positions. A full endorsement, as opposed to a Preferred designation, is treated here as concrete stance evidence on the candidate's position regarding Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "unrelated",
+   "treatment": "included",
+   "reason": "Identifies the race context for the endorsement; no direct Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State identifier adds no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement in the general phase is the primary evidence driving the assessment."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Establishes that CAIR Action endorsements are concrete stance evidence under this rubric, distinguishing full endorsement from Preferred tier."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action as weighing Gaza/ceasefire and civil-rights positions, giving the endorsement substantive policy context."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the endorsement context (2026 general)."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Local transit-district identifier; no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Incumbency status carries no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label adds no substantive information."
+  }
+ ],
+ "generated_at": "2026-10-29T09:50:24Z"
+}

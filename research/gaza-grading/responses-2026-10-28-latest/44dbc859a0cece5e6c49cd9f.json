@@ -1,0 +1,64 @@
+{
+ "candidate_id": "44dbc859a0cece5e6c49cd9f",
+ "request_sha256": "4c9312d0f8b7e5d58233b5c4dfc71e8f12496ff96e141a203bf3e9227351ac24",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Wilson's recorded engagement with the Israel-Palestine question is exclusively pro-Israel: in December 2023 he co-signed a letter with 13 other Republican AGs demanding media outlets sever ties with Gaza-based freelancers accused of Hamas affiliation, and in October 2024 he addressed a 'Gamecocks for Israel' event expressing solidarity with Israel and calling for hostage release.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used in summary; no independent signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office (SC Governor) provides context but no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Eight platform points cover criminal justice, education, transportation, healthcare, immigration, economy, civil liberties, and accountability; none reference Palestine, Gaza, Israel, or related speech protections."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Dec 2023 letter co-sign targeting Gaza-based freelancers for media severance; Oct 2024 'Gamecocks for Israel' speech expressing solidarity with Israel. Both are explicit pro-Israel actions."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing (2026-11-03) has no bearing on Palestinian-justice assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification tag; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:03:05Z"
+}

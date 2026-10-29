@@ -1,0 +1,76 @@
+{
+ "candidate_id": "94dac525ac114401c9d40c89",
+ "request_sha256": "610eb000603ebabb27d8875bbb564b81618040eeaebb6f37eb1082e9d025243e",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action lists Gordon Chester as 'preferred' for the San José District 9 City Council runoff, and Vote for Peace rates him an 'Ally' in the general cycle. CAIR evaluates candidates on civil rights and Gaza/ceasefire positions; Vote for Peace assesses human rights and war-lobby funding. The 'preferred' tier, below CAIR's full endorsement, reflects a stance that condemns the war while stopping short of the organizational threshold associated with explicit anti-aid or ceasefire-advocacy backing.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Name used as subject of the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Identifies the local race in the summary"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Implicit in San José; no independent stance signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no stance information"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR 'preferred' and Vote for Peace 'Ally' are the core stance evidence for the B assessment"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms the organizational recommendations count as concrete stance evidence without a direct quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies what CAIR and Vote for Peace evaluate and that 'preferred' is below full endorsement"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date does not bear on the candidate's stance"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "City of San José names the race in the summary"
+  },
+  {
+   "id": "candidate_record.election_type",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Runoff context stated in the summary"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label with no substantive content"
+  }
+ ],
+ "generated_at": "2026-10-29T09:34:34Z"
+}

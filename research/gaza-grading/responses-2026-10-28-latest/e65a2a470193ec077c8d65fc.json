@@ -1,0 +1,88 @@
+{
+ "candidate_id": "e65a2a470193ec077c8d65fc",
+ "request_sha256": "2ce2f5e269a8989e5f19134b3f69e71325fa329e971a8c9c1debcb6b981fb291",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Frank Lara's 2016 article in Liberation News (PSL) called AIPAC \"the premier lobby and promoter of Israeli interests in the U.S.\" and framed that year's election around the Palestinian struggle. Vote for Peace, a candidate rating guide evaluating human rights and war-lobby funding, listed him as an Ally in the 2026 general. His South San Francisco school-board platform centers on class sizes, teacher pay, and safe-schools policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local school-board role; provides jurisdiction context but no Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers class sizes, teacher pay, English-learner programs, and safe-schools policy; no Israel/Palestine content. Included briefly to frame the scope of his public commitments."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "2016 Liberation News (PSL) article in which Lara called AIPAC the premier lobby for Israeli interests and framed the election around the Palestinian struggle. Direct candidate-authored anti-Zionist statement."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes organization funding since 2024 only with unresolved totals; no specific Palestine-relevant donor identified."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Lara as Ally in the general phase; per endorsement context this is concrete stance evidence on human rights and war-lobby funding."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining how to weight Vote for Peace / CAIR ratings; not a candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace as a rating guide and AIPAC's role; contextualizes the Ally rating but adds no independent candidate evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "South San Francisco USD; local context for the school-board platform."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Administrative label; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:49:08Z"
+}

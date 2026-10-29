@@ -1,0 +1,76 @@
+{
+ "candidate_id": "bef61921ef089d7e16e6706d",
+ "request_sha256": "4b1e0cbf01e3bcfba8afc515d0bd297acb6600051e6d73ebef15ec0146b0a94e",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Reina Tello for SFUSD in the general election, a recommendation the record establishes as concrete stance evidence on civil rights and foreign policy including Gaza. Her platform addresses local education—culturally connected curriculum, language access for monolingual Spanish-speaking families, and prevention-oriented student funding—without referencing Israel or Palestine. The endorsement is the record's sole documented connection to Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local school-board office; no direct Israel/Palestine relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Five points all address SFUSD education (curriculum, language access, funding, pathways, homelessness); none reference Israel or Palestine, providing context that the endorsement is the sole Palestine-relevant item."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed Tello in the general phase; the record designates such endorsements as concrete stance evidence on civil rights and foreign policy including Gaza."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Establishes that directional CAIR Action recommendations count as concrete stance evidence even without a direct candidate quotation; grouped with the endorsement observation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action evaluates candidates on civil rights and foreign policy including Gaza/ceasefire positions; grouped with endorsement context."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date only; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "SFUSD jurisdiction; local context already conveyed by office and platform."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:47:36Z"
+}

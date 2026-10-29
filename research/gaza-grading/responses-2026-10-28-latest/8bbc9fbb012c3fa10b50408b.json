@@ -1,0 +1,58 @@
+{
+ "candidate_id": "8bbc9fbb012c3fa10b50408b",
+ "request_sha256": "75dc627e818648dcb3924be0abb86c7924fcbedee87b991c6336ebe51bbd0e64",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "At the October 8, 2026 Rider University debate, Murphy excluded Gaza entirely from his Israel-Palestine framing, reducing the conflict to West Bank settler violence and calling settlers 'a deviation' from Israelis who 'want peace.' In August, on The Capitol Show, he positioned his foreign policy around 'pro-Israel alignment' and continued U.S. support for Israel. His call for tougher pressure on settlers remains nested within that structure, with no acknowledgment of the war in Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; identifies subject but carries no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office sought (NJ Statewide U.S. Senator); contextual only."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation (Republican); not sufficient to establish specific Palestine policy without the documented statements."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Three items collectively show explicit exclusion of Gaza, pro-Israel framing, and settler criticism nested within a structure that normalizes Israel; supports F grade."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date 2026-11-03; contextual timing only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "United States Senate; contextual, no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; administrative field with no policy relevance."
+  }
+ ],
+ "generated_at": "2026-10-29T07:49:04Z"
+}

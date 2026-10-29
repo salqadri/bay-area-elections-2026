@@ -1,0 +1,70 @@
+{
+ "candidate_id": "8e6399c70934d18e03e9ba25",
+ "request_sha256": "a74b5d29d03257b6bdb00d9e6d5ad3d08e782742168e196c42ad32461d2270ed",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Donalds is positioning his Florida gubernatorial campaign as pro-Israel, per JNS, and the Jewish Times characterizes him as a 'Pro-Israel Candidate.' He equated campus anti-Semitism perpetrators with 'Hamas apologists' in 2024 and labeled Hamas 'terrorists' in an anniversary release. An April 2025 town hall turned contentious when constituents pressed him on the Israel-Hamas war. His Nay vote on H.R. 6090, the Antisemitism Awareness Act, carries no stated rationale and does not offset this consistent pro-Israel posture.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context only; no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label does not determine position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Platform covers economy, healthcare, immigration, education, and space; no mention of Israel, Palestine, Gaza, or Middle East policy."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Nay vote on H.R. 6090 (IHRA-based education bill) is a minor favorable data point, but the record notes the vote does not establish rationale; included to preserve the tension with the overall pro-Israel posture."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Seven items collectively show explicit pro-Israel campaign positioning (JNS, Jewish Times), equating anti-Semitism perpetrators with 'Hamas apologists,' labeling Hamas 'terrorists,' and a contentious town hall on the Israel-Hamas war. Primary basis for the F grade."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing metadata; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Context field; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification metadata; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T08:48:20Z"
+}

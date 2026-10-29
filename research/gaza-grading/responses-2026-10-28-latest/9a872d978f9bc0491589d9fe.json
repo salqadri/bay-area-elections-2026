@@ -1,0 +1,106 @@
+{
+ "candidate_id": "9a872d978f9bc0491589d9fe",
+ "request_sha256": "2727baff4d33f99ddb9404b0967929956e73b46fa2be7bcb0acc60fd952b4f25",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As Texas AG, Paxton opened a state investigation into pro-Palestinian student walkouts near Dallas and called for firing educators, framing the activism as antisemitism. In October 2026 he vowed to “never stop standing with Israel and the Jewish people.” A July 2026 remark questioning billions sent to Israel alongside other foreign aid complicates the picture slightly, but his overall pattern—state-level suppression of Palestinian solidarity and strong Israel advocacy—draws opposition from Vote for Peace.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual office label; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not by itself establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All 12 spenders carry unestablished relevance; spending_context confirms no policy inference."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological clarification that spending is independent and unestablished-relevance spenders cannot explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All four opposing spenders carry unestablished relevance; no explicit Palestine tie."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Paxton used AG authority to investigate pro-Palestinian walkouts and called for firing educators, framing Palestinian solidarity expression as antisemitism."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 7 2026 pro-Israel vow and 2025 walkout probe are adverse; July 2026 aid remark is a minor complication noted for balance."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note (since 2024 only); no independent policy signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace (anti-Zionist rating guide) lists Paxton as Opposed in the general phase."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric guidance on how to treat Vote for Peace tiers; no new factual content."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background on Vote for Peace and AIPAC roles; no additional candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal Senate race context only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T07:58:05Z"
+}

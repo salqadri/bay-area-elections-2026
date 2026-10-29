@@ -1,0 +1,94 @@
+{
+ "candidate_id": "503dd2c7f98755e0da55329f",
+ "request_sha256": "983e21bdc25bfb8566c221558e1fc328deb5fcd916c4b85350e43948c0591ef6",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Powell disavowed all Israel-focused outside groups in May 2026 after rejecting DMFI's ad buy, and Jewish Insider called her the \"Israel critic\" in her Nebraska primary. Her platform's foreign-policy section addresses China and Russia without naming Israel or Palestine. BOLD America and EDW Action Fund, both funded by AIPAC-backed UDP, spent over $600,000 in independent support, a funding link the record notes does not prove directed Israel-focused messaging.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name for identification only."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office (CD-2 US Representative) is structural context, not a Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State abbreviation for identification only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not determine Palestine position."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Documents UDP funding to BOLD America and EDW Action Fund (negative signal per guide) and DMFI's pro-Israel advocacy; grouped into spending and gaza-evidence discussion."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "BOLD America ($418K) and EDW Action Fund ($199K) both UDP-funded; remaining spenders have unestablished relevance and are omitted."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies spending is independent, not campaign money, and funding links do not prove directed Israel-focused ads; incorporated into the spending sentence."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "CLF opposition spending has unestablished relevance to Palestine assessment."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "International affairs section addresses China, Russia, and USAID without naming Israel or Palestine; noted to show the platform does not take a documented position on the conflict."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Powell's April rejection of DMFI, May disavowal of all Israel-focused groups, and Jewish Insider's 'Israel critic' characterization are the primary positive signals."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note (2024 onward, mixed totals omitted) does not alter the assessment."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date for scheduling only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label for context only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster tag for data management only."
+  }
+ ],
+ "generated_at": "2026-10-29T08:16:18Z"
+}

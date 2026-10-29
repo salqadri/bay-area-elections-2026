@@ -1,0 +1,82 @@
+{
+ "candidate_id": "efccd94e061a4f70509e03a1",
+ "request_sha256": "49e588dcba12762ae849a8a68e2050e9a66066c13dfd30e381ba4130ff510953",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Pritzker endorsed Senate resolutions to block U.S. arms sales to Israel in 2025 and distanced himself from AIPAC in 2026. Yet he downplayed Chicago's 2024 Gaza ceasefire resolution for not holding Hamas accountable, framed the 2023 conflict around 'peace and human rights for both Israelis and Palestinians,' and in May 2026 stated criticism of Israel is 'crossing into antisemitism.' His record condemns humanitarian harm while directing accountability at Netanyahu rather than U.S. structural support for Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers economy, healthcare, education, climate, criminal justice, and fiscal policy; no Palestine, Israel, or related civil-rights content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "uncertain",
+   "treatment": "included",
+   "reason": "Mixed signal: arms-sales-block endorsement and AIPAC distancing favor Palestinian justice; downplaying the ceasefire resolution, Hamas-accountability framing, balanced 2023 language, and 2026 antisemitism remark limit it. Grouped in paragraph."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope note clarifying funding data limitations; no specific candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Provides context for AIPAC's role; supports interpreting the 2026 distancing statement but adds no independent candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T08:52:25Z"
+}

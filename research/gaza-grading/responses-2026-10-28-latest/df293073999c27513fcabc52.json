@@ -1,0 +1,82 @@
+{
+ "candidate_id": "df293073999c27513fcabc52",
+ "request_sha256": "ca70ad96a3a110d658b2b5f66d2bcd6c30814596517190d285f911d856eba989",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "The Vote for Peace candidate rating guide listed Wagner as Opposed in the 2026 California general election. The endorsement evidence context treats this directional recommendation as concrete stance evidence for the assessment, though the guide itself evaluates human rights positions, war-lobby funding, and viability together. Three PACs made independent spending in Wagner's favor, but none carries established relevance to his position on Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate as Donald P. (Don) Wagner; used for name reference in summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Secretary of State role provides no information on Palestinian justice position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California jurisdiction is context only; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a specific stance on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All three PACs (RIGHT PATH, REFORM LOCAL GOVERNMENT, SAN DIEGO GUN OWNERS) are explicitly marked unestablished relevance; spending_context directs they not explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming unmapped spenders should not inform the Palestine assessment; no independent Palestine signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Wagner Opposed in the general election; per endorsement_evidence_context this is concrete stance evidence for the assessment."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Establishes that a Vote for Peace Opposed rating is concrete stance evidence even without a direct candidate quotation; supports the adverse signal from the focused observation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies Vote for Peace evaluates human rights, war-lobby/AIPAC funding, and viability together; adds nuance that opposition may reflect multiple factors, not a single policy claim."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "2026-11-03 dates the general election context for the Vote for Peace opposition; used for temporal specificity."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California is already implied by state and office fields; adds no distinct Palestine signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Structural label 'candidates'; no substantive content relevant to the assessment."
+  }
+ ],
+ "generated_at": "2026-10-29T09:08:09Z"
+}

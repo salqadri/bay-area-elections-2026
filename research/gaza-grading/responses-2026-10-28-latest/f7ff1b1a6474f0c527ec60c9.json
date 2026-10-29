@@ -1,0 +1,94 @@
+{
+ "candidate_id": "f7ff1b1a6474f0c527ec60c9",
+ "request_sha256": "7432a951d5d2cb607b950cceb85244cd49d1e733ea506b89042b9f06472c33f2",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Graham's campaign platform declares she strongly supports Israel, cosponsoring bills to strengthen the U.S.-Israel partnership, target the Iranian regime, and confront antisemitism, framing that support as a moral and religious duty. In a 2026 SC Senate debate she stated the US must stand with Israel, equating threats to Israel with threats to the United States, and her office's August 2026 statement that she 'doubles down' on Israel support reinforces the unqualified alignment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the explanation."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides context for the SC Senate debate setting."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Redundant with office field; no independent signal on Palestine position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All four spenders carry unestablished relevance; spending context explicitly bars using them to explain a Palestine assessment without other evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note governing use of spender data; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Both spenders carry unestablished relevance; no explicit link to Palestine policy."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Israel/Palestine point states she strongly supports Israel, cosponsors partnership and antisemitism-confrontation bills, frames support as moral and religious duty."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Debate statement equating threats to Israel with threats to US; office 'doubles down' statement; Jewish Insider runoff context all reinforce unqualified pro-Israel alignment."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope limitation note for funding data; not a candidate action or position."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing does not bear on Palestine position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Redundant with office field."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative classification; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T07:55:43Z"
+}

@@ -1,0 +1,76 @@
+{
+ "candidate_id": "b59748f99259e1c98c4539db",
+ "request_sha256": "0dda75bba46ff58b470ad9285c81c104d2f4131a41cdf35b3a212309b69b9468",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Abbott has repeatedly used Texas executive power to shield Israel and suppress Palestinian justice advocacy. In 2021 he declared \"Texas stands with Israel\" as a \"friend and partner.\" In 2025 he threatened to defund San Marcos over a ceasefire resolution, calling it \"antisemitic,\" and in 2024 directed state universities to define antisemitism in free-speech policies with punishments for antisemitic rhetoric, citing the BDS ban. In January 2026 he urged revocation of CAIR Texas's nonprofit status.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the subject as Greg Abbott; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Confirms statewide governor office; no Israel/Palestine relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not by itself indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All eight platform points address economy, criminal justice, housing, healthcare, and education; none reference Israel, Palestine, Gaza, BDS, or related speech."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2024-03-27 directive requiring universities to define antisemitism in free-speech policies with punishments for antisemitic rhetoric, citing the state BDS ban, restricts criticism of Israel on campus."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2021 unqualified pro-Israel post; 2025 threats to defund San Marcos over a ceasefire resolution and labeling it antisemitic; 2026 urging revocation of CAIR Texas nonprofit status. Pattern of shielding Israel and suppressing Palestinian justice advocacy."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date of upcoming election; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Confirms State of Texas; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:05:15Z"
+}

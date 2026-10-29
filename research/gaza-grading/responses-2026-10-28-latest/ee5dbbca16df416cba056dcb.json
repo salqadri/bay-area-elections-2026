@@ -1,0 +1,64 @@
+{
+ "candidate_id": "ee5dbbca16df416cba056dcb",
+ "request_sha256": "be9e9cb692fdff62f0b4ecf487e17b69c7fcccc28f3b2fd685877b9fd2d3ada0",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Julie Roche, the incumbent nonpartisan District 6 Councilmember in Hayward, voted in January 2024 against a resolution to divest $1.6M from Caterpillar, Intel, Chevron, and Hyundai over their ties to Israel, characterizing the measure as 'irresponsible policymaking.' CAIR-SFBA's tracker records her as having opposed the same divestment resolution, noting the entry dates to the tracker's section rather than a verified roll-call transcript.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate as Julie Roche"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides jurisdictional context (District 6 City Council Member)"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State is CA; adds no material detail beyond jurisdiction"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is contextual for a local council race"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents her vote against divesting from four Israel-linked companies and CAIR-SFBA tracker corroboration; both entries describe the same opposition action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Future election date does not bear on Palestine policy assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Hayward grounds the vote in a specific local body"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Confirms she is the sitting councilmember who cast the vote"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates' carries no policy signal"
+  }
+ ],
+ "generated_at": "2026-10-29T09:26:05Z"
+}

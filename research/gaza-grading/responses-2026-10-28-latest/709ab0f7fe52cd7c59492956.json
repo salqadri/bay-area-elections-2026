@@ -1,0 +1,76 @@
+{
+ "candidate_id": "709ab0f7fe52cd7c59492956",
+ "request_sha256": "61e3fbde9935de60fd33c11ddf4691b8eb461da4811ced1a8afb77a713b1cb9e",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Jamal Khan, a nonpartisan candidate for At-large Governing Board Member in Berryessa Union School District, is a confirmed member of the pro-Palestine Muslim community. Activist Samir Laymoun supported Khan in the general phase; that support is recorded as an activist opinion source rather than an institutional endorsement.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used throughout; no independent evaluative signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local school-board scope of the race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context already conveyed by jurisdiction; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status provides brief context for a local board race."
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in the pro-Palestine Muslim community; primary basis for the assessment per the guide's defined meaning."
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies the community field as affirmative alignment evidence, not mere religious identity; grouped with part_of_muslim_community."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Samir Laymoun supported Khan in the general phase; included as a secondary data point with appropriate framing."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Establishes Laymoun as an activist opinion source separate from institutional endorsements; grouped with the endorsement observation to preserve attribution."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no bearing on the candidate's documented position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Berryessa Union School District identifies the local scope of the race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Structural label indicating the candidate's category in the dataset; no evaluative content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:40:23Z"
+}

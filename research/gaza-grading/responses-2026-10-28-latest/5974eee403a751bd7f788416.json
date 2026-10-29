@@ -1,0 +1,76 @@
+{
+ "candidate_id": "5974eee403a751bd7f788416",
+ "request_sha256": "aca32bf0a124782371dd4b4a112d5f740ea2aa1ee79d5b2f2a03c0dca7426b23",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Wang's Oakland District 2 platform covers housing, public safety, and local economic policy without documented positions on Palestine or Israel. The 314 Action Fund, which received UDP funding in 2024, endorsed her; the guide treats that funding connection as a negative signal for Palestinian justice. No other recorded actions, statements, or endorsements in the file address Israel-Palestine policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local city council context; grouped with jurisdiction for race-level framing"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label has no direct bearing on Palestine stance"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers housing, public safety, immigration, homelessness; contains no documented position on Palestine, Israel, or Gaza"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "314 Action Fund endorsement is the sole relevant signal; guide treats the fund's UDP funding as a negative indicator"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents 314 Action Fund's 2024 UDP funding and the guide's criterion treating that link as a negative signal; no candidate-specific earmarking established"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Timing of the 2026 race; no policy bearing"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Oakland; grouped with office for local-race context"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status does not inform Palestine position"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Dataset metadata field"
+  }
+ ],
+ "generated_at": "2026-10-29T09:30:14Z"
+}

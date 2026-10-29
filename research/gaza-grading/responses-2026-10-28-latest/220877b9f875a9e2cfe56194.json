@@ -1,0 +1,70 @@
+{
+ "candidate_id": "220877b9f875a9e2cfe56194",
+ "request_sha256": "824f6bd3d6c59050927cac82d2d30d6002949fc7e660403b17bd13d77fb66bdc",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action's general-election 'preferred' recommendation is the principal stance evidence in Alvarado's record. The record treats this tier as concrete stance evidence even without a direct candidate quotation, while noting that 'Preferred' falls short of a full endorsement. The recommendation reflects CAIR Action's evaluation of her civil rights and foreign policy positions, including Gaza and ceasefire, and anchors her placement in the band that affirms the conflict as genocide while leaving room for a reset of Israel-US relations.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only; no stance signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local city council office; no direct bearing on Palestinian justice position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no stance signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a position on Palestine."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier in general phase is the central stance evidence for the B placement."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Establishes that the directional CAIR Action tier counts as concrete stance evidence even without a candidate quotation; supports the assessment framework applied to the preferred tier."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action's role and that 'Preferred' is not a full endorsement; contextual qualification for the primary evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no stance signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Morgan Hill, CA; no direct bearing on the assessment."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:27:47Z"
+}

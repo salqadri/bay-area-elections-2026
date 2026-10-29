@@ -1,0 +1,76 @@
+{
+ "candidate_id": "beb4dc80dbcb66382ad438c5",
+ "request_sha256": "058cbc71e4773fd372c37b8c0e45c8ad3e3faa649d34e8dcc502ba0ca5031af0",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Yvonne Inciarte in the general election, and Vote for Peace, which rates candidates on human rights and AIPAC funding, listed her as an Ally. Her District 2 City Council platform addresses only local Santa Clara priorities—renter protection, emergency response, infrastructure upkeep, and small-business policy—without statements on Gaza or Israel. The two pro-Palestine organizational recommendations are the concrete stance evidence for her position.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no substantive policy content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local city council race, contextualizing the platform's local focus."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier adds no material information for the Palestine assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not bear on Palestine position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Five platform points cover housing, public safety, ethics, infrastructure, and local economy; none address Gaza, Israel, or foreign policy."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed (general) and Vote for Peace rated Ally (general); per rubric context these are concrete stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms directional CAIR/Vote for Peace recommendations count as concrete stance evidence without a direct candidate quotation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's Gaza/ceasefire consideration and Vote for Peace's human-rights/AIPAC-funding criteria, clarifying what the endorsements evaluate."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 election date is scheduling context, not relevant to Palestine position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Santa Clara is already captured by the office field; adds no distinct Palestine-relevant information."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:35:51Z"
+}

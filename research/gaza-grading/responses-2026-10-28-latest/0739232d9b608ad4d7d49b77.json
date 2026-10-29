@@ -1,0 +1,76 @@
+{
+ "candidate_id": "0739232d9b608ad4d7d49b77",
+ "request_sha256": "e5af497032a4324cf67df37cc63d2f01e413da055cc4ca922ea6f88de77b92a3",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bien Doan, a San Jose District 7 City Council member, joined a unanimous council statement on January 17, 2024, calling for a ceasefire, humanitarian aid to Gaza, and hostage release from both Hamas and Israel. The statement addresses the humanitarian crisis and calls for an end to hostilities, framing the hostage issue as a mutual obligation of both parties.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification field only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes local-council context for the statement"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail, no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not signal a position on Palestine"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers homelessness, criminal justice, housing, economy, environment; no Israel/Palestine content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Unanimous council statement calling for ceasefire, humanitarian aid, and hostage release; shows engagement with the crisis though framed as mutual obligation"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing detail, no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "San Jose context grouped with office for local-level framing"
+  },
+  {
+   "id": "candidate_record.election_type",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Runoff format is administrative"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status does not signal a Palestine position"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification field"
+  }
+ ],
+ "generated_at": "2026-10-29T09:33:47Z"
+}

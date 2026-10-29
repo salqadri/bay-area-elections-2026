@@ -1,0 +1,76 @@
+{
+ "candidate_id": "fa01386b786d8d6fb78d0a78",
+ "request_sha256": "d153900ce5e84fefbb5bd52e19f591d32a9caa19f9205be2b57494f5be07fa4a",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Victor Lopez Pulido and Vote for Peace rated him an Ally for the 2026 Union City District 2 City Council race. His platform addresses only local issues—housing, transit, public safety, immigrant services—and contains no foreign-policy statement. The record's endorsement context designates these directional recommendations as concrete stance evidence even without a direct candidate quotation, and CAIR Action's full-endorsement tier, as distinct from a preferred listing, is the primary basis for this result.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate; no stance signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local city council seat; provides jurisdictional context for the endorsements"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no bearing on Palestine stance"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-related signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Entirely local issues (housing, transit, public safety, immigrant services); no foreign-policy or Israel/Palestine content, confirming the endorsements are the sole stance evidence"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement and Vote for Peace Ally/supported rating are the concrete pro-Palestine stance evidence in this record"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Explicitly designates CAIR Action and Vote for Peace recommendations as concrete stance evidence even without a direct candidate quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action considers Gaza/ceasefire positions and distinguishes endorsement from preferred; Vote for Peace evaluates war-lobby funding and human rights"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "2026-11-03; temporal context for the endorsements"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Union City; confirms local-race context"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label only; no substantive content"
+  }
+ ],
+ "generated_at": "2026-10-29T09:37:18Z"
+}

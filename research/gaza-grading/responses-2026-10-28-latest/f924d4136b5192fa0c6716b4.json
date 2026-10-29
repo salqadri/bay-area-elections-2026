@@ -1,0 +1,76 @@
+{
+ "candidate_id": "f924d4136b5192fa0c6716b4",
+ "request_sha256": "a9961f7e9ce2d8ccf97c5620cc1d2ab67af3397e5b81b240b350b0daaa8ede24",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kashif Wasim, a nonpartisan candidate for Trustee Area 4 on the New Haven Unified School District board, holds a general-election endorsement from CAIR Action and an Ally rating from Vote for Peace. Both organizations assess candidates on Gaza and foreign-policy positions, and directional recommendations at this tier are treated as concrete stance evidence. The candidate's campaign platform addresses only local education, campus safety, and board accountability.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local school-board race, contextualizing why endorsements carry the primary weight."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Minimal geographic detail; no bearing on Palestine assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status helps situate the candidate briefly."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "All five points address local education, campus safety, and board accountability with no Palestine, Israel, or foreign-policy content."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed (general) and Vote for Peace rated Ally/supported (general); per the endorsement context these are concrete stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Explicitly states directional CAIR Action / Vote for Peace recommendations constitute concrete stance evidence even without a direct candidate quotation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Confirms CAIR Action considers Gaza/ceasefire positions and Vote for Peace evaluates human-rights and war-lobby criteria, explaining why these endorsements bear on the assessment."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not materially affect the Palestine-justice reading."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "New Haven USD confirms the local scope of the race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:44:18Z"
+}

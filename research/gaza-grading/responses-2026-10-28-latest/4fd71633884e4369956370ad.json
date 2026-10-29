@@ -1,0 +1,82 @@
+{
+ "candidate_id": "4fd71633884e4369956370ad",
+ "request_sha256": "78afba964a6c549e3a8f548f110b414bf5328bf921a5364a08b89c36c1deac95",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action placed Gadus in its 'preferred' tier for the 2026 Morgan Hill Unified School District general, a directional recommendation reflecting its assessment of her civil-rights and foreign-policy positions, including on Gaza and ceasefire, though it falls short of a full endorsement. Activist Samir Laymoun separately supported her candidacy in the same race.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "School-board trustee seat has no direct bearing on Palestinian-justice evaluation."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy content."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no information about Palestine-related positions."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier and Laymoun 'supported' are the two directional pro-Palestine signals in the record."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Qualifies Laymoun as an activist opinion source separate from official BAMC positions; limits weight but does not add a policy fact."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric-level guidance on how to treat CAIR tiers; no new candidate fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR 'preferred' is not a full endorsement and that the tier reflects Gaza/ceasefire and civil-rights assessment; folded into summary attribution."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date anchors the race but adds no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Morgan Hill USD identifies the local race; included for context in summary."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status is a race fact, not a Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Data-format label ('candidates'); no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:43:46Z"
+}

@@ -1,0 +1,100 @@
+{
+ "candidate_id": "3d52a8442f6fb39f47328736",
+ "request_sha256": "61e10acecd20a82a50550fa09c4e4967d887a4bfe66b088eabb24429b90ce801",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Hernandez's F rating is anchored in a Hindu American PAC endorsement from a Hindutva organization. She also received independent spending support from United Democracy Project, an AIPAC-backed super PAC, and from BOLD America, which the record documents as having received UDP funding in 2026. At an April 2026 Indivisible Tri-Valley forum, she declined to label Israel's Gaza actions as genocide, diverging from fellow candidates and the Alameda County Democratic Party.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents BOLD America's UDP funding link and UDP's AIPAC-backed role; guide treats UDP funding as negative signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "BOLD America ($1.8M) and UDP ($825K) independent spending supporting candidate; unestablished-relevance spenders omitted."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Interpretive note clarifying spending is independent, not campaign contributions; no standalone policy signal."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Both opposing spenders have unestablished relevance; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "No Israel/Palestine, Gaza, or related civil-rights content in any platform point."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documented refusal to label Gaza actions genocide at April 2026 forum, diverging from peers and local DNP."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note limiting data to 2024+; no policy signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Hindu American PAC endorsement (Hindutva organization) directly triggers the F criterion."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Calendar date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office type; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T07:28:01Z"
+}

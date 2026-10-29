@@ -1,0 +1,76 @@
+{
+ "candidate_id": "1b4e6999391d78184a60a08b",
+ "request_sha256": "bae185dbded993142b23a3e226c5dfe18b1505ab4c97de948d6c901c194f8401",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, which assesses candidates on civil rights and foreign policy including Gaza and ceasefire positions, designated incumbent Rudy J. Rodriguez as preferred for the Franklin-McKinley at-large school board seat in the 2026 general. Preferred is a recommendation tier below full endorsement, signaling a favorable but not top-tier assessment of Rodriguez's stance on Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes local school-board context for the recommendation"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California is implied by jurisdiction; no independent signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status adds no Israel-Palestine signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action preferred tier in general is the primary pro-Palestinian-justice evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms directional CAIR tiers count as concrete stance evidence; preserves tier distinction"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Defines CAIR Action's relevance to Gaza/ceasefire evaluation and clarifies preferred below endorsement"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the 2026 general-election context"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies Franklin-McKinley School District race"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Notes Rodriguez is the sitting board member"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative field; no policy signal"
+  }
+ ],
+ "generated_at": "2026-10-29T09:41:50Z"
+}

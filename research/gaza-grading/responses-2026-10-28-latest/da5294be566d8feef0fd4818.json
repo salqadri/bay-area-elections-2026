@@ -1,0 +1,106 @@
+{
+ "candidate_id": "da5294be566d8feef0fd4818",
+ "request_sha256": "4dcb77313d15b0abfbf9db9657f6fb1bdea76bda69199b0195549af8d1034812",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Qaadri, whose owner-confirmed membership in the pro-Palestine Muslim community is affirmative evidence of general alignment, proposed a ceasefire resolution in Dublin in December 2023 as listed in CAIR-SFBA's tracker. CAIR Action endorsed him in the general election and Vote for Peace rated him an Ally, both organizations that evaluate candidates on Gaza and ceasefire positions. His local platform addresses housing, transit, and public safety without referencing Israel-Palestine policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name only; provides identity but no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local office context; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership is affirmative evidence of general pro-Palestine alignment per guide"
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Defines the Muslim community field as general pro-Palestine alignment evidence; grouped with the membership field"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Housing, transit, public safety, environment, economy; no Israel-Palestine content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker lists a proposed ceasefire resolution in Dublin, Dec 2023; concrete local action"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement and Vote for Peace Ally rating are concrete stance evidence per endorsement context"
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Explains BAMC is a trusted source but comment-only entries do not establish a Palestine stance"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming CAIR/VFP tiers count as stance evidence; applied in summary but not a separate fact"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR and VFP roles; used to attribute their evaluative focus, not a candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; timing context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Dublin; local context, referenced indirectly via ceasefire action"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Status context only; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Categorization label; no policy content"
+  }
+ ],
+ "generated_at": "2026-10-29T09:21:06Z"
+}

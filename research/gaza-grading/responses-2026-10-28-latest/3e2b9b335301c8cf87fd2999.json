@@ -1,0 +1,88 @@
+{
+ "candidate_id": "3e2b9b335301c8cf87fd2999",
+ "request_sha256": "03fe9e64a348225bc9d8d88e290c00c5fab2234238467f45b295af595f3e02d3",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "A 2026 Friend report states Rutinel called Israel's Gaza actions 'a genocide' and advocated for a ceasefire in 2022, citing his Palestinian heritage. The account is secondhand. Separately, 314 Action Fund, which received United Democracy Project funding in 2024, spent roughly $199,392 in independent advertising supporting Rutinel—a documented adverse funding signal.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label; no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "314 Action Fund received UDP funding in 2024; guide treats this as a negative funding signal for Palestinian justice. Spent ~$199K supporting Rutinel."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Only 314 Action Fund has established relevance via organization_context; all other spenders are unestablished and omitted."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "General note that spending is independent, not campaign money; does not itself establish a policy position."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All opposing spenders marked unestablished relevance; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Friend report (2026-06-04) states Rutinel called Israel's Gaza actions 'a genocide' and advocated a ceasefire in 2022, citing Palestinian heritage. Secondhand but the only direct Palestine-specific evidence."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Clarifies funding data covers 2024 onward; does not alter the 314/UDP signal already captured."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election logistics; no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Federal House race context; no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata tag; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T08:07:16Z"
+}

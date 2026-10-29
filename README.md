@@ -19,7 +19,9 @@ Published scores and explanations remain unchanged; current inputs use v18.
 [Correction and current-input policy](docs/COMMUNITY_GUIDE_CLEANUP.md).
 
 
-Publication **2026-10-28.1** adds [candidate recommendations for every confirmed race](recommendations.html): one recommended candidate per race — 12 via the Muslim-community rule, 141 via the Jev decision model over published grades — or an explicit "no recommendation" where the evidence doesn't support one (102 races with only sub-C grades, 284 with no grades at all). Each pick carries a Qwen-generated "why" paragraph. [Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).
+Publication **2026-10-28.5** attaches fresh evidence explanations to every published grade: all **398 letter-grade candidacies** in the v7 publication were re-explained from their exact frozen scoring requests under the hash-bound summary-prompt-v3 policy (**898** N/A candidacies carry the editorial insufficiency note). Recommendations now live **inside both readers** — every race card and ballot result shows the pick, the Muslim-community badge, or the explicit no-recommendation reason, each with a Qwen-written why-paragraph under our published framework (genocide + aid litmus test first, silence counted against, endorsement policy). The standalone recommendations page is retired. [Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).
+
+Publication **2026-10-28.1** historically added a standalone candidate-recommendations reader with per-race picks — 12 via the Muslim-community rule, the rest via the Jev decision model over published grades — or an explicit "no recommendation" where the evidence doesn't support one. [Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).
 
 Publication **2026-10-27.13** adds BAMC Action recommendations and complete candidate comments, plus separately attributed Samir Laymoun opinions. **96 source entries**, including official supports/oppositions and two comment-only observations, reach the endorsement lists and new Jev inputs. Propositions are excluded; scores are not rerun. [Sources, differences and repeatable import](docs/BAMC_ACTION.md).
 

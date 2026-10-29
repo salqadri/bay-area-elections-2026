@@ -1,0 +1,70 @@
+{
+ "candidate_id": "ba73e0590db70c10498dbbfe",
+ "request_sha256": "058b01e2a35e3fa9cbdba635703f88772085f8efbebd05427001b989901da2e9",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Blakeman calls himself 'a Zionist and a proud Zionist,' marched for Israel in June 2026, and issued 'graphic warnings about anti-Israel protesters' during his gubernatorial debate. He attacked rival candidates over their Israel stances and demanded New York adopt the IHRA definition of antisemitism. His public record consistently frames Israel as the protected party and Palestinian advocacy as the threat.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (NY Governor); no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not establish a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All platform points address criminal justice, economy, immigration, education, sports, and environment; none reference Israel or Palestine."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Demanding New York adopt the IHRA definition equates criticism of Israel/Zionism with antisemitism, a criterion tied to the E band; included to show the full adverse pattern supporting the F grade."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Self-identified as proud Zionist, marched for Israel, issued graphic warnings about anti-Israel protesters, and attacked rivals over their Israel stances; core evidence for the F (strong defender of Israel) grade."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata field identifying the candidate pool; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:00:01Z"
+}

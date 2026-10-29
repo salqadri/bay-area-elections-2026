@@ -1,0 +1,58 @@
+{
+ "candidate_id": "446b259fc9e89d4ed7898d3d",
+ "request_sha256": "781d2a8d0431bdf635fbbeb7d6c746455d7759e3f22e292b689511fb1427a81d",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Emanuel Yekutiel, owner of San Francisco's Manny's, faced weekly protests in 2019 for his support of Israel, and a 2024 source reports he affirms Israel's right to exist as a Jewish state. Both documented positions identify him as a defender of Israel on the Palestinian-justice question.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Name only; instructions prohibit inferring political views from names or ethnicity."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Board of Supervisors title does not bear on Palestinian-justice position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State identifier is contextual, not relevant to the position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2019 weekly protests for his Israel support and 2024 source-reported affirmation of Israel's right to exist as a Jewish state both document pro-Israel positioning."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "2026 election date is scheduling information, not relevant to the position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "San Francisco jurisdiction is contextual, not relevant to the position."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster tag 'candidates' is a dataset label, not relevant to the position."
+  }
+ ],
+ "generated_at": "2026-10-29T09:13:38Z"
+}

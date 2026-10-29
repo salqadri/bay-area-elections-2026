@@ -1,0 +1,70 @@
+{
+ "candidate_id": "1d0fdf30a97bc01601bd9bc6",
+ "request_sha256": "77a818c7d2abda5ba23490e001f68b4955167d628f4858f7287764b468f6c839",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, an advocacy organization whose recommendations weigh civil rights and foreign policy including Gaza and ceasefire positions, endorsed Reyna for the Evergreen School District at-large governing board. The endorsement is recorded at the full endorsed tier, which the evidence context treats as concrete stance evidence even absent a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Name only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the at-large board role but carries no Palestinian-justice signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement is the sole concrete stance evidence in the record"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Establishes that CAIR Action directional recommendations count as concrete stance evidence even without a direct candidate quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action as evaluating civil rights and foreign policy including Gaza and ceasefire positions"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the specific Evergreen School District race referenced in the summary"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata label only"
+  }
+ ],
+ "generated_at": "2026-10-29T09:41:23Z"
+}

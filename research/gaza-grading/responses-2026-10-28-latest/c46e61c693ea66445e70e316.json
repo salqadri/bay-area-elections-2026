@@ -1,0 +1,106 @@
+{
+ "candidate_id": "c46e61c693ea66445e70e316",
+ "request_sha256": "3fe4c9e47b7f575784b254967e0a5ce8e12382c7bf91115050aaea1ffb0c9b4c",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Valadao co-introduced a House resolution supporting Israel's right to defend itself and voted for emergency military funding to Israel in late 2023. AIPAC PAC endorsed his 2026 CA-22 race. He voted Yea on H.R. 6090 and sponsored H.R. 1007, both embedding the IHRA definition in Title VI education enforcement. A UDP-funded 314 Action Fund spent $436,700 against his campaign, a tension with the AIPAC endorsement, but the direct endorsement and Israel-supporting votes define his recorded position.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal on Palestine/Israel."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context (CD-22, US Representative); no policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a specific Palestine/Israel position."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "CLF, Clearpath, and NRA PAC all carry unestablished relevance; no explicit Palestine/Israel link."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note on independent spending; not a candidate action or statement."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "AIPAC context confirms pro-Israel endorsement role; 314 Action Fund UDP-funding context clarifies the opposing-spend tension; grouped with gaza_evidence and spenders_opposing."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "uncertain",
+   "treatment": "included",
+   "reason": "314 Action Fund ($436,700) is a UDP-funded pro-Israel org spending against Valadao, a tension with the AIPAC endorsement; other spenders unestablished and omitted."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All platform points concern water, agriculture, immigration, jobs, healthcare, veterans, and budget; none address Palestine, Israel, or related speech."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on H.R. 6090 (2024) and original sponsorship of H.R. 1007 (2025) both incorporate the IHRA definition into Title VI education enforcement, matching E/F criteria."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Co-introduced Israel-defense resolution (Oct 2023), voted for emergency military funding to Israel (Nov 2023), and received AIPAC PAC 2026 endorsement; direct Israel-supporting record."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope limitation on funding data; no candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing context for the 2026 race."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Confirms US House; no policy content."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Status indicator; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Dataset classification tag; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T08:04:45Z"
+}

@@ -1,0 +1,94 @@
+{
+ "candidate_id": "b7e865a85116f606d14c3ce9",
+ "request_sha256": "69bfada75b326213478a75bd58b96ced374e524e85e923b6278ee61a26f0737a",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Peltola stated she \"stands firmly with Israel and its right to defend\" after October 2023, then voted with Republicans in May 2024 to approve arms for Israel over her party's objection. Her Senate campaign declined to confirm or deny that record in August 2026. A UDP-funded PAC, EDW Action Fund, spent $253,750 supporting her. Her November 2023 no-vote on a separate House aid package is the only contrary action, but the framing and pro-arms vote place her on Israel's side.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context, no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier, no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Democratic Party context clarifies the May 2024 cross-party vote; included implicitly"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "EDW Action Fund received UDP (AIPAC-backed) funding in 2026; guide treats this as a negative funding signal"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "EDW Action Fund $253,750 spending is relevant via UDP link; other spenders unestablished relevance"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies independent-spending nature; no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All three opposing spenders marked unestablished relevance"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "No Israel/Palestine or related speech-rights content in platform"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 2023 pro-Israel statement, May 2024 pro-arms vote, and Aug 2026 non-response are adverse; Nov 2023 no-vote on separate package is the only contrary action"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes 2024+ scope; no independent signal"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate race context, no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only"
+  }
+ ],
+ "generated_at": "2026-10-29T07:34:57Z"
+}

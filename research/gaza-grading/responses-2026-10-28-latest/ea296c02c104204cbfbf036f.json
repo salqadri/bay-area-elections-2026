@@ -1,0 +1,82 @@
+{
+ "candidate_id": "ea296c02c104204cbfbf036f",
+ "request_sha256": "d27303ae962ad18e9d0e28d47cb367e7449bf9a1330a2f2ef11b2928072765fa",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Phoebe Shin Venkat in the general election and Vote for Peace rated her an Ally, both organizations that evaluate candidates on Gaza and human-rights positions. Her council record shows a consistent civil-liberties orientation—she raised the 5-0 ICE sanctuary resolution and cast the sole vote against expanding Flock surveillance—but the direct Palestine-specific evidence rests on those two organizational assessments.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local city council seat; no direct Palestine relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Platform covers economy, housing, climate, and public safety; the ICE sanctuary resolution and lone anti-Flock-surveillance vote show a civil-liberties orientation but do not directly address Palestine or Israeli policy. Grouped as contextual pattern in the summary."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating are the direct Palestine-specific stance evidence per the endorsement context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes that CAIR Action/Vote for Peace directional recommendations count as concrete stance evidence in this rubric; informs how the endorsements are weighted."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action (evaluates Gaza/ceasefire positions) and Vote for Peace (evaluates human rights, war-lobby funding); used to explain what the endorsements assess."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Foster City; no direct Palestine relevance."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no direct Palestine relevance."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label only; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:22:55Z"
+}

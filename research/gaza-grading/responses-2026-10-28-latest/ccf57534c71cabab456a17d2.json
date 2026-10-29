@@ -1,0 +1,82 @@
+{
+ "candidate_id": "ccf57534c71cabab456a17d2",
+ "request_sha256": "56c6b043ff1bbe2d0ed51cb0fd4e92e3439a51e23cc8da3bbc206db0dd05e214",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, whose recommendations weigh Gaza and ceasefire positions, endorsed Yvonne Martinez Beltran in the general phase of her Morgan Hill council race. The CAIR-SFBA tracker additionally records her as having supported a local peace resolution in March 2024, though it qualifies that entry as a reported local action rather than a verified roll-call transcript.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "District B City Council Member; contextual scope, not a policy action."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; does not indicate a stance on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records support for a local peace resolution (2024-03-06), qualified as reported local action, not verified roll-call."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed the candidate in the general phase; full endorsement tier, not merely preferred."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Guidance confirming CAIR Action endorsements count as concrete stance evidence; informs treatment of the endorsement row."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action weighs Gaza/ceasefire positions in recommendations; supports relevance of the endorsement without adding a new fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Morgan Hill; grounds the local scope of the peace resolution and endorsement."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:27:23Z"
+}

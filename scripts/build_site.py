@@ -1,10 +1,37 @@
 """Build the standalone GitHub Pages readers with optional remote analytics."""
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+RECOMMENDATION_PLAN = ROOT / "research/candidate-recommendations/recommendations-2026-10-28-latest.json"
+
+
+def recommendations_map_json():
+    """Compact per-race recommendation map embedded in both readers. Only the
+    fields the display needs; decisions stay in the archived plan."""
+    plan = json.loads(RECOMMENDATION_PLAN.read_text(encoding="utf-8"))
+    by_position = {}
+    for r in plan["races"]:
+        entry = {"category": r["category"], "recommended": r.get("recommended"),
+                 "recommend_reason": r.get("recommend_reason")}
+        why = r.get("recommend_reason_text") or r.get("summary")
+        if r.get("recommended") and isinstance(why, dict) and why.get("text"):
+            entry["why"] = {"text": why["text"], "model": why.get("model", "")}
+        by_position[r["position_id"]] = entry
+    from datetime import datetime, timezone, timedelta
+    gen = plan.get("generated_on", "")
+    try:  # archive timestamps are UTC; readers display Pacific dates
+        gen = datetime.fromisoformat(gen).astimezone(timezone(timedelta(hours=-7))).date().isoformat()
+    except ValueError:
+        gen = gen[:10]
+    payload = {"generated_on": gen,
+               "plan_sha256": hashlib.sha256(RECOMMENDATION_PLAN.read_bytes()).hexdigest(),
+               "byPosition": by_position}
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 
 def render(page="index"):
@@ -43,6 +70,14 @@ def render(page="index"):
     if html.count('__PRO_PALESTINE_GRADE_JS__') != 1:
         raise ValueError('Expected one shared model-grade placeholder')
     html = html.replace('__PRO_PALESTINE_GRADE_JS__', grade_js)
+    rec_display_js = (ROOT / 'src/recommendation-display.js').read_text(encoding='utf-8')
+    assert '</script' not in rec_display_js.lower(), 'Unsafe inline recommendation display script'
+    if html.count('__RECOMMENDATION_DISPLAY_JS__') != 1:
+        raise ValueError('Expected one shared recommendation display placeholder')
+    html = html.replace('__RECOMMENDATION_DISPLAY_JS__', rec_display_js)
+    if html.count('__RECOMMENDATIONS_MAP_JSON__') != 1:
+        raise ValueError('Expected one recommendations map placeholder')
+    html = html.replace('__RECOMMENDATIONS_MAP_JSON__', recommendations_map_json())
     platform_js = (ROOT / 'src/platform-display.js').read_text(encoding='utf-8')
     assert '</script' not in platform_js.lower(), 'Unsafe inline platform display script'
     if html.count('__PLATFORM_DISPLAY_JS__') != 1:

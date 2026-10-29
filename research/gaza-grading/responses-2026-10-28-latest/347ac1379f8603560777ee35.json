@@ -1,0 +1,76 @@
+{
+ "candidate_id": "347ac1379f8603560777ee35",
+ "request_sha256": "2d660d3723585d4f1537df8de8835a9cabbc401837795bfa6cd08b8ce8ff741a",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Hardy opposed a ceasefire resolution and supported a 'United Against Hate' resolution, per CAIR-SFBA's December 2023 tracker, which notes the entry is reported local action rather than a verified roll-call transcript. Activist Samir Laymoun opposed her in the general as an individual opinion source. The ceasefire opposition and 'United Against Hate' framing place her in an Israel-centric posture.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "At-large Mayor context; no Palestine/Israel relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All points address local Santa Clara issues (data centers, housing, utilities, water, education, NDAs) with no Palestine or Israel content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records opposition to a ceasefire resolution and support for a 'United Against Hate' resolution; tracker notes this is reported local action, not a verified roll-call transcript."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Samir Laymoun opposed Hardy in the general; preserved as an individual activist opinion per the supplied context."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies Laymoun is an individual opinion source separate from official BAMC Action positions; contextualizes the endorsement observation without elevating it to an organizational endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Santa Clara; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:35:26Z"
+}

@@ -1,0 +1,76 @@
+{
+ "candidate_id": "64f527fde410ba27c745d7b4",
+ "request_sha256": "d0b0e168b1bbb232a28c7858bb088868306955c005967a88bfe3d19f98f4e74d",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, an advocacy organization that evaluates candidates on civil rights and foreign policy including Gaza ceasefire positions, endorsed incumbent school board trustee John T. Horner at the full endorsement tier for the 2026 Morgan Hill Unified School District race.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the assessment."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local school board race, giving context to the endorsement."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Part of jurisdiction context for the race."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan designation carries no signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement at full endorsement tier in the general phase is the primary evidence supporting the displayed grade."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR Action directional recommendations count as concrete stance evidence; supports interpretation of the endorsement row."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's role in evaluating Gaza and ceasefire positions, giving the endorsement substantive meaning."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Dates the endorsement to the 2026 cycle; folded into the paragraph."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the specific district (Morgan Hill Unified School District) for the reader."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Notates Horner's status as the sitting trustee."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification field with no bearing on stance."
+  }
+ ],
+ "generated_at": "2026-10-29T09:43:36Z"
+}

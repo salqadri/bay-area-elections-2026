@@ -1,0 +1,76 @@
+{
+ "candidate_id": "6474d7b0ac04faca87879d65",
+ "request_sha256": "656ce69d3a209b111eca2f169bd95d51c9d74d19678332e08ec3c3978cba978b",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Nguyen for San Francisco's District 8 Board of Supervisors seat in the general election, an endorsement the organization issues after weighing candidates' positions on civil rights and foreign policy, including Gaza and ceasefire stances. The endorsement carries the full endorsement tier rather than the lesser 'Preferred' recommendation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name only; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Identifies the race for which the endorsement was issued."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State label has no bearing on Palestine assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All eight points address local SF issues (housing, transit, criminal justice, etc.); none reference Israel, Palestine, Gaza, or related foreign policy."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement at the full 'endorsed' tier in the general phase is the primary pro-Palestine signal in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Establishes that CAIR Action directional recommendations count as concrete stance evidence for this guide."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action evaluates candidates on Gaza/ceasefire positions and that 'endorsed' is a higher tier than 'Preferred.'"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Date of election does not bear on Palestine assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Specifies San Francisco as the race context for the endorsement."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Administrative label with no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:13:10Z"
+}

@@ -1,0 +1,64 @@
+{
+ "candidate_id": "b381add5649e29a640d2aea1",
+ "request_sha256": "fe90bec9b4299500a3fdde977c20e9e6d0db920019e438816ff80cd675a047ef",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bengs published a September 2025 legal analysis titled 'Is There Genocide In Gaza?' separating Netanyahu's government from Israeli people while noting the US supplied 71% of Israel's military aid. He calls the US 'partially responsible' as Israel's primary weapons source and says Israel lacked legal grounds for its Iran strikes, stopping short of calling for an end to US military assistance. His opposition to US involvement in the Iran conflict and explicit aid figures place him beyond mere humanitarian condemnation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (SD Statewide Senate); not relevant to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation (Independent); no direct bearing on Palestinian justice assessment."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Iran-conflict opposition shows general resistance to US military in the region; remaining points (Citizens United, AI data centers, term limits, tax, healthcare, immigration) are unrelated to Palestine."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Legal analysis engaging the Gaza genocide question, 71% US aid figure, 'partially responsible' US framing, and Iran-strike legality statement all document engagement with Israeli war conduct and US complicity, though Netanyahu-only separation limits the framing."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03); no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label (United States Senate); no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Metadata tag ('candidates'); no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T07:56:14Z"
+}

@@ -1,5 +1,11 @@
 # Hermes follow-up: concise explanations of all published grades
 
+Publication **2026-10-28.5** (current) completes this task: **398** fresh source-bound
+explanations for the letter-grade candidates plus **898** editorial N/A notes, attached
+from the exact frozen v7 queue. See [the completion note](../LATEST_SCORE_PUBLICATION.md)
+and [CANDIDATE_RECOMMENDATIONS.md](../CANDIDATE_RECOMMENDATIONS.md) for the race-level
+reason layer. Sections below are historical.
+
 Current publication **2026-10-28.4** publishes the owner's completed full-roster
 run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,

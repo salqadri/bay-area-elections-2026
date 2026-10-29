@@ -1,0 +1,70 @@
+{
+ "candidate_id": "6350295ba0c2d9f823652bf9",
+ "request_sha256": "e058016aced4ebb38d95f70aba26ebea6abe6be8382aa240b5d16490792caeb7",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Ty Masterson's pro-Israel posture is consistent across multiple documented actions: he joined a delegation to Israel to express solidarity around \"Israel's security realities,\" called standing by Israel \"when it's not politically convenient\" moral courage, and thanked the Trump administration for bringing \"PEACE, stability and security\" without referencing Gaza or Palestinian conditions. He also spearheaded Kansas's adoption of the IHRA definition into state law, framing the measure as combating antisemitism and supporting Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identity field; name used in the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context does not bear on Palestine or Israel policy"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no bearing on the assessment"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label alone does not establish a specific position on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All five points address economy, housing, criminal justice, and government ethics; none reference Palestine, Israel, or related speech protections"
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Spearheading Kansas IHRA adoption and emphasizing support for Israel in interview aligns with Israel-protective framing; grouped with gaza_evidence for the overall pattern"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Pro-Israel delegation visit, 'moral courage' framing of unconditional Israel support, and 'PEACE' statement omitting Gaza and Palestinians all demonstrate strong pro-Israel positioning with no acknowledgment of Palestinian harm"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date is scheduling context, not a policy indicator"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no independent bearing on the assessment"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification tag with no policy content"
+  }
+ ],
+ "generated_at": "2026-10-29T08:52:57Z"
+}

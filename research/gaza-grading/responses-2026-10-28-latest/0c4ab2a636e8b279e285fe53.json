@@ -1,0 +1,100 @@
+{
+ "candidate_id": "0c4ab2a636e8b279e285fe53",
+ "request_sha256": "91542d060f5b58c9e3501a3009a9d7b254a3a257217a915342f1551104705e8c",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Cooper signed the SHALOM Act adopting the IHRA antisemitism definition and rejected a legislative effort to block U.S. military aid to Israel in August 2025. His October 7, 2025 post called for ending \"death and destruction in Gaza\" and peace for those who suffered \"in Israel and in Gaza,\" acknowledging Palestinian harm symmetrically without calling for aid restrictions. DMFI PAC, an electoral committee for Democratic Majority for Israel, spent $2,401 in independent support for his campaign.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "DMFI PAC explicitly described as supporting a pro-Israel Democratic majority; contextualizes pro-Israel alignment"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC $2,401.25 has established pro-Israel relevance; remaining 11 spenders have unestablished relevance and are omitted"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note on interpreting spending; not a candidate action"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All five opposing spenders have unestablished relevance to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Economy, healthcare, housing, education, criminal justice; no Israel/Palestine or foreign-policy content"
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Signed SHALOM Act adopting IHRA definition; directly matches E-grade criterion on IHRA support"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Aug 2025 rejection of aid-blocking effort is adverse; Oct 7 2025 post acknowledges Gaza harm but frames symmetrically without calling for aid restrictions"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope limitation note; no candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate race identifier; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal"
+  }
+ ],
+ "generated_at": "2026-10-29T07:49:53Z"
+}

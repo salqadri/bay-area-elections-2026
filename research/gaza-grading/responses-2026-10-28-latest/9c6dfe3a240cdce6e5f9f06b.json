@@ -1,0 +1,82 @@
+{
+ "candidate_id": "9c6dfe3a240cdce6e5f9f06b",
+ "request_sha256": "cd858e670ed24748c157d818667591cba451997351dc2cf362ea89c9c285b062",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Gloria Romero's public statements on Israel and Palestine consist exclusively of antisemitism-centered framing. Across three documented instances from 2024 to 2026, she addressed campus Jew-hatred and Oct 7, explicitly tagging AIPAC and pro-Israel organizations. The JNS specifically noted she centered her campaign on antisemitism rather than Gaza policy. Her platform pledges non-discrimination on campus, specifically calling out Jewish students for safety and equal treatment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office title provides context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not independently establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Both spenders carry 'unestablished' relevance; spending_context directs that unmapped spenders should not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Interpretive guidance for spending data; no candidate action or policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Seven of eight points (education, sports, environment, economy) are unrelated to Palestine. The civil-liberties point specifically calls out Jewish students for campus safety and equal treatment, reinforcing the antisemitism-centered framing seen in gaza_evidence."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Three documented instances (2024-05, 2026-07, 2026-10) show exclusive antisemitism framing, Oct 7 as rallying point, and explicit tagging of AIPAC and pro-Israel orgs. JNS notes she centered on antisemitism rather than Gaza policy. No pro-Palestine statement or ceasefire advocacy present."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Clarifies AIPAC as an organization advocating strong US-Israel relationships and electoral support for pro-Israel candidates; contextualizes her explicit tagging of @AIPAC."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date is contextual; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California jurisdiction identifier; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Categorical label only."
+  }
+ ],
+ "generated_at": "2026-10-29T09:07:40Z"
+}

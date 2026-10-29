@@ -1,0 +1,76 @@
+{
+ "candidate_id": "429d3dba7e6f2ba009aece02",
+ "request_sha256": "19cb5bee078d7e3458f9e50737e79eb61f883820d59be0ae088617b4a28ee7c2",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action issued a full endorsement of Adams for Oakland's District 2 City Council in the general phase, and Vote for Peace rated him an Ally. Both groups assess candidates on Gaza/ceasefire positions, civil rights, and war-lobby funding. His platform covers housing, homelessness, sanctuary-city policy, and local accountability. The endorsement-level CAIR support and Vote for Peace Ally rating, from organizations weighing Palestine-related foreign-policy positions, form the recorded basis for his standing.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides jurisdictional specificity for the endorsement context."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate Palestine stance."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Local platform (housing, homelessness, sanctuary-city, accountability) with no explicit Israel/Palestine language; contextualizes that endorsements carry the weight."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating (general) are the primary pro-Palestine evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Establishes that CAIR/VFP directional ratings count as concrete stance evidence per this guide's rubric."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR weighs Gaza/ceasefire and civil-rights positions; VFP evaluates human rights and AIPAC funding; preserves endorsement-tier distinction."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Oakland; contextual only, already captured via office."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:29:24Z"
+}

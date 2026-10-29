@@ -1,0 +1,76 @@
+{
+ "candidate_id": "cbce4b7ed3bb6591a1e663ef",
+ "request_sha256": "07b9662a77e128c2885b18d7ad8514027c73c49628bc59a268fbfe876d11398a",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bello called for a Gaza ceasefire and demanded the US halt financial support for the war in a February 2024 interview as a YUCA member in East Palo Alto. CAIR Action endorsed her in the general election, and Vote for Peace rated her an Ally. Both organizations evaluate candidates on Gaza and war-lobby positions. Her early public advocacy and the endorsement-level support place her among candidates opposing US military assistance to Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate identity field; no substantive policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context only; no policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context; no policy content."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct policy signal."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Feb 2024 interview calling for ceasefire and demanding US stop financial support for the Gaza war; early advocacy opposing US military assistance."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (endorsement-level, general) and Vote for Peace Ally rating (general); both are concrete stance evidence per endorsement context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Interpretive guidance confirming CAIR/VfP directional ratings count as concrete stance evidence; folds into endorsement treatment."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Descriptive profiles of CAIR Action and Vote for Peace confirming their evaluation criteria (Gaza, war-lobby); supports reading of endorsements but is not independent candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing metadata; no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of East Palo Alto; geographic context only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata label indicating candidate roster status; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:21:37Z"
+}

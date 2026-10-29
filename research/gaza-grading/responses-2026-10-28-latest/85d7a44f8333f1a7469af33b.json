@@ -1,0 +1,76 @@
+{
+ "candidate_id": "85d7a44f8333f1a7469af33b",
+ "request_sha256": "98a82f02b63db83ac32bf3fb3c4e3f80715e9a078cb26e95904d8e265f1168ba",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Gary McCoy's platform describes Israel's actions in Gaza as genocide, calls for a permanent ceasefire, states he would have voted for the 2024 Board of Supervisors ceasefire resolution, rejects AIPAC money, and opposes sending or funding weapons to Israel. Vote for Peace (CAIR Action) rated him an Ally for the general election. All documented positions point in the same direction.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate identity only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (Board of Supervisors); no direct policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Israel/Palestine platform point explicitly calls Gaza actions genocide, supports ceasefire, rejects AIPAC money, opposes weapons to Israel; other points (housing, criminal justice, etc.) are unrelated to this assessment."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace (CAIR Action) rated him Ally in the general phase; per endorsement context this is concrete stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR/Vote for Peace directional ratings are treated as concrete stance evidence; methodological context for the endorsement above."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace methodology (human rights, AIPAC funding, viability); contextual for the Ally rating, no independent policy claim."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date 2026-11-03; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "San Francisco jurisdiction; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:12:59Z"
+}

@@ -1,0 +1,64 @@
+{
+ "candidate_id": "93a35e9cdfb3d2b9614ff38a",
+ "request_sha256": "fd5089342ad42df14e77e93f655165168ff03b212e025280c7c5650feb6673e1",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Espinoza explicitly labels Netanyahu's Gaza war a genocide and positions himself against AIPAC, which he says controls both of his opponents. His pro-Palestine advocacy predates the 2026 race: in October 2024, he thanked the Fort Bend County Anti-Genocide/Pro-Palestine team for naming him to their recommended-candidate slate, citing his Palestine advocacy and anti-AIPAC stance. By June 2026, he urges voters to Vote Peace.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; provides identity but no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Office sought (CD-34 TX); contextual metadata, no policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State abbreviation; no bearing on Palestinian justice position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Green Party affiliation; no specific policy statement attached in the record."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Two dated statements: explicit 'genocide' label, anti-AIPAC positioning, and inclusion in a pro-Palestine recommended slate with his own citation of Palestine advocacy."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "AIPAC background description; contextualizes the candidate's anti-AIPAC remarks but adds no independent policy signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; scheduling metadata only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "US House of Representatives; jurisdictional context, no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; administrative metadata."
+  }
+ ],
+ "generated_at": "2026-10-29T08:29:52Z"
+}

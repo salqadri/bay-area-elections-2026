@@ -1,0 +1,64 @@
+{
+ "candidate_id": "977064e2d59824d4b17703ec",
+ "request_sha256": "b46ce4d8b02bc361e96f3180ba76d976a0087b05294ea4f46edbb7db41dc6cee",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Ford's concrete actions position him as a defender of Israel: in November 2023 he announced his office would send tactical gear to the IDF and pledged to ensure the Jewish community feels safe in Nevada. His October 2023 joint statement with 13 other state AGs denounced Hamas strikes, and a 2024 financial disclosure showed his 2023 travel to Israel, among other countries, was funded by the Attorney General Alliance. His campaign platform raises no Palestine or Gaza issue.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identification only, no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (NV Statewide Governor), no Palestine/Israel policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier, no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation, no Palestine/Israel policy signal in record"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Eight platform points on housing, justice, economy, education, healthcare, environment, and tax; none address Palestine, Israel, Gaza, or Middle East policy"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Three items: Oct 2023 joint AG statement denouncing Hamas; Nov 2023 announcement of tactical gear to IDF and pledge for Jewish community safety; 2024 financial disclosure showing 2023 Israel trip funded by AG Alliance ($45K). Collectively show active support for Israel and Israel-centric framing"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date, no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State of Nevada, contextual only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label, no policy signal"
+  }
+ ],
+ "generated_at": "2026-10-29T08:58:43Z"
+}

@@ -99,6 +99,21 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   assert(text('panel-candidates').includes(original.notes[markCair.note_id]));
   reset();set('search','Kevin Park');assert(text('panel-candidates').includes('Preferred by CAIR Action'));assert(!text('panel-candidates').includes('Endorsed by CAIR Action'));
   reset();set('search','Marc Cooper');assert(text('panel-candidates').includes('Opposed by CAIR Action'));assert(text('panel-candidates').includes('Opposed by Samir Laymoun'));assert(text('panel-candidates').includes('2 opposed'));assert(!text('panel-candidates').includes('Endorsed by CAIR Action'));reset();set('search','CD-8');assert(text('panel-candidates').includes('Preferred by CAIR Action'));
+  {const recs=JSON.parse(all().find(n=>n.attrs.id==='recommendations-data').textContent);
+   const confirmed=id=>['confirmed','confirmed_on_ballot'].includes(original.positions.find(x=>x.id===id).ballot_status);
+   const [pickId,pick]=Object.entries(recs.byPosition).find(([id,v])=>v.recommended&&confirmed(id));
+   location.hash='#id='+pickId;window.events.hashchange();
+   assert(text('panel-candidates').includes('Our pick:'), 'confirmed race detail shows the pick');
+   assert(text('panel-candidates').includes(pick.recommended), 'detail names the recommended candidate');
+   assert(text('panel-candidates').includes(pick.why.text), 'detail shows the archived why-paragraph');
+   const [noneId,none]=Object.entries(recs.byPosition).find(([id,v])=>!v.recommended&&v.category==='no_information'&&confirmed(id));
+   location.hash='#id='+noneId;window.events.hashchange();
+   assert(text('panel-candidates').includes('No recommendation'), 'no-information race shows the no-recommendation line');
+   assert(text('panel-candidates').includes('lack of information'), 'no-information reason shown verbatim');
+   const [muslimId,muslim]=Object.entries(recs.byPosition).find(([id,v])=>v.category==='muslim_community'&&confirmed(id));
+   location.hash='#id='+muslimId;window.events.hashchange();
+   assert(text('panel-candidates').includes('Muslim community'), 'community pick carries the badge');
+   reset();}
   reset();set('search','CD-16');assert(text('panel-candidates').includes('Supported by BAMC Action'));assert(text('panel-candidates').includes('Supported by Samir Laymoun'));assert(text('panel-candidates').includes('Reduce his winning margin'));
   reset();set('search','CD-11');assert(text('panel-candidates').includes('Listed as Ally by Vote for Peace'));assert(text('panel-candidates').includes('Opposed by Vote for Peace'));assert(!text('panel-candidates').includes('Endorsed by Vote for Peace'));assert(text('panel-candidates').includes('Endorsed by AROC Action'));assert(text('panel-candidates').includes('Observed on 2026-10-09 (guide snapshot; original date unknown)'));
   reset();set('search','Manisha Pathak');assert(text('panel-candidates').includes('Supported by Dr. Romesh Japra'));
@@ -113,6 +128,21 @@ function visible(n){for(let p=n;p;p=p.parent){if(p.hidden)return false;if(p.tagN
   if(wienerIE.items.length){const spender=original.ie_spenders[wienerIE.items[0].spender_id];assert(all().some(n=>n.tagName==='A'&&n.href===spender.source_url),'Spender names must link to their FEC committee page');}assert(nodes($('panel-candidates')).some(n=>n.tagName==='A'&&String(n.href).includes('/data/independent-expenditures/')&&String(n.href).includes('candidate_id=H8CA11116')),'Candidate IE browse link required');
   const moneyDetails=all().filter(n=>n.tagName==='DETAILS'&&n.children.some(c=>typeof c==='object'&&(c.className==='ie-spend'||c.className==='fundraising')));assert(moneyDetails.length>0,'Campaign money must render inside a collapsible details block');assert(moneyDetails.every(d=>!d.open),'The campaign money section must start collapsed');
   reset();set('search','Jeff Frese');if(!frese.independent_expenditures.items.length)assert(text('panel-candidates').includes('No independent expenditures in the FEC regular-report totals for this two-year cycle.'));
+  {const recs=JSON.parse(all().find(n=>n.attrs.id==='recommendations-data').textContent);
+   const confirmed=id=>['confirmed','confirmed_on_ballot'].includes(original.positions.find(x=>x.id===id).ballot_status);
+   const [pickId,pick]=Object.entries(recs.byPosition).find(([id,v])=>v.recommended&&confirmed(id));
+   location.hash='#id='+pickId;window.events.hashchange();
+   assert(text('panel-candidates').includes('Our pick:'), 'confirmed race detail shows the pick');
+   assert(text('panel-candidates').includes(pick.recommended), 'detail names the recommended candidate');
+   assert(text('panel-candidates').includes(pick.why.text), 'detail shows the archived why-paragraph');
+   const [noneId,none]=Object.entries(recs.byPosition).find(([id,v])=>!v.recommended&&v.category==='no_information'&&confirmed(id));
+   location.hash='#id='+noneId;window.events.hashchange();
+   assert(text('panel-candidates').includes('No recommendation'), 'no-information race shows the no-recommendation line');
+   assert(text('panel-candidates').includes('lack of information'), 'no-information reason shown verbatim');
+   const [muslimId,muslim]=Object.entries(recs.byPosition).find(([id,v])=>v.category==='muslim_community'&&confirmed(id));
+   location.hash='#id='+muslimId;window.events.hashchange();
+   assert(text('panel-candidates').includes('Muslim community'), 'community pick carries the badge');
+   reset();}
   reset();set('search','CD-16');const soule=candidate('Peter Sundin Soulé');if(soule.fec.receipts!==null)assert(text('panel-candidates').includes(money(soule.fec.receipts)));
   $('download-filtered').click();const fundedExport=JSON.parse(await downloads.at(-1).blob.text());assert.equal(fundedExport.finance.currency,'USD');assert.equal(fundedExport.finance.checked_on,original.finance.checked_on);assert.equal(fundedExport.positions[0].candidates.find(c=>c.name===soule.name).fec.receipts,soule.fec.receipts);
   for(const county of original.election.counties_in_scope.map(c=>c.name)){reset();set('county',county);assert.equal(count(),original.positions.filter(p=>p.counties.includes(county)).length);}

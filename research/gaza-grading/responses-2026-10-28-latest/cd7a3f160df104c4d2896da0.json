@@ -1,0 +1,64 @@
+{
+ "candidate_id": "cd7a3f160df104c4d2896da0",
+ "request_sha256": "71593c9e134bbb8f893fe2de47811ad3d072c5e25bc3c394f6d8c30127cfc516",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Nowinski, a nonpartisan candidate for at-large City Council in El Cerrito, runs on a platform of local budget, surveillance, and infrastructure issues. The single Palestine-related entry is a May 2024 statement in which Nowinski dismissed polls showing American support for a Gaza ceasefire as 'advocacy propaganda that always fall apart when you test the details,' framing public opinion favoring an end to the war as disinformation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "At-large City Council identifies local jurisdiction; contextual for a single-statement record."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State designation; no Palestine/Israel signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal on its own."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "grouped",
+   "reason": "Eight platform points cover budget, Flock surveillance, traffic, permitting, senior center, bike infrastructure, and meeting access; none address Palestine, Israel, or related civil-rights speech."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2024-05-30 statement dismissing polls showing American ceasefire support as 'advocacy propaganda that always fall apart when you test the details' delegitimizes public opinion for an end to the war in Gaza."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of El Cerrito; contextual only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:21:44Z"
+}

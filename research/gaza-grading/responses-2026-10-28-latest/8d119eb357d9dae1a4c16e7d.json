@@ -1,0 +1,76 @@
+{
+ "candidate_id": "8d119eb357d9dae1a4c16e7d",
+ "request_sha256": "937aab8299918c4e0c53185c3caad98340fb6f5b8b3278a84696cce303699d29",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace, which evaluates candidates on human rights and AIPAC/war-lobby funding, rated Amy Acton an \"Ally\" in the general phase of her Ohio gubernatorial race. That directional rating is the concrete evidence of her stance on Palestinian justice documented here. Her campaign platform addresses domestic priorities—economy, education, healthcare, criminal justice—and does not reference Israel or Palestine.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used for identification in the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Ohio statewide governor context for the race; grouped with state and jurisdiction."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Ohio; provides jurisdictional context, grouped with office."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Democratic Party affiliation does not bear on the Palestine/Israel assessment."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers domestic priorities (economy, education, healthcare, criminal justice) with no Israel/Palestine reference; included to show the platform's scope and what is addressed."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Acton 'Ally' in the general phase; per the evidence context this is concrete directional stance evidence on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes that Vote for Peace Ally/Op posed designations are treated as concrete stance evidence in this rubric; informs how the Ally rating is interpreted."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace as evaluating human rights and AIPAC/war-lobby funding; grouped with the endorsement observation to explain what the Ally rating assesses."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not bear on the substance of the Palestine stance assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "State of Ohio; grouped with office for race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata field ('candidates') with no substantive bearing on the assessment."
+  }
+ ],
+ "generated_at": "2026-10-29T09:00:37Z"
+}

@@ -1,0 +1,64 @@
+{
+ "candidate_id": "23a270c52300346903662c7a",
+ "request_sha256": "f0daf5a0dffb23b238da8d46f0815be4f95abaf986b78fe053ebb1c0c97c706a",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "BAMC Action (Bay Area Muslim Council) recorded a general-election opposition to Stump, commenting that he has been \"the worst planning commissioner in our experience.\" The accompanying context note specifies this tactical voting advice addresses his administrative record and does not establish a position on Palestinian justice. No documented statement, vote, or action on Gaza, Israeli policy, or Palestinian rights is present in the record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office title (At-large Town Council Member) carries no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "BAMC Action general-election opposition with comment about planning-commissioner performance; context note specifies this tactical advice does not establish a Palestine stance, so signal for Palestinian justice is neutral."
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Context clarifying that BAMC Action comments are not Palestine-stance ratings; limits inference from the opposition entry."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date of election (2026-11-03); no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Town of Los Gatos; identifies local jurisdiction only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster identifier ('candidates'); no policy signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:38:28Z"
+}

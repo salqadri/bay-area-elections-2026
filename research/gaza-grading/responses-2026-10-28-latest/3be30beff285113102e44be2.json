@@ -1,0 +1,76 @@
+{
+ "candidate_id": "3be30beff285113102e44be2",
+ "request_sha256": "3a62d4f36dbc68167e650d3fe5e53d4034df2f550491ceafbb7eaacd272a5069",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, which weighs civil-rights and foreign-policy positions including Gaza and ceasefire stances in its recommendations, listed Mer Curry Nuñez as a preferred candidate for the East Side Union High School District Trustee Area 1 seat. Activist Samir Laymoun separately supported Nuñez, though his recommendation is an opinion source and does not by itself establish shared policy views.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; used for identification only."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local school-board office title; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy relevance on its own."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no direct bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action preferred-tier recommendation and Laymoun support are the primary directional signals on the candidate's alignment with pro-Palestine civil-rights positions."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Qualifies Laymoun's recommendation as an opinion source; prevents overstating its evidentiary weight."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Establishes that CAIR Action directional recommendations count as concrete stance evidence even without a candidate quotation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action weighs Gaza/ceasefire positions in its recommendations; clarifies 'preferred' is not a full endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local school-district race, giving context for the limited record."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:41:27Z"
+}

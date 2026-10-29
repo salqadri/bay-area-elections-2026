@@ -1,0 +1,88 @@
+{
+ "candidate_id": "b6e455fcfabb2ff18fb59c76",
+ "request_sha256": "fa478b26afd001d2b5f98f6c061e17e4b4852f958138e1ff62564aec2ec94e17",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Cooper runs for a Franklin-McKinley School District board seat on a platform focused on academic proficiency, parental rights, and student safety. The Palestine-related signal in the record is CAIR Action's opposition recommendation in the general phase; CAIR Action assesses candidates on civil rights and Gaza/ceasefire positions. A separate opposition from activist opinion source Samir Laymoun is also recorded, though a protest-vote recommendation does not by itself establish shared policy views.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office title provides race context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State jurisdiction; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address local education, parental rights, and student safety; no Israel, Palestine, or Gaza content."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR Action opposition in general phase is the primary Palestine-adjacent signal; Samir Laymoun opposition also recorded."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Clarifies Laymoun is an activist opinion source and a protest-vote recommendation does not establish shared policy views."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric instruction confirming CAIR Action recommendations are concrete stance evidence; methodological rather than candidate-specific fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Describes CAIR Action as evaluating civil rights and Gaza/ceasefire positions; necessary to contextualize the opposition."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date provides timing context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Franklin-McKinley School District; local education jurisdiction, no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Structural label; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:42:14Z"
+}

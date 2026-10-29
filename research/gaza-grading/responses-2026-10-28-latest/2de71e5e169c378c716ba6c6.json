@@ -1,0 +1,100 @@
+{
+ "candidate_id": "2de71e5e169c378c716ba6c6",
+ "request_sha256": "3bd5db6904ed752326b80023dc5ba99455a150cb4495e7688c249f22205c8300",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action lists Wilson as a general-election preferred candidate, a tier below full endorsement in an organization whose recommendations weigh civil-rights and Gaza/ceasefire positions. That signal is complicated by her recorded Aye on AB 715 (2025), which creates an antisemitism coordinator and classroom-material oversight in California schools. The recommendation and the education-legislation vote pull in opposite directions, placing Wilson in a middle position rather than clearly on the side of Palestinian justice or clearly pro-Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; identity only, no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office designation (AD-11 State Assembly); contextual only."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All six spenders carry 'unestablished' relevance; spending_context directs that unmapped spenders not explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note on interpreting spenders; no candidate-specific Palestine signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers jobs, public safety, housing, gov accountability, transgender-parent civil liberties, women in leadership; no Palestine/Israel content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Recorded Aye on AB 715 (2025-09-13, tracker date) creates antisemitism coordinator and classroom-material oversight; rubric flags AB-715-type bills as censoring Israel criticism."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' (general) is a concrete stance signal per endorsement_evidence_context; tier is below full endorsement."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR preferred/ally tiers count as stance evidence; grouped with the observation itself."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action weighs civil rights and Gaza/ceasefire; 'Preferred' is not full endorsement. Grouped with endorsement observation."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; contextual only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label; no Palestine-relevant signal."
+  }
+ ],
+ "generated_at": "2026-10-29T08:35:34Z"
+}

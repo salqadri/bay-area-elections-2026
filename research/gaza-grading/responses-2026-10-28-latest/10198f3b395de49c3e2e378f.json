@@ -1,0 +1,70 @@
+{
+ "candidate_id": "10198f3b395de49c3e2e378f",
+ "request_sha256": "5416775f0fa072d4412df3914e74d6553808a3d46bb6b8395e3d1aa4ea57c843",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action placed Crocker-Root in its 'preferred' tier for the Union City general election, a recommendation that weighs Gaza and ceasefire positions alongside broader civil rights. Under CAIR's stated framework, preferred sits below a full endorsement, so the record documents a directional alignment with Palestinian justice that does not reach the commitment of a confirmed advocacy endorsement.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used in the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local council context; no bearing on the Palestinian-justice assessment itself"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; not relevant to the stance question"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no information about Palestinian-justice position"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier in the general is the primary directional evidence of alignment with Palestinian justice per the endorsement context"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Methodological note confirming the CAIR tier counts as concrete stance evidence; informs how the observation is framed"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR recommendations weigh Gaza/ceasefire positions and that 'preferred' is below full endorsement; supports accurate tier description"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date not material to explaining the stance"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Union City named to ground the election context"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no substantive content for the assessment"
+  }
+ ],
+ "generated_at": "2026-10-29T09:37:53Z"
+}

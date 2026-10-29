@@ -1,0 +1,58 @@
+{
+ "candidate_id": "8cfb94bb5e0997706427db5d",
+ "request_sha256": "8813758b09f25ce6af0d8bc068078c97177539daecbc05883c6a4a14d178cdeb",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Daysog voted against Alameda's January 2024 Gaza ceasefire resolution, explicitly rejecting the letter's characterizations of Israel as an 'apartheid' or 'genocidal' state, as confirmed by CAIR-SFBA's local tracker. His concurrent congressional campaign carried 'peace' messaging, but his council vote opposed the ceasefire and the specific language used to describe Israel's conduct in Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no positional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Role title provides context for council voting but no independent position indicator"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a stance on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents vote against Alameda Gaza ceasefire letter and explicit rejection of 'apartheid'/'genocidal' characterizations, corroborated by CAIR-SFBA tracker; concurrent congressional 'peace' messaging noted as documented tension"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date, not a position indicator"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier already embedded in gaza_evidence"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification tag with no positional signal"
+  }
+ ],
+ "generated_at": "2026-10-29T09:54:54Z"
+}

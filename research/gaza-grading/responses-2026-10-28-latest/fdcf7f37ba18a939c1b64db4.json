@@ -1,0 +1,64 @@
+{
+ "candidate_id": "fdcf7f37ba18a939c1b64db4",
+ "request_sha256": "3a64657ee8c20b5092153e5c5de22723a69a582e74e6cf5601d711c9d7e86cab",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker, dated March 6, 2024, records Marilyn Librers as having opposed a peace resolution during her tenure as Morgan Hill District D city council member. The entry carries a source qualification noting it reflects the tracker section date and is not a verified roll-call transcript. Her documented opposition to a peace resolution, as recorded by CAIR-SFBA, supports the assessment that her public conduct does not advance Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used for identification in the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Office title provides context for the tracker entry; grouped with jurisdiction."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State is contextual; Morgan Hill already implies California."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestinian justice positioning."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker lists Librers as opposing a peace resolution; source qualification notes it is a tracker listing, not a verified roll-call transcript."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date is administrative; does not inform the stance assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Morgan Hill contextualizes the local council role referenced in the tracker entry."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status is administrative and does not bear on the recorded action."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label is a data-management field with no bearing on the candidate's position."
+  }
+ ],
+ "generated_at": "2026-10-29T09:27:51Z"
+}

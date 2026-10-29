@@ -1,0 +1,70 @@
+{
+ "candidate_id": "e0d62318f2056a95ceb13c49",
+ "request_sha256": "5ff4eebac9ed5638e37244632c278e2c009f2479336f1dddbccfc6c0143cc149",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Lamont's documented Gaza statements take an Israel-centric frame: his October 2023 governor's statement condemned Oct 7 as 'violent attacks in Israel,' and in January 2024, after a SCSU protest interruption, he expressed empathy for Gazan children while insisting protesters must first condemn those attacks to be heard. His campaign platform covers only domestic economic, healthcare, education, and environmental policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Name field used for identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Confirms state-governor context; no Palestine-policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label; no independent Palestine-policy signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "All items cover domestic economy, healthcare, education, housing, environment, and labor; no Israel-Palestine content appears"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 2023 statement frames events as 'violent attacks in Israel'; Jan 2024 SCSU remark expresses empathy for Gazan children but conditions being heard on first condemning Oct 7; both center Israel's narrative"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling detail only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State label; no policy signal"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Status flag; no Palestine-policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label only"
+  }
+ ],
+ "generated_at": "2026-10-29T08:47:02Z"
+}

@@ -1,0 +1,94 @@
+{
+ "candidate_id": "510f1722323448d69b07907b",
+ "request_sha256": "31225ca2c63bff1e57324fa6aecc6f325882ed4925da3031f49fd6565aa423d9",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Booker cosponsored the 2025 Antisemitism Awareness Act, which would apply the IHRA definition in campus investigations, and voted no on both Sanders resolutions to block arms sales to Israel in July 2025. His Gaza aid calls frame resources as a means to \"decrease Hamas's influence\" and \"strengthen Israel's security,\" and his April 2025 25-hour Senate speech barely addressed the war. An October 2026 remark blaming Israel for the Iran war registers criticism but sits within an Israel-centric framing.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate seat description; no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine policy signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Both spenders marked relevance unestablished; spending_context directs that unmapped spenders should not explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-guidance on interpreting spending data; not a candidate action or statement."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers criminal justice, economy, environment, healthcare, ethics; no Israel/Palestine content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Cosponsorship of 2025 Antisemitism Awareness Act directs Education Dept to apply IHRA definition in campus investigations; directly maps to IHRA-support criterion."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Voted no on both Sanders arms-sale-block resolutions; framed Gaza aid around Israeli security; 25-hour speech barely addressed war. October 2026 Iran-war blame is mildly critical but does not override the Israel-centric pattern."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scoping note on funding data; not a candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate jurisdiction; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative roster label; no policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T07:48:24Z"
+}

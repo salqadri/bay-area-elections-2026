@@ -1,0 +1,76 @@
+{
+ "candidate_id": "c3cc356b75f09bac5286cb9e",
+ "request_sha256": "b2799d4cb33e7d1b39d5739acc0f4797dc6f34082fb243bfed3b4eff82b38035",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Brouhard co-introduced an Oakland Unified School District resolution on November 1, 2023, calling for a ceasefire and the release of hostages in Israel and Palestine. CAIR Action endorsed her general-election candidacy at the full endorsement tier, which signals concrete alignment on Gaza and civil-rights positions. Her early, local legislative action on the ceasefire and CAIR Action's endorsement-level support mark her as a committed advocate for Palestinian justice at the school-board level.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no independent signal on Palestine stance."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes the local office (school director); context only."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State designation; no independent signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Co-introduced a 2023-11-01 OUSD resolution calling for a ceasefire and hostage release in Israel and Palestine; concrete early pro-Palestine legislative action."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action issued a full endorsement in the general phase, a tier treated as concrete stance evidence on Gaza positions."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR Action directional recommendations are concrete stance evidence; supports the weight given to the endorsement."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's role in civil-rights and foreign-policy recommendations including Gaza/ceasefire; contextualizes the endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date is scheduling context; no independent signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the school district; context for the resolution's scope."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Structural metadata ('candidates'); no substantive signal."
+  }
+ ],
+ "generated_at": "2026-10-29T09:44:55Z"
+}

@@ -1,0 +1,106 @@
+{
+ "candidate_id": "30b0a03e5f59e7f96800af0b",
+ "request_sha256": "fa4f8b3a921444e021a15d84c17cccddaf565cb83a64ea4e8e89c1cf09bdce72",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Luria keynoted JINSA's 2021 assessment of the Gaza conflict, denounced anti-Israel sentiment in the Democratic Party in 2019, and is profiled by Jewish Insider as a 'Pro-Israel Democrat' and 'pro-Israel leader in Congress.' She holds an endorsement from UDP-funded 314 Action Fund and was rated 'Opposed' by Vote for Peace in the general election. Her 2026 call for 'lasting peace for both Israelis and Palestinians' was framed within mourning October 7 hostages.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate identity; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; does not bear on Palestine stance"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish Palestine position"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC is pro-Israel; 314 Action Fund received UDP funding (guide treats as negative signal); both relate to Luria's Palestine alignment"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC $381.82 independent spending supports a pro-Israel Democratic candidate; other spenders have unestablished relevance"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on independent spending; no candidate-specific signal"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Governing Majority Fund opposition has unestablished relevance to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "International affairs point addresses Iran specifically; no Israel/Palestine-specific platform language present"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "JINSA keynote, 2019 denunciation of anti-Israel sentiment, and Jewish Insider 'Pro-Israel' characterizations are core evidence; 2026 peace statement is contextualized within hostage mourning"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope limitation note for funding data; no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "314 Action Fund (UDP-funded) endorsement and Vote for Peace 'Opposed' rating are concrete stance evidence per endorsement context"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming Vote for Peace tier as concrete evidence; no independent signal"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative roster label; no Palestine-specific signal"
+  }
+ ],
+ "generated_at": "2026-10-29T08:32:11Z"
+}

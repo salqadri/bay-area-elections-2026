@@ -1,0 +1,82 @@
+{
+ "candidate_id": "16d0ea57954be3cefa552271",
+ "request_sha256": "67a509769351b71334d0aca11d2ff4ff65763b51ec250aed7d88c243e16caa66",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Thomas posted 'Free Palestine' on X on August 23, 2026, pledging to call for an immediate ceasefire and restore USAID funding. Three days later she ran anti-AIPAC campaign material, filming herself discarding a bin labeled 'AIPAC Funds' and calling herself a 'sole grassroots candidate' rejecting such money. Vote for Peace, a human-rights and war-lobby funding rating guide, rated her an Ally in the general-election phase.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only, no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Race context (Oklahoma statewide Senate); no direct Palestinian-justice signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy content."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not independently indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Three dated items: Free Palestine post with ceasefire and USAID-funding pledge (Aug 23), anti-AIPAC discard reel and grassroots-candidate vow (Aug 26). Direct pro-Palestine and anti-war-lobby evidence."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Qualification about funding-data completeness since 2024; does not itself indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Thomas 'Ally' in the general phase; per endorsement context this is concrete stance evidence on war-lobby funding and human rights."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining how VFP ratings count as stance evidence; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes VFP as a human-rights and war-lobby rating guide and AIPAC as a pro-Israel advocacy org; folded into the paragraph's description of VFP."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal context (2026-11-03); no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the race as U.S. Senate; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata label ('candidates'); no substantive content."
+  }
+ ],
+ "generated_at": "2026-10-29T07:53:15Z"
+}

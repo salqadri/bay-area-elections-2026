@@ -1,0 +1,70 @@
+{
+ "candidate_id": "f0bfd30d55cba81f46f4f0e8",
+ "request_sha256": "e5cdf0b3c84b10cfd93d5e11b6bcafffc674d9926554d7a4118d0ed9077f4214",
+ "publication_id": "jev-2026-10-28-latest",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed nonpartisan school board candidate Francis Rojas for the New Haven Unified School District seat in the 2026 general election, and Vote for Peace rated Rojas an Ally in the same race. Both organizations assess candidates on Gaza/ceasefire positions, civil rights, and war-lobby funding.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the specific race (school board) for context."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State is implied by jurisdiction; adds no material Palestine-related information."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is brief context for the candidate description."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement and Vote for Peace Ally rating are the core evidence supporting the pro-Palestine assessment."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Interpretive note confirming these recommendations count as concrete stance evidence; informs reading of the endorsements above."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Explains that CAIR Action and Vote for Peace evaluate Gaza/ceasefire positions and AIPAC funding, giving substance to the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the endorsements to the 2026 general cycle."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies New Haven Unified School District as the race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label (\"candidates\") with no substantive policy content."
+  }
+ ],
+ "generated_at": "2026-10-29T09:44:48Z"
+}
