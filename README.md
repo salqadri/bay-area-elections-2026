@@ -1,5 +1,14 @@
 # Bay Area Ballot Research Assistant
 
+Current publication **2026-10-28.4** publishes the owner's completed full-roster
+run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
+Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
+with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·
+F 123 · N/A 898**. Candidate and race explanations from the previous run are
+held, per the owner's choice; fresh source-bound queues are ready for Hermes.
+The recommendations page also uses the new grades. [Current archives, validation
+and Hermes follow-up](docs/LATEST_SCORE_PUBLICATION.md). Older publication notes below are historical.
+
 Publication **2026-10-28.3** adds Census/TIGERweb failover for the address-estimate page after reproducing HTTP 502 failures in the combined Census endpoint. Live Chrome checks resolve public San Jose and San Francisco addresses; no-match and uncertain geographies remain explicit. [Diagnosis, recovery and validation](docs/ADDRESS_LOOKUP_RECOVERY.md).
 
 Publication **2026-10-28.2** corrects BAMC opposition to **Steve Raspe and Heidi Owens**,

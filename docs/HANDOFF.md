@@ -1,5 +1,14 @@
 # Research and development handoff
 
+Current publication **2026-10-28.4** publishes the owner's completed full-roster
+run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
+Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
+with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·
+F 123 · N/A 898**. Candidate and race explanations from the previous run are
+held, per the owner's choice; fresh source-bound queues are ready for Hermes.
+The recommendations page also uses the new grades. [Current archives, validation
+and Hermes follow-up](LATEST_SCORE_PUBLICATION.md). Older publication notes below are historical.
+
 Publication **2026-10-28.3** fixes Census geography-service failures with a bounded fallback to Census address coordinates and direct TIGERweb polygons. Both paths retain real district labels, cancellation and privacy behavior. Candidate data and scores are unchanged. [Address recovery policy and live checks](ADDRESS_LOOKUP_RECOVERY.md).
 
 Publication **2026-10-28.2** corrects BAMC opposition to **Steve Raspe and Heidi Owens**,

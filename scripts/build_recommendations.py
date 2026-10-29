@@ -10,6 +10,7 @@ Jev answers are cached and resumable; summaries are cached too."""
 import argparse
 import hashlib
 import json
+import os
 import re
 import time
 import unicodedata
@@ -21,15 +22,15 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "2026-11-03_Bay_Area_Elections.json"
 OBS = ROOT / "research/candidate-community/observations.json"
 OUTDIR = ROOT / "research" / "candidate-recommendations"
-PLAN = OUTDIR / "recommendations-2026-10-28.json"
-JEV_CACHE = OUTDIR / "jev-answers-2026-10-28.jsonl"
-SUM_CACHE = OUTDIR / "summaries-2026-10-28.jsonl"
+PLAN = OUTDIR / "recommendations-2026-10-28-latest.json"
+JEV_CACHE = OUTDIR / "jev-answers-2026-10-28-latest.jsonl"
+SUM_CACHE = OUTDIR / "summaries-2026-10-28-latest.jsonl"
 OUT_HTML = ROOT / "recommendations.html"
 TEMPLATE = ROOT / "src" / "recommendations.template.html"
 DISPLAY_JS = ROOT / "src" / "recommendations-display.js"
 
 JEV_URL = "https://api.typesafe.ai/v1/systemone"
-JEV_KEY = Path("/root/.cfg/typesafe_key").read_text().strip()
+JEV_KEY = None  # Loaded only for an uncached provider call; offline builds need no key.
 LMSTUDIO_URL = "http://192.168.0.66:11434/v1/chat/completions"
 LMSTUDIO_MODEL = "qwen/qwen3.8-27b"
 LMSTUDIO_REASONING = "medium"
@@ -185,55 +186,42 @@ def classify(data, obs):
     return races
 
 
-def jev_pick(race, evmap):
-    """Call Jev to choose the best candidate among the race's graded candidates."""
-    cands = []
-    for c in evmap:
-        if c.get("grade") and c["grade"] != "N/A":
-            cands.append(c)
-    if len(cands) == 1:
-        return {"choice": cands[0]["name"], "confidence": 1.0, "probabilities": {cands[0]["name"]: 1.0}, "single_candidate": True}
-    criteria = {}
-    for c in cands:
-        bits = [f"Grade {c['grade']} ({c['score']})"]
-        if c.get("platform"):
-            bits.append(c["platform"])
-        if c.get("positions"):
-            bits.append("Positions: " + " | ".join(c["positions"][:3]))
-        if c.get("endorsed_by"):
-            bits.append("Endorsed by: " + ", ".join(c["endorsed_by"][:5]))
-        criteria[c["name"]] = digest("; ".join(bits), 420)
-    state = {
-        "race": f"{race['office']}{' - ' + race['district_or_seat'] if race.get('district_or_seat') else ''}",
-        "candidates": [
-            {"name": c["name"], "party": c.get("party"), "grade": c.get("grade"), "score": c.get("score"),
-             "platform": c.get("platform"), "endorsed_by": c.get("endorsed_by", [])}
-            for c in cands
-        ],
-    }
-    questions = {
-        "best_candidate": {
-            "type": "choice",
-            "instructions": {
-                "task": "Select the single best candidate to support in this race. Rely ONLY on the candidate records provided: their pro-Palestine grade and evidence, platform positions, and endorsements. Do not use outside knowledge or personal opinion.",
-                "candidates": "See the candidates field of the state.",
-            },
-            "criteria": criteria,
-        }
-    }
-    req = json.dumps({"model": "jev-latest", "state": state, "questions": questions}).encode()
-    return _jev_call(req)
+def jev_request(race):
+    """Recommendations compare published letter grades, per the documented policy.
+
+    Evidence is evaluated in the scorecard, not reinterpreted by this selector.
+    The complete request is archived and hashed so changed grades/rosters cannot
+    silently reuse a decision cached only against the race ID.
+    """
+    candidates = [{k: c.get(k) for k in ("name", "party", "grade")}
+                  for c in race["roster"] if c.get("grade") in GRADE_ORDER]
+    return {"model": "jev-latest", "state": {
+        "position_id": race["position_id"], "office": race["office"],
+        "district_or_seat": race.get("district_or_seat"), "candidates": candidates},
+        "questions": {"best_candidate": {"type": "choice",
+            "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+            "criteria": {c["name"]: "Published pro-Palestine grade: " + c["grade"] for c in candidates}}}}
+
+
+def request_hash(request):
+    return hashlib.sha256(json.dumps(request, ensure_ascii=False, sort_keys=True,
+                                     separators=(",", ":")).encode()).hexdigest()
 
 
 def _jev_call(req):
+    key = JEV_KEY or os.environ.get("JEV_API_KEY", "").strip()
+    if not key:
+        raise ValueError("An uncached Jev call requires JEV_API_KEY or --jev-key-file")
     last = None
     for attempt in range(4):
-        r = urllib.request.Request(JEV_URL, data=req, headers={"Authorization": "Bearer " + JEV_KEY, "Content-Type": "application/json"})
+        r = urllib.request.Request(JEV_URL, data=req, headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"})
         try:
             with urllib.request.urlopen(r, timeout=90) as resp:
                 ans = json.load(resp)
             ch = ans["answers"]["best_candidate"]
-            return {"choice": ch.get("choice"), "confidence": ch.get("confidence"), "probabilities": ch.get("probabilities")}
+            from grade_gaza import validate_response
+            validate_response(json.loads(req)["questions"], ans)
+            return {"choice": ch.get("choice"), "confidence": ch.get("confidence"), "probabilities": ch.get("probabilities"), "response": ans}
         except Exception as e:  # noqa: BLE001
             last = e
             time.sleep(1.5 * (attempt + 1))
@@ -241,17 +229,29 @@ def _jev_call(req):
 
 
 def jev_phase(races):
-    data = json.loads(DATA.read_text())
-    by_pos = {p["id"]: p for p in data["positions"]}
     cache = _load_jsonl(JEV_CACHE)
-    todo = [r for r in races if r["category"] == CAT_JEV and r["position_id"] not in cache]
+    requests = {r["position_id"]: jev_request(r) for r in races if r["category"] == CAT_JEV}
+    todo = [r for r in races if r["category"] == CAT_JEV and
+            not cached_pick_matches(cache.get(r["position_id"]), requests[r["position_id"]])]
     print(f"Jev: {len(races)} total, {len(cache)} cached, {len(todo)} to run")
     def work(r):
-        evmap = [cand_brief(c) for c in all_candidates(by_pos[r["position_id"]])]
-        res = jev_pick(r, evmap)
+        request = requests[r["position_id"]]
+        candidates = request["state"]["candidates"]
+        if len(candidates) == 1:
+            name = candidates[0]["name"]
+            res = {"choice": name, "confidence": 1.0, "probabilities": {name: 1.0}, "single_candidate": True}
+        else:
+            res = _jev_call(json.dumps(request).encode())
         rec = {"position_id": r["position_id"], "choice": res["choice"], "confidence": res.get("confidence"),
-               "probabilities": res.get("probabilities"), "model": "jev-latest"}
+               "probabilities": res.get("probabilities"), "model": res.get("response", {}).get("model", "jev-latest"),
+               "request": request, "request_sha256": request_hash(request),
+               "evaluated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+        if res.get("single_candidate"): rec["single_candidate"] = True
+        if res.get("response"): rec["response"] = res["response"]
+        if not cached_pick_matches(rec, request):
+            raise ValueError("Invalid Jev recommendation: " + r["position_id"])
         return r["position_id"], rec
+    JEV_CACHE.parent.mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(max_workers=8) as ex:
         for pid, rec in ex.map(work, todo):
             with JEV_CACHE.open("a") as f:
@@ -265,6 +265,14 @@ def jev_phase(races):
             r["jev"] = cache[r["position_id"]]
             r["recommended"] = cache[r["position_id"]]["choice"]
     return races
+
+
+def cached_pick_matches(cached, request):
+    if not cached or cached.get("request") != request or cached.get("request_sha256") != request_hash(request):
+        return False
+    grades = {c["name"]: c["grade"] for c in request["state"]["candidates"]}
+    choice = cached.get("choice")
+    return choice in grades and GRADE_ORDER[grades[choice]] == min(map(GRADE_ORDER.get, grades.values()))
 
 
 def summary_prompt(race, evmap):
@@ -317,13 +325,17 @@ def summarize(races):
     data = json.loads(DATA.read_text())
     by_pos = {p["id"]: p for p in data["positions"]}
     cache = _load_jsonl(SUM_CACHE)
-    todo = [r for r in races if r["needs_summary"] and r["recommended"] and r["position_id"] not in cache]
+    prompts = {r["position_id"]: summary_prompt(r, [cand_brief(c) for c in all_candidates(by_pos[r["position_id"]])])
+               for r in races if r["needs_summary"] and r["recommended"]}
+    todo = [r for r in races if r["position_id"] in prompts and
+            cache.get(r["position_id"], {}).get("prompt_sha256") != request_hash(prompts[r["position_id"]])]
     print(f"Summaries: {sum(1 for r in races if r['needs_summary'])} needed, {len(cache)} cached, {len(todo)} to run")
     def work(r):
         evmap = [cand_brief(c) for c in all_candidates(by_pos[r["position_id"]])]
         prompt = summary_prompt(r, evmap)
         text = _lmstudio(prompt)
-        rec = {"position_id": r["position_id"], "text": text, "words": len(text.split()), "model": LMSTUDIO_MODEL}
+        rec = {"position_id": r["position_id"], "text": text, "words": len(text.split()), "model": LMSTUDIO_MODEL,
+               "prompt_sha256": request_hash(prompt)}
         return r["position_id"], rec
     def _run(batch):
         with ThreadPoolExecutor(max_workers=2) as ex:  # LM Studio concurrency = 2
@@ -343,7 +355,7 @@ def summarize(races):
     for i in range(0, len(todo), 10):
         _run(todo[i:i + 10])
     for r in races:
-        if r["needs_summary"] and r["position_id"] in cache:
+        if r["position_id"] in prompts and cache.get(r["position_id"], {}).get("prompt_sha256") == request_hash(prompts[r["position_id"]]):
             r["summary"] = cache[r["position_id"]]
     missing = [r["position_id"] for r in races if r["needs_summary"] and r["recommended"] and "summary" not in r]
     if missing:
@@ -386,6 +398,7 @@ def _load_jsonl(path):
 def build_page(races):
     order = {CAT_MUSLIM: 0, CAT_JEV: 1, CAT_NO_GOOD: 2, CAT_NO_INFO: 3}
     data = json.loads(DATA.read_text())
+    validate_plan(races, data)
     by_pos = {p["id"]: p for p in data["positions"]}
     for r in races:
         r["order"] = order[r["category"]]
@@ -427,12 +440,31 @@ def build_page(races):
     print(f"Built {OUT_HTML.name} ({OUT_HTML.stat().st_size:,} bytes)")
 
 
+def validate_plan(races, data):
+    """Refuse a stale page after a new score publication or roster change."""
+    expected = {r["position_id"]: r for r in classify(data, json.loads(OBS.read_text()))}
+    if len(races) != len(expected) or {r["position_id"] for r in races} != set(expected):
+        raise ValueError("Recommendation race coverage differs from the current dataset")
+    for race in races:
+        base = expected[race["position_id"]]
+        for key in ("roster", "category", "ballot_status", "office", "district_or_seat", "counties", "jurisdiction"):
+            if race.get(key) != base.get(key):
+                raise ValueError("Stale recommendation " + key + ": " + race["position_id"])
+        if race["category"] == CAT_JEV:
+            if not cached_pick_matches(race.get("jev"), jev_request(race)) or race.get("recommended") != race["jev"]["choice"]:
+                raise ValueError("Recommendation decision differs from current grades: " + race["position_id"])
+        elif race.get("recommended") != base.get("recommended"):
+            raise ValueError("Recommendation differs from deterministic rule: " + race["position_id"])
+
+
 def save_plan(races):
     OUTDIR.mkdir(parents=True, exist_ok=True)
     payload = {
         "generated_on": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "source_dataset": DATA.name,
         "source_dataset_sha256": hashlib.sha256(DATA.read_bytes()).hexdigest(),
+        "source_score_publication_id": json.loads(DATA.read_text()).get("pro_palestine_grading", {}).get("publication_id"),
+        "pending_summaries": [r["position_id"] for r in races if r.get("recommended") and not r.get("summary")],
         "rules": "Muslim-community candidate first; else Jev best-of-graded; none graded = no information; all grades below C (D/F) = no known good candidate.",
         "counts": {
             CAT_MUSLIM: sum(1 for r in races if r["category"] == CAT_MUSLIM),
@@ -447,15 +479,27 @@ def save_plan(races):
 
 
 def main():
+    global PLAN, JEV_CACHE, SUM_CACHE, JEV_KEY
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("command", choices=["classify", "jev", "summarize", "build", "all"])
+    ap.add_argument("command", choices=["classify", "jev", "summarize", "build", "all", "refresh"])
+    ap.add_argument("--plan", type=Path, default=PLAN)
+    ap.add_argument("--jev-cache", type=Path, default=JEV_CACHE)
+    ap.add_argument("--summary-cache", type=Path, default=SUM_CACHE)
+    ap.add_argument("--jev-key-file", type=Path)
     args = ap.parse_args()
+    PLAN, JEV_CACHE, SUM_CACHE = args.plan.resolve(), args.jev_cache.resolve(), args.summary_cache.resolve()
+    if args.jev_key_file: JEV_KEY = args.jev_key_file.read_text().strip()
     data = json.loads(DATA.read_text())
     obs = json.loads(OBS.read_text())
-    if args.command in ("classify", "all"):
+    if args.command in ("classify", "all", "refresh"):
         races = classify(data, obs)
         save_plan(races)
-    if args.command == "all":
+    if args.command == "refresh":
+        # Publish the current choices/grades without narratives from an older run.
+        races = jev_phase(races)
+        save_plan(races)
+        build_page(races)
+    elif args.command == "all":
         races = json.loads(PLAN.read_text())["races"]
         races = jev_phase(races)
         save_plan(races)

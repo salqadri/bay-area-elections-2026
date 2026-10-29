@@ -36,10 +36,12 @@ class PublicationChecks(unittest.TestCase):
 
     def test_identity_only_candidates_never_receive_a_political_grade(self):
         identity={'candidate','office','state','party','election_date','jurisdiction',
-                  'candidate_roster','incumbent','part_of_muslim_community','election_type'}
+                  'candidate_roster','incumbent','part_of_muslim_community','election_type',
+                  'office_category','government_level','district_or_seat','counties','partisan'}
         rows=[r for r in self.archive['rows'] if set(r['request']['state'])<=identity
               and r['request']['state'].get('part_of_muslim_community') is not True]
-        self.assertTrue(any(r['candidate']=='Rommy Kushner' for r in rows))
+        self.assertTrue(rows)
+        self.assertTrue(any(r['candidate']=='Charles A. Smiley' for r in rows))
         for row in rows:
             with self.subTest(candidate=row['candidate']):
                 self.assertEqual(projection(row,self.archive['score_grade_mapping'],self.archive['id'])['pro_palestine_score_grade'],'N/A')
@@ -51,8 +53,12 @@ class PublicationChecks(unittest.TestCase):
             if row['candidate'] in names:
                 self.assertFalse(has_issue_observation(row['request']['state']))
                 self.assertEqual(row_grade(row, self.archive['score_grade_mapping']), 'N/A')
-                historical = {k: v for k, v in self.archive['score_grade_mapping'].items() if k != 'require_issue_observation'}
-                self.assertEqual(row_grade(row, historical), 'D')
+        # The old, unguarded publication did display D for these four. Keep that
+        # historical regression independent of later owner reruns/raw answers.
+        historical_archive = json.loads((ROOT/'research/gaza-grading/published-2026-10-27-evidence022.json').read_text())
+        for row in historical_archive['rows']:
+            if row['candidate'] in names:
+                self.assertEqual(row_grade(row, historical_archive['score_grade_mapping']), 'D')
         for key, value in [('focused_endorsement_observations', [{'endorser':'CAIR Action','relation':'preferred'}]),
                            ('gaza_evidence', ['Supported a ceasefire.']),
                            ('campaign_platform_points', ['Oppose arms transfers to Israel.']),
