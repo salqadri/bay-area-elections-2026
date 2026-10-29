@@ -1,14 +1,14 @@
 {
-  "generated_on": "2026-10-29T15:25:22Z",
+  "generated_on": "2026-10-29T20:29:42Z",
   "source_dataset": "2026-11-03_Bay_Area_Elections.json",
-  "source_dataset_sha256": "0cf360cc025159002e96174eb03c9d32e584ddbdd4ad16e78ff81636ad878b3a",
+  "source_dataset_sha256": "1ccbb90a328e881be2efa6bcf6a9366ccdbc9c418e1189b259477625f9746f8e",
   "source_score_publication_id": "jev-2026-10-28-latest",
   "pending_summaries": [],
-  "rules": "Muslim-community candidate first; else Jev best-of-graded; none graded = no information; all grades below C (D/F) = no known good candidate.",
+  "rules": "Muslim-community candidate first; else Jev best-of-graded; none graded = no information; all grades worse than D (E/F) = no known good candidate.",
   "counts": {
     "muslim_community": 12,
-    "jev_pick": 139,
-    "no_good_candidate": 103,
+    "jev_pick": 160,
+    "no_good_candidate": 82,
     "no_information": 285
   },
   "races": [
@@ -427,10 +427,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Sam Liccardo",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-005",
+        "choice": "Sam Liccardo",
+        "confidence": 1.0,
+        "probabilities": {
+          "Sam Liccardo": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-005",
+            "office": "United States Representative",
+            "district_or_seat": "CD-16",
+            "candidates": [
+              {
+                "name": "Sam Liccardo",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Sam Liccardo": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "e7e39cf4fa1e5b5b109c182c5c977307b42acd3ceafdd0c81d00050b6c01d1d8",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-005",
+        "text": "Sam Liccardo (D) is the strongest candidate for this United States House seat. On July 14, 2026, he cosponsored the Block the Bombs Act, and he opposes the $3.3 billion in offensive weapons funding to Israel, pledging to vote against the appropriations bill carrying it. In July 2025 he called for immediate humanitarian aid to Gaza and criticized U.S. military support for Israel's actions, and in August 2025 he told South San Jose residents their anger over Palestinian suffering was justified. CAIR Action has named him their preferred candidate, and WhoFundsMyRep reports no AIPAC PAC or UDP money behind him. He has not called the war a genocide, voted against the Massie Amendment that would have eliminated the $3.3 billion in Israel aid, and backs $500 million for Iron Dome and Arrow 3. Even with those shortfalls, his concrete acts—cosponsoring the Block the Bombs Act, opposing offensive weapons funding, and publicly validating Palestinian community anger—make him the clearest choice for voters who want Congress to end arms transfers to Israel and deliver humanitarian aid to Gaza.",
+        "words": 176,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "4df408c135c370fdb579525cc896be17ef2ad3ad784ca0be7ac44be96105b4fe"
+      }
     },
     {
       "position_id": "CA2026-004",
@@ -557,10 +600,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Zoe Lofgren",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-006",
+        "choice": "Zoe Lofgren",
+        "confidence": 1.0,
+        "probabilities": {
+          "Zoe Lofgren": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-006",
+            "office": "United States Representative",
+            "district_or_seat": "CD-18",
+            "candidates": [
+              {
+                "name": "Zoe Lofgren",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Zoe Lofgren": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "836e2bd9d7603fce6375376d1a50eb17e29050b41b087148bb0482cb3d777268",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-006",
+        "text": "Zoe Lofgren, the candidate for U.S. Representative in California's 18th district, voted against $3.3 billion in Israeli military aid and sponsored the Block the Bombs Act in 2026, concrete actions to end U.S. weapons transfers to Israel. She has not called the war in Gaza genocide. But her 2026 position marks a clear break from 2024, when she supported a $14 billion weapons package and voted to cut UNRWA funding. In July 2025 she called Gaza a humanitarian catastrophe, blamed Prime Minister Netanyahu for famine, and demanded U.S. pressure for a two-state solution. Earlier, she signed de-escalation and settler-violence letters in late 2023, urged a permanent ceasefire and massive humanitarian aid in January 2024, and voted nay on the Antisemitism Awareness Act in May 2024. Her campaign received no AIPAC or UDP money, and she holds a preferred designation in the CAIR Action guide. J Street PAC, a group that opposes Netanyahu's government, endorsed her.",
+        "words": 155,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "6035bb902c57fa4137f9b7dcaa11115556355862abbd1976be69c066a9765ba8"
+      }
     },
     {
       "position_id": "CA2026-007",
@@ -617,10 +703,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Everett Wess",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-001",
+        "choice": "Everett Wess",
+        "confidence": 1.0,
+        "probabilities": {
+          "Barry Moore": 0.0,
+          "Everett Wess": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-001",
+            "office": "United States Senator",
+            "district_or_seat": "AL — Statewide",
+            "candidates": [
+              {
+                "name": "Barry Moore",
+                "party": "R",
+                "grade": "F"
+              },
+              {
+                "name": "Everett Wess",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Barry Moore": "Published pro-Palestine grade: F",
+                "Everett Wess": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "dd086a440adb40913fd82c6f5a5d70385a25336ac1d6ad23d77acb1151309c3c",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Everett Wess",
+              "confidence": 1.0,
+              "probabilities": {
+                "Barry Moore": 0.0,
+                "Everett Wess": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 476,
+            "output_tokens": 42
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-001",
+        "text": "For the U.S. Senate seat in Alabama, Everett Wess (D) is the stronger choice, though he falls short where voters need the most clarity. Wess has not called the killing in Gaza a genocide and has not taken a position on ending U.S. weapons transfers or military funding to Israel. In a federal race, that silence effectively endorses the status quo. What he has done is commit to Palestinian rights, a ceasefire, humanitarian aid into Gaza, and a two-state solution, while also affirming Israel's security. That is more than his opponent offers. Barry Moore (R) has publicly stated he stands with Israel, pressed for funding to protect it, voted yea on the Antisemitism Awareness Act, and introduced the Define to Defeat Act of 2025 to embed IHRA language in federal civil-rights law. Moore's campaign drew more than $30,000 from AIPAC's PAC and United Democracy Project, and in 2023 he called for changes in the education of Palestinian children. Wess does not carry that weight of pro-Israel alignment, and his platform at least names what Palestinians are owed.",
+        "words": 177,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "2ae03b015f2d7729f92955d222a15b88f7f76010f3d1512f1c7235fc9b9daf22"
+      }
     },
     {
       "position_id": "US2026-002",
@@ -1230,10 +1383,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Josh Turek",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-010",
+        "choice": "Josh Turek",
+        "confidence": 1.0,
+        "probabilities": {
+          "Ashley Hinson": 0.0,
+          "Josh Turek": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-010",
+            "office": "United States Senator",
+            "district_or_seat": "IA — Statewide",
+            "candidates": [
+              {
+                "name": "Ashley Hinson",
+                "party": "R",
+                "grade": "F"
+              },
+              {
+                "name": "Josh Turek",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Ashley Hinson": "Published pro-Palestine grade: F",
+                "Josh Turek": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "db286cb0d6456569255138bad4652666e22067e91a4f30eebd9570d939817329",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Josh Turek",
+              "confidence": 1.0,
+              "probabilities": {
+                "Ashley Hinson": 0.0,
+                "Josh Turek": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 476,
+            "output_tokens": 41
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-010",
+        "text": "Josh Turek is the stronger choice for the Iowa U.S. Senate seat. He has not called the war in Gaza a genocide or backed blocking weapons transfers; his documented September 2025 position conditions U.S. support for Israel, a stance that stops short of demanding an end to military aid. Still, Turek contrasts sharply with Ashley Hinson, who voted Yea on all three Israel Security Supplemental Appropriations Acts, declared Hamas 100% to blame for the suffering in Gaza, vowed to always stand with Israel, and issued a 2024 press release titled Biden Has Abandoned Israel. Turek's platform prioritizes economic, healthcare, and civil-liberties issues for Iowans, and Ro Khanna has endorsed him. For a federal seat, no recorded action to end aid accepts the status quo, but Turek at least imposed conditions where Hinson funded every tranche and framed the conflict as a U.S. failure to support Israel. Choosing the candidate who questions the unconditional pipeline over the one who defends it is the most consequential vote Iowans can cast.",
+        "words": 168,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "8a3e470c7a431cef4c139e28eccbe427eabe2e5ac366e79beb7827ec7b5d80b3"
+      }
     },
     {
       "position_id": "US2026-011",
@@ -1874,10 +2094,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Ty Pinkins",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-018",
+        "choice": "Ty Pinkins",
+        "confidence": 1.0,
+        "probabilities": {
+          "Cindy Hyde-Smith": 0.0,
+          "Ty Pinkins": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-018",
+            "office": "United States Senator",
+            "district_or_seat": "MS — Statewide",
+            "candidates": [
+              {
+                "name": "Cindy Hyde-Smith",
+                "party": "R",
+                "grade": "F"
+              },
+              {
+                "name": "Ty Pinkins",
+                "party": "I",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Cindy Hyde-Smith": "Published pro-Palestine grade: F",
+                "Ty Pinkins": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "11ad94581cbe69e30d21b91e0c257856649ff6da1358fc5290713c8135813865",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Ty Pinkins",
+              "confidence": 1.0,
+              "probabilities": {
+                "Cindy Hyde-Smith": 0.0,
+                "Ty Pinkins": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 476,
+            "output_tokens": 40
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-018",
+        "text": "In this race for the United States Senate, Ty Pinkins (I) is the stronger candidate. He has not called the war in Gaza a genocide and has not backed any measure to block weapons transfers or end military aid to Israel. What he has done is call Trump's 2025 Gaza plan reckless in a February 2025 campaign release and, in October 2026, declare that the relationship between the United States and Israel's government is unhealthy, while publicly committing to reject AIPAC money. For a federal office, his silence on ending arms sales effectively preserves the status quo. But his opponent, Cindy Hyde-Smith (R), has spent years defending Israel, cosponsored the 2025 Antisemitism Awareness Act, posted that most Gazans viewed the October 7 attack as correct, blocked Gazan refugee admission, and took over a quarter of a million dollars from AIPAC and United Democracy Project. Pinkins is the only candidate here who has spoken against the current course and refused the money that shapes it.",
+        "words": 164,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "9deaff947b86bf6c3e90fc525a41fb7ca9a45c9db9871bb8208e5995022daa4a"
+      }
     },
     {
       "position_id": "US2026-019",
@@ -1917,10 +2204,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Alani Bankhead",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-019",
+        "choice": "Alani Bankhead",
+        "confidence": 1.0,
+        "probabilities": {
+          "Alani Bankhead": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-019",
+            "office": "United States Senator",
+            "district_or_seat": "MT — Statewide",
+            "candidates": [
+              {
+                "name": "Alani Bankhead",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Alani Bankhead": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "905d34eed0878d92443eb7222d2842f053ea10043fa560ce29f12e6759aecf27",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "US2026-019",
+        "text": "Alani Bankhead has not called the war in Gaza a genocide and has not backed a full end to U.S. military and economic aid to Israel; her July 2026 podcast remarks expressed strong personal affinity for the IDF and Mossad, and even her October 2026 call to enforce the Leahy Law as a complete arms embargo during the assault remains a conditional, narrow restriction rather than a structural break from U.S. support. In a federal race, that combination effectively leaves the status quo of open-ended U.S. backing to Israel largely undisturbed. Still, Bankhead is the strongest candidate on this Montana U.S. Senate ballot because no other listed contender carries a single documented position on Palestinian lives or U.S. weapons transfers. Her October 2026 Leahy Law stance is the only concrete act in this race that would restrict arms reaching a theater of ongoing civilian harm, and her willingness to name a specific legal mechanism, even while stopping short of a full condemnation, marks a measurable difference from candidates who have said nothing at all on these questions.",
+        "words": 177,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "0c7e25d03bbe08b0f5f64c15e1c65ec21eff474bdb575ffe59c9076c6320f3fd"
+      }
     },
     {
       "position_id": "US2026-020",
@@ -3167,10 +3497,85 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Rachel Fetty Anderson",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-034",
+        "choice": "Rachel Fetty Anderson",
+        "confidence": 0.97,
+        "probabilities": {
+          "Rachel Fetty Anderson": 0.98,
+          "S. Marshall Wilson": 0.0,
+          "Shelley Moore Capito": 0.02
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-034",
+            "office": "United States Senator",
+            "district_or_seat": "WV — Statewide",
+            "candidates": [
+              {
+                "name": "Rachel Fetty Anderson",
+                "party": "D",
+                "grade": "D"
+              },
+              {
+                "name": "S. Marshall Wilson",
+                "party": "C",
+                "grade": "F"
+              },
+              {
+                "name": "Shelley Moore Capito",
+                "party": "R",
+                "grade": "E"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Rachel Fetty Anderson": "Published pro-Palestine grade: D",
+                "S. Marshall Wilson": "Published pro-Palestine grade: F",
+                "Shelley Moore Capito": "Published pro-Palestine grade: E"
+              }
+            }
+          }
+        },
+        "request_sha256": "da1c0ae0646cec491f9c39cb69f975326652c17a7a23c43000f00e717680aacd",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Rachel Fetty Anderson",
+              "confidence": 0.97,
+              "probabilities": {
+                "Rachel Fetty Anderson": 0.98,
+                "S. Marshall Wilson": 0.0,
+                "Shelley Moore Capito": 0.02
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 530,
+            "output_tokens": 52
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-034",
+        "text": "For the United States Senate seat in West Virginia, Rachel Fetty Anderson is the strongest choice. She has not called the war in Gaza a genocide and has not moved to end aid to Israel specifically, so her position is a partial step rather than a full break. But she has stated she would not vote to send or sell weapons to any country except for purely self-defense purposes, a stance that directly constrains the arms pipeline to Israel in a way neither of her opponents does. Shelley Moore Capito cosponsored the 2025 Antisemitism Awareness Act, wiring the IHRA definition into federal campus investigations and embedding the framework that equates criticism of Israel with antisemitism into the Education Department. S. Marshall Wilson told voters in a November 2024 questionnaire that Israel's worldview aligns more closely with the American Founding than any other Middle East nation, offering no engagement with Palestinian justice or the war in Gaza. Anderson's two-state solution and self-defense-only weapons stance make her the only candidate in this race whose stated positions pull policy away from the status quo the other two reinforce.",
+        "words": 185,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "22cc5a42602f2e9cc15bbd1009a635a447a7e64cf57de55b84c4c919387ac4b2"
+      }
     },
     {
       "position_id": "US2026-035",
@@ -3475,10 +3880,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Richard Pan",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-074",
+        "choice": "Richard Pan",
+        "confidence": 1.0,
+        "probabilities": {
+          "Kevin Kiley": 0.0,
+          "Richard Pan": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-074",
+            "office": "United States Representative",
+            "district_or_seat": "CD-6",
+            "candidates": [
+              {
+                "name": "Kevin Kiley",
+                "party": "NPP",
+                "grade": "F"
+              },
+              {
+                "name": "Richard Pan",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Kevin Kiley": "Published pro-Palestine grade: F",
+                "Richard Pan": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "4ad7cba1e50bfc9a4b4dc104a3b33b77e7f7b00e5263254e4074bc315effafed",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Richard Pan",
+              "confidence": 1.0,
+              "probabilities": {
+                "Kevin Kiley": 0.0,
+                "Richard Pan": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 470,
+            "output_tokens": 36
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-074",
+        "text": "Dr. Richard Pan has not called the war in Gaza a genocide and has not backed blocking weapons transfers or ending U.S. aid to Israel; his platform calls generically for ending wars without naming Israel, and for a U.S. Representative that effectively supports the status quo of American backing for the Israeli government. In the August 17 Sacramento Bee debate he repeatedly declined a yes-or-no answer on genocide, affirming instead Israel's right to defend itself while acknowledging the humanitarian crisis. He remains the strongest option in this race. His opponent Kevin Kiley traveled to Israel on an AIPAC-organized delegation in April 2024, praised Yale's overnight crackdown on pro-Palestine student encampments in April 2025, and voted to incorporate the IHRA definition into federal education law, while taking $74,799 from pro-Israel PACs in the 2026 cycle alone. CAIR Action lists Pan as preferred, and the UDP-funded 314 Action Fund spent roughly $1.2 million in independent support for his campaign. Pan named the humanitarian catastrophe in Gaza; Kiley spent those same months defending a university's crackdown on the students who protested it.",
+        "words": 179,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "e368a50164124dd1f52608b9fcad3fedf6688d1d1d08f29c8b9335e4bd71e9d3"
+      }
     },
     {
       "position_id": "US2026-075",
@@ -4760,10 +5232,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Denise Powell",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-100",
+        "choice": "Denise Powell",
+        "confidence": 1.0,
+        "probabilities": {
+          "Denise Powell": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-100",
+            "office": "United States Representative",
+            "district_or_seat": "CD-2",
+            "candidates": [
+              {
+                "name": "Denise Powell",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Denise Powell": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "351b381e98a9d1c3228fa5be1c9b5ad2cd4c984e44f12903a0d2bd0a587e115b",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "US2026-100",
+        "text": "For the United States House seat in Nebraska's second district, Denise Powell is the candidate who turned her back on the pro-Israel establishment when it came calling. In April 2026 she rejected an ad buy from Democratic Majority for Israel, and in May she disavowed support from all Israel-focused outside groups, prompting DMFI to cancel its spending in the race. Jewish Insider identified her as the Israel critic in the Nebraska Democratic primary. That said, she has not called the war in Gaza a genocide, has not backed blocking weapons transfers to Israel, and has not taken a recorded vote on U.S. military or economic aid, and for a federal office-seeker, taking no position on those questions effectively supports the status quo. Yet the AIPAC-linked groups BOLD America and EDW Action Fund poured over six hundred thousand dollars into her campaign despite her disavowal, showing that the pro-Israel machinery views her as its fundable option even as she pushes back. That makes Powell the strongest choice in this race.",
+        "words": 169,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "2a48d0376bfca1aeecd3848150edef73209a9843bdf7efb23bd855350c52aa86"
+      }
     },
     {
       "position_id": "US2026-101",
@@ -6126,10 +6641,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Shannon Taylor",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-126",
+        "choice": "Shannon Taylor",
+        "confidence": 1.0,
+        "probabilities": {
+          "Robert J. Wittman": 0.0,
+          "Shannon Taylor": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-126",
+            "office": "United States Representative",
+            "district_or_seat": "CD-1",
+            "candidates": [
+              {
+                "name": "Robert J. Wittman",
+                "party": "R",
+                "grade": "F"
+              },
+              {
+                "name": "Shannon Taylor",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Robert J. Wittman": "Published pro-Palestine grade: F",
+                "Shannon Taylor": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "91be867c1a1e8c674b3163b63463da2ff56a5d1e5be0d9d4447832770abe4220",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Shannon Taylor",
+              "confidence": 1.0,
+              "probabilities": {
+                "Robert J. Wittman": 0.0,
+                "Shannon Taylor": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 479,
+            "output_tokens": 43
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-126",
+        "text": "Shannon Taylor has not called the war in Gaza a genocide, has not backed a vote to block U.S. weapons transfers, and at a September 2026 rally gave no answer when asked about Palestine. For a candidate seeking the U.S. House of Representatives, that silence on American military and economic support effectively sustains the status quo. Still, Taylor is the stronger choice. On the first anniversary of October 7, 2024, she called for an immediate ceasefire, hostage release, and a rebuilding plan, naming innocent lives in Israel and Gaza. She has not endorsed an arms embargo but insists U.S. military aid must follow international law and civilian protection. Contrast Robert Wittman, who voted Yea on the 2024 Antisemitism Awareness Act embedding the IHRA definition in Title VI education enforcement, sponsored its 2025 successor, and signed an October 2025 letter calling ICJ genocide proceedings a redefinition effort targeting Israel and empowering Hamas. Taylor draws AFGE and AFSCME labor backing but has not taken the concrete legislative steps voters need, and that gap should weigh in their decision.",
+        "words": 176,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "69b753eae8ce50e7da7c2a6a9dd2943507b837855be33bf75bff5e98a3387d5d"
+      }
     },
     {
       "position_id": "US2026-127",
@@ -6880,10 +7462,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Mia Bonta",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-010",
+        "choice": "Mia Bonta",
+        "confidence": 1.0,
+        "probabilities": {
+          "Mia Bonta": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-010",
+            "office": "Member of the State Assembly",
+            "district_or_seat": "AD-18",
+            "candidates": [
+              {
+                "name": "Mia Bonta",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Mia Bonta": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "866e15f231bfeb6a9eb672f17d273aa0449ccbfdf7f89f04b2e2ce305ac7a83a",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-010",
+        "text": "In the California State Assembly district 18 race, Mia Bonta is the strongest option for voters who want a representative who pushes back against legislation that chills speech about Palestine. On AB 715, the antisemitism-coordinator and classroom-material oversight bill whose floor debate centered on speech about Palestine, Bonta publicly registered skepticism and pressed co-authors to clean up the text after its late-night passage, then ultimately voted aye. She has not called the war in Gaza a genocide and has not backed any measure to block weapons transfers or cut military aid to Israel. Still, she is the only candidate here with documented engagement on the question: CAIR Action preferred her, AROC Action endorsed her, and her willingness to publicly challenge the rushed handling of AB 715 shows a legislator willing to push back rather than simply follow the chamber. Her platform carries no Palestine-specific policy statement, but the community-aligned endorsements and her floor conduct set her apart from every other candidate in this race.",
+        "words": 164,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "ae72ac09edc954a8ded167c51e999cd0eaf11697cfed4a7fdda2d4b3a95e9b00"
+      }
     },
     {
       "position_id": "CA2026-232",
@@ -7229,10 +7854,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Patrick Ahrens",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-025",
+        "choice": "Patrick Ahrens",
+        "confidence": 1.0,
+        "probabilities": {
+          "Patrick Ahrens": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-025",
+            "office": "Member of the State Assembly",
+            "district_or_seat": "AD-26",
+            "candidates": [
+              {
+                "name": "Patrick Ahrens",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Patrick Ahrens": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "960a86fefe4e080e4160dc2371c553c4cb827af8883e484b1e8f27205873ab22",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-025",
+        "text": "Patrick Ahrens is the strongest option for California State Assembly, District 26, in the November 2026 general. On the two questions that matter most—opposing the genocide in Gaza and ending U.S. military and economic aid to Israel—Ahrens has not called the violence a genocide, has not backed blocking weapons transfers, and has not voted against aid bills. What he has done is earn the trust of the communities most directly affected: CAIR Action lists him as its preferred candidate and Vote for Peace rates him an Ally, assessments that carry weight even where his floor work on classroom content, including his Aye on the antisemitism-coordinator bill AB 715 and his co-authorship of the failed AB 1468, sits in tension with those community positions. A candidate who has been vetted and put forward by the Palestinian and Muslim organizations most directly impacted by U.S. policy toward Israel gives a voter a concrete, grounded reason to trust the district will be represented in a way that reflects those communities' priorities, and in this race that makes Ahrens the clear choice.",
+        "words": 178,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "e399f4d32388a446fe16e7956840c47fca47030c159a67b432d36d21161810a6"
+      }
     },
     {
       "position_id": "CA2026-026",
@@ -7611,10 +8279,85 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Colt Shelby",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-039",
+        "choice": "Colt Shelby",
+        "confidence": 1.0,
+        "probabilities": {
+          "Colt Shelby": 1.0,
+          "Fredrick Love": 0.0,
+          "Sarah Huckabee Sanders": 0.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-039",
+            "office": "Governor",
+            "district_or_seat": "AR — Statewide",
+            "candidates": [
+              {
+                "name": "Colt Shelby",
+                "party": "L",
+                "grade": "D"
+              },
+              {
+                "name": "Fredrick Love",
+                "party": "D",
+                "grade": "F"
+              },
+              {
+                "name": "Sarah Huckabee Sanders",
+                "party": "R",
+                "grade": "F"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Colt Shelby": "Published pro-Palestine grade: D",
+                "Fredrick Love": "Published pro-Palestine grade: F",
+                "Sarah Huckabee Sanders": "Published pro-Palestine grade: F"
+              }
+            }
+          }
+        },
+        "request_sha256": "d307b839ddd7a56ace34f0bfedeca7b2b3136b8ead8bf62d139425743b1cc469",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Colt Shelby",
+              "confidence": 1.0,
+              "probabilities": {
+                "Colt Shelby": 1.0,
+                "Fredrick Love": 0.0,
+                "Sarah Huckabee Sanders": 0.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 526,
+            "output_tokens": 49
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-039",
+        "text": "Shelby has not called the Gaza war a genocide, has not backed blocking weapons transfers to Israel, and has not taken divestment action; his one public statement, in August 2026, dismissed Governor Huckabee's Israel pledges as a distraction from Arkansas food insecurity and infant mortality, a bluntly negative framing toward US-Israel diplomacy that stops short of engaging Palestinian justice or the Gaza crisis. Still, in this race for Arkansas governor, the alternatives carry concrete, escalating commitments to Israel. Fredrick Love, in May 2023, sponsored Arkansas Senate Resolution 60 commending Israel on its 75th anniversary and affirming the Israeli people's right to defend their country. Sarah Huckabee Sanders signed SB 352 embedding the IHRA definition into school and university conduct codes, committed twenty-five to fifty million dollars of state money to Israeli government bonds, met Netanyahu and called the Arkansas-Israel bond unbreakable, then in October 2026 declared Arkansas makes no apology for standing with Israel while branding it disgusting and shameful to raise October 7 alongside any criticism of Israel. Shelby has done none of that, and his stated priority on domestic economic distress over Israel diplomacy makes him the clearest break from the pro-Israel path the other candidates have built.",
+        "words": 200,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "3b2410dc788fdc04ad9acc0d097b9e26ae15f8692d881d48a6180d8dbdc7aabd"
+      }
     },
     {
       "position_id": "US2026-040",
@@ -8069,10 +8812,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "JB Pritzker",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-046",
+        "choice": "JB Pritzker",
+        "confidence": 1.0,
+        "probabilities": {
+          "Darren Bailey": 0.0,
+          "JB Pritzker": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-046",
+            "office": "Governor",
+            "district_or_seat": "IL — Statewide",
+            "candidates": [
+              {
+                "name": "Darren Bailey",
+                "party": "R",
+                "grade": "F"
+              },
+              {
+                "name": "JB Pritzker",
+                "party": "D",
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Darren Bailey": "Published pro-Palestine grade: F",
+                "JB Pritzker": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "d582113cde660ecd3139b0edcb14ef6a65393aac6419d3805f4fdb0d77b70e67",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "JB Pritzker",
+              "confidence": 1.0,
+              "probabilities": {
+                "Darren Bailey": 0.0,
+                "JB Pritzker": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 476,
+            "output_tokens": 41
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-046",
+        "text": "For Illinois governor in November 2026, JB Pritzker has taken concrete steps to push back on U.S. arms flows to Israel. In August 2025 he endorsed Senate resolutions to block U.S. arms sales to Israel, calling it the right kind of message to pressure Netanyahu on Gaza's humanitarian crisis, and in March 2026 he broke from AIPAC, labeling its seventy-million-dollar Illinois spending as interference and saying he wants no part of it. Pritzker has not called the violence in Gaza a genocide, and in May 2026 he said criticism of Israel is crossing into antisemitism, while in 2024 he downplayed Chicago's Gaza ceasefire resolution for not holding Hamas accountable. Even so, among the candidates listed, Pritzker is the only one who has backed blocking weapons transfers and publicly rejected AIPAC's influence. Darren Bailey, by contrast, declared in October 2023 that he has always stood with Israel, calling Hamas a despicable terrorist organization, without any mention of civilian harm or conditions on U.S. support. For a voter who wants to see pressure on arms sales and a break from Israel-aligned lobbying, Pritzker is the stronger choice.",
+        "words": 185,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "d21f6f7cbcfeacf3af421d83a858000f0c2e60de9314bb9f57ad6094240c219c"
+      }
     },
     {
       "position_id": "US2026-047",
@@ -8509,10 +9319,85 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Jocelyn Benson",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-052",
+        "choice": "Jocelyn Benson",
+        "confidence": 1.0,
+        "probabilities": {
+          "Anthony Hudson": 0.0,
+          "Jocelyn Benson": 1.0,
+          "John James": 0.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-052",
+            "office": "Governor",
+            "district_or_seat": "MI — Statewide",
+            "candidates": [
+              {
+                "name": "Anthony Hudson",
+                "party": "L",
+                "grade": "F"
+              },
+              {
+                "name": "Jocelyn Benson",
+                "party": "D",
+                "grade": "D"
+              },
+              {
+                "name": "John James",
+                "party": "R",
+                "grade": "F"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Anthony Hudson": "Published pro-Palestine grade: F",
+                "Jocelyn Benson": "Published pro-Palestine grade: D",
+                "John James": "Published pro-Palestine grade: F"
+              }
+            }
+          }
+        },
+        "request_sha256": "ed5dba1d2432ad4c65050d565bb2ba90460aa0a26d3a2e9f47ffe55820f2b188",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Jocelyn Benson",
+              "confidence": 1.0,
+              "probabilities": {
+                "Anthony Hudson": 0.0,
+                "Jocelyn Benson": 1.0,
+                "John James": 0.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 520,
+            "output_tokens": 47
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-052",
+        "text": "Jocelyn Benson has not called the war in Gaza a genocide or voted to block weapons transfers to Israel. Still, for Michigan governor she remains the strongest option listed. In January 2025 she issued a public statement on the Israel-Hamas ceasefire, and in October 2023 Arab-American leaders called her synagogue dance during the initial Gaza strikes tone-deaf, evidence that community accountability reaches her in ways it does not reach her opponents. Anthony Hudson voted against the February 2024 border bill partly over its Israel funding yet still supports U.S. aid for Israel's defense. John James has called himself a staunch supporter of Israel, introduced a bill to expand U.S. security cooperation with Israel, received over two hundred thousand dollars from AIPAC-aligned PACs, and frames the conflict as eliminating Hamas and Iranian proxies. Benson is the only candidate here whose record shows responsiveness to Palestinian community pressure without locking in a security-first, pro-arms posture.",
+        "words": 153,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "2169f270d9b2e41f8e72c7b8b6faee2f89099dac0a3d299def4b2706fe7ddeee"
+      }
     },
     {
       "position_id": "US2026-053",
@@ -9175,10 +10060,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Dan Ahlers",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "US2026-065",
+        "choice": "Dan Ahlers",
+        "confidence": 1.0,
+        "probabilities": {
+          "Dan Ahlers": 1.0,
+          "Larry Rhoden": 0.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "US2026-065",
+            "office": "Governor",
+            "district_or_seat": "SD — Statewide",
+            "candidates": [
+              {
+                "name": "Dan Ahlers",
+                "party": "D",
+                "grade": "D"
+              },
+              {
+                "name": "Larry Rhoden",
+                "party": "R",
+                "grade": "F"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Dan Ahlers": "Published pro-Palestine grade: D",
+                "Larry Rhoden": "Published pro-Palestine grade: F"
+              }
+            }
+          }
+        },
+        "request_sha256": "409bcac6171d83e9d1152415e6514ed7d63839194ab7bc7964c00559cdc87037",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Dan Ahlers",
+              "confidence": 1.0,
+              "probabilities": {
+                "Dan Ahlers": 1.0,
+                "Larry Rhoden": 0.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 474,
+            "output_tokens": 40
+          }
+        }
+      },
+      "summary": {
+        "position_id": "US2026-065",
+        "text": "Dan Ahlers is the strongest choice for Governor of South Dakota because he is the only candidate whose public record centers Palestinian civilian lives and calls for pressure on Israel to stop killing them. As SDDP Executive Director in May 2024, he directed a party statement acknowledging the October 7 attack while emphasizing more than thirty thousand Gaza civilian deaths and urging continued pressure on Israel to end hostilities. To be clear, Ahlers has not called the situation a genocide, has not backed blocking weapons transfers, and has not called for ending U.S. military support to Israel. Even so, among the candidates here, he alone has put Palestinian civilian harm at the center of a public position and urged action against Israel. Rhoden, by contrast, led South Dakota's first trade delegation to Israel in June 2025, met President Herzog, Knesset Speaker Ohana, and Foreign Minister Sa'ar, called Israel a key partner in the state's economic success, and brought defense businesses actively seeking Israeli market sales. That deepens economic entanglement with the country carrying out the bombardment rather than applying any pressure.",
+        "words": 181,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "844414014356924209ff1a4724f41d76168dcbb9dc813557f0d4b0b8e916cee4"
+      }
     },
     {
       "position_id": "US2026-066",
@@ -10101,10 +11053,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Richard Barrera",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-018",
+        "choice": "Richard Barrera",
+        "confidence": 0.98,
+        "probabilities": {
+          "Richard Barrera": 0.99,
+          "Sonja Shaw": 0.01
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-018",
+            "office": "Superintendent of Public Instruction",
+            "district_or_seat": "Statewide",
+            "candidates": [
+              {
+                "name": "Richard Barrera",
+                "party": null,
+                "grade": "D"
+              },
+              {
+                "name": "Sonja Shaw",
+                "party": null,
+                "grade": "E"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Richard Barrera": "Published pro-Palestine grade: D",
+                "Sonja Shaw": "Published pro-Palestine grade: E"
+              }
+            }
+          }
+        },
+        "request_sha256": "08fcdba0a8023cfd7847c22f77d630584d1562154c9bfcb6052ed6998bbb0272",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Richard Barrera",
+              "confidence": 0.98,
+              "probabilities": {
+                "Richard Barrera": 0.99,
+                "Sonja Shaw": 0.01
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 470,
+            "output_tokens": 38
+          }
+        }
+      },
+      "summary": {
+        "position_id": "CA2026-018",
+        "text": "For California's Superintendent of Public Instruction, Richard Barrera is the strongest option in this November 2026 race. Barrera has not called Israel's conduct in Gaza a genocide, has not called for a ceasefire, and has not backed blocking weapons transfers. Even so, he is the candidate most willing to push back on the state's antisemitism enforcement framework: at a 2026 superintendent forum he expressed concerns about AB 715's classroom effects and declined to commit to defending the bill against every lawsuit, saying he would defend it only when that protects students. CAIR Action listed him Preferred, a tier short of full endorsement, and Vote for Peace rated him Neutral. By contrast, Sonja Shaw pressed for stronger AB 715 enforcement at that same forum, criticized a fellow candidate's abstention, and in March 2024, as Chino Valley Unified School Board president, refused to let a pro-Palestinian group address the board while other districts passed ceasefire resolutions. Vote for Peace opposed Shaw in the general. Barrera's willingness to question AB 715's scope and his Preferred standing with CAIR Action make him the clearer choice for a superintendent who will not treat that enforcement bill as beyond scrutiny.",
+        "words": 194,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "ea8a44343851b50cef658b98630aba68c6e5545c44f3f4447608ef58d2e33cfc"
+      }
     },
     {
       "position_id": "CA2026-021",
@@ -13520,10 +14539,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Desrie Campbell",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-059",
+        "choice": "Desrie Campbell",
+        "confidence": 1.0,
+        "probabilities": {
+          "Desrie Campbell": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-059",
+            "office": "City Council Member",
+            "district_or_seat": "District 2",
+            "candidates": [
+              {
+                "name": "Desrie Campbell",
+                "party": null,
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Desrie Campbell": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "357e2bb15717fe7202ff6e795d485ff9f2de18256d8fe6067db8936d33d2ab80",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-059",
+        "text": "For City Council Member, District 2, Desrie Campbell authored Fremont's March 2024 statement urging meaningful dialogue to halt the hostilities and a lasting and just solution for both Israel and Gaza. Campbell has not called the war a genocide, has not supported any measure to block weapons transfers or end U.S. military and economic aid to Israel, and when the council considered adding permanent ceasefire language to that statement, Campbell refused, calling it divisive. The equidistant framing means the statement condemns humanitarian harm without assigning responsibility to Israel, and that refusal to commit to ending military action is a real shortfall that voters should weigh. Even so, Campbell is the strongest option in this race: the statement at least forces Fremont to name the killing and demand a just resolution rather than fall silent, and a councilmember who will sit in a chamber and push for dialogue on behalf of Gaza, however measured the language, gives voters a point of leverage that silence does not. Support Campbell.",
+        "words": 167,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "cedb9e7406650d184168d09b24d1796a9428a113d279accc827fda62b1a34ecd"
+      }
     },
     {
       "position_id": "CA2026-060",
@@ -18156,10 +19218,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Cherise Marie Khaund",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-342",
+        "choice": "Cherise Marie Khaund",
+        "confidence": 1.0,
+        "probabilities": {
+          "Cherise Marie Khaund": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-342",
+            "office": "City Council Member",
+            "district_or_seat": "At-large",
+            "candidates": [
+              {
+                "name": "Cherise Marie Khaund",
+                "party": null,
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Cherise Marie Khaund": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "47c9f1e4e4170386c24a63d54e0a38f1cce376f75f4a79a12d7d3404114da48e",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-342",
+        "text": "For the City Council Member — At-large race in Walnut Creek on November 3, 2026, Cherise Marie Khaund is the only candidate with a documented record of engaging with the humanitarian crisis in Gaza. On October 11, 2023, she shared educator resources for discussing the Israel-Gaza conflict, drew on her time with peace activists from both sides, and highlighted that over one million children in Gaza lack clean water, food, and healthcare. She has not called the crisis a genocide, has not named Israel as the responsible party, and has not called for an end to U.S. military aid to Israel. Still, in a field where no other candidate has any researched record on the issue, Khaund is the only person in this race who has taken a public, documented stand centering Palestinian children's suffering and who has worked alongside peace activists from both sides to bring that reality into public discourse. For voters who want a representative who at minimum will not look away from the crisis, she is the clearest choice on the ballot.",
+        "words": 176,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "fdc5336ca58b210e7c3b4a20c4072cbe3bd47ef78614b2c720ed789f6a47107b"
+      }
     },
     {
       "position_id": "CA2026-343",
@@ -18360,10 +19465,77 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Rob Stump",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-112",
+        "choice": "Rob Stump",
+        "confidence": 0.28,
+        "probabilities": {
+          "Rob Stump": 0.64,
+          "Mary Badame": 0.36
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-112",
+            "office": "Town Council Member",
+            "district_or_seat": "At-large",
+            "candidates": [
+              {
+                "name": "Rob Stump",
+                "party": null,
+                "grade": "D"
+              },
+              {
+                "name": "Mary Badame",
+                "party": null,
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Rob Stump": "Published pro-Palestine grade: D",
+                "Mary Badame": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "51575c35ef6ac25f98928deb50688f29eb7ce1b67803a654bb83153014e2114b",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Rob Stump",
+              "confidence": 0.28,
+              "probabilities": {
+                "Rob Stump": 0.64,
+                "Mary Badame": 0.36
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 466,
+            "output_tokens": 38
+          }
+        }
+      },
+      "summary": {
+        "position_id": "CA2026-112",
+        "text": "For the at-large Los Gatos Town Council seat in November, Rob Stump has not called the war in Gaza a genocide, has not backed blocking weapons transfers to Israel, and has not taken divestment action. That silence is a real gap. But the Bay Area Muslim Council's opposition to Stump is pointed squarely at his tenure as a planning commissioner, where they called him the worst they had seen in that role, and it is not a judgment on his stance toward Palestinians. Mary Badame, by contrast, drew opposition from the same group with a direct advisory tied to her record on Palestinian justice and Israel policy, meaning she took a position on those issues that community advocates found contrary. When the choice is between a candidate with no contrary action on the Palestine question and one whose record on that question drew explicit Muslim-community opposition, Stump is the stronger option for a voter holding candidates to the tests of opposing the genocide in Gaza and ending U.S. military and economic aid to Israel. He is not a champion on that front, but he is not the candidate who moved against that community when the moment came.",
+        "words": 197,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "a27ce3f6ecbe5c6aa64c98d5fcdd6264c7b43684bce0613e1808295cb453ffa7"
+      }
     },
     {
       "position_id": "CA2026-324",
@@ -22956,10 +24128,53 @@
           "muslim": false
         }
       ],
-      "category": "no_good_candidate",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of known good candidates.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Ruth Ferguson",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-243",
+        "choice": "Ruth Ferguson",
+        "confidence": 1.0,
+        "probabilities": {
+          "Ruth Ferguson": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "position_id": "CA2026-243",
+            "office": "Trustee, Community College Board",
+            "district_or_seat": "At large — partial term",
+            "candidates": [
+              {
+                "name": "Ruth Ferguson",
+                "party": null,
+                "grade": "D"
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+              "criteria": {
+                "Ruth Ferguson": "Published pro-Palestine grade: D"
+              }
+            }
+          }
+        },
+        "request_sha256": "97e76623aac34426084d470f05a0486f57bc32c227476edd5ad1941be23ee32d",
+        "evaluated_at": "2026-10-29T20:18:51Z",
+        "single_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-243",
+        "text": "Ruth Ferguson is the strongest candidate for the San Francisco Community College District Trustee seat on the November 2026 ballot. On the conflict in Gaza, her sole public statement, a co-authored op-ed from October 20, 2023, condemned harmful rhetoric following the Israel attack and the Gaza siege, framing the crisis through Jewish-Muslim safety and mutual justice. She has not called the violence a genocide, called for a ceasefire, addressed Palestinian civilian casualties by name, or backed blocking weapons transfers or ending U.S. aid to Israel. What makes her the strongest choice here is that she is the only candidate in this race with a documented public record, and that record shows a voice for the safety of Jewish and Muslim San Franciscans rather than silence, paired with a campaign platform focused entirely on City College education policy. Voters who want a trustee who has actually spoken publicly on community safety and who centers local education can weigh a concrete, dated text against an empty slate.",
+        "words": 165,
+        "model": "qwen/qwen3.8-27b",
+        "prompt_sha256": "e52866a2d0422a39ac6fd91f4a551fe9a2872c4d5217009ed60601319a527eae"
+      }
     },
     {
       "position_id": "CA2026-241",

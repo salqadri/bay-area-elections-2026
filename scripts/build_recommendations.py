@@ -5,7 +5,8 @@ find-my-ballot) render the recommendation inside each race. Deterministic preced
   1. A confirmed Muslim-community candidate wins that race outright.
   2. Otherwise Jev chooses the best graded candidate.
   3. No candidate with a political grade -> no information.
-  4. Only grades below C -> no known good candidate.
+  4. Only grades E or F -> no known good candidate (owner rule 2026-10-29: a D-rated
+     best candidate IS recommended; E/F races stay unrecommended).
 Jev answers are cached and resumable; summaries are cached too."""
 import argparse
 import hashlib
@@ -39,6 +40,11 @@ CAT_MUSLIM = "muslim_community"
 CAT_JEV = "jev_pick"
 CAT_NO_GOOD = "no_good_candidate"
 CAT_NO_INFO = "no_information"
+
+# Owner rule (2026-10-29): recommend down through D; only all-E/F rosters get
+# "no known good candidates". GRADE_CUTOFF feeds the classify gate, the Jev
+# prompt, and the archived rules text so they can never drift apart.
+GRADE_CUTOFF = "D"
 
 
 def norm(s):
@@ -169,8 +175,8 @@ def classify(data, obs):
                 base["recommend_reason"] = "No recommendation due to a lack of information about this race."
                 base["needs_summary"] = False
             else:
-                below_c = [c for c in graded if GRADE_ORDER[grade_of(c)] > GRADE_ORDER["C"]]
-                if len(below_c) == len(graded):
+                below_cutoff = [c for c in graded if GRADE_ORDER[grade_of(c)] > GRADE_ORDER[GRADE_CUTOFF]]
+                if len(below_cutoff) == len(graded):
                     base["category"] = CAT_NO_GOOD
                     base["recommended"] = None
                     base["recommend_reason"] = "No recommendation due to a lack of known good candidates."
@@ -591,7 +597,8 @@ def save_plan(races):
         "source_dataset_sha256": hashlib.sha256(DATA.read_bytes()).hexdigest(),
         "source_score_publication_id": json.loads(DATA.read_text()).get("pro_palestine_grading", {}).get("publication_id"),
         "pending_summaries": [r["position_id"] for r in races if r.get("recommended") and not r.get("summary")],
-        "rules": "Muslim-community candidate first; else Jev best-of-graded; none graded = no information; all grades below C (D/F) = no known good candidate.",
+        "rules": ("Muslim-community candidate first; else Jev best-of-graded; none graded = no "
+                  f"information; all grades worse than {GRADE_CUTOFF} (E/F) = no known good candidate."),
         "counts": {
             CAT_MUSLIM: sum(1 for r in races if r["category"] == CAT_MUSLIM),
             CAT_JEV: sum(1 for r in races if r["category"] == CAT_JEV),

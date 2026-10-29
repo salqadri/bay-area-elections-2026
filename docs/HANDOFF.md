@@ -1,6 +1,14 @@
 # Research and development handoff
 
-Current publication **2026-10-28.5** completes the Hermes follow-up from publication
+Publication **2026-10-29.1** lowers the recommendation floor to **D** on owner
+instruction: races whose best graded candidate is a D now receive a pick and a
+Qwen why-paragraph (21 new races, e.g. Sam Liccardo, CD-16), for **172 recommended
+races** (12 Muslim-community + 160 Jev). Races where every graded candidate is
+E or F stay unrecommended (82). Classification gate, Jev prompt cache and both
+reader maps refreshed; the standalone recommendations page stays retired.
+[Rules, pipeline and provenance](CANDIDATE_RECOMMENDATIONS.md).
+
+Previous publication **2026-10-28.5** completes the Hermes follow-up from publication
 2026-10-28.4: all **398 letter-grade candidates** carry fresh source-bound evidence
 explanations (generated from each exact frozen v7 scoring request under
 summary-prompt-v3; `qwen/qwen3.8-27b`), and **898** N/A candidacies carry the editorial

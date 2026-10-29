@@ -19,6 +19,13 @@ Published scores and explanations remain unchanged; current inputs use v18.
 [Correction and current-input policy](docs/COMMUNITY_GUIDE_CLEANUP.md).
 
 
+Publication **2026-10-29.1** changes the recommendation floor on owner instruction: a race
+whose best graded candidate carries a **D** is now recommended (21 races, e.g. Sam Liccardo
+in CD-16) — **172 recommended races** (12 Muslim-community, 160 Jev). Only races whose
+graded candidates are all **E or F** keep the "no known good candidates" line (82 races).
+New picks carry Qwen why-paragraphs under the same framework; E/F races are unchanged.
+[Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).
+
 Publication **2026-10-28.5** attaches fresh evidence explanations to every published grade: all **398 letter-grade candidacies** in the v7 publication were re-explained from their exact frozen scoring requests under the hash-bound summary-prompt-v3 policy (**898** N/A candidacies carry the editorial insufficiency note). Recommendations now live **inside both readers** — every race card and ballot result shows the pick, the Muslim-community badge, or the explicit no-recommendation reason, each with a Qwen-written why-paragraph under our published framework (genocide + aid litmus test first, silence counted against, endorsement policy). The standalone recommendations page is retired. [Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).
 
 Publication **2026-10-28.1** historically added a standalone candidate-recommendations reader with per-race picks — 12 via the Muslim-community rule, the rest via the Jev decision model over published grades — or an explicit "no recommendation" where the evidence doesn't support one. [Rules, pipeline and provenance](docs/CANDIDATE_RECOMMENDATIONS.md).

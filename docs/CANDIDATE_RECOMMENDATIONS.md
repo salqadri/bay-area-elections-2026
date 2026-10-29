@@ -1,6 +1,11 @@
 # Candidate recommendations
 
-Current publication **2026-10-28.5** renders recommendations **inside both readers**:
+Current publication **2026-10-29.1** recommends down through a **D**: a race whose
+best graded candidate is a D now gets a pick (owner rule, October 29, 2026 — e.g.
+Sam Liccardo, CD-16); races whose graded candidates are all E or F keep the explicit
+no-recommendation line.
+
+Publication **2026-10-28.5** renders recommendations **inside both readers**:
 every confirmed race in [Explore all races](../index.html) and every ballot result in
 [Find my ballot](../ballot.html) shows the pick, the Muslim-community badge, or the
 explicit no-recommendation line, with a Qwen-written why-paragraph. The standalone
@@ -22,20 +27,21 @@ ballot, 68 recorded but confirmed not on it), in order:
    (`jev-latest`, via the Typesafe Jev API) reads each graded
    candidate's name, party, and published letter grade from the [pro-Palestine score
    publication](PUBLISHED_GRADES.md) plus the race context and picks the candidate to
-   support (139 races). Single-candidate rosters are short-circuited locally at 100%
+   support (160 races). Single-candidate rosters are short-circuited locally at 100%
    confidence without a model call. The model's choice is archived with confidence,
    request hash, and timestamp; a different answer is never silently overwritten.
 3. **No grades → no information.** Races where no candidate has a political grade
    (285 races) display "No recommendation due to a lack of information about this race."
-4. **Only sub-C grades → no known good candidate.** Races whose graded candidates all sit
-   below a C (103 races) display "No recommendation due to a lack of known good
-   candidates."
+4. **Only E/F grades → no known good candidate.** Races whose graded candidates all
+   sit below a D — grade E or F (82 races) — display "No recommendation due to a lack
+   of known good candidates." A D as the best available grade IS recommended
+   (owner rule, October 29, 2026).
 
 Jev never sees raw evidence; it chooses from the published grades only.
 
 ## Recommendation reasons
 
-Each recommended race (151) carries a voter-facing why-paragraph (≤200 words) generated
+Each recommended race (172) carries a voter-facing why-paragraph (≤200 words) generated
 by `qwen/qwen3.8-27b` (medium reasoning, concurrency 2) from the candidates' textual
 records — published explanation summaries, Gaza evidence with dates, platform positions,
 and the relevance-filtered endorsement lines — under the owner framework:
