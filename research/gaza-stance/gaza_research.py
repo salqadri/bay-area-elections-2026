@@ -150,7 +150,14 @@ def page_text(url, cap=6000):
     import hashlib
     h = hashlib.sha1(url.encode()).hexdigest()[:16]
     cache = os.path.join(ROOT, "raw", "pages", h + ".txt")
-    if os.path.exists(cache): return open(cache).read() or None
+    if os.path.exists(cache):
+        t = open(cache).read() or None
+        # corrupted legacy captures (compressed body decoded with errors=replace)
+        # are garbage; drop the cache and refetch through the fixed http()
+        if t and t.count("\ufffd") > max(20, len(t) * 0.1):
+            os.remove(cache)
+        else:
+            return t
     try:
         html = http(url, {"User-Agent": "Mozilla/5.0 (research bot)"}, timeout=25)
         p = TextExtract(); p.feed(html); t = re.sub(r"\s+", " ", "".join(p.parts)).strip()
@@ -158,6 +165,8 @@ def page_text(url, cap=6000):
     except Exception:
         t = ""
     os.makedirs(os.path.dirname(cache), exist_ok=True)
+    if t and t.count("\ufffd") > max(20, len(t) * 0.1):
+        t = ""   # never persist a garbled capture as if it were a real page
     open(cache, "w").write(t)
     return t or None
 
@@ -237,6 +246,69 @@ def wiki_text(name):
     open(cache, "w").write(t[:14000])
     return (t[:14000] or None) if KW.search(t) else None
 
+POLICY_LINK = re.compile(r"polic|issue|platform|foreign|israel|gaza|palestin|peace|war", re.I)
+
+def campaign_policy_pages(base_url, max_pages=4):
+    """Same-domain links from the homepage AND the sitemap whose URL/anchor text
+    looks like a policy/issues page; returns (url, text) pairs, keyword-gated.
+    Campaign stances routinely live on subpages the homepage does not link
+    (Ritesh Tandon's /policies/foreign-policy/ was sitemap-only)."""
+    import urllib.parse as _up
+    base_dom = _up.urlparse(base_url).netloc.replace("www.", "")
+    links, seen = [], set()
+    try:
+        html = http(base_url, {"User-Agent": "Mozilla/5.0 (research bot)"}, timeout=25)
+    except Exception:
+        html = ""
+    for href, anchor in re.findall(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.{0,80})', html or "", re.I):
+        blob = href + " " + anchor
+        if not POLICY_LINK.search(blob):
+            continue
+        u = _up.urljoin(base_url, href).split("#")[0]
+        if _up.urlparse(u).netloc.replace("www.", "") != base_dom or not u.startswith("http"):
+            continue
+        nu = u.rstrip("/")
+        if nu in seen or nu == base_url.rstrip("/"):
+            continue
+        seen.add(nu); links.append(u)
+    # sitemap discovery: WordPress core (wp-sitemap.xml) and Yoast-style
+    # (sitemap.xml -> post/page sitemaps) list pages the nav never links
+    for sm in ("wp-sitemap.xml", "sitemap.xml"):
+        try:
+            xml = http(_up.urljoin(base_url, "/" + sm),
+                       {"User-Agent": "Mozilla/5.0 (research bot)"}, timeout=20)
+        except Exception:
+            continue
+        locs = re.findall(r"<loc>([^<]+)</loc>", xml)
+        subs = [l for l in locs if re.search(r"sitemap[^\"]*\.xml", l)][:4]
+        for sub in subs:
+            try:
+                xml2 = http(sub, {"User-Agent": "Mozilla/5.0 (research bot)"}, timeout=20)
+                locs += re.findall(r"<loc>([^<]+)</loc>", xml2)
+            except Exception:
+                continue
+        for u in locs:
+            u = u.split("#")[0]
+            if _up.urlparse(u).netloc.replace("www.", "") != base_dom or not u.startswith("http"):
+                continue
+            if not POLICY_LINK.search(u):
+                continue
+            nu = u.rstrip("/")
+            if nu in seen or nu == base_url.rstrip("/"):
+                continue
+            seen.add(nu); links.append(u)
+    texts = []
+    for u in links:
+        if len(texts) >= max_pages: break
+        try:
+            t = page_text(u)
+        except Exception:
+            continue
+        if t and KW.search(t):
+            texts.append((u, t[:2500]))
+    return texts
+
+
 FIXED_QUERY_TEMPLATES = [
     '"{name}" gaza',
     '"{name}" israel palestine',
@@ -301,7 +373,7 @@ DOSSIER:
 
 Return STRICT JSON only: {{"items":[...],"followup_queries":[...]}}"""
 
-def build_dossier(person, pages, xposts, fec_hits, site_t, wiki_t):
+def build_dossier(person, pages, xposts, fec_hits, site_t, wiki_t, site_urls=None):
     parts = []
     def add(label, body, cap):
         if body: parts.append(f"### {label}\n{body[:cap]}")
@@ -311,7 +383,9 @@ def build_dossier(person, pages, xposts, fec_hits, site_t, wiki_t):
         f"- ({t['date'][:16]}) https://x.com/{t['handle']}/status/{t['id']}: {t['text'][:280]}" for t in xposts), 4000)
     add("FEC RECEIPTS (pro-Israel regex hits)", "\n".join(
         f"- {h.get('contribution_receipt_date')} ${h.get('receipt_amount')} from {h.get('contributor_name')}" for h in fec_hits[:15]), 2000)
-    add("CAMPAIGN SITE", site_t, 3000)
+    if site_urls:
+        add("CAMPAIGN SITE URLS (valid citations)", "\n".join(site_urls), 1200)
+    add("CAMPAIGN SITE", site_t, 6000)
     add("WIKIPEDIA", wiki_t, 6000)
     d = "\n\n".join(parts)
     return d[:28000]
@@ -345,9 +419,21 @@ def work(person):
         fec_hits += [r for r in fec_receipts(cid)
                      if organization_receipt(r) and PRO_ISRAEL.search(r.get("contributor_name") or "")]
     site_t = None
+    site_urls = []
     if person.get("campaign_url"):
+        site_urls = [person["campaign_url"]]
         t = page_text(person["campaign_url"])
-        if t and KW.search(t): site_t = t
+        site_texts = [t] if (t and KW.search(t)) else []
+        if t and not KW.search(t):
+            # the homepage may carry no conflict keywords while a policy/issues
+            # subpage does (Ritesh Tandon: foreign-policy page attacked the
+            # ceasefire call while his homepage named none) — crawl same-domain
+            # policy-looking links as a fallback
+            sub = campaign_policy_pages(person["campaign_url"])
+            site_texts += [x[1] for x in sub]
+            site_urls += [x[0] for x in sub]
+        if site_texts:
+            site_t = " · ".join(site_texts)[:6000]
     wiki_t = wiki_text(name)
     queries, pages = fixed_search_pages(name, person.get("handle"), enrich=person.get("enrich"))
     # auto-attribute X posts + FEC hits as evidence (deterministic, no LLM needed for URL/date)
@@ -376,7 +462,7 @@ def work(person):
     if not has_content:
         return name, added, 0
     # PASS B — one big extraction + next-step proposals
-    dossier = build_dossier(person, pages, xposts, fec_hits, site_t, wiki_t)
+    dossier = build_dossier(person, pages, xposts, fec_hits, site_t, wiki_t, site_urls=site_urls)
     office = person.get("office") or ""
     jurisdiction = next((c[2] for c in (person.get("ctx") or set()) if c[2]), "")
     j = lms_json(PROMPT.format(name=name, party=party or "NPP", nq=3, dossier=dossier,
@@ -388,8 +474,7 @@ def work(person):
     items = norm_items(name, j)
     # keep only URLs that actually appeared in the dossier (anti-hallucination)
     valid_urls = {p["url"] for p in pages} | {f"https://x.com/{t['handle']}/status/{t['id']}" for t in xposts if t["id"]} \
-                 | ({person["campaign_url"]} if person.get("campaign_url") else set()) \
-                 | {f"https://en.wikipedia.org/wiki/{name.replace(' ','_')}"}
+                 | set(site_urls) | {f"https://en.wikipedia.org/wiki/{name.replace(' ','_')}"}
     items = [it for it in items if it["url"] in valid_urls]
     added += add_evidence(key, items, pctx)
     # PASS C — deterministic follow-ups (max 3 queries), one second extraction pass
