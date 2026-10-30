@@ -1,9 +1,5 @@
 # Bay Area Ballot Research Assistant
 
-The separate **The TALL Voter Guide** app lives in [voter-guide/](voter-guide/README.md).
-It imports the published recommendations and candidate summaries into a compact,
-address-first guide, with its own `voter-guide` Firebase Hosting target.
-
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
