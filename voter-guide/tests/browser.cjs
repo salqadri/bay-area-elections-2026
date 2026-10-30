@@ -26,7 +26,7 @@ const pages=[];
     });
   }
   async function submit(p,value=address){await p.locator('#address').fill(value);await p.locator('#find-ballot').click();}
-  async function noOverflow(p){assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Horizontal page overflow');}
+  async function noOverflow(p){const details=await p.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,width:innerWidth,elements:[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+1||r.left< -1;}).slice(0,12).map(e=>({tag:e.tagName,id:e.id,cls:e.className,width:e.getBoundingClientRect().width}))}));if(details.overflow){await p.screenshot({path:path.join(out,'overflow-failure.png'),fullPage:true});console.log(JSON.stringify(details));}assert.equal(details.overflow,false,'Horizontal page overflow');}
   try{
     const desktop=await page();await ready(desktop);await noOverflow(desktop);
     await desktop.screenshot({path:path.join(out,'desktop-home.png'),fullPage:true});

@@ -158,7 +158,7 @@
     const counties=state.data.election.counties_in_scope.map(c=>c.name);
     for(const county of counties){$('browse-county').append(option(county,county));$('filter-county').append(option(county,county));}
     for(const group of order.groups)if(state.data.positions.some(p=>order.group(p)===group))$('filter-office').append(option(group,group));
-    $('publication-note').textContent='November 3, 2026 · Recommendations dated '+state.data.recommendations_date;
+    $('publication-note').textContent='November 3, 2026 · Recommendations dated '+new Date(state.data.recommendations_date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     if(state.mode==='all'){
       document.body.classList.add('all-view');$('results').hidden=false;$('all-filters').hidden=false;$('change-address').hidden=true;
       $('ballot-tab').removeAttribute('aria-current');$('candidates-tab').setAttribute('aria-current','page');
