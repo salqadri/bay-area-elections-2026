@@ -125,7 +125,10 @@
     for(const text of [...(s.counties||[]).map(c=>c+' County'),...(s.places||[]),...Object.entries(s.districts||{}).flatMap(([k,values])=>values.map(v=>k+'-'+v))])$('result-context').append(node('span','context-pill',text));
     officialLinks(s.counties||[]);
     $('empty-message').textContent=estimate.status==='outside_scope'?'This address is outside the five covered Bay Area counties. This does not mean there are no races at your address. Check your county’s election website.':estimate.status==='needs_county'?'We couldn’t identify a covered California county. Try a complete street address with city, state and ZIP, or browse by county.':'No confirmed contests were matched in this inventory. Check your county’s official ballot for complete election information.';
-    $('scope-note').textContent='An independent guide to elected offices; ballot measures are not included. '+(estimate.warnings?.length?estimate.warnings.join(' '):'Compare this estimate with your county’s official ballot.');
+    $('scope-note').textContent='An independent guide to elected offices. Ballot measures are not included. Compare this estimate with your county’s official ballot.';
+    $('matching-warnings').replaceChildren();
+    $('matching-notes').hidden=!estimate.warnings?.length;
+    for(const warning of estimate.warnings||[])$('matching-warnings').append(node('li',null,warning));
     renderRaces();$('results-title').focus({preventScroll:true});$('results').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
   }
   async function lookup(address){
