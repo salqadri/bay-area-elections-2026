@@ -152,3 +152,11 @@ The guide workflow builds from the actual checked-out canonical dataset and
 archives the deployable bundle, browser screenshots and check output. It does
 not deploy or use Firebase credentials. Run a real Google autocomplete selection
 and public-address lookup on the production domain after configuring the key.
+
+### PR #21 deployment verification
+
+The deployment verifier accepts Firebase's HTTP 404 response for the custom
+`404.html` page only when its body matches the release hash. Unexpected HTTP
+errors and changed response bodies still fail verification. The guide also imports
+publication **2026-10-29.2** from the latest main branch without changing any
+published recommendation or candidate blurb.

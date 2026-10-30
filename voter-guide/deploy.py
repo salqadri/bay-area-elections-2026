@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -27,6 +28,29 @@ def firebase(*args, capture=False):
     return json.loads(result.stdout) if capture else None
 
 
+def published_bytes(origin, name):
+    request = urllib.request.Request(origin + '/' + name, headers={'Cache-Control': 'no-cache'})
+    try:
+        response = urllib.request.urlopen(request, timeout=30)
+    except urllib.error.HTTPError as error:
+        # Firebase returns the custom error document with status 404, including
+        # direct requests for /404.html. Its body must still match our release.
+        if name != '404.html' or error.code != 404:
+            raise
+        response = error
+    with response:
+        return response.read()
+
+
+def verify_release(origin, manifest):
+    for name, digest in manifest['files'].items():
+        actual = hashlib.sha256(published_bytes(origin, name)).hexdigest()
+        if actual != digest:
+            raise SystemExit('Deployed file differs from the tested bundle: ' + origin + '/' + name)
+    if json.loads(published_bytes(origin, 'release.json')) != manifest:
+        raise SystemExit('Deployed release manifest differs: ' + origin)
+
+
 def main():
     if not os.environ.get('TALL_GOOGLE_MAPS_API_KEY', '').strip():
         raise SystemExit('Set TALL_GOOGLE_MAPS_API_KEY to your website-restricted Google Maps key before publishing. Local manual-entry previews do not need a key.')
@@ -42,15 +66,7 @@ def main():
     local = ROOT / 'voter-guide/dist'
     manifest = json.loads((local / 'release.json').read_text())
     for origin in (f'https://{SITE}.web.app', f'https://{SITE}.firebaseapp.com'):
-        for name, digest in manifest['files'].items():
-            request = urllib.request.Request(origin + '/' + name, headers={'Cache-Control': 'no-cache'})
-            with urllib.request.urlopen(request, timeout=30) as response:
-                actual = hashlib.sha256(response.read()).hexdigest()
-            if actual != digest:
-                raise SystemExit('Deployed file differs from the tested bundle: ' + origin + '/' + name)
-        with urllib.request.urlopen(origin + '/release.json', timeout=30) as response:
-            if json.loads(response.read()) != manifest:
-                raise SystemExit('Deployed release manifest differs: ' + origin)
+        verify_release(origin, manifest)
         print('Verified exact release at ' + origin)
     print('The TALL Voter Guide is live at https://tall-voter-guide.web.app')
 
