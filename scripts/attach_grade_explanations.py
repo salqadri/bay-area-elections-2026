@@ -157,18 +157,23 @@ def attach(data, archive, archive_path):
         validate_summary_refreshes(archive, {r['id']: r for r in grades['rows']})
     validate_editorial_review(archive)
     result = deepcopy(data)
-    targets = {}
+    from summary_source_policy import policy_for_candidate, prose_errors
+    targets = {}; source_policies = {}
     for p in result['positions']:
         for roster in ('candidates', 'filed_candidates_not_confirmed_on_ballot', 'qualified_write_in_candidates'):
             for c in p.get(roster) or []:
                 c.pop(EXPLANATION_FIELD, None)
                 if 'pro_palestine_evaluation' in c:
                     targets[c['pro_palestine_evaluation']['candidate_id']] = c
+                    source_policies[c['pro_palestine_evaluation']['candidate_id']] = policy_for_candidate(p,c)
     seen = set()
     for e in archive['entries']:
         c = targets.get(e['candidate_id'])
         if c is None or e['request_sha256'] != c['pro_palestine_evaluation']['request_sha256']:
             raise ValueError('Explanation does not bind the published evaluation: ' + e['candidate_id'])
+        violations = prose_errors(e['summary'], source_policies[e['candidate_id']])
+        if violations:
+            raise ValueError('Explanation violates editorial source policy: ' + e['candidate'] + ': ' + '; '.join(violations))
         c[EXPLANATION_FIELD] = {'publication_id': archive['publication_id'],
                                 'candidate_id': e['candidate_id'], 'request_sha256': e['request_sha256'],
                                 'summary': e['summary'], 'model': e['model']}

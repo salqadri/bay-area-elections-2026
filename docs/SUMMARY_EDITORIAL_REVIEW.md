@@ -1,5 +1,7 @@
 # Summary editorial review — October 27, 2026
 
+Current source-selection follow-up: [publication 2026-10-29.3 and the v4 prompt](SUMMARY_SOURCE_POLICY.md). Historical rules and publications below remain archived.
+
 Publication **2026-10-27.12**, schema **1.28**, manually edits **336 letter-grade
 explanations**. This is an editorial pass, not bulk model regeneration. The
 complete before/after review is [archived](../research/gaza-grading/summary-editorial-review-2026-10-27.json)

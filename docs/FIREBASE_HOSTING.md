@@ -1,5 +1,7 @@
 # Firebase Hosting
 
+Current editorial publication: **2026-10-29.3**, with the [v4 source-selection policy](SUMMARY_SOURCE_POLICY.md). The initial registration and deployment history below is preserved.
+
 Deployed on October 29, 2026 from main `8a8bd3c` (publication **2026-10-29.1**),
 including the owner's full v7 Jev score run, fresh Qwen explanations and current
 in-reader race recommendations. The requested Web App and dedicated Hosting site
@@ -102,3 +104,10 @@ and [Firebase CLI](https://firebase.google.com/docs/cli).
   readers, with zero uncaught page errors.
 
 No candidate evaluations were rerun or scores changed for this hosting move.
+
+## Editorial follow-up: 2026-10-29.3
+
+The Samir source-policy publication updates 19 blurbs and the future summary
+prompts/guards. Saved evaluations and race choices are unchanged. The matching
+plan, both readers and the Firebase bundle are rebuilt and checked by the
+51-check release gate. See [the audit and Hermes policy](SUMMARY_SOURCE_POLICY.md).

@@ -4,16 +4,17 @@
 Sub-agent: qwen/qwen3.8-27b on the owner's LM Studio (concurrency 2, medium
 reasoning). Each letter-grade candidacy is explained from its exact archived
 scoring request, rubric answers and displayed grade under the hash-bound
-summary-prompt-v3.txt. Responses bind candidate_id + request_sha256 for
+summary-prompt-v4.txt. Responses bind candidate_id + request_sha256 for
 scripts/attach_grade_explanations.py. N/A candidacies need no model call: the
 attacher writes the editorial insufficiency note. Resumable: an existing
-response file for a candidacy id is skipped.
+response is reused only when its complete generation hash and source policy match.
 
 Usage:
   python3 scripts/generate_grade_explanations.py            # all missing
   python3 scripts/generate_grade_explanations.py --limit 5  # smoke batch
 """
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -25,9 +26,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from score_grade import row_grade  # noqa: E402
+from summary_source_policy import policy_for_state, prose_errors  # noqa: E402
 
 QUEUE = ROOT / "research/gaza-grading/explanation-queue-2026-10-28-latest.json"
-PROMPT_PATH = ROOT / "research/gaza-grading/summary-prompt-v3.txt"
+PROMPT_PATH = ROOT / "research/gaza-grading/summary-prompt-v4.txt"
 LMSTUDIO_URL = "http://192.168.0.66:11434/v1/chat/completions"
 LMSTUDIO_MODEL = "qwen/qwen3.8-27b"
 REASONING = "medium"
@@ -43,7 +45,15 @@ def evidence_inventory(state):
     return [f"candidate_record.{k}" for k in state]
 
 
-def build_input(row, grade, prompt_text):
+def summary_inventory(row, current_state=None):
+    inventory = evidence_inventory(row['request']['state'])
+    if current_state is not None:
+        inventory += ['supplemental_reference.current_research_additions.' + key
+                      for key,value in current_state.items() if value != row['request']['state'].get(key)]
+    return inventory
+
+
+def build_input(row, grade, prompt_text, current_state=None):
     payload = {
         "format": "grade-summary-current-research-input/v2",
         "candidate_id": row["id"],
@@ -53,12 +63,19 @@ def build_input(row, grade, prompt_text):
         "scoring_questions": row["request"]["questions"],
         "recorded_response": row["response"],
         "displayed_grade": grade,
-        "evidence_inventory": evidence_inventory(row["request"]["state"]),
+        "evidence_inventory": summary_inventory(row, current_state),
+        "summary_source_policy": policy_for_state(current_state or row['request']['state'], row.get('position_id')),
         "note": ("Generate the voter explanation for this saved grade. Return ONLY one JSON object with keys "
                  "candidate_id, request_sha256, evidence_audit, summary. Set candidate_id to the exact candidate_id "
                  "and request_sha256 to the exact associated_score_request_sha256 shown above. evidence_audit has "
                  "exactly one row per evidence_inventory id. Never mention the evidence_audit in the summary."),
     }
+    if current_state is not None:
+        additions = {key: value for key, value in current_state.items()
+                     if value != row['request']['state'].get(key)}
+        if additions:
+            payload['supplemental_reference'] = {'current_research_additions': additions,
+                'note': 'Current source research added since the saved score; explanation context only, not a new evaluation.'}
     return prompt_text + "\n\nSUPPLIED RECORD\n" + json.dumps(payload, ensure_ascii=False)
 
 
@@ -126,7 +143,7 @@ def parse_json(text):
     return json.loads(t[start:end + 1])
 
 
-def validate(result, row, grade):
+def validate(result, row, grade, source_policy=None, inventory=None):
     if result.get("request_sha256") != row["request_sha256"]:
         return "request_sha256 echo mismatch"
     # request_sha256 is the strong binding (64 hex chars, verified exact); the
@@ -136,6 +153,9 @@ def validate(result, row, grade):
     summary = result.get("summary")
     if not isinstance(summary, str) or not summary.strip():
         return "missing summary"
+    violations = prose_errors(summary, source_policy or policy_for_state(row.get('request', {}).get('state', {}), row.get('position_id')))
+    if violations:
+        return '; '.join(violations)
     words = len(summary.split())
     if not 5 <= words <= 130:
         return f"summary {words} words outside 5-130"
@@ -146,12 +166,15 @@ def validate(result, row, grade):
             r"record is (?:limited|sparse|thin)|assessment rests|full stance|"
             r"no other (?:statements|votes|endorsements|actions)", summary, re.I):
         return "missing-record disclaimer padding"
-    ids = set(evidence_inventory(row["request"]["state"]))
+    ids = set(inventory if inventory is not None else evidence_inventory(row["request"]["state"]))
     audit = result.get("evidence_audit")
     if not isinstance(audit, list):
         return "evidence_audit missing"
     if not audit:
         return "evidence_audit empty"
+    observed = [entry.get('id') for entry in audit if isinstance(entry, dict)]
+    if len(observed) != len(audit) or len(observed) != len(set(observed)) or set(observed) != ids:
+        return "evidence_audit does not cover the complete archived and supplemental inventory"
     return None
 
 
@@ -166,9 +189,14 @@ def main():
     mapping = archive["score_grade_mapping"]
     rows = {r["id"]: r for r in archive["rows"]}
     prompt_text = PROMPT_PATH.read_text()
-    outdir = ROOT / "research/gaza-grading/responses-2026-10-28-latest"
+    outdir = ROOT / "research/gaza-grading/responses-summary-v4"
     outdir.mkdir(parents=True, exist_ok=True)
 
+    from grade_gaza import build_state
+    current = json.loads((ROOT / '2026-11-03_Bay_Area_Elections.json').read_text())
+    current_people = {c.get('pro_palestine_evaluation', {}).get('candidate_id'): (p, c)
+        for p in current['positions'] for roster in ('candidates','filed_candidates_not_confirmed_on_ballot','qualified_write_in_candidates')
+        for c in p.get(roster) or [] if c.get('pro_palestine_evaluation')}
     todo = []
     for item in queue["candidates"]:
         row = rows[item["id"]]
@@ -176,25 +204,34 @@ def main():
         if grade == "N/A":
             continue  # editorial note at attach time; no model call
         path = outdir / (item["id"] + ".json")
+        person = current_people.get(row['id'])
+        state = build_state(*person, current) if person else row['request']['state']
+        prompt = build_input(row, grade, prompt_text, state)
+        generation_hash = hashlib.sha256(prompt.encode()).hexdigest()
+        source_policy = policy_for_state(state, row.get('position_id'))
+        inventory = summary_inventory(row, state)
         if path.exists():
-            continue
-        todo.append((item, row, grade))
+            cached = json.loads(path.read_text())
+            if cached.get('generation_sha256') == generation_hash and not validate(cached, row, grade, source_policy, inventory):
+                continue
+        todo.append((item, row, grade, prompt, generation_hash, source_policy, inventory))
     if args.limit:
         todo = todo[:args.limit]
     print(f"Explanations: {len(todo)} letter-grade candidacies to generate", flush=True)
 
     def work(job):
-        item, row, grade = job
-        prompt = build_input(row, grade, prompt_text)
+        item, row, grade, prompt, generation_hash, source_policy, inventory = job
         sha_to_id = {row["request_sha256"]: row["id"]}
         result = call_lmstudio(prompt, sha_to_id=sha_to_id)
-        err = validate(result, row, grade)
+        err = validate(result, row, grade, source_policy, inventory)
         if err:
             raise ValueError(err)
         final = {"candidate_id": row["id"], "request_sha256": row["request_sha256"],
                  "publication_id": publication_id, "model": LMSTUDIO_MODEL,
                  "summary": result["summary"].strip(),
                  "evidence_audit": result["evidence_audit"],
+                 "generation_sha256": generation_hash,
+                 "prompt_sha256": hashlib.sha256(prompt_text.encode()).hexdigest(),
                  "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
         return item, row, grade, final
 
@@ -204,7 +241,7 @@ def main():
         with ThreadPoolExecutor(max_workers=CONCURRENCY) as ex:
             futs = {ex.submit(work, j): j for j in batch}
             for fut in as_completed(futs):
-                item, row, grade = futs[fut]
+                item, row, grade, *_ = futs[fut]
                 try:
                     _, _, _, final = fut.result()
                 except Exception as e:  # noqa: BLE001

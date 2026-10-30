@@ -324,13 +324,20 @@ ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",
 REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "opposed", "recommended")
 
 
-def relevant_endorsements(c):
+def relevant_endorsements(c, position=None):
+    from summary_source_policy import SAMIR, policy_for_candidate
     community, contrast = [], []
     for e in c.get("endorsements") or []:
         if not isinstance(e, dict):
             continue
         nm, rel = e.get("endorser"), e.get("relation")
-        if not nm or rel not in REASON_ENDORSER_RELATIONS:
+        if not nm:
+            continue
+        if SAMIR.search(nm):
+            if rel in ('supported','opposed','endorsed','recommended') and policy_for_candidate(position or {}, c)['samir_allowed']:
+                community.append((nm, rel or 'endorsed'))
+            continue
+        if rel not in REASON_ENDORSER_RELATIONS:
             continue
         low = nm.lower()
         if any(p in low for p in COMMUNITY_ENDORSERS):
@@ -340,7 +347,7 @@ def relevant_endorsements(c):
     return community, contrast
 
 
-def reason_evidence(c):
+def reason_evidence(c, position=None):
     """Textual evidence for the reason prompt. Numeric scores deliberately excluded."""
     lines = []
     expl = c.get("pro_palestine_explanation") or {}
@@ -358,7 +365,7 @@ def reason_evidence(c):
             d = g.get("date") or g.get("as_of")
             if t:
                 lines.append("Record" + (f" ({d})" if d else "") + ": " + digest(t, 220))
-    community, contrast = relevant_endorsements(c)
+    community, contrast = relevant_endorsements(c, position)
     if community:
         lines.append("Muslim-community / pro-Palestine-aligned records: "
                      + "; ".join(f"{n} ({r})" for n, r in community[:6]))
@@ -385,12 +392,12 @@ def reason_prompt(race, pos_by_id):
         lines.append(f"Our research selects {race['recommended']} as the strongest candidate in this race.")
     lines += ["", f"RECOMMENDED CANDIDATE: {rec.get('name')}"
               + (f" ({rec.get('party')})" if rec.get("party") else ""),
-              "- " + "\n- ".join(reason_evidence(rec))]
+              "- " + "\n- ".join(reason_evidence(rec, pos_by_id[race['position_id']]))]
     if graded:
         lines += ["", "OTHER CANDIDATES IN THIS RACE WE HAVE INFORMATION ABOUT:"]
         for c in graded:
             lines.append(f"{c.get('name')}" + (f" ({c.get('party')})" if c.get("party") else ""))
-            lines += ["- " + l for l in reason_evidence(c)[:6]]
+            lines += ["- " + l for l in reason_evidence(c, pos_by_id[race['position_id']])[:6]]
     else:
         lines += ["", "No other candidate in this race has a researched record."]
     framing = ("" if not federal else
@@ -424,6 +431,8 @@ def reason_prompt(race, pos_by_id):
               "AIPAC/UDP/DMFI/ICAN or Hindu-nationalist-aligned backing or opposition is a relevant "
               "contrast); never name any other endorser. Plain prose, no lists, no quotation marks, no "
               f"headings, no AI disclaimer. Name the office once. Output ONLY the paragraph."]
+    from summary_source_policy import VOTER_RULES
+    lines += ['', VOTER_RULES]
     return "\n".join(lines)
 
 
@@ -457,6 +466,10 @@ def out_of_policy_endorsers(race, pos_by_id, text):
     county prefixes inside org names cannot false-positive on ordinary prose;
     single distinctive names match on word boundaries. Candidate names in this
     race are never endorsements-of-record for policy purposes."""
+    from summary_source_policy import SAMIR, policy_for_candidate, prose_errors
+    position = pos_by_id[race['position_id']]
+    samir_allowed = any(policy_for_candidate(position,c)['samir_allowed'] for c in all_candidates(position))
+    violations = prose_errors(text, {'samir_allowed': samir_allowed})
     allowed = set(COMMUNITY_ENDORSERS) | set(ISRAEL_ALIGNED_ENDORSERS)
     cand_names = {norm(c.get("name")) for c in all_candidates(pos_by_id[race["position_id"]])}
     cores = set()
@@ -465,6 +478,8 @@ def out_of_policy_endorsers(race, pos_by_id, text):
             if not isinstance(e, dict):
                 continue
             nm = e.get("endorser") or ""
+            if SAMIR.search(nm) and samir_allowed:
+                continue
             low = nm.lower()
             if not nm or _policy_match(low, allowed):
                 continue
@@ -492,7 +507,7 @@ def out_of_policy_endorsers(race, pos_by_id, text):
             hits.append(value)
     # collapse hits that are substrings of other hits
     hits = [h for h in hits if not any(h != o and h.lower() in o.lower() for o in hits)]
-    return hits
+    return hits + violations
 
 
 def reasons_phase(races, only=None):

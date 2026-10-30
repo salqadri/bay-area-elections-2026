@@ -25,7 +25,7 @@ def recommendations_map_json():
     from datetime import datetime, timezone, timedelta
     gen = plan.get("generated_on", "")
     try:  # archive timestamps are UTC; readers display Pacific dates
-        gen = datetime.fromisoformat(gen).astimezone(timezone(timedelta(hours=-7))).date().isoformat()
+        gen = datetime.fromisoformat(gen.replace('Z', '+00:00')).astimezone(timezone(timedelta(hours=-7))).date().isoformat()
     except ValueError:
         gen = gen[:10]
     payload = {"generated_on": gen,

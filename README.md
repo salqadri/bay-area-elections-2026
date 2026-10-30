@@ -3,11 +3,18 @@
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
-recommendations are published. **50/50 release checks pass**, both production
+recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
 
-Current publication **2026-10-28.4** publishes the owner's completed full-roster
+Publication **2026-10-29.3** cleans 19 candidate blurbs under the owner's
+[Samir source policy](docs/SUMMARY_SOURCE_POLICY.md): omit redundant personal opinions
+and source-classification caveats; preserve Kamal Yassin's exact paragraph. Tandon
+now uses the direct evidence already collected. Scores, grades, race picks and
+current race rationale text are unchanged. Hermes now uses the versioned v4
+summary prompt, shared prose guards and generation-hash cache checks.
+
+Historical publication **2026-10-28.4** publishes the owner's completed full-roster
 run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
 with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·

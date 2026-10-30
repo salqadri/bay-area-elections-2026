@@ -1,5 +1,7 @@
 # Candidate recommendations
 
+Current source-selection follow-up: [publication 2026-10-29.3 and the v4 prompt](SUMMARY_SOURCE_POLICY.md). Historical rules and publications below remain archived.
+
 Current publication **2026-10-29.1** recommends down through a **D**: a race whose
 best graded candidate is a D now gets a pick (owner rule, October 29, 2026 — e.g.
 Sam Liccardo, CD-16); races whose graded candidates are all E or F keep the explicit
