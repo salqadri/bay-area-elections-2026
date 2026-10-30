@@ -1,0 +1,61 @@
+name: TALL voter guide
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'voter-guide/**'
+      - 'firebase.voter-guide.json'
+      - '.firebaserc'
+      - '2026-11-03_Bay_Area_Elections.json'
+      - 'research/candidate-recommendations/**'
+      - 'research/california-counties.json'
+      - 'src/address-matcher.js'
+      - 'src/address-services.js'
+      - '.github/workflows/tall-voter-guide.yml'
+  pull_request:
+    paths: ['voter-guide/**', 'firebase.voter-guide.json', '.firebaserc', '.github/workflows/tall-voter-guide.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  static-guide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and verify the source-bound import
+        run: |
+          python3 voter-guide/build.py
+          python3 -m unittest discover -s voter-guide/tests -p 'test_*.py'
+          node voter-guide/tests/core.cjs
+          node scripts/check_address_matcher.cjs
+          node scripts/check_address_services.cjs
+      - name: Install browser checks
+        run: |
+          npm install --no-save --no-package-lock --prefix .checks/browser playwright@1.62.1
+          node .checks/browser/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Exercise the guide in Chromium
+        env:
+          PLAYWRIGHT_MODULE: ${{ github.workspace }}/.checks/browser/node_modules/playwright
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory voter-guide/dist > .checks/tall-guide-server.log 2>&1 &
+          node voter-guide/tests/browser.cjs
+      - name: Save the deployable guide and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tall-voter-guide
+          path: |
+            voter-guide/dist/
+            .checks/tall-guide/
+            .checks/tall-guide-server.log
+          include-hidden-files: true
+          retention-days: 14

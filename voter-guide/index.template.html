@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e35">
+  <meta name="description" content="Your Bay Area ballot, a little clearer. Find races by address, read published recommendations and compare candidates for November 3, 2026.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:title" content="The TALL Voter Guide">
+  <meta property="og:description" content="Find your races. Read the recommendations. Make an informed choice.">
+  <meta property="og:type" content="website">
+  <title>The TALL Voter Guide · November 2026</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./config.js" defer></script>
+  <script src="./address-matcher.js" defer></script>
+  <script src="./address-services.js" defer></script>
+  <script src="./ballot-order.js" defer></script>
+  <script src="./google-autocomplete.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="The TALL Voter Guide home"><img src="./favicon.svg" width="38" height="38" alt=""><span><b>THE TALL</b><small>VOTER GUIDE</small></span></a>
+    <nav aria-label="Main navigation"><a href="./" id="ballot-tab" aria-current="page">My Ballot</a><a href="./candidates.html" id="candidates-tab">All Candidates</a></nav>
+    <span class="election-chip"><span aria-hidden="true"></span> NOV 03, 2026</span>
+  </header>
+  <main id="main">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> MADE FOR THE BAY AREA</p>
+        <h1 id="hero-title">Your ballot.<br><em>A little clearer.</em></h1>
+        <p class="hero-description">Local races. Clear recommendations.<br>Everything you need to get started, in one place.</p>
+        <form id="address-form" class="address-card" novalidate>
+          <label for="address" class="field-label">LET’S FIND YOUR BALLOT</label>
+          <div id="google-address" hidden></div>
+          <div id="manual-fields" class="address-row">
+            <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <input id="address" type="text" autocomplete="street-address" placeholder="Home address, city and ZIP" maxlength="300" aria-describedby="address-privacy lookup-error" required>
+            <button id="find-ballot" class="button primary" type="submit">Find my ballot <span aria-hidden="true">↗</span></button>
+          </div>
+          <button id="use-manual" type="button" class="text-button" hidden>Enter an address manually instead</button>
+          <p class="privacy-line" id="address-privacy"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="5" y="9" width="10" height="8" rx="2"/><path d="M7 9V6a3 3 0 0 1 6 0v3"/></svg> <span id="provider-note">Your submitted address goes to Census. We don’t save it.</span> <button type="button" data-open-dialog="privacy-dialog">How lookup works</button></p>
+          <p id="lookup-status" class="status" role="status" aria-live="polite"></p>
+          <p id="lookup-error" class="error" role="alert" hidden></p>
+          <div id="address-matches" hidden><label for="address-match">Choose the intended address</label><select id="address-match"></select></div>
+        </form>
+        <div class="browse-row"><span>Just looking around?</span><button class="text-button" id="browse-counties">Browse by county <span aria-hidden="true">→</span></button></div>
+        <div id="county-picker" class="county-picker" hidden><label for="browse-county">Choose your county</label><div class="county-row"><select id="browse-county"><option value="">Select a county</option></select><button id="browse-county-go" class="button primary" type="button">Browse races →</button></div><p>County browsing shows all races in a county. Many won’t apply to your address.</p></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="bridge-art" viewBox="0 0 540 510" fill="none"><circle cx="305" cy="212" r="169" fill="#e4e9d7"/><circle cx="360" cy="129" r="53" fill="#d8e7aa"/><path d="M20 405c125-52 248 43 502-8M20 426c140-51 270 43 502-8M20 448c140-51 270 43 502-8" stroke="#b6c4b2"/><path d="M42 331h451M150 330V151m14 179V151m210 179V177m14 153V177M148 182h18m-18 28h18m206-2h18m-18 27h18M49 313c48-19 78-71 101-147m14 0c64 163 148 156 210 28m14 0c25 66 52 102 104 120" stroke="#7c9b82" stroke-width="3"/><path d="M94 283v47m42-103v103m66-87v87m36-44v44m36-32v32m36-40v40m37-74v74m76-77v77m34-34v34" stroke="#7c9b82" stroke-width="2"/></svg>
+        <div class="guide-illustration">
+          <div class="illustration-top"><span>YOUR VOTE. YOUR VOICE.</span><span>↗</span></div>
+          <h2>A guide that<br>gets to the point.</h2>
+          <div class="illustration-step"><i>01</i><div><strong>Find your races</strong><small>Start with your home address.</small></div><span>⌖</span></div>
+          <div class="illustration-step"><i>02</i><div><strong>Read the recommendation</strong><small>A pick, with the reason why.</small></div><span>✓</span></div>
+          <div class="illustration-step"><i>03</i><div><strong>Compare your options</strong><small>Every candidate, when you need them.</small></div><span>≡</span></div>
+          <div class="illustration-bottom"><span class="mini-check">✓</span> READY WHEN YOU ARE.</div>
+        </div>
+        <div class="art-stamp">BAY AREA<br><strong>2026</strong></div>
+      </div>
+    </section>
+    <section class="intro-strip" id="intro-strip" aria-label="Guide features"><div><span>01 /</span><b>Your address, your races.</b><p>Get an estimate of the offices on your ballot.</p></div><div><span>02 /</span><b>The recommendation, up front.</b><p>Read the published pick and its explanation.</p></div><div><span>03 /</span><b>More detail, on your terms.</b><p>Open a race to compare the candidates.</p></div></section>
+    <section class="results-section" id="results" hidden aria-labelledby="results-title">
+      <div class="results-heading"><div><p class="eyebrow" id="results-eyebrow">YOUR NOVEMBER GUIDE</p><h1 id="results-title" tabindex="-1">Your ballot guide</h1><p id="results-description"></p></div><div class="result-actions"><button type="button" class="button outline" id="change-address">Change address ↗</button><button type="button" class="button outline" id="print-guide">Print guide <span aria-hidden="true">↗</span></button></div></div>
+      <div class="result-context" id="result-context"></div>
+      <div class="filters" id="all-filters" hidden><label>County<select id="filter-county"><option value="">All covered counties</option></select></label><label>Office<select id="filter-office"><option value="">All offices</option></select></label><label class="search-filter">Search<input id="filter-search" type="search" placeholder="Candidate, city or office" autocomplete="off"></label></div>
+      <p class="scope-note" id="scope-note">An independent guide to elected offices. Ballot measures are not included. Your county’s official ballot determines which races you can vote in.</p>
+      <details id="matching-notes" class="matching-notes" hidden><summary>About this address match</summary><ul id="matching-warnings"></ul></details>
+      <div class="guide-layout"><aside class="guide-sidebar"><p class="eyebrow">IN THIS GUIDE</p><nav id="section-nav" aria-label="Office sections"></nav><div class="sidebar-note"><span class="mini-check">✓</span><p>One race at a time.<br>You’ve got this.</p></div><div class="official-links" id="official-links"></div></aside><div class="guide-content"><p id="result-count" role="status" aria-live="polite"></p><div id="race-list"></div><button type="button" id="load-more" class="button outline" hidden>Show more races ↓</button><div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><h2>No races found here.</h2><p id="empty-message">Try another search or select a different county.</p></div></div></div>
+    </section>
+    <section class="about-strip" id="about-strip"><div><p class="eyebrow">A LITTLE CONTEXT</p><h2>Less searching.<br><em>More understanding.</em></h2></div><div><p>The TALL Voter Guide brings the existing recommendations and candidate summaries from the Bay Area Ballot Research Assistant into a simpler guide.</p><p>We cover Alameda, Contra Costa, San Francisco, San Mateo and Santa Clara counties. This is an independent guide, and address results are estimates.</p><button type="button" class="text-button" data-open-dialog="about-dialog">About the guide <span aria-hidden="true">↗</span></button></div></section>
+  </main>
+  <footer><a class="brand" href="./"><img src="./favicon.svg" width="30" height="30" alt=""><span><b>THE TALL</b><small>VOTER GUIDE</small></span></a><p>Made for informed choices.<br><span id="publication-note">November 3, 2026 · General election</span></p><div><button type="button" data-open-dialog="privacy-dialog">Privacy</button><button type="button" data-open-dialog="about-dialog">About</button><button type="button" data-open-dialog="terms-dialog">Terms</button><a href="https://www.sos.ca.gov/elections/voting-resources/county-elections-offices" target="_blank" rel="noopener noreferrer">Official election information ↗</a></div></footer>
+  <dialog id="privacy-dialog" aria-labelledby="privacy-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close privacy information">×</button><p class="eyebrow">YOUR PRIVACY</p><h2 id="privacy-title">An address, not an account.</h2><p>There is no sign-in, analytics or address storage in this guide. Your entered address and lookup results stay in memory in this browser tab; the guide does not retain them between visits.</p><p>When Google suggestions are enabled, what you type is sent to Google Places to offer matching addresses. Your selected address is then sent to the U.S. Census Bureau to identify geographic districts. Manual entry sends only the submitted address to Census.</p><p>Neither an address nor coordinates are added to page URLs or printed guides. Google and Census apply their own privacy policies when handling requests.</p><p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy ↗</a> · <a href="https://www.census.gov/about/policies/privacy.html" target="_blank" rel="noopener noreferrer">Census Privacy Policy ↗</a></p></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close about information">×</button><p class="eyebrow">ABOUT THIS GUIDE</p><h2 id="about-title">A simpler way through your ballot.</h2><p>The recommendations and candidate blurbs are reproduced from the published Bay Area Ballot Research Assistant. The guide does not generate new assessments, summaries or recommendations.</p><p>Recommendations reflect that project’s published editorial framework, with a focus on Palestine, Gaza and U.S. aid to Israel. They are not an evaluation of every issue. A missing recommendation does not mean a candidate is opposed.</p><p>Only confirmed elected-office contests in the five covered Bay Area counties appear. Qualified write-ins are labeled. Ballot measures and unconfirmed filers are outside this guide. An unresolved local district is shown as a possibility, not as a confirmed race for your address.</p><p>Office sections follow California Elections Code 13109. Your county may vary the order of local offices. Compare with your official ballot before voting.</p><a class="button outline" href="https://tall-bay-area-research-tool.web.app/" target="_blank" rel="noopener noreferrer">Open the research tool ↗</a></dialog>
+  <dialog id="terms-dialog" aria-labelledby="terms-title"><button class="dialog-close" type="button" data-close-dialog aria-label="Close terms">×</button><p class="eyebrow">TERMS OF USE</p><h2 id="terms-title">Use this as a guide.</h2><p>This independent guide republishes existing editorial recommendations and summaries. It is not an official ballot or an elections office. Check your registration, eligibility, deadlines and actual ballot with your county elections office.</p><p>Address matching and third-party services may be unavailable or incomplete. No account or address retention is required to use this site.</p><p>When using Google address suggestions, the <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener noreferrer">Google Maps Platform Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> apply.</p></dialog>
+  <noscript><p class="error">This guide needs JavaScript to match addresses and display races. Please enable it or visit your county’s official election website.</p></noscript>
+</body>
+</html>

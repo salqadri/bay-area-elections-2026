@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "target": "voter-guide",
+    "public": "voter-guide/dist",
+    "ignore": ["firebase.voter-guide.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["python3 voter-guide/build.py"],
+    "headers": [
+      {"source": "**", "headers": [
+        {"key": "Cache-Control", "value": "no-cache"},
+        {"key": "X-Content-Type-Options", "value": "nosniff"},
+        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+        {"key": "Permissions-Policy", "value": "geolocation=(), camera=(), microphone=()"},
+        {"key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' https://maps.googleapis.com https://maps.gstatic.com https://geocoding.geo.census.gov https://tigerweb.geo.census.gov; connect-src 'self' https://*.googleapis.com https://*.gstatic.com; img-src 'self' data: https://*.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"}
+      ]}
+    ]
+  }
+}
