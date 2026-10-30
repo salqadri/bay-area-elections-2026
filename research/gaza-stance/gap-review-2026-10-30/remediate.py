@@ -206,8 +206,25 @@ PY""")
             note("GATE FAILED/INCOMPLETE — stopping, no publish")
             return
         tok = open("/root/.cfg/gh_token").read().strip()
-        rc, out = sh(f"""git add -A && git commit -m "Publish {ver}: campaign-site policy-page remediation (Tandon-class sweep)" && git push https://x-access-token:{tok}@github.com/salqadri/bay-area-elections-2026.git HEAD:main""")
-        note(f"push rc={rc}")
+        rc, out = sh(f"""git add -A && git commit -m "Publish {ver}: campaign-site policy-page remediation (Tandon-class sweep)" """)
+        note(f"commit rc={rc}")
+        pushed = False
+        for attempt in range(3):
+            rc, out = sh(f"git push https://x-access-token:{tok}@github.com/salqadri/bay-area-elections-2026.git HEAD:main")
+            if rc == 0:
+                pushed = True
+                break
+            note(f"push attempt {attempt+1} failed rc={rc}; fetching + rebasing")
+            rc2, out2 = sh(f"git fetch https://x-access-token:{tok}@github.com/salqadri/bay-area-elections-2026.git main && git rebase FETCH_HEAD")
+            note(f"rebase rc={rc2}")
+            if rc2:
+                sh("git rebase --abort")
+                break
+        note(f"pushed={pushed}")
+        if not pushed:
+            with open(os.path.join(HERE, "NEEDS_REVIEW.md"), "w") as f:
+                f.write("Gate green but push failed after 3 attempts (divergence?) — commit is local; rebase/push manually.\n")
+            return
         time.sleep(90)
         rc, out = sh("curl -s -m 60 https://salqadri.github.io/bay-area-elections-2026/ | grep -c " + ver)
         note(f"live verification hits: {out.strip()}")
