@@ -201,8 +201,13 @@ PY""")
             time.sleep(120)
         g = open(os.path.join(HERE, "gate.log")).read() if os.path.exists(os.path.join(HERE, "gate.log")) else ""
         passes = len(re.findall(r"^PASS", g, re.M))
-        note(f"gate passes: {passes}")
-        if "FAIL" in g or "Traceback" in g or passes < 49:
+        rc, out = sh("""python3 -c "import sys; sys.path.insert(0,'scripts'); import check_release; print(len(check_release.PYTHON_CHECKS)+len(check_release.NODE_CHECKS))" """)
+        try:
+            expected = int(out.strip().splitlines()[-1])
+        except ValueError:
+            expected = 49
+        note(f"gate passes: {passes} (expected {expected})")
+        if "FAIL" in g or "Traceback" in g or passes < expected:
             note("GATE FAILED/INCOMPLETE — stopping, no publish")
             return
         tok = open("/root/.cfg/gh_token").read().strip()
