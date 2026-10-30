@@ -3,18 +3,19 @@
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
-recommendations are published. **50/50 release checks pass**, both production
+recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](FIREBASE_HOSTING.md).
 
-Current publication **2026-10-28.4** publishes the owner's completed full-roster
-run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
-Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
-with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·
-F 123 · N/A 898**. Candidate and race explanations from the previous run are
-held, per the owner's choice; fresh source-bound queues are ready for Hermes.
-The recommendations page also uses the new grades. [Current archives, validation
-and Hermes follow-up](LATEST_SCORE_PUBLICATION.md). Older publication notes below are historical.
+Current publication **2026-10-30.1** publishes Jev criteria **v8 + v8.1** over
+the full roster: **1,296 evaluations** on **v20** state inputs (California Jewish
+Democrats = renamed DFI California counted against candidates; endorsement-only
+candidates capped at B; SB 403 caste records in a low-weight never-band-moving
+channel). Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence
+**0.22**, with the issue-observation gate. Counts: **A 79 · B 75 · C 23 · D 33 ·
+E 54 · F 140 · N/A 892**; all 404 letter grades carry fresh explanations.
+[Current archives, validation and history](LATEST_SCORE_PUBLICATION.md). Older
+publication notes below are historical.
 
 Publication **2026-10-28.3** fixes Census geography-service failures with a bounded fallback to Census address coordinates and direct TIGERweb polygons. Both paths retain real district labels, cancellation and privacy behavior. Candidate data and scores are unchanged. [Address recovery policy and live checks](ADDRESS_LOOKUP_RECOVERY.md).
 

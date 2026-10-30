@@ -7,6 +7,17 @@ recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
 
+Publication **2026-10-30.1** publishes owner-directed Jev criteria **v8 + v8.1**
+with all **404** fresh grade explanations and refreshed recommendations
+(**173 recommended races** — 12 Muslim-community, 161 Jev; 83 E/F-only; 283
+no-information). v8 makes the **California Jewish Democrats** endorsement visible
+and negative (the org is the renamed Democrats for Israel California — previously
+filtered out of grading inputs, which produced an undeserved A) and caps
+endorsement-only candidates at **B**. v8.1 demotes the new SB 403 caste-bill
+records to an explicitly low-weight, never-band-moving context channel. Counts:
+**A 79 · B 75 · C 23 · D 33 · E 54 · F 140 · N/A 892**.
+[Full publication notes](docs/LATEST_SCORE_PUBLICATION.md).
+
 Publication **2026-10-29.3** cleans 19 candidate blurbs under the owner's
 [Samir source policy](docs/SUMMARY_SOURCE_POLICY.md): omit redundant personal opinions
 and source-classification caveats; preserve Kamal Yassin's exact paragraph. Tandon

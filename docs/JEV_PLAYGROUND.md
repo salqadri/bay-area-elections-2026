@@ -1,10 +1,14 @@
 # Local Jev playground
 
-Current publication **2026-10-28.4** publishes the owner's completed full-roster
-run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
+Current publication **2026-10-30.1** publishes the owner-directed v8 + v8.1
+rerun: **1,296 evaluations**, exact **v8** questions and current **v20** inputs
+(CJD-as-DFI zionist signal, endorsement-only B cap, low-weight caste channel).
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
-with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·
-F 123 · N/A 898**. Candidate and race explanations from the previous run are
+with the issue-observation gate. Counts: **A 79 · B 75 · C 23 · D 33 · E 54 ·
+F 140 · N/A 892** — see [current archives and validation](LATEST_SCORE_PUBLICATION.md).
+The previous publication **2026-10-28.4** used exact **v7** questions and **v18**
+inputs with counts **A 120 · B 44 · C 12 · D 33 · E 66 · F 123 · N/A 898**.
+Candidate and race explanations from the previous run are
 held, per the owner's choice; fresh source-bound queues are ready for Hermes.
 The recommendations page also uses the new grades. [Current archives, validation
 and Hermes follow-up](LATEST_SCORE_PUBLICATION.md). Older publication notes below are historical.
@@ -319,10 +323,13 @@ Historical requests remain unchanged. The shared CLI builder uses `candidate-evi
   evidence summary. [Reviewed context](EVIDENCE_CONTEXT.md) links debate/criticism,
   vote explanations/follow-ups and superseded guide claims.
 - Focused endorsement/recommendation observations only. The versioned exact-name
-  registries are `research/gaza-grading/endorsement-focus-v3.json` and the reviewed
+  registries are `research/gaza-grading/endorsement-focus-v6.json` and the reviewed
   `organization-context-v1.json` aliases: owner-named
   Track AIPAC, Vote for Peace, HAPAC and CAIR Action, plus AIPAC, DMFI, J Street/JStreetPAC,
-  RJC and JDCA context selected by Jev from the organizations' own material.
+  RJC and JDCA context selected by Jev from the organizations' own material, plus
+  California Jewish Democrats (the renamed Democrats for Israel California, added by
+  the owner on 2026-10-30 so its Support/Strong Support endorsements reach grading
+  states with `zionist_endorsement_context`).
   Selection evidence/actual Jev answers are in the sibling `.review.json`.
   Related parent/PAC names are included for context without merging entities or
   assigning them the same position. CAIR Action was explicitly added by the owner
