@@ -63,7 +63,11 @@ Manual entry remains available after widget/network failures.
 
 Firebase Hosting supports static Spark-plan hosting. **Google Maps Platform has
 separate billing and no-cost usage limits**; enabling Places requires its billing
-setup. Configure quotas/budgets in Cloud Console. Hosting's free tier does not
+setup. Enabling Google Maps billing in this same Firebase project upgrades its
+plan to Blaze; Hosting still has no-cost usage quotas. Use a separate Google
+Cloud project for the Maps key if the Hosting project must remain on Spark.
+Configure API quotas and budget alerts in Cloud Console; alerts do not cap costs.
+Hosting's free tier does not
 guarantee that Google autocomplete traffic is free.
 
 See [Google widget documentation](https://developers.google.com/maps/documentation/javascript/place-autocomplete-new),
