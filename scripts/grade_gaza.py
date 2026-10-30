@@ -34,8 +34,8 @@ from evidence_context import contexts as reviewed_contexts  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v7.json'
-STATE_VERSION = 'candidate-evidence-v18-candidate-only-guide-comments'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v8.json'
+STATE_VERSION = 'candidate-evidence-v19-cjd-zionist-context'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -162,7 +162,7 @@ def endorser_key(name):
 
 
 def focused_endorsements(p, c):
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v5.json').read_text())
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v6.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
     aliases.update(organization_registry()[2]['aliases'])
     observations = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
@@ -297,6 +297,14 @@ def build_state(p, c, data):
                 'For this rubric, directional CAIR Action / Vote for Peace recommendations, including Ally or Opposed, '
                 'are concrete stance evidence even without a direct candidate quotation. Preserve their stated tier, phase and source qualifications.')
     records = jev_actions(c, data)
+    if any(not e.get('historical') and endorser_key(e['endorser']) in {
+            'californiajewishdemocrats', 'democratsforisraelcalifornia', 'democratsforisraelca'}
+           for e in endorsements):
+        parts['zionist_endorsement_context'] = (
+            'California Jewish Democrats is the renamed Democrats for Israel California (same organization; dfi-ca.org). '
+            'Per owner policy it is a Zionist organization; its endorsement counts against the candidate. '
+            "'Strong Support' is its strongest tier. When paired with pro-Palestine endorsements the signals net down; "
+            'a pro-Palestine endorsement alone can never yield A for a candidate with no personal record.')
     if records:
         parts['congressional_gaza_context'] = (
             'Alignment follows the pro-Palestinian/anti-Zionist tracker; neutral/unknown is not opposition. '

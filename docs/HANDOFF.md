@@ -7,6 +7,18 @@ recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](FIREBASE_HOSTING.md).
 
+Publication **2026-10-29.4** attaches Jennifer Hawks' campaign site
+(hawksforus.com, CA State Treasurer R): owner-reported and verified
+mechanically — own-domain HTTPS page naming her for this office, and its
+paid-for-by disclaimer carries FPPC #1488439, the exact committee already on
+file in the Secretary of State finance layer. The captured pages record no
+Gaza/Palestine content, so her N/A grade stands. The miss class: the Oct 17
+link sweep covered only nationwide candidacies, and the collector marked her
+ledger-done with zero evidence because no site was recorded to fetch.
+Campaign-site coverage 653 → **654**. (Publication **2026-10-29.2**, folded
+here for continuity, merged Tandon's campaign foreign-policy page and X
+evidence from the collector fix — his E grade unchanged.)
+
 Publication **2026-10-29.3** cleans 19 candidate blurbs under the owner's
 [Samir source policy](SUMMARY_SOURCE_POLICY.md): omit redundant personal opinions
 and source-classification caveats; preserve Kamal Yassin's exact paragraph. Tandon

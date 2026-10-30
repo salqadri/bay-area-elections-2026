@@ -181,15 +181,17 @@ def validate(result, row, grade, source_policy=None, inventory=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--queue", type=Path, default=QUEUE)
+    ap.add_argument("--responses-dir", type=Path, default=None)
     args = ap.parse_args()
-    queue = json.loads(QUEUE.read_text())
+    queue = json.loads(args.queue.read_text())
     publication_id = queue["publication_id"]
     archive = json.loads((ROOT / queue["archive_path"]).read_text())
     assert archive["id"] == publication_id
     mapping = archive["score_grade_mapping"]
     rows = {r["id"]: r for r in archive["rows"]}
     prompt_text = PROMPT_PATH.read_text()
-    outdir = ROOT / "research/gaza-grading/responses-summary-v4"
+    outdir = args.responses_dir or (ROOT / "research/gaza-grading/responses-summary-v4")
     outdir.mkdir(parents=True, exist_ok=True)
 
     from grade_gaza import build_state
