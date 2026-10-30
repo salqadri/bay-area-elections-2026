@@ -1,0 +1,90 @@
+{
+ "candidate_id": "ea296c02c104204cbfbf036f",
+ "request_sha256": "f378f01a45fd62193500e5f1bcb4949196378291220826821988166fd9daab90",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action issued a full endorsement and Vote for Peace rated Phoebe Shin Venkat an Ally in her 2026 Foster City council race, both organizations evaluating candidates on Gaza and war-lobby positions. Her platform addresses local economic, housing, and civil-liberties issues but contains no explicit Palestine or Gaza statement, so the pro-Palestine assessment draws on those two organizational endorsements rather than a personal legislative or public record on the conflict.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; no directional signal for Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local council office; provides jurisdictional context but no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Platform covers economy, housing, environment, ICE sanctuary, Flock surveillance, and transparency; no Palestine or Gaza statement present. Grouped as general civil-liberties context showing no explicit pro- or anti-Israel position."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement and Vote for Peace Ally rating are the primary directional evidence for the A grade; both evaluate Gaza and war-lobby positions."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Rubric instruction establishing CAIR/VFP recommendations as concrete stance evidence even without a direct candidate quotation; supports treating endorsements as the basis for the grade."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace as advocacy/rating organizations evaluating Gaza and war-lobby criteria; contextual for the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "2026 date gives temporal context for the endorsement cycle."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Foster City identifies the local race context."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status has no bearing on Palestinian-justice assessment."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no directional signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information to assess."
+  }
+ ],
+ "generation_sha256": "0af498382257bfc5367fe351675bb62cfcf8cce8409a3beec11c375ff5c8b8ff",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:26:06Z"
+}

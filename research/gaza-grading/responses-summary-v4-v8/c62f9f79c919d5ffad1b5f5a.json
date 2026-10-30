@@ -1,0 +1,78 @@
+{
+ "candidate_id": "c62f9f79c919d5ffad1b5f5a",
+ "request_sha256": "9abb7f0380c635e7aebcde05cdca4256cf31fd0580c3a65b2ef84895e3ca2122",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace rated Keisha Lance Bottoms an Ally in the Georgia primary, a tier based on human rights and war-lobby funding criteria. Her campaign platform addresses healthcare, housing, education, and civil liberties without Palestine-related commitments. The positive evidence supporting this assessment is that organizational rating.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the assessment."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides the race context (GA Governor) for the primary-phase rating."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Same jurisdictional context as office field."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not bear on Palestine-position evidence."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers healthcare, housing, education, civil liberties; no Palestine or US-Israel policy commitments present."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated her Ally in the primary phase; this is the sole directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains how the Ally tier should be treated as stance evidence; grouped with the endorsement itself."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies Vote for Peace evaluates human rights and war-lobby funding; contextual for the Ally rating."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "2026 election date does not bear on Palestine-position evidence."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "State of Georgia, same jurisdictional context as office and state fields."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Internal roster label, no bearing on the assessment."
+  }
+ ],
+ "generation_sha256": "e6e8a41f13633a8faa369045caa72a7d51e9027022d328e495c9f594e9f82b0e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:49:38Z"
+}

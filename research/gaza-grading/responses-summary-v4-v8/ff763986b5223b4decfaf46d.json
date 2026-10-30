@@ -1,0 +1,96 @@
+{
+ "candidate_id": "ff763986b5223b4decfaf46d",
+ "request_sha256": "3e326f6465ba93d80baf7d6e2383de9b1c5bb28ee63049960842087a42d60ea7",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Abuhamdieh explicitly rejected AIPAC-aligned money for his Berkeley City Council campaign in September 2026, stating he has not taken and will not take such funds. CAIR Action endorsed him in the general election, and Vote for Peace rated him an Ally—both organizations that assess candidates on Gaza positions and war-lobby funding. BAMC Action also supported his general-election bid.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no stance information"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office identification; no Palestine-policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no stance information"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine-policy signal"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Explicit personal rejection of AIPAC-aligned money, dated 2026-09-25"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope limitation on funding data; no directional stance"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement, Vote for Peace Ally rating, and BAMC Action support all directional pro-Palestine signals"
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Interpretive context for BAMC comment; comment itself is tactical viability advice, not a Palestine stance"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric instruction on how to treat endorsements; not a fact about the candidate"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background on CAIR, VFP, AIPAC; used to attribute endorsement significance but not itself a candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no stance information"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Berkeley; geographic context only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no stance information"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information"
+  }
+ ],
+ "generation_sha256": "9f167dc5c07dda6d784cdcb14beffbbb3e34622a7b11430400f4aca5ff98bc98",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:19:50Z"
+}

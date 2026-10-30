@@ -1,0 +1,96 @@
+{
+ "candidate_id": "3a2ef3c3938387e328222c66",
+ "request_sha256": "b53770effb17e2195a9780bc3d374f956a4d2c07f1a04cc71eaf3c626ecb9e98",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As Florida State Representative, Nixon introduced HR 31C calling for an immediate cease-fire in Israel and occupied Palestine, the sole lawmaker to cite Palestinian deaths before the vote failed 104–2 and she was called anti-Semite. In 2026 she called Netanyahu 'a war criminal,' stated opposition to sending Israel any U.S. money or weapons, and pledged on her Senate platform to end U.S. support for West Bank settlements and uphold the Gaza ceasefire.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional label; no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Two PACs with explicitly unestablished relevance; spending_context directs that unmapped spenders not explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Methodology note governing how to treat spender data; no candidate-position content."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "International-affairs point pledges ending US support for West Bank settlements and upholding the Gaza ceasefire."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Documents personal introduction of HR 31C, war-criminal characterization of Netanyahu, and stated opposition to US aid and weapons to Israel."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note limiting AIPAC funding data to post-2024; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes AIPAC's role; provides backdrop for Nixon's anti-AIPAC statement but no independent policy action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal context for the race; no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal Senate context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.election_type",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Special-election label; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Data-structure label ('candidates'); no substantive content."
+  }
+ ],
+ "generation_sha256": "3586c0bc618bbeb99755355f6eace6a0d91d41b71742dfda1dac79ffa43496fc",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:26:49Z"
+}

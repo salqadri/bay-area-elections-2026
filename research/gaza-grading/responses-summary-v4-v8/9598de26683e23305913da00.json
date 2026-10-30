@@ -1,0 +1,102 @@
+{
+ "candidate_id": "9598de26683e23305913da00",
+ "request_sha256": "94086e675da91ff19614070b3f4875a40a7f30c52d9c01807e4f8c635c9880f1",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Akbari's owner-confirmed membership in the pro-Palestine Muslim community is the principal basis for his pro-Palestine alignment, reinforced by a general-election endorsement from CAIR Action and an Ally rating from Vote for Peace. His campaign platform addresses housing, sanctuary-city immigration protections, and local infrastructure but includes no personal statements on Gaza or Israel. No contrary endorsements or positions appear in the record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local city-council seat provides jurisdictional context but no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-specific direction."
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in the pro-Palestine Muslim community; explicitly listed as a sufficient criterion for top-band alignment."
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms the part_of_muslim_community field means owner-confirmed pro-Palestine community membership, not religious identity alone."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers housing, sanctuary-city immigration, infrastructure; absence of any Palestine/Israel statement is a material tension noted in the summary."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (endorsement level) and Vote for Peace Ally rating are concrete directional stance evidence per the endorsement context."
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Explains BAMC is a trusted recommendation source but specifies comment-only entries do not establish a Palestine stance; the BAMC comment concerns local experience."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note confirming CAIR/VfP tiers count as concrete evidence; no independent candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action and Vote for Peace roles and sourcing; contextual, not a candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date only; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Fremont identifier; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional information."
+  }
+ ],
+ "generation_sha256": "3ceaed8eacca406a82e2e40933c8d9365456d5dd1a89bb7c25ae6f17dbe08a9f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:27:19Z"
+}

@@ -1,0 +1,90 @@
+{
+ "candidate_id": "f6c174c23b6d0b3ba6503a70",
+ "request_sha256": "6455f20b6ea37d082b7f16e5633829217e515b980756eac3cf43e590b870487c",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "DMFI PAC, the electoral arm of Democratic Majority for Israel, endorsed Dalton as a \"pro-Israel Democrat,\" citing his stance on the U.S.-Israel relationship. His platform urges avoiding \"forever wars in the Middle East\" and setting clear goals for military operations, but frames those concerns in terms of overseas spending returns rather than Palestinian rights. A campaign-claimed endorsement from 314 Action Fund, a hybrid PAC with documented 2024 UDP funding, reinforces the pro-Israel alignment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name, identification only."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context, no bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State context, no bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation is general context, not a Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "BDA PAC and FIELD TEAM 6 both flagged as unestablished relevance; spending context states unmapped spenders should not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note clarifying spending is independent, not campaign money; no candidate-specific Palestine relevance."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "International-affairs point urges avoiding 'forever wars in the Middle East' and setting clear military goals, but frames it in ROI and national-security terms, not Palestinian rights. Slightly complicates but does not offset the DMFI PAC endorsement."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "DMFI PAC, the electoral arm of Democratic Majority for Israel, endorsed Dalton as a 'pro-Israel Democrat' citing his U.S.-Israel stance. Direct Zionist-organization endorsement, a primary F-band criterion."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "314 Action Fund endorsed Dalton per campaign claim; organization has documented 2024 UDP funding, a negative funding signal per owner criterion."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Confirms DMFI PAC is DMI's electoral committee and 314 Action Fund received UDP funding in 2024. Supports the adverse assessment of both endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date, no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context, no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label, no substantive content."
+  }
+ ],
+ "generation_sha256": "4c4e6f60d3fc354c0555af0e3da1ff2c46e789fc99ae7a89cdcf52d5314643a2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:01:17Z"
+}

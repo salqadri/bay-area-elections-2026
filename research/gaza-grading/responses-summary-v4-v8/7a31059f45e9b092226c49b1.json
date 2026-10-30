@@ -1,0 +1,102 @@
+{
+ "candidate_id": "7a31059f45e9b092226c49b1",
+ "request_sha256": "4a8dd49838b446a1478de75b71444e08b8619f2f00c46f33b9999188f5d2ebcf",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Lodhi and BAMC Action supported his Union City Council campaign, while his owner-confirmed membership in the pro-Palestine Muslim community adds general alignment. His recorded platform covers local governance—transparency, public safety, and neighborhood investment—without addressing Palestine, Gaza, or U.S. policy toward Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Candidate name used in prose for identification."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Establishes local city-council context referenced in prose."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State designation carries no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a Palestine stance."
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in the pro-Palestine Muslim community; affirmative evidence of general alignment per guide."
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms the field denotes pro-Palestine community membership, not merely religious identity; grouped with the boolean field."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform addresses local governance only (transparency, public safety, neighborhoods); no Palestine, Gaza, or Israel-policy content, relevant to explaining the assessment level."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and BAMC Action support (general) are concrete pro-Palestine organizational signals."
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology context for interpreting the BAMC endorsement; not a separate factual observation for the reader."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric-level instruction on how to weigh CAIR tiers; not a candidate-specific fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background description of CAIR Action's role; not a candidate-specific action or statement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Election date does not affect the Palestine-justice assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "City of Union City provides the local context for the council race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label carries no substantive signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Null value; no additional party information to incorporate."
+  }
+ ],
+ "generation_sha256": "d111907725640e2a5dcda73fbb488df6abe5be40c0a20409b9ca410617c57ca2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:44:38Z"
+}

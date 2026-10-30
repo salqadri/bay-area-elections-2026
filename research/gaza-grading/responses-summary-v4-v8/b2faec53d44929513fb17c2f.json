@@ -1,0 +1,90 @@
+{
+ "candidate_id": "b2faec53d44929513fb17c2f",
+ "request_sha256": "c27ff991afe99cfce8629a98266bde71e4341ab764191dfdf04fda6b6cf63fc8",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace rated Jamie Ager an 'Ally' in the 2026 North Carolina CD-11 general election, a tier based on its evaluation of human rights positions and war-lobby funding. No personal statements, legislative votes, or campaign commitments on Israel or Palestinian justice appear in the documented record, placing the candidate in the endorsement-only band rather than one supported by direct action on Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject as Jamie Ager."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides the office (CD-11 US Representative) for context."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies North Carolina jurisdiction."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not bear on Palestinian-justice assessment."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All seven spenders are marked unestablished relevance; spending_context confirms they should not explain a Palestine assessment without explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-instruction confirming unmapped spenders do not inform the Palestine grade."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All eight points address domestic issues (Hurricane Helene, healthcare, economy, ethics, immigration, VA, jobs, environment); none reference Israel, Palestine, Gaza, or related civil rights."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Ager 'Ally' in the general election; per endorsement_evidence_context this is concrete directional stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that VFP Ally tier counts as concrete stance evidence; supports interpretation of the endorsement."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes VFP methodology (human rights, war-lobby/AIPAC funding, viability); contextualizes the Ally rating."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the 2026 race and anchors the endorsement temporally."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Redundant with office field; adds no independent information."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label ('candidates') with no bearing on the assessment."
+  }
+ ],
+ "generation_sha256": "218df96d72010c97e0762adf1311699e11bb7ceaeccd4e026515670f08567c80",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:10:39Z"
+}

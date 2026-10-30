@@ -1,0 +1,114 @@
+{
+ "candidate_id": "272fa3e285ea3c8bbd7e7fd3",
+ "request_sha256": "0c58193d0c5f97727725c7d32b051eb9e586c00b8629debdee0fecf1aef2ec54",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "California Jewish Democrats, the renamed Democrats for Israel California, endorsed Wicks at its Support tier. She voted aye on AB 715, which creates a state antisemitism coordinator and classroom-material oversight, and after the October 7 attack called the violence 'terrorism, plain and simple,' saying she 'stands with the Israeli people.'",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identifies the seat (AD-14 Assembly); no Palestine relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic label; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine/Israel policy content."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All four spenders carry unestablished relevance; no explicit Palestine connection in the record."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-instruction on how to treat spending data; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Platform covers housing, economy, healthcare, immigration, criminal justice, civil liberties; no Israel/Palestine content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "AB 715 aye vote (antisemitism coordinator, classroom-material oversight) is relevant to protecting related speech; AB 1468 coauthorship is a failed general-ed bill not specifically about Israel/Palestine, so omitted as immaterial."
+  },
+  {
+   "id": "candidate_record.caste_legislation_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "LOW WEIGHT context per record; instructions direct grading strictly on Gaza record; not material to explaining the F."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 10 2023 statement calling Hamas violence 'terrorism, plain and simple' and standing with the Israeli people is direct pro-Israel framing."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Temporal scope note (since 2024); no policy signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "California Jewish Democrats (Support tier) endorsement is a Zionist-organization endorsement that triggers the top adverse band per criteria."
+  },
+  {
+   "id": "candidate_record.zionist_endorsement_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Confirms CJD is the renamed Democrats for Israel California and that its endorsement counts against the candidate; grouped with the endorsement observation."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Dataset classification label; no policy signal."
+  }
+ ],
+ "generation_sha256": "129329bcbc97ba310324e00456c37843a7fdb8a0811140c0278a0863e95154c3",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T14:38:25Z"
+}

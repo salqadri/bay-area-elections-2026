@@ -1,0 +1,78 @@
+{
+ "candidate_id": "bf25f0a04e2e6cdbf93564e2",
+ "request_sha256": "780ede7fdb9a7021a065580f78a0d4ba1cd3ccc0c539e1dd2a21d4cba80895bc",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Dionjay Brookter in the general election for San Francisco's District 10 Board of Supervisors seat. The endorsement reflects CAIR's assessment of a candidate's civil-rights and Gaza-related positions and is recorded at the full endorsement tier rather than a lower preferred or ally tier.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate identity used in the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Local office context clarifies the race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction already clear from jurisdiction field."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label has no bearing on Palestine stance."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-election endorsement is the sole directional evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains that CAIR directional recommendations count as concrete stance evidence; context for the endorsement."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's role and that Preferred differs from full endorsement; contextualizes the tier."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date does not affect the stance assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "San Francisco locality identified in the summary."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information."
+  }
+ ],
+ "generation_sha256": "37d536581e411504c63a00f8adb6ca14a2cad973654780efc6a2b7f8ce6d6a7a",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:14:46Z"
+}

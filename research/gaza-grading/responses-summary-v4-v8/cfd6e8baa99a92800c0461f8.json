@@ -1,0 +1,78 @@
+{
+ "candidate_id": "cfd6e8baa99a92800c0461f8",
+ "request_sha256": "3e846ebd6b8672135d0fbd8990c79a06aeeab65bf1b971bfc6743d218af6add2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action, an advocacy organization that weighs Gaza and civil-rights positions in its recommendations, endorsed Jeremy Lee in the general election for the San Francisco Community College District's at-large Trustee seat. The endorsement sits at the full endorsed tier rather than a lesser preference level, and the record treats such directional CAIR recommendations as concrete stance evidence on Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the paragraph."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides local-election context for why an organizational endorsement is the primary record."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Implied by jurisdiction; adds no distinct information."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not bear on Palestinian-justice stance."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed-tier general-election endorsement is the sole directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes that CAIR directional recommendations are treated as concrete stance evidence per the rubric."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's role; grouped with the endorsement observation."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date does not materially clarify the endorsement's significance."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Names the San Francisco Community College District race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label only."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional context supplied."
+  }
+ ],
+ "generation_sha256": "cac44b9feadbd9c70ca39591a77b622352e7e551a5e436e1d0545b11b0cfa972",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:54:45Z"
+}

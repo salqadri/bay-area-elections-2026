@@ -1,0 +1,78 @@
+{
+ "candidate_id": "06177b321848a02f33ebd0d4",
+ "request_sha256": "2ae9991fa55ed7140df669c5f04d567ad94ee2acc38c6b196ead9387107ccaaf",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "McCann's recorded statements on Gaza center on Netanyahu's conduct and hostage concerns rather than Israeli policy as a whole. In August 2026 he said he would 'take a look at' U.S. military aid to Israel without committing to a position; in October 2025 he expressed optimism about the ceasefire framework and sympathy for hostages on the Oct 7 anniversary. His campaign platform addresses no Israel/Palestine issue.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label; no policy signal"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All three spenders carry unestablished relevance; spending_context prohibits using them for Palestine assessment"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Editorial note clarifying spending relevance; not candidate conduct"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers economy, healthcare, environment, reproductive rights, immigration, education, jobs, ethics; no Israel/Palestine policy stated"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Statements blame Netanyahu conduct, express hostage sympathy, show non-commitment on US aid, and frame hope around ceasefire; no condemnation of Israeli policy or call to end aid"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling detail; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorization field; no policy signal"
+  }
+ ],
+ "generation_sha256": "79ee3bde697f38d38308bd19166f94eba42024c1d3282e0cf4e2fdc50159edba",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:08:03Z"
+}

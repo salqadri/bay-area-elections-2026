@@ -1,0 +1,66 @@
+{
+ "candidate_id": "34b16fec7c4002790ec38b03",
+ "request_sha256": "c69647979b7cdc5c6b64d6ba0ab2e9a065fde37a5363b70e374c5513046cba97",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "In a November 2024 voter-guide questionnaire, Wilson affirmed the U.S.-Israel relationship is important, stating Israel's worldview aligns more closely with the U.S. Founding than any other Middle East nation. His campaign platform addresses energy, the national debt, and civil liberties but offers no statement on Palestine, Gaza, or U.S. policy toward the region.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal on Palestine."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office designation provides context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State identifier; no bearing on Palestine or Israel policy."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Constitution Party affiliation; no documented Palestine or Israel stance attached in this record."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Three platform points cover energy, debt, and civil liberties; none address Palestine, Gaza, Israel, or U.S. foreign policy toward the region."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Nov 2024 voter-guide response affirming the U.S.-Israel relationship and praising Israel's alignment with U.S. Founding; sole documented position on the topic and directionally pro-Israel."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Election date; no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification tag; no substantive content."
+  }
+ ],
+ "generation_sha256": "536b691fe278dd0bce16525d90971b377291952f94745b855ab073ac3f0cd1fc",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:51:03Z"
+}

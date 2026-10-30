@@ -1,0 +1,78 @@
+{
+ "candidate_id": "047c5cc6962b4004ad9503fb",
+ "request_sha256": "be215c4c806781ea5cb525a119de85ed6a83b516aa5b501cf229345993e54e84",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker records that incumbent South San Francisco council member Eddie Flores supported a local ceasefire resolution, dated May 8, 2024, noting the entry reflects a reported local action rather than a verified roll-call transcript. This single documented pro-ceasefire vote at the city-council level is his only recorded position on the conflict, a personal municipal action without broader statements on Palestinian justice or U.S. policy toward Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City council seat establishes the municipal context for the ceasefire vote."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State designation; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine/Israel policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All items address housing, healthcare, education, environment, and local economy; none reference Palestine, Israel, or foreign policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records Flores supporting a local ceasefire resolution (2024-05-08), with the caveat that it is a reported local action, not a verified roll-call transcript. This is the sole documented pro-ceasefire action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "South San Francisco context confirms the municipal scope of the ceasefire vote."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Incumbent status confirms the 2024 vote is within his active service period."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster classification; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional research added."
+  }
+ ],
+ "generation_sha256": "5245e4bda50b1bae5737100eac2637c393cf6b6948cc803966ae73ee9c722802",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:43:45Z"
+}

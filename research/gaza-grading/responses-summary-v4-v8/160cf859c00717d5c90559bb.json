@@ -1,0 +1,150 @@
+{
+ "candidate_id": "160cf859c00717d5c90559bb",
+ "request_sha256": "6b711edbcbc6eb6d876c076e4470c253a60876714244ab3672127611f8aad4f4",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Simon cosponsored the Block the Bombs Act and a genocide-recognition resolution, publicly called Gaza's crisis genocide, and voted to eliminate $3.3 billion in Israeli military aid. Track AIPAC, CAIR Action, and Vote for Peace (Ally) back her; she is a confirmed member of the pro-Palestine Muslim community. Two contrary votes are documented: she supported a resolution conflating antisemitic violence with anti-Zionism and voted against cutting $500 million for Israeli missile defense.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no directional Palestine signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identification; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in pro-Palestine Muslim community; affirmative alignment evidence per community_alignment_context"
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Defines the part_of_muslim_community field as affirmative pro-Palestine alignment; grouped with the membership flag"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Both spenders marked unestablished relevance; no explicit Palestine connection in record"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note clarifying spenders do not prove policy; no directional signal"
+  },
+  {
+   "id": "candidate_record.official_uscpr_scorecard",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "USCPR scorecard reflects civil-liberties record; not a Palestine-specific action or statement"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All platform points address domestic issues (housing, healthcare, criminal justice, immigration); no Palestine or Israel content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Multiple dated statements calling Gaza crisis genocide, opposing U.S. arms transfers, thanking humanitarian flotilla, joining accountability rallies; core personal evidence"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note for funding data; no directional Palestine signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Track AIPAC endorsed, CAIR Action endorsed, Vote for Peace Ally with rejection of AIPAC/DMFI/Lockheed funding; JStreetPAC endorsed (omitted per low-weight policy); BAMC Action supported with positive comment"
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Defines BAMC as owner-designated community source; contextual note, not a separate action"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric guidance on how to treat CAIR/VFP tiers; not a candidate fact"
+  },
+  {
+   "id": "candidate_record.congressional_gaza_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note on how to read alignment and not-elected entries; not a candidate action"
+  },
+  {
+   "id": "candidate_record.congressional_gaza_actions",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Post-election votes show consistent NO on Israel aid packages, YES on Massie amendment to eliminate $3.3B aid, NO on ICC sanctions; sponsorships include Block the Bombs Act, genocide recognition, Nakba recognition, UNRWA restoration; two not_aligned votes (Boulder resolution, missile defense cut) noted as tension"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Definitions of endorsers' roles; contextual, not candidate actions"
+  },
+  {
+   "id": "candidate_record.reviewed_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies UNRWA vote sequence as separate packages; no new directional signal beyond what is already in actions"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identification; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; explains not-elected period but no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no Palestine-specific signal"
+  }
+ ],
+ "generation_sha256": "19a328ef3f9dcfdfb5b63a449a5a71fe6025685a5f692815e9bfe66b0a37158e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:14:47Z"
+}

@@ -1,0 +1,78 @@
+{
+ "candidate_id": "b59748f99259e1c98c4539db",
+ "request_sha256": "a58c60bcdbba436b79dd13ab4396813fa2d1ce6b129135a6a65cd2658b7b6de6",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Abbott's record spans over a decade of unqualified pro-Israel statements, from calling Ariel Sharon \"a giant leader\" in 2014 to applauding Trump's Jerusalem recognition in 2017. In 2025 he threatened to defund San Marcos, TX over a proposed Gaza ceasefire resolution, labeling it \"antisemitic.\" In 2024 he directed Texas higher-education institutions to define antisemitism in free-speech policies while citing the state's boycott-Israel ban, and in 2026 he urged the AG to revoke CAIR Texas's nonprofit status.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office identification; no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identification; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label; no policy signal on Palestine/Israel."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address economy, criminal justice, housing, healthcare, and education; none reference Palestine, Israel, or related speech rights."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Directs campus antisemitism definitions and punishments while citing the state BDS ban; suppresses pro-Palestinian/anti-Israel speech at Texas higher-education institutions."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Multiple pro-Israel statements (2014–2021), threats to defund San Marcos over a ceasefire resolution, labeling that resolution 'antisemitic,' and urging revocation of CAIR Texas nonprofit status demonstrate consistent shielding of Israel and suppression of pro-Palestinian action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Categorization label only; no policy content."
+  }
+ ],
+ "generation_sha256": "4d86c2d37aca06bd24387f8799b03c4a34c060a6635321aa4a0ef57313e7633a",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:04:39Z"
+}

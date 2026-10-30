@@ -1,0 +1,78 @@
+{
+ "candidate_id": "2d47666b0d72d76878cd22af",
+ "request_sha256": "4e682247fed16278313a26d620e3b4bc127c42d670ea4fc9deb4c906072a23e3",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker lists Turner as having opposed a peace resolution in a local action dated March 2024, noting the entry is not a verified roll-call transcript. As incumbent at-large mayor of Morgan Hill, his platform addresses municipal priorities including public safety, local economic development, and youth sports infrastructure.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "At-large Mayor context clarifies local jurisdiction; grouped into summary for reader orientation."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; no independent directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All eight platform points address local municipal issues (public safety, sports, economy, education, jobs, art, health, climate); none reference Israel, Palestine, or foreign policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker lists Turner as opposing a peace resolution (2024-03-06); the only Palestine-relevant directional evidence, qualified by the note that it is not a verified roll-call transcript."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Morgan Hill; grouped with office for context."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Incumbent status; provides context for local-office scope, no independent directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional research added."
+  }
+ ],
+ "generation_sha256": "205950507f3b2cfa0e34e92fc8c2afee6eee9934f0dd695181d696b731bcc347",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:31:38Z"
+}

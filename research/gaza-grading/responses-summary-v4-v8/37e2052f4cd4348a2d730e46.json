@@ -1,0 +1,78 @@
+{
+ "candidate_id": "37e2052f4cd4348a2d730e46",
+ "request_sha256": "d4657dd921e42744de3979e8a132caafc92dd8e3a59b1b4cb315aa62a63c0574",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Teresa Proaño co-wrote a Daly City Council ceasefire resolution with Vice Mayor Daus-Magbual in June 2024, calling for a bilateral ceasefire, hostage release, and condemning killings in Gaza. The Mercury News confirmed the council passed the resolution on June 4, 2024, making Daly City the latest Peninsula city to adopt one. Her campaign platform addresses local public safety, small-business permitting, and housing.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office title; contextual only, no Palestine/Israel relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine/Israel relevance."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Three platform points cover police, small business, and housing; none address Israel, Palestine, or related civil rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Co-authorship of a passed ceasefire resolution calling for bilateral ceasefire, hostage release, and condemning killings in Gaza; Mercury News confirms passage; CAIR-SFBA tracker corroborates."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Upcoming election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City name; contextual only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no Palestine/Israel relevance."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Structural roster label; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no additional party information."
+  }
+ ],
+ "generation_sha256": "b99b578a41df39f416aed36b66cd2f9648fd9b56cb6fc3562791ab8bd839bd0e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:21:15Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "85d7a44f8333f1a7469af33b",
+ "request_sha256": "c094be2c9db19b94fe8414e94ba2594c40b1e2f55380da6080997fbff562412d",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Gary McCoy's platform explicitly calls Israel's actions in Gaza genocide, opposes sending or funding weapons for Israel, and states he would have voted for the 2024 Board of Supervisors ceasefire resolution. He supports a permanent ceasefire and rejects AIPAC money. Vote for Peace rates him an Ally for the general election, aligning with his stated opposition to Israeli military assistance and his personal legislative position on the ceasefire vote.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name, used for identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "District 8 Board of Supervisors context explains the 2024 ceasefire resolution vote reference"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State abbreviation, no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label, no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Contains explicit genocide designation, ceasefire support, opposition to weapons funding, AIPAC rejection, and stated would-have-voted on 2024 Board ceasefire resolution"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace Ally rating in general phase, concrete directional stance evidence per endorsement_evidence_context"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on how to treat VFP/CAIR ratings; guides interpretation but is not itself candidate evidence"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes Vote for Peace's evaluation criteria; contextual, not a candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Election date, no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "San Francisco jurisdiction, no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label, no bearing on Palestine position"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no party affiliation added"
+  }
+ ],
+ "generation_sha256": "1bd4c2321279df45b593edfa610f0e4d7e873bdd5dbc90ed597f9de4d7089bc8",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:13:13Z"
+}

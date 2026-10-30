@@ -1,0 +1,78 @@
+{
+ "candidate_id": "998c6090931fec884bf1617b",
+ "request_sha256": "97c66c95b9582f3e393e830d69575158e22c6cb4063a90b4c062d7e58a506fe4",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed LaCroix in the general-election phase for the San Francisco Community College District Trustee seat, at the full endorsement tier rather than a preferred or ally level. The organization develops its recommendations by weighing civil-rights and foreign-policy positions, including on Gaza and ceasefire, and treats its endorsements as concrete directional evidence for the candidate. LaCroix is a nonpartisan candidate for an at-large board position.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Contextualizes the race as a local board seat; no policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "California context; grouped with jurisdiction for setting."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status; minor context, no directional signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement (general phase) is the sole directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains that CAIR endorsements count as concrete stance evidence; supports interpretation of the endorsement."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's recommendation process; contextual for the endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not materially clarify the stance explanation."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "San Francisco Community College District; sets the local context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information."
+  }
+ ],
+ "generation_sha256": "75bd5da7e0236cfccd32b005b61ea7bb075e535470cce10463898860c4caca28",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:54:43Z"
+}

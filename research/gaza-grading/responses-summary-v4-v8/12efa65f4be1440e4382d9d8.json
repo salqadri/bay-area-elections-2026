@@ -1,0 +1,72 @@
+{
+ "candidate_id": "12efa65f4be1440e4382d9d8",
+ "request_sha256": "8f6b8b1b2d6dba812d406409f7401905c21926b55957f3cc08f68418f6b0668e",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Days after the October 7, 2023 attacks, Governor Brad Little publicly declared Idaho's firm support for Israel and endorsed Israel's 'defensive actions against Hamas.' His campaign platform covers economy, education, immigration, and criminal justice with no reference to the conflict. The documented record presents an unqualified statement of support for Israel's military response in the immediate aftermath of the war's outbreak.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate as Brad Little for attribution in the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes his role as Idaho's governor, the title under which the 2023 statement was made."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Idaho is already implied by the office and jurisdiction fields; no independent relevance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not bear on his stated position on Israel or Palestine in this record."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Platform covers economy, education, immigration, and criminal justice; no Palestine or Israel content, briefly noted to show the scope of documented positions."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Dated 2023-10-09 statement declaring Idaho's firm support for Israel and endorsing Israel's defensive actions against Hamas; the central adverse fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 election date provides no information about his Palestine-related position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State of Idaho is context already captured by the office field."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status does not affect the substance of the documented statement."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification label with no bearing on the assessment."
+  }
+ ],
+ "generation_sha256": "0ee40ec15ae345a9039b674d8869275f2d491ad9747d54b3d94367c6e8e5d990",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:51:02Z"
+}

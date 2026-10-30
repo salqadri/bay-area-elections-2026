@@ -1,0 +1,78 @@
+{
+ "candidate_id": "b5a9b570797d3e071846fffe",
+ "request_sha256": "3d5645b56e32b9668da78db17514e4b9f33fbd4efddac687db8c97777c080180",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action's 'preferred' recommendation for Jane Stevens in the Gilroy Unified School District Trustee Area 4 general race is the sole directional evidence on file. The 'preferred' tier is a recommendation, not a full endorsement, and no personal statement or documented action on Gaza, Palestinian rights, or Israel policy accompanies it.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local school-board trustee role; no Palestine-relevant action or statement attached."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on this topic."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier for the general election is the sole directional evidence; it is a recommendation, not a full endorsement."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Editorial guidance on interpreting the recommendation tier; not a candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action's role; clarifies 'preferred' is not full endorsement but adds no new candidate fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scheduling detail; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the specific race (Gilroy USD Trustee Area 4) for contextual accuracy in the summary."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Dataset classification tag; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional research added."
+  }
+ ],
+ "generation_sha256": "b20bf0bbad424b6b1d5a684693d2ba72f50a3057370e49d82f87da4680b6323c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:50:11Z"
+}

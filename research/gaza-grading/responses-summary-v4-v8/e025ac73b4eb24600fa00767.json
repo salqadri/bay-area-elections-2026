@@ -1,0 +1,108 @@
+{
+ "candidate_id": "e025ac73b4eb24600fa00767",
+ "request_sha256": "e16bb98fa08a7065e261c6ddcdb8cab1603b91c6e00907408513c35edabd6b61",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Ortega and Vote for Peace rated her an Ally, both organizations assessing candidates on Gaza and ceasefire positions. No personal statement, legislative action, or campaign pledge on Palestine or the Gaza war appears in her record. She abstained on AB 715, a bill creating an antisemitism coordinator and classroom-material oversight. The endorsements are the directional evidence; without a documented personal position, they establish alignment but not the action record indicating a deeper commitment to Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only; AD-20 State Assembly seat."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only; California."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only; Democratic Party."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All four spenders marked unestablished relevance; spending_context states they cannot explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodology note governing how to treat spender data; not candidate evidence."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Six platform points cover housing, labor, homelessness, public safety, healthcare, cost of living; no mention of Palestine, Israel, Gaza, ceasefire, or related topics."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "AB 715 abstention is a recorded action on classroom-material policy; neutral (neither support nor opposition), relevant to the speech/civil-rights dimension."
+  },
+  {
+   "id": "candidate_record.caste_legislation_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context explicitly assigns LOW WEIGHT, states it must never move a grade band on its own, and to mention only when actually relevant; the B grade is explained without it."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement and Vote for Peace Ally rating are the concrete directional evidence for pro-Palestine alignment per the endorsement_evidence_context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodology note confirming endorsements count as concrete stance evidence; not candidate-specific data."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action and Vote for Peace roles and criteria; context for interpreting the endorsements, not independent candidate evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only; 2026-11-03 general election."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only; California State Assembly."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only; she is the sitting member."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata label ('candidates'); no substantive content."
+  }
+ ],
+ "generation_sha256": "facc594ef18388aafef751298721e8c600d87f4cc91bdc1a7533f1a8af42ef61",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T14:40:28Z"
+}

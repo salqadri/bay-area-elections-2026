@@ -1,0 +1,84 @@
+{
+ "candidate_id": "7118a559a740bd2c0fd5a2da",
+ "request_sha256": "fc6de8eba572586bb0eb063bd4eb8bb006a332d108d45a3a8a4a70399dda0ba3",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Jaria Jaug in the 2026 general election, and Vote for Peace rated her an Ally in the same race. Both organizations assess candidates on Gaza/ceasefire and civil-rights positions, and the rubric's endorsement context treats these directional recommendations as concrete stance evidence even absent a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "School-district board seat; no inherent bearing on Gaza or Israel policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on this topic."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating (general) are the concrete directional evidence for the pro-Palestine assessment."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes that these endorsements are treated as concrete stance evidence even without a direct candidate quotation; frames how the endorsement observations are weighted."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action and Vote for Peace evaluate Gaza/ceasefire and civil-rights positions; groups with the endorsement observations."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing context only; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Berryessa Union School District; no bearing on foreign-policy assessment."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status has no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label only."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional information."
+  }
+ ],
+ "generation_sha256": "5fc8a0a209c549b9fa1971881342b7c2525e40e326c6adeb627a682d1ed66b88",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:46:47Z"
+}

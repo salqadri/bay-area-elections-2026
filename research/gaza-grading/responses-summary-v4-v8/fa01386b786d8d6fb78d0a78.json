@@ -1,0 +1,84 @@
+{
+ "candidate_id": "fa01386b786d8d6fb78d0a78",
+ "request_sha256": "7cc1e02a55ca9145aaabe0f04618710e1f946956005d2b8a32196417cf4b1382",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Victor Lopez Pulido and Vote for Peace rated him an Ally, the only recorded directional evidence on his stance toward Palestinian justice. His campaign platform for Union City District 2 addresses housing, immigration, and local governance; no personal statement or legislative action on Israel or Gaza is recorded.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local city-council race, relevant to explaining the scope of the record"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CA is implied by jurisdiction; adds no material clarity"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not bear on Palestine or Israel stance"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers housing, immigration, public safety, local governance; no Palestine, Israel, or Gaza content, which contextualizes why organizational endorsements are the sole directional evidence"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (endorsement level) and Vote for Peace Ally rating are the primary recorded directional signals toward Palestinian justice"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR/VFP tiers are treated as concrete stance evidence; supports interpretation of the endorsements without adding new facts"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR and VFP roles; the endorsements themselves carry the signal, and the org descriptions add no candidate-specific fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not bear on stance assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Union City, CA identifies the local race and confirms the platform's local scope"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata label 'candidates'; no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information or context supplied"
+  }
+ ],
+ "generation_sha256": "8092140d1f56417df1d618685592d4da825a9f922398ea3d5065329b7f2ace5e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:43:36Z"
+}

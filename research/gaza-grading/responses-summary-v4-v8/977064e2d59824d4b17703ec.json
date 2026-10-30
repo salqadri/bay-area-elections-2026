@@ -1,0 +1,66 @@
+{
+ "candidate_id": "977064e2d59824d4b17703ec",
+ "request_sha256": "340551d4ecc4defbc46d74247c2699331a80be4179c4767dbd27b907f449787b",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Ford's office sent tactical gear to the IDF in November 2023, and he pledged to 'do everything in my power to ensure that the Jewish community feels safe in Nevada.' Days after the October 7 attacks, he co-signed a multi-state AG statement condemning Hamas strikes, 'grieving the lives lost in Israel and Gaza.' His campaign platform makes no reference to Gaza or Palestinian rights, and his documented engagement with the conflict centers on material support for Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Name only, no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context, no Palestine signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation, no direct Palestine signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All domestic policy (housing, economy, healthcare, education, environment); no Israel/Palestine content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Tactical gear to IDF, Jewish-community safety pledge, and joint Hamas-condemnation statement are the core directional evidence for the F grade"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date, no directional signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label, no directional signal"
+  }
+ ],
+ "generation_sha256": "ac03a54596b200e06f2b34b03ac0fcf8433861d1086e2999b32ad2aa0d1e8d50",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:58:24Z"
+}

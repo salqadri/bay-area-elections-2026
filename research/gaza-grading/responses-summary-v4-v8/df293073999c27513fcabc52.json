@@ -1,0 +1,84 @@
+{
+ "candidate_id": "df293073999c27513fcabc52",
+ "request_sha256": "659825ba2289baff75d2909ec3cbb5af5adf9f3536c385a007640746a187e8a9",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace, a candidate rating guide that evaluates human rights records and war-lobby/AIPAC funding while also weighing viability, rated Wagner as Opposed in the 2026 California general election for Secretary of State. That opposition by an anti-Zionist organization is the directional evidence underlying this assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the assessment."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Contextual; specifies the statewide Secretary of State race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Contextual; California jurisdiction."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All three PACs carry unestablished relevance; no explicit link to Israel/Palestine policy in the record."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Procedural note confirming the PACs above are independent spending with unestablished relevance; no Palestine-specific content."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Wagner Opposed in the 2026 general; per the rubric, opposition by an anti-Zionist org is concrete directional evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms Vote for Peace opposition counts as concrete stance evidence without a direct candidate quotation; supports interpretation of the focused observation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace as evaluating human rights and war-lobby/AIPAC funding while considering viability; contextualizes the rating."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the 2026-11-03 general election."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Confirms California as the race jurisdiction."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative roster label with no substantive policy content."
+  }
+ ],
+ "generation_sha256": "66784d2db07a8e7f6ed083e82a5605bf99cd3874a356d7ac55b90794f9937098",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:07:25Z"
+}

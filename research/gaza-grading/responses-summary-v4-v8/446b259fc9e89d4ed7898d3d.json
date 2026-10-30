@@ -1,0 +1,66 @@
+{
+ "candidate_id": "446b259fc9e89d4ed7898d3d",
+ "request_sha256": "b6ee2adff0a90f8733b160c369315e110454b91d8531fe13db08dee5d687f7d2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Yekutiel faced weekly protests in San Francisco in 2019 specifically because of his support for Israel, and in January 2024 a source records him affirming Israel's right to exist as a Jewish state. These documented positions mark him as a strong defender of Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Board of Supervisors seat; no bearing on Palestine or Israel policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Geographic context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not speak to Palestine position."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2019 weekly protests over his support for Israel and 2024 affirmation of Israel's right to exist as a Jewish state both document a strong pro-Israel stance supporting the F grade."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "San Francisco jurisdiction; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label only."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "7c19342ac2cfe91b2b3e29c3584d5e1f943a7b56b1fa74a754dd5e87dc156718",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:13:57Z"
+}

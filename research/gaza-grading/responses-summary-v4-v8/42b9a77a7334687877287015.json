@@ -1,0 +1,114 @@
+{
+ "candidate_id": "42b9a77a7334687877287015",
+ "request_sha256": "bd21b306727bbe988747eb96ffef7009d823355154888b35323d49b69cb0040a",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bonta's AG office diverted felony charges against five pro-Palestinian Stanford protesters to community service and restitution in September 2026. His organizational signals are mixed: CAIR Action endorsed him and Vote for Peace rated him \"Ally,\" while California Jewish Democrats, the renamed Democrats for Israel California, endorsed him at \"Support\" tier. The prosecutorial decision is a domestic action rather than a statement on Israeli military conduct, and the Zionist-organization endorsement offsets the pro-Palestine signals.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name, used in prose attribution only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies Bonta as AG, giving context to the diversion action but not independently relevant"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional label, no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation, no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All twelve spenders carry unestablished relevance; no explicit link to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming spending does not establish policy; no actionable fact"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers criminal justice, healthcare, economy, environment; no Israel/Palestine or related speech content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "AG office diverted felony charges against five pro-Palestinian Stanford protesters to community service and restitution, a concrete domestic action in his official capacity"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "uncertain",
+   "treatment": "grouped",
+   "reason": "CAIR endorsement and VfP Ally are favorable; CJD Support is adverse; Samir opposition omitted per samir_allowed false. Signals net to mixed"
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Samir Laymoun context; samir_allowed is false because other relevant evidence exists, so his opposition is not included in prose"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming CAIR/VfP tiers are concrete stance evidence; no independent factual claim"
+  },
+  {
+   "id": "candidate_record.zionist_endorsement_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Establishes CJD is renamed DFI-CA and its Support endorsement counts against the candidate; included to explain the mixed signal"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR and VfP evaluation criteria; contextual only, no additional candidate-specific fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date label, no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Same as state field, no independent signal"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status, no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label, no substantive content"
+  }
+ ],
+ "generation_sha256": "0522f8334382b0ae12b3cf7b87122f9ab5c74c05ca4a8c7f1dce1f5a2b9b19db",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:09:17Z"
+}

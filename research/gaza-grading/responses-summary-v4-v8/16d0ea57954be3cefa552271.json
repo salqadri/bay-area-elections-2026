@@ -1,0 +1,84 @@
+{
+ "candidate_id": "16d0ea57954be3cefa552271",
+ "request_sha256": "a07d0d8f1619bd6004027ae5b83eedf4ef801df302105ae8d4a220e43ca00ea1",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Thomas has built her Oklahoma Senate campaign around a pro-Palestine platform, posting “Free Palestine” and pledging to call for an immediate ceasefire in Gaza and to restore USAID funding. Her anti-AIPAC messaging includes discarding a bin labeled “AIPAC Funds” and identifying as a sole grassroots candidate who rejects AIPAC and corporate PAC money. Vote for Peace rates her an Ally in the general phase.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only, no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context (OK Statewide US Senator), no position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State abbreviation, no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation, no direct policy signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Personal statements: Free Palestine post, ceasefire pledge, USAID restoration pledge, anti-AIPAC messaging and grassroots identity claim."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note about data limitations (since 2024, mixed totals omitted); not evidence of a position."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rates Thomas an Ally in the general phase, concrete directional stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Editorial context explaining how to treat CAIR/Vote for Peace tiers; not a separate factual observation about the candidate."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background descriptions of Vote for Peace and AIPAC roles; not candidate-specific evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03), no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "United States Senate, jurisdiction label only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label ('candidates'), no policy signal."
+  }
+ ],
+ "generation_sha256": "a2bd670bafe7eb65f252972cd4eb82e025968bcb12829944a88c709d2be7d82b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:43:28Z"
+}

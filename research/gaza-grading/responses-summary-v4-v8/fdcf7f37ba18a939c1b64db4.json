@@ -1,0 +1,72 @@
+{
+ "candidate_id": "fdcf7f37ba18a939c1b64db4",
+ "request_sha256": "486d7ccb0cd66007052dc94d5f5e64f3829764aa03009e2e44624304ed90a999",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker records incumbent Morgan Hill councilmember Marilyn Librers as opposing a local peace resolution, an entry dated March 2024 that the source qualifies as a tracker listing rather than a verified roll-call transcript. Her documented opposition to a peace measure is the action bearing on her position toward Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local council seat; provides context for the scope of the recorded vote."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional label; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Nonpartisan label; no independent signal on the issue."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker entry recording opposition to a local peace resolution; the sole substantive directional fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no bearing on current position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Morgan Hill; contextual for the local council action."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Confirms she holds office, making the recorded vote a live action rather than a campaign pledge."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster metadata; no directional signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no information supplied."
+  }
+ ],
+ "generation_sha256": "cb358abb4e763f78b0896603ff25c7ca68d55efcbaf9aecc2b60e2701152ecc6",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:33:05Z"
+}

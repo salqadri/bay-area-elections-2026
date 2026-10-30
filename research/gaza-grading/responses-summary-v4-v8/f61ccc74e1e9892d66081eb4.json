@@ -1,0 +1,96 @@
+{
+ "candidate_id": "f61ccc74e1e9892d66081eb4",
+ "request_sha256": "d21198ebb1781e4a56cbb845fa7308c9207c43d7e9c2bbadaa1229bd9e2f6de2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kean's AIPAC endorsement, his recorded yes vote on the $14.3B Israel Security Supplemental containing no Palestinian humanitarian aid, and his Yea on H.R. 6090 incorporating the IHRA definition into education-discrimination enforcement mark him as a strong defender of Israel. His 2025 statements framing the conflict around October 7 and calling the Israel-Hamas agreement a historic peace deal reinforce that Israel-centric posture. 314 Action Fund, a PAC that received UDP funding, spent approximately $210K against him in 2024.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field; no directional signal on its own."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no independent Palestine signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "AIPAC endorsement and 314 Action Fund UDP-funding context both signal pro-Israel alignment; grouped with gaza_evidence and spenders_opposing in summary."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "314 Action Fund ($209K against Kean) has established relevance via UDP funding context; GIFFORDS, ACTIVATE AMERICA, INDIVISIBLE have unestablished relevance and are omitted."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies these are independent expenditures, not campaign donations; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Recorded Yea on H.R. 6090 incorporates IHRA definition into Title VI education-discrimination enforcement; relevant to pro_palestine_score band 1 criteria."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "AIPAC endorsement, yes vote on $14.3B Israel supplemental with no Palestinian aid, and 2025 statements framing conflict around October 7 and calling the agreement a 'historic peace deal' all support strong pro-Israel position."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding period starts 2024; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal House context; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Status field; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative tag indicating source list; no policy content."
+  }
+ ],
+ "generation_sha256": "bb779ec2825bd7053a01411bae37b1de1bd96c6832fe5dbd92a06ff680119ab4",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:12:46Z"
+}

@@ -1,0 +1,72 @@
+{
+ "candidate_id": "88c36f619f0ada09aafd4534",
+ "request_sha256": "a8fea8f4f77fc09ae32fc5fee3d65d72c636b20d7a9d7f4ffc883c8133af858b",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Turner voted yea on H.R. 6090 in May 2024, the Antisemitism Awareness Act that directs federal education-discrimination enforcement to use the IHRA definition and its examples. In a February 2025 statement, he framed the Gaza conflict as ignited by Hamas on October 7, cited Iran-backed threats to Israel, and called for the US to ensure Gaza peace while addressing the security of both Israelis and Palestinians—an Israel-centric framing that stops short of condemning Israeli military conduct.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no policy content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation; not relevant to policy position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; not relevant to policy position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; not independently relevant to this assessment."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on H.R. 6090 mandates the IHRA definition in federal education-discrimination enforcement, matching the E-band criterion of supporting the IHRA framework."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Israel-centric framing: attributes conflict ignition to Hamas, cites Iran-backed threats to Israel, addresses security of both sides without condemning Israeli military conduct."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no bearing on candidate's policy position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Legislative body label; context only, not a policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; not relevant to policy position."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster label; no policy content."
+  }
+ ],
+ "generation_sha256": "fe1a5cac4c659be0422f696c6c1c3b0feaaa47d17c03a385a3cbc4e7c2de95a8",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:21:29Z"
+}

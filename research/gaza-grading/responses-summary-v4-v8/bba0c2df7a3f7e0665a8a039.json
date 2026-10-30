@@ -1,0 +1,78 @@
+{
+ "candidate_id": "bba0c2df7a3f7e0665a8a039",
+ "request_sha256": "0537f61684c49e77f35fb8493b1bba0abc5f96b83beb46343e49e12add3a4dc1",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Vylma Ortiz in the general phase, and Vote for Peace rated her an Ally in the same phase. Both organizations assess candidates on Gaza/ceasefire positions and war-lobby funding, and their directional recommendations at these tiers serve as concrete stance evidence of alignment with Palestinian justice even absent a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local rent-stabilization office; no bearing on Palestine-related position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on this topic."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-phase endorsement and Vote for Peace Ally rating are the sole directional evidence, both positive for Palestinian justice."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Methodological note confirming the endorsements count as concrete stance evidence; folded into the explanation of why the endorsements matter."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes what CAIR Action and Vote for Peace evaluate (Gaza/ceasefire, war-lobby funding); used to contextualize the endorsements in the paragraph."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future 2026 date; no bearing on stance assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Berkeley; geographic context only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label indicating candidate status."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "c5a997fb790ac7fca9fb8c8e88272886eed1121a11cebd928d681750255bf4b1",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:19:13Z"
+}

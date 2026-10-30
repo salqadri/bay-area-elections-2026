@@ -1,0 +1,72 @@
+{
+ "candidate_id": "4931f907469b7a9eb7dc4ebc",
+ "request_sha256": "9821d9c287ed46c74198564267c2381443e2b25632681e56a302947f6020fd30",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Sanders has made Arkansas a fiscal and diplomatic partner of Israel, announcing a $25–50 million investment in Israeli government bonds and describing her meeting with Netanyahu as cementing an 'unbreakable bond.' On the third anniversary of October 7, her remarks centered on Hamas and she called it 'disgusting and shameful' to use the attacks as an excuse to repeat Hamas talking points. She also signed SB 352, embedding IHRA language into Arkansas school conduct codes.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject by name."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual; she is identified by name and state in the paragraph."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual; Arkansas appears in the SB 352 and bond references."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not bear on Palestinian-justice assessment."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Signing SB 352 embeds IHRA language in school conduct codes, equating anti-Zionist speech with antisemitism in educational settings."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Bond investment, Netanyahu meeting, and Oct 7 anniversary remarks collectively show active defense of Israel and suppression of related critique."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date does not inform the substance of her position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Redundant with state and office fields."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status does not affect assessment of stated positions."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster label; no bearing on candidate's position."
+  }
+ ],
+ "generation_sha256": "eb06446d88031e72d6840c0246c6e93602f8f31f89bd99f0fe6b85e9dce39aee",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:45:20Z"
+}

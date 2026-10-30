@@ -1,0 +1,84 @@
+{
+ "candidate_id": "a31614bbe2fb18e723a383a3",
+ "request_sha256": "2ad1ca808bbca9e357e528c5933c2bbee652d29b5b329a04739ea7ac915ec93d",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Hageman voted to fund Israel's military, called the country 'our ally,' told Free Palestine protesters at the Wyoming Capitol to 'go join the terrorists' while defending Israel's military action, and said Biden's Iran deal led to the October 7 attack. She voted against the IHRA-based Antisemitism Awareness Act, which would embed the IHRA definition in education-discrimination enforcement, citing First Amendment concerns rather than Palestinian rights.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label; no direct Palestine policy signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All five spenders carry unestablished relevance; spending_context confirms no policy inference without explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining why unmapped spenders are excluded; no candidate action."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Recorded Nay on H.R. 6090 (IHRA-based Antisemitism Awareness Act) limits a tool that embeds the IHRA definition in education-discrimination enforcement; her stated rationale was First Amendment, not pro-Palestinian, so the signal is partial."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Six items consistently show pro-Israel framing: voted for military aid, called Israel 'our ally,' told Free Palestine protesters to 'go join the terrorists,' defended Israel's military action, attributed the attack to Biden's Iran deal, voted YES on Israel funding while NO on Ukraine, and participated in event critiquing 'radicalism' regarding Israel."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope note on data collection; no candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate race context; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generation_sha256": "efdf564ef7cbba6b420d32471efd3c429cdf639a0db7eb29a0fe7c427039479d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:52:21Z"
+}

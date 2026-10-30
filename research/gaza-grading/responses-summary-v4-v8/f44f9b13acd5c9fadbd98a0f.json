@@ -1,0 +1,96 @@
+{
+ "candidate_id": "f44f9b13acd5c9fadbd98a0f",
+ "request_sha256": "31950c49ddb2273757084fa9f681f17641ae2c343f49e6b12049f7dbd0a7b7c2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "McGuire traveled to Israel in August 2025 on an AIEF, the AIPAC congressional branch, trip during the ongoing Gaza war, met Netanyahu, and urged him to \"get the job done\" in Gaza. He framed the visit around witnessing October 7 and amplified Laura Loomer posts portraying Gazans as a threat to Western civilization. Vote for Peace opposes his general-election campaign.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative identifier; no Palestine/Gaza relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Covers pro-life, veterans, opioids, fiscal points; no Gaza or Palestine content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "AIEF/AIPAC-branch trip to Israel during the Gaza war, meeting Netanyahu, urging him to 'get the job done,' framing the visit around October 7, and amplifying Loomer posts portraying Gazans as threats all actively shield Israel and oppose Palestinian justice."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "States funding since 2024 only with unresolved totals omitted; no specific relevant amount or source identified."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace opposes McGuire in the general election, a concrete anti-Zionist organizational stance against the candidate."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Interpretive guidance for how to treat VFP/CAIR tiers; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background descriptions of VFP and AIPAC; the AIPAC-branch link is already stated in gaza_evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative date; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative; no Palestine/Gaza relevance."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Status flag; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Categorization label; no directional signal."
+  }
+ ],
+ "generation_sha256": "4798a2542d09a23febdb9ad2935cc7391aaab558b43e4d9a6ac7825f66e2e97e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:29:49Z"
+}

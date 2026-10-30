@@ -1,0 +1,84 @@
+{
+ "candidate_id": "bbccb59002a6fcb281eb84db",
+ "request_sha256": "7bdc900046429dc5076b128000f8d87c20c195f7e850e7f573d0f080ae7fe9c6",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Hazelton for the general election, and Vote for Peace rated him Ally, both organizations that weigh Gaza and human-rights positions in their assessments. His platform addresses local education, sanctuary schools, and civil-liberties protections but does not name Palestine or Israel. The endorsements indicate organizational alignment with pro-justice positions without a recorded personal statement on the conflict.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local board seat; no bearing on Palestine/Israel policy assessment."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no directional signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers education, sanctuary schools, and civil-liberties inclusion but contains no reference to Palestine, Israel, Gaza, or the conflict; included to show the platform's local scope."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed and Vote for Peace rated Ally for the general election; primary directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Rubric context confirming these recommendations count as concrete stance evidence; supports reading of the endorsements row."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace as organizations evaluating Gaza/ceasefire and human-rights positions; contextual for the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date of the race; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "San Francisco USD; no Palestine-specific relevance."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no evaluative content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information supplied."
+  }
+ ],
+ "generation_sha256": "4fcce709306a843d81e250e0367647a2f6ecc301120765f18567fd2c6d0c4130",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:56:12Z"
+}

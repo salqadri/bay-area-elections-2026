@@ -1,0 +1,78 @@
+{
+ "candidate_id": "dfb22511d2871feab1fd6686",
+ "request_sha256": "9acb5276b909ae398e697d52c7958c0e06f08addee03c2a4e22edec01ae8a7b1",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action placed Crutchlow in its 'preferred' tier for the 2026 Santa Clara City Council general, a directional recommendation the organization bases on candidates' civil-rights and foreign-policy positions, including Gaza and ceasefire stances. That tier falls one step below a full endorsement, and the assessment here tracks the organizational recommendation rather than a first-person statement or vote by Crutchlow.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the assessment."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes local-council context for the race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Jurisdictional context; grouped with office and jurisdiction."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no signal on Palestinian-justice positions."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier in the general is the sole directional evidence; per rubric this maps to band B."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR recommendations count as concrete stance evidence; supports treating the preferred tier as directional."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that CAIR Action is an advocacy/recommendation body and that 'preferred' is not a full endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the race to 2026; contextual for the recommendation."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Santa Clara; grouped with office and state for context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Internal roster label with no bearing on the candidate's position."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "2d0994c9f2b4fd15af1460328344c44bcd5a4c9e2129fe0ad63dd653ce850fde",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:42:34Z"
+}

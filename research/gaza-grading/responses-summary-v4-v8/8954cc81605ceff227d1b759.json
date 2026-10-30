@@ -1,0 +1,84 @@
+{
+ "candidate_id": "8954cc81605ceff227d1b759",
+ "request_sha256": "cef17d43c8ec8f15205ddffad1caa7d0650af778f16b0b219d05289d169f6c9a",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Lee voted Yea on H.R. 6090, embedding the IHRA definition in federal education-discrimination enforcement, and in November 2023 voted to censure Rep. Tlaib over remarks characterized as calling for Israel's destruction. In July 2025 she framed Gaza as a 'humanitarian crisis,' and in 2026 voted against eliminating US aid to Israel while criticizing Netanyahu. The pattern is Israel-centric framing that stops short of holding Israel accountable for the war's human cost.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no bearing on Palestine stance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct policy signal on this issue."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers healthcare, education, housing, environment, veterans, criminal justice; no Israel/Palestine or Gaza content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Recorded Yea on H.R. 6090 embedding IHRA definition in Title VI enforcement; directly supports the IHRA-criterion element of the E assessment."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Five items collectively show Israel-centric framing: censure of Tlaib (2023), 'humanitarian crisis' language (2025), vote against eliminating US aid while criticizing Netanyahu (2026), plus two statements without recorded content. No item supports a pro-Palestine or anti-aid position."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope note only; no specific organization funding amounts or identities supplied."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Structural field; no policy content."
+  }
+ ],
+ "generation_sha256": "7b170694429b4309a7079b85ee8c190d372abd524baaec2ffeaca3fe5ec2ea11",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:16:19Z"
+}

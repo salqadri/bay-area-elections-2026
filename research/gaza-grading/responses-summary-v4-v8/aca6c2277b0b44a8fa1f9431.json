@@ -1,0 +1,78 @@
+{
+ "candidate_id": "aca6c2277b0b44a8fa1f9431",
+ "request_sha256": "5962bbd2bd377a70af7f329847594c1132cbc6bbb88470268d971f24a3718790",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Jason Amezcua for the general election in the Morgan Hill Unified School District Trustee Area 1 race. The endorsement reflects the organization's evaluation of his stance on civil rights and Gaza/ceasefire positions and serves as the recorded basis for his pro-Palestine assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes the local school-board context of the race"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Confirms California jurisdiction"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status; no directional signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-election endorsement is the sole directional evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Interpretive guidance confirming the endorsement functions as stance evidence"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's evaluative criteria (civil rights, Gaza/ceasefire) underlying the endorsement"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Temporal context for the 2026 race"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Morgan Hill USD specifies the local race"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative roster label with no policy content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information"
+  }
+ ],
+ "generation_sha256": "57fb683cb1ab197a1b09438650ffcf284dc1ed64a14f7be0454bba0cf6d14108",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T13:24:14Z"
+}

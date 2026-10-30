@@ -1,0 +1,132 @@
+{
+ "candidate_id": "6e5cfe7a7f104c5ff0327fd4",
+ "request_sha256": "2ab4b25a7825d77d4624de740d894995b0ac4f44c38b8afa0b597abaaac357b8",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Wiener declined to call Gaza's destruction genocide when directly asked in a January 2026 debate, saying so only in a follow-up video after sustained criticism. He earlier affirmed a Jewish state, opposed ceasefire resolutions as fueling antisemitism, and co-authored AB 715, a classroom-oversight bill CAIR California warned could censor Palestine teaching. A California Jewish Democrats 'Support' endorsement and Vote for Peace's 'Opposed' rating sit alongside his opposition to offensive arms sales and support for Iron Dome.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identifier only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CD-11 US Representative; jurisdictional context, no Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CA; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Democratic Party; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Explains J Street, JStreetPAC, Vote for Peace, AIPAC roles; context for interpreting other fields, no independent signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Most spenders have unestablished relevance; J Street Action Fund $60k noted but JStreetPAC-family backing carries little weight per policy and adds no material explanation beyond endorsements already captured."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies spending is independent, not campaign contributions; no direct Palestine signal."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Common Sense SF and A Fight Worth Having; relevance unestablished, no Palestine connection."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Healthcare, immigration, housing, civil liberties, transportation, abortion, LGBTQ, science—no Israel/Palestine content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "AB 715 coauthorship and Aye vote on a classroom-material oversight bill CAIR California warned could censor Palestine teaching; material to the assessment. AB 1468 failed and is less material; grouped under AB 715."
+  },
+  {
+   "id": "candidate_record.caste_legislation_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Explicitly flagged as low-weight, non-Gaza context; instructions say grade strictly on Gaza record and mention only when actually relevant."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "uncertain",
+   "treatment": "grouped",
+   "reason": "Contains material evidence in multiple directions: 2021–2024 pro-Israel framing (Jewish state, opposing ceasefires, urging Israeli operations), 2025 SCR 105 humanitarian condemnation, January 2026 debate refusal followed by video genocide statement after criticism, and 2026 campaign positions (genocide, opposes offensive arms, supports Iron Dome, settlement = ethnic cleansing, reject AIPAC). Net signal mixed; the refusal-plus-pressure sequence and earlier pro-Israel record anchor the D assessment while the later genocide language and arms-sale opposition are favorable elements."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note: funding since 2024 only; no independent signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "California Jewish Democrats 'Support' (Zionist org per zionist_endorsement_context) is adverse; Vote for Peace 'Opposed' is adverse; JStreetPAC endorsement carries little weight per policy. CJD and VfP included in prose."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Instructs how to treat CAIR/VfP ratings as concrete stance evidence; methodological context, not an independent fact."
+  },
+  {
+   "id": "candidate_record.zionist_endorsement_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Establishes CJD as a Zionist organization whose endorsement counts against the candidate; informs the adverse assessment of the CJD 'Support' tier already included in focused_endorsement_observations."
+  },
+  {
+   "id": "candidate_record.reviewed_evidence_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Preserves the debate-refusal-to-video sequence as a political-pressure concern rather than an unqualified ideological shift; opportunistic motive flagged as interpretation. Informs how the genocide statement is framed in prose."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; scheduling context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "United States House of Representatives; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Categorization label 'candidates'; no policy signal."
+  }
+ ],
+ "generation_sha256": "ddda46d468adc4891a855ad293e9fa874cf64138a69554e954d7852a24fbc8e2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T14:37:23Z"
+}

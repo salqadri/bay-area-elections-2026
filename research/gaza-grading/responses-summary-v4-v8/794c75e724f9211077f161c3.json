@@ -1,0 +1,108 @@
+{
+ "candidate_id": "794c75e724f9211077f161c3",
+ "request_sha256": "d3a7a91aff03a449d6f7795e795ea447b394faaa17374463da72dcca4810d722",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Steil voted Yea on H.R. 6090, embedding the IHRA definition of antisemitism in federal education-discrimination enforcement, and was rated Opposed by Vote for Peace for the general election. In August 2025 he posted on X that \"Hamas should surrender and release the hostages,\" framing the conflict around Hamas's obligations without mentioning civilian casualties or occupation. A 2019 office press release described a congressional Israel trip as a chance to \"ask tough questions.\"",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; not a policy or stance item."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a specific Palestine position."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "IN UNION USA spend is explicitly marked 'unestablished' relevance; spending_context says unmapped spenders should not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note governing how to treat spender data; not a candidate action."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on H.R. 6090 embeds IHRA definition in Title VI education-discrimination enforcement; directly relevant to E-grade criterion on supporting IHRA framework."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "2025 X post frames conflict solely around Hamas obligations without mentioning civilian casualties or occupation (Israel-centric framing); 2019 press release on Israel trip is older and relatively neutral but shows Israel engagement."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding window since 2024; no directional Palestine signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Steil 'Opposed' in the general phase; per endorsement_evidence_context this is concrete stance evidence and meets E-grade criterion for opposition by an anti-Zionist org."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Rubric context explaining how to weight Vote for Peace / CAIR Action tiers; not a candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Describes Vote for Peace's methodology; editorial context, not a candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal House; contextual only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no policy signal."
+  }
+ ],
+ "generation_sha256": "e6e3597a94de89d7f64e0e9af749322cede549a003f28f8b5da8df4d61c50e0f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:30:51Z"
+}

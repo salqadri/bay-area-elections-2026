@@ -35,7 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v8.json'
-STATE_VERSION = 'candidate-evidence-v19-cjd-zionist-context'
+STATE_VERSION = 'candidate-evidence-v20-policy-channel-low-weight'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -264,8 +264,20 @@ def build_state(p, c, data):
     # Education-policy evidence has its own complete channel. It must not be
     # silently lost behind the generic twelve-item budget or imply a grade.
     policy = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') == 'antisemitism_education']
+    caste = [e for e in policy if 'caste' in e.get('summary', '').lower() or 'SB 403' in e.get('summary', '')]
+    policy = [e for e in policy if e not in caste]
     if policy:
         parts['antisemitism_education_policy_evidence'] = [compact_policy_evidence(e) for e in policy]
+    if caste:
+        parts['caste_legislation_context'] = {
+            'weight': ('LOW WEIGHT context, not a Gaza position. The 2023 California SB 403 caste-discrimination bill '
+                       '(vetoed by Newsom; the 2025 SB 403 is an unrelated bill) concerns Hindutva accountability — '
+                       'a parallel the owner values against supremacist ideologies, but it ranks far below Gaza. '
+                       'This context may shift the score at most 0.2 in either direction and must NEVER move a grade '
+                       'band on its own: authoring or voting aye is small positive; demanding removal of the word '
+                       '"caste", co-signing a delay-and-study letter, or abstaining is small negative. Grade strictly '
+                       'on the Gaza record; mention caste history only when actually relevant to this candidate.'),
+            'items': [compact_policy_evidence(e) for e in caste]}
     generic = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') != 'antisemitism_education']
     # Filter before budgeting so an omitted old/mixed total cannot displace a
     # valid current observation. New or edited funding claims require review.

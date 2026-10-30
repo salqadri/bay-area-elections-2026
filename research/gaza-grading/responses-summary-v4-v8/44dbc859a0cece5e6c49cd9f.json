@@ -1,0 +1,66 @@
+{
+ "candidate_id": "44dbc859a0cece5e6c49cd9f",
+ "request_sha256": "19a9b5f90ca7e5bd212a95adfdd456649792459f333588d6485ec16a44f1aef0",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Wilson, running for South Carolina governor, signed a December 2023 letter with thirteen other Republican AGs demanding media outlets sever ties with Gaza-based freelancers accused of Hamas affiliation, and in October 2024 spoke at a 'Gamecocks for Israel' event expressing solidarity with Israel and calling for hostage release. His campaign platform contains no statement on Palestinian justice, Gaza, or U.S. policy toward Israel, so his documented record on the conflict consists of these two pro-Israel actions.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "States the office sought (SC Governor); no Palestine-related policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation provides no specific Palestine-policy information in the supplied record."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Eight platform points cover criminal justice, education, transportation, healthcare, immigration, economy, civil liberties, and ethics; none address Palestine, Gaza, Israel, or related speech policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Dec 2023 letter with 13 other Republican AGs demanding media cut ties with Gaza-based freelancers framed as Hamas affiliates; Oct 2024 speech at 'Gamecocks for Israel' event expressing solidarity with Israel and calling for hostage release. Both are pro-Israel actions."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03); no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "States jurisdiction as South Carolina; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label ('candidates'); no substantive policy information."
+  }
+ ],
+ "generation_sha256": "c60f46799fe2ae90edfa43a8975a54135f40f353107a6c122a7e85a1c223346c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:02:29Z"
+}

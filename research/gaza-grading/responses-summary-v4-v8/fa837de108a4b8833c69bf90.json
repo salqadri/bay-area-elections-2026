@@ -1,0 +1,114 @@
+{
+ "candidate_id": "fa837de108a4b8833c69bf90",
+ "request_sha256": "ab15fd243f8fe6599f04e549815ec14eb7c65d11094141788bbb2c8de5c9d2e7",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Adam Gray voted Yea on HR 23, the Illegitimate Court Counteraction Act, in January 2025, and a Sway endorsement page lists AIPAC PAC 2026 Endorsements among groups backing his House campaign. Vote for Peace opposed him in the general election, and his platform points address no Israel or Palestine policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office held; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine signal"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All four spenders marked unestablished relevance; spending context prohibits using them without other explicit evidence"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining why unmapped spenders are excluded"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "CLF and Conservative Caucus both unestablished relevance; no Palestine-specific evidence established"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers economy, water, agriculture, education, criminal justice, healthcare, immigration, and Iran war powers; no Israel or Palestine policy stated"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on HR 23 ICC counteraction (Jan 2025) and AIPAC PAC 2026 listed on Sway endorsement page both align with pro-Israel institutional positions"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope limitation note; no directional signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Opposed in general phase; concrete anti-Zionist stance evidence per endorsement context"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming VFP/CAIR tiers are concrete stance evidence"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "grouped",
+   "reason": "Describes AIPAC PAC as pro-Israel and VFP as evaluating war-lobby funding; context for the two orgs named in summary"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing context; no directional signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "US House; no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no directional signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster metadata; no directional signal"
+  }
+ ],
+ "generation_sha256": "3bbf66cd493e7a54eb403d81e6aab60b94f96f57d3aaa27747e75ae8c9a66114",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:56:50Z"
+}

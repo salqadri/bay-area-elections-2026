@@ -1,0 +1,78 @@
+{
+ "candidate_id": "d6a33ab61a5ea4e3aacbd6c1",
+ "request_sha256": "eaf640bdfe9547f9dc7b84474d973166f35036fc404b0f809f6c61596b5e91f2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action's general-election endorsement of Armendáriz for Gilroy District 6 is the documented directional evidence in her record, a tier above its 'preferred' recommendation and one that weighs Gaza and ceasefire positions. No personal statements, council votes, or campaign pledges on Palestinian justice or Israel policy appear in the record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides local-office context for the endorsement."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CA jurisdiction is implied by office and jurisdiction fields; no independent signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement in the general phase is the sole documented directional evidence, weighing Gaza/ceasefire positions."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action tiers count as concrete stance evidence; folded into the endorsement description."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action weighs civil-rights and Gaza/ceasefire positions; context for the endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Specific date adds no material clarity beyond the general-phase label."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Gilroy anchors the local-office context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; confirms no additional party data; no directional signal."
+  }
+ ],
+ "generation_sha256": "dbb33aa3da35cd1f09d16f60a999f4e314687508361b3a0ebb063e1c31cc698a",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:29:19Z"
+}

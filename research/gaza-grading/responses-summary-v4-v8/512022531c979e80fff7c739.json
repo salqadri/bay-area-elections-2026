@@ -1,0 +1,72 @@
+{
+ "candidate_id": "512022531c979e80fff7c739",
+ "request_sha256": "bfac579a96309baf8e625ed6b3c02b0424a95bd89bbbfb9492bb8e696367142c",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker, dated December 18, 2023, records Jimenez as opposing a ceasefire resolution in Foster City. The entry is a tracker listing rather than a verified roll-call transcript, but it documents a local action against halting the war in Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office title; no policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records opposition to a local ceasefire resolution; documents adverse action against Palestinian justice"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City name; contextual only"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster classification; no policy signal"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Null value; no information available"
+  }
+ ],
+ "generation_sha256": "9a88eaeb754b8b93c46dfad70ab8ffd44c8ccb56800b2d9c67dab17aebac75ff",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:25:55Z"
+}

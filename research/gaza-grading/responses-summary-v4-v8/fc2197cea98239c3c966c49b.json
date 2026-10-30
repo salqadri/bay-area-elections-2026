@@ -1,0 +1,84 @@
+{
+ "candidate_id": "fc2197cea98239c3c966c49b",
+ "request_sha256": "9522c143b0a40001f452ed2fcb3f076386da1a657497f54449f60ea68e5b29ae",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Klobuchar's position on Palestinian justice rests on her August 2025 public explanation of a shift to supporting a cutoff of U.S. military aid to Israel, departing from her prior pro-aid stance. The record does not establish a genocide designation or full attribution of responsibility to Israel, and Vote for Peace, which weighs viability alongside human-rights positions, rated her Opposed in the general election. These elements place her beyond condemning harm alone but short of full accountability for Israeli policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field only; no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Statewide governor race context; no Palestine-related content"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no directional signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-related content"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address economy, education, criminal justice, environment, housing, and ethics; no Israel/Palestine or foreign-policy content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Documents August 2025 public explanation of shift to supporting a cutoff of U.S. military aid to Israel, departing from prior pro-aid stance"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Klobuchar Opposed in the general election; per rubric this is a concrete directional signal"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms VFP directional ratings are concrete stance evidence; supports interpretation of the Opposed rating"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Notes VFP weighs viability alongside human-rights and AIPAC-funding factors; qualifies the Opposed rating's scope"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no directional signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State of Minnesota; no Palestine-related content"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorization tag; no directional signal"
+  }
+ ],
+ "generation_sha256": "62e62aa7cde4f5c84f79f7a12520c670f547c4b424c600981b03c20c576bb8fd",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:57:48Z"
+}

@@ -1,0 +1,120 @@
+{
+ "candidate_id": "8adeb81b78e8cf937d7978a8",
+ "request_sha256": "61331380f07090a723133371821117b775c0ccad1790ca3d0a2fcb9c0728d585",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "El-Sayed called for a Gaza ceasefire within days of the October 2023 attacks, accused Congress of funding a military 'imposing genocide and mass starvation in Gaza,' and called Israel 'just as evil' as Hamas. His campaign frames opposing military aid to Israel as a core platform. Vote for Peace rates him Ally; the AIPAC-backed UDP spent over $20 million against him, and Citizens Against AIPAC Corruption spent in his support. He is an owner-confirmed member of the pro-Palestine Muslim community.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used in summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context not material to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier not material to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation not material to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in pro-Palestine Muslim community; affirmative alignment evidence"
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Explains the part_of_muslim_community field; grouped with that entry"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Defines Track AIPAC, UDP, and Vote for Peace roles; contextual, not a candidate action"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Citizens Against AIPAC Corruption spent $57,721.63 independently for El-Sayed; other spenders have unestablished relevance"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies spending is independent, not campaign money; contextual note"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "AIPAC-backed UDP spent $20.1M independently against El-Sayed; other opposing spenders have unestablished relevance"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers healthcare, ethics, economy, education, jobs; no Israel/Palestine content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Ceasefire calls from Oct 2023, genocide accusations, 'just as evil as Hamas' statement, campaign framing of opposing military aid"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding data covers 2024 onward; contextual limitation, not a candidate fact"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rates El-Sayed as Ally in the general phase"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Explains how directional endorsements are treated under the rubric; methodological context"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date not material to Palestine position assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate race context not material to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Internal roster label, not a candidate fact"
+  }
+ ],
+ "generation_sha256": "823395f4b65008dab0f69a1e71d16b62a6f02ded160bb81035d4f5aacf82f647",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:34:53Z"
+}

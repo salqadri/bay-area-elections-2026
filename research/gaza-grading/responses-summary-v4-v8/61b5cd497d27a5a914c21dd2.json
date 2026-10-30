@@ -1,0 +1,78 @@
+{
+ "candidate_id": "61b5cd497d27a5a914c21dd2",
+ "request_sha256": "61ce3eac698786243c70fc517ff16be60610c3e5a86a4a86fa646b92f89823ce",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Moni Gangopadhyay for the 2026 Berkeley general election, and Vote for Peace rated the candidate an Ally in the same race. Both organizations evaluate candidates on Gaza ceasefire positions, war-lobby funding, and human rights records. The record's endorsement context treats these directional recommendations as concrete stance evidence, establishing the candidate's alignment with Palestinian justice for this local race.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identity used to name the candidate in the prose."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local City Council race, relevant context."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Implied by jurisdiction; adds no material information."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status is not relevant to Palestinian-justice assessment."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general endorsement and Vote for Peace Ally rating are the core directional evidence for the grade."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains that the endorsements function as concrete stance evidence per this rubric; grouped with the endorsement facts."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes what CAIR Action and Vote for Peace evaluate; grouped to explain the relevance of the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the endorsements as 2026 general-election recommendations."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local Berkeley context for the race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorical label with no bearing on the candidate's position."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information to incorporate."
+  }
+ ],
+ "generation_sha256": "4c852f06e551c0bf6464382f422f18349dd44c28730bff06fa9b652ea93dcfbd",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:20:16Z"
+}

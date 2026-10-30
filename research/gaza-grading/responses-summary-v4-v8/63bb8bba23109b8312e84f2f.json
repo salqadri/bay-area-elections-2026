@@ -1,0 +1,96 @@
+{
+ "candidate_id": "63bb8bba23109b8312e84f2f",
+ "request_sha256": "29b94226d360fd584931d24770f846490e69f185756ac7c917c5ca56dfdda2e1",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Soto voted Yea on H.R. 6090, incorporating the IHRA definition into education-discrimination enforcement, and in 2017 supported recognizing Jerusalem as Israel's capital. At a 2024 meet-and-greet, activists cited his censure of Tlaib, votes for increased Israel funding, and vote against recognizing Gaza Health Ministry death counts. His October 2025 statement called for a \"surge of aid to Palestinians in need\" but framed it alongside condemning Hamas and pursuing Israel-Gaza peace negotiations, an Israel-centric framing with limited Palestinian solidarity.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All three spenders marked unestablished relevance; spending_context confirms they cannot explain a Palestine assessment without explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Explains that unmapped spenders have unestablished relevance; no Palestine-specific content."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Economy, healthcare, housing, immigration, environment, Puerto Rico points; no Israel/Palestine or related-speech content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Recorded Yea on H.R. 6090 directs IHRA definition into Title VI education enforcement; matches E-band IHRA-support criterion."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "2017 Jerusalem press release (adverse), 2024 activists citing censure of Tlaib / Israel-funding votes / rejecting Gaza MoH counts (adverse), 2025 aid statement framed with Hamas condemnation and Israel-Gaza peace talks (Israel-centric with limited sympathy). Grouped as a pattern."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Scope note for spenders; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine-relevant content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster tag only; no substantive content."
+  }
+ ],
+ "generation_sha256": "5715dcc41ad0d2ed4364f0120f4f09c9c19da8ba2eb0f0b1790dc2d2d4684cea",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:02:19Z"
+}

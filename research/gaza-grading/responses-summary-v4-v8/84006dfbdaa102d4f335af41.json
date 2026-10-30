@@ -1,0 +1,84 @@
+{
+ "candidate_id": "84006dfbdaa102d4f335af41",
+ "request_sha256": "ddc32331e2145451a890d80cec40f13716170fd6ec380f9466a9183701c7583e",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action designated Eve Marie Little as 'preferred' for her 2026 Newark City Council general election, a tier below full endorsement. The B grade reflects that this organizational recommendation, absent a documented personal statement or legislative action on Palestinian justice, represents the ceiling for a candidate whose sole directional signal is an external assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identity reference for the candidate"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Context for the race (City Council)"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CA is implied by jurisdiction; adds no explanatory value"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status has no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Sole directional evidence: CAIR Action 'preferred' tier for general"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Internal methodology note on how CAIR tiers are treated; not voter-facing"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background on CAIR Action's role; not a candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Used as '2026' qualifier in the summary"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the race as Newark City Council"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status unrelated to Palestine position"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Administrative label, no policy content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Null value; no information provided"
+  }
+ ],
+ "generation_sha256": "1a61d1f3eb3e60ecce03c0adf84340871435332bf07095a8e84ee3cecff09a81",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:33:38Z"
+}

@@ -1,0 +1,96 @@
+{
+ "candidate_id": "c4f3f541727ecba5029637d6",
+ "request_sha256": "a58fb1adf3a7f25a542941e67456519f7656e3f50e5519889919ad4656e7c5ca",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Shah voiced support for Israel in October 2023 and, per a 2026 Algemeiner report, supported Israel's war to destroy Hamas while lamenting civilian casualties. A JDCA guide observed in October 2026 that he backs U.S. Iron Dome funding and a two-state solution. BOLD America, which received funding from AIPAC-backed United Democracy Project, spent $1.7 million opposing him, a tension the record does not resolve.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine relevance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context; no Palestine relevance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no independent Palestine signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All listed spenders carry unestablished relevance to Palestine; no explicit connection in record."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological instruction clarifying spending is independent; no candidate-specific Palestine fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Establishes BOLD America as pro-Israel via UDP/AIPAC funding; relevant to interpreting the $1.7M opposition spend."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "BOLD America $1.7M opposition is a documented tension with Shah's stated pro-Israel positions; other spenders unestablished."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "No mention of Israel, Palestine, Gaza, or Middle East policy in any platform point."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Core evidence: 2023 support for Israel, 2026 Algemeiner report of support for war to destroy Hamas, 2026 JDCA guide on Iron Dome and two-state solution."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "uncertain",
+   "treatment": "omitted",
+   "reason": "Hindu American PAC endorsement; record does not establish it is a Hindutva organization, so the F-band endorsement prong cannot be confirmed."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing; no Palestine relevance."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Federal House race context; no independent Palestine signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy content."
+  }
+ ],
+ "generation_sha256": "61bcaa6c72ea7e7b2c68b28c1426950343b9f25af5662a5a8055aa74c66da3f3",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:53:05Z"
+}

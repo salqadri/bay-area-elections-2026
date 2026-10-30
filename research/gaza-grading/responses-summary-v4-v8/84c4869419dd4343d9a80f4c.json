@@ -1,0 +1,78 @@
+{
+ "candidate_id": "84c4869419dd4343d9a80f4c",
+ "request_sha256": "2f771b46e014ba9b3234977a6117310973fb005855448c6582a6bd7fbb8e1483",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's December 2023 tracker records Sherry Hu as having opposed a ceasefire resolution; the entry is qualified as a tracker listing rather than a verified roll-call transcript. Her Dublin Mayor platform is confined to local priorities—public safety, parks, jobs, transportation, and school partnerships—with no foreign-policy or Palestine-related position. The recorded opposition to a ceasefire, uncountered by any pro-Palestine statement or action in the record, drives the assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "At large Mayor; contextual only, no Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; contextual only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan; no directional signal on Palestine."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Platform covers only local Dublin issues (safety, parks, jobs, transportation, school partnerships); no foreign-policy or Palestine-related position stated."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker (2023-12-19) records opposition to a ceasefire resolution; qualified as tracker entry, not verified roll-call transcript. This is the sole directional Palestine evidence in the record."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; contextual timing only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Dublin; contextual only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional context provided."
+  }
+ ],
+ "generation_sha256": "1e6be966b6f1995d353e4af837932679f28417cd8ed0b55e6f96c11621284c8b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:21:52Z"
+}

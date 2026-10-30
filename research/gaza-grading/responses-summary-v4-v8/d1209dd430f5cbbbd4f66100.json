@@ -1,0 +1,102 @@
+{
+ "candidate_id": "d1209dd430f5cbbbd4f66100",
+ "request_sha256": "82ca5a6a85af0380d947ae709155ee2a16be6f7e7555a9dc4a3d95be7ba643eb",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Lawrence repeatedly and personally labeled Israel's attacks on Gaza a genocide—at a Latino community forum, in social-media posts, and as a core credential of his MI-7 campaign. His platform calls for stopping arms sales to Israel and pursuing diplomatic solutions rather than military escalation. Vote for Peace rated him an Ally for the general, and DMFI spent roughly $1 million against him via Rolling Sea PAC.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used in prose; no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no Palestine policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine policy signal"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All listed spenders marked unestablished relevance; spending_context prohibits inferring policy from unmapped spenders"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note governing how to treat spending data; not a factual claim about the candidate"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All listed spenders marked unestablished relevance; no explicit Palestine-policy link in the record"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Platform explicitly calls for stopping arms sales to Israel and diplomatic solutions over military escalation"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Multiple first-person genocide statements (forum, social media, campaign framing), DMFI ~$1M opposition via Rolling Sea PAC, and pro-Palestine campaign positioning"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Lawrence Ally in the general phase; per endorsement_evidence_context this is concrete stance evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Rubric instruction on how to weight VFP/CAIR ratings; not a factual claim about the candidate"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Describes Vote for Peace methodology; no additional candidate-specific fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date context; no Palestine policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal House race; no Palestine policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Classification tag; no factual content"
+  }
+ ],
+ "generation_sha256": "318a7ae529b48794766ad8f55999401780a1cc2751514c1b152d86d9c1b4597d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:09:31Z"
+}

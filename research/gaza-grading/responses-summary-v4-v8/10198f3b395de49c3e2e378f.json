@@ -1,0 +1,78 @@
+{
+ "candidate_id": "10198f3b395de49c3e2e378f",
+ "request_sha256": "28ec0f7291a98316bfed617ff9e4d26e7b5512af0f7ea507becc58e19a6663db",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action lists Cheris Crocker-Root as preferred, a recommendation tier below full endorsement, for the 2026 Union City District 3 City Council general election. No personal statement, legislative action, or campaign pledge on Gaza or Palestinian justice is documented in the record. The preferred recommendation, standing alone without a full organizational endorsement or personal advocacy, corresponds to this level of assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name for reference in the paragraph"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local race context"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Jurisdiction context for the race"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not bear on Palestinian-justice positioning"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action preferred tier is the sole directional evidence on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that preferred is a recommendation tier, not full endorsement; folded into the main fact"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action role and confirms preferred is below endorsement; folded into the main fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the race as the 2026 general"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Union City identifies the local context"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label adds no directional or contextual information"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information available"
+  }
+ ],
+ "generation_sha256": "2611cd398d5e7251fedee79f06d7812afaaf11944a847dbb9bff321082111fef",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:44:15Z"
+}

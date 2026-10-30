@@ -1,0 +1,84 @@
+{
+ "candidate_id": "088f3c06f7688ca03e77b1c3",
+ "request_sha256": "b011baef35a6eccbeb8435fee348d1e7b6c6538de8916519999fe4350439b399",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action placed Seema Kanani in its 'preferred' tier for the Milpitas at-large city council general election. The recommendation is the sole directional evidence in the record; no personal statements, votes, or other documented action on Gaza or Palestinian justice accompanies it.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used to identify the subject in the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides the level and type of office for context."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Subsumed by jurisdiction context; no independent relevance to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestinian-justice positioning."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier is the sole directional evidence supporting the grade; Samir Laymoun 'supported' omitted per source policy (other relevant directional evidence exists)."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal editorial guidance for source handling; not voter-facing content."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric methodology explaining how CAIR recommendations are weighted; not a fact about the candidate."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Background on CAIR Action's role; the 'preferred' tier is already stated in the summary."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not materially clarify the candidate's position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Milpitas identifies the local race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label; no bearing on Palestinian-justice assessment."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no additional information supplied."
+  }
+ ],
+ "generation_sha256": "2f9f8045b38d6d76de166c9b1c3d6db7fb276eef81a29cda63faaeeefe3d1c76",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:30:54Z"
+}

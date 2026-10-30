@@ -1,0 +1,78 @@
+{
+ "candidate_id": "6dc7e3d7fb054343905b65c4",
+ "request_sha256": "a6424aa906412c6f915422d9b82cce32de8715634184426f008eb2b4bd2660eb",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace, which rates candidates on human rights positions and war-lobby funding, designated Olson an \"Ally\" in the 2026 South San Francisco general election. That directional rating is the recorded evidence of her stance on Palestinian justice; no personal legislative action, platform statement, or public remark on the issue appears alongside it.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate identity; used for third-person reference in the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local city council office; no bearing on Palestine/Israel policy position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; not relevant to the assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on Palestine."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace designated Olson 'Ally' in the general phase; the sole directional evidence of her stance on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms Vote for Peace Ally ratings count as concrete stance evidence without a direct candidate quotation; groups with the endorsement observation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace as a rating guide evaluating human rights and war-lobby funding; contextualizes the Ally tier without adding independent directional signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date provides no information on Palestine/Israel position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of South San Francisco; no Palestine-relevant policy context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label; no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional party affiliation or directional evidence."
+  }
+ ],
+ "generation_sha256": "a7c74b12140bfd907c13688185dc6ee4b9578ff2ae0b2117c88b7c5a73333be1",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T13:23:53Z"
+}

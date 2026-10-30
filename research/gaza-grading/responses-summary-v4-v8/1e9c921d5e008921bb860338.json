@@ -1,0 +1,66 @@
+{
+ "candidate_id": "1e9c921d5e008921bb860338",
+ "request_sha256": "d6466196c95bd0107eeb990bed514601cad5da477c947ff956bb173c93e2aa05",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "JTA, Jewish Insider, and the Baltimore Jewish Times characterize David Jolly's congressional record as 'pro-Israel' or 'moderate, pro-Israel' from August through October 2026, and his governor's campaign platform contains no position on Israel or Palestine. The repeated external characterization, running from his primary win into the general-election period, places his documented record on the pro-Israel side.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (FL Statewide Governor); no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Democratic Party affiliation does not establish a position on Palestinian justice or Israel."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Eight platform points cover housing, healthcare, education, climate, ethics, economy, and civil liberties; none address Israel, Palestine, or Gaza. Briefly noted to show the candidate has not positioned on the issue through the platform."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Five items (JTA 8/18, JTA 10/7, Jewish Insider 10×2, Baltimore Jewish Times 10/30) consistently characterize Jolly as 'pro-Israel' or 'moderate, pro-Israel' based on his congressional record. These are third-party media characterizations, not the candidate's own words, but they are repeated across multiple outlets and the Aug–Oct 2026 span. No pro-Palestine statements or actions appear in the record."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date 2026-11-03 provides timing context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State of Florida; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive policy content."
+  }
+ ],
+ "generation_sha256": "39696a80cfe8cedeeccbf4a502a64392e67c722f4239a0b9ebbbf6ae5114ada2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:49:46Z"
+}

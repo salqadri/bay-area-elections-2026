@@ -1,0 +1,60 @@
+{
+ "candidate_id": "072a4bb2676fb002137aa06c",
+ "request_sha256": "edf9db498123803a925ec7b975820ea658fc5297c83407690cd4a11eb6cd8c81",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "The Working Class Party platform's international-affairs position opposes \"the ongoing war in the Middle East,\" arguing it benefits only billionaires, defense contractors, and oil and gas companies while workers pay high gas prices. The framing is economic rather than centered on Palestinian rights, and the platform does not name Israel, reference Gaza, condemn specific military or settler actions, call for ending US military aid to Israel, or invoke the term genocide.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Governor race context does not bear on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Working Class Party attribution contextualizes the platform language but is not itself a policy position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "International-affairs point opposes the ongoing war in the Middle East on economic grounds; no other platform point addresses Israel, Gaza, or Palestinian rights."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Date only; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Data-management label only."
+  }
+ ],
+ "generation_sha256": "ef4ec0cfaf3340ab27c8fcf3704263ef80e4800a0f71a2eda50be8deb979d13a",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:53:56Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "64f527fde410ba27c745d7b4",
+ "request_sha256": "fe7561aa2e465a749f3b80efbaf2c6e3f3e0693d82097076fd978af260a7735c",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed incumbent Morgan Hill school trustee John T. Horner in the 2026 general election. The organization issues such endorsements after evaluating candidates' positions on civil rights and Gaza/ceasefire policy, recording Horner's alignment with Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides role context (school board trustee)"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Jurisdiction detail grouped with office and district"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestinian-justice stance"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed Horner in the general phase; primary directional evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Rubric-specific instruction elevating CAIR Action recommendations to concrete stance evidence"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's evaluative criteria (civil rights, Gaza/ceasefire)"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Date does not clarify stance on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the specific race (Morgan Hill USD)"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Incumbency status does not indicate a policy position"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative roster label with no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; adds no information"
+  }
+ ],
+ "generation_sha256": "9a71814f257d0d7db4521b6bace6ae5d9004a80ed1e047aca612c7cbca58fd5c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:51:13Z"
+}

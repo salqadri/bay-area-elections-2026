@@ -1,0 +1,66 @@
+{
+ "candidate_id": "22568f80ed1530f43a23284f",
+ "request_sha256": "9254d89fb635f35d6ec0f992940a995f902a27ed28d454dd365c58283e2a89f2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bahry's platform makes ending wars and protecting the innocent its primary foreign-policy goal, and his August 2026 Gaza statement criticizes US military funding to Israel, calling for 'mercy over endless conflict' and 'human dignity.' The statement frames the crisis in humanitarian terms rather than demanding an end to US aid to Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the subject; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not establish a Palestine-specific position"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Anti-war and protect-the-innocent language in the international-affairs and economy points supports a pro-peace framing relevant to the assessment; remaining points (NATO, term limits, pro-life, immigration, sports, religious liberty) are unrelated to Palestine"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Direct August 2026 statement criticizing US military funding to Israel and calling for mercy and human dignity; humanitarian framing rather than naming war crimes or demanding an end to aid"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scheduling context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Context only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification field"
+  }
+ ],
+ "generation_sha256": "cb8cd93718417da5a5a40946802dc998fc364d3fbec59fb4d6fc13244a74cc0c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:46:04Z"
+}

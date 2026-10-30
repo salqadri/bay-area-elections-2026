@@ -1,0 +1,108 @@
+{
+ "candidate_id": "c46e61c693ea66445e70e316",
+ "request_sha256": "88e13bb423516d034d70576583d6ad127002c9acb961436b22ca28503391e1c4",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "AIPAC PAC endorsed Valadao for CA-22 in 2026. His congressional record aligns: he co-introduced a resolution affirming Israel's right to defend itself after October 7, voted for emergency military funding to Israel, and sponsored the Antisemitism Awareness Act, which embeds the IHRA definition in Title VI education enforcement. 314 Action Fund, a UDP-funded PAC, separately spent $436,700 against him, but that reflects the group's independent calculus, not evidence of his Gaza position.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Constituency context, not a Palestine-related action."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label alone does not establish Palestine policy."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All three spenders (CLF, ClearPath, NRA PAC) carry unestablished relevance; no documented Palestine connection."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "General disclaimer that spending is independent and not proof of policy; contextual, not a candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Explains 314 Action Fund (UDP-funded, negative signal) and AIPAC (pro-Israel advocacy); used to interpret the 314 opposition and AIPAC endorsement in the summary."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "uncertain",
+   "treatment": "grouped",
+   "reason": "314 Action Fund's $436,700 opposition is a documented contrary signal (pro-Israel PAC spending against him); other spenders have unestablished relevance. Included briefly to preserve the contrary fact without over-weighting."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers agriculture, immigration, healthcare, veterans, budget; no Israel/Palestine content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on H.R. 6090 (2024) and original sponsorship of H.R. 1007 (2025) both embed the IHRA definition in Title VI education enforcement; supports the E/F assessment."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Co-introduced Israel-defense resolution (Oct 2023), voted for emergency military funding (Nov 2023), and received AIPAC PAC endorsement (2026); core pro-Israel legislative and endorsement record."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note limiting funding data to 2024 onward; not a candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "House of Representatives context; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Status flag; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorization label only."
+  }
+ ],
+ "generation_sha256": "6e259bbdf8629e5a6db3dd2d4484a01c0903221b7ee7080186b3fb0ed8d0f4b7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:57:45Z"
+}

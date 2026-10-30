@@ -1,0 +1,78 @@
+{
+ "candidate_id": "1d0fdf30a97bc01601bd9bc6",
+ "request_sha256": "d46ac5810084aa26a075e0286cea7b6dfca1bd4cd118ed3cc0ee0a9edd9893da",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Johnny Ray Reyna, a nonpartisan candidate for at-large governing board member in Evergreen School District, California, in its 2026 cycle. That endorsement, which weighs civil rights and Gaza/ceasefire positions, is the sole directional evidence in the record. The assessment reflects the endorsement-only ceiling: a pro-Palestine organization's recommendation alone, without the candidate's own documented advocacy or statements, does not reach the top band.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used to identify the subject of the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Office title provides context for the local school-board race; no direct bearing on Palestine policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "grouped",
+   "reason": "Identifies the state of the race; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Nonpartisan label is part of the candidate's identification; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed Reyna; this is the sole directional evidence and the basis for the B assessment."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on how to treat CAIR/VFP recommendations; not voter-facing content."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's mandate (civil rights, Gaza/ceasefire) to contextualize what the endorsement signifies."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "grouped",
+   "reason": "2026-11-03 provides cycle context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Evergreen School District identifies the local race in which the endorsement was issued."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal classification label; no policy relevance."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information added since the saved score."
+  }
+ ],
+ "generation_sha256": "6196cb35466439a6bb9931474feea77cf1041f0b4b1aff3f1aef32a11da72e31",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:48:33Z"
+}

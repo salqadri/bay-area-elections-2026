@@ -1,0 +1,120 @@
+{
+ "candidate_id": "4874990f34dcec3671612e60",
+ "request_sha256": "1698827f302791e4d198abde2370712e8439d4337c026c156e6478b43c19161e",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Allen publicly supported the 2019 deletion of anti-Israel language—settler colonialism, right of return, Golan Heights—from California Democratic Party resolutions and voted Aye on AB 715, which creates an antisemitism coordinator and classroom-material oversight. He visited Kibbutz K'far Aza in December 2023, framing the conflict around October 7 while identifying as Jewish Caucus Chair. California Jewish Democrats (the renamed Democrats for Israel California) gave him their strongest-tier support; Vote for Peace opposed his candidacy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office identification (Insurance Commissioner); no Palestine-related policy function."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine policy signal."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All listed spenders carry 'unestablished' relevance; spending_context directs they not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-guidance on how to treat spending data; no candidate action."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Platform covers insurance reform, wildfire, climate, ethics; no Israel/Palestine content."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Recorded Aye on AB 715 (Senate Floor) creating an antisemitism coordinator and classroom-material oversight; relevant to the E-band criterion on classroom-material policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "2019 support for deleting anti-Israel language from CA Dem Party resolutions and 2023 Kibbutz visit framed around Oct 7 are adverse; 2024 post on Palestinian-American constituents is equivocal (equates empathy with antisemitism/Islamophobia) and does not materially offset."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-note on funding period; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "CJD Strong Support (Zionist org, strongest tier) is adverse; Vote for Peace Opposed is favorable but does not offset the Zionist endorsement at F; Samir Laymoun Opposed omitted per summary_source_policy (samir_allowed: false, other relevant evidence exists)."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Source-classification context for Samir Laymoun; belongs in audit, not voter prose."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Rubric guidance on how to treat CAIR/VFP tiers; no new candidate fact."
+  },
+  {
+   "id": "candidate_record.zionist_endorsement_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Confirms CJD = renamed DFI-CA, a Zionist organization; Strong Support tier counts against candidate. Grouped with focused_endorsement_observations."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Vote for Peace methodology description; no additional candidate action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identification."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generation_sha256": "c6dd1251824e89ffa5117fae42585dd39d6c2849ec2135ea1e53c76df7d64c27",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:10:02Z"
+}

@@ -1,0 +1,78 @@
+{
+ "candidate_id": "312a69d7e4dd660b982ecb93",
+ "request_sha256": "adfcc4c3bb88b5499d2bb527fdd83e54288f3537b8ed7316a4b039499eb342b7",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Conroy's platform pledges to maintain continued U.S. military aid to Israel and support Israel's right to self-defense. In October 2025, he called Hamas a 'death cult,' credited Trump for ceasefire progress, and endorsed Trump's call for Israel to immediately stop bombing Gaza. The statement channels its entire concern through deference to the president and leaves the platform's commitment to sustained arms transfers unchallenged.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the paragraph."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context; no bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a specific Palestine policy stance."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Relevance explicitly marked unestablished; cannot explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note on how to treat spending; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "International-affairs point pledges continued military aid to Israel and support for Israel's right to self-defense; other platform points (economy, immigration, education, etc.) are unrelated to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Calls Hamas a 'death cult,' credits Trump, and endorses Trump's call to stop bombing; dehumanizing framing with no structural challenge to U.S. arms transfers or Israeli accountability."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Procedural date; not relevant to Palestine assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal chamber context; no independent bearing on Palestine position."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster label; no substantive content."
+  }
+ ],
+ "generation_sha256": "6df7e63cc6c8a08bb6f53f12d5497b72cc38eb40ae390a41a2a0550e77e4a10c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:18:46Z"
+}

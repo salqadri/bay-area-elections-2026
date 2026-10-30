@@ -1,0 +1,78 @@
+{
+ "candidate_id": "9840583c6b8717c35fba5604",
+ "request_sha256": "ee6afa2721a6069c4b70bd7560152c65eaa965a6641328bbcc162418f992c81b",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Salinas actively obstructed Palestinian justice measures as Hayward mayor. In December 2023 he invoked procedural rules to kill Councilmember Syrop's Gaza ceasefire motion. In January 2024 he voted against divesting $1.6 million from Caterpillar, Intel, Chevron, and Hyundai, calling the effort 'irresponsible.' CAIR-SFBA's tracker independently lists him as opposing the divestment resolution. These documented actions shield Israel's interests at the municipal level.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office title provides context only."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy relevance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Eight platform points cover local governance (crime, jobs, housing, transit, etc.) with no Palestine, Gaza, Israel, or foreign-policy content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Three items: (1) Dec 2023 procedural kill of ceasefire motion; (2) Jan 2024 vote against $1.6M divestment, calling it 'irresponsible'; (3) CAIR-SFBA tracker confirming opposition to divestment. All document active shielding of Israel at municipal level."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date; no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Hayward; contextual only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy relevance."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information supplied."
+  }
+ ],
+ "generation_sha256": "4aaa20cf57c9ec2bf602d80d10cc952ed8d51c6bcf8767d06489740a96eef041",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:29:32Z"
+}

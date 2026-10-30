@@ -1,0 +1,72 @@
+{
+ "candidate_id": "d70552746590ed13abd4f9b1",
+ "request_sha256": "01c215381bdda79b6e69ebc11f291a7d2d9fd2ea844a1c9a4c30889b23d62f5b",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Campbell's March 2024 Gaza statements for Fremont urged 'meaningful dialogue to halt the hostilities' and a 'lasting and just solution' while naming no specific parties, and framed peace as owed to 'both Israel and Gaza.' Campbell refused to include 'permanent ceasefire' language, calling it divisive. The documented record reflects humanitarian concern articulated without identifying Israel's role or committing to an immediate ceasefire.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the explanation."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local council seat; does not alter the Gaza-position assessment."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail, no bearing on the recorded statements."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Two March 2024 statements show unnamed-party framing, bilateral 'both Israel and Gaza' language, and explicit refusal of 'permanent ceasefire' wording—consistent with D-band humanitarian concern without naming the aggressor."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; irrelevant to the documented record."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Provides context for 'Fremont's Gaza statement' already referenced in the summary."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status does not bear on the content of the recorded statements."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Internal roster label with no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "3aca5dd8c18e4ae7078d6e0c8e46778baa9a10ad1efc74805b7194869fbbfd95",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:26:23Z"
+}

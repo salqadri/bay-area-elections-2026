@@ -1,0 +1,72 @@
+{
+ "candidate_id": "549209413fa41ef9ddd4c43b",
+ "request_sha256": "7a3d780c3af2b0e8bffb91c337e3b76361bd4abf14aecb973074986f3fa2ecbb",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kruttiventi's Pleasanton city council platform addresses local budget, public safety, housing, and infrastructure issues. The sole Palestine-related record is a January 2025 X post noting an imminent Israel-Hamas ceasefire and crediting Trump's pressure for peaceful resolution, a framing that acknowledges the conflict without condemning Israel's military conduct or referencing Palestinian harm.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local city council context frames the platform as municipal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier, no directional signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label, no Palestine-related signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Eight platform points cover local budget, public safety, housing, economy, and infrastructure; none address Israel, Palestine, or foreign policy"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Single January 2025 X post noting an imminent Israel-Hamas ceasefire and crediting Trump's pressure for peaceful resolution; acknowledges the conflict without condemning Israeli military conduct or referencing Palestinian harm"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date, no directional signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Pleasanton confirms local municipal scope"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label only"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information"
+  }
+ ],
+ "generation_sha256": "22f2c94fc313d2f814950a1ff222de3c4655cf633dc26495423b313a02ad2e09",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:37:25Z"
+}

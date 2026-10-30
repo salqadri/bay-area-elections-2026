@@ -1,0 +1,72 @@
+{
+ "candidate_id": "779ec0a5ef4cf67ff6aeea62",
+ "request_sha256": "2abed7615c8f2006c75b0b8731944e392c61e5e5faea84d8beefa235f98e4d38",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "In February 2024, Gilroy City Councilmember Tom Cline voted no on a Gaza ceasefire resolution and seconded a motion to reject any and all ceasefire resolutions at the same council meeting. The Mercury News reported the council's rejection. His seconding of the broader, blanket-rejection motion places him beyond a single no vote on one measure.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (District 5 City Council Member) clarifies jurisdiction but carries no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Two items document the same Feb 2024 event: Cline voted no on a Gaza ceasefire resolution and seconded a motion to reject any and all ceasefire resolutions; Mercury News reported the vote. Concrete documented action opposing ceasefire."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03) is scheduling context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Gilroy context; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster classification tag; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Field is null; no information supplied."
+  }
+ ],
+ "generation_sha256": "02519f25d5ac15db579bd900d41b08b84d044886235ffd4f21a82fe546fd5095",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:28:42Z"
+}

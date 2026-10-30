@@ -1,0 +1,102 @@
+{
+ "candidate_id": "695e8b56befc5b8a66f8033c",
+ "request_sha256": "730206c8643125343a77bfdc2e6f12c49e55be1bafbffb50255980f89e56b1e1",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Lieber for the California State Board of Equalization in the 2026 general, and Vote for Peace rated her an Ally. CAIR's 2024 guide, issued while she was a county-supervisor candidate, described her as an outspoken supporter of ceasefire and Palestinian rights, though the dates of those underlying statements are not recorded. Together these assessments place her in support of Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation carries no independent Palestine signal."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All five spenders carry unestablished relevance; spending_context states unmapped spenders should not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming independent spending is not proof of candidate policy; no directional signal."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 2024 guide characterized Lieber as an outspoken supporter of ceasefire and Palestinian rights during her county-supervisor run; underlying statement dates unknown."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "CAIR Action endorsed (general) and Vote for Peace rated Ally (general) are concrete stance evidence per endorsement_evidence_context; Samir Laymoun support omitted per source policy."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Contextual note for Samir Laymoun, whose support is omitted because other relevant directional evidence exists."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological guidance that CAIR/VfP recommendations count as concrete stance evidence; no independent directional signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Explains what CAIR Action and Vote for Peace are; no independent directional signal about the candidate."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office jurisdiction; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Structural label; no directional signal."
+  }
+ ],
+ "generation_sha256": "da155ebffba1d6213d61cc927082d3753ae11ccf094ef6c65f2a2ceaa94d8cf0",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:11:56Z"
+}

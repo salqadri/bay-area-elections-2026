@@ -1,0 +1,96 @@
+{
+ "candidate_id": "b6e455fcfabb2ff18fb59c76",
+ "request_sha256": "856305b9daf7bd6320397170c057f0f5ff7cc65f522f47682b3bb4760573e8d7",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Cooper, an incumbent Franklin-McKinley School District board member, ran on a platform of local education and parental-rights issues. CAIR Action, which weighs civil-rights and Gaza/ceasefire positions in its recommendations, opposed him in the general phase.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject as Marc Cooper"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "At-large Governing Board Member establishes local school-board context"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CA is context already implied by district name"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestine stance"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "All points address local education and parental-rights issues; none reference Israel, Palestine, or Gaza policy"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR Action opposed (general phase) is the primary directional signal; Samir Laymoun opposition omitted per source policy (other relevant directional evidence exists)"
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Contextual note governing Samir Laymoun treatment; not a candidate fact"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note confirming CAIR recommendations count as concrete stance evidence; not a candidate fact"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action role and relevance; used to frame the endorsement in the summary but not a candidate-specific fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not alter the assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Franklin-McKinley School District establishes the local scope"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Incumbent status is context for the candidate's record"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied"
+  }
+ ],
+ "generation_sha256": "2305142553a7fa2aba8650a51f5ee84ed90ad78cfa9758aa8caab2652800d443",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:49:25Z"
+}

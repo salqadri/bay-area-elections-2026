@@ -1,0 +1,96 @@
+{
+ "candidate_id": "ff80fb4c7a67b34c763f9403",
+ "request_sha256": "6fb27e03672765e33525da839779656bc583024bf6d634e0a1fb943e636a21a5",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Collins cosponsored the 2025 Antisemitism Awareness Act, directing the Education Department to use the IHRA definition in campus investigations, and defended current US military aid levels to Israel as 'good' during a 2026 Senate debate. She has framed the Gaza conflict as a response to Hamas's 'cruelty' and control, and the Press Herald reported she remains a 'very strong supporter of Israel' ahead of her re-election campaign.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All listed spenders have unestablished relevance to Palestine; spending_context confirms no policy inference."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note clarifying funding does not prove policy; no candidate-specific Palestine information."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All listed spenders have unestablished relevance; no Palestine-specific policy signal."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Cosponsorship of the 2025 Antisemitism Awareness Act (IHRA definition for campus investigations) is a direct legislative action listed in the rubric as an Israel-shielding / speech-restricting signal."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Three dated entries: Israel-centric framing of the conflict (2025-10-07), defense of US military aid levels as 'good' in a 2026 debate, and Press Herald characterization as a 'very strong supporter of Israel' (2026-06-22). All point toward shielding Israel."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope note for funding data; no candidate policy signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal Senate context; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal categorization label; no policy signal."
+  }
+ ],
+ "generation_sha256": "4d3bc7b162017918decd9bf5153f6969a10c9f8d610c71993d37755c7069e020",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:32:29Z"
+}

@@ -1,0 +1,66 @@
+{
+ "candidate_id": "d9e6c6bd30a588fe29c1c3f7",
+ "request_sha256": "2b4fe50b397b6a8d7b5a560df8886e5b4d02a394379e5aa551b13174440cb6e5",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Ayyadurai's campaign site frames the Gaza war as genocide and calls for Americans to 'break from Zionism.' His platform names ending all US funding to Israel as his first priority, and he has called for cutting all aid, redirecting military assistance to Palestine, and holding Israeli leaders as war criminals. A 2026 25th Amendment petition on his site accuses the Trump administration of binding the United States to genocide and subordinating its interests to Israel and AIPAC.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; not a directional fact."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context (MA Statewide US Senator); does not bear on Palestine position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic label; irrelevant to Palestine stance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Independent/unaffiliated status does not itself indicate a Palestine position."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Six dated personal statements (2023–2026) explicitly call the war genocide, demand ending all US aid, redirect military assistance to Palestine, hold Israeli leaders as war criminals, and are openly anti-Zionist."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Background note on AIPAC's role; AIPAC is already referenced in the 25th Amendment petition fact included in the summary."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date is administrative context."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "United States Senate; administrative context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label; no directional content."
+  }
+ ],
+ "generation_sha256": "67a678add9127c2d93f9f3b982a3162d20a6da44ee95009e7d7143837bb47fa2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:34:08Z"
+}

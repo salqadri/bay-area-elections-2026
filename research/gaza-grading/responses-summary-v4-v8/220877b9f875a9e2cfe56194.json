@@ -1,0 +1,78 @@
+{
+ "candidate_id": "220877b9f875a9e2cfe56194",
+ "request_sha256": "f988c516a0642efe165d84b9803350cc8fbab1df913e56e69079bc629ef28e93",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action designated Dolores Alvarado 'preferred' for the 2026 Morgan Hill general election, a tier the organization distinguishes from full endorsement. The preference reflects CAIR Action's assessment of a candidate's civil-rights and foreign-policy positions, including on Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate; no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local city council seat; no direct bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on Palestine"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action 'preferred' tier for general election is the sole directional evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action recommendations count as concrete stance evidence; grouped with the observation itself"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action's role and that 'preferred' is below full endorsement; grouped with the observation"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Anchors the recommendation to the 2026 cycle"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies Morgan Hill as the race locale for specificity"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label, no policy content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information"
+  }
+ ],
+ "generation_sha256": "361fc397d8bc19493e90c94d04ceef9e492d00384a2a5522ae51ea70a8272250",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:32:20Z"
+}

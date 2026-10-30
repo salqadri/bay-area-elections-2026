@@ -1,0 +1,84 @@
+{
+ "candidate_id": "c3cc356b75f09bac5286cb9e",
+ "request_sha256": "2ee5fbc57619c05e5f6c7141d8a7c9279cca106e5e794351a753608eff9f98da",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Brouhard co-introduced an Oakland Unified School District resolution on November 1, 2023, calling for a ceasefire and hostage release in Israel and Palestine, making her an early local advocate for halting the war. CAIR Action, which evaluates candidates on civil rights and Gaza ceasefire positions, endorsed her in the general election. Her personal introduction of that early ceasefire resolution, alongside the CAIR Action endorsement, documents a concrete commitment to Palestinian justice at the district level.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name only; identifies the candidate but carries no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Establishes local school-board context; grouped into the summary's 'district level' framing."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail with no independent directional relevance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no bearing on Palestinian justice assessment."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Co-introduced a ceasefire resolution on 2023-11-01, an early personal action qualifying for the top band."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement at endorsement level (not merely preferred) in the general election; concrete stance evidence per context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Editorial instruction on how to treat CAIR tiers; no candidate-specific fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's evaluative criteria; folded into summary attribution of the endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Oakland Unified School District; provides local context already implied by the office field."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative label 'candidates'; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional research added since the saved score."
+  }
+ ],
+ "generation_sha256": "3cb5dc37e0a77235a4e3760176d7d0f4a4c9fce0aa80a70377a17e177ff8c571",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:53:15Z"
+}

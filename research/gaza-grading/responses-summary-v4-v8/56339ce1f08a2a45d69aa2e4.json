@@ -1,0 +1,78 @@
+{
+ "candidate_id": "56339ce1f08a2a45d69aa2e4",
+ "request_sha256": "973a5c47e7187c114567e20f4e0d279cb64d9c72b2b6cacb8d9fc1e42ca3a7ff",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Ayotte condemned UNH pro-Palestinian chants as 'antisemitic' in April 2024, declaring she is 'proud to stand with Israel' and will 'always support our Jewish community.' As NH Senator in 2014, she visited Israel with a congressional delegation, framing the country as a key U.S. ally. Both statements align her squarely with Israel's position and treat pro-Palestinian expression as antisemitic rather than protected political speech.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate identity field, no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual office designation, no Palestine-related content"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not independently establish a Palestine position"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All platform points cover housing, criminal justice, education, economy, healthcare, ethics, and labor; none address Palestine, Israel, or related speech"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2024 condemnation of UNH pro-Palestinian chants as antisemitic plus explicit pledge to stand with Israel; 2014 Israel delegation visit framing it as key U.S. ally"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note stating funding window and omission criteria; no specific funding amounts or organizations named"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context, no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State jurisdiction, contextual only"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status, no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification metadata"
+  }
+ ],
+ "generation_sha256": "534ad0a99cf89c26755bcfcddd006008f030c3fb68d5f1ecd9ba84ecca252301",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:58:57Z"
+}

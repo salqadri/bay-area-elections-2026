@@ -1,0 +1,102 @@
+{
+ "candidate_id": "d7de42dad88c379641282217",
+ "request_sha256": "81e858b42c162aee6848328c2be4c6ba3b6573739f83f2cf66c56c9263e17a37",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Conley pledged continued US military support for Israel in October 2026 and backed the US-Israel alliance at a June 2026 forum, distancing herself from Senate efforts to block military sales to Israel. She told Jewish Insider she would support the Antisemitism Awareness Act, and in a final debate denounced Mamdani's Oct 7 post while condemning antisemitism. Her platform names a two-state solution, and she holds endorsements from DMFI PAC and the Jewish Democratic Council of America.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no substantive signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context (CD-17 US Representative) does not bear on Palestine policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identification only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation provides no specific Palestine signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC is described as supporting a pro-Israel Democratic majority; J Street context noted but given little weight per policy."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "DMFI PAC spent only $381.82; all other spenders have unestablished relevance to Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note clarifying spending is independent expenditure; no substantive Palestine signal."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "CLF, Progressive Champions PAC, and Governing Majority Fund all have unestablished relevance to Palestine."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "International affairs point names a two-state solution for Israel and Palestine; remaining policy areas are unrelated."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Conley told Jewish Insider she would support the Antisemitism Awareness Act, aligning with IHRA-adjacent legislative framing."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Pledged continued US military support for Israel; supported US-Israel alliance; distanced from blocking military sales; denounced Mamdani's Oct 7 post in debate and condemned antisemitism."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Endorsements from DMFI PAC and Jewish Democratic Council of America signal pro-Israel Democratic alignment; JStreet noted but given little weight."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date provides no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Federal House race context only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no substantive signal."
+  }
+ ],
+ "generation_sha256": "dcbe76d1b36a0ecfa2715583ddc63a3a5e49b2ba74e0eb352f856d7a04bc7624",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:18:01Z"
+}

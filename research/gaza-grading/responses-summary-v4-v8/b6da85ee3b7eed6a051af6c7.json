@@ -1,0 +1,72 @@
+{
+ "candidate_id": "b6da85ee3b7eed6a051af6c7",
+ "request_sha256": "0835307350173fbe24c0b951d5be53eebefa6cc1f2dc64ff024cbdd1a42205c8",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Scott's statements frame the Gaza conflict in Israel-centric terms. On October 26, 2023, he expressed empathy for families in Israel in a statement drawing criticism for omitting Palestinian victims in Gaza. After three Palestinian students were shot in Burlington on November 28, 2023, he offered support to Vermont's Muslim community. At an October 18 press conference, he was asked to criticize Israel's Gaza evacuation strategy; the record documents his response but not its substance.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; provides identity only."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office held (VT Governor); contextual, no Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine policy signal in record."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Jobs, labor, and cost-of-living pledges; no Palestine or Israel content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Israel-centric empathy statement (Oct 26) omitting Palestinian victims; limited local-community support (Nov 28); Oct 18 press-conference response documented but content unspecified."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster tag; no Palestine signal."
+  }
+ ],
+ "generation_sha256": "a3e6426a3e680925e771ac1b38f1f4039ee221ce2545073cb82f0f7e3a32b4ea",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:05:12Z"
+}

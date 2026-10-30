@@ -1,0 +1,72 @@
+{
+ "candidate_id": "8e6399c70934d18e03e9ba25",
+ "request_sha256": "3e191ced095cc2d422be84006dc7b2bc6e59220e2f4da8b5e2f361fc4d557fc2",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Byron Donalds has positioned his Florida gubernatorial campaign as explicitly pro-Israel, a framing reported by JNS and the Jewish Times. On the Oct 7 anniversary he called for hostage releases and labeled Hamas 'terrorists,' and in 2024 he equated antisemitism perpetrators with 'Hamas apologists.' On NewsNation he argued the Gaza question should center on Iran rather than Palestinian harm. His recorded Nay on H.R. 6090, the Antisemitism Awareness Act, is a narrow contrary point not offsetting this broader pattern.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office identifier; no policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy content."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct policy signal on Palestine."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Platform covers economy, healthcare, immigration, education, space; no Israel/Palestine or Middle East policy point."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Recorded Nay on H.R. 6090 (Antisemitism Awareness Act / IHRA definition in Title VI) is a narrow vote against a bill that could suppress criticism of Israel; single data point, rationale unstated."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Oct 7 hostage/Hamas-terrorist framing, equating antisemitism perpetrators with 'Hamas apologists,' Iran-centered NewsNation framing, JNS and Jewish Times reporting of explicit pro-Israel campaign positioning all point to shielding Israel."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date; no policy content."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster tag; no policy content."
+  }
+ ],
+ "generation_sha256": "3fc141efb93c853d1920e19c5ba9586627d9482fb5e302687de4714c1cbfd261",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:49:00Z"
+}

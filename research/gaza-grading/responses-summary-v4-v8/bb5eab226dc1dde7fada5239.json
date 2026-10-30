@@ -1,0 +1,114 @@
+{
+ "candidate_id": "bb5eab226dc1dde7fada5239",
+ "request_sha256": "2109208e1fe1d1cd01d4d4c8acd31d2a5878ed81ad1129d5373da20c779eba4d",
+ "publication_id": "jev-2026-10-30-v8",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Miller calls himself \"a proud Jewish American and a staunch defender of Israel\" and identifies as \"Jewish and pro-Israel.\" He voted Yea on H.R. 6090, the Antisemitism Awareness Act, in May 2024 and co-led its reintroduction in February 2025, directing federal education-discrimination enforcement to adopt the IHRA definition. Vote for Peace opposes his general-election bid.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine signal in record."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All three spenders carry unestablished relevance; spending_context confirms they should not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on how to treat unmapped spenders; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Covers defense, jobs, parental rights, and tax policy; none address Palestine, Gaza, or Israel-specific policy."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on H.R. 6090 and co-leading its reintroduction direct federal enforcement to the IHRA definition; directly relevant to whether criticism of Israel is chilled."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Miller self-identifies as 'staunch defender of Israel' and 'pro-Israel'; explicit pro-Israel framing central to the assessment."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note on funding data; no policy signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace opposes his general bid; concrete anti-Zionist organizational opposition."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual note confirming Vote for Peace ratings count as stance evidence; no independent signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes Vote for Peace methodology; no additional candidate-specific signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster tag; no policy signal."
+  }
+ ],
+ "generation_sha256": "56fa746b01135a217bd445d2bb05414f7b79dbf98b86a92998eabe75128944be",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:19:26Z"
+}
