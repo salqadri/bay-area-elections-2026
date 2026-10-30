@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "target": "research-tool",
+    "public": ".firebase-public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["python3 scripts/build_firebase_hosting.py"],
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      },
+      {
+        "source": "/",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      },
+      {
+        "source": "**/*.json",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      },
+      {
+        "source": "**",
+        "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}]
+      }
+    ]
+  }
+}

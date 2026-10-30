@@ -1,5 +1,12 @@
 # Bay Area Ballot Research Assistant
 
+Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
+The requested Web App and dedicated Hosting site are registered in
+`tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
+recommendations are published. **50/50 release checks pass**, both production
+domains match the tested bundle, and live Chrome checks pass.
+[Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
+
 Current publication **2026-10-28.4** publishes the owner's completed full-roster
 run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,

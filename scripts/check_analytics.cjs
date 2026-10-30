@@ -27,9 +27,10 @@ function sdk(supported = true) {
     assert.equal(await runner()(new URL(url), async () => {fetched = true;}), false);
     assert.equal(fetched, false, 'Nonproduction pages must not even fetch Firebase');
   }
+  for (const origin of [publicUrl, 'https://tall-bay-area-research-tool.web.app/', 'https://tall-bay-area-research-tool.firebaseapp.com/']) {
   for (const name of ['', 'index.html', 'ballot.html']) {
     const run = runner(), mock = sdk();
-    const url = new URL(publicUrl + name + '?q=PRIVATE_QUERY#q=PRIVATE_FRAGMENT');
+    const url = new URL(origin + name + '?q=PRIVATE_QUERY#q=PRIVATE_FRAGMENT');
     assert.equal(await run(url, mock.load), true);
     assert.equal(await run(url, mock.load), false, 'Only one initialization per page');
     assert.equal(mock.apps.length, 1);
@@ -37,12 +38,14 @@ function sdk(supported = true) {
     assert.equal(mock.apps[0].appId, '1:693468629214:web:04e5a5f66ac3d549e39a4f');
     assert.equal(mock.calls.length, 1);
     const config = mock.calls[0].options.config;
-    assert.equal(config.page_location, publicUrl + (name === 'ballot.html' ? name : ''));
+    assert.equal(config.page_location, origin + (name === 'ballot.html' ? name : ''));
     assert.equal(config.page_referrer, '');
     assert.equal(config.allow_google_signals, false);
     assert.equal(config.allow_ad_personalization_signals, false);
-    assert.equal(config.cookie_path, '/bay-area-elections-2026/');
+    assert.equal(config.cookie_path, new URL(origin).pathname);
+    assert.equal(config.cookie_domain, new URL(origin).hostname);
     assert(!JSON.stringify(mock).includes('PRIVATE_'), 'Never pass free text or URL parameters into Firebase');
+  }
   }
   const unsupported = sdk(false);
   assert.equal(await runner()(new URL(publicUrl), unsupported.load), false);

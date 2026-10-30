@@ -1704,9 +1704,14 @@ async function startPublishedAnalytics(location, loadSdk = () => Promise.all([
   import('https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js'),
   import('https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js')
 ])) {
-  const publicOrigin = 'https://salqadri.github.io';
-  const basePath = '/bay-area-elections-2026/';
-  if (analyticsStarted || location.origin !== publicOrigin ||
+  const deployments = {
+    'https://salqadri.github.io': '/bay-area-elections-2026/',
+    'https://tall-bay-area-research-tool.web.app': '/',
+    'https://tall-bay-area-research-tool.firebaseapp.com': '/'
+  };
+  const publicOrigin = location.origin;
+  const basePath = deployments[publicOrigin];
+  if (analyticsStarted || !basePath ||
       ![basePath, basePath + 'index.html', basePath + 'ballot.html'].includes(location.pathname)) return false;
   analyticsStarted = true;
   try {
@@ -1728,7 +1733,7 @@ async function startPublishedAnalytics(location, loadSdk = () => Promise.all([
       page_referrer: '',
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
-      cookie_domain: 'salqadri.github.io',
+      cookie_domain: location.hostname,
       cookie_path: basePath,
       cookie_prefix: 'bay_area_elections'
     }});
