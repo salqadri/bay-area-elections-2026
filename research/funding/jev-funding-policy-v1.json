@@ -4,171 +4,45 @@
  "cutoff": "2024-01-01",
  "limitation": "Evidence projection policy, not a finding of zero donations. New or modified financial observations are held until reviewed. Existing financial datasets and historical scores remain separate.",
  "observations": {
-  "GE-0239": {
-   "position_id": "CA2026-309",
-   "candidate": "John Garamendi",
-   "evidence_sha256": "a0e3d03e19c407ddde665d153e5ae6a5d5b10c1f12908a480565c19100d20310",
+  "GE-0005": {
+   "position_id": "CA2026-230",
+   "candidate": "Kevin Mullin",
+   "evidence_sha256": "c5d6a30cb67f757f7f51dfc4e4b9cdf91119204326708516b8eb2e68808ff7b3",
    "disposition": "hold",
    "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
    "classification_answer": {
     "type": "choice",
     "choice": "historical_or_mixed_period",
-    "confidence": 0.77,
+    "confidence": 0.82,
     "probabilities": {
-     "historical_or_mixed_period": 0.81,
-     "individual_or_mixed_donors": 0.13,
+     "historical_or_mixed_period": 0.85,
+     "individual_or_mixed_donors": 0.05,
      "nonfinancial": 0.0,
      "organization_2026_cycle": 0.0,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.06
+     "period_unestablished": 0.1
     }
    }
   },
-  "GE-0233": {
-   "position_id": "CA2026-309",
-   "candidate": "Rudy Recile",
-   "evidence_sha256": "0424815ab0df2196f61d4a33acff61e4cab88df839e918dace6540694f5471c0",
-   "disposition": "hold",
-   "reason": "historical_or_mixed_period",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.33,
-    "probabilities": {
-     "historical_or_mixed_period": 0.43,
-     "individual_or_mixed_donors": 0.06,
-     "nonfinancial": 0.05,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.01,
-     "period_unestablished": 0.44
-    }
-   }
-  },
-  "GE-0243": {
-   "position_id": "CA2026-310",
-   "candidate": "Josh Harder",
-   "evidence_sha256": "d9e5888c1626a938efc8b9b61561be675ac733f5dfa3a9e0def9adb9201d3405",
+  "GE-0009": {
+   "position_id": "CA2026-230",
+   "candidate": "Charles Hoelter",
+   "evidence_sha256": "df4fcde9264f1c65933d9a7a76ef8c2bd06b2538be374d92c7c079e5e7a6286d",
    "disposition": "hold",
    "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
    "classification_answer": {
     "type": "choice",
     "choice": "period_unestablished",
-    "confidence": 0.5,
-    "probabilities": {
-     "historical_or_mixed_period": 0.04,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.37,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.58
-    }
-   }
-  },
-  "GE-0419": {
-   "position_id": "CA2026-310",
-   "candidate": "Josh Harder",
-   "evidence_sha256": "4eed9903aabdd6970a2e958914f5a8639d98ab92ed8bdc8193a5168c4b642b1d",
-   "disposition": "hold",
-   "reason": "historical_or_mixed_period",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.59,
-    "probabilities": {
-     "historical_or_mixed_period": 0.66,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.01,
-     "period_unestablished": 0.3
-    }
-   }
-  },
-  "GE-0246": {
-   "position_id": "CA2026-310",
-   "candidate": "John McBride",
-   "evidence_sha256": "83960132d7d77171f6dc0a88ea876b60f0b44e6d05bbee5775f2516cdc5858fb",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.99,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.99
-    }
-   }
-  },
-  "GE-0114": {
-   "position_id": "CA2026-001",
-   "candidate": "Mark DeSaulnier",
-   "evidence_sha256": "5d4bcde37bae9e5d41ea35d00c7a360143fd46f87a30cdac2281cde1b2c75359",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.56,
-    "probabilities": {
-     "historical_or_mixed_period": 0.63,
-     "individual_or_mixed_donors": 0.16,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.03,
-     "period_unestablished": 0.16
-    }
-   }
-  },
-  "GE-0116": {
-   "position_id": "CA2026-001",
-   "candidate": "Mark DeSaulnier",
-   "evidence_sha256": "06341c46e0a4ab5b6648179ca3c471a5611652c0c932803085941b0b3d359025",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.98,
+    "confidence": 0.86,
     "probabilities": {
      "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.1,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.98
-    }
-   }
-  },
-  "GE-0024": {
-   "position_id": "CA2026-229",
-   "candidate": "Connie Chan",
-   "evidence_sha256": "bc4c752c64d38f38b1c1181f43b49acebddf67a7f1a76ddecc04fbe54a2cd350",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.87,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.08,
-     "nonfinancial": 0.02,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.89
+     "period_unestablished": 0.88
     }
    }
   },
@@ -257,6 +131,48 @@
     }
    }
   },
+  "GE-0021": {
+   "position_id": "CA2026-231",
+   "candidate": "Matt Haney",
+   "evidence_sha256": "5a2ae231701c4319fe4a2648a3324098d7f6e9bcc8311685aca4486a4cc5b163",
+   "disposition": "hold",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.87,
+    "probabilities": {
+     "historical_or_mixed_period": 0.89,
+     "individual_or_mixed_donors": 0.11,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   }
+  },
+  "GE-0024": {
+   "position_id": "CA2026-229",
+   "candidate": "Connie Chan",
+   "evidence_sha256": "bc4c752c64d38f38b1c1181f43b49acebddf67a7f1a76ddecc04fbe54a2cd350",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.87,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.08,
+     "nonfinancial": 0.02,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.89
+    }
+   }
+  },
   "GE-0027": {
    "position_id": "CA2026-229",
    "candidate": "Connie Chan",
@@ -310,6 +226,132 @@
     }
    }
   },
+  "GE-0039": {
+   "position_id": "CA2026-230",
+   "candidate": "Charles Hoelter",
+   "evidence_sha256": "272c3b46081490c9877109157506518ec0a5111bf32fc4a4ce9c002ad5ce2020",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.86,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.03,
+     "organization_2026_cycle": 0.08,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.88
+    }
+   }
+  },
+  "GE-0066": {
+   "position_id": "CA2026-015",
+   "candidate": "Ben Allen",
+   "evidence_sha256": "1ab7720b8e0b904038226e802733f7215d3b6b68173b5c1176f6a3d2f96f8d7a",
+   "disposition": "hold",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.87,
+    "probabilities": {
+     "historical_or_mixed_period": 0.89,
+     "individual_or_mixed_donors": 0.1,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.01
+    }
+   }
+  },
+  "GE-0102": {
+   "position_id": "CA2026-005",
+   "candidate": "Peter Sundin Soulé",
+   "evidence_sha256": "7bbd6ef235768fefbd67af91d4517155656a6966bdf850736e79c88e258f0b92",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.83,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.07,
+     "organization_2026_cycle": 0.06,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.86
+    }
+   }
+  },
+  "GE-0107": {
+   "position_id": "CA2026-005",
+   "candidate": "Sam Liccardo",
+   "evidence_sha256": "af7a06fb60fe67967ac4221c2a74c829e9be9b6cbac157981ff745f972ef0587",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.26,
+    "probabilities": {
+     "historical_or_mixed_period": 0.38,
+     "individual_or_mixed_donors": 0.3,
+     "nonfinancial": 0.05,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.26
+    }
+   }
+  },
+  "GE-0114": {
+   "position_id": "CA2026-001",
+   "candidate": "Mark DeSaulnier",
+   "evidence_sha256": "5d4bcde37bae9e5d41ea35d00c7a360143fd46f87a30cdac2281cde1b2c75359",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.56,
+    "probabilities": {
+     "historical_or_mixed_period": 0.63,
+     "individual_or_mixed_donors": 0.16,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.03,
+     "period_unestablished": 0.16
+    }
+   }
+  },
+  "GE-0116": {
+   "position_id": "CA2026-001",
+   "candidate": "Mark DeSaulnier",
+   "evidence_sha256": "06341c46e0a4ab5b6648179ca3c471a5611652c0c932803085941b0b3d359025",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.98,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.98
+    }
+   }
+  },
   "GE-0123": {
    "position_id": "CA2026-002",
    "candidate": "Lateefah Simon",
@@ -349,48 +391,6 @@
      "organization_2026_cycle": 0.95,
      "organization_recent_other": 0.01,
      "period_unestablished": 0.03
-    }
-   }
-  },
-  "GE-0129": {
-   "position_id": "CA2026-003",
-   "candidate": "Melissa Hernandez",
-   "evidence_sha256": "9f3ce91d72b65a604ef610eb5ad642de0321ebdfe03cc86d14a263bc048d5059",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.62,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.18,
-     "organization_recent_other": 0.12,
-     "period_unestablished": 0.68
-    }
-   }
-  },
-  "GE-0137": {
-   "position_id": "CA2026-003",
-   "candidate": "Melissa Hernandez",
-   "evidence_sha256": "f18e266fee433b40504e7d7e58d862b7488119c9bef0ee581681e597e548634e",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.48,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.09,
-     "nonfinancial": 0.22,
-     "organization_2026_cycle": 0.05,
-     "organization_recent_other": 0.06,
-     "period_unestablished": 0.57
     }
    }
   },
@@ -457,6 +457,27 @@
     }
    }
   },
+  "GE-0129": {
+   "position_id": "CA2026-003",
+   "candidate": "Melissa Hernandez",
+   "evidence_sha256": "9f3ce91d72b65a604ef610eb5ad642de0321ebdfe03cc86d14a263bc048d5059",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.62,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.18,
+     "organization_recent_other": 0.12,
+     "period_unestablished": 0.68
+    }
+   }
+  },
   "GE-0130": {
    "position_id": "CA2026-003",
    "candidate": "Melissa Hernandez",
@@ -478,45 +499,24 @@
     }
    }
   },
-  "GE-0356": {
-   "position_id": "CA2026-003",
-   "candidate": "Melissa Hernandez",
-   "evidence_sha256": "b96f4a74a2e01dcf4b4671f3cfb16be00a81549ea9db8e828b5f958ba92071b9",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.82,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.14,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.85
-    }
-   }
-  },
-  "GE-0135": {
+  "GE-0133": {
    "position_id": "CA2026-003",
    "candidate": "Aisha Wahab",
-   "evidence_sha256": "bd5acf0a9542eb6a3fa3436bb745453976c3b88ed0cd44ac50ac5d65f0dd49ee",
+   "evidence_sha256": "d93c206eaaec1a2fd14a3bf0422a66920e4a2c9bb1092b35d6ea90a2a9c9c575",
    "disposition": "hold",
-   "reason": "period_unestablished",
+   "reason": "organization_2026_cycle",
    "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
    "classification_answer": {
     "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.62,
+    "choice": "organization_2026_cycle",
+    "confidence": 0.5,
     "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.19,
-     "organization_2026_cycle": 0.12,
-     "organization_recent_other": 0.01,
-     "period_unestablished": 0.68
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.58,
+     "organization_recent_other": 0.25,
+     "period_unestablished": 0.14
     }
    }
   },
@@ -558,24 +558,24 @@
     }
    }
   },
-  "GE-0133": {
+  "GE-0135": {
    "position_id": "CA2026-003",
    "candidate": "Aisha Wahab",
-   "evidence_sha256": "d93c206eaaec1a2fd14a3bf0422a66920e4a2c9bb1092b35d6ea90a2a9c9c575",
+   "evidence_sha256": "bd5acf0a9542eb6a3fa3436bb745453976c3b88ed0cd44ac50ac5d65f0dd49ee",
    "disposition": "hold",
-   "reason": "organization_2026_cycle",
+   "reason": "period_unestablished",
    "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
    "classification_answer": {
     "type": "choice",
-    "choice": "organization_2026_cycle",
-    "confidence": 0.5,
+    "choice": "period_unestablished",
+    "confidence": 0.62,
     "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.58,
-     "organization_recent_other": 0.25,
-     "period_unestablished": 0.14
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.19,
+     "organization_2026_cycle": 0.12,
+     "organization_recent_other": 0.01,
+     "period_unestablished": 0.68
     }
    }
   },
@@ -600,108 +600,66 @@
     }
    }
   },
-  "GE-0009": {
-   "position_id": "CA2026-230",
-   "candidate": "Charles Hoelter",
-   "evidence_sha256": "df4fcde9264f1c65933d9a7a76ef8c2bd06b2538be374d92c7c079e5e7a6286d",
+  "GE-0137": {
+   "position_id": "CA2026-003",
+   "candidate": "Melissa Hernandez",
+   "evidence_sha256": "f18e266fee433b40504e7d7e58d862b7488119c9bef0ee581681e597e548634e",
    "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
    "classification_answer": {
     "type": "choice",
     "choice": "period_unestablished",
-    "confidence": 0.86,
+    "confidence": 0.48,
     "probabilities": {
      "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.1,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.88
+     "individual_or_mixed_donors": 0.09,
+     "nonfinancial": 0.22,
+     "organization_2026_cycle": 0.05,
+     "organization_recent_other": 0.06,
+     "period_unestablished": 0.57
     }
    }
   },
-  "GE-0039": {
-   "position_id": "CA2026-230",
-   "candidate": "Charles Hoelter",
-   "evidence_sha256": "272c3b46081490c9877109157506518ec0a5111bf32fc4a4ce9c002ad5ce2020",
+  "GE-0140": {
+   "position_id": "CA2026-004",
+   "candidate": "Ritesh Tandon",
+   "evidence_sha256": "6cceb34526e659cc748745c2639b1c20d4e0f808f3fe7c61719b5c5773914fef",
    "disposition": "hold",
    "reason": "period_unestablished",
    "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
    "classification_answer": {
     "type": "choice",
     "choice": "period_unestablished",
-    "confidence": 0.86,
+    "confidence": 0.74,
     "probabilities": {
-     "historical_or_mixed_period": 0.01,
+     "historical_or_mixed_period": 0.0,
      "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.03,
-     "organization_2026_cycle": 0.08,
+     "nonfinancial": 0.16,
+     "organization_2026_cycle": 0.06,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.88
+     "period_unestablished": 0.78
     }
    }
   },
-  "GE-0005": {
-   "position_id": "CA2026-230",
-   "candidate": "Kevin Mullin",
-   "evidence_sha256": "c5d6a30cb67f757f7f51dfc4e4b9cdf91119204326708516b8eb2e68808ff7b3",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.82,
-    "probabilities": {
-     "historical_or_mixed_period": 0.85,
-     "individual_or_mixed_donors": 0.05,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.1
-    }
-   }
-  },
-  "GE-0107": {
-   "position_id": "CA2026-005",
-   "candidate": "Sam Liccardo",
-   "evidence_sha256": "af7a06fb60fe67967ac4221c2a74c829e9be9b6cbac157981ff745f972ef0587",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.26,
-    "probabilities": {
-     "historical_or_mixed_period": 0.38,
-     "individual_or_mixed_donors": 0.3,
-     "nonfinancial": 0.05,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.26
-    }
-   }
-  },
-  "GE-0102": {
-   "position_id": "CA2026-005",
-   "candidate": "Peter Sundin Soulé",
-   "evidence_sha256": "7bbd6ef235768fefbd67af91d4517155656a6966bdf850736e79c88e258f0b92",
+  "GE-0141": {
+   "position_id": "CA2026-004",
+   "candidate": "Ritesh Tandon",
+   "evidence_sha256": "fc742201fa13bc707823ea32a9ba8d5cd70a5773af5e146ccea4a064ea230b7a",
    "disposition": "hold",
    "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
    "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
    "classification_answer": {
     "type": "choice",
     "choice": "period_unestablished",
-    "confidence": 0.83,
+    "confidence": 0.77,
     "probabilities": {
-     "historical_or_mixed_period": 0.01,
+     "historical_or_mixed_period": 0.02,
      "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.07,
+     "nonfinancial": 0.11,
      "organization_2026_cycle": 0.06,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.86
+     "period_unestablished": 0.81
     }
    }
   },
@@ -758,66 +716,299 @@
     }
    }
   },
-  "GE-0140": {
-   "position_id": "CA2026-004",
-   "candidate": "Ritesh Tandon",
-   "evidence_sha256": "6cceb34526e659cc748745c2639b1c20d4e0f808f3fe7c61719b5c5773914fef",
+  "GE-0159": {
+   "position_id": "CA2026-008",
+   "candidate": "Buffy Wicks",
+   "evidence_sha256": "c13e54bf852bdad71ce0cdfcfb1da6c4ec61fc57c05b914529be357b748a9a7e",
    "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.74,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.16,
-     "organization_2026_cycle": 0.06,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.78
-    }
-   }
-  },
-  "GE-0141": {
-   "position_id": "CA2026-004",
-   "candidate": "Ritesh Tandon",
-   "evidence_sha256": "fc742201fa13bc707823ea32a9ba8d5cd70a5773af5e146ccea4a064ea230b7a",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.77,
-    "probabilities": {
-     "historical_or_mixed_period": 0.02,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.11,
-     "organization_2026_cycle": 0.06,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.81
-    }
-   }
-  },
-  "GE-0399": {
-   "position_id": "CA2026-006",
-   "candidate": "Zoe Lofgren",
-   "evidence_sha256": "0d8bff4120c7e01e28d2ff4ee857a47add4c066822c7e6b8aa33286b731b017e",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
    "classification_answer": {
     "type": "choice",
     "choice": "historical_or_mixed_period",
+    "confidence": 0.41,
+    "probabilities": {
+     "historical_or_mixed_period": 0.51,
+     "individual_or_mixed_donors": 0.49,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   }
+  },
+  "GE-0164": {
+   "position_id": "CA2026-020",
+   "candidate": "Alex Lee",
+   "evidence_sha256": "18e934604e4bd631edd1e6c81f93b5f492f9cb3d688029bf0ac2fcd86fa35937",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 1.0,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 1.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   },
+   "model_text": "Alex Lee endorsed Tom Steyer for CA governor explicitly because Steyer would 'stand against AIPAC, dark money, & corporations,' framing AIPAC opposition as a key criterion.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
     "confidence": 0.6,
     "probabilities": {
-     "historical_or_mixed_period": 0.67,
-     "individual_or_mixed_donors": 0.21,
+     "hold": 0.2,
+     "supported": 0.8
+    }
+   }
+  },
+  "GE-0169": {
+   "position_id": "CA2026-049",
+   "candidate": "Jenny Wong",
+   "evidence_sha256": "da7444b8fac4e3d489b150e0fa257bbbc277b356c216a05731158f555e2265ed",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.99,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.99,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.01
+    }
+   },
+   "model_text": "A report published August 2024 places Berkeley City Auditor Jenny Wong on a JCRC-funded trip to Israel in March 2023. This is a historical trip, not a recent campaign donation.",
+   "projection_jev_ref": "5a9706d18d88e2e277d2214402d7ea42ec10bb78bb96e897f326ef5a05ad2b9a",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "yes",
+    "confidence": 0.64,
+    "probabilities": {
+     "no": 0.18,
+     "yes": 0.82
+    }
+   }
+  },
+  "GE-0174": {
+   "position_id": "CA2026-051",
+   "candidate": "Majdi \"Gaith\" Abuhamdieh",
+   "evidence_sha256": "928d2e3e023af453ef169f843e213e1bb5446d96b73a332f80d6303bd63db698",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 1.0,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 1.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   },
+   "model_text": "Abuhamdieh states he has not taken and will not take AIPAC-aligned money, explicitly rejecting pro-Israel lobbying funds for his Berkeley City Council campaign.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.76,
+    "probabilities": {
+     "hold": 0.12,
+     "supported": 0.88
+    }
+   }
+  },
+  "GE-0190": {
+   "position_id": "CA2026-072",
+   "candidate": "Barbara Lee",
+   "evidence_sha256": "55d1893359efe798c661176980ee746f557e9231940d28b64d742fa416cb4386",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.54,
+    "probabilities": {
+     "historical_or_mixed_period": 0.05,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.27,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.04,
+     "period_unestablished": 0.62
+    }
+   }
+  },
+  "GE-0233": {
+   "position_id": "CA2026-309",
+   "candidate": "Rudy Recile",
+   "evidence_sha256": "0424815ab0df2196f61d4a33acff61e4cab88df839e918dace6540694f5471c0",
+   "disposition": "hold",
+   "reason": "historical_or_mixed_period",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.33,
+    "probabilities": {
+     "historical_or_mixed_period": 0.43,
+     "individual_or_mixed_donors": 0.06,
+     "nonfinancial": 0.05,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.01,
+     "period_unestablished": 0.44
+    }
+   }
+  },
+  "GE-0239": {
+   "position_id": "CA2026-309",
+   "candidate": "John Garamendi",
+   "evidence_sha256": "a0e3d03e19c407ddde665d153e5ae6a5d5b10c1f12908a480565c19100d20310",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.77,
+    "probabilities": {
+     "historical_or_mixed_period": 0.81,
+     "individual_or_mixed_donors": 0.13,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.06
+    }
+   }
+  },
+  "GE-0243": {
+   "position_id": "CA2026-310",
+   "candidate": "Josh Harder",
+   "evidence_sha256": "d9e5888c1626a938efc8b9b61561be675ac733f5dfa3a9e0def9adb9201d3405",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.5,
+    "probabilities": {
+     "historical_or_mixed_period": 0.04,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.37,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.58
+    }
+   }
+  },
+  "GE-0246": {
+   "position_id": "CA2026-310",
+   "candidate": "John McBride",
+   "evidence_sha256": "83960132d7d77171f6dc0a88ea876b60f0b44e6d05bbee5775f2516cdc5858fb",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.99,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
      "nonfinancial": 0.01,
      "organization_2026_cycle": 0.0,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.11
+     "period_unestablished": 0.99
+    }
+   }
+  },
+  "GE-0270": {
+   "position_id": "CA2026-233",
+   "candidate": "Diane Papan",
+   "evidence_sha256": "9ecdfecb5a7d9c07aaca0d20d319d5482fbd10d97a4d822568518f9f238d5c92",
+   "disposition": "hold",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.65,
+    "probabilities": {
+     "historical_or_mixed_period": 0.71,
+     "individual_or_mixed_donors": 0.28,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.01
+    }
+   }
+  },
+  "GE-0273": {
+   "position_id": "CA2026-023",
+   "candidate": "Marc Berman",
+   "evidence_sha256": "1c1cd84d89b3d9022b467f08f7369aaf93c1b8c2b419b158f3a44e2542339fff",
+   "disposition": "hold",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.83,
+    "probabilities": {
+     "historical_or_mixed_period": 0.86,
+     "individual_or_mixed_donors": 0.13,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.01
+    }
+   }
+  },
+  "GE-0287": {
+   "position_id": "CA2026-292",
+   "candidate": "Frank Lara",
+   "evidence_sha256": "9c66fb29f46d84648e414e4a5d6911d59b6cd169180fe050c320d9dddf07359b",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "58b5156faf2cb120075070652f739720ea4a8ba326fda54de1c424097481c519",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.96,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.97,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.02
+    }
+   },
+   "model_text": "Frank Lara wrote for Liberation News (PSL) criticizing AIPAC as 'the premier lobby and promoter of Israeli interests in the U.S.' and framing the 2016 election around the Palestinian struggle.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.34,
+    "probabilities": {
+     "hold": 0.33,
+     "supported": 0.67
     }
    }
   },
@@ -884,6 +1075,132 @@
     }
    }
   },
+  "GE-0312": {
+   "position_id": "CA2026-027",
+   "candidate": "Robert Rivas",
+   "evidence_sha256": "e313d31eccd027700f73ce8c9d056dd99e3a07b1ba2139da000bf02dc4645a03",
+   "disposition": "hold",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.86,
+    "probabilities": {
+     "historical_or_mixed_period": 0.1,
+     "individual_or_mixed_donors": 0.02,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.88
+    }
+   }
+  },
+  "GE-0356": {
+   "position_id": "CA2026-003",
+   "candidate": "Melissa Hernandez",
+   "evidence_sha256": "b96f4a74a2e01dcf4b4671f3cfb16be00a81549ea9db8e828b5f958ba92071b9",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.82,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.14,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.85
+    }
+   }
+  },
+  "GE-0399": {
+   "position_id": "CA2026-006",
+   "candidate": "Zoe Lofgren",
+   "evidence_sha256": "0d8bff4120c7e01e28d2ff4ee857a47add4c066822c7e6b8aa33286b731b017e",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "c8bc9db54a91d8d7b1787f235ff22a74024d8aae4beee28833dc09f9e2489dd9",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.6,
+    "probabilities": {
+     "historical_or_mixed_period": 0.67,
+     "individual_or_mixed_donors": 0.21,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.11
+    }
+   }
+  },
+  "GE-0414": {
+   "position_id": "CA2026-026",
+   "candidate": "Gail Pellerin",
+   "evidence_sha256": "d1ba36fa93308759dabf915464ff965af1b07c4a160e149dc1be4bcca6d9b42d",
+   "disposition": "hold",
+   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.9,
+    "probabilities": {
+     "historical_or_mixed_period": 0.92,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.02,
+     "organization_recent_other": 0.04,
+     "period_unestablished": 0.02
+    }
+   }
+  },
+  "GE-0415": {
+   "position_id": "CA2026-014",
+   "candidate": "Xavier Becerra",
+   "evidence_sha256": "e3099a7044c15e34f9ac555c0e4abb63b58d0a1983b6e1154a5c766c48a711b8",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.87,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.11,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.89
+    }
+   }
+  },
+  "GE-0419": {
+   "position_id": "CA2026-310",
+   "candidate": "Josh Harder",
+   "evidence_sha256": "4eed9903aabdd6970a2e958914f5a8639d98ab92ed8bdc8193a5168c4b642b1d",
+   "disposition": "hold",
+   "reason": "historical_or_mixed_period",
+   "classification_jev_ref": "d623456d8bc017b7511c0735a5ba2736e4db7c8131e7bce726063d1553ab0f7f",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "historical_or_mixed_period",
+    "confidence": 0.59,
+    "probabilities": {
+     "historical_or_mixed_period": 0.66,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.01,
+     "period_unestablished": 0.3
+    }
+   }
+  },
   "GE-0437": {
    "position_id": "US2026-001",
    "candidate": "Barry Moore",
@@ -905,27 +1222,6 @@
     }
    }
   },
-  "GE-0450": {
-   "position_id": "US2026-002",
-   "candidate": "Dan S. Sullivan",
-   "evidence_sha256": "1b27c19775e666ad7343aff7cc87b8eeb5a0c2b46ccbf7a3b1f0b1953f7f64ab",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "e1b5c27e88ec3d9f24ec079dbca91cd2448af99fbcc73656e623d294b842c004",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.98,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.98
-    }
-   }
-  },
   "GE-0444": {
    "position_id": "US2026-002",
    "candidate": "Mary Peltola",
@@ -944,6 +1240,27 @@
      "organization_2026_cycle": 0.01,
      "organization_recent_other": 0.0,
      "period_unestablished": 0.96
+    }
+   }
+  },
+  "GE-0450": {
+   "position_id": "US2026-002",
+   "candidate": "Dan S. Sullivan",
+   "evidence_sha256": "1b27c19775e666ad7343aff7cc87b8eeb5a0c2b46ccbf7a3b1f0b1953f7f64ab",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "e1b5c27e88ec3d9f24ec079dbca91cd2448af99fbcc73656e623d294b842c004",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.98,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.98
     }
    }
   },
@@ -1031,38 +1348,6 @@
     }
    }
   },
-  "GE-0479": {
-   "position_id": "US2026-006",
-   "candidate": "Angie Nixon",
-   "evidence_sha256": "9ad12dc9c452f64a2b82bf26cc54c6b57ce8d1ecf3f2fb47621c4f772e32660b",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "e1b5c27e88ec3d9f24ec079dbca91cd2448af99fbcc73656e623d294b842c004",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 1.0,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 1.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   },
-   "model_text": "In X post during Senate primary, stated she is not receiving AIPAC funding, contrasting herself with establishment-backed candidates.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.08,
-    "probabilities": {
-     "hold": 0.46,
-     "supported": 0.54
-    }
-   }
-  },
   "GE-0471": {
    "position_id": "US2026-006",
    "candidate": "Ashley Moody",
@@ -1105,24 +1390,35 @@
     }
    }
   },
-  "GE-0489": {
-   "position_id": "US2026-007",
-   "candidate": "Jon Ossoff",
-   "evidence_sha256": "0c8ff432d454f5c506232f530619134cb52a5f58f385e8e4bb38850e65a02cd5",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+  "GE-0479": {
+   "position_id": "US2026-006",
+   "candidate": "Angie Nixon",
+   "evidence_sha256": "9ad12dc9c452f64a2b82bf26cc54c6b57ce8d1ecf3f2fb47621c4f772e32660b",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
    "classification_jev_ref": "e1b5c27e88ec3d9f24ec079dbca91cd2448af99fbcc73656e623d294b842c004",
    "classification_answer": {
     "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.75,
+    "choice": "nonfinancial",
+    "confidence": 1.0,
     "probabilities": {
-     "historical_or_mixed_period": 0.04,
-     "individual_or_mixed_donors": 0.16,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 1.0,
+     "organization_2026_cycle": 0.0,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.79
+     "period_unestablished": 0.0
+    }
+   },
+   "model_text": "In X post during Senate primary, stated she is not receiving AIPAC funding, contrasting herself with establishment-backed candidates.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.08,
+    "probabilities": {
+     "hold": 0.46,
+     "supported": 0.54
     }
    }
   },
@@ -1144,6 +1440,27 @@
      "organization_2026_cycle": 0.01,
      "organization_recent_other": 0.0,
      "period_unestablished": 0.96
+    }
+   }
+  },
+  "GE-0489": {
+   "position_id": "US2026-007",
+   "candidate": "Jon Ossoff",
+   "evidence_sha256": "0c8ff432d454f5c506232f530619134cb52a5f58f385e8e4bb38850e65a02cd5",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "e1b5c27e88ec3d9f24ec079dbca91cd2448af99fbcc73656e623d294b842c004",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.75,
+    "probabilities": {
+     "historical_or_mixed_period": 0.04,
+     "individual_or_mixed_donors": 0.16,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.79
     }
    }
   },
@@ -1852,27 +2169,6 @@
     }
    }
   },
-  "GE-0646": {
-   "position_id": "US2026-025",
-   "candidate": "Jon Husted",
-   "evidence_sha256": "a1b21279ddcfe31126ad4ebf45163c0e502e836b47e6de40423c286d4454718b",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "050f2b0cc25d9a27d63ae68fd73a2ba0b4bb57fdb2d33d5dbb681a2059803eb0",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.44,
-    "probabilities": {
-     "historical_or_mixed_period": 0.46,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.53
-    }
-   }
-  },
   "GE-0639": {
    "position_id": "US2026-025",
    "candidate": "Sherrod Brown",
@@ -1891,6 +2187,27 @@
      "organization_2026_cycle": 0.01,
      "organization_recent_other": 0.0,
      "period_unestablished": 0.91
+    }
+   }
+  },
+  "GE-0646": {
+   "position_id": "US2026-025",
+   "candidate": "Jon Husted",
+   "evidence_sha256": "a1b21279ddcfe31126ad4ebf45163c0e502e836b47e6de40423c286d4454718b",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "050f2b0cc25d9a27d63ae68fd73a2ba0b4bb57fdb2d33d5dbb681a2059803eb0",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.44,
+    "probabilities": {
+     "historical_or_mixed_period": 0.46,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.53
     }
    }
   },
@@ -2000,48 +2317,6 @@
     }
    }
   },
-  "GE-0670": {
-   "position_id": "US2026-028",
-   "candidate": "Jack Reed",
-   "evidence_sha256": "cb97bd097a74d25e3dc9576ef65a025a9c7346690ec628502e826805eaef8c48",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "050f2b0cc25d9a27d63ae68fd73a2ba0b4bb57fdb2d33d5dbb681a2059803eb0",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.74,
-    "probabilities": {
-     "historical_or_mixed_period": 0.14,
-     "individual_or_mixed_donors": 0.08,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.78
-    }
-   }
-  },
-  "GE-0671": {
-   "position_id": "US2026-028",
-   "candidate": "Jack Reed",
-   "evidence_sha256": "99f9df20dc623288454dd285925a3dd9767374766a253cdaedf4d1bc332439f1",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "050f2b0cc25d9a27d63ae68fd73a2ba0b4bb57fdb2d33d5dbb681a2059803eb0",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "organization_2026_cycle",
-    "confidence": 0.62,
-    "probabilities": {
-     "historical_or_mixed_period": 0.03,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.68,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.27
-    }
-   }
-  },
   "GE-0664": {
    "position_id": "US2026-028",
    "candidate": "Raymond McKay",
@@ -2092,6 +2367,48 @@
     "probabilities": {
      "hold": 0.24,
      "supported": 0.76
+    }
+   }
+  },
+  "GE-0670": {
+   "position_id": "US2026-028",
+   "candidate": "Jack Reed",
+   "evidence_sha256": "cb97bd097a74d25e3dc9576ef65a025a9c7346690ec628502e826805eaef8c48",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "050f2b0cc25d9a27d63ae68fd73a2ba0b4bb57fdb2d33d5dbb681a2059803eb0",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.74,
+    "probabilities": {
+     "historical_or_mixed_period": 0.14,
+     "individual_or_mixed_donors": 0.08,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.78
+    }
+   }
+  },
+  "GE-0671": {
+   "position_id": "US2026-028",
+   "candidate": "Jack Reed",
+   "evidence_sha256": "99f9df20dc623288454dd285925a3dd9767374766a253cdaedf4d1bc332439f1",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "050f2b0cc25d9a27d63ae68fd73a2ba0b4bb57fdb2d33d5dbb681a2059803eb0",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "organization_2026_cycle",
+    "confidence": 0.62,
+    "probabilities": {
+     "historical_or_mixed_period": 0.03,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.68,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.27
     }
    }
   },
@@ -2200,6 +2517,27 @@
     }
    }
   },
+  "GE-0702": {
+   "position_id": "US2026-032",
+   "candidate": "Ken Paxton",
+   "evidence_sha256": "ed24733824f1c5372913010e5c91889f0cff8f1c4ac1f7b393cc0f070d78e28d",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "organization_2026_cycle",
+    "confidence": 0.96,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.97,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.03
+    }
+   }
+  },
   "GE-0706": {
    "position_id": "US2026-032",
    "candidate": "James Talarico",
@@ -2253,27 +2591,6 @@
     }
    }
   },
-  "GE-0702": {
-   "position_id": "US2026-032",
-   "candidate": "Ken Paxton",
-   "evidence_sha256": "ed24733824f1c5372913010e5c91889f0cff8f1c4ac1f7b393cc0f070d78e28d",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "organization_2026_cycle",
-    "confidence": 0.96,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.97,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.03
-    }
-   }
-  },
   "GE-0714": {
    "position_id": "US2026-033",
    "candidate": "Mark Warner",
@@ -2316,6 +2633,429 @@
     }
    }
   },
+  "GE-0731": {
+   "position_id": "US2026-036",
+   "candidate": "Tommy Tuberville",
+   "evidence_sha256": "e0bbe0affe24b895cf1d92c2e29e27a595a1a28cbd203cbd8ecf132910109bce",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.92,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.06,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.93
+    }
+   }
+  },
+  "GE-0739": {
+   "position_id": "US2026-038",
+   "candidate": "Andy Biggs",
+   "evidence_sha256": "3d20cbc24ae108402936972ef8992910e4efea7bd9e798da4c9ca73451cfca98",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.89,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.07,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.91
+    }
+   }
+  },
+  "GE-0742": {
+   "position_id": "US2026-038",
+   "candidate": "Katie Hobbs",
+   "evidence_sha256": "39b6886bfead419e09b52a0070bb51322d5386ae3e0f3bde6c7bc5c523491a8a",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.96,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.97
+    }
+   }
+  },
+  "GE-0762": {
+   "position_id": "US2026-040",
+   "candidate": "Erik Underwood",
+   "evidence_sha256": "2b5735531cc43246f2bda12cbc33fa1a6684f1244e5c504634fa1763ca3437e9",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "individual_or_mixed_donors",
+    "confidence": 0.83,
+    "probabilities": {
+     "historical_or_mixed_period": 0.13,
+     "individual_or_mixed_donors": 0.86,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.01
+    }
+   },
+   "model_text": "Underwood’s campaign site demands AIPAC register as a foreign agent under FARA, calling it a foreign government influence.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.7,
+    "probabilities": {
+     "hold": 0.15,
+     "supported": 0.85
+    }
+   }
+  },
+  "GE-0769": {
+   "position_id": "US2026-042",
+   "candidate": "Dean Abrams",
+   "evidence_sha256": "ecc7f0147c09a0982c3125aa8b1eb8f4b342bfc44f77c65e42f15b5ba0f8fd7e",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.92,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.93,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.05
+    }
+   },
+   "model_text": "Abrams posted in Sept 2026 that he will not be bought by 'powerful lobbying organizations like AIPAC,' without stating a position on U.S. weapons or funding for Israel.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.82,
+    "probabilities": {
+     "hold": 0.09,
+     "supported": 0.91
+    }
+   }
+  },
+  "GE-0783": {
+   "position_id": "US2026-044",
+   "candidate": "Josh Green",
+   "evidence_sha256": "bdf54bfd9aa0a801f036fbebecc3a8c6eca73e957f793773eb55204cb1f49633",
+   "disposition": "hold",
+   "reason": "individual_or_mixed_donors",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "individual_or_mixed_donors",
+    "confidence": 0.64,
+    "probabilities": {
+     "historical_or_mixed_period": 0.25,
+     "individual_or_mixed_donors": 0.7,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.05
+    }
+   }
+  },
+  "GE-0791": {
+   "position_id": "US2026-046",
+   "candidate": "JB Pritzker",
+   "evidence_sha256": "1941c3e32a362b687e57611c37587a8ad66eeb1076da812e4b7a01a2a359c86a",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.93,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.9400000000000001,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.06
+    }
+   },
+   "model_text": "Pritzker publicly distanced himself from AIPAC, calling its Illinois spending “interference” and saying he wants no part of it.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.48,
+    "probabilities": {
+     "hold": 0.26,
+     "supported": 0.74
+    }
+   }
+  },
+  "GE-0806": {
+   "position_id": "US2026-050",
+   "candidate": "Wes Moore",
+   "evidence_sha256": "e21e6f54921714b8e537b41fd848507966ba7d5e56f4dea3083bbee6c77a376d",
+   "disposition": "hold",
+   "reason": "nonfinancial",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.92,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.93,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.07
+    }
+   }
+  },
+  "GE-0807": {
+   "position_id": "US2026-050",
+   "candidate": "Wes Moore",
+   "evidence_sha256": "4332d9ebb75ffd4c7d03fb1ab11b2e42612c54a79697d0c5126090a3ca70d7d2",
+   "disposition": "hold",
+   "reason": "nonfinancial",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.53,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.61,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.38
+    }
+   }
+  },
+  "GE-0816": {
+   "position_id": "US2026-052",
+   "candidate": "Jocelyn Benson",
+   "evidence_sha256": "91db3a451e60f0a25bb1663d3cef3228084ce1ce0bee29a96b79f17ed4b9272a",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 1.0,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 1.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   },
+   "model_text": "Benson received a 2026 primary endorsement from the Jewish Democratic Council of America, which cited her record on civil rights and combating antisemitism.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.88,
+    "probabilities": {
+     "hold": 0.06,
+     "supported": 0.94
+    }
+   }
+  },
+  "GE-0824": {
+   "position_id": "US2026-052",
+   "candidate": "John James",
+   "evidence_sha256": "d45673d259ed5772b23e2ee66526e04fb0d163b7385b43c674bd6e2c64bb53e5",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.94,
+    "probabilities": {
+     "historical_or_mixed_period": 0.03,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.95
+    }
+   }
+  },
+  "GE-0844": {
+   "position_id": "US2026-056",
+   "candidate": "Kelly Ayotte",
+   "evidence_sha256": "1b926eb590064257cf5348b288a047eaeb015597b68ecc13ee8e3f79dd9b508a",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.4,
+    "probabilities": {
+     "historical_or_mixed_period": 0.37,
+     "individual_or_mixed_donors": 0.09,
+     "nonfinancial": 0.03,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.5
+    }
+   }
+  },
+  "GE-0869": {
+   "position_id": "US2026-061",
+   "candidate": "Tina Kotek",
+   "evidence_sha256": "6601cc3ac23854f6309cdb5a9ca8ddf1fea4fa19da5d201a18b5cfb17c25e8de",
+   "disposition": "hold",
+   "reason": "individual_or_mixed_donors",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "individual_or_mixed_donors",
+    "confidence": 0.62,
+    "probabilities": {
+     "historical_or_mixed_period": 0.31,
+     "individual_or_mixed_donors": 0.68,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.01
+    }
+   }
+  },
+  "GE-0870": {
+   "position_id": "US2026-061",
+   "candidate": "Tina Kotek",
+   "evidence_sha256": "5e7002bc8aca142607116c34076361b76204ce5fe9737e1a25f7334915e0e08a",
+   "disposition": "hold",
+   "reason": "individual_or_mixed_donors",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "individual_or_mixed_donors",
+    "confidence": 0.47,
+    "probabilities": {
+     "historical_or_mixed_period": 0.42,
+     "individual_or_mixed_donors": 0.56,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.02
+    }
+   }
+  },
+  "GE-0879": {
+   "position_id": "US2026-062",
+   "candidate": "Josh Shapiro",
+   "evidence_sha256": "ed754b7e3f508727cbcdfd70eba0cda27d8fb140b8dd8eaff17d97af9b6e8146",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 1.0,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 1.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   },
+   "model_text": "Shapiro says he disagrees with AIPAC on some endorsements but warns that AIPAC criticism is being weaponized to silence pro-Israel Jewish voices in Democratic politics.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.78,
+    "probabilities": {
+     "hold": 0.11,
+     "supported": 0.89
+    }
+   }
+  },
+  "GE-0880": {
+   "position_id": "US2026-062",
+   "candidate": "Josh Shapiro",
+   "evidence_sha256": "de3a459997ec348b5f915257167c3ad595a98f9ed303014a846b0cde961b99e4",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 1.0,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 1.0,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.0
+    }
+   },
+   "model_text": "Shapiro warns of 'very dangerous' efforts to target AIPAC supporters within the Democratic Party, framing such targeting as potentially antisemitic.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.56,
+    "probabilities": {
+     "hold": 0.22,
+     "supported": 0.78
+    }
+   }
+  },
+  "GE-0915": {
+   "position_id": "US2026-074",
+   "candidate": "Richard Pan",
+   "evidence_sha256": "ebe2b77fa8850f92249c3b1ed328a9d7c92d1e6bec14d86f1e1bef67ccb81d9a",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "organization_2026_cycle",
+    "confidence": 0.93,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.94,
+     "organization_recent_other": 0.01,
+     "period_unestablished": 0.05
+    }
+   }
+  },
   "GE-0919": {
    "position_id": "US2026-074",
    "candidate": "Kevin Kiley",
@@ -2355,80 +3095,6 @@
      "organization_2026_cycle": 0.9299999999999999,
      "organization_recent_other": 0.01,
      "period_unestablished": 0.05
-    }
-   }
-  },
-  "GE-0915": {
-   "position_id": "US2026-074",
-   "candidate": "Richard Pan",
-   "evidence_sha256": "ebe2b77fa8850f92249c3b1ed328a9d7c92d1e6bec14d86f1e1bef67ccb81d9a",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "organization_2026_cycle",
-    "confidence": 0.93,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.94,
-     "organization_recent_other": 0.01,
-     "period_unestablished": 0.05
-    }
-   }
-  },
-  "GE-0928": {
-   "position_id": "US2026-075",
-   "candidate": "Adam Gray",
-   "evidence_sha256": "20291020b3a527044fa419bd6ba547d7a17c8ac1725aff3f9abfe67e42e342b5",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.94,
-    "probabilities": {
-     "historical_or_mixed_period": 0.03,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.95
-    }
-   }
-  },
-  "GE-0930": {
-   "position_id": "US2026-075",
-   "candidate": "Adam Gray",
-   "evidence_sha256": "16b3f247ecd180fb8c09cd26a88b2b39ae97d4df3eb5a8dd05db2300ea1bbfe1",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 0.88,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.9,
-     "organization_2026_cycle": 0.04,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.06
-    }
-   },
-   "model_text": "Sway endorsement page for Adam Gray (D-CA13) lists AIPAC PAC 2026 Endorsements among 36 groups backing him for U.S. House.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.86,
-    "probabilities": {
-     "hold": 0.07,
-     "supported": 0.93
     }
    }
   },
@@ -2535,6 +3201,59 @@
     "probabilities": {
      "hold": 0.13,
      "supported": 0.87
+    }
+   }
+  },
+  "GE-0928": {
+   "position_id": "US2026-075",
+   "candidate": "Adam Gray",
+   "evidence_sha256": "20291020b3a527044fa419bd6ba547d7a17c8ac1725aff3f9abfe67e42e342b5",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.94,
+    "probabilities": {
+     "historical_or_mixed_period": 0.03,
+     "individual_or_mixed_donors": 0.01,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.95
+    }
+   }
+  },
+  "GE-0930": {
+   "position_id": "US2026-075",
+   "candidate": "Adam Gray",
+   "evidence_sha256": "16b3f247ecd180fb8c09cd26a88b2b39ae97d4df3eb5a8dd05db2300ea1bbfe1",
+   "disposition": "nonfinancial",
+   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
+   "classification_jev_ref": "84a3124070227b6c87b0a568947278d3d8fd28c331947354738efbc2e341751e",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.88,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.9,
+     "organization_2026_cycle": 0.04,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.06
+    }
+   },
+   "model_text": "Sway endorsement page for Adam Gray (D-CA13) lists AIPAC PAC 2026 Endorsements among 36 groups backing him for U.S. House.",
+   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "projection_answer": {
+    "type": "choice",
+    "choice": "supported",
+    "confidence": 0.86,
+    "probabilities": {
+     "hold": 0.07,
+     "supported": 0.93
     }
    }
   },
@@ -3208,6 +3927,27 @@
     }
    }
   },
+  "GE-1029": {
+   "position_id": "US2026-101",
+   "candidate": "Anthony DiLorenzo",
+   "evidence_sha256": "3a7496940164cfa61ad5bfac18b1992fe9d9d25d16dd335df69c58eaefbd6ecb",
+   "disposition": "hold",
+   "reason": "period_unestablished",
+   "classification_jev_ref": "e53b2fb7d7bdb7f734fe6db83a2ea46fff9b5db8d1604c11e55d31216b5d989b",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "period_unestablished",
+    "confidence": 0.44,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.44,
+     "nonfinancial": 0.01,
+     "organization_2026_cycle": 0.01,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.53
+    }
+   }
+  },
   "GE-1032": {
    "position_id": "US2026-101",
    "candidate": "Stefany Shaheen",
@@ -3247,27 +3987,6 @@
      "organization_2026_cycle": 0.01,
      "organization_recent_other": 0.0,
      "period_unestablished": 0.4
-    }
-   }
-  },
-  "GE-1029": {
-   "position_id": "US2026-101",
-   "candidate": "Anthony DiLorenzo",
-   "evidence_sha256": "3a7496940164cfa61ad5bfac18b1992fe9d9d25d16dd335df69c58eaefbd6ecb",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "e53b2fb7d7bdb7f734fe6db83a2ea46fff9b5db8d1604c11e55d31216b5d989b",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.44,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.44,
-     "nonfinancial": 0.01,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.53
     }
    }
   },
@@ -3829,6 +4548,27 @@
     }
    }
   },
+  "GE-1129": {
+   "position_id": "US2026-117",
+   "candidate": "Bob Harvie",
+   "evidence_sha256": "893dbacd7bea56502e2a9c8a8fe5fc931947ac8e5f1b654fded7a32eddd9e854",
+   "disposition": "hold",
+   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
+   "classification_jev_ref": "8c8c593f44e758e18c578093cc1ca292102fdd7b1a3e2029a633bbe5a8f5a3cd",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "organization_2026_cycle",
+    "confidence": 0.92,
+    "probabilities": {
+     "historical_or_mixed_period": 0.0,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.0,
+     "organization_2026_cycle": 0.93,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.07
+    }
+   }
+  },
   "GE-1134": {
    "position_id": "US2026-117",
    "candidate": "Brian Fitzpatrick",
@@ -3871,24 +4611,24 @@
     }
    }
   },
-  "GE-1129": {
-   "position_id": "US2026-117",
-   "candidate": "Bob Harvie",
-   "evidence_sha256": "893dbacd7bea56502e2a9c8a8fe5fc931947ac8e5f1b654fded7a32eddd9e854",
+  "GE-1136": {
+   "position_id": "US2026-118",
+   "candidate": "Bob Brooks",
+   "evidence_sha256": "ef0cdbacd66ef2658140abbfe92290b872398feb63fe90afb2a180334cda1331",
    "disposition": "hold",
    "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
    "classification_jev_ref": "8c8c593f44e758e18c578093cc1ca292102fdd7b1a3e2029a633bbe5a8f5a3cd",
    "classification_answer": {
     "type": "choice",
-    "choice": "organization_2026_cycle",
-    "confidence": 0.92,
+    "choice": "period_unestablished",
+    "confidence": 0.99,
     "probabilities": {
      "historical_or_mixed_period": 0.0,
      "individual_or_mixed_donors": 0.0,
      "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.93,
+     "organization_2026_cycle": 0.01,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.07
+     "period_unestablished": 0.99
     }
    }
   },
@@ -3931,27 +4671,6 @@
      "organization_2026_cycle": 0.08,
      "organization_recent_other": 0.01,
      "period_unestablished": 0.9
-    }
-   }
-  },
-  "GE-1136": {
-   "position_id": "US2026-118",
-   "candidate": "Bob Brooks",
-   "evidence_sha256": "ef0cdbacd66ef2658140abbfe92290b872398feb63fe90afb2a180334cda1331",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "8c8c593f44e758e18c578093cc1ca292102fdd7b1a3e2029a633bbe5a8f5a3cd",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.99,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.99
     }
    }
   },
@@ -4113,6 +4832,27 @@
     }
    }
   },
+  "GE-1159": {
+   "position_id": "US2026-124",
+   "candidate": "Vicente Gonzalez Jr.",
+   "evidence_sha256": "1cf3de036b798f8f2cf199233c92ea3c4fbf027bec4b000e0997728eb48f1fab",
+   "disposition": "hold",
+   "reason": "nonfinancial",
+   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
+   "classification_answer": {
+    "type": "choice",
+    "choice": "nonfinancial",
+    "confidence": 0.94,
+    "probabilities": {
+     "historical_or_mixed_period": 0.01,
+     "individual_or_mixed_donors": 0.0,
+     "nonfinancial": 0.95,
+     "organization_2026_cycle": 0.0,
+     "organization_recent_other": 0.0,
+     "period_unestablished": 0.04
+    }
+   }
+  },
   "GE-1160": {
    "position_id": "US2026-123",
    "candidate": "Marlon Duran",
@@ -4142,27 +4882,6 @@
     "probabilities": {
      "hold": 0.2,
      "supported": 0.8
-    }
-   }
-  },
-  "GE-1159": {
-   "position_id": "US2026-124",
-   "candidate": "Vicente Gonzalez Jr.",
-   "evidence_sha256": "1cf3de036b798f8f2cf199233c92ea3c4fbf027bec4b000e0997728eb48f1fab",
-   "disposition": "hold",
-   "reason": "nonfinancial",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 0.94,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.95,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.04
     }
    }
   },
@@ -4334,722 +5053,56 @@
     }
    }
   },
-  "GE-0159": {
-   "position_id": "CA2026-008",
-   "candidate": "Buffy Wicks",
-   "evidence_sha256": "c13e54bf852bdad71ce0cdfcfb1da6c4ec61fc57c05b914529be357b748a9a7e",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.41,
-    "probabilities": {
-     "historical_or_mixed_period": 0.51,
-     "individual_or_mixed_donors": 0.49,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   }
-  },
-  "GE-0021": {
-   "position_id": "CA2026-231",
-   "candidate": "Matt Haney",
-   "evidence_sha256": "5a2ae231701c4319fe4a2648a3324098d7f6e9bcc8311685aca4486a4cc5b163",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.87,
-    "probabilities": {
-     "historical_or_mixed_period": 0.89,
-     "individual_or_mixed_donors": 0.11,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   }
-  },
-  "GE-0270": {
-   "position_id": "CA2026-233",
-   "candidate": "Diane Papan",
-   "evidence_sha256": "9ecdfecb5a7d9c07aaca0d20d319d5482fbd10d97a4d822568518f9f238d5c92",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.65,
-    "probabilities": {
-     "historical_or_mixed_period": 0.71,
-     "individual_or_mixed_donors": 0.28,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.01
-    }
-   }
-  },
-  "GE-0273": {
-   "position_id": "CA2026-023",
-   "candidate": "Marc Berman",
-   "evidence_sha256": "1c1cd84d89b3d9022b467f08f7369aaf93c1b8c2b419b158f3a44e2542339fff",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.83,
-    "probabilities": {
-     "historical_or_mixed_period": 0.86,
-     "individual_or_mixed_donors": 0.13,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.01
-    }
-   }
-  },
-  "GE-0164": {
-   "position_id": "CA2026-020",
-   "candidate": "Alex Lee",
-   "evidence_sha256": "18e934604e4bd631edd1e6c81f93b5f492f9cb3d688029bf0ac2fcd86fa35937",
+  "GE-1541": {
+   "position_id": "US2026-016",
+   "candidate": "Abdul El-Sayed",
+   "evidence_sha256": "f355c62bbbfc73c46ae2585a25e9184eff60f09d54425ecf11868979f75af2d1",
+   "reason": "Reviewed narrow projection; Jev classification and projection support on file.",
    "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 1.0,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 1.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   },
-   "model_text": "Alex Lee endorsed Tom Steyer for CA governor explicitly because Steyer would 'stand against AIPAC, dark money, & corporations,' framing AIPAC opposition as a key criterion.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
+   "model_text": "AIPAC targeted 130,000 Jewish Michiganders with mailers demonizing El-Sayed while his campaign canvassed on Jewish safety, Israel, Palestine and antisemitism.",
+   "projection_jev_ref": "418107423ddfceaf509081d370d661f5919ab2e4a1050318624c9f2866625e9b",
    "projection_answer": {
     "type": "choice",
     "choice": "supported",
-    "confidence": 0.6,
+    "confidence": 0.84,
     "probabilities": {
-     "hold": 0.2,
-     "supported": 0.8
-    }
-   }
-  },
-  "GE-0414": {
-   "position_id": "CA2026-026",
-   "candidate": "Gail Pellerin",
-   "evidence_sha256": "d1ba36fa93308759dabf915464ff965af1b07c4a160e149dc1be4bcca6d9b42d",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.9,
-    "probabilities": {
-     "historical_or_mixed_period": 0.92,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.02,
-     "organization_recent_other": 0.04,
-     "period_unestablished": 0.02
-    }
-   }
-  },
-  "GE-0312": {
-   "position_id": "CA2026-027",
-   "candidate": "Robert Rivas",
-   "evidence_sha256": "e313d31eccd027700f73ce8c9d056dd99e3a07b1ba2139da000bf02dc4645a03",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.86,
-    "probabilities": {
-     "historical_or_mixed_period": 0.1,
-     "individual_or_mixed_donors": 0.02,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.88
-    }
-   }
-  },
-  "GE-0415": {
-   "position_id": "CA2026-014",
-   "candidate": "Xavier Becerra",
-   "evidence_sha256": "e3099a7044c15e34f9ac555c0e4abb63b58d0a1983b6e1154a5c766c48a711b8",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "d6321369759cddb662e0513e0f9f874be9e8e85dd4c4d7d62dacdc9abd992fd4",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.87,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.11,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.89
-    }
-   }
-  },
-  "GE-0731": {
-   "position_id": "US2026-036",
-   "candidate": "Tommy Tuberville",
-   "evidence_sha256": "e0bbe0affe24b895cf1d92c2e29e27a595a1a28cbd203cbd8ecf132910109bce",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.92,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.06,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.93
-    }
-   }
-  },
-  "GE-0739": {
-   "position_id": "US2026-038",
-   "candidate": "Andy Biggs",
-   "evidence_sha256": "3d20cbc24ae108402936972ef8992910e4efea7bd9e798da4c9ca73451cfca98",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.89,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.07,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.91
-    }
-   }
-  },
-  "GE-0742": {
-   "position_id": "US2026-038",
-   "candidate": "Katie Hobbs",
-   "evidence_sha256": "39b6886bfead419e09b52a0070bb51322d5386ae3e0f3bde6c7bc5c523491a8a",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.96,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.97
-    }
-   }
-  },
-  "GE-0762": {
-   "position_id": "US2026-040",
-   "candidate": "Erik Underwood",
-   "evidence_sha256": "2b5735531cc43246f2bda12cbc33fa1a6684f1244e5c504634fa1763ca3437e9",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "individual_or_mixed_donors",
-    "confidence": 0.83,
-    "probabilities": {
-     "historical_or_mixed_period": 0.13,
-     "individual_or_mixed_donors": 0.86,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.01
+     "hold": 0.08,
+     "supported": 0.92
     }
    },
-   "model_text": "Underwood’s campaign site demands AIPAC register as a foreign agent under FARA, calling it a foreign government influence.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.7,
-    "probabilities": {
-     "hold": 0.15,
-     "supported": 0.85
-    }
-   }
-  },
-  "GE-0769": {
-   "position_id": "US2026-042",
-   "candidate": "Dean Abrams",
-   "evidence_sha256": "ecc7f0147c09a0982c3125aa8b1eb8f4b342bfc44f77c65e42f15b5ba0f8fd7e",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_jev_ref": "4d08b8881cdb5221b6c1c7d58e60be03a7efefe0cc96e7dbbddd4e3e53553e50",
    "classification_answer": {
     "type": "choice",
     "choice": "nonfinancial",
-    "confidence": 0.92,
+    "confidence": 0.75,
     "probabilities": {
-     "historical_or_mixed_period": 0.01,
+     "historical_or_mixed_period": 0.0,
      "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.93,
-     "organization_2026_cycle": 0.0,
+     "nonfinancial": 0.79,
+     "organization_2026_cycle": 0.04,
      "organization_recent_other": 0.0,
-     "period_unestablished": 0.05
-    }
-   },
-   "model_text": "Abrams posted in Sept 2026 that he will not be bought by 'powerful lobbying organizations like AIPAC,' without stating a position on U.S. weapons or funding for Israel.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.82,
-    "probabilities": {
-     "hold": 0.09,
-     "supported": 0.91
+     "period_unestablished": 0.17
     }
    }
   },
-  "GE-0783": {
-   "position_id": "US2026-044",
-   "candidate": "Josh Green",
-   "evidence_sha256": "bdf54bfd9aa0a801f036fbebecc3a8c6eca73e957f793773eb55204cb1f49633",
+  "GE-1557": {
+   "position_id": "US2026-117",
+   "candidate": "Brian Fitzpatrick",
+   "evidence_sha256": "bac0d1f6c53daa810922b8da8be62d876fc5ee00f8f0b380b3e3503532af0dd4",
+   "reason": "Held: projection review returned hold at p=0.98 (<0.75).",
    "disposition": "hold",
-   "reason": "individual_or_mixed_donors",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
+   "classification_jev_ref": "9503a5ea53ad29c6b86d85e5d921c21f38e1f32862bf831f750459d53fd9ed2c",
    "classification_answer": {
     "type": "choice",
-    "choice": "individual_or_mixed_donors",
-    "confidence": 0.64,
-    "probabilities": {
-     "historical_or_mixed_period": 0.25,
-     "individual_or_mixed_donors": 0.7,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.05
-    }
-   }
-  },
-  "GE-0791": {
-   "position_id": "US2026-046",
-   "candidate": "JB Pritzker",
-   "evidence_sha256": "1941c3e32a362b687e57611c37587a8ad66eeb1076da812e4b7a01a2a359c86a",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
+    "choice": "organization_2026_cycle",
     "confidence": 0.93,
     "probabilities": {
      "historical_or_mixed_period": 0.0,
      "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.9400000000000001,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.06
-    }
-   },
-   "model_text": "Pritzker publicly distanced himself from AIPAC, calling its Illinois spending “interference” and saying he wants no part of it.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.48,
-    "probabilities": {
-     "hold": 0.26,
-     "supported": 0.74
-    }
-   }
-  },
-  "GE-0806": {
-   "position_id": "US2026-050",
-   "candidate": "Wes Moore",
-   "evidence_sha256": "e21e6f54921714b8e537b41fd848507966ba7d5e56f4dea3083bbee6c77a376d",
-   "disposition": "hold",
-   "reason": "nonfinancial",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 0.92,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.93,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.07
-    }
-   }
-  },
-  "GE-0807": {
-   "position_id": "US2026-050",
-   "candidate": "Wes Moore",
-   "evidence_sha256": "4332d9ebb75ffd4c7d03fb1ab11b2e42612c54a79697d0c5126090a3ca70d7d2",
-   "disposition": "hold",
-   "reason": "nonfinancial",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 0.53,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.61,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.38
-    }
-   }
-  },
-  "GE-0816": {
-   "position_id": "US2026-052",
-   "candidate": "Jocelyn Benson",
-   "evidence_sha256": "91db3a451e60f0a25bb1663d3cef3228084ce1ce0bee29a96b79f17ed4b9272a",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 1.0,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 1.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   },
-   "model_text": "Benson received a 2026 primary endorsement from the Jewish Democratic Council of America, which cited her record on civil rights and combating antisemitism.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.88,
-    "probabilities": {
-     "hold": 0.06,
-     "supported": 0.94
-    }
-   }
-  },
-  "GE-0824": {
-   "position_id": "US2026-052",
-   "candidate": "John James",
-   "evidence_sha256": "d45673d259ed5772b23e2ee66526e04fb0d163b7385b43c674bd6e2c64bb53e5",
-   "disposition": "hold",
-   "reason": "Receipt totals can combine direct PAC and earmarked individual donations; lifetime/unknown periods also fail the cutoff. No isolated organization amount is established by this observation.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.94,
-    "probabilities": {
-     "historical_or_mixed_period": 0.03,
-     "individual_or_mixed_donors": 0.01,
      "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.95
-    }
-   }
-  },
-  "GE-0844": {
-   "position_id": "US2026-056",
-   "candidate": "Kelly Ayotte",
-   "evidence_sha256": "1b926eb590064257cf5348b288a047eaeb015597b68ecc13ee8e3f79dd9b508a",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.4,
-    "probabilities": {
-     "historical_or_mixed_period": 0.37,
-     "individual_or_mixed_donors": 0.09,
-     "nonfinancial": 0.03,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.5
-    }
-   }
-  },
-  "GE-0869": {
-   "position_id": "US2026-061",
-   "candidate": "Tina Kotek",
-   "evidence_sha256": "6601cc3ac23854f6309cdb5a9ca8ddf1fea4fa19da5d201a18b5cfb17c25e8de",
-   "disposition": "hold",
-   "reason": "individual_or_mixed_donors",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "individual_or_mixed_donors",
-    "confidence": 0.62,
-    "probabilities": {
-     "historical_or_mixed_period": 0.31,
-     "individual_or_mixed_donors": 0.68,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.01
-    }
-   }
-  },
-  "GE-0870": {
-   "position_id": "US2026-061",
-   "candidate": "Tina Kotek",
-   "evidence_sha256": "5e7002bc8aca142607116c34076361b76204ce5fe9737e1a25f7334915e0e08a",
-   "disposition": "hold",
-   "reason": "individual_or_mixed_donors",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "individual_or_mixed_donors",
-    "confidence": 0.47,
-    "probabilities": {
-     "historical_or_mixed_period": 0.42,
-     "individual_or_mixed_donors": 0.56,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.02
-    }
-   }
-  },
-  "GE-0879": {
-   "position_id": "US2026-062",
-   "candidate": "Josh Shapiro",
-   "evidence_sha256": "ed754b7e3f508727cbcdfd70eba0cda27d8fb140b8dd8eaff17d97af9b6e8146",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 1.0,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 1.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   },
-   "model_text": "Shapiro says he disagrees with AIPAC on some endorsements but warns that AIPAC criticism is being weaponized to silence pro-Israel Jewish voices in Democratic politics.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.78,
-    "probabilities": {
-     "hold": 0.11,
-     "supported": 0.89
-    }
-   }
-  },
-  "GE-0880": {
-   "position_id": "US2026-062",
-   "candidate": "Josh Shapiro",
-   "evidence_sha256": "de3a459997ec348b5f915257167c3ad595a98f9ed303014a846b0cde961b99e4",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 1.0,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 1.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   },
-   "model_text": "Shapiro warns of 'very dangerous' efforts to target AIPAC supporters within the Democratic Party, framing such targeting as potentially antisemitic.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.56,
-    "probabilities": {
-     "hold": 0.22,
-     "supported": 0.78
-    }
-   }
-  },
-  "GE-0066": {
-   "position_id": "CA2026-015",
-   "candidate": "Ben Allen",
-   "evidence_sha256": "1ab7720b8e0b904038226e802733f7215d3b6b68173b5c1176f6a3d2f96f8d7a",
-   "disposition": "hold",
-   "reason": "Donor-row periods are historical, cross the 2024 cutoff, or consist of individuals. No isolated 2024-onward organization amount.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "historical_or_mixed_period",
-    "confidence": 0.87,
-    "probabilities": {
-     "historical_or_mixed_period": 0.89,
-     "individual_or_mixed_donors": 0.1,
-     "nonfinancial": 0.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.01
-    }
-   }
-  },
-  "GE-0169": {
-   "position_id": "CA2026-049",
-   "candidate": "Jenny Wong",
-   "evidence_sha256": "da7444b8fac4e3d489b150e0fa257bbbc277b356c216a05731158f555e2265ed",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 0.99,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.99,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.01
-    }
-   },
-   "model_text": "A report published August 2024 places Berkeley City Auditor Jenny Wong on a JCRC-funded trip to Israel in March 2023. This is a historical trip, not a recent campaign donation.",
-   "projection_jev_ref": "5a9706d18d88e2e277d2214402d7ea42ec10bb78bb96e897f326ef5a05ad2b9a",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "yes",
-    "confidence": 0.64,
-    "probabilities": {
-     "no": 0.18,
-     "yes": 0.82
-    }
-   }
-  },
-  "GE-0174": {
-   "position_id": "CA2026-051",
-   "candidate": "Majdi \"Gaith\" Abuhamdieh",
-   "evidence_sha256": "928d2e3e023af453ef169f843e213e1bb5446d96b73a332f80d6303bd63db698",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 1.0,
-    "probabilities": {
-     "historical_or_mixed_period": 0.0,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 1.0,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.0
-    }
-   },
-   "model_text": "Abuhamdieh states he has not taken and will not take AIPAC-aligned money, explicitly rejecting pro-Israel lobbying funds for his Berkeley City Council campaign.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.76,
-    "probabilities": {
-     "hold": 0.12,
-     "supported": 0.88
-    }
-   }
-  },
-  "GE-0190": {
-   "position_id": "CA2026-072",
-   "candidate": "Barbara Lee",
-   "evidence_sha256": "55d1893359efe798c661176980ee746f557e9231940d28b64d742fa416cb4386",
-   "disposition": "hold",
-   "reason": "period_unestablished",
-   "classification_jev_ref": "8fcb046f7a4ca3978f9ea44da604f503167be6f10a52c524f3e77abe357f257c",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "period_unestablished",
-    "confidence": 0.54,
-    "probabilities": {
-     "historical_or_mixed_period": 0.05,
-     "individual_or_mixed_donors": 0.01,
-     "nonfinancial": 0.27,
-     "organization_2026_cycle": 0.01,
-     "organization_recent_other": 0.04,
-     "period_unestablished": 0.62
-    }
-   }
-  },
-  "GE-0287": {
-   "position_id": "CA2026-292",
-   "candidate": "Frank Lara",
-   "evidence_sha256": "9c66fb29f46d84648e414e4a5d6911d59b6cd169180fe050c320d9dddf07359b",
-   "disposition": "nonfinancial",
-   "reason": "Reviewed narrow projection; preserves nonfinancial policy or separately dated organization outside spending.",
-   "classification_jev_ref": "58b5156faf2cb120075070652f739720ea4a8ba326fda54de1c424097481c519",
-   "classification_answer": {
-    "type": "choice",
-    "choice": "nonfinancial",
-    "confidence": 0.96,
-    "probabilities": {
-     "historical_or_mixed_period": 0.01,
-     "individual_or_mixed_donors": 0.0,
-     "nonfinancial": 0.97,
-     "organization_2026_cycle": 0.0,
-     "organization_recent_other": 0.0,
-     "period_unestablished": 0.02
-    }
-   },
-   "model_text": "Frank Lara wrote for Liberation News (PSL) criticizing AIPAC as 'the premier lobby and promoter of Israeli interests in the U.S.' and framing the 2016 election around the Palestinian struggle.",
-   "projection_jev_ref": "988d48ad9df7c49cd1ead53200acc4d0e3f112e9c1d3b00cf29c5b29aa27e762",
-   "projection_answer": {
-    "type": "choice",
-    "choice": "supported",
-    "confidence": 0.34,
-    "probabilities": {
-     "hold": 0.33,
-     "supported": 0.67
+     "organization_2026_cycle": 0.94,
+     "organization_recent_other": 0.01,
+     "period_unestablished": 0.05
     }
    }
   }

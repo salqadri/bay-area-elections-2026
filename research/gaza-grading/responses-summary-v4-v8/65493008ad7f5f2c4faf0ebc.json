@@ -1,0 +1,108 @@
+{
+ "candidate_id": "65493008ad7f5f2c4faf0ebc",
+ "request_sha256": "8ab4c64e312d87bc544e33fbc1783afadb5ced1cb19c1bb06afbce96421eb7cf",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Marc Berman carries California Jewish Democrats' strongest-tier Strong Support endorsement from the organization formerly called Democrats for Israel California, a Zionist group. Per CalMatters, he recorded an Aye on AB 715, a bill establishing a state antisemitism coordinator and classroom-material oversight mechanism. These are the two principal documented actions in his record bearing on Palestinian justice, and both point to the pro-Israel end of the spectrum.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name field only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct Palestine signal."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All four spenders carry unestablished relevance; spending_context directs that unmapped spenders not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "General interpretive guidance, not a candidate-specific fact."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "AB 715 Aye vote (classroom-material oversight) is adverse and included. AB 1468 coauthorship is a failed bill with tangential Palestine relevance; omitted as immaterial."
+  },
+  {
+   "id": "candidate_record.caste_legislation_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Low-weight context; SB 403 abstention concerns caste discrimination, not Gaza or Israel/Palestine policy. Instructions limit mention to when actually relevant."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "General scope note, not a candidate-specific fact."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "CJD 'Strong Support' is the primary adverse signal and is included. Samir Laymoun opposition is omitted per summary_source_policy (samir_allowed: false, other_relevant_evidence exists)."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Source-classification context for Samir Laymoun; belongs in audit, not voter prose per instructions."
+  },
+  {
+   "id": "candidate_record.zionist_endorsement_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Confirms CJD is a Zionist organization and 'Strong Support' is its strongest tier; integrated into the CJD endorsement discussion in prose."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the race; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Status fact; no direct policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generation_sha256": "567fc45b39f40b0e1ecee34be157e93d987702359107f54b41fb3516779b3999",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T14:41:26Z"
+}

@@ -252,8 +252,9 @@ class ValidationChecks(unittest.TestCase):
                           {'endorser':'Local Teachers Union','relation':'endorsed','phase':'general'},
                           {'endorser':'California Jewish Democrats','relation':'supported','phase':'general'},
                           {'endorser':'Peace Officers Research Association of California','relation':'endorsed','phase':'general'}]
-        state=g.build_state(pos,c,data);rows=state['focused_endorsement_observations'];self.assertEqual(len(rows),3)
+        state=g.build_state(pos,c,data);rows=state['focused_endorsement_observations'];self.assertEqual(len(rows),4)  # v8 adds CJD-as-DFI to the focus (owner 2026-10-30)
         self.assertEqual(rows[0],{**c['endorsements'][0],'source':'unverified'});self.assertNotIn('endorsements_and_recommendations',state)
+        self.assertIn({'endorser':'California Jewish Democrats','relation':'supported','phase':'general','source':'unverified'},rows)
 
     def test_compact_identity_keeps_false_observations_and_retention_context(self):
         data=expanded_fixture();data['election']['date']='2026-11-03'
