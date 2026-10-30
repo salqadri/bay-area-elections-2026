@@ -18,9 +18,48 @@ adds optional campaign_url + campaign evidence fields).
 Usage: python3 xhunt2.py --limit 6   # smoke test
        python3 xhunt2.py --workers 4 # full run
 """
-import argparse, concurrent.futures, glob, json, os, re, threading, time
+import argparse, concurrent.futures, glob, gzip, json, os, re, threading, time
 import urllib.request, urllib.error
 from html.parser import HTMLParser
+
+try:
+    import brotli as _brotli
+except ImportError:
+    _brotli = None
+
+
+def _decompress_body(raw, enc=""):
+    """Return decompressed bytes or None. Honors Content-Encoding when present;
+    otherwise sniffs magic bytes (gzip, zlib, zstd) and finally tries every
+    available codec — some servers compress without saying so."""
+    import zlib
+    attempts = []
+    enc = (enc or "").lower()
+    if raw[:2] == b"\x1f\x8b":
+        attempts.append("gzip")
+    elif raw[:4] == b"\x28\xb5\x2f\xfd":
+        attempts.append("zstd")
+    elif len(raw) > 2 and raw[0] == 0x78 and raw[1] in (0x01, 0x9c, 0xda):
+        attempts.append("deflate")
+    if enc == "gzip" and "gzip" not in attempts: attempts.append("gzip")
+    if enc == "deflate" and "deflate" not in attempts: attempts.append("deflate")
+    if enc == "br" and "br" not in attempts: attempts.append("br")
+    if enc == "zstd" and "zstd" not in attempts: attempts.append("zstd")
+    for extra in ("gzip", "deflate", "raw-deflate", "zstd", "br"):
+        if extra not in attempts: attempts.append(extra)
+    for a in attempts:
+        try:
+            if a == "gzip": return gzip.decompress(raw)
+            if a == "deflate": return zlib.decompress(raw)
+            if a == "raw-deflate": return zlib.decompress(raw, -15)
+            if a == "zstd":
+                import zstandard
+                return zstandard.ZstdDecompressor().decompress(raw)
+            if a == "br" and _brotli is not None:
+                return _brotli.decompress(raw)
+        except Exception:
+            continue
+    return None
 
 WORK = os.path.dirname(os.path.abspath(__file__))
 STATE_PATH = os.path.join(WORK, "state2.json")
@@ -49,7 +88,18 @@ def http(url, headers=None, timeout=30, attempts=2, data=None):
         try:
             req = urllib.request.Request(url, data=data, headers=headers or {})
             with urllib.request.urlopen(req, timeout=timeout) as r:
-                return r.read().decode(errors="replace")
+                raw = r.read()
+                enc = (r.headers.get("Content-Encoding") or "").lower()
+            # decode defensively: servers sometimes send gzip/deflate/br bodies
+            # without any Content-Encoding header; decoding such bytes with
+            # errors="replace" produced U+FFFD garbage that silently failed every
+            # keyword gate (the Ritesh Tandon campaign-site miss, 2026-10-30)
+            try:
+                return raw.decode("utf-8")
+            except UnicodeDecodeError:
+                pass
+            dec = _decompress_body(raw, enc)
+            return (dec if dec is not None else raw).decode("utf-8", errors="replace")
         except Exception as e:
             last = repr(e); time.sleep(2 * (i + 1))
     raise RuntimeError(last)
