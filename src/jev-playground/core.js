@@ -1,9 +1,10 @@
 /* Pure presentation helpers. Evidence sufficiency is separate from confidence. */
 (function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.JevPlaygroundCore=api;})(typeof globalThis==='object'?globalThis:this,()=>{
   const percent=n=>typeof n==='number'&&Number.isFinite(n)?new Intl.NumberFormat('en-US',{style:'percent',maximumFractionDigits:1}).format(n):'Not returned';
+  const activeQuestions=questions=>Object.fromEntries(Object.entries(questions||{}).filter(([name])=>name!=='gaza_grade'));
   function samePrompt(a,b){try{return JSON.stringify(JSON.parse(a))===JSON.stringify(JSON.parse(b));}catch{return a===b;}}
   function currentInput(snapshot,row){return snapshot.candidates.find(candidate=>candidate.id===row.id)?.state??{status:'Candidate is outside the current input scope.'};}
-  const defaultScoreGradeMapping={upper_bounds:[.7,1.4,2.3,3.3,4.4],minimum_evidence_score:.22,require_issue_observation:true};
+  const defaultScoreGradeMapping={upper_bounds:[.74,1.4,2.3,3.3,4.4],minimum_evidence_score:.22,require_issue_observation:true};
   function validateMapping(mapping){
     const b=mapping?.upper_bounds;
     if(!mapping||Object.keys(mapping).some(key=>!['upper_bounds','minimum_evidence_score','require_issue_observation'].includes(key))||!Array.isArray(b)||b.length!==5||b.some((n,i)=>typeof n!=='number'||!Number.isFinite(n)||n<=(i?b[i-1]:0)||n>=5))throw new Error('Grade bounds must be five finite, strictly increasing numbers between 0 and 5.');
@@ -75,7 +76,7 @@
   }
   function currentCair(row){return (row.cair_action||[]).filter(r=>r.historical!==true&&(!r.phase||['general','unspecified'].includes(r.phase)));}
   function cairLabel(record){return (record.shared&&record.relation==='endorsed'?'Jointly endorsed':{endorsed:'Endorsed',preferred:'Preferred',opposed:'Opposed'}[record.relation]||record.relation)+(record.historical?' · historical':'')+(record.phase==='primary'?' · primary':'');}
-  function cairComparison(row,{gradeKey='gaza_grade',scoreKey='pro_palestine_score',mapping=defaultScoreGradeMapping}={}){
+  function cairComparison(row,{gradeKey='pro_palestine_score_grade',scoreKey='pro_palestine_score',mapping=defaultScoreGradeMapping}={}){
     const recommendations=currentCair(row),positive=recommendations.some(r=>['endorsed','preferred'].includes(r.relation));
     const questions=row.request?.questions||{},answers=row.status==='complete'?row.response?.answers||{}:{};
     const g=answers[gradeKey],gq=questions[gradeKey],s=answers[scoreKey],sq=questions[scoreKey];
@@ -88,13 +89,13 @@
   }
   function comparisonQuestions(rows){
     const grades=new Set(),scores=new Set();
-    for(const row of rows)for(const [key,q]of Object.entries(row.request?.questions||{})){
+    for(const row of rows)for(const [key,q]of Object.entries(activeQuestions(row.request?.questions))){
       if(q.type==='choice'&&Object.keys(q.criteria||{}).length&&Object.keys(q.criteria).every(k=>/^[A-F]$/i.test(k)))grades.add(key);
       if(q.type==='score'&&q.criteria?.length===6)scores.add(key);
       if(key==='pro_palestine_score'&&q.type==='score'&&q.criteria?.length===6)grades.add('pro_palestine_score_grade');
     }
     return {grades:[...grades].sort(),scores:[...scores].sort()};
   }
-  function parseQuestions(text){const q=JSON.parse(text);if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
-  return {currentInput,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,hasIssueObservation,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,gradeDistribution,boundaryNeighbors,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
+  function parseQuestions(text){const parsed=JSON.parse(text);const q=parsed&&typeof parsed==='object'&&!Array.isArray(parsed)?activeQuestions(parsed):parsed;if(!q||Array.isArray(q)||typeof q!=='object'||!Object.keys(q).length)throw new Error('Provide a nonempty questions object.');for(const [name,v]of Object.entries(q)){if(!v||!['choice','score','noul'].includes(v.type))throw new Error(name+': use choice, score, or noul.');if(v.type==='score'&&(!Array.isArray(v.criteria)||!v.criteria.length||v.criteria.length>10))throw new Error(name+': provide 1–10 ordered score levels.');if(v.type==='choice'&&(!v.criteria||Array.isArray(v.criteria)||typeof v.criteria!=='object'||!Object.keys(v.criteria).length))throw new Error(name+': provide named choices in a criteria object.');}return q;}
+  return {currentInput,activeQuestions,percent,samePrompt,defaultScoreGradeMapping,validateMapping,scoreGrade,hasIssueObservation,evidenceScore,derivedGrade,gradeMetric,withScoreGrades,gradeDistribution,boundaryNeighbors,answerValue,probabilityRows,isHouse,raceLabel,sortRaces,mergeDelta,catalogRows,catalogRaces,candidateSiteUrl,countyMatches,currentCair,cairLabel,cairComparison,comparisonQuestions,parseQuestions};
 });

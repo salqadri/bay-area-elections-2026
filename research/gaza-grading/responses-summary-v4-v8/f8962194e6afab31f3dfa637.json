@@ -1,0 +1,96 @@
+{
+ "candidate_id": "f8962194e6afab31f3dfa637",
+ "request_sha256": "8c6ef5a8992083e2078098d7c54fc67f1319f879be080a8cc765bc1d0a48efe2",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Cognetti stated on January 22, 2026, that she \"vehemently supports Israel's right to defend itself\" and would ensure Congress provides military aid to Israel. Her campaign platform addresses government-ethics measures—stock-trading bans, term limits, lobbying restrictions—with no plank on the war in Gaza or US military support for Israel. DMFI PAC, a committee aligned with Democratic Majority for Israel, recorded $381.82 in independent spending in her support.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no directional signal on Palestine."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "PA CD-8 House seat; identification only."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Pennsylvania; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Democratic Party; no directional signal by itself."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC identified as pro-Israel Democratic committee; provides context for the $381.82 supporting spend."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC $381.82 is the only mapped pro-Israel spender; all others unestablished relevance and omitted per instructions."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note that spending is independent and unmapped spenders lack established relevance."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CLF, Governing Majority Fund, and PA Pro-Life Federation all have unestablished relevance to Palestine assessment."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers only ethics and accountability (stock-trading ban, term limits, lobbying rules); no Palestine or Israel-related plank present."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Jan 22 2026 statement: 'vehemently supports Israel's right to defend itself' and would ensure Congress provides military aid to Israel; direct pro-aid commitment."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding is from 2024 only; scope limitation, not a directional fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; timing only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "US House of Representatives; identification."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no directional signal."
+  }
+ ],
+ "generation_sha256": "f225d6d507b95e8c2326467b5e3c9dfe99324719f1836840cb404bb1a1f53882",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:24:58Z"
+}

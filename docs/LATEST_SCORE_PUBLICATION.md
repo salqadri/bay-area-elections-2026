@@ -1,6 +1,37 @@
-# Latest score publication — October 28, 2026
+# Latest score publication — October 30, 2026
 
-Publication **2026-10-28.5** (current) completes the Hermes follow-up below: all **398**
+Publication **2026-10-30.1** (current) publishes owner-directed criteria **v8**
+plus the same-day **v8.1** correction, with fresh Qwen explanations for all
+**404** letter-grade candidacies (`research/gaza-grading/explanations-2026-10-30-v8-1.json`,
+responses in `research/gaza-grading/responses-summary-v4-v8/`) and refreshed race
+recommendations (161 Jev picks, 12 community-rule picks, 83 E/F-only, 283
+no-information). Score archive
+`research/gaza-grading/published-2026-10-30-v8-1.json` (`jev-2026-10-30-v8-1`):
+**A 79 · B 75 · C 23 · D 33 · E 54 · F 140 · N/A 892**.
+
+- **v8 (CJD-as-DFI):** *California Jewish Democrats* is the renamed Democrats for
+  Israel California (dfi-ca.org; documented in `endorsement-focus-v6.json`). Its
+  Support/Strong Support endorsements now reach the Jev state via a
+  `zionist_endorsement_context` block — previously CJD was filtered out of the
+  state entirely, which produced the Malia Cohen A from a lone CAIR Action
+  endorsement with zero personal record.
+- **v8 (endorsement-only cap):** a pro-Palestine organization endorsement with no
+  personal statement or action caps the score at 4.0 — **B, never A**.
+- **v8.1 (SB403 low weight, owner correction the same day):** 2023 SB 403
+  caste-discrimination records moved from the education-policy channel into a
+  dedicated `caste_legislation_context` block capped at **±0.2 total, never
+  band-moving on its own**. Targeted rerun of only the 19 candidacies whose state
+  changed (`research/gaza-grading/rerun-v8/targeted-v8-1.py`); the other 1,277
+  answers are byte-identical to v8. Net effect vs v8: one grade change (Richard
+  Barrera D→C). A 4-call stability sweep per rerun candidate confirmed no other
+  band crossings beyond inherent Jev edge noise.
+- Counts vs the v7 publication (2026-10-28.5): 86 letter changes; the systematic
+  ones are 17 downgrades where a CJD/DFI endorsement is now visible and 34
+  endorsement-only A→B caps.
+
+The previous publication was **2026-10-28.5** (schema **1.30**, archive
+`research/gaza-grading/published-2026-10-28-latest.json`, criteria **v7**,
+state **v18**): all **398**
 letter-grade candidacies now carry fresh Qwen explanations generated from their exact
 frozen v7 requests under summary-prompt-v3 (`research/gaza-grading/explanations-2026-10-28-latest.json`,
 responses in `research/gaza-grading/responses-2026-10-28-latest/`), and the **898** N/A

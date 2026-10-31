@@ -1,0 +1,84 @@
+{
+ "candidate_id": "0739232d9b608ad4d7d49b77",
+ "request_sha256": "3d8631cf6bd6ba67a3766a953c85e303aeb87c07a8e47e8f60eccd4cf32600e7",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bien Doan, a sitting San Jose District 7 City Council member, was part of a unanimous January 2024 council statement calling for a ceasefire in Gaza, humanitarian aid, and hostage release held by both Hamas and Israel. The action condemns ongoing humanitarian harm while its bilateral hostage framing and unanimous nature do not establish a more specific individual position on Israeli war crimes, West Bank settlement violence, or US military aid to Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Local city council office provides context for the unanimous statement; no independent Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-related directional signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All eight platform points address local San Jose issues (homelessness, public safety, housing, ethics, education, economy, environment, digital access) with no reference to Palestine, Israel, Gaza, or foreign policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Sole Palestine-related evidence: unanimous January 2024 council statement calling for ceasefire, humanitarian aid, and hostage release; condemns ongoing harm but bilateral framing and collective nature limit individual attribution."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling detail only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local city jurisdiction; no Palestine-related policy context."
+  },
+  {
+   "id": "candidate_record.election_type",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Runoff context only; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label only."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no additional party or Palestine-related information supplied."
+  }
+ ],
+ "generation_sha256": "4ba214bf16f652999dcdf76887a097c4b35fc56bfbc4e77d82a8ce535eaa6599",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:39:38Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "f959d855131e8a83074bad01",
+ "request_sha256": "15b50a6d53de01e003fd6a902b4539f3db0e3ac3515e4360620049a895a25c5d",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "IdaRose Sylvester's Mountain View council platform covers housing, homelessness, climate, and local economic policy, with no documented personal statements or actions on Palestine, Israel, or Gaza. The sole directional evidence is a CAIR Action general-election 'preferred' recommendation, a tier below full endorsement. CAIR Action weighs civil rights and Gaza-related foreign policy in its recommendations. No personal advocacy or public statement on Palestinian justice is recorded.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Local council race context; relevant to explain absence of federal foreign-policy levers."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction detail; no independent signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no directional signal on Palestine."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Entirely local issues (housing, homelessness, climate, economy, AI); no Palestine, Israel, or Gaza content, which is material to the grade explanation."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-election 'preferred' recommendation is the sole directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action recommendations are treated as concrete stance evidence for this rubric; supports including the endorsement."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action weighs civil rights and Gaza/ceasefire foreign policy; 'preferred' is below full endorsement tier."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Mountain View context already conveyed via office field."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information."
+  }
+ ],
+ "generation_sha256": "8b0520abd984dfcca3805459b62906ea292bdf801e9e43fc4a1c45d84768f411",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:33:29Z"
+}

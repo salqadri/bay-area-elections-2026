@@ -1,0 +1,78 @@
+{
+ "candidate_id": "d8261d68db1950c687cb1854",
+ "request_sha256": "28a3399c03556d1c582745753b3325e4ae6c7ebcc4cf6e89a8bc7ef880419f56",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "BAMC Action, the Bay Area Muslim Council, opposed Mary Badame in the 2026 Los Gatos Town Council general election, advising \"Do not vote for Mary.\" The recommendation is tactical rather than a documented policy finding. No personal statements, legislative votes, or actions by Badame on Palestine or Israel appear in the record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name only; no Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local council role provides context for scope of policy record."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction detail; no independent Palestine-justice signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-policy direction."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "BAMC Action general-election opposition with 'Do not vote for Mary' is the sole directional evidence."
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes the opposition is a tactical recommendation, not a specific policy finding."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Dates the opposition to the 2026 cycle."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Identifies Los Gatos as the local race context."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status has no bearing on Palestine-justice assessment."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster label; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information added."
+  }
+ ],
+ "generation_sha256": "39b2af66c552b3eccf8ae3abfa072066c5627ff0030b824269d812f26db3cb9c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:45:49Z"
+}

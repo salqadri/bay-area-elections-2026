@@ -1,0 +1,55 @@
+[2026-10-30 06:42:20] sweep finished; starting remediation
+[2026-10-30 06:42:20] impacted candidates: 29
+[2026-10-30 06:42:27] collector redo targets: 32
+[2026-10-30 06:48:45] redo abdul el sayed|D: +6 items
+[2026-10-30 06:51:34] redo adam withrow|UP: +0 items
+[2026-10-30 06:52:44] redo alex behrend|None: +1 items
+[2026-10-30 06:54:11] redo bale dalton|D: +1 items
+[2026-10-30 06:57:38] redo ben ray lujn|D: +3 items
+[2026-10-30 07:01:24] redo bill hagerty|R: +6 items
+[2026-10-30 07:04:03] redo brian fitzpatrick|R: +3 items
+[2026-10-30 07:06:16] redo charles booker|D: +0 items
+[2026-10-30 07:09:55] redo connie chan|D: +2 items
+[2026-10-30 07:12:21] redo david jolly|D: +3 items
+[2026-10-30 07:19:09] redo ed markey|D: +3 items
+[2026-10-30 07:22:10] redo greg abbott|R: +5 items
+[2026-10-30 07:27:17] redo jack reed|D: +5 items
+[2026-10-30 07:39:46] redo jennifer balkcom|R: +0 items
+[2026-10-30 07:41:48] redo john deaton|R: +1 items
+[2026-10-30 07:44:15] redo john james|R: +0 items
+[2026-10-30 07:47:09] redo lateefah simon|D: +7 items
+[2026-10-30 07:48:19] redo lydia christensen|L: +0 items
+[2026-10-30 07:51:43] redo mark warner|D: +3 items
+[2026-10-30 07:52:41] redo marlon duran|G: +0 items
+[2026-10-30 07:54:00] redo matt loesby|L: +0 items
+[2026-10-30 07:55:36] redo monica alponte|L: +3 items
+[2026-10-30 07:57:19] redo pat dixon|L: +0 items
+[2026-10-30 07:58:47] redo rachel fetty anderson|D: +1 items
+[2026-10-30 08:02:06] redo randy villegas|D: +0 items
+[2026-10-30 08:03:47] redo sam forstag|D: +1 items
+[2026-10-30 08:07:06] redo tom perriello|D: +0 items
+[2026-10-30 08:10:47] redo troy jackson|D: +3 items
+[2026-10-30 08:11:57] redo zach dembo|D: +1 items
+[2026-10-30 08:13:21] redo douglas p  marsh|G: +0 items
+[2026-10-30 08:14:20] redo michael bahry|I: +1 items
+[2026-10-30 08:15:20] redo walid hakim|G: +0 items
+[2026-10-30 08:15:22] merge rc=1
+[2026-10-30 08:15:22] ger())
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/bay-area-elections-2026/research/gaza-stance/merge_gaza_evidence.py", line 70, in merged_data
+    items = [clean_item(e) for e in rows]
+             ~~~~~~~~~~^^^
+  File "/workspace/bay-area-elections-2026/research/gaza-stance/merge_gaza_evidence.py", line 46, in clean_item
+    raise ValueError(f"Invalid ledger item {e['id']}: {errors}")
+ValueError: Invalid ledger item GE-1592: ['$.date_method: value not in enum']
+
+[2026-10-30 08:37:00] sweep finished; starting remediation
+[2026-10-30 08:37:00] impacted candidates: 29
+[2026-10-30 08:37:03] merge rc=1
+[2026-10-30 08:37:03] cts with reviewed publication; reconcile before merging:\n' + '\n'.join(errors))
+ValueError: Ledger conflicts with reviewed publication; reconcile before merging:
+CA2026-002 / Lateefah Simon / GE-1579: raw X excerpt is not a concise summary
+CA2026-002 / Lateefah Simon / GE-1580: raw X excerpt is not a concise summary
+CA2026-002 / Lateefah Simon / GE-1581: raw X excerpt is not a concise summary
+CA2026-002 / Lateefah Simon / GE-1582: quarantined source reintroduced without a documented resolution
+

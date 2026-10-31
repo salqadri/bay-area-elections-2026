@@ -1,0 +1,72 @@
+{
+ "candidate_id": "e0d62318f2056a95ceb13c49",
+ "request_sha256": "f3ba5a85947e0596822c8b61bb06ef66c73499171aa3b70bc7de164be2a67cda",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Lamont's documented statements frame Gaza through an Israel-centric lens. His October 2023 governor's statement condemned 'violent attacks in Israel.' In January 2024, after an SCSU protest was interrupted, he cited prior visits to Gaza and expressed empathy for Gazan children, but insisted protesters must first condemn Oct 7 to be heard. The recognition of Palestinian suffering is real yet conditional, subordinated to affirming Israel's victimhood before Palestinian voices are granted legitimacy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine/Israel signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State context; no Palestine/Israel signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine/Israel signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All eight points address economy, healthcare, education, housing, climate, and labor; none reference Palestine, Israel, Gaza, or related speech rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 2023 statement frames Oct 7 as 'violent attacks in Israel'; Jan 2024 SCSU remark shows empathy for Gazan children but conditions protest legitimacy on first condemning Oct 7—Israel-centric framing with qualified sympathy for Palestinians."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context; no Palestine/Israel signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification; no policy signal."
+  }
+ ],
+ "generation_sha256": "c7013daad68eb502cafc852b37e7c6e218beee474793b0d402dda7aef237d41d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:47:23Z"
+}

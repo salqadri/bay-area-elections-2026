@@ -1,0 +1,78 @@
+{
+ "candidate_id": "91fd7c3ed70550d87b21ba21",
+ "request_sha256": "010cf8ff26a5987d5f01ed2ce48a32c4c60da467f8aaa6aca057135c96f4c533",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Tuberville signed a 2023 bill redirecting $100 million in Palestinian aid to Israel's Iron Dome, stating Gaza aid 'will ultimately wind up in the hands of Hamas,' and opposed U.S. aid to Gaza, which he framed as 'Hamas-controlled.' He co-signed a 2024 Senate statement calling for Hamas's elimination and, in a 2025 interview, urged restoring the Abraham Accords while saying the conflict cannot be solved by one ceasefire.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (AL Governor); no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers education, economy, immigration, crime, pro-life, guns, jobs, ethics; no mention of Palestine, Israel, Gaza, or related speech."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Record explicitly states the religious-liberty objection to the Antisemitism Awareness Act is 'distinct from a pro-Palestinian stance'; no signal for or against Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Signed bill redirecting $100M Palestinian aid to Iron Dome; opposed U.S. aid to Gaza framing it Hamas-controlled; co-signed statement calling for Hamas elimination; urged Abraham Accords restoration. Consistent pro-Israel, anti-Palestinian pattern."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope note only; no organization or amount specified that would establish relevance."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification tag; no policy content."
+  }
+ ],
+ "generation_sha256": "2dd570ed2712ded59f049a78b00bb6a3738e353e8f49077017a989ae3318fd65",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:42:43Z"
+}

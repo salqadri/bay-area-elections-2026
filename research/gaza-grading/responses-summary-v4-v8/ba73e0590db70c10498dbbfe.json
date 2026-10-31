@@ -1,0 +1,72 @@
+{
+ "candidate_id": "ba73e0590db70c10498dbbfe",
+ "request_sha256": "7d0562a8f8a99cbe7529c4f89927e4801c7cf926d19c01ce33c06e63ea9a2070",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Blakeman identifies as \"a Zionist and a proud Zionist,\" marched for Israel, and in a 2026 gubernatorial debate issued graphic warnings about anti-Israel protesters while attacking his opponent's Israel stance. He also demanded New York adopt the IHRA working definition of antisemitism, criticizing the mayor's removal of it. His public statements consistently defend Israel and cast opposition to it as a threat to Jewish communities.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Name identifier only, no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context, no bearing on Palestine position"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label, no directional signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not establish Palestine position"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers criminal justice, economy, immigration, education, sports, environment; no Israel/Palestine content"
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Demand to adopt IHRA definition and criticize its removal equates anti-Zionism with antisemitism, supporting pro-Israel framing"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Explicit Zionist self-identification, march for Israel, debate warnings about anti-Israel protesters, attacking opponent over Israel stance; consistent pro-Israel shielding"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling detail, no directional signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label, no directional signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster tag, no directional signal"
+  }
+ ],
+ "generation_sha256": "455c59545f8a698ef37a258023a89d5e7a411bf7bef80baf5b9813e0160554d6",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:59:50Z"
+}

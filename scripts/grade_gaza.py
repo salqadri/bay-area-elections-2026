@@ -1,7 +1,7 @@
 """Jev System One grader for Gaza/pro-Palestine positions, reusable across races and rubrics.
 
 plan → grade → report over any candidate scope, using a versioned criteria file (score + choice
-questions; output always carries pro_palestine_score and gaza_grade). The per-candidate state is
+questions; grades derive exclusively from pro_palestine_score). The per-candidate state is
 deliberately succinct: identity line, IE spenders for/against with amounts, campaign platform
 points, Gaza evidence items — no boilerplate notes. Decisions are cached against the exact
 request contract, so re-runs only pay for changed inputs. Nothing here publishes; results stay a
@@ -28,14 +28,14 @@ from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
-from organization_context import add_spending, add_observation_context, registry as organization_registry  # noqa: E402
+from organization_context import add_spending, add_observation_context, normalize_endorsement_observations, registry as organization_registry  # noqa: E402
 from evidence_context import contexts as reviewed_contexts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v7.json'
-STATE_VERSION = 'candidate-evidence-v18-candidate-only-guide-comments'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v9.json'
+STATE_VERSION = 'candidate-evidence-v23-cjd-canonical-endorsements'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -94,6 +94,12 @@ def validate_response(questions, response):
         if q['type'] == 'score' and not number(a.get('score'), 0, len(keys) - 1):
             raise ValueError('Invalid score for ' + name)
     return response
+
+
+def active_questions(questions):
+    """Retire the old choice grade from new requests; archived contracts stay exact."""
+    validate_questions(questions)
+    return validate_questions({name: question for name, question in questions.items() if name != 'gaza_grade'})
 
 
 def jev_call(work, request, key, force=False):
@@ -162,7 +168,7 @@ def endorser_key(name):
 
 
 def focused_endorsements(p, c):
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v5.json').read_text())
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v6.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
     aliases.update(organization_registry()[2]['aliases'])
     observations = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
@@ -202,7 +208,7 @@ def focused_endorsements(p, c):
                                  'source_label': card['source_label'], 'phase': card['phase'],
                                  'url': card['url'], 'checked_on': guide['reviewed_on'],
                                  'verification': 'endorser_statement'})
-    return observations
+    return normalize_endorsement_observations(observations)
 
 
 def compact_endorsements(observations):
@@ -264,8 +270,20 @@ def build_state(p, c, data):
     # Education-policy evidence has its own complete channel. It must not be
     # silently lost behind the generic twelve-item budget or imply a grade.
     policy = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') == 'antisemitism_education']
+    caste = [e for e in policy if 'caste' in e.get('summary', '').lower() or 'SB 403' in e.get('summary', '')]
+    policy = [e for e in policy if e not in caste]
     if policy:
         parts['antisemitism_education_policy_evidence'] = [compact_policy_evidence(e) for e in policy]
+    if caste:
+        parts['caste_legislation_context'] = {
+            'weight': ('LOW WEIGHT context, not a Gaza position. The 2023 California SB 403 caste-discrimination bill '
+                       '(vetoed by Newsom; the 2025 SB 403 is an unrelated bill) concerns Hindutva accountability — '
+                       'a parallel the owner values against supremacist ideologies, but it ranks far below Gaza. '
+                       'This context may shift the score at most 0.2 in either direction and must NEVER move a grade '
+                       'band on its own: authoring or voting aye is small positive; demanding removal of the word '
+                       '"caste", co-signing a delay-and-study letter, or abstaining is small negative. Grade strictly '
+                       'on the Gaza record; mention caste history only when actually relevant to this candidate.'),
+            'items': [compact_policy_evidence(e) for e in caste]}
     generic = [e for e in c.get('gaza_evidence') or [] if e.get('dimension') != 'antisemitism_education']
     # Filter before budgeting so an omitted old/mixed total cannot displace a
     # valid current observation. New or edited funding claims require review.
@@ -316,7 +334,7 @@ def plan(data, criteria, scope):
     items = []
     for p, c, roster in rows:
         state = build_state(p, c, data)
-        request = {'model': MODEL, 'state': state, 'questions': criteria['questions']}
+        request = {'model': MODEL, 'state': state, 'questions': active_questions(criteria['questions'])}
         items.append({'position_id': p['id'], 'candidate': c['name'], 'roster': roster,
                       'party': c.get('party'), 'district_or_seat': p.get('district_or_seat'),
                       'request_sha256': digest(dump(request).encode()), 'state': state})
@@ -330,7 +348,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
     validate_questions(criteria['questions'])
     decisions = {}
 
-    questions = criteria['questions']
+    questions = active_questions(criteria['questions'])
 
     def one(item):
         request = {'model': MODEL, 'state': item['state'], 'questions': questions}
@@ -344,10 +362,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
         decisions[ref] = {'request': request, 'response': response}
         answers = response.get('answers', {})
         out = {**base, 'state': item['state'], 'answers': answers}
-        g = answers.get('gaza_grade', {})
         s = answers.get('pro_palestine_score', {})
-        out['gaza_grade'] = g.get('choice')
-        out['gaza_grade_confidence'] = g.get('confidence')
         out['pro_palestine_score'] = s.get('score')
         out['pro_palestine_confidence'] = s.get('confidence')
         out['pro_palestine_score_grade'] = row_grade({'status': 'complete', 'request': request, 'response': response}, mapping)
@@ -369,7 +384,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
 
 def summary(batch):
     from collections import Counter
-    grades = Counter(r.get('gaza_grade') or 'none' for r in batch['results'])
+    grades = Counter(r.get('pro_palestine_score_grade') or 'none' for r in batch['results'])
     return {'graded': len(batch['results']), 'errors': sum('error' in r for r in batch['results']),
             'grades': dict(sorted(grades.items())),
             'scores_recorded': sum(isinstance(r.get('pro_palestine_score'), (int, float)) for r in batch['results'])}

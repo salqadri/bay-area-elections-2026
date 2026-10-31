@@ -1,0 +1,96 @@
+{
+ "candidate_id": "1f11be244257234150f1077c",
+ "request_sha256": "3b689b6fcb0360818276b6d53d8f873a186186d518671fd4f347a849bedb6592",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Flippo holds an AIPAC endorsement and, on Real America's Voice in July 2025, blamed Hamas for Gaza's humanitarian crisis, saying the group had \"proven what they are.\" In October 2026 he touted post–October 7 aid to Israel, claiming his nonprofit delivered food, although records attribute the delivery to the Order of St. John. His platform states no specific Israel or Palestine policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no positional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office designation; no Israel/Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no positional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a specific policy position."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All four spenders carry unestablished relevance; spending_context directs they not explain a Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining why unmapped spenders are excluded; no independent positional signal."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Single opposing spender with unestablished relevance; no explicit Israel/Palestine connection."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Eight platform points cover economy, immigration, education, etc.; none address Israel, Palestine, Gaza, or related civil-rights policy specifically."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Two items: (1) blaming Hamas for Gaza's aid shortfall on Real America's Voice; (2) claiming credit for post-Oct 7 aid delivery to Israel that records attribute to Order of St. John, made in the context of an AIPAC endorsement. Both signal pro-Israel framing and misrepresentation."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope note (since 2024 only); no independent positional signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Defines AIPAC as an advocacy organization supporting pro-Israel candidates; contextualizes the AIPAC endorsement referenced in gaza_evidence. Grouped with gaza_evidence in the summary."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03); no positional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier; no positional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no positional signal."
+  }
+ ],
+ "generation_sha256": "6876456f3f7f04b1395f25c6f71e9d5214ee233d3d0650d6714257886654a8b7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:15:28Z"
+}

@@ -1,0 +1,38 @@
+{
+ "id": "pro-palestine-v8",
+ "description": "Owner-edited v8: California Jewish Democrats (renamed from Democrats for Israel California, dfi-ca.org) is an explicit Zionist-organization signal; a pro-Palestine organization endorsement alone can never earn an A, and endorsement-only evidence on both sides nets down.",
+ "questions": {
+  "pro_palestine_score": {
+   "type": "score",
+   "instructions": "What grade should we give the candidate wrt how pro-Palestine and anti-Israel they are?",
+   "criteria": [
+    "Shields Israel and a strong defender of Israel or has endorsements from Hindutva or Zionist organizations (other than JStreetPAC; Zionist organizations explicitly include California Jewish Democrats, the renamed Democrats for Israel California, and its 'Strong Support' tier counts double against the candidate)",
+    "Israel-centric framing with sympathy for Palestinians or equates being anti-zionism or anti-Israel with anti-semitism / supports the IHRA definition of anti-semitism or bills like AB-715 in CA that censor criticism of Israel, or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+    "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist and refuses to say a clear Yes it's a genocide when explicitly asked",
+    "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreet",
+    "Explicitly affirms it to be a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+    "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action (at endorsement level rather than just preferred level) or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community, or has personally been a strong champion for our cause such as leading / introducing a ceasefire resolution. Or are openly and explicitly anti-zionist and strong supporters of BDS against Israel. They oppose the US doing things on behalf of Israel. An endorsement from a pro-Palestine organization (CAIR Action, Vote for Peace, Track AIPAC, BAMC) is never by itself sufficient for this top band: a candidate who has said or done nothing personally caps at the band below, and if the same candidate also carries a California Jewish Democrats (ex-DFI) endorsement the two net down to the middle bands (its 'Support' tier nets to the middle, 'Strong Support' further)."
+   ]
+  },
+  "gaza_grade": {
+   "type": "choice",
+   "instructions": "What grade should we give the candidate wrt the Gaza genocide, with A being the most anti-Israel to F being the most pro-Israel?",
+   "criteria": {
+    "A": "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action (at endorsement level rather than just preferred level) or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community, or has personally been a strong champion for our cause such as leading / introducing a ceasefire resolution. Or are openly and explicitly anti-zionist and strong supporters of BDS against Israel. They oppose the US doing things on behalf of Israel. Never assign A when the only evidence is a pro-Palestine organization endorsement with no personal statement or action by the candidate; cap at B in that case.",
+    "B": "Explicitly affirms it to be a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action. This band is also the ceiling for a candidate whose sole evidence is pro-Palestine organization endorsement(s) with no personal statement; if that candidate simultaneously holds a California Jewish Democrats (ex-Democrats for Israel California) endorsement, the opposing signals net the candidate down to C (or worse when the CJD tier is 'Strong Support').",
+    "C": "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreet",
+    "D": "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist and refuses to say a clear Yes it's a genocide when explicitly asked",
+    "E": "Israel-centric framing with sympathy for Palestinians or equates being anti-zionism or anti-Israel with anti-semitism / supports the IHRA definition of anti-semitism or bills like AB-715 in CA that censor criticism of Israel, or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+    "F": "Shields Israel and a strong defender of Israel or has endorsements from Hindutva or Zionist organizations (other than JStreetPAC)"
+   }
+  },
+  "evidence_score": {
+   "type": "score",
+   "instructions": "how strong are the evidences or observations for us to evaluate the candidate's stance on being pro-Palestine or being recommended by Muslim community as a measure of being pro-Justice vs being pro-Israel or benefiting zionists?",
+   "criteria": [
+    "There is zero evidence that indicates one way or another or has said or done absolutely nothing about the topic as far as we know (which is especially ok for local races)",
+    "There is concrete undeniable evidence of this candidate being one way or the other"
+   ]
+  }
+ }
+}

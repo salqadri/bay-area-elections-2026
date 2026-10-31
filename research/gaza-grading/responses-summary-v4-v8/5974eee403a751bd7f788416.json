@@ -1,0 +1,84 @@
+{
+ "candidate_id": "5974eee403a751bd7f788416",
+ "request_sha256": "d041e31a8d62fbc923d104f5233b71cf2bb29a1d6c79e958988b03a4c129ad0e",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Charlene Wang, a nonpartisan Oakland City Council member, campaigns on local housing, public safety, and governance priorities. The sole directional signal in her record is an endorsement from 314 Action Fund, a hybrid PAC that received United Democracy Project funding in May 2024. The guide treats that UDP connection as a negative indicator for Palestinian justice. No personal statements, votes, or legislative actions on Palestine or Israel are documented.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes local-race context relevant to evidence expectations."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Implied by jurisdiction field; no independent signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is contextual for a city council race."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "All eight platform points address local housing, economy, safety, and governance; none reference Palestine, Israel, or the Middle East."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "314 Action Fund endorsement is the sole directional signal; adverse per guide's UDP-funding criterion."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents 314 Action Fund's May 2024 UDP funding; guide treats this as a negative indicator without requiring candidate-specific earmarking proof."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 date is scheduling metadata, not a policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Oakland context; grouped with office field."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status does not bear on Palestine/Israel position."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Metadata field with no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information supplied."
+  }
+ ],
+ "generation_sha256": "e47a91bf1765ab19a14bccb33a8b02059c3767dbe8b59ee352259e56ef8079f9",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:34:48Z"
+}

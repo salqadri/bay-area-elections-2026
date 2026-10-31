@@ -72,7 +72,7 @@ def resolve_date(url):
     d = resolve_meta(url)
     if d: return d, "page_metadata"
     d = resolve_wayback(url)
-    if d: return d, "wayback_metadata"
+    if d: return d, "wayback_first_capture"
     return None, None
 
 if __name__ == "__main__":

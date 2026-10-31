@@ -1,0 +1,96 @@
+{
+ "candidate_id": "e5615b61952305a5c75bf9ae",
+ "request_sha256": "1cef5d659e38e240d74b0df26fd2c6c1beb7df593d27245e83f56c394295a124",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Cotton introduced the Israel Security Assistance Support Act (May 2024) to require weapons deliveries to Israel and the PLO and PA Terror Payments Accountability Act (January 2025) to sanction Palestinian institutions. On C-SPAN in April 2024 he said there was 'no evidence of genocide' in Gaza; in October 2023 he posted that everything in Gaza was Hamas's responsibility. He also cosponsored the 2025 Antisemitism Awareness Act, which directs the Education Department to use the IHRA definition for campus investigations.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes the seat (AR Statewide Senator); no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label; no specific Palestine policy signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "AMERICA ONE spending has 'unestablished' relevance per the record; cannot explain the Palestine assessment without other explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "General framing note for spenders; no candidate-specific policy content."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "International-affairs bullet mentions deterring Iran but contains no Israel/Palestine-specific policy; other bullets (immigration, economy, healthcare, etc.) are unrelated to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Cosponsorship of the 2025 Antisemitism Awareness Act directs use of the IHRA definition for campus investigations, a tool that can suppress criticism of Israel."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Covers denial of genocide (C-SPAN, Apr 2024), blaming all Gaza harm on Hamas (X post, Oct 2023), introducing the Israel Security Assistance Support Act (May 2024), reintroducing the PLO/PA Terror Payments Accountability Act (Jan 2025), and commending Trump and Netanyahu (Oct 2025). All uniformly shield Israel."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Clarifies the time window for spender data; no policy signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Confirms federal Senate race; no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative label only."
+  }
+ ],
+ "generation_sha256": "3bc3fe52db91fb3c6e8756efeebb5803469cf015b8514424fbfa56af12223bf2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:24:51Z"
+}

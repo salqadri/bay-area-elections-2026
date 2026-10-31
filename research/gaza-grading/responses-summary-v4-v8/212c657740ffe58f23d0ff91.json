@@ -1,0 +1,96 @@
+{
+ "candidate_id": "212c657740ffe58f23d0ff91",
+ "request_sha256": "dbc3e619bd524f8701cc66be0223b2eca782fe3283f983084a6bcda3654c2915",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Stelson's two documented Gaza statements are squarely pro-Israel. After October 2023 she called for \"standing with Israelis and defeating Hamas,\" and by June 2024 she agreed with Israel's \"right to root out Hamas and decimate [it],\" framing the conflict without acknowledgment of Palestinian civilian harm. DMFI PAC, a pro-Israel electoral committee, made a small independent expenditure in her support. Her campaign platform contains no statement on Israel, Palestine, or Gaza policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context (CD-10 PA); no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label; no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Describes DMFI PAC as a pro-Israel electoral committee; provides context for the small DMFI PAC expenditure."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC ($381.82) is a pro-Israel PAC with established relevance; remaining nine spenders have unestablished relevance and do not explain the Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies that funding links do not establish candidate policy; used to frame DMFI PAC spending accurately."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All six opposing spenders have unestablished relevance to Palestine policy (CLF, Freedom Caucus, etc.)."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Covers economy, housing, ethics, healthcare, jobs, immigration, civil liberties, and benefits; no Israel/Palestine/Gaza content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Two statements (Oct 2023, June 2024) squarely pro-Israel: 'stand with Israelis and defeat Hamas,' agree with Israel's 'right to decimate Hamas,' no mention of Palestinian civilians."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note limiting funding data to post-2024; no directional signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03); no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Federal House race; no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no Palestine-policy signal."
+  }
+ ],
+ "generation_sha256": "4adf87756854e83e803f4798670fb651084ec385b435865c6d36f0a10313d1cd",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:25:46Z"
+}

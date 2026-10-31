@@ -1,0 +1,120 @@
+{
+ "candidate_id": "1570044afa2dd0a9c55de78c",
+ "request_sha256": "015491bd961b2de16cd074b10c3936c5f893d932f320a48e8035ce522aedd4be",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Shaw pressed for stronger enforcement of AB 715, California's antisemitism-in-schools bill, at a state-superintendent forum, criticizing a rival's abstention and accusing another of weakening the resolution. In March 2024, as Chino Valley Unified School Board President, she refused to let a pro-Palestinian group address the board while other boards passed ceasefire resolutions. A December 2023 Fox News appearance framed the Gaza conflict around 'growing antisemitism in young people.' Vote for Peace opposed her in the general election.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the paragraph"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides context for the state-superintendent forum"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes AB 715 as a California bill"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status adds no Palestine-justice signal"
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Relevance explicitly unestablished; no Palestine-justice connection"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "General spending guidance; no mapped Palestine relevance"
+  },
+  {
+   "id": "candidate_record.ca_spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "CTA spending relevance unestablished; no Palestine-justice connection"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Parental-rights and core-academics pledges contain no Israel/Palestine-specific content"
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Pressing for stronger AB 715 enforcement directly supports a bill restricting Israel criticism in schools"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Fox News antisemitism framing and refusal of pro-Palestinian speech at board meeting are concrete adverse actions"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Vote for Peace opposition is concrete anti-Zionist-org opposition; Samir Laymoun omitted per source policy"
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Source-policy context; Samir excluded from prose because other relevant evidence exists"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodology note for how to read Vote for Peace tier; no independent factual claim"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes Vote for Peace's rating role; already captured by the opposition fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "General election timing does not alter the Palestine-justice assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California already implied by AB 715 and office"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no policy content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information"
+  }
+ ],
+ "generation_sha256": "6009b4012a305fad5069a4950e242b40396dabd67d595cfc378905693414bec4",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T14:44:18Z"
+}

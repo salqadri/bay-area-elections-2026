@@ -1,0 +1,84 @@
+{
+ "candidate_id": "b1c803d83c4a2ad7b6bcee75",
+ "request_sha256": "32442cb17705d28a15158d7fe2dca9e9f163cfa2f9c2833124a7da2cfeaa2fd9",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Avery Arbaugh is running for Berkeley's Rent Stabilization Board, a local seat focused on tenant protections and rent control. CAIR Action endorsed the general-election bid and Vote for Peace rated the candidate an Ally, both organizations that weigh ceasefire and foreign-policy positions. No personal statement or action by the candidate on Gaza or Palestinian justice appears in the record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Local Rent Stabilization Board seat provides context for a housing-focused race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; implicit in Berkeley reference, no independent signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "All eight points address Berkeley housing, tenant rights, and rent control; no foreign-policy or Palestine-related content, establishing the platform's scope."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating (general) are the sole directional evidence on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR/VFP recommendations count as concrete stance evidence without a candidate quotation; informs weighting of the endorsements."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace as organizations that weigh ceasefire and foreign-policy positions; contextual support for the endorsement signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "2026-11-03; no bearing on Palestinian justice assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Berkeley; used to identify the local race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no directional signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional research context available."
+  }
+ ],
+ "generation_sha256": "61298c0476a5a58dacfede6f838b2bb5c921f5d56090ab063bd8c468057c777f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:18:03Z"
+}

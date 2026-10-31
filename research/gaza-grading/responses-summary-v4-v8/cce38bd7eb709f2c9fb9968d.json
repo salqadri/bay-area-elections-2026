@@ -1,0 +1,78 @@
+{
+ "candidate_id": "cce38bd7eb709f2c9fb9968d",
+ "request_sha256": "ce2337323059d3e7254b688888b176b8be19bd3a15b38e6cd7709eead2cd2c05",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Deborah Africa for the general election to At-large Mayor of Morgan Hill, California. The organization's recommendations weigh civil rights and foreign policy, including Gaza and ceasefire positions, and the recorded endorsement tier serves as directional stance evidence on the candidate's alignment with Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the explanation"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides the office for which the endorsement was issued"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Jurisdiction context for the endorsement"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not bear on Palestinian justice position"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-election endorsement is the sole directional evidence on the record"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action endorsements count as concrete stance evidence; contextualizes the endorsement item"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's scope (civil rights, foreign policy, Gaza/ceasefire); explains why the endorsement is directional"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Specific date adds no material clarification to the voter explanation"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Morgan Hill specifies the local race"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Internal roster label with no bearing on the assessment"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information supplied"
+  }
+ ],
+ "generation_sha256": "693ad51358e9db620d3c48da4cc08af02e82f717cf584b39f825f11d7cb74ba8",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:31:41Z"
+}

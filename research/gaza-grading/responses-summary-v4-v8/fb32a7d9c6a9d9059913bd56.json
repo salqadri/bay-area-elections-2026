@@ -1,0 +1,78 @@
+{
+ "candidate_id": "fb32a7d9c6a9d9059913bd56",
+ "request_sha256": "18107e8572d722a5a52f2bf9b96fdbf2c3d06e7daf20742bef654d97319a3f3f",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As a DOJ official, Gates co-authored a letter in March 2025 opening a federal civil rights investigation into the University of California over alleged discrimination against Jewish or Israeli employees. Taken during the ongoing Gaza war, the action deployed his federal authority in defense of Jewish and Israeli institutional interests.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal for Palestine assessment."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Current office (State AG) is contextual; the relevant action was taken in a prior DOJ role per gaza_evidence."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional identifier only; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a Palestine position in this record."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All three spenders are marked unestablished relevance; spending_context explicitly bars using them to explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming the spenders are independent spending with unestablished Palestine relevance."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All platform points address domestic issues (criminal justice, housing, guns, elections); no Israel/Palestine content to include or contradict the assessment."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Co-authoring a March 2025 DOJ letter opening a civil rights investigation into UC over alleged discrimination against Jewish/Israeli employees, during the ongoing Gaza war, is a documented action deploying federal authority to protect Jewish and Israeli institutional interests."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Timing of the race; no direct Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; already reflected in state field, no additional Palestine signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Classification tag only; no substantive content."
+  }
+ ],
+ "generation_sha256": "284c1a6631fd1b44032e96dd55aeb814c7ffa03756146fac4462d2c57a84de65",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:10:09Z"
+}

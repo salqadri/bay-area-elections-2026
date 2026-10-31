@@ -1,0 +1,96 @@
+{
+ "candidate_id": "8146aa9489489b44082376d6",
+ "request_sha256": "a3aebbb8223a9ffef6623f11a5fd314e1a70a659e7635bcbb66e5ac06c64b60c",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Booker called Israel's actions in Gaza a genocide at a March 2026 televised primary debate and stated the U.S. should not fund them. Vote for Peace rated him an Ally in the general election. His campaign platform frames foreign policy around ending reckless wars, consistent with his explicit condemnation of the campaign in Gaza and his opposition to U.S. financial support for it.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Race context (KY statewide Senate); not Palestine-relevant."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "MARCH ON PAC and NEW POWER PAC spending flagged as unestablished relevance; spending_context explicitly bars using unmapped spenders to explain a Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-instruction on how to treat spenders; not candidate conduct."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "International affairs point ('ending reckless wars') is consistent with and contextualizes the anti-funding stance; other points (healthcare, economy, education) are unrelated to Palestine justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Direct candidate statement at March 2026 primary debate calling Israel's actions in Gaza a genocide and saying the U.S. should not fund them; primary evidence for top-band assessment."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Booker 'Ally' in the general phase; directional stance evidence per endorsement_evidence_context."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodology note explaining how Vote for Peace ratings count; not a candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Describes Vote for Peace's role as a rating guide; organizational context, not candidate conduct."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label; no policy content."
+  }
+ ],
+ "generation_sha256": "822c207d9c4c6d4a5f49f67a5f338c556c27f65af1bfdbc54efa2d1f382ef922",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:31:32Z"
+}

@@ -1,0 +1,90 @@
+{
+ "candidate_id": "2c3c4640d885b656dd7de2e2",
+ "request_sha256": "21cf6280ae39d00375ef31db74458a98c5b704ff2e5ae3821b49f2abbc2a95bf",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "At the September 2024 RJC summit, Whatley declared, \"We stand by Israel. We stand with the Jewish people,\" with no mention of Palestinians or the humanitarian situation in Gaza. In June 2024, he retweeted Israel's hostage-rescue post, adopting its framing of the war as \"what Israel is fighting for\" and condemning Hamas without acknowledging Palestinian civilian harm. Both statements offer an unqualified defense of Israel with no recognition of Palestinian suffering.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate; no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All four spenders marked unestablished relevance; no documented connection to Israel/Palestine policy"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies that unmapped spenders do not establish candidate policy on this topic"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "All three spenders marked unestablished relevance; no documented connection to Israel/Palestine policy"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Eight platform points cover criminal justice, immigration, economy, Second Amendment, disaster relief, parental rights, and jobs; none address Israel or Palestine"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "RJC summit allegiance statement and retweet of Israel's framing both show unqualified defense of Israel with no mention of Palestinian civilians"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding window since 2024; no directional signal"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal Senate context only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster classification; no directional signal"
+  }
+ ],
+ "generation_sha256": "223fe118e533d75d94da62ea2921b06d701e102e95e4d25c6048b40f451bf95f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:41:05Z"
+}

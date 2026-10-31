@@ -1,0 +1,84 @@
+{
+ "candidate_id": "d451a33ea5685d708c29ffe5",
+ "request_sha256": "2d92efc0b749646a0ba51b5734ef286781426927e8565d5f73861fbf2b181bcd",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Monica E. Wilson in the general election for Antioch's District 4 City Council. CAIR Action's recommendations weigh civil rights and foreign policy, including Gaza and ceasefire positions, and the endorsement is recorded as concrete directional stance evidence.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal for Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides jurisdictional context (District 4 City Council) for the endorsement; not itself directional."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed in the general phase; the sole directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric instruction on how to treat CAIR Action recommendations; not a candidate fact or action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Describes CAIR Action's scope (civil rights, Gaza/ceasefire policy) to contextualize the endorsement."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; no bearing on the candidate's Palestine position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Antioch; situates the race geographically in the paragraph."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Incumbency status has no bearing on the Palestine assessment."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Internal roster label; no directional content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information to assess."
+  }
+ ],
+ "generation_sha256": "2b2b08d65e11f7ea2578017aa131bc23cd5cd1c1594eefd3e6adfe6fcb7d3ac6",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:17:21Z"
+}

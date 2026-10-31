@@ -23,10 +23,52 @@ FUNDING_LINK_ASSESSMENT = (
     'funding signal for Palestinian justice; no candidate-specific earmarking proof is required. '
     'Keep the recorded support/opposition direction when assessing a candidate.'
 )
+# Owner-specified endorsement context, separate from the reviewed spending registry.
+CJD_ALIASES = ('California Jewish Democrats', 'Democrats for Israel California',
+               'Democrats for Israel CA', 'DFI California')
+CJD_ENDORSEMENT_CONTEXT = (
+    'California Jewish Democrats is the renamed Democrats for Israel California '
+    '(same organization; dfi-ca.org).'
+)
 
 
 def name_key(name):
     return re.sub(r'[^a-z0-9]', '', unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower())
+
+
+def normalize_endorsement_observations(observations):
+    """Use CJD's current name without counting a campaign's old-name claim twice.
+
+    Raw source records stay untouched. The organization's own stated tier takes
+    precedence over a redundant, unrated campaign claim for the same phase and
+    historical status. Distinct phases, directions and explicit tiers survive.
+    """
+    aliases = {name_key(alias) for alias in CJD_ALIASES}
+    current_name = 'California Jewish Democrats'
+    normalized = deepcopy(observations)
+    for row in normalized:
+        if name_key(row['endorser']) in aliases:
+            row['endorser'] = current_name
+    official = [row for row in normalized if row['endorser'] == current_name
+                and row.get('verification') == 'endorser_statement']
+    positive = {'endorsed', 'supported'}
+
+    def same_direction(a, b):
+        return a == b or (a in positive and b in positive)
+
+    result = []
+    for row in normalized:
+        redundant = (row['endorser'] == current_name
+                     and row.get('verification') != 'endorser_statement'
+                     and any((row.get('phase') or 'unspecified') == (own.get('phase') or 'unspecified')
+                             and bool(row.get('historical')) == bool(own.get('historical'))
+                             and same_direction(row.get('relation'), own.get('relation'))
+                             and (not row.get('rating') or
+                                  row['rating'].strip().casefold() == str(own.get('rating', '')).strip().casefold())
+                             for own in official))
+        if not redundant and row not in result:
+            result.append(row)
+    return result
 
 
 @lru_cache(maxsize=1)
@@ -111,6 +153,12 @@ def add_observation_context(state):
         entity_id = indexes['aliases'].get(name_key(name))
         if entity_id:
             add_context(state, entity_id, name)
+        elif not observation.get('historical') and name_key(name) in {name_key(alias) for alias in CJD_ALIASES}:
+            state.setdefault('organization_context', {})['California Jewish Democrats'] = {
+                'role': 'endorsement organization',
+                'relevance': CJD_ENDORSEMENT_CONTEXT,
+                'sources': ['https://www.dfi-ca.org/news/13476586'],
+            }
     # Explicit mentions already in projected, date-reviewed Gaza evidence. Never
     # scan discarded historical funding, names of people, or all canonical prose.
     for text in state.get('gaza_evidence', []):

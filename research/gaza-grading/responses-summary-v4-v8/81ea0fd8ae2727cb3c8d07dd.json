@@ -1,0 +1,78 @@
+{
+ "candidate_id": "81ea0fd8ae2727cb3c8d07dd",
+ "request_sha256": "41d39616a65a9c2f4d0fdbe28ab8455be1f5e3520e8d7d4b5f75b9b281a258e3",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kuszmaul's Mountain View city council platform addresses transportation, housing, surveillance, and immigration enforcement but contains no Palestine or Israel content. The sole directional signal in the record is a 314 Action Fund endorsement; that hybrid PAC received UDP funding in 2024, a connection the guide treats as a negative signal for Palestinian justice without requiring candidate-specific earmarking.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local council office establishes jurisdictional context"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no directional signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no Palestine/Israel directional signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Platform covers transportation, housing, surveillance, ICE; no Palestine or Israel content to support or complicate the assessment"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "314 Action Fund endorsement (campaign claim); guide treats UDP-funded PAC endorsement as negative signal for Palestinian justice"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents 314 Action Fund's 2024 UDP funding; guide criterion states this suffices as negative funding signal without requiring candidate-specific earmarking"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026 election date; timing context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Mountain View; local context already captured via office field"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata field, no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional party information supplied"
+  }
+ ],
+ "generation_sha256": "99bc8f83204f74c91058347b8ce6a182f963985e91003bee9b57aef30eb7dfb7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:32:59Z"
+}

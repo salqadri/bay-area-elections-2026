@@ -1,11 +1,24 @@
 # Bay Area Ballot Research Assistant
 
+**Continuing PR #22 in another session? Start with [the portable playground handoff](docs/PR22_HANDOFF.md).** Latest owner questions, thresholds and held results are committed separately from the frozen public publication.
+
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
 recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
+
+Publication **2026-10-30.1** publishes owner-directed Jev criteria **v8 + v8.1**
+with all **404** fresh grade explanations and refreshed recommendations
+(**173 recommended races** — 12 Muslim-community, 161 Jev; 83 E/F-only; 283
+no-information). v8 makes the **California Jewish Democrats** endorsement visible
+and negative (the org is the renamed Democrats for Israel California — previously
+filtered out of grading inputs, which produced an undeserved A) and caps
+endorsement-only candidates at **B**. v8.1 demotes the new SB 403 caste-bill
+records to an explicitly low-weight, never-band-moving context channel. Counts:
+**A 79 · B 75 · C 23 · D 33 · E 54 · F 140 · N/A 892**.
+[Full publication notes](docs/LATEST_SCORE_PUBLICATION.md).
 
 Publication **2026-10-29.3** cleans 19 candidate blurbs under the owner's
 [Samir source policy](docs/SUMMARY_SOURCE_POLICY.md): omit redundant personal opinions
@@ -300,7 +313,7 @@ County totals overlap: a shared district appears once in the data with multiple 
 
 Contra Costa's local contests were reconciled on October 12, 2026 against the county's certified August 14 candidate list and its exhaustive August 27 Contest/Candidate Proof List (both archived under `research/contra_costa/` and cited as S1087/S1088). Contests absent from that on-ballot proof — including Canyon Elementary SD and Rodeo Sanitary District, which never appear in either file — are recorded as excluded with their filers retained separately; unopposed candidates elected at certification are named in the contest notes. Santa Clara's Lion's Gate CSD (both terms), San Martin County Water District and Silver Creek Valley Country Club GHAD, and San Mateo's Bayshore ESD short term and Colma Fire Protection District Director were resolved October 14 as excluded on the same zero-filing pattern: each county's exhaustive final candidate documentation contains no row for these contests at all (Santa Clara additionally shows zero write-in filings in its unofficial write-in list), with ballot-material deadlines already passed; evidence and the Jev adjudication are archived under `research/unresolved_2026-10-14/`. See `coverage.limitations` for remaining boundaries.
 
-Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases. **447 printed candidacies carry an X profile** (`x_url`), **10 add a second account** (`secondary_x_url`, personal vs office handle), and **653 carry a recorded campaign or official website** (`campaign_url`). Source titles retain each observation's date and verification limits, including older probable matches; this update does not re-verify existing links. The October 22 [campaign self-link recovery](docs/X_PROFILES.md) adds 11 Jev-reviewed accounts, including Xavier Becerra, from an attempted pass over all 301 missing-X candidacies with recorded websites; a same-day re-pass over the remaining queue adds 1 more (Shivraj Singh, Dublin City Council) and keeps every hold explicit. The [audit](docs/reviews/2026-10-22-x-profiles.md) preserves unavailable pages and identity/ownership holds. Omission never means no account exists.
+Candidate lists describe printed ballot names. Provisional filers and verified write-ins are stored separately. Write-in qualification can continue after the snapshot date. A candidate who stopped campaigning may still have a printed ballot name; relevant notes explain such cases. **447 printed candidacies carry an X profile** (`x_url`), **10 add a second account** (`secondary_x_url`, personal vs office handle), and **654 carry a recorded campaign or official website** (`campaign_url`). Source titles retain each observation's date and verification limits, including older probable matches; this update does not re-verify existing links. The October 22 [campaign self-link recovery](docs/X_PROFILES.md) adds 11 Jev-reviewed accounts, including Xavier Becerra, from an attempted pass over all 301 missing-X candidacies with recorded websites; a same-day re-pass over the remaining queue adds 1 more (Shivraj Singh, Dublin City Council) and keeps every hold explicit. The [audit](docs/reviews/2026-10-22-x-profiles.md) preserves unavailable pages and identity/ownership holds. Omission never means no account exists.
 
 Open Civic Data identifiers are included where available and carry an explicit verification status. They have **not been API-validated**. The address view estimates races and retains unresolved alternatives; it does not determine an official ballot or voter registration. Consult the relevant county election office for your official ballot.
 

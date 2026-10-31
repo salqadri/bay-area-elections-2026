@@ -1,0 +1,78 @@
+{
+ "candidate_id": "6968afb87676065c45fcfe47",
+ "request_sha256": "983743a281ca0b283e7ade99403f4fae66f8b0722c8c14073a42cb06d23170ee",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Askar's only recorded Palestine-related statement is a 2 October 2024 post thanking Israel for fighting Iran's terrorists, asserting Israel deserves America's full support, and criticizing President Biden for telling Israel to stand down. His campaign platform addresses general national-security and domestic priorities but contains no specific Israel or Palestine policy. The statement places him firmly in defense of Israel's military actions without qualification.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (CD-22 FL House); no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State context; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label alone does not establish Israel/Palestine position."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Club for Growth Action spending has explicitly unestablished relevance; spending_context says unmapped spenders should not explain Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodology note for interpreting spenders; no candidate-specific policy content."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Eight platform points cover economy, immigration, healthcare, education, energy, ethics, civil liberties, and general international affairs (China, military modernization). None name Israel, Palestine, Gaza, or related civil-rights policy specifically."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2024-10-02 post thanking Israel for fighting Iran's terrorists, asserting Israel deserves America's full support, and criticizing Biden for telling Israel to stand down. Direct unqualified defense of Israel."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "U.S. House of Representatives; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no policy content."
+  }
+ ],
+ "generation_sha256": "8f5748737ea5ef01c5794984d23659be4cefb532d60550d79d0ad20713fbd877",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:03:50Z"
+}

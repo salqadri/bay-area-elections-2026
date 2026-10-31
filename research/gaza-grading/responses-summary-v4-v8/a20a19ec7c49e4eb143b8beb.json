@@ -1,0 +1,78 @@
+{
+ "candidate_id": "a20a19ec7c49e4eb143b8beb",
+ "request_sha256": "f901d0189f0cb09eb5a63b3c6f48303235af8d0a3c7f9eed2905ef2961944c84",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Richard Thornbury in the general election for Dublin City Council District 2, and Vote for Peace rated him an Ally in the same contest. The record's endorsement context treats both directional recommendations as concrete stance evidence on Palestinian justice even without a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; identity only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context; no policy signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement and Vote for Peace Ally rating are the two directional pro-Palestine signals in the record"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Establishes that the CAIR/Vote for Peace tiers count as concrete stance evidence even without a direct candidate quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace roles and methodology; supports relevance of the endorsements already counted"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Calendar date; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Dublin; geographic context only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information added"
+  }
+ ],
+ "generation_sha256": "1418b96ce749e1e4ce2b2bf6b4104c250b225c6665d4c31589ce643195257877",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:23:01Z"
+}

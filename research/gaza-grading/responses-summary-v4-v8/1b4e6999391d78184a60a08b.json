@@ -1,0 +1,84 @@
+{
+ "candidate_id": "1b4e6999391d78184a60a08b",
+ "request_sha256": "e0e92d4eeb96eff0f3fbfe5f693c4540049f5ba1900dd95c475cafa4afe2ea63",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action lists Rodriguez as preferred in the general election for Franklin-McKinley School District's at-large governing board. The preferred tier reflects alignment on civil-rights and foreign-policy positions, including Gaza, but is not a full endorsement. Rodriguez is a nonpartisan incumbent running in 2026.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Specifies the at-large governing board seat, relevant race context."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California is implied by the school district jurisdiction and CAIR Action context; adds no independent signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is relevant context for a local school-board race."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action preferred tier in the general phase is the sole directional evidence of alignment on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological instruction on how to treat CAIR tiers; not voter-facing fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action's role and that preferred is not full endorsement; the key distinction is already conveyed in the summary."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes the 2026 race timeframe."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Franklin-McKinley School District identifies the specific local race."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Incumbent status is relevant context for a local board race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Administrative label; no bearing on Palestinian-justice assessment."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "b2b5a59229bc4b7d7496e3dc198ec333b399e1c92aef2a640090bd8a903a8bf7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:48:42Z"
+}

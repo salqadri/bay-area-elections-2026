@@ -1,0 +1,66 @@
+{
+ "candidate_id": "5aa6fbe34c68e2258ce5d6db",
+ "request_sha256": "2b9998bf36c1cc19656fbdd00b44f8049a2f21dd09e692591bfbc2f9c682d37e",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Crowley's Oct. 7, 2023 statement condemned the Hamas attacks and expressed solidarity with Milwaukee's Jewish community, without addressing Palestinian civilians or Israel's military response in Gaza. In July 2026, he withdrew from a Wisconsin Muslim Civic Alliance forum after questions on Israel's Gaza conduct and state anti-boycott laws were circulated, citing illness and flooding. These actions reflect an Israel-centric framing and avoidance of direct engagement with questions about Israel's conduct in Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Name only, no policy content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context, no position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation carries no information on this issue."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "No platform point references Israel, Palestine, Gaza, or related civil rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 2023 statement is Israel-centric (condemns Hamas, solidarity with Jewish community, no mention of Palestinian civilians or Gaza); July 2026 withdrawal avoids a forum specifically on Israel's Gaza conduct and anti-boycott laws."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only."
+  }
+ ],
+ "generation_sha256": "5d1b4be0158b8662fde9bd3e1e60e1b0918ca1564527f09023e45d3797907ace",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:05:56Z"
+}

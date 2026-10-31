@@ -1,0 +1,66 @@
+{
+ "candidate_id": "801e92607b3d8dfe0ba0da94",
+ "request_sha256": "e9860910d0e4b2be2576fa1fa240fde41d95ebbbf7e7a734c105c1a6fdb80e31",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As PA Treasurer, Garrity directed $45 million in state funds into Israel Bonds between October 2023 and June 2025, overriding internal Treasury concerns and publicly defending the purchases as showing 'support' for Israel. She thanked the Israel Heritage Foundation on X for the relationship. In an October 2026 gubernatorial debate, she marked the Oct 7 anniversary by naming 1,200 killed, including 49 Americans, framing the conflict solely around the Hamas attack without acknowledging Palestinian civilian casualties or Israeli military conduct.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used throughout; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office title provides context only; no bearing on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not establish position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Platform covers energy, taxes, housing, voter ID, education, sports, and government ethics; none address Israel/Palestine policy or related civil rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Six entries document $45M in state funds invested in Israel Bonds post-Oct 7, public defense of the purchases, thanking the Israel Heritage Foundation, overriding internal Treasury concerns, and a debate statement framing the conflict solely around the Hamas attack with no mention of Palestinian harm."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date is contextual; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification tag; no substantive content."
+  }
+ ],
+ "generation_sha256": "e5ba8378a1977c8c20879fdf7eb545af876cec2c2462863a43ffade7150e4369",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:02:29Z"
+}

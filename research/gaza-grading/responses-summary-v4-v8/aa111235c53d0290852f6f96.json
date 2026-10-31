@@ -1,0 +1,72 @@
+{
+ "candidate_id": "aa111235c53d0290852f6f96",
+ "request_sha256": "48632c1bc18b7d9a045d011c5d58548e176b38976b50300d3d139cde67f65338",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Erik Underwood's campaign site pledges to 'condemn the atrocities happening in Gaza' as governor and to support sponsoring Palestinian families 'fleeing the ongoing genocide in Gaza.' He also demands AIPAC register as a foreign agent under FARA, calling it a foreign government influence. Together these positions mark explicit opposition to the genocide and to the lobbying organization that pressures US policymakers on Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; no directional signal for Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Establishes gubernatorial scope for the 'as governor' pledge; folded into the summary phrasing."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Approval Voting Party affiliation carries no information on Palestine/Israel policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Core evidence: explicit use of 'genocide,' pledge to condemn atrocities, support for sponsoring Palestinian families, and demand for AIPAC FARA registration."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding transparency limitations; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes AIPAC's role; provides context for why the FARA demand is a meaningful anti-lobbying stance. Folded into the closing sentence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generation_sha256": "84d24cfdc3d05e7bee918e89e45c6bd0d8d8c6d11518a44b58c5c8a6c107a307",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:46:52Z"
+}

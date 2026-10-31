@@ -55,14 +55,18 @@ def summary_inventory(row, current_state=None):
 
 def build_input(row, grade, prompt_text, current_state=None):
     payload = {
-        "format": "grade-summary-current-research-input/v2",
+        "format": "grade-summary-current-research-input/v3",
         "candidate_id": row["id"],
         "candidate": row["candidate"],
         "associated_score_request_sha256": row["request_sha256"],
         "candidate_record": row["request"]["state"],
-        "scoring_questions": row["request"]["questions"],
-        "recorded_response": row["response"],
+        "scoring_questions": {key: value for key, value in row["request"]["questions"].items()
+                              if key != 'gaza_grade'},
+        "recorded_response": {**row["response"], 'answers': {
+            key: value for key, value in row["response"].get('answers', {}).items()
+            if key != 'gaza_grade'}},
         "displayed_grade": grade,
+        "grade_basis": "The displayed letter grade derives exclusively from pro_palestine_score using the saved mapping and evidence gate.",
         "evidence_inventory": summary_inventory(row, current_state),
         "summary_source_policy": policy_for_state(current_state or row['request']['state'], row.get('position_id')),
         "note": ("Generate the voter explanation for this saved grade. Return ONLY one JSON object with keys "
@@ -181,15 +185,17 @@ def validate(result, row, grade, source_policy=None, inventory=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--queue", type=Path, default=QUEUE)
+    ap.add_argument("--responses-dir", type=Path, default=None)
     args = ap.parse_args()
-    queue = json.loads(QUEUE.read_text())
+    queue = json.loads(args.queue.read_text())
     publication_id = queue["publication_id"]
     archive = json.loads((ROOT / queue["archive_path"]).read_text())
     assert archive["id"] == publication_id
     mapping = archive["score_grade_mapping"]
     rows = {r["id"]: r for r in archive["rows"]}
     prompt_text = PROMPT_PATH.read_text()
-    outdir = ROOT / "research/gaza-grading/responses-summary-v4"
+    outdir = args.responses_dir or (ROOT / "research/gaza-grading/responses-summary-v4")
     outdir.mkdir(parents=True, exist_ok=True)
 
     from grade_gaza import build_state

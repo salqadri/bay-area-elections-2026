@@ -1,11 +1,45 @@
 # Research and development handoff
 
+**PR #22 continuation:** [PR22_HANDOFF.md](PR22_HANDOFF.md) contains the latest owner prompt, thresholds and offline restore instructions for a fresh checkout. The held review results are newer than the public publication described below.
+
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
 recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](FIREBASE_HOSTING.md).
+
+Publication **2026-10-30.1** (branch `v8-jev-cjd-sb403`, PR #22) publishes Jev
+criteria **v8 + v8.1** with all 404 fresh explanations and refreshed
+recommendations. v8 makes the California Jewish Democrats endorsement visible and
+negative — the org is the renamed Democrats for Israel California, previously
+filtered out of the grading state (owner-found via the Malia M. Cohen A, awarded
+on a lone CAIR Action endorsement with no personal record) — and caps
+endorsement-only candidates at B. v8.1 demotes the new SB 403 caste-bill records
+to an explicitly low-weight, never-band-moving context channel after the owner
+judged the initial impact too heavy; targeted rerun of only the 19 affected
+candidacies, one net grade change vs v8 (Barrera D→C). Score distribution
+**A 79 · B 75 · C 23 · D 33 · E 54 · F 140 · N/A 892**; 86 letter changes vs the
+v7 publication, systematically 17 CJD-visibility downgrades and 34
+endorsement-only caps. Alex Lee holds **A** (his SB 403 letter co-signature is
+noted but low-weight); Ash Kalra C reflects CJD, not caste. Grade explanations
+for the 18 changed requests regenerated; the other 386 carried forward under
+their exact frozen request SHAs with the publication id restamped. Recommendations
+moved 8 races (e.g. Ahrens' AD-20 loses its pick to no-good-candidate after the
+CJD drop; RI Senate and two House races gain first D-eligible picks). Details:
+[LATEST_SCORE_PUBLICATION.md](LATEST_SCORE_PUBLICATION.md).
+
+Publication **2026-10-29.4** attaches Jennifer Hawks' campaign site
+(hawksforus.com, CA State Treasurer R): owner-reported and verified
+mechanically — own-domain HTTPS page naming her for this office, and its
+paid-for-by disclaimer carries FPPC #1488439, the exact committee already on
+file in the Secretary of State finance layer. The captured pages record no
+Gaza/Palestine content, so her N/A grade stands. The miss class: the Oct 17
+link sweep covered only nationwide candidacies, and the collector marked her
+ledger-done with zero evidence because no site was recorded to fetch.
+Campaign-site coverage 653 → **654**. (Publication **2026-10-29.2**, folded
+here for continuity, merged Tandon's campaign foreign-policy page and X
+evidence from the collector fix — his E grade unchanged.)
 
 Publication **2026-10-29.3** cleans 19 candidate blurbs under the owner's
 [Samir source policy](SUMMARY_SOURCE_POLICY.md): omit redundant personal opinions

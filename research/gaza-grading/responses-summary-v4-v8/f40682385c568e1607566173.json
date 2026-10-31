@@ -1,0 +1,78 @@
+{
+ "candidate_id": "f40682385c568e1607566173",
+ "request_sha256": "7d5f592c26131cbff597b3b7debe0422e8e78e2c26fa9840d43a6cbb97969dc0",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Aaron Tiedemann worked with Mayor John Miki in 2024 to create Albany's Gaza ceasefire resolution, a concrete personal action in support of ending the war. His campaign platform touts the effort as a key achievement, and CAIR-SFBA's tracker lists him as having supported the resolution. The platform frames the work primarily in terms of keeping public discourse civil rather than explicitly condemning Israel's conduct, but drafting and passing a ceasefire resolution is a direct pro-Palestine measure.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office held provides jurisdictional context only."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Israel/Palestine signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address local Albany issues (park, revenue, ALPR, crisis response, housing, transit, energy, regional cooperation); none reference Israel, Palestine, or Gaza."
+  },
+  {
+   "id": "candidate_record.reviewed_gaza_platform_statement",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Documents that Tiedemann personally worked with the Mayor to create Albany's 2024 Gaza ceasefire resolution; the platform touts it as a key achievement. Mild tension: framing emphasizes civil discourse rather than explicit condemnation of Israel."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "CAIR-SFBA tracker (2024-03-25) lists Tiedemann as supporting the ceasefire resolution, corroborating the platform statement. Grouped with the platform statement as the same underlying action."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local city identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information to assess."
+  }
+ ],
+ "generation_sha256": "e8cd37b917024cf2b1bc0cfa45d64fb740e7548b4a5c62d4f6ed60ec536e97a3",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:15:59Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "bef61921ef089d7e16e6706d",
+ "request_sha256": "e8017a434a5540ee6ac5213b3270adaa55cd28e4ffbfe7d0acbb02f1fd7c26d3",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Reina Tello's San Francisco school board platform addresses only local education issues—culturally connected curricula, Spanish-language family access, and community school funding—with no mention of Palestine or Israel in her stated positions. CAIR Action, whose recommendations weigh Gaza and ceasefire positions, endorsed her in the general election. That endorsement is the only directional evidence in the record, and a candidate with organizational support but no personal statement or action on Palestinian justice reaches no further than this level.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Local school board context; explains why platform is education-focused rather than foreign-policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no independent directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no bearing on Palestinian justice position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "All five points address SFUSD education (curriculum, language access, community schools, ethnic studies, homelessness); none mention Palestine, Israel, or Gaza, establishing the local scope of her stated positions."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement in the general election is the sole directional evidence; CAIR Action weighs Gaza/ceasefire positions in its recommendations."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note confirming CAIR Action tiers count as concrete stance evidence; no additional candidate fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action as an advocacy organization whose recommendations consider Gaza/ceasefire positions; supports interpreting the endorsement as directional."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; scheduling detail with no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "San Francisco Unified School District; confirms local education context already captured via office."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy or stance content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "a9f6c04de303c4e73fb607b86692ae913c14e4f70b69739cbb1034ce07635c6d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:57:01Z"
+}

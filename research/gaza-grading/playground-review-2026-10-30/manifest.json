@@ -1,0 +1,51 @@
+{
+  "format": "jev-playground-review/v1",
+  "status": "held_for_review",
+  "captured_at": "2026-10-31T02:13:20+00:00",
+  "source_pr": 22,
+  "source_branch": "v8-jev-cjd-sb403",
+  "preferred_criteria_path": "research/gaza-grading/criteria-pro-palestine-v9.json",
+  "preferred_questions_sha256": "26fc5b5fda84b99c3f113eec6adb00551cf067c89b3b35d8e62c2df9285d0bc7",
+  "score_grade_mapping": {
+    "require_issue_observation": true,
+    "minimum_evidence_score": 0.22,
+    "upper_bounds": [
+      0.74,
+      1.4,
+      2.3,
+      3.3,
+      4.4
+    ]
+  },
+  "runs": [
+    {
+      "path": "research/gaza-grading/playground-review-2026-10-30/full-roster.json",
+      "sha256": "57867b9364b980be71072cd266ad44ef18918ec05d570c23414b6f597036ed99",
+      "run_id": "20261031T012958Z-2ce361f8",
+      "candidates": 1296
+    },
+    {
+      "path": "research/gaza-grading/playground-review-2026-10-30/latest-candidate.json",
+      "sha256": "2bd34e7d0f894e41d18b04b68761da1a44962fb684736b192354f180726c5a5c",
+      "run_id": "20261031T013913Z-e318f9d2",
+      "candidates": 1
+    },
+    {
+      "path": "research/gaza-grading/playground-review-2026-10-30/haney-genocide-update.json",
+      "sha256": "bcc08cce07b01517e36a781c80f5d6cf313231f15f8fa55f34518789298ad028",
+      "run_id": "20261031T172141Z-cd7e89bf",
+      "candidates": 1
+    }
+  ],
+  "note": "Held latest-per-candidate review: the original full roster, later Eleni prompt test, and October 31 Matt Haney evidence/score update. Each run retains its exact questions and inputs; this is not a public score publication.",
+  "review_outputs": [
+    {
+      "path": "research/gaza-grading/haney-genocide-2026-10-31/candidate-explanation.json",
+      "sha256": "9d822ea5c90f0ce67838abd25997218e294df5e0e8f887ab6b9e6149f84b9558"
+    },
+    {
+      "path": "research/gaza-grading/haney-genocide-2026-10-31/race-rationale.json",
+      "sha256": "490b8dc85c4e2b9ba20c436f06b60042dae276508effd8e4a5192c23c6a5ec97"
+    }
+  ]
+}

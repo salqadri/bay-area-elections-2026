@@ -1,0 +1,66 @@
+{
+ "candidate_id": "4e96bc55de540ebee37a1d93",
+ "request_sha256": "4417f559b9a776652551e39c9f2ec5f2916082d67976279ff10245f5d4cdc2ad",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kreiss-Tomkins voted in the Alaska House in 2014 for a resolution commending the State of Israel, which passed unanimously. His 2026 campaign platform covers education, housing, energy, and fiscal policy but does not address the conflict in Gaza or Palestinian rights.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the explanation."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Provides office context; not itself relevant to Palestine."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Geographic context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not bear on Israel-Palestine position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Covers education, housing, energy, healthcare, data centers, environment, and fiscal policy; no item addresses Israel, Palestine, or Gaza."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2014 Alaska House vote for a resolution commending the State of Israel, passed unanimously; sole documented action on the topic."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no bearing on recorded position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms state-level race context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no substantive policy content."
+  }
+ ],
+ "generation_sha256": "240511621575a928598e79121466897eed7e4bb81aa19efa165d32ab58bd6a73",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:43:27Z"
+}

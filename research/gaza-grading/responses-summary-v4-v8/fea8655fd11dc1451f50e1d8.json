@@ -1,0 +1,114 @@
+{
+ "candidate_id": "fea8655fd11dc1451f50e1d8",
+ "request_sha256": "851c02c35c7274ea5b3ef24f3e5d6643e0e1b56a70997d15acf1a1c7991da892",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Pappas reaffirmed Israel's right to exist, voted for Iron Dome aid, and stated in 2025 he has 'never wavered' in support of Israel. He voted yea on the IHRA Antisemitism Awareness Act and co-sponsored its 2025 re-introduction. Vote for Peace rates him Opposed and Citizens Against AIPAC Corruption spent against him. His 2026 no on the anti-BDS bill and 'present' on the Massie amendment offer limited movement, but his framing pairs Gaza concern with Hamas destruction rather than siege accountability.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no independent Palestine signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Provides definitions for DMFI PAC, Track AIPAC, and Vote for Peace used in spender and endorsement items."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "omitted",
+   "reason": "DMFI PAC ($937.50) is a pro-Israel PAC, but amount is minimal and other concrete votes/statements carry the assessment; remaining spenders have unestablished relevance."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note that independent spending does not prove candidate policy."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Citizens Against AIPAC Corruption ($2,832.50) spent against him, confirming opposition from an anti-Zionist org (E criterion). Other spenders unestablished."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "No Palestine, Israel, or related civil-rights content in platform points."
+  },
+  {
+   "id": "candidate_record.antisemitism_education_policy_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Yea vote on H.R. 6090 and co-sponsorship of H.R. 1007 incorporate IHRA definition into federal education enforcement; supports E-band IHRA criterion."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Overall Israel-centric: reaffirmed Israel right to exist, Iron Dome votes, 'never wavered' support, Hamas-destruction framing; countered by NO on anti-BDS bill and present on Massie amendment, which are acknowledged but do not offset the pattern."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal scope note; no independent directional signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated him Opposed in the general phase; explicit E-band criterion (opposed by anti-Zionist org)."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological guidance on how to treat endorsement tiers; no independent signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no substantive content."
+  }
+ ],
+ "generation_sha256": "98e28ee0db1f580b596b7bc6bf6e77971bd218948f45285171418be3a43c4a80",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:39:12Z"
+}

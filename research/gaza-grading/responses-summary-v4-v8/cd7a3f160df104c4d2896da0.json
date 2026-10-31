@@ -1,0 +1,72 @@
+{
+ "candidate_id": "cd7a3f160df104c4d2896da0",
+ "request_sha256": "896ac85b54d82a757a2a4a6a7c9d102efcec69d5910b87b3b57a4c8a1985e657",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Nowinski dismissed May 2024 polls showing American support for a Gaza ceasefire as 'advocacy propaganda' that 'always fall apart when you test the details,' treating public polling on the conflict as unreliable. His campaign platform, covering budgeting, surveillance, permitting, and community infrastructure, makes no reference to Israel, Gaza, or foreign policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local city council office; does not inform Palestine stance."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All points address local El Cerrito issues (budgeting, surveillance, traffic, permitting, businesses, senior center, greenway, governance); none reference Israel, Gaza, or foreign policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Nowinski dismissed May 2024 ceasefire-support polling as 'advocacy propaganda'; sole Palestine-related statement in record."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local jurisdiction identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information supplied."
+  }
+ ],
+ "generation_sha256": "8fdad5b54bebd3f64f97814616f097380f59ac840ac124607b0469f57098859d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:24:44Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "f924d4136b5192fa0c6716b4",
+ "request_sha256": "3d63a1f5b5926607e7c14cc2ac17f1e3b5facd83b2298c96354e78fb39ba4554",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Wasim, a nonpartisan school board candidate in New Haven Unified School District, runs on a platform of teacher training, classroom technology, and student safety. CAIR Action endorsed the candidate in the general election, and Vote for Peace rated Wasim an Ally. These pro-Palestine organization recommendations indicate alignment with Palestinian justice; the endorsement-only evidence, without documented personal advocacy on the conflict, places the assessment at the corresponding tier.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the paragraph"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local school board race, contextualizing the platform scope"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Immaterial to the Palestine-position explanation"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is relevant context for a school board candidate"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers education and safety topics; no Palestine or Israel content, which shapes the assessment"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement and Vote for Peace Ally rating are the primary directional pro-Palestine evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms these recommendations are treated as concrete stance evidence per rubric; grouped with the endorsement observations"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action and Vote for Peace methodology; already reflected in how the endorsements are characterized"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Immaterial to the position explanation"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "New Haven Unified School District identifies the specific race context"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata tag, not a factual claim about the candidate"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no new information added"
+  }
+ ],
+ "generation_sha256": "dea1eb67c53d5b9ddd41d09369d977af22870eb1cf794f78b5a077b90949cdb8",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:52:36Z"
+}

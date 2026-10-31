@@ -1,0 +1,102 @@
+{
+ "candidate_id": "3d52a8442f6fb39f47328736",
+ "request_sha256": "42a9f83f18a5b32e671502ac13d8e2f767bc36635a9d62c9aa7c4cbfce11bf13",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Hernandez is assessed as shielding Israel on the strength of a Hindu American PAC endorsement from a Hindutva-aligned group and $825,000 in independent super-PAC spending from AIPAC-backed United Democracy Project, joined by $1.84 million from BOLD America, a UDP-funded PAC. At an April 2026 Indivisible Tri-Valley forum she declined to call Israel's Gaza actions genocide, diverging from the Alameda County Democratic Party. Her campaign platform contains no statement on Palestine or Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context, no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identification only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation, no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "BOLD America received UDP (AIPAC-backed) funding in 2026; guide treats this as negative funding signal for Palestinian justice"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "UDP spent $825,293 and BOLD America $1.84M in independent support; other spenders have unestablished relevance"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Clarifies independent spending nature; incorporated in prose as 'independent super-PAC spending'"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "American Priorities and Progressive Promise relevance unestablished; no Palestine connection documented"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "No Palestine, Israel, or genocide-related language in any platform point; absence noted"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Hernandez explicitly declined to label Gaza actions genocide at April 2026 forum, diverging from county party"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope clarification (since 2024); does not alter directional signal"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Hindu American PAC endorsement; criteria identify Hindutva endorsements as F-band signal"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date, no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identification only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal classification label, not substantive evidence"
+  }
+ ],
+ "generation_sha256": "bfc1c41087584577ef5cf549016c1a047f8ec3e7740295edadf40be05c25795e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:14:56Z"
+}

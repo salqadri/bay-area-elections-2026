@@ -1,0 +1,84 @@
+{
+ "candidate_id": "0235d00fba949b42ea1f8007",
+ "request_sha256": "86c974c08f1715b868a3927747b0546a93dc2f5aeca037bee89fd9b7b8be7b67",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Watanabe's Santa Clara mayoral platform covers local governance, public safety, housing, and neighborhood services with no Palestine or Israel reference. The directional record is a CAIR-SFBA tracker entry from December 2023 listing her as having opposed a ceasefire resolution and supported a United Against Hate Resolution, noted as a reported local action rather than a verified roll-call transcript. That opposition to a ceasefire vote is the sole substantive Palestine-related action in the record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; identity field only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "At-large Mayor; jurisdictional context, no Palestine-relevant signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "California; geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan; no Palestine-relevant signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Eight platform points cover local governance, safety, housing, economy, education; none reference Palestine or Israel"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker (Dec 2023) lists opposition to ceasefire resolution and support for United Against Hate Resolution; sole substantive Palestine-related action"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "omitted",
+   "reason": "Samir Laymoun opposed in general; omitted per summary_source_policy (samir_allowed=false, other relevant evidence exists)"
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Source-classification context for Laymoun; not a candidate action or policy statement"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "2026-11-03; temporal context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Santa Clara; geographic context only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional information"
+  }
+ ],
+ "generation_sha256": "b27d33c73d5055b36ea2bf602046d74a67e6b5d1852b752a59be46c1a1efc80e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:41:01Z"
+}

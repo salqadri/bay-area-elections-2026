@@ -1,0 +1,72 @@
+{
+ "candidate_id": "ee5dbbca16df416cba056dcb",
+ "request_sha256": "19aba37d6eaedab8cfa65a6eb191f9947021c3f96de5003826dd5239fd576669",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Julie Roche voted against a January 2024 Hayward council resolution to divest $1.6M from Caterpillar, Intel, Chevron, and Hyundai over their ties to Israel, calling the measure 'irresponsible policymaking.' The CAIR-SFBA tracker corroborates her opposition. Her vote preserved municipal investment in those companies despite the council's stated concern about their Israeli connections.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local council office; contextual only, no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan designation; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Records her January 2024 vote against divesting $1.6M from four companies over ties to Israel and her characterization of the measure as irresponsible; CAIR-SFBA tracker corroborates."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Hayward; contextual only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "aeef64c7c80adcd5f46a95f2ac84342b2fc1750f4129a5a34924a9cb6d9c778f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:30:00Z"
+}

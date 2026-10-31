@@ -1,0 +1,84 @@
+{
+ "candidate_id": "9c6dfe3a240cdce6e5f9f06b",
+ "request_sha256": "3d0dcea1c1b356547c246a119343481117b6e26c546e80c1dd4b2b81be1be1eb",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Romero's campaign messaging centers on combating antisemitism on California campuses. In October 2026, she tagged AIPAC and pro-Israel organizations while calling for votes to 'end antisemitism in California schools, colleges,' framing October 7 as a rallying point. Her platform calls for holding university administrators accountable for campus non-discrimination, specifically naming Jewish students. JNS reported she centers her campaign on antisemitism 'rather than Gaza policy.' This alignment positions her as a defender of Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office (Lt. Governor) does not establish Palestine position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a Palestine justice position."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Both spenders carry 'unestablished' relevance; spending context prohibits using them to explain the Palestine assessment."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining why unmapped spenders are excluded; no candidate-specific signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Civil-liberties platform point centers on Jewish student safety and campus non-discrimination without addressing Palestinian rights; other points (education, environment, economy, Title IX) are unrelated to Palestine justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Three dated items show Romero consistently framing the issue as antisemitism rather than Gaza policy, explicitly tagging AIPAC and pro-Israel orgs, and using Oct 7 as a rallying point."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Confirms AIPAC advocates a strong US-Israel relationship and pro-Israel electoral support; contextualizes Romero's explicit tagging of @AIPAC as alignment with a pro-Israel body."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date only; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorical label only."
+  }
+ ],
+ "generation_sha256": "91b98c59cc691bb4f4a09bd6698208e4c6eab00efa85f21f1f07655e6b1a7e1f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:06:50Z"
+}

@@ -1,0 +1,66 @@
+{
+ "candidate_id": "73dad88a6b0842c23e2116fb",
+ "request_sha256": "e7b467cb0498af16bc9356ae19fd4a92732fba9578ae62caa9a63ba517e799b8",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As Anchorage Mayor in March 2024, Bronson issued a statement supporting Israel after his campaign signs were vandalized by pro-Hamas vandals. The remark was a reactive response to the vandalism incident and did not extend to a stated policy position on the Israel-Palestine conflict or US foreign policy toward the region.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no policy signal on Israel/Palestine."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All eight platform points address economy, transport, housing, education, PFD, accountability, public safety, and homelessness; none reference Israel, Palestine, or US foreign policy toward the region."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "March 2024 statement by Anchorage Mayor Bronson publicly supporting Israel in response to vandalism of his campaign signs; the sole documented reference to Israel/Palestine in the record."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification tag; no policy content."
+  }
+ ],
+ "generation_sha256": "2b17f467a4639a0fd647aed4a1a716c3e1acfc2662cefa096d2d178ef6d64b38",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:42:43Z"
+}

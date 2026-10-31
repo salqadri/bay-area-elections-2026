@@ -1,0 +1,84 @@
+{
+ "candidate_id": "b0dff785dc35db4b61684a66",
+ "request_sha256": "313913e20c81ebe848537f9e6cb050a5824b4c22163c05a6e3553a2f3a0f2ac4",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Cameron Sasai in the general phase of this Contra Costa Community College District race. No personal statements, votes, or actions on Palestine or Israel-Palestine policy appear in the record; the campaign platform addresses only community college education and workforce training. The endorsement is the sole directional signal available.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides local-race context (Ward 1 Governing Board Member)"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "State context, no directional signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Nonpartisan label, no directional signal on Palestine"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All six points address community college education and workforce training; no Palestine, Gaza, or Israel-Palestine content"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed Sasai in the general phase; sole directional signal in the record"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action endorsements are treated as concrete stance evidence; contextual for the endorsement"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action's role; contextual, no additional candidate-specific signal"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date does not affect the Palestine-justice assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contra Costa CC District context already captured by office field"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label, no directional content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party or contextual information"
+  }
+ ],
+ "generation_sha256": "b5b7b0ca1a6a4eacf91abc79610271be2cfed73bff7b3e0d60e21e705eb896b7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:47:21Z"
+}

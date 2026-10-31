@@ -1,0 +1,114 @@
+{
+ "candidate_id": "178b3fcffe7acadce7755a18",
+ "request_sha256": "81a8bf1ef02ae2f1ec3b796631018a67e1010548c35669dfae9b8fb6694a97f1",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "In a May 2024 POLITICO interview, Ma opposed divestment from Israel in response to UC student demands, calling Israel a U.S. ally. The record lists a 'Support' endorsement from California Jewish Democrats (the renamed Democrats for Israel California), with a second DFI California entry sourced to a campaign claim. CAIR Action lists her as 'Preferred' in its general-election guide, but that tier is not a full endorsement and does not offset the Zionist-organization backing or her own pro-Israel statement.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject of the assessment."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Lieutenant Governor role does not bear on Palestine position."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California jurisdiction is context only, not directional."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All ten spenders marked relevance unestablished; spending_context forbids using them without explicit Palestine linkage."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta-instruction governing how to treat spender data; not candidate evidence."
+  },
+  {
+   "id": "candidate_record.ca_spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Opposition ad concerns sexual-harassment claims, not Israel/Palestine policy."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Economy, education, housing, cannabis, and agriculture points contain no Israel/Palestine content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "May 2024 POLITICO interview: Ma opposed divestment from Israel and called it a U.S. ally—direct personal statement shielding Israel."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "CJD 'Support' endorsement and DFI California 'endorsed' (campaign claim) are Zionist-org backing; CAIR 'Preferred' is a pro-Palestine signal but not a full endorsement; Laymoun support omitted per source policy."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Context note for Samir Laymoun; his opinion is excluded from prose because other directional evidence exists and samir_allowed is false."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Meta-instruction on how to treat CAIR tiers; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.zionist_endorsement_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Confirms CJD and DFI California are the same Zionist organization; its endorsement counts against the candidate and is the primary F-band trigger."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action's role; clarifies 'Preferred' is not full endorsement but is a rubric note, not candidate evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date is scheduling context, not directional."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California is geographic context, not a Palestine-position signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal classification tag; no bearing on the assessment."
+  }
+ ],
+ "generation_sha256": "f5d29a0bd95d7fa52e237eaef136bd2f848e59fe3dce7a691e48f9d41aa377fb",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:06:49Z"
+}

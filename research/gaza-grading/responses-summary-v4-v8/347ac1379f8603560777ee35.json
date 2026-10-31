@@ -1,0 +1,84 @@
+{
+ "candidate_id": "347ac1379f8603560777ee35",
+ "request_sha256": "0eb7ceb1bbee540e53545a5768fd0b02d73744d6c9d7a7126f0e40f4a3297153",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Karen Hardy's only Palestine-related action in the record comes from CAIR-SFBA's December 2023 tracker, which lists her as opposing a local Ceasefire Resolution and supporting a 'United Against Hate' Resolution. Opposing the call to stop the war in Gaza while backing a general anti-hate resolution shields Israel from local accountability. Her campaign platform addresses data centers, housing, and municipal transparency without mentioning Palestine.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Name identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context, not Palestine-related"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label, no Palestine relevance"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All items concern data centers, housing, utilities, water, education, and municipal transparency; no Palestine or Israel content"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker records her opposing a Ceasefire Resolution and supporting a 'United Against Hate' Resolution in Dec 2023; the pairing shields Israel from local accountability"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "omitted",
+   "reason": "Samir Laymoun opposition noted but excluded from voter prose per summary_source_policy (samir_allowed false; other relevant evidence exists)"
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Meta description of source type, not a candidate action or position"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing, not Palestine-related"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Santa Clara context, not Palestine-related"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster category label, no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no additional party information supplied"
+  }
+ ],
+ "generation_sha256": "596b6828aa603baa8a79a37322f73039536f252037494b1c8c2e4ac5f5ad9839",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:41:23Z"
+}

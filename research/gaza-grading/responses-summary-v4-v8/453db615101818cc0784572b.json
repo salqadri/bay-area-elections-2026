@@ -1,0 +1,108 @@
+{
+ "candidate_id": "453db615101818cc0784572b",
+ "request_sha256": "3bfdad84407394f75193ede8efbbce48c2eb90d8a5d2527329850bc891fdd610",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "DMFI PAC, the hybrid PAC for Democratic Majority for Israel, endorsed Marni von Wilpert in March 2026 as \"strongly pro-Israel\" with \"great relationships and records with the community,\" and reaffirmed the pick under its Majority Project in June. Her platform references a two-state solution but is framed around rebuilding alliances and supporting NATO; Vote for Peace rates her Opposed. The explicit pro-Israel organizational alignment drives the assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identification only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Defines DMFI PAC and DMFI as pro-Israel organizations; contextualizes their endorsement of von Wilpert as pro-Israel alignment. Vote for Peace and JStreetPAC entries provide rating context."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "DMFI PAC $333.34 spending confirms pro-Israel organizational engagement; all other spenders have unestablished relevance and are omitted."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on how to interpret spending; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "SERVING CA and HEALTH CARE SAVES LIVES have unestablished relevance to Palestine policy."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "International affairs point references a two-state solution but is framed around rebuilding alliances and supporting NATO; modest tension with DMFI 'strongly pro-Israel' label."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "DMFI PAC labeled her 'strongly pro-Israel' with 'great relationships and records with the community' (Mar 2026) and reaffirmed under Majority Project (Jun 2026); core evidence driving F grade."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Notes funding tracked since 2024 only; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "DMFI endorsed (pro-Israel org); Vote for Peace rated Opposed (concrete stance evidence per context note). JStreet PAC endorsement given little weight per policy."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological guidance confirming Vote for Peace Opposed rating is concrete stance evidence; no independent policy fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date context; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Categorization label; no policy signal."
+  }
+ ],
+ "generation_sha256": "eae2e414aca13f72a475e8bc08d3dc43e5fed89d16c7018f5eae3386257ad101",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:58:35Z"
+}

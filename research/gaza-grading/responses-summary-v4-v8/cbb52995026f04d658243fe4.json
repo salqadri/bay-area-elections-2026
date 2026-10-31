@@ -1,0 +1,72 @@
+{
+ "candidate_id": "cbb52995026f04d658243fe4",
+ "request_sha256": "6cb9e692fba1a568fba0159669df80560391523a4e6c3cf86ffb5b44cac715e1",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "On May 24, 2026, Forstag stated he would not vote for an appropriations package sending weapons to Israel, calling the situation in Gaza 'a genocide.' Naming the killing as genocide and opposing US military funding for Israel in the same statement places him squarely against the ongoing campaign.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office designation; no Palestine-relevant content"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State abbreviation; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-relevant content"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All three spenders carry 'unestablished' relevance; spending_context says unmapped spenders should not explain a Palestine assessment without other explicit evidence"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Interpretive note governing how to read spending data, not candidate evidence"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Candidate's own dated statement (2026-05-24) calling Gaza situation 'a genocide' and refusing to vote for appropriations sending weapons to Israel; directly supports top-band criteria"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "House of Representatives; contextual only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Categorization label 'candidates'; no policy content"
+  }
+ ],
+ "generation_sha256": "b8cd7af55fb3be940d0130447cda98029c75e891294b4be123dd54e31c4441ba",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:09:56Z"
+}

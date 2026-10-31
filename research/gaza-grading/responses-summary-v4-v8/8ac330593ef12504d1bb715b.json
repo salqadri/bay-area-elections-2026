@@ -1,0 +1,66 @@
+{
+ "candidate_id": "8ac330593ef12504d1bb715b",
+ "request_sha256": "d07b0389e1e33ef760c3b4b905f4024ae1b1ca631297cf7b3b06bc152cbdda48",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker, dated February 26, 2024, records Gilroy District 4 City Council member Fred Tovar as having opposed a local ceasefire resolution, noting the entry as a reported local action rather than a verified roll-call transcript. That opposition to a ceasefire measure reflects a local record that declines to call for an end to military operations in Gaza, consistent with an Israel-centric posture at the municipal level.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Identity field; needed to name the candidate in the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes the local municipal level at which the documented action occurred"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only; no independent policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no directional signal on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Core evidence: CAIR-SFBA tracker (2024-02-26) records opposition to a local ceasefire resolution, noted as a reported local action rather than a verified roll-call transcript"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Upcoming 2026 election date; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "City of Gilroy provides local context, grouped with office in the summary"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Data classification tag; no policy content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information supplied"
+  }
+ ],
+ "generation_sha256": "fb25ce25ad035d9c869303b72bc3a4c864f688ddb6984159f7c1184563b066cb",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:28:05Z"
+}

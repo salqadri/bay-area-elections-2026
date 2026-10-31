@@ -1,0 +1,90 @@
+{
+ "candidate_id": "ce5cf968d11cfe26d986d4b6",
+ "request_sha256": "f8741b98003289d29cf9d2e7010646468dd5d17a39270c17e6451794029da1de",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Kiran Mohammad, a confirmed member of the pro-Palestine Muslim community, runs for At Large Mayor in Dublin, California. BAMC Action supported her in the general election. Her platform centers on local governance—youth mental health, transit-oriented housing, downtown development, and small-business reform. Her community membership and the Bay Area Muslim Council's endorsement together indicate pro-Palestine alignment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal on Palestine"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "At Large Mayor; local office context, no Palestine signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; jurisdictional context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan; no Palestine signal"
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in pro-Palestine Muslim community; affirmative evidence of general alignment"
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Explains that the true value means confirmed pro-Palestine community membership, not religion alone; grouped with the membership fact"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All eight points address local Dublin governance (youth mental health, housing, transit, small business, ethics); no mention of Palestine, Israel, Gaza, or related civil-rights speech"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "BAMC Action supported the candidate in the general election; pro-Palestine organizational endorsement"
+  },
+  {
+   "id": "candidate_record.bamc_action_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Defines BAMC Action as owner-designated trusted source; context for the endorsement, not independent evidence"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; scheduling context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "City of Dublin; local jurisdiction, no Palestine signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied"
+  }
+ ],
+ "generation_sha256": "1f7fe7739a8fbca57cb4523da81e36a2401ca572b99672dd928bf4c93e7957e7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:22:50Z"
+}

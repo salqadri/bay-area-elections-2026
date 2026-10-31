@@ -1,13 +1,21 @@
 # Published pro-Palestine model scores
 
-Current publication **2026-10-28.4** publishes the owner's completed full-roster
-run: **1,296 evaluations**, exact **v7** questions and current **v18** inputs.
-Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,
-with the issue-observation gate. Counts: **A 120 · B 44 · C 12 · D 33 · E 66 ·
-F 123 · N/A 898**. Candidate and race explanations from the previous run are
-held, per the owner's choice; fresh source-bound queues are ready for Hermes.
-The recommendations page also uses the new grades. [Current archives, validation
-and Hermes follow-up](LATEST_SCORE_PUBLICATION.md). Older publication notes below are historical.
+**Working review versus publication:** [PR #22 handoff](PR22_HANDOFF.md) records the newer held evaluations, v9 default prompt and owner-saved **0.74** F cutoff. These do not alter the frozen publication described below.
+
+Current publication **2026-10-30.1** (`jev-2026-10-30-v8-1`) publishes the
+owner-directed **v8 + v8.1** rerun: **1,296 evaluations** on **v20** inputs
+(California Jewish Democrats — the renamed Democrats for Israel California — and
+its Strong Support tier count against candidates via `zionist_endorsement_context`;
+a pro-Palestine endorsement alone with no personal record caps at **B**; 2023
+SB 403 caste-bill records sit in a `caste_legislation_context` channel capped at
+±0.2 and never band-moving). Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**,
+minimum evidence **0.22**, with the issue-observation gate. Counts: **A 79 ·
+B 75 · C 23 · D 33 · E 54 · F 140 · N/A 892**; all 404 letter grades carry fresh
+explanations bound to their exact frozen requests.
+[Current archives, validation and Hermes follow-up](LATEST_SCORE_PUBLICATION.md).
+The previous publication **2026-10-28.4** (criteria v7, state v18) counts were
+**A 120 · B 44 · C 12 · D 33 · E 66 · F 123 · N/A 898**; older publication notes
+below are historical.
 
 Publication **2026-10-28.2** corrects BAMC opposition to **Steve Raspe and Heidi Owens**,
 removes race-wide guide context from every candidate input, and assigns the Samir

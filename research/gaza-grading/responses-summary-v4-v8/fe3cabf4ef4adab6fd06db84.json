@@ -1,0 +1,102 @@
+{
+ "candidate_id": "fe3cabf4ef4adab6fd06db84",
+ "request_sha256": "600ef7b4218e7fdb7097079e6fb6d24aa235ca75d07bb88d7c6d0de740784825",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Steve Hilton, per Vote for Peace's reporting, supports U.S.-funded military aid to Israel and pledged legal action against California cities adopting BDS. He expressed optimism after Israel's 2025 strikes on Iranian nuclear sites and in a 2021 Fox appearance called the American left and media 'servants' for their Israel-Palestine coverage. In 2026 he told JNS that Democratic gubernatorial candidates ignore 'Jew-hatred,' framing the Gaza conflict as an anti-Semitism issue. Vote for Peace opposes his general-election bid.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context only"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine policy signal"
+  },
+  {
+   "id": "candidate_record.ca_spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All six spenders marked unestablished relevance; spending_context directs not to explain assessment without other explicit evidence"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note explaining why unestablished spenders are excluded"
+  },
+  {
+   "id": "candidate_record.ca_spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Single opposing spender marked unestablished relevance; no explicit Palestine connection"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Four statements: 2021 Fox 'servants' remark, 2025 optimism at Iranian strikes, 2026 JNS anti-Semitism framing, Vote for Peace report on military aid and BDS legal pledge; all indicate strong pro-Israel / anti-BDS positioning"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Vote for Peace opposed (general) included as concrete stance evidence; Samir Laymoun opposed omitted per summary_source_policy (samir_allowed: false, other relevant evidence exists)"
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Contextual note about Samir Laymoun; his opposition is omitted per source policy"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note on how CAIR/VFP ratings count; no new candidate fact"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Vote for Peace methodology description; clarifies role but adds no candidate-specific fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election timing context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "California; no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal"
+  }
+ ],
+ "generation_sha256": "575b4b1b455c7f5d199b126847be692a754dcad3b789d467a1b1db9ca499e488",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:42:20Z"
+}

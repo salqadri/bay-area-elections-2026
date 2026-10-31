@@ -1,0 +1,96 @@
+{
+ "candidate_id": "503dd2c7f98755e0da55329f",
+ "request_sha256": "5645570abe6729630fe8565f651dfb33265ed66056b44d600008ea321b2477d9",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Powell rejected support from the pro-Israel super PAC Democratic Majority for Israel and disavowed all Israel-focused outside groups in May 2026, prompting DMFI to cancel its Nebraska ad buy; Jewish Insider identified her as the primary's 'Israel critic.' She also received independent spending from BOLD America and EDW Action Fund, both funded by AIPAC-backed United Democracy Project. Her platform calls for congressional oversight of military actions without addressing Israel or Gaza specifically.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Identifies the subject of the assessment"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Contextual detail not needed in the paragraph"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Used implicitly via 'Nebraska' in prose; no independent signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not bear on Palestine assessment"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents UDP funding of BOLD America and EDW Action Fund (negative per guide) and describes DMFI as pro-Israel, contextualizing Powell's rejection"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "BOLD America and EDW Action Fund spending tied to UDP-funded PACs per organization_context; remaining spenders have unestablished relevance"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on independent spending; no independent factual signal"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "CLF opposition spending has unestablished relevance to Palestine assessment"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "International affairs point on military-action oversight shows general accountability stance without naming Israel; other platform points are unrelated"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "DMFI rejection, disavowal of Israel-focused groups, and Jewish Insider 'Israel critic' framing document documented distancing from pro-Israel advocacy; BOLD America spending note is complicating context"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal scope qualifier for funding data; no independent directional signal"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Not relevant to the Palestine assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Contextual; already implied by office"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification with no policy signal"
+  }
+ ],
+ "generation_sha256": "267be4c0a74b8b05730bfc5719bb45d1289f9e821f5416e8ec2bed656b7733f2",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:11:54Z"
+}

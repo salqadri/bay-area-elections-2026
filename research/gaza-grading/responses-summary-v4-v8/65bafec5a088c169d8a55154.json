@@ -1,0 +1,72 @@
+{
+ "candidate_id": "65bafec5a088c169d8a55154",
+ "request_sha256": "0425b79451a30ebea950c7ff6a5f8ef509353f1d835ed98f9393843b02a3e781",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "In June 2025, Rhoden led a South Dakota trade delegation to Israel shortly after the October 7 attacks, meeting President Herzog, Knesset Speaker Ohana, and FM Sa'ar, and calling Israel a 'key partner' in the state's economic success. The delegation included defense businesses seeking Israeli market sales; the visit also included a wreath-laying at the World Holocaust Remembrance Center. No recorded statement from Rhoden addresses Palestinian civilian harm or Gaza accountability.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "included",
+   "reason": "Identifies the subject; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Statewide Governor; contextual only, no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction identifier; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not determine a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address domestic economy, immigration, education, healthcare, and China-related trade; none reference Israel, Palestine, or related civil rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Documents Rhoden leading a June 2025 trade delegation to Israel during the Gaza war, calling Israel a 'key partner,' including defense businesses seeking Israeli sales, and a wreath-laying at the Holocaust Remembrance Center; no recorded statement addresses Palestinian civilian harm or Gaza accountability."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling detail; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State-level jurisdiction; no directional signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Classification tag; no directional signal."
+  }
+ ],
+ "generation_sha256": "895f60383a519ed6222ff8950d8c7058d54fa4487e6a16b5bcfb07e2a4606bd6",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:03:10Z"
+}

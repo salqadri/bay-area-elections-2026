@@ -1,0 +1,78 @@
+{
+ "candidate_id": "00972583902c708945da69ea",
+ "request_sha256": "c60da824ffe01d57aa9fa5227e02e180e93a5054c510e5323eb626c7eb354c9d",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Risch has consistently shielded Israel in the Senate. In a May 2025 floor speech he attributed Gaza's suffering to Hamas, and in related remarks stated the humanitarian crisis is 'not Israel's fault.' He introduced a bill to defend Israel at the UN and the Senate NOPE Act companion, which would block UN funding for Palestine beyond observer status, calling Israel 'one of America's greatest allies.' In September 2025 he formally opposed allied nations' recognition of a Palestinian state.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field only; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual metadata; no Palestine-relevant signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation does not by itself establish a Palestine position"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All platform points address environment, economy, immigration, and gun rights; none reference Israel, Palestine, or Gaza"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Floor speech blaming Hamas, 'not Israel's fault' statement, UN-defense bill, NOPE Act companion blocking Palestine funding, opposition to Palestinian statehood recognition, and routine ceasefire comment all point consistently to shielding Israel"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note only; no specific funding data supplied for this candidate"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Calendar context; no policy signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Status flag; no policy signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative classification; no policy signal"
+  }
+ ],
+ "generation_sha256": "3126e5c4ac5f1c5a873f542ccbd9bef84dd3c1a13161ab22d81be9ad0cab7a15",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:28:42Z"
+}

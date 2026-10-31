@@ -1,0 +1,96 @@
+{
+ "candidate_id": "3c029e868af991966a3d935d",
+ "request_sha256": "4c46a09ea227973852581dabe0262de5592b9e4dbdd0de293711db8b660b5f12",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Harris Mojadedi for the general election and Vote for Peace rated the incumbent Chabot-Las Positas community college trustee an Ally, providing directional evidence of pro-Palestine alignment. The B grade reflects these organizational recommendations as the documented basis for the assessment. Mojadedi's campaign platform addresses community college affordability, immigration protections, and labor policy without language on Palestine, Israel, or Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; no directional signal on its own."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes local community-college context for the race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Jurisdictional detail grouped with office and district."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no directional signal on Palestine/Israel."
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Value is false; no Muslim-community alignment evidence to cite."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers education, immigration, affordability, labor; contains no Palestine/Israel language, which is material to explaining the grade basis."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement and Vote for Peace Ally rating are the primary directional evidence for the B grade."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR/VFP tiers count as concrete stance evidence; grouped with endorsement observations."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace roles; context for endorsement observations."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future date (2026-11-03); does not clarify the stance evidence."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Names the district; grouped with office for local-race context."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Mojadedi is the sitting trustee; relevant context for the endorsement phase."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster label; no bearing on the assessment."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "e9bfb2ec28f95a9bbbb35c0ad44c291993f7592db892f3d0e354e84316e02263",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:47:27Z"
+}

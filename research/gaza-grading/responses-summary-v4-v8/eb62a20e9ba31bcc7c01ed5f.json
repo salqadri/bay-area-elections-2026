@@ -1,0 +1,84 @@
+{
+ "candidate_id": "eb62a20e9ba31bcc7c01ed5f",
+ "request_sha256": "e2409d02751301dd3a1011dbe765280cf4840884176b8a5af7ef880624c37bf6",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Jackson's Oct 7 anniversary post on X (October 7, 2026) called the attacks 'an act of evil,' prayed for Georgia's Jewish community, and framed the conflict solely around Oct 7 victims and antisemitism. Vote for Peace, which rates candidates on human-rights and war-lobby criteria, marked him Opposed in the primary phase. His public framing centers the conflict on Jewish victims and antisemitism rather than on Palestinian justice or Israeli military accountability.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office designation (GA Statewide Governor) provides context but no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label (Republican) does not by itself establish a Palestine position."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Platform covers economy, education, immigration, criminal justice; no mention of Palestine, Israel, Gaza, or Middle East policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Oct 7 anniversary post frames conflict solely around Oct 7 victims and antisemitism; Israel-centric framing with no acknowledgment of Palestinian justice or Israeli military conduct."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Jackson 'Opposed' in the primary phase; per rubric, opposition by an anti-Zionist org is concrete stance evidence."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Clarifies that Vote for Peace directional tiers count as concrete stance evidence; supports treatment of the Opposed rating above."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes Vote for Peace methodology (human rights, war-lobby/AIPAC funding, viability); provides context for the Opposed rating."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03) is logistical; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction (State of Georgia) is contextual; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no directional signal."
+  }
+ ],
+ "generation_sha256": "36983d0c45228c63f97ac2088c76d53996331a7e910a897349978759d0ffcc2b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:50:18Z"
+}

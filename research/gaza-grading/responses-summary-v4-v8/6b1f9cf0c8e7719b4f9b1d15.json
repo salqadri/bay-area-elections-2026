@@ -1,0 +1,84 @@
+{
+ "candidate_id": "6b1f9cf0c8e7719b4f9b1d15",
+ "request_sha256": "74e72b3449812add3e6d03296ddd279efb3da9873390cb9caf97ead669617158",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Paul Sethy, the incumbent Ward 3 Director for the Alameda County Water District, holds a CAIR Action endorsement and a Vote for Peace Ally rating for the 2026 general election. CAIR Action evaluates candidates on civil rights and Gaza ceasefire positions, while Vote for Peace assesses human rights records and war-lobby funding; the endorsement context treats these directional recommendations as concrete stance evidence of the candidate's alignment on Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the subject as Paul Sethy; named in the paragraph."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Ward 3 Director provides the specific local context for the candidate."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "CA is implied by jurisdiction; no independent relevance to Palestine stance."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestinian justice position."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating (general) are the core directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes that these directional recommendations are treated as concrete stance evidence without a direct candidate quotation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "CAIR Action and Vote for Peace descriptions clarify what each organization evaluates (ceasefire positions, AIPAC funding); folded into the endorsement explanation."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 is administrative; the general-election phase is already noted via the endorsement phase field."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Alameda County Water District identifies the local body; included with office for specificity."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Incumbent status noted briefly for voter context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative roster label; no bearing on Palestine stance."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "fb9a371188a91c86a1ed5a3f354df9be44366ec6776a4cd858d72aa5c16bf1d7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:59:00Z"
+}

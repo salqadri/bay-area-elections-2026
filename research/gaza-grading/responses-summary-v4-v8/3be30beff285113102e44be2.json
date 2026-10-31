@@ -1,0 +1,84 @@
+{
+ "candidate_id": "3be30beff285113102e44be2",
+ "request_sha256": "a26473cb3ef6e86974316097b92eef50eac83a7e247699b2154bcd4f2906d8a1",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action recommended Mer Curry Nuñez at its 'preferred' tier for the general election in the East Side Union High School District Trustee Area 1 race. In that local school board contest, the directional signal on Palestine and Israel rests on that organizational recommendation rather than on recorded personal statements or votes.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name, used in prose but not a directional fact."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes local school board context for the recommendation."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier, no independent directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no Palestine-directional information."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "CAIR Action 'preferred' tier (general) is the primary directional signal; Samir Laymoun 'supported' omitted per source policy because other relevant directional evidence exists."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal source-classification context; Samir is excluded from prose per policy."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Rubric methodology note on how to weigh CAIR tiers; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action's role; clarifies 'preferred' is not full endorsement but does not add candidate-specific evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not materially alter the assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "East Side Union High School District identifies the local school board context."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label, no directional content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "eff4df5a72b75061de99950af1695c20a2d8f5a070dad92d07e07a954b56a7b4",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:48:00Z"
+}

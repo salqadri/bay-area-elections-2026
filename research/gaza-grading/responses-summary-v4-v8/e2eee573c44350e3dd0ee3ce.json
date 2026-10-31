@@ -1,0 +1,78 @@
+{
+ "candidate_id": "e2eee573c44350e3dd0ee3ce",
+ "request_sha256": "554471d0b0b952be629d647979d9a3c13b73073e9eb60033273870bbf764b180",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Diana Sanchez Bentz in the general election for Gilroy District 4 City Council, and Vote for Peace rated her an Ally, each organization assessing candidates on civil rights, foreign policy including Gaza positions, and war-lobby funding.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name used throughout the summary."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides the office context (District 4 City Council) for the endorsement."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State is implied by jurisdiction; not material to the position assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan status does not bear on Palestine position."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement and Vote for Peace Ally rating are the sole directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Rubric methodology for interpreting endorsements; not a candidate fact."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes what CAIR Action and Vote for Peace evaluate; folded into the summary to explain the significance of the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date not material to explaining the candidate's position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Gilroy gives local context for the race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification field with no substantive content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information provided."
+  }
+ ],
+ "generation_sha256": "2846f97076d67378414a0056aa9a13c3dd100993747efd7784e458573c042704",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T13:23:10Z"
+}

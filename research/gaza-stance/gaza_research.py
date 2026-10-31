@@ -132,13 +132,19 @@ def add_evidence(k, items, person_ctx=None):
                     rev.append({"person": it["person"], "url": u, "date": date,
                                 "flag": s, "summary": (it.get("summary") or "")[:200], "on": TODAY})
                 json.dump(rev, open(rpath, "w"), indent=1)
-            cur.append({"id": next_eid(), "person": it["person"], "date": date or None,
-                        **({"date_method": dmethod} if dmethod else {}),
-                        "url": u, "domain": urllib.parse.urlparse(u).netloc.replace("www.", ""),
-                        "summary": (it.get("summary") or "")[:240],
-                        "quote": (it.get("quote") or "")[:300] or None,
-                        "dimension": it.get("dimension", "other"),
-                        "source_kind": it.get("source_kind", "news"), "checked_on": TODAY})
+            item_date_method = dmethod
+            item = {"id": next_eid(), "person": it["person"], "date": date or None,
+                    **({"date_method": item_date_method} if item_date_method else {}),
+                    "url": u, "domain": urllib.parse.urlparse(u).netloc.replace("www.", ""),
+                    "summary": (it.get("summary") or "")[:240],
+                    "quote": (it.get("quote") or "")[:300] or None,
+                    "dimension": it.get("dimension", "other"),
+                    "source_kind": it.get("source_kind", "news"), "checked_on": TODAY}
+            if item_date_method == "wayback_first_capture" and not it.get("date_note"):
+                item["date_note"] = "Archive bound: page content first seen by the Internet Archive by this date; the underlying statement may be earlier."
+            elif it.get("date_note"):
+                item["date_note"] = it["date_note"]
+            cur.append(item)
             added += 1
         if added:
             tmp = ev_path(k) + ".tmp"; json.dump(cur, open(tmp, "w"), indent=1); os.replace(tmp, ev_path(k))
@@ -446,7 +452,7 @@ def work(person):
             except Exception: pass
         det_items.append({"person": name, "date": iso or None,
                           "url": f"https://x.com/{t['handle']}/status/{t['id']}" if t["id"] else f"https://x.com/{t['handle']}",
-                          "summary": "X post: " + re.sub(r"\s+", " ", t["text"])[:200],
+                          "summary": re.sub(r"\s+", " ", t["person"] + " posted on X: ") + re.sub(r"\s+", " ", t["text"])[:160],
                           "quote": re.sub(r"\s+", " ", t["text"])[:300],
                           "dimension": "other", "source_kind": "x_post"})
     for r in fec_hits[:12]:

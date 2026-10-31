@@ -1,0 +1,66 @@
+{
+ "candidate_id": "dc49c19eb45954d46e77b3a4",
+ "request_sha256": "cd11f4441957de4e82328aaa11542556743194433a1e61452210941c865e3b88",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Shafina Barnett, a Green Party candidate for Michigan's 4th congressional district, is recorded with owner-confirmed membership in the pro-Palestine Muslim community, which this guide treats as affirmative evidence of general alignment with Palestinian justice and anti-Zionism.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Candidate name for identification in the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Office context for identifying the race"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "State context for identifying the race"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Party affiliation noted as identifying context; no specific policy position attributed from party alone"
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in the pro-Palestine Muslim community; primary directional evidence for the grade"
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms the membership is pro-Palestine community alignment, not merely religious identity; supports the favorable assessment of part_of_muslim_community"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date provides temporal context but adds no directional signal on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal House of Representatives is implied by office field; no independent directional signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster classification tag with no bearing on the candidate's position"
+  }
+ ],
+ "generation_sha256": "ea3c55476880b1bb4b6082122a1f8691900dc5bbc0307492bcc00ee31cf287bc",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:08:37Z"
+}

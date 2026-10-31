@@ -1,0 +1,60 @@
+{
+ "candidate_id": "accf8bb081610505b35af196",
+ "request_sha256": "b6ff1dcc481b25d4deb2f6b06072b429e653695b132037a57ba6c8e4eb78b832",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Clifton Brown's 2026 campaign platform pledges to stop funding Israel, end US arms sales worldwide, and calls the US-backed attack on Gaza a genocide. The platform explicitly assigns the United States a role in the conflict through its funding and arms policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name for the summary"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; does not bear on Palestinian-justice position"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context; not relevant to the position"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party label (Independent) does not independently indicate a stance on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Campaign platform pledges to stop funding Israel, end US arms sales worldwide, and calls the US-backed attack on Gaza genocide—direct evidence of explicit opposition to US support for Israel and use of the word genocide"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Temporal context; not relevant to the substance of the position"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative context; does not affect the position"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Administrative classification field with no substantive policy content"
+  }
+ ],
+ "generation_sha256": "fc8402e86b248985b7db3a18824c8a6a2fe183295d33409392a821ff51e71cf7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:59:34Z"
+}

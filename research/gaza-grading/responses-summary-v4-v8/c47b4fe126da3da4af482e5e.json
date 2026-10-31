@@ -1,0 +1,66 @@
+{
+ "candidate_id": "c47b4fe126da3da4af482e5e",
+ "request_sha256": "76bdef63628b15db3aeefc3f6c84679eadc7be587055bddb41f77aaa4a0f6268",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "As Surfside Mayor, Burkett's sole recorded statement on the conflict (April 2024) acknowledges \"people on both sides\" but centers on condemning physical attacks on Jewish people and protecting the local Jewish community. The framing is Israel-centric, directed at safeguarding Jewish residents rather than addressing Israeli military conduct or Palestinian harm.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context (FL Governor); no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation (Independent); no Palestine-related content."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All eight platform points cover economy, healthcare, housing, government ethics, transportation, and immigration; none address Israel/Palestine policy, Palestinian justice, or related speech rights."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Sole Palestine-relevant item: April 2024 statement as Surfside Mayor acknowledges 'both sides' but centers on condemning attacks on Jewish people and protecting the local Jewish community; Israel-centric framing with no condemnation of Israeli military conduct."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03); no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata tag ('candidates'); no policy signal."
+  }
+ ],
+ "generation_sha256": "c447db479792d4a7a5d24c247ca676c67a35b36e4ad58e7d979bd8758dcad49c",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:47:53Z"
+}

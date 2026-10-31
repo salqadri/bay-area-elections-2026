@@ -1,0 +1,84 @@
+{
+ "candidate_id": "5536a203cce78766e4b9cd97",
+ "request_sha256": "c5ded817198ea80f287b569beb312cef40c195156d461bde28a69268c5c15ab6",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace, which evaluates candidates on human rights and war-lobby funding, rated incumbent Ramachandran an Ally in the 2026 Oakland general. That directional rating is the sole recorded evidence of her position on Palestinian justice, with no personal statements, votes, or campaign pledges documented alongside it.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy content."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local council office; no bearing on Palestine policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy content."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated her Ally in the general; sole directional evidence on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms VFP directional ratings count as concrete stance evidence; folded into endorsement treatment."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Describes VFP methodology (human rights, war-lobby funding); provides context for the Ally rating."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "2026 date anchors the general-election endorsement in time."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "City of Oakland identifies the race context."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Confirms she is the sitting council member; relevant to framing."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Null value; no additional information."
+  }
+ ],
+ "generation_sha256": "c60d220d595275784899a50bf42b99455df47e3fb4c8f61d075e31b4541423e5",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:35:17Z"
+}

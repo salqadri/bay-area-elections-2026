@@ -1,0 +1,90 @@
+{
+ "candidate_id": "5205bd16d87a21a605b31575",
+ "request_sha256": "21b0c03cd0cb0c94d1b598f3997a3bc2f874e7596f63e8caf2ba183f2896065d",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed McFadden for the San Francisco Community College Board in the general election, and in October 2024 the candidate personally authored a recommendation for a SOMArts Día de los Muertos exhibit centering Palestinian communal grief and solidarity. The campaign platform focuses entirely on local education access, enrollment growth, and board governance.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; no directional signal on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local community college board seat; context only, no Palestine-specific signal"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; no independent Palestine signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan; no directional signal"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Platform covers local education access, enrollment, dual enrollment, and board governance; no Palestine-related commitments"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Personal action: authored a Palestine-focused SOMArts exhibit recommendation framing the conflict through communal grief and solidarity (2024-10-03)"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsed McFadden in the general phase; per endorsement context this is concrete directional stance evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action directional recommendations count as concrete stance evidence; supports reading of the endorsement"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action as considering civil rights and foreign policy including Gaza; contextualizes the endorsement without adding new candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03; timing context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "San Francisco Community College District; identifies the local race for endorsement context"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no substantive signal"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional research added"
+  }
+ ],
+ "generation_sha256": "09b1fed508f134d4f1a4ff21f7bee18c17f612d5b83b68af0f45b506bdb8b40b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:55:27Z"
+}

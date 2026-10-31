@@ -1,0 +1,102 @@
+{
+ "candidate_id": "d7bcef6faff8be43ea33add3",
+ "request_sha256": "6ed3060387685e088bed1e2d79fba55c43b9a431551c3a741e6bbcd297a5e4b5",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Track AIPAC states Villegas recognizes the genocide in Gaza and has pledged to oppose military aid to Israel. CAIR Action endorsed him in the general election and Vote for Peace rated him an Ally. As a school board member in January 2024, he signed a public ceasefire letter to the Biden White House. His campaign platform opposes the Iran war as a 'reckless war of choice,' and pro-Israel PACs DMFI PAC and 314 Action Fund spent against him.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identity field; no policy signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional context only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label does not indicate Palestine stance"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All twelve spenders carry unestablished relevance; no documented Palestine-policy connection"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological note on independent spending; no candidate-specific signal"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Descriptive profiles of DMFI PAC, 314 Action Fund, CAIR, Vote for Peace, Track AIPAC; used as reference for other items"
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "DMFI PAC ($500K) and 314 Action Fund ($36.7K, UDP-linked per guide assessment) spent against Villegas, indicating pro-Israel opposition to him"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Platform opposes Iran war as 'reckless war of choice,' showing anti-US-intervention stance in the region; other points (economy, healthcare, immigration) are unrelated"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Jan 2024 school-board ceasefire letter; Track AIPAC states he recognizes genocide and pledged to oppose military aid to Israel; Sway 'Stop arming Israel' listing; Jewish Insider headline"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general) and Vote for Peace Ally rating are concrete pro-Palestine stance evidence per endorsement_evidence_context"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Methodological clarification that directional recommendations count as stance evidence; no independent fact"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scheduling detail"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context only"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Classification tag"
+  }
+ ],
+ "generation_sha256": "468804f686c003851b7a3f03c1a2376331d221fbdb303c514634d60162ab9f0f",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:57:48Z"
+}

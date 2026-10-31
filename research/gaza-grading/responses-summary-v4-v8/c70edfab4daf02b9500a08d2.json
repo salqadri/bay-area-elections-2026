@@ -1,0 +1,84 @@
+{
+ "candidate_id": "c70edfab4daf02b9500a08d2",
+ "request_sha256": "1ab324043a1319e103fad83d0f927718487a07ea16aa91b30ebef4c2b5101218",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "At the August 2026 NH-01 GOP primary debate, DiLorenzo stated, 'I do support Israel,' adding that military funding should carry humanitarian conditions. His campaign platform names Middle East peace as a foreign-policy priority alongside Ukraine, without singling out Palestine. The documented record is a clear pro-Israel position paired with a narrow humanitarian-aid qualifier, reflecting an Israel-centric framing with limited sympathy for Palestinian civilian welfare.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only, no policy content"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context (NH CD-1 House seat), not Palestine-specific"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party affiliation not specific to Palestine position"
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Record explicitly marks relevance as unestablished; spending_context instructs that unmapped spenders should not explain a Palestine assessment"
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note on how to treat spending data, not candidate evidence"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "International-affairs point names Middle East peace as a priority alongside Ukraine; general framing without Palestine-specific content; other platform points (economy, healthcare, immigration, etc.) are unrelated and omitted"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Primary evidence: candidate explicitly states 'I do support Israel' with only a humanitarian-conditions caveat on military funding; pro-Israel framing"
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Funding time-scope note, not candidate policy evidence"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Date context only"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label, no policy content"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Metadata tag"
+  }
+ ],
+ "generation_sha256": "85115ff563840fa61f80946b2bcef34851ba7f2b1bcedb7d6447d9aa47e7a0d5",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:12:51Z"
+}

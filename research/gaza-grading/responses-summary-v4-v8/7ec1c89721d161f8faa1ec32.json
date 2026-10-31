@@ -1,0 +1,78 @@
+{
+ "candidate_id": "7ec1c89721d161f8faa1ec32",
+ "request_sha256": "f7b9e5707720db1d233d7629885e3b89983989af378b22020adfb0ce20c51906",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Joyce calls Gaza a genocide, identifies Netanyahu as a war criminal, and refuses all Pro-Israel PAC money, a pledge repeated on her campaign website. She proposes AIPAC register under FARA and states Palestine should be free. Her accountability framing targets Netanyahu as the war criminal rather than US military support for Israel, and no AIPAC-linked FEC filing appears in her 2026 campaign record.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name; identity context only."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office sought; no bearing on Palestinian-justice assessment."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; immaterial."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; does not bear on the specific assessment."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Israel/Palestine point: calls Gaza a genocide, names Netanyahu a war criminal, refuses Pro-Israel PAC money, proposes AIPAC FARA registration, states Palestine should be free. Other platform points (AI, Epstein files, surveillance, immigration, dark money, workflow) are unrelated to Palestinian justice."
+  },
+  {
+   "id": "candidate_record.reviewed_gaza_platform_statement",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Campaign website quote confirming refusal of Pro-Israel PAC money in the candidate's own words."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "2026-06 PoliVion profile lists no AIPAC-linked FEC record, corroborating the stated refusal. Note that a general 'end war' pledge does not specify Israel/Gaza policy, but the platform statement is more specific and supersedes it."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "AIPAC description provides context for why refusing its money and proposing FARA registration are relevant to the assessment."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; immaterial to the stance assessment."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; immaterial."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster category tag; immaterial."
+  }
+ ],
+ "generation_sha256": "2ab807f4976a7359a92844cb3534fc8bc07b08da8f3cdcb58faf429cbd1611dc",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:14:06Z"
+}

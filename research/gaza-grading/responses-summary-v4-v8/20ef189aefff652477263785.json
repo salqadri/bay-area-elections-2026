@@ -1,0 +1,66 @@
+{
+ "candidate_id": "20ef189aefff652477263785",
+ "request_sha256": "728597fb04b9fe1e50aabe817a86d4b8c37bdb251de68ab368412990e563c225",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Mazzei praised Trump in June 2025 for 'protecting our ally Israel and securing peace in the Mid East,' framing the US-Israel relationship positively with no mention of Gaza or Palestinian casualties. An advocacy site claims he co-sponsored a 2016 Oklahoma Senate resolution commending Israel, but the state Senate record does not name him and the claim remains unverified.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name; no directional signal"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Office context only; no Palestine-related content"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no directional signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Party label alone does not establish a policy position on Palestine"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Platform covers economy, education, criminal justice, immigration; no mention of Israel, Palestine, Gaza, or related civil liberties"
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "June 2025 statement praising Trump for protecting Israel with no mention of Gaza or Palestinian casualties is primary pro-Israel evidence; 2016 resolution claim is explicitly unverified and omitted as unconfirmed"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election date; no directional signal"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no directional signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification; no directional signal"
+  }
+ ],
+ "generation_sha256": "6535d19895e0e34ede23d3c32515ed718291d7c2803afb6edb82b0fe54623fc0",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:01:01Z"
+}

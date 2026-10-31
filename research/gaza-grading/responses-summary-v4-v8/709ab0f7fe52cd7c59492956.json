@@ -1,0 +1,84 @@
+{
+ "candidate_id": "709ab0f7fe52cd7c59492956",
+ "request_sha256": "a8233cfb9333d8cf866d4dca21e5e89c2bf238e5ac16c85ed96c44caef9a542a",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Jamal Khan, a nonpartisan candidate for at-large Governing Board member in the Berryessa Union School District, California, is a confirmed member of the pro-Palestine Muslim community. That documented affiliation is the record's evidence of his general pro-Palestine alignment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides context for the local school-board race."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Geographic context."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan designation is brief context."
+  },
+  {
+   "id": "candidate_record.part_of_muslim_community",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Owner-confirmed membership in the pro-Palestine Muslim community; affirmative evidence of general pro-Palestine alignment."
+  },
+  {
+   "id": "candidate_record.community_alignment_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies the community flag as pro-Palestine alignment, not mere religious identity; grouped with the community flag."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "omitted",
+   "reason": "Samir Laymoun support; omitted per summary_source_policy (samir_allowed: false, other relevant directional evidence exists)."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual note for the omitted Laymoun observation; no independent policy signal."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Administrative date; does not bear on the candidate's position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Names the Berryessa Union School District, clarifying the local scope of the race."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Administrative label 'candidates'; no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Value is null; no information to report."
+  }
+ ],
+ "generation_sha256": "60e26940147c4f0a75c9e2927ce1c6435d06773743446b93fb708b29c9015580",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:46:39Z"
+}

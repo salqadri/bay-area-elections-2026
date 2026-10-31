@@ -1,0 +1,84 @@
+{
+ "candidate_id": "e03955e5c1cec23f1f034641",
+ "request_sha256": "2e8fe06eabea06200d8b879a263610e3ec65f41924d8215f69994c34caf6c3ea",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Ferguson co-authored an op-ed on October 20, 2023, condemning harmful rhetoric after the Israel attack and Gaza siege and framing the conflict through Jewish-Muslim safety and justice. The statement addresses interfaith speech rather than naming Israel's military actions, calling for a ceasefire, or using the word genocide. Her City College Board platform centers on education access, the Free City tuition program, and workforce development.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate identity only, no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Contextual detail (local education board); no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier, no policy content."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label carries no Palestine-directional signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address City College education policy (Free City, dual enrollment, workforce development); no Palestine, Israel, or related civil-rights content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Oct 20, 2023 op-ed condemns harmful rhetoric, references the Gaza siege, and frames conflict through Jewish-Muslim safety and justice; does not name Israel's military actions, call for a ceasefire, or use the word genocide."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Election scheduling detail, no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "District identification, no policy content."
+  },
+  {
+   "id": "candidate_record.election_type",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Special-election label, no policy signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status, no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal categorization tag, no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Field is null; no additional information supplied."
+  }
+ ],
+ "generation_sha256": "bc701006ad33db90b1e1cf29cab68e52ccd0b842d17cb4914239e389e2fa768b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:55:38Z"
+}

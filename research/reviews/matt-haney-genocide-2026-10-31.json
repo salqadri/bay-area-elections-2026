@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "id": "matt-haney-genocide-2026-10-31",
+  "election_date": "2026-11-03",
+  "reviewed_on": "2026-10-31",
+  "counties": [
+    "San Francisco"
+  ],
+  "base_dataset_sha256": "8d0969cef2be6e52469ad02e1f3c82f447a8ecb7b09ec36555827b9a242d34bb",
+  "sources": {
+    "haney-video": {
+      "url": "https://www.youtube.com/watch?v=YxIYQMrSsEw",
+      "title": "CAIR-SFBA 2026 Gala \"Liberty\" Award Honoree Asm. Matt Haney",
+      "publisher": "CAIRSFBA",
+      "channel_url": "https://www.youtube.com/@CAIRSFBA",
+      "published_at": "2026-10-23T16:32:04-07:00",
+      "checked_on": "2026-10-31",
+      "identity_verification": "The official CAIRSFBA recording identifies Assemblymember Matt Haney in its title. Verified with YouTube oEmbed and watch-page player metadata.",
+      "content_verification": "Owner explicitly confirms that Haney called it a genocide in this recording. No verbatim quote or timestamp is asserted; automatic captions and transcript retrieval returned no text.",
+      "search_provider": "serper.dev",
+      "original_owner_url": "https://www.youtube.com/watch?v=YxIYQMrSsEw.",
+      "canonicalization": "Removed the trailing punctuation after the eleven-character YouTube video ID."
+    }
+  },
+  "notes": {},
+  "decisions": [
+    {
+      "id": "owner-confirmed-genocide-statement",
+      "action": "change",
+      "source_key": "haney-video",
+      "position_id": "CA2026-231",
+      "candidate": "Matt Haney",
+      "field": "gaza_evidence",
+      "before": null,
+      "after": {
+        "id": "GE-1613",
+        "url": "https://www.youtube.com/watch?v=YxIYQMrSsEw",
+        "summary": "Haney publicly called Israel’s actions in Gaza a genocide in CAIR-SFBA’s 2026 Liberty Award recording. The owner confirmed this statement in the linked video.",
+        "date": "2026-10-23",
+        "dimension": "genocide_language",
+        "checked_on": "2026-10-31",
+        "source_kind": "video",
+        "date_method": "page_metadata",
+        "date_note": "Date is the official CAIRSFBA video upload date, not a verified speech date. Statement content is owner-confirmed; a transcript and exact timestamp were not independently retrievable."
+      },
+      "reason": "Owner directly identified Haney’s genocide statement. The official recording’s identity and upload date were independently retrieved; content provenance remains owner confirmation, not a fabricated transcript."
+    }
+  ]
+}

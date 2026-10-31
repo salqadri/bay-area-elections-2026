@@ -1,0 +1,90 @@
+{
+ "candidate_id": "9093b2af9bfb5c00e7ed838a",
+ "request_sha256": "68c3b0ffbfcc61e5621c6aa6f162cc6add139334219c8781e4d17bdec59267a5",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Calling Netanyahu's war 'illegal' and voting for two Sanders resolutions blocking arms sales to Israel, Luján has condemned Israel's military campaign and West Bank settler violence. He called for a Gaza ceasefire and humanitarian aid in 2025 and questioned US support for Lebanon's forced displacement in 2026. His record is complicated by a 2024 vote for the supplemental that included Israeli security assistance and a 2026 post on October 7's anniversary referencing only Israeli victims.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (NM Senator); no Palestine signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Both spenders carry unestablished relevance to Palestine; environmental organizations with no documented Israel/Palestine connection in record."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Methodological note clarifying independent spending does not prove policy; no candidate-specific fact."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Platform covers healthcare, environment, economy, tribes, immigration, education, transportation; no Israel/Palestine or related speech-rights content."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "uncertain",
+   "treatment": "grouped",
+   "reason": "Mixed directional evidence: favorable (called war illegal, voted to block arms sales, condemned settler violence, called for ceasefire and aid, questioned US support for Lebanon displacement) and adverse (2024 supplemental vote including Israeli security assistance; 2026 Oct 7 post centered on Israeli victims). Net pattern fits C band."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Scope limitation note; no candidate-specific policy fact."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Senate jurisdiction; context only."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no policy content."
+  }
+ ],
+ "generation_sha256": "b9767d6407589771b8b20d786af15c1faa7c29994100d68c918a639f14217467",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:40:29Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "24a200ee938a590df0f15b50",
+ "request_sha256": "031d2c0f5a3d12e53ffcbbafd83ebdefab6afe89116ded3111789e80b01be518",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed incumbent nonpartisan Trustee Suzanne Lee Chan for the Ohlone Community College District governing board in the 2026 general election. That endorsement is the sole directional evidence in the record, and the endorsement context treats CAIR Action recommendations as concrete stance evidence even without a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes this is a local college-board trustee race"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "California; no specific relevance beyond jurisdiction already captured"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is relevant context for a local race"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement (general phase) is the sole directional evidence supporting the pro-Palestine assessment"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Frames CAIR Action recommendations as concrete stance evidence even without a candidate quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes CAIR Action's role; organizational context, not a candidate action"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Dates the endorsement context to the 2026 general election"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Ohlone Community College District identifies the specific race"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Incumbent status provides context for the local race"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Structural metadata (candidates); no substantive content"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information supplied"
+  }
+ ],
+ "generation_sha256": "1e5f582253b1016a61163b3cad8bd08f888c40771a5ff352f0e12c1dabb07d21",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:54:11Z"
+}

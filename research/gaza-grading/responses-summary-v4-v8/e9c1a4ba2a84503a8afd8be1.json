@@ -1,0 +1,90 @@
+{
+ "candidate_id": "e9c1a4ba2a84503a8afd8be1",
+ "request_sha256": "21482cf2cef54198457d3508cbccb83308564e144db55d6dda890095966c4e06",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Rubio in the general election and Vote for Peace rated her an Ally. Her San Ramon platform addresses housing, climate, transportation, and local governance. The B reflects the endorsement-evidence ceiling, as no personal statement or action on Palestinian justice or Israeli military policy is recorded alongside these organizational assessments.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name used for identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local council office; no bearing on Palestine/Israel stance"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic identifier only"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no directional signal on this issue"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "All points address San Ramon housing, climate, transit, economy, education, healthcare, jobs, and accountability; none reference Palestine, Israel, Gaza, or foreign policy"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action general-election endorsement and Vote for Peace Ally rating are the sole directional evidence for the B ceiling"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Confirms the endorsements count as concrete stance evidence; folded into the summary's explanation of the grade"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace roles and tiers; contextualizes the endorsement evidence already included"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date; no bearing on stance"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of San Ramon; local context only"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no directional signal"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Null value; no additional information"
+  }
+ ],
+ "generation_sha256": "2647a55a20dfc579133689182ba36db0309306e8f501aab0fe388d7307eb6e9d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:40:23Z"
+}

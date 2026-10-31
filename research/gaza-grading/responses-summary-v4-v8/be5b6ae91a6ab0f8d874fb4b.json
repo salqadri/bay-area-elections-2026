@@ -1,0 +1,60 @@
+{
+ "candidate_id": "be5b6ae91a6ab0f8d874fb4b",
+ "request_sha256": "e18da05f63c7dcb01a503175e0ba1fbc0f4cb45793a73e8e51ebac9fade2218d",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bailey declared on October 11, 2023 that he has 'always stood with Israel,' calling Hamas a 'despicable terrorist organization' and criticizing Governor Bost for using the attacks on Israel for political points. The remark is an unqualified alignment with Israel that frames the conflict entirely from Israel's perspective, with no reference to Palestinian harm or to Israel's military conduct in Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "IL Statewide Governor race; contextual only, no policy content."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no bearing on the assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Republican Party affiliation; no specific policy content in the record."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "2023-10-11 statement: 'always stood with Israel,' calls Hamas despicable, criticizes Bost for using Israel attacks politically. Direct, unqualified alignment with Israel."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; contextual only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State of Illinois; no policy content."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive information."
+  }
+ ],
+ "generation_sha256": "510a232b8b9cb4d65498a94713eb54b9229b9053140cb237212a7e2f9f7870da",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:50:50Z"
+}

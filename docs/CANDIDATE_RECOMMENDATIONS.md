@@ -2,10 +2,12 @@
 
 Current source-selection follow-up: [publication 2026-10-29.3 and the v4 prompt](SUMMARY_SOURCE_POLICY.md). Historical rules and publications below remain archived.
 
-Current publication **2026-10-29.1** recommends down through a **D**: a race whose
+Current publication **2026-10-30.1** recommends down through a **D**: a race whose
 best graded candidate is a D now gets a pick (owner rule, October 29, 2026 — e.g.
 Sam Liccardo, CD-16); races whose graded candidates are all E or F keep the explicit
-no-recommendation line.
+no-recommendation line. Against the v8/v8.1 grades the plan holds **173 picks**
+(12 Muslim-community, 161 Jev), 83 E/F-only races and 283 without information;
+8 races moved when the California Jewish Democrats endorsement became visible.
 
 Publication **2026-10-28.5** renders recommendations **inside both readers**:
 every confirmed race in [Explore all races](../index.html) and every ballot result in
@@ -43,7 +45,7 @@ Jev never sees raw evidence; it chooses from the published grades only.
 
 ## Recommendation reasons
 
-Each recommended race (172) carries a voter-facing why-paragraph (≤200 words) generated
+Each recommended race (173) carries a voter-facing why-paragraph (≤200 words) generated
 by `qwen/qwen3.8-27b` (medium reasoning, concurrency 2) from the candidates' textual
 records — published explanation summaries, Gaza evidence with dates, platform positions,
 and the relevance-filtered endorsement lines — under the owner framework:

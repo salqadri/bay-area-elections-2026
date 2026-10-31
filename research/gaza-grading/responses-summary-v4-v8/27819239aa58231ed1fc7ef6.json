@@ -1,0 +1,60 @@
+{
+ "candidate_id": "27819239aa58231ed1fc7ef6",
+ "request_sha256": "dc3ac820107161426daff46b6918065bc3fde15b29794892e71a2981f7b3050b",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Stinnett called Netanyahu and hardliners 'guilty in plain sight of genocide of the Palestinian people' in August 2026 and said in September he would vote against continued U.S. funding to Israel until Netanyahu is replaced and Israel makes restitution. He explicitly names the killing as genocide and opposes American financial support, but frames the remedy around Netanyahu's removal and Israeli restitution rather than a broader break with the U.S.-Israel relationship.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context only; no policy signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic context only; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no direct policy signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Two dated statements: explicit genocide naming and opposition to continued U.S. funding to Israel, conditional on Netanyahu's removal and restitution."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election timing; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Federal Senate context; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label; no policy signal."
+  }
+ ],
+ "generation_sha256": "6706068077fc0bffa0ef3f944594fe88f8dd53d23f35f89d02f8f1dfca7169b3",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:42:50Z"
+}

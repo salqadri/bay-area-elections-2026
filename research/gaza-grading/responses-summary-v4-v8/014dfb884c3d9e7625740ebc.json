@@ -1,0 +1,78 @@
+{
+ "candidate_id": "014dfb884c3d9e7625740ebc",
+ "request_sha256": "805ba91f8e17eef40acc42c2c4603745342c2031befd263fa0a45c03afcca0cf",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Dublin's Green Party platform opposes imperialism, NATO, and military intervention, calling for drastic U.S. military budget cuts. In March 2024, then in the North Carolina House, he stated AIPAC should be registered as a foreign agent, criticized a political opponent for opposing a Palestine ceasefire, and called AIPAC's influence detrimental to U.S. people. His documented positions center on opposing U.S. intervention and AIPAC's political role rather than on a specific legislative push to end U.S. military assistance to Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Identifies the candidate by name; no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "States the race (NC Statewide Senator); not relevant to the substance of the assessment."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Geographic identifier; no bearing on Palestinian justice position."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Green Party label provides context for the platform's anti-interventionist framing; grouped into the platform description in the summary."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "International-affairs platform point opposes imperialism, NATO, and military intervention and calls for drastic U.S. military budget cuts; directly relevant to pro-Palestine alignment on U.S. foreign policy."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "March 2024 statement calling AIPAC a foreign agent, criticizing an opponent for opposing a Palestine ceasefire, and condemning AIPAC's influence; concrete pro-Palestine and anti-AIPAC action."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note stating funding data covers 2024 onward and omits unresolved totals; no specific funding documented, no directional signal."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes AIPAC as advocating a strong U.S.–Israel relationship; contextual for understanding Dublin's AIPAC criticism; grouped with gaza_evidence in the summary."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 election date; no bearing on the candidate's stated position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "United States Senate jurisdiction; structural context only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no substantive content."
+  }
+ ],
+ "generation_sha256": "5d7eb7edbeb40d3a1c55a2dd8370706b3d5fef9889965a0f3dc2d51bbbfefb36",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:41:13Z"
+}

@@ -1,0 +1,84 @@
+{
+ "candidate_id": "f33a88595b067745dfae60f9",
+ "request_sha256": "b5092e773470f91fdccbf2010e541536bcdf30394c928efc3d3849f2e0d100bc",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Sanwong in the general phase for the East Bay Regional Park District's Ward 5 Director seat, a nonpartisan position she holds as incumbent. The organization's recommendations assess candidates on civil rights and foreign policy, including Gaza and ceasefire positions, and the endorsement tier it issued here sits above its Preferred tier, providing concrete directional evidence of the candidate's stance on those issues.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name, used for identification only"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local seat and frames the race scope"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction already specified; no additional policy signal"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Nonpartisan status is material context for a local park-district race"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action endorsement at endorsement tier in the general phase is the primary directional evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Establishes that CAIR Action directional recommendations count as concrete stance evidence without a direct candidate quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Confirms CAIR Action recommendations weigh Gaza/ceasefire positions and distinguishes endorsement tier from Preferred tier"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "2026-11-03 date does not alter the stance assessment"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "East Bay Regional Park District identifies the specific local body"
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Incumbent status is brief context for the seat"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal roster label, no policy signal"
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information"
+  }
+ ],
+ "generation_sha256": "33bfac2887c9b7e28633cb029b3bed6c70ba997c270e3c76f45b90a902d2392d",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T13:00:13Z"
+}

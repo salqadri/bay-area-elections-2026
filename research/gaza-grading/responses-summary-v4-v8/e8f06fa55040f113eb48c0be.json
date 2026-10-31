@@ -1,0 +1,84 @@
+{
+ "candidate_id": "e8f06fa55040f113eb48c0be",
+ "request_sha256": "8f9047bc7f97c6ac7fed796cf5ababa9fdc84c41092ad517b99c4aa7b382c334",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action issued a full general-election endorsement—not a lower-tier recommendation—of Sarah Syed for Ward 4 Director of the Alameda-Contra Costa Transit District, a local nonpartisan transit seat. The record's evidence context treats CAIR Action's directional recommendations as concrete stance evidence on civil rights and foreign policy, including Gaza and ceasefire positions, even without a direct candidate quotation.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no stance signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the local transit role; contextualizes the endorsement's scope."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no independent stance signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Full CAIR Action general-election endorsement is the primary directional evidence in the record."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Establishes that CAIR Action recommendations are concrete stance evidence even without a candidate quotation."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "favorable",
+   "treatment": "grouped",
+   "reason": "Clarifies CAIR Action's role and that the recorded tier is a full endorsement above 'Preferred.'"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no bearing on stance."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Names the local transit district; helps situate the endorsement context."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbent status does not indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label only; no stance signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional party information supplied."
+  }
+ ],
+ "generation_sha256": "d5bedaaa5256ac4b2fee259c78a42467d49b59b9ab7aa98d61cdc245d0b98816",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:59:28Z"
+}

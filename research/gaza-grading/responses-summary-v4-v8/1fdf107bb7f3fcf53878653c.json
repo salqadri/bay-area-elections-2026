@@ -1,0 +1,78 @@
+{
+ "candidate_id": "1fdf107bb7f3fcf53878653c",
+ "request_sha256": "21e26ec19c26e5430d4a9a1fb9c0252cca2cf876f681c203f6c77e7eb52a7a7b",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR-SFBA's tracker records Kiesel as opposing a ceasefire resolution, a local action dated December 2023 that the tracker notes is not a verified roll-call transcript. His campaign platform addresses exclusively Foster City priorities—housing, infrastructure, parks, and public safety. The single recorded adverse action on the Gaza conflict is the basis for the assessment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Local city council seat; no Palestine-relevant jurisdiction."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label; no policy signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "unrelated",
+   "treatment": "grouped",
+   "reason": "All points address Foster City housing, infrastructure, parks, safety, and transportation; no Palestine or Israel content. Referenced generally in summary to show the platform's exclusively local scope."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "CAIR-SFBA tracker lists Kiesel as opposing a ceasefire resolution (Dec 2023), noted as not a verified roll-call transcript. Primary and only Palestine-related fact in the record."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "City of Foster City; no Palestine-relevant jurisdiction."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Incumbency status; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster tag only."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information."
+  }
+ ],
+ "generation_sha256": "4efe77c92c093b604582376325b9b0ae6f3657b94dab980ff313573de4c5a2c4",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:25:24Z"
+}

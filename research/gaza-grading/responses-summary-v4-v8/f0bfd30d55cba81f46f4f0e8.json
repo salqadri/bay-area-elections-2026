@@ -1,0 +1,78 @@
+{
+ "candidate_id": "f0bfd30d55cba81f46f4f0e8",
+ "request_sha256": "cc3be4d7ee8dd26004280fc3e4bf5cd72c910a656fd49b649a455696a0baf71c",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "CAIR Action endorsed Rojas for the New Haven Unified School District general election at its full endorsement tier, and Vote for Peace rated the candidate an Ally. CAIR Action's recommendations weigh Gaza and ceasefire positions alongside civil rights; Vote for Peace evaluates human rights and war-lobby funding. Under this guide, these directional recommendations at their stated tiers constitute concrete stance evidence on the candidate's position regarding Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; not a directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Describes the local school-board seat; no bearing on Palestine policy."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Geographic context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label does not indicate a position on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "CAIR Action full endorsement and Vote for Peace Ally rating are the concrete directional evidence on the candidate's stance."
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Rubric interpretive instruction establishing that these endorsements count as concrete stance evidence; not itself a candidate action."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Describes CAIR Action and Vote for Peace evaluation criteria (Gaza, ceasefire, war-lobby funding); provides relevance context for the endorsements."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Timing metadata; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Identifies the school district; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information added."
+  }
+ ],
+ "generation_sha256": "c9c6f091a931e5865abcd4b6ff8f4db0f0b356b6bb89d67eaa3f613fd3cda8d7",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:52:53Z"
+}

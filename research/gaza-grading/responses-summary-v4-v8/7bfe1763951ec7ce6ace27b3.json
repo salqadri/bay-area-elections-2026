@@ -1,0 +1,90 @@
+{
+ "candidate_id": "7bfe1763951ec7ce6ace27b3",
+ "request_sha256": "6f6e19bbd9193d0f9384f8b40dc0d39f1f7056e8747a6b19f207a68f13a6a2f9",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Jackson repeatedly calls the Gaza war a genocide, names Netanyahu a war criminal, and vows to block U.S. taxpayer-funded military aid to Israel, positions he maintained at a September 29 town hall, a profile interview, and the October 7 general-election debate. He apologized in late September for generalizing that Jewish Mainers reject the genocide label but reaffirmed the term in his October 1 statement. His platform commits him to ending U.S. military funding for Israel.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name, used in prose but no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no directional signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "All spenders marked unestablished relevance; spending_context prohibits inferring Palestine position without explicit evidence."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Instructs that unmapped spenders do not explain a Palestine assessment; no explicit relevance established for any listed spender."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "AIPAC $42,900 opposition listed with relevance 'unestablished'; instructions require explicit relevance to include spending."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Platform explicitly states Jackson believes Gaza is a genocide, calls Netanyahu a war criminal, and would stop U.S. tax dollars funding Israel's military."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Multiple dated statements: genocide label at town hall and debate, Netanyahu war-criminal charge, opposition to military aid, and the late-September apology for generalizing about Jewish Mainers while reaffirming the genocide position."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Describes AIPAC's general role; no candidate-specific action or endorsement referenced in the paragraph."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Date context; no directional signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster identifier; no substantive content."
+  }
+ ],
+ "generation_sha256": "f35c97504aecd953571d41d42e4c2fefc0842e042ed72ffa03515e2fee443d9a",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:32:38Z"
+}

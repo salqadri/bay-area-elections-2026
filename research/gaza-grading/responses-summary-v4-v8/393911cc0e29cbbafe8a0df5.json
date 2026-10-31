@@ -1,0 +1,72 @@
+{
+ "candidate_id": "393911cc0e29cbbafe8a0df5",
+ "request_sha256": "ff688924a67965fccd160a672f1db4fdc94321c0515e7fed395e62c1c803ca52",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Pinkins' documented positions on Palestinian justice center on two campaign statements: a 2025 press release calling Trump's Gaza plan 'reckless' and criticizing Senator Hyde-Smith for supporting it, and a 2026 remark describing the US relationship with Israel's government as 'unhealthy,' which he stood by. The record shows no condemnation of specific Israeli military actions, no call for ending US military aid, and no Palestine-related policy in his platform.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate identification only."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction context only."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation; no Palestine-specific signal."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Covers healthcare, housing, jobs, education, trade, environment, ethics; no Palestine, Israel, Gaza, or Middle East policy mentioned."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Two statements: 2025 press release calling Trump's Gaza plan 'reckless' and criticizing Hyde-Smith; 2026 'unhealthy relationship' remark with Israel's government, stood by. Critical of US-Israel alignment but stops short of naming war crimes, genocide, or calling for aid cutoff."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Scope note stating funding since 2024 only with unresolved totals; no specific pro- or anti-Palestine funding identified."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date context only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no policy signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster classification label; no policy content."
+  }
+ ],
+ "generation_sha256": "9383e545866983ae2a909b4ffaaf91157a6712b0f47f82da22da81372aeb350a",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T10:37:03Z"
+}

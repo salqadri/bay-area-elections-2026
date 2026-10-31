@@ -1,0 +1,66 @@
+{
+ "candidate_id": "b36e9b22e9417e79e918cdad",
+ "request_sha256": "889c3ab4a1612d57c90317a7cf602d4d3dee8ecd840dc8df5864c8ac36cfb8b2",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Bastiany, a nonpartisan candidate for San Francisco's District 10 Board of Supervisors, stated in 2026 that he is a \"free agent seeking a tribe where he can call out the Genocide in Gaza without being gaslit.\" The statement explicitly affirms the genocide characterization for Gaza. The free-agent and seeking-a-tribe framing positions his pro-Palestine stance as independent of established organizational or party alignment.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no policy signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Identifies local Board of Supervisors seat; contextual for scope of record, no directional signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "State identifier; no policy signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Nonpartisan status used in opening identification; no directional signal on Palestine."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Candidate explicitly uses the word 'Genocide' for Gaza and frames himself as a free agent calling it out; core evidence for B-grade affirmation."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Future election date; no policy signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "San Francisco jurisdiction used in opening identification; no directional signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Roster label 'candidates'; no policy signal."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no additional information."
+  }
+ ],
+ "generation_sha256": "93b6ff0c19def71f159c4e92bb3f18ee02fa2e10d94f652bdb6fa2ddd7e4109b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:14:11Z"
+}

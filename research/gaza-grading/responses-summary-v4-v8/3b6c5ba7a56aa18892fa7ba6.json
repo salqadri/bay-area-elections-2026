@@ -1,0 +1,78 @@
+{
+ "candidate_id": "3b6c5ba7a56aa18892fa7ba6",
+ "request_sha256": "364c063ab8d4faab655b588e77c4362c24ad7fcaa824c2c2f51d0b10055ab167",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "Vote for Peace, which evaluates candidates on human rights positions and AIPAC funding, rated Cindy Holscher an Ally for the 2026 Kansas gubernatorial general. Her campaign platform addresses cost of living, healthcare, education, and other state issues. The organization's directional rating is the documented evidence of her alignment on Palestinian justice, as her platform contains no statements on Palestine, Israel, or Gaza.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Identifies the candidate by name"
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides race context (KS Governor)"
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "Redundant with office field; grouped into race context"
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation adds no directional signal on Palestinian justice"
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers economy, healthcare, education, etc.; absence of Palestine/Israel/Gaza content is a relevant factual observation"
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "favorable",
+   "treatment": "included",
+   "reason": "Vote for Peace rated Holscher an Ally in the general; per endorsement context this is concrete directional stance evidence"
+  },
+  {
+   "id": "candidate_record.endorsement_evidence_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Establishes that VFP Ally rating counts as concrete stance evidence without requiring a direct candidate quotation"
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Clarifies VFP evaluates human rights and AIPAC funding; explains what the Ally rating reflects"
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Provides temporal context for the race"
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "grouped",
+   "reason": "State of Kansas; redundant with office and state fields"
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Internal classification label; no bearing on the assessment"
+  }
+ ],
+ "generation_sha256": "68bea9a1ea76aac56cd85c7301c45653764c7a3cf01706765f26da63d967316e",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:52:28Z"
+}

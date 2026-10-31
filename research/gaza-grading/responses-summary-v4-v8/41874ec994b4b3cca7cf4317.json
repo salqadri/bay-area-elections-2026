@@ -1,0 +1,60 @@
+{
+ "candidate_id": "41874ec994b4b3cca7cf4317",
+ "request_sha256": "5468f48a7eec542edaaf9a8766e46ba598df0a4511f95f50c51164b8bc6cd45d",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "In February 2024, Taylor signed a letter calling on the United States to end financial contributions to UNRWA, the UN agency that provides essential services to Palestinian refugees. Defunding UNRWA would reduce support for displaced Palestinians in Gaza, the West Bank, and beyond. The action works against Palestinian welfare rather than advancing Palestinian justice.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name only; no directional signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office and race context; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation alone does not establish a specific policy position."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "Signing a letter calling for the US to end UNRWA funding is a documented action against Palestinian refugee welfare."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdiction label; no Palestine-related signal."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Roster classification; no Palestine-related signal."
+  }
+ ],
+ "generation_sha256": "af6d1084306e1c088a08d6a55b0f4b80c679aff8e1b50a921227708b542ac9fe",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:43:18Z"
+}

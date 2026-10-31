@@ -1,0 +1,102 @@
+{
+ "candidate_id": "44814dff234740d8f05e4182",
+ "request_sha256": "08e47e5846798f791e51abdd32152a6b1e9bec770f1d57b5d0bb1d034a015e16",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "DMFI PAC, a hybrid PAC associated with Democratic Majority for Israel, is recorded as endorsing Pia Dandiya in September 2026, and a tracking site uses that endorsement to assign her a 'Supports' rating on U.S. weapons and funding for Israel. Her campaign platform addresses housing, healthcare, and government ethics, with no statement on Gaza, Palestine, or Israel-Palestine policy.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate identity only; no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Office context (CD-22 US Representative); no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "State identifier (FL); no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Party affiliation (Democratic); no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.spenders_supporting",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Both spenders (Progressive Turnout Project, Field Team 6) have unestablished relevance; no explicit link to Israel/Palestine."
+  },
+  {
+   "id": "candidate_record.spending_context",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Methodological note on how spending data should be read; not a candidate action or statement."
+  },
+  {
+   "id": "candidate_record.spenders_opposing",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Stronger America Together spending has unestablished relevance; no explicit link to Israel/Palestine."
+  },
+  {
+   "id": "candidate_record.campaign_platform_points",
+   "assessment": "neutral",
+   "treatment": "included",
+   "reason": "Platform covers housing, healthcare, education, ethics; no Israel/Palestine/Gaza statement, contextualizing the DMFI endorsement as the primary directional evidence."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "DMFI PAC endorsement and resulting 'Supports' rating on U.S. weapons/funding for Israel; direct pro-Israel signal."
+  },
+  {
+   "id": "candidate_record.funding_scope",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Scope note (since 2024 only); no Palestine-relevant signal."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "DMFI PAC endorsement (adverse, grouped with gaza_evidence); Hindu American PAC listed without organization context to establish Hindutva or Palestine relevance."
+  },
+  {
+   "id": "candidate_record.organization_context",
+   "assessment": "adverse",
+   "treatment": "grouped",
+   "reason": "Establishes DMFI PAC as associated with Democratic Majority for Israel, supporting a pro-Israel Democratic majority; grouped with gaza_evidence."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Election date (2026-11-03); contextual only."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "US House of Representatives; contextual only."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Data classification label ('candidates'); no substantive content."
+  }
+ ],
+ "generation_sha256": "9b423209ed8e4fe48a5902e3cad86bbd4c442d44df1ccb43ffa40ce8074a95d6",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T11:03:08Z"
+}

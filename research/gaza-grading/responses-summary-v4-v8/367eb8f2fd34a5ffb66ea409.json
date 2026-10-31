@@ -1,0 +1,84 @@
+{
+ "candidate_id": "367eb8f2fd34a5ffb66ea409",
+ "request_sha256": "d82cbad8bfad246f957d45ac90e5098acfb2be4cef186c6aa9c02ed978333455",
+ "publication_id": "jev-2026-10-30-v8-1",
+ "model": "qwen/qwen3.8-27b",
+ "summary": "On May 16, 2024, Veenker organized a 'unity statement' at the Palo Alto City Council bringing pro-Palestinian and pro-Israel residents together to de-escalate debate over Gaza cease-fire demands. The action positioned her as a mediator seeking to reconcile both camps rather than as an advocate pressing for the cease-fire or a critic of Israel's military campaign, a de-escalation posture that frames the dispute as a balance between two equivalent claims.",
+ "evidence_audit": [
+  {
+   "id": "candidate_record.candidate",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Candidate name used throughout prose; not a standalone evidentiary fact."
+  },
+  {
+   "id": "candidate_record.office",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Local council office; does not alter the substance of the documented Gaza action."
+  },
+  {
+   "id": "candidate_record.state",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Jurisdictional detail; no bearing on the assessment."
+  },
+  {
+   "id": "candidate_record.party",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Nonpartisan label adds no directional signal on Palestinian justice."
+  },
+  {
+   "id": "candidate_record.gaza_evidence",
+   "assessment": "adverse",
+   "treatment": "included",
+   "reason": "The May 2024 unity statement is the sole documented Gaza action; it is a de-escalation/mediation move that treats pro-Palestinian and pro-Israel positions as equivalents rather than condemning Israel's campaign."
+  },
+  {
+   "id": "candidate_record.focused_endorsement_observations",
+   "assessment": "adverse",
+   "treatment": "omitted",
+   "reason": "Samir Laymoun opposition noted, but summary_source_policy sets samir_allowed to false because other relevant directional evidence (the unity statement) exists; omitted per source policy."
+  },
+  {
+   "id": "candidate_record.activist_opinion_context",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Internal classification context for the Laymoun source; not voter-facing information and the opinion itself is omitted per policy."
+  },
+  {
+   "id": "candidate_record.election_date",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Future election date; no bearing on the candidate's documented position."
+  },
+  {
+   "id": "candidate_record.jurisdiction",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Palo Alto already referenced in the gaza_evidence item; no additional signal."
+  },
+  {
+   "id": "candidate_record.incumbent",
+   "assessment": "neutral",
+   "treatment": "omitted",
+   "reason": "Incumbency status does not alter the substance of the documented action."
+  },
+  {
+   "id": "candidate_record.candidate_roster",
+   "assessment": "unrelated",
+   "treatment": "omitted",
+   "reason": "Administrative roster label with no policy content."
+  },
+  {
+   "id": "supplemental_reference.current_research_additions.party",
+   "assessment": "not_applicable",
+   "treatment": "omitted",
+   "reason": "Value is null; no information to assess."
+  }
+ ],
+ "generation_sha256": "76b710afeaf38d8edba28104c9114d4b62139dc2594a7a1d968391f478f8b40b",
+ "prompt_sha256": "72cd965cb984d4dc78a1d94106517747de2d494de5be5996cc29b30db2e36672",
+ "generated_at": "2026-10-30T12:36:02Z"
+}
