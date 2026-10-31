@@ -1,7 +1,7 @@
 """Jev System One grader for Gaza/pro-Palestine positions, reusable across races and rubrics.
 
 plan → grade → report over any candidate scope, using a versioned criteria file (score + choice
-questions; output always carries pro_palestine_score and gaza_grade). The per-candidate state is
+questions; grades derive exclusively from pro_palestine_score). The per-candidate state is
 deliberately succinct: identity line, IE spenders for/against with amounts, campaign platform
 points, Gaza evidence items — no boilerplate notes. Decisions are cached against the exact
 request contract, so re-runs only pay for changed inputs. Nothing here publishes; results stay a
@@ -34,8 +34,8 @@ from evidence_context import contexts as reviewed_contexts  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v8.json'
-STATE_VERSION = 'candidate-evidence-v20-policy-channel-low-weight'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v9.json'
+STATE_VERSION = 'candidate-evidence-v22-cjd-identity-only'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -94,6 +94,12 @@ def validate_response(questions, response):
         if q['type'] == 'score' and not number(a.get('score'), 0, len(keys) - 1):
             raise ValueError('Invalid score for ' + name)
     return response
+
+
+def active_questions(questions):
+    """Retire the old choice grade from new requests; archived contracts stay exact."""
+    validate_questions(questions)
+    return validate_questions({name: question for name, question in questions.items() if name != 'gaza_grade'})
 
 
 def jev_call(work, request, key, force=False):
@@ -309,14 +315,6 @@ def build_state(p, c, data):
                 'For this rubric, directional CAIR Action / Vote for Peace recommendations, including Ally or Opposed, '
                 'are concrete stance evidence even without a direct candidate quotation. Preserve their stated tier, phase and source qualifications.')
     records = jev_actions(c, data)
-    if any(not e.get('historical') and endorser_key(e['endorser']) in {
-            'californiajewishdemocrats', 'democratsforisraelcalifornia', 'democratsforisraelca'}
-           for e in endorsements):
-        parts['zionist_endorsement_context'] = (
-            'California Jewish Democrats is the renamed Democrats for Israel California (same organization; dfi-ca.org). '
-            'Per owner policy it is a Zionist organization; its endorsement counts against the candidate. '
-            "'Strong Support' is its strongest tier. When paired with pro-Palestine endorsements the signals net down; "
-            'a pro-Palestine endorsement alone can never yield A for a candidate with no personal record.')
     if records:
         parts['congressional_gaza_context'] = (
             'Alignment follows the pro-Palestinian/anti-Zionist tracker; neutral/unknown is not opposition. '
@@ -336,7 +334,7 @@ def plan(data, criteria, scope):
     items = []
     for p, c, roster in rows:
         state = build_state(p, c, data)
-        request = {'model': MODEL, 'state': state, 'questions': criteria['questions']}
+        request = {'model': MODEL, 'state': state, 'questions': active_questions(criteria['questions'])}
         items.append({'position_id': p['id'], 'candidate': c['name'], 'roster': roster,
                       'party': c.get('party'), 'district_or_seat': p.get('district_or_seat'),
                       'request_sha256': digest(dump(request).encode()), 'state': state})
@@ -350,7 +348,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
     validate_questions(criteria['questions'])
     decisions = {}
 
-    questions = criteria['questions']
+    questions = active_questions(criteria['questions'])
 
     def one(item):
         request = {'model': MODEL, 'state': item['state'], 'questions': questions}
@@ -364,10 +362,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
         decisions[ref] = {'request': request, 'response': response}
         answers = response.get('answers', {})
         out = {**base, 'state': item['state'], 'answers': answers}
-        g = answers.get('gaza_grade', {})
         s = answers.get('pro_palestine_score', {})
-        out['gaza_grade'] = g.get('choice')
-        out['gaza_grade_confidence'] = g.get('confidence')
         out['pro_palestine_score'] = s.get('score')
         out['pro_palestine_confidence'] = s.get('confidence')
         out['pro_palestine_score_grade'] = row_grade({'status': 'complete', 'request': request, 'response': response}, mapping)
@@ -389,7 +384,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
 
 def summary(batch):
     from collections import Counter
-    grades = Counter(r.get('gaza_grade') or 'none' for r in batch['results'])
+    grades = Counter(r.get('pro_palestine_score_grade') or 'none' for r in batch['results'])
     return {'graded': len(batch['results']), 'errors': sum('error' in r for r in batch['results']),
             'grades': dict(sorted(grades.items())),
             'scores_recorded': sum(isinstance(r.get('pro_palestine_score'), (int, float)) for r in batch['results'])}

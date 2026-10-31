@@ -13,6 +13,21 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class SummarySourceChecks(unittest.TestCase):
+    def test_retired_grade_is_excluded_from_explanation_context_without_mutating_history(self):
+        row = {'id': 'fixture', 'candidate': 'Fixture', 'request_sha256': '0' * 64,
+               'request': {'state': {}, 'questions': {
+                   'pro_palestine_score': {'type': 'score', 'criteria': list('012345')},
+                   'gaza_grade': {'type': 'choice', 'criteria': {'A': 'Historical'}}}},
+               'response': {'answers': {'pro_palestine_score': {'type': 'score', 'score': 1},
+                                        'gaza_grade': {'type': 'choice', 'choice': 'A'}}}}
+        before = deepcopy(row)
+        payload = json.loads(generator.build_input(row, 'E', 'Prompt').split('\n\nSUPPLIED RECORD\n', 1)[1])
+        self.assertNotIn('gaza_grade', payload['scoring_questions'])
+        self.assertNotIn('gaza_grade', payload['recorded_response']['answers'])
+        self.assertEqual(payload['recorded_response']['answers']['pro_palestine_score']['score'], 1)
+        self.assertEqual(payload['displayed_grade'], 'E')
+        self.assertEqual(row, before)
+
     def fixture(self):
         return {'candidate':'Fixture Candidate','focused_endorsement_observations':[
             {'endorser':'Samir Laymoun','relation':'supported'}]}

@@ -23,6 +23,13 @@ FUNDING_LINK_ASSESSMENT = (
     'funding signal for Palestinian justice; no candidate-specific earmarking proof is required. '
     'Keep the recorded support/opposition direction when assessing a candidate.'
 )
+# Owner-specified endorsement context, separate from the reviewed spending registry.
+CJD_ALIASES = ('California Jewish Democrats', 'Democrats for Israel California',
+               'Democrats for Israel CA', 'DFI California')
+CJD_ENDORSEMENT_CONTEXT = (
+    'California Jewish Democrats is the renamed Democrats for Israel California '
+    '(same organization; dfi-ca.org).'
+)
 
 
 def name_key(name):
@@ -111,6 +118,12 @@ def add_observation_context(state):
         entity_id = indexes['aliases'].get(name_key(name))
         if entity_id:
             add_context(state, entity_id, name)
+        elif not observation.get('historical') and name_key(name) in {name_key(alias) for alias in CJD_ALIASES}:
+            state.setdefault('organization_context', {})['California Jewish Democrats'] = {
+                'role': 'endorsement organization',
+                'relevance': CJD_ENDORSEMENT_CONTEXT,
+                'sources': ['https://www.dfi-ca.org/news/13476586'],
+            }
     # Explicit mentions already in projected, date-reviewed Gaza evidence. Never
     # scan discarded historical funding, names of people, or all canonical prose.
     for text in state.get('gaza_evidence', []):

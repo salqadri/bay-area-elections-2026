@@ -87,7 +87,7 @@ class GuideChecks(unittest.TestCase):
             self.assertEqual(observation['relation'],card['relation'])
             self.assertEqual(observation.get('comments',[]),[q['text'] for q in card['comments']])
             self.assertNotIn('community_guide_race_context',state)
-        self.assertEqual(grading.STATE_VERSION,'candidate-evidence-v20-policy-channel-low-weight')
+        self.assertEqual(grading.STATE_VERSION,'candidate-evidence-v22-cjd-identity-only')
         self.assertEqual(playground.STATE_VERSION,grading.STATE_VERSION+'-local-federal')
 
     def test_opposition_and_protest_comments_have_correct_subjects(self):

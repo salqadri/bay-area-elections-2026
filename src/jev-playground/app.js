@@ -4,7 +4,8 @@
   const C=JevPlaygroundCore,$=id=>document.getElementById(id);
   const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
   let boot,run,selectedId='',view='current-state',editor=null,stateEditor=null,lastStateText='',pollTimer=null,loading=false,activeRunId=null,historyTimer=null;
-  let comparisonGrade='gaza_grade',comparisonScore='pro_palestine_score',gradeMapping=C.defaultScoreGradeMapping;
+  const comparisonGrade='pro_palestine_score_grade',comparisonScore='pro_palestine_score';
+  let gradeMapping=C.defaultScoreGradeMapping;
   let savedGradeMapping=C.validateMapping(gradeMapping),mappingInvalid=false,mappingSaving=false,selectedBucket='C';
   let baselineId='',answerSignature='',monacoReady=false,promptBaseline='';const expandedAnswers=new Set();
   const rows=()=>run?.scope==='latest'?run.rows:C.catalogRows(boot.snapshot,run),races=()=>run?.scope==='latest'?run.races:C.catalogRaces(boot.snapshot,run);
@@ -18,7 +19,7 @@
   function syncPrompt(force=false){
     const row=run&&rows().find(r=>r.id===selectedId),questions=row?.request?.questions||(force?run?.questions:null);
     if(!questions)return;
-    const saved=JSON.stringify(questions,null,2);
+    const saved=JSON.stringify(C.activeQuestions(questions),null,2);
     if(force||C.samePrompt(text(),promptBaseline)){promptBaseline=saved;if(force||!C.samePrompt(text(),saved))setText(saved,true);else validate();}
   }
   const selectionKey='jev-playground-selection-v1';
@@ -46,7 +47,7 @@
       if(lastState!==race.state){lastState=race.state;group=node('section','state-group');group.dataset.state=race.state;group.append(node('h3',null,ContestLabel.stateLabel(race.state)));fragment.append(group);}
       const raceEl=node('section','race');raceEl.dataset.race=race.id;raceEl.append(node('h4',null,label));
       for(const row of rows){visible++;const card=node('button','candidate');card.type='button';card.dataset.candidateId=row.id;card.setAttribute('aria-pressed',String(row.id===selectedId));const head=node('div','candidate-head');head.append(node('span','candidate-name',row.candidate),node('span','party',row.party||'Nonpartisan'));card.append(head);const recommendations=C.currentCair(row);card.append(node('p','candidate-cair-mini','CAIR Action: '+(recommendations.length?recommendations.map(C.cairLabel).join(' · '):'No current recommendation recorded')));
-        if(row.status==='complete'&&row.response){const answers=node('div','answer-list');for(const [name,answer]of Object.entries(row.response.answers)){const a=node('div');a.append(node('span','answer-name',name),node('span','answer-value',C.answerValue(answer,row.request.questions[name])));a.append(node('span','answer-confidence',answer.type==='noul'?'Probability of yes / true':'Confidence '+C.percent(answer.confidence)));answers.append(a);}const grade=C.derivedGrade(row,gradeMapping);if(grade)answers.append(node('div','derived-grade-mini','pro_palestine_score_grade: '+grade+' · derived'));card.append(answers);}else card.append(node('p','candidate-status',row.status==='preview'?(latestMode()?'Not evaluated yet':'Not evaluated in this saved run'):row.status==='error'?row.error:row.status==='queued'?'Waiting to run':row.status==='cancelled'?'Not run · stopped':row.status));
+        if(row.status==='complete'&&row.response){const answers=node('div','answer-list');for(const [name,answer]of Object.entries(C.activeQuestions(row.response.answers))){const a=node('div');a.append(node('span','answer-name',name),node('span','answer-value',C.answerValue(answer,row.request.questions[name])));a.append(node('span','answer-confidence',answer.type==='noul'?'Probability of yes / true':'Confidence '+C.percent(answer.confidence)));answers.append(a);}const grade=C.derivedGrade(row,gradeMapping);if(grade)answers.append(node('div','derived-grade-mini','pro_palestine_score_grade: '+grade+' · derived'));card.append(answers);}else card.append(node('p','candidate-status',row.status==='preview'?(latestMode()?'Not evaluated yet':'Not evaluated in this saved run'):row.status==='error'?row.error:row.status==='queued'?'Waiting to run':row.status==='cancelled'?'Not run · stopped':row.status));
         card.addEventListener('click',()=>selectCandidate(row.id,true));raceEl.append(card);
       }group.append(raceEl);
     }
@@ -75,7 +76,7 @@
   async function poll(){const id=run.id;try{const value=await api(latestMode()?'/api/latest':'/api/runs/'+encodeURIComponent(id)+'?after='+run.revision);if(run.id!==id)return;run=latestMode()?value:C.mergeDelta(run,value);syncPrompt();renderRaces();renderCairReview();inspect();if(!status())pollTimer=setTimeout(poll,900);else await history();}catch(e){error(e.message+' The server may still be working; select Latest per candidate to reconnect.');}}
   async function history(){const entries=await api('/api/runs');activeRunId=entries.find(item=>['running','cancelling'].includes(item.status))?.id||null;clearTimeout(historyTimer);historyTimer=null;if(activeRunId&&run?.active_run?.id!==activeRunId&&run?.id!==activeRunId)historyTimer=setTimeout(()=>(latestMode()?refreshLatest():history()).catch(e=>error(e.message)),1200);validate();const selected=$('history').value;$('history').replaceChildren();const latest=node('option',null,'Latest per candidate');latest.value='latest';$('history').append(latest);const base=node('option',null,boot.baseline.label||'Stored House results · Oct 23');base.value=baselineId;$('history').append(base);for(const item of entries){const o=node('option',null,formatTime(item.created_at)+' · '+(item.scope==='candidate'?item.candidate:scopeLabel(item.scope))+' · '+item.status+' · '+item.completed+'/'+item.total+' · '+item.id.slice(-6));o.value=item.id;$('history').append(o);}$('history').value=run?.id||selected||'latest';}
   async function refreshLatest(){const value=await api('/api/latest');showRun(value,false);await history();}
-  async function start(candidateId=null,scope='all'){const button=candidateId!==null?$('run-selected'):scope==='bay-area'?$('run-bay-area'):$('run');if(!validate()||button.disabled)return;loading=true;validate();error('');try{const questions=C.parseQuestions(text());boot.snapshot=await api('/api/snapshot');await api('/api/runs',{method:'POST',body:JSON.stringify({questions,...(candidateId!==null?{candidate_id:candidateId}:scope==='bay-area'?{scope}:{})})});updateScope();selectedId=candidateId||selectedId;await refreshLatest();workspaceView('results');await history();}catch(e){error(e.message);}finally{loading=false;validate();}}
+  async function start(candidateId=null,scope='all'){const button=candidateId!==null?$('run-selected'):scope==='bay-area'?$('run-bay-area'):$('run');if(!validate()||button.disabled)return;loading=true;validate();error('');try{const questions=C.activeQuestions(C.parseQuestions(text()));boot.snapshot=await api('/api/snapshot');await api('/api/runs',{method:'POST',body:JSON.stringify({questions,...(candidateId!==null?{candidate_id:candidateId}:scope==='bay-area'?{scope}:{})})});updateScope();selectedId=candidateId||selectedId;await refreshLatest();workspaceView('results');await history();}catch(e){error(e.message);}finally{loading=false;validate();}}
   $('run').addEventListener('click',()=>start());$('run-bay-area').addEventListener('click',()=>start(null,'bay-area'));$('run-selected').addEventListener('click',()=>start(selectedId));$('stop').addEventListener('click',async()=>{try{await api('/api/runs/'+encodeURIComponent(activeRunId||run.id)+'/cancel',{method:'POST',body:'{}'});run.status='cancelling';status();}catch(e){error(e.message);}});
   $('questions').addEventListener('input',validate);$('questions').addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();start(selectedId);}});
   $('format').addEventListener('click',()=>{try{setText(JSON.stringify(C.parseQuestions(text()),null,2));}catch(e){$('question-error').textContent=e.message;$('question-error').hidden=false;}});
@@ -177,15 +178,13 @@
     if(oldGrade)$('grade-histogram').querySelector('[data-distribution-grade="'+oldGrade+'"]')?.focus({preventScroll:true});
   }
   function renderCandidateCair(row){$('candidate-cair').replaceChildren();appendCair($('candidate-cair'),row);const comparison=C.cairComparison(row,comparisonOptions());$('candidate-cair-flag').textContent='Matches CAIR review rule: '+comparison.reasons.join(' or ');$('candidate-cair-flag').hidden=!comparison.flagged;}
-  function questionPicker(id,keys,selected){const select=$(id);select.replaceChildren();const none=node('option',null,'Do not compare');none.value='';select.append(none);for(const key of keys){const option=node('option',null,key+(key==='pro_palestine_score_grade'?' (derived)':''));option.value=key;select.append(option);}if(selected&&!keys.includes(selected)){const missing=node('option',null,selected+' — not available in this view');missing.value=selected;select.append(missing);}select.value=selected;}
   function renderCairReview(){
     if(!run)return;
-    const available=C.comparisonQuestions(rows());questionPicker('comparison-grade',available.grades,comparisonGrade);questionPicker('comparison-score',available.scores,comparisonScore);
     $('comparison-source').textContent=latestMode()?'Latest saved evaluation per candidate':'Selected saved run · '+formatTime(run.created_at);
     const ordered=orderedCandidates().map(item=>({...item,comparison:C.cairComparison(item.row,comparisonOptions())}));
     const recommended=ordered.filter(item=>item.comparison.positive),comparable=recommended.filter(item=>item.comparison.comparable),flagged=comparable.filter(item=>item.comparison.flagged);
     $('cair-review-count').textContent='('+flagged.length+')';$('cair-review-summary').textContent=flagged.length+' to review';
-    $('comparison-coverage').textContent=flagged.length+' match the review rule · '+comparable.length+' of '+recommended.length+' Preferred/Endorsed candidacies have a compatible saved result · '+(recommended.length-comparable.length)+' have no compatible saved result. Only saved A–F grade and 0–5 score questions are compared.';
+    $('comparison-coverage').textContent=flagged.length+' match the review rule · '+comparable.length+' of '+recommended.length+' Preferred/Endorsed candidacies have a compatible saved result · '+(recommended.length-comparable.length)+' have no compatible saved result. Grades derive from the saved pro_palestine_score using the current thresholds.';
     const results=document.createDocumentFragment();
     if(!flagged.length)results.append(node('p','empty-result','No saved evaluations in this county view match the selected review rule.'));
     for(const {row,race,comparison} of flagged){
@@ -194,7 +193,6 @@
       const recommendation=node('div','comparison-recommendation');appendCair(recommendation,row);card.append(recommendation);
       const metrics=node('div','comparison-metrics');
       const metricRows=[[comparisonGrade,comparison.grade,'grade'],[comparisonScore,comparison.score,'score']];
-      if(comparisonGrade!=='pro_palestine_score_grade'){metricRows.push(['pro_palestine_score_grade',C.gradeMetric(row,gradeMapping),'grade']);}
       for(const [key,metric,type]of metricRows){const cell=node('div');cell.dataset.metricKey=key;cell.append(node('strong',null,key||'Question not selected'));cell.append(node('p',null,metric?(type==='score'?String(metric.value)+' / 5':metric.value):'No compatible saved answer'));if(metric)cell.append(node('span','help',metric.insufficient?'Saved evidence_score: '+String(metric.evidence)+' / 1, below '+String(gradeMapping.minimum_evidence_score??.10):(metric.derived?'Derived · Source score confidence: ':'Confidence: ')+C.percent(metric.confidence)));metrics.append(cell);}card.append(metrics);
       card.append(node('p','help','Review reason: '+comparison.reasons.join(' or ')));
       const footer=node('div','comparison-footer'),open=sourceLink(C.candidateSiteUrl(row),'Election site ↗');footer.append(node('span','help','Saved '+formatTime(row.evaluation?.finished_at||row.evaluation?.created_at||run.created_at)+' · '+(row.response?.model||run.model)));if(open)footer.append(open);card.append(footer);results.append(card);
@@ -202,8 +200,6 @@
     $('comparison-results').replaceChildren(results);
   }
   $('review-jump').addEventListener('click',()=>{$('cair-review').open=true;});
-  $('comparison-grade').addEventListener('change',()=>{comparisonGrade=$('comparison-grade').value;renderCairReview();inspect();});
-  $('comparison-score').addEventListener('change',()=>{comparisonScore=$('comparison-score').value;renderCairReview();inspect();});
   function resultNotice(){if(!run)return;const row=rows().find(r=>r.id===selectedId);let edited=false;try{edited=JSON.stringify(C.parseQuestions(text()))!==JSON.stringify(row?.request?.questions||run.questions);}catch{edited=true;}
     const messages=[];
     if(row?.status==='preview')messages.push(latestMode()?'No saved evaluation yet. Run this candidate with the current questions.':'Not evaluated in this saved run. Choose Latest per candidate to see evaluations from other runs.');
@@ -219,7 +215,7 @@
     const signature=JSON.stringify([row.evaluation?.run_id||run.id,row.id,row.status,row.response,row.request_sha256]);if(signature===answerSignature)return;answerSignature=signature;
     const fragment=document.createDocumentFragment();
     if(row.status!=='complete'||!row.response){const messages={preview:latestMode()?'No saved evaluation for this candidate yet.':'No result for this candidate in this saved run.',queued:'Running this prompt… Results will appear here.',cancelled:'Not evaluated · run stopped.',interrupted:'Evaluation interrupted. Run this candidate again.',error:row.error};fragment.append(node('p','empty-result',messages[row.status]||'No answers returned.'));}
-    else for(const name of Object.keys(row.request.questions)){
+    else for(const name of Object.keys(C.activeQuestions(row.request.questions))){
       const answer=row.response.answers[name];
       const question=row.request.questions[name],probabilities=C.probabilityRows(answer,question),id=(row.evaluation?.run_id||run.id)+':'+row.id+':'+name;
       const detail=node('details','question-answer');detail.dataset.question=name;detail.open=expandedAnswers.has(id);

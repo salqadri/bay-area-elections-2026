@@ -196,6 +196,18 @@ class ValidationChecks(unittest.TestCase):
         self.assertEqual(g.validate_questions(QUESTIONS),QUESTIONS)
         self.assertEqual(g.validate_response(QUESTIONS,response({'questions':QUESTIONS}))['answers']['rating']['confidence'],0.)
 
+    def test_retired_grade_does_not_change_archived_validation_or_new_cli_requests(self):
+        questions = {**deepcopy(QUESTIONS), 'gaza_grade': {'type': 'choice', 'criteria': {'A': 'Historical'}}}
+        original = deepcopy(questions)
+        self.assertEqual(g.active_questions(questions), QUESTIONS)
+        self.assertEqual(questions, original)
+        self.assertEqual(set(g.validate_response(questions, response({'questions': questions}))['answers']), set(questions))
+        planned = g.plan(fixture(), {'id': 'old', 'questions': questions}, 'house-all')
+        expected = {'model': g.MODEL, 'state': planned['items'][0]['state'], 'questions': QUESTIONS}
+        self.assertEqual(planned['items'][0]['request_sha256'], g.digest(g.dump(expected).encode()))
+        with self.assertRaises(ValueError):
+            g.active_questions({'gaza_grade': questions['gaza_grade']})
+
     def test_invalid_questions_fail_before_model_call(self):
         for q in ([],{}, {'q':{'type':'box'}},{'q':{'type':'score','criteria':[]}},{'q':{'type':'choice','criteria':[]}}, {'q':{'type':'noul','criteria':{'maybe':'x'}}}):
             with self.assertRaises(ValueError):g.validate_questions(q)
@@ -399,6 +411,25 @@ class RunChecks(unittest.TestCase):
         m.set_score_grade_mapping({**legacy,'minimum_evidence_score':.4})
         restarted=p.RunManager(self.path,m.work,baseline=self.base)
         self.assertEqual(restarted.score_grade_mapping()['minimum_evidence_score'],.4)
+
+    def test_new_single_and_roster_runs_retire_choice_grade_but_preserve_other_questions(self):
+        calls = []
+        def call(work, request, key, force=False):
+            calls.append(deepcopy(request))
+            return response(request)
+        m = self.manager(call)
+        questions = {**deepcopy(QUESTIONS), 'gaza_grade': {'type': 'choice', 'criteria': {'A': 'Old'}}}
+        original = deepcopy(questions)
+        candidate_id = m.current()['candidates'][0]['id']
+        for selected in (candidate_id, None):
+            done = self.wait(m, m.start(questions, selected)['id'])
+            self.assertEqual(done['questions'], QUESTIONS)
+            for row in done['rows']:
+                self.assertEqual(row['request']['questions'], QUESTIONS)
+                self.assertNotIn('gaza_grade', row['response']['answers'])
+                self.assertEqual(row['request_sha256'], g.digest(g.dump(row['request']).encode()))
+        self.assertTrue(calls)
+        self.assertEqual(questions, original)
 
     def test_default_is_stored_all_answers_with_no_threshold_flag(self):
         b=self.manager().bootstrap();self.assertEqual(len(b['baseline']['rows']),3)

@@ -1,5 +1,7 @@
 # Research and development handoff
 
+**PR #22 continuation:** [PR22_HANDOFF.md](PR22_HANDOFF.md) contains the latest owner prompt, thresholds and offline restore instructions for a fresh checkout. The held review results are newer than the public publication described below.
+
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader

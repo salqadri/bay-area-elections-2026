@@ -10,6 +10,32 @@ from discover_organization_funding import fetch_transfers, packet
 
 
 class OrganizationChecks(unittest.TestCase):
+    def test_cjd_context_preserves_endorsement_tiers_without_blanket_offsets(self):
+        for alias in org.CJD_ALIASES:
+            for rating in ('Support', 'Strong Support'):
+                with self.subTest(alias=alias, rating=rating):
+                    candidate = {'name': 'Example', 'endorsements': [
+                        {'endorser': alias, 'relation': 'supported', 'rating': rating},
+                        {'endorser': 'CAIR Action', 'relation': 'endorsed', 'phase': 'general'},
+                    ]}
+                    original = deepcopy(candidate)
+                    state = g.build_state({'id': 'test', 'office': 'Assembly'}, candidate, {'codes': {'party': {}}})
+                    self.assertNotIn('zionist_endorsement_context', state)
+                    self.assertEqual(state['organization_context']['California Jewish Democrats']['relevance'],
+                                     org.CJD_ENDORSEMENT_CONTEXT)
+                    observations = state['focused_endorsement_observations']
+                    self.assertTrue(any(e['endorser'] == alias and e['rating'] == rating for e in observations))
+                    self.assertTrue(any(e['endorser'] == 'CAIR Action' and e['relation'] == 'endorsed'
+                                        for e in observations))
+                    self.assertIn('CAIR Action', state['organization_context'])
+                    self.assertEqual(candidate, original)
+
+    def test_cjd_context_requires_a_current_observation(self):
+        for observations in ([], [{'endorser': 'California Jewish Democrats', 'historical': True}]):
+            state = {'focused_endorsement_observations': observations}
+            org.add_observation_context(state)
+            self.assertNotIn('California Jewish Democrats', state.get('organization_context', {}))
+
     def test_discovery_paginates_and_holds_unreviewed_transfers(self):
         rows = [{'committee_id':'C00799031','recipient_committee_id':'C00000001',
                  'recipient_name':'Unreviewed recipient','disbursement_date':'2026-01-01',

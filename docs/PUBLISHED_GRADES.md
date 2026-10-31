@@ -1,5 +1,7 @@
 # Published pro-Palestine model scores
 
+**Working review versus publication:** [PR #22 handoff](PR22_HANDOFF.md) records the newer held evaluations, v9 default prompt and owner-saved **0.74** F cutoff. These do not alter the frozen publication described below.
+
 Current publication **2026-10-30.1** (`jev-2026-10-30-v8-1`) publishes the
 owner-directed **v8 + v8.1** rerun: **1,296 evaluations** on **v20** inputs
 (California Jewish Democrats — the renamed Democrats for Israel California — and

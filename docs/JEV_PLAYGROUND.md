@@ -1,5 +1,27 @@
 # Local Jev playground
 
+**Resume PR #22:** [portable prompt, thresholds, saved results and launch instructions](PR22_HANDOFF.md). Latest default v9 preserves the owner's October 2023 exception. Saved working bounds are **0.74 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**; the older published snapshot below retains its original mapping.
+
+Local review update (October 30): the separate `gaza_grade` question is retired.
+New default rubric **v9** keeps the score and evidence questions; new requests
+strip the retired question even when an old prompt is pasted. Loading a saved
+prompt preserves its other questions. Results, distributions and CAIR comparisons
+use **pro_palestine_score** and its threshold-derived letter grade exclusively.
+Future explanation-generation inputs also omit the retired question and answer.
+Original request/response archives remain intact for audit; no evaluation was
+rerun and no production grades changed.
+
+Local PR #22 review update (October 30): newly generated **v22** inputs place
+California Jewish Democrats under `organization_context` with organization
+identity only. Endorsement tiers remain observations; all weighting belongs in
+the editable question prompt. The separate
+`zionist_endorsement_context` and its blanket endorsement-offset / A-cap language
+are removed from generated states. CAIR Action's original recommendation tier is
+preserved. Saved evaluation inputs, answers, editable questions and thresholds
+are unchanged; **Current input** previews the next request, while **State JSON**
+continues to show the exact input used for the saved result. No rerun or
+publication accompanies this local review change.
+
 Current publication **2026-10-30.1** publishes the owner-directed v8 + v8.1
 rerun: **1,296 evaluations**, exact **v8** questions and current **v20** inputs
 (CJD-as-DFI zionist signal, endorsement-only B cap, low-weight caste channel).
@@ -195,8 +217,8 @@ unspecified phases remain labeled. Primary/historical records and Opposed do not
 satisfy this positive-recommendation rule. These are review flags under the
 owner’s rule, not automatic corrections to grades or recommendations.
 
-The defaults are `gaza_grade` and `pro_palestine_score`. Question selectors allow
-renamed A–F choice and 0–5 score questions, or disabling either comparison.
+The comparison uses `pro_palestine_score_grade`, derived from
+`pro_palestine_score` using the current thresholds, and the raw score.
 Scores on other scales are not silently rescaled. The area reports how many
 Preferred/Endorsed candidates lack a compatible saved result; missing, failed
 or ungraded answers are not treated as low grades. Every qualifying answer is
@@ -217,8 +239,7 @@ model requests/responses and attach a separate derived grade/mapping layer;
 
 ## Deterministic score grade
 
-`pro_palestine_score_grade` is a derived row field, separate from the model's
-`gaza_grade`. Only a completed numeric `pro_palestine_score` submitted with six
+`pro_palestine_score_grade` is the sole letter grade, derived from the score. Only a completed numeric `pro_palestine_score` submitted with six
 score criteria (0–5) qualifies. Missing/invalid answers, other scales and unrun
 candidates get `null`; they are never assigned F by default. No new Jev question
 or call is required, and no separate grade confidence is invented. The UI labels
@@ -231,7 +252,7 @@ exactly at the minimum qualifies. The minimum accepts values from 0 to 1 and
 previews live alongside grade bounds. This applies to the
 selected result, race cards, histogram, CAIR cards, API projections and downloads,
 without another Jev call. The UI explains the evidence threshold separately from
-model confidence. Original scores, `gaza_grade`, probabilities and confidence are
+model confidence. Original saved scores, probabilities and confidence are
 unchanged. A historical prompt without this question (or an incompatible/invalid
 answer) does not establish low evidence and retains the existing mapping.
 An insufficient-info label is never compared as an A–F grade; independently
@@ -272,13 +293,9 @@ preserved. Expand the full bucket list to inspect other members in score order.
 Previewing or saving thresholds does not rewrite model answers, saved runs or
 published main-site grades. Downloads use the current preview mapping.
 
-The CAIR grade selector also offers `pro_palestine_score_grade (derived)`;
-`gaza_grade` remains the default comparison. Each CAIR comparison card also
-always displays `pro_palestine_score_grade` alongside its selected grade and score,
-using the current mapping and the source score confidence, or the low-evidence
-explanation when suppressed. Selecting the derived
-grade for the comparison shows it once. Missing/incompatible scores are labeled
-without assigning a grade.
+Each CAIR comparison card displays `pro_palestine_score_grade` and
+`pro_palestine_score`, using the current mapping and source score confidence.
+Missing or incompatible scores are labeled without assigning a grade.
 
 The tracked default is `research/gaza-grading/score-grade-mapping.json`.
 The optional `minimum_evidence_score` property travels with the mapping in local

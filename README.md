@@ -1,5 +1,7 @@
 # Bay Area Ballot Research Assistant
 
+**Continuing PR #22 in another session? Start with [the portable playground handoff](docs/PR22_HANDOFF.md).** Latest owner questions, thresholds and held results are committed separately from the frozen public publication.
+
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader
