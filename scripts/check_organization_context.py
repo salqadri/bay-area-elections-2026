@@ -10,6 +10,38 @@ from discover_organization_funding import fetch_transfers, packet
 
 
 class OrganizationChecks(unittest.TestCase):
+    def test_fiona_cjd_campaign_alias_does_not_duplicate_official_support(self):
+        data = json.loads(g.DATASET.read_text())
+        position, candidate = next((p, c) for p in data['positions']
+                                   for c in p.get('candidates') or [] if c['name'] == 'Fiona Ma')
+        original = deepcopy(candidate)
+        state = g.build_state(position, candidate, data)
+        observations = [e for e in state['focused_endorsement_observations']
+                        if org.name_key(e['endorser']) in {org.name_key(n) for n in org.CJD_ALIASES}]
+        self.assertEqual(observations, [{'endorser': 'California Jewish Democrats',
+                                        'relation': 'supported', 'phase': 'unspecified', 'rating': 'Support'}])
+        self.assertEqual(candidate, original)
+        self.assertTrue(any(e['endorser'] == 'Democrats for Israel California'
+                            for e in candidate['endorsements']))
+
+    def test_cjd_normalization_preserves_distinct_phases_history_ratings_and_opposition(self):
+        own = {'endorser': 'California Jewish Democrats', 'relation': 'supported',
+               'rating': 'Support', 'phase': 'general', 'verification': 'endorser_statement'}
+        claim = {'endorser': 'Democrats for Israel California', 'relation': 'endorsed',
+                 'phase': 'general', 'verification': 'campaign_claim'}
+        distinct = [{**claim, 'rating': 'Strong Support'}, {**claim, 'phase': 'primary'},
+                    {**claim, 'historical': True}, {**claim, 'relation': 'opposed'}]
+        rows = [own, claim, *distinct, {**own, 'endorser': 'DFI California'}]
+        original = deepcopy(rows)
+        result = org.normalize_endorsement_observations(rows)
+        self.assertEqual(len(result), 5)
+        self.assertTrue(all(e['endorser'] == 'California Jewish Democrats' for e in result))
+        self.assertTrue(any(e.get('rating') == 'Strong Support' for e in result))
+        self.assertTrue(any(e['phase'] == 'primary' for e in result))
+        self.assertTrue(any(e.get('historical') for e in result))
+        self.assertTrue(any(e['relation'] == 'opposed' for e in result))
+        self.assertEqual(rows, original)
+
     def test_cjd_context_preserves_endorsement_tiers_without_blanket_offsets(self):
         for alias in org.CJD_ALIASES:
             for rating in ('Support', 'Strong Support'):
@@ -24,7 +56,7 @@ class OrganizationChecks(unittest.TestCase):
                     self.assertEqual(state['organization_context']['California Jewish Democrats']['relevance'],
                                      org.CJD_ENDORSEMENT_CONTEXT)
                     observations = state['focused_endorsement_observations']
-                    self.assertTrue(any(e['endorser'] == alias and e['rating'] == rating for e in observations))
+                    self.assertTrue(any(e['endorser'] == 'California Jewish Democrats' and e['rating'] == rating for e in observations))
                     self.assertTrue(any(e['endorser'] == 'CAIR Action' and e['relation'] == 'endorsed'
                                         for e in observations))
                     self.assertIn('CAIR Action', state['organization_context'])

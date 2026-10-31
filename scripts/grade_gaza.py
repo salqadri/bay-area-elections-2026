@@ -28,14 +28,14 @@ from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
-from organization_context import add_spending, add_observation_context, registry as organization_registry  # noqa: E402
+from organization_context import add_spending, add_observation_context, normalize_endorsement_observations, registry as organization_registry  # noqa: E402
 from evidence_context import contexts as reviewed_contexts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v9.json'
-STATE_VERSION = 'candidate-evidence-v22-cjd-identity-only'
+STATE_VERSION = 'candidate-evidence-v23-cjd-canonical-endorsements'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -208,7 +208,7 @@ def focused_endorsements(p, c):
                                  'source_label': card['source_label'], 'phase': card['phase'],
                                  'url': card['url'], 'checked_on': guide['reviewed_on'],
                                  'verification': 'endorser_statement'})
-    return observations
+    return normalize_endorsement_observations(observations)
 
 
 def compact_endorsements(observations):

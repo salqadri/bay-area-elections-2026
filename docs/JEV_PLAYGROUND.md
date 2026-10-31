@@ -11,9 +11,13 @@ Future explanation-generation inputs also omit the retired question and answer.
 Original request/response archives remain intact for audit; no evaluation was
 rerun and no production grades changed.
 
-Local PR #22 review update (October 30): newly generated **v22** inputs place
+Local PR #22 review update (October 30): newly generated **v23** inputs place
 California Jewish Democrats under `organization_context` with organization
-identity only. Endorsement tiers remain observations; all weighting belongs in
+identity only. All old-name endorsement aliases normalize to California Jewish
+Democrats. An unrated campaign claim for the same phase is collapsed into the
+organization’s own stated rating (Fiona Ma: one **Support** observation). Distinct
+phases, history, directions and explicit ratings remain separate. Raw source
+records and saved evaluations stay unchanged. Endorsement tiers remain observations; all weighting belongs in
 the editable question prompt. The separate
 `zionist_endorsement_context` and its blanket endorsement-offset / A-cap language
 are removed from generated states. CAIR Action's original recommendation tier is

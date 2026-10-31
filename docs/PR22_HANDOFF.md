@@ -16,7 +16,7 @@ unchanged unless the user asks to publish.
   grade, `pro_palestine_score_grade`, derives from the score and saved thresholds.
   The old `gaza_grade` is retired from new calls, visible results, comparisons and
   future explanation inputs. Exact historical requests/responses are retained.
-- New state version: **candidate-evidence-v22-cjd-identity-only**; the playground
+- New state version: **candidate-evidence-v23-cjd-canonical-endorsements**; the playground
   adds `-local-federal`. California Jewish Democrats appears under
   `organization_context` with identity only:
   > California Jewish Democrats is the renamed Democrats for Israel California (same organization; dfi-ca.org).
@@ -24,6 +24,11 @@ unchanged unless the user asks to publish.
   observations, as does CAIR Action's original tier. No CJD scoring directive or
   endorsement-offset instruction is injected into state. The editable prompt
   determines weighting. Do not restore `zionist_endorsement_context`.
+- CJD old-name aliases normalize to **California Jewish Democrats** in new inputs.
+  Fiona Ma’s duplicate campaign claim collapses into CJD’s own **Support** rating;
+  no rating is promoted to an endorsement. Distinct phases, historical records,
+  opposing directions and differing explicit tiers remain. Raw sources and the
+  archived v22 evaluations stay exact. No score was rerun for this normalization.
 - The existing low-weight SB 403 caste channel and source evidence are retained.
 
 ## Saved results: two prompts, not one homogeneous rerun

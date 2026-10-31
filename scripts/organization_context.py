@@ -36,6 +36,41 @@ def name_key(name):
     return re.sub(r'[^a-z0-9]', '', unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower())
 
 
+def normalize_endorsement_observations(observations):
+    """Use CJD's current name without counting a campaign's old-name claim twice.
+
+    Raw source records stay untouched. The organization's own stated tier takes
+    precedence over a redundant, unrated campaign claim for the same phase and
+    historical status. Distinct phases, directions and explicit tiers survive.
+    """
+    aliases = {name_key(alias) for alias in CJD_ALIASES}
+    current_name = 'California Jewish Democrats'
+    normalized = deepcopy(observations)
+    for row in normalized:
+        if name_key(row['endorser']) in aliases:
+            row['endorser'] = current_name
+    official = [row for row in normalized if row['endorser'] == current_name
+                and row.get('verification') == 'endorser_statement']
+    positive = {'endorsed', 'supported'}
+
+    def same_direction(a, b):
+        return a == b or (a in positive and b in positive)
+
+    result = []
+    for row in normalized:
+        redundant = (row['endorser'] == current_name
+                     and row.get('verification') != 'endorser_statement'
+                     and any((row.get('phase') or 'unspecified') == (own.get('phase') or 'unspecified')
+                             and bool(row.get('historical')) == bool(own.get('historical'))
+                             and same_direction(row.get('relation'), own.get('relation'))
+                             and (not row.get('rating') or
+                                  row['rating'].strip().casefold() == str(own.get('rating', '')).strip().casefold())
+                             for own in official))
+        if not redundant and row not in result:
+            result.append(row)
+    return result
+
+
 @lru_cache(maxsize=1)
 def registry():
     data = json.loads(REGISTRY.read_text())
