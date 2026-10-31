@@ -11,11 +11,11 @@ from serve_jev_playground import RunManager
 class RestoreChecks(unittest.TestCase):
     def test_fresh_restore_reproduces_latest_candidate_results_and_thresholds(self):
         manifest, mapping, runs = load_review()
-        self.assertEqual(len(runs), 2)
+        self.assertEqual(len(runs), 3)
         with tempfile.TemporaryDirectory() as directory:
             work = Path(directory)
-            self.assertEqual(restore(work=work)['restored_runs'], 2)
-            self.assertEqual(restore(work=work)['already_present_runs'], 2)
+            self.assertEqual(restore(work=work)['restored_runs'], len(runs))
+            self.assertEqual(restore(work=work)['already_present_runs'], len(runs))
             for run_id, raw in runs:
                 self.assertEqual((work / 'runs' / run_id / 'run.json').read_bytes(), raw)
             manager = RunManager(work=work)
@@ -24,12 +24,17 @@ class RestoreChecks(unittest.TestCase):
             self.assertEqual(len(bootstrap['latest']['rows']), 1296)
             self.assertEqual(bootstrap['latest']['completed'], 1296)
             self.assertEqual(set(bootstrap['questions']), {'pro_palestine_score', 'evidence_score'})
-            latest = json.loads(runs[-1][1])
-            eleni = next(row for row in bootstrap['latest']['rows'] if row['candidate'] == 'Eleni Kounalakis')
-            self.assertEqual(eleni['request'], latest['rows'][0]['request'])
-            self.assertEqual(eleni['response'], latest['rows'][0]['response'])
-            self.assertEqual(eleni['evaluation']['run_id'], latest['id'])
-            self.assertEqual(bootstrap['questions'], latest['questions'])
+            for _, raw in runs[1:]:
+                update = json.loads(raw)
+                expected = update['rows'][0]
+                actual = next(row for row in bootstrap['latest']['rows'] if row['id'] == expected['id'])
+                self.assertEqual(actual['request'], expected['request'])
+                self.assertEqual(actual['response'], expected['response'])
+                self.assertEqual(actual['evaluation']['run_id'], update['id'])
+                self.assertEqual(bootstrap['questions'], update['questions'])
+            haney = next(row for row in bootstrap['latest']['rows'] if row['candidate'] == 'Matt Haney')
+            self.assertTrue(any('genocide' in text and 'owner confirmed' in text
+                                for text in haney['request']['state']['gaza_evidence']))
 
     def test_preserves_existing_local_thresholds(self):
         with tempfile.TemporaryDirectory() as directory:

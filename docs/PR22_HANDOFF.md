@@ -30,7 +30,7 @@ unchanged unless the user asks to publish.
 
 The portable review bundle is
 [`playground-review-2026-10-30/manifest.json`](../research/gaza-grading/playground-review-2026-10-30/manifest.json).
-It hashes two exact local run files, without credentials or machine-specific paths:
+It hashes three exact local run files, without credentials or machine-specific paths:
 
 1. **Full roster**, `20261031T012958Z-2ce361f8`: all **1,296 candidates**, zero
    errors. Started **October 30, 2026, 6:29 p.m. Pacific**, completed 6:33 p.m.
@@ -42,15 +42,23 @@ It hashes two exact local run files, without credentials or machine-specific pat
    The sole change from the full-roster prompt is the addition to score criterion 0:
    **“Don't hold statements made in October 2023 against them though.”**
 
-Both runs use v22 input states. Latest-per-candidate therefore contains **1,295**
-results with the full-roster prompt and **one** with the newer prompt. Under the
-saved mapping its distribution is **A 124, B 41, C 19, D 29, E 70, F 119,
-N/A 894**. These are **held review results**, not a new public score publication.
-No extra evaluations were made while preparing this handoff.
+3. **October 31 Matt Haney update**, `20261031T172141Z-cd7e89bf`: owner-confirmed
+   genocide statement from the official CAIR-SFBA video, new evidence **GE-1613**.
+   One requested v9 evaluation: **A 4.45 / 5**, confidence **0.61**, evidence
+   **0.99 / 1**, replacing his prior local **C 2.89 / 5**. Refreshed Qwen candidate
+   and race narratives are held alongside the result.
+   [Source qualification, results and both summaries](reviews/matt-haney-genocide-2026-10-31.md).
+
+All three runs use v22 input states. The October 31 Haney update supersedes one additional full-roster result.
+Latest-per-candidate contains **1,294** results with the full-roster prompt and
+**two** with the newer v9 prompt. Under the saved mapping its distribution is
+**A 125, B 41, C 18, D 29, E 70, F 119, N/A 894**. These are **held review results**, not a new public score publication.
+The original handoff made no extra evaluations; the owner subsequently requested
+the single Haney evaluation and both Qwen summaries on October 31.
 
 Do not rewrite request hashes, replace the prompt attached to old answers, or
 claim that all 1,296 candidates used the newest prompt. If the user later wants
-one prompt for publication, the other 1,295 candidates still need evaluation
+one prompt for publication, the other 1,294 candidates still need evaluation
 under that exact prompt. The publication validator rejects mixed question JSON.
 
 ## Restore and launch from a fresh checkout
@@ -88,11 +96,10 @@ read-only. No run is started just by opening or restoring the playground.
 
 ## Publication boundary and next work
 
-The PR's existing canonical dataset, score archives, explanations, race picks and
-built readers remain at **2026-10-30.1 / jev-2026-10-30-v8-1**, with the earlier
+The PR's public score metadata, attached explanations and race picks remain at **2026-10-30.1 / jev-2026-10-30-v8-1**, with the earlier
 **0.7** F upper bound and v8 questions. The current review/default F upper bound
-is **0.74**. Changing defaults does not alter that frozen publication. Main and
-the deployed sites have not been updated by this handoff. The separate TALL
+is **0.74**. Changing defaults does not alter that frozen publication. GE-1613 and a corrected AD-17 factual race paragraph are added to the PR readers;
+the newer score and candidate-grade explanation remain held. Main and deployed research data have not been updated. The separate TALL
 Firebase guide remains local-only and must not be added to this repository.
 
 Future publication must freeze the approved results and mapping, regenerate or

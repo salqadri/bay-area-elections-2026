@@ -1,0 +1,84 @@
+{
+  "format": "held-race-rationale/v1",
+  "status": "held_for_review",
+  "position_id": "CA2026-231",
+  "recommended": "Matt Haney",
+  "category": "jev_pick",
+  "roster": [
+    {
+      "name": "Matt Haney",
+      "party": "D",
+      "grade": "A",
+      "score": 4.45,
+      "muslim": false
+    },
+    {
+      "name": "Manuel Noris-Barrera",
+      "party": "R",
+      "grade": "N/A",
+      "score": 0.87,
+      "muslim": false
+    }
+  ],
+  "selection": {
+    "position_id": "CA2026-231",
+    "choice": "Matt Haney",
+    "confidence": 1.0,
+    "probabilities": {
+      "Matt Haney": 1.0
+    },
+    "model": "jev-latest",
+    "request": {
+      "model": "jev-latest",
+      "state": {
+        "position_id": "CA2026-231",
+        "office": "Member of the State Assembly",
+        "district_or_seat": "AD-17",
+        "candidates": [
+          {
+            "name": "Matt Haney",
+            "party": "D",
+            "grade": "A"
+          }
+        ]
+      },
+      "questions": {
+        "best_candidate": {
+          "type": "choice",
+          "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+          "criteria": {
+            "Matt Haney": "Published pro-Palestine grade: A"
+          }
+        }
+      }
+    },
+    "request_sha256": "cc3255e199a1d89989ef1188866c07e28e7f639991546f1583f0244b7f76ee55",
+    "evaluated_at": "2026-10-31T17:24:10Z",
+    "single_candidate": true
+  },
+  "text": "Matt Haney is the strongest candidate for California State Assembly District 17. He called Israel's actions in Gaza a genocide on the CAIR-SFBA 2026 Liberty Award recording, and in February 2026 he invited HEAL Palestine's Global Healing children from Gaza to speak on the chamber floor in Sacramento about their medical treatment. CAIR Action and AROC Action both endorse him. Haney also voted aye on AB 715, the antisemitism-coordinator and classroom-oversight bill, a vote that sits in tension with his Palestine record. Even with that complication, Haney has taken concrete, public steps to center Palestinian suffering in a state legislative chamber, naming what is happening in Gaza and bringing Gazan children's voices onto the floor, and has drawn endorsements from organizations that center Muslim and Palestinian-community interests. That combination of named action and community backing makes him the clear choice in this race.",
+  "words": 143,
+  "model": "qwen/qwen3.8-27b",
+  "reasoning_effort": "medium",
+  "temperature": 1,
+  "prompt_sha256": "6c87dd8b2f984317412fe885956af04699e6e27670886a8759847e06a135cc5d",
+  "source_candidate_request_sha256": "6792a60af2e4b6b17d643de0aebf84d672abfd22babeba8e32a6fd483d9c9c77",
+  "usage": {
+    "prompt_tokens": 1203,
+    "completion_tokens": 3457,
+    "total_tokens": 4660,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3261
+    }
+  },
+  "elapsed_seconds": 26.6,
+  "generated_at": "2026-10-31T17:26:14Z",
+  "revision_reason": "Correct upload-date attribution and avoid treating AB 715 as a positive Palestine action or faulting a state legislator for absent congressional votes.",
+  "editorial_clarifications": [
+    {
+      "before": "about the treatment they endured",
+      "after": "about their medical treatment",
+      "reason": "GE-0020 describes HEAL Palestine children’s medical care; avoid implying a different mistreatment claim."
+    }
+  ]
+}
