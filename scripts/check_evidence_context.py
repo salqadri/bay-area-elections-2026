@@ -12,6 +12,29 @@ from publish_jev_grades import validate_recommendation_evidence
 
 
 class ContextChecks(unittest.TestCase):
+    def test_community_report_keeps_attribution_observation_date_and_scope(self):
+        from schema_validation import check, SCHEMA
+        from check_evidence import check_evidence
+        from grade_gaza import build_state
+        report = {'id':'GE-99998','date':'2026-11-02','checked_on':'2026-11-02',
+            'url':'https://example.org/community-report','dimension':'actions_votes',
+            'source_kind':'community_report','date_method':'source_observed',
+            'date_note':'Report received on this date; original statement date unknown.',
+            'summary':'Community report: local Muslim community members confirmed Fixture supports divesting from Israel.'}
+        self.assertFalse(check(report, SCHEMA['$defs']['stanceEvidence']))
+        p={'id':'fixture','office':'Trustee','candidates':[{'name':'Fixture','gaza_evidence':[report]}]}
+        data={'positions':[p],'codes':{'party':{}}}
+        self.assertFalse(check_evidence(data,[]))
+        state=build_state(p,p['candidates'][0],data)
+        self.assertIn('Community report:',state['gaza_evidence'][0])
+        self.assertIn('original statement date unknown',state['gaza_evidence'][0])
+        self.assertNotIn('part_of_muslim_community',state)
+        for update in [{'date_method':'source_stated'},{'summary':'Fixture supports divesting from Israel.'},
+                       {'date_note':None}]:
+            self.assertTrue(check({**report,**update},SCHEMA['$defs']['stanceEvidence']))
+        p['candidates'][0]['gaza_evidence']=[{**report,'date':'2026-11-01'}]
+        self.assertTrue(check_evidence(data,[]))
+
     def test_official_bill_identity_dates_and_withdrawals(self):
         xml=b'<billStatus><bill><congress>119</congress><type>HR</type><number>3565</number><title>Bill title</title><cosponsors><item><bioguideId>K000389</bioguideId><fullName>Rep. Khanna, Ro</fullName><sponsorshipDate>2025-08-05</sponsorshipDate><sponsorshipWithdrawnDate>2026-01-01</sponsorshipWithdrawnDate></item></cosponsors></bill></billStatus>'
         url='https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr3565.xml'

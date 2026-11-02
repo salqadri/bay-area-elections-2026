@@ -121,7 +121,7 @@
    "NPP denotes the official No Party Preference label. An omitted candidate party field in a nonpartisan contest has a different meaning. Ballot appearance and roster completeness are independent in schema version 1.3.",
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
-  "printed_candidates_with_gaza_evidence": 349,
+  "printed_candidates_with_gaza_evidence": 350,
   "printed_candidates_with_endorsements": 599,
   "printed_candidates_with_independent_expenditures": 181,
   "printed_candidates_with_gaza_voting_records": 11,
@@ -400013,7 +400013,20 @@
       "request_sha256": "36d4c4f72fbd93d80d3e5cbd10345633ca4ed8c7fb20ee9ecf7c91d6806cbbb1",
       "summary": "CAIR Action endorsed Gabriel Gutierrez in the general phase, a recommendation the organization develops by weighing civil rights and foreign policy including Gaza and ceasefire positions. His campaign platform covers only Gavilan College tuition, housing, labor, and campus safety. The endorsement is concrete directional evidence of alignment with Palestinian justice, but as the sole such evidence it does not reflect a personal statement or action on the issue.",
       "model": "qwen/qwen3.8-27b"
-     }
+     },
+     "gaza_evidence": [
+      {
+       "id": "GE-1614",
+       "date": "2026-11-02",
+       "checked_on": "2026-11-02",
+       "url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/research/community-reports/gabriel-gutierrez-2026-11-02.md",
+       "dimension": "actions_votes",
+       "source_kind": "community_report",
+       "date_method": "source_observed",
+       "date_note": "Report received by the guide on November 2, 2026; the date of the underlying statement is unknown. Community confirmation relayed by the guide owner.",
+       "summary": "Community report: local Muslim community members confirmed Gabriel Gutierrez supports divesting from Israel."
+      }
+     ]
     }
    ],
    "source_ids": [
@@ -459476,7 +459489,8 @@
   "N1547": "BAMC Action is the owner-designated trusted Bay Area Muslim Council recommendation source. Support/opposition is copied from its official organization guide and owner-authorized board guide. Supplementary board-guide candidate comments are included at owner direction; they may concern local suitability or tactical voting and do not independently establish a Palestine position. Comment-only entries are not endorsements, neutrality ratings or opposition. Samir Laymoun is a separately attributed activist opinion source, not an official BAMC Action position. Comments are assigned to their reviewed candidate subjects, not automatically to the candidate under whose ballot option they were posted. Protest-vote support is marked as tactical. Propositions and ballot measures are excluded.",
   "N1548": "Campaign site attached on owner report and mechanical verification: the HTTPS own-domain page names the candidate for this office and its paid-for-by disclaimer carries the same FPPC committee number as the Secretary of State finance record already on file. Site presence does not imply any position on the Israel/Gaza conflict; the captured pages record no such content.",
   "N1549": "Campaign website supplied by the owner and directly verified November 2, 2026: the site identifies Shahida Merchant, Gavilan College Board of Trustees Area 3 and Gilroy. This matches the recorded Shahida S. Merchant candidacy; no ballot name or roster change. The URL was absent from the inventory, so previous campaign-site crawls could not inspect it.",
-  "N1550": "November 2, 2026 targeted campaign-site refresh for Shahida S. Merchant, Gavilan CCD Trustee Area 3. Local Qwen extracted five general-platform points; all five quotes passed source-containment gates. No issue evidence, endorsement or community affiliation was inferred from the candidate name, biography or site silence. Existing Palestine scores, picks and archived evaluation requests are preserved."
+  "N1550": "November 2, 2026 targeted campaign-site refresh for Shahida S. Merchant, Gavilan CCD Trustee Area 3. Local Qwen extracted five general-platform points; all five quotes passed source-containment gates. No issue evidence, endorsement or community affiliation was inferred from the candidate name, biography or site silence. Existing Palestine scores, picks and archived evaluation requests are preserved.",
+  "N1551": "Gabriel Gutierrez, Gavilan CCD Trustee Area 3: owner-supplied community confirmation received November 2, 2026 reports support for divesting from Israel. Explicitly attributed as a community report; no public quotation, statement date, vote or candidate community-membership inference. Frozen grades and evaluation inputs remain exact."
  },
  "sources": {
   "S001": {

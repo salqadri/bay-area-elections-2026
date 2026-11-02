@@ -1815,7 +1815,7 @@
     "dimension",
     "checked_on"
    ],
-   "description": "One dated piece of public evidence relevant to Gaza/Israel-Palestine policy, including antisemitism definitions and education policy. This record is evidence, distinct from separately archived model grades.",
+   "description": "One dated item relevant to Gaza/Israel-Palestine policy, with public-source evidence or an explicitly attributed community report; distinct from separately archived model grades.",
    "properties": {
     "id": {
      "type": "string",
@@ -1837,7 +1837,7 @@
       "event_recorded",
       "source_observed"
      ],
-     "description": "How this date was established. wayback_first_capture is an UPPER BOUND (content first seen by then), not a publication date; event_recorded means the date comes from the recorded event itself, corroborated elsewhere. source_observed is the date a voter-guide assessment was inspected, not its original publication or underlying event date; requires date_note and voter_guide source kind."
+     "description": "How this date was established. wayback_first_capture is an UPPER BOUND (content first seen by then), not a publication date; event_recorded means the date comes from the recorded event itself, corroborated elsewhere. source_observed is the date a voter-guide assessment was inspected or a community report was received, not its original publication or underlying event date; requires date_note and voter_guide or community_report source kind."
     },
     "date_note": {
      "type": "string",
@@ -1906,7 +1906,36 @@
         "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
        },
        "source_kind": {
-        "const": "voter_guide"
+        "enum": [
+         "voter_guide",
+         "community_report"
+        ]
+       }
+      }
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "source_kind": {
+        "const": "community_report"
+       }
+      },
+      "required": [
+       "source_kind"
+      ]
+     },
+     "then": {
+      "required": [
+       "date_method",
+       "date_note"
+      ],
+      "properties": {
+       "date_method": {
+        "const": "source_observed"
+       },
+       "summary": {
+        "pattern": "^Community report: "
        }
       }
      }

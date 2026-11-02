@@ -64,8 +64,11 @@ def check_evidence(data, quarantine=None):
                         errors.append(context + ': archive bound needs an explanatory date note')
                     if method == 'source_observed' and (not evidence.get('date_note') or
                             evidence.get('date') != evidence.get('checked_on') or
-                            evidence.get('source_kind') != 'voter_guide'):
-                        errors.append(context + ': guide observation needs its check date, voter_guide source kind and date note')
+                            evidence.get('source_kind') not in {'voter_guide', 'community_report'}):
+                        errors.append(context + ': guide observation or community report needs its check date, attributed source kind and date note')
+                    if evidence.get('source_kind') == 'community_report' and (
+                            method != 'source_observed' or not summary.startswith('Community report: ')):
+                        errors.append(context + ': community report needs explicit attribution and observation-date provenance')
                     try:
                         parts = [int(p) for p in evidence['date'].split('-')]
                         lower_bound = datetime.date(parts[0], parts[1] if len(parts) > 1 else 1,

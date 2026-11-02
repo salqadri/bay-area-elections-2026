@@ -147,3 +147,16 @@ is no active worker. Outputs remain held for review under ignored
 production. Do not call the entire batch complete or silently publish failed
 or outdated narratives. The status was checked against all 555 saved output
 artifacts on November 2.
+
+## Gabriel Gutierrez community confirmation — November 2
+
+GE-1614 adds the owner-relayed report from local Muslim community members that
+Gabriel Gutierrez supports divesting from Israel (CA2026-153). It is explicitly
+a community report, with November 2 as receipt/observation date, not an asserted
+statement date or vote. The source record, generated Jev state and refresh
+note are in `research/community-reports/`. Public main and TALL receive the
+same narrow factual addition independently of this unmerged PR. Exact saved
+evaluations, prompts, thresholds, letter grades and recommendations are unchanged.
+The current input contains the new report; archived State JSON stays exact.
+Re-evaluate him when requested, then refresh his candidate explanation and the
+CA2026-153 rationale. The existing Qwen outputs predate this new report.
