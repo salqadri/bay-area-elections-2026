@@ -171,3 +171,14 @@ supplied. Do not invent a quotation, vote, original statement date or community
 membership. Use the registered-review workflow and reconcile the collector after
 publication. Generated Jev inputs preserve attribution and date provenance;
 archived evaluations remain exact until a new evaluation is requested.
+
+## Owner-confirmed organization context
+
+`research/gaza-grading/owner-organization-context-v1.json` records only explicit
+owner-supplied organization descriptions, separately from the source-reviewed
+spending registry. Exact aliases enter focused endorsement observations and
+organization context only when that organization is present for the candidate.
+USAMPAC is an owner-confirmed Muslim community organization aligned on Palestine.
+Its Shahida Merchant endorsement is reported, not mislabeled as a retrieved
+first-party statement. The organization’s identity never establishes candidate
+religion or community membership. Similar AMPAC names are not joined.

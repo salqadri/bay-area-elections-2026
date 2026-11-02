@@ -313,7 +313,7 @@ def _load_jsonl(path):
 # ---- race-level recommendation reasons (owner framework, 2026-10-28) ----
 # Litmus test first; silence is a ding, not neutrality; no numeric scores;
 # endorsement policy: Muslim-community-aligned vs AIPAC/Zionist/Hindutva only.
-COMMUNITY_ENDORSERS = ["bamc", "cair", "aroc", "arab resource", "vote for peace",
+COMMUNITY_ENDORSERS = ["usampac", "bamc", "cair", "aroc", "arab resource", "vote for peace",
                        "khanna", "muslim", "jewish voice for peace", "jvp",
                        "peace action", "organize for peace", "track aipac"]
 ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",

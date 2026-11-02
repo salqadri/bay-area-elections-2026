@@ -10,6 +10,25 @@ from discover_organization_funding import fetch_transfers, packet
 
 
 class OrganizationChecks(unittest.TestCase):
+    def test_owner_confirmed_usampac_context_preserves_reporting_and_direction(self):
+        p = {'id':'owner-context-fixture','office':'Trustee'}
+        c = {'name':'Fixture','endorsements':[{'endorser':'USAMPAC','relation':'endorsed',
+             'phase':'unspecified','verification':'reported'}]}
+        original = deepcopy(c)
+        state = g.build_state(p,c,{'codes':{'party':{}}})
+        self.assertEqual(state['focused_endorsement_observations'],[
+            {'endorser':'USAMPAC','relation':'endorsed','phase':'unspecified','source':'report'}])
+        context = state['organization_context']['USAMPAC']
+        self.assertEqual(context['basis'],'owner_confirmation')
+        self.assertIn('aligned on Palestine',context['relevance'])
+        self.assertIsNot(state.get('part_of_muslim_community'),True)
+        self.assertEqual(c,original)
+        c['endorsements'][0]['relation']='opposed'
+        self.assertEqual(g.build_state(p,c,{'codes':{'party':{}}})[
+            'focused_endorsement_observations'][0]['relation'],'opposed')
+        c['endorsements'][0]['endorser']='AMPAC'
+        self.assertNotIn('USAMPAC',g.build_state(p,c,{'codes':{'party':{}}}).get('organization_context',{}))
+
     def test_discovery_paginates_and_holds_unreviewed_transfers(self):
         rows = [{'committee_id':'C00799031','recipient_committee_id':'C00000001',
                  'recipient_name':'Unreviewed recipient','disbursement_date':'2026-01-01',

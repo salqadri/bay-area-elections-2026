@@ -1,3 +1,15 @@
+## November 2: USAMPAC endorsement for Shahida Merchant
+
+Publication **2026-11-02.4** adds the owner-confirmed USAMPAC endorsement of
+Shahida S. Merchant (CA2026-153), reported with phase unspecified. The public
+USAMPAC homepage confirms Muslim civic engagement; its candidate directory
+returned Network Error. The owner supplies the endorsement and Palestine
+alignment. `owner-organization-context-v1.json` keeps this explicitly attributed
+context separate from the Jev-reviewed spending registry. Exact aliases enter
+new states only when observed; candidate membership is not inferred. The race
+prose policy permits USAMPAC references. Saved public scores remain frozen;
+targeted new Jev/Qwen results are held in PR #22.
+
 ## November 2: Gabriel Gutierrez community report
 
 Publication **2026-11-02.3** adds **GE-1614** for Gabriel Gutierrez, CA2026-153.

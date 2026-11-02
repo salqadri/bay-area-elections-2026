@@ -7,6 +7,10 @@ recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
 
+Publication **2026-11-02.4** records the owner-confirmed USAMPAC endorsement
+of Shahida S. Merchant and adds the organization’s Palestine alignment to new
+Jev inputs. It preserves reported-source provenance; no public scores change.
+
 Publication **2026-11-02.3** adds an attributed community report that Gabriel
 Gutierrez supports divesting from Israel (Gavilan CCD Trustee Area 3).
 The report received November 2 is preserved in the Gaza evidence section and

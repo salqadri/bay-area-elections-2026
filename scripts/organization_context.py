@@ -25,6 +25,22 @@ FUNDING_LINK_ASSESSMENT = (
 )
 
 
+@lru_cache(maxsize=1)
+def owner_organization_context():
+    """Exact owner-confirmed aliases; separate from the reviewed spending registry."""
+    data = json.loads(REGISTRY.with_name('owner-organization-context-v1.json').read_text())
+    if data.get('version') != 1:
+        raise ValueError('Unknown owner organization context version')
+    result = {}
+    for entity in data['entities']:
+        for alias in entity['aliases']:
+            key = name_key(alias)
+            if key in result and result[key] != entity:
+                raise ValueError('Ambiguous owner organization alias: ' + alias)
+            result[key] = entity
+    return result
+
+
 def name_key(name):
     return re.sub(r'[^a-z0-9]', '', unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode().lower())
 
@@ -108,6 +124,12 @@ def add_observation_context(state):
     _, _, indexes = registry()
     for observation in state.get('focused_endorsement_observations', []):
         name = observation['endorser']
+        owner = owner_organization_context().get(name_key(name))
+        if owner and not observation.get('historical'):
+            state.setdefault('organization_context', {})[owner['name']] = {
+                'role': owner['role'], 'relevance': owner['relevance'],
+                'basis': owner['basis'], 'sources': owner['sources'],
+            }
         entity_id = indexes['aliases'].get(name_key(name))
         if entity_id:
             add_context(state, entity_id, name)

@@ -29,13 +29,14 @@ from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
 from organization_context import add_spending, add_observation_context, registry as organization_registry  # noqa: E402
+from organization_context import owner_organization_context
 from evidence_context import contexts as reviewed_contexts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v8.json'
-STATE_VERSION = 'candidate-evidence-v20-policy-channel-low-weight'
+STATE_VERSION = 'candidate-evidence-v20-policy-channel-low-weight-owner-org-context'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -165,6 +166,7 @@ def focused_endorsements(p, c):
     focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v6.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
     aliases.update(organization_registry()[2]['aliases'])
+    aliases.update(owner_organization_context())
     observations = [{k: e[k] for k in ('endorser', 'relation', 'phase', 'historical', 'rating', 'verification', 'shared') if k in e}
                     for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     original = [e for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
