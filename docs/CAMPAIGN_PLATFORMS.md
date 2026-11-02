@@ -111,3 +111,15 @@ The common publication workflow requires HTTPS source provenance. HTTP seed URLs
 For publication, a maintainer must read the original source context and held proofs, resolve stale identities and historical quarantine, then draft exact before/after `gaza_platform` changes through `scripts/reviewed_updates.py` with registered sources, provenance and a concrete review reason. Do not paste the held export over the dataset or bypass the common review guards. `no_website` is inventory metadata without a fetched source; it remains held until a maintainer supplies suitable reviewed provenance or elects not to publish it. Review summaries and silence findings as carefully as positive matches. Mechanical gates cannot establish political meaning, full-site exhaustiveness or source truth.
 
 When applying reviewed platform records, bump the publication version, preserve roster/finance/research snapshot dates, rebuild both readers and run the full release gate. Check that the Gaza Evidence section visibly separates campaign platform checks, attributed USCPR grades, congressional records and other evidence. Do not claim a broad pass completed until every planned source and candidacy has an explicit reviewed disposition, and report unavailable/unreviewed cases alongside the result.
+
+## Targeted missing-site refresh — November 2, 2026
+
+Shahida S. Merchant (CA2026-153) now has a verified campaign URL. Previously
+there was no recorded URL for the collectors to fetch. The existing bounded
+crawler and quote-gated Qwen platform extractor produced five platform points
+from ten successful captures (five unique pages across bare/www hosts). The
+registered review adds the general platform and a scoped HTML-only Gaza check;
+it makes no claim about the untranscribed linked video. The generated Jev state
+adds only general platform points. Her existing N/A and the race selection are
+preserved. See the source packet and downstream review in
+`research/campaign-issues/shahida-merchant-2026-11-02/`.

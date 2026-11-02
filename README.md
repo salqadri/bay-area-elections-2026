@@ -7,6 +7,11 @@ recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
 
+Publication **2026-11-02.2** adds Shahida S. Merchant’s verified campaign site
+and five quoted general platform priorities (Gavilan CCD Trustee Area 3).
+The bounded HTML check found no Palestine-specific statement; scores, grades,
+explanations and race picks are unchanged. [Source review](docs/HANDOFF.md).
+
 Publication **2026-10-30.1** publishes owner-directed Jev criteria **v8 + v8.1**
 with all **404** fresh grade explanations and refreshed recommendations
 (**173 recommended races** — 12 Muslim-community, 161 Jev; 83 E/F-only; 283

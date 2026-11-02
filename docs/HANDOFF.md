@@ -1,3 +1,20 @@
+## November 2: Shahida Merchant campaign-site refresh
+
+Publication **2026-11-02.2** adds the owner-supplied campaign website for
+Shahida S. Merchant (CA2026-153, Gavilan CCD Trustee Area 3), verified against
+the exact office and area. A bounded crawl captured five unique HTML pages on
+bare/www hosts with no failures. Local Qwen extracted five general platform
+priorities; every quote passed deterministic source-containment gates.
+The source packet, Qwen response, generated Jev state and downstream review are
+under `research/campaign-issues/shahida-merchant-2026-11-02/`; the registered
+review is `research/reviews/shahida-merchant-campaign-2026-11-02.json`.
+
+Only `campaign_platform_points` is added to her generated Jev input. No Gaza,
+Israel or Palestine statement or endorsement was found in the inspected HTML;
+the linked external video was not transcribed. Her N/A, frozen scoring request
+and existing race pick are unchanged. No Jev or political narrative rerun was
+necessary. This targeted check does not advance the global roster research date.
+
 # Research and development handoff
 
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
