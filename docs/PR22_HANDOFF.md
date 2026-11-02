@@ -57,7 +57,7 @@ It hashes six exact local run files, without credentials or machine-specific pat
 The first three runs use v22 input states; the November 2 Gavilan runs use current v23 input states. The October 31 Haney update supersedes one additional full-roster result.
 Latest-per-candidate contains **1,292** results with the full-roster prompt and
 **four** with the newer v9 prompt. Under the saved mapping its distribution is
-**A 125, B 41, C 18, D 29, E 70, F 119, N/A 894**. These are **held review results**, not a new public score publication.
+**A 126, B 41, C 18, D 29, E 70, F 119, N/A 893**. These are **held review results**, not a new public score publication.
 The original handoff made no extra evaluations; the owner subsequently requested
 the single Haney evaluation and both Qwen summaries on October 31.
 
@@ -103,7 +103,7 @@ read-only. No run is started just by opening or restoring the playground.
 The PR's public score metadata, attached explanations and race picks remain at **2026-10-30.1 / jev-2026-10-30-v8-1**, with the earlier
 **0.7** F upper bound and v8 questions. The current review/default F upper bound
 is **0.74**. Changing defaults does not alter that frozen publication. GE-1613 and a corrected AD-17 factual race paragraph are added to the PR readers;
-the newer score and candidate-grade explanation remain held. Main and deployed research data have not been updated. The separate TALL
+the newer score and candidate-grade explanation remain held. The v9 score publication remains held; independent factual corrections have been published on main and the deployed sites. The separate TALL
 Firebase guide remains local-only and must not be added to this repository.
 
 Future publication must freeze the approved results and mapping, regenerate or
@@ -162,7 +162,7 @@ CA2026-153 rationale. The existing Qwen outputs predate this new report.
 
 ## November 2 Gavilan race evaluations and summaries
 
-Both CA2026-153 candidates were re-evaluated under the exact latest v9 prompt
+Initially, before the USAMPAC correction below, both CA2026-153 candidates were re-evaluated under the exact latest v9 prompt
 and saved thresholds: Gabriel Gutierrez **A 4.94 / 5**, confidence **0.99**,
 evidence **0.94 / 1**; Shahida S. Merchant **N/A**, evidence **0 / 1**.
 The two exact runs are now part of the portable review bundle (six runs total, including the superseded pre-USAMPAC Merchant check).
