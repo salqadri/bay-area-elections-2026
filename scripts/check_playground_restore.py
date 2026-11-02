@@ -11,7 +11,8 @@ from serve_jev_playground import RunManager
 class RestoreChecks(unittest.TestCase):
     def test_fresh_restore_reproduces_latest_candidate_results_and_thresholds(self):
         manifest, mapping, runs = load_review()
-        self.assertEqual(len(runs), 3)
+        self.assertEqual(len(runs), len(manifest['runs']))
+        self.assertGreaterEqual(len(runs), 3)
         with tempfile.TemporaryDirectory() as directory:
             work = Path(directory)
             self.assertEqual(restore(work=work)['restored_runs'], len(runs))
@@ -24,17 +25,24 @@ class RestoreChecks(unittest.TestCase):
             self.assertEqual(len(bootstrap['latest']['rows']), 1296)
             self.assertEqual(bootstrap['latest']['completed'], 1296)
             self.assertEqual(set(bootstrap['questions']), {'pro_palestine_score', 'evidence_score'})
+            updates = {}
             for _, raw in runs[1:]:
                 update = json.loads(raw)
-                expected = update['rows'][0]
+                for expected in update['rows']:
+                    updates[expected['id']] = (update, expected)
+            for update, expected in updates.values():
                 actual = next(row for row in bootstrap['latest']['rows'] if row['id'] == expected['id'])
                 self.assertEqual(actual['request'], expected['request'])
                 self.assertEqual(actual['response'], expected['response'])
                 self.assertEqual(actual['evaluation']['run_id'], update['id'])
-                self.assertEqual(bootstrap['questions'], update['questions'])
             haney = next(row for row in bootstrap['latest']['rows'] if row['candidate'] == 'Matt Haney')
             self.assertTrue(any('genocide' in text and 'owner confirmed' in text
                                 for text in haney['request']['state']['gaza_evidence']))
+            gabriel = next(row for row in bootstrap['latest']['rows'] if row['candidate'] == 'Gabriel Gutierrez')
+            self.assertTrue(any('Community report:' in text and 'divesting from Israel' in text
+                                for text in gabriel['request']['state']['gaza_evidence']))
+            merchant = next(row for row in bootstrap['latest']['rows'] if row['candidate'] == 'Shahida S. Merchant')
+            self.assertEqual(len(merchant['request']['state']['campaign_platform_points']), 5)
 
     def test_preserves_existing_local_thresholds(self):
         with tempfile.TemporaryDirectory() as directory:

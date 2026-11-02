@@ -122,7 +122,7 @@
    "Endorsement research was partially reviewed October 9, 2026. Records distinguish endorsements, preferences, opposition, support ratings, campaign claims and secondary reports. Primary support is not automatically a November endorsement. Missing or inaccessible evidence is unknown, not proof of no endorsements."
   ],
   "printed_candidates_with_gaza_evidence": 350,
-  "printed_candidates_with_endorsements": 599,
+  "printed_candidates_with_endorsements": 600,
   "printed_candidates_with_independent_expenditures": 181,
   "printed_candidates_with_gaza_voting_records": 11,
   "printed_candidates_with_uscpr_grade": 9,
@@ -399173,7 +399173,19 @@
         "content_sha256": "53575d498f646c8b7fc5bb6dc4473065d2acdba130481b98c44ed2c388715295"
        }
       ]
-     }
+     },
+     "endorsements": [
+      {
+       "endorser": "USAMPAC",
+       "kind": "organization",
+       "relation": "endorsed",
+       "phase": "unspecified",
+       "url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/research/community-reports/shahida-merchant-usampac-2026-11-02.md",
+       "checked_on": "2026-11-02",
+       "verification": "reported",
+       "note_id": "N1552"
+      }
+     ]
     },
     {
      "name": "Gabriel Gutierrez",
@@ -459490,7 +459502,8 @@
   "N1548": "Campaign site attached on owner report and mechanical verification: the HTTPS own-domain page names the candidate for this office and its paid-for-by disclaimer carries the same FPPC committee number as the Secretary of State finance record already on file. Site presence does not imply any position on the Israel/Gaza conflict; the captured pages record no such content.",
   "N1549": "Campaign website supplied by the owner and directly verified November 2, 2026: the site identifies Shahida Merchant, Gavilan College Board of Trustees Area 3 and Gilroy. This matches the recorded Shahida S. Merchant candidacy; no ballot name or roster change. The URL was absent from the inventory, so previous campaign-site crawls could not inspect it.",
   "N1550": "November 2, 2026 targeted campaign-site refresh for Shahida S. Merchant, Gavilan CCD Trustee Area 3. Local Qwen extracted five general-platform points; all five quotes passed source-containment gates. No issue evidence, endorsement or community affiliation was inferred from the candidate name, biography or site silence. Existing Palestine scores, picks and archived evaluation requests are preserved.",
-  "N1551": "Gabriel Gutierrez, Gavilan CCD Trustee Area 3: owner-supplied community confirmation received November 2, 2026 reports support for divesting from Israel. Explicitly attributed as a community report; no public quotation, statement date, vote or candidate community-membership inference. Frozen grades and evaluation inputs remain exact."
+  "N1551": "Gabriel Gutierrez, Gavilan CCD Trustee Area 3: owner-supplied community confirmation received November 2, 2026 reports support for divesting from Israel. Explicitly attributed as a community report; no public quotation, statement date, vote or candidate community-membership inference. Frozen grades and evaluation inputs remain exact.",
+  "N1552": "The owner confirmed Shahida Merchant’s USAMPAC endorsement and described USAMPAC as a Muslim community organization aligned on Palestine. The public USAMPAC site confirms its Muslim civic-engagement identity; its candidate directory returned Network Error during the November 2 check. Endorsement is explicitly reported, phase unspecified, not an independently fetched endorsement statement or a candidate community-membership claim."
  },
  "sources": {
   "S001": {

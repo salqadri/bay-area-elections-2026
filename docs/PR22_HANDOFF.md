@@ -35,7 +35,7 @@ unchanged unless the user asks to publish.
 
 The portable review bundle is
 [`playground-review-2026-10-30/manifest.json`](../research/gaza-grading/playground-review-2026-10-30/manifest.json).
-It hashes three exact local run files, without credentials or machine-specific paths:
+It hashes six exact local run files, without credentials or machine-specific paths:
 
 1. **Full roster**, `20261031T012958Z-2ce361f8`: all **1,296 candidates**, zero
    errors. Started **October 30, 2026, 6:29 p.m. Pacific**, completed 6:33 p.m.
@@ -54,16 +54,16 @@ It hashes three exact local run files, without credentials or machine-specific p
    and race narratives are held alongside the result.
    [Source qualification, results and both summaries](reviews/matt-haney-genocide-2026-10-31.md).
 
-All three runs use v22 input states. The October 31 Haney update supersedes one additional full-roster result.
-Latest-per-candidate contains **1,294** results with the full-roster prompt and
-**two** with the newer v9 prompt. Under the saved mapping its distribution is
+The first three runs use v22 input states; the November 2 Gavilan runs use current v23 input states. The October 31 Haney update supersedes one additional full-roster result.
+Latest-per-candidate contains **1,292** results with the full-roster prompt and
+**four** with the newer v9 prompt. Under the saved mapping its distribution is
 **A 125, B 41, C 18, D 29, E 70, F 119, N/A 894**. These are **held review results**, not a new public score publication.
 The original handoff made no extra evaluations; the owner subsequently requested
 the single Haney evaluation and both Qwen summaries on October 31.
 
 Do not rewrite request hashes, replace the prompt attached to old answers, or
 claim that all 1,296 candidates used the newest prompt. If the user later wants
-one prompt for publication, the other 1,294 candidates still need evaluation
+one prompt for publication, the other 1,292 candidates still need evaluation
 under that exact prompt. The publication validator rejects mixed question JSON.
 
 ## Restore and launch from a fresh checkout
@@ -89,8 +89,7 @@ or use `--port 8788`; do not interrupt an active evaluation.
 The restore command validates file hashes, exact requests/responses and candidate
 identities. It preserves existing local runs and thresholds; use a fresh work
 directory for the exact committed settings. Repeating restoration is safe.
-The earlier one-candidate experiments remain on the original machine; only the
-two runs needed to reproduce the latest result of every candidate are bundled.
+The earlier one-candidate experiments remain on the original machine; the six runs needed to reproduce the latest result of every candidate are bundled.
 
 The editor deliberately follows the selected candidate's saved prompt. Select
 Eleni Kounalakis or press **Restore defaults** to load the latest v9 prompt for
@@ -160,3 +159,42 @@ evaluations, prompts, thresholds, letter grades and recommendations are unchange
 The current input contains the new report; archived State JSON stays exact.
 Re-evaluate him when requested, then refresh his candidate explanation and the
 CA2026-153 rationale. The existing Qwen outputs predate this new report.
+
+## November 2 Gavilan race evaluations and summaries
+
+Both CA2026-153 candidates were re-evaluated under the exact latest v9 prompt
+and saved thresholds: Gabriel Gutierrez **A 4.94 / 5**, confidence **0.99**,
+evidence **0.94 / 1**; Shahida S. Merchant **N/A**, evidence **0 / 1**.
+The two exact runs are now part of the portable review bundle (six runs total, including the superseded pre-USAMPAC Merchant check).
+The first three requests remain exact. Latest-per-candidate now contains 1,292
+full-roster-prompt results and four v9 results; letter distribution is unchanged.
+Qwen regenerated both candidate paragraphs and the race comparison, preserving
+community-report attribution and making no Palestine inference from Merchant’s
+college platform. [Full results and prose](../research/gaza-grading/gavilan-refresh-2026-11-02/README.md).
+These outputs supersede the earlier held CA2026-153 summaries for local review.
+PR #22 is unmerged; these two scores/summaries have not changed the frozen
+public score publication or the live TALL snapshot.
+
+## USAMPAC correction supersedes the initial Merchant N/A
+
+The owner then confirmed that USAMPAC endorses Shahida Merchant and is a Muslim
+community organization aligned on Palestine. The new reported endorsement is
+in both research checkouts, with its context in
+`owner-organization-context-v1.json`. USAMPAC’s public directory returned an
+error, so the record is not mislabeled as a retrieved first-party statement.
+Only exact owner-confirmed aliases are included; candidate religion is not
+inferred. State versions add `-owner-org-context` for new requests.
+
+Merchant was re-evaluated with unchanged v9 questions and thresholds:
+**A 4.76 / 5**, score confidence **0.87**, evidence **0.69 / 1** (evidence
+confidence **0.38**). Confidence is shown, not used as an acceptance filter.
+The original N/A run remains exact history; the six-run portable bundle resolves
+her latest result to this new A. Gutierrez remains **A 4.94 / 5**. Latest review
+distribution is **A 126, B 41, C 18, D 29, E 70, F 119, N/A 893**.
+Both are now A-graded; the existing Gutierrez race pick is retained for review
+among highest-grade ties, not replaced by an invented new tie-breaking result.
+Fresh Qwen prose must mention both aligned organizations and cannot reuse the
+old claim that only Gutierrez has such backing. The exact questions are unchanged;
+1,292 candidates retain the roster prompt and four use v9. Scores and matching
+prose are held for review, and the live sites retain their frozen score
+publication. The factual USAMPAC endorsement is published separately.

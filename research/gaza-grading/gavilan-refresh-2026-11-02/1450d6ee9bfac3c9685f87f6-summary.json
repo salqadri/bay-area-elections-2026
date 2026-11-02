@@ -1,0 +1,117 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate": "Gabriel Gutierrez",
+  "candidate_id": "1450d6ee9bfac3c9685f87f6",
+  "position_id": "CA2026-153",
+  "request_sha256": "cb5d9b3ec9c29c0f7207dee87c53e5d64529744d8af29e52bb6b1d1240187fa3",
+  "run_id": "20261102T233318Z-323e6140",
+  "grade": "A",
+  "score_grade_mapping": {
+    "require_issue_observation": true,
+    "minimum_evidence_score": 0.22,
+    "upper_bounds": [
+      0.74,
+      1.4,
+      2.3,
+      3.3,
+      4.4
+    ]
+  },
+  "summary": "Gabriel Gutierrez is reported by local Muslim community members as supporting divestment from Israel. CAIR Action endorsed him for the Gavilan College Board Trustee, Area 3, general election.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Candidate name used for identification only"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Local college board trustee role has no direct bearing on Palestinian justice assessment"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Jurisdictional identifier only"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label does not indicate a position on Palestinian justice"
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Platform covers tuition, housing, labor, security, and accountability; no foreign-policy or Israel/Palestine content"
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "Community report confirming support for divestment from Israel; central directional evidence for the assessment"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "CAIR Action endorsed him in the general election; concrete pro-Palestinian justice signal"
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Methodology note on how CAIR tiers are weighted; not a candidate fact for the voter paragraph"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Describes CAIR Action's role and source; contextual metadata, not a candidate action"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Date of the election; no bearing on the substance of the assessment"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Gavilan JCCD identifies the local race; not relevant to Palestinian justice"
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Incumbency status does not indicate a position on Palestinian justice"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label; no substantive content"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "reasoning_effort": "medium",
+  "temperature": 1,
+  "prompt_sha256": "54809bc661b8bb6adb26b4fe0fa2d8a8828f80453406430f8685615adf7aff40",
+  "usage": {
+    "prompt_tokens": 4615,
+    "completion_tokens": 2228,
+    "total_tokens": 6843,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1619
+    }
+  },
+  "elapsed_seconds": 18.3,
+  "generated_at": "2026-11-02T23:38:06+00:00",
+  "revision_reason": "Remove organizational-methodology padding; state the two substantive observations directly."
+}

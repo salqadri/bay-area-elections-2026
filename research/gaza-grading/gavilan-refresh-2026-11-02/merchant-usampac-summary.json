@@ -1,0 +1,104 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate": "Shahida S. Merchant",
+  "candidate_id": "921684db0280f8155043264e",
+  "position_id": "CA2026-153",
+  "request_sha256": "9c8cbd1aa6ec7d67d110f601bbb17dbbe73ce7d904a7c7ba0dbc71dfdc61ab17",
+  "run_id": "20261102T234626Z-a05d815d",
+  "grade": "A",
+  "score_grade_mapping": {
+    "require_issue_observation": true,
+    "minimum_evidence_score": 0.22,
+    "upper_bounds": [
+      0.74,
+      1.4,
+      2.3,
+      3.3,
+      4.4
+    ]
+  },
+  "summary": "Shahida S. Merchant has a reported USAMPAC endorsement for her Gavilan Community College District Area 3 board race. USAMPAC is a Muslim community organization the guide owner describes as aligned on Palestine. Her documented platform centers on education access, financial transparency, and workforce development.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Candidate name, used for identification only"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Local community college board seat; contextual for the endorsement but no Palestine content"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "State identifier, no bearing on Palestine assessment"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label carries no Palestine-direction signal"
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Platform addresses education access, financial transparency, and workforce development; no Middle East or Palestine content"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "USAMPAC endorsed the candidate per report; primary Palestine-direction evidence in the record"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "Supplied context identifies USAMPAC as a Muslim community organization the guide owner describes as aligned on Palestine; owner_confirmation basis"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Temporal marker for the race, no Palestine relevance"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Gavilan Joint Community College District; situates the local race"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label, no substantive content"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "reasoning_effort": "medium",
+  "temperature": 1,
+  "prompt_sha256": "2f5dd74ceb2c98d1599b04d1f5c106417cfb3810813b3841f7ab7f6effa05ce5",
+  "usage": {
+    "prompt_tokens": 4280,
+    "completion_tokens": 2737,
+    "total_tokens": 7017,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2240
+    }
+  },
+  "generated_at": "2026-11-02T23:53:29+00:00",
+  "editorial_clarifications": [
+    {
+      "before": "Shahida S. Merchant received a USAMPAC endorsement for her Gavilan Community College District Area 3 board race. The supplied record identifies USAMPAC as a Muslim community organization the guide owner describes as aligned on Palestine. Her documented platform centers on education access, financial transparency, and workforce development.",
+      "after": "Shahida S. Merchant has a reported USAMPAC endorsement for her Gavilan Community College District Area 3 board race. USAMPAC is a Muslim community organization the guide owner describes as aligned on Palestine. Her documented platform centers on education access, financial transparency, and workforce development.",
+      "reason": "Remove supplied-record jargon and preserve reported-endorsement attribution; no substantive position changed."
+    }
+  ]
+}

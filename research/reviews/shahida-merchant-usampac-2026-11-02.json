@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "id": "shahida-merchant-usampac-2026-11-02",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-11-02",
+ "counties": [
+  "Santa Clara"
+ ],
+ "sources": {
+  "owner-report": {
+   "url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/research/community-reports/shahida-merchant-usampac-2026-11-02.md",
+   "publisher": "Guide owner",
+   "role": "aggregator",
+   "checked_on": "2026-11-02",
+   "retrieval": "owner_supplied_endorsement_report",
+   "content_sha256": "d18b90619bfe629c7dc206241c04c229d7af5b9b84e965dc618e807dcd714a49"
+  }
+ },
+ "notes": {
+  "N1552": "The owner confirmed Shahida Merchant’s USAMPAC endorsement and described USAMPAC as a Muslim community organization aligned on Palestine. The public USAMPAC site confirms its Muslim civic-engagement identity; its candidate directory returned Network Error during the November 2 check. Endorsement is explicitly reported, phase unspecified, not an independently fetched endorsement statement or a candidate community-membership claim."
+ },
+ "decisions": [
+  {
+   "id": "shahida-merchant-usampac-endorsement",
+   "action": "change",
+   "field": "endorsements",
+   "source_key": "owner-report",
+   "position_id": "CA2026-153",
+   "candidate": "Shahida S. Merchant",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Gavilan Joint Community College District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "endorser": "USAMPAC",
+    "kind": "organization",
+    "relation": "endorsed",
+    "phase": "unspecified",
+    "url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/research/community-reports/shahida-merchant-usampac-2026-11-02.md",
+    "checked_on": "2026-11-02",
+    "verification": "reported",
+    "note_id": "N1552"
+   },
+   "reason": "Explicit owner confirmation of the endorsement and organization’s Palestine alignment; preserve as a reported endorsement with separate organization context.",
+   "evidence": {
+    "identity_basis": "The owner named Shahida Merchant in the current CA2026-153 Gavilan CCD Trustee Area 3 race. The separately verified campaign site confirms the matching office and area.",
+    "date_basis": "November 2, 2026 is receipt of the owner’s confirmation; no endorsement announcement date or phase was provided.",
+    "relationship_basis": "The owner explicitly said endorsed by USAMPAC. This is a reported endorsement, not inferred from a mention, a generic Muslim organization name or a primary-source statement that was not retrieved."
+   }
+  }
+ ]
+}
