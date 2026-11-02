@@ -159,3 +159,15 @@ Read the source around the passage, retain the citation and date basis, and writ
 The user-requested Vote for Peace / AROC pass also captures substantive candidate-specific Gaza notes that lack an original date. Preserve these as an attributed guide assessment inspected on a known date: `date_method: source_observed`, `source_kind: voter_guide`, full `date` equal to `checked_on`, and a `date_note` explaining that the underlying event/publication date is unknown. Both readers must display that distinction. Such observations cannot establish historical stance chronology. Do not apply this date method to unresolved historical/social evidence or relabel quarantine to bypass its rules.
 
 Guide claims about contributions, legislative support and votes remain explicitly attributed unless independently verified. State missing financial scope where material. General party platforms, a source badge, silence and an organization's principles do not establish a candidate-specific Gaza position. The dated peace-guide manifest records inclusion/exclusion reasons and preserves all source leads.
+
+## Owner-supplied community reports
+
+A community report may be recorded separately from direct public-source evidence
+when the owner explicitly supplies it. Use `source_kind: community_report`,
+`date_method: source_observed`, the actual report-receipt date, a date note, and
+a summary beginning `Community report: `. Retain a source document stating
+what was reported, who relayed it, and which dates or public records were not
+supplied. Do not invent a quotation, vote, original statement date or community
+membership. Use the registered-review workflow and reconcile the collector after
+publication. Generated Jev inputs preserve attribution and date provenance;
+archived evaluations remain exact until a new evaluation is requested.

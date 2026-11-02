@@ -1,3 +1,18 @@
+## November 2: Gabriel Gutierrez community report
+
+Publication **2026-11-02.3** adds **GE-1614** for Gabriel Gutierrez, CA2026-153.
+The owner relayed confirmation from local Muslim community members that he
+supports divesting from Israel. The source is explicitly `community_report`,
+with `source_observed` dating receipt of the report, not the original statement.
+The report and generated Jev state are under `research/community-reports/`.
+This does not establish a public quotation, a vote or candidate community
+membership. Schema and provenance checks now support attributed community
+reports, and both readers label the received date correctly. The collector is
+reconciled so a later research merge cannot remove this manually added report.
+No Jev call was made: current frozen scores, prompts, thresholds, explanations
+and race choices are preserved. Refresh the candidate and CA2026-153 summaries
+after the next evaluation; their held Qwen outputs predate this report.
+
 ## November 2: Shahida Merchant campaign-site refresh
 
 Publication **2026-11-02.2** adds the owner-supplied campaign website for

@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "id": "gabriel-gutierrez-community-report-2026-11-02",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-11-02",
+ "counties": [
+  "Santa Clara"
+ ],
+ "sources": {
+  "community-report": {
+   "url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/research/community-reports/gabriel-gutierrez-2026-11-02.md",
+   "publisher": "Guide owner, relaying local Muslim community members",
+   "role": "aggregator",
+   "checked_on": "2026-11-02",
+   "retrieval": "owner_supplied_community_report",
+   "content_sha256": "391a4b8546c565a95448bea6faa2987fbeb3840df4d504c9435d694b7a910900"
+  }
+ },
+ "notes": {
+  "N1551": "Gabriel Gutierrez, Gavilan CCD Trustee Area 3: owner-supplied community confirmation received November 2, 2026 reports support for divesting from Israel. Explicitly attributed as a community report; no public quotation, statement date, vote or candidate community-membership inference. Frozen grades and evaluation inputs remain exact."
+ },
+ "decisions": [
+  {
+   "id": "gabriel-gutierrez-divestment-community-report",
+   "action": "change",
+   "field": "gaza_evidence",
+   "source_key": "community-report",
+   "position_id": "CA2026-153",
+   "candidate": "Gabriel Gutierrez",
+   "identity": {
+    "office": "Governing Board Member",
+    "jurisdiction": "Gavilan Joint Community College District",
+    "district_or_seat": "Trustee Area 3",
+    "term": "Full term (4 years)",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1614",
+    "date": "2026-11-02",
+    "checked_on": "2026-11-02",
+    "url": "https://github.com/salqadri/bay-area-elections-2026/blob/main/research/community-reports/gabriel-gutierrez-2026-11-02.md",
+    "dimension": "actions_votes",
+    "source_kind": "community_report",
+    "date_method": "source_observed",
+    "date_note": "Report received by the guide on November 2, 2026; the date of the underlying statement is unknown. Community confirmation relayed by the guide owner.",
+    "summary": "Community report: local Muslim community members confirmed Gabriel Gutierrez supports divesting from Israel."
+   },
+   "reason": "The owner explicitly supplied local community confirmation of this candidate’s divestment position. Preserve the report with attribution and observation-date provenance.",
+   "evidence": {
+    "identity_basis": "The owner identified Gabriel Gutierrez in the Gavilan CCD Trustee Area 3 race already under discussion (CA2026-153); no other same-name person is joined.",
+    "date_basis": "Report received by the guide on November 2, 2026; the date of the underlying statement is unknown. Community confirmation relayed by the guide owner.",
+    "issue_basis": "The reported position explicitly concerns divesting from Israel. It is a community report relayed by the guide owner, not a direct public candidate quote or an independently verified vote."
+   }
+  }
+ ]
+}

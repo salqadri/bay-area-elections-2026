@@ -7,6 +7,11 @@ recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
 
+Publication **2026-11-02.3** adds an attributed community report that Gabriel
+Gutierrez supports divesting from Israel (Gavilan CCD Trustee Area 3).
+The report received November 2 is preserved in the Gaza evidence section and
+new Jev inputs; frozen scores and summaries are unchanged.
+
 Publication **2026-11-02.2** adds Shahida S. Merchant’s verified campaign site
 and five quoted general platform priorities (Gavilan CCD Trustee Area 3).
 The bounded HTML check found no Palestine-specific statement; scores, grades,
