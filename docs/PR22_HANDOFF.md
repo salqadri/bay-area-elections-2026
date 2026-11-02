@@ -125,3 +125,25 @@ python3 scripts/check_release.py
 
 Use Serper.dev exclusively for any web searches, as requested by the owner.
 This review restore and its checks make no research or model API calls.
+
+## November 2 targeted source refresh and Qwen status
+
+Shahida S. Merchant (CA2026-153, Gavilan CCD Trustee Area 3) now has the owner-
+supplied verified campaign website and five source-quoted general platform
+priorities. The registered November 2 review and source packet are under
+`research/reviews/shahida-merchant-campaign-2026-11-02.json` and
+`research/campaign-issues/shahida-merchant-2026-11-02/`. Her current generated
+state gains only `campaign_platform_points`; no Palestine statement was found
+in the bounded HTML check. The linked video was not transcribed. No Jev score,
+letter grade, frozen request, prompt, threshold or race choice was changed.
+This factual patch was also applied independently to latest main and selectively
+to the TALL production snapshot; PR #22 remains unmerged.
+
+The local Qwen refresh finished October 31 at 8:42 p.m. Pacific: **401/401
+candidate explanations succeeded; 154/176 race summaries succeeded; 22 race
+summaries failed the endorser/source-policy validation after retries**. There
+is no active worker. Outputs remain held for review under ignored
+`.research/summary-refresh-v9-2026-10-31/`; they have not been attached to
+production. Do not call the entire batch complete or silently publish failed
+or outdated narratives. The status was checked against all 555 saved output
+artifacts on November 2.
