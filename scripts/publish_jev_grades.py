@@ -112,6 +112,19 @@ def attach(data, archive, archive_path, archive_sha):
                 if not preserve_explanations: c.pop('pro_palestine_explanation', None)
                 targets[(p['id'], c['name'], roster)] = (p, c)
     seen = set()
+    variants = {}
+    for variant in archive.get('question_variants', []):
+        path = (ROOT / variant['criteria_path']).resolve()
+        if not path.is_relative_to(ROOT / 'research/gaza-grading'):
+            raise ValueError('Question variant outside grading registry')
+        criteria = json.loads(path.read_text())
+        questions_sha = digest(dump(criteria['questions']).encode())
+        if criteria != variant['criteria'] or questions_sha != variant['questions_sha256']:
+            raise ValueError('Question variant differs from exact versioned criteria')
+        variants[questions_sha] = criteria['questions']
+    assignments = archive.get('candidate_question_variants', {})
+    if variants and set(assignments) != {row['id'] for row in archive['rows']}:
+        raise ValueError('Every candidate needs an explicit question variant binding')
     for row in archive['rows']:
         key = row['position_id'], row['candidate'], row['roster']
         if key in seen or key not in targets:
@@ -119,7 +132,9 @@ def attach(data, archive, archive_path, archive_sha):
         p,c = targets[key]
         if p.get('ballot_status') == 'excluded' or row['id'] != candidacy_id(*key):
             raise ValueError('Excluded contest or candidate identity mismatch')
-        if row['request']['questions'] != archive['preferred_criteria']['questions']:
+        expected_questions = (variants.get(assignments.get(row['id'])) if variants
+                              else archive['preferred_criteria']['questions'])
+        if expected_questions is None or row['request']['questions'] != expected_questions:
             raise ValueError('Every published evaluation must use the exact preferred question JSON')
         state=row['request']['state']
         if not isinstance(state,dict) or state.get('candidate') != row['candidate'] or state.get('candidate_roster') != row['roster']:
@@ -140,6 +155,8 @@ def attach(data, archive, archive_path, archive_sha):
     # mapping must not display narratives bound to older answers or grade bands.
     explanations = (data.get('pro_palestine_grading') or {}).get('explanations')
     if preserve_explanations: result['pro_palestine_grading']['explanations'] = explanations
+    if previous.get('archive_sha256') == archive_sha and previous.get('publication_id') == archive['id'] and previous.get('previous_explanations'):
+        result['pro_palestine_grading']['previous_explanations'] = deepcopy(previous['previous_explanations'])
     return result
 
 

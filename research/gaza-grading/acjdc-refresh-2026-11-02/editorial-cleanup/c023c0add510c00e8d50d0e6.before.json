@@ -1,0 +1,104 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "c023c0add510c00e8d50d0e6",
+  "candidate": "Jenny Wong",
+  "position_id": "CA2026-049",
+  "request_sha256": "0afd4f38c25e3119600f73ee43744292b0b91494e08e2edb9a992c0b5bb445a3",
+  "grade": "E",
+  "summary": "Her JCRC-funded trip to Israel in March 2023 and endorsement by the Alameda County Jewish Democratic Club, whose stated mission includes supporting Israel as a secure Jewish state, mark a pro-Israel alignment. In a questionnaire of undated response, she identified the Jerusalem Declaration on Antisemitism as the framework best representing her views on criticism of Israel. As city auditor, she stated she does not take positions on unaudited measures, and her platform addresses only local fiscal accountability.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Name identification only; no policy signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "City auditor role explains limited foreign-policy scope; referenced in prose to contextualize her non-positions on unaudited measures."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Jurisdictional detail with no Palestine-policy relevance."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label does not indicate Palestine position."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Platform addresses local whistleblower programs and fiscal transparency; no Israel/Palestine content."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "JCRC-funded Israel trip (Mar 2023) and statement aligning criticism-of-Israel views with the Jerusalem Declaration on Antisemitism both signal pro-Israel framing; response date is undated per record."
+    },
+    {
+      "id": "candidate_record.funding_scope",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Notes unresolved organizational funding since 2024; no direction or Palestine relevance established."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Alameda County Jewish Democratic Club general-election endorsement is an alignment signal given the club's stated pro-Israel mission."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Club's first-party mission statement includes supporting Israel as a secure Jewish state; contextualizes the endorsement, recorded at low weight."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Election timing only; no policy signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "City of Berkeley; no Palestine-policy relevance beyond confirming local office."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Incumbent status does not indicate Palestine position."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label only; no policy signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "9e42ba7785cb2af0b6f89571a2c94cb06a34812c2b54d28110c3ed895ecaa709",
+  "generated_at": "2026-11-03T03:59:05+00:00",
+  "usage": {
+    "prompt_tokens": 4230,
+    "completion_tokens": 2841,
+    "total_tokens": 7071,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2132
+    }
+  },
+  "elapsed_seconds": 37.07,
+  "generation_request_sha256": "e9f55526d46f28c4e630ba79d56f97e175cb998f61a9c067aecac0c8765b60d1",
+  "attempt": 1
+}

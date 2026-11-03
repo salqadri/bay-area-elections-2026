@@ -1,0 +1,86 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "0ac756d64e9f6fda319f9f47",
+  "candidate": "Adam Hundt",
+  "position_id": "CA2026-073",
+  "request_sha256": "4969684bc8979c495afa2e2711d4b47375fc86a669fcaf8f2b384520e1194f13",
+  "grade": "F",
+  "summary": "Hundt's questionnaire response opposes antisemitism and efforts to delegitimize Israel's existence, and he stated he would keep the council focused on matters within municipal jurisdiction. The file is dated September 9, 2026, though the response date is not stated. The Alameda County Jewish Democratic Club, whose purpose includes supporting Israel, endorsed him in the general election. These observations align him with a pro-Israel, jurisdictional-avoidance posture on Palestinian justice.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Candidate name for identification only; no policy signal"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "At large City Council Member; office designation does not bear on Palestinian-justice position"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "State identification (CA); no policy signal"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label; no policy signal"
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Candidate opposes delegitimization of Israel's existence and would keep council focused on municipal jurisdiction; upload date noted as not the response date"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "General-election endorsement by Alameda County Jewish Democratic Club, whose purpose includes supporting Israel"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Confirms the club's stated pro-Israel purpose; groups with the endorsement observation as supporting context"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Election timing (2026-11-03); no policy signal"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "City of Piedmont; contextual only"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Roster label 'candidates'; no policy signal"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "3f1096d28e3b85d486a9f92d1931f4211ac176521462cd8047a4170a1cb79471",
+  "generated_at": "2026-11-03T04:02:21+00:00",
+  "usage": {
+    "prompt_tokens": 4036,
+    "completion_tokens": 3462,
+    "total_tokens": 7498,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2918
+    }
+  },
+  "elapsed_seconds": 43.64,
+  "generation_request_sha256": "12a307077ff049d5959ba2314b04d264b89632cf9b2aa5e3b9c7f38b5926d7a8",
+  "attempt": 1
+}

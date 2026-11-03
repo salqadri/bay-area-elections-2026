@@ -1,0 +1,3420 @@
+{
+  "generated_at": "2026-11-03T04:47:19.098099+00:00",
+  "production_url": "https://tall-voter-guide.web.app/",
+  "production_guide_sha256": "9a0422d7ba0bcdc61cf1e956d59fc585ef523654c7131954543a01c0ed6e391d",
+  "production_release_sha256": "05dccc7939a088395f04fb2c401bf898923849fa81e125b4c420ee217609dfa0",
+  "pr_url": "https://github.com/salqadri/bay-area-elections-2026/pull/22",
+  "tall_head": "ff023518745a2ed72a969146ad79e65e912577ec",
+  "review_manifest_sha256": "f78a77d154bc218fb350a6d4a54575a1b9c191d0f20a179703d37c98799b4b7c",
+  "summary": {
+    "production_races": 340,
+    "preview_races": 340,
+    "production_picks": 122,
+    "preview_picks": 125,
+    "changed_picks": 6,
+    "change_counts": {
+      "changed_candidate": 1,
+      "new_recommendation": 4,
+      "withdrawn_recommendation": 1
+    },
+    "same_pick_changed_grade": 9,
+    "changed_candidate_letter_grades": 37,
+    "changed_rationale_text": 130,
+    "editorial_exceptions_retained": 11,
+    "unchanged_propositions": true,
+    "fresh_candidate_summaries_in_preview": 198,
+    "race_summary_status_counts": {
+      "committed_targeted_qwen": 29,
+      "completed_qwen_batch": 66,
+      "older_context_refresh_pending": 11,
+      "older_fallback": 8
+    }
+  },
+  "changed_picks": [
+    {
+      "position_id": "CA2026-054",
+      "office": "Rent Stabilization Board Commissioner",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Avery Arbaugh",
+      "preview_pick": "Ida Martinac",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "change": "changed_candidate"
+    },
+    {
+      "position_id": "CA2026-053",
+      "office": "City Council Member",
+      "district_or_seat": "District 8",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Mark Humbert",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "D",
+      "change": "new_recommendation"
+    },
+    {
+      "position_id": "CA2026-075",
+      "office": "City Council Member",
+      "district_or_seat": "District 3",
+      "jurisdiction": "City of Pleasanton",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Jamie Yee",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "D",
+      "change": "new_recommendation"
+    },
+    {
+      "position_id": "CA2026-112",
+      "office": "Town Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "Town of Los Gatos",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Rob Stump",
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "N/A",
+      "change": "withdrawn_recommendation"
+    },
+    {
+      "position_id": "CA2026-133",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "District 4",
+      "jurisdiction": "Oakland Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Sylvia Pfeiffer Williams",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "C",
+      "change": "new_recommendation"
+    },
+    {
+      "position_id": "CA2026-192",
+      "office": "Director",
+      "district_or_seat": "Area 2",
+      "jurisdiction": "Hayward Area Recreation and Park District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Sara Lamnin",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "D",
+      "change": "new_recommendation"
+    }
+  ],
+  "same_pick_grade_changes": [
+    {
+      "position_id": "CA2026-005",
+      "office": "United States Representative",
+      "district_or_seat": "CD-16",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Sam Liccardo",
+      "preview_pick": "Sam Liccardo",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "C"
+    },
+    {
+      "position_id": "CA2026-006",
+      "office": "United States Representative",
+      "district_or_seat": "CD-18",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Zoe Lofgren",
+      "preview_pick": "Zoe Lofgren",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "C"
+    },
+    {
+      "position_id": "CA2026-022",
+      "office": "State Senator",
+      "district_or_seat": "SD-10",
+      "jurisdiction": "California State Senate",
+      "counties": [
+        "Alameda",
+        "Santa Clara"
+      ],
+      "production_pick": "Scott Sakakihara",
+      "preview_pick": "Scott Sakakihara",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "D"
+    },
+    {
+      "position_id": "CA2026-011",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-20",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Liz Ortega",
+      "preview_pick": "Liz Ortega",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "B"
+    },
+    {
+      "position_id": "CA2026-013",
+      "office": "Controller",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Malia M. Cohen",
+      "preview_pick": "Malia M. Cohen",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "B"
+    },
+    {
+      "position_id": "CA2026-018",
+      "office": "Superintendent of Public Instruction",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Richard Barrera",
+      "preview_pick": "Richard Barrera",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "C"
+    },
+    {
+      "position_id": "CA2026-021",
+      "office": "Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "California State Board of Equalization",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Sally J. Lieber",
+      "preview_pick": "Sally J. Lieber",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "C"
+    },
+    {
+      "position_id": "CA2026-047",
+      "office": "Mayor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Alameda",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Tracy Jensen",
+      "preview_pick": "Tracy Jensen",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "D"
+    },
+    {
+      "position_id": "CA2026-177",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "West Valley-Mission Community College District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Anne J. Kepner",
+      "preview_pick": "Anne J. Kepner",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "B"
+    }
+  ],
+  "rationale_changes": [
+    {
+      "position_id": "CA2026-309",
+      "office": "United States Representative",
+      "district_or_seat": "CD-8",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "John Garamendi",
+      "preview_pick": "John Garamendi",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-310",
+      "office": "United States Representative",
+      "district_or_seat": "CD-9",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "John McBride",
+      "preview_pick": "John McBride",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-001",
+      "office": "United States Representative",
+      "district_or_seat": "CD-10",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Alameda",
+        "Contra Costa"
+      ],
+      "production_pick": "Mark DeSaulnier",
+      "preview_pick": "Mark DeSaulnier",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-229",
+      "office": "United States Representative",
+      "district_or_seat": "CD-11",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Connie Chan",
+      "preview_pick": "Connie Chan",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-002",
+      "office": "United States Representative",
+      "district_or_seat": "CD-12",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Lateefah Simon",
+      "preview_pick": "Lateefah Simon",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-003",
+      "office": "United States Representative",
+      "district_or_seat": "CD-14",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Aisha Wahab",
+      "preview_pick": "Aisha Wahab",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-230",
+      "office": "United States Representative",
+      "district_or_seat": "CD-15",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "San Francisco",
+        "San Mateo"
+      ],
+      "production_pick": "Charles Hoelter",
+      "preview_pick": "Charles Hoelter",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-005",
+      "office": "United States Representative",
+      "district_or_seat": "CD-16",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Sam Liccardo",
+      "preview_pick": "Sam Liccardo",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "C",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-004",
+      "office": "United States Representative",
+      "district_or_seat": "CD-17",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Alameda",
+        "Santa Clara"
+      ],
+      "production_pick": "Ro Khanna",
+      "preview_pick": "Ro Khanna",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-006",
+      "office": "United States Representative",
+      "district_or_seat": "CD-18",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Zoe Lofgren",
+      "preview_pick": "Zoe Lofgren",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "C",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-007",
+      "office": "United States Representative",
+      "district_or_seat": "CD-19",
+      "jurisdiction": "United States House of Representatives",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Peter Coe Verbica",
+      "preview_pick": "Peter Coe Verbica",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-022",
+      "office": "State Senator",
+      "district_or_seat": "SD-10",
+      "jurisdiction": "California State Senate",
+      "counties": [
+        "Alameda",
+        "Santa Clara"
+      ],
+      "production_pick": "Scott Sakakihara",
+      "preview_pick": "Scott Sakakihara",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "D",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-311",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-11",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Jenny Leilani Callison",
+      "preview_pick": "Jenny Leilani Callison",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-008",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-14",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Alameda",
+        "Contra Costa"
+      ],
+      "production_pick": "Mark Rendon",
+      "preview_pick": "Mark Rendon",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-009",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-16",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Alameda",
+        "Contra Costa"
+      ],
+      "production_pick": "Joseph A. Rubay",
+      "preview_pick": "Joseph A. Rubay",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-010",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-18",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Mia Bonta",
+      "preview_pick": "Mia Bonta",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "D",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-232",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-19",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "San Francisco",
+        "San Mateo"
+      ],
+      "production_pick": "Philip Louis Wing",
+      "preview_pick": "Philip Louis Wing",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-011",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-20",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Liz Ortega",
+      "preview_pick": "Liz Ortega",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "B",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-233",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-21",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-023",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-23",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "David G. Johnson",
+      "preview_pick": "David G. Johnson",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-020",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-24",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Alameda",
+        "Santa Clara"
+      ],
+      "production_pick": "Alex Lee",
+      "preview_pick": "Alex Lee",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-024",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-25",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Ash Kalra",
+      "preview_pick": "Ash Kalra",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-025",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-26",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Patrick Ahrens",
+      "preview_pick": "Patrick Ahrens",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "D",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-026",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-28",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Carol Pefley",
+      "preview_pick": "Carol Pefley",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-027",
+      "office": "Member of the State Assembly",
+      "district_or_seat": "AD-29",
+      "jurisdiction": "California State Assembly",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Dennis P. Sanchez",
+      "preview_pick": "Dennis P. Sanchez",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-014",
+      "office": "Governor",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Xavier Becerra",
+      "preview_pick": "Xavier Becerra",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "C",
+      "preview_pick_grade": "C",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-017",
+      "office": "Secretary of State",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Shirley N. Weber",
+      "preview_pick": "Shirley N. Weber",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-013",
+      "office": "Controller",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Malia M. Cohen",
+      "preview_pick": "Malia M. Cohen",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "B",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-012",
+      "office": "Attorney General",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Rob Bonta",
+      "preview_pick": "Rob Bonta",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-015",
+      "office": "Insurance Commissioner",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Jane Kim",
+      "preview_pick": "Jane Kim",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-018",
+      "office": "Superintendent of Public Instruction",
+      "district_or_seat": "Statewide",
+      "jurisdiction": "California",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Richard Barrera",
+      "preview_pick": "Richard Barrera",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "C",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-021",
+      "office": "Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "California State Board of Equalization",
+      "counties": [
+        "Alameda",
+        "Contra Costa",
+        "San Francisco",
+        "San Mateo",
+        "Santa Clara"
+      ],
+      "production_pick": "Sally J. Lieber",
+      "preview_pick": "Sally J. Lieber",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "C",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-238",
+      "office": "Member, Board of Supervisors",
+      "district_or_seat": "District 6",
+      "jurisdiction": "City and County of San Francisco",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Alex Behrend",
+      "preview_pick": "Alex Behrend",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-239",
+      "office": "Member, Board of Supervisors",
+      "district_or_seat": "District 8",
+      "jurisdiction": "City and County of San Francisco",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Gary McCoy",
+      "preview_pick": "Gary McCoy",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-240",
+      "office": "Member, Board of Supervisors",
+      "district_or_seat": "District 10",
+      "jurisdiction": "City and County of San Francisco",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Dionjay (DJ) Brookter",
+      "preview_pick": "Dionjay (DJ) Brookter",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-047",
+      "office": "Mayor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Alameda",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Tracy Jensen",
+      "preview_pick": "Tracy Jensen",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "D",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-048",
+      "office": "City Council Member",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Albany",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Aaron Tiedemann",
+      "preview_pick": "Aaron Tiedemann",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-325",
+      "office": "City Council Member",
+      "district_or_seat": "District 1",
+      "jurisdiction": "City of Antioch",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Tamisha Torres-Walker",
+      "preview_pick": "Tamisha Torres-Walker",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-326",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Antioch",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Monica E. Wilson",
+      "preview_pick": "Monica E. Wilson",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-049",
+      "office": "City Auditor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-054",
+      "office": "Rent Stabilization Board Commissioner",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Avery Arbaugh",
+      "preview_pick": "Ida Martinac",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-050",
+      "office": "City Council Member",
+      "district_or_seat": "District 1",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Moni Gangopadhyay",
+      "preview_pick": "Moni Gangopadhyay",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-051",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Majdi \"Gaith\" Abuhamdieh",
+      "preview_pick": "Majdi \"Gaith\" Abuhamdieh",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-052",
+      "office": "City Council Member",
+      "district_or_seat": "District 7",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Syrak Micael",
+      "preview_pick": "Syrak Micael",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-053",
+      "office": "City Council Member",
+      "district_or_seat": "District 8",
+      "jurisdiction": "City of Berkeley",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Mark Humbert",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "D",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-333",
+      "office": "City Council Member",
+      "district_or_seat": "District 5",
+      "jurisdiction": "City of Concord",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Laura Nakamura",
+      "preview_pick": "Laura Nakamura",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-253",
+      "office": "City Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Daly City",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Teresa Proaño",
+      "preview_pick": "Teresa Proaño",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-057",
+      "office": "Mayor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Dublin",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Kiran Mohammad",
+      "preview_pick": "Kiran Mohammad",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-055",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Dublin",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Richard Thornbury",
+      "preview_pick": "Richard Thornbury",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-056",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Dublin",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Kashef Qaadri",
+      "preview_pick": "Kashef Qaadri",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-254",
+      "office": "City Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of East Palo Alto",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Ruben Abrica",
+      "preview_pick": "Ruben Abrica",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-058",
+      "office": "City Council Member",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Emeryville",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Kalimah Atreyu Priforce",
+      "preview_pick": "Kalimah Atreyu Priforce",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-255",
+      "office": "City Council Member",
+      "district_or_seat": "District 1",
+      "jurisdiction": "City of Foster City",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Phoebe Shin Venkat",
+      "preview_pick": "Phoebe Shin Venkat",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-059",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Fremont",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Desrie Campbell",
+      "preview_pick": "Desrie Campbell",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "D",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-060",
+      "office": "City Council Member",
+      "district_or_seat": "District 3",
+      "jurisdiction": "City of Fremont",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Kathy Kimberlin",
+      "preview_pick": "Kathy Kimberlin",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-061",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Fremont",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Aziz Akbari",
+      "preview_pick": "Aziz Akbari",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-089",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Gilroy",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Diana Sanchez Bentz",
+      "preview_pick": "Diana Sanchez Bentz",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-090",
+      "office": "City Council Member",
+      "district_or_seat": "District 5",
+      "jurisdiction": "City of Gilroy",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Christina Tovar",
+      "preview_pick": "Christina Tovar",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-091",
+      "office": "City Council Member",
+      "district_or_seat": "District 6",
+      "jurisdiction": "City of Gilroy",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Rebeca G. Armendáriz",
+      "preview_pick": "Rebeca G. Armendáriz",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-064",
+      "office": "Mayor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Hayward",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Tom Wong",
+      "preview_pick": "Tom Wong",
+      "production_kind": "protest",
+      "preview_kind": "protest",
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-062",
+      "office": "City Council Member",
+      "district_or_seat": "District 1",
+      "jurisdiction": "City of Hayward",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "George Syrop",
+      "preview_pick": "George Syrop",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-094",
+      "office": "City Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Milpitas",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Seema Kanani",
+      "preview_pick": "Seema Kanani",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-098",
+      "office": "Mayor",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Morgan Hill",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Deborah M. Africa",
+      "preview_pick": "Deborah M. Africa",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-096",
+      "office": "City Council Member",
+      "district_or_seat": "District B",
+      "jurisdiction": "City of Morgan Hill",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Yvonne Martinez Beltran",
+      "preview_pick": "Yvonne Martinez Beltran",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-097",
+      "office": "City Council Member",
+      "district_or_seat": "District D",
+      "jurisdiction": "City of Morgan Hill",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Dolores Alvarado",
+      "preview_pick": "Dolores Alvarado",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-099",
+      "office": "City Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Mountain View",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "IdaRose Sylvester",
+      "preview_pick": "IdaRose Sylvester",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-066",
+      "office": "City Council Member",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Newark",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Eve Marie Little",
+      "preview_pick": "Eve Marie Little",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-072",
+      "office": "Mayor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Oakland",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Barbara Lee",
+      "preview_pick": "Barbara Lee",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-069",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Oakland",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Nate Adams",
+      "preview_pick": "Nate Adams",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-070",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Oakland",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Janani Ramachandran",
+      "preview_pick": "Janani Ramachandran",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-266",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Pacifica",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Christine Boles",
+      "preview_pick": "Christine Boles",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-100",
+      "office": "City Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Palo Alto",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Raymond L. Goins",
+      "preview_pick": "Raymond L. Goins",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-073",
+      "office": "City Council Member",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Piedmont",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-337",
+      "office": "City Clerk",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Pittsburg",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Latoyya P. Ella Bordelon",
+      "preview_pick": "Latoyya P. Ella Bordelon",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-074",
+      "office": "City Council Member",
+      "district_or_seat": "District 1",
+      "jurisdiction": "City of Pleasanton",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Kathy Narum",
+      "preview_pick": "Kathy Narum",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-075",
+      "office": "City Council Member",
+      "district_or_seat": "District 3",
+      "jurisdiction": "City of Pleasanton",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Jamie Yee",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "D",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-270",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Redwood City",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Chris Sturken",
+      "preview_pick": "Chris Sturken",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-314",
+      "office": "Mayor",
+      "district_or_seat": "At large",
+      "jurisdiction": "City of Richmond",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Claudia Jiménez",
+      "preview_pick": "Claudia Jiménez",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-101",
+      "office": "City Council Member",
+      "district_or_seat": "District 5",
+      "jurisdiction": "City of San José",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Peter Ortiz",
+      "preview_pick": "Peter Ortiz",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-102",
+      "office": "City Council Member",
+      "district_or_seat": "District 7",
+      "jurisdiction": "City of San José",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Bien Doan",
+      "preview_pick": "Bien Doan",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "C",
+      "preview_pick_grade": "C",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-103",
+      "office": "City Council Member",
+      "district_or_seat": "District 9",
+      "jurisdiction": "City of San José",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Gordon Chester",
+      "preview_pick": "Gordon Chester",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-341",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of San Ramon",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Marisol Rubio",
+      "preview_pick": "Marisol Rubio",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-106",
+      "office": "Mayor",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Santa Clara",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Kevin Park",
+      "preview_pick": "Kevin Park",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-104",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Santa Clara",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Yvonne Inciarte",
+      "preview_pick": "Yvonne Inciarte",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-105",
+      "office": "City Council Member",
+      "district_or_seat": "District 3",
+      "jurisdiction": "City of Santa Clara",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Eric Crutchlow",
+      "preview_pick": "Eric Crutchlow",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-281",
+      "office": "City Council Member",
+      "district_or_seat": "District 3",
+      "jurisdiction": "City of South San Francisco",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Melanie Olson",
+      "preview_pick": "Melanie Olson",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-282",
+      "office": "City Council Member",
+      "district_or_seat": "District 5",
+      "jurisdiction": "City of South San Francisco",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Eddie Flores",
+      "preview_pick": "Eddie Flores",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-082",
+      "office": "City Council Member",
+      "district_or_seat": "District 2",
+      "jurisdiction": "City of Union City",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Victor Lopez Pulido",
+      "preview_pick": "Victor Lopez Pulido",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-083",
+      "office": "City Council Member",
+      "district_or_seat": "District 3",
+      "jurisdiction": "City of Union City",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Cheris Crocker-Root",
+      "preview_pick": "Cheris Crocker-Root",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-084",
+      "office": "City Council Member",
+      "district_or_seat": "District 4",
+      "jurisdiction": "City of Union City",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Qasim Lodhi",
+      "preview_pick": "Qasim Lodhi",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-342",
+      "office": "City Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "City of Walnut Creek",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Cherise Marie Khaund",
+      "preview_pick": "Cherise Marie Khaund",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "D",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-112",
+      "office": "Town Council Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "Town of Los Gatos",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Rob Stump",
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-348",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 5",
+      "jurisdiction": "Antioch Unified School District",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Brandon Dawkins",
+      "preview_pick": "Brandon Dawkins",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-142",
+      "office": "Governing Board Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "Berryessa Union School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Jamal Khan",
+      "preview_pick": "Jamal Khan",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-117",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "Castro Valley Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-118",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "Trustee Area 4",
+      "jurisdiction": "Castro Valley Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-120",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "Chabot-Las Positas Community College District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Harris Mojadedi",
+      "preview_pick": "Harris Mojadedi",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-345",
+      "office": "Governing Board Member",
+      "district_or_seat": "Ward 1",
+      "jurisdiction": "Contra Costa Community College District",
+      "counties": [
+        "Contra Costa"
+      ],
+      "production_pick": "Cameron Sasai",
+      "preview_pick": "Cameron Sasai",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-123",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "Trustee Area 5",
+      "jurisdiction": "Dublin Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Seema Badar",
+      "preview_pick": "Seema Badar",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-146",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 1",
+      "jurisdiction": "East Side Union High School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Mer Curry Nuñez",
+      "preview_pick": "Mer Curry Nuñez",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-148",
+      "office": "Governing Board Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "Evergreen School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Johnny Ray Reyna",
+      "preview_pick": "Johnny Ray Reyna",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-150",
+      "office": "Governing Board Member",
+      "district_or_seat": "At-large",
+      "jurisdiction": "Franklin-McKinley School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Rudy J. Rodriguez",
+      "preview_pick": "Rudy J. Rodriguez",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-152",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 4",
+      "jurisdiction": "Fremont Union High School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Naomi Nakano-Matsumoto",
+      "preview_pick": "Naomi Nakano-Matsumoto",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-153",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "Gavilan Joint Community College District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Gabriel Gutierrez",
+      "preview_pick": "Gabriel Gutierrez",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-155",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 4",
+      "jurisdiction": "Gilroy Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Jane Stevens",
+      "preview_pick": "Jane Stevens",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-159",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 1",
+      "jurisdiction": "Morgan Hill Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Jason Amezcua",
+      "preview_pick": "Jason Amezcua",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-160",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 2",
+      "jurisdiction": "Morgan Hill Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "John T. Horner",
+      "preview_pick": "John T. Horner",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-161",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "Morgan Hill Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Sarah Northrup Gadus",
+      "preview_pick": "Sarah Northrup Gadus",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-162",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 4",
+      "jurisdiction": "Morgan Hill Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Claudia Ortiz",
+      "preview_pick": "Claudia Ortiz",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "B",
+      "preview_pick_grade": "B",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-130",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "Trustee Area 4",
+      "jurisdiction": "New Haven Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Kashif Wasim",
+      "preview_pick": "Kashif Wasim",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-131",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "Trustee Area 5",
+      "jurisdiction": "New Haven Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Francis Rojas",
+      "preview_pick": "Francis Rojas",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-132",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "District 2",
+      "jurisdiction": "Oakland Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Jennifer Brouhard",
+      "preview_pick": "Jennifer Brouhard",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-133",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "District 4",
+      "jurisdiction": "Oakland Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Sylvia Pfeiffer Williams",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "C",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-134",
+      "office": "Governing Board Member / School Director",
+      "district_or_seat": "District 6",
+      "jurisdiction": "Oakland Unified School District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Valarie Bachelor",
+      "preview_pick": "Valarie Bachelor",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-135",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 6",
+      "jurisdiction": "Ohlone Community College District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Suzanne \"Sue\" Lee Chan",
+      "preview_pick": "Suzanne \"Sue\" Lee Chan",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-136",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 5",
+      "jurisdiction": "Peralta Community College District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-242",
+      "office": "Trustee, Community College Board",
+      "district_or_seat": "At large — full term",
+      "jurisdiction": "San Francisco Community College District",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Leah LaCroix",
+      "preview_pick": "Leah LaCroix",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_fallback"
+    },
+    {
+      "position_id": "CA2026-243",
+      "office": "Trustee, Community College Board",
+      "district_or_seat": "At large — partial term",
+      "jurisdiction": "San Francisco Community College District",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Ruth Ferguson",
+      "preview_pick": "Ruth Ferguson",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "D",
+      "preview_pick_grade": "D",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-241",
+      "office": "Member, Board of Education",
+      "district_or_seat": "At large",
+      "jurisdiction": "San Francisco Unified School District",
+      "counties": [
+        "San Francisco"
+      ],
+      "production_pick": "Virginia Cheung",
+      "preview_pick": "Virginia Cheung",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "older_context_refresh_pending"
+    },
+    {
+      "position_id": "CA2026-170",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 2",
+      "jurisdiction": "San José Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Tomara Hall",
+      "preview_pick": "Tomara Hall",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-173",
+      "office": "Member, Board of Education",
+      "district_or_seat": "Trustee Area 7",
+      "jurisdiction": "Santa Clara County Board of Education",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Raeena S. Lari",
+      "preview_pick": "Raeena S. Lari",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-174",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 1",
+      "jurisdiction": "Santa Clara Unified School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Kamal Yassin",
+      "preview_pick": "Kamal Yassin",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-292",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area E",
+      "jurisdiction": "South San Francisco Unified School District",
+      "counties": [
+        "San Mateo"
+      ],
+      "production_pick": "Frank Lara",
+      "preview_pick": "Frank Lara",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-176",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "Sunnyvale School District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": null,
+      "preview_pick": null,
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "N/A",
+      "summary_status": "no_recommendation"
+    },
+    {
+      "position_id": "CA2026-177",
+      "office": "Governing Board Member",
+      "district_or_seat": "Trustee Area 3",
+      "jurisdiction": "West Valley-Mission Community College District",
+      "counties": [
+        "Santa Clara"
+      ],
+      "production_pick": "Anne J. Kepner",
+      "preview_pick": "Anne J. Kepner",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "B",
+      "summary_status": "committed_targeted_qwen"
+    },
+    {
+      "position_id": "CA2026-181",
+      "office": "Director",
+      "district_or_seat": "Ward 3",
+      "jurisdiction": "Alameda County Water District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Paul Sethy",
+      "preview_pick": "Paul Sethy",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-183",
+      "office": "Director",
+      "district_or_seat": "Ward 4",
+      "jurisdiction": "Alameda-Contra Costa Transit District (AC Transit)",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Sarah Syed",
+      "preview_pick": "Sarah Syed",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-188",
+      "office": "Director",
+      "district_or_seat": "Ward 3",
+      "jurisdiction": "East Bay Regional Park District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "William Yragui",
+      "preview_pick": "William Yragui",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-189",
+      "office": "Director",
+      "district_or_seat": "Ward 5",
+      "jurisdiction": "East Bay Regional Park District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": "Olivia Sanwong",
+      "preview_pick": "Olivia Sanwong",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "A",
+      "preview_pick_grade": "A",
+      "summary_status": "completed_qwen_batch"
+    },
+    {
+      "position_id": "CA2026-192",
+      "office": "Director",
+      "district_or_seat": "Area 2",
+      "jurisdiction": "Hayward Area Recreation and Park District",
+      "counties": [
+        "Alameda"
+      ],
+      "production_pick": null,
+      "preview_pick": "Sara Lamnin",
+      "production_kind": null,
+      "preview_kind": null,
+      "production_pick_grade": "N/A",
+      "preview_pick_grade": "D",
+      "summary_status": "committed_targeted_qwen"
+    }
+  ],
+  "candidate_grade_changes": [
+    {
+      "position_id": "CA2026-005",
+      "candidate": "Sam Liccardo",
+      "production": "D",
+      "preview": "C"
+    },
+    {
+      "position_id": "CA2026-004",
+      "candidate": "Ritesh Tandon",
+      "production": "E",
+      "preview": "F"
+    },
+    {
+      "position_id": "CA2026-006",
+      "candidate": "Zoe Lofgren",
+      "production": "D",
+      "preview": "C"
+    },
+    {
+      "position_id": "CA2026-007",
+      "candidate": "Jimmy Panetta",
+      "production": "F",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-022",
+      "candidate": "Scott Sakakihara",
+      "production": "B",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-011",
+      "candidate": "Liz Ortega",
+      "production": "A",
+      "preview": "B"
+    },
+    {
+      "position_id": "CA2026-233",
+      "candidate": "Diane Papan",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-026",
+      "candidate": "Gail Pellerin",
+      "production": "E",
+      "preview": "F"
+    },
+    {
+      "position_id": "CA2026-013",
+      "candidate": "Malia M. Cohen",
+      "production": "A",
+      "preview": "B"
+    },
+    {
+      "position_id": "CA2026-018",
+      "candidate": "Richard Barrera",
+      "production": "D",
+      "preview": "C"
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "production": "A",
+      "preview": "C"
+    },
+    {
+      "position_id": "CA2026-047",
+      "candidate": "Tracy Jensen",
+      "production": "B",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-048",
+      "candidate": "Robin D. López",
+      "production": "B",
+      "preview": "A"
+    },
+    {
+      "position_id": "CA2026-049",
+      "candidate": "Jenny Wong",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-050",
+      "candidate": "Laura Babitt",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-050",
+      "candidate": "Ross Bernet",
+      "production": "N/A",
+      "preview": "F"
+    },
+    {
+      "position_id": "CA2026-051",
+      "candidate": "Igor A. Tregub",
+      "production": "N/A",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-053",
+      "candidate": "Mark Humbert",
+      "production": "N/A",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-058",
+      "candidate": "Corry Frydlewicz",
+      "production": "N/A",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-069",
+      "candidate": "Charlene Wang",
+      "production": "D",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-073",
+      "candidate": "Adam Hundt",
+      "production": "N/A",
+      "preview": "F"
+    },
+    {
+      "position_id": "CA2026-075",
+      "candidate": "Reena Gupta",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-075",
+      "candidate": "Jamie Yee",
+      "production": "N/A",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-324",
+      "candidate": "Kerry Hillis",
+      "production": "F",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-117",
+      "candidate": "Dan Jacowitz",
+      "production": "N/A",
+      "preview": "F"
+    },
+    {
+      "position_id": "CA2026-117",
+      "candidate": "Eryka N Mathews-Cain",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-118",
+      "candidate": "Brian A. Foster",
+      "production": "N/A",
+      "preview": "F"
+    },
+    {
+      "position_id": "CA2026-153",
+      "candidate": "Shahida S. Merchant",
+      "production": "N/A",
+      "preview": "A"
+    },
+    {
+      "position_id": "CA2026-132",
+      "candidate": "Arielle Fleisher",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-133",
+      "candidate": "Kathryn Camp",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-133",
+      "candidate": "Sylvia Pfeiffer Williams",
+      "production": "N/A",
+      "preview": "C"
+    },
+    {
+      "position_id": "CA2026-134",
+      "candidate": "LeAna Powell",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-136",
+      "candidate": "Cindi Reiss",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-136",
+      "candidate": "Sandra Weese",
+      "production": "N/A",
+      "preview": "E"
+    },
+    {
+      "position_id": "CA2026-176",
+      "candidate": "Rommy Kushner",
+      "production": "N/A",
+      "preview": "D"
+    },
+    {
+      "position_id": "CA2026-177",
+      "candidate": "Anne J. Kepner",
+      "production": "A",
+      "preview": "B"
+    },
+    {
+      "position_id": "CA2026-192",
+      "candidate": "Sara Lamnin",
+      "production": "N/A",
+      "preview": "D"
+    }
+  ],
+  "editorial_rules": [
+    {
+      "position_id": "CA2026-310",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-310",
+        "kind": "protest",
+        "candidate": "John McBride",
+        "opposed_incumbent": "Josh Harder",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-310",
+        "kind": "protest",
+        "candidate": "John McBride",
+        "opposed_incumbent": "Josh Harder",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-230",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-230",
+        "kind": "protest",
+        "candidate": "Charles Hoelter",
+        "opposed_incumbent": "Kevin Mullin",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-230",
+        "kind": "protest",
+        "candidate": "Charles Hoelter",
+        "opposed_incumbent": "Kevin Mullin",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-007",
+      "status": "retained",
+      "grade_labels_updated": true,
+      "production_rule": {
+        "position_id": "CA2026-007",
+        "kind": "protest",
+        "candidate": "Peter Coe Verbica",
+        "opposed_incumbent": "Jimmy Panetta",
+        "expected_incumbent_grade": "F",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-007",
+        "kind": "protest",
+        "candidate": "Peter Coe Verbica",
+        "opposed_incumbent": "Jimmy Panetta",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-009",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-009",
+        "kind": "protest",
+        "candidate": "Joseph A. Rubay",
+        "opposed_incumbent": "Rebecca Bauer-Kahan",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-009",
+        "kind": "protest",
+        "candidate": "Joseph A. Rubay",
+        "opposed_incumbent": "Rebecca Bauer-Kahan",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-232",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-232",
+        "kind": "protest",
+        "candidate": "Philip Louis Wing",
+        "opposed_incumbent": "Catherine Stefani",
+        "expected_incumbent_grade": "F",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-232",
+        "kind": "protest",
+        "candidate": "Philip Louis Wing",
+        "opposed_incumbent": "Catherine Stefani",
+        "expected_incumbent_grade": "F",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-023",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-023",
+        "kind": "protest",
+        "candidate": "David G. Johnson",
+        "opposed_incumbent": "Marc Berman",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-023",
+        "kind": "protest",
+        "candidate": "David G. Johnson",
+        "opposed_incumbent": "Marc Berman",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-026",
+      "status": "retained",
+      "grade_labels_updated": true,
+      "production_rule": {
+        "position_id": "CA2026-026",
+        "kind": "protest",
+        "candidate": "Carol Pefley",
+        "opposed_incumbent": "Gail Pellerin",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-026",
+        "kind": "protest",
+        "candidate": "Carol Pefley",
+        "opposed_incumbent": "Gail Pellerin",
+        "expected_incumbent_grade": "F",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-027",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-027",
+        "kind": "protest",
+        "candidate": "Dennis P. Sanchez",
+        "opposed_incumbent": "Robert Rivas",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-027",
+        "kind": "protest",
+        "candidate": "Dennis P. Sanchez",
+        "opposed_incumbent": "Robert Rivas",
+        "expected_incumbent_grade": "E",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-064",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-064",
+        "kind": "protest",
+        "candidate": "Tom Wong",
+        "opposed_incumbent": "Mark Salinas",
+        "expected_incumbent_grade": "F",
+        "expected_candidate_grade": "N/A"
+      },
+      "preview_rule": {
+        "position_id": "CA2026-064",
+        "kind": "protest",
+        "candidate": "Tom Wong",
+        "opposed_incumbent": "Mark Salinas",
+        "expected_incumbent_grade": "F",
+        "expected_candidate_grade": "N/A"
+      }
+    },
+    {
+      "position_id": "CA2026-016",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-016",
+        "kind": "community",
+        "candidate": "Fiona Ma",
+        "expected_candidate_grade": "E",
+        "required_recommendation": {
+          "endorser": "CAIR Action",
+          "phase": "general",
+          "relation": "preferred"
+        }
+      },
+      "preview_rule": {
+        "position_id": "CA2026-016",
+        "kind": "community",
+        "candidate": "Fiona Ma",
+        "expected_candidate_grade": "E",
+        "required_recommendation": {
+          "endorser": "CAIR Action",
+          "phase": "general",
+          "relation": "preferred"
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-019",
+      "status": "retained",
+      "grade_labels_updated": false,
+      "production_rule": {
+        "position_id": "CA2026-019",
+        "kind": "community",
+        "candidate": "Eleni Kounalakis",
+        "expected_candidate_grade": "E",
+        "required_recommendation": {
+          "endorser": "CAIR Action",
+          "phase": "general",
+          "relation": "preferred"
+        }
+      },
+      "preview_rule": {
+        "position_id": "CA2026-019",
+        "kind": "community",
+        "candidate": "Eleni Kounalakis",
+        "expected_candidate_grade": "E",
+        "required_recommendation": {
+          "endorser": "CAIR Action",
+          "phase": "general",
+          "relation": "preferred"
+        }
+      }
+    }
+  ],
+  "summary_status": {
+    "CA2026-309": "completed_qwen_batch",
+    "CA2026-310": "no_recommendation",
+    "CA2026-001": "committed_targeted_qwen",
+    "CA2026-229": "completed_qwen_batch",
+    "CA2026-002": "completed_qwen_batch",
+    "CA2026-003": "committed_targeted_qwen",
+    "CA2026-230": "no_recommendation",
+    "CA2026-005": "older_fallback",
+    "CA2026-004": "committed_targeted_qwen",
+    "CA2026-006": "older_context_refresh_pending",
+    "CA2026-007": "no_recommendation",
+    "US2026-001": "completed_qwen_batch",
+    "US2026-002": "no_recommendation",
+    "US2026-003": "no_recommendation",
+    "US2026-004": "older_context_refresh_pending",
+    "US2026-005": "no_recommendation",
+    "US2026-006": "older_fallback",
+    "US2026-007": "completed_qwen_batch",
+    "US2026-008": "completed_qwen_batch",
+    "US2026-009": "no_recommendation",
+    "US2026-010": "completed_qwen_batch",
+    "US2026-011": "completed_qwen_batch",
+    "US2026-012": "completed_qwen_batch",
+    "US2026-013": "no_recommendation",
+    "US2026-014": "older_context_refresh_pending",
+    "US2026-015": "older_context_refresh_pending",
+    "US2026-016": "older_context_refresh_pending",
+    "US2026-017": "completed_qwen_batch",
+    "US2026-018": "completed_qwen_batch",
+    "US2026-019": "completed_qwen_batch",
+    "US2026-020": "completed_qwen_batch",
+    "US2026-021": "no_recommendation",
+    "US2026-022": "no_recommendation",
+    "US2026-023": "completed_qwen_batch",
+    "US2026-024": "completed_qwen_batch",
+    "US2026-025": "older_context_refresh_pending",
+    "US2026-026": "completed_qwen_batch",
+    "US2026-027": "completed_qwen_batch",
+    "US2026-028": "completed_qwen_batch",
+    "US2026-029": "no_recommendation",
+    "US2026-030": "completed_qwen_batch",
+    "US2026-031": "completed_qwen_batch",
+    "US2026-032": "completed_qwen_batch",
+    "US2026-033": "no_recommendation",
+    "US2026-034": "completed_qwen_batch",
+    "US2026-035": "no_recommendation",
+    "US2026-071": "older_fallback",
+    "US2026-072": "completed_qwen_batch",
+    "US2026-073": "no_recommendation",
+    "US2026-074": "older_context_refresh_pending",
+    "US2026-075": "no_recommendation",
+    "US2026-076": "completed_qwen_batch",
+    "US2026-077": "no_recommendation",
+    "US2026-078": "completed_qwen_batch",
+    "US2026-079": "no_recommendation",
+    "US2026-080": "older_context_refresh_pending",
+    "US2026-081": "no_recommendation",
+    "US2026-082": "no_recommendation",
+    "US2026-083": "no_recommendation",
+    "US2026-084": "no_recommendation",
+    "US2026-085": "no_recommendation",
+    "US2026-086": "no_recommendation",
+    "US2026-087": "no_recommendation",
+    "US2026-088": "no_recommendation",
+    "US2026-089": "no_recommendation",
+    "US2026-090": "no_recommendation",
+    "US2026-091": "no_recommendation",
+    "US2026-092": "no_recommendation",
+    "US2026-093": "older_fallback",
+    "US2026-094": "completed_qwen_batch",
+    "US2026-095": "no_recommendation",
+    "US2026-096": "no_recommendation",
+    "US2026-097": "completed_qwen_batch",
+    "US2026-098": "no_recommendation",
+    "US2026-099": "older_context_refresh_pending",
+    "US2026-100": "completed_qwen_batch",
+    "US2026-101": "completed_qwen_batch",
+    "US2026-102": "older_context_refresh_pending",
+    "US2026-103": "completed_qwen_batch",
+    "US2026-104": "no_recommendation",
+    "US2026-105": "completed_qwen_batch",
+    "US2026-106": "no_recommendation",
+    "US2026-107": "no_recommendation",
+    "US2026-108": "no_recommendation",
+    "US2026-109": "no_recommendation",
+    "US2026-110": "completed_qwen_batch",
+    "US2026-111": "no_recommendation",
+    "US2026-112": "no_recommendation",
+    "US2026-113": "completed_qwen_batch",
+    "US2026-114": "no_recommendation",
+    "US2026-115": "no_recommendation",
+    "US2026-116": "completed_qwen_batch",
+    "US2026-117": "no_recommendation",
+    "US2026-118": "older_context_refresh_pending",
+    "US2026-119": "no_recommendation",
+    "US2026-120": "no_recommendation",
+    "US2026-121": "no_recommendation",
+    "US2026-122": "no_recommendation",
+    "US2026-123": "completed_qwen_batch",
+    "US2026-124": "completed_qwen_batch",
+    "US2026-125": "no_recommendation",
+    "US2026-126": "older_context_refresh_pending",
+    "US2026-127": "no_recommendation",
+    "US2026-128": "completed_qwen_batch",
+    "US2026-129": "no_recommendation",
+    "US2026-130": "no_recommendation",
+    "US2026-131": "older_fallback",
+    "CA2026-022": "committed_targeted_qwen",
+    "CA2026-311": "older_fallback",
+    "CA2026-008": "committed_targeted_qwen",
+    "CA2026-312": "no_recommendation",
+    "CA2026-009": "no_recommendation",
+    "CA2026-231": "committed_targeted_qwen",
+    "CA2026-010": "committed_targeted_qwen",
+    "CA2026-232": "no_recommendation",
+    "CA2026-011": "older_context_refresh_pending",
+    "CA2026-233": "no_recommendation",
+    "CA2026-023": "no_recommendation",
+    "CA2026-020": "older_context_refresh_pending",
+    "CA2026-024": "completed_qwen_batch",
+    "CA2026-025": "completed_qwen_batch",
+    "CA2026-026": "no_recommendation",
+    "CA2026-027": "no_recommendation",
+    "CA2026-014": "committed_targeted_qwen",
+    "US2026-036": "completed_qwen_batch",
+    "US2026-037": "no_recommendation",
+    "US2026-038": "no_recommendation",
+    "US2026-039": "completed_qwen_batch",
+    "US2026-040": "older_fallback",
+    "US2026-041": "no_recommendation",
+    "US2026-042": "no_recommendation",
+    "US2026-043": "completed_qwen_batch",
+    "US2026-044": "no_recommendation",
+    "US2026-045": "no_recommendation",
+    "US2026-046": "completed_qwen_batch",
+    "US2026-047": "no_recommendation",
+    "US2026-048": "older_context_refresh_pending",
+    "US2026-049": "no_recommendation",
+    "US2026-050": "completed_qwen_batch",
+    "US2026-051": "completed_qwen_batch",
+    "US2026-052": "completed_qwen_batch",
+    "US2026-053": "completed_qwen_batch",
+    "US2026-054": "no_recommendation",
+    "US2026-055": "no_recommendation",
+    "US2026-056": "no_recommendation",
+    "US2026-057": "older_fallback",
+    "US2026-058": "no_recommendation",
+    "US2026-059": "older_context_refresh_pending",
+    "US2026-060": "no_recommendation",
+    "US2026-061": "no_recommendation",
+    "US2026-062": "completed_qwen_batch",
+    "US2026-063": "no_recommendation",
+    "US2026-064": "no_recommendation",
+    "US2026-065": "completed_qwen_batch",
+    "US2026-066": "no_recommendation",
+    "US2026-067": "older_context_refresh_pending",
+    "US2026-068": "completed_qwen_batch",
+    "US2026-069": "no_recommendation",
+    "US2026-070": "no_recommendation",
+    "CA2026-016": "no_recommendation",
+    "CA2026-017": "committed_targeted_qwen",
+    "CA2026-013": "committed_targeted_qwen",
+    "CA2026-019": "no_recommendation",
+    "CA2026-012": "committed_targeted_qwen",
+    "CA2026-015": "committed_targeted_qwen",
+    "CA2026-018": "committed_targeted_qwen",
+    "CA2026-021": "committed_targeted_qwen",
+    "CA2026-039": "no_recommendation",
+    "CA2026-040": "no_recommendation",
+    "CA2026-028": "no_recommendation",
+    "CA2026-029": "no_recommendation",
+    "CA2026-030": "no_recommendation",
+    "CA2026-031": "no_recommendation",
+    "CA2026-037": "no_recommendation",
+    "CA2026-032": "no_recommendation",
+    "CA2026-033": "no_recommendation",
+    "CA2026-038": "no_recommendation",
+    "CA2026-034": "no_recommendation",
+    "CA2026-035": "no_recommendation",
+    "CA2026-036": "no_recommendation",
+    "CA2026-041": "no_recommendation",
+    "CA2026-042": "no_recommendation",
+    "CA2026-043": "no_recommendation",
+    "CA2026-044": "no_recommendation",
+    "CA2026-045": "no_recommendation",
+    "CA2026-303": "no_recommendation",
+    "CA2026-234": "no_recommendation",
+    "CA2026-235": "no_recommendation",
+    "CA2026-236": "no_recommendation",
+    "CA2026-237": "no_recommendation",
+    "CA2026-238": "older_fallback",
+    "CA2026-239": "older_fallback",
+    "CA2026-240": "older_context_refresh_pending",
+    "CA2026-046": "no_recommendation",
+    "CA2026-047": "committed_targeted_qwen",
+    "CA2026-048": "completed_qwen_batch",
+    "CA2026-327": "no_recommendation",
+    "CA2026-325": "completed_qwen_batch",
+    "CA2026-326": "completed_qwen_batch",
+    "CA2026-245": "no_recommendation",
+    "CA2026-246": "no_recommendation",
+    "CA2026-247": "no_recommendation",
+    "CA2026-049": "no_recommendation",
+    "CA2026-054": "completed_qwen_batch",
+    "CA2026-050": "committed_targeted_qwen",
+    "CA2026-051": "committed_targeted_qwen",
+    "CA2026-052": "completed_qwen_batch",
+    "CA2026-053": "committed_targeted_qwen",
+    "CA2026-328": "no_recommendation",
+    "CA2026-329": "no_recommendation",
+    "CA2026-248": "no_recommendation",
+    "CA2026-249": "no_recommendation",
+    "CA2026-250": "no_recommendation",
+    "CA2026-251": "no_recommendation",
+    "CA2026-085": "no_recommendation",
+    "CA2026-086": "no_recommendation",
+    "CA2026-087": "no_recommendation",
+    "CA2026-330": "no_recommendation",
+    "CA2026-334": "no_recommendation",
+    "CA2026-331": "no_recommendation",
+    "CA2026-332": "no_recommendation",
+    "CA2026-333": "completed_qwen_batch",
+    "CA2026-088": "no_recommendation",
+    "CA2026-253": "older_context_refresh_pending",
+    "CA2026-057": "completed_qwen_batch",
+    "CA2026-055": "completed_qwen_batch",
+    "CA2026-056": "completed_qwen_batch",
+    "CA2026-254": "completed_qwen_batch",
+    "CA2026-313": "no_recommendation",
+    "CA2026-058": "committed_targeted_qwen",
+    "CA2026-255": "completed_qwen_batch",
+    "CA2026-256": "no_recommendation",
+    "CA2026-059": "completed_qwen_batch",
+    "CA2026-060": "completed_qwen_batch",
+    "CA2026-061": "older_fallback",
+    "CA2026-089": "completed_qwen_batch",
+    "CA2026-090": "completed_qwen_batch",
+    "CA2026-091": "completed_qwen_batch",
+    "CA2026-257": "no_recommendation",
+    "CA2026-258": "no_recommendation",
+    "CA2026-259": "no_recommendation",
+    "CA2026-064": "no_recommendation",
+    "CA2026-062": "completed_qwen_batch",
+    "CA2026-063": "no_recommendation",
+    "CA2026-319": "no_recommendation",
+    "CA2026-065": "no_recommendation",
+    "CA2026-092": "no_recommendation",
+    "CA2026-093": "no_recommendation",
+    "CA2026-320": "no_recommendation",
+    "CA2026-260": "no_recommendation",
+    "CA2026-261": "no_recommendation",
+    "CA2026-262": "no_recommendation",
+    "CA2026-263": "no_recommendation",
+    "CA2026-264": "no_recommendation",
+    "CA2026-265": "no_recommendation",
+    "CA2026-094": "completed_qwen_batch",
+    "CA2026-095": "no_recommendation",
+    "CA2026-098": "completed_qwen_batch",
+    "CA2026-096": "completed_qwen_batch",
+    "CA2026-097": "completed_qwen_batch",
+    "CA2026-099": "older_context_refresh_pending",
+    "CA2026-066": "completed_qwen_batch",
+    "CA2026-067": "no_recommendation",
+    "CA2026-068": "no_recommendation",
+    "CA2026-072": "committed_targeted_qwen",
+    "CA2026-069": "committed_targeted_qwen",
+    "CA2026-070": "completed_qwen_batch",
+    "CA2026-071": "no_recommendation",
+    "CA2026-323": "no_recommendation",
+    "CA2026-266": "completed_qwen_batch",
+    "CA2026-267": "no_recommendation",
+    "CA2026-268": "no_recommendation",
+    "CA2026-100": "completed_qwen_batch",
+    "CA2026-073": "no_recommendation",
+    "CA2026-318": "no_recommendation",
+    "CA2026-337": "completed_qwen_batch",
+    "CA2026-336": "no_recommendation",
+    "CA2026-338": "no_recommendation",
+    "CA2026-321": "no_recommendation",
+    "CA2026-322": "no_recommendation",
+    "CA2026-076": "no_recommendation",
+    "CA2026-074": "completed_qwen_batch",
+    "CA2026-075": "committed_targeted_qwen",
+    "CA2026-270": "completed_qwen_batch",
+    "CA2026-271": "no_recommendation",
+    "CA2026-272": "no_recommendation",
+    "CA2026-314": "completed_qwen_batch",
+    "CA2026-273": "no_recommendation",
+    "CA2026-274": "no_recommendation",
+    "CA2026-275": "no_recommendation",
+    "CA2026-276": "no_recommendation",
+    "CA2026-101": "older_context_refresh_pending",
+    "CA2026-102": "completed_qwen_batch",
+    "CA2026-103": "older_context_refresh_pending",
+    "CA2026-081": "no_recommendation",
+    "CA2026-077": "no_recommendation",
+    "CA2026-078": "no_recommendation",
+    "CA2026-079": "no_recommendation",
+    "CA2026-080": "no_recommendation",
+    "CA2026-277": "no_recommendation",
+    "CA2026-278": "no_recommendation",
+    "CA2026-279": "no_recommendation",
+    "CA2026-316": "no_recommendation",
+    "CA2026-315": "no_recommendation",
+    "CA2026-317": "no_recommendation",
+    "CA2026-339": "no_recommendation",
+    "CA2026-340": "no_recommendation",
+    "CA2026-341": "completed_qwen_batch",
+    "CA2026-106": "committed_targeted_qwen",
+    "CA2026-104": "completed_qwen_batch",
+    "CA2026-105": "completed_qwen_batch",
+    "CA2026-107": "no_recommendation",
+    "CA2026-283": "no_recommendation",
+    "CA2026-284": "no_recommendation",
+    "CA2026-280": "no_recommendation",
+    "CA2026-281": "completed_qwen_batch",
+    "CA2026-282": "completed_qwen_batch",
+    "CA2026-108": "no_recommendation",
+    "CA2026-109": "no_recommendation",
+    "CA2026-110": "no_recommendation",
+    "CA2026-082": "older_fallback",
+    "CA2026-083": "completed_qwen_batch",
+    "CA2026-084": "older_context_refresh_pending",
+    "CA2026-342": "completed_qwen_batch",
+    "CA2026-343": "no_recommendation",
+    "CA2026-252": "no_recommendation",
+    "CA2026-335": "no_recommendation",
+    "CA2026-111": "no_recommendation",
+    "CA2026-112": "no_recommendation",
+    "CA2026-324": "no_recommendation",
+    "CA2026-269": "no_recommendation",
+    "CA2026-285": "no_recommendation",
+    "CA2026-286": "no_recommendation",
+    "CA2026-347": "no_recommendation",
+    "CA2026-362": "no_recommendation",
+    "CA2026-363": "no_recommendation",
+    "CA2026-113": "no_recommendation",
+    "CA2026-114": "no_recommendation",
+    "CA2026-140": "no_recommendation",
+    "CA2026-141": "no_recommendation",
+    "CA2026-364": "no_recommendation",
+    "CA2026-348": "completed_qwen_batch",
+    "CA2026-115": "no_recommendation",
+    "CA2026-142": "completed_qwen_batch",
+    "CA2026-349": "no_recommendation",
+    "CA2026-297": "no_recommendation",
+    "CA2026-365": "no_recommendation",
+    "CA2026-289": "no_recommendation",
+    "CA2026-290": "no_recommendation",
+    "CA2026-143": "no_recommendation",
+    "CA2026-144": "no_recommendation",
+    "CA2026-145": "no_recommendation",
+    "CA2026-116": "no_recommendation",
+    "CA2026-117": "no_recommendation",
+    "CA2026-118": "no_recommendation",
+    "CA2026-119": "no_recommendation",
+    "CA2026-120": "completed_qwen_batch",
+    "CA2026-121": "no_recommendation",
+    "CA2026-345": "completed_qwen_batch",
+    "CA2026-346": "no_recommendation",
+    "CA2026-361": "no_recommendation",
+    "CA2026-344": "no_recommendation",
+    "CA2026-359": "no_recommendation",
+    "CA2026-360": "no_recommendation",
+    "CA2026-204": "no_recommendation",
+    "CA2026-122": "no_recommendation",
+    "CA2026-123": "completed_qwen_batch",
+    "CA2026-146": "completed_qwen_batch",
+    "CA2026-147": "no_recommendation",
+    "CA2026-124": "no_recommendation",
+    "CA2026-148": "completed_qwen_batch",
+    "CA2026-149": "no_recommendation",
+    "CA2026-150": "completed_qwen_batch",
+    "CA2026-151": "no_recommendation",
+    "CA2026-152": "older_fallback",
+    "CA2026-153": "committed_targeted_qwen",
+    "CA2026-154": "no_recommendation",
+    "CA2026-155": "completed_qwen_batch",
+    "CA2026-125": "no_recommendation",
+    "CA2026-126": "no_recommendation",
+    "CA2026-350": "no_recommendation",
+    "CA2026-351": "no_recommendation",
+    "CA2026-367": "no_recommendation",
+    "CA2026-368": "no_recommendation",
+    "CA2026-352": "no_recommendation",
+    "CA2026-369": "no_recommendation",
+    "CA2026-127": "no_recommendation",
+    "CA2026-128": "no_recommendation",
+    "CA2026-129": "no_recommendation",
+    "CA2026-156": "no_recommendation",
+    "CA2026-157": "no_recommendation",
+    "CA2026-370": "no_recommendation",
+    "CA2026-371": "no_recommendation",
+    "CA2026-298": "no_recommendation",
+    "CA2026-158": "no_recommendation",
+    "CA2026-372": "no_recommendation",
+    "CA2026-159": "completed_qwen_batch",
+    "CA2026-160": "completed_qwen_batch",
+    "CA2026-161": "completed_qwen_batch",
+    "CA2026-162": "completed_qwen_batch",
+    "CA2026-205": "no_recommendation",
+    "CA2026-163": "no_recommendation",
+    "CA2026-164": "no_recommendation",
+    "CA2026-373": "no_recommendation",
+    "CA2026-353": "no_recommendation",
+    "CA2026-354": "no_recommendation",
+    "CA2026-130": "older_context_refresh_pending",
+    "CA2026-131": "completed_qwen_batch",
+    "CA2026-206": "no_recommendation",
+    "CA2026-165": "no_recommendation",
+    "CA2026-166": "no_recommendation",
+    "CA2026-167": "no_recommendation",
+    "CA2026-132": "committed_targeted_qwen",
+    "CA2026-133": "committed_targeted_qwen",
+    "CA2026-134": "committed_targeted_qwen",
+    "CA2026-374": "no_recommendation",
+    "CA2026-355": "no_recommendation",
+    "CA2026-375": "no_recommendation",
+    "CA2026-207": "no_recommendation",
+    "CA2026-135": "completed_qwen_batch",
+    "CA2026-208": "no_recommendation",
+    "CA2026-168": "no_recommendation",
+    "CA2026-356": "no_recommendation",
+    "CA2026-299": "no_recommendation",
+    "CA2026-300": "no_recommendation",
+    "CA2026-169": "no_recommendation",
+    "CA2026-209": "no_recommendation",
+    "CA2026-136": "no_recommendation",
+    "CA2026-210": "no_recommendation",
+    "CA2026-376": "no_recommendation",
+    "CA2026-211": "no_recommendation",
+    "CA2026-137": "no_recommendation",
+    "CA2026-301": "no_recommendation",
+    "CA2026-242": "older_fallback",
+    "CA2026-243": "completed_qwen_batch",
+    "CA2026-241": "older_context_refresh_pending",
+    "CA2026-138": "no_recommendation",
+    "CA2026-170": "completed_qwen_batch",
+    "CA2026-171": "no_recommendation",
+    "CA2026-172": "no_recommendation",
+    "CA2026-212": "no_recommendation",
+    "CA2026-213": "no_recommendation",
+    "CA2026-214": "no_recommendation",
+    "CA2026-215": "no_recommendation",
+    "CA2026-216": "no_recommendation",
+    "CA2026-287": "no_recommendation",
+    "CA2026-288": "no_recommendation",
+    "CA2026-293": "no_recommendation",
+    "CA2026-294": "no_recommendation",
+    "CA2026-357": "no_recommendation",
+    "CA2026-173": "completed_qwen_batch",
+    "CA2026-174": "completed_qwen_batch",
+    "CA2026-175": "no_recommendation",
+    "CA2026-295": "no_recommendation",
+    "CA2026-296": "no_recommendation",
+    "CA2026-291": "no_recommendation",
+    "CA2026-292": "completed_qwen_batch",
+    "CA2026-176": "no_recommendation",
+    "CA2026-139": "no_recommendation",
+    "CA2026-358": "no_recommendation",
+    "CA2026-177": "committed_targeted_qwen",
+    "CA2026-178": "no_recommendation",
+    "CA2026-179": "no_recommendation",
+    "CA2026-180": "no_recommendation",
+    "CA2026-181": "completed_qwen_batch",
+    "CA2026-217": "no_recommendation",
+    "CA2026-182": "no_recommendation",
+    "CA2026-183": "completed_qwen_batch",
+    "CA2026-184": "no_recommendation",
+    "CA2026-218": "no_recommendation",
+    "CA2026-387": "no_recommendation",
+    "CA2026-388": "no_recommendation",
+    "CA2026-389": "no_recommendation",
+    "CA2026-391": "no_recommendation",
+    "CA2026-390": "no_recommendation",
+    "CA2026-219": "no_recommendation",
+    "CA2026-392": "no_recommendation",
+    "CA2026-393": "no_recommendation",
+    "CA2026-185": "no_recommendation",
+    "CA2026-383": "no_recommendation",
+    "CA2026-394": "no_recommendation",
+    "CA2026-304": "no_recommendation",
+    "CA2026-305": "no_recommendation",
+    "CA2026-306": "no_recommendation",
+    "CA2026-395": "no_recommendation",
+    "CA2026-386": "no_recommendation",
+    "CA2026-396": "no_recommendation",
+    "CA2026-199": "no_recommendation",
+    "CA2026-377": "no_recommendation",
+    "CA2026-397": "no_recommendation",
+    "CA2026-398": "no_recommendation",
+    "CA2026-399": "no_recommendation",
+    "CA2026-378": "no_recommendation",
+    "CA2026-220": "no_recommendation",
+    "CA2026-186": "no_recommendation",
+    "CA2026-187": "no_recommendation",
+    "CA2026-188": "completed_qwen_batch",
+    "CA2026-189": "completed_qwen_batch",
+    "CA2026-401": "no_recommendation",
+    "CA2026-381": "no_recommendation",
+    "CA2026-402": "no_recommendation",
+    "CA2026-403": "no_recommendation",
+    "CA2026-221": "no_recommendation",
+    "CA2026-190": "no_recommendation",
+    "CA2026-222": "no_recommendation",
+    "CA2026-191": "no_recommendation",
+    "CA2026-307": "no_recommendation",
+    "CA2026-404": "no_recommendation",
+    "CA2026-192": "committed_targeted_qwen",
+    "CA2026-193": "no_recommendation",
+    "CA2026-384": "no_recommendation",
+    "CA2026-405": "no_recommendation",
+    "CA2026-406": "no_recommendation",
+    "CA2026-194": "no_recommendation",
+    "CA2026-200": "no_recommendation",
+    "CA2026-407": "no_recommendation",
+    "CA2026-379": "no_recommendation",
+    "CA2026-380": "no_recommendation",
+    "CA2026-408": "no_recommendation",
+    "CA2026-385": "no_recommendation",
+    "CA2026-409": "no_recommendation",
+    "CA2026-195": "no_recommendation",
+    "CA2026-196": "no_recommendation",
+    "CA2026-197": "no_recommendation",
+    "CA2026-382": "no_recommendation",
+    "CA2026-411": "no_recommendation",
+    "CA2026-198": "no_recommendation",
+    "CA2026-223": "no_recommendation",
+    "CA2026-244": "no_recommendation",
+    "CA2026-412": "no_recommendation",
+    "CA2026-201": "no_recommendation",
+    "CA2026-202": "no_recommendation",
+    "CA2026-203": "no_recommendation",
+    "CA2026-413": "no_recommendation",
+    "CA2026-400": "no_recommendation",
+    "CA2026-224": "no_recommendation",
+    "CA2026-414": "no_recommendation",
+    "CA2026-415": "no_recommendation",
+    "CA2026-416": "no_recommendation"
+  },
+  "all_scope_summary_counts": {
+    "superseded_cached_candidate_outputs": 22,
+    "fresh_candidate_summaries_all_scope": 423,
+    "fresh_race_summaries_all_scope": 140,
+    "older_or_missing_race_summaries_all_scope": 39
+  },
+  "input_base_pr_commit": "1758371413c1e33018d4a473bdcdc78b61029ff7",
+  "capture_note": "Built from the PR22 working tree before the final commit. Exact manifest and dataset source hashes bind these results; the local preview is rebuilt at the pushed commit."
+}

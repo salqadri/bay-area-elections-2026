@@ -1,0 +1,102 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "ebec7c6c253b40c488e814e5",
+  "candidate": "Tracy Jensen",
+  "position_id": "CA2026-047",
+  "request_sha256": "4ec522491fef124ec098f7f5cc66668a42648eeab9b0f03e3dcf8ce60c74047d",
+  "grade": "D",
+  "summary": "CAIR-SFBA lists Tracy Jensen as supporting a January 2024 ceasefire letter. In her ACJDC questionnaire, she says she opposed sending the White House an anti-war letter as ineffective and divisive, without dating it or identifying it as a ceasefire letter. She also describes excluding weapons investments broadly, rather than Israel-specific BDS. These accounts do not establish a reversal on ceasefire. ACJDC endorsed her.",
+  "model": "qwen/qwen3.8-27b + factual editorial correction",
+  "source_prompt_sha256": "936bb6213ad4c1711fbcf0e192191efa4d9fc2ff93bad0423ec2121bf072954c",
+  "generated_at": "2026-11-03T03:58:32+00:00",
+  "usage": {
+    "prompt_tokens": 4319,
+    "completion_tokens": 4884,
+    "total_tokens": 9203,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4211
+    }
+  },
+  "elapsed_seconds": 57.01,
+  "generation_request_sha256": "8be6312ea5d07296545e9354e3b955471373aa11aa18c542df90f9c79fe6a017",
+  "attempt": 1,
+  "editorial_correction": {
+    "reviewed_on": "2026-11-03",
+    "source_artifact": "research/gaza-grading/acjdc-refresh-2026-11-02/candidate-explanations/ebec7c6c253b40c488e814e5.json",
+    "source_artifact_sha256": "2ff92ac2bae8d4b3865452e5c86475f2f3994f23fd4097a801451f5f9ff8f8b5",
+    "original_text": "CAIR-SFBA's 2024 tracker lists Tracy Jensen as having supported a local ceasefire letter, but a 2026 questionnaire records her opposing a Gaza ceasefire letter as \"ineffective and divisive,\" with her explaining that she worked on eliminating weapons investments broadly rather than pursuing an Israel-specific BDS policy. The Alameda County Jewish Democratic Club, whose stated purpose includes supporting Israel, endorsed her for the general election.",
+    "reason": "Do not relabel the undated anti-war letter as a ceasefire letter or assert a later reversal. Preserve independent CAIR tracker support and the weapons-investment statement.",
+    "score_changed": false
+  },
+  "words": 63,
+  "original_evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Candidate name; no directional signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "At-large Mayor office; no Palestine-related policy content."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "State identifier only."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label; no Palestine-related signal."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Housing, climate, biotech, transit, accountability, education, and safety points; no Gaza, Palestine, or Israel-specific content. Weapons-investment restriction is framed as local economic policy, not Israel-specific."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "uncertain",
+      "treatment": "included",
+      "reason": "2024 CAIR-SFBA tracker entry (supported ceasefire letter) is favorable; 2026 questionnaire entry (opposed Gaza ceasefire letter as ineffective and divisive; reframed weapons-investment work as general rather than Israel-specific BDS) is adverse. Two entries point in opposite directions and are from different source types and time frames."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "ACJDC endorsed Jensen for the general election; the club states its purpose includes supporting Israel. Low context weight; endorsement does not prove Jensen endorses every club position."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Confirms ACJDC mission language about supporting Israel as a 'democratic, inclusive and secure Jewish state.' Grouped with the endorsement observation; owner-requested low weight."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Election date only; no directional signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "City of Alameda; no Palestine-related policy content."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label only."
+    }
+  ],
+  "audit_note": "Original model audit concerns the original stored input. The editorial correction distinguishes the anti-war letter from the separately recorded ceasefire-letter support; it makes no new scoring judgment."
+}

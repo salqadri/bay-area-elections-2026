@@ -1,0 +1,118 @@
+{
+  "position_id": "CA2026-120",
+  "jurisdiction": "Chabot-Las Positas Community College District",
+  "office_category": "Community college district",
+  "office": "Governing Board Member",
+  "district_or_seat": "Trustee Area 3",
+  "counties": [
+    "Alameda"
+  ],
+  "ballot_status": "confirmed",
+  "roster": [
+    {
+      "name": "Mark Fay",
+      "party": null,
+      "grade": "N/A",
+      "score": 1.9,
+      "muslim": false
+    },
+    {
+      "name": "Wendy Huang",
+      "party": null,
+      "grade": "N/A",
+      "score": 2.06,
+      "muslim": false
+    },
+    {
+      "name": "Harris Mojadedi",
+      "party": null,
+      "grade": "B",
+      "score": 4.2,
+      "muslim": false
+    }
+  ],
+  "category": "jev_pick",
+  "recommended": "Harris Mojadedi",
+  "recommend_reason": "Jev selected the strongest candidate in this race.",
+  "needs_summary": true,
+  "jev": {
+    "position_id": "CA2026-120",
+    "choice": "Harris Mojadedi",
+    "confidence": 1.0,
+    "probabilities": {
+      "Harris Mojadedi": 1.0
+    },
+    "model": "jev-latest",
+    "request": {
+      "model": "jev-latest",
+      "state": {
+        "position_id": "CA2026-120",
+        "office": "Governing Board Member",
+        "district_or_seat": "Trustee Area 3",
+        "candidates": [
+          {
+            "name": "Harris Mojadedi",
+            "party": null,
+            "grade": "B"
+          }
+        ]
+      },
+      "questions": {
+        "best_candidate": {
+          "type": "choice",
+          "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+          "criteria": {
+            "Harris Mojadedi": "Published pro-Palestine grade: B"
+          }
+        }
+      }
+    },
+    "request_sha256": "e95813d5b951b486b0ec5cf54b528f9214c474859763d625d04b86511f2eb914",
+    "evaluated_at": "2026-10-30T15:16:08Z",
+    "single_candidate": true
+  },
+  "summary": {
+    "position_id": "CA2026-120",
+    "text": "Harris Mojadedi is running for Trustee Area 3 in the Chabot-Las Positas Community College District and should win this seat. His campaign platform centers on making community college affordable, protecting immigrant students, and strengthening labor policy. On the question of Gaza and U.S. support for Israel, Mojadedi has not called the war a genocide or backed blocking weapons transfers to Israel. What he carries is alignment with the communities this district depends on: CAIR Action endorsed him and Ro Khanna endorsed his candidacy, placing his name alongside leaders who have stood with Palestinians. Mojadedi is the only candidate in this race with documented backing from the communities college exists to serve, and his platform speaks directly to the affordability and protection those communities need.",
+    "words": 124,
+    "model": "qwen/qwen3.8-27b",
+    "prompt_sha256": "9fa16ac30d043445778a38d6b5425b53b36c726d49070990c5058595130ba672"
+  },
+  "selection_policy": "direction-aware-selection-v1",
+  "selection_evidence": {
+    "Mark Fay": {
+      "observations": [],
+      "other_issue_evidence": false,
+      "opposition_only": false
+    },
+    "Wendy Huang": {
+      "observations": [],
+      "other_issue_evidence": false,
+      "opposition_only": false
+    },
+    "Harris Mojadedi": {
+      "observations": [
+        {
+          "endorser": "CAIR Action",
+          "relation": "endorsed",
+          "phase": "general",
+          "source": "unverified"
+        },
+        {
+          "endorser": "Vote for Peace",
+          "relation": "supported",
+          "phase": "general",
+          "rating": "Ally",
+          "source": "unverified"
+        }
+      ],
+      "other_issue_evidence": false,
+      "opposition_only": false
+    }
+  },
+  "decision_revalidation": {
+    "policy_version": "direction-aware-selection-v1",
+    "current_request_sha256": "98c9562d64b317a4fbe479736deb49e10d32a2ef119688722385df92619a245b",
+    "archived_request_sha256": "e95813d5b951b486b0ec5cf54b528f9214c474859763d625d04b86511f2eb914"
+  }
+}

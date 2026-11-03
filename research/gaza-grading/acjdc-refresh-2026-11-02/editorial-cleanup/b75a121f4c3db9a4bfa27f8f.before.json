@@ -1,0 +1,92 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "b75a121f4c3db9a4bfa27f8f",
+  "candidate": "Eryka N Mathews-Cain",
+  "position_id": "CA2026-117",
+  "request_sha256": "460ec999f71defb576dfd3c6862410d031d72d274c67c42a50c4ca9855e3565e",
+  "grade": "E",
+  "summary": "Stating she would seek AB 715/SB 48 implementation updates in district policy and would not use a school-board role for foreign-policy decisions or international boycotts, Mathews-Cain—a nonpartisan candidate for a Castro Valley Unified School District seat—supports discussion without identity-based targeting. She received a general-election endorsement from the Alameda County Jewish Democratic Club, whose stated mission includes supporting Israel. The questionnaire response carries no stated date; only the September 2026 file upload is recorded.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "included",
+      "reason": "Candidate name used to identify subject in prose."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "included",
+      "reason": "Establishes the local school-board context for the candidate's stated positions."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "CA is implicit in the named school district; adds no independent signal."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "included",
+      "reason": "Nonpartisan status provides minimal context for the endorsement and questionnaire."
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Stated intention to seek AB 715/SB 48 implementation updates aligns with a bill the rubric characterizes as censoring criticism of Israel; forward-looking language preserved as a stated intention."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Candidate explicitly would not use the school-board role for foreign-policy decisions or international boycotts; supports discussion without identity-based targeting, declining Palestine-related action from the seat."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "General-election endorsement by Alameda County Jewish Democratic Club, an organization whose stated mission includes supporting Israel."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Confirms ACJDC mission includes supporting Israel as a Jewish state; grouped with the endorsement row. Owner-requested low weight; noted as stated mission rather than candidate agreement."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Future election date does not bear on the candidate's stated positions."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "included",
+      "reason": "Castro Valley Unified School District identifies the local race context."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Administrative label; no substantive policy signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "2ce1ca672800c665d2b1a790e66feec57051ffeebd7053b015ca304e1d37c120",
+  "generated_at": "2026-11-03T04:04:37+00:00",
+  "usage": {
+    "prompt_tokens": 4161,
+    "completion_tokens": 6873,
+    "total_tokens": 11034,
+    "completion_tokens_details": {
+      "reasoning_tokens": 6204
+    }
+  },
+  "elapsed_seconds": 76.57,
+  "generation_request_sha256": "2b27261443c4fe0b19a95e14033c492039d8b64ada4decb14ef979ce70f89184",
+  "attempt": 1
+}

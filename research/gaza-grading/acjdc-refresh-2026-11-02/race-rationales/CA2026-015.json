@@ -1,0 +1,31 @@
+{
+  "format": "held-race-rationale/v1",
+  "status": "held_for_review",
+  "narrative_context_version": "exact-organization-boundaries-v2",
+  "position_id": "CA2026-015",
+  "recommended": "Jane Kim",
+  "text": "CAIR Action endorsed Jane Kim, Vote for Peace rated her Ally, and AROC Action and Ro Khanna endorsed her for California Insurance Commissioner. Vote for Peace reports Kim pledged to reject war-lobby support and favors divesting public funds from war crimes and genocide. By contrast, Vote for Peace rated Ben Allen Opposed, and the Alameda County Jewish Democratic Club endorsed him. Allen publicly supported deleting anti-Israel language from state party resolutions in 2019, opposed BDS, affirmed Israel's right to exist and defend itself, and voted Aye on AB 715 in September 2025, which creates an antisemitism coordinator and classroom-material oversight. Allen also cited support for a resolution calling for an end to Gaza's humanitarian catastrophe and release of hostages, and described visiting a kibbutz in December 2023 while framing the conflict around October 7 and domestic antisemitism.",
+  "words": 137,
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "c76e589035a90747d92ad7d48ac7debf0bd2d0db3db3c549f28348992f46d148",
+  "generated_at": "2026-11-03T04:41:22+00:00",
+  "source_candidate_request_sha256": {
+    "4874990f34dcec3671612e60": "ceca6d0f1f63d84d34a7594e56d48ee950f65217ea78a5954e0a25066c292bce",
+    "b8da8d5ea8e26458d42229df": "a716f796dd5bb0350929d45894fa0dd5b42e9d0662b711596351e831d45be9da"
+  },
+  "generation_request_sha256": "251558bc996130c70ef6041e458635c2fbf97fbbad9103e7f75c97b3c995e9bb",
+  "attempt": 8,
+  "usage": {
+    "prompt_tokens": 4839,
+    "completion_tokens": 3470,
+    "total_tokens": 8309,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3275
+    }
+  },
+  "validation_recovery": "AROC Action is not OC Action; exact phrase boundaries corrected. State-party policy event retained without listing an unrelated endorsement.",
+  "editorial_cleanup": {
+    "before": "CAIR Action endorsed Jane Kim, Vote for Peace rated her Ally, and AROC Action and Ro Khanna endorsed her for California Insurance Commissioner. Vote for Peace reports Kim pledged to reject war-lobby support and favors divesting public funds from war crimes and genocide. By contrast, Vote for Peace rated Ben Allen Opposed, and the Alameda County Jewish Democratic Club endorsed him. Allen publicly supported the 2019 California Democratic Party decision to delete anti-Israel language from party resolutions, opposed BDS, affirmed Israel's right to exist and defend itself, and voted Aye on AB 715 (tracker date September 2025), which creates an antisemitism coordinator and classroom-material oversight. Allen also cited support for a resolution calling for an end to Gaza's humanitarian catastrophe and release of hostages, and described visiting a kibbutz in December 2023 while framing the conflict around October 7 and domestic antisemitism.",
+    "reason": "Remove endorsement-validator ambiguity and tracker-date boilerplate; retain the actual policy action."
+  }
+}

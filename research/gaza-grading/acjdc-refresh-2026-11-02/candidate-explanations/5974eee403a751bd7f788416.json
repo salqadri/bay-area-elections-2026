@@ -1,0 +1,111 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "5974eee403a751bd7f788416",
+  "candidate": "Charlene Wang",
+  "position_id": "CA2026-069",
+  "request_sha256": "54fcb520afa42164c5e687d77d909027c0589b9f76a8d1874e375e1524e0d56b",
+  "grade": "E",
+  "summary": "Charlene Wang supports Israel's existence and opposes Israel-specific investment rules, while remaining open to universal divestment for weapons manufacturers. She holds a general-election endorsement from the Alameda County Jewish Democratic Club, whose mission includes supporting Israel, and a campaign-claimed endorsement from 314 Action Fund, a hybrid PAC that received UDP funding in 2024.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Candidate name used in prose identification."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Local municipal office; no direct bearing on Palestine stance."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Jurisdictional context; no Palestine-specific relevance."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label adds no directional signal on Palestine."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Platform covers housing, public safety, sanctuary protections, anti-trafficking; no Palestine or Gaza reference, noted to contextualize scope."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Supports Israel's existence and opposes Israel-specific investment rules; openness to universal divestment is a minor nuance. Response date unstated."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "ACJDC (general) and 314 Action Fund (campaign claim) both pro-Israel-aligned; endorsements signal pro-Israel positioning."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Confirms ACJDC mission includes supporting Israel (low weight) and 314 Action Fund received UDP funding in 2024, making both endorsers pro-Israel aligned."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "2026-11-03 election date; no bearing on Palestine stance."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "City of Oakland; no direct Palestine relevance."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Incumbent status; no Palestine-specific bearing."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Internal roster label; no substantive content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "e026c858da04c44702d5fd55e1f4ae7733929fca1e5c1ae04cb20a5b58961ea2",
+  "generated_at": "2026-11-03T04:02:06+00:00",
+  "usage": {
+    "prompt_tokens": 4670,
+    "completion_tokens": 6839,
+    "total_tokens": 11509,
+    "completion_tokens_details": {
+      "reasoning_tokens": 6163
+    }
+  },
+  "elapsed_seconds": 79.77,
+  "generation_request_sha256": "7488a76bd231fc53b9390b55ebc842ad863ac7ace96391239c48a2557a3d14a9",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " The response date is unstated; only a September 2026 file upload is recorded.",
+        "replacement": ""
+      },
+      {
+        "removed": " Her platform addresses housing, public safety, and sanctuary protections without referencing Palestine or Gaza.",
+        "replacement": ""
+      }
+    ]
+  }
+}

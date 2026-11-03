@@ -1,0 +1,137 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "272fa3e285ea3c8bbd7e7fd3",
+  "candidate": "Buffy Wicks",
+  "position_id": "CA2026-008",
+  "request_sha256": "3b357ef4e8f909a3b7ef7b556868508fc0dc23bdc37d42fd587df922e4462fb9",
+  "grade": "E",
+  "summary": "Wicks voted aye on AB 715, creating an antisemitism coordinator and classroom-material oversight in California schools, and coauthored the failed AB 1468, which would have limited high-school ethnic studies to domestic experiences. Endorsement by the Alameda County Jewish Democratic Club and support from California Jewish Democrats reinforce this Israel-centric positioning.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Candidate name; no policy signal"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Office title; no policy signal"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "State identifier; no policy signal"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Party affiliation; no Palestine-specific signal"
+    },
+    {
+      "id": "candidate_record.ca_spenders_supporting",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "All listed spenders carry unestablished relevance; no explicit Palestine connection"
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Methodological note on spending data; no candidate action"
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Covers housing, economy, healthcare, immigration, criminal justice, civil liberties; no Israel/Palestine content"
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Aye vote on AB 715 (antisemitism coordinator, classroom-material oversight) and coauthorship of failed AB 1468 (restricting ethnic studies to domestic experiences) signal support for Israel-protective educational framing"
+    },
+    {
+      "id": "candidate_record.caste_legislation_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Explicitly designated LOW WEIGHT; at most 0.2 shift; does not change grade band; not a Gaza position"
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Oct 7 2023 statement calling violence 'terrorism, plain and simple' and stating she 'stands with the Israeli people' aligns with Israel-centric framing"
+    },
+    {
+      "id": "candidate_record.funding_scope",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Scope note on funding data; no candidate action"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Primary endorsement by Alameda County Jewish Democratic Club and support from California Jewish Democrats (formerly Democrats for Israel California) align candidate with Israel-supportive organizations"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Explains that ACJDC mission includes supporting Israel and that CA Jewish Democrats is the renamed Democrats for Israel California; grouped with endorsement observations"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Election date; no policy signal"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Jurisdiction label; no policy signal"
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Incumbent status; no policy signal"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Roster label; no policy signal"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "d1d3c1e72d4754350774272e2b3b128a63b0c8e1c52af3fd4101a3ed4c827f59",
+  "generated_at": "2026-11-03T03:51:15+00:00",
+  "usage": {
+    "prompt_tokens": 5280,
+    "completion_tokens": 4040,
+    "total_tokens": 9320,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3201
+    }
+  },
+  "elapsed_seconds": 50.65,
+  "generation_request_sha256": "f32f80133de99a2ce4950e533ed69fd51419f40c176df1b0539ebd689350cc5e",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " She called the October 7 violence \"terrorism, plain and simple\" and stated she \"stands with the Israeli people.\"",
+        "replacement": ""
+      }
+    ]
+  }
+}

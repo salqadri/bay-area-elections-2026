@@ -10,9 +10,9 @@ PYTHON_CHECKS = [
     ('build_site.py', '--check'), ('check_firebase_hosting.py',), ('check_summary_source_policy.py',), ('check_data.py',), ('check_evidence.py',),
     ('check_published_endorsements.py',), ('check_endorsement_images.py',), ('check_research_gaps.py',), ('check_education_policy.py',), ('check_endorsements.py',), ('check_ballotpedia_endorsements.py',), ('check_x_profiles.py',), ('check_jev_playground.py',), ('check_published_grades.py',), ('check_grade_explanations.py',), ('check_candidate_community.py',),
     ('check_campaign_endorsement_batch.py', 'research/endorsements/batch-2026-10-18'),
-    ('check_recommendations.py',), ('check_bamc_action.py',), ('check_cair_guide.py',), ('check_cair_refresh.py',), ('check_local_ceasefires.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
+    ('check_recommendations.py',), ('check_acjdc.py',), ('check_bamc_action.py',), ('check_cair_guide.py',), ('check_cair_refresh.py',), ('check_local_ceasefires.py',), ('check_peace_guides.py',), ('check_research_workflow.py',),
     ('check_schema.py',), ('check_fec_money.py',), ('check_gaza_ledger.py',), ('check_funding_evidence.py',),
-    ('check_organization_context.py',), ('check_evidence_context.py',), ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),
+    ('check_organization_context.py',), ('check_playground_restore.py',), ('check_evidence_context.py',), ('check_gaza_voting_records.py',), ('check_uscpr_scorecard.py',), ('check_gaza_records.py',),
     ('check_campaign_platforms.py',), ('check_platform_positions.py',), ('prepare_dom_fixture.py',),
 ]
 NODE_CHECKS = ['check_pro_palestine_grade_display.cjs', 'check_analytics.cjs', 'check_jev_playground.cjs', 'check_endorsement_display.cjs', 'check_finance_display.cjs', 'check_gaza_display.cjs', 'check_platform_display.cjs', 'check_candidate_sort.cjs', 'check_contest_label.cjs', 'check_explorer.cjs', 'check_address_services.cjs', 'check_address_suggestions.cjs',

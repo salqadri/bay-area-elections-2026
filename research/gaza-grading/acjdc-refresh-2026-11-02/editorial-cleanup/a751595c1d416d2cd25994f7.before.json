@@ -1,0 +1,86 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "a751595c1d416d2cd25994f7",
+  "candidate": "Dan Jacowitz",
+  "position_id": "CA2026-117",
+  "request_sha256": "5816dae44e04da7b40e5b828757a1665fba5e68ccd36792be24733b1529823dd",
+  "grade": "F",
+  "summary": "In a questionnaire response dated by file upload rather than confirmed statement date, Jacowitz called Israel the United States' greatest ally and stated support for its democracy and security, while placing Middle East policy outside a school board's purview. He said he is familiar with AB 715 and would designate a district coordinator to investigate antisemitic incidents. His campaign platform addresses campus safety, parent involvement, and district transparency without reference to Palestine or Israel.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Identifying name only; no policy content."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Establishes local school-board context; no direct Palestine/Israel policy relevance."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Geographic label only."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label carries no bearing on Palestine position."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Platform addresses campus safety, parent involvement, and district transparency; no reference to Palestine, Israel, or Middle East policy."
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "States familiarity with AB 715 and a stated intention to establish a district coordinator to investigate antisemitic incidents, aligning with the educational framework the rubric links to restricting Israel criticism."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Calls Israel the United States' greatest ally, supports its democracy and security, and places Middle East policy outside a school board's purview."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Scheduling context only."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Geographic context (Castro Valley Unified School District); no policy content."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Administrative categorization label."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "dda252f60cdf7646c91476cf8f92de378138c80a2f5035727c84391849383113",
+  "generated_at": "2026-11-03T04:03:27+00:00",
+  "usage": {
+    "prompt_tokens": 4055,
+    "completion_tokens": 4497,
+    "total_tokens": 8552,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3924
+    }
+  },
+  "elapsed_seconds": 51.22,
+  "generation_request_sha256": "9e0b2d9bb64e2642470986f9981949a7a12bb1d3ea89f8ef9144fc6523176ddf",
+  "attempt": 1
+}

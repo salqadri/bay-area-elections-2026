@@ -1,0 +1,35 @@
+{
+  "format": "held-race-rationale/v1",
+  "status": "held_for_review",
+  "narrative_context_version": "exact-organization-boundaries-v2",
+  "position_id": "CA2026-106",
+  "recommended": "Kevin Park",
+  "text": "In the Santa Clara at-large Mayor race, CAIR-SFBA's tracker records Kevin Park as supporting a ceasefire resolution and a \"United Against Hate\" resolution, while recording Karen Hardy and Kathy Watanabe each as having opposed the ceasefire resolution and supported the \"United Against Hate\" resolution. A Silicon Valley Voice opinion article credits Park with championing a Gaza ceasefire resolution, noting the effort to introduce it was blocked. CAIR Action lists Park as preferred for the general phase; BAMC Action lists him as supported, commenting that he \"has been consistent in support of Muslims.\" Ro Khanna is listed as an endorser of Watanabe.",
+  "words": 101,
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "e42978b4a3e4e786c637b256267e31a97bd8f65a6f523aeee131f2d007bf93c2",
+  "generated_at": "2026-11-03T04:42:40+00:00",
+  "source_candidate_request_sha256": {
+    "43cc6e0d2e26a0d7d7d61cc4": "27e0358b7ffeee064217109029bbbb1d6635804d8c45f90b39d49dafc9c531e7",
+    "723148308fc777b849b5d4aa": "440a66af07000bcc2c8fb88aa9ffea64e45eb43003e76df578769fbb815d57ce",
+    "347ac1379f8603560777ee35": "03af500784e306c9fb4a33f0672bcd915feb070b1337f8888a88fc094ae72b5c",
+    "cc69f3d19ea48d8f066bf1ed": "cc2a2a2427d193f7b041e076853b574415a29efa57f1f965b4d4c0ddb6d12e47",
+    "0235d00fba949b42ea1f8007": "8ebb0f10e0aacf46ac18c7b5647f2906258c909eb5b052c8eeb40c135fdf3acf",
+    "42ed776c0a167a3b05c40f33": "a5aa1f04006658ff50cc96057af898baf70d0970f84ff4b4b0bf96613b072728"
+  },
+  "usage": {
+    "prompt_tokens": 6179,
+    "completion_tokens": 2810,
+    "total_tokens": 8989,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2656
+    }
+  },
+  "elapsed_seconds": 23.33,
+  "generation_request_sha256": "b591cf7a15c167724ea4120f1efb85a3163ebf845a32120738829615fffe0c73",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "before": "In the Santa Clara at-large Mayor race, CAIR-SFBA's tracker records Kevin Park as supporting a ceasefire resolution and a \"United Against Hate\" resolution, while recording Karen Hardy and Kathy Watanabe each as having opposed the ceasefire resolution and supported the \"United Against Hate\" resolution. A Silicon Valley Voice opinion article credits Park with championing a Gaza ceasefire resolution, noting the effort to introduce it was blocked. CAIR Action lists Park as preferred for the general phase; BAMC Action lists him as supported, commenting that he \"has been consistent in support of Muslims.\" No CAIR Action or BAMC Action listing appears for Hardy or Watanabe. Ro Khanna is recorded as having endorsed Watanabe in the Muslim-community aligned records.",
+    "reason": "Omit unrelated spending, missing-record disclaimers and research metadata; preserve recorded policy observations."
+  }
+}

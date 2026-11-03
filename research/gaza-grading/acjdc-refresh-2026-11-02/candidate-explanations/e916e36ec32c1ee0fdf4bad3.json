@@ -1,0 +1,122 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "e916e36ec32c1ee0fdf4bad3",
+  "candidate": "Barbara Lee",
+  "position_id": "CA2026-072",
+  "request_sha256": "c0bca3defe61f5d59ab085da1ed0eaf91c0067248a30cc92e227c67bff1a3af8",
+  "grade": "B",
+  "summary": "Lee voted No on most pro-Israel aid and sanctions measures in Congress and publicly framed suppression of Gaza's death toll as 'genocide denial,' yet AIPAC twice thanked her for pro-Israel funding provisions and she voted Yes on the IHRA resolution and a PLO entry ban. As Oakland Mayor she backed halting Israeli military cargo at the Port and stated she has 'long supported Israel's right to exist peacefully.' CAIR Action endorsed her in the general election.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "included",
+      "reason": "Identification only; no directional signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Office title provides context but no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Jurisdiction identifier; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Platform covers housing, public safety, immigration, climate, youth; no Gaza/Israel/Palestine policy stated. Immigration civil-rights language is general and not Palestine-specific."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "Contains pro-Palestine statements (genocide-denial condemnation, ceasefire call, Port of Oakland action) and adverse items (two AIPAC thank-yous, 'Israel right to exist' statement). Directly shapes assessment."
+    },
+    {
+      "id": "candidate_record.funding_scope",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Scope note on funding data; no specific Palestine-relevant funding identified."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "CAIR Action general endorsement and Vote for Peace Ally rating are concrete pro-Palestine directional evidence. Alameda County Jewish Democratic Club endorsement noted but low weight per org context."
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological instruction for reading endorsement tiers; not a candidate fact."
+    },
+    {
+      "id": "candidate_record.congressional_gaza_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological reading guide for vote data; not a candidate fact."
+    },
+    {
+      "id": "candidate_record.congressional_gaza_actions",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "Predominantly No votes on pro-Israel aid/sanctions (aligned) with several Yes votes on not-aligned items (IHRA, PLO ban, Hamas surrender, student condemnation). Mixed but predominantly pro-Palestine legislative record."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Provides background on AIPAC, CAIR, Vote for Peace, Alameda County Jewish Democratic Club to correctly weight endorsements and spending mentions already in the record."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Date of the Oakland mayoral race; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "City of Oakland; contextual only."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Incumbency status; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label; no Palestine-relevant signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "01a78b1bf8b813dcb72a5dcb09d8202a24b441e00bc4477d0b9de2352e4d963b",
+  "generated_at": "2026-11-03T04:01:38+00:00",
+  "usage": {
+    "prompt_tokens": 6901,
+    "completion_tokens": 5299,
+    "total_tokens": 12200,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4428
+    }
+  },
+  "elapsed_seconds": 61.44,
+  "generation_request_sha256": "85a1220acb35583ce19e3cd2b558be52955fcb68a0ddb49f2fb3043e7f8fec3a",
+  "attempt": 1
+}

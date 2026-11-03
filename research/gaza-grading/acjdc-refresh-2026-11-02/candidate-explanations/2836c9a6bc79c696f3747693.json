@@ -1,0 +1,116 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "2836c9a6bc79c696f3747693",
+  "candidate": "Eleni Kounalakis",
+  "position_id": "CA2026-019",
+  "request_sha256": "b4aa3cf54d92c4fedee71c40f88c28c87f8ffe47cebaa3a1d7a31098d1a3679e",
+  "grade": "E",
+  "summary": "Vote for Peace rates Kounalakis Opposed in the general election. Her documented record shows Israel-centric framing: she joined interfaith leaders at a Capitol rally calling for the October 7 hostage release and in May 2024 publicly criticized California universities for their handling of Palestinian student protests. The Alameda County Jewish Democratic Club endorsed her in the primary; CAIR Action lists her as Preferred, a tier below full endorsement.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Identifying name only; no policy signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Office title; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Jurisdictional detail; no policy signal."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Party affiliation; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.ca_spenders_supporting",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "All listed spenders carry unestablished relevance; spending context explicitly states these do not explain a Palestine assessment without other evidence."
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological note clarifying that independent spending does not prove candidate policy; no independent factual claim."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Platform covers economy, education, environment, and equity; no mention of Israel, Palestine, Gaza, or related foreign policy."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Oct 2023 hostage-release rally shows Israel-centric framing; May 2024 criticism of Palestinian student protests is a documented adverse action toward Palestinian justice."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Vote for Peace opposition triggers level-1 criterion; Alameda Jewish Democratic Club endorsement is low-weight contextual; CAIR Action Preferred is a complicating softer tier. Samir Laymoun opposition omitted per summary_source_policy."
+    },
+    {
+      "id": "candidate_record.activist_opinion_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Explanatory context for how to treat activist opinions; not a factual observation about the candidate."
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological instruction on treating CAIR/Vote for Peace tiers; no independent candidate fact."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Describes the mission of Alameda club, Vote for Peace, and CAIR Action; provides context for the endorsement observations already included."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Election date; no policy signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Repeats state; no policy signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Dataset label; no policy signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "26a6b54165bcf485b0bac05139be4dea4f904f399485fcf338da7dac92819953",
+  "generated_at": "2026-11-03T03:55:43+00:00",
+  "usage": {
+    "prompt_tokens": 5162,
+    "completion_tokens": 3253,
+    "total_tokens": 8415,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2450
+    }
+  },
+  "elapsed_seconds": 42.75,
+  "generation_request_sha256": "fd280a9f53a9363085835913c232a7d2a961e99638140b286f0e3a71951debbe",
+  "attempt": 1
+}

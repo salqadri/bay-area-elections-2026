@@ -1,0 +1,51 @@
+{
+  "format": "publisher-race-context/v1",
+  "status": "held_for_review",
+  "position_id": "CA2026-120",
+  "recommended": null,
+  "text": "Mark Fay, Wendy Huang and Harris Mojadedi are running for Chabot-Las Positas Community College District, Trustee Area 3. Mojadedi is endorsed by CAIR Action and rated Ally by Vote for Peace. The guide publisher reports strong opposition to him from the Muslim American Alliance and has withheld a recommendation for this race. Separately, a February 2024 Bay Area Reporter article documents Mojadedi's criticism of MAA's voter guide over LGBTQ-related parental-rights criteria. The article does not establish a Gaza position or independently confirm the reported opposition.",
+  "words": 85,
+  "model": "qwen/qwen3.8-27b",
+  "generated_at": "2026-11-03T07:09:02+00:00",
+  "generation_request_sha256": "4caf3be853e4e931cf6a8ccb199d5a594145c796d7ce56eb3715f93a2b765139",
+  "usage": {
+    "prompt_tokens": 1461,
+    "completion_tokens": 5324,
+    "total_tokens": 6785,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4749
+    }
+  },
+  "evidence_audit": [
+    {
+      "id": "candidate_records.Mark Fay",
+      "note": "Recorded as a candidate for Trustee Area 3 Governing Board Member, California. No party affiliation, endorsements, platform points, or other recorded items on file."
+    },
+    {
+      "id": "candidate_records.Wendy Huang",
+      "note": "Recorded as a candidate for Trustee Area 3 Governing Board Member, California. No party affiliation, endorsements, platform points, or other recorded items on file."
+    },
+    {
+      "id": "candidate_records.Harris Mojadedi",
+      "note": "Recorded with campaign platform points on education, immigration, economy, housing, jobs, AI policy, and government accountability. CAIR Action recorded as endorsed (general); Vote for Peace recorded as Ally (general)."
+    },
+    {
+      "id": "community_source_report",
+      "note": "Owner-reported MAA opposition to Mojadedi recorded by the guide publisher on 2026-11-02; no public source link; not independently verified. A 2024 Bay Area Reporter article documents Mojadedi's public criticism of the MAA guide's parental-rights criteria, classified as a community-policy disagreement; it does not verify the opposition or establish a Gaza position."
+    },
+    {
+      "id": "publisher_disposition",
+      "note": "No recommendation setting recorded by the publisher on 2026-11-02, attributed to the owner-reported MAA opposition. This is a publisher decision, not an inference from the 2024 article or a new Gaza assessment."
+    }
+  ],
+  "source_context_sha256": "a8490919c0b8a83d1cf7d038ea16090711f7e26d90e97d31499e388fd516bcc5",
+  "summary_type": "neutral_factual_context",
+  "original_generated_text": "Position CA2026-120 covers the Trustee Area 3 Governing Board Member race in California. Three candidates are on record: Mark Fay, Wendy Huang, and Harris Mojadedi; none has a party affiliation listed. For Mojadedi, CAIR Action is recorded as having endorsed him in the general phase, and Vote for Peace lists him as an Ally in the general phase. The guide publisher's record, reviewed on 2026-11-02, notes an owner-reported statement that the Muslim American Alliance strongly opposes Mojadedi; it is not independently verified and has no public source link. A 2024 Bay Area Reporter article documents Mojadedi's public criticism of the MAA guide's parental-rights criteria; it is classified as a community-policy disagreement that does not verify the opposition or establish a Gaza position. The publisher disposition records a No recommendation setting for this race.",
+  "editorial_review": "Edited for concise wording and precise separation of the owner report from the article; raw model output preserved in generation-calls.",
+  "source_binding_history": [
+    {
+      "source_context_sha256": "004f6118f66a3b2a8dcc6fbfe34228d2c033c76cf485bd9d6edc025046367310",
+      "reason": "Same source facts now also projected into the Jev state; text and exact generation/scoring requests unchanged."
+    }
+  ]
+}

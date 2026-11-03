@@ -1,3 +1,38 @@
+## November 3 publication — PR #22 release
+
+Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
+saved candidate evaluations under `jev-2026-11-03-final`. Scott Sakakihara is
+**C (2.36 / 5)** using owner prompt **v11**; the other 1,295 retain their exact
+**v10** evaluations. Both prompts, per-candidate question assignments and raw
+answers are archived; no result is relabeled as a different prompt.
+
+Saved bounds: F .74 / E 1.4 / D 2.3 / C 3.3 / B 4.4 / A through 5;
+evidence minimum **.22**, with the issue-observation guard and no confidence
+acceptance cutoff. Distribution: **A 119 · B 46 · C 21 · D 34 · E 84 · F 121 · N/A 871**.
+The newer main-branch CAL-ACCESS finance refresh is preserved.
+
+The source plan retains **177** existing eligible choices (12 community, 165
+explicit publisher carry-forwards). A release receipt records the approved
+preview and current eligibility; it is not a new provider decision or cache hit.
+The TALL guide retains its separately reviewed editorial exceptions. Harris
+Mojadedi and Mark Humbert remain publisher-withheld; N/A has no interpretation.
+
+At the owner's request, **424 earlier candidate assessments** keep their original
+request hashes in `previous_pro_palestine_explanation`, separate from the new
+scores. Both readers label them **Earlier assessment**; older race rationales
+are labeled too. These are not newly generated explanations of the latest score.
+Hermes refresh queues: `research/gaza-grading/explanation-queue-2026-11-03-final.json`
+and `research/candidate-recommendations/rationale-refresh-2026-11-03.json`.
+No model calls were made to prepare this release.
+
+Tracy Jensen's questionnaire describes an undated anti-war letter, not an
+identified ceasefire letter or a later reversal. Its current-source correction
+and independent January 2024 ceasefire-support record are preserved. Her saved
+C 2.32 predates this wording correction; the exact saved request stays unchanged.
+
+Earlier sections below describe historical releases and review stages. This
+publication supersedes their “held/unpublished” status for the selected results.
+
 # Maintaining the explorer
 
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
@@ -7,7 +42,7 @@ recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](FIREBASE_HOSTING.md).
 
-Current publication **2026-10-30.1** publishes Jev criteria **v8 + v8.1** over
+Historical publication **2026-10-30.1** publishes Jev criteria **v8 + v8.1** over
 the full roster: **1,296 evaluations** on **v20** state inputs (California Jewish
 Democrats = renamed DFI California counted against candidates; endorsement-only
 candidates capped at B; SB 403 caste records in a low-weight never-band-moving
@@ -147,7 +182,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs the complete 44-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs the complete 53-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -320,3 +355,23 @@ See [the candidate-only correction](COMMUNITY_GUIDE_CLEANUP.md). Preserve every 
 source; comment-only or tactical advice cannot create opposition. Measures are
 excluded. Rebuild both readers and the current Jev inputs after a reviewed import;
 never rewrite frozen evaluation requests or automatically rerun scores.
+
+
+### Held source-batch evaluations
+
+For PR #22, the latest saved questions/thresholds and immutable review history
+are documented in [PR22_HANDOFF.md](PR22_HANDOFF.md). The November 2 ACJDC batch
+contains 44 explicitly requested current-state evaluations; it is held rather
+than a new public score publication. The
+[run, comparison and generation receipts](../research/gaza-grading/acjdc-refresh-2026-11-02/README.md)
+preserve the exact model inputs and outputs.
+
+`scripts/refresh_held_review.py` consumes a completed scoped Jev run and an exact
+candidate scope file. It overlays latest successful scores in its work directory,
+rechecks selections under the existing policy, and uses Qwen at parallelism two
+for candidate and dependent race narratives. It makes provider calls only when
+explicitly invoked; local history restoration remains offline. Candidate summaries
+bind to their exact scoring request, while race summaries bind every candidate
+request used in the comparison. N/A gets no old explanation. Saved settings and
+canonical publication data are never changed by this command. Review factual-audit
+flags before copying outputs into the portable bundle or building a release.

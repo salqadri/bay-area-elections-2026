@@ -1,0 +1,23 @@
+{
+  "id": "chatcmpl-yfv2mzwciba2a9qdebc1d4",
+  "model": "qwen/qwen3.8-27b",
+  "created": 1793467353,
+  "usage": {
+    "prompt_tokens": 5269,
+    "completion_tokens": 3495,
+    "total_tokens": 8764,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2580
+    }
+  },
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"candidate_id\":\"c0c0d5dd99c12f1c5bfe8c06\",\"request_sha256\":\"6792a60af2e4b6b17d643de0aebf84d672abfd22babeba8e32a6fd483d9c9c77\",\"evidence_audit\":[{\"id\":\"candidate_record.candidate\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Candidate name only; no policy signal.\"},{\"id\":\"candidate_record.office\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Office title; no Palestine-relevant signal.\"},{\"id\":\"candidate_record.state\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"State identifier only.\"},{\"id\":\"candidate_record.party\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Party label; no policy signal.\"},{\"id\":\"candidate_record.ca_spenders_supporting\",\"assessment\":\"unrelated\",\"treatment\":\"omitted\",\"reason\":\"All four spenders marked unestablished relevance; spending_context directs not to use them without explicit evidence.\"},{\"id\":\"candidate_record.spending_context\",\"assessment\":\"unrelated\",\"treatment\":\"omitted\",\"reason\":\"Methodology note confirming spenders cannot explain a Palestine assessment without other evidence.\"},{\"id\":\"candidate_record.campaign_platform_points\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Platform covers housing, homelessness, climate, criminal justice, civil liberties; no Gaza or Israel/Palestine content.\"},{\"id\":\"candidate_record.antisemitism_education_policy_evidence\",\"assessment\":\"adverse\",\"treatment\":\"included\",\"reason\":\"Aye vote on AB 715 (antisemitism coordinator and classroom-material oversight) is a documented action that complicates the pro-Palestine record.\"},{\"id\":\"candidate_record.caste_legislation_context\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Explicitly marked LOW WEIGHT, not a Gaza position; SB 403 caste vote does not materially inform the Palestine assessment.\"},{\"id\":\"candidate_record.gaza_evidence\",\"assessment\":\"favorable\",\"treatment\":\"included\",\"reason\":\"Genocide statement (owner-confirmed) and invitation of HEAL Palestine Gaza children to the Assembly floor are direct pro-Palestine actions.\"},{\"id\":\"candidate_record.funding_scope\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Notes funding window since 2024 and omission of unresolved totals; no Palestine-specific relevance established.\"},{\"id\":\"candidate_record.focused_endorsement_observations\",\"assessment\":\"uncertain\",\"treatment\":\"grouped\",\"reason\":\"Mixed signals: CAIR Action endorsement and Vote for Peace Ally rating are favorable; California Jewish Democrats Strong Support is adverse. Grouped in prose.\"},{\"id\":\"candidate_record.endorsement_evidence_context\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Methodology note on how to treat CAIR/VFP tiers; not a candidate action.\"},{\"id\":\"candidate_record.organization_context\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Descriptive profiles of endorsing organizations; clarifies CJD identity but is not a candidate action.\"},{\"id\":\"candidate_record.election_date\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Election date; no policy signal.\"},{\"id\":\"candidate_record.jurisdiction\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Jurisdiction label; no policy signal.\"},{\"id\":\"candidate_record.incumbent\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Incumbency status; no policy signal.\"},{\"id\":\"candidate_record.candidate_roster\",\"assessment\":\"not_applicable\",\"treatment\":\"omitted\",\"reason\":\"Roster label; no policy signal.\"}],\"summary\":\"Haney called Israel's actions in Gaza a genocide in a 2026 CAIR-SFBA Liberty Award recording and invited Gaza children through HEAL Palestine to speak on the State Assembly floor. CAIR Action endorsed him and Vote for Peace rated him Ally. Those actions sit alongside his aye vote on AB 715, which creates an antisemitism coordinator and classroom-material oversight in California schools, and Strong Support from California Jewish Democrats, the renamed Democrats for Israel California.\"}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}

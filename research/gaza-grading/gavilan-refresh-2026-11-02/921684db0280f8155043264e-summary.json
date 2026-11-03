@@ -1,0 +1,86 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate": "Shahida S. Merchant",
+  "candidate_id": "921684db0280f8155043264e",
+  "position_id": "CA2026-153",
+  "request_sha256": "d05eb6218dd58ea4ee63a942160c581d5dea2c326bbfb9e130cc935f8ab207c6",
+  "run_id": "20261102T233314Z-9726b440",
+  "grade": "N/A",
+  "score_grade_mapping": {
+    "require_issue_observation": true,
+    "minimum_evidence_score": 0.22,
+    "upper_bounds": [
+      0.74,
+      1.4,
+      2.3,
+      3.3,
+      4.4
+    ]
+  },
+  "summary": "Shahida S. Merchant is a nonpartisan candidate for Gavilan College District Trustee, Area 3, in a 2026 local race. Her documented platform covers counseling and advising, basic-needs support, degree and transfer pathways, workforce and apprenticeship programs, budget transparency, and community listening sessions in the Gilroy area.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Identifies the candidate; no directional signal on Palestine."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Local college trustee role; establishes scope but no Palestine-related action possible."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Jurisdictional detail only; no independent signal."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Nonpartisan label; no directional signal on Palestine."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "grouped",
+      "reason": "All five points address counseling, basic needs, pathways, workforce, and budget transparency; none reference Palestine, Israel, Gaza, or related civil-rights speech."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "2026-11-03 is a future date; no substantive signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Gavilan Joint Community College District; confirms local scope."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Roster label only; no directional signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "reasoning_effort": "medium",
+  "temperature": 1,
+  "prompt_sha256": "e3ae47a9c1ca6c60787d314df795039a8924485bcca692ea45fbc0df917426d0",
+  "usage": {
+    "prompt_tokens": 4115,
+    "completion_tokens": 1605,
+    "total_tokens": 5720,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1157
+    }
+  },
+  "elapsed_seconds": 21.4,
+  "generated_at": "2026-11-02T23:34:50+00:00"
+}

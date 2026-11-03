@@ -18,7 +18,7 @@ from urllib.parse import urlsplit, parse_qs
 import uuid
 
 from grade_gaza import (ROOT, DATASET, MODEL, DEFAULT_CRITERIA, candidates, build_state,
-                        validate_questions, validate_response, jev_call, digest, dump, save, now, STATE_VERSION as CORE_STATE_VERSION)
+                        validate_questions, validate_response, active_questions, jev_call, digest, dump, save, now, STATE_VERSION as CORE_STATE_VERSION)
 from score_grade import DEFAULT_MAPPING, validate_mapping, present_run, row_grade
 
 PLAYGROUND_DEFAULT_MAPPING = {**DEFAULT_MAPPING, 'minimum_evidence_score': DEFAULT_MAPPING.get('minimum_evidence_score', .22)}
@@ -132,7 +132,7 @@ class RunManager:
         current = self.current()
         batch = json.loads(self.baseline.read_text())
         baseline = stored_run(batch, current)
-        return {'snapshot': current, 'baseline': self.present(baseline), 'questions': json.loads(DEFAULT_CRITERIA.read_text())['questions'],
+        return {'snapshot': current, 'baseline': self.present(baseline), 'questions': active_questions(json.loads(DEFAULT_CRITERIA.read_text())['questions']),
                 'latest': self.present(self.latest(current, baseline)),
                 'score_grade_mapping': self.score_grade_mapping(), 'default_score_grade_mapping': PLAYGROUND_DEFAULT_MAPPING,
                 'key_configured': bool(self.key), 'history': self.history()}
@@ -217,7 +217,7 @@ class RunManager:
         save(self.work / 'runs' / run['id'] / 'run.json', run)
 
     def start(self, questions, candidate_id=None, scope='all'):
-        validate_questions(questions)
+        questions = active_questions(questions)
         if not isinstance(scope, str) or scope not in {'all', 'bay-area'}:
             raise ValueError('scope must be all or bay-area')
         if candidate_id is not None and scope != 'all':

@@ -1,0 +1,105 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "ab0b2ab8a0502f22132bf12f",
+  "candidate": "Jamie Yee",
+  "position_id": "CA2026-075",
+  "request_sha256": "ec611b7115b5658540c256fe217739b95336e2ed0bd14b32f81ea4b02ae9a271",
+  "grade": "D",
+  "summary": "Yee's sole documented Gaza statement supports \"Israeli and Palestinian safety and dignity,\" rejects local antisemitism and anti-Palestinian hate, and expresses caution about \"one-sided international resolutions,\" framing the conflict symmetrically without condemning Israeli military action. The Alameda County Jewish Democratic Club, whose stated purpose includes supporting Israel, endorsed Yee in the general election.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Identifies the candidate as Jamie Yee"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Establishes this is a local city council race; contextual for the assessment"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "CA is jurisdictional context, not directly relevant to the pro-Palestine assessment"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan status does not bear on Palestinian justice positioning"
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Platform covers housing, public safety, fiscal policy, and economy with no reference to Israel, Palestine, or related policy"
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Sole Gaza statement is symmetric, cautions against one-sided resolutions, does not condemn Israeli military action; frames conflict without addressing occupation or specific Israeli conduct"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "ACJDC endorsed Yee in the general election; club's stated purpose includes supporting Israel, providing supplementary adverse context"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Documents ACJDC mission includes supporting Israel; low weight per record; endorsement does not establish candidate agreement with all club policy"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "2026-11-03 is scheduling context, not relevant to the substance of the assessment"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "City of Pleasanton is jurisdictional detail, not relevant to the pro-Palestine assessment"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Metadata field indicating record type, no substantive content"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "4389715ffb8cf9bf5b474d94f2b9c189737d0be1ef395b6112dd7caa31eeee59",
+  "generated_at": "2026-11-03T04:03:20+00:00",
+  "usage": {
+    "prompt_tokens": 4368,
+    "completion_tokens": 5151,
+    "total_tokens": 9519,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4509
+    }
+  },
+  "elapsed_seconds": 58.84,
+  "generation_request_sha256": "f82fd373b240e54920b3f501dc1841a11604ef56b46bd0ba7897afc664db42d7",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " The response date is unstated; the recorded date reflects file-upload metadata.",
+        "replacement": ""
+      },
+      {
+        "removed": " Yee's campaign platform addresses housing, public safety, and fiscal policy with no reference to Israel or Palestine.",
+        "replacement": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "6380668431a23b629d2f4dce",
+  "candidate": "LeAna Powell",
+  "position_id": "CA2026-134",
+  "request_sha256": "0a9ef99b8da873dd0871b2073af1b005a0db3038ec1a33faa2ddc4d635a39ddc",
+  "grade": "E",
+  "summary": "Powell's questionnaire responses indicate she would urge the Oakland Unified superintendent to implement AB 715 and would defer on Gaza international-policy questions pending broad community agreement. She supported engagement with both Jewish and Muslim communities. The Alameda County Jewish Democratic Club, whose stated mission includes supporting Israel as a Jewish state, endorsed her in the general election.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Candidate name; no policy signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Local school-board role provides scope context for AB 715 implementation but is not itself a policy statement."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "California context relevant to AB 715 as a state statute; no independent policy signal."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Nonpartisan registration does not indicate a position on Palestinian justice or Israel policy."
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Stated intention to urge implementation of AB 715, the California statute incorporating the IHRA antisemitism definition into school anti-bias training; also notes unsuccessful amendment negotiations and support for engagement with both Jewish and Muslim communities."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Deflects from taking an international-policy position on Gaza pending broad community agreement; offers only general opposition to religious and ethnic discrimination without addressing Palestinian self-determination, ceasefire, or US military support for Israel."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Endorsement by the Alameda County Jewish Democratic Club in the general election; the club's stated mission includes supporting Israel as a Jewish state."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Documents the club's first-party stated purpose of supporting Israel as a democratic, inclusive and secure Jewish state; owner-assigned low weight limits independent significance of the endorsement alone."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Timing context only; no policy signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Oakland Unified School District identifies the local scope of the role; no independent policy signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label; no policy signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "7a99336ad1326d98788077368e4806b6064c519a63c9ac7bc7d413819539de49",
+  "generated_at": "2026-11-03T04:06:07+00:00",
+  "usage": {
+    "prompt_tokens": 4136,
+    "completion_tokens": 5330,
+    "total_tokens": 9466,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4640
+    }
+  },
+  "elapsed_seconds": 56.97,
+  "generation_request_sha256": "fd8b71dce21ad97ce0570926a18f1e621149c815140a6f45da083af5930e3099",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": "—dated by file upload, not a stated response date—",
+        "replacement": " "
+      },
+      {
+        "removed": ", the California statute embedding the IHRA antisemitism definition in school training,",
+        "replacement": ""
+      }
+    ]
+  }
+}

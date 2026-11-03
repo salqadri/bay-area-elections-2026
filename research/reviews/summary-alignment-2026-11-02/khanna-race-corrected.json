@@ -1,0 +1,30 @@
+{
+  "format": "held-race-rationale/v1",
+  "status": "held_for_review",
+  "position_id": "CA2026-004",
+  "recommended": "Ro Khanna",
+  "text": "In the race for the U.S. House seat in California's 17th district, Ro Khanna's documented record on Gaza and U.S. support for Israel marks a clear break from his Republican opponent. Khanna sponsored the Block the Bombs Act and a genocide-recognition resolution, declared Zero Aid to Israel at a 2026 Democratic National Committee meeting, introduced a June 2026 amendment striking Section 224 of the National Defense Authorization Act for its U.S.-Israel military integration, and in July 2026 co-sponsored a measure with Thomas Massie to block U.S. funding for Israel's military. He issued a ceasefire statement recorded by the Working Families Party in May 2024. In January 2026, he voted yea on an aid package carrying $3.3 billion for Israel, which he attributed to provisions Republicans inserted; he later voted no on the February consolidated bill. Tandon, by contrast, called Khanna's ceasefire advocacy naive in February 2024 and rejected the genocide label in October 2026 while emphasizing 1,200-plus Israeli victims. Khanna holds endorsements from CAIR Action, AROC Action, and Track AIPAC, while also drawing J Street PAC support.",
+  "words": 177,
+  "model": "qwen/qwen3.8-27b + factual editorial correction",
+  "prompt_sha256": "9178e569620f75336b76c56865aaaa5d89e2ca96222708a3e29225ed03dc0fc9",
+  "generated_at": "2026-11-01T02:23:44+00:00",
+  "usage": {
+    "prompt_tokens": 1775,
+    "completion_tokens": 4093,
+    "total_tokens": 5868,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3828
+    }
+  },
+  "source_candidate_request_sha256": {
+    "2936483efec2278cf6b5f118": "3c40c5da30b7506ed042d8ef9dbdb151a6b9870e31f91303f81d45ffc9a96d42",
+    "e6fae25f22f51294ed0ce61a": "daa16e6b6aced5d6fb50c5811e721dc6685e3ccda7ff5556ab5c66484f48656f"
+  },
+  "editorial_correction": {
+    "reviewed_on": "2026-11-02",
+    "reason": "The source contains several not-aligned votes, so one contrary vote is an incorrect exclusive claim. Preserve the January vote, its stated explanation and the later February No.",
+    "before_text_sha256": "0b96ae578bd01818fd2d2419eb73da060277912996f179ced9c6b44648031bf0",
+    "original_model": "qwen/qwen3.8-27b",
+    "score_changed": false
+  }
+}

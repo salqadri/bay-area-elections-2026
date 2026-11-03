@@ -1,4 +1,47 @@
+## November 3 publication — PR #22 release
+
+Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
+saved candidate evaluations under `jev-2026-11-03-final`. Scott Sakakihara is
+**C (2.36 / 5)** using owner prompt **v11**; the other 1,295 retain their exact
+**v10** evaluations. Both prompts, per-candidate question assignments and raw
+answers are archived; no result is relabeled as a different prompt.
+
+Saved bounds: F .74 / E 1.4 / D 2.3 / C 3.3 / B 4.4 / A through 5;
+evidence minimum **.22**, with the issue-observation guard and no confidence
+acceptance cutoff. Distribution: **A 119 · B 46 · C 21 · D 34 · E 84 · F 121 · N/A 871**.
+The newer main-branch CAL-ACCESS finance refresh is preserved.
+
+The source plan retains **177** existing eligible choices (12 community, 165
+explicit publisher carry-forwards). A release receipt records the approved
+preview and current eligibility; it is not a new provider decision or cache hit.
+The TALL guide retains its separately reviewed editorial exceptions. Harris
+Mojadedi and Mark Humbert remain publisher-withheld; N/A has no interpretation.
+
+At the owner's request, **424 earlier candidate assessments** keep their original
+request hashes in `previous_pro_palestine_explanation`, separate from the new
+scores. Both readers label them **Earlier assessment**; older race rationales
+are labeled too. These are not newly generated explanations of the latest score.
+Hermes refresh queues: `research/gaza-grading/explanation-queue-2026-11-03-final.json`
+and `research/candidate-recommendations/rationale-refresh-2026-11-03.json`.
+No model calls were made to prepare this release.
+
+Tracy Jensen's questionnaire describes an undated anti-war letter, not an
+identified ceasefire letter or a later reversal. Its current-source correction
+and independent January 2024 ceasefire-support record are preserved. Her saved
+C 2.32 predates this wording correction; the exact saved request stays unchanged.
+
+Earlier sections below describe historical releases and review stages. This
+publication supersedes their “held/unpublished” status for the selected results.
+
 # Bay Area Ballot Research Assistant
+
+**Continuing PR #22 in another session? Start with [the portable playground handoff](docs/PR22_HANDOFF.md).** Latest owner questions, thresholds and held results are committed separately from the frozen public publication.
+
+**Held November 2 ACJDC review:** all 44 changed candidate inputs across 36 races
+were re-evaluated with the saved v9 questions and unchanged thresholds. There are
+26 letter-outcome changes, including 20 newly graded candidates; four remain N/A.
+[Exact results and comparison](research/gaza-grading/acjdc-refresh-2026-11-02/README.md).
+This targeted review does not change the frozen public scores or deploy either site.
 
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in

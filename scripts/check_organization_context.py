@@ -10,6 +10,50 @@ from discover_organization_funding import fetch_transfers, packet
 
 
 class OrganizationChecks(unittest.TestCase):
+    def test_sara_official_acjdc_supersedes_unspecified_campaign_claim(self):
+        data = json.loads(g.DATASET.read_text())
+        p, c = next((p, c) for p in data['positions'] for c in p.get('candidates') or []
+                    if c['name'] == 'Sara Lamnin')
+        original = deepcopy(c)
+        rows = g.build_state(p, c, data)['focused_endorsement_observations']
+        rows = [r for r in rows if r['endorser'] == 'Alameda County Jewish Democratic Club']
+        self.assertEqual(rows, [{'endorser': 'Alameda County Jewish Democratic Club',
+                                'relation': 'endorsed', 'phase': 'general'}])
+        self.assertEqual(c, original)
+
+    def test_deduplication_preserves_contradictions_phases_and_unique_comments(self):
+        own = {'endorser': 'Alameda County Jewish Democratic Club', 'relation': 'endorsed',
+               'phase': 'general', 'verification': 'endorser_statement'}
+        claim = {**own, 'phase': 'unspecified', 'verification': 'campaign_claim'}
+        distinct = [{**claim, 'phase': 'primary'}, {**claim, 'relation': 'opposed'},
+                    {**claim, 'historical': True}, {**claim, 'rating': 'Strong Support'},
+                    {**claim, 'comments': ['Unique source qualification']}]
+        result = org.normalize_endorsement_observations([own, claim, *distinct])
+        self.assertEqual(result, [own, *distinct])
+
+    def test_harris_owner_report_reaches_current_state_without_becoming_gaza_evidence(self):
+        data = json.loads(g.DATASET.read_text())
+        p = next(p for p in data['positions'] if p['id'] == 'CA2026-120')
+        c = next(c for c in p['candidates'] if c['name'] == 'Harris Mojadedi')
+        original = deepcopy(c)
+        state = g.build_state(p, c, data)
+        maa = [r for r in state['focused_endorsement_observations']
+               if r['endorser'] == 'Muslim American Alliance']
+        self.assertEqual(len(maa), 1)
+        self.assertEqual(maa[0]['relation'], 'opposed')
+        self.assertIn('owner report', maa[0]['source'])
+        self.assertIn('not independently verified', maa[0]['source'])
+        self.assertEqual(maa[0]['reported_strength'], 'strong')
+        self.assertNotIn('gaza_evidence', state)
+        article = state['community_policy_observations'][0]
+        self.assertIn('not direct evidence of a Gaza position', article['scope'])
+        self.assertEqual(article['source_url'], 'https://www.ebar.com/story/74015')
+        other = g.build_state(p, next(c for c in p['candidates'] if c['name'] != 'Harris Mojadedi'), data)
+        self.assertNotIn('community_policy_observations', other)
+        self.assertFalse(any(r['endorser'] == 'Muslim American Alliance'
+                             for r in other.get('focused_endorsement_observations', [])))
+        self.assertEqual(c, original)
+
     def test_owner_confirmed_usampac_context_preserves_reporting_and_direction(self):
         p = {'id':'owner-context-fixture','office':'Trustee'}
         c = {'name':'Fixture','endorsements':[{'endorser':'USAMPAC','relation':'endorsed',
@@ -28,6 +72,64 @@ class OrganizationChecks(unittest.TestCase):
             'focused_endorsement_observations'][0]['relation'],'opposed')
         c['endorsements'][0]['endorser']='AMPAC'
         self.assertNotIn('USAMPAC',g.build_state(p,c,{'codes':{'party':{}}}).get('organization_context',{}))
+
+    def test_fiona_cjd_campaign_alias_does_not_duplicate_official_support(self):
+        data = json.loads(g.DATASET.read_text())
+        position, candidate = next((p, c) for p in data['positions']
+                                   for c in p.get('candidates') or [] if c['name'] == 'Fiona Ma')
+        original = deepcopy(candidate)
+        state = g.build_state(position, candidate, data)
+        observations = [e for e in state['focused_endorsement_observations']
+                        if org.name_key(e['endorser']) in {org.name_key(n) for n in org.CJD_ALIASES}]
+        self.assertEqual(observations, [{'endorser': 'California Jewish Democrats',
+                                        'relation': 'supported', 'phase': 'unspecified', 'rating': 'Support'}])
+        self.assertEqual(candidate, original)
+        self.assertTrue(any(e['endorser'] == 'Democrats for Israel California'
+                            for e in candidate['endorsements']))
+
+    def test_cjd_normalization_preserves_distinct_phases_history_ratings_and_opposition(self):
+        own = {'endorser': 'California Jewish Democrats', 'relation': 'supported',
+               'rating': 'Support', 'phase': 'general', 'verification': 'endorser_statement'}
+        claim = {'endorser': 'Democrats for Israel California', 'relation': 'endorsed',
+                 'phase': 'general', 'verification': 'campaign_claim'}
+        distinct = [{**claim, 'rating': 'Strong Support'}, {**claim, 'phase': 'primary'},
+                    {**claim, 'historical': True}, {**claim, 'relation': 'opposed'}]
+        rows = [own, claim, *distinct, {**own, 'endorser': 'DFI California'}]
+        original = deepcopy(rows)
+        result = org.normalize_endorsement_observations(rows)
+        self.assertEqual(len(result), 5)
+        self.assertTrue(all(e['endorser'] == 'California Jewish Democrats' for e in result))
+        self.assertTrue(any(e.get('rating') == 'Strong Support' for e in result))
+        self.assertTrue(any(e['phase'] == 'primary' for e in result))
+        self.assertTrue(any(e.get('historical') for e in result))
+        self.assertTrue(any(e['relation'] == 'opposed' for e in result))
+        self.assertEqual(rows, original)
+
+    def test_cjd_context_preserves_endorsement_tiers_without_blanket_offsets(self):
+        for alias in org.CJD_ALIASES:
+            for rating in ('Support', 'Strong Support'):
+                with self.subTest(alias=alias, rating=rating):
+                    candidate = {'name': 'Example', 'endorsements': [
+                        {'endorser': alias, 'relation': 'supported', 'rating': rating},
+                        {'endorser': 'CAIR Action', 'relation': 'endorsed', 'phase': 'general'},
+                    ]}
+                    original = deepcopy(candidate)
+                    state = g.build_state({'id': 'test', 'office': 'Assembly'}, candidate, {'codes': {'party': {}}})
+                    self.assertNotIn('zionist_endorsement_context', state)
+                    self.assertEqual(state['organization_context']['California Jewish Democrats']['relevance'],
+                                     org.CJD_ENDORSEMENT_CONTEXT)
+                    observations = state['focused_endorsement_observations']
+                    self.assertTrue(any(e['endorser'] == 'California Jewish Democrats' and e['rating'] == rating for e in observations))
+                    self.assertTrue(any(e['endorser'] == 'CAIR Action' and e['relation'] == 'endorsed'
+                                        for e in observations))
+                    self.assertIn('CAIR Action', state['organization_context'])
+                    self.assertEqual(candidate, original)
+
+    def test_cjd_context_requires_a_current_observation(self):
+        for observations in ([], [{'endorser': 'California Jewish Democrats', 'historical': True}]):
+            state = {'focused_endorsement_observations': observations}
+            org.add_observation_context(state)
+            self.assertNotIn('California Jewish Democrats', state.get('organization_context', {}))
 
     def test_discovery_paginates_and_holds_unreviewed_transfers(self):
         rows = [{'committee_id':'C00799031','recipient_committee_id':'C00000001',

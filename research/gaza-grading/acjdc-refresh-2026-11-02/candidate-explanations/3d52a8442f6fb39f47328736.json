@@ -1,0 +1,125 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "3d52a8442f6fb39f47328736",
+  "candidate": "Melissa Hernandez",
+  "position_id": "CA2026-003",
+  "request_sha256": "b531d84fff3b71935864e81d6648a9da495d78fe5a22552f815f8c87b24a8052",
+  "grade": "F",
+  "summary": "Hernandez declined to label Israel's Gaza actions as genocide at an April 2026 Indivisible forum, diverging from fellow candidates and the Alameda County Democratic Party. Her questionnaire responses endorse continued U.S. security assistance to Israel and reject the Global BDS Movement. AIPAC-aligned super PACs spent heavily in her support: UDP over $825,000 and BOLD America, which received UDP funding in 2026, nearly $1.8 million.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Candidate identification; used for third-person reference."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Office context; no bearing on Palestine position."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "State context; no bearing on Palestine position."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Party affiliation; not relevant to Palestine assessment."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "BOLD America received UDP (AIPAC-backed) funding in 2026; guide treats this as a negative funding signal for Palestinian justice."
+    },
+    {
+      "id": "candidate_record.spenders_supporting",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "UDP spent $825K and BOLD America (UDP-funded) spent $1.8M in independent support; other spenders have unestablished relevance."
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Clarifies figures are independent spending, not campaign contributions; frames the spending facts accurately."
+    },
+    {
+      "id": "candidate_record.spenders_opposing",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "American Priorities and Progressive Promise spending has unestablished relevance to Palestine assessment."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "No Palestine, Israel, or related speech-rights content in platform points."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Declined genocide label at Indivisible forum; supports continued U.S. security aid to Israel; rejects Global BDS Movement. Core adverse evidence."
+    },
+    {
+      "id": "candidate_record.funding_scope",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Notes funding scope since 2024; does not change the direction of the spending signal."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "uncertain",
+      "treatment": "omitted",
+      "reason": "Hindu American PAC endorsement listed; record does not establish the organization as Hindutva, so the score-0 criterion is not met by this entry alone."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Election date context; no bearing on Palestine position."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Federal House race; no bearing on Palestine position."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label; no substantive content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "3078cdeb9412a922018262cdfb3ef75fb9d675c51cbe100c6de948b2355f6134",
+  "generated_at": "2026-11-03T03:47:25+00:00",
+  "usage": {
+    "prompt_tokens": 5187,
+    "completion_tokens": 3015,
+    "total_tokens": 8202,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2207
+    }
+  },
+  "elapsed_seconds": 38.93,
+  "generation_request_sha256": "4495c503a0e34d6a601ef8ab837d7d6531156156b47b9d226359e06dde846f4e",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": ", in a Drive file dated April 2026 with the response date unstated,",
+        "replacement": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,6662 @@
+{
+ "format": "jev-playground-run/v1",
+ "id": "20261031T013913Z-e318f9d2",
+ "created_at": "2026-10-31T01:39:13+00:00",
+ "model": "jev-latest",
+ "questions": {
+  "pro_palestine_score": {
+   "type": "score",
+   "instructions": "What grade should we give the candidate wrt how pro-Palestine and anti-Israel they are?",
+   "criteria": [
+    "Shields Israel and a strong defender of Israel or is openly Hindutva or endorsed by Hindutva orgs. Don't hold statements made in October 2023 against them though.",
+    "Israel-centric framing with sympathy for Palestinians or equates being anti-zionism or anti-Israel with anti-semitism / supports the IHRA definition of anti-semitism or bills like AB-715 in CA that censor criticism of Israel, or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+    "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist and refuses to say a clear Yes it's a genocide when explicitly asked",
+    "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreetPAC",
+    "Explicitly affirms it to be a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+    "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action (at endorsement level rather than just preferred level) or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community, or has personally been a strong champion for our cause such as leading / introducing a ceasefire resolution. Or are openly and explicitly anti-zionist and strong supporters of BDS against Israel. They oppose the US doing things on behalf of Israel. They supportive of bills like Block the Bombs."
+   ]
+  },
+  "evidence_score": {
+   "type": "score",
+   "instructions": "how strong are the evidences or observations for us to evaluate the candidate's stance on being pro-Palestine or being recommended by Muslim community as a measure of being pro-Justice vs being pro-Israel or benefiting zionists?",
+   "criteria": [
+    "There is zero evidence that indicates one way or another or has said or done absolutely nothing about the topic as far as we know (which is especially ok for local races)",
+    "There is concrete undeniable evidence of this candidate being one way or the other"
+   ]
+  }
+ },
+ "scope": "candidate",
+ "dataset_sha256": "1c4d83ed71f77589b1b973ba51aa70aa8fd58d4dce95fa44d9fbd3640cc2808e",
+ "state_version": "candidate-evidence-v22-cjd-identity-only-local-federal",
+ "races": [
+  {
+   "id": "CA2026-309",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-8",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:8",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-310",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-9",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:9",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-001",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-10",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:10",
+   "counties": [
+    "Alameda",
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-229",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-11",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:11",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-002",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-12",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:12",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-003",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-14",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:14",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-230",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-15",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:15",
+   "counties": [
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-005",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-16",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:16",
+   "counties": [
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-004",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-17",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:17",
+   "counties": [
+    "Alameda",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-006",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-18",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:18",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-007",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-19",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:19",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "US2026-001",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "AL — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:al",
+   "counties": [],
+   "election_type": "general",
+   "state": "AL"
+  },
+  {
+   "id": "US2026-002",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "AK — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ak",
+   "counties": [],
+   "election_type": "general",
+   "state": "AK"
+  },
+  {
+   "id": "US2026-003",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "AR — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ar",
+   "counties": [],
+   "election_type": "general",
+   "state": "AR"
+  },
+  {
+   "id": "US2026-004",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "CO — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:co",
+   "counties": [],
+   "election_type": "general",
+   "state": "CO"
+  },
+  {
+   "id": "US2026-005",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "DE — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:de",
+   "counties": [],
+   "election_type": "general",
+   "state": "DE"
+  },
+  {
+   "id": "US2026-006",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "FL — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:fl",
+   "counties": [],
+   "election_type": "special",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-007",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "GA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ga",
+   "counties": [],
+   "election_type": "general",
+   "state": "GA"
+  },
+  {
+   "id": "US2026-008",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "ID — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:id",
+   "counties": [],
+   "election_type": "general",
+   "state": "ID"
+  },
+  {
+   "id": "US2026-009",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "IL — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:il",
+   "counties": [],
+   "election_type": "general",
+   "state": "IL"
+  },
+  {
+   "id": "US2026-010",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "IA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ia",
+   "counties": [],
+   "election_type": "general",
+   "state": "IA"
+  },
+  {
+   "id": "US2026-011",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "KS — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ks",
+   "counties": [],
+   "election_type": "general",
+   "state": "KS"
+  },
+  {
+   "id": "US2026-012",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "KY — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ky",
+   "counties": [],
+   "election_type": "general",
+   "state": "KY"
+  },
+  {
+   "id": "US2026-013",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "LA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:la",
+   "counties": [],
+   "election_type": "general",
+   "state": "LA"
+  },
+  {
+   "id": "US2026-014",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "ME — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:me",
+   "counties": [],
+   "election_type": "general",
+   "state": "ME"
+  },
+  {
+   "id": "US2026-015",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "MA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ma",
+   "counties": [],
+   "election_type": "general",
+   "state": "MA"
+  },
+  {
+   "id": "US2026-016",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "MI — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:mi",
+   "counties": [],
+   "election_type": "general",
+   "state": "MI"
+  },
+  {
+   "id": "US2026-017",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "MN — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:mn",
+   "counties": [],
+   "election_type": "general",
+   "state": "MN"
+  },
+  {
+   "id": "US2026-018",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "MS — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ms",
+   "counties": [],
+   "election_type": "general",
+   "state": "MS"
+  },
+  {
+   "id": "US2026-019",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "MT — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:mt",
+   "counties": [],
+   "election_type": "general",
+   "state": "MT"
+  },
+  {
+   "id": "US2026-020",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "NE — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ne",
+   "counties": [],
+   "election_type": "general",
+   "state": "NE"
+  },
+  {
+   "id": "US2026-021",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "NH — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nh",
+   "counties": [],
+   "election_type": "general",
+   "state": "NH"
+  },
+  {
+   "id": "US2026-022",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "NJ — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nj",
+   "counties": [],
+   "election_type": "general",
+   "state": "NJ"
+  },
+  {
+   "id": "US2026-023",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "NM — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nm",
+   "counties": [],
+   "election_type": "general",
+   "state": "NM"
+  },
+  {
+   "id": "US2026-024",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "NC — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nc",
+   "counties": [],
+   "election_type": "general",
+   "state": "NC"
+  },
+  {
+   "id": "US2026-025",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "OH — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:oh",
+   "counties": [],
+   "election_type": "special",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-026",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "OK — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ok",
+   "counties": [],
+   "election_type": "general",
+   "state": "OK"
+  },
+  {
+   "id": "US2026-027",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "OR — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:or",
+   "counties": [],
+   "election_type": "general",
+   "state": "OR"
+  },
+  {
+   "id": "US2026-028",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "RI — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ri",
+   "counties": [],
+   "election_type": "general",
+   "state": "RI"
+  },
+  {
+   "id": "US2026-029",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "SC — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:sc",
+   "counties": [],
+   "election_type": "general",
+   "state": "SC"
+  },
+  {
+   "id": "US2026-030",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "SD — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:sd",
+   "counties": [],
+   "election_type": "general",
+   "state": "SD"
+  },
+  {
+   "id": "US2026-031",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "TN — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:tn",
+   "counties": [],
+   "election_type": "general",
+   "state": "TN"
+  },
+  {
+   "id": "US2026-032",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "TX — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:tx",
+   "counties": [],
+   "election_type": "general",
+   "state": "TX"
+  },
+  {
+   "id": "US2026-033",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "VA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:va",
+   "counties": [],
+   "election_type": "general",
+   "state": "VA"
+  },
+  {
+   "id": "US2026-034",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "WV — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:wv",
+   "counties": [],
+   "election_type": "general",
+   "state": "WV"
+  },
+  {
+   "id": "US2026-035",
+   "office": "United States Senator",
+   "office_category": "U.S. Senate",
+   "government_level": "Federal",
+   "jurisdiction": "United States Senate",
+   "district_or_seat": "WY — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:wy",
+   "counties": [],
+   "election_type": "general",
+   "state": "WY"
+  },
+  {
+   "id": "US2026-071",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:al/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "AL"
+  },
+  {
+   "id": "US2026-072",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:az/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "AZ"
+  },
+  {
+   "id": "US2026-073",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-6",
+   "ocd_division_id": "ocd-division/country:us/state:az/cd:6",
+   "counties": [],
+   "election_type": "general",
+   "state": "AZ"
+  },
+  {
+   "id": "US2026-074",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-6",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:6",
+   "counties": [],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "US2026-075",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-13",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:13",
+   "counties": [],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "US2026-076",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-22",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:22",
+   "counties": [],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "US2026-077",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-48",
+   "ocd_division_id": "ocd-division/country:us/state:ca/cd:48",
+   "counties": [],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "US2026-078",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-3",
+   "ocd_division_id": "ocd-division/country:us/state:co/cd:3",
+   "counties": [],
+   "election_type": "general",
+   "state": "CO"
+  },
+  {
+   "id": "US2026-079",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-5",
+   "ocd_division_id": "ocd-division/country:us/state:co/cd:5",
+   "counties": [],
+   "election_type": "general",
+   "state": "CO"
+  },
+  {
+   "id": "US2026-080",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-8",
+   "ocd_division_id": "ocd-division/country:us/state:co/cd:8",
+   "counties": [],
+   "election_type": "general",
+   "state": "CO"
+  },
+  {
+   "id": "US2026-081",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-7",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:7",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-082",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-9",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:9",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-083",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-13",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:13",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-084",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-14",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:14",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-085",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-22",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:22",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-086",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-25",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:25",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-087",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-27",
+   "ocd_division_id": "ocd-division/country:us/state:fl/cd:27",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-088",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:ia/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "IA"
+  },
+  {
+   "id": "US2026-089",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:ia/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "IA"
+  },
+  {
+   "id": "US2026-090",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-3",
+   "ocd_division_id": "ocd-division/country:us/state:ia/cd:3",
+   "counties": [],
+   "election_type": "general",
+   "state": "IA"
+  },
+  {
+   "id": "US2026-091",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-6",
+   "ocd_division_id": "ocd-division/country:us/state:ky/cd:6",
+   "counties": [],
+   "election_type": "general",
+   "state": "KY"
+  },
+  {
+   "id": "US2026-092",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:me/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "ME"
+  },
+  {
+   "id": "US2026-093",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-4",
+   "ocd_division_id": "ocd-division/country:us/state:mi/cd:4",
+   "counties": [],
+   "election_type": "general",
+   "state": "MI"
+  },
+  {
+   "id": "US2026-094",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-7",
+   "ocd_division_id": "ocd-division/country:us/state:mi/cd:7",
+   "counties": [],
+   "election_type": "general",
+   "state": "MI"
+  },
+  {
+   "id": "US2026-095",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-10",
+   "ocd_division_id": "ocd-division/country:us/state:mi/cd:10",
+   "counties": [],
+   "election_type": "general",
+   "state": "MI"
+  },
+  {
+   "id": "US2026-096",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:mn/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "MN"
+  },
+  {
+   "id": "US2026-097",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:mt/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "MT"
+  },
+  {
+   "id": "US2026-098",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:nc/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "NC"
+  },
+  {
+   "id": "US2026-099",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-11",
+   "ocd_division_id": "ocd-division/country:us/state:nc/cd:11",
+   "counties": [],
+   "election_type": "general",
+   "state": "NC"
+  },
+  {
+   "id": "US2026-100",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:ne/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "NE"
+  },
+  {
+   "id": "US2026-101",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:nh/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "NH"
+  },
+  {
+   "id": "US2026-102",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-7",
+   "ocd_division_id": "ocd-division/country:us/state:nj/cd:7",
+   "counties": [],
+   "election_type": "general",
+   "state": "NJ"
+  },
+  {
+   "id": "US2026-103",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:nm/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "NM"
+  },
+  {
+   "id": "US2026-104",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:nv/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "NV"
+  },
+  {
+   "id": "US2026-105",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:nv/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "NV"
+  },
+  {
+   "id": "US2026-106",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-3",
+   "ocd_division_id": "ocd-division/country:us/state:nv/cd:3",
+   "counties": [],
+   "election_type": "general",
+   "state": "NV"
+  },
+  {
+   "id": "US2026-107",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:ny/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "NY"
+  },
+  {
+   "id": "US2026-108",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-3",
+   "ocd_division_id": "ocd-division/country:us/state:ny/cd:3",
+   "counties": [],
+   "election_type": "general",
+   "state": "NY"
+  },
+  {
+   "id": "US2026-109",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-4",
+   "ocd_division_id": "ocd-division/country:us/state:ny/cd:4",
+   "counties": [],
+   "election_type": "general",
+   "state": "NY"
+  },
+  {
+   "id": "US2026-110",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-17",
+   "ocd_division_id": "ocd-division/country:us/state:ny/cd:17",
+   "counties": [],
+   "election_type": "general",
+   "state": "NY"
+  },
+  {
+   "id": "US2026-111",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-21",
+   "ocd_division_id": "ocd-division/country:us/state:ny/cd:21",
+   "counties": [],
+   "election_type": "general",
+   "state": "NY"
+  },
+  {
+   "id": "US2026-112",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:oh/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-113",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-7",
+   "ocd_division_id": "ocd-division/country:us/state:oh/cd:7",
+   "counties": [],
+   "election_type": "general",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-114",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-9",
+   "ocd_division_id": "ocd-division/country:us/state:oh/cd:9",
+   "counties": [],
+   "election_type": "general",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-115",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-10",
+   "ocd_division_id": "ocd-division/country:us/state:oh/cd:10",
+   "counties": [],
+   "election_type": "general",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-116",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-15",
+   "ocd_division_id": "ocd-division/country:us/state:oh/cd:15",
+   "counties": [],
+   "election_type": "general",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-117",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:pa/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "PA"
+  },
+  {
+   "id": "US2026-118",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-7",
+   "ocd_division_id": "ocd-division/country:us/state:pa/cd:7",
+   "counties": [],
+   "election_type": "general",
+   "state": "PA"
+  },
+  {
+   "id": "US2026-119",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-8",
+   "ocd_division_id": "ocd-division/country:us/state:pa/cd:8",
+   "counties": [],
+   "election_type": "general",
+   "state": "PA"
+  },
+  {
+   "id": "US2026-120",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-10",
+   "ocd_division_id": "ocd-division/country:us/state:pa/cd:10",
+   "counties": [],
+   "election_type": "general",
+   "state": "PA"
+  },
+  {
+   "id": "US2026-121",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:sc/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "SC"
+  },
+  {
+   "id": "US2026-122",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-15",
+   "ocd_division_id": "ocd-division/country:us/state:tx/cd:15",
+   "counties": [],
+   "election_type": "general",
+   "state": "TX"
+  },
+  {
+   "id": "US2026-123",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-28",
+   "ocd_division_id": "ocd-division/country:us/state:tx/cd:28",
+   "counties": [],
+   "election_type": "general",
+   "state": "TX"
+  },
+  {
+   "id": "US2026-124",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-34",
+   "ocd_division_id": "ocd-division/country:us/state:tx/cd:34",
+   "counties": [],
+   "election_type": "general",
+   "state": "TX"
+  },
+  {
+   "id": "US2026-125",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-35",
+   "ocd_division_id": "ocd-division/country:us/state:tx/cd:35",
+   "counties": [],
+   "election_type": "general",
+   "state": "TX"
+  },
+  {
+   "id": "US2026-126",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:va/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "VA"
+  },
+  {
+   "id": "US2026-127",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-2",
+   "ocd_division_id": "ocd-division/country:us/state:va/cd:2",
+   "counties": [],
+   "election_type": "general",
+   "state": "VA"
+  },
+  {
+   "id": "US2026-128",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-5",
+   "ocd_division_id": "ocd-division/country:us/state:va/cd:5",
+   "counties": [],
+   "election_type": "general",
+   "state": "VA"
+  },
+  {
+   "id": "US2026-129",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-3",
+   "ocd_division_id": "ocd-division/country:us/state:wa/cd:3",
+   "counties": [],
+   "election_type": "general",
+   "state": "WA"
+  },
+  {
+   "id": "US2026-130",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-1",
+   "ocd_division_id": "ocd-division/country:us/state:wi/cd:1",
+   "counties": [],
+   "election_type": "general",
+   "state": "WI"
+  },
+  {
+   "id": "US2026-131",
+   "office": "United States Representative",
+   "office_category": "U.S. House",
+   "government_level": "Federal",
+   "jurisdiction": "United States House of Representatives",
+   "district_or_seat": "CD-3",
+   "ocd_division_id": "ocd-division/country:us/state:wi/cd:3",
+   "counties": [],
+   "election_type": "general",
+   "state": "WI"
+  },
+  {
+   "id": "CA2026-022",
+   "office": "State Senator",
+   "office_category": "State Senate",
+   "government_level": "State",
+   "jurisdiction": "California State Senate",
+   "district_or_seat": "SD-10",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldu:10",
+   "counties": [
+    "Alameda",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-311",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-11",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:11",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-008",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-14",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:14",
+   "counties": [
+    "Alameda",
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-312",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-15",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:15",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-009",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-16",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:16",
+   "counties": [
+    "Alameda",
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-231",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-17",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:17",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-010",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-18",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:18",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-232",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-19",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:19",
+   "counties": [
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-011",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-20",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:20",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-233",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-21",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:21",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-023",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-23",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:23",
+   "counties": [
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-020",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-24",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:24",
+   "counties": [
+    "Alameda",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-024",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-25",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:25",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-025",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-26",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:26",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-026",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-28",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:28",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-027",
+   "office": "Member of the State Assembly",
+   "office_category": "State Assembly",
+   "government_level": "State",
+   "jurisdiction": "California State Assembly",
+   "district_or_seat": "AD-29",
+   "ocd_division_id": "ocd-division/country:us/state:ca/sldl:29",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-014",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "US2026-036",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Alabama",
+   "district_or_seat": "AL — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:al",
+   "counties": [],
+   "election_type": "general",
+   "state": "AL"
+  },
+  {
+   "id": "US2026-037",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Alaska",
+   "district_or_seat": "AK — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ak",
+   "counties": [],
+   "election_type": "general",
+   "state": "AK"
+  },
+  {
+   "id": "US2026-038",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Arizona",
+   "district_or_seat": "AZ — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:az",
+   "counties": [],
+   "election_type": "general",
+   "state": "AZ"
+  },
+  {
+   "id": "US2026-039",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Arkansas",
+   "district_or_seat": "AR — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ar",
+   "counties": [],
+   "election_type": "general",
+   "state": "AR"
+  },
+  {
+   "id": "US2026-040",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Colorado",
+   "district_or_seat": "CO — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:co",
+   "counties": [],
+   "election_type": "general",
+   "state": "CO"
+  },
+  {
+   "id": "US2026-041",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Connecticut",
+   "district_or_seat": "CT — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ct",
+   "counties": [],
+   "election_type": "general",
+   "state": "CT"
+  },
+  {
+   "id": "US2026-042",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Florida",
+   "district_or_seat": "FL — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:fl",
+   "counties": [],
+   "election_type": "general",
+   "state": "FL"
+  },
+  {
+   "id": "US2026-043",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Georgia",
+   "district_or_seat": "GA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ga",
+   "counties": [],
+   "election_type": "general",
+   "state": "GA"
+  },
+  {
+   "id": "US2026-044",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Hawaii",
+   "district_or_seat": "HI — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:hi",
+   "counties": [],
+   "election_type": "general",
+   "state": "HI"
+  },
+  {
+   "id": "US2026-045",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Idaho",
+   "district_or_seat": "ID — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:id",
+   "counties": [],
+   "election_type": "general",
+   "state": "ID"
+  },
+  {
+   "id": "US2026-046",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Illinois",
+   "district_or_seat": "IL — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:il",
+   "counties": [],
+   "election_type": "general",
+   "state": "IL"
+  },
+  {
+   "id": "US2026-047",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Iowa",
+   "district_or_seat": "IA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ia",
+   "counties": [],
+   "election_type": "general",
+   "state": "IA"
+  },
+  {
+   "id": "US2026-048",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Kansas",
+   "district_or_seat": "KS — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ks",
+   "counties": [],
+   "election_type": "general",
+   "state": "KS"
+  },
+  {
+   "id": "US2026-049",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Maine",
+   "district_or_seat": "ME — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:me",
+   "counties": [],
+   "election_type": "general",
+   "state": "ME"
+  },
+  {
+   "id": "US2026-050",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Maryland",
+   "district_or_seat": "MD — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:md",
+   "counties": [],
+   "election_type": "general",
+   "state": "MD"
+  },
+  {
+   "id": "US2026-051",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Massachusetts",
+   "district_or_seat": "MA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ma",
+   "counties": [],
+   "election_type": "general",
+   "state": "MA"
+  },
+  {
+   "id": "US2026-052",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Michigan",
+   "district_or_seat": "MI — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:mi",
+   "counties": [],
+   "election_type": "general",
+   "state": "MI"
+  },
+  {
+   "id": "US2026-053",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Minnesota",
+   "district_or_seat": "MN — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:mn",
+   "counties": [],
+   "election_type": "general",
+   "state": "MN"
+  },
+  {
+   "id": "US2026-054",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Nebraska",
+   "district_or_seat": "NE — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ne",
+   "counties": [],
+   "election_type": "general",
+   "state": "NE"
+  },
+  {
+   "id": "US2026-055",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Nevada",
+   "district_or_seat": "NV — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nv",
+   "counties": [],
+   "election_type": "general",
+   "state": "NV"
+  },
+  {
+   "id": "US2026-056",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of New Hampshire",
+   "district_or_seat": "NH — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nh",
+   "counties": [],
+   "election_type": "general",
+   "state": "NH"
+  },
+  {
+   "id": "US2026-057",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of New Mexico",
+   "district_or_seat": "NM — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:nm",
+   "counties": [],
+   "election_type": "general",
+   "state": "NM"
+  },
+  {
+   "id": "US2026-058",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of New York",
+   "district_or_seat": "NY — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ny",
+   "counties": [],
+   "election_type": "general",
+   "state": "NY"
+  },
+  {
+   "id": "US2026-059",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Ohio",
+   "district_or_seat": "OH — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:oh",
+   "counties": [],
+   "election_type": "general",
+   "state": "OH"
+  },
+  {
+   "id": "US2026-060",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Oklahoma",
+   "district_or_seat": "OK — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ok",
+   "counties": [],
+   "election_type": "general",
+   "state": "OK"
+  },
+  {
+   "id": "US2026-061",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Oregon",
+   "district_or_seat": "OR — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:or",
+   "counties": [],
+   "election_type": "general",
+   "state": "OR"
+  },
+  {
+   "id": "US2026-062",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Pennsylvania",
+   "district_or_seat": "PA — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:pa",
+   "counties": [],
+   "election_type": "general",
+   "state": "PA"
+  },
+  {
+   "id": "US2026-063",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Rhode Island",
+   "district_or_seat": "RI — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ri",
+   "counties": [],
+   "election_type": "general",
+   "state": "RI"
+  },
+  {
+   "id": "US2026-064",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of South Carolina",
+   "district_or_seat": "SC — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:sc",
+   "counties": [],
+   "election_type": "general",
+   "state": "SC"
+  },
+  {
+   "id": "US2026-065",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of South Dakota",
+   "district_or_seat": "SD — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:sd",
+   "counties": [],
+   "election_type": "general",
+   "state": "SD"
+  },
+  {
+   "id": "US2026-066",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Tennessee",
+   "district_or_seat": "TN — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:tn",
+   "counties": [],
+   "election_type": "general",
+   "state": "TN"
+  },
+  {
+   "id": "US2026-067",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Texas",
+   "district_or_seat": "TX — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:tx",
+   "counties": [],
+   "election_type": "general",
+   "state": "TX"
+  },
+  {
+   "id": "US2026-068",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Vermont",
+   "district_or_seat": "VT — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:vt",
+   "counties": [],
+   "election_type": "general",
+   "state": "VT"
+  },
+  {
+   "id": "US2026-069",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Wisconsin",
+   "district_or_seat": "WI — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:wi",
+   "counties": [],
+   "election_type": "general",
+   "state": "WI"
+  },
+  {
+   "id": "US2026-070",
+   "office": "Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "State of Wyoming",
+   "district_or_seat": "WY — Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:wy",
+   "counties": [],
+   "election_type": "general",
+   "state": "WY"
+  },
+  {
+   "id": "CA2026-016",
+   "office": "Lieutenant Governor",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-017",
+   "office": "Secretary of State",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-013",
+   "office": "Controller",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-019",
+   "office": "Treasurer",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-012",
+   "office": "Attorney General",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-015",
+   "office": "Insurance Commissioner",
+   "office_category": "Statewide executive",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-018",
+   "office": "Superintendent of Public Instruction",
+   "office_category": "Statewide education",
+   "government_level": "State",
+   "jurisdiction": "California",
+   "district_or_seat": "Statewide",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-021",
+   "office": "Member",
+   "office_category": "Board of Equalization",
+   "government_level": "State",
+   "jurisdiction": "California State Board of Equalization",
+   "district_or_seat": "District 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-039",
+   "office": "Associate Justice",
+   "office_category": "Supreme Court",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Supreme Court",
+   "district_or_seat": "Joshua Groban seat",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-040",
+   "office": "Associate Justice",
+   "office_category": "Supreme Court",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Supreme Court",
+   "district_or_seat": "Kelli M. Evans seat",
+   "ocd_division_id": "ocd-division/country:us/state:ca",
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo",
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-028",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 1 - Charles A. Smiley seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-029",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 1 - Kathleen M. Banke seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-030",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 1 - Monique Langhorne Wilson seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-031",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 2 - Tara M. Desautels seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-037",
+   "office": "Presiding Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 2 - Therese M. Stewart seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-032",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 3 - Ioana Petrou seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-033",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 3 - Victor A. Rodriguez seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-038",
+   "office": "Presiding Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 4 - Tracie L. Brown seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-034",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 5 - Danny Y. Chou seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-035",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 5 - Gordon Burns seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-036",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, First Appellate District",
+   "district_or_seat": "Division 5 - Mark Simons seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa",
+    "San Francisco",
+    "San Mateo"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-041",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, Sixth Appellate District",
+   "district_or_seat": "Allison Marston Danner seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-042",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, Sixth Appellate District",
+   "district_or_seat": "Charles E. Wilson II seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-043",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, Sixth Appellate District",
+   "district_or_seat": "Charles F. Adams seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-044",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, Sixth Appellate District",
+   "district_or_seat": "Daniel H. Bromberg seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-045",
+   "office": "Associate Justice",
+   "office_category": "Court of Appeal",
+   "government_level": "State judiciary",
+   "jurisdiction": "California Court of Appeal, Sixth Appellate District",
+   "district_or_seat": "Frederick S. Chung seat",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "retention",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-303",
+   "office": "Supervisor",
+   "office_category": "County supervisor",
+   "government_level": "County",
+   "jurisdiction": "San Mateo County",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_mateo/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "special",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-234",
+   "office": "Assessor-Recorder",
+   "office_category": "Assessor-Recorder",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "Citywide",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-235",
+   "office": "Public Defender",
+   "office_category": "Public Defender",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "Citywide",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-236",
+   "office": "Member, Board of Supervisors",
+   "office_category": "Board of Supervisors",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco/council_district:2",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-237",
+   "office": "Member, Board of Supervisors",
+   "office_category": "Board of Supervisors",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco/council_district:4",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-238",
+   "office": "Member, Board of Supervisors",
+   "office_category": "Board of Supervisors",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "District 6",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco/council_district:6",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-239",
+   "office": "Member, Board of Supervisors",
+   "office_category": "Board of Supervisors",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "District 8",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco/council_district:8",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-240",
+   "office": "Member, Board of Supervisors",
+   "office_category": "Board of Supervisors",
+   "government_level": "City or town",
+   "jurisdiction": "City and County of San Francisco",
+   "district_or_seat": "District 10",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco/council_district:10",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-046",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Alameda",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:alameda",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-047",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Alameda",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:alameda",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-048",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Albany",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:albany",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-325",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Antioch",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:antioch/council_district:1",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-326",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Antioch",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:antioch/council_district:4",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-245",
+   "office": "Mayor",
+   "office_category": "Mayor",
+   "government_level": "City or town",
+   "jurisdiction": "City of Belmont",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:belmont",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-246",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Belmont",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:belmont/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-247",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Belmont",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:belmont/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-049",
+   "office": "City Auditor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Berkeley",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:berkeley",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-054",
+   "office": "Rent Stabilization Board Commissioner",
+   "office_category": "Rent board",
+   "government_level": "City or town",
+   "jurisdiction": "City of Berkeley",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:berkeley",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-050",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Berkeley",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:berkeley/council_district:1",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-051",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Berkeley",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:berkeley/council_district:4",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-052",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Berkeley",
+   "district_or_seat": "District 7",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:berkeley/council_district:7",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-053",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Berkeley",
+   "district_or_seat": "District 8",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:berkeley/council_district:8",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-328",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Brentwood",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:brentwood/council_district:2",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-329",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Brentwood",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:brentwood/council_district:4",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-248",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Brisbane",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:brisbane",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-249",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Burlingame",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:burlingame/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-250",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Burlingame",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:burlingame/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-251",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Burlingame",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:burlingame/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-085",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Campbell",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:campbell/council_district:3",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-086",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Campbell",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:campbell/council_district:4",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-087",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Campbell",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:campbell/council_district:5",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-330",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Clayton",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:clayton",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-334",
+   "office": "City Treasurer",
+   "office_category": "City Treasurer",
+   "government_level": "City or town",
+   "jurisdiction": "City of Concord",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:concord",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-331",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Concord",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:concord/council_district:1",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-332",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Concord",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:concord/council_district:3",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-333",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Concord",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:concord/council_district:5",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-088",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Cupertino",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:cupertino",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-253",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Daly City",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:daly_city",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-057",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Dublin",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:dublin",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-055",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Dublin",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:dublin/council_district:2",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-056",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Dublin",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:dublin/council_district:4",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-254",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of East Palo Alto",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:east_palo_alto",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-313",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of El Cerrito",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:el_cerrito",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-058",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Emeryville",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:emeryville",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-255",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Foster City",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:foster_city/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-256",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Foster City",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:foster_city/council_district:2",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-059",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Fremont",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:fremont/council_district:2",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-060",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Fremont",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:fremont/council_district:3",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-061",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Fremont",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:fremont/council_district:4",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-089",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Gilroy",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:gilroy/council_district:4",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-090",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Gilroy",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:gilroy/council_district:5",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-091",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Gilroy",
+   "district_or_seat": "District 6",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:gilroy/council_district:6",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-257",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Half Moon Bay",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:half_moon_bay/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-258",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Half Moon Bay",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:half_moon_bay/council_district:4",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-259",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Half Moon Bay",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:half_moon_bay/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-064",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Hayward",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:hayward",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-062",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Hayward",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:hayward/council_district:1",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-063",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Hayward",
+   "district_or_seat": "District 6",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:hayward/council_district:6",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-319",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Hercules",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:hercules",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-065",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Livermore",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:livermore/council_district:2",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-092",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Los Altos",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:los_altos/council_district:2",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-093",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Los Altos",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:los_altos/council_district:4",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-320",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Martinez",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:martinez/council_district:1",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-260",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Menlo Park",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:menlo_park/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-261",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Menlo Park",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:menlo_park/council_district:2",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-262",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Menlo Park",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:menlo_park/council_district:4",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-263",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Millbrae",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:millbrae/council_district:2",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-264",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Millbrae",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:millbrae/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "special",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-265",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Millbrae",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:millbrae/council_district:4",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-094",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Milpitas",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:milpitas",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-095",
+   "office": "Mayor",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Milpitas",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:milpitas",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-098",
+   "office": "Mayor",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Morgan Hill",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:morgan_hill",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-096",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Morgan Hill",
+   "district_or_seat": "District B",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:morgan_hill/council_district:b",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-097",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Morgan Hill",
+   "district_or_seat": "District D",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:morgan_hill/council_district:d",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-099",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Mountain View",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:mountain_view",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-066",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Newark",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:newark",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-067",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Newark",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:newark",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-068",
+   "office": "City Auditor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Oakland",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:oakland",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-072",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Oakland",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:oakland",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-069",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Oakland",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:oakland/council_district:2",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-070",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Oakland",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:oakland/council_district:4",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-071",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Oakland",
+   "district_or_seat": "District 6",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:oakland/council_district:6",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-323",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Orinda",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:orinda",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-266",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pacifica",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pacifica/council_district:2",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-267",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pacifica",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pacifica/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-268",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pacifica",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pacifica/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-100",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Palo Alto",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:palo_alto",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-073",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Piedmont",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:piedmont",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-318",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pinole",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pinole",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-337",
+   "office": "City Clerk",
+   "office_category": "City Clerk",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pittsburg",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pittsburg",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-336",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pittsburg",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pittsburg",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-338",
+   "office": "City Treasurer",
+   "office_category": "City Treasurer",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pittsburg",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pittsburg",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-321",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pleasant Hill",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pleasant_hill/council_district:3",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-322",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pleasant Hill",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pleasant_hill/council_district:4",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-076",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pleasanton",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pleasanton",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-074",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pleasanton",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pleasanton/council_district:1",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-075",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Pleasanton",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:pleasanton/council_district:3",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-270",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Redwood City",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:redwood_city/council_district:2",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-271",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Redwood City",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:redwood_city/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-272",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Redwood City",
+   "district_or_seat": "District 6",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:redwood_city/council_district:6",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-314",
+   "office": "Mayor",
+   "office_category": "Mayor",
+   "government_level": "City or town",
+   "jurisdiction": "City of Richmond",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:richmond",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "runoff",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-273",
+   "office": "Mayor",
+   "office_category": "Mayor",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Bruno",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_bruno",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-274",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Bruno",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_bruno/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-275",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Bruno",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_bruno/council_district:4",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-276",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Carlos",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_carlos",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-101",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of San José",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_jose/council_district:5",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "runoff",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-102",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of San José",
+   "district_or_seat": "District 7",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_jose/council_district:7",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "runoff",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-103",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of San José",
+   "district_or_seat": "District 9",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_jose/council_district:9",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "runoff",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-081",
+   "office": "Mayor",
+   "office_category": "City elected executive",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Leandro",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_leandro",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-077",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Leandro",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_leandro/council_district:1",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-078",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Leandro",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_leandro/council_district:2",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-079",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Leandro",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_leandro/council_district:3",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-080",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Leandro",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_leandro/council_district:5",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-277",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Mateo",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_mateo/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-278",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Mateo",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_mateo/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-279",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Mateo",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_mateo/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-316",
+   "office": "City Clerk",
+   "office_category": "City Clerk",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Pablo",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-315",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Pablo",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-317",
+   "office": "City Treasurer",
+   "office_category": "City Treasurer",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Pablo",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_pablo",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-339",
+   "office": "Mayor",
+   "office_category": "Mayor",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Ramon",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_ramon",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-340",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Ramon",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_ramon/council_district:2",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-341",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of San Ramon",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:san_ramon/council_district:4",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-106",
+   "office": "Mayor",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Santa Clara",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:santa_clara",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-104",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Santa Clara",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:santa_clara/council_district:2",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-105",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Santa Clara",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:santa_clara/council_district:3",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-107",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Saratoga",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:saratoga",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-283",
+   "office": "City Clerk",
+   "office_category": "City clerk",
+   "government_level": "City or town",
+   "jurisdiction": "City of South San Francisco",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:south_san_francisco",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-284",
+   "office": "City Treasurer",
+   "office_category": "City treasurer",
+   "government_level": "City or town",
+   "jurisdiction": "City of South San Francisco",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:south_san_francisco",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-280",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of South San Francisco",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:south_san_francisco/council_district:1",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-281",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of South San Francisco",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:south_san_francisco/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-282",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of South San Francisco",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:south_san_francisco/council_district:5",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-108",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Sunnyvale",
+   "district_or_seat": "District 1",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:sunnyvale/council_district:1",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-109",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Sunnyvale",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:sunnyvale/council_district:3",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-110",
+   "office": "City Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "City of Sunnyvale",
+   "district_or_seat": "District 5",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:sunnyvale/council_district:5",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-082",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Union City",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:union_city/council_district:2",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-083",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Union City",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:union_city/council_district:3",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-084",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Union City",
+   "district_or_seat": "District 4",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:union_city/council_district:4",
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-342",
+   "office": "City Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "City of Walnut Creek",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:walnut_creek",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-343",
+   "office": "City Treasurer",
+   "office_category": "City Treasurer",
+   "government_level": "City or town",
+   "jurisdiction": "City of Walnut Creek",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:walnut_creek",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-252",
+   "office": "City Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Colma",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:colma",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-335",
+   "office": "Town Council Member",
+   "office_category": "City Council",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Danville",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:danville",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-111",
+   "office": "Town Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Los Altos Hills",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:los_altos_hills",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-112",
+   "office": "Town Council Member",
+   "office_category": "City or town",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Los Gatos",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:los_gatos",
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-324",
+   "office": "Town Council Member",
+   "office_category": "City council",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Moraga",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:moraga",
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-269",
+   "office": "Town Council Member",
+   "office_category": "Town council",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Portola Valley",
+   "district_or_seat": "At-large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:portola_valley",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-285",
+   "office": "Town Council Member",
+   "office_category": "Town council",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Woodside",
+   "district_or_seat": "District 2",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:woodside/council_district:2",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-286",
+   "office": "Town Council Member",
+   "office_category": "Town council",
+   "government_level": "City or town",
+   "jurisdiction": "Town of Woodside",
+   "district_or_seat": "District 3",
+   "ocd_division_id": "ocd-division/country:us/state:ca/place:woodside/council_district:3",
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-347",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Acalanes Union High School District",
+   "district_or_seat": "Trustee Area 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-113",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Alameda Unified School District",
+   "district_or_seat": "At large — full term",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-114",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Albany Unified School District",
+   "district_or_seat": "At large — combined proportional ranked-choice contest",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-140",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Alum Rock Union School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-141",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Alum Rock Union School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-348",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Antioch Unified School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-115",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Berkeley Unified School District",
+   "district_or_seat": "At large",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-142",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Berryessa Union School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-349",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Brentwood Union School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-297",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Brisbane School District",
+   "district_or_seat": "At large — full term",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-289",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Cabrillo Unified School District",
+   "district_or_seat": "Trustee Area C",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-290",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Cabrillo Unified School District",
+   "district_or_seat": "Trustee Area E",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-143",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Cambrian School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-144",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Campbell Union School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-145",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Campbell Union School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-116",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Castro Valley Unified School District",
+   "district_or_seat": "Trustee Area 2 — short term",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-117",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Castro Valley Unified School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-118",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Castro Valley Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-119",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Chabot-Las Positas Community College District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-120",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Chabot-Las Positas Community College District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-121",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Chabot-Las Positas Community College District",
+   "district_or_seat": "Trustee Area 6",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-345",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Contra Costa Community College District",
+   "district_or_seat": "Ward 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-346",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Contra Costa Community College District",
+   "district_or_seat": "Ward 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-344",
+   "office": "Governing Board Member",
+   "office_category": "County board of education",
+   "government_level": "Education",
+   "jurisdiction": "Contra Costa County Board of Education",
+   "district_or_seat": "Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-122",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Dublin Unified School District",
+   "district_or_seat": "Trustee Area 3 — short term",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-123",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Dublin Unified School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-146",
+   "office": "Governing Board Member",
+   "office_category": "High school district",
+   "government_level": "Education",
+   "jurisdiction": "East Side Union High School District",
+   "district_or_seat": "Trustee Area 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-147",
+   "office": "Governing Board Member",
+   "office_category": "High school district",
+   "government_level": "Education",
+   "jurisdiction": "East Side Union High School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-124",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Emery Unified School District",
+   "district_or_seat": "At large",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-148",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Evergreen School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-149",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Foothill-De Anza Community College District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-150",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Franklin-McKinley School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-151",
+   "office": "Governing Board Member",
+   "office_category": "High school district",
+   "government_level": "Education",
+   "jurisdiction": "Fremont Union High School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-152",
+   "office": "Governing Board Member",
+   "office_category": "High school district",
+   "government_level": "Education",
+   "jurisdiction": "Fremont Union High School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-153",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Gavilan Joint Community College District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-154",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Gilroy Unified School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-155",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Gilroy Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-125",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Hayward Unified School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-126",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Hayward Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-350",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "John Swett Unified School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-351",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Knightsen Elementary School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-352",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Liberty Union High School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-127",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Livermore Valley Joint Unified School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-128",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Livermore Valley Joint Unified School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-129",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Livermore Valley Joint Unified School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-156",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Los Altos School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-157",
+   "office": "Governing Board Member",
+   "office_category": "High school district",
+   "government_level": "Education",
+   "jurisdiction": "Los Gatos-Saratoga Union High School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-298",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Menlo Park City School District",
+   "district_or_seat": "At large — full term",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-158",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Milpitas Unified School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-159",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Morgan Hill Unified School District",
+   "district_or_seat": "Trustee Area 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-160",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Morgan Hill Unified School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-161",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Morgan Hill Unified School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-162",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Morgan Hill Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-163",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Mountain View Whisman School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-164",
+   "office": "Governing Board Member",
+   "office_category": "High school district",
+   "government_level": "Education",
+   "jurisdiction": "Mountain View-Los Altos Union High School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-353",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Mt. Diablo Unified School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-354",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Mt. Diablo Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-130",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "New Haven Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-131",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "New Haven Unified School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-165",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Oak Grove School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-166",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Oak Grove School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-167",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Oak Grove School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-132",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Oakland Unified School District",
+   "district_or_seat": "District 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-133",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Oakland Unified School District",
+   "district_or_seat": "District 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-134",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Oakland Unified School District",
+   "district_or_seat": "District 6",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-355",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Oakley Union Elementary School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-135",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Ohlone Community College District",
+   "district_or_seat": "Trustee Area 6",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-168",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Orchard School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-356",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Orinda Union School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-299",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Pacifica School District",
+   "district_or_seat": "At large — full term",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-300",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Pacifica School District",
+   "district_or_seat": "At large — short term",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-169",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Palo Alto Unified School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-136",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Peralta Community College District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-137",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Pleasanton Unified School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-301",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "San Carlos School District",
+   "district_or_seat": "At large — full term",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-242",
+   "office": "Trustee, Community College Board",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "San Francisco Community College District",
+   "district_or_seat": "At large — full term",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-243",
+   "office": "Trustee, Community College Board",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "San Francisco Community College District",
+   "district_or_seat": "At large — partial term",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "special",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-241",
+   "office": "Member, Board of Education",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "San Francisco Unified School District",
+   "district_or_seat": "At large",
+   "ocd_division_id": "ocd-division/country:us/state:ca/county:san_francisco",
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-138",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "San Joaquin Delta Community College District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-170",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "San José Unified School District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-171",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "San José Unified School District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-172",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "San José-Evergreen Community College District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-287",
+   "office": "Board of Education Member",
+   "office_category": "County board of education",
+   "government_level": "Education",
+   "jurisdiction": "San Mateo County Board of Education",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-288",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "San Mateo County Community College District",
+   "district_or_seat": "Trustee Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-293",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "San Mateo Union High School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-294",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "San Mateo Union High School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-357",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "San Ramon Valley Unified School District",
+   "district_or_seat": "Trustee Area 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-173",
+   "office": "Member, Board of Education",
+   "office_category": "County board of education",
+   "government_level": "Education",
+   "jurisdiction": "Santa Clara County Board of Education",
+   "district_or_seat": "Trustee Area 7",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-174",
+   "office": "Governing Board Member",
+   "office_category": "Unified school district",
+   "government_level": "Education",
+   "jurisdiction": "Santa Clara Unified School District",
+   "district_or_seat": "Trustee Area 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-175",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Saratoga Union School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-295",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Sequoia Union High School District",
+   "district_or_seat": "Trustee Area A",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-296",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Sequoia Union High School District",
+   "district_or_seat": "Trustee Area D",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-291",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "South San Francisco Unified School District",
+   "district_or_seat": "Trustee Area C",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-292",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "South San Francisco Unified School District",
+   "district_or_seat": "Trustee Area E",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-176",
+   "office": "Governing Board Member",
+   "office_category": "Elementary school district",
+   "government_level": "Education",
+   "jurisdiction": "Sunnyvale School District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-139",
+   "office": "Governing Board Member / School Director",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Sunol Glen Unified School District",
+   "district_or_seat": "At large",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-358",
+   "office": "Governing Board Member",
+   "office_category": "School district",
+   "government_level": "Education",
+   "jurisdiction": "Walnut Creek School District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-177",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "West Valley-Mission Community College District",
+   "district_or_seat": "Trustee Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-178",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "West Valley-Mission Community College District",
+   "district_or_seat": "Trustee Area 7",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-179",
+   "office": "Governing Board Member",
+   "office_category": "Community college district",
+   "government_level": "Education",
+   "jurisdiction": "Yosemite Community College District",
+   "district_or_seat": "Trustee Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-180",
+   "office": "Director",
+   "office_category": "Water",
+   "government_level": "Special district",
+   "jurisdiction": "Alameda County Water District",
+   "district_or_seat": "Ward 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-181",
+   "office": "Director",
+   "office_category": "Water",
+   "government_level": "Special district",
+   "jurisdiction": "Alameda County Water District",
+   "district_or_seat": "Ward 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-182",
+   "office": "Director",
+   "office_category": "Transit",
+   "government_level": "Special district",
+   "jurisdiction": "Alameda-Contra Costa Transit District (AC Transit)",
+   "district_or_seat": "Ward 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-183",
+   "office": "Director",
+   "office_category": "Transit",
+   "government_level": "Special district",
+   "jurisdiction": "Alameda-Contra Costa Transit District (AC Transit)",
+   "district_or_seat": "Ward 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-184",
+   "office": "Director",
+   "office_category": "Transit",
+   "government_level": "Special district",
+   "jurisdiction": "Alameda-Contra Costa Transit District (AC Transit)",
+   "district_or_seat": "Ward 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-185",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Castro Valley Sanitary District",
+   "district_or_seat": "At large",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-383",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Central Contra Costa Sanitary District",
+   "district_or_seat": "Division 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-304",
+   "office": "Director",
+   "office_category": "Water district",
+   "government_level": "Special district",
+   "jurisdiction": "Coastside County Water District",
+   "district_or_seat": "Zone 5",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-305",
+   "office": "Director",
+   "office_category": "Fire district",
+   "government_level": "Special district",
+   "jurisdiction": "Coastside Fire Protection District",
+   "district_or_seat": "District D",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-306",
+   "office": "Director",
+   "office_category": "Fire district",
+   "government_level": "Special district",
+   "jurisdiction": "Coastside Fire Protection District",
+   "district_or_seat": "District E",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-386",
+   "office": "Director",
+   "office_category": "Water",
+   "government_level": "Special district",
+   "jurisdiction": "Contra Costa Water District",
+   "district_or_seat": "Division 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-199",
+   "office": "Director",
+   "office_category": "Sanitary district",
+   "government_level": "Special district",
+   "jurisdiction": "Cupertino Sanitary District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-377",
+   "office": "Director",
+   "office_category": "Community services",
+   "government_level": "Special district",
+   "jurisdiction": "Diablo Community Services District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-378",
+   "office": "Director",
+   "office_category": "Water and wastewater",
+   "government_level": "Special district",
+   "jurisdiction": "Dublin San Ramon Services District",
+   "district_or_seat": "Division 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-186",
+   "office": "Director",
+   "office_category": "Water",
+   "government_level": "Special district",
+   "jurisdiction": "East Bay Municipal Utility District (EBMUD)",
+   "district_or_seat": "Ward 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-187",
+   "office": "Director",
+   "office_category": "Water",
+   "government_level": "Special district",
+   "jurisdiction": "East Bay Municipal Utility District (EBMUD)",
+   "district_or_seat": "Ward 7",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda",
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-188",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "East Bay Regional Park District",
+   "district_or_seat": "Ward 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-189",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "East Bay Regional Park District",
+   "district_or_seat": "Ward 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-381",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "East Bay Regional Park District",
+   "district_or_seat": "Ward 7",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-190",
+   "office": "Director",
+   "office_category": "Healthcare",
+   "government_level": "Special district",
+   "jurisdiction": "Eden Township Healthcare District",
+   "district_or_seat": "Area 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-191",
+   "office": "Director",
+   "office_category": "Fire protection",
+   "government_level": "Special district",
+   "jurisdiction": "Fairview Fire Protection District",
+   "district_or_seat": "At large",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-307",
+   "office": "Director",
+   "office_category": "Community services district",
+   "government_level": "Special district",
+   "jurisdiction": "Granada Community Services District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "San Mateo"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-192",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "Hayward Area Recreation and Park District",
+   "district_or_seat": "Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-193",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "Hayward Area Recreation and Park District",
+   "district_or_seat": "Area 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-384",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Ironhouse Sanitary District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-194",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "Livermore Area Recreation and Park District",
+   "district_or_seat": "At large",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-200",
+   "office": "Director",
+   "office_category": "Open space district or authority",
+   "government_level": "Special district",
+   "jurisdiction": "Midpeninsula Regional Open Space District",
+   "district_or_seat": "Ward 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-379",
+   "office": "Director",
+   "office_category": "Fire protection",
+   "government_level": "Special district",
+   "jurisdiction": "Moraga-Orinda Fire Protection District",
+   "district_or_seat": "Division 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-380",
+   "office": "Director",
+   "office_category": "Fire protection",
+   "government_level": "Special district",
+   "jurisdiction": "Moraga-Orinda Fire Protection District",
+   "district_or_seat": "Division 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-385",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Mt. View Sanitary District",
+   "district_or_seat": "Area 2",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-195",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Oro Loma Sanitary District",
+   "district_or_seat": "District 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-196",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Oro Loma Sanitary District",
+   "district_or_seat": "District 3",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-197",
+   "office": "Director",
+   "office_category": "Sanitary",
+   "government_level": "Special district",
+   "jurisdiction": "Oro Loma Sanitary District",
+   "district_or_seat": "District 5",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-382",
+   "office": "Director",
+   "office_category": "Parks and recreation",
+   "government_level": "Special district",
+   "jurisdiction": "Pleasant Hill Recreation & Park District",
+   "district_or_seat": "At-large",
+   "ocd_division_id": null,
+   "counties": [
+    "Contra Costa"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-198",
+   "office": "Director",
+   "office_category": "Transit",
+   "government_level": "Special district",
+   "jurisdiction": "San Francisco Bay Area Rapid Transit District (BART)",
+   "district_or_seat": "District 4",
+   "ocd_division_id": null,
+   "counties": [
+    "Alameda"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-244",
+   "office": "Director",
+   "office_category": "Transit district",
+   "government_level": "Special district",
+   "jurisdiction": "San Francisco Bay Area Rapid Transit District (BART)",
+   "district_or_seat": "District 8",
+   "ocd_division_id": null,
+   "counties": [
+    "San Francisco"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-201",
+   "office": "Director",
+   "office_category": "Water district",
+   "government_level": "Special district",
+   "jurisdiction": "Santa Clara Valley Water District",
+   "district_or_seat": "District 1",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-202",
+   "office": "Director",
+   "office_category": "Water district",
+   "government_level": "Special district",
+   "jurisdiction": "Santa Clara Valley Water District",
+   "district_or_seat": "District 6",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  },
+  {
+   "id": "CA2026-203",
+   "office": "Director",
+   "office_category": "Water district",
+   "government_level": "Special district",
+   "jurisdiction": "Santa Clara Valley Water District",
+   "district_or_seat": "District 7",
+   "ocd_division_id": null,
+   "counties": [
+    "Santa Clara"
+   ],
+   "election_type": "general",
+   "state": "CA"
+  }
+ ],
+ "rows": [
+  {
+   "id": "2836c9a6bc79c696f3747693",
+   "position_id": "CA2026-019",
+   "candidate": "Eleni Kounalakis",
+   "party": "D",
+   "roster": "candidates",
+   "cair_action": [
+    {
+     "endorser": "CAIR Action",
+     "kind": "organization",
+     "relation": "preferred",
+     "phase": "general",
+     "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=2",
+     "checked_on": "2026-10-23",
+     "verification": "endorser_statement",
+     "note_id": "N1544",
+     "quote": "Eleni Kounalakis | Treasurer | PREFERRED"
+    }
+   ],
+   "request": {
+    "model": "jev-latest",
+    "state": {
+     "candidate": "Eleni Kounalakis",
+     "office": "Statewide Treasurer",
+     "state": "CA",
+     "party": "Democratic Party",
+     "ca_spenders_supporting": [
+      {
+       "spender": "ADVANCE CALIFORNIA, SPONSORED BY CALIFORNIA APARTMENT ASSOCIATION",
+       "amount_usd": 75000.0,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "PLANNED PARENTHOOD AFFILIATES OF CALIFORNIA VOTES PAC",
+       "amount_usd": 13534.76,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "GROWSF VOTER GUIDE",
+       "amount_usd": 9913.53,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "UNITED DOMESTIC WORKERS OF AMERICA INDEPENDENT EXPENDITURE PAC",
+       "amount_usd": 3260.5,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "NORTHERN SOLANO DEMOCRATIC CLUB",
+       "amount_usd": 694.97,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "CALIFORNIA FEDERATION OF TEACHERS, COPE - AFT, AFL-CIO",
+       "amount_usd": 632.27,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "TEHAMA COUNTY DEMOCRATIC CENTRAL COMMITTEE",
+       "amount_usd": 477.98,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "CALIFORNIA TEACHERS ASSOCIATION/ASSOCIATION FOR BETTER CITIZENSHIP",
+       "amount_usd": 321.74,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "DEMOCRATIC CLUB OF THE CONEJO VALLEY",
+       "amount_usd": 237.49,
+       "relevance": "unestablished"
+      },
+      {
+       "spender": "DEMOCRATS OF THE DESERT",
+       "amount_usd": 127.69,
+       "relevance": "unestablished"
+      }
+     ],
+     "spending_context": "Independent spending, not campaign contributions or proof of candidate policy. Organization context explains documented relevance; unmapped spenders have unestablished relevance and should not explain a Palestine assessment without other explicit evidence. Top 12 per direction plus all registered relevant spenders; not exhaustive totals. Funding links do not establish earmarking, control, or that every ad concerns Israel/Palestine.",
+     "campaign_platform_points": [
+      "Economy & cost of living: As a candidate for State Treasurer, Kounalakis commits to fiscal stewardship and responsible management of the state's finances, with a vision for investments that reflect California's values and ensure a strong, inclusive economic future.",
+      "Education: The campaign states her leadership has focused on responsible investment in education, including approving construction of over 60,000 beds on college campuses, positioning education infrastructure as a core priority for the Treasurer role.",
+      "Environment & climate: The campaign highlights climate resilience as a central focus of her public leadership, alongside advancing clean energy jobs, framing environmental investment as a key priority for managing state finances.",
+      "Other: The campaign states her goal is to build a future where everyone, regardless of race, class, or immigration status, has the same chance and opportunity, framing equity and equal access as a core value of her candidacy."
+     ],
+     "gaza_evidence": [
+      "2023-10-23: Kounalakis attended a California Capitol rally with Jewish and interfaith leaders calling for the release of hostages taken by Hamas on Oct 7.",
+      "2024-05-16: Kounalakis publicly criticized California universities for their handling of Palestinian student protests related to the Gaza conflict."
+     ],
+     "focused_endorsement_observations": [
+      {
+       "endorser": "Vote for Peace",
+       "relation": "opposed",
+       "phase": "general",
+       "source_label": "Opposed"
+      },
+      {
+       "endorser": "CAIR Action",
+       "relation": "preferred",
+       "phase": "general"
+      },
+      {
+       "endorser": "Samir Laymoun",
+       "relation": "opposed",
+       "phase": "general"
+      }
+     ],
+     "activist_opinion_context": "Samir Laymoun is an activist opinion source requested by the owner, separate from official BAMC Action positions. Preserve his support/opposition and comments. A tactical vote may aim to pressure an incumbent; comments are assigned to their reviewed candidate subject. A protest-vote recommendation does not establish shared policy views.",
+     "endorsement_evidence_context": "For this rubric, directional CAIR Action / Vote for Peace recommendations, including Ally or Opposed, are concrete stance evidence even without a direct candidate quotation. Preserve their stated tier, phase and source qualifications.",
+     "organization_context": {
+      "Vote for Peace": {
+       "role": "candidate rating guide",
+       "relevance": "Evaluates human rights and war-lobby/AIPAC funding, also considering viability. Preserve Ally/Neutral/Opposed; inclusion alone is not endorsement or proof of a specific policy.",
+       "sources": [
+        "https://voteforpeace.info/methodology"
+       ]
+      },
+      "CAIR Action": {
+       "role": "advocacy and recommendation organization",
+       "relevance": "Recommendations consider civil rights and foreign policy, including Gaza/ceasefire positions. Preferred is not full endorsement; preserve the recorded tier and joint status.",
+       "sources": [
+        "https://cairaction.org/how-we-developed-our-endorsements/"
+       ]
+      }
+     },
+     "election_date": "2026-11-03",
+     "jurisdiction": "California",
+     "candidate_roster": "candidates"
+    },
+    "questions": {
+     "pro_palestine_score": {
+      "type": "score",
+      "instructions": "What grade should we give the candidate wrt how pro-Palestine and anti-Israel they are?",
+      "criteria": [
+       "Shields Israel and a strong defender of Israel or is openly Hindutva or endorsed by Hindutva orgs. Don't hold statements made in October 2023 against them though.",
+       "Israel-centric framing with sympathy for Palestinians or equates being anti-zionism or anti-Israel with anti-semitism / supports the IHRA definition of anti-semitism or bills like AB-715 in CA that censor criticism of Israel, or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+       "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist and refuses to say a clear Yes it's a genocide when explicitly asked",
+       "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreetPAC",
+       "Explicitly affirms it to be a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+       "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action (at endorsement level rather than just preferred level) or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community, or has personally been a strong champion for our cause such as leading / introducing a ceasefire resolution. Or are openly and explicitly anti-zionist and strong supporters of BDS against Israel. They oppose the US doing things on behalf of Israel. They supportive of bills like Block the Bombs."
+      ]
+     },
+     "evidence_score": {
+      "type": "score",
+      "instructions": "how strong are the evidences or observations for us to evaluate the candidate's stance on being pro-Palestine or being recommended by Muslim community as a measure of being pro-Justice vs being pro-Israel or benefiting zionists?",
+      "criteria": [
+       "There is zero evidence that indicates one way or another or has said or done absolutely nothing about the topic as far as we know (which is especially ok for local races)",
+       "There is concrete undeniable evidence of this candidate being one way or the other"
+      ]
+     }
+    }
+   },
+   "request_sha256": "c43f692f1adbdebfb2984dc92262541813dac0aef8d768f174ed1776d0b9b148",
+   "status": "complete",
+   "revision": 1,
+   "response": {
+    "model": "jev-1.14.0",
+    "answers": {
+     "evidence_score": {
+      "type": "score",
+      "score": 0.85,
+      "confidence": 0.7,
+      "legend": {
+       "0": "There is zero evidence that indicates one way or another or has said or done absolutely nothing about the topic as far as we know (which is especially ok for local races)",
+       "1": "There is concrete undeniable evidence of this candidate being one way or the other"
+      },
+      "probabilities": {
+       "0": 0.15,
+       "1": 0.85
+      }
+     },
+     "pro_palestine_score": {
+      "type": "score",
+      "score": 1.26,
+      "confidence": 0.82,
+      "legend": {
+       "0": "Shields Israel and a strong defender of Israel or is openly Hindutva or endorsed by Hindutva orgs. Don't hold statements made in October 2023 against them though.",
+       "1": "Israel-centric framing with sympathy for Palestinians or equates being anti-zionism or anti-Israel with anti-semitism / supports the IHRA definition of anti-semitism or bills like AB-715 in CA that censor criticism of Israel, or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+       "2": "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist and refuses to say a clear Yes it's a genocide when explicitly asked",
+       "3": "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreetPAC",
+       "4": "Explicitly affirms it to be a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+       "5": "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action (at endorsement level rather than just preferred level) or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community, or has personally been a strong champion for our cause such as leading / introducing a ceasefire resolution. Or are openly and explicitly anti-zionist and strong supporters of BDS against Israel. They oppose the US doing things on behalf of Israel. They supportive of bills like Block the Bombs."
+      },
+      "probabilities": {
+       "0": 0.01,
+       "1": 0.87,
+       "2": 0.05,
+       "3": 0.01,
+       "4": 0.05,
+       "5": 0.01
+      }
+     }
+    },
+    "usage": {
+     "input_tokens": 2253,
+     "output_tokens": 37
+    }
+   },
+   "finished_at": "2026-10-31T01:39:13+00:00"
+  }
+ ],
+ "status": "complete",
+ "revision": 2,
+ "completed": 1,
+ "errors": 0,
+ "finished_at": "2026-10-31T01:39:14+00:00"
+}

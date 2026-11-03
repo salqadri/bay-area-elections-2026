@@ -46,9 +46,10 @@ assert(html.includes('id="run-bay-area"'));assert(html.includes('Run full roster
 
 const cairQuestions={gaza_grade:{type:'choice',criteria:{A:'A',B:'B',C:'C',D:'D',E:'E',F:'F'}},pro_palestine_score:{type:'score',criteria:['0','1','2','3','4','5']}};
 function reviewed(grade='B',score=4,relation='preferred',extra={}){return {status:'complete',cair_action:[{endorser:'CAIR Action',relation,phase:'general',...extra}],request:{questions:cairQuestions},response:{answers:{gaza_grade:{type:'choice',choice:grade,confidence:.01},pro_palestine_score:{type:'score',score,confidence:0}}}};}
-assert(C.cairComparison(reviewed('C',5)).flagged);assert(C.cairComparison(reviewed('F',5)).flagged);
+assert(!C.cairComparison(reviewed('C',5)).flagged);assert(!C.cairComparison(reviewed('F',5)).flagged);
+assert(C.cairComparison(reviewed('A',3.3)).flagged);assert(!C.cairComparison(reviewed('F',3.300001)).flagged);
 assert(C.cairComparison(reviewed('B',2.5,'endorsed')).flagged);
-assert(C.cairComparison(reviewed('A',0)).flagged);assert(!C.cairComparison(reviewed('A',2.500001)).flagged);
+assert(C.cairComparison(reviewed('A',0)).flagged);assert(C.cairComparison(reviewed('A',2.500001)).flagged);
 assert(!C.cairComparison(reviewed('B',4)).flagged);assert(!C.cairComparison(reviewed('F',0,'opposed')).flagged);
 assert(!C.cairComparison(reviewed('F',0,'endorsed',{historical:true})).positive);
 assert(!C.cairComparison(reviewed('F',0,'endorsed',{phase:'primary'})).positive);
@@ -61,7 +62,17 @@ const wrongScale=reviewed('A',0);wrongScale.request={questions:{...cairQuestions
 const custom=reviewed('C',2);custom.request={questions:{custom_grade:cairQuestions.gaza_grade,custom_score:cairQuestions.pro_palestine_score}};custom.response={answers:{custom_grade:custom.response.answers.gaza_grade,custom_score:custom.response.answers.pro_palestine_score}};
 assert(!C.cairComparison(custom).comparable);assert(C.cairComparison(custom,{gradeKey:'custom_grade',scoreKey:'custom_score'}).flagged);
 assert.deepEqual(C.comparisonQuestions([custom]),{grades:['custom_grade'],scores:['custom_score']});
-assert.equal(C.cairComparison(reviewed('F',5)).grade.confidence,.01);assert.equal(C.cairComparison(reviewed('A',0)).score.confidence,0);
+assert.equal(C.cairComparison(reviewed('F',5)).grade.confidence,0);assert.equal(C.cairComparison(reviewed('A',0)).score.confidence,0);
+
+// Historical answers remain exact but never re-enter prompts or the comparison UI.
+const retiredPrompt=structuredClone(cairQuestions),retiredBefore=JSON.stringify(retiredPrompt);
+assert.deepEqual(Object.keys(C.activeQuestions(retiredPrompt)),['pro_palestine_score']);
+assert.deepEqual(C.parseQuestions(JSON.stringify(retiredPrompt)),C.activeQuestions(retiredPrompt));
+assert.equal(JSON.stringify(retiredPrompt),retiredBefore);
+assert.throws(()=>C.parseQuestions(JSON.stringify({gaza_grade:cairQuestions.gaza_grade})));
+assert.deepEqual(C.comparisonQuestions([reviewed('F',5)]),{grades:['pro_palestine_score_grade'],scores:['pro_palestine_score']});
+assert(!html.includes('id="comparison-grade"'));assert(!html.includes('id="comparison-score"'));
+
 const snapshotCair={...snapshot,candidates:[{...snapshot.candidates[0],cair_action:[{relation:'preferred',phase:'general'}]},snapshot.candidates[1]]};
 const oldCair={...single,rows:[{...single.rows[0],cair_action:[{relation:'opposed',phase:'general'}]}]};
 const withCurrent=C.catalogRows(snapshotCair,oldCair)[0];assert.equal(withCurrent.cair_action[0].relation,'preferred');assert.equal(withCurrent.request,oldCair.rows[0].request);assert.equal(oldCair.rows[0].cair_action[0].relation,'opposed');

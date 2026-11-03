@@ -1,7 +1,7 @@
 """Jev System One grader for Gaza/pro-Palestine positions, reusable across races and rubrics.
 
 plan → grade → report over any candidate scope, using a versioned criteria file (score + choice
-questions; output always carries pro_palestine_score and gaza_grade). The per-candidate state is
+questions; grades derive exclusively from pro_palestine_score). The per-candidate state is
 deliberately succinct: identity line, IE spenders for/against with amounts, campaign platform
 points, Gaza evidence items — no boilerplate notes. Decisions are cached against the exact
 request contract, so re-runs only pay for changed inputs. Nothing here publishes; results stay a
@@ -28,15 +28,15 @@ from ballotpedia_endorsements import digest, dump, save, now  # noqa: E402
 from candidate_community import community_state  # noqa: E402
 from legislative_actions import CUTOFF, jev_actions  # noqa: E402
 from funding_evidence import model_text as funding_text, needs_review as funding_review  # noqa: E402
-from organization_context import add_spending, add_observation_context, registry as organization_registry  # noqa: E402
+from organization_context import add_spending, add_observation_context, normalize_endorsement_observations, registry as organization_registry  # noqa: E402
 from organization_context import owner_organization_context
 from evidence_context import contexts as reviewed_contexts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
-DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v8.json'
-STATE_VERSION = 'candidate-evidence-v20-policy-channel-low-weight-owner-org-context'
+DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v11.json'
+STATE_VERSION = 'candidate-evidence-v26-endorsement-dedupe-community-reports'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -95,6 +95,12 @@ def validate_response(questions, response):
         if q['type'] == 'score' and not number(a.get('score'), 0, len(keys) - 1):
             raise ValueError('Invalid score for ' + name)
     return response
+
+
+def active_questions(questions):
+    """Retire the old choice grade from new requests; archived contracts stay exact."""
+    validate_questions(questions)
+    return validate_questions({name: question for name, question in questions.items() if name != 'gaza_grade'})
 
 
 def jev_call(work, request, key, force=False):
@@ -163,7 +169,7 @@ def endorser_key(name):
 
 
 def focused_endorsements(p, c):
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v6.json').read_text())
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v7.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
     aliases.update(organization_registry()[2]['aliases'])
     aliases.update(owner_organization_context())
@@ -171,7 +177,7 @@ def focused_endorsements(p, c):
                     for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     original = [e for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     for record, source in zip(observations, original):
-        if endorser_key(record['endorser']) in {'bamcaction','samirlaymoun'}:
+        if endorser_key(record['endorser']) in {'bamcaction','samirlaymoun','alamedacountyjewishdemocraticclub','acjdc'}:
             if source.get('comments'):
                 record['comments'] = [comment['text'] for comment in source['comments']]
             if source.get('recommendation_context'):
@@ -204,7 +210,7 @@ def focused_endorsements(p, c):
                                  'source_label': card['source_label'], 'phase': card['phase'],
                                  'url': card['url'], 'checked_on': guide['reviewed_on'],
                                  'verification': 'endorser_statement'})
-    return observations
+    return normalize_endorsement_observations(observations)
 
 
 def compact_endorsements(observations):
@@ -242,6 +248,12 @@ def compact_policy_evidence(evidence):
 def build_state(p, c, data):
     """Succinct evidence state: identity + IE money both directions + platform + Gaza evidence."""
     import re
+    exclusions = json.loads((ROOT / 'research/gaza-grading/assessment-evidence-exclusions.json').read_text())
+    excluded = {id_ for rule in exclusions['exclusions']
+                if (rule['position_id'], rule['candidate']) == (p['id'], c['name'])
+                for id_ in rule['evidence_ids']}
+    if excluded:
+        c = {**c, 'gaza_evidence': [e for e in c.get('gaza_evidence') or [] if e.get('id') not in excluded]}
     match = re.search(r'state:(\w\w)', p.get('ocd_division_id') or '')
     parts = {
         'candidate': c['name'],
@@ -291,6 +303,11 @@ def build_state(p, c, data):
     if any(funding_review(e) for e in generic):
         parts['funding_scope'] = 'Organization funding since 2024 only; unresolved or mixed totals omitted, not proof of zero funding.'
     endorsements = compact_endorsements(focused_endorsements(p, c))
+    from community_report_context import observations as community_observations
+    community = community_observations(p, c)
+    endorsements.extend(community['endorsements'])
+    if community['policy']:
+        parts['community_policy_observations'] = community['policy']
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
         if any(endorser_key(e['endorser']) == 'bamcaction' for e in endorsements):
@@ -311,14 +328,6 @@ def build_state(p, c, data):
                 'For this rubric, directional CAIR Action / Vote for Peace recommendations, including Ally or Opposed, '
                 'are concrete stance evidence even without a direct candidate quotation. Preserve their stated tier, phase and source qualifications.')
     records = jev_actions(c, data)
-    if any(not e.get('historical') and endorser_key(e['endorser']) in {
-            'californiajewishdemocrats', 'democratsforisraelcalifornia', 'democratsforisraelca'}
-           for e in endorsements):
-        parts['zionist_endorsement_context'] = (
-            'California Jewish Democrats is the renamed Democrats for Israel California (same organization; dfi-ca.org). '
-            'Per owner policy it is a Zionist organization; its endorsement counts against the candidate. '
-            "'Strong Support' is its strongest tier. When paired with pro-Palestine endorsements the signals net down; "
-            'a pro-Palestine endorsement alone can never yield A for a candidate with no personal record.')
     if records:
         parts['congressional_gaza_context'] = (
             'Alignment follows the pro-Palestinian/anti-Zionist tracker; neutral/unknown is not opposition. '
@@ -338,7 +347,7 @@ def plan(data, criteria, scope):
     items = []
     for p, c, roster in rows:
         state = build_state(p, c, data)
-        request = {'model': MODEL, 'state': state, 'questions': criteria['questions']}
+        request = {'model': MODEL, 'state': state, 'questions': active_questions(criteria['questions'])}
         items.append({'position_id': p['id'], 'candidate': c['name'], 'roster': roster,
                       'party': c.get('party'), 'district_or_seat': p.get('district_or_seat'),
                       'request_sha256': digest(dump(request).encode()), 'state': state})
@@ -352,7 +361,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
     validate_questions(criteria['questions'])
     decisions = {}
 
-    questions = criteria['questions']
+    questions = active_questions(criteria['questions'])
 
     def one(item):
         request = {'model': MODEL, 'state': item['state'], 'questions': questions}
@@ -366,10 +375,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
         decisions[ref] = {'request': request, 'response': response}
         answers = response.get('answers', {})
         out = {**base, 'state': item['state'], 'answers': answers}
-        g = answers.get('gaza_grade', {})
         s = answers.get('pro_palestine_score', {})
-        out['gaza_grade'] = g.get('choice')
-        out['gaza_grade_confidence'] = g.get('confidence')
         out['pro_palestine_score'] = s.get('score')
         out['pro_palestine_confidence'] = s.get('confidence')
         out['pro_palestine_score_grade'] = row_grade({'status': 'complete', 'request': request, 'response': response}, mapping)
@@ -391,7 +397,7 @@ def grade(work, plan_doc, criteria, key, workers=3, force=False, score_grade_map
 
 def summary(batch):
     from collections import Counter
-    grades = Counter(r.get('gaza_grade') or 'none' for r in batch['results'])
+    grades = Counter(r.get('pro_palestine_score_grade') or 'none' for r in batch['results'])
     return {'graded': len(batch['results']), 'errors': sum('error' in r for r in batch['results']),
             'grades': dict(sorted(grades.items())),
             'scores_recorded': sum(isinstance(r.get('pro_palestine_score'), (int, float)) for r in batch['results'])}

@@ -1,0 +1,105 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "2c23e1830ebf037711737e57",
+  "candidate": "Igor A. Tregub",
+  "position_id": "CA2026-051",
+  "request_sha256": "a7142c5ba6c8eaac723bbf3d4cbeae7a21ffc3952d3a2aaf4376bb2d93971f79",
+  "grade": "D",
+  "summary": "Tregub voted for a Berkeley peace resolution developed with Jewish Coalition of Berkeley guidance after another version failed, and stands by that vote. The Alameda County Jewish Democratic Club, whose stated purpose includes supporting Israel, endorsed him in the 2026 general.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Identifies the candidate by name; no policy signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "City council office establishes limited foreign-policy scope; grouped with jurisdiction in prose."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "State of California has no bearing on stance."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan registration does not indicate position on Palestinian justice."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "Documents his vote for a Berkeley peace resolution and that he stands by it; a modest positive signal, though framed as a compromise developed with Jewish Coalition guidance after another version failed. The 2026-09-07 date is upload metadata, not a confirmed response date."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Endorsement by an organization whose stated purpose includes supporting Israel; relevant directional signal for his positioning."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Provides the club's stated mission (supporting Israel as a democratic, secure Jewish state), giving context to the endorsement; owner-requested low weight noted."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Upcoming 2026-11-03 date is contextual timing only; no policy signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Confirms Berkeley local context; grouped with office to note limited foreign-policy levers."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Incumbent status does not indicate position on Palestinian justice."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Administrative classification field with no policy content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "372105ba44a1513df428ffd79ca283bc80389f76e652a27f0fac85e016471510",
+  "generated_at": "2026-11-03T04:00:07+00:00",
+  "usage": {
+    "prompt_tokens": 4059,
+    "completion_tokens": 4872,
+    "total_tokens": 8931,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4209
+    }
+  },
+  "elapsed_seconds": 56.04,
+  "generation_request_sha256": "0561c1531e4590cdf2cf5165961360044a2820a82843dace69ffb4622fe7cdca",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " The 2026-09-07 date reflects upload metadata, not a confirmed response date.",
+        "replacement": ""
+      },
+      {
+        "removed": " As a city council member his foreign-policy levers are limited, but the documented record places his stance in the range of acknowledging humanitarian harm through an Israel-sympathetic framing.",
+        "replacement": ""
+      }
+    ]
+  }
+}

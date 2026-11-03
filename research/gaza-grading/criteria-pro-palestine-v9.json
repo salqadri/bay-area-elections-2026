@@ -1,0 +1,26 @@
+{
+  "id": "pro-palestine-v9",
+  "description": "Latest owner-saved prompt from October 30, 2026 (Pacific), including the October 2023 statement exception. Only pro_palestine_score and evidence_score are evaluated; the letter grade is derived from saved thresholds. The earlier full-roster run used the separately archived questions in the review bundle.",
+  "questions": {
+    "pro_palestine_score": {
+      "type": "score",
+      "instructions": "What grade should we give the candidate wrt how pro-Palestine and anti-Israel they are?",
+      "criteria": [
+        "Shields Israel and a strong defender of Israel or is openly Hindutva or endorsed by Hindutva orgs. Don't hold statements made in October 2023 against them though.",
+        "Israel-centric framing with sympathy for Palestinians or equates being anti-zionism or anti-Israel with anti-semitism / supports the IHRA definition of anti-semitism or bills like AB-715 in CA that censor criticism of Israel, or is opposed by any anti-Zionist org like TrackAIPAC or Vote For Peace",
+        "Condemns humanitarian harm only without fully blaming Israel or only blaming Netanahu or is a liberal zionist and refuses to say a clear Yes it's a genocide when explicitly asked",
+        "Condemns Israel for doing serious war crimes and condemns settler violence in the West Bank, but stop short of calling for ending US aid to Israel or endorsed by JStreetPAC",
+        "Explicitly affirms it to be a 'genocide' but leaves room for a reset of Israel-US relations by blaming Netanyahu and the current government only. They are against aid to Israel but they still insist on allowing sales to Israel. They are a champion for getting US out of wars in the middle east. Preferred by CAIR Action.",
+        "Openly against the genocide and Israeli military assistance / endorsed by Track AIPAC or CAIR Action (at endorsement level rather than just preferred level) or Vote for Peace / opposed by UDP. An early advocate for calling for a ceasefire in Gaza.  Or we know they are part of the Muslim community, or has personally been a strong champion for our cause such as leading / introducing a ceasefire resolution. Or are openly and explicitly anti-zionist and strong supporters of BDS against Israel. They oppose the US doing things on behalf of Israel. They supportive of bills like Block the Bombs."
+      ]
+    },
+    "evidence_score": {
+      "type": "score",
+      "instructions": "how strong are the evidences or observations for us to evaluate the candidate's stance on being pro-Palestine or being recommended by Muslim community as a measure of being pro-Justice vs being pro-Israel or benefiting zionists?",
+      "criteria": [
+        "There is zero evidence that indicates one way or another or has said or done absolutely nothing about the topic as far as we know (which is especially ok for local races)",
+        "There is concrete undeniable evidence of this candidate being one way or the other"
+      ]
+    }
+  }
+}

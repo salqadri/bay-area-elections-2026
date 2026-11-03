@@ -1,0 +1,33 @@
+{
+  "format": "held-race-rationale/v1",
+  "status": "held_for_review",
+  "position_id": "CA2026-053",
+  "recommended": "Mark Humbert",
+  "text": "Mark Humbert, a candidate for District 8 City Council Member in Berkeley, provided a questionnaire response on Gaza in which he initially resisted a ceasefire resolution, stating Israel's early response seemed justified, but later supported Taplin's ceasefire resolution and said he would assess further proposals case by case. He was endorsed for the general election by the Alameda County Jewish Democratic Club, a county Democratic club whose stated purpose includes supporting Israel as a democratic, inclusive and secure Jewish state.",
+  "words": 80,
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "74432453ef957c84cf6eb430a7d2c7d1da0649f3605c43daffe5b09328b925ae",
+  "generated_at": "2026-11-03T04:39:14+00:00",
+  "source_candidate_request_sha256": {
+    "7b6f781ef34912aa05b8b392": "feb98fb0e146afb47c124d6fef5cd0288228a48cab9620f7ef098b0e223143f5",
+    "b12fe8d23f7b5d6827a70bca": "ac8fdfc5ec85618c51f98565a7c9bf9496aee0e5a23f7ce463b104bb20c0ade5",
+    "a9dd5700e462351ecdcaaf7c": "2fd231c98ad6bbc3ef57cc7b472791604335a929f8ebb0eba4f543a7046171bb",
+    "ab013e8cdc3f357452a92ef4": "d0b96d4e335154d53daf3bc662ead09000f45fc13a472a9d85a19eb4783703b6"
+  },
+  "usage": {
+    "prompt_tokens": 2196,
+    "completion_tokens": 1351,
+    "total_tokens": 3547,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1230
+    }
+  },
+  "elapsed_seconds": 16.07,
+  "generation_request_sha256": "8877866624dd7cc779b1c7da216914c1a4846a386b1b8229964c80d19a48e043",
+  "attempt": 1,
+  "narrative_context_version": "exact-organization-boundaries-v2",
+  "editorial_cleanup": {
+    "before": "Mark Humbert, the recorded strongest candidate for District 8 City Council Member in Berkeley, provided a questionnaire response on Gaza in which he initially resisted a ceasefire resolution, stating Israel's early response seemed justified, but later supported Taplin's ceasefire resolution and said he would assess further proposals case by case. He was endorsed for the general election by the Alameda County Jewish Democratic Club, a county Democratic club whose stated purpose includes supporting Israel as a democratic, inclusive and secure Jewish state; the endorsement does not establish agreement with every club policy. No other candidate in this race has a researched record.",
+    "reason": "Omit unrelated spending, missing-record disclaimers and research metadata; preserve recorded policy observations."
+  }
+}

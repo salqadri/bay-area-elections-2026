@@ -1,0 +1,107 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "44006b6ca00a8912fe4c892d",
+  "candidate": "Kathryn Camp",
+  "position_id": "CA2026-133",
+  "request_sha256": "538ecaf69226f043c4a4f1d54fb80c912d7f50ac5474ccaade77addb65e19de5",
+  "grade": "E",
+  "summary": "Camp's stated support for AB 715 and SB 48 compliance in Oakland school districts, paired with a response endorsing \"Israel's peaceful existence,\" aligns with Israel-centric framing rather than Palestinian justice. The Alameda County Jewish Democratic Club endorsed her for the general election.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "included",
+      "reason": "Candidate name used in prose; no independent signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Local school-board title provides no Palestine-related signal."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "California context relevant only insofar as AB 715 is state legislation; not a standalone fact."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label carries no Palestine-related signal."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "All eight points address literacy, career pathways, school safety, accountability, and labor; none reference Palestine, Israel, Gaza, or related civil-rights speech."
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Stated support for AB 715/SB 48 compliance in school districts is a documented pro-Israel-education position; response date unstated, only file-upload date (2026-09-09) available."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Response endorses 'Israel's peaceful existence'; paired with generic anti-discrimination language. Same upload-date caveat applies."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Alameda County Jewish Democratic Club endorsed Camp (general election); low-weight per owner note but recorded as an endorsement."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Club mission includes supporting Israel as a Jewish state; owner-requested low weight, grouped with endorsement observation."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Election date 2026-11-03 has no Palestine-related signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Oakland Unified School District context; no independent Palestine signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label only; no substantive content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "63edcd1946341b9b36c2da3e7b15715c50b4771d732aeca4e7c755ab01418514",
+  "generated_at": "2026-11-03T04:05:10+00:00",
+  "usage": {
+    "prompt_tokens": 4431,
+    "completion_tokens": 3299,
+    "total_tokens": 7730,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2596
+    }
+  },
+  "elapsed_seconds": 37.5,
+  "generation_request_sha256": "e15e344ad58d9289201666d61db760fb395fde4bc21026203f0b84835d366265",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " Both the AB 715 and Gaza responses carry only a file-upload date (2026-09-09); the actual response date is unstated.",
+        "replacement": ""
+      }
+    ]
+  }
+}

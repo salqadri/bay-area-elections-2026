@@ -1,5 +1,12 @@
 # Jev grading and the local playground
 
+For PR #22 continuation, use [the portable handoff](../../docs/PR22_HANDOFF.md). Latest owner questions, working thresholds and the two held runs needed to restore every candidate's latest result are committed; restoration needs no model call.
+
+Local PR review update, October 30: default rubric **pro-palestine-v9** retires
+the separate Gaza choice grade. New requests evaluate `pro_palestine_score` and
+`evidence_score`; `pro_palestine_score_grade` is derived using saved thresholds.
+Existing versioned rubrics and frozen evaluations remain historical records.
+
 Current publication **2026-10-27.11** applies minimum evidence **0.22** with no
 model calls. `published-2026-10-27-evidence022.json` copies the existing v6 raw
 results and changes only their public mapping metadata. Matching explanation

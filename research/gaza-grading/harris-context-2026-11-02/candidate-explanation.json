@@ -1,0 +1,70 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "3c029e868af991966a3d935d",
+  "candidate": "Harris Mojadedi",
+  "position_id": "CA2026-120",
+  "request_sha256": "cbb9a0ae4fc387e52b36155babbadc429fdf6f98b8c980a400f2244f2f10720a",
+  "grade": "A",
+  "summary": "Harris Mojadedi is endorsed by CAIR Action and rated Ally by Vote for Peace. Separately, the guide publisher reports that the Muslim American Alliance strongly opposes him. A February 2024 Bay Area Reporter article documents his criticism of MAA's voter guide over LGBTQ-related parental-rights criteria. That article concerns a different policy dispute; it does not establish his Gaza position or confirm MAA's reported opposition.",
+  "review_context_source": "research/gaza-grading/harris-context-2026-11-02/race-context.json",
+  "model": "qwen/qwen3.8-27b",
+  "generated_at": "2026-11-03T07:08:52+00:00",
+  "generation_request_sha256": "c597b9bce63222abbdab2ea06c2121e7fbc64ca172f71e63f6a8f94e4adea01b",
+  "usage": {
+    "prompt_tokens": 1235,
+    "completion_tokens": 3901,
+    "total_tokens": 5136,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3257
+    }
+  },
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "note": "Candidate name recorded as Harris Mojadedi."
+    },
+    {
+      "id": "candidate_record.office",
+      "note": "Office recorded as Trustee Area 3 Governing Board Member."
+    },
+    {
+      "id": "candidate_record.state",
+      "note": "State recorded as CA (California)."
+    },
+    {
+      "id": "candidate_record.party",
+      "note": "Party field is null; no party affiliation recorded."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "note": "Eight platform points on file covering education, immigration, affordability, housing, labor, AI guardrails, and government transparency; present in the record but not expanded in this summary."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "note": "Two entries recorded: CAIR Action – endorsed, general phase; Vote for Peace – supported (tier: Ally), general phase."
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "note": "Recorded disposition: directional CAIR Action / Vote for Peace recommendations (including Ally or Opposed tiers) are treated as concrete stance evidence even absent a direct candidate quotation; tier, phase, and source qualifications are preserved as recorded settings."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "note": "CAIR Action listed as an advocacy and recommendation organization (civil-rights and foreign-policy criteria); Vote for Peace listed as a candidate rating guide (human-rights and funding criteria). Source URLs provided. Roles recorded as organizational context, not as endorsements by this summary."
+    },
+    {
+      "id": "community_source_report",
+      "note": "Owner-reported observation (position CA2026-120, reviewed 2026-11-02): guide owner states MAA strongly opposes Mojadedi; source_type is owner_report, independently_verified is false, no public source URL. Linked 2024 Bay Area Reporter article documents a community-policy disagreement over the guide's parental-rights criteria; it is classified as such and is not direct evidence of a Gaza position nor confirmation of MAA opposition or its cause."
+    }
+  ],
+  "source_context_sha256": "a8490919c0b8a83d1cf7d038ea16090711f7e26d90e97d31499e388fd516bcc5",
+  "summary_type": "neutral_factual_context",
+  "original_generated_text": "Harris Mojadedi, running for Trustee Area 3 Governing Board Member in California, is recorded as endorsed by CAIR Action and rated Ally by Vote for Peace, both in the general phase. A 2024 Bay Area Reporter article documents Mojadedi publicly criticizing the Muslim American Alliance voter guide over its parental-rights criteria. Separately, the guide owner reported MAA strongly opposes Mojadedi; this is an owner statement, not independently verified, and the article does not confirm that opposition or its cause.",
+  "editorial_review": "Edited for concise wording and precise separation of the owner report from the article; raw model output preserved in generation-calls.",
+  "source_binding_history": [
+    {
+      "source_context_sha256": "004f6118f66a3b2a8dcc6fbfe34228d2c033c76cf485bd9d6edc025046367310",
+      "reason": "Same source facts now also projected into the Jev state; text and exact generation/scoring requests unchanged."
+    }
+  ]
+}

@@ -3,12 +3,14 @@
 sub-agent writes the race-level recommendation reason; both readers (explore +
 find-my-ballot) render the recommendation inside each race. Deterministic precedence (owner rules):
   1. A confirmed Muslim-community candidate wins that race outright.
-  2. Otherwise Jev chooses the best graded candidate.
+  2. Otherwise Jev chooses among graded candidates with usable selection evidence.
+     Opposition-only records cannot become automatic support recommendations.
   3. No candidate with a political grade -> no information.
   4. Only grades E or F -> no known good candidate (owner rule 2026-10-29: a D-rated
      best candidate IS recommended; E/F races stay unrecommended).
 Jev answers are cached and resumable; summaries are cached too."""
 import argparse
+from copy import deepcopy
 import hashlib
 import json
 import os
@@ -18,6 +20,8 @@ import unicodedata
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+
+from recommendation_evidence import POLICY_VERSION, candidate_evidence
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "2026-11-03_Bay_Area_Elections.json"
@@ -135,6 +139,7 @@ def classify(data, obs):
     def office_category(p):
         raw = p.get("office_category") or ""
         return OFFICE_CATEGORY_CANON.get(raw.lower(), raw)
+    holds = {h["position_id"]: h for h in json.loads((OUTDIR / "owner-review-holds.json").read_text())["holds"]}
     races = []
     for p in data["positions"]:
         cands = all_candidates(p)
@@ -149,6 +154,8 @@ def classify(data, obs):
             "district_or_seat": p.get("district_or_seat"),
             "counties": p.get("counties") or [],
             "ballot_status": p.get("ballot_status"),
+            "selection_policy": POLICY_VERSION,
+            "selection_evidence": {c['name']: candidate_evidence(p, c, data) for c in cands},
             "roster": [
                 {
                     "name": c.get("name"),
@@ -168,11 +175,15 @@ def classify(data, obs):
             base["muslim_candidate"] = muslims[0]["name"]
             base["needs_summary"] = True
         else:
-            graded = [c for c in cands if grade_of(c)]
+            graded = [c for c in cands if grade_of(c)
+                      and not base['selection_evidence'][c['name']]['opposition_only']]
             if not graded:
                 base["category"] = CAT_NO_INFO
                 base["recommended"] = None
                 base["recommend_reason"] = "No recommendation due to a lack of information about this race."
+                if any(grade_of(c) and base['selection_evidence'][c['name']]['opposition_only'] for c in cands):
+                    base['recommend_reason'] = ('No recommendation: the available graded records contain only opposition. '
+                                                'Other candidates remain unassessed.')
                 base["needs_summary"] = False
             else:
                 below_cutoff = [c for c in graded if GRADE_ORDER[grade_of(c)] > GRADE_ORDER[GRADE_CUTOFF]]
@@ -186,17 +197,21 @@ def classify(data, obs):
                     base["recommended"] = None  # filled by Jev
                     base["recommend_reason"] = "Jev selected the strongest candidate in this race."
                     base["needs_summary"] = True
+        hold = holds.get(p['id'])
+        if hold and any(c['name'] == hold['candidate'] for c in cands):
+            base.update(category=CAT_NO_GOOD, recommended=None, needs_summary=False,
+                        recommend_reason=hold['public_reason'], owner_review_hold=deepcopy(hold))
+            if hold.get('narrative_context_path'):
+                from publisher_review_context import current_context
+                context = current_context(hold['narrative_context_path'], p, data, hold)
+                if context:
+                    base['recommend_reason'] = context['text']
         races.append(base)
     return races
 
 
-def jev_request(race):
-    """Recommendations compare published letter grades, per the documented policy.
-
-    Evidence is evaluated in the scorecard, not reinterpreted by this selector.
-    The complete request is archived and hashed so changed grades/rosters cannot
-    silently reuse a decision cached only against the race ID.
-    """
+def legacy_jev_request(race):
+    """Exact historical contract, for validating archived decisions only."""
     candidates = [{k: c.get(k) for k in ("name", "party", "grade")}
                   for c in race["roster"] if c.get("grade") in GRADE_ORDER]
     return {"model": "jev-latest", "state": {
@@ -205,6 +220,38 @@ def jev_request(race):
         "questions": {"best_candidate": {"type": "choice",
             "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
             "criteria": {c["name"]: "Published pro-Palestine grade: " + c["grade"] for c in candidates}}}}
+
+
+def eligible_candidates(race):
+    evidence = race.get('selection_evidence') or {}
+    return [c for c in race['roster'] if c.get('grade') in GRADE_ORDER
+            and not evidence.get(c['name'], {}).get('opposition_only')]
+
+
+def jev_request(race):
+    """Compare grades after the direction-aware eligibility guard.
+
+    Preserve all candidates and signed observations, including N/A context.
+    Opposition does not become support and N/A does not become a favorable grade.
+    The complete request is archived and hashed so changed grades/rosters cannot
+    silently reuse a decision cached only against the race ID.
+    """
+    evidence = race.get('selection_evidence') or {}
+    eligible = {c['name'] for c in eligible_candidates(race)}
+    candidates = [{**{k: c.get(k) for k in ('name', 'party', 'grade')},
+                   **evidence.get(c['name'], {}), 'selection_eligible': c['name'] in eligible}
+                  for c in race['roster']]
+    return {"model": "jev-latest", "state": {
+        "selection_policy": POLICY_VERSION,
+        "position_id": race["position_id"], "office": race["office"],
+        "district_or_seat": race.get("district_or_seat"), "candidates": candidates},
+        "questions": {"best_candidate": {"type": "choice",
+            "instructions": ("Choose among selection_eligible candidates using their published letter grades: A, B, C, D, E, F. "
+                             "All candidates and signed source observations are supplied as context. Opposition is not support. "
+                             "N/A means unassessed, not favorable or unfavorable. Never infer support for an opponent from opposition alone. "
+                             "Do not use outside knowledge or rescore candidates. Choose among strongest tied eligible candidates."),
+            "criteria": {c['name']: 'Published pro-Palestine grade: ' + c['grade']
+                         for c in candidates if c['selection_eligible']}}}}
 
 
 def request_hash(request):
@@ -240,7 +287,7 @@ def jev_phase(races):
     print(f"Jev: {len(races)} total, {len(cache)} cached, {len(todo)} to run")
     def work(r):
         request = requests[r["position_id"]]
-        candidates = request["state"]["candidates"]
+        candidates = [c for c in request["state"]["candidates"] if c['selection_eligible']]
         if len(candidates) == 1:
             name = candidates[0]["name"]
             res = {"choice": name, "confidence": 1.0, "probabilities": {name: 1.0}, "single_candidate": True}
@@ -250,7 +297,7 @@ def jev_phase(races):
                "probabilities": res.get("probabilities"), "model": res.get("response", {}).get("model", "jev-latest"),
                "request": request, "request_sha256": request_hash(request),
                "evaluated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
-        if res.get("single_candidate"): rec["single_candidate"] = True
+        if res.get("single_candidate"): rec["only_eligible_candidate"] = True
         if res.get("response"): rec["response"] = res["response"]
         if not cached_pick_matches(rec, request):
             raise ValueError("Invalid Jev recommendation: " + r["position_id"])
@@ -263,20 +310,58 @@ def jev_phase(races):
             cache[pid] = rec
             r = next(x for x in races if x["position_id"] == pid)
             r["jev"] = rec
+            r.pop('decision_revalidation', None)
+            r.pop('selection_status', None)
     # apply cached + fresh to all jev races
     for r in races:
         if r["category"] == CAT_JEV and r["position_id"] in cache:
             r["jev"] = cache[r["position_id"]]
             r["recommended"] = cache[r["position_id"]]["choice"]
+            r['needs_summary'] = True
+            r.pop('decision_revalidation', None)
+            r.pop('selection_status', None)
     return races
 
 
 def cached_pick_matches(cached, request):
     if not cached or cached.get("request") != request or cached.get("request_sha256") != request_hash(request):
         return False
-    grades = {c["name"]: c["grade"] for c in request["state"]["candidates"]}
+    criteria = request['questions']['best_candidate']['criteria']
+    grades = {c["name"]: c["grade"] for c in request["state"]["candidates"]
+              if c['name'] in criteria and c.get('selection_eligible', True)
+              and c.get('grade') in GRADE_ORDER}
     choice = cached.get("choice")
     return choice in grades and GRADE_ORDER[grades[choice]] == min(map(GRADE_ORDER.get, grades.values()))
+
+
+def legacy_revalidation(race):
+    """A receipt for retaining an exact old choice, never a new provider answer."""
+    archived = race.get('jev')
+    if not cached_pick_matches(archived, legacy_jev_request(race)):
+        # A source projection may remove a redundant unspecified-phase copy.
+        # Preserve the exact provider response; only issue a separate receipt
+        # when that narrowly defined deletion makes the entire request match.
+        if not archived or not cached_pick_matches(archived, archived.get('request', {})):
+            return None
+        projected = deepcopy(archived['request'])
+        for candidate in projected['state']['candidates']:
+            rows = candidate.get('observations', [])
+            candidate['observations'] = [row for row in rows if not (
+                (row.get('phase') or 'unspecified') == 'unspecified'
+                and any(own.get('phase') not in (None, '', 'unspecified')
+                        and bool(row.get('historical')) == bool(own.get('historical'))
+                        and all(own.get(k) == v for k,v in row.items() if k != 'phase')
+                        for own in rows))]
+        if projected != jev_request(race):
+            return None
+    eligible = eligible_candidates(race)
+    grades = {c['name']: GRADE_ORDER[c['grade']] for c in eligible}
+    choice = race.get('recommended')
+    if choice != archived['choice'] or choice not in grades or grades[choice] != min(grades.values()):
+        return None
+    return {'policy_version': POLICY_VERSION,
+            'current_request_sha256': request_hash(jev_request(race)),
+            'archived_request_sha256': archived['request_sha256']}
 
 
 def _lmstudio(prompt, max_tokens=4000):
@@ -315,13 +400,13 @@ def _load_jsonl(path):
 # endorsement policy: Muslim-community-aligned vs AIPAC/Zionist/Hindutva only.
 COMMUNITY_ENDORSERS = ["usampac", "bamc", "cair", "aroc", "arab resource", "vote for peace",
                        "khanna", "muslim", "jewish voice for peace", "jvp",
-                       "peace action", "organize for peace", "track aipac"]
+                       "peace action", "organize for peace", "track aipac", "trackaipac", "voteforpeace"]
 ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",
                             "democratic majority for israel", "cufo", "cufi",
                             "christians united", "israeli-american civic", "ican",
-                            "bajc", "jstreet", "j street", "hindu", "americans4hindus",
-                            "jewish democratic council"]
-REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "opposed", "recommended")
+                            "bajc", "jstreet", "jstreetpac", "j street", "j street pac", "hindu american pac", "hindu american political action committee", "hapac", "americans4hindus",
+                            "jewish democratic council", "alameda county jewish democratic club", "acjdc"]
+REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "supported", "opposed", "recommended")
 
 
 def relevant_endorsements(c, position=None):
@@ -340,99 +425,99 @@ def relevant_endorsements(c, position=None):
         if rel not in REASON_ENDORSER_RELATIONS:
             continue
         low = nm.lower()
-        if any(p in low for p in COMMUNITY_ENDORSERS):
+        if _policy_match(low, COMMUNITY_ENDORSERS):
             community.append((nm, rel or "endorsed"))
-        elif any(p in low for p in ISRAEL_ALIGNED_ENDORSERS):
+        elif _policy_match(low, ISRAEL_ALIGNED_ENDORSERS):
             contrast.append((nm, rel or "endorsed"))
     return community, contrast
 
 
-def reason_evidence(c, position=None):
-    """Textual evidence for the reason prompt. Numeric scores deliberately excluded."""
-    lines = []
-    expl = c.get("pro_palestine_explanation") or {}
-    if isinstance(expl, dict) and expl.get("summary"):
-        lines.append("Our assessment: " + digest(expl["summary"], 460))
-    pp = c.get("platform_positions")
-    if isinstance(pp, dict) and pp.get("positions"):
-        for pos in pp["positions"][:4]:
-            t, s = pos.get("topic"), pos.get("summary") or pos.get("position")
-            if t and s:
-                lines.append(f"Platform — {t}: " + digest(s, 220))
-    for g in (c.get("gaza_evidence") or [])[:8]:
-        if isinstance(g, dict):
-            t = g.get("action") or g.get("title") or g.get("summary")
-            d = g.get("date") or g.get("as_of")
-            if t:
-                lines.append("Record" + (f" ({d})" if d else "") + ": " + digest(t, 220))
+def reason_evidence(c, position=None, data=None):
+    """Use the direct Jev evidence projection, not a shortened LLM paraphrase."""
+    from grade_gaza import build_state
+    if data is None:
+        data = json.loads(DATA.read_text())
+    position = position or {'id': ''}
+    state = build_state(position, c, data)
+    lines = ["Documented candidate record (authoritative JSON; preserve response and alignment together): "
+             + json.dumps(state, ensure_ascii=False, separators=(",", ":"))]
     community, contrast = relevant_endorsements(c, position)
     if community:
         lines.append("Muslim-community / pro-Palestine-aligned records: "
-                     + "; ".join(f"{n} ({r})" for n, r in community[:6]))
+                     + "; ".join(f"{n} ({r})" for n, r in community))
     if contrast:
         lines.append("Israel-aligned / AIPAC / Hindu-nationalist-aligned records: "
-                     + "; ".join(f"{n} ({r})" for n, r in contrast[:6]))
+                     + "; ".join(f"{n} ({r})" for n, r in contrast))
     return lines
 
 
 def reason_prompt(race, pos_by_id):
+    data = json.loads(DATA.read_text())
     cands = all_candidates(pos_by_id[race["position_id"]])
     rec = next(c for c in cands if c.get("name") == race["recommended"])
-    graded = [c for c in cands if grade_of(c) and c.get("name") != race["recommended"]]
-    graded.sort(key=lambda c: GRADE_ORDER[grade_of(c)])
-    graded = graded[:3]
+    evidence = race.get('selection_evidence') or {}
+    graded = []
+    for candidate in cands:
+        if candidate.get('name') == race['recommended']:
+            continue
+        context = evidence.get(candidate['name']) or candidate_evidence(pos_by_id[race['position_id']], candidate, data)
+        if grade_of(candidate) or context.get('other_issue_evidence') or context.get('observations'):
+            graded.append(candidate)
+    graded.sort(key=lambda c: GRADE_ORDER.get(grade_of(c), 99))
     federal = race.get("office_category") in ("U.S. House", "U.S. Senate")
     lines = [f"Race: {race['office']}"
              + (f" — {race['district_or_seat']}" if race.get("district_or_seat") else "")
              + f" ({race['jurisdiction'] or ' '.join(race.get('counties') or [])}), November 3, 2026 general election."]
     if race["category"] == CAT_MUSLIM:
-        lines.append(f"We support {race['recommended']}, a confirmed member of the Muslim community,"
-                     " our community's candidate in this race.")
+        lines.append(f"Recorded selection: {race['recommended']}; a confirmed community-alignment observation is present."
+                     " Do not infer a specific policy merely from that observation.")
     else:
         lines.append(f"Our research selects {race['recommended']} as the strongest candidate in this race.")
     lines += ["", f"RECOMMENDED CANDIDATE: {rec.get('name')}"
               + (f" ({rec.get('party')})" if rec.get("party") else ""),
-              "- " + "\n- ".join(reason_evidence(rec, pos_by_id[race['position_id']]))]
+              "- " + "\n- ".join(reason_evidence(rec, pos_by_id[race['position_id']], data))]
     if graded:
         lines += ["", "OTHER CANDIDATES IN THIS RACE WE HAVE INFORMATION ABOUT:"]
         for c in graded:
             lines.append(f"{c.get('name')}" + (f" ({c.get('party')})" if c.get("party") else ""))
-            lines += ["- " + l for l in reason_evidence(c, pos_by_id[race['position_id']])[:6]]
+            lines += ["- " + l for l in reason_evidence(c, pos_by_id[race['position_id']], data)]
     else:
         lines += ["", "No other candidate in this race has a researched record."]
-    framing = ("" if not federal else
-               "This is a FEDERAL race: for a federal office-seeker, taking no recorded position on these "
-               "questions effectively supports the status quo, and the paragraph should say that plainly "
-               "when the recommended candidate's shown record lacks litmus-test action.")
     lines += ["",
-              "Write ONE voter-facing paragraph of up to 200 words explaining why a voter should support "
-              f"{race['recommended']} in this race and why {race['recommended']} is stronger than the other "
-              "candidates above, grounded in the textual records shown. "
-              "OUR FRAMEWORK: voters judge candidates first on two litmus tests — opposing the genocide in "
-              "Gaza and ending U.S. military/economic aid to Israel. When the recommended candidate's shown "
-              "record contains concrete acts on these tests (cosponsoring the Block the Bombs Act, voting "
-              "against arms funding, calling it a genocide, divestment action), name the specific acts with "
-              "their dates or bill names as shown. When the shown record does NOT contain them, be "
-              "transparent: one plain sentence stating what the candidate has not done on the record (for "
-              "example: has not called it a genocide; has not backed blocking weapons transfers; voted for "
-              "aid bills), then explain why the candidate is still the best option listed. Never hide a "
-              "shortfall and never invent one. Do not write meta-language like 'the record does not show' or "
-              "'has not published a stated position' — write about what the candidate has or has not done. "
-              "A candidate who refused to properly support Palestinians when put in the position (a contrary "
-              "vote, an opposed resolution, rejecting community asks) gets that held against them; an "
-              "abstention under heavy pressure can read as qualified support if the shown assessment says so — "
-              "follow the shown assessments. " + framing + " "
-              "Rules: never mention any numeric score or rating; a letter grade may appear at most in "
-              "passing — prefer explaining actual acts, votes, statements and positions. Use ONLY the facts "
-              "shown; never add outside knowledge or invent events, dates, quotes or endorsements; if a "
-              "competitor has no shown record, say nothing about them. Endorsements: mention only the "
-              "'Muslim-community / pro-Palestine-aligned records' and 'Israel-aligned / AIPAC / "
-              "Hindu-nationalist-aligned records' lines (Muslim-aligned backing supports a candidate; "
-              "AIPAC/UDP/DMFI/ICAN or Hindu-nationalist-aligned backing or opposition is a relevant "
-              "contrast); never name any other endorser. Plain prose, no lists, no quotation marks, no "
-              f"headings, no AI disclaimer. Name the office once. Output ONLY the paragraph."]
+              "Write ONE factual paragraph of 30–200 words explaining the recorded comparison for "
+              f"{race['recommended']}. The guide's issue focus is Palestinian justice, including Gaza, "
+              "arms transfers, divestment, civil liberties, and relevant recommendations. Consider all supplied "
+              "observations and preserve substantive contrary evidence. Describe concrete statements, votes, "
+              "sponsorships, pledges, and exact recommendation tiers; do not rescore or choose a different candidate. "
+              "N/A means unassessed, not favorable or unfavorable. Relevant N/A observations remain context. "
+              "An absent entry does not establish that a candidate has never said or done something. State a "
+              "refusal, opposition or shortfall only when explicitly supported, not from a missing record. "
+              "Do not fault state or local officeholders for not exercising congressional powers. "
+              "Use only issue-relevant facts; omit unrelated platform lists, missing-record disclaimers, "
+              "source-upload mechanics, grading methodology and generic uncertainty padding. "
+              "When an actual statement date is unknown, omit the date; never substitute upload metadata. "
+              "Preserve Preferred, Ally, supported, opposed and endorsed as distinct source terms. "
+              "Mention endorsement organizations only from the two explicit relevant-record lists above; "
+              "omit other backing even when it appears elsewhere in the source state. "
+              "Describe super-PAC money as independent spending supporting or opposing the candidate, "
+              "not campaign contributions. Omit spenders marked with unestablished relevance; their presence "
+              "alone does not establish a Palestine connection. Use current structured spending amounts when giving current totals; "
+              "do not substitute an older narrative total. Avoid overclaiming a bill's provisions from its name. "
+              "Do not use rubric descriptions as independent factual evidence. "
+              "No numeric score, grade, confidence, threshold, voting instruction, demographic appeal, "
+              "outside knowledge or invented fact. Name the office once. Plain prose, no lists or headings. "
+              "Output ONLY the paragraph."]
     from summary_source_policy import VOTER_RULES
-    lines += ['', VOTER_RULES]
+    lines += ["", VOTER_RULES,
+              "LEGISLATIVE CONSISTENCY: Each legislative action has a date/period, response, and tracker alignment. "
+              "Keep these together. Aligned means aligned with the tracker, not a negative item. "
+              "A No vote against defunding universities for boycotting Israel is aligned when the record says aligned; "
+              "never describe it as cutting the other way. A Yes vote can support an adverse bill. "
+              "Not voting, Not elected, neutral and unknown are not contrary votes. Distinguish sponsorship, "
+              "a pledge to sponsor, and a recorded vote. Do not merge differently dated bills or turn a period "
+              "into an exact vote date. Use the structured evidence, not an earlier narrative, to resolve meaning. "
+              "Write a factual comparison of the supplied observations and saved selection, without voting "
+              "instructions or identity-based appeals."]
     return "\n".join(lines)
 
 
@@ -501,7 +586,7 @@ def out_of_policy_endorsers(race, pos_by_id, text):
     lower = text.lower()
     for kind, value in sorted(cores, key=lambda x: -len(x[1])):
         if kind == "phrase":
-            if value in flat:
+            if re.search(r"(?<![A-Za-z0-9])" + re.escape(value) + r"(?![A-Za-z0-9])", flat):
                 hits.append(value)
         elif len(value) >= 4 and re.search(r"(?<![a-z0-9])" + re.escape(value) + r"(?![a-z0-9])", lower):
             hits.append(value)
@@ -587,6 +672,26 @@ def build_pages():
         print(f"Built {page}.html ({(ROOT / f'{page}.html').stat().st_size:,} bytes)")
 
 
+def release_choice_matches(race):
+    """Owner-approved carry-forward, separate from an exact provider response."""
+    receipt = race.get('release_choice_review')
+    if not receipt:return False
+    path = (ROOT/receipt['path']).resolve()
+    if not path.is_relative_to(ROOT/'research/candidate-recommendations') or hashlib.sha256(path.read_bytes()).hexdigest()!=receipt['sha256']:
+        return False
+    review = json.loads(path.read_text())
+    source = (ROOT/review['approved_preview_path']).resolve()
+    if not source.is_relative_to(ROOT/'research/candidate-recommendations') or hashlib.sha256(source.read_bytes()).hexdigest()!=review['approved_preview_sha256']:
+        return False
+    prior = next((r for r in json.loads(source.read_text())['races'] if r['position_id']==race['position_id']),{})
+    entry = next((r for r in review['choices'] if r['position_id']==race['position_id']),{})
+    eligible = eligible_candidates(race)
+    best = min((GRADE_ORDER[c['grade']] for c in eligible),default=None)
+    return bool(entry and race.get('recommended')==prior.get('recommended')==entry.get('candidate')
+                and entry.get('request_sha256')==request_hash(jev_request(race))
+                and any(c['name']==race['recommended'] and GRADE_ORDER[c['grade']]==best for c in eligible))
+
+
 def validate_plan(races, data):
     """Refuse a stale page after a new score publication or roster change."""
     expected = {r["position_id"]: r for r in classify(data, json.loads(OBS.read_text()))}
@@ -594,26 +699,96 @@ def validate_plan(races, data):
         raise ValueError("Recommendation race coverage differs from the current dataset")
     for race in races:
         base = expected[race["position_id"]]
-        for key in ("roster", "category", "ballot_status", "office", "district_or_seat", "counties", "jurisdiction"):
+        for key in ("roster", "category", "ballot_status", "office", "district_or_seat", "counties", "jurisdiction",
+                    'selection_policy', 'selection_evidence'):
             if race.get(key) != base.get(key):
                 raise ValueError("Stale recommendation " + key + ": " + race["position_id"])
         if race["category"] == CAT_JEV:
-            if not cached_pick_matches(race.get("jev"), jev_request(race)) or race.get("recommended") != race["jev"]["choice"]:
+            if race.get('selection_status') == 'review_required':
+                if any(race.get(key) for key in ('recommended', 'jev', 'summary', 'needs_summary',
+                                                 'recommend_reason_text', 'decision_revalidation')):
+                    raise ValueError('Pending selection carries a choice or old rationale: ' + race['position_id'])
+                continue
+            receipt = legacy_revalidation(race)
+            retained = receipt is not None and race.get('decision_revalidation') == receipt
+            current = cached_pick_matches(race.get('jev'), jev_request(race))
+            approved = release_choice_matches(race)
+            if not approved and (not (current or retained) or race.get("recommended") != race["jev"]["choice"]):
                 raise ValueError("Recommendation decision differs from current grades: " + race["position_id"])
         elif race.get("recommended") != base.get("recommended"):
             raise ValueError("Recommendation differs from deterministic rule: " + race["position_id"])
+        if not race.get('recommended') and any(race.get(key) for key in ('summary', 'recommend_reason_text', 'jev')):
+            raise ValueError('Unselected race carries an old choice or rationale: ' + race['position_id'])
+
+
+def revalidate_plan(plan, data):
+    """Offline migration: retain valid exact choices or withhold; never invent one.
+
+    Old model requests/responses remain exact. A separate receipt binds a
+    retained historical choice to current eligibility. It is not a cache hit
+    for future requests, whose evidence changes require a new decision.
+    """
+    expected = classify(data, json.loads(OBS.read_text()))
+    previous = {r['position_id']: r for r in plan['races']}
+    if set(previous) != {r['position_id'] for r in expected}:
+        raise ValueError('Recommendation race coverage differs from current dataset')
+    result = deepcopy(plan)
+    races, changes = [], []
+    for base in expected:
+        old = previous[base['position_id']]
+        for key in ('roster', 'ballot_status', 'office', 'district_or_seat', 'counties', 'jurisdiction'):
+            if old.get(key) != base.get(key):
+                raise ValueError('Stale recommendation ' + key + ': ' + base['position_id'])
+        race = {**deepcopy(old), **base}
+        for key in ('decision_revalidation', 'selection_status'):
+            race.pop(key, None)
+        if base['category'] == CAT_JEV:
+            race['recommended'] = old.get('recommended')
+            receipt = legacy_revalidation(race)
+            current = cached_pick_matches(race.get('jev'), jev_request(race))
+            if race.get('recommended') and (current or receipt):
+                if not current:
+                    race['decision_revalidation'] = receipt
+            else:
+                race.update(recommended=None, selection_status='review_required', needs_summary=False,
+                            recommend_reason='No recommendation: selection requires review of the recorded evidence.')
+        if not race.get('recommended'):
+            for key in ('summary', 'recommend_reason_text', 'jev', 'decision_revalidation'):
+                race.pop(key, None)
+        # A migration can withdraw an unsupported choice, not choose an opponent.
+        if race.get('recommended') not in (None, old.get('recommended')):
+            raise ValueError('Revalidation attempted a new choice: ' + race['position_id'])
+        if old.get('recommended') != race.get('recommended'):
+            changes.append({'position_id': race['position_id'], 'previous': deepcopy(old),
+                            'recommended': race.get('recommended'), 'reason': race['recommend_reason'],
+                            'selection_evidence': race['selection_evidence']})
+        races.append(race)
+    result.update(races=races, selection_policy=POLICY_VERSION,
+                  generated_on=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                  rules=('Existing community-first and published-grade policy, with an opposition-only eligibility gate. '
+                         'N/A remains unassessed. Withheld choices require review; no automatic opponent endorsement.'),
+                  pending_summaries=[r['position_id'] for r in races if r.get('recommended') and not r.get('summary')],
+                  counts={key: sum(r['category'] == key for r in races)
+                          for key in (CAT_MUSLIM, CAT_JEV, CAT_NO_GOOD, CAT_NO_INFO)})
+    validate_plan(races, data)
+    return result, {'policy_version': POLICY_VERSION, 'changed_choices': changes,
+                    'retained_archived_choices': sum(bool(r.get('decision_revalidation')) for r in races),
+                    'pending_review': [r['position_id'] for r in races if r.get('selection_status') == 'review_required'],
+                    'model_calls': 0}
 
 
 def save_plan(races):
     OUTDIR.mkdir(parents=True, exist_ok=True)
     payload = {
         "generated_on": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        'selection_policy': POLICY_VERSION,
         "source_dataset": DATA.name,
         "source_dataset_sha256": hashlib.sha256(DATA.read_bytes()).hexdigest(),
         "source_score_publication_id": json.loads(DATA.read_text()).get("pro_palestine_grading", {}).get("publication_id"),
         "pending_summaries": [r["position_id"] for r in races if r.get("recommended") and not r.get("summary")],
         "rules": ("Muslim-community candidate first; else Jev best-of-graded; none graded = no "
-                  f"information; all grades worse than {GRADE_CUTOFF} (E/F) = no known good candidate."),
+                  f"information; all eligible grades worse than {GRADE_CUTOFF} (E/F) = no known good candidate; "
+                  "opposition-only records excluded from automatic selection; N/A stays unassessed."),
         "counts": {
             CAT_MUSLIM: sum(1 for r in races if r["category"] == CAT_MUSLIM),
             CAT_JEV: sum(1 for r in races if r["category"] == CAT_JEV),

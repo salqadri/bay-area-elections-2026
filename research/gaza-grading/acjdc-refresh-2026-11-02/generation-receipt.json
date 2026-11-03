@@ -1,0 +1,1212 @@
+{
+  "format": "held-summary-refresh-receipt/v1",
+  "status": "held_for_review",
+  "execution_status": "complete",
+  "model": "qwen/qwen3.8-27b",
+  "reasoning_effort": "medium",
+  "temperature": 1,
+  "parallelism": 2,
+  "started_at": "2026-11-03T03:46:46+00:00",
+  "finished_at": "2026-11-03T04:42:40+00:00",
+  "candidate_summaries": 40,
+  "race_summaries": 26,
+  "no_summary_na": 4,
+  "audit_results": [
+    {
+      "position_id": "CA2026-177",
+      "candidate": "Anne J. Kepner",
+      "output_path": "candidate-results/22f3de02278951b6dd08ce0c.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.83,
+        "probabilities": {
+          "consistent": 0.87,
+          "contradiction": 0.03,
+          "needs_review": 0.09,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-133",
+      "candidate": "Sylvia Pfeiffer Williams",
+      "output_path": "candidate-results/24408f0f8b8b0c7751a7cc42.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.64,
+        "probabilities": {
+          "consistent": 0.73,
+          "contradiction": 0.01,
+          "needs_review": 0.01,
+          "no_assessable_claim": 0.25
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-136",
+      "candidate": "Sandra Weese",
+      "output_path": "candidate-results/15d9486506f74eea1adc9005.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.96,
+        "probabilities": {
+          "consistent": 0.97,
+          "contradiction": 0.0,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-133",
+      "candidate": "Kathryn Camp",
+      "output_path": "candidate-results/44006b6ca00a8912fe4c892d.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.6,
+        "probabilities": {
+          "consistent": 0.7,
+          "contradiction": 0.03,
+          "needs_review": 0.22,
+          "no_assessable_claim": 0.05
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-008",
+      "candidate": "Buffy Wicks",
+      "output_path": "candidate-results/272fa3e285ea3c8bbd7e7fd3.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.56,
+        "probabilities": {
+          "consistent": 0.67,
+          "contradiction": 0.18,
+          "needs_review": 0.15,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": "Aisha Wahab",
+      "output_path": "candidate-results/45d66bb6837c85f34ca6736c.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.59,
+        "probabilities": {
+          "consistent": 0.69,
+          "contradiction": 0.26,
+          "needs_review": 0.05,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": "Ben Allen",
+      "output_path": "candidate-results/4874990f34dcec3671612e60.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.51,
+        "probabilities": {
+          "consistent": 0.63,
+          "contradiction": 0.12,
+          "needs_review": 0.25,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": "Mark DeSaulnier",
+      "output_path": "candidate-results/4c848318ace49e244a9a3135.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.55,
+        "probabilities": {
+          "consistent": 0.66,
+          "contradiction": 0.24,
+          "needs_review": 0.1,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": "Sally J. Lieber",
+      "output_path": "candidate-results/695e8b56befc5b8a66f8033c.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.88,
+        "probabilities": {
+          "consistent": 0.91,
+          "contradiction": 0.03,
+          "needs_review": 0.05,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-134",
+      "candidate": "LeAna Powell",
+      "output_path": "candidate-results/6380668431a23b629d2f4dce.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.95,
+        "probabilities": {
+          "consistent": 0.96,
+          "contradiction": 0.01,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-018",
+      "candidate": "Richard Barrera",
+      "output_path": "candidate-results/84812a7fbbbc9135a1c1929f.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.92,
+        "probabilities": {
+          "consistent": 0.94,
+          "contradiction": 0.03,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-009",
+      "candidate": "Rebecca Bauer-Kahan",
+      "output_path": "candidate-results/a64290dfd07882c7002f8f12.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.79,
+        "probabilities": {
+          "consistent": 0.84,
+          "contradiction": 0.08,
+          "needs_review": 0.08,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": "Mia Bonta",
+      "output_path": "candidate-results/9ae651fd8267ba0ef191d22a.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.91,
+        "probabilities": {
+          "consistent": 0.93,
+          "contradiction": 0.04,
+          "needs_review": 0.03,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-132",
+      "candidate": "Arielle Fleisher",
+      "output_path": "candidate-results/9e1c803dc2c085e108d1fa77.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.88,
+        "probabilities": {
+          "consistent": 0.91,
+          "contradiction": 0.01,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.06
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-117",
+      "candidate": "Dan Jacowitz",
+      "output_path": "candidate-results/a751595c1d416d2cd25994f7.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.8,
+        "probabilities": {
+          "consistent": 0.85,
+          "contradiction": 0.01,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.12
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-117",
+      "candidate": "Eryka N Mathews-Cain",
+      "output_path": "candidate-results/b75a121f4c3db9a4bfa27f8f.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.91,
+        "probabilities": {
+          "consistent": 0.93,
+          "contradiction": 0.01,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.04
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-136",
+      "candidate": "Cindi Reiss",
+      "output_path": "candidate-results/b8ae5d69d33410c6728f2a7a.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.84,
+        "probabilities": {
+          "consistent": 0.88,
+          "contradiction": 0.01,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.09
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-118",
+      "candidate": "Brian A. Foster",
+      "output_path": "candidate-results/d3b0446a348251c7e032a716.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.6,
+        "probabilities": {
+          "consistent": 0.7,
+          "contradiction": 0.01,
+          "needs_review": 0.02,
+          "no_assessable_claim": 0.27
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-022",
+      "candidate": "Scott Sakakihara",
+      "output_path": "candidate-results/e2546bdcaeaaab898b7e3501.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.85,
+        "probabilities": {
+          "consistent": 0.89,
+          "contradiction": 0.01,
+          "needs_review": 0.05,
+          "no_assessable_claim": 0.05
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-001",
+      "candidate": null,
+      "output_path": "race-results/CA2026-001.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.61,
+        "probabilities": {
+          "consistent": 0.71,
+          "contradiction": 0.26,
+          "needs_review": 0.03,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-072",
+      "candidate": "Barbara Lee",
+      "output_path": "candidate-results/e916e36ec32c1ee0fdf4bad3.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.32,
+        "probabilities": {
+          "consistent": 0.49,
+          "contradiction": 0.42,
+          "needs_review": 0.09,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-003",
+      "candidate": null,
+      "output_path": "race-results/CA2026-003.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.61,
+        "probabilities": {
+          "consistent": 0.71,
+          "contradiction": 0.23,
+          "needs_review": 0.06,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-008",
+      "candidate": null,
+      "output_path": "race-results/CA2026-008.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.88,
+        "probabilities": {
+          "consistent": 0.91,
+          "contradiction": 0.03,
+          "needs_review": 0.05,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-010",
+      "candidate": null,
+      "output_path": "race-results/CA2026-010.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.49,
+        "probabilities": {
+          "consistent": 0.62,
+          "contradiction": 0.16,
+          "needs_review": 0.22,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-018",
+      "candidate": null,
+      "output_path": "race-results/CA2026-018.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.55,
+        "probabilities": {
+          "consistent": 0.66,
+          "contradiction": 0.26,
+          "needs_review": 0.05,
+          "no_assessable_claim": 0.03
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-021",
+      "candidate": null,
+      "output_path": "race-results/CA2026-021.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.2,
+        "probabilities": {
+          "consistent": 0.4,
+          "contradiction": 0.33,
+          "needs_review": 0.25,
+          "no_assessable_claim": 0.02
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-072",
+      "candidate": null,
+      "output_path": "race-results/CA2026-072.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.29,
+        "probabilities": {
+          "consistent": 0.47,
+          "contradiction": 0.31,
+          "needs_review": 0.22,
+          "no_assessable_claim": 0.0
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-022",
+      "candidate": null,
+      "output_path": "race-results/CA2026-022.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.51,
+        "probabilities": {
+          "consistent": 0.63,
+          "contradiction": 0.12,
+          "needs_review": 0.2,
+          "no_assessable_claim": 0.05
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-133",
+      "candidate": null,
+      "output_path": "race-results/CA2026-133.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.6,
+        "probabilities": {
+          "consistent": 0.7,
+          "contradiction": 0.01,
+          "needs_review": 0.03,
+          "no_assessable_claim": 0.26
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-132",
+      "candidate": null,
+      "output_path": "race-results/CA2026-132.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.84,
+        "probabilities": {
+          "consistent": 0.88,
+          "contradiction": 0.03,
+          "needs_review": 0.08,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-177",
+      "candidate": null,
+      "output_path": "race-results/CA2026-177.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.92,
+        "probabilities": {
+          "consistent": 0.94,
+          "contradiction": 0.01,
+          "needs_review": 0.01,
+          "no_assessable_claim": 0.04
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-134",
+      "candidate": null,
+      "output_path": "race-results/CA2026-134.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.37,
+        "probabilities": {
+          "consistent": 0.53,
+          "contradiction": 0.12,
+          "needs_review": 0.34,
+          "no_assessable_claim": 0.01
+        }
+      }
+    },
+    {
+      "position_id": "CA2026-015",
+      "candidate": null,
+      "output_path": "race-results/CA2026-015.json",
+      "audit": {
+        "type": "choice",
+        "choice": "consistent",
+        "confidence": 0.71,
+        "probabilities": {
+          "consistent": 0.78,
+          "contradiction": 0.08,
+          "needs_review": 0.14,
+          "no_assessable_claim": 0.0
+        }
+      }
+    }
+  ],
+  "calls": [
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/0ac756d64e9f6fda319f9f47/1.request.json",
+      "request_file_sha256": "67ab25f88a32dfa62ce4abf4a6a8b271bca3e0c4d08141867f5ccfe374d7adb0",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/0ac756d64e9f6fda319f9f47/1.response.json",
+      "response_file_sha256": "8fd304f2557906312ce2887b659d13c8f174b52b1d158c73aa1aae072f21ce4f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/15d9486506f74eea1adc9005/1.request.json",
+      "request_file_sha256": "399813c2dbec0f680ffc7a985f1687a9344e9db08c58c46fda6d92a0fcb4b101",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/15d9486506f74eea1adc9005/1.response.json",
+      "response_file_sha256": "aec4430deb60f8f860fe8d95be1dde483fd5eea9791f10be5a5e94778c90a61c"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/178b3fcffe7acadce7755a18/1.request.json",
+      "request_file_sha256": "fe6dbc4784791acc6e2cd18d450e2333dfd1eb8b01f042e6c3e6ab66cbb3940c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/178b3fcffe7acadce7755a18/1.response.json",
+      "response_file_sha256": "4ad8c5f74f4a0fac35bb0a780662114ec9535da4be3ac535f8e4d0c1f7e5695f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/22f3de02278951b6dd08ce0c/1.request.json",
+      "request_file_sha256": "db30d0ffa97a40be0ab687c6d165baedd5e3b49fe7be30353f67d36c20e70319",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/22f3de02278951b6dd08ce0c/1.response.json",
+      "response_file_sha256": "c39d9d7b8ac0fb2763f3747cd5fbab64c1f805d418413f0d7117e3260cf0453f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/24408f0f8b8b0c7751a7cc42/1.request.json",
+      "request_file_sha256": "37b73a077464338bcb3fbc99d3f1558dac246f6ead41dfdbe1fccfcb7b85a6c3",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/24408f0f8b8b0c7751a7cc42/1.response.json",
+      "response_file_sha256": "4d0979daeeb2099fad13a67064e27138158937642f00945e31be4390516f5de3"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/272fa3e285ea3c8bbd7e7fd3/1.request.json",
+      "request_file_sha256": "e4ea75b33fad3395b3c2e6e696183a877e79ed73de75a1916587d9c410df31ea",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/272fa3e285ea3c8bbd7e7fd3/1.response.json",
+      "response_file_sha256": "05197882ad1b911df4b4b894c2d24ed9ca2961d9e61ba4567f6db1af3b7935c3"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/2836c9a6bc79c696f3747693/1.request.json",
+      "request_file_sha256": "4082d0bd3049da3956a7688937758e97066da3baa3e3b5b897116fbe650c5132",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/2836c9a6bc79c696f3747693/1.response.json",
+      "response_file_sha256": "ed008c90e80a2a7b8e614d987957511ee7accde4c74e45539b74460d53e23577"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/2c23e1830ebf037711737e57/1.request.json",
+      "request_file_sha256": "6d97e9a33e9ebb3b0a8181129527fea984fbfa68d58ccf27b3e111140f757af6",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/2c23e1830ebf037711737e57/1.response.json",
+      "response_file_sha256": "67e67215b922b27425876dffeaea395bf5ebc086743bac8b2c2edf75ab86e5a0"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/3d52a8442f6fb39f47328736/1.request.json",
+      "request_file_sha256": "9ad8809e38b5104bcbd1304d6f1e369f73e9c111d076d499359d911edc5b25f6",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/3d52a8442f6fb39f47328736/1.response.json",
+      "response_file_sha256": "d71132404ea18ec43edb38920ac69cfeb1c3771b40dcf8d71813abd47b536276"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/42b9a77a7334687877287015/1.request.json",
+      "request_file_sha256": "a8b8d8c82b3e12e4460d640c4f2d03f032b5e57155139bb89ee6131ecee77f41",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/42b9a77a7334687877287015/1.response.json",
+      "response_file_sha256": "193485a69abe1feff95898ca33bbced6506d2509671557d68d8ce22d1182cb42"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/44006b6ca00a8912fe4c892d/1.request.json",
+      "request_file_sha256": "b0165a6591724d68231f4cca9d62ee886afbb8f2994c3e0fbeae82d6bffe54db",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/44006b6ca00a8912fe4c892d/1.response.json",
+      "response_file_sha256": "ed4dae62cee2078ae5b079a212002741d1c638f56fb2f0d091ccfd44f03a43be"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/45d66bb6837c85f34ca6736c/1.request.json",
+      "request_file_sha256": "174c5b2ac528ee080ee1cfa4f9e6f57f3c73540a8af74855721482a24d1e2452",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/45d66bb6837c85f34ca6736c/1.response.json",
+      "response_file_sha256": "45d852bb014f334228a1980b742950b505e15d666ede408d76dae40dd581dcef"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4874990f34dcec3671612e60/1.request.json",
+      "request_file_sha256": "0ce6d4181a8d3557fabba4337fbab812690686710991e2578ff1cc1d0b94a70e",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4874990f34dcec3671612e60/1.response.json",
+      "response_file_sha256": "4fa77cc0984e723de022bf1f6f5fa0da155bca5b5520d957753cb5f537d69b50"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4a90f3a77de6d83c0c723f51/1.request.json",
+      "request_file_sha256": "c08aeca37d7aff4411d8ab6f1b3c22c5a8566ed8833c8cf6449e997f44e03b8f",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4a90f3a77de6d83c0c723f51/1.response.json",
+      "response_file_sha256": "1e4b6ed7bcafec01bf909df9d71b1ae901f6ab532a798a2df11d6c62895fc606"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4c848318ace49e244a9a3135/1.request.json",
+      "request_file_sha256": "d4c27aeed410da8cd89d1fd543349d41940ba1860a0c3c11b9fff95b585ae27c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4c848318ace49e244a9a3135/1.response.json",
+      "response_file_sha256": "2404cdc5230032cbce02c64e7a38f8fc4d5a88ce780d3bfceb864ecc85814de2",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4c848318ace49e244a9a3135/1.error.json",
+      "error_file_sha256": "5d3fdbbdba2efafdf767ead86a04330839bcb79f4cee49b9ae4507badea7d622"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4c848318ace49e244a9a3135/2.request.json",
+      "request_file_sha256": "ace8d245f8b6a31f18016ff4594c5176609d31ac76f25dba6c6dce86ab6f6788",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/4c848318ace49e244a9a3135/2.response.json",
+      "response_file_sha256": "202978c05044a0d0828aeeb56e0f494bd0c5524f80f85412dc2adf57fd67ab60"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/5974eee403a751bd7f788416/1.request.json",
+      "request_file_sha256": "38cdfa9268ac990fc6ba78b80a06c051eef0a767c20497d564ae865ec99cd511",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/5974eee403a751bd7f788416/1.response.json",
+      "response_file_sha256": "3d0063abd28f5697af4815ae18154ee78db15e828c28ac67c2f2c19bfade0f0d"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/62008dcd65372a9060b8a79c/1.request.json",
+      "request_file_sha256": "4f48ce7e1aba7f7dc2102f136fbde1ba2c5ebbe078b91013aca63eb47672b204",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/62008dcd65372a9060b8a79c/1.response.json",
+      "response_file_sha256": "1ddeb6e0a4b6e5d2c78588d3fab964fa25e7bcd1c97079a82f7ae6a9fe34f90b"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/6380668431a23b629d2f4dce/1.request.json",
+      "request_file_sha256": "f7037d798892883ba0b895b81b671749c2b5ac6cc2d3c6d63270d017222aaf83",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/6380668431a23b629d2f4dce/1.response.json",
+      "response_file_sha256": "d4f1ee63be0fbb7ebc6cb95098abafefe8f0e031a95c112128e87d4fcc49ead4"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/695e8b56befc5b8a66f8033c/1.request.json",
+      "request_file_sha256": "47c47ce2fd0a6190a909924c5608bbed6846d3629a8fcf63e235641a8f10d142",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/695e8b56befc5b8a66f8033c/1.response.json",
+      "response_file_sha256": "43dabc05e1b008cdde5dd3538f94c5abc85713967aafa5d062e88c288bd155df"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/6dec27f5e09bfe9416fb486c/1.request.json",
+      "request_file_sha256": "c44625d50aa08c324f1d24fbc760f89d633ae1de950a1fb4c92ad3ca04ba4c07",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/6dec27f5e09bfe9416fb486c/1.response.json",
+      "response_file_sha256": "9a395c6e31fd4a39ab7b2d3f91a9dbadf194ebed7cd6f57c7c6dc0807b3f76d1"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/7300051f30910ca9a7988d9a/1.request.json",
+      "request_file_sha256": "1dd685ac060eaae291f019e14a02c94736a11efea86124caa0fb011d73cba8cb",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/7300051f30910ca9a7988d9a/1.response.json",
+      "response_file_sha256": "72cc2ddf6c4e2ce7201bb41e8120c462507c63088e0daba7badcd5b6b3a07afe"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/84812a7fbbbc9135a1c1929f/1.request.json",
+      "request_file_sha256": "b61b2a682c1cf59255039c6667b22ee98db67b97076b56c637cb6b563188a3f7",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/84812a7fbbbc9135a1c1929f/1.response.json",
+      "response_file_sha256": "9894ec9c0d59703e2110cb2888cbd0a97bceaf764cb3da669024294c15052d52"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/8cfb94bb5e0997706427db5d/1.request.json",
+      "request_file_sha256": "c74e384a22c90c19222982dd3ea500aca0f9133bbad2d3918494d2047541537b",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/8cfb94bb5e0997706427db5d/1.response.json",
+      "response_file_sha256": "1e8d65d10374e5f4cf6a884048ef2c43c9e5ec5be537ad15ca36fb4d90d8ef0e",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/8cfb94bb5e0997706427db5d/1.error.json",
+      "error_file_sha256": "5d3fdbbdba2efafdf767ead86a04330839bcb79f4cee49b9ae4507badea7d622"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/8cfb94bb5e0997706427db5d/2.request.json",
+      "request_file_sha256": "987bffa1f8b3b23534a375be13cb7c1104f0ed8ac300f163a3f8b83246249028",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/8cfb94bb5e0997706427db5d/2.response.json",
+      "response_file_sha256": "816f893215320f41019ebb4bb35ff40ef2543598bb948e11c37855a0a3cd786b"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/93a8eb7c4c398569aca428d6/1.request.json",
+      "request_file_sha256": "46fd99cb43aeadb57823b9b0b01fde1566701419b2a9e0f64e5f4e2056bc15d1",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/93a8eb7c4c398569aca428d6/1.response.json",
+      "response_file_sha256": "2b2d388ec4cf1903b60556a88b2f338ad4050bedb60aab56e18260cf640ae85b"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/9ae651fd8267ba0ef191d22a/1.request.json",
+      "request_file_sha256": "7f9cd9e3f9fb5342b0ff47f0ce9e3667f2e7e71a2c77aa01c038acdcaec077ec",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/9ae651fd8267ba0ef191d22a/1.response.json",
+      "response_file_sha256": "d083d85180631bab18fd1cee11fc0ae4fc07678f561ba7b8e77832e3b668798e"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/9e1c803dc2c085e108d1fa77/1.request.json",
+      "request_file_sha256": "7a629e4f41d0c77df01a9a1f16b5fccb161c3b5ee7cc199882856b8e7035567c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/9e1c803dc2c085e108d1fa77/1.response.json",
+      "response_file_sha256": "405a90a4f727f93cddc1613d154cda413f4d643465c0259c0dcf3e3b6aad5a1b"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/a64290dfd07882c7002f8f12/1.request.json",
+      "request_file_sha256": "aa2248602c8e6b186aaa11688a295e60057d2dee41b08eed9cb4bcec725967d4",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/a64290dfd07882c7002f8f12/1.response.json",
+      "response_file_sha256": "792b89dac8f4475a7e30d1b03407aa974b4cd74e1f0faf05c1b7e5396292ea26"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/a751595c1d416d2cd25994f7/1.request.json",
+      "request_file_sha256": "c6fe15e7098bfe1a5ae2691c420d417b72bbf3119a2b78447b06ea1ba594fe88",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/a751595c1d416d2cd25994f7/1.response.json",
+      "response_file_sha256": "31644f2092ee199130f1bfe8735da1af809c63b433e786ac62441ffbaa83a324"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/ab0b2ab8a0502f22132bf12f/1.request.json",
+      "request_file_sha256": "533a80f7a0510b5cbda840bbf0cb748d201d441410e25d2115b9557082f28e67",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/ab0b2ab8a0502f22132bf12f/1.response.json",
+      "response_file_sha256": "16351bff51a735ac526b06fc8e2fac3d799687f6cab0138b8ec4279fc4969872"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/b12fe8d23f7b5d6827a70bca/1.request.json",
+      "request_file_sha256": "de18a6899df4b22c8df4806cf4af44afa453cd73ba3f520cc517d994f1ee9ac3",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/b12fe8d23f7b5d6827a70bca/1.response.json",
+      "response_file_sha256": "6cfe525a8760b813082e03647d34f077b09ed1b084a585eb384b76b562670b7a"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/b75a121f4c3db9a4bfa27f8f/1.request.json",
+      "request_file_sha256": "2b4dc7329fbda8c5e846909f5334c14871c6badda1ba63091096dd864296f832",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/b75a121f4c3db9a4bfa27f8f/1.response.json",
+      "response_file_sha256": "e2ffe9f7da5d2cbeb6e9d41771d64fbd805dec27b69bce8f5f7e6a834559d023"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/b8ae5d69d33410c6728f2a7a/1.request.json",
+      "request_file_sha256": "4660e296aebe4e5592e0fb8d14fd2e3246119ef642a6c0759c8b9b719b39b1e5",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/b8ae5d69d33410c6728f2a7a/1.response.json",
+      "response_file_sha256": "90674693a0aff7ef87eb0271458679cab314b299bc255fdc9ddeec313a1235a1"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/c023c0add510c00e8d50d0e6/1.request.json",
+      "request_file_sha256": "0a920bcf2fe971467d09d24dcec3f2877389860ea055c318ae5028baadb3506f",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/c023c0add510c00e8d50d0e6/1.response.json",
+      "response_file_sha256": "02c193173bddca137e865b885ae79812bd680c4b3458cc24c8a80ba02d7d22b0"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/c4a1b8d9c233d1ac41789064/1.request.json",
+      "request_file_sha256": "752310b4ebb76bfcdc7ac0e382ff2b2d3becbf5d22ccd30e2b1880696f7f3b7a",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/c4a1b8d9c233d1ac41789064/1.response.json",
+      "response_file_sha256": "054a5e948990371a435fa45bf199b7ad6c7bcb165bc0f0b756763ebff81741fb"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/ce450d09fbfcec0d8e6ac477/1.request.json",
+      "request_file_sha256": "120ab61c9a9e943ec001f21807c0f67fdfbd3f6beeaaa829c4b75db2cf02d4b6",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/ce450d09fbfcec0d8e6ac477/1.response.json",
+      "response_file_sha256": "9e2c6da18364fe5b968bbd7ccf809a7c667d2a404cd9781c8ac9f7f7fb8bfb72"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/cf485097bc907617aa2c2181/1.request.json",
+      "request_file_sha256": "2cd5344b8f3645e8f2c3ad3cef1a7effe3dd1b8ae83178846a7bd3f50e31f256",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/cf485097bc907617aa2c2181/1.response.json",
+      "response_file_sha256": "ab2a89bb00ed7446c47f5ca46825f1f27b021970719b4eda43087ec5e5f203b9"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/d3b0446a348251c7e032a716/1.request.json",
+      "request_file_sha256": "fcc9b18573f00d43dd7159021caea0c521cf8c094c5bf7e4c1dfad8738281a18",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/d3b0446a348251c7e032a716/1.response.json",
+      "response_file_sha256": "13819cf38acc75cf84de4f70b5a8ac9b8b31cc764116d1032f471db477a9eb9e"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e2546bdcaeaaab898b7e3501/1.request.json",
+      "request_file_sha256": "233e6f06d9cc53420e4dc3862b28106c5740a36f15b0b7757d10e3f9965f9bf7",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e2546bdcaeaaab898b7e3501/1.response.json",
+      "response_file_sha256": "b6516a8d6ba76750856603ed5671bfdadcf8e2d110a79bf6cc2cd41a9fc03c4a",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e2546bdcaeaaab898b7e3501/1.error.json",
+      "error_file_sha256": "5d3fdbbdba2efafdf767ead86a04330839bcb79f4cee49b9ae4507badea7d622"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e2546bdcaeaaab898b7e3501/2.request.json",
+      "request_file_sha256": "240b1e1e2f5a63af2b86757b516dd01adb5084d835e7c43926620f40de71977a",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e2546bdcaeaaab898b7e3501/2.response.json",
+      "response_file_sha256": "cbef8ea606f5a281b2c9a741dfe77567279c16580b233296d424871ce999fec3"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e916e36ec32c1ee0fdf4bad3/1.request.json",
+      "request_file_sha256": "359004d1affe5a7e76f28bb8c19a3ddd0b696b695639ae4f9e6010336e091a29",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/e916e36ec32c1ee0fdf4bad3/1.response.json",
+      "response_file_sha256": "1b66ca768efb0fc825410261aa9cbd80d6ddcd5a89abbea55700e7be60be7042"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/ebec7c6c253b40c488e814e5/1.request.json",
+      "request_file_sha256": "d326b999557efb56409ac2309e335cfb3d5b4f4f8050bcf7647403efcc4cb0ec",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/candidates/ebec7c6c253b40c488e814e5/1.response.json",
+      "response_file_sha256": "2edb50b11bd49b3838b5f4ff791b9fb35b550d10a9972877df69a5d357d17e71"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/1.request.json",
+      "request_file_sha256": "711d4887204f8903cdb402c863f55d7b33ff1dc9ba95caf62b7f9b660ffda5f5",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/1.response.json",
+      "response_file_sha256": "e2c026ff597f4cd1036bf3cb02321c4d05fb5e3e94fb89c255702a77530e616f",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/1.error.json",
+      "error_file_sha256": "2604fed53bcd23c2ff1e2db5e9d443ccd91ea283d8883ca4c875fd1cdc65af6c"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/2.request.json",
+      "request_file_sha256": "9a76f5f13258345f18efbe64444175cd1f5f90a3c94f76e72e86313fcb5e54ae",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/2.response.json",
+      "response_file_sha256": "fefaf0db277d73dabe2361d624005316acd127f3f9a86dd879e083cf1743aa87",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/2.error.json",
+      "error_file_sha256": "2604fed53bcd23c2ff1e2db5e9d443ccd91ea283d8883ca4c875fd1cdc65af6c"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/3.request.json",
+      "request_file_sha256": "9a76f5f13258345f18efbe64444175cd1f5f90a3c94f76e72e86313fcb5e54ae",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/3.response.json",
+      "response_file_sha256": "a9d10386f4ad7bd20ee2bb79330f08edd77eeefbaaf07f0658144cd9704a7fbe",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/3.error.json",
+      "error_file_sha256": "2604fed53bcd23c2ff1e2db5e9d443ccd91ea283d8883ca4c875fd1cdc65af6c"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/4.request.json",
+      "request_file_sha256": "f98b2a16d188eb7809d54c16174a1c0b187b3db344ddd0fef1b12dc145f8c55c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-001/4.response.json",
+      "response_file_sha256": "21015367bbbf64774455e93375921c36d0984b573f5a6c372ced61b3b6465a4e"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-003/1.request.json",
+      "request_file_sha256": "fd834d39792f9567770ebf307ed68e4d4dd9c93a2c20339764a173474b214839",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-003/1.response.json",
+      "response_file_sha256": "9845fbbd88cadb1544a527668e7cbcccae863c980e0ab6911de2aeafd337c8b8"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-003/2.request.json",
+      "request_file_sha256": "c32a485f1f7b2670ca99ca16bf65ce1c8f5ee04e95118338e9813218ebf325e3",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-003/2.response.json",
+      "response_file_sha256": "8584c2e643b22a0e896ba264e256a231ca3864c024217c146c99df17d8cb649e"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/1.request.json",
+      "request_file_sha256": "d3d336fb3164c2c160b520cab929b110abf5becd8afb7be60bab1107cfc6d02d",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/1.response.json",
+      "response_file_sha256": "165d39aac591e5bdf933f206e717100af1ff562ce4c2d7b22299389d6b2e71a3"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/2.request.json",
+      "request_file_sha256": "e7f52f32e9931ef491ff4130a47823b27923ffddb6616b35670dd6ff4139a8d2",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/2.response.json",
+      "response_file_sha256": "3336e7291f98ddaf69c9674d8b90b12fde94092e555a5a5896ca7726bf9a2e16",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/2.error.json",
+      "error_file_sha256": "6f80f94e507e9d777032c0d487fb249f671655e3df029553353248651a307d4b"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/3.request.json",
+      "request_file_sha256": "3d8e174a084e9fdd7f428d8400847e35c993472327d7c015caf82b34dc0dcbf4",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-008/3.response.json",
+      "response_file_sha256": "cb4c2d900caf7403d55c099c9c7168ddce2d4aa24247f158d9bb0d70591e62ad"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-010/1.request.json",
+      "request_file_sha256": "3cbe56336c630e890e67e3dfacd854592d7a9beae6bfaa6308e40066397159c4",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-010/1.response.json",
+      "response_file_sha256": "544d9902997c1498311e1ab6aac9a53727c91aa6b5ae9ae3b7d2734bd4d8507d"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-010/2.request.json",
+      "request_file_sha256": "795c87849ec8e86592294a90ed0baceb8ede7bc8cd11720af3123b43ae25422e",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-010/2.response.json",
+      "response_file_sha256": "b2fbfa8d62b1a82b209c965a3d12fbb223287f3c3baaff2c4786b03fba3bebb0"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/1.request.json",
+      "request_file_sha256": "29541c935cf8c0ab368f89881448ab1e21d4dfb153daead5f8d75a94d600329a",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/1.response.json",
+      "response_file_sha256": "1d945771d5162b157d37c89f4601fd5b2b67427b83ee22bb84e34b40a247f1e9",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/1.error.json",
+      "error_file_sha256": "a49a3021236f4d62d5cbc62acad3c92a7b345686aec6430ff452a45e8b8d3e26"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/2.request.json",
+      "request_file_sha256": "5262be10ef1b10b0345d48bcd809d8636ff3a996d77883959aab5f372c1a573a",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/2.response.json",
+      "response_file_sha256": "7ec8f546b0a2ae3580e42c6ef8b81ed53aaedae46cdeaf99477b1e8d88dde9b3"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/3.request.json",
+      "request_file_sha256": "b71560a306ba8b47fca4098050c5517521932439f9d024de52128cad12b065dc",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-012/3.response.json",
+      "response_file_sha256": "4b7ed65c6198d21e9678e544d1a71c2dbc239331d2596445e2f620aa244d0cad"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/1.request.json",
+      "request_file_sha256": "0d6fa0d7c3140fa3eaf3df5c31f6bb9924e8fe9ca834d82ff6f8e91dad21a57f",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/1.response.json",
+      "response_file_sha256": "55b3324351eb190d285391c8817fe63129182908c69d096371ca59ee37008b5c"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/2.request.json",
+      "request_file_sha256": "41a8425d06dc537701f4c531977f3be828421a9f55e78d88a4eaf4d586552bdd",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/2.response.json",
+      "response_file_sha256": "6626cbcd4e0a1d7a5d21cd037b83d06e82cf9c75112de4822376ec98296b5597",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/2.error.json",
+      "error_file_sha256": "e1626ff22404ca3540fe2beb4f1e22e4178606b8152af35ec8a4c9592f550f82"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/3.request.json",
+      "request_file_sha256": "cf92923c2e86fb5905e34bc07b424b473128085104ffc0a92e580440c0c2357b",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-013/3.response.json",
+      "response_file_sha256": "7c50bf4a7dca9bc455f25b799527ec09aafb81bdc210400dd45d105ee1e8f566"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/1.request.json",
+      "request_file_sha256": "d5919227506d20a02b7a7cbbfa83ec683f2948175198648ad9c7cc9ba6e94cc1",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/1.response.json",
+      "response_file_sha256": "aac1ba3ead5a786a197e9b4e866617bcfc5e5536b81e422a51f89399aea14f21",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/1.error.json",
+      "error_file_sha256": "0b2bd41c2e5cf26df2494692f66c5769514cc2ad05b488096ea77b63654df0fb"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/2.request.json",
+      "request_file_sha256": "000f0f7f15a340e9cb1ba81e9a9619532e0c8dab2b0b62c24973fba86387b05b",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/2.response.json",
+      "response_file_sha256": "fbee82aed62a3f18762745b5845bc5d8768f57613488e1269e3137126583db1d",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/2.error.json",
+      "error_file_sha256": "d2ce2e5e610f5604c42b422fbc511a5f81eb7b75d18c7a19cdbcbef55fc31099"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/3.request.json",
+      "request_file_sha256": "bd0cb97fc61d75a14d4fb34e32deaaefe6c50fc8ba28007955e1a1891131dca8",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/3.response.json",
+      "response_file_sha256": "1109c001f7310d28acd442b83296f2c4e6394efaba3122b2591cc3413850e2ee",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/3.error.json",
+      "error_file_sha256": "cb82852287d15da9163c63352e5e6ab53223596d5751309a4fcff0b8a03ca64c"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/4.request.json",
+      "request_file_sha256": "d99cd52e1feb401e8b454e08ae229b0f4b38e091b49af850810398c31243f18f",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/4.response.json",
+      "response_file_sha256": "287e028a9428dcb1ef8c362f9d5c879ce9122ab5b34ee9a13065d403e8cfb9ef",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/4.error.json",
+      "error_file_sha256": "e1fdf968e86bb8b6fdb5dff0f36d9890e9158fea66181b5bcb184126c9f5328a"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/5.request.json",
+      "request_file_sha256": "7d4bf3128fc50e0003fffb19026e9577dcb21f5cebb31a1a2028348ad86fa03c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/5.response.json",
+      "response_file_sha256": "2de980133feb1687f0fd41e470c759d3d51e70ca688f649ac69025085b03056b",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/5.error.json",
+      "error_file_sha256": "691fab0e9d31069a3513677150b0dda3cbdd223d87d08c8315c18ddab4eb4964"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/6.request.json",
+      "request_file_sha256": "91f860d785d79bc8404545e38aac4fb0999ee5132963c81adef70047359a2a37",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/6.response.json",
+      "response_file_sha256": "11edb5b320d5804ed00c1e8c5e46756017988fef9c732d8e1e48f2df3a258d33"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/7.request.json",
+      "request_file_sha256": "4c6b33288dd04c578573a356c29dcf45092dfc0b40e002393e559461cc50f6cd",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-014/7.response.json",
+      "response_file_sha256": "698bbb5f8721df4ac177dececeaea6961df7bcec5f8a6a452b9dadaf49ef3b8f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/1.request.json",
+      "request_file_sha256": "8fc798f46388274c28779b2d8e5064f5be0df58c9f827c14ecb49bf1cca57412",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/1.response.json",
+      "response_file_sha256": "b9efa43e934572fc355d9aa4da26647e2f6655d2bb7a3a0f9661fdb420fec782",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/1.error.json",
+      "error_file_sha256": "0688655cf28a41255423097ad22a39d50618aa18d911d4a1af0c31b8ac3a6553"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/2.request.json",
+      "request_file_sha256": "fc406582e579d150ddd8dfd09ad0a067b8ace33cdf4a69ad9fae9eaaaf7325ea",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/2.response.json",
+      "response_file_sha256": "dce631fa4bdaf64dc3f44755f6be0beaf256b5dacce2edd7b32941fa2f4e4a1e",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/2.error.json",
+      "error_file_sha256": "d325ea6dd6646825f7f3ce14a958c2bccc8f11e1fd251cd15d0e0d45153ba2a3"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/3.request.json",
+      "request_file_sha256": "903cbb794efed6bbc8b1ca16dde1e176a7a7a05c4082d3b0844ab18140c38848"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/4.request.json",
+      "request_file_sha256": "72fbb03e851ae77d425b7aa77c2600144561cb65b762c1e36197703d7924406d",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/4.response.json",
+      "response_file_sha256": "f43a5d738ecdbea87e506b53ef43b8136dd33fd6655e72f5d0f60a7a04848763",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/4.error.json",
+      "error_file_sha256": "2863e4039ef02e85aa5984fb95f32e8758574050ff5aa827eec7d3dfa3998750"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/5.request.json",
+      "request_file_sha256": "3d1503976e0e46b824a4c4e6cc3789071f4b4d12b7068e61f36f5e1ab5ccee90",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/5.response.json",
+      "response_file_sha256": "86f078d83bc31f1985ef01cc9f347586531e3d41d1338235bb43f663dd5dd2d9",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/5.error.json",
+      "error_file_sha256": "2de7130014b3fe7742f400610c44280a4756db305e89bec31baa79fef89fa4a9"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/6.request.json",
+      "request_file_sha256": "bc452d345e5a2a62438db01801b098ad4effb547d78566362518a6a3cb4f4459",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/6.response.json",
+      "response_file_sha256": "a94e2793009f3654b011c64f5b5cb5e2a99df0350c01e6d6a09917fab6f43896",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/6.error.json",
+      "error_file_sha256": "7dbd9ad68cfa95d7fa2c9edeb2ca63d3b394390c2a76c05dc09ac3faaa1e3d4f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/7.request.json",
+      "request_file_sha256": "426d0a94fc0114473006e07e61cf08060dd0dc7b5610b17c1a918e9b9636cdc6",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/7.response.json",
+      "response_file_sha256": "6b7c0e46a922f1c5a77697ccf0344f672f8ecab5247ecdddf2d8555f638c55cf",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/7.error.json",
+      "error_file_sha256": "0cd756c842a436ba92c3584093f0c2dd8c3ca5598452510cf2a8913a6044800e"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/8.request.json",
+      "request_file_sha256": "5cc5675ac6fc69b673784b3708b4c2b19c9071027810d75f26505ca0f8a3bcc4",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/8.response.json",
+      "response_file_sha256": "49d71b890717abc746788c9da46e7146fee994621837e85615e5ecf904cec8fc",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/8.error.json",
+      "error_file_sha256": "7607a62fa4bc1dfeadcc235e9fbbef4c663de285fa54dd6960786bd7d5659d5a"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/9.request.json",
+      "request_file_sha256": "c08e12f3d849a724c8e655cf1d8d87d1e6a001faf5c1f7e90e9d5800dd7b954f",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/9.response.json",
+      "response_file_sha256": "965c5de84cbeaeaf9a4a95ce27383bad06707f91a28246703efa6a74fbbbfc94",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-015/9.error.json",
+      "error_file_sha256": "0cd756c842a436ba92c3584093f0c2dd8c3ca5598452510cf2a8913a6044800e"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-017/1.request.json",
+      "request_file_sha256": "fc64209b0c02076607fd810d63f43aa3fdee429ebb41d3868cd13f1ddf765244",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-017/1.response.json",
+      "response_file_sha256": "09d5def333e033c7446026e6dd61c9a59c05f85ac9fd084df133464bb163d8bc"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-017/2.request.json",
+      "request_file_sha256": "e5c6bd5580f51989cb4a80fd1b92327d8cd8ee65896b0986ffa7ab50d0a80210",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-017/2.response.json",
+      "response_file_sha256": "4998181435314d02077c364a16d02bdbd3c78ba8b950522319b6836ab3434293"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-018/1.request.json",
+      "request_file_sha256": "d9639c5b5ad33f26083746a572e5410f25174c4b430541293e2708a608b5ae9c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-018/1.response.json",
+      "response_file_sha256": "2dac52855750073a952248f97efe53a8f2f41a6c37384a13957df180804f6fd2"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-018/2.request.json",
+      "request_file_sha256": "1d1fd8974a1bc3bcfb7cbc8b6dfa573d80a7081e6f6ac1bec9e4619d56ca7bd0",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-018/2.response.json",
+      "response_file_sha256": "f62e3ce85bf86e55e15735a6be78bd77642395b67e2f09ac73618d33797bb248"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/1.request.json",
+      "request_file_sha256": "f360f572ee42b3cec78007da7728296d2e678a5e080a8081e93cce0414334860"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/2.request.json",
+      "request_file_sha256": "63780c804a2ebf2cd074a846b115b332e7136d84750f5392141670a9848a25ee",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/2.response.json",
+      "response_file_sha256": "ba2603e74b06a86429cc22e08deeadacc0cb22f0dd435f3eee3ba5059247d634",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/2.error.json",
+      "error_file_sha256": "567c9f6179df3e041bb2f361fd5fe8d1ccc3ef18ff57ba480e5b62ee0dcda59f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/3.request.json",
+      "request_file_sha256": "5c62d92b7aa2cdc0d0aa69906bf2d1486cc9ae6e009546f6ab38d65b90211c8d",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/3.response.json",
+      "response_file_sha256": "7dc09f0581d3ce99b3b1c91b92af5e613b50226e997e781517a804696f0ec0f4",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/3.error.json",
+      "error_file_sha256": "ec5d44194bb651df9e98b92b4f8acca113ba84bc949e89a657ad8c871088db83"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/4.request.json",
+      "request_file_sha256": "bbce111ebc7b74f4d41f401fef25b7b0526fe1af9f6a00635130fd8d6d6d4aff"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/5.request.json",
+      "request_file_sha256": "b5dbdd67f542ec0db63f65561f143931b6cb9b3e168662930eaf3adffa8f7071",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/5.response.json",
+      "response_file_sha256": "07ed33c92284839dbea8be1dd0acdd7c1a5a133dd4bf09b4a1b7d74991842253",
+      "error_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/5.error.json",
+      "error_file_sha256": "89a9773575d4b515ce719679184b2541aba015f6683ef1bcf0b243f5d8cd0315"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/6.request.json",
+      "request_file_sha256": "0563b52999dce796c84379237f6f05afcdb1e33e3b615f3fe455168fdc9f30f4",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-021/6.response.json",
+      "response_file_sha256": "83bc0ace2461402d488aa344fc1621c54a3299f18666de105fd4c188f2777e8f"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-022/1.request.json",
+      "request_file_sha256": "bf68e8ae6864e1ad82c7f1d92a57d8e7a80ab223b53cfaa53fd335740c3866cb",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-022/1.response.json",
+      "response_file_sha256": "b8a04dcc49a7872aff7c5d9731628a86aeacedc3f6464c4d19c0bdfb56d65934"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-022/2.request.json",
+      "request_file_sha256": "453a3f141f7c4dd5260fec362e19ec2e7b55760faa5eb19c391e9280c7a11cb6",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-022/2.response.json",
+      "response_file_sha256": "9d7d613ca86834e8bb46e527caac89c03c7aa6433b3ec8107ad1f221b2bd51b0"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-047/1.request.json",
+      "request_file_sha256": "cb74d2f22bde343303e4d863993eebdd428f6e9fe74dea6e9406f32655bcc1cd",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-047/1.response.json",
+      "response_file_sha256": "4937a2a91ce7d28b567c06266ffc97bb7e484bccc7b829447f966104f89078dd"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-047/2.request.json",
+      "request_file_sha256": "d41e4a5461918623d87ab33e789b22b2e35eab41864e5bf13d00c521521f0698",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-047/2.response.json",
+      "response_file_sha256": "d2e5ac6e8df4fb3176c87fdda0df191392ebe4e04689d558c6c8c561bb7b518a"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-050/1.request.json",
+      "request_file_sha256": "29d5b3efc1fc82491c1cfff76b476fa5b2de30fd664223701bb3c23eb6c897f4"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-050/2.request.json",
+      "request_file_sha256": "da4f7a69990ccc671d421d27aa5516ff08f3df8f8fba808896e18c376da733ec",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-050/2.response.json",
+      "response_file_sha256": "085e507240e7efd32a249c24205c612fb7e6f72e6ecef082adcd97b1b2bc38f5"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-051/1.request.json",
+      "request_file_sha256": "1ba7f51f36a96842ec109571a0a9d71faffb5c47d681cff1ef91be624deb1d23",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-051/1.response.json",
+      "response_file_sha256": "e51e2bbe2aef6b24d45684f0949540ec5967a15013adff1955d9f98e5874f3c4"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-053/1.request.json",
+      "request_file_sha256": "ecf7a300a60c0d09d0c5af96d1a249d25cd25326607df5fc7f18887682e08c0b",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-053/1.response.json",
+      "response_file_sha256": "c8f58f67e05f26286251d1759951e7eebfed9520eaaec57c78e1a6d41af2d41a"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-058/1.request.json",
+      "request_file_sha256": "e55ca3165226a451697842234403241cd56ef0be089e27954ed5a7d82c16db96",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-058/1.response.json",
+      "response_file_sha256": "b56dd973b997c4fa7b5558bf71cb18f0d082ad5e7396e6709f69d87edb175ae2"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-069/1.request.json",
+      "request_file_sha256": "db22d4257816a211d7a88ad3ddbac080376a9d3a618174bf2ea6ff482c430d6c",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-069/1.response.json",
+      "response_file_sha256": "34bfdc52cb5169bad3120010b1ea18838f1ea6b4bdcf280dd46deea9f8def22b"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-072/1.request.json",
+      "request_file_sha256": "95258dd223833c5455ed3a299261f071b82170ef1a1cfbd1539ad6f39f2646f3",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-072/1.response.json",
+      "response_file_sha256": "9a26ce1342abcb0543beaa4b5c0c5e09a3134d00c111e99401e476c2dfd214a8"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-075/1.request.json",
+      "request_file_sha256": "13f1f384ff74acaeeaf4f97debdd5ce5e0211fc2d0193d65980c596680aa4b34",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-075/1.response.json",
+      "response_file_sha256": "486ac671825ad5af431a9570fd6c18df3f23ce5ac3c098926801f395c6c1ec03"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-106/1.request.json",
+      "request_file_sha256": "8cdf6eb642fb5e9ffa809aad30c8b24f865dc183db08c6b848e541e34dcce528",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-106/1.response.json",
+      "response_file_sha256": "8efa8b9eea319626107df6d42d1e93354032635cfd1fbd6c8bc852af31c04def"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-132/1.request.json",
+      "request_file_sha256": "30f8529f3acd875c3c29dd00a1030a33646b68a6c1fd4e10984258205d1a4383",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-132/1.response.json",
+      "response_file_sha256": "8b35c4e488243a8926c963643b45dc651290550a8b3414dfd2344686420ffac6"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-133/1.request.json",
+      "request_file_sha256": "21ca43f5bf0e129c925000c79a83e3a2d00b1d742c109ffa0d1776931a1ca95d",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-133/1.response.json",
+      "response_file_sha256": "677d8fefb398a586248c3cc0dbc106e393abfcc28343cb7730abc4849acb31de"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-134/1.request.json",
+      "request_file_sha256": "ee5bf36640c14a6438e214ea08f116759847458565efb1d05c285b00cee94946",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-134/1.response.json",
+      "response_file_sha256": "6d62830b0f1e6675c5e5f5c8c1082ef8035f9ab31f62233415d49b779b2e5418"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-177/1.request.json",
+      "request_file_sha256": "ccda3b26e0b9098562e56e121b0382a6176fbd02a98c8976548f3b10aa81035e",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-177/1.response.json",
+      "response_file_sha256": "6dd76392b3b5ec90c84a7edf4bc366b67c898e4e3ff69cf6b7f805697054e129"
+    },
+    {
+      "request_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-192/1.request.json",
+      "request_file_sha256": "3f8befb168b209665866585596d9d4152c00a2302cbd683d820f24df257272d3",
+      "response_path": "research/gaza-grading/acjdc-refresh-2026-11-02/generation-calls/races/CA2026-192/1.response.json",
+      "response_file_sha256": "e6e006e6d893dddf5e0644504eab34e741f68285a589c4816abdc10e2fda6a71"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "7300051f30910ca9a7988d9a",
+  "candidate": "Ross Bernet",
+  "position_id": "CA2026-050",
+  "request_sha256": "e779b6cf3f31c018bdae73acb36847ab443d476591d851a133467fed8cabd4b8",
+  "grade": "F",
+  "summary": "Bernet stated he would resist anti-Israel use of city government and would have rejected the earlier commission version of the Taplin ceasefire resolution while accepting the final version, in a response whose date is not stated. The Alameda County Jewish Democratic Club, whose mission includes supporting Israel as a secure Jewish state, endorsed him for the general election. His platform addresses local housing, homelessness, and infrastructure without referencing Israel or Palestine policy.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Identifies the candidate by name for the paragraph."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Establishes this is a local municipal race, contextualizing the limited Israel/Palestine policy record."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "California is not material to the pro-Palestine assessment beyond the already-stated local office."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan status does not bear on the candidate's documented Israel/Palestine position."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Platform covers housing, homelessness, transit, public safety, and environment with no Israel or Palestine reference, confirming silence on the topic in the candidate's own platform."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Candidate would resist anti-Israel use of city government and rejected the earlier commission version of the Taplin ceasefire resolution; accepting the final version is a qualified concession. Response date unstated; 2026-09-08 is file upload metadata."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "ACJDC endorsed Bernet in the general (rank 2) and an unspecified phase (campaign claim); context notes these are not multiple independent endorsements."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "ACJDC mission includes supporting Israel as a secure Jewish state; owner-assigned low weight; endorsement does not establish agreement with every club policy. Grouped with the endorsement row."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Election date does not materially clarify the pro-Palestine assessment."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "City of Berkeley is already implied by the office field; not additional material context."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Administrative field value 'candidates' carries no policy signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "575129dbfe3f22829c46ff0b6f544fb9203a23cec165835b1e577ee7819e0389",
+  "generated_at": "2026-11-03T03:59:48+00:00",
+  "usage": {
+    "prompt_tokens": 4402,
+    "completion_tokens": 3360,
+    "total_tokens": 7762,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2678
+    }
+  },
+  "elapsed_seconds": 42.28,
+  "generation_request_sha256": "26418b42b7e93b7fc1f2293f103de8700872d584f8f07eb270aee4f77ffd8e70",
+  "attempt": 1
+}

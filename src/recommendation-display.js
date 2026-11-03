@@ -31,6 +31,7 @@ const RecommendationDisplay = {
       details.addEventListener('toggle', () => this.rememberWhy(!!details.open));
       details.append(node('summary', null, 'Why this pick?'));
       details.append(node('p', 'race-recommendation-text', why));
+      if (r.why.earlier_assessment) details.append(node('p', 'race-recommendation-note', 'Earlier rationale · not regenerated for the latest evaluation.'));
       if (recs.generated_on) details.append(node('p', 'race-recommendation-note', 'Recommendation set dated ' + recs.generated_on + '.'));
       box.append(details);
     }
