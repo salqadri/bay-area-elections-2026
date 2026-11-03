@@ -191,9 +191,40 @@ test('All applicable appellate retention votes and BOE are included despite miss
     const result = estimateBallot(data, manualCounty(county));
     const judiciary = countyPositions(county).filter(p => p.government_level === 'State judiciary');
     for (const p of judiciary) assert.equal(race(result, p.id).confidence, 'expected', `${county}: ${p.id}`);
-    assert.equal(race(result, 'CA2026-021').confidence, 'expected', `${county} belongs wholly to BOE District 2`);
-    assert.equal(rowsFor(result, p => p.office_category === 'Court of Appeal').length, county === 'Santa Clara' ? 5 : 11);
+    // Fresno lies wholly in Board of Equalization District 1 (CFMR001 contest 1170);
+    // the original five counties share the District 2 record.
+    assert.equal(race(result, county === 'Fresno' ? 'CA2026-417' : 'CA2026-021').confidence, 'expected', `${county} belongs wholly to its Board of Equalization district`);
+    assert.equal(rowsFor(result, p => p.office_category === 'Court of Appeal').length, county === 'Santa Clara' ? 5 : county === 'Fresno' ? 6 : 11);
   }
+});
+
+test('Fresno County address narrows state legislative races and keeps federal possibilities', () => {
+  const result = estimate({
+    matchedAddress: '2600 F ST, FRESNO, CA, 93721',
+    coordinates: { x: -119.79, y: 36.737 },
+    geographies: {
+      'States': [{ STATE: '06', NAME: 'California' }],
+      'Counties': [{ STATE: '06', COUNTY: '019', NAME: 'Fresno County' }],
+      'Incorporated Places': [{ STATE: '06', BASENAME: 'Fresno', NAME: 'Fresno city' }],
+      '2026 State Legislative Districts - Upper': [{ STATE: '06', SLDU: '014' }],
+      '2026 State Legislative Districts - Lower': [{ STATE: '06', SLDL: '027' }]
+    }
+  });
+  assert.equal(result.status, 'ok');
+  assert(result.races.every(row => row.position.counties.includes('Fresno')));
+  const senate = rowsFor(result, p => p.office_category === 'State Senate');
+  assert.deepEqual(senate.map(row => row.position.district_or_seat), ['SD-14']);
+  assert.equal(race(result, senate[0].position.id).confidence, 'expected');
+  const assembly = rowsFor(result, p => p.office_category === 'State Assembly');
+  assert.deepEqual(assembly.map(row => row.position.district_or_seat), ['AD-27']);
+  // No congressional geography: every researched Fresno House district remains possible
+  assert.deepEqual(resultIds(rowsFor(result, p => p.government_level === 'Federal')),
+    ids(countyPositions('Fresno').filter(p => p.government_level === 'Federal')));
+  const municipal = rowsFor(result, p => p.government_level === 'City or town');
+  assert.deepEqual(resultIds(municipal), ids(positions.filter(p => p.jurisdiction === 'City of Fresno' && p.ballot_status !== 'excluded')));
+  assert(municipal.length > 0, 'Fresno council fixtures must exist');
+  const fresnoExcluded = positions.find(p => p.counties.includes('Fresno') && p.ballot_status === 'excluded');
+  assert(fresnoExcluded && !race(result, fresnoExcluded.id), 'Excluded Fresno determinations are dropped from estimates');
 });
 
 test('Manual county fallback preserves every inventory record with local uncertainty', () => {

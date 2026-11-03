@@ -15,7 +15,9 @@ DATA = json.loads((ROOT / '2026-11-03_Bay_Area_Elections.json').read_text())
 class EducationPolicyChecks(unittest.TestCase):
     def test_refresh_covers_every_active_candidacy_even_with_existing_evidence(self):
         rows = plan(DATA)['items']
-        self.assertEqual(len(rows), 1296)
+        # 1,518 active candidacies since Fresno County was added November 3, 2026
+        # (was 1,296 for the five Bay Area counties).
+        self.assertEqual(len(rows), 1518)
         self.assertTrue(any(r['candidate'] == 'Scott Wiener' for r in rows))
         self.assertTrue(any(r['candidate'] == 'Kevin Park' for r in rows))
         self.assertTrue(all('IHRA' in r['query'] and 'AB 715' in r['query'] for r in rows))
@@ -138,7 +140,13 @@ class EducationPolicyChecks(unittest.TestCase):
         from ballotpedia_endorsements import digest, dump
         from grade_gaza import candidates
         sweep = json.loads((ROOT / 'research/education-policy/sweep-2026-10-26.json').read_text())
-        wanted = {(p['id'], c['name'], roster) for p, c, roster in candidates(DATA, 'all')}
+        # The sweep is a dated October 26, 2026 artifact: Fresno County records added
+        # November 3 postdate it and legitimately have no sweep rows. Extended shared
+        # records keep their pre-sweep candidacies, so only Fresno-only records are out.
+        post_sweep = {p['id'] for p in DATA['positions']
+                      if p.get('counties') == ['Fresno'] and p['id'].startswith('CA2026-')}
+        wanted = {(p['id'], c['name'], roster) for p, c, roster in candidates(DATA, 'all')
+                  if p['id'] not in post_sweep}
         actual = {(r['position_id'], r['candidate'], r['roster']) for r in sweep['candidates']}
         self.assertEqual(actual, wanted)
         self.assertEqual(sweep['counts']['new_evidence_records'], 129)

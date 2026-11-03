@@ -22,8 +22,11 @@ class RestoreChecks(unittest.TestCase):
             manager = RunManager(work=work)
             bootstrap = manager.bootstrap()
             self.assertEqual(bootstrap['score_grade_mapping'], mapping)
-            self.assertEqual(len(bootstrap['latest']['rows']), 1296)
-            self.assertEqual(bootstrap['latest']['completed'], 1296)
+            # 1,518 latest-projection rows with 1,518 completed since the Fresno
+            # County grading run published November 3, 2026 (was 1,296 completed);
+            # the Fresno candidacies evaluated N/A for lack of a Palestine record.
+            self.assertEqual(len(bootstrap['latest']['rows']), 1518)
+            self.assertEqual(bootstrap['latest']['completed'], 1518)
             self.assertEqual(set(bootstrap['questions']), {'pro_palestine_score', 'evidence_score'})
             updates = {}
             for _, raw in runs[1:]:

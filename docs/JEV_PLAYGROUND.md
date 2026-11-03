@@ -120,10 +120,11 @@ this publication. [Methodology](PUBLISHED_GRADES.md).
 
 The playground runs on this computer, separate from the GitHub Pages readers.
 It includes **all active candidates tracked in this repository**, including
-nationwide House, Senate and governor races and every active contest serving
-Alameda, Contra Costa, San Francisco, San Mateo or Santa Clara County. The full
-catalog currently has **1,296 candidacies / 471 races**. **Run Bay Area** targets
-**877 candidacies / 340 races** serving the five counties. Shared races appear
+nationwide House, Senate and governor races, every active contest serving
+Alameda, Contra Costa, San Francisco, San Mateo or Santa Clara County, and
+Fresno County contests added November 3, 2026. The full
+catalog currently has **1,518 candidacies / 564 races**. **Run Bay Area** targets
+**877 candidacies / 340 races** serving the five Bay Area counties. Shared races appear
 once; separate candidacies and roster types remain distinct.
 
 County coverage includes local, district, state and judicial ballot contests,
@@ -185,7 +186,8 @@ The playground adds no public API or main-reader UI. Its implementation is merge
    Drafts stay in the current page session; reloading returns to saved questions.
    For an ungraded candidate, the current editor draft is retained. **Run Bay Area (877)**
    evaluates only the five-county group with the current question text.
-   **Run full roster (1296)** includes every active tracked candidate, including nationwide House, Senate and governor races.
+   **Run full roster (1518)** includes every active tracked candidate, including Fresno
+   County, nationwide House, Senate and governor races.
    Each action takes a fresh snapshot of current data; a regional batch is labeled
    **Bay Area** in progress/history and downloads. Up to three Jev calls run
    concurrently; `choice`, `score` and yes/no `noul` questions can be renamed/added.

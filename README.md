@@ -1,3 +1,18 @@
+## November 3 publication — Fresno County release
+
+Publication **2026-11-03.2** adds **Fresno County** as the sixth researched
+county: 207 new contest records (93 confirmed on the November ballot with
+complete printed rosters, 114 excluded determinations) from the Registrar's
+exhaustive CFMR001 Contest/Candidate Proof List printed 10/12/2026, machine-
+verified against the county's own candidate counts, plus terms from Exhibit G
+of the county Candidate Guide. Eleven shared statewide, Supreme Court and
+congressional records reuse their existing stable IDs with the Fresno county
+name added. The Fresno grading run (`jev-2026-11-03-fresno`) evaluated all
+**222** new candidacies — every one **N/A** for lack of any Palestine record
+below the evidence floor — merged byte-identically with all **1,296**
+previously saved evaluations under `jev-2026-11-03-final`, which are unchanged.
+Scott Sakakihara remains **C (2.36 / 5)** under owner prompt **v11**.
+
 ## November 3 publication — PR #22 release
 
 Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
@@ -218,8 +233,9 @@ An independent research inventory and searchable, static explorer of elected off
 
 Candidate cards in both readers now show a colored Jev score badge, for example
 **E (1.36 / 5)**. **N/A** means insufficient evidence or no saved evaluation.
-The current publication covers all **1,296 active candidacies / 471 races**:
-405 letter grades and 891 N/A results. Scores/confidences, exact input states,
+The current publication covers all **1,518 saved evaluations**: 425 letter
+grades and 1,093 N/A results (distribution **A 119 · B 46 · C 21 · D 34 · E 84 ·
+F 121 · N/A 1093** across the 1,518 candidacies, including Fresno County). Scores/confidences, exact input states,
 owner question JSON and provider responses are archived. The prior **Why this
 grade?** summaries are retained in historical archives; a new source-bound queue
 is ready for Hermes to regenerate them. See [methodology and publication](docs/PUBLISHED_GRADES.md)
@@ -230,8 +246,9 @@ and the [Hermes explanation task](docs/tasks/HERMES_GRADE_EXPLANATIONS.md).
 Run `python3 scripts/serve_jev_playground.py --jev-key-file /secure/path/jev-key`
 and open **http://127.0.0.1:8787/**. Edit the owner's question JSON in Monaco,
 run Jev on the selected candidate to iterate, use **Run Bay Area** for all **877
-candidacies / 340 races** serving the five counties, or run the full **1,296
-candidacies / 471 races** including all active tracked nationwide contests. Inspect answers, confidences and exact
+candidacies / 340 races** serving the five Bay Area counties, or run the full
+**1,518 candidacies / 564 races** including Fresno County and all active tracked
+nationwide contests. Inspect answers, confidences and exact
 candidate inputs grouped by state/district. The editor and selected answers share
 a workspace, with generated state available on demand. Stored
 results load in **Latest per candidate** by default; no confidence cutoffs apply.
@@ -340,11 +357,11 @@ The layer comes from the Secretary of State's nightly raw export (`dbwebexport.z
 
 ## Coverage and limitations
 
-The snapshot contains **547 researched contests**, including **471 confirmed contests**, **574 confirmed seats** and **1,294 printed candidate entries**, with **zero unresolved scheduled contests and zero confirmed contests missing a complete roster** as of October 21, 2026. The 70 nationwide U.S. Senate (35 races) and out-of-state governor (35 races) compilations added October 17 are now all confirmed against official state lists or Ballotpedia race pages (see the handoff), joined on October 21 by **61 in-play nationwide U.S. House races** (below); every Bay Area contest remains finally resolved. Every confirmed contest now carries a complete verified roster; 76 contests are recorded as excluded (confirmed not on the ballot): 51 Contra Costa after reconciliation against the county's final certification files, 21 Alameda (including all 19 races resolved October 13 against the Registrar's official Candidate List for the November 3 General Election), and Santa Clara's four zero-filing districts plus San Mateo's Bayshore ESD short term and Colma Fire Director on October 14.
+The snapshot contains **754 researched contests**, including **564 confirmed contests**, **691 confirmed seats** and **1,516 printed candidate entries**, with **zero unresolved scheduled contests and exactly one confirmed contest with a null roster** (Fresno's Huron City Council short-term seat — one filing, zero qualified candidates; write-in only). Fresno County joined November 3, 2026 from the county's exhaustive on-ballot and not-on-ballot CFMR001 proofs; its 93 confirmed and 114 excluded records carry machine-verified rosters. The 70 nationwide U.S. Senate (35 races) and out-of-state governor (35 races) compilations added October 17 are now all confirmed against official state lists or Ballotpedia race pages (see the handoff), joined on October 21 by **61 in-play nationwide U.S. House races** (below); every Bay Area contest remains finally resolved. Every confirmed contest now carries a complete verified roster except the one Huron write-in-only seat; 190 contests are recorded as excluded (confirmed not on the ballot): 51 Contra Costa after reconciliation against the county's final certification files, 21 Alameda (including all 19 races resolved October 13 against the Registrar's official Candidate List for the November 3 General Election), Santa Clara's four zero-filing districts plus San Mateo's Bayshore ESD short term and Colma Fire Director on October 14, and Fresno's 114 June-resolved or zero-filing contests from the county's companion not-on-ballot proof.
 
 ## Nationwide Senate and governor races (added October 17, 2026)
 
-Because of high demand beyond the Bay Area, the dataset now also covers **all 35 contested 2026 U.S. Senate races** (33 Class 2 seats plus the Florida and Ohio special elections for the Rubio/Vance unexpired terms ending January 3, 2029) and **35 out-of-state governor races** (California's existing CA2026-014 record is unchanged; territories are excluded). These contests carry an empty `counties` array: they appear in the explorer only when no county filter is selected, never in a county-filtered view or an address-based ballot estimate. The five-county filter set is unchanged by design.
+Because of high demand beyond the Bay Area, the dataset now also covers **all 35 contested 2026 U.S. Senate races** (33 Class 2 seats plus the Florida and Ohio special elections for the Rubio/Vance unexpired terms ending January 3, 2029) and **35 out-of-state governor races** (California's existing CA2026-014 record is unchanged; territories are excluded). These contests carry an empty `counties` array: they appear in the explorer only when no county filter is selected, never in a county-filtered view or an address-based ballot estimate. The county filter set is unchanged by design.
 
 Their rosters were compiled October 17 from each state's certified candidate lists as aggregated by the cited Wikipedia race-summary tables (S1099/S1100), were initially held as `unverified` and have since been reconciled against official state election-office sources or Ballotpedia race pages (waves 1–12, October 20); write-in slates and one provisional roster (CT Governor) are noted per contest. Senate filers carry FEC 2026-cycle receipts (**114 of 123 candidacies have FEC filings; 58 published totals so far** — null is unknown, never zero) and Schedule E independent-expenditure snapshots under the same dated method as the existing federal layer (**$117.5M for / $127.6M against across 56 candidacies with regular-report activity**, corrected October 20). An October 19 matcher fix linked six previously missed candidacies (hyphenated/compound surnames El-Sayed, Hyde-Smith and Fetty Anderson; legal-name difference Hinson→"Arenholz"; plus the two reviewed Alaska Sullivan assignments) — see `research/federal_2026/apply_fec_match_fix.py`. Governor races are state elections: they have no FEC receipts or federal Schedule E data, and any future money figures will come from separately cited state sources. Minor-party candidates without FEC filings are explained by note N907; absence of a filing is not absence from the ballot. Each candidacy also carries mechanically verified research links where found — 162 campaign websites (own-domain or paid-for-by disclaimer, note N908), 181 X accounts (handle existence + name match or campaign-site link) and 135 Ballotpedia candidate pages — plus Gaza stance evidence collected by the same collector as Bay Area races: 478 dated items across 140 candidacies; a candidacy without items was searched and found silent, which is not a position on any other topic.
 

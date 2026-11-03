@@ -219,7 +219,7 @@ The remaining Bay Area counties are Marin, Napa, Solano and Sonoma. For each add
 
 1. Research resident ballot coverage and local final rosters, not only geographic intersections. Inventory cities, county offices, schools/colleges, special districts and judicial contests as well as federal/state offices.
 2. Add the county to `election.counties_in_scope`. Reuse a shared contest's stable ID and extend its `counties` only when evidence supports it; keep separate terms/seats separate.
-3. Update the matcher FIPS map, official county-election URL map, fallback text mentioning five counties and any hardcoded template county lists. Most dropdowns derive from the JSON, but verify both pages.
+3. Insert the county alphabetically into `counties_in_scope` and the official county-election URL map, generalize any "five counties" fallback text and hardcoded template county lists, and add the county's FIPS code check to the matcher fixtures. The matcher FIPS map already resolves all 58 California counties from `research/california-counties.json`; coverage is gated by `counties_in_scope`, not by registry edits. Most dropdowns derive from the JSON, but verify both pages.
 4. Check OCD geography, boundary vintage and every `countywide_electorate` assertion for newly listed counties. Do not assume an existing BOE district or appellate district covers all nine.
 5. Recompute coverage, revise limitations, refresh fixtures and test positive, negative and unresolved address matches for the new county. Rebuild both HTML pages.
 

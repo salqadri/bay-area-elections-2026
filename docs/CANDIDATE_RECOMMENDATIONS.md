@@ -55,8 +55,8 @@ Historical publication **2026-10-28.1** added a standalone recommendations page;
 
 ## Rules
 
-For each race in the current dataset (539 evaluated races: 471 confirmed on the November
-ballot, 68 recorded but confirmed not on it), in order:
+For each race in the current dataset (736 evaluated races: 563 confirmed on the November
+ballot, 173 recorded but confirmed not on it), in order:
 
 1. **Muslim community first.** A candidate whose Muslim-community membership is confirmed
    in the [community-observations registry](../research/candidate-community/observations.json)

@@ -98,8 +98,9 @@ archive. It has not been silently rebound to a new scoring request.
 ## Refreshed race recommendations
 
 [Current plan](../research/candidate-recommendations/recommendations-2026-10-28-latest.json)
-uses the current dataset and score publication. Counts over all 539 inventory races:
-**12 community-rule picks, 139 Jev picks, 103 no-good-candidate, 285 no-information**.
+uses the current dataset and score publication. Counts over all 736 inventory races
+(including Fresno County from November 3, 2026):
+**12 community-rule picks, 167 Jev picks, 84 no-good-candidate, 473 no-information**.
 Five category changes follow directly from the updated grades. Seven selected
 names change overall: two previous picks become no recommendation, and five tied
 grade races receive different Jev choices. The exact selector requests and answers

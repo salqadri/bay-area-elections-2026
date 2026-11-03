@@ -32,7 +32,10 @@ class PublicationChecks(unittest.TestCase):
     def test_exact_projection_and_idempotence(self):
         cfg=self.data['pro_palestine_grading']
         self.assertEqual(attach(self.data,self.archive,cfg['archive_path'],cfg['archive_sha256']),self.data)
-        self.assertEqual(len(self.archive['rows']),1296)
+        # 1,518 archive rows since the Fresno County grading run (222 candidacies,
+        # all N/A for lack of a Palestine record) was merged November 3, 2026;
+        # the 1,296 pre-Fresno rows are carried byte-identical.
+        self.assertEqual(len(self.archive['rows']),1518)
 
     def test_identity_only_candidates_never_receive_a_political_grade(self):
         identity={'candidate','office','state','party','election_date','jurisdiction',
