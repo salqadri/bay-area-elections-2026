@@ -15,6 +15,8 @@ Num Cands/Num Qualified columns; the run fails otherwise.
 """
 import json
 import re
+import argparse
+from pathlib import Path
 
 PARTIES = [
     "Republican", "Democratic", "No Party Preference", "Green", "Libertarian",
@@ -134,9 +136,29 @@ def parse(text: str):
     return contests
 
 
+def validate(contests, on_ballot=None):
+    """Reject missing status/counts and truncated rosters before writing a parse."""
+    if not contests:
+        raise ValueError('No contests parsed')
+    for cid, contest in contests.items():
+        if on_ballot is not None and contest['on_ballot'] != on_ballot:
+            raise ValueError('Unexpected ballot status for contest ' + cid)
+        if not contest['districts']:
+            raise ValueError('Missing county count columns for contest ' + cid)
+        counts = {d['qualified'] for d in contest['districts']}
+        if len(counts) != 1 or len(contest['candidates']) != next(iter(counts)):
+            raise ValueError(f"Contest {cid}: parsed roster does not match qualified counts {counts}")
+
+
 if __name__ == "__main__":
-    text = open("proof.txt").read()
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument('--input', type=Path, default=Path(__file__).with_name('proof.txt'))
+    cli.add_argument('--output', type=Path, default=Path(__file__).with_name('proof-parsed.json'))
+    cli.add_argument('--status', choices=['on', 'off'], default='on')
+    args = cli.parse_args()
+    text = args.input.read_text()
     contests = parse(text)
+    validate(contests, on_ballot=args.status == 'on')
     on_ballot = {k: v for k, v in contests.items() if v["on_ballot"]}
     print("total contest ids:", len(contests))
     print("on ballot:", len(on_ballot))
@@ -159,4 +181,4 @@ if __name__ == "__main__":
         print(f"{cid} [{status}] {c['office_header']} :: {c['title']} :: {dist}{shared}{inc}")
         if cands:
             print(f"     -> {cands}")
-    json.dump(contests, open("proof-parsed.json", "w"), indent=1)
+    args.output.write_text(json.dumps(contests, ensure_ascii=False, indent=1) + '\n')

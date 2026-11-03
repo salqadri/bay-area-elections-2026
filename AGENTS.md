@@ -1,3 +1,11 @@
+# PR #23 review — Fresno County
+
+PR #23 is held for review, not merged or deployed. Read
+[the review handoff](research/fresno/review-2026-11-03/README.md) before changing
+its publication or recommendation plan. Preserve prior choices/prose and exact
+model inputs/answers; no model reruns or deployment are needed to resume review.
+The PR #22 authorization below concerns its historical release only.
+
 # November 3 release
 
 PR #22 publication is authorized. Read the current release section in docs/PR22_HANDOFF.md; historical held-review instructions below do not override that authorization. Do not rerun models or rewrite exact saved requests merely to resume work.

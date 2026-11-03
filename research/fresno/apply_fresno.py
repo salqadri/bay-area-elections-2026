@@ -2,8 +2,8 @@
 Proof List (printed 10/12/2026), cross-checked against Exhibit G of the county
 Candidate Guide (offices up for election; terms).
 
-Machine guard (Contra Costa precedent): the parse asserts every parsed roster
-equals the county's own Cands/Qualified counts before anything is written.
+Machine guard (Contra Costa precedent): validate every parsed roster against
+the county's qualified-candidate count before anything is written.
 
 - Only ON BALLOT contests become confirmed records (the proof is the county's
   exhaustive on-ballot list; nothing here is left 'unverified').
@@ -15,7 +15,9 @@ equals the county's own Cands/Qualified counts before anything is written.
 """
 import json
 import re
+import sys
 from pathlib import Path
+from parse_proof import validate as validate_proof
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_PATH = ROOT / "2026-11-03_Bay_Area_Elections.json"
@@ -125,7 +127,7 @@ def strip_noise(s: str):
     s = re.sub(r"\([^)]*\)", " ", s)
     s = re.sub(r"[\"‘’“”][^\"‘’“”]*[\"‘’“”]", " ", s)
     s = re.sub(r"\b(I{1,3}|JR|SR)\.?\b", " ", s)
-    return [t for t in re.findall(r"[A-Za-zÁ-úá-ú'.-]+", s) if len(t) > 1]
+    return [t for t in re.findall(r"[A-Za-zÁ-úá-ú'.-]+", s) if len(t.strip(".'-")) > 1]
 
 
 def norm(s: str) -> str:
@@ -145,6 +147,17 @@ def names_match(a: str, b: str) -> bool:
         odd_a = next(t for t in ta if t not in tb)
         odd_b = next(t for t in tb if t not in ta)
         if frozenset({odd_a, odd_b}) in alias:
+            return True
+    return False
+
+
+def is_incumbent(candidate, proof):
+    if candidate['incumbent_flag']:
+        return True
+    for inc in proof['incumbents']:
+        name = re.sub(r'\s+(Elected|Appointed to Vacancy|Appointed in Lieu|Appointed|Vacated|Declared Elected)$', '', inc, flags=re.I)
+        matches = [c for c in proof['candidates'] if names_match(c['name'], name)]
+        if len(matches) == 1 and matches[0]['name'] == candidate['name']:
             return True
     return False
 
@@ -304,7 +317,11 @@ def jurisdiction_name(header: str, cid: str):
 
 def main():
     data = json.loads(DATA_PATH.read_text())
+    original_ids = {p['id'] for p in data['positions']}
     parsed = json.loads(PARSED.read_text())
+    validate_proof(parsed, on_ballot=True)
+    off = json.loads(PROOF_NOT_ON_BALLOT.read_text())
+    validate_proof(off, on_ballot=False)
     by_id = {p["id"]: p for p in data["positions"]}
     nums = [int(p["id"].split("-")[1]) for p in data["positions"] if p["id"].startswith("CA2026-")]
     next_num = max(nums) + 1
@@ -316,14 +333,16 @@ def main():
         have = [c["name"] for c in (by_id[pid].get("candidates") or [])]
         extra_p = [a for a in printed if not any(names_match(a, b) for b in have)]
         extra_h = [b for b in have if not any(names_match(a, b) for a in printed)]
-        assert len(printed) == len(have) and not extra_p and not extra_h, (cid, pid, extra_p, extra_h)
-        assert "Fresno" not in by_id[pid]["counties"]
+        if len(printed) != len(have) or extra_p or extra_h:
+            raise ValueError(f'Existing roster mismatch: {cid}, {pid}, {extra_p}, {extra_h}')
+        if 'Fresno' in by_id[pid]['counties']:
+            raise ValueError('Fresno already imported; refusing duplicate IDs/counties')
 
     # Guard 2: every ON BALLOT contest's roster matches the county's own counts.
     for cid, c in parsed.items():
-        assert c["on_ballot"], cid
+        if not c['on_ballot']:raise ValueError('Unexpected off-ballot contest: ' + cid)
         want = max(d["qualified"] for d in c["districts"])
-        assert want == len(c["candidates"]), (cid, want, len(c["candidates"]))
+        if want != len(c['candidates']):raise ValueError('Qualified roster mismatch: ' + cid)
 
     # alphabetical insertion keeps every derived county list in the established order
     scope = data["election"]["counties_in_scope"]
@@ -368,7 +387,7 @@ def main():
             entry = {"name": name}
             if cand["party"]:
                 entry["party"] = PARTY_CODE[cand["party"]]
-            if cand["incumbent_flag"] or norm(name) in incumbent_names:
+            if is_incumbent(cand, proof):
                 entry["incumbent"] = True
             roster.append(entry)
         retention = "JUSTICE" in header.upper() and ("APPEAL" in header.upper() or "SUPREME" in header.upper())
@@ -453,7 +472,6 @@ def main():
     # Excluded determinations from the companion 'Contests not on Ballot' proof
     # (same CFMR001 print run): June-elected/appointed officers and zero-filing
     # seats — Contra Costa precedent records these as excluded with filed names.
-    off = json.loads(PROOF_NOT_ON_BALLOT.read_text())
     for cid, proof in sorted(off.items(), key=lambda kv: int(kv[0])):
         header = proof["office_header"]
         level, category = level_category(header, cid)
@@ -486,7 +504,7 @@ def main():
                 entry = {"name": smart_title(cand["name"]), "source_ids": ["S1514"]}
                 if cand["party"]:
                     entry["party"] = PARTY_CODE[cand["party"]]
-                if cand["incumbent_flag"]:
+                if is_incumbent(cand, proof):
                     entry["incumbent"] = True
                 filed.append(entry)
             rec["filed_candidates_not_confirmed_on_ballot"] = filed
@@ -529,8 +547,7 @@ def main():
 
     data["notes"]["N1553"] = ("Fresno County was added to coverage on November 3, 2026 from the Registrar's exhaustive CFMR001 "
                               "Contest/Candidate Proof List printed 10/12/2026: every contest the on-ballot list carries is confirmed on the "
-                              "November ballot with its complete printed roster, machine-verified to equal the county's own Num Cands/"
-                              "Num Qualified columns (research/fresno/). Terms and short-term designations come from Exhibit G of the "
+                              "November ballot with its complete printed roster, machine-verified to equal the county's own qualified-candidate counts (filings may exceed qualified candidates) (research/fresno/). Terms and short-term designations come from Exhibit G of the "
                               "county Candidate Guide. Ballot measures are outside this dataset's scope and are not included.")
     data["notes"]["N1555"] = ("Fresno County residents vote in this contest per the CFMR001 district line and shared-county list "
                               "(printed 10/12/2026); the Fresno county name was added to the existing stable record rather than "
@@ -604,7 +621,24 @@ def main():
         (c.get("independent_expenditures") or {}).get("for_total", 0)
         + (c.get("independent_expenditures") or {}).get("against_total", 0) > 0 for c in printed)
 
-    DATA_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import build_recommendations as recommendations
+    plan = json.loads(recommendations.PLAN.read_text())
+    added_ids = [p['id'] for p in data['positions'] if p['id'] not in original_ids]
+    expanded = recommendations.extend_county_plan(plan, data, added_ids)
+    # All validation finishes before replacing either maintained input.
+    old_data, old_plan = DATA_PATH.read_bytes(), recommendations.PLAN.read_bytes()
+    try:
+        DATA_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n')
+        recommendations.PLAN.write_text(json.dumps(expanded, ensure_ascii=False, indent=2) + '\n')
+    except BaseException:
+        DATA_PATH.write_bytes(old_data)
+        recommendations.PLAN.write_bytes(old_plan)
+        raise
+    manifest = {'format':'county-expansion-manifest/v1', 'county':'Fresno',
+                'base_positions':sorted(original_ids), 'added_positions':added_ids,
+                'proof_contests':id_log}
+    (PARSED.parent/'import-manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
     print("new positions:", sum(len(v) for v in new_recs.values()))
     print("total positions:", len(data["positions"]))
     print("coverage:", {k: cov[k] for k in ("confirmed_contests", "confirmed_seats", "printed_candidate_entries")})

@@ -1,89 +1,79 @@
 #!/usr/bin/env python3
-"""Merge the Fresno bootstrap into a complete published archive (2026-11-03.2).
+"""Attach a registered Fresno run, preserving prior archives and recommendations.
 
-Carries jev-2026-11-03-final rows byte-identical (with their v10/v11 variant
-bindings), registers v11 as a question variant, binds every new Fresno row to
-the v11 questions hash, then runs publish_jev_grades freeze+attach exactly like
-the playground publisher would.
+No model calls. Existing output archives cannot be overwritten. Register the
+saved batch first, then use a new publication and earlier-summary output path.
 """
+import argparse
+from copy import deepcopy
 import json
-import subprocess
-import sys
 from pathlib import Path
+import sys
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "scripts"))
-from grade_gaza import dump, digest  # noqa: E402
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts'))
+from grade_gaza import digest,dump,validate_response
+from publish_jev_grades import attach,DATASET
+from build_recommendations import extend_county_plan,PLAN
 
-FINAL = ROOT / "research/gaza-grading/published-2026-11-03-final.json"
-BOOT = ROOT / ".research/jev-playground-fresno/bootstrap-fresno.json"
-V11 = ROOT / "research/gaza-grading/criteria-pro-palestine-v11.json"
-OUT = ROOT / "research/gaza-grading/published-2026-11-03-fresno.json"
+
+def build_archive(final,run,criteria,publication_id,criteria_path):
+    rows=deepcopy(final['rows'])
+    have={r['id']for r in rows}
+    archive=deepcopy(final)
+    sha=digest(dump(criteria['questions']).encode())
+    if not any(v['questions_sha256']==sha for v in archive['question_variants']):
+        archive['question_variants'].append({'criteria_path':criteria_path,'criteria':criteria,'questions_sha256':sha})
+    for original in run['rows']:
+        if original['id']in have:raise ValueError('Fresno run would replace an existing candidacy')
+        if original['status']!='complete' or original['request']['questions']!=criteria['questions']:
+            raise ValueError('Incomplete result or question drift')
+        if digest(dump(original['request']).encode())!=original['request_sha256']:
+            raise ValueError('Request hash mismatch')
+        validate_response(criteria['questions'],original['response'])
+        row=deepcopy(original)
+        row['evaluation']={k:run[k]for k in ('dataset_sha256','state_version','model')}
+        row['evaluation']['run_id']=run['id']
+        rows.append(row);have.add(row['id'])
+        archive['candidate_question_variants'][row['id']]=sha
+    archive.update(id=publication_id,published_on=final['published_on'],rows=rows,
+                   preferred_criteria=criteria,preferred_criteria_path=criteria_path)
+    return archive
 
 
 def main():
-    if OUT.exists():
-        raise SystemExit('preserve the existing archive; use a new path')
-    final = json.load(open(FINAL))
-    boot = json.load(open(BOOT))
-    latest = boot['latest']
-    dataset_path = ROOT / "2026-11-03_Bay_Area_Elections.json"
-    registry = json.load(open(dataset_path))['pro_palestine_grading'].get('previous_explanations')
-    v11 = json.load(open(V11))
-    v11_sha = digest(dump(v11['questions']).encode())
-    # every new row must use the exact v11 questions
-    have = {row['id'] for row in final['rows']}
-    for row in latest['rows']:
-        if row['id'] in have:
-            continue
-        if row['request']['questions'] != v11['questions']:
-            raise SystemExit('new row not using exact v11 questions: ' + row['candidate'])
-    archive = {
-        'format': 'published-jev-grades/v1',
-        'id': 'jev-2026-11-03-fresno',
-        'published_on': '2026-11-03',
-        'selection': 'latest successful saved evaluation per candidacy',
-        'score_grade_mapping': final['score_grade_mapping'],
-        'evidence_threshold': final['evidence_threshold'],
-        'preferred_criteria_path': 'research/gaza-grading/criteria-pro-palestine-v11.json',
-        'preferred_criteria': v11,
-        'question_variants': list(final['question_variants']) + (
-            [] if any(v['questions_sha256'] == v11_sha for v in final['question_variants'])
-            else [{'criteria_path': 'research/gaza-grading/criteria-pro-palestine-v11.json',
-                   'questions_sha256': v11_sha, 'criteria': v11}]),
-        'candidate_question_variants': dict(final['candidate_question_variants']),
-        'rows': latest['rows'],
-    }
-    for row in latest['rows']:
-        if row['id'] not in have:
-            archive['candidate_question_variants'][row['id']] = v11_sha
-    if {row['id'] for row in archive['rows']} != set(archive['candidate_question_variants']):
-        raise SystemExit('variant bindings must cover every row exactly')
-    OUT.write_text(json.dumps(archive, ensure_ascii=False, indent=1) + '\n')
-    print('archive written', OUT, 'rows', len(archive['rows']), flush=True)
-    # freeze() validates before writing; run the publisher attach on the fresh archive
-    result = subprocess.run(
-        [sys.executable, str(ROOT / 'scripts' / 'publish_jev_grades.py'),
-         '--archive', str(OUT), '--published-on', '2026-11-03'],
-        cwd=ROOT, text=True, capture_output=True)
-    print(result.stdout, result.stderr)
-    if result.returncode:
-        raise SystemExit('attach failed')
-    # A new score archive drops the earlier-assessment registry; re-attach it with
-    # its current-publication pointer advanced to this archive, then re-pin the
-    # registry hash (the pointer lives inside the archive bytes).
-    if registry:
-        earlier = ROOT / registry['archive_path']
-        a = json.loads(earlier.read_text())
-        a['current_publication_id'] = archive['id']
-        earlier.write_text(json.dumps(a, ensure_ascii=False, indent=2) + '\n')
-        import hashlib
-        registry['archive_sha256'] = hashlib.sha256(earlier.read_bytes()).hexdigest()
-        data = json.load(open(dataset_path))
-        data['pro_palestine_grading']['previous_explanations'] = registry
-        dataset_path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n')
-        print('earlier-summaries pointer advanced and registry re-pinned', flush=True)
+    cli=argparse.ArgumentParser(description=__doc__)
+    cli.add_argument('--run',type=Path,default=ROOT/'research/gaza-grading/fresno-county-2026-11-03/reviewed-run.json')
+    cli.add_argument('--output',type=Path,default=ROOT/'research/gaza-grading/published-2026-11-03-fresno-reviewed.json')
+    cli.add_argument('--earlier-output',type=Path,default=ROOT/'research/gaza-grading/earlier-summaries-2026-11-03-fresno.json')
+    cli.add_argument('--publication-id',default='jev-2026-11-03-fresno-reviewed')
+    args=cli.parse_args()
+    args.run=args.run.resolve();args.output=args.output.resolve();args.earlier_output=args.earlier_output.resolve()
+    for path in (args.output,args.earlier_output):
+        if path.exists():raise SystemExit('Preserve existing archive: '+str(path))
+        if not path.resolve().is_relative_to(ROOT/'research/gaza-grading'):raise SystemExit('Store archives under research/gaza-grading')
+    data=json.loads(DATASET.read_text());final=json.loads((ROOT/'research/gaza-grading/published-2026-11-03-final.json').read_text())
+    path='research/gaza-grading/criteria-pro-palestine-v11.json';criteria=json.loads((ROOT/path).read_text())
+    archive=build_archive(final,json.loads(args.run.read_text()),criteria,args.publication_id,path)
+    raw=(json.dumps(archive,ensure_ascii=False,indent=1)+'\n').encode()
+    proposed=attach(data,archive,str(args.output.relative_to(ROOT)),digest(raw))
+    earlier=None
+    if data['pro_palestine_grading'].get('previous_explanations'):
+        earlier=json.loads((ROOT/data['pro_palestine_grading']['previous_explanations']['archive_path']).read_text())
+        earlier['current_publication_id']=archive['id']
+        earlier_raw=(json.dumps(earlier,ensure_ascii=False,indent=2)+'\n').encode()
+        proposed['pro_palestine_grading']['previous_explanations']={'archive_path':str(args.earlier_output.relative_to(ROOT)),'archive_sha256':digest(earlier_raw)}
+    added=json.loads((ROOT/'research/fresno/import-manifest.json').read_text())['added_positions']
+    plan=extend_county_plan(json.loads(PLAN.read_text()),proposed,added)
+    args.output.write_bytes(raw)
+    if earlier:args.earlier_output.write_bytes(earlier_raw)
+    old_data,old_plan=DATASET.read_bytes(),PLAN.read_bytes()
+    try:
+        DATASET.write_text(json.dumps(proposed,ensure_ascii=False,indent=1)+'\n')
+        PLAN.write_text(json.dumps(plan,ensure_ascii=False,indent=2)+'\n')
+    except BaseException:
+        DATASET.write_bytes(old_data);PLAN.write_bytes(old_plan);raise
+    print('Attached',len(archive['rows']),'exact evaluations; prior choices/prose retained')
 
 
-if __name__ == '__main__':
-    main()
+if __name__=='__main__':main()

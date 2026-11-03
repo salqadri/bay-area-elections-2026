@@ -1,50 +1,45 @@
-## Fresno County expansion — November 3, 2026 (publication 2026-11-03.2)
+## Fresno County expansion — PR #23, held for review
 
-Fresno County is now the sixth researched county. Source of truth: the county's
-own CFMR001 Contest/Candidate Proof List printed 10/12/2026 — both the
-**Contests on Ballot with Qualified Candidates** and the companion **Contests
-not on Ballot** files — archived in `research/fresno/` with a parser that fails
-unless every roster equals the county's printed Num Cands/Num Qualified columns.
-Terms and short-term designations come from Exhibit G of the county Candidate
-Guide (6/29/2026). Ballotpedia was used only as corroboration.
+Prepared publication **2026-11-03.2** is **unmerged and not deployed**.
+The county CFMR001 Contest/Candidate Proof Lists (printed 10/12/2026), both
+on-ballot and not-on-ballot, are archived in `research/fresno/`. Terms come
+from Exhibit G of the county Candidate Guide. Parsing fails before writing
+when qualified counts or ballot statuses do not match; filing counts may be
+higher than qualified counts.
 
-- **Added** 93 confirmed contests (new stable IDs CA2026-417…509) and 114 excluded
-  determinations (CA2026-510…623) with provisional filed names retained. Every
-  contest in both county proofs is accounted for; nothing is left unresolved.
-- **Extended** eleven existing stable records (statewide executive/education,
-  Supreme Court retentions, State BOE District 2, CD-13, CD-22) by adding the
-  Fresno county name — never cloned. Fresno lies wholly in BOE **District 1**,
-  so a separate District 1 record was created rather than misusing the District 2
-  record (note N1563).
-- **Conventions:** new federal/legislative/city/countywide records carry
-  convention-derived OCD IDs; Court of Appeal Fifth District retentions, Superior
-  Court seats, BOE D1 and the County Superintendent carry `countywide_electorate`
-  (verified against the address matcher's Fresno fixture). The Huron City Council
-  short-term seat is the dataset's only null-roster confirmed contest (one filing,
-  zero qualified — write-in only).
-- **Not included:** ballot measures (out of scope); Merced County BOE Trustee
-  Area 5 is included because Fresno residents vote in it per the county's own
-  district line.
-- **Coverage counters recomputed**: 754 positions, 564 confirmed contests, 691
-  seats, 1,516 printed entries, 190 excluded, one missing roster.
-- **Recommendation layer:** `classify` re-run adds 197 Fresno races, all
-  `no_information` (every Fresno candidacy graded N/A). Jev and reason caches are
-  content-hashed, so all 1,296 pre-existing evaluations and every cached narrative
-  were preserved unchanged (0 reruns).
-- **Fresno grading run (`jev-2026-11-03-fresno`):** all 222 Fresno candidacies
-  evaluated individually under owner prompt v11 (`research/fresno/jev-fresno-run.py`,
-  resumable single-candidate runs), every one **N/A** — no Palestine record,
-  evidence below the .22 floor. The batch merged byte-identically with the 1,296
-  saved pre-Fresno evaluations into `published-2026-11-03-fresno.json`
-  (`research/fresno/merge-publish-fresno.py`), registered as a targeted run in the
-  playground review bundle (`research/fresno/register-fresno-run.py`); the
-  earlier-assessment pointer advanced and re-pinned.
-- **Bay Area batch unchanged by design:** Fresno is not Bay Area; the playground's
-  Bay Area batch stays five counties. The October 26 education-policy sweep
-  predates Fresno and is scoped out by check.
-- **Next research passes for Fresno (not blockers):** FEC refresh for CD-5/20/21,
-  CAIL/endorsement crawl, platform positions and Gaza evidence collection —
-  a future rerun can lift the 222 N/A grades once real evidence exists.
+- Added **93 confirmed** contests (CA2026-417…509) and **114 excluded**
+  determinations (CA2026-510…623), retaining provisional filed names.
+- Extended **13 existing** statewide, Supreme Court and congressional records
+  to Fresno, including two previously nationwide congressional records.
+  Fresno lies in BOE **District 1**, which is new; District 2 is unchanged.
+- County proof coverage: **106** on-ballot contests and **114** excluded.
+  The dataset totals **754 positions / 564 confirmed / 691 seats / 1,516
+  printed entries / 190 excluded**, with one missing named roster: Huron
+  City Council short term, zero qualified candidates. The plan includes this
+  contest explicitly with no recommendation.
+- Plan totals **737** rows: 564 confirmed and 173 excluded with candidate
+  records. **198 new rows** add no recommendation. All **539 prior rows** keep
+  their choices, prose and decision provenance; **177 existing choices** remain.
+  The review removed four unintended changed picks and 179 changed old summaries
+  from the active plan. Those out-of-scope cache additions remain audit-only.
+- Corrected **28 new-record incumbent flags** using unambiguous county-proof
+  name matching. Source requests and responses were not edited or rerun.
+- Current prepared archive: `published-2026-11-03-fresno-reviewed.json`,
+  publication ID `jev-2026-11-03-fresno-reviewed`. It retains **1,296 prior**
+  evaluations exactly and the **222 new** Fresno raw requests/answers/scores.
+  All new grades are N/A under owner prompt v11 and the .22 evidence floor.
+- Portable Fresno history uses `fresno-county-2026-11-03/reviewed-run.json`,
+  ID `20261103T165344Z-0f36bd7d`. Its reconstructed envelope uses the last
+  actual saved completion time; the original future-dated envelope is audit-only.
+  Previously published archives are immutable; the updated earlier-summary
+  pointer uses a separate `earlier-summaries-2026-11-03-fresno.json` copy.
+- **No model calls** during review. Full release gate: **54/54 PASS**.
+  TALL projection: **435 contests**, all 11 existing editorial exceptions valid.
+  This verifies integration; TALL and research production are not updated by review.
+- **Bay Area batch stays five counties.** Fresno enrichment (FEC, endorsements,
+  platforms and Gaza evidence) remains future work; empty evidence is not a grade.
+
+[Detailed fixes, receipts and safe commands](../research/fresno/review-2026-11-03/README.md).
 
 ## November 3 publication — PR #22 release
 

@@ -1,13 +1,17 @@
-## November 3 publication — Fresno County release
+## Prepared Fresno publication — PR #23, held for review
 
-Publication **2026-11-03.2**, publication ID `jev-2026-11-03-fresno`, publishes
-**1,518** evaluations: the Fresno County grading run's **222** new candidacies
-(all **N/A** — no Palestine record, evidence below the .22 floor, under owner
-prompt **v11**) merged with the **1,296** earlier saved evaluations byte-
-identical to `jev-2026-11-03-final`, including Scott Sakakihara's **C (2.36 /
-5)** v11 result. Distribution: **A 119 · B 46 · C 21 · D 34 · E 84 · F 121 ·
-N/A 1093**. Earlier-assessment prose keeps its prior request bindings and now
-points at this publication.
+Publication **2026-11-03.2** is unmerged and not deployed. Its current prepared
+archive is `published-2026-11-03-fresno-reviewed.json`, publication ID
+`jev-2026-11-03-fresno-reviewed`: **1,518** evaluations, comprising **1,296**
+prior rows unchanged and **222** saved Fresno results under owner prompt v11.
+All Fresno grades are N/A below the .22 evidence floor. Distribution:
+**A 119 · B 46 · C 21 · D 34 · E 84 · F 121 · N/A 1093**.
+
+No scoring prompt, threshold, input, raw answer or score changed during review.
+The new archive repairs only run references; the original Fresno archive and
+run remain for audit. Prior published archives remain byte-identical. Earlier
+assessment text retains its original hashes in a separate Fresno binding copy.
+[Review provenance and verification](../research/fresno/review-2026-11-03/README.md).
 
 ## November 3 publication — PR #22 release
 

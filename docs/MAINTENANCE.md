@@ -222,6 +222,8 @@ The remaining Bay Area counties are Marin, Napa, Solano and Sonoma. For each add
 3. Insert the county alphabetically into `counties_in_scope` and the official county-election URL map, generalize any "five counties" fallback text and hardcoded template county lists, and add the county's FIPS code check to the matcher fixtures. The matcher FIPS map already resolves all 58 California counties from `research/california-counties.json`; coverage is gated by `counties_in_scope`, not by registry edits. Most dropdowns derive from the JSON, but verify both pages.
 4. Check OCD geography, boundary vintage and every `countywide_electorate` assertion for newly listed counties. Do not assume an existing BOE district or appellate district covers all nine.
 5. Recompute coverage, revise limitations, refresh fixtures and test positive, negative and unresolved address matches for the new county. Rebuild both HTML pages.
+6. Extend the existing recommendation plan with `extend_county_plan` in `scripts/build_recommendations.py`. Validate that old rosters, grades and policy inputs are unchanged; preserve old selections and prose. Include confirmed contests with no named candidates as explicit no-recommendation rows. Do not rerun nationwide selection or narrative phases as a side effect of adding a county.
+7. Preserve old published archives and raw requests/answers. Register saved runs with standard IDs and actual completion timestamps; create a new archive and earlier-summary binding copy. Verify portable history lookup and the standalone TALL projection before handoff. See the [Fresno review](../research/fresno/review-2026-11-03/README.md).
 
 ## GitHub Pages publication
 

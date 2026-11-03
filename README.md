@@ -1,17 +1,17 @@
-## November 3 publication — Fresno County release
+## Fresno County expansion — PR #23, held for review
 
-Publication **2026-11-03.2** adds **Fresno County** as the sixth researched
-county: 207 new contest records (93 confirmed on the November ballot with
-complete printed rosters, 114 excluded determinations) from the Registrar's
-exhaustive CFMR001 Contest/Candidate Proof List printed 10/12/2026, machine-
-verified against the county's own candidate counts, plus terms from Exhibit G
-of the county Candidate Guide. Eleven shared statewide, Supreme Court and
-congressional records reuse their existing stable IDs with the Fresno county
-name added. The Fresno grading run (`jev-2026-11-03-fresno`) evaluated all
-**222** new candidacies — every one **N/A** for lack of any Palestine record
-below the evidence floor — merged byte-identically with all **1,296**
-previously saved evaluations under `jev-2026-11-03-final`, which are unchanged.
-Scott Sakakihara remains **C (2.36 / 5)** under owner prompt **v11**.
+[PR #23](https://github.com/salqadri/bay-area-elections-2026/pull/23) prepares
+publication **2026-11-03.2**, adding Fresno as the sixth researched county.
+It is **unmerged and not deployed**. The county's CFMR001 proofs account for
+106 on-ballot contests: **93 new** and **13 existing** records extended to Fresno,
+plus **114 excluded** determinations. BOE District 1 is new; District 2 is unchanged.
+
+The reviewed archive `jev-2026-11-03-fresno-reviewed` retains all **1,296** prior
+evaluations and **222** saved Fresno evaluations without changing model inputs,
+answers, scores or thresholds. The new results are all **N/A** below the .22
+evidence floor. Existing race choices and paragraphs are preserved; the plan
+includes the Huron write-in-only contest. The five-county Bay Area batch stays
+unchanged. [Review findings and reproduction steps](research/fresno/review-2026-11-03/README.md).
 
 ## November 3 publication — PR #22 release
 

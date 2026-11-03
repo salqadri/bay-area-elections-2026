@@ -1,6 +1,20 @@
+# Current status — November 3, 2026
+
+Production uses `jev-2026-11-03-final` (1,296 saved evaluations; see
+[PUBLISHED_GRADES.md](PUBLISHED_GRADES.md)). PR #23 prepares the separate
+`jev-2026-11-03-fresno-reviewed` archive, adding 222 N/A Fresno evaluations
+without changing prior raw results, prompts or thresholds. The PR is unmerged
+and not deployed. Its recommendation plan has **737** rows: 12 community,
+167 selection-category, 84 no-good-candidate and 474 no-information, with
+**177** existing choices preserved. Category membership is not a count of new
+provider calls or fresh selections. [Review report](../research/fresno/review-2026-11-03/README.md).
+
+The October 30 notes below are historical; they do not describe the current
+saved prompt, scores or recommendation plan.
+
 # Latest score publication — October 30, 2026
 
-Publication **2026-10-30.1** (current) publishes owner-directed criteria **v8**
+Publication **2026-10-30.1** (historical) publishes owner-directed criteria **v8**
 plus the same-day **v8.1** correction, with fresh Qwen explanations for all
 **404** letter-grade candidacies (`research/gaza-grading/explanations-2026-10-30-v8-1.json`,
 responses in `research/gaza-grading/responses-summary-v4-v8/`) and refreshed race
@@ -98,9 +112,8 @@ archive. It has not been silently rebound to a new scoring request.
 ## Refreshed race recommendations
 
 [Current plan](../research/candidate-recommendations/recommendations-2026-10-28-latest.json)
-uses the current dataset and score publication. Counts over all 736 inventory races
-(including Fresno County from November 3, 2026):
-**12 community-rule picks, 167 Jev picks, 84 no-good-candidate, 473 no-information**.
+Historical October 30 counts over 539 inventory races:
+**12 community-rule picks, 139 Jev picks, 103 no-good-candidate, 285 no-information**.
 Five category changes follow directly from the updated grades. Seven selected
 names change overall: two previous picks become no recommendation, and five tied
 grade races receive different Jev choices. The exact selector requests and answers

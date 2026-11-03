@@ -143,7 +143,7 @@ def classify(data, obs):
     races = []
     for p in data["positions"]:
         cands = all_candidates(p)
-        if not cands:
+        if not cands and p.get('ballot_status') != 'confirmed':
             continue
         office = p.get("office")
         base = {
@@ -746,8 +746,12 @@ def revalidate_plan(plan, data):
             race['recommended'] = old.get('recommended')
             receipt = legacy_revalidation(race)
             current = cached_pick_matches(race.get('jev'), jev_request(race))
-            if race.get('recommended') and (current or receipt):
-                if not current:
+            approved = release_choice_matches(race)
+            if race.get('recommended') and (current or receipt or approved):
+                if approved:
+                    race['recommend_reason'] = old['recommend_reason']
+                    race['needs_summary'] = old.get('needs_summary', False)
+                if not current and not approved:
                     race['decision_revalidation'] = receipt
             else:
                 race.update(recommended=None, selection_status='review_required', needs_summary=False,
@@ -775,6 +779,44 @@ def revalidate_plan(plan, data):
                     'retained_archived_choices': sum(bool(r.get('decision_revalidation')) for r in races),
                     'pending_review': [r['position_id'] for r in races if r.get('selection_status') == 'review_required'],
                     'model_calls': 0}
+
+
+def extend_county_plan(plan, data, new_position_ids):
+    """Extend coverage without rerunning unrelated selections or narrative writers."""
+    fresh = classify(data, json.loads(OBS.read_text()))
+    previous = {r['position_id']: r for r in plan['races']}
+    new_ids = set(new_position_ids)
+    expanded = []
+    for base in fresh:
+        pid = base['position_id']
+        if pid in new_ids:
+            row = deepcopy(base)
+            if row['category'] == CAT_JEV:
+                row.update(recommended=None, needs_summary=False, selection_status='review_required',
+                           recommend_reason='No recommendation: the new contest requires selection review.')
+        else:
+            if pid not in previous:
+                raise ValueError('Unregistered new contest in county expansion: ' + pid)
+            old = previous[pid]
+            for key in ('roster', 'category', 'office', 'district_or_seat', 'jurisdiction',
+                        'ballot_status', 'selection_evidence', 'selection_policy'):
+                if old.get(key) != base.get(key):
+                    raise ValueError('County expansion changes existing ' + key + ': ' + pid)
+            if not set(old['counties']) <= set(base['counties']):
+                raise ValueError('County expansion removes existing coverage: ' + pid)
+            row = deepcopy(old)
+            row['counties'] = deepcopy(base['counties'])
+        expanded.append(row)
+    if set(previous) - {r['position_id'] for r in fresh}:
+        raise ValueError('County expansion removes an existing recommendation record')
+    validate_plan(expanded, data)
+    result = deepcopy(plan)
+    source = (json.dumps(data, ensure_ascii=False, indent=1) + '\n').encode()
+    result.update(races=expanded, source_dataset_sha256=hashlib.sha256(source).hexdigest(),
+                  source_score_publication_id=data['pro_palestine_grading']['publication_id'])
+    result['counts'] = {key: sum(r['category'] == key for r in expanded)
+                        for key in (CAT_MUSLIM, CAT_JEV, CAT_NO_GOOD, CAT_NO_INFO)}
+    return result
 
 
 def save_plan(races):
