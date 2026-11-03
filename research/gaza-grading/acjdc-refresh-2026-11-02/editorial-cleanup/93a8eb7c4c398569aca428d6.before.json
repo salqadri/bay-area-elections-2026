@@ -1,0 +1,74 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "93a8eb7c4c398569aca428d6",
+  "candidate": "Corry Frydlewicz",
+  "position_id": "CA2026-058",
+  "request_sha256": "4e9c899323aec02bb89a4cd7eadaf07d6265048165639d69a1bb25e5bf2e4d8c",
+  "grade": "D",
+  "summary": "Corry Frydlewicz, a nonpartisan candidate for Emeryville's at-large City Council seat, stated in a questionnaire (response date unstated; Drive file dated 2026-09-02) that the candidate personally opposes Israel's treatment of Palestinians and U.S. complicity while condemning Hamas, war, and violence, and situated those views outside the council's local mandate. The position names U.S. complicity specifically but pairs it with condemnation of Hamas and frames the statement as personal rather than a municipal policy platform.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Candidate name only; no directional signal for Palestinian justice."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "At-large City Council seat contextualizes the candidate's stated distinction between personal views and the council's local role."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Jurisdictional identifier; no independent signal on Palestine policy."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label carries no directional signal on Palestinian justice."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "favorable",
+      "treatment": "included",
+      "reason": "Candidate personally opposes Israel's treatment of Palestinians and U.S. complicity; also condemns Hamas and frames views as outside council mandate. Only substantive directional evidence in the record."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Temporal context for the race; no policy signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "City of Emeryville; confirms local municipal scope but no independent policy signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label only; no policy or directional content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "d74477d6abc835854eb8d4625d9b4a27933251d1422c46850cb2c0df59c06183",
+  "generated_at": "2026-11-03T04:00:46+00:00",
+  "usage": {
+    "prompt_tokens": 3852,
+    "completion_tokens": 3072,
+    "total_tokens": 6924,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2566
+    }
+  },
+  "elapsed_seconds": 38.83,
+  "generation_request_sha256": "a9edb9d6f07c0a796ad432fd35fc9459fa74d771b2c00c741d82a27a86fd9812",
+  "attempt": 1
+}

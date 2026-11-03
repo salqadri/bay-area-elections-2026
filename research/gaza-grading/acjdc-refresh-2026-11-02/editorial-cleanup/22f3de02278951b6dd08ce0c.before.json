@@ -1,0 +1,116 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "22f3de02278951b6dd08ce0c",
+  "candidate": "Anne J. Kepner",
+  "position_id": "CA2026-177",
+  "request_sha256": "9b6a79201a9ac1f9857c96d21f728ccf93fd1b52ae3de158764b297335a4feaf",
+  "grade": "B",
+  "summary": "CAIR Action, which evaluates Gaza and ceasefire positions, endorsed Kepner in the general election. In a state primary questionnaire (file metadata dated April 2026; response date unconfirmed), she placed foreign policy outside a local trustee's duties, affirmed support for Israel's existence, and said she would study AB 715 with all sides rather than commit against amendments. The endorsement and her own pro-Israel-existence language sit in tension with each other.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Candidate name only; no policy signal"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "grouped",
+      "reason": "Local school-board trustee role contextualizes her foreign-policy deflection"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Geographic identifier; no policy signal"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label has no bearing on Palestine position"
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Education and community-college advocacy; no Palestine or Israel content"
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "uncertain",
+      "treatment": "included",
+      "reason": "Would study AB 715 with all sides; no unqualified pledge against amendments; neither clear support nor opposition to the bill"
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "uncertain",
+      "treatment": "included",
+      "reason": "Deflects foreign policy as outside local duties but affirms Israel's existence; response date unconfirmed per file-metadata caveat"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "favorable",
+      "treatment": "grouped",
+      "reason": "CAIR Action endorsement (general) is concrete pro-Palestine stance evidence; Samir Laymoun support omitted per source policy (other directional evidence exists)"
+    },
+    {
+      "id": "candidate_record.activist_opinion_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Source-classification context for Samir Laymoun; not used in prose per source policy"
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological note on how CAIR tiers are treated; not a candidate action"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "not_applicable",
+      "treatment": "grouped",
+      "reason": "Describes CAIR Action's evaluative role; folded into prose to explain the endorsement's significance"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Election date; no policy signal"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Community-college district name; no policy signal"
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Incumbent status; no bearing on Palestine position"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Structural label; no policy signal"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "eea1f118dbacdb9ec946171c8a30da630b5a956fccd52690a0e5c35fd81e1881",
+  "generated_at": "2026-11-03T04:07:04+00:00",
+  "usage": {
+    "prompt_tokens": 4323,
+    "completion_tokens": 5358,
+    "total_tokens": 9681,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4598
+    }
+  },
+  "elapsed_seconds": 57.22,
+  "generation_request_sha256": "e6903ed7aaa38c2cf3d0091cacee3f9383024b57d22a3fbde39251738f70dceb",
+  "attempt": 1
+}

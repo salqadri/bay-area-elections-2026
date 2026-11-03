@@ -147,7 +147,7 @@ node scripts/check_ballot_page.cjs
 
 The candidate-ordering regression also needs the built pages: run `check_candidate_sort.cjs` after `build_site.py` (it is included in the release sequence).
 
-`python3 scripts/check_release.py` runs the complete 44-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
+`python3 scripts/check_release.py` runs the complete 53-check offline sequence and records its results under `.checks/`. This command must be run after the final data/build; the list is not a claim that a particular pending PR has already passed.
 
 The fixture preparation must follow the build and precede the two page integration checks. `.checks/` contains disposable fixtures/reports and is ignored. The build's `--check` does not repair stale HTML. Do not use Python's `-O` option; these checks rely on assertions.
 
@@ -320,3 +320,23 @@ See [the candidate-only correction](COMMUNITY_GUIDE_CLEANUP.md). Preserve every 
 source; comment-only or tactical advice cannot create opposition. Measures are
 excluded. Rebuild both readers and the current Jev inputs after a reviewed import;
 never rewrite frozen evaluation requests or automatically rerun scores.
+
+
+### Held source-batch evaluations
+
+For PR #22, the latest saved questions/thresholds and immutable review history
+are documented in [PR22_HANDOFF.md](PR22_HANDOFF.md). The November 2 ACJDC batch
+contains 44 explicitly requested current-state evaluations; it is held rather
+than a new public score publication. The
+[run, comparison and generation receipts](../research/gaza-grading/acjdc-refresh-2026-11-02/README.md)
+preserve the exact model inputs and outputs.
+
+`scripts/refresh_held_review.py` consumes a completed scoped Jev run and an exact
+candidate scope file. It overlays latest successful scores in its work directory,
+rechecks selections under the existing policy, and uses Qwen at parallelism two
+for candidate and dependent race narratives. It makes provider calls only when
+explicitly invoked; local history restoration remains offline. Candidate summaries
+bind to their exact scoring request, while race summaries bind every candidate
+request used in the comparison. N/A gets no old explanation. Saved settings and
+canonical publication data are never changed by this command. Review factual-audit
+flags before copying outputs into the portable bundle or building a release.

@@ -1,0 +1,128 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "4874990f34dcec3671612e60",
+  "candidate": "Ben Allen",
+  "position_id": "CA2026-015",
+  "request_sha256": "ceca6d0f1f63d84d34a7594e56d48ee950f65217ea78a5954e0a25066c292bce",
+  "grade": "E",
+  "summary": "Allen's record shows Israel-centric framing: he voted Aye on AB 715, cited coauthoring a Bloom bill opposing BDS, publicly backed deleting \"settler colonialism\" and right-of-return language from 2019 party resolutions, and affirmed Israel's right to exist and defend itself. His limited humanitarian note—citing SCR 105 for an end to Gaza's catastrophe—was weighed alongside Vote for Peace's Opposed rating and California Jewish Democrats' Strong Support.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Identifies the candidate; no Palestine signal"
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Insurance Commissioner role; no Palestine/Israel policy jurisdiction"
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Jurisdiction label only"
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Party affiliation carries no Palestine-specific signal here"
+    },
+    {
+      "id": "candidate_record.ca_spenders_supporting",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "All entries marked unestablished relevance; spending_context prohibits using them for Palestine assessment"
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological guidance on spending, not candidate evidence"
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Platform covers insurance reform, wildfire, climate, and ethics; no Israel/Palestine content"
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Recorded Aye on AB 715 classroom-material oversight; criteria explicitly name this bill"
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Deleting anti-Israel resolution language (2019), BDS opposition, Israel right-to-defend affirmation, and Kibbutz-visit framing dominate; SCR 105 citation shows limited humanitarian note only"
+    },
+    {
+      "id": "candidate_record.funding_scope",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Describes funding data scope; no Palestine relevance"
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Vote for Peace Opposed (general) and California Jewish Democrats Strong Support are material directional evidence; Alameda County Jewish DC primary endorsement is low-weight and carry-forward; Samir Laymoun excluded per source policy"
+    },
+    {
+      "id": "candidate_record.activist_opinion_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Context for Samir Laymoun source; excluded from prose per summary_source_policy"
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological guidance on how to treat CAIR/Vote for Peace tiers; not candidate evidence"
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Descriptive org profiles; substantive endorsement signals already captured in focused_endorsement_observations"
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Timing context only"
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Jurisdiction label"
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster category label"
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "47216102f561ae12dbaa0fae20a80b43408b06c37fadef2ede26b4b16506d46a",
+  "generated_at": "2026-11-03T03:56:34+00:00",
+  "usage": {
+    "prompt_tokens": 5717,
+    "completion_tokens": 4268,
+    "total_tokens": 9985,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3419
+    }
+  },
+  "elapsed_seconds": 51.05,
+  "generation_request_sha256": "fe315be25dc539ce58a70472ca3be692fa2986eae1caeacc5a25c4c07f8ba322",
+  "attempt": 1
+}

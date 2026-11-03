@@ -73,6 +73,39 @@ class DirectionChecks(unittest.TestCase):
         self.assertEqual(community, [('CAIR Action', 'supported')])
         self.assertEqual(contrast, [])
 
+    def test_documented_jstreetpac_alias_is_allowed_without_weakening_word_boundaries(self):
+        position = {'id':'fixture','candidates':[{'name':'Fixture','endorsements':[
+            {'endorser':'JStreetPAC','relation':'endorsed'},
+            {'endorser':'American Library Association','relation':'endorsed'}]}]}
+        race = {'position_id':'fixture'}
+        self.assertEqual(rec.out_of_policy_endorsers(race,{'fixture':position},
+            'JStreetPAC endorsed Fixture.'), [])
+        self.assertTrue(rec.out_of_policy_endorsers(race,{'fixture':position},
+            'American Library Association endorsed Fixture.'))
+        self.assertFalse(rec._policy_match('american library association', {'ican'}))
+
+    def test_summary_grouping_does_not_match_ican_inside_american_names(self):
+        candidate = {'name':'Fixture','endorsements':[
+            {'endorser':'Asian American Action Fund','relation':'endorsed'},
+            {'endorser':'American Federation of Musicians Local 47','relation':'endorsed'},
+            {'endorser':'The Israeli-American Civic Action Network','relation':'endorsed'},
+            {'endorser':'Americans4Hindus','relation':'endorsed'},
+            {'endorser':'TrackAIPAC','relation':'endorsed'},
+            {'endorser':'JStreetPAC','relation':'endorsed'}]}
+        community, contrast = rec.relevant_endorsements(candidate)
+        self.assertEqual(community, [('TrackAIPAC','endorsed')])
+        self.assertEqual(contrast,[('The Israeli-American Civic Action Network','endorsed'),
+                                  ('Americans4Hindus','endorsed'),('JStreetPAC','endorsed')])
+
+    def test_oc_action_does_not_match_inside_aroc_action(self):
+        position = {'id':'fixture','candidates':[{'name':'Fixture','endorsements':[
+            {'endorser':'AROC Action','relation':'endorsed'},
+            {'endorser':'OC Action','relation':'endorsed'}]}]}
+        self.assertEqual(rec.out_of_policy_endorsers({'position_id':'fixture'}, {'fixture':position},
+                                                   'AROC Action endorsed Fixture.'), [])
+        self.assertEqual(rec.out_of_policy_endorsers({'position_id':'fixture'}, {'fixture':position},
+                                                   'OC Action endorsed Fixture.'), ['OC Action'])
+
     def test_direction_change_invalidates_request_even_when_grades_stay_identical(self):
         race = self.fixture()
         race['selection_evidence']['Graded'] = evidence_from_state(self.state('supported'))
@@ -152,6 +185,18 @@ class RecommendationChecks(unittest.TestCase):
         prompt = rec.reason_prompt(race, {position['id']: position})
         self.assertIn('LEGISLATIVE CONSISTENCY', prompt)
         self.assertIn('"response":"No","alignment":"aligned"', prompt)
+
+    def test_race_context_keeps_relevant_na_observations_without_absence_inference(self):
+        data = json.loads(rec.DATA.read_text())
+        position = next(p for p in data['positions'] if p['id'] == 'CA2026-047')
+        race = next(r for r in rec.classify(data, {'observations':[]}) if r['position_id'] == position['id'])
+        race['recommended'] = 'Tracy Jensen'
+        prompt = rec.reason_prompt(race, {position['id']:position})
+        self.assertIn('Malia Vella', prompt)
+        self.assertIn('N/A means unassessed', prompt)
+        self.assertIn('An absent entry does not establish', prompt)
+        self.assertNotIn('effectively supports the status quo', prompt)
+        self.assertNotIn('has not called it a genocide; has not backed', prompt)
 
     def test_readers_embed_the_current_recommendation_plan(self):
         plan = json.loads(rec.PLAN.read_text())

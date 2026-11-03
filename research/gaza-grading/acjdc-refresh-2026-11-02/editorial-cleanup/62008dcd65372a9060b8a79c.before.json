@@ -1,0 +1,86 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "62008dcd65372a9060b8a79c",
+  "candidate": "Laura Babitt",
+  "position_id": "CA2026-050",
+  "request_sha256": "72284abff9fd85bb9ab5cfd57e6cec57aabd4d434f9a710e6873f1d491ffbbb5",
+  "grade": "E",
+  "summary": "Babitt's questionnaire responses oppose delegitimizing Israel and exclusion based on Zionism or Jewish identity, while distinguishing criticism of Israeli government policy from antisemitism. She stated she would be very cautious about international resolutions and prioritize matters within Berkeley's municipal responsibility. She received a first-ranked general-election endorsement from the Alameda County Jewish Democratic Club, whose stated purpose includes supporting Israel. The questionnaire file is dated September 14, 2026; the response date itself is not stated.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Identifies the subject of the assessment."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Establishes municipal scope relevant to her stated preference for Berkeley-level matters; grouped with jurisdiction."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Administrative detail; no independent bearing on Palestinian-justice assessment."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label adds no directional signal on the assessment."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Her own words oppose delegitimizing Israel, oppose exclusion based on Zionism, and express caution about international resolutions, framing her position as Israel-protective and municipal-scope-limited."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "First-ranked general endorsement by an organization whose stated mission includes supporting Israel; low context weight per record but directionally relevant."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Documents the endorser's first-party mission of supporting Israel as a Jewish state; clarifies the endorsement's directional weight without equating it to candidate agreement on every policy."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Calendar date for the race; no bearing on substance of the assessment."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Confirms Berkeley municipal context for her stated preference to limit scope to city responsibility; grouped with office."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Administrative classification tag; no substantive signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "cd942382663d0437ea3c40c41a0f9991f2f47257ce307a32e0e46d8fa38d8f48",
+  "generated_at": "2026-11-03T03:59:11+00:00",
+  "usage": {
+    "prompt_tokens": 4091,
+    "completion_tokens": 3122,
+    "total_tokens": 7213,
+    "completion_tokens_details": {
+      "reasoning_tokens": 2527
+    }
+  },
+  "elapsed_seconds": 39.47,
+  "generation_request_sha256": "ef4b11abafd8fd714cd0085f3ba851494a8592deaba86f24caa1a251111c6c9e",
+  "attempt": 1
+}

@@ -1,0 +1,93 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "ce450d09fbfcec0d8e6ac477",
+  "candidate": "Reena Gupta",
+  "position_id": "CA2026-075",
+  "request_sha256": "1e46372f2d9f5052b0a7b1beb797344c1696dab7d82d756dcda9140afb13d062",
+  "grade": "E",
+  "summary": "Reena Gupta's recorded response supports Israel's existence and Israeli and Palestinian safety, rejects discriminatory city actions, and would evaluate any investments through legal authority, fiduciary duties, and local purpose.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Identity field; no Palestine-relevant signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "City council seat establishes local jurisdiction, not a Palestine-related action."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Geographic identifier only."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label carries no Palestine-related signal."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "All six points address local Pleasanton priorities (economy, housing, jobs, accountability, downtown, services); none reference Israel or Palestine. Included in prose to confirm the record's local scope."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Supports Israel's existence, affirms Israeli and Palestinian safety, rejects discriminatory city actions, and frames investment review through institutional criteria rather than Palestinian justice. Adverse to the pro-Palestine assessment."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Scheduling detail; no policy signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "City of Pleasanton; confirms local scope but no independent Palestine signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster classification label; no policy signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "a5a3bf5f408023cd7d22e4d524c19d25aa290f7598c05de815eba6a5a45ee684",
+  "generated_at": "2026-11-03T04:02:35+00:00",
+  "usage": {
+    "prompt_tokens": 4057,
+    "completion_tokens": 2147,
+    "total_tokens": 6204,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1628
+    }
+  },
+  "elapsed_seconds": 29.45,
+  "generation_request_sha256": "16f6fd77e869569875830d63cb25007feae396472dfc348851806b18ea396b6b",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " Her campaign platform addresses only local Pleasanton priorities.",
+        "replacement": ""
+      },
+      {
+        "removed": " The 2026-09-08 date reflects a file-upload timestamp; the response itself is undated.",
+        "replacement": ""
+      }
+    ]
+  }
+}

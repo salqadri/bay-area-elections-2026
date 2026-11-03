@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-11-03T03:46:46+00:00",
+  "status": "running",
+  "phase": "races",
+  "candidate_total": 40,
+  "race_total": 25,
+  "candidate_completed": 40,
+  "race_completed": 8,
+  "candidate_failed": 0,
+  "race_failed": 2,
+  "active": {
+    "CA2026-015": {
+      "kind": "race",
+      "label": "CA2026-015",
+      "started_at": "2026-11-03T04:12:20+00:00"
+    },
+    "CA2026-021": {
+      "kind": "race",
+      "label": "CA2026-021",
+      "started_at": "2026-11-03T04:13:44+00:00"
+    }
+  },
+  "errors": [
+    {
+      "kind": "race",
+      "id": "CA2026-001",
+      "error": "jstreetpac"
+    },
+    {
+      "kind": "race",
+      "id": "CA2026-014",
+      "error": "San Mateo County Republican Party"
+    }
+  ],
+  "parallelism": 2,
+  "model": "qwen/qwen3.8-27b",
+  "updated_at": "2026-11-03T04:13:44+00:00",
+  "interruption_reason": "Resume remaining race jobs with actionable validation repairs and factual narrative guards; completed outputs and exact calls retained."
+}

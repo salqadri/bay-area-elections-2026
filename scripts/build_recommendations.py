@@ -375,11 +375,11 @@ def _load_jsonl(path):
 # endorsement policy: Muslim-community-aligned vs AIPAC/Zionist/Hindutva only.
 COMMUNITY_ENDORSERS = ["usampac", "bamc", "cair", "aroc", "arab resource", "vote for peace",
                        "khanna", "muslim", "jewish voice for peace", "jvp",
-                       "peace action", "organize for peace", "track aipac"]
+                       "peace action", "organize for peace", "track aipac", "trackaipac", "voteforpeace"]
 ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",
                             "democratic majority for israel", "cufo", "cufi",
                             "christians united", "israeli-american civic", "ican",
-                            "bajc", "jstreet", "j street", "hindu", "americans4hindus",
+                            "bajc", "jstreet", "jstreetpac", "j street", "j street pac", "hindu", "americans4hindus",
                             "jewish democratic council", "alameda county jewish democratic club", "acjdc"]
 REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "supported", "opposed", "recommended")
 
@@ -400,9 +400,9 @@ def relevant_endorsements(c, position=None):
         if rel not in REASON_ENDORSER_RELATIONS:
             continue
         low = nm.lower()
-        if any(p in low for p in COMMUNITY_ENDORSERS):
+        if _policy_match(low, COMMUNITY_ENDORSERS):
             community.append((nm, rel or "endorsed"))
-        elif any(p in low for p in ISRAEL_ALIGNED_ENDORSERS):
+        elif _policy_match(low, ISRAEL_ALIGNED_ENDORSERS):
             contrast.append((nm, rel or "endorsed"))
     return community, contrast
 
@@ -430,16 +430,22 @@ def reason_prompt(race, pos_by_id):
     data = json.loads(DATA.read_text())
     cands = all_candidates(pos_by_id[race["position_id"]])
     rec = next(c for c in cands if c.get("name") == race["recommended"])
-    graded = [c for c in cands if grade_of(c) and c.get("name") != race["recommended"]]
-    graded.sort(key=lambda c: GRADE_ORDER[grade_of(c)])
-    graded = graded[:3]
+    evidence = race.get('selection_evidence') or {}
+    graded = []
+    for candidate in cands:
+        if candidate.get('name') == race['recommended']:
+            continue
+        context = evidence.get(candidate['name']) or candidate_evidence(pos_by_id[race['position_id']], candidate, data)
+        if grade_of(candidate) or context.get('other_issue_evidence') or context.get('observations'):
+            graded.append(candidate)
+    graded.sort(key=lambda c: GRADE_ORDER.get(grade_of(c), 99))
     federal = race.get("office_category") in ("U.S. House", "U.S. Senate")
     lines = [f"Race: {race['office']}"
              + (f" — {race['district_or_seat']}" if race.get("district_or_seat") else "")
              + f" ({race['jurisdiction'] or ' '.join(race.get('counties') or [])}), November 3, 2026 general election."]
     if race["category"] == CAT_MUSLIM:
-        lines.append(f"We support {race['recommended']}, a confirmed member of the Muslim community,"
-                     " our community's candidate in this race.")
+        lines.append(f"Recorded selection: {race['recommended']}; a confirmed community-alignment observation is present."
+                     " Do not infer a specific policy merely from that observation.")
     else:
         lines.append(f"Our research selects {race['recommended']} as the strongest candidate in this race.")
     lines += ["", f"RECOMMENDED CANDIDATE: {rec.get('name')}"
@@ -452,37 +458,30 @@ def reason_prompt(race, pos_by_id):
             lines += ["- " + l for l in reason_evidence(c, pos_by_id[race['position_id']], data)]
     else:
         lines += ["", "No other candidate in this race has a researched record."]
-    framing = ("" if not federal else
-               "This is a FEDERAL race: for a federal office-seeker, taking no recorded position on these "
-               "questions effectively supports the status quo, and the paragraph should say that plainly "
-               "when the recommended candidate's shown record lacks litmus-test action.")
     lines += ["",
-              "Write ONE voter-facing paragraph of up to 200 words explaining why a voter should support "
-              f"{race['recommended']} in this race and why {race['recommended']} is stronger than the other "
-              "candidates above, grounded in the textual records shown. "
-              "OUR FRAMEWORK: voters judge candidates first on two litmus tests — opposing the genocide in "
-              "Gaza and ending U.S. military/economic aid to Israel. When the recommended candidate's shown "
-              "record contains concrete acts on these tests (cosponsoring the Block the Bombs Act, voting "
-              "against arms funding, calling it a genocide, divestment action), name the specific acts with "
-              "their dates or bill names as shown. When the shown record does NOT contain them, be "
-              "transparent: one plain sentence stating what the candidate has not done on the record (for "
-              "example: has not called it a genocide; has not backed blocking weapons transfers; voted for "
-              "aid bills), then explain why the candidate is still the best option listed. Never hide a "
-              "shortfall and never invent one. Do not write meta-language like 'the record does not show' or "
-              "'has not published a stated position' — write about what the candidate has or has not done. "
-              "A candidate who refused to properly support Palestinians when put in the position (a contrary "
-              "vote, an opposed resolution, rejecting community asks) gets that held against them; an "
-              "abstention under heavy pressure can read as qualified support if the shown assessment says so — "
-              "follow the shown assessments. " + framing + " "
-              "Rules: never mention any numeric score or rating; a letter grade may appear at most in "
-              "passing — prefer explaining actual acts, votes, statements and positions. Use ONLY the facts "
-              "shown; never add outside knowledge or invent events, dates, quotes or endorsements; if a "
-              "competitor has no shown record, say nothing about them. Endorsements: mention only the "
-              "'Muslim-community / pro-Palestine-aligned records' and 'Israel-aligned / AIPAC / "
-              "Hindu-nationalist-aligned records' lines (Muslim-aligned backing supports a candidate; "
-              "AIPAC/UDP/DMFI/ICAN or Hindu-nationalist-aligned backing or opposition is a relevant "
-              "contrast); never name any other endorser. Plain prose, no lists, no quotation marks, no "
-              f"headings, no AI disclaimer. Name the office once. Output ONLY the paragraph."]
+              "Write ONE factual paragraph of 30–200 words explaining the recorded comparison for "
+              f"{race['recommended']}. The guide's issue focus is Palestinian justice, including Gaza, "
+              "arms transfers, divestment, civil liberties, and relevant recommendations. Consider all supplied "
+              "observations and preserve substantive contrary evidence. Describe concrete statements, votes, "
+              "sponsorships, pledges, and exact recommendation tiers; do not rescore or choose a different candidate. "
+              "N/A means unassessed, not favorable or unfavorable. Relevant N/A observations remain context. "
+              "An absent entry does not establish that a candidate has never said or done something. State a "
+              "refusal, opposition or shortfall only when explicitly supported, not from a missing record. "
+              "Do not fault state or local officeholders for not exercising congressional powers. "
+              "Use only issue-relevant facts; omit unrelated platform lists, missing-record disclaimers, "
+              "source-upload mechanics, grading methodology and generic uncertainty padding. "
+              "When an actual statement date is unknown, omit the date; never substitute upload metadata. "
+              "Preserve Preferred, Ally, supported, opposed and endorsed as distinct source terms. "
+              "Mention endorsement organizations only from the two explicit relevant-record lists above; "
+              "omit other backing even when it appears elsewhere in the source state. "
+              "Describe super-PAC money as independent spending supporting or opposing the candidate, "
+              "not campaign contributions. Omit spenders marked with unestablished relevance; their presence "
+              "alone does not establish a Palestine connection. Use current structured spending amounts when giving current totals; "
+              "do not substitute an older narrative total. Avoid overclaiming a bill's provisions from its name. "
+              "Do not use rubric descriptions as independent factual evidence. "
+              "No numeric score, grade, confidence, threshold, voting instruction, demographic appeal, "
+              "outside knowledge or invented fact. Name the office once. Plain prose, no lists or headings. "
+              "Output ONLY the paragraph."]
     from summary_source_policy import VOTER_RULES
     lines += ["", VOTER_RULES,
               "LEGISLATIVE CONSISTENCY: Each legislative action has a date/period, response, and tracker alignment. "
@@ -562,7 +561,7 @@ def out_of_policy_endorsers(race, pos_by_id, text):
     lower = text.lower()
     for kind, value in sorted(cores, key=lambda x: -len(x[1])):
         if kind == "phrase":
-            if value in flat:
+            if re.search(r"(?<![A-Za-z0-9])" + re.escape(value) + r"(?![A-Za-z0-9])", flat):
                 hits.append(value)
         elif len(value) >= 4 and re.search(r"(?<![a-z0-9])" + re.escape(value) + r"(?![a-z0-9])", lower):
             hits.append(value)

@@ -28,10 +28,11 @@ pro-Israel organization context, with the owner's requested low endorsement-only
 weight. Current input state is **candidate-evidence-v24-acjdc-questionnaires**.
 [Answer-by-answer report and replay details](../research/questionnaires/acjdc-2026-11-02/README.md).
 
-Current states change for **44 candidates**, listed in that report's
-`state-changes.json`. Scores, thresholds, questions and exact historical answers
-are unchanged; these new facts have **not** been evaluated. Existing explanations
-predate this source refresh. Do not claim that an old score included these answers.
+The owner subsequently requested a targeted rerun of these **44 candidates**, listed
+in `state-changes.json`. All 44 now have complete v9 evaluations with unchanged
+saved thresholds. **26 letter outcomes change, including 20 N/A → graded**; four
+remain N/A. Old exact evaluations remain intact. This is a held review, not a
+production publication. [Exact run and comparison](../research/gaza-grading/acjdc-refresh-2026-11-02/README.md).
 
 A separate audit of 249 distinct legislative paragraphs confirms two factual
 errors in held Qwen race outputs: Aisha Wahab's aligned No vote was called a
@@ -72,7 +73,7 @@ candidate narrative. [Audit scope, limits and before/after files](../research/re
 
 The portable review bundle is
 [`playground-review-2026-10-30/manifest.json`](../research/gaza-grading/playground-review-2026-10-30/manifest.json).
-It hashes six exact local run files, without credentials or machine-specific paths:
+It hashes seven exact local run files, without credentials or machine-specific paths:
 
 1. **Full roster**, `20261031T012958Z-2ce361f8`: all **1,296 candidates**, zero
    errors. Started **October 30, 2026, 6:29 p.m. Pacific**, completed 6:33 p.m.
@@ -91,16 +92,21 @@ It hashes six exact local run files, without credentials or machine-specific pat
    and race narratives are held alongside the result.
    [Source qualification, results and both summaries](reviews/matt-haney-genocide-2026-10-31.md).
 
+4. **November 2 ACJDC refresh**, `20261103T034523Z-3d5574c2`: 44 candidates
+   across 36 races, zero errors, v24 source state, saved v9 prompt and thresholds.
+   Of their previous results, 43 used the earlier roster prompt. Do not attribute
+   differences exclusively to new evidence. Exact scores and comparisons are held.
+
 The first three runs use v22 input states; the November 2 Gavilan runs use current v23 input states. The October 31 Haney update supersedes one additional full-roster result.
-Latest-per-candidate contains **1,292** results with the full-roster prompt and
-**four** with the newer v9 prompt. Under the saved mapping its distribution is
-**A 126, B 41, C 18, D 29, E 70, F 119, N/A 893**. These are **held review results**, not a new public score publication.
-The original handoff made no extra evaluations; the owner subsequently requested
-the single Haney evaluation and both Qwen summaries on October 31.
+After the November 2 ACJDC batch, latest-per-candidate contains **1,249** results
+with the full-roster prompt and **47** with the newer v9 prompt. Under the saved
+mapping its distribution is **A 123, B 41, C 21, D 35, E 80, F 123, N/A 873**. These are **held review results**, not a new public score publication.
+The original handoff made no extra evaluations; subsequent owner requests
+authorized the targeted Haney, Gavilan and 44-candidate ACJDC refreshes.
 
 Do not rewrite request hashes, replace the prompt attached to old answers, or
 claim that all 1,296 candidates used the newest prompt. If the user later wants
-one prompt for publication, the other 1,292 candidates still need evaluation
+one prompt for publication, the other 1,249 candidates still need evaluation
 under that exact prompt. The publication validator rejects mixed question JSON.
 
 ## Restore and launch from a fresh checkout
@@ -126,7 +132,7 @@ or use `--port 8788`; do not interrupt an active evaluation.
 The restore command validates file hashes, exact requests/responses and candidate
 identities. It preserves existing local runs and thresholds; use a fresh work
 directory for the exact committed settings. Repeating restoration is safe.
-The earlier one-candidate experiments remain on the original machine; the six runs needed to reproduce the latest result of every candidate are bundled.
+The earlier one-candidate experiments remain on the original machine; the seven runs needed to reproduce the latest result of every candidate are bundled.
 
 The editor deliberately follows the selected candidate's saved prompt. Select
 Eleni Kounalakis or press **Restore defaults** to load the latest v9 prompt for
@@ -197,13 +203,13 @@ The current input contains the new report; archived State JSON stays exact.
 Re-evaluate him when requested, then refresh his candidate explanation and the
 CA2026-153 rationale. The existing Qwen outputs predate this new report.
 
-## November 2 Gavilan race evaluations and summaries
+## Earlier November 2 Gavilan race evaluations and summaries
 
 Initially, before the USAMPAC correction below, both CA2026-153 candidates were re-evaluated under the exact latest v9 prompt
 and saved thresholds: Gabriel Gutierrez **A 4.94 / 5**, confidence **0.99**,
 evidence **0.94 / 1**; Shahida S. Merchant **N/A**, evidence **0 / 1**.
 The two exact runs are now part of the portable review bundle (six runs total, including the superseded pre-USAMPAC Merchant check).
-The first three requests remain exact. Latest-per-candidate now contains 1,292
+The first three requests remain exact. At that point, latest-per-candidate contained 1,292
 full-roster-prompt results and four v9 results; letter distribution is unchanged.
 Qwen regenerated both candidate paragraphs and the race comparison, preserving
 community-report attribution and making no Palestine inference from Merchant’s
@@ -212,7 +218,7 @@ These outputs supersede the earlier held CA2026-153 summaries for local review.
 PR #22 is unmerged; these two scores/summaries have not changed the frozen
 public score publication or the live TALL snapshot.
 
-## USAMPAC correction supersedes the initial Merchant N/A
+## Earlier USAMPAC correction supersedes the initial Merchant N/A
 
 The owner then confirmed that USAMPAC endorses Shahida Merchant and is a Muslim
 community organization aligned on Palestine. The new reported endorsement is
@@ -226,12 +232,43 @@ Merchant was re-evaluated with unchanged v9 questions and thresholds:
 **A 4.76 / 5**, score confidence **0.87**, evidence **0.69 / 1** (evidence
 confidence **0.38**). Confidence is shown, not used as an acceptance filter.
 The original N/A run remains exact history; the six-run portable bundle resolves
-her latest result to this new A. Gutierrez remains **A 4.94 / 5**. Latest review
-distribution is **A 126, B 41, C 18, D 29, E 70, F 119, N/A 893**.
+her latest result to this new A. Gutierrez remains **A 4.94 / 5**. At that point the review
+distribution was **A 126, B 41, C 18, D 29, E 70, F 119, N/A 893**.
 Both are now A-graded; the existing Gutierrez race pick is retained for review
 among highest-grade ties, not replaced by an invented new tie-breaking result.
 Fresh Qwen prose must mention both aligned organizations and cannot reuse the
 old claim that only Gutierrez has such backing. The exact questions are unchanged;
-1,292 candidates retain the roster prompt and four use v9. Scores and matching
+At that point, 1,292 candidates retained the roster prompt and four used v9. Scores and matching
 prose are held for review, and the live sites retain their frozen score
 publication. The factual USAMPAC endorsement is published separately.
+
+
+## Completed ACJDC rerun and local review — November 2
+
+All **44** changed candidates were re-evaluated with the saved v9 questions and
+unchanged mapping: **26 letter changes, including 20 N/A → graded; four remain
+N/A**. Exact requests/responses are the seventh portable run. Latest-per-candidate
+is 1,249 earlier-roster-prompt results plus 47 v9 results; **A 123, B 41, C 21,
+D 35, E 80, F 123, N/A 873**. No confidence acceptance rule was added.
+
+Qwen produced 40 candidate and 26 race paragraphs, including a narrative-only
+Kevin Park correction; explicit editorial trims and all raw drafts are preserved.
+The final 33 legislative-consistency audits have no remaining flags. Race inputs
+now preserve N/A context and avoid unsupported absence claims. The ICAN/American
+input substring and OC Action/AROC output-boundary bugs are fixed. They affect
+narratives, not exact-alias Jev scoring. Kevin Park's frozen PR rationale also
+loses its unsupported Korean-organization/Israel association; no choice or grade
+changes for that correction. Both research readers are rebuilt.
+
+[Full scope, results, receipts and caveats](../research/gaza-grading/acjdc-refresh-2026-11-02/README.md).
+The regenerated local TALL preview has 125 picks versus production's 122; six
+picks differ, nine same-pick grades change, and 37 candidate letters change. All
+198 graded candidates have matching paragraphs. Nineteen other old race rationales
+remain visibly labeled and queued; do not call the entire historical corpus fresh.
+The current review is held: no merge or deployment. See the report before using
+the additional narrative-only `--additional-races` / `--only-races` flags on
+`scripts/refresh_held_review.py`; those flags never request candidate scores.
+
+Validation: **53/53 offline release checks pass**. Live Chrome checks pass for
+the 44-row review, questionnaire evidence, N/A suppression, Kevin correction,
+desktop/mobile layout, no page errors and no localhost analytics collection.

@@ -1,0 +1,137 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "9ae651fd8267ba0ef191d22a",
+  "candidate": "Mia Bonta",
+  "position_id": "CA2026-010",
+  "request_sha256": "f46acdc5b1a7b9dc47da93482ea87ccb181405144d94ba88d5f754719d8ca6ba",
+  "grade": "D",
+  "summary": "Bonta voted aye on AB 715, the antisemitism-coordinator and classroom-material oversight bill, after criticizing its rushed handling and pressuring co-authors to revise it. CAIR Action preferred her and Vote for Peace rated her an Ally, while the Alameda County Jewish Democratic Club, whose stated purpose includes supporting Israel, endorsed her in the primary.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Identity field; no directional signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "State Assembly seat; provides jurisdictional context only."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "California; context only."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Democratic affiliation; no Palestine-specific signal."
+    },
+    {
+      "id": "candidate_record.ca_spenders_supporting",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "All six spenders carry unestablished relevance; no explicit link to Palestine assessment."
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Methodological note confirming unestablished-relevance spenders should not explain the assessment."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "Healthcare, criminal justice, education, housing, immigration, economy; no Palestine/Israel content."
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Recorded Aye on AB 715 (antisemitism-coordinator and classroom-material oversight); tracker date, not independently verified roll call."
+    },
+    {
+      "id": "candidate_record.caste_legislation_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Explicitly low-weight, max 0.2 shift, must never move a grade band; aye on SB 403 is a small parallel signal not material to the Gaza assessment here."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "grouped",
+      "reason": "Three entries document her as a skeptic of AB 715 who pressured co-authors to revise it after rushed passage, yet ultimately voted for it; the 2026-10-09 date is the guide's observation date, not the vote date."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "uncertain",
+      "treatment": "grouped",
+      "reason": "Mixed: ACJDC (Israel-supporting mission) endorsed in primary (adverse); CAIR Action preferred in general (favorable); Vote for Peace rated Ally in general (favorable). Split signal."
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Rubric instruction on how to treat directional tiers; not a candidate fact."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Provides stated purpose of ACJDC (supporting Israel) and tier definitions for CAIR/VfP; used to contextualize endorsements in prose."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "November 2026; temporal context only."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "California State Assembly; context only."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Incumbent status; no directional signal."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Roster label; no substantive content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "15bb55be0bba649ab24619a7b7623e7b813dac63468077a4d065fe1aaf80bf3e",
+  "generated_at": "2026-11-03T03:53:31+00:00",
+  "usage": {
+    "prompt_tokens": 5582,
+    "completion_tokens": 5398,
+    "total_tokens": 10980,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4495
+    }
+  },
+  "elapsed_seconds": 64.61,
+  "generation_request_sha256": "8aad5e6ca64b3cbd39f960578c3ac2be53c6c039a3b8855e5fba608ca2ecbaf5",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " Her aye vote on a bill she publicly questioned, alongside those split endorsements, underlies the assessment.",
+        "replacement": ""
+      }
+    ]
+  }
+}

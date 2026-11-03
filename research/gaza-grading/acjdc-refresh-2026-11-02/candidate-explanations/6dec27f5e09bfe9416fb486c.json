@@ -1,0 +1,116 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "6dec27f5e09bfe9416fb486c",
+  "candidate": "Shirley N. Weber",
+  "position_id": "CA2026-017",
+  "request_sha256": "9d27cf395ce3b2d49e80c04cb70f80d47f23a7ac42f17fc7216c60044b609b86",
+  "grade": "B",
+  "summary": "By October 2023, Weber expressed sympathy for both Israeli and Palestinian civilians, calling for an end to the conflict and its underlying causes. CAIR Action endorsed her in the general and Vote for Peace rated her an Ally. California Jewish Democrats, the renamed Democrats for Israel California, issued a Support rating, and the Alameda County Jewish Democratic Club carried its primary endorsement to the general. Her record pairs balanced language with endorsements from organizations on both sides.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Identifying field; no directional signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Contextual; does not bear on Palestine position."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Jurisdictional detail; no directional signal."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Party affiliation alone does not establish Palestine position."
+    },
+    {
+      "id": "candidate_record.ca_spenders_supporting",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "All twelve spenders carry unestablished relevance; spending_context directs that unmapped spenders not explain a Palestine assessment without other explicit evidence."
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Methodological note governing the spender list; no independent directional signal."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "2023-10-12 statement expresses sympathy for both Israeli and Palestinian civilians and calls for ending the conflict and addressing underlying causes; balanced symmetry language without specific condemnation of Israel or policy demands."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "uncertain",
+      "treatment": "grouped",
+      "reason": "CAIR Action general endorsement and Vote for Peace Ally rating are favorable per endorsement_evidence_context; California Jewish Democrats Support rating and Alameda County Jewish Democratic Club primary-to-general carry-forward endorsement are adverse; Samir Laymoun support omitted per samir_allowed false with other relevant evidence present."
+    },
+    {
+      "id": "candidate_record.activist_opinion_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Internal source-classification context; Samir Laymoun support excluded from prose per summary_source_policy (samir_allowed false, other relevant evidence exists)."
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Informs that CAIR Action and Vote for Peace directional tiers count as concrete stance evidence; used to justify treating Ally as directional rather than merely informational."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "neutral",
+      "treatment": "grouped",
+      "reason": "Clarifies that California Jewish Democrats is the renamed Democrats for Israel California (pro-Israel) and that Alameda County Jewish Democratic Club's stated purpose includes supporting Israel (low context weight); informs accurate description of endorsements."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Temporal context; no directional signal."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Jurisdictional detail; no directional signal."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Status detail; no directional signal on Palestine position."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Classification label; no directional signal."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "7608d6af25df8a643b97deb779ec6ccee141b144918a4fcb8ed4692096109367",
+  "generated_at": "2026-11-03T03:55:00+00:00",
+  "usage": {
+    "prompt_tokens": 5117,
+    "completion_tokens": 5493,
+    "total_tokens": 10610,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4666
+    }
+  },
+  "elapsed_seconds": 63.89,
+  "generation_request_sha256": "dc03c9fd0975b414cd493167861eb8ac80a784dd6612ea1ca79b8e977e6d330c",
+  "attempt": 1
+}

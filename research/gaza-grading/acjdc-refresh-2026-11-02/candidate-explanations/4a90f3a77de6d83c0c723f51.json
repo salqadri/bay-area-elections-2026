@@ -1,0 +1,125 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "4a90f3a77de6d83c0c723f51",
+  "candidate": "Malia M. Cohen",
+  "position_id": "CA2026-013",
+  "request_sha256": "7e2d5804d194e4580e81eb028f9cbc35deff729c4359da4cb7715b642264eec8",
+  "grade": "B",
+  "summary": "CAIR Action endorsed Cohen for California State Controller and Vote for Peace rated her an Ally. California Jewish Democrats—the renamed Democrats for Israel California—supported her, and the Alameda County Jewish Democratic Club, whose mission includes supporting Israel, carried its primary endorsement into the general.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Identifies the subject of the paragraph."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Specifies the statewide Controller race context."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Confirms California jurisdiction for the endorsement and platform descriptions."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Party affiliation does not bear on Palestine-specific positioning."
+    },
+    {
+      "id": "candidate_record.ca_spenders_supporting",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "All twelve spenders carry unestablished relevance; spending_context prohibits using them to explain a Palestine assessment."
+    },
+    {
+      "id": "candidate_record.spending_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Meta-instruction confirming unmapped spenders should not explain the assessment; no separate voter-facing fact."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Shows platform covers housing, labor, healthcare, civil liberties, and environment with no Gaza, Israel, or U.S. military-aid language, contextualizing that the pro-Palestine signal rests on endorsements rather than platform text."
+    },
+    {
+      "id": "candidate_record.focused_endorsement_observations",
+      "assessment": "uncertain",
+      "treatment": "grouped",
+      "reason": "CAIR Action endorsement and Vote for Peace Ally rating are the primary favorable signals; California Jewish Democrats support and Alameda County Jewish Democratic Club primary carry-forward are material contrary signals; Samir Laymoun support omitted per source policy (other relevant evidence exists)."
+    },
+    {
+      "id": "candidate_record.activist_opinion_context",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Source-policy context for Samir Laymoun; his endorsement is excluded from prose because other directional evidence exists."
+    },
+    {
+      "id": "candidate_record.endorsement_evidence_context",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Rubric guidance confirming CAIR/VfP tiers are concrete stance evidence; informs interpretation but adds no separate voter-facing fact."
+    },
+    {
+      "id": "candidate_record.organization_context",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Establishes California Jewish Democrats is the renamed Democrats for Israel California and that the Alameda County Jewish Democratic Club's mission includes supporting Israel; necessary for accurate description of the contrary endorsements."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "General date context; not needed to explain the Palestine-specific assessment."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Already captured by state field; redundant."
+    },
+    {
+      "id": "candidate_record.incumbent",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Incumbency status does not bear on Palestine positioning."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Administrative label (candidates); no substantive content for the paragraph."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "5e8a6a7f46a2f3329223a6378b23cf9eb38020c427e093c367834666ac400323",
+  "generated_at": "2026-11-03T03:55:21+00:00",
+  "usage": {
+    "prompt_tokens": 5423,
+    "completion_tokens": 4305,
+    "total_tokens": 9728,
+    "completion_tokens_details": {
+      "reasoning_tokens": 3499
+    }
+  },
+  "elapsed_seconds": 53.93,
+  "generation_request_sha256": "d74901481c2cb19f95bafa5f8e7e26ca575341bf0fa5a95f2b749ae12c9f2631",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " Her platform addresses housing, labor, healthcare, and civil liberties without naming Gaza or U.S. policy toward Israel.",
+        "replacement": ""
+      }
+    ]
+  }
+}

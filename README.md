@@ -2,6 +2,12 @@
 
 **Continuing PR #22 in another session? Start with [the portable playground handoff](docs/PR22_HANDOFF.md).** Latest owner questions, thresholds and held results are committed separately from the frozen public publication.
 
+**Held November 2 ACJDC review:** all 44 changed candidate inputs across 36 races
+were re-evaluated with the saved v9 questions and unchanged thresholds. There are
+26 letter-outcome changes, including 20 newly graded candidates; four remain N/A.
+[Exact results and comparison](research/gaza-grading/acjdc-refresh-2026-11-02/README.md).
+This targeted review does not change the frozen public scores or deploy either site.
+
 Firebase Hosting is live (October 29): [tall-bay-area-research-tool.web.app](https://tall-bay-area-research-tool.web.app/).
 The requested Web App and dedicated Hosting site are registered in
 `tall-bay-area-voter-guide`; current scores, fresh explanations and in-reader

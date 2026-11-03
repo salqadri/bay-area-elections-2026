@@ -11,7 +11,7 @@
   const rows=()=>run?.scope==='latest'?run.rows:C.catalogRows(boot.snapshot,run),races=()=>run?.scope==='latest'?run.races:C.catalogRaces(boot.snapshot,run);
   const raceLabel=race=>C.raceLabel(race,ContestLabel.districtLabel);
   const latestMode=()=>run?.scope==='latest';
-  const scopeLabel=scope=>scope==='bay-area'?'Bay Area':scope==='candidate'?'Selected candidate':'Full roster';
+  const scopeLabel=scope=>scope==='bay-area'?'Bay Area':scope==='candidate'?'Selected candidate':scope==='source-refresh'?'Source refresh':'Full roster';
   function updateScope(){const current=boot.snapshot;$('scope').textContent=`${current.candidates.length} candidates · ${current.races.length} races · All active tracked candidates`;$('run').textContent='Run full roster ('+current.candidates.length+')';const bay=current.scope_counts?.['bay-area'];$('run-bay-area').textContent=bay?'Run Bay Area ('+bay.candidates+')':'Run Bay Area';$('run-bay-area').title=bay?bay.candidates+' candidates across '+bay.races+' races serving '+current.bay_area_counties.join(', '):'Restart the local server to load Bay Area batch support.';}
   const formatTime=value=>new Date(value).toLocaleString('en-US',{timeZone:'America/Los_Angeles',dateStyle:'medium',timeStyle:'short'})+' PT';
   const text=()=>editor?editor.getValue():$('questions').value;

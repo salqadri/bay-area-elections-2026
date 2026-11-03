@@ -1,0 +1,99 @@
+{
+  "format": "held-grade-explanation/v1",
+  "status": "held_for_review",
+  "candidate_id": "d3b0446a348251c7e032a716",
+  "candidate": "Brian A. Foster",
+  "position_id": "CA2026-118",
+  "request_sha256": "7f8aca78a10f8ca20424ec777740d616f275572c77c8981e32f308c62c622347",
+  "grade": "F",
+  "summary": "Brian A. Foster, a Castro Valley Unified School District board candidate, opposes BDS and rejects comparisons of Israel to South African apartheid in a questionnaire response. The candidate adds that school instruction should critically examine issues and oppose hatred, and states they were unaware of AB 715 but would review curricula for state compliance and fairness.",
+  "evidence_audit": [
+    {
+      "id": "candidate_record.candidate",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Names the candidate; no directional signal."
+    },
+    {
+      "id": "candidate_record.office",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Establishes local school-board context; no Palestine/Israel signal."
+    },
+    {
+      "id": "candidate_record.state",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Confirms CA jurisdiction relevant to AB 715 as a state bill."
+    },
+    {
+      "id": "candidate_record.party",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Nonpartisan label adds no information about Palestine position."
+    },
+    {
+      "id": "candidate_record.campaign_platform_points",
+      "assessment": "unrelated",
+      "treatment": "omitted",
+      "reason": "All eight points concern academic policy, grading, AP expansion, board transparency, and executive pay; none reference Palestine, Israel, BDS, or related speech."
+    },
+    {
+      "id": "candidate_record.antisemitism_education_policy_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "States the candidate was unaware of AB 715 but would review curricula for state compliance, a stated intention to implement the bill; also advocates stronger penalties for hate incidents. Metadata date caveat preserved."
+    },
+    {
+      "id": "candidate_record.gaza_evidence",
+      "assessment": "adverse",
+      "treatment": "included",
+      "reason": "Opposes BDS and rejects South African apartheid comparisons; the mild 'critically examine issues and oppose hatred' language does not offset the explicit BDS opposition. Metadata date caveat preserved."
+    },
+    {
+      "id": "candidate_record.election_date",
+      "assessment": "neutral",
+      "treatment": "omitted",
+      "reason": "Future local election date; no directional signal on Palestine position."
+    },
+    {
+      "id": "candidate_record.jurisdiction",
+      "assessment": "neutral",
+      "treatment": "included",
+      "reason": "Identifies the school district for context."
+    },
+    {
+      "id": "candidate_record.candidate_roster",
+      "assessment": "not_applicable",
+      "treatment": "omitted",
+      "reason": "Internal metadata label ('candidates'); no substantive content."
+    }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "source_prompt_sha256": "3ce9b3c5262de232f2ab58c022eecf613b6c56c9dc61816871db87a73f802eb2",
+  "generated_at": "2026-11-03T04:03:56+00:00",
+  "usage": {
+    "prompt_tokens": 4313,
+    "completion_tokens": 2577,
+    "total_tokens": 6890,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1980
+    }
+  },
+  "elapsed_seconds": 29.93,
+  "generation_request_sha256": "02863af538a644b1695b66ae34a382998975d3ceea091918a0afff6a4bc4d9cc",
+  "attempt": 1,
+  "editorial_cleanup": {
+    "reason": "Owner-requested removal of source mechanics, irrelevant platform silence and methodology padding; temporal exclusion applied. LeAna Powell also loses an unsourced IHRA bill-description appositive not present in her supplied state.",
+    "edits": [
+      {
+        "removed": " (file metadata dated September 2026; actual response date unstated)",
+        "replacement": ""
+      },
+      {
+        "removed": " The campaign platform addresses only academic and governance policy.",
+        "replacement": ""
+      }
+    ]
+  }
+}

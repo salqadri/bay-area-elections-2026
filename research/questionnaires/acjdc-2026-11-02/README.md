@@ -48,11 +48,11 @@ Primary Israel/BDS question 7 and AB 715 question 8 correspond to November quest
 
 The general-election endorsements for **John Marchand** and **Evan Branning** could not be matched to a current confirmed candidate in this dataset and are held in the import audit; no race or candidacy was invented. Other held names are primary-only or absent from the current roster.
 
-## Organization context and next evaluations
+## Organization context and held evaluations
 
 The [club’s stated mission](https://www.acjdc.org/about-acjdc) includes support for Israel as a democratic, inclusive and secure Jewish state. This is sourced policy context, not an inference from Jewish identity. The owner requests low weight for an endorsement alone. Candidate questionnaire answers are separate direct evidence; an endorsement does not establish agreement with every club position.
 
-Current Jev inputs changed for **44 candidates**, listed in [state-changes.json](state-changes.json). New state version: `candidate-evidence-v24-acjdc-questionnaires`. **No scores, score questions, thresholds or saved provider answers were changed or rerun.** Existing scores and explanations predate this new research.
+Current Jev inputs changed for **44 candidates**, listed in [state-changes.json](state-changes.json). New state version: `candidate-evidence-v24-acjdc-questionnaires`. The source import itself did not alter historical evaluations. At the owner’s subsequent request, all 44 changed states were evaluated using saved v9 questions and unchanged thresholds: 26 letter outcomes changed, including 20 newly graded candidates; four remain N/A. [Exact held results, before/after scores and summary refresh](../../gaza-grading/acjdc-refresh-2026-11-02/README.md). Production remains unchanged; old requests and answers remain exact.
 
 ## Reproduction and checks
 
