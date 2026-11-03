@@ -4,8 +4,8 @@
   "captured_at": "2026-10-31T02:13:20+00:00",
   "source_pr": 22,
   "source_branch": "v8-jev-cjd-sb403",
-  "preferred_criteria_path": "research/gaza-grading/criteria-pro-palestine-v9.json",
-  "preferred_questions_sha256": "26fc5b5fda84b99c3f113eec6adb00551cf067c89b3b35d8e62c2df9285d0bc7",
+  "preferred_criteria_path": "research/gaza-grading/criteria-pro-palestine-v10.json",
+  "preferred_questions_sha256": "4ee38db3566939be87f16966f7bdbd87fac146abecf6c918e1a963c8d5df5175",
   "score_grade_mapping": {
     "require_issue_observation": true,
     "minimum_evidence_score": 0.22,
@@ -65,9 +65,15 @@
       "run_id": "20261103T063127Z-d881771c",
       "sha256": "d95f1a2d1ff20ef0f92b255c94b201f28e4863e60d4296a87c525fc10a7f75c6",
       "candidates": 1
+    },
+    {
+      "path": "research/gaza-grading/full-roster-2026-11-03/run.json",
+      "run_id": "20261103T075603Z-68c505d6",
+      "sha256": "901a9638ff7ff7752f4e5f62a9d12747a96fcc801ccbb1771dace90388005766",
+      "candidates": 1296
     }
   ],
-  "note": "Exact earlier requests/responses remain unchanged. November 2 ACJDC refresh evaluates 44 changed current states with saved v9 questions and thresholds; all results are held for review. Latest-per-candidate includes both older roster-prompt results and v9 results; this is not a uniform full-roster rerun.",
+  "note": "Nine exact runs. The November 3 full-roster run supersedes every current score with the same owner-saved v10 prompt; older history stays immutable. Tracy Jensen wording was corrected after this run and is not retroactively changed inside its requests.",
   "review_outputs": [
     {
       "path": "research/gaza-grading/haney-genocide-2026-10-31/candidate-explanation.json",
@@ -392,6 +398,14 @@
     {
       "path": "research/gaza-grading/state-dedupe-community-2026-11-02/selection-plan.json",
       "sha256": "bfbc097189482ac373e5a2f9d3a61728c635bdf8f3f19fe1c09ff35cb9267eec"
+    },
+    {
+      "path": "research/reviews/tracy-letter-clarification-2026-11-03/candidate-corrected.json",
+      "sha256": "e7e2c6982d0678fcdc8362fbd20c08f0d903de94a8266710ab402d943f31a38c"
+    },
+    {
+      "path": "research/reviews/tracy-letter-clarification-2026-11-03/race-corrected.json",
+      "sha256": "97870ae3a0d51cfa07782e2a8f130177b80ab282781fd004578ca508a3735ed1"
     }
   ]
 }

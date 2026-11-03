@@ -18,6 +18,9 @@ const panel=display.renderExplanation({pro_palestine_score_grade:'A',pro_palesti
 assert.equal(panel.tagName,'details');assert.equal(panel.className,'grade-explanation');assert(!panel.open);
 assert(panel.children.some(c=>c.textContent==='Why this grade?'));assert(panel.children.some(c=>c.textContent===explanation.summary));
 assert(panel.children.some(c=>typeof c==='object'&&c.textContent.includes(explanation.model)&&c.textContent.includes('never changes it')));
+const olderPanel=display.renderExplanation({pro_palestine_score_grade:'C',pro_palestine_explanation:{...explanation,preview_stale:true}},{node});
+assert(olderPanel.children.some(c=>c.textContent.includes('not regenerated for the latest evaluation')));
+assert(!olderPanel.children.some(c=>c.textContent.includes('It explains the published grade')));
 const naPanel=display.renderExplanation({pro_palestine_score_grade:'N/A',pro_palestine_explanation:{...explanation,summary:'Rudy Recile received N/A because the saved evidence score was 0.01 out of 1, below the 0.10 threshold; the available evidence was insufficient and no letter grade was assigned.'}},{node});
 assert.equal(naPanel,null,'N/A candidates have no political or editorial explanation panel');
 const fundingCandidate={pro_palestine_score_grade:'B',pro_palestine_explanation:explanation,pro_palestine_evaluation:{input_state_version:'candidate-evidence-v7-local-federal-community'},gaza_evidence:[{dimension:'aipac_funding'}]};

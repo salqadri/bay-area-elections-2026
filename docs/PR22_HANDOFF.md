@@ -7,15 +7,26 @@ unchanged unless the user asks to publish.
 
 ## Current review snapshot
 
-Current generated input version is **v26-endorsement-dedupe-community-reports**. The latest
-Aisha-only follow-up is A 4.87 / 5 with the two primary questionnaire responses
-excluded from current assessment and preserved in the source archive. The bundle
-has eight exact runs. Publisher holds apply to Mark Humbert and Harris Mojadedi;
-the local comparison now contains 123 publisher picks versus production's 122,
-with six changed picks. Harris's MAA opposition report is owner-provided without
-a public source URL; the separate 2024 article does not verify it or establish
-his Gaza position. No new Harris scoring run was made. Earlier snapshots below
-remain historical. The current preview is held and production remains unchanged.
+Current input format is **v26-endorsement-dedupe-community-reports**. The latest
+owner-run full roster is now archived: **1,296/1,296 complete, zero errors**, all
+with the same **v10** prompt and unchanged thresholds. Nine portable runs retain
+exact history. Distribution: **A 119 · B 46 · C 20 · D 35 · E 84 · F 121 · N/A 871**.
+Compared with the previous PR review, 31 letters changed (19 Bay Area). Harris is
+now B 3.98, Tracy Jensen C 2.32, and Aisha Wahab A 4.86. Publisher holds for Harris
+and Mark Humbert remain. Local previews use this new run; production does not.
+[Exact run, comparisons and narrative status](../research/gaza-grading/full-roster-2026-11-03/README.md).
+
+## Tracy Jensen letter clarification — November 3
+
+GE-1638 now describes her stated opposition to a White House **anti-war letter**,
+without relabeling it a ceasefire letter or inventing an event date. The separate
+January 2024 CAIR ceasefire-support record is retained. Jev receives a source-bound
+context preventing an inferred reversal; current curated questionnaire text and
+candidate/race preview narratives are corrected. Exact original scoring inputs
+remain unchanged. No new model calls followed the correction. At the owner’s request, both local
+previews use the latest full-roster v10 scores, with older explanations labeled
+for refresh. The exact saved Tracy request still contains the pre-correction
+wording; Current input contains the corrected evidence. Production is unchanged. [Source correction and narrative originals](../research/reviews/tracy-letter-clarification-2026-11-03/README.md).
 
 ## Current state follow-up: duplicate endorsements and Harris report
 
@@ -89,8 +100,8 @@ candidate narrative. [Audit scope, limits and before/after files](../research/re
 
 ## Current working settings
 
-- Latest owner-saved questions: [`criteria-pro-palestine-v9.json`](../research/gaza-grading/criteria-pro-palestine-v9.json).
-  Exact questions SHA-256: `26fc5b5fda84b99c3f113eec6adb00551cf067c89b3b35d8e62c2df9285d0bc7`.
+- Latest owner-saved questions: [`criteria-pro-palestine-v10.json`](../research/gaza-grading/criteria-pro-palestine-v10.json).
+  Exact questions SHA-256: `4ee38db3566939be87f16966f7bdbd87fac146abecf6c918e1a963c8d5df5175`.
 - Saved thresholds: [`score-grade-mapping.json`](../research/gaza-grading/score-grade-mapping.json).
   Inclusive upper bounds **F 0.74, E 1.4, D 2.3, C 3.3, B 4.4; A ends at 5**.
   Minimum `evidence_score` **0.22 / 1**, with `require_issue_observation: true`.
@@ -179,7 +190,7 @@ directory for the exact committed settings. Repeating restoration is safe.
 The earlier one-candidate experiments remain on the original machine; the seven runs needed to reproduce the latest result of every candidate are bundled.
 
 The editor deliberately follows the selected candidate's saved prompt. Select
-Eleni Kounalakis or press **Restore defaults** to load the latest v9 prompt for
+Eleni Kounalakis or press **Restore defaults** to load the latest v10 prompt for
 another candidate; other candidates initially show their actual full-roster
 prompt. **Current input** previews the next generated state; **State JSON** shows
 the exact state used for the displayed saved answer. The generated state is

@@ -90,6 +90,21 @@ class ACJDCChecks(unittest.TestCase):
             self.assertEqual(e['recommendation_rank'], rank)
             self.assertFalse(e.get('shared'))
 
+    def test_tracy_antiwar_letter_is_not_relabelled_ceasefire_opposition(self):
+        p = next(p for p in self.data['positions'] if p['id'] == 'CA2026-047')
+        c = next(c for c in p['candidates'] if c['name'] == 'Tracy Jensen')
+        evidence = {e['id']: e for e in c['gaza_evidence']}
+        self.assertIn('Supported ceasefire letter', evidence['GE-1286']['summary'])
+        self.assertIn('White House letter against the Gaza war', evidence['GE-1638']['summary'])
+        self.assertNotIn('Opposed a Gaza ceasefire letter', evidence['GE-1638']['summary'])
+        self.assertIn('not the actual response', evidence['GE-1638']['date_note'])
+        state = build_state(p, c, self.data)
+        context = next(e for e in state['reviewed_evidence_context']
+                       if e['topic'] == 'Anti-war letter and separately recorded ceasefire support')
+        self.assertIn('Do not assume these are the same proposal', context['context'])
+        packet = next(r for r in self.packet['responses'] if r['candidate'] == c['name'])
+        self.assertEqual(packet['israel_summaries'], [evidence['GE-1638']['summary']])
+
 
 if __name__ == '__main__':
     unittest.main()

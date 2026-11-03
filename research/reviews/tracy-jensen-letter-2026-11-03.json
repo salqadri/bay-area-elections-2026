@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "tracy-jensen-letter-clarification-2026-11-03",
+  "election_date": "2026-11-03",
+  "reviewed_on": "2026-11-03",
+  "counties": [
+    "Alameda"
+  ],
+  "base_dataset_sha256": "8112009b5abd384b43f4e82866ca1119de07351f0b43a3f23e3c9bd3e81515e8",
+  "sources": {
+    "questionnaire": {
+      "url": "https://docs.google.com/document/d/1eCIdVM0ACh5n6dKsiiVJkHoo5vKmNbm-/edit?usp=drivesdk&ouid=110512924182668764507&rtpof=true&sd=true",
+      "publisher": "Tracy Jensen via Alameda County Jewish Democratic Club",
+      "title": "Alameda Mayor - Tracy Jensen.docx, answers 8 and 9",
+      "checked_on": "2026-11-03",
+      "content_sha256": "9cace474adffb0729b19630664dd460138b6af95d1d3c262fd74554672bc8073",
+      "retrieval": "Google Drive connector text extraction; re-read candidate answers directly.",
+      "quoted_excerpt": "I persuaded two of my colleagues that a letter would be ineffective and the gesture would further divide Alameda."
+    }
+  },
+  "notes": {},
+  "decisions": [
+    {
+      "id": "clarify-letter-not-ceasefire-position",
+      "action": "change",
+      "source_key": "questionnaire",
+      "position_id": "CA2026-047",
+      "candidate": "Tracy Jensen",
+      "identity": {
+        "office": "Mayor",
+        "jurisdiction": "City of Alameda",
+        "district_or_seat": "At large",
+        "term": "4 years",
+        "election_type": "general"
+      },
+      "field": "gaza_evidence",
+      "before": {
+        "id": "GE-1638",
+        "url": "https://docs.google.com/document/d/1eCIdVM0ACh5n6dKsiiVJkHoo5vKmNbm-/edit?usp=drivesdk&ouid=110512924182668764507&rtpof=true&sd=true",
+        "summary": "Opposed a Gaza ceasefire letter as ineffective and divisive; says she worked on eliminating investments in all weapons rather than an Israel-specific BDS policy.",
+        "date": "2026-09-09",
+        "dimension": "framing_balance",
+        "checked_on": "2026-11-02",
+        "source_kind": "candidate_questionnaire",
+        "date_method": "page_metadata",
+        "date_note": "Drive upload metadata dates the general questionnaire file, not the actual response. Response date is not stated."
+      },
+      "after": {
+        "id": "GE-1638",
+        "url": "https://docs.google.com/document/d/1eCIdVM0ACh5n6dKsiiVJkHoo5vKmNbm-/edit?usp=drivesdk&ouid=110512924182668764507&rtpof=true&sd=true",
+        "summary": "Says she opposed a White House letter against the Gaza war as ineffective and divisive, without calling it a ceasefire letter or dating it; says she pursued excluding all weapons investments rather than Israel-specific BDS.",
+        "date": "2026-09-09",
+        "dimension": "framing_balance",
+        "checked_on": "2026-11-03",
+        "source_kind": "candidate_questionnaire",
+        "date_method": "page_metadata",
+        "date_note": "Drive upload metadata dates the general questionnaire file, not the actual response. Response date is not stated."
+      },
+      "reason": "The source describes opposition to sending an anti-war letter, not opposition to a ceasefire itself; it does not identify the proposal as the January 2024 letter or date it. Preserve the independent CAIR tracker support record.",
+      "evidence": {
+        "identity_basis": "Questionnaire explicitly names Tracy Jensen, Alameda mayor candidate.",
+        "date_basis": "Keep the upload metadata date and existing response-date qualification; no event chronology inferred.",
+        "issue_basis": "Answers 8 and 9 distinguish objection to municipal letter-writing from support for excluding weapons investments. Do not infer opposition to a ceasefire as a policy goal."
+      }
+    }
+  ]
+}

@@ -54,8 +54,10 @@ class RestoreChecks(unittest.TestCase):
                          {(r['position_id'],r['candidate']) for r in scope})
         self.assertEqual(len(run['rows']), 44)
         self.assertEqual(run['score_grade_mapping'], mapping)
-        preferred = json.loads((root/manifest['preferred_criteria_path']).read_text())['questions']
-        self.assertEqual(run['questions'], preferred)
+        # This historical targeted run retains its own v9 questions even when
+        # a later full-roster run becomes the preferred prompt.
+        original_questions = json.loads((root/'research/gaza-grading/criteria-pro-palestine-v9.json').read_text())['questions']
+        self.assertEqual(run['questions'], original_questions)
         self.assertEqual(set(run['questions']), {'pro_palestine_score','evidence_score'})
         self.assertIn('v24-acjdc-questionnaires', run['state_version'])
         before = {}
