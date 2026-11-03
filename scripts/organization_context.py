@@ -53,7 +53,7 @@ def name_key(name):
 
 
 def normalize_endorsement_observations(observations):
-    """Use CJD's current name without counting a campaign's old-name claim twice.
+    """Prefer a recognized organization's own record over a redundant campaign claim.
 
     Raw source records stay untouched. The organization's own stated tier takes
     precedence over a redundant, unrated campaign claim for the same phase and
@@ -65,7 +65,13 @@ def normalize_endorsement_observations(observations):
     for row in normalized:
         if name_key(row['endorser']) in aliases:
             row['endorser'] = current_name
-    official = [row for row in normalized if row['endorser'] == current_name
+    identities = {key: entity['name'] for key, entity in owner_organization_context().items()}
+    identities.update({key: registry()[1][entity_id]['name']
+                       for key, entity_id in registry()[2]['aliases'].items()})
+    identities.update({key: current_name for key in aliases})
+    def identity(row):
+        return identities.get(name_key(row['endorser']))
+    official = [row for row in normalized if identity(row)
                 and row.get('verification') == 'endorser_statement']
     positive = {'endorsed', 'supported'}
 
@@ -74,13 +80,17 @@ def normalize_endorsement_observations(observations):
 
     result = []
     for row in normalized:
-        redundant = (row['endorser'] == current_name
+        redundant = (identity(row)
                      and row.get('verification') != 'endorser_statement'
-                     and any((row.get('phase') or 'unspecified') == (own.get('phase') or 'unspecified')
+                     and any(identity(row) == identity(own)
+                             and ((row.get('phase') or 'unspecified') == 'unspecified'
+                                  or row.get('phase') == own.get('phase'))
                              and bool(row.get('historical')) == bool(own.get('historical'))
                              and same_direction(row.get('relation'), own.get('relation'))
                              and (not row.get('rating') or
                                   row['rating'].strip().casefold() == str(own.get('rating', '')).strip().casefold())
+                             and all(not row.get(field) or row.get(field) == own.get(field)
+                                     for field in ('comments', 'recommendation_rank', 'recommendation_context', 'shared'))
                              for own in official))
         if not redundant and row not in result:
             result.append(row)

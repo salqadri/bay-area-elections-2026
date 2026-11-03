@@ -7,7 +7,7 @@ unchanged unless the user asks to publish.
 
 ## Current review snapshot
 
-Current generated input version is **v25-current-assessment-scope**. The latest
+Current generated input version is **v26-endorsement-dedupe-community-reports**. The latest
 Aisha-only follow-up is A 4.87 / 5 with the two primary questionnaire responses
 excluded from current assessment and preserved in the source archive. The bundle
 has eight exact runs. Publisher holds apply to Mark Humbert and Harris Mojadedi;
@@ -16,6 +16,25 @@ with six changed picks. Harris's MAA opposition report is owner-provided without
 a public source URL; the separate 2024 article does not verify it or establish
 his Gaza position. No new Harris scoring run was made. Earlier snapshots below
 remain historical. The current preview is held and production remains unchanged.
+
+## Current state follow-up: duplicate endorsements and Harris report
+
+The current builder now prefers an organization's own endorsement record over
+a redundant undated campaign claim. This removes one duplicate ACJDC observation
+from eight candidacies, including Sara Lamnin. Explicitly different phases,
+history, ratings, opposition and unique comments remain separate; raw sources
+are untouched. Harris's registered owner-reported MAA opposition now reaches
+`focused_endorsement_observations` with its strength, reporting date and source
+qualification. The article is separate `community_policy_observations`, expressly
+not direct Gaza evidence. Exact candidate + position matching prevents spillover.
+
+[Nine changed states, before/after and source-selection audit](../research/gaza-grading/state-dedupe-community-2026-11-02/README.md).
+No model calls, new scores, questions or threshold changes. Harris's saved A is
+still the earlier evaluation, which lacked these observations. In the playground,
+**Current input** previews the next request; **State JSON** preserves the exact
+old submitted state. Do not rewrite that archived result to imply it saw new facts.
+The local server must be restarted after Python builder changes. Production is
+unchanged and PR #22 remains unmerged.
 
 ## Harris candidate and race narrative refresh
 

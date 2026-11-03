@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v9.json'
-STATE_VERSION = 'candidate-evidence-v25-current-assessment-scope'
+STATE_VERSION = 'candidate-evidence-v26-endorsement-dedupe-community-reports'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -303,6 +303,11 @@ def build_state(p, c, data):
     if any(funding_review(e) for e in generic):
         parts['funding_scope'] = 'Organization funding since 2024 only; unresolved or mixed totals omitted, not proof of zero funding.'
     endorsements = compact_endorsements(focused_endorsements(p, c))
+    from community_report_context import observations as community_observations
+    community = community_observations(p, c)
+    endorsements.extend(community['endorsements'])
+    if community['policy']:
+        parts['community_policy_observations'] = community['policy']
     if endorsements:
         parts['focused_endorsement_observations'] = endorsements
         if any(endorser_key(e['endorser']) == 'bamcaction' for e in endorsements):

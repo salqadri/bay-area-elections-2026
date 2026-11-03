@@ -137,6 +137,25 @@ class DirectionChecks(unittest.TestCase):
         self.assertIsNone(race['recommended'])
         self.assertFalse(race['needs_summary'])
 
+    def test_duplicate_projection_receipt_preserves_exact_answer_and_rejects_new_facts(self):
+        race = self.fixture()
+        state = self.state('supported')
+        state['focused_endorsement_observations'][0]['phase'] = 'general'
+        race['selection_evidence']['Graded'] = evidence_from_state(state)
+        current = rec.jev_request(race)
+        archived = deepcopy(current)
+        person = next(c for c in archived['state']['candidates'] if c['name'] == 'Graded')
+        person['observations'].append({**person['observations'][0], 'phase': 'unspecified'})
+        race.update(recommended='Graded', jev={'choice':'Graded', 'request':archived,
+                    'request_sha256':rec.request_hash(archived)})
+        original = deepcopy(race)
+        self.assertFalse(rec.cached_pick_matches(race['jev'], current))
+        receipt = rec.legacy_revalidation(race)
+        self.assertEqual(receipt['current_request_sha256'], rec.request_hash(current))
+        self.assertEqual(race, original)
+        race['selection_evidence']['Graded']['observations'][0]['relation'] = 'opposed'
+        self.assertIsNone(rec.legacy_revalidation(race))
+
     def test_legacy_response_retention_is_explicit_and_not_a_current_cache_hit(self):
         race = self.fixture()
         race['selection_evidence']['Graded'] = evidence_from_state(self.state('supported'))

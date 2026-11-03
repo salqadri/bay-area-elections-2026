@@ -10,6 +10,50 @@ from discover_organization_funding import fetch_transfers, packet
 
 
 class OrganizationChecks(unittest.TestCase):
+    def test_sara_official_acjdc_supersedes_unspecified_campaign_claim(self):
+        data = json.loads(g.DATASET.read_text())
+        p, c = next((p, c) for p in data['positions'] for c in p.get('candidates') or []
+                    if c['name'] == 'Sara Lamnin')
+        original = deepcopy(c)
+        rows = g.build_state(p, c, data)['focused_endorsement_observations']
+        rows = [r for r in rows if r['endorser'] == 'Alameda County Jewish Democratic Club']
+        self.assertEqual(rows, [{'endorser': 'Alameda County Jewish Democratic Club',
+                                'relation': 'endorsed', 'phase': 'general'}])
+        self.assertEqual(c, original)
+
+    def test_deduplication_preserves_contradictions_phases_and_unique_comments(self):
+        own = {'endorser': 'Alameda County Jewish Democratic Club', 'relation': 'endorsed',
+               'phase': 'general', 'verification': 'endorser_statement'}
+        claim = {**own, 'phase': 'unspecified', 'verification': 'campaign_claim'}
+        distinct = [{**claim, 'phase': 'primary'}, {**claim, 'relation': 'opposed'},
+                    {**claim, 'historical': True}, {**claim, 'rating': 'Strong Support'},
+                    {**claim, 'comments': ['Unique source qualification']}]
+        result = org.normalize_endorsement_observations([own, claim, *distinct])
+        self.assertEqual(result, [own, *distinct])
+
+    def test_harris_owner_report_reaches_current_state_without_becoming_gaza_evidence(self):
+        data = json.loads(g.DATASET.read_text())
+        p = next(p for p in data['positions'] if p['id'] == 'CA2026-120')
+        c = next(c for c in p['candidates'] if c['name'] == 'Harris Mojadedi')
+        original = deepcopy(c)
+        state = g.build_state(p, c, data)
+        maa = [r for r in state['focused_endorsement_observations']
+               if r['endorser'] == 'Muslim American Alliance']
+        self.assertEqual(len(maa), 1)
+        self.assertEqual(maa[0]['relation'], 'opposed')
+        self.assertIn('owner report', maa[0]['source'])
+        self.assertIn('not independently verified', maa[0]['source'])
+        self.assertEqual(maa[0]['reported_strength'], 'strong')
+        self.assertNotIn('gaza_evidence', state)
+        article = state['community_policy_observations'][0]
+        self.assertIn('not direct evidence of a Gaza position', article['scope'])
+        self.assertEqual(article['source_url'], 'https://www.ebar.com/story/74015')
+        other = g.build_state(p, next(c for c in p['candidates'] if c['name'] != 'Harris Mojadedi'), data)
+        self.assertNotIn('community_policy_observations', other)
+        self.assertFalse(any(r['endorser'] == 'Muslim American Alliance'
+                             for r in other.get('focused_endorsement_observations', [])))
+        self.assertEqual(c, original)
+
     def test_owner_confirmed_usampac_context_preserves_reporting_and_direction(self):
         p = {'id':'owner-context-fixture','office':'Trustee'}
         c = {'name':'Fixture','endorsements':[{'endorser':'USAMPAC','relation':'endorsed',

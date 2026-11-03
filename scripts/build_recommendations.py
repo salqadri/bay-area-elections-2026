@@ -338,7 +338,22 @@ def legacy_revalidation(race):
     """A receipt for retaining an exact old choice, never a new provider answer."""
     archived = race.get('jev')
     if not cached_pick_matches(archived, legacy_jev_request(race)):
-        return None
+        # A source projection may remove a redundant unspecified-phase copy.
+        # Preserve the exact provider response; only issue a separate receipt
+        # when that narrowly defined deletion makes the entire request match.
+        if not archived or not cached_pick_matches(archived, archived.get('request', {})):
+            return None
+        projected = deepcopy(archived['request'])
+        for candidate in projected['state']['candidates']:
+            rows = candidate.get('observations', [])
+            candidate['observations'] = [row for row in rows if not (
+                (row.get('phase') or 'unspecified') == 'unspecified'
+                and any(own.get('phase') not in (None, '', 'unspecified')
+                        and bool(row.get('historical')) == bool(own.get('historical'))
+                        and all(own.get(k) == v for k,v in row.items() if k != 'phase')
+                        for own in rows))]
+        if projected != jev_request(race):
+            return None
     eligible = eligible_candidates(race)
     grades = {c['name']: GRADE_ORDER[c['grade']] for c in eligible}
     choice = race.get('recommended')
