@@ -201,6 +201,11 @@ def classify(data, obs):
         if hold and any(c['name'] == hold['candidate'] for c in cands):
             base.update(category=CAT_NO_GOOD, recommended=None, needs_summary=False,
                         recommend_reason=hold['public_reason'], owner_review_hold=deepcopy(hold))
+            if hold.get('narrative_context_path'):
+                from publisher_review_context import current_context
+                context = current_context(hold['narrative_context_path'], p, data, hold)
+                if context:
+                    base['recommend_reason'] = context['text']
         races.append(base)
     return races
 

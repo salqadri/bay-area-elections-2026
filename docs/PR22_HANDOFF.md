@@ -17,6 +17,19 @@ a public source URL; the separate 2024 article does not verify it or establish
 his Gaza position. No new Harris scoring run was made. Earlier snapshots below
 remain historical. The current preview is held and production remains unchanged.
 
+## Harris candidate and race narrative refresh
+
+Harris Mojadedi's candidate explanation and the CA2026-120 race context have
+been regenerated with local Qwen and edited for concise, factual wording.
+[Outputs, exact calls and provenance](../research/gaza-grading/harris-context-2026-11-02/README.md).
+The publisher's No recommendation setting stays in place. No Jev scoring,
+question, threshold or candidate-record changes were made. The owner-reported
+MAA opposition is attributed separately from the February 2024 article, which
+concerns LGBTQ-related guide criteria and does not establish a Gaza position.
+The narrative is bound to the current source records and publisher hold; a source
+change invalidates it and restores the generic No recommendation text until refreshed.
+Both local previews consume this held context. Production remains unchanged.
+
 ## November 2 selection guard
 
 The recommendation selector now preserves signed source observations and N/A

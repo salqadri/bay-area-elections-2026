@@ -219,6 +219,28 @@ class RecommendationChecks(unittest.TestCase):
         self.assertEqual({k:v for k,v in person.items() if k!='pro_palestine_score_grade'},
                          {k:v for k,v in original.items() if k!='pro_palestine_score_grade'})
 
+    def test_harris_context_is_source_bound_and_never_selects_a_candidate(self):
+        from publisher_review_context import context_digest, current_context
+        data = json.loads(rec.DATA.read_text())
+        original = deepcopy(data)
+        position = next(p for p in data['positions'] if p['id'] == 'CA2026-120')
+        hold = next(h for h in json.loads((rec.ROOT / 'research/candidate-recommendations/owner-review-holds.json').read_text())['holds']
+                    if h['position_id'] == position['id'])
+        context = current_context(hold['narrative_context_path'], position, data, hold)
+        self.assertIsNotNone(context)
+        race = next(r for r in rec.classify(data, {'observations': []}) if r['position_id'] == position['id'])
+        self.assertIsNone(race['recommended'])
+        self.assertFalse(race['needs_summary'])
+        self.assertEqual(race['recommend_reason'], context['text'])
+        self.assertEqual(data, original)
+        modified_hold = {**hold, 'reviewed_on': '2099-01-01'}
+        self.assertIsNone(current_context(hold['narrative_context_path'], position, data, modified_hold))
+        position['candidates'][0]['name'] += ' changed'
+        self.assertNotEqual(context_digest(position, data, hold), context['source_context_sha256'])
+        race = next(r for r in rec.classify(data, {'observations': []}) if r['position_id'] == position['id'])
+        self.assertIsNone(race['recommended'])
+        self.assertEqual(race['recommend_reason'], hold['public_reason'])
+
     def test_readers_embed_the_current_recommendation_plan(self):
         plan = json.loads(rec.PLAN.read_text())
         data = json.loads(rec.DATA.read_text())
