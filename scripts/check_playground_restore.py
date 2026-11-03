@@ -78,7 +78,10 @@ class RestoreChecks(unittest.TestCase):
         manifest, mapping, runs = load_review()
         root = Path(__file__).resolve().parent.parent
         run = next(json.loads(raw) for _,raw in runs if json.loads(raw).get('scope') == 'source-refresh')
-        latest = {row['id']:row for _,raw in runs for row in json.loads(raw)['rows']}
+        latest = {}
+        for id_,raw in runs:
+            latest.update({row['id']:row for row in json.loads(raw)['rows']})
+            if id_ == run['id']:break
         people = {row['id']:row for row in run['rows']}
         outputs = []
         for entry in manifest['review_outputs']:

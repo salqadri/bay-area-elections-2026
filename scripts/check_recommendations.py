@@ -106,6 +106,13 @@ class DirectionChecks(unittest.TestCase):
         self.assertEqual(rec.out_of_policy_endorsers({'position_id':'fixture'}, {'fixture':position},
                                                    'OC Action endorsed Fixture.'), ['OC Action'])
 
+    def test_hindu_identity_name_does_not_imply_hindutva_alignment(self):
+        c={'name':'Fixture','endorsements':[
+            {'endorser':"Hindu's for Human Rights Action PAC",'relation':'endorsed'},
+            {'endorser':'Hindu American PAC','relation':'endorsed'}]}
+        _, contrast=rec.relevant_endorsements(c)
+        self.assertEqual(contrast,[('Hindu American PAC','endorsed')])
+
     def test_direction_change_invalidates_request_even_when_grades_stay_identical(self):
         race = self.fixture()
         race['selection_evidence']['Graded'] = evidence_from_state(self.state('supported'))

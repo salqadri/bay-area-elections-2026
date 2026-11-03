@@ -5,6 +5,18 @@ from another Codex project, checkout or machine. This handoff supersedes the PR'
 initial v8 scoring-policy description. Keep the PR unmerged and production
 unchanged unless the user asks to publish.
 
+## Current review snapshot
+
+Current generated input version is **v25-current-assessment-scope**. The latest
+Aisha-only follow-up is A 4.87 / 5 with the two primary questionnaire responses
+excluded from current assessment and preserved in the source archive. The bundle
+has eight exact runs. Publisher holds apply to Mark Humbert and Harris Mojadedi;
+the local comparison now contains 123 publisher picks versus production's 122,
+with six changed picks. Harris's MAA opposition report is owner-provided without
+a public source URL; the separate 2024 article does not verify it or establish
+his Gaza position. No new Harris scoring run was made. Earlier snapshots below
+remain historical. The current preview is held and production remains unchanged.
+
 ## November 2 selection guard
 
 The recommendation selector now preserves signed source observations and N/A
@@ -275,3 +287,21 @@ desktop/mobile layout, no page errors and no localhost analytics collection.
 
 
 Owner review supersedes the initial Mark Humbert selection: **CA2026-053 now has no recommendation**. The owner found his record insufficiently affirmative, despite grade eligibility. The persisted `owner-review-holds.json` applies before automatic selection, so re-running or changing thresholds cannot silently restore the pick. Scores, factual evidence (including later resolution support) and raw model responses remain unchanged. The preview now has **124 recommended candidates**, with **five** pick differences versus production; the earlier 125/six figures above describe the pre-review snapshot. Humbert’s old race paragraph remains archived but is removed from active review outputs.
+
+
+## Latest follow-up: current Aisha scope and publisher holds
+
+Current generated state is **v25-current-assessment-scope**. Two complete Aisha
+Wahab primary questionnaire responses are excluded per owner instruction; raw
+sources and old evaluations remain exact. Her new held result is **A 4.87 / 5**,
+confidence **0.92**, evidence **0.99**; both narratives are refreshed. See
+[the follow-up and exact inputs](../research/gaza-grading/aisha-current-scope-2026-11-02/README.md).
+The portable bundle has eight runs; the unique latest prompt split remains
+47 v9 and 1,249 older results. No other candidate was rescored.
+
+Publisher holds now include Harris Mojadedi, in addition to Mark Humbert.
+Harris's opposition report is owner-provided, not independently verified or
+attributed to the linked 2024 article as proof. It does not establish a Gaza
+position and has not changed his grade. The local comparison shows **123**
+publisher picks versus production's 122, with **six** changed picks. Earlier
+124/125 counts above are historical. No production deployment or merge occurs.

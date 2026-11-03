@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v9.json'
-STATE_VERSION = 'candidate-evidence-v24-acjdc-questionnaires'
+STATE_VERSION = 'candidate-evidence-v25-current-assessment-scope'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -248,6 +248,12 @@ def compact_policy_evidence(evidence):
 def build_state(p, c, data):
     """Succinct evidence state: identity + IE money both directions + platform + Gaza evidence."""
     import re
+    exclusions = json.loads((ROOT / 'research/gaza-grading/assessment-evidence-exclusions.json').read_text())
+    excluded = {id_ for rule in exclusions['exclusions']
+                if (rule['position_id'], rule['candidate']) == (p['id'], c['name'])
+                for id_ in rule['evidence_ids']}
+    if excluded:
+        c = {**c, 'gaza_evidence': [e for e in c.get('gaza_evidence') or [] if e.get('id') not in excluded]}
     match = re.search(r'state:(\w\w)', p.get('ocd_division_id') or '')
     parts = {
         'candidate': c['name'],

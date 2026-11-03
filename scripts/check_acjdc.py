@@ -68,6 +68,20 @@ class ACJDCChecks(unittest.TestCase):
             if e['endorser'] == 'CAIR Action':
                 self.assertEqual(e['relation'], 'preferred')
 
+    def test_owner_scope_excludes_complete_aisha_primary_responses_without_deleting_sources(self):
+        p = next(p for p in self.data['positions'] if p['id']=='CA2026-003')
+        c = next(c for c in p['candidates'] if c['name']=='Aisha Wahab')
+        before = deepcopy(c)
+        state = build_state(p,c,self.data)
+        text = json.dumps(state)
+        self.assertNotIn('strong U.S.-Israel alliance',text)
+        self.assertNotIn('Defends civil disobedience',text)
+        self.assertEqual(c,before)
+        self.assertTrue({'GE-1623','GE-1624'} <= {e['id'] for e in c['gaza_evidence']})
+        self.assertIn('congressional_gaza_actions',state)
+        other = next(c for c in p['candidates'] if c['name']=='Melissa Hernandez')
+        self.assertIn('continued U.S. security assistance',json.dumps(build_state(p,other,self.data)))
+
     def test_ranked_source_is_not_invented_joint_support(self):
         p = next(p for p in self.data['positions'] if p['id'] == 'CA2026-050')
         for name, rank in [('Laura Babitt', 1), ('Ross Bernet', 2)]:

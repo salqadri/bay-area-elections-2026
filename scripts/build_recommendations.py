@@ -384,7 +384,7 @@ COMMUNITY_ENDORSERS = ["usampac", "bamc", "cair", "aroc", "arab resource", "vote
 ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",
                             "democratic majority for israel", "cufo", "cufi",
                             "christians united", "israeli-american civic", "ican",
-                            "bajc", "jstreet", "jstreetpac", "j street", "j street pac", "hindu", "americans4hindus",
+                            "bajc", "jstreet", "jstreetpac", "j street", "j street pac", "hindu american pac", "hindu american political action committee", "hapac", "americans4hindus",
                             "jewish democratic council", "alameda county jewish democratic club", "acjdc"]
 REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "supported", "opposed", "recommended")
 
