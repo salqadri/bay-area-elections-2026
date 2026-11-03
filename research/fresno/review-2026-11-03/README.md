@@ -9,15 +9,16 @@ Baseline main: `e3ccd3372d96b452dd419552414a511175cb3cd2`.
 
 ## Findings and fixes
 
-1. **Unrelated recommendations changed.** The county import regenerated 179
-   existing race summaries and changed four old picks: US2026-033 (no pick →
-   Mark Warner), CA2026-136 (no pick → Sandra Weese), CA2026-241 (Virginia Cheung
-   → Ryan Hazelton), CA2026-242 (Leah LaCroix → Bunny McFadden). All 539 existing
-   race rows now retain their prior choices, prose and decision provenance;
-   only supported county extensions change. New cache records are retained in
-   the two `out-of-scope-*.jsonl` audit files here, outside the active caches.
-   Active caches match baseline main byte-for-byte. Cache records alone do not
-   prove which calls ran during the import.
+1. **Recommendation refresh reviewed and accepted.** The county import also
+   regenerated 179 existing race summaries and changed four picks: US2026-033
+   (no pick → Mark Warner), CA2026-136 (no pick → Sandra Weese), CA2026-241
+   (Virginia Cheung → Ryan Hazelton), CA2026-242 (Leah LaCroix → Bunny McFadden).
+   After reviewing examples and the prompt/context changes, the owner explicitly
+   approved keeping the refresh. These choices and paragraphs are now active.
+   The active selector cache matches the original PR; the reason cache retains
+   that PR’s records plus the marked Aisha editorial correction described below.
+   The `out-of-scope-*.jsonl` files retain their historical names as snapshots of
+   the initial review; their records are no longer quarantined from active use.
 2. **TALL import failed on Huron.** Confirmed write-in-only CA2026-480 has no
    printed names. `classify()` previously skipped it, and TALL rejected the
    missing recommendation record. Confirmed null-roster contests now get an
@@ -54,6 +55,41 @@ grades, selection evidence and policy before preserving old rows. New contests
 needing a selection decision remain withheld pending review. County additions
 must not run nationwide selector or narrative phases as a side effect.
 
+## Accepted refresh and manual correction
+
+The owner’s follow-up instruction was to keep Hermes’s changes and manually
+fix Aisha Wahab’s attribution. No new model calls were made. The original PR’s
+race plan (`9f96aeb`) supplies the accepted selections, summaries and provider
+records; the safe county-extension helper retains those rows while keeping the
+Huron row and other source/provenance fixes from review.
+
+CA2026-003 changes only this clause:
+
+- Original: “As a state senator she voted No on defunding universities that boycott Israel”
+- Corrected: “In Congress, she voted No on defunding universities that boycott Israel”
+
+The rest of the paragraph is unchanged. Its final cache entry and plan summary
+say `qwen/qwen3.8-27b + factual editorial correction` and retain the original
+provider prompt hash, original text hash, source commit and exact replacement.
+The original unedited output remains earlier in the cache. A normal cache reuse
+therefore keeps the correction without rewriting provider history.
+
+The PR #22 `rationale-refresh-2026-11-03.json` queue is historical and superseded
+for the current accepted race plan. Do not replay it against this review: its
+publication binding and some selected names are older. Candidate-grade
+explanation refresh queues are separate and unchanged.
+
+Why the refresh differed from production: earlier PR #22 changes replaced a
+shortened candidate assessment/evidence digest with the full structured Jev
+state, and replaced the earlier recommendation-writing instructions with a
+factual-comparison prompt. Production intentionally retained older paragraphs.
+The original Fresno PR did not itself change that code; its broad generation
+picked up the current path. All 179 refreshed prompt hashes match reconstructed
+current prompts; none matched the old cache’s prompt hash. Aisha, Matt Haney,
+Kevin Park, Ro Khanna and Becerra’s structured candidate states were unchanged
+between main and the original Fresno PR. This distinguishes earlier pipeline
+changes from newly added Fresno evidence or altered candidate grades.
+
 ## Current prepared artifacts
 
 - **County proof:** 106 on-ballot contests (93 new + 13 extended existing records),
@@ -63,8 +99,9 @@ must not run nationwide selector or narrative phases as a side effect.
 - **Dataset:** 754 positions, 564 confirmed, 691 seats, 1,516 printed entries,
   190 excluded determinations and one confirmed contest without printed names.
 - **Plan:** 737 rows (564 confirmed + 173 excluded with names), including 198
-  new no-information rows and all 177 prior choices. All earlier race prose is
-  retained; a category count is not a count of fresh model calls or picks.
+  new no-information rows and **179 selected races**. The owner-approved 179
+  rewritten race summaries and four changed picks are retained. The accepted
+  existing rows are bound by hashes in `approved-race-refresh.json`.
 - **Scores:** 1,518 candidacies: 1,296 prior rows unchanged and 222 new N/A
   results. A 119 / B 46 / C 21 / D 34 / E 84 / F 121 / N/A 1,093. Fresno uses
   existing owner criteria v11; previous per-candidate variants stay unchanged.
@@ -88,9 +125,10 @@ platform and Gaza evidence enrichment remains a separate follow-up.
 
 Full offline release gate: **54/54 PASS**, including the new `check_fresno.py`.
 It verifies proof counts, failure without output on truncated input, incumbent
-ambiguity, old choices/prose, approved release receipts, immutable archives,
-unchanged raw results, reproducible envelope reconstruction and portable history
-lookup. Both research readers were rebuilt.
+ambiguity, preservation of maintained choices/prose during county extension,
+approved refresh hashes and editorial provenance, historical release receipts,
+immutable archives, unchanged raw grading results, reproducible envelope
+reconstruction and portable history lookup. Both research readers were rebuilt.
 
 The separate TALL builder's `project()` and `apply_editorial()` integration
 probe accepts **435 contests** and all **11** existing editorial exceptions.
@@ -112,6 +150,7 @@ The one-time Fresno import/publication scripts already have their outputs in
 this branch; rerunning is unnecessary. They refuse repeated imports or existing
 archive output paths. `--plan-only` is safe; invoking the grading script without
 it requires explicit provider credentials and performs paid evaluations.
-`regen-samir-reasons.py` is an obsolete record of the out-of-scope narrative
-rerun, not a step of the corrected county-import workflow. No more model calls,
+`regen-samir-reasons.py` records the original narrative refresh’s retries;
+its outputs are retained in the accepted cache. It is not a step of the corrected
+county-import workflow. No more model calls,
 merge, TALL sync or deployment are needed to resume this review.

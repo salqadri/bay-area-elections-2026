@@ -9,8 +9,9 @@ plus **114 excluded** determinations. BOE District 1 is new; District 2 is uncha
 The reviewed archive `jev-2026-11-03-fresno-reviewed` retains all **1,296** prior
 evaluations and **222** saved Fresno evaluations without changing model inputs,
 answers, scores or thresholds. The new results are all **N/A** below the .22
-evidence floor. Existing race choices and paragraphs are preserved; the plan
-includes the Huron write-in-only contest. The five-county Bay Area batch stays
+evidence floor. The owner approved Hermes’s **179 refreshed race summaries** and **four changed
+selections**, with Aisha Wahab’s vote attribution manually corrected to Congress.
+The plan has **179 selected races** and includes the Huron write-in-only contest. The five-county Bay Area batch stays
 unchanged. [Review findings and reproduction steps](research/fresno/review-2026-11-03/README.md).
 
 ## November 3 publication — PR #22 release

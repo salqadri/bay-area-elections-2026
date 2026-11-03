@@ -6,8 +6,10 @@ Production uses `jev-2026-11-03-final` (1,296 saved evaluations; see
 without changing prior raw results, prompts or thresholds. The PR is unmerged
 and not deployed. Its recommendation plan has **737** rows: 12 community,
 167 selection-category, 84 no-good-candidate and 474 no-information, with
-**177** existing choices preserved. Category membership is not a count of new
-provider calls or fresh selections. [Review report](../research/fresno/review-2026-11-03/README.md).
+**179** owner-approved choices and **179 refreshed race summaries**. The accepted
+refresh includes the four changed race picks and a marked factual correction to
+Aisha Wahab’s congressional-vote attribution. Candidate grades are unchanged.
+Category membership is not a count of new provider calls or fresh selections. [Review report](../research/fresno/review-2026-11-03/README.md).
 
 The October 30 notes below are historical; they do not describe the current
 saved prompt, scores or recommendation plan.

@@ -18,10 +18,19 @@ higher than qualified counts.
   City Council short term, zero qualified candidates. The plan includes this
   contest explicitly with no recommendation.
 - Plan totals **737** rows: 564 confirmed and 173 excluded with candidate
-  records. **198 new rows** add no recommendation. All **539 prior rows** keep
-  their choices, prose and decision provenance; **177 existing choices** remain.
-  The review removed four unintended changed picks and 179 changed old summaries
-  from the active plan. Those out-of-scope cache additions remain audit-only.
+  records. **198 new rows** add no recommendation. Following review, the owner
+  approved retaining Hermes’s **179 refreshed race summaries** and **four changed
+  picks**. There are now **179 selected races** (12 community, 167 Jev picks).
+  Mark Warner and Sandra Weese gain recommendations; Ryan Hazelton replaces
+  Virginia Cheung; Bunny McFadden replaces Leah LaCroix.
+- Aisha Wahab’s refreshed CA2026-003 paragraph is manually corrected from
+  “As a state senator she voted No…” to “In Congress, she voted No…” for the
+  university-defunding vote. The original provider output remains in the cache;
+  the corrected final entry and plan paragraph carry explicit editorial provenance.
+  `approved-race-refresh.json` in the review directory binds the accepted plan.
+  No scoring prompt, input, answer, grade or threshold changed in this update.
+  The older PR #22 race-rationale refresh queue is superseded for this plan;
+  candidate-grade explanation queues remain separate and unchanged.
 - Corrected **28 new-record incumbent flags** using unambiguous county-proof
   name matching. Source requests and responses were not edited or rerun.
 - Current prepared archive: `published-2026-11-03-fresno-reviewed.json`,

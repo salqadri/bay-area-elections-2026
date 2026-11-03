@@ -69,23 +69,49 @@ class FresnoChecks(unittest.TestCase):
         row=plan['CA2026-480'];self.assertEqual(row['roster'],[])
         self.assertIsNone(row['recommended']);self.assertEqual(row['category'],rec.CAT_NO_INFO)
 
-    def test_expansion_keeps_every_original_choice_and_narrative(self):
-        current={r['position_id']:r for r in self.plan['races']}
+    def test_expansion_preserves_choices_and_prose_without_implicit_regeneration(self):
+        replay=rec.extend_county_plan(self.baseline,self.data,self.manifest['added_positions'])
+        current={r['position_id']:r for r in replay['races']}
         for old in self.baseline['races']:
             new=current[old['position_id']]
             for field in ('recommended','summary','recommend_reason_text','recommend_reason','release_choice_review','jev'):
                 self.assertEqual(old.get(field),new.get(field),(old['position_id'],field))
-        replay=rec.extend_county_plan(self.baseline,self.data,self.manifest['added_positions'])
-        self.assertEqual(replay['races'],self.plan['races'])
+        # An explicit owner-approved refresh is a new maintained plan. County
+        # extension must preserve it too, rather than restore an older baseline.
+        accepted=rec.extend_county_plan(self.plan,self.data,[])
+        self.assertEqual(accepted['races'],self.plan['races'])
         changed=deepcopy(self.data)
         person=next(c for p in changed['positions']if p['id']=='CA2026-047'for c in p['candidates']if c['name']=='Tracy Jensen')
         person['pro_palestine_score_grade']='F'
         with self.assertRaisesRegex(ValueError,'changes existing'):rec.extend_county_plan(self.baseline,changed,self.manifest['added_positions'])
 
     def test_regular_revalidation_recognizes_owner_approved_release_choices(self):
-        updated,audit=rec.revalidate_plan(self.plan,self.data)
-        self.assertEqual(audit['changed_choices'],[])
-        self.assertEqual([r.get('recommended')for r in updated['races']],[r.get('recommended')for r in self.plan['races']])
+        historical=rec.extend_county_plan(self.baseline,self.data,self.manifest['added_positions'])
+        for plan in (historical,self.plan):
+            updated,audit=rec.revalidate_plan(plan,self.data)
+            self.assertEqual(audit['changed_choices'],[])
+            self.assertEqual([r.get('recommended')for r in updated['races']],[r.get('recommended')for r in plan['races']])
+
+    def test_approved_refresh_and_manual_correction_keep_provider_output_auditable(self):
+        receipt=json.loads((FRESNO/'review-2026-11-03/review-receipt.json').read_text())['owner_approved_refresh']
+        raw=(ROOT/receipt['path']).read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),receipt['sha256'])
+        review=json.loads(raw);current={r['position_id']:r for r in self.plan['races']}
+        self.assertEqual(sum(bool(r.get('recommended'))for r in self.plan['races']),review['selected_races'])
+        for entry in review['approved_existing_races']:
+            row=current[entry['position_id']]
+            serialized=json.dumps(row,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
+            self.assertEqual(hashlib.sha256(serialized).hexdigest(),entry['row_sha256'])
+        cache=[json.loads(line)for line in rec.REASON_CACHE.read_text().splitlines()if line.strip()]
+        edited=current['CA2026-003']['summary'];meta=edited['editorial_correction']
+        self.assertIn('In Congress, she voted No on defunding universities',edited['text'])
+        self.assertNotIn('As a state senator she voted No',edited['text'])
+        original=next(row for row in cache if row['position_id']=='CA2026-003'
+                      and hashlib.sha256(row['text'].encode()).hexdigest()==meta['original_text_sha256'])
+        self.assertEqual(edited['text'],original['text'].replace(meta['replacements'][0]['before'],meta['replacements'][0]['after']))
+        self.assertEqual(edited['prompt_sha256'],original['prompt_sha256'])
+        self.assertIn('factual editorial correction',edited['model'])
+        self.assertEqual([row for row in cache if row['position_id']=='CA2026-003'][-1],edited)
 
     def test_archives_keep_old_evaluations_and_new_raw_answers_exact(self):
         receipt=json.loads((FRESNO/'review-2026-11-03/review-receipt.json').read_text())

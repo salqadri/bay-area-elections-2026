@@ -1,0 +1,2745 @@
+{
+  "format": "approved-race-refresh/v1",
+  "approved_on": "2026-11-03",
+  "authorization": "Owner approved retaining the original Hermes rewrites and race selections, with the Aisha attribution corrected manually.",
+  "original_commit": "9f96aeb1a5e058a4c3934bde758190e67301bd71",
+  "original_plan_sha256": "fac377c8ea10561cce34d3306e5aa1b8381c6de8fbf629ed9b0e1959625bf04b",
+  "model_calls": 0,
+  "selected_races": 179,
+  "rewritten_existing_summaries": 179,
+  "choice_changes": [
+    {
+      "position_id": "US2026-033",
+      "previous": null,
+      "approved": "Mark Warner"
+    },
+    {
+      "position_id": "CA2026-136",
+      "previous": null,
+      "approved": "Sandra Weese"
+    },
+    {
+      "position_id": "CA2026-242",
+      "previous": "Leah LaCroix",
+      "approved": "Bunny McFadden"
+    },
+    {
+      "position_id": "CA2026-241",
+      "previous": "Virginia Cheung",
+      "approved": "Ryan Hazelton"
+    }
+  ],
+  "aisha_editorial_correction": {
+    "corrected_on": "2026-11-03",
+    "reason": "The defunding-universities vote is a congressional action, not a state Senate action.",
+    "original_model": "qwen/qwen3.8-27b",
+    "original_text_sha256": "ee4337e1aebedbf66f281897336a5e5e21778af01bff6617743a842dc764e9f2",
+    "source_commit": "9f96aeb1a5e058a4c3934bde758190e67301bd71",
+    "source_cache": "research/candidate-recommendations/race-reasons-2026-10-28-latest.jsonl",
+    "source_position_id": "CA2026-003",
+    "provider_prompt_sha256": "fc2c8cbf993414326039d8161bd2c29e68f293e6fc9f64faf5086139c977f4b5",
+    "replacements": [
+      {
+        "before": "As a state senator she voted No on defunding universities that boycott Israel",
+        "after": "In Congress, she voted No on defunding universities that boycott Israel"
+      }
+    ]
+  },
+  "approved_existing_races": [
+    {
+      "position_id": "CA2026-309",
+      "recommended": "John Garamendi",
+      "row_sha256": "6d72e149e6e7fa6e998e1f4ffa5924863c05048b283403f2c7e3242198756b3a"
+    },
+    {
+      "position_id": "CA2026-310",
+      "recommended": null,
+      "row_sha256": "8dec2a16d586f31f0abd7ae27b552f5fc65e6d5cefac39866c3a36ac6b3a8c29"
+    },
+    {
+      "position_id": "CA2026-001",
+      "recommended": "Mark DeSaulnier",
+      "row_sha256": "a0a1111dd341efbb4fb99999d5516e2bc6a03d8a6dbd253ff6f816e065d9f23c"
+    },
+    {
+      "position_id": "CA2026-229",
+      "recommended": "Connie Chan",
+      "row_sha256": "b9e9097fcb17a6d13d4c90317892a6089a7179ccebac4962d65114567e9f3b83"
+    },
+    {
+      "position_id": "CA2026-002",
+      "recommended": "Lateefah Simon",
+      "row_sha256": "40a5dac308678c26e57ea069dffbf67b3dac90c00fc3e807edb9f33a528828de"
+    },
+    {
+      "position_id": "CA2026-003",
+      "recommended": "Aisha Wahab",
+      "row_sha256": "8a3d2b3836b71e719875160c3afd9f20b4a0e2c3c41516cdac94d05724ce3970"
+    },
+    {
+      "position_id": "CA2026-230",
+      "recommended": null,
+      "row_sha256": "9586ab789454ed715adb3912825d31c2afbc1767a1760513ac348fac79295f0b"
+    },
+    {
+      "position_id": "CA2026-005",
+      "recommended": "Sam Liccardo",
+      "row_sha256": "489948d9d897ca6647f85e194ea5e1c091d29655418d8b86fda7dd47863e1613"
+    },
+    {
+      "position_id": "CA2026-004",
+      "recommended": "Ro Khanna",
+      "row_sha256": "cb6609680f14fbf83075f02d404b02efdba538c7476e46f4aad676dc9a2d66fe"
+    },
+    {
+      "position_id": "CA2026-006",
+      "recommended": "Zoe Lofgren",
+      "row_sha256": "b288d31b40ffff0f0bbaefab2d0990f3a224daf42987e4b398e886fe09b96df9"
+    },
+    {
+      "position_id": "CA2026-007",
+      "recommended": null,
+      "row_sha256": "d9b72e4029b92b9650027c9ad69780a2f43216ae13e831f9767a53262cbae470"
+    },
+    {
+      "position_id": "US2026-001",
+      "recommended": "Everett Wess",
+      "row_sha256": "49dcefc8b7b24b6d9b8eca6eb3355cd1d72f80c93c5c04c397549a553c107540"
+    },
+    {
+      "position_id": "US2026-002",
+      "recommended": null,
+      "row_sha256": "78104572a5db0b125bbcdc7df53a0e07aec13664159dda89c9f4eee3377880c4"
+    },
+    {
+      "position_id": "US2026-003",
+      "recommended": null,
+      "row_sha256": "400571af394a6c914e9261f442903f756f33ba55fe52e902737def6879e053b6"
+    },
+    {
+      "position_id": "US2026-004",
+      "recommended": "Adam Withrow",
+      "row_sha256": "bfcc6d7aeeb30a6df0f53c32444ff8063bca0ff410e99968adcf32b13d0f9585"
+    },
+    {
+      "position_id": "US2026-005",
+      "recommended": null,
+      "row_sha256": "4963c6d906e373484d4c2c71fd16a5d23b5c267af9a99aa3b398e51ff7df8595"
+    },
+    {
+      "position_id": "US2026-006",
+      "recommended": "Angie Nixon",
+      "row_sha256": "3e327224333a2afadf0413f8a23601fd055e126be70f7ae946a14c3405dd04c9"
+    },
+    {
+      "position_id": "US2026-007",
+      "recommended": "Jon Ossoff",
+      "row_sha256": "822a1421316a6e2d868dc81c723a72f568d7be31c4dc59867a364e0c555a5c1e"
+    },
+    {
+      "position_id": "US2026-008",
+      "recommended": "Matt Loesby",
+      "row_sha256": "15e416f7d7f9d2fa4d89809903640d26906696bc143c8bd238a06a8db0a051f9"
+    },
+    {
+      "position_id": "US2026-009",
+      "recommended": null,
+      "row_sha256": "aa590ee765fff9496c968fd1ad9af675037eb39dae3318123b971cf9896a2ab9"
+    },
+    {
+      "position_id": "US2026-010",
+      "recommended": "Josh Turek",
+      "row_sha256": "7ea9324a15e62448f845e06bd33efec0a9bd719f63e2d49ba777f4a6e155b99f"
+    },
+    {
+      "position_id": "US2026-011",
+      "recommended": "Adam Hamilton",
+      "row_sha256": "421561512531a89082521371381897dded22053f2b9bf395989079b2b8ee43c7"
+    },
+    {
+      "position_id": "US2026-012",
+      "recommended": "Charles Booker",
+      "row_sha256": "e9743047a23d510092d68ef934a4d40f8d9d88b569826d6542a02d84fcbc681a"
+    },
+    {
+      "position_id": "US2026-013",
+      "recommended": null,
+      "row_sha256": "6b940c99c16d403d3dae61d78f9a69d790a37ad121dd7711d273a5d86a4cb15b"
+    },
+    {
+      "position_id": "US2026-014",
+      "recommended": "Troy Jackson",
+      "row_sha256": "931ed1d4efa765b2ef77c8fea251e4e24a1ea3317bc93ff469b915166dfef21a"
+    },
+    {
+      "position_id": "US2026-015",
+      "recommended": "Ed Markey",
+      "row_sha256": "e4335562d838819e690785656e0a02054abf8a2f2fde61f189681ec3fd36596d"
+    },
+    {
+      "position_id": "US2026-016",
+      "recommended": "Abdul El-Sayed",
+      "row_sha256": "5b14576c91221049f7c7cc3f34fae354cf3044dc1d949305d8e8af80419433df"
+    },
+    {
+      "position_id": "US2026-017",
+      "recommended": "Peggy Flanagan",
+      "row_sha256": "b942d6a04945ae12be3ff51e842264bfd2ad94cd24fa33228b32c2c840acb628"
+    },
+    {
+      "position_id": "US2026-018",
+      "recommended": "Ty Pinkins",
+      "row_sha256": "22126199fe2c290948176f8da87b8462f2dd23f89cec132a52fa254bc529c2f2"
+    },
+    {
+      "position_id": "US2026-019",
+      "recommended": "Alani Bankhead",
+      "row_sha256": "7c5bea64ce15961ea2172b3c5d532e3dbed943be7f812ea6158f655677b05f82"
+    },
+    {
+      "position_id": "US2026-020",
+      "recommended": "Dan Osborn",
+      "row_sha256": "4ca157d06c36dd0adffbe257c9a159774134423ed1303ee25db81bc0d94ed198"
+    },
+    {
+      "position_id": "US2026-021",
+      "recommended": null,
+      "row_sha256": "ad0fb8a6674856eb6ec8606185c3ec8219d1ffe14afb2a1bd229be956a6605f8"
+    },
+    {
+      "position_id": "US2026-022",
+      "recommended": null,
+      "row_sha256": "adde2d048ac1b928327c9bd90c62db332e711d1bdd7f735cf103c9c6b5ecdfc0"
+    },
+    {
+      "position_id": "US2026-023",
+      "recommended": "Ben Ray Luján",
+      "row_sha256": "30cf2d35a01166ec8849f6a34261a63344e01280b7b645dcbf55cdd4994569de"
+    },
+    {
+      "position_id": "US2026-024",
+      "recommended": "Michael Dublin",
+      "row_sha256": "0fb621fc1091f6a5d0cb98113e666ec493e7a39a3f0a40657eac5edc46763971"
+    },
+    {
+      "position_id": "US2026-025",
+      "recommended": "Greg Levy",
+      "row_sha256": "4c8794cf4c7cecb51909cdeec7f3b17e633387c3cb6f548a77f2bb607a2c2dc6"
+    },
+    {
+      "position_id": "US2026-026",
+      "recommended": "N'Kiyla Jasmine Thomas",
+      "row_sha256": "1238e06d9b17d4ddad1b703f7cfadd9ed00846f001ccafa481555ccc6272b79b"
+    },
+    {
+      "position_id": "US2026-027",
+      "recommended": "Jeff Merkley",
+      "row_sha256": "67b332f4f19fd1d986707499d089c544b7640b25183e5f8dc4901b325f4204d0"
+    },
+    {
+      "position_id": "US2026-028",
+      "recommended": "Michael Bahry",
+      "row_sha256": "ada5b194089bbc447f6ad8987d0dc0e59a8bba36d9c8da3b53b9c35829af96a7"
+    },
+    {
+      "position_id": "US2026-029",
+      "recommended": null,
+      "row_sha256": "bd6389aa2871fa7f641c479354d3973c0d8528ec36009036679eb88292ec85bd"
+    },
+    {
+      "position_id": "US2026-030",
+      "recommended": "Brian Bengs",
+      "row_sha256": "419f1a02766712ac5922e099bf0cad0fee5bc37da1b1860ed979625a5f92a1b6"
+    },
+    {
+      "position_id": "US2026-031",
+      "recommended": "Tharon Chandler",
+      "row_sha256": "2a15583888926932ea61765db3304a58b1d62ce6d4448f75df0d3ab4f26a7f22"
+    },
+    {
+      "position_id": "US2026-032",
+      "recommended": "James Talarico",
+      "row_sha256": "8ffd0800af787ce630b8f6a135d8559e5f8936271b90731f469bafdd2131ba41"
+    },
+    {
+      "position_id": "US2026-033",
+      "recommended": "Mark Warner",
+      "row_sha256": "757ade589759db1fba0b2e84e56e7a90bc5088b5e28f161c80e44dba8695ae1a"
+    },
+    {
+      "position_id": "US2026-034",
+      "recommended": "Rachel Fetty Anderson",
+      "row_sha256": "031169b66dc9cc70c261cf8f30a3650d16a070d7e6bce0f0fd2768ff2f2d34f3"
+    },
+    {
+      "position_id": "US2026-035",
+      "recommended": null,
+      "row_sha256": "1fb979d05b919d7334d9ef073563e9fdcde3ae8ec374e1feb46c4b1ca117ac42"
+    },
+    {
+      "position_id": "US2026-071",
+      "recommended": "Shomari Figures",
+      "row_sha256": "7b0cab4ff299df3cdc821ca68f8006cad6dc22553f680e6458804bff61a33a64"
+    },
+    {
+      "position_id": "US2026-072",
+      "recommended": "Monica Alponte",
+      "row_sha256": "c37873bee6c2c8a345acead26481eeb93ec950c2aa500b201c8c69943bbf1b47"
+    },
+    {
+      "position_id": "US2026-073",
+      "recommended": null,
+      "row_sha256": "73a5a7ffe187442603c92467b7d700bd75f50a212e382bdbc4c50be6f4593f9a"
+    },
+    {
+      "position_id": "US2026-074",
+      "recommended": "Richard Pan",
+      "row_sha256": "4b2ce7d3207ac0f1d0a9425018152ec3d97ba9c058a9a68cd5a0236781e28618"
+    },
+    {
+      "position_id": "US2026-075",
+      "recommended": null,
+      "row_sha256": "b287aea9ed11980b99067dae5276ac9fa47dbb7ccba9640ed611a40bfa27f8e3"
+    },
+    {
+      "position_id": "US2026-076",
+      "recommended": "Randy Villegas",
+      "row_sha256": "d00aa09f7c8fbff5f78594803e97b85fc846dc32757818c2c9c85e7076c5f17b"
+    },
+    {
+      "position_id": "US2026-077",
+      "recommended": null,
+      "row_sha256": "70ff5a4ef5076a41783fbb743db755a72d0d7b661bbcab8dfb6255fc04462fa3"
+    },
+    {
+      "position_id": "US2026-078",
+      "recommended": "Clifton Brown",
+      "row_sha256": "88875d0f2681823331c988ccdcd0ddaa88dd96b2c4351cd60bdad958f96dace1"
+    },
+    {
+      "position_id": "US2026-079",
+      "recommended": null,
+      "row_sha256": "fa9f13552be5082651edab2a290e735faa1fa8d30f635440550a6480971b6d4e"
+    },
+    {
+      "position_id": "US2026-080",
+      "recommended": "Manny Rutinel",
+      "row_sha256": "152994fbdfabacd5f19626eae84f55b3658c4e8ff4a3441ff2889f57aa4f81d9"
+    },
+    {
+      "position_id": "US2026-081",
+      "recommended": null,
+      "row_sha256": "fb70af2d31da38aeeaa3fcbb49ca397b75caf0de8b17a3e559c058f68f2450b8"
+    },
+    {
+      "position_id": "US2026-082",
+      "recommended": null,
+      "row_sha256": "98313e5d9454a41b8fd2cf508000ea817d84b82ba28a120a02c664af90310780"
+    },
+    {
+      "position_id": "US2026-083",
+      "recommended": null,
+      "row_sha256": "7366b040295651458074b8fe4211e1746c98c17efed9c5ee9e92363f7f896c5b"
+    },
+    {
+      "position_id": "US2026-084",
+      "recommended": null,
+      "row_sha256": "56922e81c51a5967e4fa0145488cce66980318e0847a0c67e13a92e4f890f81f"
+    },
+    {
+      "position_id": "US2026-085",
+      "recommended": null,
+      "row_sha256": "e54d42f494fb1b7673243ab7f9a7abdce45f93c2f9027ff0990001a9f1d3eb7d"
+    },
+    {
+      "position_id": "US2026-086",
+      "recommended": null,
+      "row_sha256": "bd8d8bc34b5d843aea2712aa81353fba3fbf808cdb74c4ccb59d9af7d107bb90"
+    },
+    {
+      "position_id": "US2026-087",
+      "recommended": null,
+      "row_sha256": "9b3cef028dfb75b6675f52ca370b9ca749d3e39ab9d8668f1a6884268f9db637"
+    },
+    {
+      "position_id": "US2026-088",
+      "recommended": null,
+      "row_sha256": "69d84963db8ff632aa479e8b1ecbe06bacc94e700c40a77e1a2f04151c83fb03"
+    },
+    {
+      "position_id": "US2026-089",
+      "recommended": null,
+      "row_sha256": "1c1bf2c3e6671790d162992d0e39c8fd6ca3aa063b779ecdb91b5c8ff93738de"
+    },
+    {
+      "position_id": "US2026-090",
+      "recommended": null,
+      "row_sha256": "7e03fcac9c6403b1ba094f487a21adbb60d4ae917d223b9a310478cbcd1a1471"
+    },
+    {
+      "position_id": "US2026-091",
+      "recommended": null,
+      "row_sha256": "d96cba0715637342322bf562bbc9901ef7df18369bc3631d0238f50f2ae9b2e5"
+    },
+    {
+      "position_id": "US2026-092",
+      "recommended": null,
+      "row_sha256": "c136e6a3e3aa55237efc90d4415734636b0c9b5c36be90662b64c644ee021f34"
+    },
+    {
+      "position_id": "US2026-093",
+      "recommended": "Shafina Barnett",
+      "row_sha256": "c0ec5a5f8c203882dec4fceb792982ee274fd38f2eef9fd9a68658be8bfc8640"
+    },
+    {
+      "position_id": "US2026-094",
+      "recommended": "William Lawrence",
+      "row_sha256": "a35d2ebfc2aa4a708c51202ee12364851b99f9787cfc404a9ed67138fbc01b75"
+    },
+    {
+      "position_id": "US2026-095",
+      "recommended": null,
+      "row_sha256": "843931a7ef6c9d6f05ddd960c1632edbe12503662ca390ed5248f2e51b466bb5"
+    },
+    {
+      "position_id": "US2026-096",
+      "recommended": null,
+      "row_sha256": "405d16afeedf5c2a4b3e63e8a606795885e232148d05c1f63696a16f9871c888"
+    },
+    {
+      "position_id": "US2026-097",
+      "recommended": "Sam Forstag",
+      "row_sha256": "95e7ebadda42a7d16dd94c94818dd7393282a637031ce7f19b50c71cfda40d6e"
+    },
+    {
+      "position_id": "US2026-098",
+      "recommended": null,
+      "row_sha256": "5d882aea764cfdb6eaa48fa8c079880c8fab3b2cb7bcb1f52a7b9341e64fbae9"
+    },
+    {
+      "position_id": "US2026-099",
+      "recommended": "Jamie Ager",
+      "row_sha256": "00c8966530435a3cfece9de55670851e26730aeb79cceedaca559f104f70114a"
+    },
+    {
+      "position_id": "US2026-100",
+      "recommended": "Denise Powell",
+      "row_sha256": "5c365f5ec2757ef33cffc08001872d857adc0aea66902b51cabb917b89f66ffd"
+    },
+    {
+      "position_id": "US2026-101",
+      "recommended": "Stefany Shaheen",
+      "row_sha256": "eaca5ef1692855c99a41967bca8566a9040beaf1ec6c8080db9214f84f500e68"
+    },
+    {
+      "position_id": "US2026-102",
+      "recommended": "Seamus O'Toole",
+      "row_sha256": "6e0a6cf53492987260704a8eb325ec54623a23239aa94f4ed0735338eb987f45"
+    },
+    {
+      "position_id": "US2026-103",
+      "recommended": "Gabriel Vasquez",
+      "row_sha256": "19afa266c6c8db38f70e0f7a7434e657b8ba0570d4044a250a0e37b76093c8cf"
+    },
+    {
+      "position_id": "US2026-104",
+      "recommended": null,
+      "row_sha256": "458febbbeae163a31fc30ce5d987e37d7c7e5a346b2a895d539e636c4dbe8113"
+    },
+    {
+      "position_id": "US2026-105",
+      "recommended": "Teresa Benitez-Thompson",
+      "row_sha256": "57e2a2c7769eda312332ab4b7eee3b852c303d78ce32f5c0907c440af26947a2"
+    },
+    {
+      "position_id": "US2026-106",
+      "recommended": null,
+      "row_sha256": "d2108cf21c5214b812ea30ed8e402fa457df51a3303d282e3e7fc82b3a20d019"
+    },
+    {
+      "position_id": "US2026-107",
+      "recommended": null,
+      "row_sha256": "b620791b04c231cbe750e5f73fcbf11330ad32b059125052ae965366461c19f0"
+    },
+    {
+      "position_id": "US2026-108",
+      "recommended": null,
+      "row_sha256": "142a49d94c1b27a47cff0ac6b6bbc120d5111a6b17997d6ceb3a440ab0d08860"
+    },
+    {
+      "position_id": "US2026-109",
+      "recommended": null,
+      "row_sha256": "a524fbfbb17644bbdf15af48ca78f390d59fccbbfcaf9cfd990efe9a892e92e4"
+    },
+    {
+      "position_id": "US2026-110",
+      "recommended": "Cait Conley",
+      "row_sha256": "4d01772c73663719471d73ab124339dda7b512b6c6a0ca30274fe55b63f6f267"
+    },
+    {
+      "position_id": "US2026-111",
+      "recommended": null,
+      "row_sha256": "8f5fbf5681848a9e80f724aa1088c48ab51826672a6ff593160e9382de3fabfa"
+    },
+    {
+      "position_id": "US2026-112",
+      "recommended": null,
+      "row_sha256": "1c0896608351a6fc83956bb78939e62ba2871d16aa7733705c421bfb1f2a33a8"
+    },
+    {
+      "position_id": "US2026-113",
+      "recommended": "Brian Poindexter",
+      "row_sha256": "3f81475b788204a4a5d9640ce6f4d546298e9cb6c86f6a9d4acdca9d41b27339"
+    },
+    {
+      "position_id": "US2026-114",
+      "recommended": null,
+      "row_sha256": "8662f388a0043595712efe6db785ef0a0e681d7daad212e77b1402f37c1018da"
+    },
+    {
+      "position_id": "US2026-115",
+      "recommended": null,
+      "row_sha256": "3b77b7dac7a9f5161798dff6fc5a39132973247318ac6e49f2e2377db1ef7307"
+    },
+    {
+      "position_id": "US2026-116",
+      "recommended": "Don Leonard",
+      "row_sha256": "f7fcfc2042b4d8fdf6387a65b8767e21fa545661896c356702b78491eb3f1db2"
+    },
+    {
+      "position_id": "US2026-117",
+      "recommended": null,
+      "row_sha256": "60f21eb16494f120a25f8488c1086c9cb3a207f49f8da30a82a9b766efde0b22"
+    },
+    {
+      "position_id": "US2026-118",
+      "recommended": "Bob Brooks",
+      "row_sha256": "de961f509f6ba9b17d9bc7a27472afa346c551d9ea37e42322c83033a05a2ae8"
+    },
+    {
+      "position_id": "US2026-119",
+      "recommended": null,
+      "row_sha256": "2c001efbda7a4d3738ba7e7ab73d609bac211884bfe560fe2019a7c50111b2c5"
+    },
+    {
+      "position_id": "US2026-120",
+      "recommended": null,
+      "row_sha256": "5b495562d013aa4ffa1d86107589697843cccb4a0f78113f7c3f9c75af13b8cc"
+    },
+    {
+      "position_id": "US2026-121",
+      "recommended": null,
+      "row_sha256": "abb9eacc9ba7e4c6402667d8a7467473f1905a414bca37e7a9357496208b5bc8"
+    },
+    {
+      "position_id": "US2026-122",
+      "recommended": null,
+      "row_sha256": "83378db4f29707cd9d76be54b4f49840dbf30dd4246ea0be374a56b0b98953a6"
+    },
+    {
+      "position_id": "US2026-123",
+      "recommended": "Marlon Duran",
+      "row_sha256": "64378b64f83da3261e3d8e74d5cb211673c84dc64c415895fea18287598a8f54"
+    },
+    {
+      "position_id": "US2026-124",
+      "recommended": "Eddie Espinoza",
+      "row_sha256": "3a0ffb94d4ce28be34bb2b9266b1a867c6e1eb00cad55d0e22308a981278428e"
+    },
+    {
+      "position_id": "US2026-125",
+      "recommended": null,
+      "row_sha256": "25f4375a737c3fa599069be3992fd8ee8a529df1bf037a3f6994e4594acd22b3"
+    },
+    {
+      "position_id": "US2026-126",
+      "recommended": "Shannon Taylor",
+      "row_sha256": "c433d7062e917cefbaac5c0216b51cd1cd408849fe1a3ee324ddee9f40ad466d"
+    },
+    {
+      "position_id": "US2026-127",
+      "recommended": null,
+      "row_sha256": "ddcb1a46ee58a616e8a7b3ab1ae3e7db9d58bd17a62ce03033a43abc09a90a76"
+    },
+    {
+      "position_id": "US2026-128",
+      "recommended": "Tom Perriello",
+      "row_sha256": "d1bff02b2e447bf88e6f79a689f32c3dea11006304355fe17c39d7f6d24c5a48"
+    },
+    {
+      "position_id": "US2026-129",
+      "recommended": null,
+      "row_sha256": "09a56d62a24e5c73d0aff73c0c5b0d3a3779af02fd0e73053783a5c408ae7b54"
+    },
+    {
+      "position_id": "US2026-130",
+      "recommended": null,
+      "row_sha256": "e48f32bc2712390749f21835636daf4fec3e319f3335ee4fe2fedf2e15bf591d"
+    },
+    {
+      "position_id": "US2026-131",
+      "recommended": "Rebecca Cooke",
+      "row_sha256": "5175df1828fd564e27f6863993cf21d85e498ffbefe3d04b32ff206152ca33ff"
+    },
+    {
+      "position_id": "CA2026-022",
+      "recommended": "Scott Sakakihara",
+      "row_sha256": "3c65e41d1f9a4d476822f129e1d23ab6f49b1f6cd3ed7c5ae48a1c91d5824536"
+    },
+    {
+      "position_id": "CA2026-311",
+      "recommended": "Jenny Leilani Callison",
+      "row_sha256": "f08565dbeb15bee73868806061e40402934c96895a6423af8a58ab620aa228f7"
+    },
+    {
+      "position_id": "CA2026-008",
+      "recommended": "Mark Rendon",
+      "row_sha256": "de99a7e4ef19bafe6741cdc2ebf5b232379a4fe7656a3c9c19527ca1be8c5f50"
+    },
+    {
+      "position_id": "CA2026-312",
+      "recommended": null,
+      "row_sha256": "fcfb6a374b9d184e73a349f3d275ae431a91d1bc4b9c5ee10bd5cf1535b35712"
+    },
+    {
+      "position_id": "CA2026-009",
+      "recommended": null,
+      "row_sha256": "cc1ee9063dfa0e00b43517953076d9a8124d0389b8a6ae4f43dd111a817aee01"
+    },
+    {
+      "position_id": "CA2026-231",
+      "recommended": "Matt Haney",
+      "row_sha256": "b5d26b9abf65e53958b24197b15ad5c765c3dfed3df434d76d5691811cedfd2e"
+    },
+    {
+      "position_id": "CA2026-010",
+      "recommended": "Mia Bonta",
+      "row_sha256": "b1e74757061a62bd4ef94d28bd26d87453b205a29e78a8e8eaf08ee6d1d754e2"
+    },
+    {
+      "position_id": "CA2026-232",
+      "recommended": null,
+      "row_sha256": "cfa1fdca26b8dcd5ada7f5eb1246b238d262b3e9106d7332945deae91bc07d3d"
+    },
+    {
+      "position_id": "CA2026-011",
+      "recommended": "Liz Ortega",
+      "row_sha256": "52fa016ed9efc09cee32ebce42c3fd511d5bc379c3e89830a7d39bf2ae84b2f9"
+    },
+    {
+      "position_id": "CA2026-233",
+      "recommended": null,
+      "row_sha256": "67b2fe17b9c7f682aad02733418e8a761f56888687b7b32a9fabe4c3510f3c3b"
+    },
+    {
+      "position_id": "CA2026-023",
+      "recommended": null,
+      "row_sha256": "eaefbd278145235ce1d7eed3214ff818d6cdedf1564dcbad8e6662eac2f216e0"
+    },
+    {
+      "position_id": "CA2026-020",
+      "recommended": "Alex Lee",
+      "row_sha256": "6a66c7a3709cde447977111ae7024cbb998b3f99be553baef87fca2484a23280"
+    },
+    {
+      "position_id": "CA2026-024",
+      "recommended": "Ash Kalra",
+      "row_sha256": "ae53706bef00932626d85ac13703c0d931dfedccb0c7990d2064ff52d67efb9d"
+    },
+    {
+      "position_id": "CA2026-025",
+      "recommended": "Patrick Ahrens",
+      "row_sha256": "c5bfddc2db55a82c35d0f3b4ce9de478b32dee992f1260c7f1b4fecab473651b"
+    },
+    {
+      "position_id": "CA2026-026",
+      "recommended": null,
+      "row_sha256": "a73276e2557409369b1dc7278e6c8bf6c881cf59afd75758dc9afba71f0c9b83"
+    },
+    {
+      "position_id": "CA2026-027",
+      "recommended": null,
+      "row_sha256": "e9aae8fd8003e544348e2372b301457421bc95c24f51d56a9c93c971163a9fc0"
+    },
+    {
+      "position_id": "CA2026-014",
+      "recommended": "Xavier Becerra",
+      "row_sha256": "e8b99bba50ff41c5941042020e40ed8cb667c00f5dacc80a55695fa156174cb0"
+    },
+    {
+      "position_id": "US2026-036",
+      "recommended": "Doug Jones",
+      "row_sha256": "26678eaaab7587d4d4a535e4766ae0580598919002b22a15835aa9b79be2f27e"
+    },
+    {
+      "position_id": "US2026-037",
+      "recommended": null,
+      "row_sha256": "30ffdea45eb1ce517f060cdf9ea3caee34c1228fe8a26a5cab4de3955baae882"
+    },
+    {
+      "position_id": "US2026-038",
+      "recommended": null,
+      "row_sha256": "1f9151c1733384ec935781bf0affb7a462338c0a46ac25903828fe9e07f45c2d"
+    },
+    {
+      "position_id": "US2026-039",
+      "recommended": "Colt Shelby",
+      "row_sha256": "8691306678314f048e1f88466797e456e29772451a95550d9c0b96f8a3c22f95"
+    },
+    {
+      "position_id": "US2026-040",
+      "recommended": "Erik Underwood",
+      "row_sha256": "7ba02fb3d24f9a8b4fc37f3b59553fc418d0776ae8ff52810d78b9edf44086f1"
+    },
+    {
+      "position_id": "US2026-041",
+      "recommended": null,
+      "row_sha256": "5106038483e7ca1a719b5522715b00d0bd74c0a6340c3c5614f664da96d1d790"
+    },
+    {
+      "position_id": "US2026-042",
+      "recommended": null,
+      "row_sha256": "7dffc1d7f4868616725e7df31afbf850ab23faf46217b0db777a2bb9ea9c5717"
+    },
+    {
+      "position_id": "US2026-043",
+      "recommended": "Keisha Lance Bottoms",
+      "row_sha256": "527c66e4ce61565c488c829ea048f60b96eff342c59b18056aa197e25d565f9f"
+    },
+    {
+      "position_id": "US2026-044",
+      "recommended": null,
+      "row_sha256": "c987c5d898e156b9fc9cc8edea15343015adf020a7f2b11dff9fd3505c74b8d1"
+    },
+    {
+      "position_id": "US2026-045",
+      "recommended": null,
+      "row_sha256": "a9cabaaeff11bee6a9588b3b6d72b31ee34bb1612050198455c9085ddb05db9d"
+    },
+    {
+      "position_id": "US2026-046",
+      "recommended": "JB Pritzker",
+      "row_sha256": "ee903424cbefdca9dfcb39931a957c5f914ff3829cad7613018cfbd4d560b6e2"
+    },
+    {
+      "position_id": "US2026-047",
+      "recommended": null,
+      "row_sha256": "0fddbb85c4e32bebe43b97523acea749d02e4e0b16dff0cbc7059c690b52db06"
+    },
+    {
+      "position_id": "US2026-048",
+      "recommended": "Cindy Holscher",
+      "row_sha256": "d083164be5e8d637df979e99e67348d84c04da1ce3ef97d2cd9f12d43984a3e9"
+    },
+    {
+      "position_id": "US2026-049",
+      "recommended": null,
+      "row_sha256": "223575a15db49209d1c7de152cc2673f7d2daa51fbb8806f105ebeb21917ca5b"
+    },
+    {
+      "position_id": "US2026-050",
+      "recommended": "Andy Ellis",
+      "row_sha256": "c160a41ceb795959fb56a2a0682f6125e72e90669598fb57f94f70181dcda00b"
+    },
+    {
+      "position_id": "US2026-051",
+      "recommended": "Andrea James",
+      "row_sha256": "92b7f893c657cce2c9d03b626af6cedbaf824abdf0f9b2c003aaa49aa3161c4f"
+    },
+    {
+      "position_id": "US2026-052",
+      "recommended": "Jocelyn Benson",
+      "row_sha256": "5c3f70bf37a53f0530f1c6c3746744f9f77b9bf200d6ce7d91d737e04479d7fe"
+    },
+    {
+      "position_id": "US2026-053",
+      "recommended": "Steven Young",
+      "row_sha256": "d2379865a8350377a77150933994d9916909cb5fb60f7c779b014f78adb27bb1"
+    },
+    {
+      "position_id": "US2026-054",
+      "recommended": null,
+      "row_sha256": "1c247541953dedd201796603d9e057166d94de7ebab84270e118eee3f92cc287"
+    },
+    {
+      "position_id": "US2026-055",
+      "recommended": null,
+      "row_sha256": "4fdfbcf3b323c85a918f804b136a7583bee2849746278fb9cf9d5d7c2c2ddce7"
+    },
+    {
+      "position_id": "US2026-056",
+      "recommended": null,
+      "row_sha256": "037e71702a8d03506c652a9ca7ad3c27e027f0bbf73c109fdcc1fe4383dd2a35"
+    },
+    {
+      "position_id": "US2026-057",
+      "recommended": "Deb Haaland",
+      "row_sha256": "ae5882f00bbc394c42febf40727f45c4a60d629f40f445d614aa321b88afa07b"
+    },
+    {
+      "position_id": "US2026-058",
+      "recommended": null,
+      "row_sha256": "6ef2b89cef653739b7f25d8d99fe26922f50911c7559f4aad44f4906c28e99d4"
+    },
+    {
+      "position_id": "US2026-059",
+      "recommended": "Amy Acton",
+      "row_sha256": "8d1ef147363a78f4d1bb5866cbfad3e44b6549ca26ffcafc2c346db74a0fac35"
+    },
+    {
+      "position_id": "US2026-060",
+      "recommended": null,
+      "row_sha256": "3941f7ae5fcdf430e70badb561da7dc23bab96d36bb5e0e00414bdd75164d522"
+    },
+    {
+      "position_id": "US2026-061",
+      "recommended": null,
+      "row_sha256": "5246f50832dcd88683a304acba75d00c35491facf07a01f59d5a8ab8651efdb2"
+    },
+    {
+      "position_id": "US2026-062",
+      "recommended": "Josh Shapiro",
+      "row_sha256": "58f592d6b7de3e98b5d413bb7a04c1a11dd7b315ef4ebc063f598816619a7a70"
+    },
+    {
+      "position_id": "US2026-063",
+      "recommended": null,
+      "row_sha256": "c1db6a5d28146e595881b417e06d6345ca9b6625452edbccd4440cc22f5f7539"
+    },
+    {
+      "position_id": "US2026-064",
+      "recommended": null,
+      "row_sha256": "f5ccda72bf9f546ae4559acc06e4bd53ed872cfccb9a76ed7e2195024a6aeb3f"
+    },
+    {
+      "position_id": "US2026-065",
+      "recommended": "Dan Ahlers",
+      "row_sha256": "a62d0e09af8218ec40ffa308992967d76460b60dcb0f6d7c69a6de00100b6ab6"
+    },
+    {
+      "position_id": "US2026-066",
+      "recommended": null,
+      "row_sha256": "fce64cfbc03f57702ea6f5b2a89679b94aefa9f91911bc39ef69ef4b06079bea"
+    },
+    {
+      "position_id": "US2026-067",
+      "recommended": "Gina Hinojosa",
+      "row_sha256": "d67954719f5a57f734e3de4bc392de68af612f6e903da8bf407e0683eba8918f"
+    },
+    {
+      "position_id": "US2026-068",
+      "recommended": "June Goodband",
+      "row_sha256": "be609427ff92bf826ce56e48c2012fcda1ca27bcbf561de38705d3bb5c673984"
+    },
+    {
+      "position_id": "US2026-069",
+      "recommended": null,
+      "row_sha256": "2d0c754fdd3b8235ab631d0798975d87b9ea9b7ec8e25cce00ff7f3d80f76949"
+    },
+    {
+      "position_id": "US2026-070",
+      "recommended": null,
+      "row_sha256": "a1c20a4fff08cc7b9785e4b3c94bfe945ace9611e01eb0d67010f30c260db353"
+    },
+    {
+      "position_id": "CA2026-016",
+      "recommended": null,
+      "row_sha256": "57412e59a9c09ad2b312f2b186cf70b6f521cae1f331a59ca419488b78283be7"
+    },
+    {
+      "position_id": "CA2026-017",
+      "recommended": "Shirley N. Weber",
+      "row_sha256": "448d4cce18d3255e3d553f6a389621204db589acd4036def719e6fe9ad03657b"
+    },
+    {
+      "position_id": "CA2026-013",
+      "recommended": "Malia M. Cohen",
+      "row_sha256": "6161b3af9c53a7141125633ab9edd66d894862339930cd26a13d3e258a66a053"
+    },
+    {
+      "position_id": "CA2026-019",
+      "recommended": null,
+      "row_sha256": "b0726ff8d8c193be82d79b04b36da2c13742e880673ae3a8822b97d94bc93174"
+    },
+    {
+      "position_id": "CA2026-012",
+      "recommended": "Rob Bonta",
+      "row_sha256": "98dc7654e4e1432822e8e142e28f1f39bf6289b4f258a6defc45fd20a7d9cbba"
+    },
+    {
+      "position_id": "CA2026-015",
+      "recommended": "Jane Kim",
+      "row_sha256": "165c29a30458751fe62c486b3bb09557318ca46dd95c5707235df16a7a78b4d0"
+    },
+    {
+      "position_id": "CA2026-018",
+      "recommended": "Richard Barrera",
+      "row_sha256": "7b48e32711057a5d583f05885e23e080731e042b9abc0c5d7f5c414834edfb0e"
+    },
+    {
+      "position_id": "CA2026-021",
+      "recommended": "Sally J. Lieber",
+      "row_sha256": "872658dcef73d0bf3e34eddd3b689a00199e99be082fcff915a8a22ad6c0b7eb"
+    },
+    {
+      "position_id": "CA2026-039",
+      "recommended": null,
+      "row_sha256": "16b687cfc1f2766f5474bfa166f30fef410ab9fc034ea0a486db748d1ceb5933"
+    },
+    {
+      "position_id": "CA2026-040",
+      "recommended": null,
+      "row_sha256": "c88a577f2559272ef7e8c66164447fc0cdd4e06429a76b2c7880d2cdf164f2c7"
+    },
+    {
+      "position_id": "CA2026-028",
+      "recommended": null,
+      "row_sha256": "02a3f937e00449eda3aa5b2d799ea9a2fa63c0118cdda3c3c51b213c6a7a477a"
+    },
+    {
+      "position_id": "CA2026-029",
+      "recommended": null,
+      "row_sha256": "9dffda8707755a9dba902b60de24071b3f72bd82cd7f6d9fc234b00a63d79d09"
+    },
+    {
+      "position_id": "CA2026-030",
+      "recommended": null,
+      "row_sha256": "08b16034276ea2e02ea4745cf16e38d1fdfbd8f82531be9ef8692d4c11045526"
+    },
+    {
+      "position_id": "CA2026-031",
+      "recommended": null,
+      "row_sha256": "d6783ca2cdadf5d78509e391bf68c3cb7de868574d8f3abb7299f27795081d7e"
+    },
+    {
+      "position_id": "CA2026-037",
+      "recommended": null,
+      "row_sha256": "0bf82bc2ee541e4ef2fbdf3ab4411b0715cdd63da1f0c1fca3b1f32d1b452e69"
+    },
+    {
+      "position_id": "CA2026-032",
+      "recommended": null,
+      "row_sha256": "04cceb44345f202a43bfe2d175f47738cfc7beb0fb75f19acf72327033856f09"
+    },
+    {
+      "position_id": "CA2026-033",
+      "recommended": null,
+      "row_sha256": "5ba87bb808b86d9ec59543829a4f2068e5f9a7ee91b536f2deeda5083c47d30d"
+    },
+    {
+      "position_id": "CA2026-038",
+      "recommended": null,
+      "row_sha256": "1f74b8c37e5a1d319726825b5be5bcae91072587684441beac3632e934c88689"
+    },
+    {
+      "position_id": "CA2026-034",
+      "recommended": null,
+      "row_sha256": "3488c8c4fc8879e770d9865468aa15c26d85baf3609af50e1bb4be073c1ec1b4"
+    },
+    {
+      "position_id": "CA2026-035",
+      "recommended": null,
+      "row_sha256": "14ee1ee9e96a752c713cb48500bfd7026f0c3c0836689d2fc7096238494509c0"
+    },
+    {
+      "position_id": "CA2026-036",
+      "recommended": null,
+      "row_sha256": "9b81367299aea569cee6dc255d99cc4d3c7038a673d86aec05ae8714af70235b"
+    },
+    {
+      "position_id": "CA2026-041",
+      "recommended": null,
+      "row_sha256": "93541dc2870f284b9d808af5292b68abb6f612186ab2d828b6cbc4281e5fec8a"
+    },
+    {
+      "position_id": "CA2026-042",
+      "recommended": null,
+      "row_sha256": "c878461464ae024d5cf12a6c026289c232d0b99af77656d79627f9bc27820d3e"
+    },
+    {
+      "position_id": "CA2026-043",
+      "recommended": null,
+      "row_sha256": "a2a8147290799b09dc73e83fd702bd0226edb3efe7071052273fb3003aa7e492"
+    },
+    {
+      "position_id": "CA2026-044",
+      "recommended": null,
+      "row_sha256": "1eff760c8502d258df111db748f72d4d076b86261c7750d0dc43328927a4902a"
+    },
+    {
+      "position_id": "CA2026-045",
+      "recommended": null,
+      "row_sha256": "a568ddec89338cf2444a1afc4af987234cf1d41b7a6270be3e69ce1e25d06bd1"
+    },
+    {
+      "position_id": "CA2026-303",
+      "recommended": null,
+      "row_sha256": "b154d139f24e7c706a0821ee806f3e42b35cd0d27e1a89026a5e7f346c7920f7"
+    },
+    {
+      "position_id": "CA2026-234",
+      "recommended": null,
+      "row_sha256": "0e2c214bc9e33f5cfe8d9c98374f561e5d6e6b14a54c2f99464f4fe334a3965f"
+    },
+    {
+      "position_id": "CA2026-235",
+      "recommended": null,
+      "row_sha256": "f57f963a242874fe9712542cd6eb7427257b998618094a97def4b5561c649f11"
+    },
+    {
+      "position_id": "CA2026-236",
+      "recommended": null,
+      "row_sha256": "705750b59ed5ddf76f44fb3e152a74cf235c9e14378aef08c9e7e9f5caf7799d"
+    },
+    {
+      "position_id": "CA2026-237",
+      "recommended": null,
+      "row_sha256": "9c40d1be9e4222f262f74776707341d9efecd5aa0d54b46aa1ac2dd2651019a6"
+    },
+    {
+      "position_id": "CA2026-238",
+      "recommended": "Alex Behrend",
+      "row_sha256": "e5d91fe1facd597afb85e3fe78444670b73e54002d0bb41ec5cd5302b1923ce2"
+    },
+    {
+      "position_id": "CA2026-239",
+      "recommended": "Gary McCoy",
+      "row_sha256": "c8df9fc5fbb743792705cb8b55fd7afce74ac22a815ed0a7b26d26f713553698"
+    },
+    {
+      "position_id": "CA2026-240",
+      "recommended": "Dionjay (DJ) Brookter",
+      "row_sha256": "93da8608a793279426df9ccf2cefd5bcd25f5840b08b03c2f57a8bde5946f178"
+    },
+    {
+      "position_id": "CA2026-046",
+      "recommended": null,
+      "row_sha256": "a092d91019766328260ddf3c5eaa672d806f81a7d4bad6eb3b4186f8c4c2c3a5"
+    },
+    {
+      "position_id": "CA2026-047",
+      "recommended": "Tracy Jensen",
+      "row_sha256": "29038ceb6b832d0de1d272bdcad2ba378e7120294ed7ad68f2e5f5307573e748"
+    },
+    {
+      "position_id": "CA2026-048",
+      "recommended": "Aaron Tiedemann",
+      "row_sha256": "cf4af117d6689bf03505eb1539ab511a4a9b902565e988c5f03236f8eda58400"
+    },
+    {
+      "position_id": "CA2026-327",
+      "recommended": null,
+      "row_sha256": "fdfbbc1076e3792a6ff5faae2ba54a1ac9ee0f0d1fce0821b17949096f6f2273"
+    },
+    {
+      "position_id": "CA2026-325",
+      "recommended": "Tamisha Torres-Walker",
+      "row_sha256": "9822b713f53a795543d9461ffc9b570b8d422092efe0d52c750bcf6200b10046"
+    },
+    {
+      "position_id": "CA2026-326",
+      "recommended": "Monica E. Wilson",
+      "row_sha256": "1599b33984c36aa33727f74a69ad1b58c8a9f59d1bf7585aeaabe8f0033a6999"
+    },
+    {
+      "position_id": "CA2026-245",
+      "recommended": null,
+      "row_sha256": "3e46d8f3be516da7519b405df4e2d7d45c5b2f2cdb11d0f797fba92f7a70fc0a"
+    },
+    {
+      "position_id": "CA2026-246",
+      "recommended": null,
+      "row_sha256": "2c0d7ebe3a4fc8407f2b7b6eafd2c37527d1b033bc5fb81665be0004f6caef31"
+    },
+    {
+      "position_id": "CA2026-247",
+      "recommended": null,
+      "row_sha256": "e71dffd0d9546bcf434eb5674d31d314544e16948b2e3577257e7b2f37f44ebc"
+    },
+    {
+      "position_id": "CA2026-049",
+      "recommended": null,
+      "row_sha256": "9cddb9ba97adfc247ec4470a7f20653196bc8d2ba322c2ef08f404454428b5db"
+    },
+    {
+      "position_id": "CA2026-054",
+      "recommended": "Ida Martinac",
+      "row_sha256": "38917f52d84e0a0329ead3fe85b7000ae7cd1cc730f5a2a60f99eaf60f59d668"
+    },
+    {
+      "position_id": "CA2026-050",
+      "recommended": "Moni Gangopadhyay",
+      "row_sha256": "fa870a929e1898c07979a62852df65eca352e37bcbe624a861bbb82e52d865c5"
+    },
+    {
+      "position_id": "CA2026-051",
+      "recommended": "Majdi \"Gaith\" Abuhamdieh",
+      "row_sha256": "35f9e4f486b8644ed8a324adbe5b1414fd069bb2b0565678311a1ca558631c83"
+    },
+    {
+      "position_id": "CA2026-052",
+      "recommended": "Syrak Micael",
+      "row_sha256": "c74b3d81c089dfcd5ddb4985d241812b7517d0e05be2387dda0f5484f47da889"
+    },
+    {
+      "position_id": "CA2026-053",
+      "recommended": null,
+      "row_sha256": "dfe2a09d2465b3b3f7471a62c28e37e04583b675ac902a953ac2c80d6241f07e"
+    },
+    {
+      "position_id": "CA2026-328",
+      "recommended": null,
+      "row_sha256": "37fbcc0e671512046e190aa4bb803ed3430dbfe19fe7998796cbf4490eb90c22"
+    },
+    {
+      "position_id": "CA2026-329",
+      "recommended": null,
+      "row_sha256": "96959d6de47fbcb10e523f692728ddcb0bbee6811f011faf09122d2eef4f34f5"
+    },
+    {
+      "position_id": "CA2026-248",
+      "recommended": null,
+      "row_sha256": "c46aaedd752d182ce77a0c21df18f9d70c2aa2432d5d4e19ece1487a04a37f66"
+    },
+    {
+      "position_id": "CA2026-249",
+      "recommended": null,
+      "row_sha256": "51752de0c722936e07225d33d1d92dcc4258dc4bac3a5db4fbb81519a6c4ee13"
+    },
+    {
+      "position_id": "CA2026-250",
+      "recommended": null,
+      "row_sha256": "6f8464408dc24a4e2669d2b00f04f02e61e623e3fb1041453a8a20e56589112c"
+    },
+    {
+      "position_id": "CA2026-251",
+      "recommended": null,
+      "row_sha256": "e1789a5753f19f10d01b75679125afd9da475119cf6e579dc19171c83e638b01"
+    },
+    {
+      "position_id": "CA2026-085",
+      "recommended": null,
+      "row_sha256": "107da0b46465a32c74a82d5f7a5cbd3b03a86e9c98afa68d4d7307958ce3bd6b"
+    },
+    {
+      "position_id": "CA2026-086",
+      "recommended": null,
+      "row_sha256": "5bf9e6640c6a8f1d13eca3a37679a9e0d5b1f9184e2749a8cb6f82dcb016e227"
+    },
+    {
+      "position_id": "CA2026-087",
+      "recommended": null,
+      "row_sha256": "2fac225e9fd0c372657be2cd90938239ae31001f4e1035ddb2e3a4bafaf0f4b9"
+    },
+    {
+      "position_id": "CA2026-330",
+      "recommended": null,
+      "row_sha256": "90cd58fc5929b92eab454dbb18ad671b6c936a2a97e5c6277d3caee9f344625a"
+    },
+    {
+      "position_id": "CA2026-334",
+      "recommended": null,
+      "row_sha256": "983372a189f797119062dcfdc1005ddf441003aa7783835b1791106eacae765e"
+    },
+    {
+      "position_id": "CA2026-331",
+      "recommended": null,
+      "row_sha256": "3281ac27694cd4066f9259151da8a112ccf6aa426ee6b6dcaeaccfff93ac085c"
+    },
+    {
+      "position_id": "CA2026-332",
+      "recommended": null,
+      "row_sha256": "30613ad708e60221f3a9db39c8fea309c333aeceba38a34d24038df389935783"
+    },
+    {
+      "position_id": "CA2026-333",
+      "recommended": "Laura Nakamura",
+      "row_sha256": "87ee137d97c0f8e15ca9b6612ce26254342ffc2f3701479c0908184bb1d8a7ff"
+    },
+    {
+      "position_id": "CA2026-088",
+      "recommended": null,
+      "row_sha256": "ea7506f0b978e66a1cd6d643e4cd57d083a63e4f531799bc1cfa454cae5fb35e"
+    },
+    {
+      "position_id": "CA2026-253",
+      "recommended": "Teresa Proaño",
+      "row_sha256": "faa0f2573ba72b4e9e79fcd13764b13d89e8475402ec8158a04b483dc421b899"
+    },
+    {
+      "position_id": "CA2026-057",
+      "recommended": "Kiran Mohammad",
+      "row_sha256": "14fd504a7d2832c1fa27ae698391589d5d502b525ce2b88cf6d2cb7518591bfb"
+    },
+    {
+      "position_id": "CA2026-055",
+      "recommended": "Richard Thornbury",
+      "row_sha256": "e5e953f6afbfe43465adbcbef6ed25ada25061448f0eefa78d22695201461591"
+    },
+    {
+      "position_id": "CA2026-056",
+      "recommended": "Kashef Qaadri",
+      "row_sha256": "fb893e2fe9ff9827576888b6f40127117039fc8f12203797d18bc6a5ad61cd76"
+    },
+    {
+      "position_id": "CA2026-254",
+      "recommended": "Ruben Abrica",
+      "row_sha256": "bd83bab5091044a4b5c65ca05d60ec40cd5b66fb676af1a15bccb6c7d309c7da"
+    },
+    {
+      "position_id": "CA2026-313",
+      "recommended": null,
+      "row_sha256": "b109ec12eee46eb8962dbc0b5814c1f1e9413f6c380f8a744684c8a768ae737f"
+    },
+    {
+      "position_id": "CA2026-058",
+      "recommended": "Kalimah Atreyu Priforce",
+      "row_sha256": "2ea540d6170603b328f1daab18cec8e5809c5db180c12d332eb2317067e63909"
+    },
+    {
+      "position_id": "CA2026-255",
+      "recommended": "Phoebe Shin Venkat",
+      "row_sha256": "734abeb7b7d484f29d554bda7a7421a25ec65b655cdd64b6b8019e27df18f56d"
+    },
+    {
+      "position_id": "CA2026-256",
+      "recommended": null,
+      "row_sha256": "368690f633013582aa33c6043ea281b872b23c06102c1a616c7ca0aeaeb072cd"
+    },
+    {
+      "position_id": "CA2026-059",
+      "recommended": "Desrie Campbell",
+      "row_sha256": "6844154fe18a5af3281e6db75c1ff83d43edf30f4456a761436e9221189b48e6"
+    },
+    {
+      "position_id": "CA2026-060",
+      "recommended": "Kathy Kimberlin",
+      "row_sha256": "fe596344a0c4e11efbab50c3bbd45eda52341b8ab8ba1fc89e769ecb56417232"
+    },
+    {
+      "position_id": "CA2026-061",
+      "recommended": "Aziz Akbari",
+      "row_sha256": "410308d7128dcb57bb3e123e5fc66a3e47a5171a9af59e17fe24b403ee598bd6"
+    },
+    {
+      "position_id": "CA2026-089",
+      "recommended": "Diana Sanchez Bentz",
+      "row_sha256": "bf56ad376040251a843396497ae4a814b829242db37130d6457351d6df38b4d7"
+    },
+    {
+      "position_id": "CA2026-090",
+      "recommended": "Christina Tovar",
+      "row_sha256": "b853115da6dfdc5ea822ad836b25d8213fe98d9af7e1d747082e4968f60dad7f"
+    },
+    {
+      "position_id": "CA2026-091",
+      "recommended": "Rebeca G. Armendáriz",
+      "row_sha256": "b46ec9d038fb2be4f3613e81874cce4889056c1fbda69c05a065baaa78f36248"
+    },
+    {
+      "position_id": "CA2026-257",
+      "recommended": null,
+      "row_sha256": "25a07a173cf52f7b8744172c577829ad9de149ecf0d67a59007820f6ec493bc6"
+    },
+    {
+      "position_id": "CA2026-258",
+      "recommended": null,
+      "row_sha256": "7083a867698ecd827d8825d01589201787b741b24ea290a6b6ef02f6e442ee3a"
+    },
+    {
+      "position_id": "CA2026-259",
+      "recommended": null,
+      "row_sha256": "75c6f5ad44cf19bf954c233ec864e8cfc9c790257b5b33f1037b54f12dd7f252"
+    },
+    {
+      "position_id": "CA2026-064",
+      "recommended": null,
+      "row_sha256": "c2c9d3a5266508da3e7b091455be85f39e0ea393b6e294a5d252b5c9550ad130"
+    },
+    {
+      "position_id": "CA2026-062",
+      "recommended": "George Syrop",
+      "row_sha256": "8026620b53118439801db8229b88adb85a9e63808c82276d669d90cde6d4a0a3"
+    },
+    {
+      "position_id": "CA2026-063",
+      "recommended": null,
+      "row_sha256": "368cc3e7c2239c97ea19623906f3a11232e00364ca000885233ba55aa582cbcb"
+    },
+    {
+      "position_id": "CA2026-319",
+      "recommended": null,
+      "row_sha256": "fe6a7d233f6694a24c6f5bca04cdb00248a47d53360df5804d61b5ee691b54b1"
+    },
+    {
+      "position_id": "CA2026-065",
+      "recommended": null,
+      "row_sha256": "aea9e6adc97ff8a42766504327e20fc3dbb7473851c11f4afebae3c6b9334074"
+    },
+    {
+      "position_id": "CA2026-092",
+      "recommended": null,
+      "row_sha256": "39d6186403c60a4401b76edd8f5044bb0010db66fd51124355b52501610eafee"
+    },
+    {
+      "position_id": "CA2026-093",
+      "recommended": null,
+      "row_sha256": "1e536359ebd3936eec53a305194f472d6ee88c6e4225349d89e203d78c1ed1ae"
+    },
+    {
+      "position_id": "CA2026-320",
+      "recommended": null,
+      "row_sha256": "9cc897f44b0a6da9c76c4b4fcf1ad4f27ea6e61a7bef87635ec3247bbb770e65"
+    },
+    {
+      "position_id": "CA2026-260",
+      "recommended": null,
+      "row_sha256": "cb29dd978e26f497a9e4fa41001caca10825c1f20ca2a924818c43aa765eb18a"
+    },
+    {
+      "position_id": "CA2026-261",
+      "recommended": null,
+      "row_sha256": "dba86ccbe267818481914487b6cbc794ffe93af51c63180a602c9db9b2630273"
+    },
+    {
+      "position_id": "CA2026-262",
+      "recommended": null,
+      "row_sha256": "12860b246c5436bf747b580c51d6489671f4d8db4bc3060e752d971308d41154"
+    },
+    {
+      "position_id": "CA2026-263",
+      "recommended": null,
+      "row_sha256": "acaa35f794ff9142cecb1e48ea86fc24e5ce7ad87569f0c3edb17bee4b67eb84"
+    },
+    {
+      "position_id": "CA2026-264",
+      "recommended": null,
+      "row_sha256": "f923e47d306bad49d95e3a41dee35b1c0ffdbc24afdd4cf199efd4dbe62d12ec"
+    },
+    {
+      "position_id": "CA2026-265",
+      "recommended": null,
+      "row_sha256": "5af5f9873d95cda86410c99a7df09bf9e8a4a5275cc56654b180ae08537d6676"
+    },
+    {
+      "position_id": "CA2026-094",
+      "recommended": "Seema Kanani",
+      "row_sha256": "7fae71a71a1ec77bfe1c80cc100339f27892ab63587a18559bfe600b071cc8c9"
+    },
+    {
+      "position_id": "CA2026-095",
+      "recommended": null,
+      "row_sha256": "a0150cf57f2c78847687fb56285f7dcc1fc093635a22882199589d5c8b5c2a63"
+    },
+    {
+      "position_id": "CA2026-098",
+      "recommended": "Deborah M. Africa",
+      "row_sha256": "d595b06713b126ef964016586419b06035b4cbf017c10cc2409887f54c2d01d0"
+    },
+    {
+      "position_id": "CA2026-096",
+      "recommended": "Yvonne Martinez Beltran",
+      "row_sha256": "5ed439562b6a558caf2c3e87f2bf08976c9699f921146a911d8f54b0950089b5"
+    },
+    {
+      "position_id": "CA2026-097",
+      "recommended": "Dolores Alvarado",
+      "row_sha256": "a9b5cc6dd5ec21c1f03bf51ce3dacf06bdfcef12e09535d742c21040862f9f93"
+    },
+    {
+      "position_id": "CA2026-099",
+      "recommended": "IdaRose Sylvester",
+      "row_sha256": "e8c580e15945e7b43de5a8c987f302ad4e58bc175e96e5dc645ad010c21f2dad"
+    },
+    {
+      "position_id": "CA2026-066",
+      "recommended": "Eve Marie Little",
+      "row_sha256": "4319bd93115210160f612e3700c683d544ae11542d3c7e4538219d8c0af99a6a"
+    },
+    {
+      "position_id": "CA2026-067",
+      "recommended": null,
+      "row_sha256": "4526cac7b0f6b9d7024009f8ea167cc51ab37d636e5cea4069c2c90a5219e404"
+    },
+    {
+      "position_id": "CA2026-068",
+      "recommended": null,
+      "row_sha256": "6553f9a0f4883ee89696675d6c463d817fdca5fe32b3d4f0cff6f38a938ab317"
+    },
+    {
+      "position_id": "CA2026-072",
+      "recommended": "Barbara Lee",
+      "row_sha256": "27ba0a864f56887bf46cb832c22a57f65d846601896808f6d65a8fafd9565ddb"
+    },
+    {
+      "position_id": "CA2026-069",
+      "recommended": "Nate Adams",
+      "row_sha256": "3fafa63b1866e6194d237bfd9a144a861d7a57db56d48800c8fa3ddf6e949f7d"
+    },
+    {
+      "position_id": "CA2026-070",
+      "recommended": "Janani Ramachandran",
+      "row_sha256": "0f0320329d134dbf071101de33e71298a3dba2060d433af29af74f005632d541"
+    },
+    {
+      "position_id": "CA2026-071",
+      "recommended": null,
+      "row_sha256": "7424624658ea30caafdf29a3958ce5668309c4f3e396036aa62b27d6eebafff8"
+    },
+    {
+      "position_id": "CA2026-323",
+      "recommended": null,
+      "row_sha256": "02c59c3ca0ed4003d9953855d1b058daea2d0e92c7908540df16e35aa0047bf3"
+    },
+    {
+      "position_id": "CA2026-266",
+      "recommended": "Christine Boles",
+      "row_sha256": "f5b13b2b86aba7bc6c881b9966ff4f0f53e65cc729dd2e6391f7d1094cedb705"
+    },
+    {
+      "position_id": "CA2026-267",
+      "recommended": null,
+      "row_sha256": "801974ad838b1490fac9d75e7c098e0cc4eaeff06aa4761bd6206ce251d47c67"
+    },
+    {
+      "position_id": "CA2026-268",
+      "recommended": null,
+      "row_sha256": "0df10f37d76abb6e890142c107ffcd36e5ec1a7f1aeff29c027beb0ec9a98f17"
+    },
+    {
+      "position_id": "CA2026-100",
+      "recommended": "Raymond L. Goins",
+      "row_sha256": "07be1fe99a77b9ed338602375e876fac49ad0ac50bc96d0c77219a121460a8d0"
+    },
+    {
+      "position_id": "CA2026-073",
+      "recommended": null,
+      "row_sha256": "68f54aee5843fdbada625b891b4db94d40656666657ca29520584766f6c8505f"
+    },
+    {
+      "position_id": "CA2026-318",
+      "recommended": null,
+      "row_sha256": "dedd6d91d72970ac11e935f7ec83e3db6b7cab4b4648dcd2cba742574a4549dd"
+    },
+    {
+      "position_id": "CA2026-337",
+      "recommended": "Latoyya P. Ella Bordelon",
+      "row_sha256": "69bd83317bdef2bc4b482d31fbf1e2d5d80e0fee0821d737db9886aa89e1b4a7"
+    },
+    {
+      "position_id": "CA2026-336",
+      "recommended": null,
+      "row_sha256": "3f283e3caac2e725a7008af1745488a634591228fd957ce9f8b229e76b28fcd9"
+    },
+    {
+      "position_id": "CA2026-338",
+      "recommended": null,
+      "row_sha256": "82c4e62ba29df0e7b3a9115782b28229d53959b2bb4746baef0599b9a119b55d"
+    },
+    {
+      "position_id": "CA2026-321",
+      "recommended": null,
+      "row_sha256": "099bea070fc7f71c1124252eab59032563fe84d13b2e4d40d9acc890d304cace"
+    },
+    {
+      "position_id": "CA2026-322",
+      "recommended": null,
+      "row_sha256": "f1e82b7f1f677406be332a9f687095cd257a2c31acd1ce0fc329b6bc9c9dc761"
+    },
+    {
+      "position_id": "CA2026-076",
+      "recommended": null,
+      "row_sha256": "3748b25003d5339a6055e57a93fe311f12773436908dffd705a78c2d44714844"
+    },
+    {
+      "position_id": "CA2026-074",
+      "recommended": "Kathy Narum",
+      "row_sha256": "274a3c9fa5c4470335157849b59a748c3e92684174666516211e0adc42b6b749"
+    },
+    {
+      "position_id": "CA2026-075",
+      "recommended": "Jamie Yee",
+      "row_sha256": "93624954255b0dcd0c53eaf3177d51a0fec26b8dcd09a13859e104e2d5e8a09f"
+    },
+    {
+      "position_id": "CA2026-270",
+      "recommended": "Chris Sturken",
+      "row_sha256": "e454cd1182369e9531f6bb954f35aeee52ac4313b71f3fef7d91c968856bb467"
+    },
+    {
+      "position_id": "CA2026-271",
+      "recommended": null,
+      "row_sha256": "7e9ed04d7c67591ce18d1bb71f663c7027040c0eb67d9471677dd99378036da3"
+    },
+    {
+      "position_id": "CA2026-272",
+      "recommended": null,
+      "row_sha256": "86a2c9039a9327fa90a7a94a966eaae75b8dabe2c44d4fcc9252f3adfbf57ff0"
+    },
+    {
+      "position_id": "CA2026-314",
+      "recommended": "Claudia Jiménez",
+      "row_sha256": "1a8e4feae90adae30dc7e35711b08926b339e605c27a82a1bb594279735eeb3a"
+    },
+    {
+      "position_id": "CA2026-273",
+      "recommended": null,
+      "row_sha256": "c19f1d2ceb11bc75dbb6a7fd18df68767741be792830863d7c029a2f852c44c4"
+    },
+    {
+      "position_id": "CA2026-274",
+      "recommended": null,
+      "row_sha256": "b90c1b30a2b5eeb522f477d6e0012ebe97caca422d5deed5e79d2f1c94f6be40"
+    },
+    {
+      "position_id": "CA2026-275",
+      "recommended": null,
+      "row_sha256": "0d92da3ee2802e065d10099cd3d25c443abc6be6c6b8e2127986657a3c48882f"
+    },
+    {
+      "position_id": "CA2026-276",
+      "recommended": null,
+      "row_sha256": "f491b502aafb379b9c90e1570820a235ed749cc1bfaeef9295e44fdff4588f56"
+    },
+    {
+      "position_id": "CA2026-101",
+      "recommended": "Peter Ortiz",
+      "row_sha256": "13131b6c222bfbe4419d5b7d8987b844a73bbb9287c4d6719db772be715686d4"
+    },
+    {
+      "position_id": "CA2026-102",
+      "recommended": "Bien Doan",
+      "row_sha256": "d562d8bb06ef155b29a1e9ec74cfc0861c149dc2275c8ba0d38c10ab3a042577"
+    },
+    {
+      "position_id": "CA2026-103",
+      "recommended": "Gordon Chester",
+      "row_sha256": "cf6a5112f4e1db376324a470d9b8189777f56343959f344e5b10b27547892e48"
+    },
+    {
+      "position_id": "CA2026-081",
+      "recommended": null,
+      "row_sha256": "a524a0aeada8e446ae2c667e56cfeaac548e70b08064da1dd389989d3527b455"
+    },
+    {
+      "position_id": "CA2026-077",
+      "recommended": null,
+      "row_sha256": "393560694db5bba836e995fab06a64515f79a3ce9500f0f19ae460b6b1aa11a0"
+    },
+    {
+      "position_id": "CA2026-078",
+      "recommended": null,
+      "row_sha256": "fb32ab931d2df41aaf9b8634b98775edbf7e1eb5755d853507f3fc5d1f3225a4"
+    },
+    {
+      "position_id": "CA2026-079",
+      "recommended": null,
+      "row_sha256": "036b847d52702e5654d90aff74180c3c387911b19e7772f1d2e5606d3f1a6611"
+    },
+    {
+      "position_id": "CA2026-080",
+      "recommended": null,
+      "row_sha256": "fed0a0c2c1280af67f609bdb63cfb5ea9b2d22223a6aa22910b0c8b122265208"
+    },
+    {
+      "position_id": "CA2026-277",
+      "recommended": null,
+      "row_sha256": "25b3d058ee8532da1dd10090e471b6484449ded5cf0493de03f4ae6fe936109e"
+    },
+    {
+      "position_id": "CA2026-278",
+      "recommended": null,
+      "row_sha256": "9916ea987784d6c49421592cdf0f489afd935a048e020a2f2551c58484b8a1b2"
+    },
+    {
+      "position_id": "CA2026-279",
+      "recommended": null,
+      "row_sha256": "841e9d0c45bf76542ee958f6bddaf8e219829ee79b5d2e6e641351873cd695cc"
+    },
+    {
+      "position_id": "CA2026-316",
+      "recommended": null,
+      "row_sha256": "5f211b478c8520454ffbf998b45a1f2db8a23804f1af4f550258f95951eab00a"
+    },
+    {
+      "position_id": "CA2026-315",
+      "recommended": null,
+      "row_sha256": "37a1a3fa59c1db4921c86f174c19a2bd87d8d19c0a76730b60cc9c8bf9975020"
+    },
+    {
+      "position_id": "CA2026-317",
+      "recommended": null,
+      "row_sha256": "2a1a7a36e367fb28917f94011f8127da864175038d7e8c08d82078059bfeffe6"
+    },
+    {
+      "position_id": "CA2026-339",
+      "recommended": null,
+      "row_sha256": "2fdfb28d4078fb9ed160e1579d70da9898f149963af86db2ca09ffbccd1ad0af"
+    },
+    {
+      "position_id": "CA2026-340",
+      "recommended": null,
+      "row_sha256": "7f8974ea68af3e39160e473123af83c517b9da4579a9f760f67e7a63618d7490"
+    },
+    {
+      "position_id": "CA2026-341",
+      "recommended": "Marisol Rubio",
+      "row_sha256": "6d9f5249865934513ebb29033bafc160111d9c39bc2e6a07304c26f5de57152c"
+    },
+    {
+      "position_id": "CA2026-106",
+      "recommended": "Kevin Park",
+      "row_sha256": "ed0d804b10158bca87d9af8c124a36a7eb506804f44afd17bc180f3b40c269bb"
+    },
+    {
+      "position_id": "CA2026-104",
+      "recommended": "Yvonne Inciarte",
+      "row_sha256": "107fa70a6c5def9a4c3ff49b18d0099bf1d529b86ff0c394ad3b961916972b1f"
+    },
+    {
+      "position_id": "CA2026-105",
+      "recommended": "Eric Crutchlow",
+      "row_sha256": "f8bd80fdcc249940b8b63436382b7d1f91712df6ecab2ad732c5cbfec4430a2e"
+    },
+    {
+      "position_id": "CA2026-107",
+      "recommended": null,
+      "row_sha256": "4304f4601ccc2e91bdc1f015d0043da36486ae06cd434fd51a398d8ffcf1946e"
+    },
+    {
+      "position_id": "CA2026-283",
+      "recommended": null,
+      "row_sha256": "1862fe4e95bb058e1984dba17cf847623d19136e01b3a202177d3ae66e0290e9"
+    },
+    {
+      "position_id": "CA2026-284",
+      "recommended": null,
+      "row_sha256": "4c4f1c09d59e5d5d4966b98bad0758b7dc85307b987b2975f0012a13e28abe8c"
+    },
+    {
+      "position_id": "CA2026-280",
+      "recommended": null,
+      "row_sha256": "8690b31970163698af430fe47089c7dd8a463e11b9b439a085fefaf047b75ee2"
+    },
+    {
+      "position_id": "CA2026-281",
+      "recommended": "Melanie Olson",
+      "row_sha256": "f3130c4df84038ce0b6618b10e3aa65f4f220993410b291a528c2cfdfbeab991"
+    },
+    {
+      "position_id": "CA2026-282",
+      "recommended": "Eddie Flores",
+      "row_sha256": "8e2767c56bab3b31bf72b4fab427298e3bddfa38b3c375fd776cc6495c2e32f5"
+    },
+    {
+      "position_id": "CA2026-108",
+      "recommended": null,
+      "row_sha256": "a8bbd765a5c4eb692a8fbd9caa7ea02b95ab39af671644dc478c2d659083ee18"
+    },
+    {
+      "position_id": "CA2026-109",
+      "recommended": null,
+      "row_sha256": "e50766848d54aa47750061b9ffcdf4c0cceac78170947a91ebda837506c41e3d"
+    },
+    {
+      "position_id": "CA2026-110",
+      "recommended": null,
+      "row_sha256": "f6f83280290942620a7d31bf4742d484971a63dfe2fa327e1fd911b73a1dae7e"
+    },
+    {
+      "position_id": "CA2026-082",
+      "recommended": "Victor Lopez Pulido",
+      "row_sha256": "9c83b4674ff51eb179a4705fcb46dbc29024b14544513bdeca2bf1ef96cc0bc4"
+    },
+    {
+      "position_id": "CA2026-083",
+      "recommended": "Cheris Crocker-Root",
+      "row_sha256": "d542e5e5a7536456733707ff5c73c6afe8363b1a3e39a048fd05f6591cdda345"
+    },
+    {
+      "position_id": "CA2026-084",
+      "recommended": "Qasim Lodhi",
+      "row_sha256": "4be48c52cdf75cf4571404c03378cbf7646b89638f30465380d0f4135546322e"
+    },
+    {
+      "position_id": "CA2026-342",
+      "recommended": "Cherise Marie Khaund",
+      "row_sha256": "b6c624b871d12e91dcb0dab9834d22c8f001eacc92c6b67fcccbacb40db1db27"
+    },
+    {
+      "position_id": "CA2026-343",
+      "recommended": null,
+      "row_sha256": "35a9e541f9d77dab30d2a6adf82fcc3c1a856afedca07c2be09b179b7052f80e"
+    },
+    {
+      "position_id": "CA2026-252",
+      "recommended": null,
+      "row_sha256": "a41fd33da7104163c7a2f579de6ccfd35812d35b3ac2c8fa98314803f6e91c9c"
+    },
+    {
+      "position_id": "CA2026-335",
+      "recommended": null,
+      "row_sha256": "b5f2a8fc5a56e7a6944423ea1dda75062852ab41936e0cdbceeea2e9fe220939"
+    },
+    {
+      "position_id": "CA2026-111",
+      "recommended": null,
+      "row_sha256": "fac44f3f0c3dfeba04389cf80cc6f52c677924a45ee11c41f2568751ef80775b"
+    },
+    {
+      "position_id": "CA2026-112",
+      "recommended": null,
+      "row_sha256": "c013a506b7118dc0e5672767098af18817f22195ead5262721752be1e72e97cf"
+    },
+    {
+      "position_id": "CA2026-324",
+      "recommended": null,
+      "row_sha256": "1b310c354bc1cc35b8ee77ad2a523236d263a71c5efbf6b6db1b6a6bb012c94d"
+    },
+    {
+      "position_id": "CA2026-269",
+      "recommended": null,
+      "row_sha256": "1d17ff1ef4cc45c607237aca9f73a300e16c6eb3d71b67e73e07babbd994752d"
+    },
+    {
+      "position_id": "CA2026-285",
+      "recommended": null,
+      "row_sha256": "9e76fef9ad66d3cb913ce7f4c00aa6c3797a91f4c9c8062fdd07135ffb885c76"
+    },
+    {
+      "position_id": "CA2026-286",
+      "recommended": null,
+      "row_sha256": "2d24b22b26d5b9db388bd32409d1a1d6c4db43da3876de252af7b5949a548648"
+    },
+    {
+      "position_id": "CA2026-347",
+      "recommended": null,
+      "row_sha256": "1a126da6b401be06105954fc662f69699eb8b9e594a2b89f6c00d47358735e6f"
+    },
+    {
+      "position_id": "CA2026-362",
+      "recommended": null,
+      "row_sha256": "1f0611489b0cbd22b2af906b13f8bd25242e11db4121d46351c85c70eae1230a"
+    },
+    {
+      "position_id": "CA2026-363",
+      "recommended": null,
+      "row_sha256": "34a252a18904dc09bd3a6f675e12ae6cf589710bc3d8a8a52486b6de1c89167a"
+    },
+    {
+      "position_id": "CA2026-113",
+      "recommended": null,
+      "row_sha256": "7cc639911e94eef85699d208556c03a60b2e6adfbbf4a2d0cba81ca2a43502e2"
+    },
+    {
+      "position_id": "CA2026-114",
+      "recommended": null,
+      "row_sha256": "3c983d7c4e20b7ca2b97384727b94e2cee4b169ae7ac35899017e08cb5a26dd9"
+    },
+    {
+      "position_id": "CA2026-140",
+      "recommended": null,
+      "row_sha256": "6019c975c1bb26a4d92d606c20c2fe5dcff6e5e1d8cdc6be882b728191d10c16"
+    },
+    {
+      "position_id": "CA2026-141",
+      "recommended": null,
+      "row_sha256": "64217c224bc09a373523dd9900a36589c5a7ca4d42d244bb9d26971236f47ae6"
+    },
+    {
+      "position_id": "CA2026-364",
+      "recommended": null,
+      "row_sha256": "91b6328ebb84ca538b47633ab7a70232b2e5fe6f9b1256a23ea3fe727081f1ab"
+    },
+    {
+      "position_id": "CA2026-348",
+      "recommended": "Brandon Dawkins",
+      "row_sha256": "7db4c862a0a4b3433eb101b057b3939b8d166350ec77928ca7c84f550f6ec003"
+    },
+    {
+      "position_id": "CA2026-115",
+      "recommended": null,
+      "row_sha256": "ffe764594ebdfe8f9cb479a137429a912ae00de9e6fd2f3bab9085bb60d8f97e"
+    },
+    {
+      "position_id": "CA2026-142",
+      "recommended": "Jamal Khan",
+      "row_sha256": "842c54e76538b923046bd4b3414b664dfd59be72bd372e8e4713dc12492b314d"
+    },
+    {
+      "position_id": "CA2026-349",
+      "recommended": null,
+      "row_sha256": "46cfa6e55931c31c177e247dd1c494b566da779a13ce67e5372a96a5af1bcf8b"
+    },
+    {
+      "position_id": "CA2026-297",
+      "recommended": null,
+      "row_sha256": "afeda723076e7cbf41c308f1b1d671fd0bfa30825b6061ebd83bddf75e9704f3"
+    },
+    {
+      "position_id": "CA2026-365",
+      "recommended": null,
+      "row_sha256": "9e253f4134287df04d7fd888a7fef5d50b1fb323b1a0d68e06fc596179c683ec"
+    },
+    {
+      "position_id": "CA2026-289",
+      "recommended": null,
+      "row_sha256": "f62c54f17e0a96aa50be55223af63cea4db667291bc06657036ac50bc8dc2c2e"
+    },
+    {
+      "position_id": "CA2026-290",
+      "recommended": null,
+      "row_sha256": "bcb9d9bea9a736f4d3ae1cedc76370f1d389deea6cb4fba606c4fd80401075f1"
+    },
+    {
+      "position_id": "CA2026-143",
+      "recommended": null,
+      "row_sha256": "06cab62e9a2bc3d32cc8a60a9d6bb3bfeeb24c0bbf2b5de397a1c24ef1c1fd3b"
+    },
+    {
+      "position_id": "CA2026-144",
+      "recommended": null,
+      "row_sha256": "1586145e493134f0d6c52736ad874fead1bbfa385e13bf27eee1c1bb052954b7"
+    },
+    {
+      "position_id": "CA2026-145",
+      "recommended": null,
+      "row_sha256": "a50d7c05d7ebf3219f72cbbbf8cdfb899e5a60cccc9b2b19f704d3d4d15f412d"
+    },
+    {
+      "position_id": "CA2026-116",
+      "recommended": null,
+      "row_sha256": "cb052dfdf7994bf4e4429299c79d44676cc29ec4b8d40575f6ec8a759205364a"
+    },
+    {
+      "position_id": "CA2026-117",
+      "recommended": null,
+      "row_sha256": "b65cc0b03c43198932fdff52b7dcb8d25b66fb1a5ec2334f0a7d34b4a8f55f5a"
+    },
+    {
+      "position_id": "CA2026-118",
+      "recommended": null,
+      "row_sha256": "d2140bfa6b51f949eaf9dd4855557c35d2a20e889e610e18251c5e5ee47b94e0"
+    },
+    {
+      "position_id": "CA2026-119",
+      "recommended": null,
+      "row_sha256": "79744e4d1641bb76d431198c597d0c6cd0f73976cb165c8a12aacccbbeaee3c8"
+    },
+    {
+      "position_id": "CA2026-120",
+      "recommended": null,
+      "row_sha256": "00c12ce9b789cfd952628d5df5e8a7ddd6da45bb7bf8b6417f5d2f2efd701e39"
+    },
+    {
+      "position_id": "CA2026-121",
+      "recommended": null,
+      "row_sha256": "0d4703084f6d87f3dfbaed29ee5612c5cf12db2809c1d4ff5e7ab7fbfc420a3f"
+    },
+    {
+      "position_id": "CA2026-345",
+      "recommended": "Cameron Sasai",
+      "row_sha256": "0b22df6439dab804841420181753b304457b40f2aac7be913a64fe1147835cc9"
+    },
+    {
+      "position_id": "CA2026-346",
+      "recommended": null,
+      "row_sha256": "e25660cb065cf8cb6e92efd8be11ee63e47935a24c8e63c6f3c14eab13f2071a"
+    },
+    {
+      "position_id": "CA2026-361",
+      "recommended": null,
+      "row_sha256": "fbcc63e925c75a66d52d6d86683fe2f4212df840f986a38a685e0128fc16b66d"
+    },
+    {
+      "position_id": "CA2026-344",
+      "recommended": null,
+      "row_sha256": "4aea3fbb77f3a729dfec7d93c92e0f35e5f02a4dabc11650e7f1847d8b3aa44e"
+    },
+    {
+      "position_id": "CA2026-359",
+      "recommended": null,
+      "row_sha256": "3ca461e146c86980c24dc7e440c780eb0df746c04ce7c176428ac10968edf5e8"
+    },
+    {
+      "position_id": "CA2026-360",
+      "recommended": null,
+      "row_sha256": "3d7d1e53a893a1c0ea9b0c6823dc60be9e630982c06a26ce87aa7519431704a7"
+    },
+    {
+      "position_id": "CA2026-204",
+      "recommended": null,
+      "row_sha256": "a6e014beec51dd184e010280e1ebb6e10e313e6960d08e041cda1aeac8f163b3"
+    },
+    {
+      "position_id": "CA2026-122",
+      "recommended": null,
+      "row_sha256": "2fd48978930d450f70b7bb3e121d110fa1e9513aa6f56dce7c097d5fc4e9cf1e"
+    },
+    {
+      "position_id": "CA2026-123",
+      "recommended": "Seema Badar",
+      "row_sha256": "50e626268111a3285d94569853c03ca0e12669f9c34fab352c0e5bc32770cdeb"
+    },
+    {
+      "position_id": "CA2026-146",
+      "recommended": "Mer Curry Nuñez",
+      "row_sha256": "2a5ed6570d410b72a6ee5b6139f96e40adefecea950f5edd6935f94f355547ef"
+    },
+    {
+      "position_id": "CA2026-147",
+      "recommended": null,
+      "row_sha256": "3cd04191b9765ca949b3ffdcd1af234248567a3ceffc17ac7e0dabdf62292c78"
+    },
+    {
+      "position_id": "CA2026-124",
+      "recommended": null,
+      "row_sha256": "2bc352c90bc1e7e090e34fea92083b7d4b703a1d4e609edbe0051f27dcab718f"
+    },
+    {
+      "position_id": "CA2026-148",
+      "recommended": "Johnny Ray Reyna",
+      "row_sha256": "a6c6440a705338ebd2506adb14944df0ff977181915cb398015de67dfa56b7ae"
+    },
+    {
+      "position_id": "CA2026-149",
+      "recommended": null,
+      "row_sha256": "488a524b26c1c9999d8bf587b8e651feb95737b35178e4adb468b41401d2f6de"
+    },
+    {
+      "position_id": "CA2026-150",
+      "recommended": "Rudy J. Rodriguez",
+      "row_sha256": "d35f14083a0a1463d4f83b6260946d6a547086bffbc614c33b5b95f3e9ace7b1"
+    },
+    {
+      "position_id": "CA2026-151",
+      "recommended": null,
+      "row_sha256": "9b7308e84f442c18452eb818d8b57a48a8ce6f014731d0f14d887f6c7dbe858a"
+    },
+    {
+      "position_id": "CA2026-152",
+      "recommended": "Naomi Nakano-Matsumoto",
+      "row_sha256": "ab8823f26e93328efe8e801caf3491a76dc29575ecef654abfd48f23c1693562"
+    },
+    {
+      "position_id": "CA2026-153",
+      "recommended": "Gabriel Gutierrez",
+      "row_sha256": "9ba01972abf21a227c01053bc8aa8f69e61acacc971c055a29cc398843b8c933"
+    },
+    {
+      "position_id": "CA2026-154",
+      "recommended": null,
+      "row_sha256": "7064ca1d5a17976a4dac45ebc01c69126930a6ee915f92cdc7679fef680dd160"
+    },
+    {
+      "position_id": "CA2026-155",
+      "recommended": "Jane Stevens",
+      "row_sha256": "58a670b38f3902cbcb49721d3a82945917d95f183d6cebfa432a6cd7e4d189db"
+    },
+    {
+      "position_id": "CA2026-125",
+      "recommended": null,
+      "row_sha256": "a737f755fe7d95ff02bc37dc067a325a7bccdcefe377f02e9ddcc032f7b268fc"
+    },
+    {
+      "position_id": "CA2026-126",
+      "recommended": null,
+      "row_sha256": "93258295589c9958d8f0dd0b32eeefddd1186a86f0c04d78cb62cdb7f66350ba"
+    },
+    {
+      "position_id": "CA2026-350",
+      "recommended": null,
+      "row_sha256": "81935de1496a2737cffd8db073fac4b539fe08be21da690c69b56c9f5ae01519"
+    },
+    {
+      "position_id": "CA2026-351",
+      "recommended": null,
+      "row_sha256": "1519f040142546ae8c27f6585cd0d9ce0c98704fa2ae1c86939e1708c1d59342"
+    },
+    {
+      "position_id": "CA2026-367",
+      "recommended": null,
+      "row_sha256": "53a8d8135e242ecf1a972e37845cd27d4a36e6e6ed044af4755e1acb50f83442"
+    },
+    {
+      "position_id": "CA2026-368",
+      "recommended": null,
+      "row_sha256": "79205135fc9d8d54bf03dd3798d9d55e5c624a5e1b3241afc0ea927e026214d5"
+    },
+    {
+      "position_id": "CA2026-352",
+      "recommended": null,
+      "row_sha256": "e128b60a2bc90884cbe178fce39635382d7626a0366b6483df44dce779dfff8a"
+    },
+    {
+      "position_id": "CA2026-369",
+      "recommended": null,
+      "row_sha256": "94374c0484f6df67d975d810e69b20ff9ffb70d6325d9eb223e2dd22e1eea780"
+    },
+    {
+      "position_id": "CA2026-127",
+      "recommended": null,
+      "row_sha256": "2ce516c300f4a59039c0fece72769d9f3e6d32f1f77f1cb5037c905c75507cc2"
+    },
+    {
+      "position_id": "CA2026-128",
+      "recommended": null,
+      "row_sha256": "89b63c0a262e6fd3c89df5ca5c86ba546cbe2eea1bb2cf30640f4ac799487051"
+    },
+    {
+      "position_id": "CA2026-129",
+      "recommended": null,
+      "row_sha256": "d9eeead909be09924a79bb499965c666551607f1ddabdf88cea1764630b04b03"
+    },
+    {
+      "position_id": "CA2026-156",
+      "recommended": null,
+      "row_sha256": "3c0271f46340e7eca901a1cadec68352a4c83e8b0a2183f0c600d4bb50980c23"
+    },
+    {
+      "position_id": "CA2026-157",
+      "recommended": null,
+      "row_sha256": "723d27398cfc2ad9c9798e57718895c23667662abe29e2604d40d17120d4bb62"
+    },
+    {
+      "position_id": "CA2026-370",
+      "recommended": null,
+      "row_sha256": "2c7fdeabd1d1d79a4af37ed6355b95f1f01a526fff882fcdeba4ab28124f2aee"
+    },
+    {
+      "position_id": "CA2026-371",
+      "recommended": null,
+      "row_sha256": "98c46765f25b01492b06635142f4a31b5bb623329261cae51c205593cec1c26e"
+    },
+    {
+      "position_id": "CA2026-298",
+      "recommended": null,
+      "row_sha256": "56dd01324107e1b3dba40a379ca4f562bc9009584aa9c8a6a4fbb4b8d73aeac7"
+    },
+    {
+      "position_id": "CA2026-158",
+      "recommended": null,
+      "row_sha256": "2656212f7d67c5283b1799830c17bddd36cece0bd3db052f41dc8abe0785df10"
+    },
+    {
+      "position_id": "CA2026-372",
+      "recommended": null,
+      "row_sha256": "1f27e7fc2707a443c64e00a9a57aef85a073b8db2df4a23496a657f601ef6f37"
+    },
+    {
+      "position_id": "CA2026-159",
+      "recommended": "Jason Amezcua",
+      "row_sha256": "08958a40c474fb3554fbe66553b978e1ee7c31fe3ac11c6b1b5d60a705686875"
+    },
+    {
+      "position_id": "CA2026-160",
+      "recommended": "John T. Horner",
+      "row_sha256": "6df6e308835edb1a2aaca7a32e698640284eac215d1faa7c702e7a358024e1c2"
+    },
+    {
+      "position_id": "CA2026-161",
+      "recommended": "Sarah Northrup Gadus",
+      "row_sha256": "bdcc9a3e23c54ccb58f0eeaadf6ce507ee7c7b20bb1a8b5be75724160337bb69"
+    },
+    {
+      "position_id": "CA2026-162",
+      "recommended": "Claudia Ortiz",
+      "row_sha256": "f9f31b34d8b0ea84979a435054c84eec9535eee1fd8de207da212298d017d698"
+    },
+    {
+      "position_id": "CA2026-205",
+      "recommended": null,
+      "row_sha256": "9db206bc72dacb994a9935b95df662eb58a84191bff854a9c40eca50bd5351e4"
+    },
+    {
+      "position_id": "CA2026-163",
+      "recommended": null,
+      "row_sha256": "1a3e2e0f8b27bb28b275c29b7e969199a42597febdfba85cae131e89d1348980"
+    },
+    {
+      "position_id": "CA2026-164",
+      "recommended": null,
+      "row_sha256": "cf719990e02b9a077c48e7947e299c388bd091f03bbb7889c6596a64f32b6f65"
+    },
+    {
+      "position_id": "CA2026-373",
+      "recommended": null,
+      "row_sha256": "67fa5678207de3cd424673133863aad78bb89fb9bace4c9abb447f57da4b9501"
+    },
+    {
+      "position_id": "CA2026-353",
+      "recommended": null,
+      "row_sha256": "4b58cd95d243cb96bcea85236097b31d3a61f621718de56534388e25adcd459c"
+    },
+    {
+      "position_id": "CA2026-354",
+      "recommended": null,
+      "row_sha256": "622e4e4d1e140f89de3c6733aa7574852e07f0e7b22d973944387334dd695651"
+    },
+    {
+      "position_id": "CA2026-130",
+      "recommended": "Kashif Wasim",
+      "row_sha256": "beb807f9ba1a642beb988c8982e6a74b0b6a938c2474d1eff3d8e004e231fef0"
+    },
+    {
+      "position_id": "CA2026-131",
+      "recommended": "Francis Rojas",
+      "row_sha256": "b33b24626bb7e435ab78d77ad3afeb9084e5e5115bc92ef01db73d42ed3629b9"
+    },
+    {
+      "position_id": "CA2026-206",
+      "recommended": null,
+      "row_sha256": "06fef73c828f0642b41103869763ffded73c7e80b5be36ea9a0b460a040ba3bc"
+    },
+    {
+      "position_id": "CA2026-165",
+      "recommended": null,
+      "row_sha256": "17ce4de745f6de42f7c2b8daa49693fba3fb29491ed2ff38b168e608f5b47690"
+    },
+    {
+      "position_id": "CA2026-166",
+      "recommended": null,
+      "row_sha256": "ba0941dea05ed32df830e2151b4904eac8b418f6548c737c843d3164499e8046"
+    },
+    {
+      "position_id": "CA2026-167",
+      "recommended": null,
+      "row_sha256": "e66481f3e132b94855eead74009c1815d712f1a6e30bfb2124f8bd44ecd1c650"
+    },
+    {
+      "position_id": "CA2026-132",
+      "recommended": "Jennifer Brouhard",
+      "row_sha256": "a3ae655b461d3c19786d1bc98d3a08bbd474afe167829e805581d37ad8ff3f79"
+    },
+    {
+      "position_id": "CA2026-133",
+      "recommended": "Sylvia Pfeiffer Williams",
+      "row_sha256": "ad9344b2b59c26c5c3dc1bec0ba0753be613ff498099fe8140da495698715818"
+    },
+    {
+      "position_id": "CA2026-134",
+      "recommended": "Valarie Bachelor",
+      "row_sha256": "843314c7b13be50b5713e6025c70c30c7776a2d38176043b8b6db97c6218984c"
+    },
+    {
+      "position_id": "CA2026-374",
+      "recommended": null,
+      "row_sha256": "5489b9de1402ca41332eabed16d73ed615941c02b55375affb67328a740595f0"
+    },
+    {
+      "position_id": "CA2026-355",
+      "recommended": null,
+      "row_sha256": "bed4336cc2cb9270e4a54d788de8491ce48da9b17cada3ea95951408d3fbc2c7"
+    },
+    {
+      "position_id": "CA2026-375",
+      "recommended": null,
+      "row_sha256": "a76073fa2d752b65e9ff618aa4ade741af3094f4c757057a1aa4d6217160f2c4"
+    },
+    {
+      "position_id": "CA2026-207",
+      "recommended": null,
+      "row_sha256": "acbc95a154e1823f8f5d7c3bc1a720bfea8356e4bafe4a6ba74b6992537676d6"
+    },
+    {
+      "position_id": "CA2026-135",
+      "recommended": "Suzanne \"Sue\" Lee Chan",
+      "row_sha256": "a005a9d5929965c1b8181c935249bcea77bc8de08947bfd2e8843beacd709206"
+    },
+    {
+      "position_id": "CA2026-208",
+      "recommended": null,
+      "row_sha256": "b074176f96c51aa15f790a7e452d0c5a832b13eeffb62a5ad9a41fffbc3d0685"
+    },
+    {
+      "position_id": "CA2026-168",
+      "recommended": null,
+      "row_sha256": "fbb84b55badb6814d4c9d738afe5bcbb8983a64677464606bd8890db093de31f"
+    },
+    {
+      "position_id": "CA2026-356",
+      "recommended": null,
+      "row_sha256": "4d1ae687cf77da0e3108ff3d238189d6a823a1689962018c42c723ba547bda89"
+    },
+    {
+      "position_id": "CA2026-299",
+      "recommended": null,
+      "row_sha256": "fecd066851c6bfca4849c362232fcd6ad8a2c05af4c55123fe27497bf57e4928"
+    },
+    {
+      "position_id": "CA2026-300",
+      "recommended": null,
+      "row_sha256": "47c9035942a4df67ca5cb69e524119b4caca96dcb3742632f201cbf2a2853259"
+    },
+    {
+      "position_id": "CA2026-169",
+      "recommended": null,
+      "row_sha256": "faca225bd0ae89f78c5d1b9ff84f81caf8be5b699260cfe80dc06dee4ac90e00"
+    },
+    {
+      "position_id": "CA2026-209",
+      "recommended": null,
+      "row_sha256": "94d7a370bc0f360a70a220228b5e540ffc78b4c9bd8eb336458a34e310407a86"
+    },
+    {
+      "position_id": "CA2026-136",
+      "recommended": "Sandra Weese",
+      "row_sha256": "47b919f44f813869084e8c8ab38c3935aca318dfc0f94162ac3b57e977341842"
+    },
+    {
+      "position_id": "CA2026-210",
+      "recommended": null,
+      "row_sha256": "274fbc338c36dfcf8626dee274015393115f1d38f76017537b4019735dc71386"
+    },
+    {
+      "position_id": "CA2026-376",
+      "recommended": null,
+      "row_sha256": "1c36692c204f443aeb97884afb91504ccee0518e1990ca56b7a033bea4f86b22"
+    },
+    {
+      "position_id": "CA2026-211",
+      "recommended": null,
+      "row_sha256": "525647389cf36edd5495812835a8af427651ec2a57dad7e3ae343ae5de417148"
+    },
+    {
+      "position_id": "CA2026-137",
+      "recommended": null,
+      "row_sha256": "667281a076fd014816dd864294061cfb21537bf3b2060d0d37075aff72a9a1b6"
+    },
+    {
+      "position_id": "CA2026-301",
+      "recommended": null,
+      "row_sha256": "6e659f3b3bda7514c5ef86f9d97b1c177eef86430c25585421347e060b581446"
+    },
+    {
+      "position_id": "CA2026-242",
+      "recommended": "Bunny McFadden",
+      "row_sha256": "bf9b2dc3329db55fb5419f6a7a0fd71299470ced10fee0e347cda0eb03d2c425"
+    },
+    {
+      "position_id": "CA2026-243",
+      "recommended": "Ruth Ferguson",
+      "row_sha256": "7b1c9f13dee45401b87a66acae46db5df07be1e49b5c2dd4b21c46873ca5ce04"
+    },
+    {
+      "position_id": "CA2026-241",
+      "recommended": "Ryan Hazelton",
+      "row_sha256": "4cf8adc0afaa81fde4369c7090792b880e9c67dc421956ef7eaf4fe9b7be118e"
+    },
+    {
+      "position_id": "CA2026-138",
+      "recommended": null,
+      "row_sha256": "34fc4a956881121cc84c91d61c5936de19fad0927cdee48d7e48ae926571421c"
+    },
+    {
+      "position_id": "CA2026-170",
+      "recommended": "Tomara Hall",
+      "row_sha256": "61e9a0694a3c720f2a0a20509e2a03039e147949bec9be9d960fbfb35c824b56"
+    },
+    {
+      "position_id": "CA2026-171",
+      "recommended": null,
+      "row_sha256": "c5bc394f26f586aa59a7b0c594c7c21bf044e43519358bd43050a98e49ebd302"
+    },
+    {
+      "position_id": "CA2026-172",
+      "recommended": null,
+      "row_sha256": "13a0725ec9e5bcd63069165cf57d8a915fe9d29a3bdd8c619e553c5d5164cd49"
+    },
+    {
+      "position_id": "CA2026-212",
+      "recommended": null,
+      "row_sha256": "54b719ed0bb31cc49a1610019421d4b1216b8a43ca9da4e642e09a86b9988a43"
+    },
+    {
+      "position_id": "CA2026-213",
+      "recommended": null,
+      "row_sha256": "9e319f3fa34dfa6255e92ad84051affd282a4eec1094530c4c65d22df40bb022"
+    },
+    {
+      "position_id": "CA2026-214",
+      "recommended": null,
+      "row_sha256": "cf9f1e9c1afe3950f783477b0480105823fe5ffbfb0b6e32af102ec7e7e5cf05"
+    },
+    {
+      "position_id": "CA2026-215",
+      "recommended": null,
+      "row_sha256": "5bdb19a52ddb10274272046bd376102cb34c1bbb11d5de83e1dc5af621cc2434"
+    },
+    {
+      "position_id": "CA2026-216",
+      "recommended": null,
+      "row_sha256": "f1c21d301e9947e853e7e4beb946c3049fb34eb45f3b5e5c2ea5d78e8295a208"
+    },
+    {
+      "position_id": "CA2026-287",
+      "recommended": null,
+      "row_sha256": "27c3ad7ce33847a35fa5b6ac14a05fb520d0ed4af9a976a58f93be0d791d13d5"
+    },
+    {
+      "position_id": "CA2026-288",
+      "recommended": null,
+      "row_sha256": "6490ef8558455cb398d915feec79f8ef5cffb0fb210fbd9c32d3d8495cf809b9"
+    },
+    {
+      "position_id": "CA2026-293",
+      "recommended": null,
+      "row_sha256": "f9cd1f2155c24335ef06f353cb9fb94d04149154507c23f0b0230a85a0e590a7"
+    },
+    {
+      "position_id": "CA2026-294",
+      "recommended": null,
+      "row_sha256": "72586d58ac89fb872c86f173282a4e4b67cd49b3574eb0494da45454c799f440"
+    },
+    {
+      "position_id": "CA2026-357",
+      "recommended": null,
+      "row_sha256": "acf93b85921105455efeb2831baef281f21998299524d24c3fada55ddfc2e8e1"
+    },
+    {
+      "position_id": "CA2026-173",
+      "recommended": "Raeena S. Lari",
+      "row_sha256": "d541dd78232d78efe4e2a9187b44184098b19a7957c944a62ac01f86c1d30abe"
+    },
+    {
+      "position_id": "CA2026-174",
+      "recommended": "Kamal Yassin",
+      "row_sha256": "62159137652ad49619da1298307f06861e75780aed2304af75ad1ed5698f3599"
+    },
+    {
+      "position_id": "CA2026-175",
+      "recommended": null,
+      "row_sha256": "13767b03a4b3492b1617d076ae1c805977a25c77eedf39f7363b4fc121bf43f5"
+    },
+    {
+      "position_id": "CA2026-295",
+      "recommended": null,
+      "row_sha256": "627ae811994c221bbb3fa8645746550eb810ba1ed4455294551aba5e381fd2dd"
+    },
+    {
+      "position_id": "CA2026-296",
+      "recommended": null,
+      "row_sha256": "bc20f96367a4e8c0e00d43efdc0ee52fe8c19cb64e623a386c15566cd872a669"
+    },
+    {
+      "position_id": "CA2026-291",
+      "recommended": null,
+      "row_sha256": "c3f2ac6cef803c4ebdd3ce4ece4717335a374176295fc58717510bbdf51e9963"
+    },
+    {
+      "position_id": "CA2026-292",
+      "recommended": "Frank Lara",
+      "row_sha256": "c5f26cc8c31e86c25376d370dad5741a9359a46f5477d605e9f4da56b790d7e0"
+    },
+    {
+      "position_id": "CA2026-176",
+      "recommended": null,
+      "row_sha256": "1f9e96b8ff28ede46374b7d214200a9880f345d4937966c58cf7ae9082f149da"
+    },
+    {
+      "position_id": "CA2026-139",
+      "recommended": null,
+      "row_sha256": "7ba98939acaf990dc336ec599c12f9f8b1139f642adeda86cc364d948a46850c"
+    },
+    {
+      "position_id": "CA2026-358",
+      "recommended": null,
+      "row_sha256": "9bcbc21e6dcb6f7b147da83d52edefa6651bd10db00a043af4632168bdd55611"
+    },
+    {
+      "position_id": "CA2026-177",
+      "recommended": "Anne J. Kepner",
+      "row_sha256": "bb0b037a5b99b38ab7d0939cd48945dbe03aba1e1360429f39a186ea6cc67e3a"
+    },
+    {
+      "position_id": "CA2026-178",
+      "recommended": null,
+      "row_sha256": "4eb6e9a3e4ae0c58ce4c151bfc6d1d6817991fb6de0e2dc2c878031ae028cabc"
+    },
+    {
+      "position_id": "CA2026-179",
+      "recommended": null,
+      "row_sha256": "dea5b2319da009b06ac12df2efbc26eabf67cf96d8e922d9d72c9e043f5a6457"
+    },
+    {
+      "position_id": "CA2026-180",
+      "recommended": null,
+      "row_sha256": "ddc859d27850d8afceb4ec3539cffa0223a14c539bdd2eb6e0c8cd5833c96c9b"
+    },
+    {
+      "position_id": "CA2026-181",
+      "recommended": "Paul Sethy",
+      "row_sha256": "ff12e354520b76806a36dc8bc1d228c2d74d83b07345345ec26cae5a5c760a71"
+    },
+    {
+      "position_id": "CA2026-217",
+      "recommended": null,
+      "row_sha256": "65a3ab8da1c80381a782d3851ad5ea56865f26358c2a43251a49ae91a700ff05"
+    },
+    {
+      "position_id": "CA2026-182",
+      "recommended": null,
+      "row_sha256": "0b5119cd4a227ad76ec9844d8166d169b4627a064c18599574b6a59b6d06bb96"
+    },
+    {
+      "position_id": "CA2026-183",
+      "recommended": "Sarah Syed",
+      "row_sha256": "a4560b841570e4d5cfbcf5ce6e71db52444ae3bdc4f0331624f3b7b42ec5e64e"
+    },
+    {
+      "position_id": "CA2026-184",
+      "recommended": null,
+      "row_sha256": "bd024786d876a31b2f6f0c769839dafb81579557f8c786f0a7777b913a91a440"
+    },
+    {
+      "position_id": "CA2026-218",
+      "recommended": null,
+      "row_sha256": "97634571674b26735525d403bfa4e1882641517a2a4cedc15b18893fddc4f14f"
+    },
+    {
+      "position_id": "CA2026-387",
+      "recommended": null,
+      "row_sha256": "f6d42a0b9d512c7474235ffd92d7957f0c13075b007ee2988d2336487531e661"
+    },
+    {
+      "position_id": "CA2026-388",
+      "recommended": null,
+      "row_sha256": "ff2381bc7707076f03cc7154a6e49eb983406bae2f898afab880307dd3efd71a"
+    },
+    {
+      "position_id": "CA2026-389",
+      "recommended": null,
+      "row_sha256": "3cd6fa68f6a20c62f8d6af54cd6f7ddb3d7821786c70e2859e55cb9f0ff50ded"
+    },
+    {
+      "position_id": "CA2026-391",
+      "recommended": null,
+      "row_sha256": "ea370ebb03d937436f2a37116ca58bd7af476ce866e4d12a51c7096941b5403a"
+    },
+    {
+      "position_id": "CA2026-390",
+      "recommended": null,
+      "row_sha256": "b055007f2014fb0941d077e14ededb343fd2041f0c633217d0d14f64b0a135fd"
+    },
+    {
+      "position_id": "CA2026-219",
+      "recommended": null,
+      "row_sha256": "fa9225219b8b630046eb0b18dc874b4ef3a3459ff486a94b8f07e5f1b9389d8e"
+    },
+    {
+      "position_id": "CA2026-392",
+      "recommended": null,
+      "row_sha256": "0ac68e9608687d4ed10e615f978f9cc45084e6f07d2108b4fa1126468ac9aafa"
+    },
+    {
+      "position_id": "CA2026-393",
+      "recommended": null,
+      "row_sha256": "0f5f53e865544c31b31e17c47eb041102a2a6a5f906f35b32808268792e6199d"
+    },
+    {
+      "position_id": "CA2026-185",
+      "recommended": null,
+      "row_sha256": "45c47294f2722b91408dfa1e0dca153fd577d95360512a90a5357c34c1fd9254"
+    },
+    {
+      "position_id": "CA2026-383",
+      "recommended": null,
+      "row_sha256": "955c11a7651fb56aaf0e485fb80d3b9ce19b80a1f613fd9949561b15f33e88e8"
+    },
+    {
+      "position_id": "CA2026-394",
+      "recommended": null,
+      "row_sha256": "532e5ce8e74a14ee780c13626e4fcc3841051b41905b2442788c14214c274a90"
+    },
+    {
+      "position_id": "CA2026-304",
+      "recommended": null,
+      "row_sha256": "f2c162494fbe77508a9baa3fc566b8f54f58023b74fb74497b7f78d3d48b3faa"
+    },
+    {
+      "position_id": "CA2026-305",
+      "recommended": null,
+      "row_sha256": "39e54cf9017bc7eec6d46ed5463b69e69bea719ba78f8e45f442b8c52404fbbc"
+    },
+    {
+      "position_id": "CA2026-306",
+      "recommended": null,
+      "row_sha256": "8f04ec2914218b1665cda0dbd07f4c72c0c176401e362d28d32646fa95943f6e"
+    },
+    {
+      "position_id": "CA2026-395",
+      "recommended": null,
+      "row_sha256": "6d6621b9681b72cc4c6a4cce6d268900ed16c397d1f09853416b916810457f1c"
+    },
+    {
+      "position_id": "CA2026-386",
+      "recommended": null,
+      "row_sha256": "9f68447079e55656914dd65c85523cf0869985e8d3b817ac6bf5de3e6602479b"
+    },
+    {
+      "position_id": "CA2026-396",
+      "recommended": null,
+      "row_sha256": "d4b604e8b41439df0dafbdb58f2cf9a89eb924aa13810071f32dad1190797da9"
+    },
+    {
+      "position_id": "CA2026-199",
+      "recommended": null,
+      "row_sha256": "6024adbaa19b853057fa29f91b5a3ce53c19db884c1bc8f9d38a1d43db35ad69"
+    },
+    {
+      "position_id": "CA2026-377",
+      "recommended": null,
+      "row_sha256": "7c8c3915ed09d1e0cdd92f4c17fc99154b06681c4023526b4bf918d21e12ccc0"
+    },
+    {
+      "position_id": "CA2026-397",
+      "recommended": null,
+      "row_sha256": "0576b8699358d128bf56a155b8f6daf18e22bc013747ed703241c69f8886a255"
+    },
+    {
+      "position_id": "CA2026-398",
+      "recommended": null,
+      "row_sha256": "70387a5b8a76f46ee7bc8398bc7d53c6d3822816715962f46f0d05cc74865a3b"
+    },
+    {
+      "position_id": "CA2026-399",
+      "recommended": null,
+      "row_sha256": "499ed85d743ba372e2c387223199afc4a6d47ae46d7957b407d777900cf3948d"
+    },
+    {
+      "position_id": "CA2026-378",
+      "recommended": null,
+      "row_sha256": "116bc2c91c7ee3109160f4b8b078f3de60c1ba8c9704fc69fcbce9de8da1ec74"
+    },
+    {
+      "position_id": "CA2026-220",
+      "recommended": null,
+      "row_sha256": "012534fd4a46e74a168981ef1cacce4c00d6c48401c1edfe36d5b645936c16f7"
+    },
+    {
+      "position_id": "CA2026-186",
+      "recommended": null,
+      "row_sha256": "6065821d55fb5b4ee0bca3e4aba3428888d2c986771626636616a52d1bd2d16a"
+    },
+    {
+      "position_id": "CA2026-187",
+      "recommended": null,
+      "row_sha256": "030875907c237a99468af29f831f1823f101f894da47b87527870ddc5256706c"
+    },
+    {
+      "position_id": "CA2026-188",
+      "recommended": "William Yragui",
+      "row_sha256": "33623c3a47d8393929d2a568a88eda24fa3470142b3cfd9ee9c5471e57c4ac35"
+    },
+    {
+      "position_id": "CA2026-189",
+      "recommended": "Olivia Sanwong",
+      "row_sha256": "37d495b4159b51c39b584b64a6922b774af6cbf2b5df907129fe95ea928a212c"
+    },
+    {
+      "position_id": "CA2026-401",
+      "recommended": null,
+      "row_sha256": "67823ba95081766e98722529ab2667f837e79f68c5487c72c162ad41b1af366b"
+    },
+    {
+      "position_id": "CA2026-381",
+      "recommended": null,
+      "row_sha256": "9cfe984d270cdb2944eed7ecb6e1fe26848474832ecde0b5b2077033d9219dc6"
+    },
+    {
+      "position_id": "CA2026-402",
+      "recommended": null,
+      "row_sha256": "cf4f20363cefbdfc7a19d919843d5b79f1c26a3ac7fdd041151690f3701498e3"
+    },
+    {
+      "position_id": "CA2026-403",
+      "recommended": null,
+      "row_sha256": "110744be421d0f8712864fe21ba4bd2c5ebfa3059cdf93a2061f7e5ed453eed6"
+    },
+    {
+      "position_id": "CA2026-221",
+      "recommended": null,
+      "row_sha256": "ce0791693e14c38c6ecef17f11ed5463e5a5f284de118272d781a91dbcf41d88"
+    },
+    {
+      "position_id": "CA2026-190",
+      "recommended": null,
+      "row_sha256": "b78fbf965ec0c6b48315b58dfa556d81a1b4d97147600882f5b98a5181a3c836"
+    },
+    {
+      "position_id": "CA2026-222",
+      "recommended": null,
+      "row_sha256": "ab92bfe8f8a4064ffad71812d739281b277cc37c1bb55740b9f206e0aaabdb8b"
+    },
+    {
+      "position_id": "CA2026-191",
+      "recommended": null,
+      "row_sha256": "8bea717fefc0f61be44e8c5c702b84ccd633616d9b4de45b7df19c11016083c3"
+    },
+    {
+      "position_id": "CA2026-307",
+      "recommended": null,
+      "row_sha256": "62fc809e9d0c3bd583fa518c83a56035e70df199f89460c41934ae8e324af6e4"
+    },
+    {
+      "position_id": "CA2026-404",
+      "recommended": null,
+      "row_sha256": "becdbc689ad51075e4db78ce6d290e9aca7a0e59bcff760acdb3e25286cc3cc1"
+    },
+    {
+      "position_id": "CA2026-192",
+      "recommended": "Sara Lamnin",
+      "row_sha256": "5d17a670ccd26c7d2f317fb2acac2e5bf82a22149243b6740026da1c09904b74"
+    },
+    {
+      "position_id": "CA2026-193",
+      "recommended": null,
+      "row_sha256": "872fc396b21fb45b277cbc7c5226fc8d180327d9ee5d6baf11b1db9a734b52e2"
+    },
+    {
+      "position_id": "CA2026-384",
+      "recommended": null,
+      "row_sha256": "4c421621266898184fbfff9222f863e7826ae4e440aaff362bcc3f2d7c826c87"
+    },
+    {
+      "position_id": "CA2026-405",
+      "recommended": null,
+      "row_sha256": "600ad5cbf33876f01308f74ad35787cf79c75b29cc90a0142087e61054c3f413"
+    },
+    {
+      "position_id": "CA2026-406",
+      "recommended": null,
+      "row_sha256": "f9f25cccf64eb0af2ee6b8b5d921a1b3357ba13f4ca3ffc7f490b10da5586744"
+    },
+    {
+      "position_id": "CA2026-194",
+      "recommended": null,
+      "row_sha256": "e6a7dcc7b22d8904debcc8767fc24bbe344b2752bb6076f7e0a38a82e581cb8f"
+    },
+    {
+      "position_id": "CA2026-200",
+      "recommended": null,
+      "row_sha256": "edc042cfce4f66694c3e8cefff2ea934dded05da2d246ff44326dea84f1d1184"
+    },
+    {
+      "position_id": "CA2026-407",
+      "recommended": null,
+      "row_sha256": "f941f96750fa1930a03d8ad155e72f7a092c353d1d341f2ddf82da03fdf3b725"
+    },
+    {
+      "position_id": "CA2026-379",
+      "recommended": null,
+      "row_sha256": "f6abf14bdcb98f4664b299a4ad18f5e17c95816328e971e5648a8c1701ca257f"
+    },
+    {
+      "position_id": "CA2026-380",
+      "recommended": null,
+      "row_sha256": "fea1d0fe1fec13cd0884fa342322fb1270387416be535984c307c1e6ad79937a"
+    },
+    {
+      "position_id": "CA2026-408",
+      "recommended": null,
+      "row_sha256": "c7a8f9bea5b2ffa6c8a7dc13a596f85b8d32921a31ee7574f9ae791a848ef27e"
+    },
+    {
+      "position_id": "CA2026-385",
+      "recommended": null,
+      "row_sha256": "a12794b423be05bcec92bfb8ce5d5537df5dcc1da828f8cebceac234972b0f21"
+    },
+    {
+      "position_id": "CA2026-409",
+      "recommended": null,
+      "row_sha256": "75ed6a4ab1f182586d4b2ad18fbd94754591d6f33ed07e580370c628a478d6d6"
+    },
+    {
+      "position_id": "CA2026-195",
+      "recommended": null,
+      "row_sha256": "b173ebee5a84fba49a4bcdb2328d0bd4b92d7e2ef6d6dab8514b191544c709d2"
+    },
+    {
+      "position_id": "CA2026-196",
+      "recommended": null,
+      "row_sha256": "af9783097ff018adbb5780413526dfcfc6da7044b604d446ea58a4d4f7bfb238"
+    },
+    {
+      "position_id": "CA2026-197",
+      "recommended": null,
+      "row_sha256": "480a5e1d1fa1a7f1975407ed8e2cf3977bb709f0b22d1ea7f2c90b240cfe3a15"
+    },
+    {
+      "position_id": "CA2026-382",
+      "recommended": null,
+      "row_sha256": "23e0693a20d089ae667dbbe71092759151fa4efe34dba1a3c03db0f0ef248584"
+    },
+    {
+      "position_id": "CA2026-411",
+      "recommended": null,
+      "row_sha256": "c2b123dfb602613ef612bf47316412232578e0defbec19892073348aa6ae49e5"
+    },
+    {
+      "position_id": "CA2026-198",
+      "recommended": null,
+      "row_sha256": "b75c1d9f41618a38dae2740308caa267d14deee9e1250518bc0e1b1eab36b6b2"
+    },
+    {
+      "position_id": "CA2026-223",
+      "recommended": null,
+      "row_sha256": "7be68d13def51271359a9549c9314786f8639525efb652daf17c48d794516f0b"
+    },
+    {
+      "position_id": "CA2026-244",
+      "recommended": null,
+      "row_sha256": "568e33e59e81116806c895b8d7cb88efd014be2866f267228133d43bfe116f2e"
+    },
+    {
+      "position_id": "CA2026-412",
+      "recommended": null,
+      "row_sha256": "2b5078e337d0440706e222ac376de1bc4a3796d4e373b2a860f2b4e342b0de9b"
+    },
+    {
+      "position_id": "CA2026-201",
+      "recommended": null,
+      "row_sha256": "23db4f6b8bc217b5d24ece165cefcfc9cdbf1444476e9c8f488d64339dc5e049"
+    },
+    {
+      "position_id": "CA2026-202",
+      "recommended": null,
+      "row_sha256": "0ca54e9d70d427b9d58304d284fd55d3ed3fe81658f4c2e76d580523018b4e30"
+    },
+    {
+      "position_id": "CA2026-203",
+      "recommended": null,
+      "row_sha256": "da04ea8b8615be684d0074ec8e3aa0515b4846865640c3cd98c7f123d90b6393"
+    },
+    {
+      "position_id": "CA2026-413",
+      "recommended": null,
+      "row_sha256": "915a5884e2fad4f8a5eac540e4a345c6e8cc1b8454bebbc5658b109d5212f5a6"
+    },
+    {
+      "position_id": "CA2026-400",
+      "recommended": null,
+      "row_sha256": "d7c99cb444f677ab317419b3842ce9351d16ae9733f9257f0a4235629c85be8b"
+    },
+    {
+      "position_id": "CA2026-224",
+      "recommended": null,
+      "row_sha256": "219a254c7ad706d65d6abd3f4ac365c04ae5cea885dec3774bc7e9229a5a64c0"
+    },
+    {
+      "position_id": "CA2026-414",
+      "recommended": null,
+      "row_sha256": "bf5aff8fb4da71f1d29ebfd163a7beaabefb34a61e4976134baa0abf614a68a7"
+    },
+    {
+      "position_id": "CA2026-415",
+      "recommended": null,
+      "row_sha256": "52666da6fa10e84634aa135b1c7956ef9afd34582d81e91013ca1ac3f69e4480"
+    },
+    {
+      "position_id": "CA2026-416",
+      "recommended": null,
+      "row_sha256": "cdf9a7e57f8e11882091a2e6d4d5319119c22b3abbdf2f9f6114d72ef5fb0277"
+    }
+  ]
+}

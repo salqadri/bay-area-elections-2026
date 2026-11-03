@@ -2,8 +2,10 @@
 
 PR #23 is held for review, not merged or deployed. Read
 [the review handoff](research/fresno/review-2026-11-03/README.md) before changing
-its publication or recommendation plan. Preserve prior choices/prose and exact
-model inputs/answers; no model reruns or deployment are needed to resume review.
+its publication or recommendation plan. The owner approved retaining Hermes’s 179 refreshed race summaries and four changed
+selections, with Aisha Wahab’s congressional-vote attribution corrected manually.
+Preserve that accepted plan and exact model inputs/answers; no model reruns or
+deployment are needed to resume review.
 The PR #22 authorization below concerns its historical release only.
 
 # November 3 release

@@ -1,3 +1,17 @@
+## PR #23 — owner-approved race refresh, held for review
+
+The owner approved retaining Hermes’s **179 refreshed race summaries** and
+**four changed selections** in the Fresno PR, for **179 selected races** across
+737 plan rows. Mark Warner and Sandra Weese gain recommendations; Ryan Hazelton
+replaces Virginia Cheung; Bunny McFadden replaces Leah LaCroix. Aisha Wahab’s
+university-defunding vote is described as a **congressional** vote. Her corrected
+paragraph is explicitly marked as a factual editorial correction; the original
+Qwen output remains in the cache. Candidate scores, thresholds and saved grading
+requests/answers are unchanged. [Approval receipt and handoff](../research/fresno/review-2026-11-03/README.md).
+
+The PR remains unmerged and not deployed. The PR #22 publication notes below
+are historical and describe the production baseline.
+
 ## November 3 publication — PR #22 release
 
 Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest

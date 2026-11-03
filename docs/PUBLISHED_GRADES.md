@@ -13,6 +13,10 @@ run remain for audit. Prior published archives remain byte-identical. Earlier
 assessment text retains its original hashes in a separate Fresno binding copy.
 [Review provenance and verification](../research/fresno/review-2026-11-03/README.md).
 
+The owner also approved the 179 refreshed race summaries and four changed race
+selections, with Aisha Wahab’s congressional-vote attribution corrected manually.
+That narrative/selection approval does not change any candidate score.
+
 ## November 3 publication — PR #22 release
 
 Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
