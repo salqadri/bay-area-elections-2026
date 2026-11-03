@@ -171,6 +171,7 @@ def add_observation_context(state):
             state.setdefault('organization_context', {})[owner['name']] = {
                 'role': owner['role'], 'relevance': owner['relevance'],
                 'basis': owner['basis'], 'sources': owner['sources'],
+                **{key: owner[key] for key in ('context_weight', 'weight_note') if key in owner},
             }
         entity_id = indexes['aliases'].get(name_key(name))
         if entity_id:

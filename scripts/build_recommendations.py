@@ -380,7 +380,7 @@ ISRAEL_ALIGNED_ENDORSERS = ["aipac", "united democracy project", "dmfi",
                             "democratic majority for israel", "cufo", "cufi",
                             "christians united", "israeli-american civic", "ican",
                             "bajc", "jstreet", "j street", "hindu", "americans4hindus",
-                            "jewish democratic council"]
+                            "jewish democratic council", "alameda county jewish democratic club", "acjdc"]
 REASON_ENDORSER_RELATIONS = (None, "endorsed", "preferred", "supported", "opposed", "recommended")
 
 
@@ -407,35 +407,27 @@ def relevant_endorsements(c, position=None):
     return community, contrast
 
 
-def reason_evidence(c, position=None):
-    """Textual evidence for the reason prompt. Numeric scores deliberately excluded."""
-    lines = []
-    expl = c.get("pro_palestine_explanation") or {}
-    if isinstance(expl, dict) and expl.get("summary"):
-        lines.append("Our assessment: " + digest(expl["summary"], 460))
-    pp = c.get("platform_positions")
-    if isinstance(pp, dict) and pp.get("positions"):
-        for pos in pp["positions"][:4]:
-            t, s = pos.get("topic"), pos.get("summary") or pos.get("position")
-            if t and s:
-                lines.append(f"Platform — {t}: " + digest(s, 220))
-    for g in (c.get("gaza_evidence") or [])[:8]:
-        if isinstance(g, dict):
-            t = g.get("action") or g.get("title") or g.get("summary")
-            d = g.get("date") or g.get("as_of")
-            if t:
-                lines.append("Record" + (f" ({d})" if d else "") + ": " + digest(t, 220))
+def reason_evidence(c, position=None, data=None):
+    """Use the direct Jev evidence projection, not a shortened LLM paraphrase."""
+    from grade_gaza import build_state
+    if data is None:
+        data = json.loads(DATA.read_text())
+    position = position or {'id': ''}
+    state = build_state(position, c, data)
+    lines = ["Documented candidate record (authoritative JSON; preserve response and alignment together): "
+             + json.dumps(state, ensure_ascii=False, separators=(",", ":"))]
     community, contrast = relevant_endorsements(c, position)
     if community:
         lines.append("Muslim-community / pro-Palestine-aligned records: "
-                     + "; ".join(f"{n} ({r})" for n, r in community[:6]))
+                     + "; ".join(f"{n} ({r})" for n, r in community))
     if contrast:
         lines.append("Israel-aligned / AIPAC / Hindu-nationalist-aligned records: "
-                     + "; ".join(f"{n} ({r})" for n, r in contrast[:6]))
+                     + "; ".join(f"{n} ({r})" for n, r in contrast))
     return lines
 
 
 def reason_prompt(race, pos_by_id):
+    data = json.loads(DATA.read_text())
     cands = all_candidates(pos_by_id[race["position_id"]])
     rec = next(c for c in cands if c.get("name") == race["recommended"])
     graded = [c for c in cands if grade_of(c) and c.get("name") != race["recommended"]]
@@ -452,12 +444,12 @@ def reason_prompt(race, pos_by_id):
         lines.append(f"Our research selects {race['recommended']} as the strongest candidate in this race.")
     lines += ["", f"RECOMMENDED CANDIDATE: {rec.get('name')}"
               + (f" ({rec.get('party')})" if rec.get("party") else ""),
-              "- " + "\n- ".join(reason_evidence(rec, pos_by_id[race['position_id']]))]
+              "- " + "\n- ".join(reason_evidence(rec, pos_by_id[race['position_id']], data))]
     if graded:
         lines += ["", "OTHER CANDIDATES IN THIS RACE WE HAVE INFORMATION ABOUT:"]
         for c in graded:
             lines.append(f"{c.get('name')}" + (f" ({c.get('party')})" if c.get("party") else ""))
-            lines += ["- " + l for l in reason_evidence(c, pos_by_id[race['position_id']])[:6]]
+            lines += ["- " + l for l in reason_evidence(c, pos_by_id[race['position_id']], data)]
     else:
         lines += ["", "No other candidate in this race has a researched record."]
     framing = ("" if not federal else
@@ -492,7 +484,16 @@ def reason_prompt(race, pos_by_id):
               "contrast); never name any other endorser. Plain prose, no lists, no quotation marks, no "
               f"headings, no AI disclaimer. Name the office once. Output ONLY the paragraph."]
     from summary_source_policy import VOTER_RULES
-    lines += ['', VOTER_RULES]
+    lines += ["", VOTER_RULES,
+              "LEGISLATIVE CONSISTENCY: Each legislative action has a date/period, response, and tracker alignment. "
+              "Keep these together. Aligned means aligned with the tracker, not a negative item. "
+              "A No vote against defunding universities for boycotting Israel is aligned when the record says aligned; "
+              "never describe it as cutting the other way. A Yes vote can support an adverse bill. "
+              "Not voting, Not elected, neutral and unknown are not contrary votes. Distinguish sponsorship, "
+              "a pledge to sponsor, and a recorded vote. Do not merge differently dated bills or turn a period "
+              "into an exact vote date. Use the structured evidence, not an earlier narrative, to resolve meaning. "
+              "Write a factual comparison of the supplied observations and saved selection, without voting "
+              "instructions or identity-based appeals."]
     return "\n".join(lines)
 
 

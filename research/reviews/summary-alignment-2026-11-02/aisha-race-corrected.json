@@ -1,0 +1,30 @@
+{
+  "format": "held-race-rationale/v1",
+  "status": "held_for_review",
+  "position_id": "CA2026-003",
+  "recommended": "Aisha Wahab",
+  "text": "Aisha Wahab answered Yes at an April 2026 forum that Israel committed genocide in Gaza and introduced a California Senate resolution in August 2026 calling the war a genocide. She cosponsored the Block the Bombs Act. She carried the 2026 special election for the United States House of Representatives seat in California's 14th district despite over $2.5 million in negative advertising from AIPAC's United Democracy Project and BOLD America. CAIR Action, CAIR Action PAC, and AROC Action endorsed her. She voted against defunding universities that boycott Israel. She abstained on AB 715, a state bill creating an antisemitism coordinator. Melissa Hernandez, by contrast, declined at the same April 2026 forum to label Israel's Gaza actions genocide, and AIPAC-linked super PACs spent millions promoting her as the moderate alternative.",
+  "words": 128,
+  "model": "qwen/qwen3.8-27b + factual editorial correction",
+  "prompt_sha256": "d0f58a253e922b2cfeea935602d569f20a18064350c0a373e7ef49109dc2c2d0",
+  "generated_at": "2026-11-01T02:23:00+00:00",
+  "usage": {
+    "prompt_tokens": 1903,
+    "completion_tokens": 4505,
+    "total_tokens": 6408,
+    "completion_tokens_details": {
+      "reasoning_tokens": 4303
+    }
+  },
+  "source_candidate_request_sha256": {
+    "3d52a8442f6fb39f47328736": "1aa1b33059502c37ee5a9cc3e70b723fab95ad614641e4962359e67a0fcdd7d3",
+    "45d66bb6837c85f34ca6736c": "26239094ba7e047e25af1713d73d9ed9445ede778486f0568d2979d55a27b20f"
+  },
+  "editorial_correction": {
+    "reviewed_on": "2026-11-02",
+    "reason": "An aligned No vote was incorrectly presented as a contrary item. Preserve the vote and remove the reversed interpretation.",
+    "before_text_sha256": "f8971731bc3ce8ed918b464d71843d2727c7ec6b189a81f104de5aa03d723584",
+    "original_model": "qwen/qwen3.8-27b",
+    "score_changed": false
+  }
+}

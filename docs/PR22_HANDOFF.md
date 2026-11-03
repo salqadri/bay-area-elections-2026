@@ -17,6 +17,31 @@ have explicit revalidation receipts, not relabeled Jev answers. This has not
 been merged or deployed. Read [the selection contract and replay commands](RECOMMENDATION_SELECTION.md)
 before updating a plan or rebuilding the local preview.
 
+## November 2 questionnaire and narrative corrections
+
+The ACJDC refresh adds 53 candidate-authored evidence items from 33 questionnaires
+and fills 11 missing official endorsement records (31 current first-party records
+in total). Primary/general phases, carry-forward, and ranked preferences remain
+explicit. Question preambles, blank answers and inapplicable AB 715 questions are
+not converted into candidate positions. The club's own mission supplies its
+pro-Israel organization context, with the owner's requested low endorsement-only
+weight. Current input state is **candidate-evidence-v24-acjdc-questionnaires**.
+[Answer-by-answer report and replay details](../research/questionnaires/acjdc-2026-11-02/README.md).
+
+Current states change for **44 candidates**, listed in that report's
+`state-changes.json`. Scores, thresholds, questions and exact historical answers
+are unchanged; these new facts have **not** been evaluated. Existing explanations
+predate this source refresh. Do not claim that an old score included these answers.
+
+A separate audit of 249 distinct legislative paragraphs confirms two factual
+errors in held Qwen race outputs: Aisha Wahab's aligned No vote was called a
+contrary item, and Ro Khanna was incorrectly described as having one contrary
+vote. Both receive explicitly labeled factual editorial corrections bound to
+unchanged score requests, added as portable review outputs. The original Qwen
+text and raw Jev history remain intact. The race writer now gets complete compact
+source state, including response plus alignment, rather than a shortened LLM
+candidate narrative. [Audit scope, limits and before/after files](../research/reviews/summary-alignment-2026-11-02/README.md).
+
 ## Current working settings
 
 - Latest owner-saved questions: [`criteria-pro-palestine-v9.json`](../research/gaza-grading/criteria-pro-palestine-v9.json).
@@ -28,7 +53,7 @@ before updating a plan or rebuilding the local preview.
   grade, `pro_palestine_score_grade`, derives from the score and saved thresholds.
   The old `gaza_grade` is retired from new calls, visible results, comparisons and
   future explanation inputs. Exact historical requests/responses are retained.
-- New state version: **candidate-evidence-v23-cjd-canonical-endorsements**; the playground
+- New state version: **candidate-evidence-v24-acjdc-questionnaires**; the playground
   adds `-local-federal`. California Jewish Democrats appears under
   `organization_context` with identity only:
   > California Jewish Democrats is the renamed Democrats for Israel California (same organization; dfi-ca.org).

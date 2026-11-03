@@ -135,6 +135,24 @@ class DirectionChecks(unittest.TestCase):
 
 
 class RecommendationChecks(unittest.TestCase):
+    def test_race_writer_receives_vote_response_with_alignment_and_full_source_evidence(self):
+        data = json.loads(rec.DATA.read_text())
+        position = next(p for p in data['positions'] if p['id'] == 'CA2026-003')
+        candidate = deepcopy(next(c for c in position['candidates'] if c['name'] == 'Aisha Wahab'))
+        candidate['pro_palestine_explanation'] = {'summary': 'An earlier misleading paraphrase.'}
+        lines = rec.reason_evidence(candidate, position, data)
+        projected = json.loads(lines[0].split(': ', 1)[1])
+        row = next(r for r in projected['congressional_gaza_actions']
+                   if r['title'] == 'Defund universities that boycott Israel')
+        self.assertEqual((row['response'], row['alignment']), ('No', 'aligned'))
+        self.assertNotIn('earlier misleading paraphrase', '\n'.join(lines))
+        self.assertEqual(len(projected.get('gaza_evidence', [])),
+                         len(__import__('grade_gaza').build_state(position, candidate, data).get('gaza_evidence', [])))
+        race = next(r for r in json.loads(rec.PLAN.read_text())['races'] if r['position_id'] == position['id'])
+        prompt = rec.reason_prompt(race, {position['id']: position})
+        self.assertIn('LEGISLATIVE CONSISTENCY', prompt)
+        self.assertIn('"response":"No","alignment":"aligned"', prompt)
+
     def test_readers_embed_the_current_recommendation_plan(self):
         plan = json.loads(rec.PLAN.read_text())
         data = json.loads(rec.DATA.read_text())

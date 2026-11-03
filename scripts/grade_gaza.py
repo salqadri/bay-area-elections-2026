@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATASET = ROOT / '2026-11-03_Bay_Area_Elections.json'
 WORK = ROOT / '.research/gaza-grading'
 DEFAULT_CRITERIA = ROOT / 'research/gaza-grading/criteria-pro-palestine-v9.json'
-STATE_VERSION = 'candidate-evidence-v23-cjd-canonical-endorsements-owner-org-context'
+STATE_VERSION = 'candidate-evidence-v24-acjdc-questionnaires'
 MODEL = 'jev-latest'  # score-type questions require the current flagship model per TypeSafe docs
 
 
@@ -169,7 +169,7 @@ def endorser_key(name):
 
 
 def focused_endorsements(p, c):
-    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v6.json').read_text())
+    focus = json.loads((ROOT / 'research/gaza-grading/endorsement-focus-v7.json').read_text())
     aliases = {endorser_key(name) for entity in focus['entities'] for name in entity['aliases']}
     aliases.update(organization_registry()[2]['aliases'])
     aliases.update(owner_organization_context())
@@ -177,7 +177,7 @@ def focused_endorsements(p, c):
                     for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     original = [e for e in c.get('endorsements') or [] if endorser_key(e['endorser']) in aliases]
     for record, source in zip(observations, original):
-        if endorser_key(record['endorser']) in {'bamcaction','samirlaymoun'}:
+        if endorser_key(record['endorser']) in {'bamcaction','samirlaymoun','alamedacountyjewishdemocraticclub','acjdc'}:
             if source.get('comments'):
                 record['comments'] = [comment['text'] for comment in source['comments']]
             if source.get('recommendation_context'):
