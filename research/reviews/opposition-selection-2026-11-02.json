@@ -1,0 +1,233 @@
+{
+  "policy_version": "direction-aware-selection-v1",
+  "changed_choices": [
+    {
+      "position_id": "CA2026-112",
+      "previous": {
+        "position_id": "CA2026-112",
+        "jurisdiction": "Town of Los Gatos",
+        "office_category": "City or town",
+        "office": "Town Council Member",
+        "district_or_seat": "At-large",
+        "counties": [
+          "Santa Clara"
+        ],
+        "ballot_status": "confirmed",
+        "roster": [
+          {
+            "name": "Steve Raspe",
+            "party": null,
+            "grade": "N/A",
+            "score": 2.5,
+            "muslim": false
+          },
+          {
+            "name": "Rob Stump",
+            "party": null,
+            "grade": "C",
+            "score": 2.33,
+            "muslim": false
+          },
+          {
+            "name": "Mary Badame",
+            "party": null,
+            "grade": "D",
+            "score": 2.25,
+            "muslim": false
+          },
+          {
+            "name": "Jeff Suzuki",
+            "party": null,
+            "grade": "N/A",
+            "score": 2.85,
+            "muslim": false
+          },
+          {
+            "name": "Rob Moore",
+            "party": null,
+            "grade": "N/A",
+            "score": 2.96,
+            "muslim": false
+          },
+          {
+            "name": "Heidi Owens",
+            "party": null,
+            "grade": "N/A",
+            "score": 2.32,
+            "muslim": false
+          }
+        ],
+        "category": "jev_pick",
+        "recommended": "Rob Stump",
+        "recommend_reason": "Jev selected the strongest candidate in this race.",
+        "needs_summary": true,
+        "jev": {
+          "position_id": "CA2026-112",
+          "choice": "Rob Stump",
+          "confidence": 1.0,
+          "probabilities": {
+            "Rob Stump": 1.0,
+            "Mary Badame": 0.0
+          },
+          "model": "jev-1.14.0",
+          "request": {
+            "model": "jev-latest",
+            "state": {
+              "position_id": "CA2026-112",
+              "office": "Town Council Member",
+              "district_or_seat": "At-large",
+              "candidates": [
+                {
+                  "name": "Rob Stump",
+                  "party": null,
+                  "grade": "C"
+                },
+                {
+                  "name": "Mary Badame",
+                  "party": null,
+                  "grade": "D"
+                }
+              ]
+            },
+            "questions": {
+              "best_candidate": {
+                "type": "choice",
+                "instructions": "Choose the strongest candidate for Palestinian justice using only the supplied published letter grades. A is strongest, followed by B, C, D, E, F. Do not use outside knowledge. Choose among the strongest tied candidates when grades are equal.",
+                "criteria": {
+                  "Rob Stump": "Published pro-Palestine grade: C",
+                  "Mary Badame": "Published pro-Palestine grade: D"
+                }
+              }
+            }
+          },
+          "request_sha256": "09e8c89638ab83ed0985e20967446b578de5a64c15e2bc8e3b8ac388cb35041b",
+          "evaluated_at": "2026-10-30T15:16:08Z",
+          "response": {
+            "model": "jev-1.14.0",
+            "answers": {
+              "best_candidate": {
+                "type": "choice",
+                "choice": "Rob Stump",
+                "confidence": 1.0,
+                "probabilities": {
+                  "Rob Stump": 1.0,
+                  "Mary Badame": 0.0
+                }
+              }
+            },
+            "usage": {
+              "input_tokens": 466,
+              "output_tokens": 38
+            }
+          }
+        },
+        "summary": {
+          "position_id": "CA2026-112",
+          "text": "Rob Stump is running for At-large Town Council Member in the Town of Los Gatos. He has not called the killing in Gaza a genocide and has not backed any effort to block U.S. weapons transfers or economic aid to Israel. The Bay Area Muslim Council Action opposed Stump, but its stated reason was his record as a planning commissioner — a matter of local governance, not of Palestine policy. That distinction matters: the opposition does not rest on any contrary act or silence on the question of Israeli violence against Palestinians. Mary Badame, also on the ballot, drew opposition from the same group, but that call was tactical rather than grounded in any policy finding, and Badame herself has made no public statements or taken any actions on the Palestine question. Between two candidates neither of whom has taken a public stand on Palestine, Stump is the stronger choice because the documented reason for his opposition is a specific, bounded governance question rather than an unexplained tactical call, and nothing he has done reflects a refusal to stand with Palestinians when the moment called for it.",
+          "words": 187,
+          "model": "qwen/qwen3.8-27b",
+          "prompt_sha256": "dbcf856ee3ba984253d8ab0ffe0af742822d7baaab12736ccac9a0537ae6dda5"
+        }
+      },
+      "recommended": null,
+      "reason": "No recommendation: the available graded records contain only opposition. Other candidates remain unassessed.",
+      "selection_evidence": {
+        "Steve Raspe": {
+          "observations": [
+            {
+              "endorser": "BAMC Action",
+              "relation": "opposed",
+              "phase": "general",
+              "comments": [
+                "Because it is the highest votes winners, I suggest you vote only for two."
+              ],
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": false,
+          "opposition_only": true
+        },
+        "Rob Stump": {
+          "observations": [
+            {
+              "endorser": "BAMC Action",
+              "relation": "opposed",
+              "phase": "general",
+              "comments": [
+                "Do not vote for Rob Stump. He has been the worst planning commissioner in our experience"
+              ],
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": false,
+          "opposition_only": true
+        },
+        "Mary Badame": {
+          "observations": [
+            {
+              "endorser": "BAMC Action",
+              "relation": "opposed",
+              "phase": "general",
+              "comments": [
+                "Do not vote for Mary"
+              ],
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": false,
+          "opposition_only": true
+        },
+        "Jeff Suzuki": {
+          "observations": [
+            {
+              "endorser": "BAMC Action",
+              "relation": "supported",
+              "phase": "general",
+              "comments": [
+                "Jeff is one of the biggest supporter of diversity in one of the least diverse communities in the Bay Area."
+              ],
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": false,
+          "opposition_only": false
+        },
+        "Rob Moore": {
+          "observations": [
+            {
+              "endorser": "BAMC Action",
+              "relation": "supported",
+              "phase": "general",
+              "comments": [
+                "Rob is the youngest Mayor and a great supporter of diverse communities."
+              ],
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": false,
+          "opposition_only": false
+        },
+        "Heidi Owens": {
+          "observations": [
+            {
+              "endorser": "BAMC Action",
+              "relation": "opposed",
+              "phase": "general",
+              "comments": [
+                "Because it is the highest votes winners, I suggest you vote only for two - Rob and Jeff."
+              ],
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": false,
+          "opposition_only": true
+        }
+      }
+    }
+  ],
+  "retained_archived_choices": 160,
+  "pending_review": [],
+  "model_calls": 0,
+  "source_dataset_sha256": "6f0134a910221f8b75f0cf9e5c00e8b52606b500bdfd36f22850b84c694afba1",
+  "previous_plan_sha256": "94f05cb038954b237331d97c015d176fa602bb26a4b4d5d5f9d4994e832bb336"
+}

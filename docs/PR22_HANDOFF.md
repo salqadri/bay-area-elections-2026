@@ -5,6 +5,18 @@ from another Codex project, checkout or machine. This handoff supersedes the PR'
 initial v8 scoring-policy description. Keep the PR unmerged and production
 unchanged unless the user asks to publish.
 
+## November 2 selection guard
+
+The recommendation selector now preserves signed source observations and N/A
+candidate context. Opposition-only records from the existing recommendation
+sources cannot turn into automatic support recommendations. The PR's plan
+withdraws Rob Stump; the local latest-score review also withdraws Rommy Kushner.
+Recorded grades, score prompts and thresholds stay exact. Unassessed opponents
+stay N/A, with no automatic replacement or new protest choice. Old valid choices
+have explicit revalidation receipts, not relabeled Jev answers. This has not
+been merged or deployed. Read [the selection contract and replay commands](RECOMMENDATION_SELECTION.md)
+before updating a plan or rebuilding the local preview.
+
 ## Current working settings
 
 - Latest owner-saved questions: [`criteria-pro-palestine-v9.json`](../research/gaza-grading/criteria-pro-palestine-v9.json).
