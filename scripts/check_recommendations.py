@@ -288,6 +288,16 @@ class RecommendationChecks(unittest.TestCase):
                 if entry['recommended']:
                     self.assertIn('why', got, f'{page}:{pid} recommended pick carries a reason')
 
+    def test_publication_choice_is_explicit_and_does_not_become_a_model_answer(self):
+        plan=json.loads(rec.PLAN.read_text())
+        choices=[r for r in plan['races'] if r.get('release_choice_review')]
+        if not choices:self.skipTest('No owner-approved release choices')
+        race=deepcopy(choices[0])
+        self.assertTrue(rec.release_choice_matches(race))
+        self.assertFalse(rec.cached_pick_matches(race.get('jev'),rec.jev_request(race)))
+        race['recommended']='Unknown replacement'
+        self.assertFalse(rec.release_choice_matches(race))
+
     def test_changed_grade_or_roster_cannot_reuse_a_cached_pick(self):
         race = {'position_id': 'fixture', 'office': 'Council', 'roster': [
             {'name': 'One', 'grade': 'B'}, {'name': 'Two', 'grade': 'C'}]}

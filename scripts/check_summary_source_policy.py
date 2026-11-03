@@ -83,7 +83,7 @@ class SummarySourceChecks(unittest.TestCase):
         for p in data['positions']:
             for roster in ('candidates','filed_candidates_not_confirmed_on_ballot','qualified_write_in_candidates'):
                 for c in p.get(roster) or []:
-                    text=c.get('pro_palestine_explanation',{}).get('summary','')
+                    text=(c.get('pro_palestine_explanation') or c.get('previous_pro_palestine_explanation') or {}).get('summary','')
                     if SAMIR.search(text):remaining.append((p['id'],c['name']))
                     self.assertEqual(prose_errors(text,policy_for_candidate(p,c)),[],c['name'])
         self.assertEqual(remaining,[('CA2026-174','Kamal Yassin')])

@@ -1,3 +1,38 @@
+## November 3 publication — PR #22 release
+
+Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
+saved candidate evaluations under `jev-2026-11-03-final`. Scott Sakakihara is
+**C (2.36 / 5)** using owner prompt **v11**; the other 1,295 retain their exact
+**v10** evaluations. Both prompts, per-candidate question assignments and raw
+answers are archived; no result is relabeled as a different prompt.
+
+Saved bounds: F .74 / E 1.4 / D 2.3 / C 3.3 / B 4.4 / A through 5;
+evidence minimum **.22**, with the issue-observation guard and no confidence
+acceptance cutoff. Distribution: **A 119 · B 46 · C 21 · D 34 · E 84 · F 121 · N/A 871**.
+The newer main-branch CAL-ACCESS finance refresh is preserved.
+
+The source plan retains **177** existing eligible choices (12 community, 165
+explicit publisher carry-forwards). A release receipt records the approved
+preview and current eligibility; it is not a new provider decision or cache hit.
+The TALL guide retains its separately reviewed editorial exceptions. Harris
+Mojadedi and Mark Humbert remain publisher-withheld; N/A has no interpretation.
+
+At the owner's request, **424 earlier candidate assessments** keep their original
+request hashes in `previous_pro_palestine_explanation`, separate from the new
+scores. Both readers label them **Earlier assessment**; older race rationales
+are labeled too. These are not newly generated explanations of the latest score.
+Hermes refresh queues: `research/gaza-grading/explanation-queue-2026-11-03-final.json`
+and `research/candidate-recommendations/rationale-refresh-2026-11-03.json`.
+No model calls were made to prepare this release.
+
+Tracy Jensen's questionnaire describes an undated anti-war letter, not an
+identified ceasefire letter or a later reversal. Its current-source correction
+and independent January 2024 ceasefire-support record are preserved. Her saved
+C 2.32 predates this wording correction; the exact saved request stays unchanged.
+
+Earlier sections below describe historical releases and review stages. This
+publication supersedes their “held/unpublished” status for the selected results.
+
 # Bay Area Ballot Research Assistant
 
 **Continuing PR #22 in another session? Start with [the portable playground handoff](docs/PR22_HANDOFF.md).** Latest owner questions, thresholds and held results are committed separately from the frozen public publication.
@@ -14,6 +49,20 @@ The requested Web App and dedicated Hosting site are registered in
 recommendations are published. **51/51 release checks pass**, both production
 domains match the tested bundle, and live Chrome checks pass.
 [Setup, deployment and verification](docs/FIREBASE_HOSTING.md).
+
+Publication **2026-11-02.4** records the owner-confirmed USAMPAC endorsement
+of Shahida S. Merchant and adds the organization’s Palestine alignment to new
+Jev inputs. It preserves reported-source provenance; no public scores change.
+
+Publication **2026-11-02.3** adds an attributed community report that Gabriel
+Gutierrez supports divesting from Israel (Gavilan CCD Trustee Area 3).
+The report received November 2 is preserved in the Gaza evidence section and
+new Jev inputs; frozen scores and summaries are unchanged.
+
+Publication **2026-11-02.2** adds Shahida S. Merchant’s verified campaign site
+and five quoted general platform priorities (Gavilan CCD Trustee Area 3).
+The bounded HTML check found no Palestine-specific statement; scores, grades,
+explanations and race picks are unchanged. [Source review](docs/HANDOFF.md).
 
 Publication **2026-10-30.1** publishes owner-directed Jev criteria **v8 + v8.1**
 with all **404** fresh grade explanations and refreshed recommendations

@@ -51,8 +51,12 @@ class PublicationChecks(unittest.TestCase):
         names = {'Shruti Kumar', 'Arielle Fleisher', 'Boris Lipkin', 'Rebecca Lewington'}
         for row in self.archive['rows']:
             if row['candidate'] in names:
-                self.assertFalse(has_issue_observation(row['request']['state']))
-                self.assertEqual(row_grade(row, self.archive['score_grade_mapping']), 'N/A')
+                state = row['request']['state']
+                if state.get('gaza_evidence'):
+                    self.assertTrue(has_issue_observation(state))
+                else:
+                    self.assertFalse(has_issue_observation(state))
+                    self.assertEqual(row_grade(row, self.archive['score_grade_mapping']), 'N/A')
         # The old, unguarded publication did display D for these four. Keep that
         # historical regression independent of later owner reruns/raw answers.
         historical_archive = json.loads((ROOT/'research/gaza-grading/published-2026-10-27-evidence022.json').read_text())
@@ -92,7 +96,10 @@ class PublicationChecks(unittest.TestCase):
         for r in self.archive['rows']:
             p=projection(r,mapping,self.archive['id']);variants.add(p['pro_palestine_evaluation']['questions_sha256'])
             self.assertNotIn('pro_palestine_score_grade',r['response']['answers'])
-        self.assertEqual(len(variants),1);self.assertEqual(before,self.archive)
+        expected = {v['questions_sha256'] for v in self.archive.get('question_variants', [])}
+        self.assertEqual(variants, expected or variants)
+        if not expected:self.assertEqual(len(variants),1)
+        self.assertEqual(before,self.archive)
 
     def test_mixed_prompt_is_rejected_before_publication(self):
         a=deepcopy(self.archive);a['rows'][0]['request']['questions']['evidence_score']['instructions']='Other rubric'

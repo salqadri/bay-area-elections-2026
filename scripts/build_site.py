@@ -21,6 +21,7 @@ def recommendations_map_json():
         why = r.get("recommend_reason_text") or r.get("summary")
         if r.get("recommended") and isinstance(why, dict) and why.get("text"):
             entry["why"] = {"text": why["text"], "model": why.get("model", "")}
+            if why.get('earlier_assessment'):entry['why']['earlier_assessment'] = True
         by_position[r["position_id"]] = entry
     from datetime import datetime, timezone, timedelta
     gen = plan.get("generated_on", "")

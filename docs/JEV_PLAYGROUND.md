@@ -1,3 +1,38 @@
+## November 3 publication — PR #22 release
+
+Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
+saved candidate evaluations under `jev-2026-11-03-final`. Scott Sakakihara is
+**C (2.36 / 5)** using owner prompt **v11**; the other 1,295 retain their exact
+**v10** evaluations. Both prompts, per-candidate question assignments and raw
+answers are archived; no result is relabeled as a different prompt.
+
+Saved bounds: F .74 / E 1.4 / D 2.3 / C 3.3 / B 4.4 / A through 5;
+evidence minimum **.22**, with the issue-observation guard and no confidence
+acceptance cutoff. Distribution: **A 119 · B 46 · C 21 · D 34 · E 84 · F 121 · N/A 871**.
+The newer main-branch CAL-ACCESS finance refresh is preserved.
+
+The source plan retains **177** existing eligible choices (12 community, 165
+explicit publisher carry-forwards). A release receipt records the approved
+preview and current eligibility; it is not a new provider decision or cache hit.
+The TALL guide retains its separately reviewed editorial exceptions. Harris
+Mojadedi and Mark Humbert remain publisher-withheld; N/A has no interpretation.
+
+At the owner's request, **424 earlier candidate assessments** keep their original
+request hashes in `previous_pro_palestine_explanation`, separate from the new
+scores. Both readers label them **Earlier assessment**; older race rationales
+are labeled too. These are not newly generated explanations of the latest score.
+Hermes refresh queues: `research/gaza-grading/explanation-queue-2026-11-03-final.json`
+and `research/candidate-recommendations/rationale-refresh-2026-11-03.json`.
+No model calls were made to prepare this release.
+
+Tracy Jensen's questionnaire describes an undated anti-war letter, not an
+identified ceasefire letter or a later reversal. Its current-source correction
+and independent January 2024 ceasefire-support record are preserved. Her saved
+C 2.32 predates this wording correction; the exact saved request stays unchanged.
+
+Earlier sections below describe historical releases and review stages. This
+publication supersedes their “held/unpublished” status for the selected results.
+
 # Local Jev playground
 
 **Resume PR #22:** [portable prompt, thresholds, saved results and launch instructions](PR22_HANDOFF.md). Latest default v9 preserves the owner's October 2023 exception. Saved working bounds are **0.74 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**; the older published snapshot below retains its original mapping.
@@ -26,7 +61,7 @@ are unchanged; **Current input** previews the next request, while **State JSON**
 continues to show the exact input used for the saved result. No rerun or
 publication accompanies this local review change.
 
-Current publication **2026-10-30.1** publishes the owner-directed v8 + v8.1
+Historical publication **2026-10-30.1** publishes the owner-directed v8 + v8.1
 rerun: **1,296 evaluations**, exact **v8** questions and current **v20** inputs
 (CJD-as-DFI zionist signal, endorsement-only B cap, low-weight caste channel).
 Saved bounds are **0.7 / 1.4 / 2.3 / 3.3 / 4.4**, minimum evidence **0.22**,

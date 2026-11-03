@@ -1,3 +1,7 @@
+# November 3 release
+
+PR #22 publication is authorized. Read the current release section in docs/PR22_HANDOFF.md; historical held-review instructions below do not override that authorization. Do not rerun models or rewrite exact saved requests merely to resume work.
+
 # Continuing PR #22
 
 When working on PR #22, read [docs/PR22_HANDOFF.md](docs/PR22_HANDOFF.md) first.

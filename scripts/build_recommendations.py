@@ -672,6 +672,26 @@ def build_pages():
         print(f"Built {page}.html ({(ROOT / f'{page}.html').stat().st_size:,} bytes)")
 
 
+def release_choice_matches(race):
+    """Owner-approved carry-forward, separate from an exact provider response."""
+    receipt = race.get('release_choice_review')
+    if not receipt:return False
+    path = (ROOT/receipt['path']).resolve()
+    if not path.is_relative_to(ROOT/'research/candidate-recommendations') or hashlib.sha256(path.read_bytes()).hexdigest()!=receipt['sha256']:
+        return False
+    review = json.loads(path.read_text())
+    source = (ROOT/review['approved_preview_path']).resolve()
+    if not source.is_relative_to(ROOT/'research/candidate-recommendations') or hashlib.sha256(source.read_bytes()).hexdigest()!=review['approved_preview_sha256']:
+        return False
+    prior = next((r for r in json.loads(source.read_text())['races'] if r['position_id']==race['position_id']),{})
+    entry = next((r for r in review['choices'] if r['position_id']==race['position_id']),{})
+    eligible = eligible_candidates(race)
+    best = min((GRADE_ORDER[c['grade']] for c in eligible),default=None)
+    return bool(entry and race.get('recommended')==prior.get('recommended')==entry.get('candidate')
+                and entry.get('request_sha256')==request_hash(jev_request(race))
+                and any(c['name']==race['recommended'] and GRADE_ORDER[c['grade']]==best for c in eligible))
+
+
 def validate_plan(races, data):
     """Refuse a stale page after a new score publication or roster change."""
     expected = {r["position_id"]: r for r in classify(data, json.loads(OBS.read_text()))}
@@ -692,7 +712,8 @@ def validate_plan(races, data):
             receipt = legacy_revalidation(race)
             retained = receipt is not None and race.get('decision_revalidation') == receipt
             current = cached_pick_matches(race.get('jev'), jev_request(race))
-            if not (current or retained) or race.get("recommended") != race["jev"]["choice"]:
+            approved = release_choice_matches(race)
+            if not approved and (not (current or retained) or race.get("recommended") != race["jev"]["choice"]):
                 raise ValueError("Recommendation decision differs from current grades: " + race["position_id"])
         elif race.get("recommended") != base.get("recommended"):
             raise ValueError("Recommendation differs from deterministic rule: " + race["position_id"])

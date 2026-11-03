@@ -1,3 +1,82 @@
+## November 3 publication — PR #22 release
+
+Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest
+saved candidate evaluations under `jev-2026-11-03-final`. Scott Sakakihara is
+**C (2.36 / 5)** using owner prompt **v11**; the other 1,295 retain their exact
+**v10** evaluations. Both prompts, per-candidate question assignments and raw
+answers are archived; no result is relabeled as a different prompt.
+
+Saved bounds: F .74 / E 1.4 / D 2.3 / C 3.3 / B 4.4 / A through 5;
+evidence minimum **.22**, with the issue-observation guard and no confidence
+acceptance cutoff. Distribution: **A 119 · B 46 · C 21 · D 34 · E 84 · F 121 · N/A 871**.
+The newer main-branch CAL-ACCESS finance refresh is preserved.
+
+The source plan retains **177** existing eligible choices (12 community, 165
+explicit publisher carry-forwards). A release receipt records the approved
+preview and current eligibility; it is not a new provider decision or cache hit.
+The TALL guide retains its separately reviewed editorial exceptions. Harris
+Mojadedi and Mark Humbert remain publisher-withheld; N/A has no interpretation.
+
+At the owner's request, **424 earlier candidate assessments** keep their original
+request hashes in `previous_pro_palestine_explanation`, separate from the new
+scores. Both readers label them **Earlier assessment**; older race rationales
+are labeled too. These are not newly generated explanations of the latest score.
+Hermes refresh queues: `research/gaza-grading/explanation-queue-2026-11-03-final.json`
+and `research/candidate-recommendations/rationale-refresh-2026-11-03.json`.
+No model calls were made to prepare this release.
+
+Tracy Jensen's questionnaire describes an undated anti-war letter, not an
+identified ceasefire letter or a later reversal. Its current-source correction
+and independent January 2024 ceasefire-support record are preserved. Her saved
+C 2.32 predates this wording correction; the exact saved request stays unchanged.
+
+Earlier sections below describe historical releases and review stages. This
+publication supersedes their “held/unpublished” status for the selected results.
+
+## November 2: USAMPAC endorsement for Shahida Merchant
+
+Publication **2026-11-02.4** adds the owner-confirmed USAMPAC endorsement of
+Shahida S. Merchant (CA2026-153), reported with phase unspecified. The public
+USAMPAC homepage confirms Muslim civic engagement; its candidate directory
+returned Network Error. The owner supplies the endorsement and Palestine
+alignment. `owner-organization-context-v1.json` keeps this explicitly attributed
+context separate from the Jev-reviewed spending registry. Exact aliases enter
+new states only when observed; candidate membership is not inferred. The race
+prose policy permits USAMPAC references. Saved public scores remain frozen;
+targeted new Jev/Qwen results are held in PR #22.
+
+## November 2: Gabriel Gutierrez community report
+
+Publication **2026-11-02.3** adds **GE-1614** for Gabriel Gutierrez, CA2026-153.
+The owner relayed confirmation from local Muslim community members that he
+supports divesting from Israel. The source is explicitly `community_report`,
+with `source_observed` dating receipt of the report, not the original statement.
+The report and generated Jev state are under `research/community-reports/`.
+This does not establish a public quotation, a vote or candidate community
+membership. Schema and provenance checks now support attributed community
+reports, and both readers label the received date correctly. The collector is
+reconciled so a later research merge cannot remove this manually added report.
+No Jev call was made: current frozen scores, prompts, thresholds, explanations
+and race choices are preserved. Refresh the candidate and CA2026-153 summaries
+after the next evaluation; their held Qwen outputs predate this report.
+
+## November 2: Shahida Merchant campaign-site refresh
+
+Publication **2026-11-02.2** adds the owner-supplied campaign website for
+Shahida S. Merchant (CA2026-153, Gavilan CCD Trustee Area 3), verified against
+the exact office and area. A bounded crawl captured five unique HTML pages on
+bare/www hosts with no failures. Local Qwen extracted five general platform
+priorities; every quote passed deterministic source-containment gates.
+The source packet, Qwen response, generated Jev state and downstream review are
+under `research/campaign-issues/shahida-merchant-2026-11-02/`; the registered
+review is `research/reviews/shahida-merchant-campaign-2026-11-02.json`.
+
+Only `campaign_platform_points` is added to her generated Jev input. No Gaza,
+Israel or Palestine statement or endorsement was found in the inspected HTML;
+the linked external video was not transcribed. Her N/A, frozen scoring request
+and existing race pick are unchanged. No Jev or political narrative rerun was
+necessary. This targeted check does not advance the global roster research date.
+
 # Research and development handoff
 
 **PR #22 continuation:** [PR22_HANDOFF.md](PR22_HANDOFF.md) contains the latest owner prompt, thresholds and offline restore instructions for a fresh checkout. The held review results are newer than the public publication described below.

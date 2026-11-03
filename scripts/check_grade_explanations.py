@@ -10,6 +10,7 @@ from publish_jev_grades import ROSTERS
 
 
 def check(data):
+    check_previous(data)
     if 'explanations' not in data['pro_palestine_grading']:
         if any(c.get(EXPLANATION_FIELD) for p in data['positions'] for roster in ROSTERS for c in p.get(roster) or []):
             raise ValueError('Orphan explanations without a current archive binding')
@@ -53,6 +54,51 @@ def check(data):
     if seen != set(targets):
         raise ValueError('Missing explanations for %d published evaluations' % (len(set(targets) - seen)))
     return archive
+
+
+def check_previous(data):
+    """Earlier prose keeps its old request binding; it never explains a new score."""
+    cfg = data['pro_palestine_grading'].get('previous_explanations')
+    people = {(p['id'],c['name'],roster):c for p in data['positions'] for roster in ROSTERS
+              for c in p.get(roster) or []}
+    attached = {key:c['previous_pro_palestine_explanation'] for key,c in people.items()
+                if c.get('previous_pro_palestine_explanation')}
+    if not cfg:
+        if attached:raise ValueError('Orphan earlier summaries')
+        return
+    path = (ROOT/cfg['archive_path']).resolve()
+    if not path.is_relative_to(ROOT/'research/gaza-grading') or digest(path.read_bytes()) != cfg['archive_sha256']:
+        raise ValueError('Changed earlier-summary archive')
+    archive = json.loads(path.read_text())
+    if archive['current_publication_id'] != data['pro_palestine_grading']['publication_id']:
+        raise ValueError('Earlier summaries belong to a different current publication')
+    known = {}
+    for source in archive['source_evaluation_archives']:
+        source_path = (ROOT/source['path']).resolve()
+        if not source_path.is_relative_to(ROOT/'research/gaza-grading') or digest(source_path.read_bytes()) != source['sha256']:
+            raise ValueError('Changed earlier evaluation source')
+        for row in json.loads(source_path.read_text())['rows']:
+            known[(row['id'],row['request_sha256'])] = row
+    expected = {}
+    for entry in archive['entries']:
+        key = entry['position_id'],entry['candidate'],entry['roster']
+        row = known.get((entry['candidate_id'],entry['request_sha256']))
+        if not row or (row['position_id'],row['candidate'],row['roster']) != key:
+            raise ValueError('Earlier summary lacks its exact original evaluation')
+        if key not in people or people[key].get('pro_palestine_score_grade') not in list('ABCDEF'):
+            raise ValueError('Earlier political assessment attached to N/A or missing person')
+        expected[key] = {k:v for k,v in entry.items() if k not in ('position_id','candidate','roster')}
+    if attached != expected:raise ValueError('Earlier summary text or provenance changed')
+
+
+class PreviousExplanationChecks(unittest.TestCase):
+    def test_previous_text_is_checked_even_without_fresh_explanations(self):
+        data=json.loads(DATASET.read_text())
+        if not data['pro_palestine_grading'].get('previous_explanations'):self.skipTest('No earlier summaries')
+        check_previous(data)
+        person=next(c for p in data['positions'] for roster in ROSTERS for c in p.get(roster)or[] if c.get('previous_pro_palestine_explanation'))
+        person['previous_pro_palestine_explanation']['summary']='Tampered earlier text.'
+        with self.assertRaisesRegex(ValueError,'provenance changed'):check_previous(data)
 
 
 class ExplanationChecks(unittest.TestCase):

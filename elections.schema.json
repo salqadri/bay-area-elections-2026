@@ -11,7 +11,7 @@
    "description": "Relative link to the companion schema file, intended to reside beside this dataset."
   },
   "schema_version": {
-   "const": "1.30"
+   "const": "1.31"
   },
   "election": {
    "type": "object",
@@ -944,6 +944,9 @@
     },
     "pro_palestine_explanation": {
      "$ref": "#/$defs/proPalestineExplanation"
+    },
+    "previous_pro_palestine_explanation": {
+     "$ref": "#/$defs/previousPalestineExplanation"
     }
    },
    "required": [
@@ -3085,6 +3088,24 @@
       }
      },
      "description": "Optional reviewed layer: Hermes evidence summaries bound to the frozen explanations archive."
+    },
+    "previous_explanations": {
+     "type": "object",
+     "additionalProperties": false,
+     "properties": {
+      "archive_path": {
+       "type": "string",
+       "minLength": 1
+      },
+      "archive_sha256": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{64}$"
+      }
+     },
+     "required": [
+      "archive_path",
+      "archive_sha256"
+     ]
     }
    }
   },
@@ -3122,6 +3143,50 @@
     }
    },
    "description": "Evidence summary explaining the saved score, bound to the exact archived request. It never changes the score or grade."
+  },
+  "previousPalestineExplanation": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "candidate_id": {
+     "type": "string",
+     "pattern": "^[0-9a-f]{24}$"
+    },
+    "request_sha256": {
+     "type": "string",
+     "pattern": "^[0-9a-f]{64}$"
+    },
+    "summary": {
+     "type": "string",
+     "minLength": 1
+    },
+    "model": {
+     "type": "string",
+     "minLength": 1
+    },
+    "grade": {
+     "enum": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+     ]
+    },
+    "source_publication_id": {
+     "type": "string",
+     "minLength": 1
+    }
+   },
+   "required": [
+    "candidate_id",
+    "request_sha256",
+    "summary",
+    "model",
+    "grade",
+    "source_publication_id"
+   ]
   }
  }
 }
