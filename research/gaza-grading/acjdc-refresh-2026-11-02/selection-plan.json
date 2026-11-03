@@ -2916,90 +2916,17 @@
           "muslim": false
         }
       ],
-      "category": "jev_pick",
-      "recommended": "Mark Humbert",
-      "recommend_reason": "Jev selected the strongest candidate in this race.",
-      "needs_summary": true,
-      "jev": {
+      "category": "no_good_candidate",
+      "recommended": null,
+      "recommend_reason": "No recommendation. The available record does not establish sufficient affirmative support for Palestinian rights to recommend a candidate in this race.",
+      "needs_summary": false,
+      "owner_review_hold": {
         "position_id": "CA2026-053",
-        "choice": "Mark Humbert",
-        "confidence": 1.0,
-        "probabilities": {
-          "Mark Humbert": 1.0
-        },
-        "model": "jev-latest",
-        "request": {
-          "model": "jev-latest",
-          "state": {
-            "selection_policy": "direction-aware-selection-v1",
-            "position_id": "CA2026-053",
-            "office": "City Council Member",
-            "district_or_seat": "District 8",
-            "candidates": [
-              {
-                "name": "Fred M. Feller",
-                "party": null,
-                "grade": "N/A",
-                "observations": [],
-                "other_issue_evidence": false,
-                "opposition_only": false,
-                "selection_eligible": false
-              },
-              {
-                "name": "Mark Humbert",
-                "party": null,
-                "grade": "D",
-                "observations": [
-                  {
-                    "endorser": "Alameda County Jewish Democratic Club",
-                    "relation": "endorsed",
-                    "phase": "general",
-                    "source": "unverified"
-                  },
-                  {
-                    "endorser": "Alameda County Jewish Democratic Club",
-                    "relation": "endorsed",
-                    "phase": "unspecified",
-                    "source": "unverified"
-                  }
-                ],
-                "other_issue_evidence": true,
-                "opposition_only": false,
-                "selection_eligible": true
-              },
-              {
-                "name": "Mari Mendonca",
-                "party": null,
-                "grade": "N/A",
-                "observations": [],
-                "other_issue_evidence": false,
-                "opposition_only": false,
-                "selection_eligible": false
-              },
-              {
-                "name": "Michael Wallman",
-                "party": null,
-                "grade": "N/A",
-                "observations": [],
-                "other_issue_evidence": false,
-                "opposition_only": false,
-                "selection_eligible": false
-              }
-            ]
-          },
-          "questions": {
-            "best_candidate": {
-              "type": "choice",
-              "instructions": "Choose among selection_eligible candidates using their published letter grades: A, B, C, D, E, F. All candidates and signed source observations are supplied as context. Opposition is not support. N/A means unassessed, not favorable or unfavorable. Never infer support for an opponent from opposition alone. Do not use outside knowledge or rescore candidates. Choose among strongest tied eligible candidates.",
-              "criteria": {
-                "Mark Humbert": "Published pro-Palestine grade: D"
-              }
-            }
-          }
-        },
-        "request_sha256": "9f72e3e01df5e420142b346fa8a6d691c4c3572ec0d49515e12f34f61209ec74",
-        "evaluated_at": "2026-11-03T03:46:19Z",
-        "only_eligible_candidate": true
+        "candidate": "Mark Humbert",
+        "reviewed_on": "2026-11-02",
+        "reason": "No recommendation. The owner reviewed Mark Humbert's initial resistance to a ceasefire and ACJDC endorsement and found insufficient affirmative support to recommend him. Other candidates remain unassessed.",
+        "public_reason": "No recommendation. The available record does not establish sufficient affirmative support for Palestinian rights to recommend a candidate in this race.",
+        "note": "This withholds the race recommendation without changing scores or deleting his recorded later support for Taplin's resolution. Keep the hold until explicitly reviewed again."
       }
     },
     {

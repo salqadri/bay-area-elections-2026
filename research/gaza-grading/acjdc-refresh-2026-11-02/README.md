@@ -201,3 +201,6 @@ original hashes; this PR is unmerged and neither production site is deployed.
 Validation: **53/53 offline release checks pass**. Live Chrome checks pass for
 the 44-row review, questionnaire evidence, N/A suppression, Kevin correction,
 desktop/mobile layout, no page errors and no localhost analytics collection.
+
+
+Owner review supersedes the initial Mark Humbert selection: **CA2026-053 now has no recommendation**. The owner found his record insufficiently affirmative, despite grade eligibility. The persisted `owner-review-holds.json` applies before automatic selection, so re-running or changing thresholds cannot silently restore the pick. Scores, factual evidence (including later resolution support) and raw model responses remain unchanged. The preview now has **124 recommended candidates**, with **five** pick differences versus production; the earlier 125/six figures above describe the pre-review snapshot. Humbert’s old race paragraph remains archived but is removed from active review outputs.

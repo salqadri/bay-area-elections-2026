@@ -139,6 +139,7 @@ def classify(data, obs):
     def office_category(p):
         raw = p.get("office_category") or ""
         return OFFICE_CATEGORY_CANON.get(raw.lower(), raw)
+    holds = {h["position_id"]: h for h in json.loads((OUTDIR / "owner-review-holds.json").read_text())["holds"]}
     races = []
     for p in data["positions"]:
         cands = all_candidates(p)
@@ -196,6 +197,10 @@ def classify(data, obs):
                     base["recommended"] = None  # filled by Jev
                     base["recommend_reason"] = "Jev selected the strongest candidate in this race."
                     base["needs_summary"] = True
+        hold = holds.get(p['id'])
+        if hold and any(c['name'] == hold['candidate'] for c in cands):
+            base.update(category=CAT_NO_GOOD, recommended=None, needs_summary=False,
+                        recommend_reason=hold['public_reason'], owner_review_hold=deepcopy(hold))
         races.append(base)
     return races
 

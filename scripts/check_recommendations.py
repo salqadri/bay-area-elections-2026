@@ -198,6 +198,20 @@ class RecommendationChecks(unittest.TestCase):
         self.assertNotIn('effectively supports the status quo', prompt)
         self.assertNotIn('has not called it a genocide; has not backed', prompt)
 
+    def test_owner_hold_withholds_humbert_even_when_grade_is_eligible(self):
+        data = json.loads(rec.DATA.read_text())
+        position = deepcopy(next(p for p in data['positions'] if p['id']=='CA2026-053'))
+        person = next(c for c in position['candidates'] if c['name']=='Mark Humbert')
+        original = deepcopy(person)
+        for grade in ('D','A'):
+            person['pro_palestine_score_grade'] = grade
+            race = rec.classify({**data,'positions':[position]}, {'observations':[]})[0]
+            self.assertIsNone(race['recommended'])
+            self.assertFalse(race['needs_summary'])
+            self.assertEqual(race['owner_review_hold']['candidate'],'Mark Humbert')
+        self.assertEqual({k:v for k,v in person.items() if k!='pro_palestine_score_grade'},
+                         {k:v for k,v in original.items() if k!='pro_palestine_score_grade'})
+
     def test_readers_embed_the_current_recommendation_plan(self):
         plan = json.loads(rec.PLAN.read_text())
         data = json.loads(rec.DATA.read_text())
