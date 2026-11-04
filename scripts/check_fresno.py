@@ -97,7 +97,9 @@ class FresnoChecks(unittest.TestCase):
         raw=(ROOT/receipt['path']).read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(),receipt['sha256'])
         review=json.loads(raw);current={r['position_id']:r for r in self.plan['races']}
-        self.assertEqual(sum(bool(r.get('recommended'))for r in self.plan['races']),review['selected_races'])
+        approved_ids={entry['position_id'] for entry in review['approved_existing_races']}
+        self.assertEqual(sum(bool(r.get('recommended')) for r in self.plan['races']
+                             if r['position_id'] in approved_ids),review['selected_races'])
         for entry in review['approved_existing_races']:
             row=current[entry['position_id']]
             serialized=json.dumps(row,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
@@ -117,12 +119,23 @@ class FresnoChecks(unittest.TestCase):
         receipt=json.loads((FRESNO/'review-2026-11-03/review-receipt.json').read_text())
         for file,sha in receipt['immutable_baselines'].items():self.assertEqual(hashlib.sha256((ROOT/file).read_bytes()).hexdigest(),sha)
         old=json.loads((ROOT/'research/gaza-grading/published-2026-11-03-final.json').read_text())
-        current=json.loads((ROOT/self.data['pro_palestine_grading']['archive_path']).read_text());rows={r['id']:r for r in current['rows']}
+        # Original roster-only evaluations are immutable history. Later source
+        # research can explicitly replace a named subset in a new publication.
+        historical=json.loads((ROOT/'research/gaza-grading/published-2026-11-03-fresno-reviewed.json').read_text())
+        rows={r['id']:r for r in historical['rows']}
         self.assertTrue(all(rows[r['id']]==r for r in old['rows']))
         source=json.loads((ROOT/'research/gaza-grading/fresno-county-2026-11-03/run.json').read_text())
         for row in source['rows']:
             for key in ('request','request_sha256','response','finished_at'):self.assertEqual(rows[row['id']][key],row[key])
-            self.assertEqual(row_grade(rows[row['id']],current['score_grade_mapping']),'N/A')
+            self.assertEqual(row_grade(rows[row['id']],historical['score_grade_mapping']),'N/A')
+        current=json.loads((ROOT/self.data['pro_palestine_grading']['archive_path']).read_text())
+        refresh=json.loads((FRESNO/'local-2026-11-03/score-refresh.json').read_text())
+        replacements={r['id'] for r in refresh['changed_candidates']}
+        latest={r['id']:r for r in current['rows']}
+        self.assertEqual(len(replacements),5)
+        self.assertEqual({key for key in latest if latest[key]!=rows[key]},replacements)
+        self.assertEqual(current['preferred_criteria'],historical['preferred_criteria'])
+        self.assertEqual(current['score_grade_mapping'],historical['score_grade_mapping'])
 
     def test_reviewed_batch_history_can_be_opened_and_has_no_future_placeholder(self):
         entry=next(e for e in load_review()[0]['runs']if '/fresno-county-'in e['path'])

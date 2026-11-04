@@ -1,3 +1,19 @@
+## Owner-requested Fresno local research follow-up — current PR #23 state
+
+PR #23 remains unmerged and not deployed. The initial import/review below is
+historical: local candidate research has now been completed as a bounded pass
+for all 80 named county/city candidates and four contested court candidates.
+There are 97 new verified links, 105 quoted platform points, 64 endorsements and
+four issue observations. Five candidates were re-evaluated with unchanged v11
+questions and thresholds; four new Fresno recommendations bring the plan to
+183 selections. All 539 previously accepted race rows and 1,513 unaffected
+saved evaluations remain exact. The current prepared archive is
+`jev-2026-11-03-fresno-local-research`.
+
+Read [the source research handoff](../research/fresno/local-2026-11-03/README.md)
+for exact results, review receipts, held evidence, current Jev inputs and the
+five-candidate explanation queue. No production deployment occurred.
+
 ## Fresno County expansion — PR #23, held for review
 
 Prepared publication **2026-11-03.2** is **unmerged and not deployed**.

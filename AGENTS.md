@@ -1,3 +1,13 @@
+# Owner-requested Fresno local research follow-up
+
+Read [the local research handoff](research/fresno/local-2026-11-03/README.md).
+This follows the roster-only PR #23 review below. It adds source-backed local
+research, five targeted Jev evaluations and four new Fresno race recommendations.
+The current prepared publication is `jev-2026-11-03-fresno-local-research`.
+Preserve all 539 previously accepted race rows and prior model archives. PR #23
+is still unmerged and undeployed; local preview authorization is not deployment
+authorization. Do not rerun completed research/evaluation batches merely to resume.
+
 # PR #23 review — Fresno County
 
 PR #23 is held for review, not merged or deployed. Read

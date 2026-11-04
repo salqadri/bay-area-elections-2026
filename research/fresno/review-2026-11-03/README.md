@@ -1,4 +1,10 @@
-# PR #23 review — November 3, 2026
+# Original roster/import review — November 3, 2026
+
+**Current follow-up:** the owner subsequently requested local candidate research.
+Read [the research handoff](../local-2026-11-03/README.md). It adds enrichment,
+five targeted evaluations and four Fresno picks while preserving this review's
+539 accepted existing race rows. The descriptions below of 222 N/A results,
+179 total picks and no provider calls describe the initial import review only.
 
 This branch prepares Fresno County coverage. **It is unmerged and not deployed.**
 The review made no provider calls and changed no scoring questions, thresholds,

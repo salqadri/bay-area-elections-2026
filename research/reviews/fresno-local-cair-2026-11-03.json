@@ -1,0 +1,275 @@
+{
+ "version": 1,
+ "id": "fresno-local-cair-2026-11-03",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-11-03",
+ "counties": [
+  "Fresno"
+ ],
+ "base_dataset_sha256": "a5499a660ff34d7a39b858199d8bf2aa8df82c10f4451791ad420d9827f2c993",
+ "sources": {
+  "page14": {
+   "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=14",
+   "publisher": "CAIR Action",
+   "role": "endorser",
+   "checked_on": "2026-11-03",
+   "content_sha256": "b95341251cf0406d0cf2cd309bac74672ce73ad13d5772ec8e3c2362281aa56c",
+   "retrieval": "Direct publisher PDF; geometry-bounded text extraction; candidate page 14"
+  },
+  "page19": {
+   "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=19",
+   "publisher": "CAIR Action",
+   "role": "endorser",
+   "checked_on": "2026-11-03",
+   "content_sha256": "b95341251cf0406d0cf2cd309bac74672ce73ad13d5772ec8e3c2362281aa56c",
+   "retrieval": "Direct publisher PDF; geometry-bounded text extraction; candidate page 19"
+  }
+ },
+ "notes": {
+  "N1565": "CAIR Action 2026 California General Election guide, explicitly dated November 3, 2026. Exact candidate card and source page were captured on 2026-11-03. Endorsed and Joint Endorsement are endorsements (joint remains shared); Preferred and Opposed retain their distinct polarity. The observation date is not an announcement date. Ballot measures and absent names do not add or remove candidate recommendations."
+ },
+ "decisions": [
+  {
+   "id": "cair-p14-c5",
+   "action": "change",
+   "source_key": "page14",
+   "position_id": "CA2026-466",
+   "candidate": "Maria Pacheco",
+   "reason": "Current general-election publisher card and Jev-confirmed identity; refresh exact CAIR tier without duplicating the older unspecified/current observation.",
+   "jev_ref": "ee91ec12f0a0f687ed1e19fc7418d8a7e43ffb11f3ad18974f8101047477c336",
+   "source_observation": {
+    "id": "p14-c5",
+    "page": 14,
+    "name": "Maria Pacheco",
+    "office": "County Supervisor, Fresno County Board of Supervisor, District 1",
+    "level": "Endorsed",
+    "source_label": "ENDORSED",
+    "section": "FRESNO COUNTY BOARD OF SUPERVISOR · COUNTY SUPERVISOR",
+    "bbox": [
+     23.25,
+     545.25,
+     205.5,
+     612.0
+    ]
+   },
+   "field": "endorsements",
+   "identity": {
+    "office": "Supervisor",
+    "jurisdiction": "Fresno County",
+    "district_or_seat": "District 1",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "endorser": "CAIR Action",
+    "kind": "organization",
+    "relation": "endorsed",
+    "phase": "general",
+    "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=14",
+    "checked_on": "2026-11-03",
+    "verification": "endorser_statement",
+    "note_id": "N1565",
+    "quote": "Maria Pacheco | County Supervisor, Fresno County Board of Supervisor, District 1 | ENDORSED"
+   },
+   "evidence": {
+    "identity_basis": "Maria Pacheco | County Supervisor, Fresno County Board of Supervisor, District 1 | FRESNO COUNTY BOARD OF SUPERVISOR · COUNTY SUPERVISOR",
+    "date_basis": "Guide header explicitly says 2026 California General and GENERAL ELECTION: 11/3/26; capture date 2026-11-03 is observation only.",
+    "relationship_basis": "ENDORSED on candidate card, page 14"
+   }
+  },
+  {
+   "id": "cair-p19-c8",
+   "action": "change",
+   "source_key": "page19",
+   "position_id": "CA2026-476",
+   "candidate": "Naindeep Singh",
+   "reason": "Current general-election publisher card and Jev-confirmed identity; refresh exact CAIR tier without duplicating the older unspecified/current observation.",
+   "jev_ref": "745734748b29e62035552782ae22e9e11be4bd38a9d8dbe4e22cb259958950cb",
+   "source_observation": {
+    "id": "p19-c8",
+    "page": 19,
+    "name": "Naindeep Singh",
+    "office": "City Council Member, Fresno City Council, District 1",
+    "level": "Endorsed",
+    "source_label": "ENDORSED",
+    "section": "FRESNO · CITY COUNCIL MEMBER",
+    "bbox": [
+     23.25,
+     499.5,
+     205.5,
+     576.75
+    ]
+   },
+   "field": "endorsements",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Fresno",
+    "district_or_seat": "District 1",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "endorser": "CAIR Action",
+    "kind": "organization",
+    "relation": "endorsed",
+    "phase": "general",
+    "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=19",
+    "checked_on": "2026-11-03",
+    "verification": "endorser_statement",
+    "note_id": "N1565",
+    "quote": "Naindeep Singh | City Council Member, Fresno City Council, District 1 | ENDORSED"
+   },
+   "evidence": {
+    "identity_basis": "Naindeep Singh | City Council Member, Fresno City Council, District 1 | FRESNO · CITY COUNCIL MEMBER",
+    "date_basis": "Guide header explicitly says 2026 California General and GENERAL ELECTION: 11/3/26; capture date 2026-11-03 is observation only.",
+    "relationship_basis": "ENDORSED on candidate card, page 19"
+   }
+  },
+  {
+   "id": "cair-p19-c9",
+   "action": "change",
+   "source_key": "page19",
+   "position_id": "CA2026-477",
+   "candidate": "Joaquin Arambula",
+   "reason": "Current general-election publisher card and Jev-confirmed identity; refresh exact CAIR tier without duplicating the older unspecified/current observation.",
+   "jev_ref": "d6b93663c22feb0e0323804932a533c6d44d610e9d14022fc56cd6876f0d9ca6",
+   "source_observation": {
+    "id": "p19-c9",
+    "page": 19,
+    "name": "Joaquin Arambula",
+    "office": "City Council Member, Fresno City Council, District 3",
+    "level": "Endorsed",
+    "source_label": "ENDORSED",
+    "section": "FRESNO · CITY COUNCIL MEMBER",
+    "bbox": [
+     214.5,
+     499.5,
+     397.5,
+     576.75
+    ]
+   },
+   "field": "endorsements",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Fresno",
+    "district_or_seat": "District 3",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "endorser": "CAIR Action",
+    "kind": "organization",
+    "relation": "endorsed",
+    "phase": "general",
+    "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=19",
+    "checked_on": "2026-11-03",
+    "verification": "endorser_statement",
+    "note_id": "N1565",
+    "quote": "Joaquin Arambula | City Council Member, Fresno City Council, District 3 | ENDORSED"
+   },
+   "evidence": {
+    "identity_basis": "Joaquin Arambula | City Council Member, Fresno City Council, District 3 | FRESNO · CITY COUNCIL MEMBER",
+    "date_basis": "Guide header explicitly says 2026 California General and GENERAL ELECTION: 11/3/26; capture date 2026-11-03 is observation only.",
+    "relationship_basis": "ENDORSED on candidate card, page 19"
+   }
+  },
+  {
+   "id": "cair-p19-c10",
+   "action": "change",
+   "source_key": "page19",
+   "position_id": "CA2026-478",
+   "candidate": "Ariana Martinez Lott",
+   "reason": "Current general-election publisher card and Jev-confirmed identity; refresh exact CAIR tier without duplicating the older unspecified/current observation.",
+   "jev_ref": "55ddeb398a05bf55328229d4d82e6277536d94b393dbf8a0e8376a4b887842e4",
+   "source_observation": {
+    "id": "p19-c10",
+    "page": 19,
+    "name": "Ariana Martinez Lott",
+    "office": "City Council Member, Fresno City Council, District 7",
+    "level": "Endorsed",
+    "source_label": "ENDORSED",
+    "section": "FRESNO · CITY COUNCIL MEMBER",
+    "bbox": [
+     406.5,
+     499.5,
+     588.75,
+     576.75
+    ]
+   },
+   "field": "endorsements",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Fresno",
+    "district_or_seat": "District 7",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "endorser": "CAIR Action",
+    "kind": "organization",
+    "relation": "endorsed",
+    "phase": "general",
+    "url": "https://cairaction.org/wp-json/cair/v1/state-guide/CA-2026#page=19",
+    "checked_on": "2026-11-03",
+    "verification": "endorser_statement",
+    "note_id": "N1565",
+    "quote": "Ariana Martinez Lott | City Council Member, Fresno City Council, District 7 | ENDORSED"
+   },
+   "evidence": {
+    "identity_basis": "Ariana Martinez Lott | City Council Member, Fresno City Council, District 7 | FRESNO · CITY COUNCIL MEMBER",
+    "date_basis": "Guide header explicitly says 2026 California General and GENERAL ELECTION: 11/3/26; capture date 2026-11-03 is observation only.",
+    "relationship_basis": "ENDORSED on candidate card, page 19"
+   }
+  }
+ ],
+ "card_dispositions": [
+  {
+   "card_id": "p14-c5",
+   "page": 14,
+   "name": "Maria Pacheco",
+   "source_level": "Endorsed",
+   "status": "added",
+   "jev_ref": "ee91ec12f0a0f687ed1e19fc7418d8a7e43ffb11f3ad18974f8101047477c336",
+   "position_id": "CA2026-466",
+   "candidate": "Maria Pacheco"
+  },
+  {
+   "card_id": "p19-c8",
+   "page": 19,
+   "name": "Naindeep Singh",
+   "source_level": "Endorsed",
+   "status": "added",
+   "jev_ref": "745734748b29e62035552782ae22e9e11be4bd38a9d8dbe4e22cb259958950cb",
+   "position_id": "CA2026-476",
+   "candidate": "Naindeep Singh"
+  },
+  {
+   "card_id": "p19-c9",
+   "page": 19,
+   "name": "Joaquin Arambula",
+   "source_level": "Endorsed",
+   "status": "added",
+   "jev_ref": "d6b93663c22feb0e0323804932a533c6d44d610e9d14022fc56cd6876f0d9ca6",
+   "position_id": "CA2026-477",
+   "candidate": "Joaquin Arambula"
+  },
+  {
+   "card_id": "p19-c10",
+   "page": 19,
+   "name": "Ariana Martinez Lott",
+   "source_level": "Endorsed",
+   "status": "added",
+   "jev_ref": "55ddeb398a05bf55328229d4d82e6277536d94b393dbf8a0e8376a4b887842e4",
+   "position_id": "CA2026-478",
+   "candidate": "Ariana Martinez Lott"
+  }
+ ],
+ "model": "jev-1.13.0",
+ "policy": "cair-california-guide-v1",
+ "full_source_card_count": 246,
+ "out_of_scope_cards": 242
+}

@@ -2,15 +2,15 @@
   "generated_on": "2026-11-03T17:26:52Z",
   "selection_policy": "direction-aware-selection-v1",
   "source_dataset": "2026-11-03_Bay_Area_Elections.json",
-  "source_dataset_sha256": "ff510a5f46e9c43219c1631ec3e7c829d68532f1099e80c68524e4e4d989fea6",
-  "source_score_publication_id": "jev-2026-11-03-fresno-reviewed",
+  "source_dataset_sha256": "a8132b2ec64c82ec68a97ff3c676167a9c5d639b7df7146233306690b472e483",
+  "source_score_publication_id": "jev-2026-11-03-fresno-local-research",
   "pending_summaries": [],
   "rules": "Muslim-community candidate first; else Jev best-of-graded; none graded = no information; all eligible grades worse than D (E/F) = no known good candidate; opposition-only records excluded from automatic selection; N/A stays unassessed.",
   "counts": {
     "muslim_community": 12,
-    "jev_pick": 167,
+    "jev_pick": 171,
     "no_good_candidate": 84,
-    "no_information": 474
+    "no_information": 470
   },
   "races": [
     {
@@ -47969,12 +47969,19 @@
       "selection_evidence": {
         "Mike Karbassi": {
           "observations": [],
-          "other_issue_evidence": false,
+          "other_issue_evidence": true,
           "opposition_only": false
         },
         "Maria Pacheco": {
-          "observations": [],
-          "other_issue_evidence": false,
+          "observations": [
+            {
+              "endorser": "CAIR Action",
+              "relation": "endorsed",
+              "phase": "general",
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": true,
           "opposition_only": false
         }
       },
@@ -47982,22 +47989,116 @@
         {
           "name": "Mike Karbassi",
           "party": null,
-          "grade": "N/A",
-          "score": 1.82,
+          "grade": "F",
+          "score": 0.21,
           "muslim": false
         },
         {
           "name": "Maria Pacheco",
           "party": null,
-          "grade": "N/A",
-          "score": 2.1,
+          "grade": "A",
+          "score": 4.95,
           "muslim": false
         }
       ],
-      "category": "no_information",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of information about this race.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Maria Pacheco",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-466",
+        "choice": "Maria Pacheco",
+        "confidence": 1.0,
+        "probabilities": {
+          "Mike Karbassi": 0.0,
+          "Maria Pacheco": 1.0
+        },
+        "model": "jev-1.14.0",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "selection_policy": "direction-aware-selection-v1",
+            "position_id": "CA2026-466",
+            "office": "Supervisor",
+            "district_or_seat": "District 1",
+            "candidates": [
+              {
+                "name": "Mike Karbassi",
+                "party": null,
+                "grade": "F",
+                "observations": [],
+                "other_issue_evidence": true,
+                "opposition_only": false,
+                "selection_eligible": true
+              },
+              {
+                "name": "Maria Pacheco",
+                "party": null,
+                "grade": "A",
+                "observations": [
+                  {
+                    "endorser": "CAIR Action",
+                    "relation": "endorsed",
+                    "phase": "general",
+                    "source": "unverified"
+                  }
+                ],
+                "other_issue_evidence": true,
+                "opposition_only": false,
+                "selection_eligible": true
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose among selection_eligible candidates using their published letter grades: A, B, C, D, E, F. All candidates and signed source observations are supplied as context. Opposition is not support. N/A means unassessed, not favorable or unfavorable. Never infer support for an opponent from opposition alone. Do not use outside knowledge or rescore candidates. Choose among strongest tied eligible candidates.",
+              "criteria": {
+                "Mike Karbassi": "Published pro-Palestine grade: F",
+                "Maria Pacheco": "Published pro-Palestine grade: A"
+              }
+            }
+          }
+        },
+        "request_sha256": "bf5986ff6c0b3747a9e96bcbda7659fd082b5de89162de09be31a3232ac9b538",
+        "evaluated_at": "2026-11-04T02:35:39Z",
+        "response": {
+          "model": "jev-1.14.0",
+          "answers": {
+            "best_candidate": {
+              "type": "choice",
+              "choice": "Maria Pacheco",
+              "confidence": 1.0,
+              "probabilities": {
+                "Mike Karbassi": 0.0,
+                "Maria Pacheco": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 632,
+            "output_tokens": 41
+          }
+        }
+      },
+      "summary": {
+        "position_id": "CA2026-466",
+        "text": "Maria Pacheco is our recommendation for Fresno County Supervisor, District 1. She introduced Kerman's Gaza ceasefire proclamation in February 2024 and voted for it in March. It called for an immediate, permanent ceasefire, hostage release and aid to civilians. CAIR Action endorsed her for the general election. Mike Karbassi, by contrast, publicly supported U.S.-Israeli military action in Iran, calling it a rescue mission. These are his reported personal views, rather than a Fresno council resolution.",
+        "words": 75,
+        "model": "qwen/qwen3.8-27b + factual editorial correction",
+        "prompt_sha256": "9f2a9900a938a44402400c04287a4107e7b705884b4141d6519e8c22559b346f",
+        "editorial_correction": {
+          "review_path": "research/fresno/local-2026-11-03/narrative-review.json",
+          "original_text_sha256": "d6bf9d383716f79d3398f7df649a547a2fd687287ecc7452d8a46e01247ba2e2",
+          "reason": "Correct Pacheco introduction/vote dates; remove process boilerplate and avoid treating general local policies as Palestine positions.",
+          "replacements": [
+            {
+              "before": "For the District 1 Supervisor race, the recorded Palestine-related comparison is as follows. KVPR reported that Maria Pacheco introduced and voted for Kerman's Gaza ceasefire proclamation at a February 2024 council meeting, a proposal calling for an immediate, permanent ceasefire, hostage release, and aid to civilians. CAIR Action, whose recommendations consider civil rights and foreign policy including Gaza and ceasefire positions, recorded an endorsement of Pacheco in the general phase. Mike Karbassi was reported by ABC30 as having described his personal support for U.S.-Israeli military action in Iran as a \"rescue mission,\" clarifying that it was his personal stance rather than a council resolution.",
+              "after": "Maria Pacheco is our recommendation for Fresno County Supervisor, District 1. She introduced Kerman's Gaza ceasefire proclamation in February 2024 and voted for it in March. It called for an immediate, permanent ceasefire, hostage release and aid to civilians. CAIR Action endorsed her for the general election. Mike Karbassi, by contrast, publicly supported U.S.-Israeli military action in Iran, calling it a rescue mission. These are his reported personal views, rather than a Fresno council resolution."
+            }
+          ]
+        }
+      }
     },
     {
       "position_id": "CA2026-467",
@@ -48408,7 +48509,14 @@
       "selection_policy": "direction-aware-selection-v1",
       "selection_evidence": {
         "Naindeep Singh": {
-          "observations": [],
+          "observations": [
+            {
+              "endorser": "CAIR Action",
+              "relation": "endorsed",
+              "phase": "general",
+              "source": "unverified"
+            }
+          ],
           "other_issue_evidence": false,
           "opposition_only": false
         },
@@ -48422,8 +48530,8 @@
         {
           "name": "Naindeep Singh",
           "party": null,
-          "grade": "N/A",
-          "score": 1.75,
+          "grade": "A",
+          "score": 4.9,
           "muslim": false
         },
         {
@@ -48434,10 +48542,85 @@
           "muslim": false
         }
       ],
-      "category": "no_information",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of information about this race.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Naindeep Singh",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-476",
+        "choice": "Naindeep Singh",
+        "confidence": 1.0,
+        "probabilities": {
+          "Naindeep Singh": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "selection_policy": "direction-aware-selection-v1",
+            "position_id": "CA2026-476",
+            "office": "City Council Member",
+            "district_or_seat": "District 1",
+            "candidates": [
+              {
+                "name": "Naindeep Singh",
+                "party": null,
+                "grade": "A",
+                "observations": [
+                  {
+                    "endorser": "CAIR Action",
+                    "relation": "endorsed",
+                    "phase": "general",
+                    "source": "unverified"
+                  }
+                ],
+                "other_issue_evidence": false,
+                "opposition_only": false,
+                "selection_eligible": true
+              },
+              {
+                "name": "Rob Fuentes",
+                "party": null,
+                "grade": "N/A",
+                "observations": [],
+                "other_issue_evidence": false,
+                "opposition_only": false,
+                "selection_eligible": false
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose among selection_eligible candidates using their published letter grades: A, B, C, D, E, F. All candidates and signed source observations are supplied as context. Opposition is not support. N/A means unassessed, not favorable or unfavorable. Never infer support for an opponent from opposition alone. Do not use outside knowledge or rescore candidates. Choose among strongest tied eligible candidates.",
+              "criteria": {
+                "Naindeep Singh": "Published pro-Palestine grade: A"
+              }
+            }
+          }
+        },
+        "request_sha256": "b2d2d6964150df22d6be990a87d933cf4c790443b5d1139c07e101c0b3f438ca",
+        "evaluated_at": "2026-11-04T02:35:38Z",
+        "only_eligible_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-476",
+        "text": "Naindeep Singh is our recommendation for Fresno City Council, District 1. CAIR Action endorsed him for the general election, providing the concrete community recommendation supporting this choice on Palestinian justice and civil rights.",
+        "words": 33,
+        "model": "qwen/qwen3.8-27b + factual editorial correction",
+        "prompt_sha256": "759ab741318c5b8ddfe1b024b114db67c4b5467ec34fb5dde603642174850e03",
+        "editorial_correction": {
+          "review_path": "research/fresno/local-2026-11-03/narrative-review.json",
+          "original_text_sha256": "6a41005563200eeafa47b620c8b06bd3f6b701e5a77b30490cba72910bb90777",
+          "reason": "Correct Pacheco introduction/vote dates; remove process boilerplate and avoid treating general local policies as Palestine positions.",
+          "replacements": [
+            {
+              "before": "In the District 1 City Council Member race in Fresno, California, the sole recorded observation relevant to the guide's Palestinian-justice and civil-liberties focus is CAIR Action's endorsement of Naindeep Singh in the general election phase. CAIR Action is an advocacy and recommendation organization whose recommendations consider civil rights and foreign policy, including Gaza and ceasefire positions. The recorded recommendation tier is \"endorsed.\" No other candidate in this race has a researched record on these issues.",
+              "after": "Naindeep Singh is our recommendation for Fresno City Council, District 1. CAIR Action endorsed him for the general election, providing the concrete community recommendation supporting this choice on Palestinian justice and civil rights."
+            }
+          ]
+        }
+      }
     },
     {
       "position_id": "CA2026-477",
@@ -48452,8 +48635,15 @@
       "selection_policy": "direction-aware-selection-v1",
       "selection_evidence": {
         "Joaquin Arambula": {
-          "observations": [],
-          "other_issue_evidence": false,
+          "observations": [
+            {
+              "endorser": "CAIR Action",
+              "relation": "endorsed",
+              "phase": "general",
+              "source": "unverified"
+            }
+          ],
+          "other_issue_evidence": true,
           "opposition_only": false
         },
         "Keshia Thomas": {
@@ -48466,8 +48656,8 @@
         {
           "name": "Joaquin Arambula",
           "party": null,
-          "grade": "N/A",
-          "score": 2.0,
+          "grade": "B",
+          "score": 4.4,
           "muslim": false
         },
         {
@@ -48478,10 +48668,85 @@
           "muslim": false
         }
       ],
-      "category": "no_information",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of information about this race.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Joaquin Arambula",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-477",
+        "choice": "Joaquin Arambula",
+        "confidence": 1.0,
+        "probabilities": {
+          "Joaquin Arambula": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "selection_policy": "direction-aware-selection-v1",
+            "position_id": "CA2026-477",
+            "office": "City Council Member",
+            "district_or_seat": "District 3",
+            "candidates": [
+              {
+                "name": "Joaquin Arambula",
+                "party": null,
+                "grade": "B",
+                "observations": [
+                  {
+                    "endorser": "CAIR Action",
+                    "relation": "endorsed",
+                    "phase": "general",
+                    "source": "unverified"
+                  }
+                ],
+                "other_issue_evidence": true,
+                "opposition_only": false,
+                "selection_eligible": true
+              },
+              {
+                "name": "Keshia Thomas",
+                "party": null,
+                "grade": "N/A",
+                "observations": [],
+                "other_issue_evidence": false,
+                "opposition_only": false,
+                "selection_eligible": false
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose among selection_eligible candidates using their published letter grades: A, B, C, D, E, F. All candidates and signed source observations are supplied as context. Opposition is not support. N/A means unassessed, not favorable or unfavorable. Never infer support for an opponent from opposition alone. Do not use outside knowledge or rescore candidates. Choose among strongest tied eligible candidates.",
+              "criteria": {
+                "Joaquin Arambula": "Published pro-Palestine grade: B"
+              }
+            }
+          }
+        },
+        "request_sha256": "e08a4c3039812e6df7410651c1602d9b5c8f7264acecb7e5038eb84ccd6224da",
+        "evaluated_at": "2026-11-04T02:35:38Z",
+        "only_eligible_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-477",
+        "text": "Joaquin Arambula is our recommendation for Fresno City Council, District 3, with CAIR Action's general-election endorsement. His earlier Assembly record on AB 715 is mixed: he voted Aye at the May 2025 third reading and abstained on the September concurrence in Senate amendments. CAIR's endorsement is a positive factor, while his support for the earlier bill version remains a concern for protecting criticism of Israel.",
+        "words": 65,
+        "model": "qwen/qwen3.8-27b + factual editorial correction",
+        "prompt_sha256": "3ae1d2d894c6606e553ebcfbfa8564cc9784918839eafa5d9a1bfaae52f3c97e",
+        "editorial_correction": {
+          "review_path": "research/fresno/local-2026-11-03/narrative-review.json",
+          "original_text_sha256": "b1e656de946b5f73c68810fb92080de0e2b08789168a3bf8fa4357cf38496a9a",
+          "reason": "Correct Pacheco introduction/vote dates; remove process boilerplate and avoid treating general local policies as Palestine positions.",
+          "replacements": [
+            {
+              "before": "For the District 3 City Council Member race, Joaquin Arambula's recorded issue-relevant evidence includes two prior California Assembly votes on AB 715, an antisemitism education measure: an Aye at the May 2025 third reading and an Abstain at the September 2025 concurrence on Senate amendments, reflecting his record at two stages of the legislation. CAIR Action, an advocacy organization whose recommendations consider civil rights and foreign policy including Gaza and ceasefire positions, endorsed Arambula for the general election. No other candidate in this race carries a researched record.",
+              "after": "Joaquin Arambula is our recommendation for Fresno City Council, District 3, with CAIR Action's general-election endorsement. His earlier Assembly record on AB 715 is mixed: he voted Aye at the May 2025 third reading and abstained on the September concurrence in Senate amendments. CAIR's endorsement is a positive factor, while his support for the earlier bill version remains a concern for protecting criticism of Israel."
+            }
+          ]
+        }
+      }
     },
     {
       "position_id": "CA2026-478",
@@ -48496,7 +48761,14 @@
       "selection_policy": "direction-aware-selection-v1",
       "selection_evidence": {
         "Ariana Martinez Lott": {
-          "observations": [],
+          "observations": [
+            {
+              "endorser": "CAIR Action",
+              "relation": "endorsed",
+              "phase": "general",
+              "source": "unverified"
+            }
+          ],
           "other_issue_evidence": false,
           "opposition_only": false
         },
@@ -48510,8 +48782,8 @@
         {
           "name": "Ariana Martinez Lott",
           "party": null,
-          "grade": "N/A",
-          "score": 1.94,
+          "grade": "A",
+          "score": 4.87,
           "muslim": false
         },
         {
@@ -48522,10 +48794,85 @@
           "muslim": false
         }
       ],
-      "category": "no_information",
-      "recommended": null,
-      "recommend_reason": "No recommendation due to a lack of information about this race.",
-      "needs_summary": false
+      "category": "jev_pick",
+      "recommended": "Ariana Martinez Lott",
+      "recommend_reason": "Jev selected the strongest candidate in this race.",
+      "needs_summary": true,
+      "jev": {
+        "position_id": "CA2026-478",
+        "choice": "Ariana Martinez Lott",
+        "confidence": 1.0,
+        "probabilities": {
+          "Ariana Martinez Lott": 1.0
+        },
+        "model": "jev-latest",
+        "request": {
+          "model": "jev-latest",
+          "state": {
+            "selection_policy": "direction-aware-selection-v1",
+            "position_id": "CA2026-478",
+            "office": "City Council Member",
+            "district_or_seat": "District 7",
+            "candidates": [
+              {
+                "name": "Ariana Martinez Lott",
+                "party": null,
+                "grade": "A",
+                "observations": [
+                  {
+                    "endorser": "CAIR Action",
+                    "relation": "endorsed",
+                    "phase": "general",
+                    "source": "unverified"
+                  }
+                ],
+                "other_issue_evidence": false,
+                "opposition_only": false,
+                "selection_eligible": true
+              },
+              {
+                "name": "Nav Gurm",
+                "party": null,
+                "grade": "N/A",
+                "observations": [],
+                "other_issue_evidence": false,
+                "opposition_only": false,
+                "selection_eligible": false
+              }
+            ]
+          },
+          "questions": {
+            "best_candidate": {
+              "type": "choice",
+              "instructions": "Choose among selection_eligible candidates using their published letter grades: A, B, C, D, E, F. All candidates and signed source observations are supplied as context. Opposition is not support. N/A means unassessed, not favorable or unfavorable. Never infer support for an opponent from opposition alone. Do not use outside knowledge or rescore candidates. Choose among strongest tied eligible candidates.",
+              "criteria": {
+                "Ariana Martinez Lott": "Published pro-Palestine grade: A"
+              }
+            }
+          }
+        },
+        "request_sha256": "1181719fbc82fef476a2b95fccc271c9dd2acf93d4fea21a384ab884e65c06cc",
+        "evaluated_at": "2026-11-04T02:35:38Z",
+        "only_eligible_candidate": true
+      },
+      "summary": {
+        "position_id": "CA2026-478",
+        "text": "Ariana Martinez Lott is our recommendation for Fresno City Council, District 7. CAIR Action endorsed her for the general election, providing a positive community recommendation for this race. Her CAIR endorsement is the Palestine-related basis for our recommendation.",
+        "words": 38,
+        "model": "qwen/qwen3.8-27b + factual editorial correction",
+        "prompt_sha256": "747fa71b49ff1896cbe6f02bab50ae4f65f204442ac94c5771d106fb51a16cf9",
+        "editorial_correction": {
+          "review_path": "research/fresno/local-2026-11-03/narrative-review.json",
+          "original_text_sha256": "d94a925945d31da46f9f9dd6e6110c35030f956f16285531b264e351c8a948dc",
+          "reason": "Correct Pacheco introduction/vote dates; remove process boilerplate and avoid treating general local policies as Palestine positions.",
+          "replacements": [
+            {
+              "before": "Ariana Martinez Lott, running for District 7 City Council Member, is the sole candidate in this race with a researched record on the issues of Palestinian justice and civil liberties. CAIR Action, an advocacy organization whose recommendations consider civil rights and foreign policy including Gaza and ceasefire positions, endorsed her for the general election. On civil liberties, Martinez Lott proposes prohibiting collaboration between ICE and local law enforcement and creating a Residential Response Team for neighborhood issues. No other candidate in the race has documented observations in the supplied research.",
+              "after": "Ariana Martinez Lott is our recommendation for Fresno City Council, District 7. CAIR Action endorsed her for the general election, providing a positive community recommendation for this race. Her CAIR endorsement is the Palestine-related basis for our recommendation."
+            }
+          ]
+        }
+      }
     },
     {
       "position_id": "CA2026-479",

@@ -6,13 +6,21 @@ It is **unmerged and not deployed**. The county's CFMR001 proofs account for
 106 on-ballot contests: **93 new** and **13 existing** records extended to Fresno,
 plus **114 excluded** determinations. BOE District 1 is new; District 2 is unchanged.
 
-The reviewed archive `jev-2026-11-03-fresno-reviewed` retains all **1,296** prior
-evaluations and **222** saved Fresno evaluations without changing model inputs,
-answers, scores or thresholds. The new results are all **N/A** below the .22
-evidence floor. The owner approved Hermes’s **179 refreshed race summaries** and **four changed
-selections**, with Aisha Wahab’s vote attribution manually corrected to Congress.
-The plan has **179 selected races** and includes the Huron write-in-only contest. The five-county Bay Area batch stays
-unchanged. [Review findings and reproduction steps](research/fresno/review-2026-11-03/README.md).
+The owner-requested local research follow-up now covers **80 county/city
+candidates plus four contested court candidates**: 97 verified profile/site/X
+links, 105 quoted platform points, 64 endorsement observations and four issue
+observations. Four CAIR Action endorsements were missing because the roster
+import had not run enrichment. Five affected candidates were re-evaluated with
+unchanged v11 criteria and thresholds: Pacheco **A**, Singh **A**, Arambula **B**,
+Martinez Lott **A**, Karbassi **F**. The other **1,513** evaluations remain exact.
+The prepared publication is `jev-2026-11-03-fresno-local-research`; 79 of the 84
+local candidates remain N/A after the bounded research pass.
+
+The plan now has **183 selected races**, adding four Fresno recommendations.
+The owner-approved 179 earlier race summaries/selections and Aisha's manually
+corrected congressional attribution remain unchanged. The five-county Bay Area
+batch stays unchanged. [Research findings, limits and artifacts](research/fresno/local-2026-11-03/README.md).
+[Original import review and receipts](research/fresno/review-2026-11-03/README.md).
 
 ## November 3 publication — PR #22 release
 

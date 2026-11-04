@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Council on American–Islamic Relations Action\",\"prior_observations\":[{\"endorser\":\"CAIR Action\",\"phase\":\"general\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Council on American–Islamic Relations Action\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Council on American–Islamic Relations Action\",\"url\":\"https://ballotpedia.org/Endorsements_by_Council_on_American–Islamic_Relations_Action\"},{\"text\":\"\",\"url\":\"https://www.pachecoforfresno.com/#block-a1073eae-56e5-4abc-8c0d-bcc2b6fbf886\"}],\"row_html_sha256\":\"c0656537dd36f6ec3056ac14f8a00eabe3caaf695fe9655b0f4d1c70e55fcb64\",\"text\":\"Council on American–Islamic Relations Action\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "curated",
+    "confidence": 0.45,
+    "probabilities": {
+     "curated": 0.59,
+     "distinct": 0.01,
+     "overlap": 0.4,
+     "unclear": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 707,
+   "output_tokens": 50
+  }
+ }
+}

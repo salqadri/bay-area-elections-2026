@@ -2,14 +2,14 @@
 
 Production uses `jev-2026-11-03-final` (1,296 saved evaluations; see
 [PUBLISHED_GRADES.md](PUBLISHED_GRADES.md)). PR #23 prepares the separate
-`jev-2026-11-03-fresno-reviewed` archive, adding 222 N/A Fresno evaluations
-without changing prior raw results, prompts or thresholds. The PR is unmerged
-and not deployed. Its recommendation plan has **737** rows: 12 community,
-167 selection-category, 84 no-good-candidate and 474 no-information, with
-**179** owner-approved choices and **179 refreshed race summaries**. The accepted
-refresh includes the four changed race picks and a marked factual correction to
-Aisha Wahab’s congressional-vote attribution. Candidate grades are unchanged.
-Category membership is not a count of new provider calls or fresh selections. [Review report](../research/fresno/review-2026-11-03/README.md).
+`jev-2026-11-03-fresno-local-research` archive. The initial 222 Fresno evaluations
+were N/A before enrichment; five source-researched candidates now have grades,
+with the other 1,513 rows unchanged. No prompt or threshold changed. The PR is
+unmerged and not deployed. Its 737-row plan has **183 choices** (12 community,
+171 selection-category), 84 no-good-candidate and 470 no-information rows.
+The owner's earlier 179 race paragraphs/selections, including the Aisha correction,
+remain exact; four new Fresno choices have reviewed rationales.
+[Current findings and artifacts](../research/fresno/local-2026-11-03/README.md).
 
 The October 30 notes below are historical; they do not describe the current
 saved prompt, scores or recommendation plan.

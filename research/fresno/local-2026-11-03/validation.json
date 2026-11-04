@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "checked_on": "2026-11-03",
+  "release_gate": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "build_site.py",
+        "passed": true
+      },
+      {
+        "name": "check_firebase_hosting.py",
+        "passed": true
+      },
+      {
+        "name": "check_summary_source_policy.py",
+        "passed": true
+      },
+      {
+        "name": "check_data.py",
+        "passed": true
+      },
+      {
+        "name": "check_evidence.py",
+        "passed": true
+      },
+      {
+        "name": "check_published_endorsements.py",
+        "passed": true
+      },
+      {
+        "name": "check_endorsement_images.py",
+        "passed": true
+      },
+      {
+        "name": "check_research_gaps.py",
+        "passed": true
+      },
+      {
+        "name": "check_education_policy.py",
+        "passed": true
+      },
+      {
+        "name": "check_endorsements.py",
+        "passed": true
+      },
+      {
+        "name": "check_ballotpedia_endorsements.py",
+        "passed": true
+      },
+      {
+        "name": "check_x_profiles.py",
+        "passed": true
+      },
+      {
+        "name": "check_jev_playground.py",
+        "passed": true
+      },
+      {
+        "name": "check_published_grades.py",
+        "passed": true
+      },
+      {
+        "name": "check_grade_explanations.py",
+        "passed": true
+      },
+      {
+        "name": "check_candidate_community.py",
+        "passed": true
+      },
+      {
+        "name": "check_campaign_endorsement_batch.py",
+        "passed": true
+      },
+      {
+        "name": "check_recommendations.py",
+        "passed": true
+      },
+      {
+        "name": "check_fresno.py",
+        "passed": true
+      },
+      {
+        "name": "check_local_candidate_research.py",
+        "passed": true
+      },
+      {
+        "name": "check_acjdc.py",
+        "passed": true
+      },
+      {
+        "name": "check_bamc_action.py",
+        "passed": true
+      },
+      {
+        "name": "check_cair_guide.py",
+        "passed": true
+      },
+      {
+        "name": "check_cair_refresh.py",
+        "passed": true
+      },
+      {
+        "name": "check_local_ceasefires.py",
+        "passed": true
+      },
+      {
+        "name": "check_peace_guides.py",
+        "passed": true
+      },
+      {
+        "name": "check_research_workflow.py",
+        "passed": true
+      },
+      {
+        "name": "check_schema.py",
+        "passed": true
+      },
+      {
+        "name": "check_fec_money.py",
+        "passed": true
+      },
+      {
+        "name": "check_gaza_ledger.py",
+        "passed": true
+      },
+      {
+        "name": "check_funding_evidence.py",
+        "passed": true
+      },
+      {
+        "name": "check_organization_context.py",
+        "passed": true
+      },
+      {
+        "name": "check_playground_restore.py",
+        "passed": true
+      },
+      {
+        "name": "check_evidence_context.py",
+        "passed": true
+      },
+      {
+        "name": "check_gaza_voting_records.py",
+        "passed": true
+      },
+      {
+        "name": "check_uscpr_scorecard.py",
+        "passed": true
+      },
+      {
+        "name": "check_gaza_records.py",
+        "passed": true
+      },
+      {
+        "name": "check_campaign_platforms.py",
+        "passed": true
+      },
+      {
+        "name": "check_platform_positions.py",
+        "passed": true
+      },
+      {
+        "name": "prepare_dom_fixture.py",
+        "passed": true
+      },
+      {
+        "name": "check_pro_palestine_grade_display.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_analytics.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_jev_playground.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_endorsement_display.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_finance_display.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_gaza_display.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_platform_display.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_candidate_sort.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_contest_label.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_explorer.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_address_services.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_address_suggestions.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_address_autocomplete.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_address_matcher.cjs",
+        "passed": true
+      },
+      {
+        "name": "check_ballot_page.cjs",
+        "passed": true
+      }
+    ],
+    "data_sha256": "a8132b2ec64c82ec68a97ff3c676167a9c5d639b7df7146233306690b472e483",
+    "limitation": "Offline consistency and regression checks; not source truth, live-service availability or browser rendering."
+  },
+  "local_previews": {
+    "research": "http://localhost:8791/",
+    "tall": "http://localhost:4173/",
+    "general_browser_checks": {
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Fresno county browsing",
+          "contests": 106,
+          "propositions": 14,
+          "results": "106 county-wide possibilities · Use an address to narrow your guide · 14 statewide propositions"
+        },
+        {
+          "name": "All Candidates Fresno filter and Clovis search"
+        },
+        {
+          "name": "All three accepted TALL race-selection changes visible"
+        },
+        {
+          "name": "Aisha congressional-vote correction visible"
+        },
+        {
+          "name": "Mobile Fresno results fit viewport"
+        },
+        {
+          "name": "Research explorer loads Fresno and accepted PR23 recommendations"
+        },
+        {
+          "name": "No browser errors or analytics requests"
+        }
+      ],
+      "errors": [],
+      "analytics": []
+    },
+    "fresno_browser_checks": {
+      "passed": true,
+      "checks": [
+        "Pacheco pick, grade A, CAIR tag and campaign/Ballotpedia links",
+        "Source-bound evidence and endorsement drawers render",
+        "Mobile layout fits",
+        "Research reader embeds the four new Fresno picks"
+      ],
+      "errors": []
+    }
+  },
+  "production_deployed": false
+}

@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"California Federation of Labor Unions, AFL-CIO\",\"prior_observations\":[{\"endorser\":\"Fresno Madera Tulare Kings Central Labor Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno Madera Tulare Kings Building Trades Council\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno County Democratic Party\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno County Young Democrats\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno Teachers Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno Chamber of Commerce\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno City Employees Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno City Fire Fighters Association - Local 202\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Fresno City Police Officers Association\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Ironworkers Local 155\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Sheet Metal Workers Local 104\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"},{\"endorser\":\"Operating Engineers Local 3\",\"phase\":\"unspecified\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"California Federation of Labor Unions, AFL-CIO\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"California Federation of Labor Unions, AFL-CIO\",\"url\":\"https://ballotpedia.org/Endorsements_by_California_Federation_of_Labor_Unions,_AFL-CIO\"},{\"text\":\"\",\"url\":\"https://calaborfed.org/labor-2026-primary-election-endorsements/?county=Fresno\"}],\"row_html_sha256\":\"6bb45650f59750940c785aa9d34c13ae6502e9b7164a347acb419ae32870e9d7\",\"text\":\"California Federation of Labor Unions, AFL-CIO\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.72,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.79,
+     "overlap": 0.15,
+     "unclear": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 968,
+   "output_tokens": 49
+  }
+ }
+}

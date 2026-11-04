@@ -1,0 +1,36 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve entity identity from the supplied names and source context. Do not merge a PAC and its parent or different people. No background guesses.",
+  "questions": {
+   "duplicate": {
+    "type": "choice",
+    "instructions": "{\"candidate\":\"Ariana Martinez Lott\",\"existing\":{\"r0\":{\"checked_on\":\"2026-11-03\",\"endorser\":\"California Working Families Party\",\"kind\":\"party\",\"note_id\":\"N1568\",\"phase\":\"unspecified\",\"quote\":\"California Working Families Party\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Ariana_Martinez_Lott#Endorsements\",\"verification\":\"reported\"}},\"incoming\":{\"checked_on\":\"2026-11-03\",\"endorser\":\"Working Families Party\",\"kind\":\"party\",\"note_id\":\"N1568\",\"phase\":\"unspecified\",\"quote\":\"Working Families Party\",\"relation\":\"endorsed\",\"url\":\"https://ballotpedia.org/Ariana_Martinez_Lott#Endorsements\",\"verification\":\"reported\"},\"source_entry\":{\"category_context\":[],\"endorser\":\"Working Families Party\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Working Families Party\",\"url\":\"https://ballotpedia.org/Working_Families_Party\"},{\"text\":\"\",\"url\":\"https://workingfamilies.org/candidates/\"}],\"row_html_sha256\":\"d27701cfbc70638a26eb2fffd8ad9bb03859147ddc28a03cba00a5d3ba486c4e\",\"text\":\"Working Families Party\"}}\nDoes the incoming observation describe the SAME entity and relationship as an existing record? Different explicit phases and historical/current contexts are already separate. A new source URL is corroboration, not a new endorser. Conflicting relation/rating needs unclear. Choose distinct only when all supplied candidates are clearly different.",
+    "criteria": {
+     "r0": "Same entity AND relationship as this existing record",
+     "distinct": "Clearly distinct from every existing entity/relationship",
+     "unclear": "Identity or relationship overlap cannot be resolved"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "duplicate": {
+    "type": "choice",
+    "choice": "r0",
+    "confidence": 0.79,
+    "probabilities": {
+     "distinct": 0.1,
+     "r0": 0.86,
+     "unclear": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 741,
+   "output_tokens": 41
+  }
+ }
+}
