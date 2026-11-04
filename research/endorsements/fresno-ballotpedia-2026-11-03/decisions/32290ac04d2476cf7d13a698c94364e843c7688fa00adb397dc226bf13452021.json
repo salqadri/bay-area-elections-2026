@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Central Valley Progressive PAC\",\"prior_observations\":[{\"endorser\":\"CAIR Action\",\"phase\":\"general\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Central Valley Progressive PAC\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Central Valley Progressive PAC\",\"url\":\"https://ballotpedia.org/Endorsements_by_Central_Valley_Progressive_PAC\"},{\"text\":\"\",\"url\":\"https://www.pachecoforfresno.com/#block-a1073eae-56e5-4abc-8c0d-bcc2b6fbf886\"}],\"row_html_sha256\":\"2292516c0d5dde9d7d6285d2d69a469def3736db822b74fd15c123929cb845f2\",\"text\":\"Central Valley Progressive PAC\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.77,
+    "probabilities": {
+     "curated": 0.0,
+     "distinct": 0.83,
+     "overlap": 0.03,
+     "unclear": 0.14
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 686,
+   "output_tokens": 49
+  }
+ }
+}

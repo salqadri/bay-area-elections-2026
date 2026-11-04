@@ -1,0 +1,200 @@
+{
+ "version": 1,
+ "id": "fresno-local-gaza-reviewed-2026-11-03",
+ "election_date": "2026-11-03",
+ "reviewed_on": "2026-11-03",
+ "counties": [
+  "Fresno"
+ ],
+ "base_dataset_sha256": "9dc1a6e5b760bd0985d3891d984f2def9abec9618c7eb61b46c5d2566aac6fa8",
+ "sources": {
+  "source-031c2e1d3cdd2d26cebc": {
+   "url": "https://www.kvpr.org/local-news/2024-03-29/kerman-becomes-second-valley-city-to-call-for-gaza-ceasefire-mayor-says-matter-goes-beyond-politics",
+   "publisher": "KVPR",
+   "role": "news",
+   "candidate": "Maria Pacheco",
+   "checked_on": "2026-11-03",
+   "content_sha256": "b31e91bae52138e38740dd17cca3e3f3efb3bb8ba22eb197faf272188d8ef241",
+   "retrieval": "Captured source HTML"
+  },
+  "source-77a0bc39d8d0df357d05": {
+   "url": "https://gvwire.com/2024/03/28/a-fresno-county-first-kerman-council-passes-amended-gaza-cease-fire-resolution/",
+   "publisher": "GV Wire",
+   "role": "news",
+   "candidate": "Gary K. Yep",
+   "checked_on": "2026-11-03",
+   "content_sha256": "66efed72a860c7698566c9203ae3b6ad2153a99454bb250d808da08c21a46812",
+   "retrieval": "Captured source HTML"
+  },
+  "source-404c80f0160473804d6b": {
+   "url": "https://abc30.com/post/fresno-council-member-karbassi-speaks-iran-attacks-isnt-war-is-rescue-mission/18670160/",
+   "publisher": "ABC30 / KFSN",
+   "role": "news",
+   "candidate": "Mike Karbassi",
+   "checked_on": "2026-11-03",
+   "content_sha256": "8c2111d941ac7d7a11d6098df47b935a1b801563509f75a288083f39e30bdc29",
+   "retrieval": "Captured source HTML"
+  },
+  "source-c6a662c6afd99f24f9ae": {
+   "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+   "publisher": "CalMatters Digital Democracy",
+   "role": "legislative_record",
+   "candidate": "Joaquin Arambula",
+   "checked_on": "2026-11-03",
+   "content_sha256": "271ab922ba2992f5de1f1765288f9d177881d6c6e72c17943fe3b43a86520499",
+   "retrieval": "CalMatters Digital Democracy bill JSON-LD; bill text and exact structured VoteAction fields, not an official roll-call transcript"
+  }
+ },
+ "notes": {},
+ "decisions": [
+  {
+   "id": "gaza-claim-0",
+   "action": "change",
+   "source_key": "source-031c2e1d3cdd2d26cebc",
+   "position_id": "CA2026-466",
+   "candidate": "Maria Pacheco",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "305a039043163b611bf366c4adc1eb8ba05073429f9d2ab32d9bdcd0163780b2",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "Supervisor",
+    "jurisdiction": "Fresno County",
+    "district_or_seat": "District 1",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1668",
+    "date": "2024-03-29",
+    "date_method": "source_stated",
+    "summary": "KVPR reported Pacheco introduced Kerman’s Gaza ceasefire proclamation and voted for it; it called for an immediate, permanent ceasefire, hostage release and aid to civilians.",
+    "quote": "Mayor Pacheco and councilmembers Herrera and Bill Nijjer voted in favor of the resolution.",
+    "dimension": "actions_votes",
+    "source_kind": "news",
+    "date_note": "Publication date of reporting on the preceding council meeting; proposal introduced in February 2024.",
+    "url": "https://www.kvpr.org/local-news/2024-03-29/kerman-becomes-second-valley-city-to-call-for-gaza-ceasefire-mayor-says-matter-goes-beyond-politics",
+    "checked_on": "2026-11-03"
+   },
+   "evidence": {
+    "identity_basis": "The source names this candidate in the same local jurisdiction; the current campaign/profile corroborates identity where the office has changed.",
+    "date_basis": "The explicit source publication or structured action date, at the stated precision; not the inspection date.",
+    "issue_basis": "KVPR reported Pacheco introduced Kerman’s Gaza ceasefire proclamation and voted for it; it called for an immediate, permanent ceasefire, hostage release and aid to civilians. Exact source quote: Mayor Pacheco and councilmembers Herrera and Bill Nijjer voted in favor of the resolution."
+   }
+  },
+  {
+   "id": "gaza-claim-1",
+   "action": "hold",
+   "source_key": "source-77a0bc39d8d0df357d05",
+   "position_id": "CA2026-481",
+   "candidate": "Gary K. Yep",
+   "reason": "Source-bound Jev review did not establish all evidence requirements.",
+   "jev_ref": "bcdbe4bc10dc892e2d79501238ac117088943f8cbaad6ec67817a3a030e91197"
+  },
+  {
+   "id": "gaza-claim-2",
+   "action": "change",
+   "source_key": "source-404c80f0160473804d6b",
+   "position_id": "CA2026-466",
+   "candidate": "Mike Karbassi",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "8c194511f6cc9d1a27fc3355decaa1894ac1b48ad49aa2089bc2429d153d69b1",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "Supervisor",
+    "jurisdiction": "Fresno County",
+    "district_or_seat": "District 1",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1670",
+    "date": "2026-03-03",
+    "date_method": "source_stated",
+    "summary": "ABC30 reported Karbassi supported U.S.-Israeli military action in Iran, calling it a “rescue mission”; he described this as his personal stance, not a council resolution.",
+    "quote": "this isn't a war. This is a rescue mission",
+    "dimension": "other",
+    "source_kind": "news",
+    "date_note": "Publication date; the reported military action concerns Iran, not a Gaza ceasefire vote.",
+    "url": "https://abc30.com/post/fresno-council-member-karbassi-speaks-iran-attacks-isnt-war-is-rescue-mission/18670160/",
+    "checked_on": "2026-11-03"
+   },
+   "evidence": {
+    "identity_basis": "The source names this candidate in the same local jurisdiction; the current campaign/profile corroborates identity where the office has changed.",
+    "date_basis": "The explicit source publication or structured action date, at the stated precision; not the inspection date.",
+    "issue_basis": "ABC30 reported Karbassi supported U.S.-Israeli military action in Iran, calling it a “rescue mission”; he described this as his personal stance, not a council resolution. Exact source quote: this isn't a war. This is a rescue mission"
+   }
+  },
+  {
+   "id": "gaza-claim-3",
+   "action": "change",
+   "source_key": "source-c6a662c6afd99f24f9ae",
+   "position_id": "CA2026-477",
+   "candidate": "Joaquin Arambula",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "e3bbabbadc6ef1d3e10dd4d4a8619a8b1d95f25d5fe83688f92aa1fc72677b2a",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Fresno",
+    "district_or_seat": "District 3",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1671",
+    "date": "2025-05",
+    "date_method": "source_stated",
+    "summary": "CalMatters records Arambula’s Aye on AB 715 at the May 2025 Assembly third reading; this is his prior Assembly record, not a Fresno council vote.",
+    "quote": "Joaquin Arambula | Aye",
+    "dimension": "antisemitism_education",
+    "source_kind": "legislative_record",
+    "date_note": "Month precision preserves the structured source’s date without assuming a timezone; the two stages concern different bill versions.",
+    "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+    "checked_on": "2026-11-03"
+   },
+   "evidence": {
+    "identity_basis": "The source names this candidate in the same local jurisdiction; the current campaign/profile corroborates identity where the office has changed.",
+    "date_basis": "The explicit source publication or structured action date, at the stated precision; not the inspection date.",
+    "issue_basis": "CalMatters records Arambula’s Aye on AB 715 at the May 2025 Assembly third reading; this is his prior Assembly record, not a Fresno council vote. Exact source quote: Joaquin Arambula | Aye"
+   }
+  },
+  {
+   "id": "gaza-claim-4",
+   "action": "change",
+   "source_key": "source-c6a662c6afd99f24f9ae",
+   "position_id": "CA2026-477",
+   "candidate": "Joaquin Arambula",
+   "reason": "Actual captured source, exact quote, verified candidate identity and explicit date/provenance passed Jev review.",
+   "jev_ref": "17c567efdb71c15ee2f1efa31824db88a22c47215066fd94934528414b8122a1",
+   "field": "gaza_evidence",
+   "identity": {
+    "office": "City Council Member",
+    "jurisdiction": "City of Fresno",
+    "district_or_seat": "District 3",
+    "term": "4 years",
+    "election_type": "general"
+   },
+   "before": null,
+   "after": {
+    "id": "GE-1672",
+    "date": "2025-09",
+    "date_method": "source_stated",
+    "summary": "CalMatters records Arambula’s Abstain on AB 715 at the September 2025 concurrence in Senate amendments; this is his prior Assembly record, not a Fresno council vote.",
+    "quote": "Joaquin Arambula | Abstain",
+    "dimension": "antisemitism_education",
+    "source_kind": "legislative_record",
+    "date_note": "Month precision preserves the structured source’s date without assuming a timezone; the two stages concern different bill versions.",
+    "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab715",
+    "checked_on": "2026-11-03"
+   },
+   "evidence": {
+    "identity_basis": "The source names this candidate in the same local jurisdiction; the current campaign/profile corroborates identity where the office has changed.",
+    "date_basis": "The explicit source publication or structured action date, at the stated precision; not the inspection date.",
+    "issue_basis": "CalMatters records Arambula’s Abstain on AB 715 at the September 2025 concurrence in Senate amendments; this is his prior Assembly record, not a Fresno council vote. Exact source quote: Joaquin Arambula | Abstain"
+   }
+  }
+ ]
+}

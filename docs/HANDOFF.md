@@ -1,3 +1,71 @@
+## Owner-requested Fresno local research follow-up — current PR #23 state
+
+PR #23 remains unmerged and not deployed. The initial import/review below is
+historical: local candidate research has now been completed as a bounded pass
+for all 80 named county/city candidates and four contested court candidates.
+There are 97 new verified links, 105 quoted platform points, 64 endorsements and
+four issue observations. Five candidates were re-evaluated with unchanged v11
+questions and thresholds; four new Fresno recommendations bring the plan to
+183 selections. All 539 previously accepted race rows and 1,513 unaffected
+saved evaluations remain exact. The current prepared archive is
+`jev-2026-11-03-fresno-local-research`.
+
+Read [the source research handoff](../research/fresno/local-2026-11-03/README.md)
+for exact results, review receipts, held evidence, current Jev inputs and the
+five-candidate explanation queue. No production deployment occurred.
+
+## Fresno County expansion — PR #23, held for review
+
+Prepared publication **2026-11-03.2** is **unmerged and not deployed**.
+The county CFMR001 Contest/Candidate Proof Lists (printed 10/12/2026), both
+on-ballot and not-on-ballot, are archived in `research/fresno/`. Terms come
+from Exhibit G of the county Candidate Guide. Parsing fails before writing
+when qualified counts or ballot statuses do not match; filing counts may be
+higher than qualified counts.
+
+- Added **93 confirmed** contests (CA2026-417…509) and **114 excluded**
+  determinations (CA2026-510…623), retaining provisional filed names.
+- Extended **13 existing** statewide, Supreme Court and congressional records
+  to Fresno, including two previously nationwide congressional records.
+  Fresno lies in BOE **District 1**, which is new; District 2 is unchanged.
+- County proof coverage: **106** on-ballot contests and **114** excluded.
+  The dataset totals **754 positions / 564 confirmed / 691 seats / 1,516
+  printed entries / 190 excluded**, with one missing named roster: Huron
+  City Council short term, zero qualified candidates. The plan includes this
+  contest explicitly with no recommendation.
+- Plan totals **737** rows: 564 confirmed and 173 excluded with candidate
+  records. **198 new rows** add no recommendation. Following review, the owner
+  approved retaining Hermes’s **179 refreshed race summaries** and **four changed
+  picks**. There are now **179 selected races** (12 community, 167 Jev picks).
+  Mark Warner and Sandra Weese gain recommendations; Ryan Hazelton replaces
+  Virginia Cheung; Bunny McFadden replaces Leah LaCroix.
+- Aisha Wahab’s refreshed CA2026-003 paragraph is manually corrected from
+  “As a state senator she voted No…” to “In Congress, she voted No…” for the
+  university-defunding vote. The original provider output remains in the cache;
+  the corrected final entry and plan paragraph carry explicit editorial provenance.
+  `approved-race-refresh.json` in the review directory binds the accepted plan.
+  No scoring prompt, input, answer, grade or threshold changed in this update.
+  The older PR #22 race-rationale refresh queue is superseded for this plan;
+  candidate-grade explanation queues remain separate and unchanged.
+- Corrected **28 new-record incumbent flags** using unambiguous county-proof
+  name matching. Source requests and responses were not edited or rerun.
+- Current prepared archive: `published-2026-11-03-fresno-reviewed.json`,
+  publication ID `jev-2026-11-03-fresno-reviewed`. It retains **1,296 prior**
+  evaluations exactly and the **222 new** Fresno raw requests/answers/scores.
+  All new grades are N/A under owner prompt v11 and the .22 evidence floor.
+- Portable Fresno history uses `fresno-county-2026-11-03/reviewed-run.json`,
+  ID `20261103T165344Z-0f36bd7d`. Its reconstructed envelope uses the last
+  actual saved completion time; the original future-dated envelope is audit-only.
+  Previously published archives are immutable; the updated earlier-summary
+  pointer uses a separate `earlier-summaries-2026-11-03-fresno.json` copy.
+- **No model calls** during review. Full release gate: **54/54 PASS**.
+  TALL projection: **435 contests**, all 11 existing editorial exceptions valid.
+  This verifies integration; TALL and research production are not updated by review.
+- **Bay Area batch stays five counties.** Fresno enrichment (FEC, endorsements,
+  platforms and Gaza evidence) remains future work; empty evidence is not a grade.
+
+[Detailed fixes, receipts and safe commands](../research/fresno/review-2026-11-03/README.md).
+
 ## November 3 publication — PR #22 release
 
 Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest

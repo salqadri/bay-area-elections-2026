@@ -17,6 +17,32 @@ The shared [California registry](../research/california-counties.json) contains 
 
 For a new county, follow [RESEARCH.md](RESEARCH.md): audit county, municipal, school/college and special-district inventories against official resident-ballot materials; determine June-resolved and canceled contests; reconcile shared offices; verify party/incumbency and candidate identity; record uncertainty explicitly. Refresh federal receipts with their actual coverage dates. The separate external Gaza collector still has its own documented validation/ledger requirements. This workflow does not replace official roster research or imply that external collector is now part of this repository.
 
+### Newly imported local candidates need an enrichment pass
+
+A verified roster and a completed empty-state grading batch do not constitute
+candidate research. Before evaluating a new county, inventory all its confirmed
+county/city candidacies (including named contested county courts), then research
+campaign policies, publisher endorsements and direct issue evidence:
+
+```sh
+python3 scripts/local_candidate_research.py --county Fresno --output .research/fresno-local-plan.json
+```
+
+Refresh shared CAIR/peace guides against the enlarged roster, not only individual
+campaign websites. Follow actual campaign profile links and their linked policy
+and endorsement pages. Search exact and less restrictive name variants through
+Serper.dev; record unavailable sources and each candidate's final disposition.
+Qwen may propose factual extractions from captured text. `review_local_campaigns.py`
+requires literal quotes/contexts, captured hashes and independent Jev identity and
+assertion checks, and drafts a review for separate preview/apply. A Ballotpedia
+Person infobox verifies page format only; candidate identity is independently
+checked. No position or religion is inferred from names, silence or ordinary
+endorsements. Only newly affected candidates/races should be evaluated afterward;
+preserve unrelated saved evaluations and approved race paragraphs.
+
+The [Fresno follow-up](../research/fresno/local-2026-11-03/README.md) records the
+first complete scoped pass and its remaining source limitations.
+
 ## 2. Collect once, cache and resume
 
 ```sh

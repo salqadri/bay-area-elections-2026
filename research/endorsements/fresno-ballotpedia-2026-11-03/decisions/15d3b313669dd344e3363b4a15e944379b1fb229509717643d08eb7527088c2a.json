@@ -1,0 +1,38 @@
+{
+ "request": {
+  "model": "jev-1.13.0",
+  "state": "Resolve only entity identity from supplied evidence. Do not merge a PAC and its parent, distinct union locals, different people, or distinct voting groups.",
+  "questions": {
+   "new_entity": {
+    "type": "choice",
+    "instructions": "{\"curated_publishers\":[\"AROC Action\",\"CAIR Action\",\"California Jewish Democrats\",\"Vote for Peace\"],\"incoming\":\"Planned Parenthood Affiliates of California\",\"prior_observations\":[{\"endorser\":\"CAIR Action\",\"phase\":\"general\",\"relation\":\"endorsed\"}],\"source_row\":{\"category_context\":[],\"endorser\":\"Planned Parenthood Affiliates of California\",\"heading_path\":[\"Elections\",\"2026\",\"Endorsements\"],\"links\":[{\"text\":\"Planned Parenthood Affiliates of California\",\"url\":\"https://ballotpedia.org/Endorsements_by_Planned_Parenthood_Affiliates_of_California\"},{\"text\":\"\",\"url\":\"https://www.plannedparenthoodaction.org/planned-parenthood-advocates-mar-monte/voter-guide-2026/ca-endorsements#fresnocounty\"}],\"row_html_sha256\":\"c925967d5dc8ff9e41ff98393a7a96de4f84d96f70f35256f85e4491b77cc7e6\",\"text\":\"Planned Parenthood Affiliates of California\"}}\nIs this clearly a different entity from every compatible existing observation AND the curated publishers? Check acronyms, reordered/legal names and title variants even when spelling differs. Same entity with a different relationship or rating is overlap, not distinct. Choose unclear when identity cannot be established; never guess a merger.",
+    "criteria": {
+     "distinct": "Clearly distinct from all supplied existing and curated entities",
+     "overlap": "Same entity or likely alias of an existing observation",
+     "curated": "Same entity or alias of a protected curated publisher",
+     "unclear": "Identity overlap is uncertain"
+    }
+   }
+  }
+ },
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "new_entity": {
+    "type": "choice",
+    "choice": "distinct",
+    "confidence": 0.93,
+    "probabilities": {
+     "curated": 0.01,
+     "distinct": 0.95,
+     "overlap": 0.02,
+     "unclear": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 716,
+   "output_tokens": 49
+  }
+ }
+}

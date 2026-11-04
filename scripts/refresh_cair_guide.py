@@ -34,7 +34,7 @@ def capture_pdf(raw, checked_on):
     date.fromisoformat(checked_on)
     if not raw.startswith(b'%PDF-'):
         raise ValueError('Expected the actual PDF served by the state-guide endpoint')
-    cards, pages, measure_pages = [], [], []
+    cards, pages, measure_pages, mixed_pages = [], [], [], []
     with pdfplumber.open(io.BytesIO(raw)) as pdf:
         title = pdf.pages[0].extract_text() or ''
         if '2026 California General' not in title or 'GENERAL ELECTION: 11/3/26' not in title:
@@ -49,14 +49,31 @@ def capture_pdf(raw, checked_on):
                            key=lambda r:(r['top'],r['x0']))
             headers = [r for r in page.rects if r['x0'] > 10 and r['width'] > .85*page.width
                        and 15 < r['height'] < 70 and r['bottom'] < .925*page.height]
+            measure_top = None
             if 'BALLOT MEASURES' in page_text:
-                if rects:
-                    raise ValueError('Mixed candidate/measure layout needs an adapter review')
+                headings = [a['top'] for a, b in zip(words, words[1:])
+                            if a['text'] == 'BALLOT' and b['text'] == 'MEASURES'
+                            and abs(a['top'] - b['top']) < 2 and a['size'] >= 9]
+                if len(headings) != 1:
+                    raise ValueError('Ambiguous ballot-measures boundary; refusing a partial capture')
+                measure_top = headings[0]
+                if any(r['top'] < measure_top < r['bottom'] for r in rects):
+                    raise ValueError('Candidate card crosses ballot-measures boundary')
+                if any(w['top'] >= measure_top and w['text'] in LABELS
+                       and 'Bold' in w['fontname'] and w['size'] < 7
+                       and any(r['top'] >= measure_top and r['x0'] <= w['x0'] <= r['x1']
+                               and r['top'] <= w['top'] <= r['bottom'] for r in rects)
+                       for w in words):
+                    raise ValueError('Candidate badge follows ballot-measures heading')
+                rects = [r for r in rects if r['bottom'] <= measure_top]
                 measure_pages.append(number)
+                if rects:
+                    mixed_pages.append(number)
             elif not rects:
                 raise ValueError(f'Unparsed candidate page {number}; refusing a partial capture')
-            if number not in measure_pages:
+            if number not in measure_pages or rects:
                 badges = [w for w in words if 'Bold' in w['fontname'] and w['size'] < 7
+                          and (measure_top is None or w['bottom'] <= measure_top)
                           and w['text'] in {'ENDORSED','PREFERRED','OPPOSED','OPPOSE','JOINT','NO'}]
                 if len(badges) != len(rects):
                     raise ValueError(f'Unbound recommendation badge on page {number}; refusing a partial capture')
@@ -75,13 +92,15 @@ def capture_pdf(raw, checked_on):
                 cards.append({'id':f'p{number}-c{index}', 'page':number, 'name':name, 'office':office,
                               'level':LABELS[raw_label], 'source_label':raw_label, 'section':section,
                               'bbox':[round(rect[k],3) for k in ('x0','top','x1','bottom')]})
-            pages.append({'page':number,'candidate_cards':len(rects),'kind':'measures' if number in measure_pages else 'candidates'})
+            pages.append({'page':number,'candidate_cards':len(rects),
+                          'kind':'mixed' if number in mixed_pages else 'measures' if number in measure_pages else 'candidates'})
     if not cards:
         raise ValueError('No complete candidate cards')
     return {'version':1,'policy':POLICY,'source_url':URL,'landing_url':PAGE,'checked_on':checked_on,
             'source_sha256':digest(raw),'source_bytes':len(raw),'retrieval':'Direct publisher PDF; geometry-bounded text extraction',
             'election_date':'2026-11-03','phase':'general','page_count':len(pages),'pages':pages,
-            'excluded_measure_pages':measure_pages,'card_count':len(cards),
+            'excluded_measure_pages':measure_pages,'mixed_candidate_measure_pages':mixed_pages,
+            'parser_version':'cair-pdf-layout-v2','card_count':len(cards),
             'level_counts':dict(Counter(c['level']for c in cards)), 'cards':cards}
 
 

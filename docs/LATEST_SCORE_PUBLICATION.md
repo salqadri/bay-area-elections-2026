@@ -1,6 +1,22 @@
+# Current status — November 3, 2026
+
+Production uses `jev-2026-11-03-final` (1,296 saved evaluations; see
+[PUBLISHED_GRADES.md](PUBLISHED_GRADES.md)). PR #23 prepares the separate
+`jev-2026-11-03-fresno-local-research` archive. The initial 222 Fresno evaluations
+were N/A before enrichment; five source-researched candidates now have grades,
+with the other 1,513 rows unchanged. No prompt or threshold changed. The PR is
+unmerged and not deployed. Its 737-row plan has **183 choices** (12 community,
+171 selection-category), 84 no-good-candidate and 470 no-information rows.
+The owner's earlier 179 race paragraphs/selections, including the Aisha correction,
+remain exact; four new Fresno choices have reviewed rationales.
+[Current findings and artifacts](../research/fresno/local-2026-11-03/README.md).
+
+The October 30 notes below are historical; they do not describe the current
+saved prompt, scores or recommendation plan.
+
 # Latest score publication — October 30, 2026
 
-Publication **2026-10-30.1** (current) publishes owner-directed criteria **v8**
+Publication **2026-10-30.1** (historical) publishes owner-directed criteria **v8**
 plus the same-day **v8.1** correction, with fresh Qwen explanations for all
 **404** letter-grade candidacies (`research/gaza-grading/explanations-2026-10-30-v8-1.json`,
 responses in `research/gaza-grading/responses-summary-v4-v8/`) and refreshed race
@@ -98,7 +114,7 @@ archive. It has not been silently rebound to a new scoring request.
 ## Refreshed race recommendations
 
 [Current plan](../research/candidate-recommendations/recommendations-2026-10-28-latest.json)
-uses the current dataset and score publication. Counts over all 539 inventory races:
+Historical October 30 counts over 539 inventory races:
 **12 community-rule picks, 139 Jev picks, 103 no-good-candidate, 285 no-information**.
 Five category changes follow directly from the updated grades. Seven selected
 names change overall: two previous picks become no recommendation, and five tied

@@ -1,3 +1,22 @@
+## Prepared Fresno publication — PR #23, held for review
+
+Prepared publication **2026-11-03.2** remains unmerged and undeployed. The
+current archive is `published-2026-11-03-fresno-local-research.json`, ID
+`jev-2026-11-03-fresno-local-research`: **1,518 evaluations**, with five newly
+informed Fresno results (Pacheco A, Singh A, Arambula B, Martinez Lott A,
+Karbassi F). All **1,513 other rows** remain exact, including the 1,296 prior
+Bay Area/nationwide results. Owner v11 criteria and thresholds are unchanged.
+Distribution: **A 122 · B 47 · C 21 · D 34 · E 84 · F 122 · N/A 1088**.
+
+The original roster-only archive `jev-2026-11-03-fresno-reviewed` remains
+immutable history: all 222 initial Fresno results were N/A because candidate
+enrichment had not been performed. The follow-up supplies four missing CAIR
+recommendations and direct issue evidence, with five actual portable runs and
+source-bound refresh receipts. Four new Fresno selections bring the total to
+183; the prior 179 approved choices and race paragraphs remain exact. Five
+candidate-grade explanations are queued for Hermes rather than relabeled from
+old prose. [Source research and provenance](../research/fresno/local-2026-11-03/README.md).
+
 ## November 3 publication — PR #22 release
 
 Publication **2026-11-03.1**, schema **1.31**, publishes all **1,296** latest

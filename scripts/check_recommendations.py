@@ -272,7 +272,9 @@ class RecommendationChecks(unittest.TestCase):
             entry = {'category': race['category'], 'recommended': race.get('recommended'),
                      'recommend_reason': race.get('recommend_reason')}
             expected[race['position_id']] = entry
-        self.assertEqual(len(expected), 539)
+        # 737 plan races since Fresno County coverage (was 539): 564 confirmed +
+        # 173 excluded determinations with candidate records (November 3, 2026).
+        self.assertEqual(len(expected), 737)
         for page in ('index', 'ballot'):
             html = (rec.ROOT / f'{page}.html').read_text(encoding='utf-8')
             match = re.search(r'<script id="recommendations-data" type="application/json">(.*?)</script>', html, re.S)

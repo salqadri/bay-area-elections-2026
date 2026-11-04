@@ -6,7 +6,7 @@ from schema_validation import HERE, SCHEMA, SEEN, ASSERTIONS, scan_schema, check
 DATA = json.loads((HERE / "2026-11-03_Bay_Area_Elections.json").read_text())
 
 def mutated(mutator):
-    value = copy.deepcopy(DATA)
+    value = copy.deepcopy(FIXTURE)
     mutator(value)
     return value
 
@@ -18,6 +18,26 @@ assert not errors, "Current dataset schema errors:\n" + "\n".join(errors[:40])
 
 def first(data, predicate):
     return next(p for p in data["positions"] if predicate(p))
+
+
+# The real, complete dataset is validated above. Malformed-example regressions
+# need representative records, not 70 additional complete dataset traversals.
+# Keep every kind of record targeted below and retain the unchanged registries.
+# Coverage arithmetic and source truth are checked in their dedicated suites.
+fixture_positions = [DATA['positions'][0]]
+for predicate in (
+    lambda p: p['office_category'] == 'State Assembly',
+    lambda p: p['office_category'] == 'State Senate',
+    lambda p: p['election_type'] == 'retention',
+    lambda p: not p['partisan'] and p.get('candidates'),
+    lambda p: p.get('government_level') == 'Federal' and any(
+        c.get('independent_expenditures', {}).get('items') for c in p.get('candidates') or []),
+):
+    position = first(DATA, predicate)
+    if position['id'] not in {p['id'] for p in fixture_positions}:
+        fixture_positions.append(position)
+FIXTURE = {**DATA, 'positions': fixture_positions}
+assert not check(FIXTURE, SCHEMA), 'Representative schema regression fixture is invalid'
 
 
 def add_party_to_nonpartisan(data):

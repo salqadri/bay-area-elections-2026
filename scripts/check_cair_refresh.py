@@ -42,6 +42,21 @@ class ParserChecks(unittest.TestCase):
         with self.assertRaises(ValueError):self.parse(page)
         with self.assertRaises(ValueError):cair.capture_pdf(b'<html>not PDF</html>','2026-10-23')
 
+    def test_mixed_page_keeps_candidate_above_measures_and_excludes_measure_cards(self):
+        page=self.page()
+        page.extract_text.return_value+=' BALLOT MEASURES Prop 2 SUPPORT'
+        words=page.extract_words.return_value
+        for text,x in [('BALLOT',30),('MEASURES',120)]:
+            words.append({'text':text,'x0':x,'x1':x+60,'top':170,'bottom':184,'fontname':'Font-Bold','size':14})
+        page.rects.append({'x0':23,'x1':205,'top':210,'bottom':280,'width':182,'height':70,'non_stroking_color':(1.,1.,1.)})
+        packet=self.parse(page)
+        self.assertEqual([c['name']for c in packet['cards']],['Kevin Park'])
+        self.assertEqual(packet['mixed_candidate_measure_pages'],[1])
+        self.assertEqual(packet['pages'][0]['kind'],'mixed')
+        # An unexpected candidate below the boundary must never disappear silently.
+        words.append({'text':'ENDORSED','x0':85,'x1':110,'top':230,'bottom':236,'fontname':'Font-Bold','size':6})
+        with self.assertRaisesRegex(ValueError,'badge follows'):self.parse(page)
+
 
 class RefreshChecks(unittest.TestCase):
     def setUp(self):

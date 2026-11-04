@@ -1,3 +1,14 @@
+## November 3 mixed-page PDF parser correction
+
+The current source's page 28 places a candidate card above ballot measures.
+The refresh parser now uses the actual BALLOT MEASURES heading's geometry to
+retain candidate cards above it and exclude measure recommendations below.
+Crossing or ambiguous layouts still fail closed. The 34-page guide yields 246
+candidate cards. A scoped Fresno refresh adds Pacheco, Singh, Arambula and
+Martinez Lott without changing other counties' records. Source hashes and exact
+Jev checks are in `research/reviews/fresno-local-cair-2026-11-03.*.json` and the
+[local research handoff](../research/fresno/local-2026-11-03/README.md).
+
 # Refresh CAIR Action's California guide
 
 `refresh_cair_guide.py` refreshes every candidate card in the official California

@@ -1,3 +1,23 @@
+# Owner-requested Fresno local research follow-up
+
+Read [the local research handoff](research/fresno/local-2026-11-03/README.md).
+This follows the roster-only PR #23 review below. It adds source-backed local
+research, five targeted Jev evaluations and four new Fresno race recommendations.
+The current prepared publication is `jev-2026-11-03-fresno-local-research`.
+Preserve all 539 previously accepted race rows and prior model archives. PR #23
+is still unmerged and undeployed; local preview authorization is not deployment
+authorization. Do not rerun completed research/evaluation batches merely to resume.
+
+# PR #23 review — Fresno County
+
+PR #23 is held for review, not merged or deployed. Read
+[the review handoff](research/fresno/review-2026-11-03/README.md) before changing
+its publication or recommendation plan. The owner approved retaining Hermes’s 179 refreshed race summaries and four changed
+selections, with Aisha Wahab’s congressional-vote attribution corrected manually.
+Preserve that accepted plan and exact model inputs/answers; no model reruns or
+deployment are needed to resume review.
+The PR #22 authorization below concerns its historical release only.
+
 # November 3 release
 
 PR #22 publication is authorized. Read the current release section in docs/PR22_HANDOFF.md; historical held-review instructions below do not override that authorization. Do not rerun models or rewrite exact saved requests merely to resume work.

@@ -159,7 +159,7 @@
         if (!races.some(r => r.position.district_or_seat === prefix+'-'+district)) warnings.push('The geography identifies '+prefix+'-'+district+', but this inventory has no matching researched contest for that county. This is a coverage gap, not confirmation that no election occurs.');
       }
     }
-    if (matchingCounties.length !== counties.length) warnings.push('Some possible address locations are outside the five researched counties. Results only cover the supported portions.');
+    if (matchingCounties.length !== counties.length) warnings.push('Some possible address locations are outside the researched counties. Results only cover the supported portions.');
     return {status,races,warnings:unique(warnings),geography:geo,summary:summary(geo),counts};
   }
 
